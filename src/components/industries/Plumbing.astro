@@ -168,55 +168,72 @@ const unscrewing = mechs[1] ?? {};
 
 <article class="plm">
 
-  {/* ═══ HERO — the range plate ═══════════════════════════════════════════ */}
-  <header class="plm-hero">
+  {/* ═══ HERO — the index ═════════════════════════════════════════════════
+       The opening is a catalogue sheet, not a statement with a drawing beside
+       it. A masthead title block sits above; under it the twelve fitting types
+       are ruled into one numbered grid with a caption rail at its head. The
+       reader's first impression of this chapter is a range, which is the
+       chapter's whole argument. Hatch — section hatch, cut steel — carries the
+       ground behind it. ═══════════════════════════════════════════════════ */}
+  <header class="plm-hero" data-tex="hatch">
     <div class="shell--wide">
-      <div class="plm-plate" data-reveal style="--reveal-y:0px">
-        <div class="plm-plate__copy">
-          <p class="eyebrow">{content.hero.kicker}</p>
-          <h1 class="plm-hero__head">
-            {content.hero.headline.map((line: any) => <span>{line}</span>)}
-          </h1>
+
+      {/* Title block. Copy sits above the index and does not dominate it. */}
+      <div class="plm-mast">
+        <p class="eyebrow plm-mast__eb">{content.hero.kicker}</p>
+        <h1 class="plm-hero__head">
+          {content.hero.headline.map((line: any) => <span>{line}</span>)}
+        </h1>
+        <div class="plm-mast__side">
           <p class="plm-hero__lead">{content.hero.lead}</p>
           {content.hero.markers && (
-            <ul class="plm-hero__markers">
-              {content.hero.markers.map((m: any) => <li class="t-mono">{m}</li>)}
+            <ul class="badges plm-hero__markers">
+              {content.hero.markers.map((m: any) => <li class="badge">{m}</li>)}
             </ul>
           )}
         </div>
+      </div>
 
-        {plate.map((c: any, i: number) => (
-          <figure class="plm-cell" style={`--i:${i}`}>
-            <svg viewBox="0 0 120 100" data-nomirror aria-hidden="true">
-              <path d={G[c.id]?.o ?? ''} class="plm-g plm-g--o" />
-              {G[c.id]?.d && <path d={G[c.id].d} class="plm-g plm-g--d" />}
-              {G[c.id]?.m && <path d={G[c.id].m} class="plm-g plm-g--m" />}
-            </svg>
-            <figcaption class="plm-cell__cap">
-              <span class="plm-cell__name">{c.name}</span>
-              <span class="plm-cell__meta">
-                <span class="t-mono">{c.code}</span>
-                <span class="t-mono">{c.range}</span>
-              </span>
-            </figcaption>
-          </figure>
-        ))}
+      {/* The index. One sheet, one border, twelve numbered cells. */}
+      <div class="plm-sheet">
+        <div class="plm-sheet__rail">
+          <p class="t-label">{b.plate.label}</p>
+          <ul class="plm-key">
+            <li><span class="plm-key__sw plm-key__sw--poly"></span>{b.plate.keyPolymer}</li>
+            <li><span class="plm-key__sw plm-key__sw--metal"></span>{b.plate.keyMetal}</li>
+          </ul>
+        </div>
+
+        <div class="plm-plate" data-reveal style="--reveal-y:0px">
+          {plate.map((c: any, i: number) => (
+            <figure class="plm-cell" style={`--i:${i}`}>
+              <span class="plm-cell__i t-mono" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+              <svg viewBox="0 0 120 100" data-nomirror aria-hidden="true">
+                <path d={G[c.id]?.o ?? ''} class="plm-g plm-g--o" />
+                {G[c.id]?.d && <path d={G[c.id].d} class="plm-g plm-g--d" />}
+                {G[c.id]?.m && <path d={G[c.id].m} class="plm-g plm-g--m" />}
+              </svg>
+              <figcaption class="plm-cell__cap">
+                <span class="plm-cell__name">{c.name}</span>
+                <span class="plm-cell__meta">
+                  <span class="t-mono">{c.code}</span>
+                  <span class="t-mono">{c.range}</span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
 
       <div class="plm-plate__foot">
-        <p class="t-label">{b.plate.label}</p>
         <p class="plm-plate__note">{b.plate.note}</p>
-        <ul class="plm-key">
-          <li><span class="plm-key__sw plm-key__sw--poly"></span>{b.plate.keyPolymer}</li>
-          <li><span class="plm-key__sw plm-key__sw--metal"></span>{b.plate.keyMetal}</li>
-        </ul>
         <p class="figure-note">{common.schematic}</p>
       </div>
     </div>
   </header>
 
   {/* ═══ 01 · THE RANGE ═══════════════════════════════════════════════════ */}
-  <section class="plm-band" id="plm-range">
+  <section class="plm-band plm-band--anchor on-steel" id="plm-range" data-tex="hatch">
     <div class="shell--wide plm-band__inner">
       <div class="plm-rail"><p class="plm-rail__i t-mono">{b.range.index}</p></div>
       <div class="plm-band__body">
@@ -252,15 +269,15 @@ const unscrewing = mechs[1] ?? {};
               hidden
             >
               <p class="plm-strat__hl">{v.headline}</p>
-              <dl class="plm-strat__fig">
+              <p class="plm-strat__note">{v.note}</p>
+              <dl class="caps plm-strat__caps">
                 {(STRAT[v.id] ?? []).map((row: any) => (
-                  <div>
-                    <dt class="t-label">{row.k}</dt>
-                    <dd class="t-mono">{row.v}</dd>
+                  <div class="cap cap--fig">
+                    <dt class="cap__k">{row.k}</dt>
+                    <dd class="cap__v">{row.v}</dd>
                   </div>
                 ))}
               </dl>
-              <p class="plm-strat__note">{v.note}</p>
             </div>
           ))}
 
@@ -905,7 +922,7 @@ const unscrewing = mechs[1] ?? {};
   </section>
 
   {/* ═══ 07 · BOUNDARY — the one inversion on the page ════════════════════ */}
-  <section class="plm-band plm-band--inv" id="plm-boundary">
+  <section class="plm-band plm-band--inv on-steel on-steel--deep" id="plm-boundary">
     <div class="shell--wide plm-band__inner">
       <div class="plm-rail"><p class="plm-rail__i t-mono">{b.boundary.index}</p></div>
       <div class="plm-band__body">
@@ -981,8 +998,8 @@ const unscrewing = mechs[1] ?? {};
 
         <div class="plm-facts">
           <p class="t-label">{b.start.factsLabel}</p>
-          <ul class="plm-facts__list">
-            {(b.start.facts ?? []).map((f: any) => <li class="t-mono">{f}</li>)}
+          <ul class="badges plm-facts__list">
+            {(b.start.facts ?? []).map((f: any) => <li class="badge">{f}</li>)}
           </ul>
           <p class="plm-facts__note">{b.start.note}</p>
         </div>
@@ -1059,74 +1076,116 @@ const unscrewing = mechs[1] ?? {};
     text-anchor: middle;
   }
 
-  /* ── Hero: the range plate ───────────────────────────────────────────── */
-  .plm-hero { padding-block: clamp(2rem, 5vw, 4rem) clamp(2rem, 5vw, 3.5rem); }
-  .plm-plate {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: var(--rule);
-  }
-  .plm-plate__copy {
-    grid-column: 1 / 4;
-    grid-row: 1 / 3;
-    background: var(--surface);
-    padding: clamp(1.25rem, 2.6vw, 2.25rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  @media (max-width: 1080px) {
-    .plm-plate { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .plm-plate__copy { grid-column: 1 / -1; grid-row: auto; }
-  }
-  @media (max-width: 640px) {
-    .plm-plate { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* ── Hero: the index ─────────────────────────────────────────────────────
+     The opening is a catalogue sheet. A title block runs across the top and is
+     ruled off; under it the twelve types sit in one bordered, numbered grid
+     with a caption rail at its head. The copy is above the index, not beside
+     it, and the index — not the headline — is what the reader meets first.
+
+     Section hatch sits under the whole opening. It is set well below the
+     threshold at which a reader could describe it: felt, not seen. */
+  .plm-hero {
+    padding-block: clamp(2rem, 5vw, 3.5rem) clamp(2.25rem, 5vw, 3.75rem);
+    --tex-ink: var(--accent-deep);
+    --tex-opacity: 0.07;
   }
 
+  /* Title block. Kicker across the top, statement and qualification beneath,
+     divided by a rule that is cleared on both sides. */
+  .plm-mast {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    align-items: end;
+    padding-block-end: clamp(1.25rem, 3vw, 2rem);
+    border-block-end: var(--rule-strong);
+  }
+  .plm-mast__eb { grid-column: 1 / -1; margin-block-end: clamp(1rem, 2.4vw, 1.75rem); }
   .plm-hero__head {
-    margin-block-start: clamp(0.85rem, 2vw, 1.35rem);
-    font-size: clamp(1.85rem, 3.4vw, 3rem);
+    grid-column: 1;
+    padding-inline-end: var(--col-pad);
+    font-size: clamp(1.8rem, 3.15vw, 2.85rem);
     line-height: 1.06;
     letter-spacing: -0.026em;
     font-weight: 500;
   }
   .plm-hero__head span { display: block; }
   .plm-hero__head span:last-child { color: var(--accent-deep); }
+  .plm-mast__side {
+    grid-column: 2;
+    padding-inline-start: var(--col-pad);
+    border-inline-start: var(--rule);
+    align-self: end;
+  }
   .plm-hero__lead {
-    margin-block-start: var(--sp-5);
     font-size: var(--step-0);
     line-height: 1.55;
     color: var(--ink-muted);
-    max-inline-size: 52ch;
+    max-inline-size: 46ch;
   }
-  .plm-hero__markers {
-    margin-block-start: var(--sp-6);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-  .plm-hero__markers li {
-    font-size: var(--step--2);
-    letter-spacing: 0.07em;
-    padding-block: 0.38em;
-    padding-inline: 0.7em;
-    border: 1px solid color-mix(in oklab, var(--accent) 32%, transparent);
-    color: var(--accent-deep);
+  .plm-hero__markers { margin-block-start: var(--sp-5); }
+  @media (max-width: 1000px) {
+    .plm-mast { grid-template-columns: minmax(0, 1fr); }
+    .plm-hero__head { padding-inline-end: 0; }
+    .plm-mast__side {
+      grid-column: 1;
+      margin-block-start: clamp(1.25rem, 3.5vw, 1.75rem);
+      padding-block-start: clamp(1.25rem, 3.5vw, 1.75rem);
+      padding-inline-start: 0;
+      border-inline-start: 0;
+      border-block-start: var(--rule);
+    }
   }
 
-  .plm-cell {
-    background: var(--surface);
-    padding-block: var(--sp-4) var(--sp-3);
+  /* The sheet carries one border; the grid inside it carries only hairlines. */
+  .plm-sheet {
+    margin-block-start: clamp(1.5rem, 3.5vw, 2.5rem);
+    border: var(--rule);
+    /* Raised off the hatched ground, so the index reads as a sheet laid on
+       cut steel rather than as more of the same near-white. */
+    background: var(--surface-raise);
+  }
+  .plm-sheet__rail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-3) var(--sp-6);
+    padding-block: var(--sp-4);
     padding-inline: var(--sp-4);
-    min-block-size: 8.5rem;
+    border-block-end: var(--rule-strong);
+  }
+  .plm-plate {
     display: grid;
-    grid-template-rows: 1fr auto;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--line);
+  }
+  @media (max-width: 1080px) { .plm-plate { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (max-width: 720px)  { .plm-plate { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 520px)  { .plm-plate { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+  .plm-cell {
+    background: var(--surface-raise);
+    padding-block: var(--sp-3) var(--sp-4);
+    padding-inline: var(--sp-4);
+    min-block-size: 10rem;
+    min-inline-size: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     gap: var(--sp-3);
     align-content: stretch;
   }
-  .plm-cell svg { inline-size: 100%; block-size: auto; max-block-size: 5.5rem; align-self: center; }
+  /* Each cell is numbered, as a catalogue cell is. */
+  .plm-cell__i {
+    display: block;
+    font-size: var(--step--2);
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    padding-block-end: var(--sp-2);
+    border-block-end: var(--rule);
+    font-variant-numeric: tabular-nums;
+  }
+  .plm-cell svg { inline-size: 100%; block-size: auto; max-block-size: 5.25rem; align-self: center; }
   .plm-g { fill: none; stroke-linejoin: round; }
   .plm-g--o { stroke: var(--accent-deep); stroke-width: 1.5; }
   .plm-g--d { stroke: var(--accent); stroke-width: 0.9; opacity: 0.65; }
@@ -1174,6 +1233,16 @@ const unscrewing = mechs[1] ?? {};
   /* ── The page's drawing-sheet rail ───────────────────────────────────── */
   .plm-band { border-block-start: var(--rule); }
   .plm-band--sunk { background: var(--surface-sunk); }
+
+  /* The chapter's contrast anchor. This is a light chapter, so it earns its
+     presence with one dark plate rather than by being quiet: the range — the
+     argument the whole page rests on — is set on steel. `.on-steel` carries
+     the entire token flip, so nothing is restated here, and the hatch that
+     opened the chapter carries through it at a lower weight. */
+  .plm-band--anchor {
+    border-block-start: 0;
+    --tex-opacity: 0.05;
+  }
   .plm-band__inner { display: grid; grid-template-columns: var(--plm-rail) minmax(0, 1fr); }
   .plm-rail { border-inline-end: var(--rule); padding-block: var(--section-y-tight) var(--sp-8); }
   .plm-rail:first-child { padding-inline-start: 0; }
@@ -1191,7 +1260,7 @@ const unscrewing = mechs[1] ?? {};
     padding-inline-start: clamp(1.25rem, 3vw, 3rem);
     min-inline-size: 0;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     .plm-band__inner { grid-template-columns: minmax(0, 1fr); }
     .plm-rail { border-inline-end: 0; border-block-end: var(--rule); padding-block: var(--sp-6) var(--sp-3); }
     .plm-rail__i { position: static; }
@@ -1237,33 +1306,39 @@ const unscrewing = mechs[1] ?? {};
 
   .plm-strat__panel {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-    gap: clamp(1.25rem, 3vw, 2.5rem);
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    grid-template-areas: 'hl note' 'figs figs';
+    gap: clamp(1.25rem, 3vw, 2.25rem);
     padding: clamp(1.25rem, 2.6vw, 2rem);
     border: var(--rule);
     border-block-start: 0;
     align-items: start;
   }
   .plm-strat__panel[hidden] { display: none; }
-  @media (max-width: 820px) { .plm-strat__panel { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) {
+    .plm-strat__panel {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: 'hl' 'note' 'figs';
+    }
+  }
   .plm-strat__hl {
-    grid-column: 1 / -1;
+    grid-area: hl;
     font-size: var(--step-1);
     line-height: 1.35;
     letter-spacing: var(--track-head);
     max-inline-size: 44ch;
   }
-  .plm-strat__fig { border-block-start: var(--rule-strong); }
-  .plm-strat__fig > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: var(--sp-4);
-    padding-block: var(--sp-3);
-    border-block-end: var(--rule);
+  .plm-strat__note { grid-area: note; font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+  /* The tooling arithmetic is the most persuasive material on this page. It is
+     set as the shared capability module rather than as a mono ledger strip. */
+  .plm-strat__caps {
+    grid-area: figs;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
-  .plm-strat__fig dd { font-size: var(--step-2); color: var(--accent-deep); font-variant-numeric: tabular-nums; }
-  .plm-strat__note { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+  .plm-strat__caps .cap__v { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+  @media (max-width: 560px) {
+    .plm-strat__caps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
 
   .plm-mx__cap { display: block; margin-block: var(--sp-7) var(--sp-4); }
   .plm-mx__scroll { overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
@@ -1345,8 +1420,13 @@ const unscrewing = mechs[1] ?? {};
   .plm-notes__item:first-child { padding-inline-start: 0; }
   .plm-notes__item:last-child { border-inline-end: 0; }
   .plm-notes__item p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
-  @media (max-width: 780px) {
-    .plm-notes__item { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: 0; }
+  @media (max-width: 1000px) {
+    .plm-notes { grid-template-columns: minmax(0, 1fr); }
+    .plm-notes__item {
+      border-inline-end: 0;
+      border-block-end: var(--rule);
+      padding-inline: 0;
+    }
   }
 
   /* ── 02 Mechanism board ──────────────────────────────────────────────── */
@@ -1356,6 +1436,7 @@ const unscrewing = mechs[1] ?? {};
     grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
     gap: var(--plm-gap);
   }
+  @media (max-width: 1000px) { .plm-mech { grid-template-columns: minmax(0, 1fr); } }
   .plm-mech__col {
     border: var(--rule);
     padding: clamp(1.1rem, 2.2vw, 1.75rem);
@@ -1435,6 +1516,7 @@ const unscrewing = mechs[1] ?? {};
     background: var(--line);
     border: var(--rule);
   }
+  @media (max-width: 1000px) { .plm-thr { grid-template-columns: minmax(0, 1fr); } }
   .plm-thr__fig {
     background: var(--surface);
     padding: clamp(1.1rem, 2.2vw, 1.6rem);
@@ -1453,7 +1535,7 @@ const unscrewing = mechs[1] ?? {};
     gap: var(--plm-gap);
     align-items: start;
   }
-  @media (max-width: 900px) { .plm-agr { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .plm-agr { grid-template-columns: minmax(0, 1fr); } }
   .plm-agr__fig {
     border: var(--rule);
     padding: clamp(1.1rem, 2.2vw, 1.6rem);
@@ -1471,7 +1553,7 @@ const unscrewing = mechs[1] ?? {};
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(1.5rem, 4vw, 3.5rem);
   }
-  @media (max-width: 820px) { .plm-split { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .plm-split { grid-template-columns: minmax(0, 1fr); } }
   .plm-list { margin-block-start: var(--sp-4); border-block-start: var(--rule-strong); }
   .plm-list li {
     padding-block: var(--sp-3);
@@ -1512,8 +1594,13 @@ const unscrewing = mechs[1] ?? {};
   }
   .plm-three li:first-child { padding-inline-start: 0; }
   .plm-three li:last-child { border-inline-end: 0; }
-  @media (max-width: 780px) {
-    .plm-three li { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: 0; }
+  @media (max-width: 1000px) {
+    .plm-three { grid-template-columns: minmax(0, 1fr); }
+    .plm-three li {
+      border-inline-end: 0;
+      border-block-end: var(--rule);
+      padding-inline: 0;
+    }
   }
   .plm-three__n { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
   .plm-three li p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
@@ -1527,6 +1614,7 @@ const unscrewing = mechs[1] ?? {};
     background: var(--line);
     border: var(--rule);
   }
+  @media (max-width: 1000px) { .plm-calc__grid { grid-template-columns: minmax(0, 1fr); } }
   .plm-calc__col { background: var(--surface); padding: clamp(1.1rem, 2.2vw, 1.6rem); }
   .plm-band--sunk .plm-calc__col { background: var(--surface-sunk); }
   .plm-calc__col dl { margin-block-start: var(--sp-4); border-block-start: var(--rule); }
@@ -1552,27 +1640,16 @@ const unscrewing = mechs[1] ?? {};
     padding-block: var(--sp-4);
     border-block-end: var(--rule);
   }
-  @media (max-width: 720px) { .plm-lost__list > div { grid-template-columns: 1fr; gap: var(--sp-2); } }
+  @media (max-width: 1000px) { .plm-lost__list > div { grid-template-columns: minmax(0, 1fr); gap: var(--sp-2); } }
   .plm-lost__list dt { font-size: var(--step-0); font-weight: var(--weight-medium); }
   .plm-lost__list dd { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
 
-  /* ── 07 Boundary — the page's single inversion ───────────────────────── */
-  .plm-band--inv {
-    background: var(--inverse);
-    color: var(--inverse-ink);
-    --ink: var(--inverse-ink);
-    --signal: var(--signal-inverse);
-    --signal-ink: var(--signal-inverse);
-    --accent: var(--accent-inverse);
-    --accent-deep: var(--accent-inverse);
-    --ink-muted: color-mix(in oklab, var(--inverse-ink) 66%, transparent);
-    --line: color-mix(in oklab, var(--inverse-ink) 20%, transparent);
-    --surface: var(--inverse);
-    --accent: color-mix(in oklab, var(--accent-wash) 88%, var(--inverse));
-  }
+  /* ── 07 Boundary — the page's floor ──────────────────────────────────────
+     `on-steel on-steel--deep` in the markup does the whole token flip: ink,
+     rules, accent, signal, buttons and focus ring. Restating any of them here
+     is how a band ends up with an accent measured against a near-white page,
+     so only the one chapter-specific reassignment lives in this file. */
   .plm-band--inv .plm-rail__i { color: var(--signal-ink); }
-  .plm-band--inv .plm-list li::before { background: var(--accent); }
-  .plm-band--inv .plm-list--cannot li::before { background: var(--signal); }
   .plm-split--bound { margin-block-start: clamp(2rem, 4vw, 3.5rem); }
   .plm-statement {
     margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
@@ -1597,7 +1674,7 @@ const unscrewing = mechs[1] ?? {};
   }
   /* The one place the page steps off its own grid. */
   .plm-audit__list li:nth-child(even) { padding-inline-start: clamp(0rem, 4vw, 3.5rem); }
-  @media (max-width: 820px) {
+  @media (max-width: 1000px) {
     .plm-audit__list li { grid-template-columns: 2.4rem minmax(0, 1fr); gap: var(--sp-4); }
     .plm-audit__list li:nth-child(even) { padding-inline-start: 0; }
     .plm-audit__c { grid-column: 2; }
@@ -1612,7 +1689,7 @@ const unscrewing = mechs[1] ?? {};
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(1.5rem, 4vw, 3.5rem);
   }
-  @media (max-width: 820px) { .plm-ledger { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .plm-ledger { grid-template-columns: minmax(0, 1fr); } }
   .plm-ledger__col ul { margin-block-start: var(--sp-4); border-block-start: var(--rule-strong); }
   .plm-ledger__col li {
     padding-block: var(--sp-4);
@@ -1634,15 +1711,7 @@ const unscrewing = mechs[1] ?? {};
   .plm-ledger__col--out li::before { background: var(--accent); }
 
   .plm-facts { margin-block-start: clamp(2rem, 4vw, 3rem); padding-block-start: var(--sp-6); border-block-start: var(--rule); }
-  .plm-facts__list { margin-block-start: var(--sp-4); display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .plm-facts__list li {
-    font-size: var(--step--2);
-    letter-spacing: 0.06em;
-    padding-block: 0.4em;
-    padding-inline: 0.75em;
-    border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
-    color: var(--accent-deep);
-  }
+  .plm-facts__list { margin-block-start: var(--sp-4); }
   .plm-facts__note { margin-block-start: var(--sp-4); font-size: var(--step--1); color: var(--ink-muted); max-inline-size: 60ch; }
 
   .plm-panels { margin-block-start: clamp(2.5rem, 5vw, 4rem); }
@@ -1657,16 +1726,6 @@ const unscrewing = mechs[1] ?? {};
   }
   /* Scripts without a Latin small-caps tradition must not be tracked out or
      forced into the mono face — it damages legibility and breaks Arabic joins. */
-  :global(html[lang='zh']) .plm-hero__markers li,
-  :global(html[lang='th']) .plm-hero__markers li,
-  :global(html[lang='ar']) .plm-hero__markers li,
-  :global(html[lang='fa']) .plm-hero__markers li,
-  :global(html[lang='ur']) .plm-hero__markers li,
-  :global(html[lang='zh']) .plm-facts__list li,
-  :global(html[lang='th']) .plm-facts__list li,
-  :global(html[lang='ar']) .plm-facts__list li,
-  :global(html[lang='fa']) .plm-facts__list li,
-  :global(html[lang='ur']) .plm-facts__list li,
   :global(html[lang='zh']) .plm-cmp thead th,
   :global(html[lang='th']) .plm-cmp thead th,
   :global(html[lang='ar']) .plm-cmp thead th,

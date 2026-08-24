@@ -45,10 +45,10 @@ const schemas = [
 
 <Base locale={locale} meta={p.meta} route="contact" schemas={schemas}>
   <a class="skip-link" href="#main">{c.a11y.skipToContent}</a>
-  <SiteHeader locale={locale} current="contact" />
+  <SiteHeader locale={locale} current="contact" overDark />
 
   <main id="main">
-    <header class="ct-hero">
+    <header class="ct-hero on-steel mat mat--milled" data-tex="grain">
       <div class="shell--wide ct-hero__inner">
         <div>
           <p class="eyebrow">{p.hero.kicker}</p>
@@ -183,14 +183,18 @@ const schemas = [
 </Base>
 
 <style>
-  .ct-hero { padding-block: clamp(3rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem); }
+  .ct-hero {
+        --tex-opacity: 0.16;
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    padding-block-start: calc(4.25rem + clamp(2.25rem, 5vw, 4.5rem));
+  }
   .ct-hero__inner {
     display: grid;
     grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
     gap: clamp(2rem, 5vw, 4.5rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .ct-hero__inner { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .ct-hero__inner { grid-template-columns: minmax(0, 1fr); } }
 
   .ct-hero__head {
     margin-block-start: clamp(1.25rem, 3vw, 2rem);
@@ -254,7 +258,7 @@ const schemas = [
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .ct-send__inner { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .ct-send__inner { grid-template-columns: minmax(0, 1fr); } }
   .ct-send__head { display: grid; gap: var(--sp-5); }
   .ct-send__head h2 { max-inline-size: 16ch; }
   .ct-send__list { border-block-start: var(--rule-strong); }

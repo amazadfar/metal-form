@@ -128,8 +128,15 @@ const links = [
      explicitly — otherwise it renders near-black on a near-black hero. */
   .hdr--over-dark:not(.is-condensed) :global(.wm) { color: var(--inverse-ink); }
   .hdr--over-dark:not(.is-condensed) :global(a.wm:hover) { color: #FFFFFF; }
-  .hdr--over-dark:not(.is-condensed) .hdr__link { color: color-mix(in oklab, var(--inverse-ink) 78%, transparent); }
-  .hdr--over-dark:not(.is-condensed) .hdr__link:hover { color: var(--inverse-ink); }
+  /* The wordmark's second half is set at 0.72 opacity, which is fine on a
+     near-white page and not on a mid-tone one. */
+  .hdr--over-dark:not(.is-condensed) :global(.wm__b) { opacity: 0.92; }
+  /* Full ink, not a mix. A chapter opening on a saturated tint of its own
+     accent is a much lighter ground than the near-black these were measured
+     against, and 78% of the inverse ink over the furniture chapter's olive
+     came out at 3.86:1. */
+  .hdr--over-dark:not(.is-condensed) .hdr__link { color: var(--inverse-ink); }
+  .hdr--over-dark:not(.is-condensed) .hdr__link:hover { color: #FFFFFF; }
 
   .hdr__inner {
     inline-size: min(100% - var(--gutter) * 2, var(--shell-wide));
@@ -220,7 +227,7 @@ const links = [
     color: var(--ink-muted);
     transition: color var(--dur-2) var(--ease-out);
   }
-  .hdr--over-dark:not(.is-condensed) .hdr__lang { color: color-mix(in oklab, var(--inverse-ink) 78%, transparent); }
+  .hdr--over-dark:not(.is-condensed) .hdr__lang { color: var(--inverse-ink); }
   .hdr__lang:hover { color: var(--ink); }
   .hdr--over-dark:not(.is-condensed) .hdr__lang:hover { color: var(--inverse-ink); }
   .hdr__globe { inline-size: 0.95rem; block-size: 0.95rem; }

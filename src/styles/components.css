@@ -157,7 +157,7 @@
   border-block-end: var(--rule);
   align-items: baseline;
 }
-@media (max-width: 620px) { .spec__row { grid-template-columns: 1fr; gap: var(--sp-1); } }
+@media (max-width: 620px) { .spec__row { grid-template-columns: minmax(0, 1fr); gap: var(--sp-1); } }
 .spec__k {
   font-family: var(--font-mono);
   font-size: var(--step--2);
@@ -237,7 +237,7 @@
   padding-block-start: var(--sp-5);
   border-block-start: var(--rule-strong);
 }
-@media (max-width: 720px) { .ruled-head { grid-template-columns: 1fr; gap: var(--sp-3); } }
+@media (max-width: 720px) { .ruled-head { grid-template-columns: minmax(0, 1fr); gap: var(--sp-3); } }
 
 /* ── Figure caption / disclosure of illustrative media ────────────────────
    Every generated visual on the site is labelled as a schematic so it can
@@ -272,15 +272,21 @@
    rule on its leading edge and its index in full accent, the inactive ones a
    muted index. The prose stays readable at every step.
 
-   Declared here, after the chapter styles are authored, with a doubled
+   Declared here, after the chapter styles are authored, with a repeated
    attribute selector so it wins over a chapter's own `opacity` rule without
-   `!important`. */
-[data-stepper] [data-station-step][data-station-step] {
+   `!important`.
+
+   Three repeats, not two. Astro appends a scope attribute to every selector in
+   a component's `<style>`, so a chapter's `html.js .av-reg__row` is really
+   `html.js .av-reg__row[data-astro-cid-…]` — specificity (0,3,1), which beat
+   the two-repeat version of this rule and took a whole stepper's prose down to
+   a 1.95:1 contrast ratio. (0,4,0) clears it with room. */
+[data-stepper] [data-station-step][data-station-step][data-station-step] {
   opacity: 1;
   position: relative;
   transition: border-color var(--dur-3) var(--ease-out);
 }
-[data-stepper] [data-station-step][data-station-step]::before {
+[data-stepper] [data-station-step][data-station-step][data-station-step]::before {
   content: '';
   position: absolute;
   inset-inline-start: calc(var(--sp-5) * -1);
@@ -301,9 +307,9 @@
 [data-stepper][data-step='7'] [data-station-step='7']::before { opacity: 1; }
 
 /* The index marker dims instead of the prose — it is a marker, not content. */
-[data-stepper] [data-station-step][data-station-step] > .t-mono,
-[data-stepper] [data-station-step][data-station-step] [class*='__n'],
-[data-stepper] [data-station-step][data-station-step] [class*='__i'] {
+[data-stepper] [data-station-step][data-station-step][data-station-step] > .t-mono,
+[data-stepper] [data-station-step][data-station-step][data-station-step] [class*='__n'],
+[data-stepper] [data-station-step][data-station-step][data-station-step] [class*='__i'] {
   color: var(--ink-muted);
   transition: color var(--dur-3) var(--ease-out);
 }

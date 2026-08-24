@@ -243,7 +243,7 @@ const { pillars, d, schematicLabel } = Astro.props;
   .pl__band[data-band='1'] .pl__fig { order: 1; }
   @media (max-width: 940px) {
     .pl__band-inner,
-    .pl__band[data-band='1'] .pl__band-inner { grid-template-columns: 1fr; }
+    .pl__band[data-band='1'] .pl__band-inner { grid-template-columns: minmax(0, 1fr); }
     .pl__band[data-band='1'] .pl__copy { order: 0; }
     .pl__band[data-band='1'] .pl__fig { order: 0; }
   }
@@ -445,7 +445,7 @@ const { pillars, d, schematicLabel } = Astro.props;
     gap: var(--sp-6);
     align-items: start;
   }
-  @media (max-width: 560px) { .pl__pair { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .pl__pair { grid-template-columns: minmax(0, 1fr); } }
   .pl__warn {
     margin-block-start: var(--sp-4);
     font-size: var(--step--2);

@@ -101,7 +101,7 @@ const next = list[(idx + 1) % list.length];
     border: var(--rule);
     margin-block-end: var(--sp-8);
   }
-  @media (max-width: 620px) { .chnav__steps { grid-template-columns: 1fr; } }
+  @media (max-width: 620px) { .chnav__steps { grid-template-columns: minmax(0, 1fr); } }
 
   .chnav__step {
     display: grid;

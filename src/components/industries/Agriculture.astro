@@ -164,17 +164,27 @@ const CURVES = [
       <marker id="agr-arrow-rail" markerUnits="userSpaceOnUse" markerWidth="15" markerHeight="15" refX="13" refY="7.5" orient="auto">
         <path d="M0 0 L15 7.5 L0 15 z" fill="currentColor" />
       </marker>
-      <linearGradient id="agr-sheet" x1="0" y1="0" x2="0.3" y2="1">
-        <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.07" />
-        <stop offset="100%" stop-color="var(--accent)" stop-opacity="0" />
-      </linearGradient>
     </defs>
   </svg>
 
-  {/* ═══ HERO — field scale resolving into one emitter ═════════════════════ */}
-  <header class="agr-hero">
+  {/* ═══ HERO — PLATE: the drawing sheet, handed over ══════════════════════
+       The chapter opens on a saturated bed mixed from its own accent, and the
+       figure is framed as a document — border, corner tick, its own inner
+       padding — sitting on that bed rather than floating beside the copy. */}
+  <header class="agr-hero ground--tint mat mat--milled" data-tex="wave">
     <div class="agr-hero__bleed" aria-hidden="true">
       <svg viewBox="0 0 1400 620" preserveAspectRatio="xMidYMid slice" data-nomirror>
+        {/* The sheet wash lives inside the tinted hero, not in the chapter-wide
+            defs block. A `var()` in a <stop> resolves against the stop's own
+            ancestors, and the shared defs sit outside `ground--tint` — so this
+            wash was being mixed from the light-page accent while every other
+            mark in the same drawing took the ground's remapped one. */}
+        <defs>
+          <linearGradient id="agr-sheet" x1="0" y1="0" x2="0.3" y2="1">
+            <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.07" />
+            <stop offset="100%" stop-color="var(--accent)" stop-opacity="0" />
+          </linearGradient>
+        </defs>
         <rect width="1400" height="620" fill="url(#agr-sheet)" />
         {Array.from({ length: 15 }).map((_: any, i: number) => (
           <line
@@ -200,45 +210,48 @@ const CURVES = [
         </h1>
         <p class="agr-hero__lead">{content.hero.lead}</p>
         {content.hero.markers && (
-          <ul class="agr-hero__markers">
-            {content.hero.markers.map((m: string) => <li class="t-mono">{m}</li>)}
+          <ul class="badges agr-hero__markers">
+            {content.hero.markers.map((m: string) => <li class="badge">{m}</li>)}
           </ul>
         )}
       </div>
 
-      {/* Two registers of the same object. The fan lines carry the magnification. */}
-      <figure class="agr-hero__fig" data-reveal>
-        <svg viewBox="0 0 620 328" data-nomirror role="img" aria-label={common.schematic}>
-          {/* Drawing-frame corner ticks around the magnified register */}
-          <path d="M44 52 V36 H72 M540 36 H568 V52 M44 148 V164 H72 M540 164 H568 V148" class="agr-tick" />
-          <path d={HERO.top} class="agr-wall" />
-          <path d={HERO.bot} class="agr-wall" />
-          <path d={HERO.flow} class="agr-flow" pathLength="1" />
-          <path d={HERO.flow} class="agr-bead" pathLength="1" />
-          <text x="44" y="28" class="agr-micro" font-size="9">{b.scale.overture.magLabel}</text>
+      {/* The plate. Two registers of the same object, framed as a sheet: the
+          fan lines carry the magnification between them. */}
+      <figure class="agr-hero__plate plate plate--tick" data-reveal>
+        <div class="scroller agr-hero__scroll">
+          <svg viewBox="0 0 620 328" data-nomirror role="img" aria-label={common.schematic}>
+            {/* Drawing-frame corner ticks around the magnified register */}
+            <path d="M44 52 V36 H72 M540 36 H568 V52 M44 148 V164 H72 M540 164 H568 V148" class="agr-tick" />
+            <path d={HERO.top} class="agr-wall" />
+            <path d={HERO.bot} class="agr-wall" />
+            <path d={HERO.flow} class="agr-flow" pathLength="1" />
+            <path d={HERO.flow} class="agr-bead" pathLength="1" />
+            <text x="44" y="28" class="agr-micro" font-size="9">{b.scale.overture.magLabel}</text>
 
-          {/* Magnification fan */}
-          <path d="M250 238 L44 168 M370 238 L568 168" class="agr-fan" />
+            {/* Magnification fan */}
+            <path d="M250 238 L44 168 M370 238 L568 168" class="agr-fan" />
 
-          {/* The same part, small */}
-          <rect x="250" y="240" width="120" height="44" class="agr-body" />
-          <path d={HERO_TRUE.top} class="agr-wall agr-wall--hair" />
-          <path d={HERO_TRUE.bot} class="agr-wall agr-wall--hair" />
-          <path d={HERO_TRUE.flow} class="agr-flow agr-flow--hair" pathLength="1" />
-          <circle cx="364" cy="262" r="4" class="agr-outlet" />
-          <text x="386" y="266" class="agr-micro" font-size="9">{b.scale.overture.trueLabel}</text>
+            {/* The same part, small */}
+            <rect x="250" y="240" width="120" height="44" class="agr-body" />
+            <path d={HERO_TRUE.top} class="agr-wall agr-wall--hair" />
+            <path d={HERO_TRUE.bot} class="agr-wall agr-wall--hair" />
+            <path d={HERO_TRUE.flow} class="agr-flow agr-flow--hair" pathLength="1" />
+            <circle cx="364" cy="262" r="4" class="agr-outlet" />
+            <text x="386" y="266" class="agr-micro" font-size="9">{b.scale.overture.trueLabel}</text>
 
-          {/* Millimetre rule under it */}
-          <line x1="250" y1="294" x2="370" y2="294" class="agr-rule" />
-          {Array.from({ length: 27 }).map((_: any, i: number) => (
-            <line
-              x1={r(250 + i * (120 / 26))} y1="294"
-              x2={r(250 + i * (120 / 26))} y2={i % 5 === 0 ? 304 : 300}
-              class="agr-rule"
-            />
-          ))}
-          <text x="250" y="318" class="agr-micro" font-size="8">{b.scale.overture.ruleLabel}</text>
-        </svg>
+            {/* Millimetre rule under it */}
+            <line x1="250" y1="294" x2="370" y2="294" class="agr-rule" />
+            {Array.from({ length: 27 }).map((_: any, i: number) => (
+              <line
+                x1={r(250 + i * (120 / 26))} y1="294"
+                x2={r(250 + i * (120 / 26))} y2={i % 5 === 0 ? 304 : 300}
+                class="agr-rule"
+              />
+            ))}
+            <text x="250" y="318" class="agr-micro" font-size="8">{b.scale.overture.ruleLabel}</text>
+          </svg>
+        </div>
         <figcaption class="figure-note">{common.schematic}</figcaption>
       </figure>
     </div>
@@ -363,7 +376,7 @@ const CURVES = [
               <line x1="180" y1="382" x2="180" y2="394" class="agr-rule" />
             </svg>
 
-            <div class="agr-mag__readout" aria-hidden="true">
+            <div class="badge agr-mag__readout" aria-hidden="true">
               <span class="t-label">{b.scale.scaleLabel}</span>
               <span class="agr-mag__vals t-mono">
                 {b.scale.steps.map((s: any, i: number) => <span data-i={i}>{s.scale}</span>)}
@@ -376,8 +389,12 @@ const CURVES = [
         <ol class="agr-mag__steps" aria-label={b.scale.stepsLabel}>
           {b.scale.steps.map((s: any, i: number) => (
             <li class="agr-step" data-station-step={i}>
-              <span class="agr-step__n t-mono">{s.scale}</span>
-              <h3 class="agr-step__h">{s.label}</h3>
+              {/* The scale used to be an 11px tracked-out mono chip. It carries
+                  the whole magnification argument, so it is set with the shared
+                  capability-module vocabulary instead. The `__n` in the class
+                  is load-bearing: it is what the shared stepper dims. */}
+              <span class="cap__k agr-step__n">{s.scale}</span>
+              <h3 class="cap__v agr-step__h">{s.label}</h3>
               <p class="agr-step__p">{s.note}</p>
             </li>
           ))}
@@ -448,7 +465,7 @@ const CURVES = [
 
       <figure class="agr-lab__fig" data-reveal>
         <p class="t-label agr-lab__figlabel">{b.labyrinth.figureLabel}</p>
-        <div class="agr-lab__scroll">
+        <div class="scroller agr-lab__scroll">
           <svg viewBox="0 0 860 420" data-nomirror role="img" aria-label={common.schematic}>
             <path d={DETAIL.top} class="agr-wall agr-wall--heavy" />
             <path d={DETAIL.bot} class="agr-wall agr-wall--heavy" />
@@ -480,19 +497,19 @@ const CURVES = [
               <circle cx="298" cy="234" r="3" class="agr-call__dot" />
               <line x1="298" y1="234" x2="244" y2="82" class="agr-call__lead" />
               <circle cx="240" cy="70" r="12" class="agr-call__ring" />
-              <text x="240" y="75" text-anchor="middle" class="agr-micro" font-size="13">1</text>
+              <text x="240" y="75" text-anchor="middle" class="agr-micro" font-size="13">{b.labyrinth.calls[0].n}</text>
             </g>
             <g class="agr-call">
               <circle cx="628" cy="186" r="3" class="agr-call__dot" />
               <line x1="628" y1="186" x2="694" y2="82" class="agr-call__lead" />
               <circle cx="698" cy="70" r="12" class="agr-call__ring" />
-              <text x="698" y="75" text-anchor="middle" class="agr-micro" font-size="13">2</text>
+              <text x="698" y="75" text-anchor="middle" class="agr-micro" font-size="13">{b.labyrinth.calls[1].n}</text>
             </g>
             <g class="agr-call">
               <circle cx="826" cy="210" r="3" class="agr-call__dot" />
               <line x1="826" y1="210" x2="792" y2="360" class="agr-call__lead" />
               <circle cx="789" cy="372" r="12" class="agr-call__ring" />
-              <text x="789" y="377" text-anchor="middle" class="agr-micro" font-size="13">3</text>
+              <text x="789" y="377" text-anchor="middle" class="agr-micro" font-size="13">{b.labyrinth.calls[2].n}</text>
             </g>
           </svg>
         </div>
@@ -511,8 +528,11 @@ const CURVES = [
               <dd>{p.note}</dd>
             </div>
           ))}
-          <p class="agr-src t-fine">{b.labyrinth.paramsSource}</p>
         </dl>
+        {/* Outside the list: a `<dl>` may only contain `<dt>`, `<dd>`, `<div>`,
+            `<script>` and `<template>`, so a source note sitting inside one
+            breaks the description-list semantics a screen reader relies on. */}
+        <p class="agr-src t-fine">{b.labyrinth.paramsSource}</p>
 
         <div class="agr-calls">
           <h3 class="agr-h4">{b.labyrinth.callHeading}</h3>
@@ -618,8 +638,10 @@ const CURVES = [
     </div>
   </section>
 
-  {/* ═══ 04 · CAVITIES AND VOLUME — the one inverted band ══════════════════ */}
-  <section class="agr-cav" id="cavities">
+  {/* ═══ 04 · CAVITIES AND VOLUME — the one inverted band ══════════════════
+       The chapter's second and last textured surface: the same swell as the
+       hero, so the two dark bands read as one material. */}
+  <section class="agr-cav" id="cavities" data-tex="wave">
     <div class="shell--wide">
       <div class="agr-head">
         <div class="agr-head__idx"><span class="t-mono">{b.cavities.index}</span></div>
@@ -698,7 +720,7 @@ const CURVES = [
 
       <figure class="agr-sea__fig" data-reveal>
         <p class="t-label">{b.season.figureLabel}</p>
-        <div class="agr-sea__scroll">
+        <div class="scroller agr-sea__scroll">
           <svg viewBox="0 0 760 350" data-nomirror role="img" aria-label={common.schematic}>
             <rect x="306" y="40" width="202" height="280" class="agr-peak" />
             <line x1="306" y1="40" x2="306" y2="320" class="agr-peak__edge" />
@@ -756,7 +778,7 @@ const CURVES = [
       </div>
 
       <p class="t-label agr-mat__cap">{b.material.tableLabel}</p>
-      <div class="agr-mat__scroll">
+      <div class="scroller agr-mat__scroll">
         <table class="agr-ledger">
           <thead>
             <tr>{b.material.columns.map((c: string) => <th scope="col">{c}</th>)}</tr>
@@ -849,9 +871,11 @@ const CURVES = [
         ))}
       </ol>
 
+      {/* Verified capability. It used to be a strip of 11px tracked-out mono
+          chips, which reads as build metadata; it is the shared badge now. */}
       <div class="agr-facts">
         <p class="t-label">{b.work.factsLabel}</p>
-        <ul>{b.work.facts.map((f: string) => <li class="t-mono">{f}</li>)}</ul>
+        <ul class="badges">{b.work.facts.map((f: string) => <li class="badge">{f}</li>)}</ul>
       </div>
 
       <p class="agr-close">{b.work.close}</p>
@@ -890,7 +914,17 @@ const CURVES = [
      structure, one green pen carries the drawing, one blue carries the water.
      Everything is prefixed .agr- so nothing leaks into the other twelve. */
 
-  .agr { --agr-hair: 1.1; --agr-heavy: 1.7; }
+  .agr {
+    --agr-hair: 1.1;
+    --agr-heavy: 1.7;
+    /* This <article> is `main`'s first child, so the shared header clearance in
+       chapters.css lands here — on a transparent box above a tinted hero, under
+       a header that is in its light-on-dark state. That would put a strip of
+       near-white page behind near-white header type. The clearance moves onto
+       the hero itself, which is exactly the case the shared rule keeps at zero
+       specificity for. */
+    padding-block-start: 0;
+  }
 
   .agr-defs {
     position: absolute;
@@ -987,8 +1021,10 @@ const CURVES = [
     color: var(--accent-deep);
     letter-spacing: 0.06em;
   }
-  @media (max-width: 900px) {
-    .agr-head { grid-template-columns: 1fr; gap: var(--sp-3); }
+  /* Every band in this chapter is a real stack below 1000px — a 46ch paragraph
+     beside anything stops being a column and starts being a gutter first. */
+  @media (max-width: 1000px) {
+    .agr-head { grid-template-columns: minmax(0, 1fr); gap: var(--sp-3); }
     .agr-head__idx { border-block-start: 0; padding-block-start: 0; }
   }
 
@@ -1017,54 +1053,113 @@ const CURVES = [
   }
   .agr-bound--wide { max-inline-size: 78ch; }
 
-  /* ── Hero ─────────────────────────────────────────────────────────────── */
+  /* ── Hero — PLATE on the tint ground ──────────────────────────────────────
+     The opening is a deep bed mixed from the chapter's own accent
+     (`ground--tint`, chapters.css) with the drawing laid on it as a framed
+     sheet. Nothing here restates a colour: the ground remaps ink, rules,
+     accent, signal and both surfaces, and every rule below picks from that
+     remapped set. */
   .agr-hero {
     position: relative;
-    padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2.5rem, 6vw, 4.5rem);
+    /* Own the header clearance — see the note on `.agr`. 4.25rem is the header
+       block-size the shared rule in chapters.css clears. */
+    padding-block: calc(4.25rem + clamp(2.5rem, 6vw, 5rem)) clamp(3rem, 7vw, 5.5rem);
     overflow: clip;
+    /* The swell is the sector's own material: anything that moves fluid. Felt,
+       not seen — the default 0.11 is loud against light ink on a dark bed. */
+    --tex-opacity: 0.085;
   }
-  .agr-hero__bleed { position: absolute; inset: 0; pointer-events: none; }
+  /* `.mat--milled` (base.css) and `[data-tex]` (chapters.css) both render into
+     ::before, and chapters.css wins the image. Only the milled layer's tiling
+     and blend leak through, and a swell is one large gradient rather than a
+     140px tile, so both are neutralised; the cast grain the milled surface
+     would have contributed is re-laid on ::after from the same shared token. */
+  .agr-hero::before { background-size: auto; mix-blend-mode: normal; }
+  .agr-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: var(--tex-grain);
+    background-size: 140px 140px;
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+  }
+  .agr-hero__bleed { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
   .agr-hero__bleed svg { inline-size: 100%; block-size: 100%; }
 
+  /* Deliberately uneven: the sheet is the larger half, and the copy is set
+     against it rather than balanced with it. */
   .agr-hero__inner {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-    gap: clamp(2rem, 5vw, 4rem);
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
   }
-  @media (max-width: 940px) { .agr-hero__inner { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) {
+    .agr-hero__inner {
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(2rem, 7vw, 3.25rem);
+    }
+  }
+
+  /* Small type on this bed: `--ink-muted` is 3.8:1 against the tint ground, so
+     anything under 24px takes full ink. */
+  .agr-hero .eyebrow,
+  .agr-hero__note { color: var(--ink); }
 
   .agr-hero__head {
     margin-block-start: clamp(1.25rem, 3vw, 1.9rem);
-    font-size: clamp(2.1rem, 4.6vw, 3.5rem);
-    line-height: 1.04;
+    font-size: clamp(2.15rem, 4.4vw, 3.4rem);
+    line-height: 1.03;
     letter-spacing: -0.03em;
     font-weight: 500;
+    text-wrap: balance;
   }
   .agr-hero__head span { display: block; }
-  .agr-hero__head span:last-child { color: var(--accent-deep); }
+  /* The setup is muted, the payload is not — the shared two-tone statement.
+     The accent is a marking colour on this ground, not display type. */
+  .agr-hero__head span:not(:last-child) { color: var(--ink-muted); }
 
   .agr-hero__lead {
     margin-block-start: var(--sp-5);
-    font-size: var(--step-0);
-    line-height: 1.6;
-    color: var(--ink-muted);
-    max-inline-size: 46ch;
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-inline-size: 38ch;
   }
-  .agr-hero__markers { margin-block-start: var(--sp-6); display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .agr-hero__markers li {
-    font-size: var(--step--2);
-    letter-spacing: 0.07em;
-    padding: 0.4em 0.75em;
-    border: var(--hair) solid color-mix(in oklab, var(--accent) 36%, transparent);
-    color: var(--accent-deep);
+  .agr-hero__markers { margin-block-start: var(--sp-6); }
+  /* Two corrections for the dark bed, both taken from the ground's own remapped
+     tokens: the light-surface relief reads as a bright hairline here, and the
+     badge's 7% accent wash lands at 4.3:1 against this bed — the sunk surface
+     takes it to 7.6:1 and ties the markers to the plate beside them. */
+  .agr-hero .badge {
+    box-shadow: var(--relief-dark);
+    background: var(--surface-sunk);
   }
-  .agr-hero__fig svg { inline-size: 100%; block-size: auto; }
-  .agr-hero__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  /* The plate: a border, a corner tick and its own inner padding — a drawing
+     that was handed to you, not a figure floated beside a headline.
+     `--surface-raise` sits too close to the bed for the drawing's hairlines
+     (2.3:1); the sunk surface is the darker of the two remapped surfaces and
+     the whole figure reads against it. */
+  .agr-hero__plate {
+    background: var(--surface-sunk);
+    padding-block: clamp(1.1rem, 2.2vw, 1.9rem);
+    padding-inline: clamp(1.1rem, 2.2vw, 1.9rem);
+  }
+  .agr-hero__scroll { margin-block-end: var(--sp-4); }
+  .agr-hero__plate svg { display: block; inline-size: 100%; min-inline-size: 22rem; block-size: auto; }
+  .agr-hero__plate .figure-note {
+    padding-block-start: var(--sp-3);
+    border-block-start: var(--rule);
+    color: var(--ink);
+  }
+
   .agr-hero__note {
     position: relative;
-    margin-block-start: clamp(1.5rem, 3vw, 2.5rem);
+    margin-block-start: clamp(1.75rem, 3.5vw, 3rem);
     padding-block-start: var(--sp-4);
     border-block-start: var(--rule);
     max-inline-size: 78ch;
@@ -1084,10 +1179,10 @@ const CURVES = [
     gap: clamp(1.5rem, 4vw, 3rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .agr-mag__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .agr-mag__grid { grid-template-columns: minmax(0, 1fr); } }
 
   .agr-mag__stage { position: sticky; inset-block-start: clamp(5rem, 11vh, 7rem); }
-  @media (max-width: 900px) { .agr-mag__stage { position: static; } }
+  @media (max-width: 1000px) { .agr-mag__stage { position: static; } }
   .agr-mag__fig {
     background: var(--surface-raise);
     border: var(--rule);
@@ -1103,9 +1198,11 @@ const CURVES = [
   .agr-mag[data-step='3'] .agr-frame[data-frame='3'],
   .agr-mag[data-step='4'] .agr-frame[data-frame='4'] { opacity: 1; }
 
+  /* The live scale readout, framed as a badge rather than left as a tracked-out
+     label strip: it is the one value the figure beside it is currently at. */
   .agr-mag__readout {
     margin-block-start: var(--sp-4);
-    display: flex;
+    display: inline-flex;
     align-items: baseline;
     gap: var(--sp-4);
   }
@@ -1118,22 +1215,19 @@ const CURVES = [
   .agr-mag[data-step='4'] .agr-mag__vals span[data-i='4'] { display: inline; }
   :global(html:not(.js)) .agr-mag__readout { display: none; }
 
+  /* The prose is never faded. Body copy on this site already sits close to the
+     4.5:1 floor, so a meaningful fade takes it under; the shared stepper in
+     components.css carries the active state on the marker instead. */
   .agr-mag__steps { border-block-start: var(--rule-strong); }
   .agr-step {
     padding-block: var(--sp-5) var(--sp-6);
     border-block-end: var(--rule);
-    transition: opacity 380ms var(--ease-out);
   }
-  :global(html.js) .agr-step { opacity: 0.42; }
-  .agr-mag[data-step='0'] .agr-step[data-station-step='0'],
-  .agr-mag[data-step='1'] .agr-step[data-station-step='1'],
-  .agr-mag[data-step='2'] .agr-step[data-station-step='2'],
-  .agr-mag[data-step='3'] .agr-step[data-station-step='3'],
-  .agr-mag[data-step='4'] .agr-step[data-station-step='4'] { opacity: 1; }
-  @media (max-width: 900px) { .agr-step { opacity: 1; } }
-  .agr-step__n { display: block; font-size: var(--step--2); letter-spacing: 0.12em; color: var(--accent-deep); }
-  .agr-step__h { margin-block-start: 0.3rem; font-size: var(--step-1); letter-spacing: var(--track-head); }
+  .agr-step__n { display: block; }
+  .agr-step__h { margin-block-start: 0.3rem; }
   .agr-step__p { margin-block-start: 0.4rem; font-size: var(--step--1); line-height: 1.58; color: var(--ink-muted); }
+  /* Stacked, the shared active-step marker would sit outside the page gutter. */
+  @media (max-width: 1000px) { .agr-mag__steps { padding-inline-start: var(--sp-5); } }
 
   /* ── 02 Repetition ────────────────────────────────────────────────────── */
   .agr-rep { position: relative; padding-block: var(--section-y); overflow: clip; }
@@ -1167,7 +1261,7 @@ const CURVES = [
     border-block-end: var(--rule);
     align-items: baseline;
   }
-  @media (max-width: 620px) { .agr-rep__list li { grid-template-columns: 1fr; gap: var(--sp-2); } }
+  @media (max-width: 620px) { .agr-rep__list li { grid-template-columns: minmax(0, 1fr); gap: var(--sp-2); } }
   .agr-rep__list li span { font-size: var(--step--2); letter-spacing: 0.12em; color: var(--accent-deep); }
   .agr-rep__list li p { font-size: var(--step-0); line-height: 1.55; max-inline-size: 62ch; }
 
@@ -1182,8 +1276,7 @@ const CURVES = [
   }
   .agr-lab__fig { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
   .agr-lab__figlabel { display: block; margin-block-end: var(--sp-4); }
-  .agr-lab__scroll { overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
-  .agr-lab__scroll svg { inline-size: 100%; min-inline-size: 34rem; block-size: auto; }
+  .agr-lab__scroll svg { display: block; inline-size: 100%; min-inline-size: 34rem; block-size: auto; }
   .agr-lab__fig .figure-note { margin-block-start: var(--sp-4); }
 
   .agr-call__dot { fill: var(--accent-deep); }
@@ -1197,7 +1290,7 @@ const CURVES = [
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .agr-lab__cols { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .agr-lab__cols { grid-template-columns: minmax(0, 1fr); } }
 
   .agr-params { border-block-start: var(--rule-strong); }
   .agr-param { padding-block: var(--sp-5); border-block-end: var(--rule); }
@@ -1223,6 +1316,7 @@ const CURVES = [
 
   .agr-calls__list { margin-block-start: var(--sp-5); display: grid; gap: var(--sp-5); }
   .agr-calls__list li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: var(--sp-4); }
+  @media (max-width: 620px) { .agr-calls__list li { grid-template-columns: minmax(0, 1fr); gap: var(--sp-2); } }
   .agr-calls__n {
     font-size: var(--step-1);
     line-height: 1.2;
@@ -1252,7 +1346,7 @@ const CURVES = [
     padding-block: clamp(1.5rem, 3vw, 2.5rem);
     border-block: var(--rule);
   }
-  @media (max-width: 900px) { .agr-dia { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .agr-dia { grid-template-columns: minmax(0, 1fr); } }
   .agr-dia__copy p { margin-block-start: var(--sp-4); font-size: var(--step--1); line-height: 1.62; max-inline-size: 54ch; }
   .agr-dia__key { margin-block-start: var(--sp-5); display: grid; gap: 0.5rem; }
   .agr-dia__key li {
@@ -1302,7 +1396,7 @@ const CURVES = [
     gap: clamp(1.5rem, 4vw, 3rem);
     align-items: start;
   }
-  @media (max-width: 820px) { .agr-exp__body { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .agr-exp__body { grid-template-columns: minmax(0, 1fr); } }
   .agr-exp__fig svg { inline-size: 100%; block-size: auto; max-inline-size: 26rem; }
   .agr-exp__fig .figure-note { margin-block-start: var(--sp-3); }
   .agr-curve { fill: none; stroke: var(--signal); stroke-width: 1; opacity: 0.22; transition: opacity var(--dur-3) var(--ease-out), stroke-width var(--dur-3) var(--ease-out); }
@@ -1329,6 +1423,9 @@ const CURVES = [
     --line: color-mix(in oklab, var(--inverse-ink) 18%, transparent);
     --surface: var(--inverse);
     --accent-deep: color-mix(in oklab, var(--accent) 62%, var(--inverse-ink));
+    /* The chapter's second and last textured surface. Lower than the hero's:
+       there is more type over this one. */
+    --tex-opacity: 0.055;
   }
   .agr-cav .agr-head__idx span { color: color-mix(in oklab, var(--accent) 55%, var(--inverse-ink)); }
   .agr-cav__b2 {
@@ -1344,7 +1441,7 @@ const CURVES = [
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .agr-cav__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .agr-cav__grid { grid-template-columns: minmax(0, 1fr); } }
   .agr-plate svg { inline-size: 100%; block-size: auto; margin-block: var(--sp-4); }
   .agr-plate__body { fill: none; stroke: var(--line); stroke-width: 1.1; }
   .agr-plate__run { stroke: color-mix(in oklab, var(--accent) 60%, var(--inverse-ink)); stroke-width: 1.4; }
@@ -1414,8 +1511,8 @@ const CURVES = [
     max-inline-size: 60ch;
   }
   .agr-sea__fig { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
-  .agr-sea__scroll { margin-block-start: var(--sp-4); overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
-  .agr-sea__scroll svg { inline-size: 100%; min-inline-size: 30rem; block-size: auto; }
+  .agr-sea__scroll { margin-block-start: var(--sp-4); }
+  .agr-sea__scroll svg { display: block; inline-size: 100%; min-inline-size: 30rem; block-size: auto; }
   .agr-sea__fig .figure-note { margin-block-start: var(--sp-3); }
   .agr-peak { fill: url(#agr-hatch-peak); }
   .agr-peak__edge { stroke: var(--accent-deep); stroke-width: 1; stroke-dasharray: 6 4; opacity: 0.6; }
@@ -1449,7 +1546,7 @@ const CURVES = [
     border-block-start: var(--rule-strong);
     padding-block-start: var(--sp-5);
   }
-  @media (max-width: 780px) { .agr-sea__rails { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .agr-sea__rails { grid-template-columns: minmax(0, 1fr); gap: var(--sp-6); } }
   .agr-sea__rails li { position: relative; padding-inline-start: var(--sp-5); }
   .agr-sea__rails li::before {
     content: '';
@@ -1488,7 +1585,7 @@ const CURVES = [
   .agr-mat { padding-block: var(--section-y); }
   .agr-mat__b2 { margin-block-start: var(--sp-5); font-size: var(--step-0); line-height: 1.62; max-inline-size: 62ch; }
   .agr-mat__cap { display: block; margin-block-start: clamp(2rem, 4vw, 3rem); }
-  .agr-mat__scroll { margin-block-start: var(--sp-4); overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
+  .agr-mat__scroll { margin-block-start: var(--sp-4); }
   .agr-ledger {
     inline-size: 100%;
     min-inline-size: 48rem;
@@ -1538,8 +1635,8 @@ const CURVES = [
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(1.5rem, 4vw, 3rem);
   }
-  @media (max-width: 1000px) { .agr-scope__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 700px) { .agr-scope__cols { grid-template-columns: 1fr; } }
+  @media (max-width: 1140px) { .agr-scope__cols { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 1000px) { .agr-scope__cols { grid-template-columns: minmax(0, 1fr); } }
 
   .agr-col ul { margin-block-start: var(--sp-5); border-block-start: var(--rule-strong); }
   .agr-col li {
@@ -1601,7 +1698,7 @@ const CURVES = [
     background: var(--accent);
   }
   @media (max-width: 700px) {
-    .agr-station { grid-template-columns: 1fr; gap: var(--sp-2); padding-inline: var(--sp-5) 0; }
+    .agr-station { grid-template-columns: minmax(0, 1fr); gap: var(--sp-2); padding-inline: var(--sp-5) 0; }
   }
   .agr-station__n { font-size: var(--step--2); letter-spacing: 0.12em; color: var(--accent-deep); }
   .agr-station__body p {
@@ -1613,14 +1710,7 @@ const CURVES = [
   }
 
   .agr-facts { margin-block-start: clamp(2rem, 4vw, 3rem); }
-  .agr-facts ul { margin-block-start: var(--sp-4); display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .agr-facts li {
-    font-size: var(--step--2);
-    letter-spacing: 0.06em;
-    padding: 0.42em 0.8em;
-    border: var(--hair) solid color-mix(in oklab, var(--accent) 32%, transparent);
-    color: var(--accent-deep);
-  }
+  .agr-facts .badges { margin-block-start: var(--sp-4); }
 
   /* ── Panels ───────────────────────────────────────────────────────────── */
   .agr-panels { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }

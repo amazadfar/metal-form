@@ -116,7 +116,7 @@ const channels = availableChannels();
     gap: clamp(2rem, 6vw, 5rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .cta__inner { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .cta__inner { grid-template-columns: minmax(0, 1fr); } }
 
   .cta__head { max-inline-size: 16ch; }
   .cta__body { margin-block-start: var(--sp-5); }

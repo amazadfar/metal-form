@@ -109,6 +109,11 @@ const toolSteps = (b.tool?.steps ?? []) as any[];
 const lifeMarkers = (b.life?.markers ?? []) as any[];
 const routeItems = (b.routes?.items ?? []) as any[];
 const grades = (b.fit?.grades ?? []) as any[];
+
+/* The two letters on the cutting plane are the first half of the section mark
+   the content already carries ("A–A" → "A"), so the cut and the view it names
+   can never disagree and neither is left hard-coded in the template. */
+const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).filter(Boolean)[0] ?? '';
 ---
 
 <article class="av">
@@ -157,7 +162,7 @@ const grades = (b.fit?.grades ?? []) as any[];
   </svg>
 
   {/* ═══ SHEET HEADER ══════════════════════════════════════════════════════ */}
-  <header class="av-sheet">
+  <header class="av-sheet ground--steel mat mat--milled" data-tex="hatch">
     <div class="av-sheet__frame" aria-hidden="true"></div>
     <div class="av-sheet__ruler av-sheet__ruler--block" aria-hidden="true"></div>
     <div class="av-sheet__ruler av-sheet__ruler--inline" aria-hidden="true"></div>
@@ -170,98 +175,122 @@ const grades = (b.fit?.grades ?? []) as any[];
           <span class="t-label">{content.hero.kicker}</span>
         </p>
 
+        {/* The orientation line is a sheet field, so it sits with the sheet
+            number rather than under the statement. */}
+        <p class="av-sheet__orient t-mono">{b.sheet.orientation}</p>
+
         <h1 class="av-sheet__head">
           {content.hero.headline.map((line: string, i: number) => (
             <span style={`--l:${i}`}>{line}</span>
           ))}
         </h1>
 
-        <p class="av-sheet__orient t-mono">{b.sheet.orientation}</p>
         <p class="av-sheet__lead">{content.hero.lead}</p>
         <p class="av-sheet__pivot">{b.sheet.pivot}</p>
       </div>
 
-      <figure class="av-sheet__fig" data-reveal>
-        <svg viewBox="0 0 600 440" data-nomirror role="img" aria-label={b.sheet.figureLabel}>
-          {/* ── Front elevation ───────────────────────────────────────── */}
-          <g transform="translate(60 60)">
-            <path d="M0 150 h230 v34 h-230 z" class="av-ln" />
-            <path d="M18 150 v-92" class="av-ln" />
-            <path d="M76 150 v-92" class="av-ln" />
-            <circle cx="47" cy="48" r="29" class="av-ln" />
-            <circle cx="47" cy="48" r="13" class="av-ln" />
-            <path d="M76 150 v-44 l70 44 z" class="av-ln" />
-            <circle cx="180" cy="167" r="8" class="av-ln" />
-            <circle cx="210" cy="167" r="8" class="av-ln" />
-            {/* External undercut — a groove in the end face, formed by a slide */}
-            <path d="M230 156 h-18 v10 h18" class="av-ln" />
-            {/* Gate mark on the end face */}
-            <path d="M0 161 l-9 6 l9 6 z" class="av-solid" />
-            {/* Hidden detail — the bore behind the cut plane */}
-            <path d="M34 58 v92 M60 58 v92" class="av-hid" />
-            {/* Centre lines */}
-            <path d="M47 8 v196" class="av-cl" />
-            <path d="M4 48 h90" class="av-cl" />
-            <path d="M168 167 h54 M180 153 v28 M210 153 v28" class="av-cl" />
-            {/* Cutting plane */}
-            <path d="M47 2 v14 M47 190 v14" class="av-cut" />
-            <text x="56" y="12" class="av-mi">A</text>
-            <text x="56" y="212" class="av-mi">A</text>
-            {/* Overall dimension */}
-            <path d="M0 188 v22 M230 188 v22" class="av-ext" />
-            <path d="M0 204 H230" class="av-dim" marker-start="url(#av-arw-s)" marker-end="url(#av-arw-e)" />
-            <text x="115" y="199" text-anchor="middle" class="av-fig">{b.sheet.dimWidth}</text>
-          </g>
+      {/* ── The plate ───────────────────────────────────────────────────────
+           The drawing is not a picture in the right-hand column: it is a
+           document, framed, with its own parts list under a rule, handed to
+           the reader on the chapter's steel. ─────────────────────────────── */}
+      <div class="av-sheet__plate plate plate--tick">
+        <figure class="av-sheet__fig" data-reveal>
+          <svg viewBox="0 0 600 440" data-nomirror role="img" aria-label={b.sheet.figureLabel}>
+            {/* A pattern resolves its tokens where it is DEFINED, not where it
+                is used. The chapter's shared set sits on the light ground, so
+                the section hatch taken from there would be drawn in near-black
+                on this steel plate and disappear. The sheet keeps its own copy
+                inside the ground, which inherits the remapped ink — the same
+                token, resolved in the right place, no colour restated. */}
+            <defs>
+              <pattern id="av-h-steel-sheet" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <path d="M0 0 V11" class="av-hatch" />
+              </pattern>
+            </defs>
 
-          {/* ── Section A–A ───────────────────────────────────────────── */}
-          <g transform="translate(370 60)">
-            <path d="M0 150 h150 v34 h-150 z" class="av-ln av-fill-steel" />
-            <path d="M18 40 h16 v110 h-16 z" class="av-ln av-fill-steel" />
-            <path d="M60 40 h16 v110 h-16 z" class="av-ln av-fill-steel" />
-            <path d="M-16 150 H166" class="av-part-ln" />
-            <path d="M47 20 v180" class="av-cl" />
-            <path d="M34 56 v28 M60 56 v28" class="av-ext" />
-            <path d="M34 70 H60" class="av-dim" marker-start="url(#av-arw-s)" marker-end="url(#av-arw-e)" />
-            <text x="47" y="50" text-anchor="middle" class="av-fig">{b.sheet.dimBore}</text>
-            <text x="75" y="212" text-anchor="middle" class="av-mi">{b.sheet.sectionMark}</text>
-          </g>
-
-          {/* ── Balloons ─────────────────────────────────────────────── */}
-          {SHEET_BALLOONS.map((p: any, i: number) => (
-            <g class="av-bln" style={`--i:${i}`}>
-              <path d={leader(p, 13)} class="av-ldr" />
-              <circle cx={p.ax} cy={p.ay} r="2.8" class="av-anchor" />
-              <circle cx={p.cx} cy={p.cy} r="13" class="av-bln__c" />
-              <text x={p.cx} y={p.cy + 3.8} text-anchor="middle" class="av-bln__t">
-                {b.sheet.balloons[i]?.n}
-              </text>
+            {/* ── Front elevation ───────────────────────────────────────── */}
+            <g transform="translate(60 60)">
+              <path d="M0 150 h230 v34 h-230 z" class="av-ln" />
+              <path d="M18 150 v-92" class="av-ln" />
+              <path d="M76 150 v-92" class="av-ln" />
+              <circle cx="47" cy="48" r="29" class="av-ln" />
+              <circle cx="47" cy="48" r="13" class="av-ln" />
+              <path d="M76 150 v-44 l70 44 z" class="av-ln" />
+              <circle cx="180" cy="167" r="8" class="av-ln" />
+              <circle cx="210" cy="167" r="8" class="av-ln" />
+              {/* External undercut — a groove in the end face, formed by a slide */}
+              <path d="M230 156 h-18 v10 h18" class="av-ln" />
+              {/* Gate mark on the end face */}
+              <path d="M0 161 l-9 6 l9 6 z" class="av-solid" />
+              {/* Hidden detail — the bore behind the cut plane */}
+              <path d="M34 58 v92 M60 58 v92" class="av-hid" />
+              {/* Centre lines */}
+              <path d="M47 8 v196" class="av-cl" />
+              <path d="M4 48 h90" class="av-cl" />
+              <path d="M168 167 h54 M180 153 v28 M210 153 v28" class="av-cl" />
+              {/* Cutting plane */}
+              <path d="M47 2 v14 M47 190 v14" class="av-cut" />
+              <text x="56" y="12" class="av-mi">{sectionLetter}</text>
+              <text x="56" y="212" class="av-mi">{sectionLetter}</text>
+              {/* Overall dimension */}
+              <path d="M0 188 v22 M230 188 v22" class="av-ext" />
+              <path d="M0 204 H230" class="av-dim" marker-start="url(#av-arw-s)" marker-end="url(#av-arw-e)" />
+              <text x="115" y="199" text-anchor="middle" class="av-fig">{b.sheet.dimWidth}</text>
             </g>
-          ))}
-        </svg>
-        <figcaption class="figure-note">{common.schematic}</figcaption>
-      </figure>
 
-      {/* ── Parts list ─────────────────────────────────────────────────── */}
-      <div class="av-sheet__list">
-        <p class="t-label av-sheet__list-h">{b.sheet.legendLabel}</p>
-        <dl class="av-parts">
-          {b.sheet.balloons.map((item: any) => (
-            <div class="av-parts__row">
-              <dt><span class="av-bal av-bal--sm">{item.n}</span><span class="av-parts__name">{item.label}</span></dt>
-              <dd>{item.note}</dd>
-            </div>
-          ))}
-        </dl>
+            {/* ── Section A–A ───────────────────────────────────────────── */}
+            <g transform="translate(370 60)">
+              <path d="M0 150 h150 v34 h-150 z" class="av-ln av-fill-steel" />
+              <path d="M18 40 h16 v110 h-16 z" class="av-ln av-fill-steel" />
+              <path d="M60 40 h16 v110 h-16 z" class="av-ln av-fill-steel" />
+              <path d="M-16 150 H166" class="av-part-ln" />
+              <path d="M47 20 v180" class="av-cl" />
+              <path d="M34 56 v28 M60 56 v28" class="av-ext" />
+              <path d="M34 70 H60" class="av-dim" marker-start="url(#av-arw-s)" marker-end="url(#av-arw-e)" />
+              <text x="47" y="50" text-anchor="middle" class="av-fig">{b.sheet.dimBore}</text>
+              <text x="75" y="212" text-anchor="middle" class="av-mi">{b.sheet.sectionMark}</text>
+            </g>
+
+            {/* ── Balloons ─────────────────────────────────────────────── */}
+            {SHEET_BALLOONS.map((p: any, i: number) => (
+              <g class="av-bln" style={`--i:${i}`}>
+                <path d={leader(p, 13)} class="av-ldr" />
+                <circle cx={p.ax} cy={p.ay} r="2.8" class="av-anchor" />
+                <circle cx={p.cx} cy={p.cy} r="13" class="av-bln__c" />
+                <text x={p.cx} y={p.cy + 3.8} text-anchor="middle" class="av-bln__t">
+                  {b.sheet.balloons[i]?.n}
+                </text>
+              </g>
+            ))}
+          </svg>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+        </figure>
+
+        {/* ── Parts list, on the plate under the drawing ──────────────────── */}
+        <div class="av-sheet__list">
+          <p class="t-label av-sheet__list-h">{b.sheet.legendLabel}</p>
+          <dl class="av-parts">
+            {b.sheet.balloons.map((item: any) => (
+              <div class="av-parts__row">
+                <dt><span class="av-bal av-bal--sm">{item.n}</span><span class="av-parts__name">{item.label}</span></dt>
+                <dd>{item.note}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
       </div>
 
-      {/* ── Title block: the verified facts, as drawing fields ─────────── */}
+      {/* ── Title block ─────────────────────────────────────────────────────
+           A drawing's title block runs the width of the sheet, and it carries
+           the verified capability of this shop. Set as capability fields so a
+           buyer reads them, not as an 11px stamp strip. ─────────────────── */}
       <div class="av-title">
         <p class="t-label av-title__h">{b.sheet.titleBlockLabel}</p>
-        <dl class="av-title__grid">
+        <dl class="caps caps--tight av-title__grid">
           {b.sheet.fields.map((f: any) => (
-            <div class="av-title__cell">
-              <dt class="t-label">{f.k}</dt>
-              <dd class="t-mono">{f.v}</dd>
+            <div class="cap">
+              <dt class="cap__k">{f.k}</dt>
+              <dd class="cap__v">{f.v}</dd>
             </div>
           ))}
         </dl>
@@ -355,7 +384,7 @@ const grades = (b.fit?.grades ?? []) as any[];
                     <div class="av-reg__body">
                       <h4 class="av-reg__name">{item.name}</h4>
                       <p class="av-reg__note">{item.note}</p>
-                      <p class="av-reg__mat t-mono">{item.material}</p>
+                      <p class="av-reg__mat"><span class="badge">{item.material}</span></p>
                     </div>
                   </li>
                 ))}
@@ -419,7 +448,7 @@ const grades = (b.fit?.grades ?? []) as any[];
   </section>
 
   {/* ═══ 03 · INSIDE THE TOOL ═════════════════════════════════════════════ */}
-  <section class="av-sec av-tool" id="tool" data-stepper>
+  <section class="av-sec av-tool" id="tool" data-stepper data-tex="hatch">
     <div class="shell--wide">
       <div class="av-head">
         <p class="av-kick">
@@ -535,8 +564,8 @@ const grades = (b.fit?.grades ?? []) as any[];
                 <span class="av-step__label">{s.label}</span>
               </p>
               <p class="av-step__body">{s.body}</p>
-              <ul class="av-step__spec">
-                {s.spec.map((k: string) => <li class="t-mono">{k}</li>)}
+              <ul class="av-step__spec badges">
+                {s.spec.map((k: string) => <li class="badge">{k}</li>)}
               </ul>
             </li>
           ))}
@@ -804,7 +833,7 @@ const grades = (b.fit?.grades ?? []) as any[];
             <p class="av-routes__body">{r.body}</p>
             <div class="av-routes__in">
               <p class="t-label">{b.routes.inputsLabel}</p>
-              <ul>{r.inputs.map((x: string) => <li class="t-mono">{x}</li>)}</ul>
+              <ul class="badges">{r.inputs.map((x: string) => <li class="badge">{x}</li>)}</ul>
             </div>
           </div>
         ))}
@@ -920,11 +949,25 @@ const grades = (b.fit?.grades ?? []) as any[];
      states. Everything structural is a hairline.
      ═══════════════════════════════════════════════════════════════════════ */
 
-  .av {
+  /* These four are mixed from --ink and --surface, and a custom property is
+     substituted against the element it is declared on. The sheet re-declares
+     them so they resolve against the steel ground it carries rather than
+     against the light one the rest of the chapter runs on. */
+  .av,
+  .av-sheet {
     --av-ink-soft: color-mix(in oklab, var(--ink) 62%, var(--surface));
     --av-frame: color-mix(in oklab, var(--ink) 34%, transparent);
     --av-tick: color-mix(in oklab, var(--ink) 20%, transparent);
     --av-tick-major: color-mix(in oklab, var(--ink) 42%, transparent);
+  }
+  .av {
+    /* Height of the site header, which overlays this chapter because it opens
+       on steel. The chapter layout pads `main > :first-child` to clear it, but
+       here that first child is the article rather than the ground, so the
+       clearance is handed to the sheet below and the steel runs up behind the
+       header instead of leaving a pale strip above it. */
+    --av-clear: 4.25rem;
+    padding-block-start: 0;
   }
 
   .av-defs {
@@ -1049,6 +1092,11 @@ const grades = (b.fit?.grades ?? []) as any[];
     pointer-events: none;
   }
   .av-sheet__frame--close { inset-block-end: clamp(0.75rem, 2vw, 2rem); }
+  /* On the opening sheet the border and both rulers begin below the overlaid
+     header, so the frame reads as a frame rather than as a line cut in half. */
+  .av-sheet > .av-sheet__frame { inset-block-start: calc(var(--av-clear) + clamp(0.75rem, 2vw, 2rem)); }
+  .av-sheet > .av-sheet__ruler--block,
+  .av-sheet > .av-sheet__ruler--inline { inset-block-start: var(--av-clear); }
 
   .av-sheet__ruler { position: absolute; pointer-events: none; }
   .av-sheet__ruler--block {
@@ -1072,49 +1120,90 @@ const grades = (b.fit?.grades ?? []) as any[];
     background-repeat: repeat-y;
   }
 
-  /* ── Sheet header ─────────────────────────────────────────────────────── */
+  /* ── Sheet header ─────────────────────────────────────────────────────────
+     The chapter opens on steel: `ground--steel` remaps the whole token set and
+     `mat--milled` puts a surface-ground finish and a cast grain on it, so the
+     drawing that follows is a blueprint rather than a line drawing on paper.
+     No background is declared here — the ground class owns it.               */
   .av-sheet {
     position: relative;
-    padding-block: clamp(3rem, 7vw, 6rem) clamp(3rem, 7vw, 6rem);
+    /* The overlaid header is cleared by the sheet itself, so the steel runs
+       up behind it. */
+    padding-block: calc(var(--av-clear) + clamp(3rem, 7vw, 6rem)) clamp(3rem, 7vw, 6rem);
     overflow: clip;
+    --tex-opacity: 0.06;
   }
+  /* `.mat--milled` and `[data-tex]` are both implemented on ::before, so an
+     element carrying both keeps only one of them: the chapter texture wins the
+     background and the milled finish is lost. The grain is what stops a large
+     dark field reading as a flat digital rectangle, so the sheet clears what
+     the milled rule left behind on that layer and composes the finish onto its
+     own second one. Both are the shared tokens — no treatment is restated. */
+  .av-sheet::before { background-size: auto; mix-blend-mode: normal; }
+  .av-sheet::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: var(--tex-grain), var(--tex-mill);
+    background-size: 140px 140px, auto;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+  }
+
+  /* ── The plate archetype ──────────────────────────────────────────────────
+     Copy against a framed plate at a deliberately uneven ratio. The plate is
+     the drawing AND its parts list — a document, not a picture in the second
+     column — and the title block runs the full width of the sheet beneath
+     both, the way a title block runs the width of a drawing.                 */
   .av-sheet__inner {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
     grid-template-areas:
-      'copy fig'
-      'list fig'
-      'title note';
+      'copy  plate'
+      'title title'
+      'note  note';
     column-gap: clamp(2rem, 5vw, 4.5rem);
-    row-gap: clamp(1.75rem, 4vw, 3rem);
+    row-gap: clamp(2rem, 5vw, 3.5rem);
     align-items: start;
   }
   .av-sheet__copy { grid-area: copy; }
-  .av-sheet__fig { grid-area: fig; }
-  .av-sheet__list { grid-area: list; }
+  .av-sheet__plate { grid-area: plate; }
   .av-title { grid-area: title; }
-  .av-sheet__note { grid-area: note; align-self: end; }
+  .av-sheet__note { grid-area: note; }
 
-  @media (max-width: 900px) {
+  .av-sheet__plate {
+    padding: clamp(1rem, 2.4vw, 2rem);
+    box-shadow: var(--relief-dark);
+  }
+  .av-sheet__list { margin-block-start: clamp(1.5rem, 3vw, 2.25rem); }
+  /* The balloon punches out of the plate, not out of the ground behind it. */
+  .av-sheet .av-bln__c { fill: var(--surface-raise); }
+  /* Section hatch on the plate comes from the sheet's own pattern, so it is
+     drawn in the steel ground's ink rather than the light ground's. */
+  .av-sheet .av-fill-steel { fill: url(#av-h-steel-sheet); }
+
+  @media (max-width: 1000px) {
     .av-sheet__inner {
       grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: 'copy' 'fig' 'list' 'title' 'note';
+      grid-template-areas: 'copy' 'plate' 'title' 'note';
     }
   }
 
   .av-sheet__head {
-    margin-block-start: clamp(1.25rem, 3vw, 2rem);
-    font-size: clamp(2.4rem, 6vw, 5rem);
-    line-height: 1.0;
-    letter-spacing: -0.035em;
+    margin-block-start: clamp(1.5rem, 3vw, 2.25rem);
+    font-size: clamp(2.1rem, 3.9vw, 3.5rem);
+    line-height: 1.03;
+    letter-spacing: -0.032em;
     font-weight: 500;
   }
   .av-sheet__head span { display: block; }
   .av-sheet__head span:last-child { color: var(--av-ink-soft); }
 
   .av-sheet__orient {
-    margin-block-start: var(--sp-6);
+    margin-block-start: var(--sp-5);
     font-size: var(--step--2);
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1200,28 +1289,24 @@ const grades = (b.fit?.grades ?? []) as any[];
     border-block-end: var(--rule);
     align-items: start;
   }
-  @media (max-width: 620px) { .av-parts__row { grid-template-columns: 1fr; gap: var(--sp-2); } }
+  /* Both parts lists live inside a narrow column — the plate on the sheet, the
+     copy column in the warp band — so the pair stacks well before the page
+     does, rather than becoming two gutters. */
+  @media (max-width: 1200px) { .av-parts__row { grid-template-columns: minmax(0, 1fr); gap: var(--sp-2); } }
   .av-parts__row dt { display: flex; align-items: center; gap: var(--sp-3); }
   .av-parts__name { font-size: var(--step--1); font-weight: var(--weight-medium); }
   .av-parts__row dd { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
   .av-parts--tight { margin-block-start: var(--sp-6); }
 
   .av-title__h { display: block; margin-block-end: var(--sp-4); }
-  .av-title__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: var(--hair) solid var(--av-frame);
+  /* The shared capability module carries the structure; the sheet only asks
+     for the drawing-office frame and a monospaced field value. */
+  .av-title__grid { border-color: var(--av-frame); }
+  .av-title .cap__v {
+    font-family: var(--font-mono);
+    font-size: var(--step-0);
+    letter-spacing: 0.02em;
   }
-  .av-title__cell {
-    background: var(--surface-raise);
-    padding: var(--sp-4);
-    display: grid;
-    gap: var(--sp-2);
-    align-content: start;
-  }
-  .av-title__cell dd { font-size: var(--step-0); color: var(--ink); }
   .av-sheet__note { max-inline-size: 52ch; line-height: 1.6; }
 
   /* ── 01 Component register ────────────────────────────────────────────── */
@@ -1233,7 +1318,7 @@ const grades = (b.fit?.grades ?? []) as any[];
     gap: clamp(2rem, 4vw, 3.5rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .av-map__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .av-map__grid { grid-template-columns: minmax(0, 1fr); } }
 
   .av-map__fig {
     position: sticky;
@@ -1242,7 +1327,7 @@ const grades = (b.fit?.grades ?? []) as any[];
     border: var(--hair) solid var(--av-frame);
     padding: clamp(0.75rem, 2vw, 1.5rem);
   }
-  @media (max-width: 900px) { .av-map__fig { position: static; } }
+  @media (max-width: 1000px) { .av-map__fig { position: static; } }
   .av-map__fig svg { inline-size: 100%; block-size: auto; }
   .av-map__fig .figure-note { margin-block-start: var(--sp-3); }
 
@@ -1292,12 +1377,10 @@ const grades = (b.fit?.grades ?? []) as any[];
   }
   .av-reg__name { font-size: var(--step-0); font-weight: var(--weight-medium); line-height: 1.3; }
   .av-reg__note { margin-block-start: var(--sp-2); font-size: var(--step--1); line-height: 1.58; color: var(--ink-muted); }
-  .av-reg__mat {
-    margin-block-start: var(--sp-3);
-    font-size: var(--step--2);
-    letter-spacing: 0.08em;
-    color: var(--accent-deep);
-  }
+  /* The material designation is verified capability, so it is a badge with a
+     mark and a readable size rather than an 11px tracked-out stamp. */
+  .av-reg__mat { margin-block-start: var(--sp-3); }
+  .av-reg__mat .badge { font-family: var(--font-mono); letter-spacing: 0.02em; }
 
   /* ── 02 Material rail ─────────────────────────────────────────────────── */
   .av-mat__rail-h { display: block; margin-block-start: clamp(2rem, 4vw, 3rem); margin-block-end: var(--sp-4); }
@@ -1364,7 +1447,9 @@ const grades = (b.fit?.grades ?? []) as any[];
   }
 
   /* ── 03 Inside the tool ───────────────────────────────────────────────── */
-  .av-tool { background: var(--surface-sunk); }
+  /* The second — and last — textured surface in the chapter. Section hatch on
+     the band that cuts the tool open. Felt, not read. */
+  .av-tool { background: var(--surface-sunk); --tex-opacity: 0.045; }
   .av-tool__grid {
     margin-block-start: clamp(2rem, 5vw, 3.5rem);
     display: grid;
@@ -1372,7 +1457,7 @@ const grades = (b.fit?.grades ?? []) as any[];
     gap: clamp(2rem, 4vw, 3.5rem);
     align-items: start;
   }
-  @media (max-width: 980px) { .av-tool__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .av-tool__grid { grid-template-columns: minmax(0, 1fr); } }
 
   .av-tool__fig {
     position: sticky;
@@ -1381,7 +1466,7 @@ const grades = (b.fit?.grades ?? []) as any[];
     border: var(--hair) solid var(--av-frame);
     padding: clamp(0.75rem, 2vw, 1.5rem);
   }
-  @media (max-width: 980px) { .av-tool__fig { position: static; } }
+  @media (max-width: 1000px) { .av-tool__fig { position: static; } }
   .av-tool__fig svg { inline-size: 100%; block-size: auto; }
   .av-tool__fig .figure-note { margin-block-start: var(--sp-3); }
 
@@ -1420,21 +1505,14 @@ const grades = (b.fit?.grades ?? []) as any[];
   :global(html.js) .av-tool[data-step='3'] .av-step:nth-child(4),
   :global(html.js) .av-tool[data-step='4'] .av-step:nth-child(5),
   :global(html.js) .av-tool[data-step='5'] .av-step:nth-child(6) { opacity: 1; }
-  @media (max-width: 980px) {
+  @media (max-width: 1000px) {
     :global(html.js) .av-step { opacity: 1; }
   }
   .av-step__h { display: flex; align-items: center; gap: var(--sp-3); }
   .av-step__label { font-size: var(--step-1); letter-spacing: var(--track-head); font-weight: var(--weight-medium); }
   .av-step__body { margin-block-start: var(--sp-4); font-size: var(--step--1); line-height: 1.62; color: var(--ink-muted); }
-  .av-step__spec { margin-block-start: var(--sp-4); display: flex; flex-wrap: wrap; gap: var(--sp-2); }
-  .av-step__spec li {
-    font-size: var(--step--2);
-    letter-spacing: 0.06em;
-    padding: 0.35em 0.7em;
-    border: var(--hair) solid var(--line);
-    color: var(--accent-deep);
-    background: var(--surface-raise);
-  }
+  /* What each subsystem is measured on: the shared badge, not a chip strip. */
+  .av-step__spec { margin-block-start: var(--sp-4); }
 
   /* ── 04 Dimension and fit ─────────────────────────────────────────────── */
   .av-datum { fill: none; stroke: var(--ink); stroke-width: 1.2; }
@@ -1476,7 +1554,7 @@ const grades = (b.fit?.grades ?? []) as any[];
     align-items: start;
   }
   .av-stack__panel[hidden] { display: none; }
-  @media (max-width: 860px) { .av-stack__panel { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .av-stack__panel { grid-template-columns: minmax(0, 1fr); } }
   .av-stack__fig svg { inline-size: 100%; block-size: auto; margin-block: var(--sp-4); }
   .av-stack__legend { display: grid; gap: var(--sp-2); margin-block-end: var(--sp-4); }
   .av-stack__legend p { display: flex; align-items: center; gap: var(--sp-3); }
@@ -1501,7 +1579,7 @@ const grades = (b.fit?.grades ?? []) as any[];
     gap: clamp(2rem, 4vw, 3.5rem);
     align-items: start;
   }
-  @media (max-width: 860px) { .av-fit__cols { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .av-fit__cols { grid-template-columns: minmax(0, 1fr); } }
   .av-classes__list { margin-block-start: var(--sp-5); border-block-start: var(--rule-strong); }
   .av-classes__list li {
     display: grid;
@@ -1542,7 +1620,7 @@ const grades = (b.fit?.grades ?? []) as any[];
     gap: clamp(2rem, 4vw, 3.5rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .av-warp { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .av-warp { grid-template-columns: minmax(0, 1fr); } }
   .av-warp__body { margin-block-start: var(--sp-5); font-size: var(--step-0); line-height: 1.62; color: var(--ink-muted); max-inline-size: 52ch; }
   .av-warp__fig svg { inline-size: 100%; block-size: auto; }
   .av-warp__fig .figure-note { margin-block-start: var(--sp-3); }
@@ -1638,7 +1716,14 @@ const grades = (b.fit?.grades ?? []) as any[];
   }
   .av-routes__tab:hover { color: var(--ink); }
   .av-routes__tab[aria-selected='true'] { background: var(--surface-raise); color: var(--ink); }
-  .av-routes__tab[aria-selected='true'] .av-bal { background: var(--signal); color: var(--surface); }
+    /* The signal is chosen to be readable AS TEXT on a light page; it is not
+     dark enough to carry light text on top of it. The selected balloon fills
+     with the darker ink variant instead. */
+  .av-routes__tab[aria-selected='true'] .av-bal {
+    background: var(--signal-ink);
+    border-color: var(--signal-ink);
+    color: var(--surface);
+  }
 
   .av-routes__fig {
     border: var(--hair) solid var(--av-frame);
@@ -1669,7 +1754,7 @@ const grades = (b.fit?.grades ?? []) as any[];
     align-items: start;
   }
   .av-routes__panel[hidden] { display: none; }
-  @media (max-width: 820px) { .av-routes__panel { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .av-routes__panel { grid-template-columns: minmax(0, 1fr); } }
   .av-routes__sit {
     grid-column: 1 / -1;
     font-size: var(--step-1);
@@ -1677,14 +1762,8 @@ const grades = (b.fit?.grades ?? []) as any[];
     letter-spacing: var(--track-head);
   }
   .av-routes__body { font-size: var(--step--1); line-height: 1.62; color: var(--ink-muted); }
-  .av-routes__in ul { margin-block-start: var(--sp-3); border-block-start: var(--rule); }
-  .av-routes__in li {
-    padding-block: var(--sp-3);
-    border-block-end: var(--rule);
-    font-size: var(--step--2);
-    letter-spacing: 0.05em;
-    color: var(--accent-deep);
-  }
+  /* What we need from you to start: badges, sized to be read. */
+  .av-routes__in ul { margin-block-start: var(--sp-3); }
   .av-routes__out {
     display: flex;
     flex-wrap: wrap;
@@ -1729,7 +1808,7 @@ const grades = (b.fit?.grades ?? []) as any[];
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(1.75rem, 4vw, 3.5rem);
   }
-  @media (max-width: 820px) { .av-bound__cols { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .av-bound__cols { grid-template-columns: minmax(0, 1fr); } }
   .av-bound__col ul { margin-block-start: var(--sp-4); border-block-start: var(--rule-strong); }
   .av-bound__col li {
     padding-block: var(--sp-4);

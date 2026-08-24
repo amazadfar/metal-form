@@ -48,7 +48,7 @@ const schemas = [
     </header>
 
     {/* Four facts, set as a drawing's title block rather than as a stat wall. */}
-    <section class="ab-facts">
+    <section class="ab-facts on-steel mat mat--milled" data-tex="dot">
       <div class="shell--wide">
         <dl class="ab-facts__grid">
           {p.facts.map((fact, i) => (
@@ -109,7 +109,13 @@ const schemas = [
   .ab-hero__lead { margin-block-start: clamp(1.25rem, 2.5vw, 1.75rem); max-inline-size: 60ch; }
 
   /* ── Facts ────────────────────────────────────────────────────────────── */
-  .ab-facts { padding-block: var(--section-y-tight); }
+  /* The one dark band on this page. A light page with no anchor reads as a
+     document; this is where the four verified figures sit, so it is also where
+     the page should stop and be looked at. */
+  .ab-facts {
+    padding-block: var(--section-y-tight);
+    --tex-opacity: 0.1;
+  }
   .ab-facts__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
@@ -148,7 +154,7 @@ const schemas = [
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .ab-sec__inner { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .ab-sec__inner { grid-template-columns: minmax(0, 1fr); } }
 
   .ab-sec__n { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }
   .ab-sec__t {

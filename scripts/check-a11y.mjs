@@ -31,6 +31,25 @@ const ROUTES = [
   ['/ur/', 'home · urdu nastaliq'],
   ['/zh/industries/medical/', 'medical · chinese'],
   ['/hy/', 'home · armenian'],
+  ['/en/about/', 'about'],
+  ['/en/industries/', 'industries index'],
+  // Every chapter now runs its own ground — light, steel or a saturated tint of
+  // its own accent — and each of those remaps the whole token set. A contrast
+  // check on two of the thirteen is not a check on the system, so all thirteen
+  // are here.
+  ['/en/industries/automotive/', 'automotive · steel'],
+  ['/en/industries/cosmetics/', 'cosmetics · light'],
+  ['/en/industries/appliances/', 'appliances · tint'],
+  ['/en/industries/chemical/', 'chemical · steel'],
+  ['/en/industries/electrical/', 'electrical · steel'],
+  ['/en/industries/consumer-products/', 'consumer products · light'],
+  ['/en/industries/agriculture/', 'agriculture · tint'],
+  ['/en/industries/plumbing/', 'plumbing · light'],
+  ['/en/industries/furniture/', 'furniture · tint'],
+  ['/en/industries/marine/', 'marine · steel'],
+  ['/en/industries/custom-projects/', 'custom projects · light'],
+  ['/fa/industries/beverage/', 'beverage · rtl'],
+  ['/ur/industries/automotive/', 'automotive · nastaliq'],
 ];
 
 const browser = await chromium.launch();

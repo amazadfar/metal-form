@@ -135,24 +135,26 @@ const GUT: Record<string, string[]> = {
 <article class="chm">
 
   {/* ═══ HERO — one closure, one neck, one sealing interface ═══════════════ */}
-  <header class="chm-hero">
-    <div class="shell--wide chm-hero__inner">
-      <div class="chm-hero__copy">
+  <header class="chm-hero ground--steel mat mat--milled" data-tex="grain">
+    <div class="shell--wide chm-hero__inner split">
+      <div class="chm-hero__copy" data-split-copy>
         <p class="eyebrow">{content.hero.kicker}</p>
-        <h1 class="chm-hero__head">
+        <h1 class="chm-hero__head t-statement">
           {content.hero.headline.map((line: string, i: number) => (
             <span style={`--l:${i}`}>{line}</span>
           ))}
         </h1>
-        <p class="chm-hero__lead">{content.hero.lead}</p>
-        {content.hero.markers && (
-          <ul class="chm-hero__markers">
-            {content.hero.markers.map((m: string) => <li class="t-mono">{m}</li>)}
-          </ul>
-        )}
+        <div class="chm-hero__note">
+          <p class="chm-hero__lead">{content.hero.lead}</p>
+          {content.hero.markers && (
+            <ul class="badges chm-hero__markers">
+              {content.hero.markers.map((m: string) => <li class="badge">{m}</li>)}
+            </ul>
+          )}
+        </div>
       </div>
 
-      <figure class="chm-hero__fig">
+      <figure class="chm-hero__fig" data-split-figure>
         <svg viewBox="-340 52 760 568" data-nomirror role="img" aria-label={common.schematic}>
           <defs>
             <pattern id="chm-hatch-hero" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -189,7 +191,7 @@ const GUT: Record<string, string[]> = {
           <g class="chm-hero__ann" style="--a:0">
             <path d="M -136 116 H -258 M -124 340 H -258" class="chm-ext" />
             <path d="M -250 116 V 340" class="chm-dim" marker-start="url(#chm-ar-hero)" marker-end="url(#chm-ar-hero)" />
-            <text x="-244" y="232" class="chm-lbl">H</text>
+            <text x="-244" y="232" class="chm-lbl">{b.engagement.letters[3]?.k}</text>
           </g>
 
           {[
@@ -636,12 +638,12 @@ const GUT: Record<string, string[]> = {
         </div>
 
         <h3 class="t-label chm-cap chm-cap--gap">{b.cr.archHeading}</h3>
-        <ul class="chm-arch">
+        <ul class="caps chm-arch">
           {b.cr.arch.map((a: any) => (
-            <li>
-              <span class="chm-arch__type t-mono">{a.type}</span>
-              <h4 class="chm-h5">{a.name}</h4>
-              <p>{a.note}</p>
+            <li class="cap">
+              <span class="cap__k">{a.type}</span>
+              <h4 class="cap__v">{a.name}</h4>
+              <p class="cap__n">{a.note}</p>
             </li>
           ))}
         </ul>
@@ -878,7 +880,7 @@ const GUT: Record<string, string[]> = {
   <hr class="chm-rule" />
 
   {/* ═══ 07 · MATERIAL LEDGER ══════════════════════════════════════════════ */}
-  <section class="chm-sec" id="material">
+  <section class="chm-sec chm-sec--grain" id="material" data-tex="grain">
     <div class="shell--wide chm-sec__inner">
       <div class="chm-gut" aria-hidden="true">
         <span class="chm-gut__n t-mono">{b.material.index}</span>
@@ -1115,6 +1117,11 @@ const GUT: Record<string, string[]> = {
   .chm {
     --chm-field: var(--surface-raise);
     --chm-gut: 6rem;
+    /* The shell puts the header clearance on <article>, which is transparent,
+       and a near-white strip above a steel opening is exactly the seam this
+       chapter must not have. The hero carries the clearance instead, so the
+       steel runs to the top edge and the header overlays the composition. */
+    padding-block-start: 0;
   }
 
   .chm-h2 {
@@ -1156,45 +1163,82 @@ const GUT: Record<string, string[]> = {
     fill: var(--ink-muted);
   }
 
-  /* ── Hero ─────────────────────────────────────────────────────────────── */
-  .chm-hero { position: relative; padding-block: clamp(2rem, 5vw, 4rem) clamp(2.5rem, 6vw, 5rem); overflow: clip; }
-  .chm-hero__inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
-    gap: clamp(2rem, 5vw, 4rem);
-    align-items: center;
+  /* ── Hero — SPLIT, on steel ────────────────────────────────────────────
+     The chapter opens on its own inverse, so the first thing a buyer sees is a
+     section cut lit like a blueprint rather than a line drawing on paper.
+
+     `ground--steel` owns every colour in this band — ink, muted ink, rules,
+     accent, signal, focus and the buttons — so nothing below restates one, and
+     the figure's own `--chm-field` follows the remapped surface on its own.
+
+     The split is deliberately unequal and it is not the old composition: the
+     statement is a size step up and carries the band, the drawing is a
+     recessed plate that fills its column to the trailing edge instead of
+     floating in half of one, and a hairline divides them the way a sheet
+     border does. */
+  .chm-hero {
+    position: relative;
+    padding-block: calc(4.25rem + clamp(2.5rem, 6vw, 5rem)) clamp(3rem, 7vw, 5.5rem);
+    overflow: clip;
+    /* Cast grain over milled steel. Felt, not seen. */
+    --tex-opacity: 0.45;
   }
-  @media (max-width: 940px) { .chm-hero__inner { grid-template-columns: 1fr; } }
+  .chm-hero__inner {
+    --split-a: 1.3fr;
+    --split-b: 1fr;
+    --split-gap: clamp(2rem, 5vw, 4.5rem);
+    --split-align: stretch;
+  }
+  /* The divider between the two columns needs air on BOTH sides of it; the
+     grid still starts and ends flush with the shell. */
+  .chm-hero__inner > * { padding-inline: var(--col-pad); min-inline-size: 0; }
+  .chm-hero__inner > :first-child { padding-inline-start: 0; }
+  .chm-hero__inner > * + * { border-inline-start: var(--rule); }
+  .chm-hero__copy { align-self: center; }
 
   .chm-hero__head {
     margin-block-start: clamp(1.25rem, 3vw, 2rem);
-    font-size: clamp(2.3rem, 5.6vw, 4.6rem);
-    line-height: 1.0;
-    letter-spacing: -0.035em;
-    font-weight: 500;
+    font-size: clamp(2.7rem, 6.2vw, 5.6rem);
+    max-inline-size: 14ch;
   }
   .chm-hero__head span { display: block; }
   .chm-hero__head span:last-child { color: var(--accent-deep); }
 
+  /* Lead and verified capability sit below the statement's own rule, so the
+     opening reads as a title block and then its notes. */
+  .chm-hero__note {
+    margin-block-start: clamp(1.75rem, 3.4vw, 2.6rem);
+    padding-block-start: clamp(1.1rem, 2.2vw, 1.7rem);
+    border-block-start: var(--rule-strong);
+  }
   .chm-hero__lead {
-    margin-block-start: clamp(1.25rem, 2.5vw, 1.8rem);
     font-size: var(--step-1);
     line-height: 1.5;
     color: var(--ink-muted);
-    max-inline-size: 48ch;
+    max-inline-size: 46ch;
   }
-  .chm-hero__markers { margin-block-start: var(--sp-6); display: flex; flex-wrap: wrap; gap: 0.45rem; }
-  .chm-hero__markers li {
-    font-size: var(--step--2);
-    letter-spacing: 0.08em;
-    padding: 0.4em 0.75em;
-    border: 1px solid color-mix(in oklab, var(--accent) 34%, transparent);
-    color: var(--accent-deep);
-    background: color-mix(in oklab, var(--surface-raise) 70%, transparent);
+  .chm-hero__markers { margin-block-start: var(--sp-5); }
+  /* `ground--steel` remaps ink, rules and accent but not the relief edges, so
+     the badge takes the dark relief here rather than a white top edge. */
+  .chm-hero .badge { box-shadow: var(--relief-dark); }
+
+  .chm-hero__fig {
+    --chm-field: var(--surface-sunk);
+    margin: 0;
+    display: grid;
+    align-content: center;
+    gap: var(--sp-4);
+    background: var(--surface-sunk);
+    padding-block: clamp(1rem, 2.6vw, 2.25rem);
   }
-  .chm-hero__fig { --chm-field: var(--surface); margin: 0; }
   .chm-hero__fig svg { inline-size: 100%; block-size: auto; }
-  .chm-hero__fig .figure-note { margin-block-start: var(--sp-4); }
+  .chm-hero__fig .figure-note { margin-block-start: 0; }
+
+  /* Below the split breakpoint the opening is a stack, not a narrow pair. */
+  @media (max-width: 1000px) {
+    .chm-hero__inner > * { padding-inline: 0; border-inline-start: 0; }
+    .chm-hero__fig { padding-inline: var(--col-pad); }
+  }
 
   @keyframes chm-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
   @keyframes chm-fade { from { opacity: 0; } to { opacity: 1; } }
@@ -1246,9 +1290,17 @@ const GUT: Record<string, string[]> = {
   }
   .chm-gut__fig { inline-size: 2.1rem; block-size: auto; }
   .chm-gsil { fill: none; stroke: var(--ink-muted); stroke-width: 1.4; opacity: 0.5; }
-  @media (max-width: 900px) {
-    .chm { --chm-gut: 1.6rem; }
-    .chm-gut__fig { display: none; }
+  /* Below the breakpoint the gutter stops being a column and becomes a
+     header strip above the body: index and silhouette on one line. */
+  @media (max-width: 1000px) {
+    .chm-sec__inner { grid-template-columns: minmax(0, 1fr); gap: var(--sp-5); }
+    .chm-gut {
+      position: static;
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+    }
+    .chm-gut__fig { inline-size: 1.5rem; }
     .chm-gut__n { font-size: var(--step--2); letter-spacing: 0.1em; }
   }
 
@@ -1291,14 +1343,14 @@ const GUT: Record<string, string[]> = {
     align-items: start;
   }
   .chm-pair .chm-fig { margin-block-start: 0; }
-  @media (max-width: 900px) { .chm-pair { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .chm-pair { grid-template-columns: minmax(0, 1fr); } }
 
   .chm-two {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(1.5rem, 4vw, 3rem);
   }
-  @media (max-width: 760px) { .chm-two { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .chm-two { grid-template-columns: minmax(0, 1fr); } }
   .chm-two__col p { margin-block-start: var(--sp-3); font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
 
   /* ── 01 Engagement ────────────────────────────────────────────────────── */
@@ -1309,9 +1361,9 @@ const GUT: Record<string, string[]> = {
     gap: clamp(1.5rem, 4vw, 3rem);
     align-items: start;
   }
-  @media (max-width: 960px) { .chm-eng__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .chm-eng__grid { grid-template-columns: minmax(0, 1fr); } }
   .chm-eng__fig { margin-block-start: 0; position: sticky; inset-block-start: clamp(5.5rem, 12vh, 7.5rem); }
-  @media (max-width: 960px) { .chm-eng__fig { position: static; } }
+  @media (max-width: 1000px) { .chm-eng__fig { position: static; } }
 
   .chm-steps { border-block-start: var(--rule-strong); }
   .chm-step { padding-block: var(--sp-5); border-block-end: var(--rule); display: grid; gap: 0.4rem; }
@@ -1329,7 +1381,7 @@ const GUT: Record<string, string[]> = {
   :global(html.js) .chm-eng[data-step='1'] [data-ann='1'],
   :global(html.js) .chm-eng[data-step='2'] [data-ann='2'],
   :global(html.js) .chm-eng[data-step='3'] [data-ann] { opacity: 1; }
-  @media (max-width: 960px) {
+  @media (max-width: 1000px) {
     :global(html.js) .chm-step,
     :global(html.js) .chm-eng [data-ann] { opacity: 1; }
   }
@@ -1341,7 +1393,7 @@ const GUT: Record<string, string[]> = {
     gap: clamp(1.5rem, 4vw, 3rem);
     align-items: start;
   }
-  @media (max-width: 860px) { .chm-eng__data { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .chm-eng__data { grid-template-columns: minmax(0, 1fr); } }
 
   .chm-letters__list { border-block-start: var(--rule-strong); }
   .chm-letters__list > div {
@@ -1352,6 +1404,7 @@ const GUT: Record<string, string[]> = {
     border-block-end: var(--rule);
     align-items: baseline;
   }
+  @media (max-width: 420px) { .chm-letters__list > div { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; } }
   .chm-letters__list dt { font-size: var(--step-1); color: var(--accent-deep); }
   .chm-letters__list dd { font-size: var(--step--1); line-height: 1.5; }
 
@@ -1368,6 +1421,10 @@ const GUT: Record<string, string[]> = {
     .chm-profiles__list li { grid-template-columns: 2.6rem 3rem minmax(0, 1fr); }
     .chm-profiles__t { grid-column: 1 / -1; }
   }
+  @media (max-width: 460px) {
+    .chm-profiles__list li { grid-template-columns: 2.6rem minmax(0, 1fr); gap: var(--sp-3); }
+    .chm-profiles__d, .chm-profiles__t { grid-column: 2 / -1; }
+  }
   .chm-profiles__fig { inline-size: 100%; block-size: auto; }
   .chm-profiles__n { font-size: var(--step-1); color: var(--accent-deep); }
   .chm-profiles__d { font-size: var(--step--1); color: var(--ink); }
@@ -1383,7 +1440,8 @@ const GUT: Record<string, string[]> = {
   }
   .chm-table th, .chm-table td { text-align: start; vertical-align: top; }
   .chm-table thead th {
-    padding: 0 var(--sp-4) var(--sp-4) 0;
+    padding-block: 0 var(--sp-4);
+    padding-inline: 0 var(--sp-4);
     border-block-end: var(--rule-strong);
     font-family: var(--font-mono);
     font-size: var(--step--2);
@@ -1393,14 +1451,16 @@ const GUT: Record<string, string[]> = {
     font-weight: var(--weight-regular);
   }
   .chm-table tbody th {
-    padding: var(--sp-4) var(--sp-4) var(--sp-4) 0;
+    padding-block: var(--sp-4);
+    padding-inline: 0 var(--sp-4);
     border-block-end: var(--rule);
     font-weight: var(--weight-medium);
     font-size: var(--step-0);
     inline-size: 11rem;
   }
   .chm-table tbody td {
-    padding: var(--sp-4) var(--sp-4) var(--sp-4) 0;
+    padding-block: var(--sp-4);
+    padding-inline: 0 var(--sp-4);
     border-block-end: var(--rule);
     line-height: 1.6;
     color: var(--ink-muted);
@@ -1420,8 +1480,8 @@ const GUT: Record<string, string[]> = {
     align-items: baseline;
   }
   .chm-ledger__row--win { grid-template-columns: 11rem 9rem minmax(0, 1fr); }
-  @media (max-width: 720px) {
-    .chm-ledger__row, .chm-ledger__row--win { grid-template-columns: 1fr; gap: 0.3rem; }
+  @media (max-width: 820px) {
+    .chm-ledger__row, .chm-ledger__row--win { grid-template-columns: minmax(0, 1fr); gap: 0.3rem; }
   }
   .chm-ledger dt { font-size: var(--step-0); font-weight: var(--weight-medium); }
   .chm-ledger dd { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
@@ -1452,20 +1512,15 @@ const GUT: Record<string, string[]> = {
     align-items: center;
   }
   .chm-tabs__panel[hidden] { display: none; }
-  @media (max-width: 900px) { .chm-tabs__panel { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .chm-tabs__panel { grid-template-columns: minmax(0, 1fr); } }
   .chm-tabs__panel .chm-fig { border: 0; padding: 0; background: transparent; }
   .chm-tabs__note { font-size: var(--step--1); line-height: 1.65; color: var(--ink-muted); }
 
-  .chm-arch {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1px;
-    background: var(--line);
-    border: var(--rule);
-  }
-  .chm-arch li { background: var(--surface); padding: var(--sp-5); display: grid; gap: 0.45rem; align-content: start; }
-  .chm-arch__type { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
-  .chm-arch p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+  /* The child-resistant architectures are verified capability with a
+     qualification under each one, so they are set as capability modules
+     rather than as a strip of tracked-out type a buyer scrolls past. */
+  .chm-arch { grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+  @media (max-width: 640px) { .chm-arch { grid-template-columns: minmax(0, 1fr); } }
 
   .chm-note {
     margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
@@ -1491,7 +1546,7 @@ const GUT: Record<string, string[]> = {
     border-block-end: var(--rule);
     align-items: baseline;
   }
-  @media (max-width: 560px) { .chm-route__spec > div { grid-template-columns: 1fr; gap: 0.2rem; } }
+  @media (max-width: 620px) { .chm-route__spec > div { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; } }
   .chm-route__spec dd { font-size: var(--step--1); line-height: 1.6; }
 
   .chm-rules { display: grid; gap: 0; border-block-start: var(--rule-strong); }
@@ -1503,6 +1558,7 @@ const GUT: Record<string, string[]> = {
     border-block-end: var(--rule);
     align-items: baseline;
   }
+  @media (max-width: 420px) { .chm-rules li { grid-template-columns: minmax(0, 1fr); gap: 0.25rem; } }
   .chm-rules span { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); font-family: var(--font-mono); }
   .chm-rules p { font-size: var(--step--1); line-height: 1.6; max-inline-size: 70ch; }
 
@@ -1516,7 +1572,7 @@ const GUT: Record<string, string[]> = {
     border-block-end: var(--rule);
     align-items: start;
   }
-  @media (max-width: 720px) { .chm-levers li { grid-template-columns: 1fr; gap: var(--sp-3); } }
+  @media (max-width: 820px) { .chm-levers li { grid-template-columns: minmax(0, 1fr); gap: var(--sp-3); } }
   .chm-levers__k {
     font-size: var(--step-2);
     letter-spacing: var(--track-head);
@@ -1536,7 +1592,13 @@ const GUT: Record<string, string[]> = {
   .chm-band p { font-size: var(--step--1); line-height: 1.65; color: var(--ink-muted); max-inline-size: 72ch; }
   .chm-band__b { color: var(--ink) !important; }
 
-  /* ── 07 Material ──────────────────────────────────────────────────────── */
+  /* ── 07 Material ────────────────────────────────────────────────────────
+     The second and last grained surface on the page: the ledger band is where
+     the argument is about material rather than about geometry, so the field
+     under it is cast rather than polished. Kept well below the point where a
+     reader could describe the pattern. */
+  .chm-sec--grain { --tex-opacity: 0.085; }
+
   .chm-mat {
     margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
     display: grid;
@@ -1544,7 +1606,7 @@ const GUT: Record<string, string[]> = {
     gap: clamp(1.5rem, 4vw, 3.5rem);
     align-items: start;
   }
-  @media (max-width: 820px) { .chm-mat { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .chm-mat { grid-template-columns: minmax(0, 1fr); } }
   .chm-mat__list { border-block-start: var(--rule-strong); }
   .chm-mat__list > div {
     display: grid;
@@ -1554,7 +1616,7 @@ const GUT: Record<string, string[]> = {
     border-block-end: var(--rule);
     align-items: baseline;
   }
-  @media (max-width: 520px) { .chm-mat__list > div { grid-template-columns: 1fr; gap: 0.2rem; } }
+  @media (max-width: 700px) { .chm-mat__list > div { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; } }
   .chm-mat__list dt { font-size: var(--step--1); color: var(--accent-deep); }
   .chm-mat__list dd { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
 
@@ -1585,7 +1647,7 @@ const GUT: Record<string, string[]> = {
     gap: clamp(1.5rem, 4vw, 3.5rem);
     align-items: start;
   }
-  @media (max-width: 820px) { .chm-scope { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .chm-scope { grid-template-columns: minmax(0, 1fr); } }
   .chm-scope__h { max-inline-size: 22ch; }
   .chm-scope__list { margin-block-start: var(--sp-5); border-block-start: var(--rule-strong); }
   .chm-scope__list li {

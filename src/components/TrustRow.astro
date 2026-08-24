@@ -76,7 +76,7 @@ const items = compact
   }
   .trust--row .trust__item:last-child { border-inline-end: 0; }
   @media (max-width: 720px) {
-    .trust--row { grid-template-columns: 1fr; margin-inline: 0; }
+    .trust--row { grid-template-columns: minmax(0, 1fr); margin-inline: 0; }
     .trust--row .trust__item { border-inline-end: 0; padding-inline: 0; }
   }
 

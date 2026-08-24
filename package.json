@@ -21,7 +21,8 @@
     "og": "node scripts/make-og.mjs",
     "smoke": "node scripts/smoke.mjs",
     "check:gutters": "node scripts/check-gutters.mjs",
-    "check:steppers": "node scripts/check-steppers.mjs"
+    "check:steppers": "node scripts/check-steppers.mjs",
+    "check:overflow": "node scripts/check-overflow.mjs"
   },
   "dependencies": {
     "astro": "^7.2.4"

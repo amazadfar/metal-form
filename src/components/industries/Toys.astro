@@ -30,7 +30,7 @@ const b = content.blocks as any;
 /* ── Exploded stack geometry ───────────────────────────────────────────────
    Six components of one illustrative consumer product, each a section profile
    held apart on a single vertical axis at x = 170. Leader anchors are the
-   right-hand extreme of each part; the balloon column sits at x = 306. */
+   trailing extreme of each part. */
 const STACK = [
   { y: 44,  ax: 270, ay: 53,  h: 18 },
   { y: 110, ax: 198, ay: 117, h: 13 },
@@ -39,6 +39,26 @@ const STACK = [
   { y: 272, ax: 270, ay: 289, h: 34 },
   { y: 352, ax: 234, ay: 357, h: 9 },
 ];
+
+/* ── The hero plate ───────────────────────────────────────────────────────
+   The opening is stacked: the statement runs the full width of the chapter and
+   the assembly sits on a plate beneath it that is wider than any text column
+   on the page. The stack keeps its single vertical axis; what the extra width
+   buys is the drawing's own annotation — leaders that run the sheet, item
+   balloons ranged on a legend rule, and specs with room to translate.
+
+   One scale and one offset map the geometry above onto the plate, so the
+   drawing of record above stays the drawing of record. */
+const SHEET_S = 1.06;
+const SHEET_X = 260 - 170 * SHEET_S;   /* the axis lands at x = 260 */
+const SHEET_Y = 8;
+const RANGE_X = 850;                   /* the legend rule the balloons range on */
+/** Extra explosion distance per item, in drawing units. The plate is taller
+ *  than the old column, so the stack is held further apart on it. */
+const EXPLODE = 38;
+const spread = (i: number) => i * EXPLODE;
+const px = (x: number) => +(SHEET_X + x * SHEET_S).toFixed(1);
+const py = (y: number) => +(SHEET_Y + y * SHEET_S).toFixed(1);
 
 /* Amortisation rail. Bar ends fall as annual volume rises; the shape is the
    argument and there is no currency anywhere near it. */
@@ -63,8 +83,10 @@ function profile(amp: number, seed: number): string {
 
 <article class="tys">
 
-  {/* ═══ HERO — the exploded stack ══════════════════════════════════════ */}
-  <header class="tys-hero">
+  {/* ═══ HERO — STACKED ═════════════════════════════════════════════════
+       The statement runs the full width of the chapter; the exploded stack
+       sits on a plate below it that bleeds to both edges of the page. */}
+  <header class="tys-hero" data-tex="mesh">
     <div class="tys-hero__bleed" aria-hidden="true">
       <svg viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid slice" data-nomirror>
         <defs>
@@ -77,96 +99,124 @@ function profile(amp: number, seed: number): string {
       </svg>
     </div>
 
-    <div class="shell--wide tys-hero__inner">
-      <div class="tys-hero__copy">
-        <p class="eyebrow">{content.hero.kicker}</p>
-        <h1 class="tys-hero__head">
-          {content.hero.headline.map((line: string, i: number) => (
-            <span style={`--l:${i}`}>{line}</span>
-          ))}
-        </h1>
+    <div class="shell--wide tys-hero__top">
+      <p class="eyebrow">{content.hero.kicker}</p>
+      <h1 class="tys-hero__head">
+        {content.hero.headline.map((line: string, i: number) => (
+          <span style={`--l:${i}`}>{line}</span>
+        ))}
+      </h1>
+
+      <div class="tys-hero__under">
         <p class="tys-hero__lead">{content.hero.lead}</p>
-        {content.hero.markers && (
-          <ul class="tys-hero__markers">
-            {content.hero.markers.map((m: string) => <li class="t-mono">{m}</li>)}
-          </ul>
-        )}
         <p class="tys-hero__thesis">{b.stack.thesis}</p>
       </div>
 
-      <figure class="tys-hero__fig tys-fig" data-reveal>
-        <p class="t-label tys-hero__figlabel">{b.stack.figureLabel}</p>
-        <svg viewBox="0 0 460 600" data-nomirror role="img" aria-label={common.schematic}>
-          <defs>
-            <pattern id="tys-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.75" opacity="0.34" />
-            </pattern>
-          </defs>
-
-          {/* The axis the whole chapter is built on. */}
-          <line x1="170" y1="12" x2="170" y2="566" class="tys-cl" />
-
-          {/* 1 · upper shell */}
-          <g class="tys-part" style="--i:0">
-            <g transform={`translate(170 ${STACK[0].y})`}>
-              <path d="M-100 18 V8 Q-100 0 -92 0 H92 Q100 0 100 8 V18 H92 V10 Q92 8 84 8 H-84 Q-92 8 -92 10 V18 Z" class="tys-ln tys-hf" />
-            </g>
-          </g>
-          {/* 2 · lens */}
-          <g class="tys-part" style="--i:1">
-            <g transform={`translate(170 ${STACK[1].y})`}>
-              <path d="M-28 12 V6 Q0 -4 28 6 V12 Z" class="tys-ln tys-glass" />
-            </g>
-          </g>
-          {/* 3 · button */}
-          <g class="tys-part" style="--i:2">
-            <g transform={`translate(170 ${STACK[2].y})`}>
-              <path d="M-16 14 V6 H-9 V0 H9 V6 H16 V14 Z" class="tys-ln tys-hf" />
-            </g>
-          </g>
-          {/* 4 · chassis, cored bosses and ribs */}
-          <g class="tys-part" style="--i:3">
-            <g transform={`translate(170 ${STACK[3].y})`}>
-              <path d="M-86 0 H86 V7 H-86 Z" class="tys-ln tys-hf" />
-              <path d="M-46 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
-              <path d="M-34 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
-              <path d="M28 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
-              <path d="M40 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
-              <path d="M-10 7 h5 v14 h-5 z" class="tys-ln tys-hf" />
-              <path d="M5 7 h5 v14 h-5 z" class="tys-ln tys-hf" />
-            </g>
-          </g>
-          {/* 5 · lower shell */}
-          <g class="tys-part" style="--i:4">
-            <g transform={`translate(170 ${STACK[4].y})`}>
-              <path d="M-100 0 V26 Q-100 34 -92 34 H92 Q100 34 100 26 V0 H92 V24 Q92 26 84 26 H-84 Q-92 26 -92 24 V0 Z" class="tys-ln tys-hf" />
-            </g>
-          </g>
-          {/* 6 · hinged lid, land drawn between the two strips */}
-          <g class="tys-part" style="--i:5">
-            <g transform={`translate(170 ${STACK[5].y})`}>
-              <path d="M-64 0 H-4 V9 H-64 Z" class="tys-ln tys-hf" />
-              <path d="M-4 3.5 H4 V5.5 H-4 Z" class="tys-ln tys-sig" />
-              <path d="M4 0 H64 V9 H4 Z" class="tys-ln tys-hf" />
-            </g>
-          </g>
-
-          {/* Leaders and item balloons — drawing convention, not decoration. */}
-          {b.stack.parts.map((part: any, i: number) => (
-            <g class="tys-lead" style={`--i:${i}`}>
-              <circle cx={STACK[i].ax} cy={STACK[i].ay} r="1.9" class="tys-dot" />
-              <line x1={STACK[i].ax} y1={STACK[i].ay} x2="295" y2={STACK[i].ay} class="tys-leader" />
-              <circle cx="306" cy={STACK[i].ay} r="9.5" class="tys-balloon" />
-              <text x="306" y={STACK[i].ay + 3.4} text-anchor="middle" class="tys-num">{part.no}</text>
-              <text x="322" y={STACK[i].ay + 3.4} class="tys-spec">{part.spec}</text>
-            </g>
-          ))}
-        </svg>
-        <ul class="tys-hero__meta">
-          {b.stack.meta.map((m: string) => <li class="t-mono">{m}</li>)}
+      {content.hero.markers && (
+        <ul class="badges tys-hero__markers">
+          {content.hero.markers.map((m: string) => <li class="badge">{m}</li>)}
         </ul>
-        <figcaption class="figure-note">{common.schematic}</figcaption>
-      </figure>
+      )}
+    </div>
+
+    {/* The plate. Full-bleed, ruled top and bottom, and the only thing on the
+        page that is allowed to be this wide. */}
+    <div class="tys-hero__sheet">
+      <div class="shell--wide">
+        <figure class="tys-hero__fig tys-fig" data-reveal>
+          {/* Below the plate's own width the drawing scrolls inside this box
+              rather than shrinking its annotation out of legibility. */}
+          <div class="scroller tys-sheet__scroll">
+          <svg viewBox="0 0 1240 630" data-nomirror role="img" aria-label={common.schematic}>
+            <defs>
+              <pattern id="tys-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.75" opacity="0.34" />
+              </pattern>
+            </defs>
+
+            {/* Sheet registration and the rule the item balloons range on. */}
+            <g class="tys-tick" aria-hidden="true">
+              <path d="M16 46 V16 H46" />
+              <path d="M1194 16 H1224 V46" />
+              <path d="M1224 584 V614 H1194" />
+              <path d="M46 614 H16 V584" />
+            </g>
+            <line x1={RANGE_X} y1="30" x2={RANGE_X} y2="600" class="tys-range" />
+
+            <g transform={`translate(${SHEET_X} ${SHEET_Y}) scale(${SHEET_S})`}>
+              {/* The axis the whole chapter is built on. */}
+              <line x1="170" y1="12" x2="170" y2="566" class="tys-cl" />
+
+              {/* 1 · upper shell */}
+              <g class="tys-part" style="--i:0">
+                <g transform={`translate(170 ${STACK[0].y + spread(0)})`}>
+                  <path d="M-100 18 V8 Q-100 0 -92 0 H92 Q100 0 100 8 V18 H92 V10 Q92 8 84 8 H-84 Q-92 8 -92 10 V18 Z" class="tys-ln tys-hf" />
+                </g>
+              </g>
+              {/* 2 · lens */}
+              <g class="tys-part" style="--i:1">
+                <g transform={`translate(170 ${STACK[1].y + spread(1)})`}>
+                  <path d="M-28 12 V6 Q0 -4 28 6 V12 Z" class="tys-ln tys-glass" />
+                </g>
+              </g>
+              {/* 3 · button */}
+              <g class="tys-part" style="--i:2">
+                <g transform={`translate(170 ${STACK[2].y + spread(2)})`}>
+                  <path d="M-16 14 V6 H-9 V0 H9 V6 H16 V14 Z" class="tys-ln tys-hf" />
+                </g>
+              </g>
+              {/* 4 · chassis, cored bosses and ribs */}
+              <g class="tys-part" style="--i:3">
+                <g transform={`translate(170 ${STACK[3].y + spread(3)})`}>
+                  <path d="M-86 0 H86 V7 H-86 Z" class="tys-ln tys-hf" />
+                  <path d="M-46 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
+                  <path d="M-34 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
+                  <path d="M28 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
+                  <path d="M40 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
+                  <path d="M-10 7 h5 v14 h-5 z" class="tys-ln tys-hf" />
+                  <path d="M5 7 h5 v14 h-5 z" class="tys-ln tys-hf" />
+                </g>
+              </g>
+              {/* 5 · lower shell */}
+              <g class="tys-part" style="--i:4">
+                <g transform={`translate(170 ${STACK[4].y + spread(4)})`}>
+                  <path d="M-100 0 V26 Q-100 34 -92 34 H92 Q100 34 100 26 V0 H92 V24 Q92 26 84 26 H-84 Q-92 26 -92 24 V0 Z" class="tys-ln tys-hf" />
+                </g>
+              </g>
+              {/* 6 · hinged lid, land drawn between the two strips */}
+              <g class="tys-part" style="--i:5">
+                <g transform={`translate(170 ${STACK[5].y + spread(5)})`}>
+                  <path d="M-64 0 H-4 V9 H-64 Z" class="tys-ln tys-hf" />
+                  <path d="M-4 3.5 H4 V5.5 H-4 Z" class="tys-ln tys-sig" />
+                  <path d="M4 0 H64 V9 H4 Z" class="tys-ln tys-hf" />
+                </g>
+              </g>
+            </g>
+
+            {/* Leaders and item balloons — drawing convention, not decoration.
+                On the plate they run the width of the sheet. */}
+            {b.stack.parts.map((part: any, i: number) => (
+              <g class="tys-lead" style={`--i:${i}`}>
+                <circle cx={px(STACK[i].ax)} cy={py(STACK[i].ay + spread(i))} r="2.6" class="tys-dot" />
+                <line x1={px(STACK[i].ax)} y1={py(STACK[i].ay + spread(i))} x2={RANGE_X - 15} y2={py(STACK[i].ay + spread(i))} class="tys-leader" />
+                <circle cx={RANGE_X} cy={py(STACK[i].ay + spread(i))} r="14" class="tys-balloon" />
+                <text x={RANGE_X} y={py(STACK[i].ay + spread(i)) + 5} text-anchor="middle" class="tys-num tys-num--plate">{part.no}</text>
+                <text x={RANGE_X + 28} y={py(STACK[i].ay + spread(i)) + 5} class="tys-spec tys-spec--plate">{part.spec}</text>
+              </g>
+            ))}
+          </svg>
+          </div>
+
+          {/* Title strip along the foot of the plate. */}
+          <div class="tys-sheet__strip">
+            <p class="t-label tys-hero__figlabel">{b.stack.figureLabel}</p>
+            <ul class="tys-hero__meta">
+              {b.stack.meta.map((m: string) => <li class="t-mono">{m}</li>)}
+            </ul>
+          </div>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+        </figure>
+      </div>
     </div>
 
     {/* Parts list — the drawing's own legend, set as a datasheet. */}
@@ -184,10 +234,13 @@ function profile(amp: number, seed: number): string {
       </ol>
       <p class="tys-parts__caption t-fine">{b.stack.caption}</p>
 
+      {/* On record. Set to be read, not tracked out at 11px as build metadata. */}
       <div class="tys-proof">
-        <span class="t-label">{b.stack.proofLabel}</span>
-        <ul>
-          {b.stack.proof.map((p: string) => <li class="t-mono">{p}</li>)}
+        <span class="t-label tys-proof__cap">{b.stack.proofLabel}</span>
+        <ul class="caps caps--tight">
+          {b.stack.proof.map((p: string) => (
+            <li class="cap"><span class="cap__v">{p}</span></li>
+          ))}
         </ul>
       </div>
     </div>
@@ -248,8 +301,10 @@ function profile(amp: number, seed: number): string {
     </div>
   </section>
 
-  {/* ═══ 02 · CONSOLIDATION ═════════════════════════════════════════════ */}
-  <section class="tys-cons" id="consolidation">
+  {/* ═══ 02 · CONSOLIDATION ═════════════════════════════════════════════
+       The chapter's one idea, and the page's contrast anchor: a light chapter
+       still needs one band that is not paper. */}
+  <section class="tys-cons tys-dark on-steel" id="consolidation" data-tex="mesh">
     <div class="shell--wide">
       <div class="tys-head">
         <p class="eyebrow">{b.consolidate.index} · {b.consolidate.kicker}</p>
@@ -463,7 +518,6 @@ function profile(amp: number, seed: number): string {
                     <path d="M152 52 H160 V86 H152 Z" class="tys-ln tys-acc" />
                     <path d="M147 52 Q152 52 152 57" class="tys-ln" />
                     <path d="M165 52 Q160 52 160 57" class="tys-ln" />
-                    <text x="156" y="96" text-anchor="middle" class="tys-micro">40–60%</text>
                   </g>
                 )}
 
@@ -474,7 +528,6 @@ function profile(amp: number, seed: number): string {
                     <path d="M22 30 H16 M22 48 H16 M22 66 H16" class="tys-sinkline" />
                     <line x1="134" y1="12" x2="134" y2="92" class="tys-cl" />
                     <path d="M134 18 L128 84 L146 84 L152 18 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
-                    <text x="168" y="42" class="tys-micro">2°</text>
                   </g>
                 )}
 
@@ -485,10 +538,8 @@ function profile(amp: number, seed: number): string {
                     <path d="M96 34 V70" class="tys-dim" marker-start={`url(#tys-arw-l${i})`} marker-end={`url(#tys-arw-l${i})`} />
                     <path d="M20 26 H52" class="tys-dim" marker-start={`url(#tys-arw-l${i})`} marker-end={`url(#tys-arw-l${i})`} />
                     <path d="M56 26 H88" class="tys-dim" marker-start={`url(#tys-arw-l${i})`} marker-end={`url(#tys-arw-l${i})`} />
-                    <text x="54" y="94" text-anchor="middle" class="tys-micro">±0.02</text>
                     <path d="M124 34 H192 V70 H124 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
                     <path d="M124 80 H192" class="tys-dim tys-dim--on" marker-start={`url(#tys-arw-l${i})`} marker-end={`url(#tys-arw-l${i})`} />
-                    <text x="158" y="94" text-anchor="middle" class="tys-micro">±0.30</text>
                   </g>
                 )}
 
@@ -743,7 +794,7 @@ function profile(amp: number, seed: number): string {
   </section>
 
   {/* ═══ 07 · BOUNDARY — the page's strongest instrument ════════════════ */}
-  <section class="tys-bnd" id="boundary">
+  <section class="tys-bnd tys-dark on-steel" id="boundary">
     <div class="shell--wide">
       <div class="tys-head">
         <p class="eyebrow">{b.boundary.index} · {b.boundary.kicker}</p>
@@ -907,68 +958,104 @@ function profile(amp: number, seed: number): string {
   .tys-rail { fill: url(#tys-hatch-c); stroke: var(--accent-deep); stroke-width: 1.4; }
   .tys-flip { stroke: var(--signal); stroke-width: 1; stroke-dasharray: 12 3 2 3; }
 
-  /* ── Hero ─────────────────────────────────────────────────────────────── */
+  /* ── Hero — STACKED ───────────────────────────────────────────────────
+     One statement across the whole width, then a plate that bleeds to both
+     edges of the page. Nothing in the opening sits in a column. */
   .tys-hero {
     position: relative;
     padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2.5rem, 6vw, 4.5rem);
     overflow: clip;
+    /* Structural mesh — a large panel and its ribbing. Warm, and pitched to be
+       felt rather than seen. */
+    --tex-ink: var(--accent-deep);
+    --tex-opacity: 0.055;
   }
-  .tys-hero__bleed { position: absolute; inset: 0; pointer-events: none; }
+  .tys-hero__bleed { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
   .tys-hero__bleed svg { inline-size: 100%; block-size: 100%; }
 
-  .tys-hero__inner {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
-    gap: clamp(2rem, 5vw, 5rem);
-    align-items: center;
-  }
-  @media (max-width: 940px) { .tys-hero__inner { grid-template-columns: 1fr; } }
+  .tys-hero__top { position: relative; }
 
   .tys-hero__head {
     margin-block-start: clamp(1.25rem, 3vw, 2rem);
-    font-size: clamp(2.35rem, 5.8vw, 4.7rem);
-    line-height: 1.0;
-    letter-spacing: -0.035em;
+    font-size: clamp(2.4rem, 6vw, 5.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.038em;
     font-weight: 500;
+    max-inline-size: 28ch;
   }
-  .tys-hero__head span { display: block; }
+  .tys-hero__head span { display: block; text-wrap: balance; }
   .tys-hero__head span:last-child { color: var(--accent-deep); }
 
+  /* Lead and thesis run under the statement as a footing, divided by a rule
+     that has air on both sides of it. */
+  .tys-hero__under {
+    margin-block-start: clamp(1.75rem, 4vw, 3rem);
+    padding-block-start: var(--sp-5);
+    border-block-start: var(--rule-strong);
+    display: grid;
+    grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  .tys-hero__under > * { padding-inline: var(--col-pad); min-inline-size: 0; }
+  .tys-hero__under > :first-child { padding-inline-start: 0; }
+  .tys-hero__under > :last-child { padding-inline-end: 0; }
+  .tys-hero__under > * + * { border-inline-start: var(--rule); }
+  @media (max-width: 1000px) {
+    .tys-hero__under {
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--sp-5);
+    }
+    .tys-hero__under > * { padding-inline: 0; }
+    .tys-hero__under > * + * { border-inline-start: 0; padding-block-start: var(--sp-5); border-block-start: var(--rule); }
+  }
+
   .tys-hero__lead {
-    margin-block-start: clamp(1.25rem, 2.5vw, 1.8rem);
     font-size: var(--step-1);
     line-height: 1.5;
     color: var(--ink-muted);
-    max-inline-size: 46ch;
-  }
-  .tys-hero__markers { margin-block-start: var(--sp-6); display: flex; flex-wrap: wrap; gap: 0.45rem; }
-  .tys-hero__markers li {
-    font-size: var(--step--2);
-    letter-spacing: 0.08em;
-    padding: 0.4em 0.75em;
-    border: 1px solid color-mix(in oklab, var(--accent) 34%, transparent);
-    color: var(--accent-deep);
-    background: color-mix(in oklab, var(--surface-raise) 72%, transparent);
+    max-inline-size: 52ch;
   }
   .tys-hero__thesis {
-    margin-block-start: var(--sp-7);
-    padding-block-start: var(--sp-5);
-    border-block-start: var(--rule-strong);
     font-size: var(--step-0);
     line-height: 1.62;
-    max-inline-size: 50ch;
+    max-inline-size: 54ch;
   }
+  .tys-hero__markers { margin-block-start: clamp(1.5rem, 3vw, 2.25rem); }
 
-  .tys-hero__figlabel { display: block; margin-block-end: var(--sp-4); }
-  .tys-hero__fig svg { overflow: visible; }
-  .tys-hero__meta {
-    margin-block-start: var(--sp-5);
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--sp-2) var(--sp-5);
+  /* The plate. */
+  .tys-hero__sheet {
+    position: relative;
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    padding-block: clamp(1.5rem, 3.2vw, 2.75rem);
+    border-block: var(--rule);
+    background: color-mix(in oklab, var(--surface-raise) 62%, transparent);
+  }
+  .tys-sheet__scroll { min-inline-size: 0; max-inline-size: 100%; }
+  @media (max-width: 900px) {
+    /* The plate keeps a legible width and scrolls inside its own box. */
+    .tys-hero__fig svg { min-inline-size: 56rem; }
+  }
+  .tys-tick { fill: none; stroke: var(--ink-muted); stroke-width: 1; opacity: 0.45; }
+  .tys-range { stroke: var(--line); stroke-width: 1; }
+  .tys-num--plate { font-size: 14px; }
+  .tys-spec--plate { font-size: 15px; letter-spacing: 0.04em; }
+
+  .tys-sheet__strip {
+    margin-block-start: var(--sp-4);
     padding-block-start: var(--sp-3);
     border-block-start: var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-2) var(--sp-6);
+  }
+  .tys-hero__figlabel { display: block; }
+  .tys-hero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2) var(--sp-6);
     font-size: var(--step--2);
     letter-spacing: 0.06em;
     color: var(--ink-muted);
@@ -1006,7 +1093,7 @@ function profile(amp: number, seed: number): string {
     padding-block: var(--sp-4);
     border-block-end: var(--rule);
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     .tys-parts__row { grid-template-columns: 2.2rem minmax(0, 1fr); gap: var(--sp-3) var(--sp-4); }
     .tys-parts__spec { grid-column: 2; }
     .tys-parts__note { grid-column: 2; }
@@ -1019,16 +1106,10 @@ function profile(amp: number, seed: number): string {
 
   .tys-proof {
     margin-block-start: clamp(1.75rem, 4vw, 3rem);
-    padding-block: var(--sp-4);
-    border-block: var(--rule);
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: var(--sp-5);
-    align-items: baseline;
+    padding-block-start: var(--sp-5);
+    border-block-start: var(--rule-strong);
   }
-  @media (max-width: 760px) { .tys-proof { grid-template-columns: 1fr; gap: var(--sp-3); } }
-  .tys-proof ul { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-6); }
-  .tys-proof li { font-size: var(--step--2); letter-spacing: 0.05em; color: var(--ink-muted); }
+  .tys-proof__cap { display: block; margin-block-end: var(--sp-4); }
 
   /* ── 01 Intake ────────────────────────────────────────────────────────── */
   .tys-intake { padding-block: var(--section-y); border-block-start: var(--rule); }
@@ -1057,23 +1138,45 @@ function profile(amp: number, seed: number): string {
     gap: 0;
     border-block-start: var(--rule-strong);
   }
-  @media (max-width: 980px) { .tys-lanes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 600px) { .tys-lanes { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) {
+    .tys-lanes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tys-lanes__item:nth-child(2n) { border-inline-end: 0; }
+    .tys-lanes__item:nth-child(2n+1) { padding-inline-start: 0; }
+  }
+  @media (max-width: 640px) { .tys-lanes { grid-template-columns: minmax(0, 1fr); } }
   .tys-lanes__item {
-    padding: var(--sp-5) var(--sp-5) var(--sp-6) 0;
+    padding-block: var(--sp-5) var(--sp-6);
+    padding-inline: var(--col-pad) var(--sp-5);
     border-inline-end: var(--rule);
     display: grid;
     gap: var(--sp-2);
     align-content: start;
+    min-inline-size: 0;
   }
+  .tys-lanes__item:first-child { padding-inline-start: 0; }
   .tys-lanes__item:last-child { border-inline-end: 0; }
-  @media (max-width: 600px) { .tys-lanes__item { border-inline-end: 0; border-block-end: var(--rule); } }
+  @media (max-width: 640px) {
+    .tys-lanes__item { border-inline-end: 0; border-block-end: var(--rule); padding-inline: 0; }
+  }
   .tys-lanes__no { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
   .tys-lanes__action { font-size: var(--step--1); line-height: 1.55; }
   .tys-lanes__need { color: var(--ink-muted); }
 
-  /* ── 02 Consolidation ─────────────────────────────────────────────────── */
-  .tys-cons { padding-block: var(--section-y); background: var(--surface-sunk); border-block: var(--rule); }
+  /* ── The two inverted bands ───────────────────────────────────────────
+     `.on-steel` does the whole token flip — ink, muted ink, rules, accent,
+     signal, focus and buttons — so none of that is restated here. The only
+     thing this class changes is the bed itself, moved off the neutral steel
+     and onto this chapter's own warm inverse. */
+  .tys-dark {
+    background: var(--inverse);
+    --surface: var(--inverse);
+    --surface-sunk: color-mix(in oklab, var(--inverse) 82%, #000000);
+    --surface-raise: color-mix(in oklab, var(--inverse) 88%, #FFFFFF);
+    --tex-ink: var(--inverse-ink);
+  }
+
+  /* ── 02 Consolidation — the page's contrast anchor ────────────────────── */
+  .tys-cons { padding-block: var(--section-y-loose); --tex-opacity: 0.04; }
   .tys-cons__fig { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
   .tys-cons__fig .figure-note { margin-block-start: var(--sp-4); }
   :global(html.js) .tys-cons__fig[data-reveal='in'] .tys-now {
@@ -1090,8 +1193,11 @@ function profile(amp: number, seed: number): string {
     padding-block-start: var(--sp-6);
     border-block-start: var(--rule-strong);
   }
-  @media (max-width: 900px) { .tys-count { grid-template-columns: 1fr 1fr; } .tys-count__col--wide { grid-column: 1 / -1; } }
-  @media (max-width: 520px) { .tys-count { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) {
+    .tys-count { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .tys-count__col--wide { grid-column: 1 / -1; }
+  }
+  @media (max-width: 620px) { .tys-count { grid-template-columns: minmax(0, 1fr); } }
   .tys-count__col h3 { display: block; margin-block-end: var(--sp-4); }
   .tys-count__col dl { display: grid; }
   .tys-count__col dl > div {
@@ -1141,12 +1247,13 @@ function profile(amp: number, seed: number): string {
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
   }
-  @media (max-width: 940px) { .tys-vol__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .tys-vol__grid { grid-template-columns: minmax(0, 1fr); } }
   .tys-vol__fig {
     position: sticky;
     inset-block-start: clamp(5rem, 11vh, 7rem);
+    min-inline-size: 0;
   }
-  @media (max-width: 940px) { .tys-vol__fig { position: static; } }
+  @media (max-width: 1000px) { .tys-vol__fig { position: static; } }
   .tys-vol__fig .t-label { display: block; margin-block-end: var(--sp-4); }
   .tys-vol__axis { margin-block-start: var(--sp-3); }
   .tys-vol__fig .figure-note { margin-block-start: var(--sp-2); }
@@ -1168,13 +1275,13 @@ function profile(amp: number, seed: number): string {
     opacity: 0.55;
     transition: opacity var(--dur-3) var(--ease-out);
   }
-  @media (max-width: 620px) { .tys-rung { grid-template-columns: 1fr; } }
+  @media (max-width: 620px) { .tys-rung { grid-template-columns: minmax(0, 1fr); } }
   .tys-vol[data-step='0'] .tys-rung[data-r='0'],
   .tys-vol[data-step='1'] .tys-rung[data-r='1'],
   .tys-vol[data-step='2'] .tys-rung[data-r='2'],
   .tys-vol[data-step='3'] .tys-rung[data-r='3'],
   .tys-vol[data-step='4'] .tys-rung[data-r='4'] { opacity: 1; }
-  @media (max-width: 940px) { .tys-rung { opacity: 1; } }
+  @media (max-width: 1000px) { .tys-rung { opacity: 1; } }
   .tys-rung__v { grid-row: span 2; font-size: var(--step-0); color: var(--accent-deep); }
   @media (max-width: 620px) { .tys-rung__v { grid-row: auto; } }
   .tys-rung p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
@@ -1186,7 +1293,7 @@ function profile(amp: number, seed: number): string {
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .tys-vol__foot { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .tys-vol__foot { grid-template-columns: minmax(0, 1fr); } }
   .tys-flipblock {
     padding-inline-start: var(--sp-5);
     border-inline-start: 2px solid var(--signal);
@@ -1205,7 +1312,7 @@ function profile(amp: number, seed: number): string {
   }
   .tys-led__cols span:first-child { grid-column: 2; }
   .tys-led__cols--b { grid-column: 3; }
-  @media (max-width: 940px) { .tys-led__cols { display: none; } }
+  @media (max-width: 1000px) { .tys-led__cols { display: none; } }
 
   .tys-led__list { margin-block-start: var(--sp-3); border-block-start: var(--rule-strong); }
   .tys-led__row {
@@ -1216,8 +1323,9 @@ function profile(amp: number, seed: number): string {
     padding-block: var(--sp-7);
     border-block-end: var(--rule);
   }
-  @media (max-width: 940px) {
-    .tys-led__row { grid-template-columns: 1fr; gap: var(--sp-5); }
+  @media (max-width: 1000px) {
+    .tys-led__row { grid-template-columns: minmax(0, 1fr); gap: var(--sp-5); }
+    .tys-led__fig { max-inline-size: 22rem; }
   }
   .tys-led__id { display: grid; gap: var(--sp-2); align-content: start; }
   .tys-led__id span { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
@@ -1251,7 +1359,8 @@ function profile(amp: number, seed: number): string {
   }
   .tys-tab {
     flex: 1 1 12rem;
-    padding: 0.9rem 1rem;
+    padding-block: 0.9rem;
+    padding-inline: 1rem;
     background: var(--surface);
     font-size: var(--step--1);
     font-weight: var(--weight-medium);
@@ -1260,7 +1369,9 @@ function profile(amp: number, seed: number): string {
     transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out);
   }
   .tys-tab:hover { background: var(--accent-wash); color: var(--accent-deep); }
-  .tys-tab[aria-selected='true'] { background: var(--accent); color: var(--surface-raise); }
+    /* White on the raw accent measured 4.42:1 — under the floor by a whisker,
+     which is still under it. The deeper variant clears it. */
+  .tys-tab[aria-selected='true'] { background: var(--accent-deep); color: var(--surface-raise); }
 
   .tys-det__panel {
     display: grid;
@@ -1273,7 +1384,7 @@ function profile(amp: number, seed: number): string {
     align-items: start;
   }
   .tys-det__panel[hidden] { display: none; }
-  @media (max-width: 900px) { .tys-det__panel { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .tys-det__panel { grid-template-columns: minmax(0, 1fr); } }
   .tys-det__fig svg { overflow: visible; }
   .tys-det__fig .figure-note { margin-block-start: var(--sp-4); }
   .tys-det__summary { font-size: var(--step-0); line-height: 1.6; }
@@ -1291,7 +1402,8 @@ function profile(amp: number, seed: number): string {
     font-size: var(--step--2);
     color: var(--accent-deep);
     border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
-    padding: 0.1em 0.45em;
+    padding-block: 0.1em;
+    padding-inline: 0.45em;
     flex: none;
   }
   .tys-callouts dd { font-size: var(--step--2); line-height: 1.6; color: var(--ink-muted); }
@@ -1321,16 +1433,29 @@ function profile(amp: number, seed: number): string {
     grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 0;
   }
-  @media (max-width: 900px) { .tys-grades__row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media (max-width: 520px) { .tys-grades__row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 1000px) {
+    .tys-grades__row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .tys-grade:nth-child(3n) { border-inline-end: 0; }
+    .tys-grade:nth-child(3n+1) { padding-inline-start: 0; }
+  }
+  @media (max-width: 560px) {
+    .tys-grades__row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tys-grade:nth-child(3n) { border-inline-end: var(--rule); }
+    .tys-grade:nth-child(3n+1) { padding-inline-start: var(--col-pad); }
+    .tys-grade:nth-child(2n) { border-inline-end: 0; }
+    .tys-grade:nth-child(2n+1) { padding-inline-start: 0; }
+  }
   .tys-grade {
-    padding: var(--sp-5) var(--sp-4) var(--sp-5) 0;
+    padding-block: var(--sp-5);
+    padding-inline: var(--col-pad) var(--sp-4);
     border-inline-end: var(--rule);
     border-block-end: var(--rule);
     display: grid;
     gap: 0.35rem;
     align-content: start;
+    min-inline-size: 0;
   }
+  .tys-grade:first-child { padding-inline-start: 0; }
   .tys-grade:last-child { border-inline-end: 0; }
   .tys-grade__fig { margin-block-end: var(--sp-3); }
   .tys-grade__g { font-size: var(--step-0); color: var(--ink); }
@@ -1348,7 +1473,7 @@ function profile(amp: number, seed: number): string {
     gap: clamp(2rem, 5vw, 4rem);
     align-items: start;
   }
-  @media (max-width: 900px) { .tys-colour { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .tys-colour { grid-template-columns: minmax(0, 1fr); } }
   .tys-colour__copy .t-lead { margin-block-start: var(--sp-4); }
   .tys-colour__driftcap { display: block; margin-block-start: var(--sp-6); margin-block-end: var(--sp-3); }
   .tys-drift { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; }
@@ -1370,20 +1495,10 @@ function profile(amp: number, seed: number): string {
     border-inline-start: 2px solid var(--signal);
   }
 
-  /* ── 07 Boundary — inverted, and the loudest block on the page ────────── */
-  .tys-bnd {
-    padding-block: var(--section-y-loose);
-    background: var(--inverse);
-    color: var(--inverse-ink);
-    --ink: var(--inverse-ink);
-    --signal: var(--signal-inverse);
-    --signal-ink: var(--signal-inverse);
-    --accent: var(--accent-inverse);
-    --accent-deep: var(--accent-inverse);
-    --ink-muted: color-mix(in oklab, var(--inverse-ink) 62%, transparent);
-    --line: color-mix(in oklab, var(--inverse-ink) 18%, transparent);
-    --surface-raise: color-mix(in oklab, var(--inverse-ink) 6%, transparent);
-  }
+  /* ── 07 Boundary — the chapter's closing instrument ───────────────────
+     The inversion is `.on-steel` + `.tys-dark` on the element; nothing about
+     ink, rules, accent or signal is restated here. */
+  .tys-bnd { padding-block: var(--section-y-loose); }
   .tys-bnd__h { max-inline-size: 22ch; }
 
   .tys-std { margin-block-start: clamp(2.5rem, 5vw, 4rem); }
@@ -1395,7 +1510,7 @@ function profile(amp: number, seed: number): string {
     background: var(--line);
     border: var(--hair) solid var(--line);
   }
-  .tys-std__list > div { background: var(--inverse); padding: var(--sp-5); display: grid; gap: var(--sp-2); }
+  .tys-std__list > div { background: var(--surface); padding: var(--sp-5); display: grid; gap: var(--sp-2); }
   .tys-std__list dt { font-size: var(--step--1); letter-spacing: 0.06em; color: var(--signal-ink); }
   .tys-std__list dd { font-size: var(--step--2); line-height: 1.6; color: var(--ink-muted); }
   .tys-std__note {
@@ -1403,7 +1518,7 @@ function profile(amp: number, seed: number): string {
     font-size: var(--step--1);
     line-height: 1.6;
     max-inline-size: 72ch;
-    color: var(--inverse-ink);
+    color: var(--ink);
   }
 
   .tys-split {
@@ -1412,7 +1527,7 @@ function profile(amp: number, seed: number): string {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: clamp(2rem, 5vw, 4rem);
   }
-  @media (max-width: 860px) { .tys-split { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .tys-split { grid-template-columns: minmax(0, 1fr); } }
   .tys-split__col ul { margin-block-start: var(--sp-5); border-block-start: var(--rule-strong); }
   .tys-split__col li {
     padding-block: var(--sp-4);
@@ -1456,7 +1571,7 @@ function profile(amp: number, seed: number): string {
     border-block-end: var(--rule);
     position: relative;
   }
-  @media (max-width: 680px) { .tys-event { grid-template-columns: 1fr; gap: var(--sp-2); } }
+  @media (max-width: 680px) { .tys-event { grid-template-columns: minmax(0, 1fr); gap: var(--sp-2); } }
   .tys-event__mark {
     font-size: var(--step--2);
     letter-spacing: 0.1em;

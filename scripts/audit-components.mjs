@@ -51,7 +51,12 @@ function split(src) {
   const scripts = [...rest.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g)].map((m) => m[1]).join('\n');
   let template = rest
     .replace(/<style[^>]*>[\s\S]*?<\/style>/g, '')
-    .replace(/<script[^>]*>[\s\S]*?<\/script>/g, '');
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/g, '')
+    // A JSX comment explaining a piece of markup quotes that markup, and the
+    // scanner below reads the quoted fragment as visitor-facing copy. Comments
+    // are not rendered, so they are not part of what this check is about.
+    .replace(/\{\s*\/\*[\s\S]*?\*\/\s*\}/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '');
   return { frontmatter: fm ? fm[1] : '', template, styles, scripts };
 }
 
