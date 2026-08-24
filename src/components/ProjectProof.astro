@@ -1,0 +1,117 @@
+---
+/**
+ * REAL PROJECT PROOF
+ *
+ * The one place on this site where a photograph of actual work may appear.
+ *
+ * It renders nothing at all while `FEATURES.realProjectMedia` is off. That is
+ * deliberate and it is the whole point of the component: a hidden module is
+ * honest, whereas "PROJECT IMAGE HERE" on a live page is not. A chapter that
+ * drops this in stays visually complete either way, because the surrounding
+ * sections were written to stand without it.
+ *
+ * Rules this component enforces so they cannot be forgotten later:
+ *   · Nothing generated ever appears here. Every image in `PROJECTS` must be a
+ *     photograph of a real Metal Form tool, part or project.
+ *   · A project appears only with the customer's written permission, recorded
+ *     in `permission`.
+ *   · Where the customer cannot be named, the page says so in words rather than
+ *     implying anonymity through vagueness.
+ *
+ * To populate: add entries to `src/config/projects.ts`, put the images in
+ * `public/projects/`, and switch `FEATURES.realProjectMedia` on.
+ */
+import { FEATURES } from '../config/site.ts';
+import { PROJECTS, type Project } from '../config/projects.ts';
+import type { Locale } from '../i18n/locales.ts';
+import type { IndustryKey } from '../config/industries.ts';
+
+interface Props {
+  locale: Locale;
+  industry: IndustryKey;
+  /**
+   * The chapter's optional `blocks.proof` object. Absent on every chapter today,
+   * which is why no chapter currently carries three untranslatable strings for a
+   * module that renders nothing. Add it in the same commit as the first real
+   * photograph:
+   *   { heading, disclosure, anonymousLabel }
+   */
+  copy?: { heading?: string; disclosure?: string; anonymousLabel?: string };
+  /** At most this many. Proof is not a gallery. */
+  limit?: number;
+}
+
+const { locale, industry, copy, limit = 2 } = Astro.props;
+
+// Three conditions, all of which must hold: the flag is on, the copy exists,
+// and there is a permitted project for this vertical.
+const ready = FEATURES.realProjectMedia && Boolean(copy?.heading && copy?.disclosure);
+
+const shown: Project[] = ready
+  ? PROJECTS.filter((p) => p.industry === industry && p.permission !== 'none').slice(0, limit)
+  : [];
+---
+
+{shown.length > 0 && (
+  <section class="proofmod" data-reveal>
+    <div class="shell--wide">
+      <h2 class="proofmod__h t-h4">{copy!.heading}</h2>
+
+      <ul class="proofmod__list">
+        {shown.map((project) => (
+          <li class="proofmod__item">
+            <figure>
+              <img
+                src={project.image}
+                alt={project.alt[locale] ?? project.alt.en}
+                width={project.width}
+                height={project.height}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span class="proofmod__title">
+                  {project.customer ?? copy!.anonymousLabel}
+                </span>
+                <span class="proofmod__note">{project.note[locale] ?? project.note.en}</span>
+                {project.permission === 'anonymous' && (
+                  <span class="proofmod__anon t-fine">{copy!.anonymousLabel}</span>
+                )}
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+
+      <p class="proofmod__disclosure t-fine">{copy!.disclosure}</p>
+    </div>
+  </section>
+)}
+
+<style>
+  .proofmod { padding-block: var(--section-y); border-block-start: var(--rule); }
+  .proofmod__h { max-inline-size: 22ch; }
+  .proofmod__list {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .proofmod__item figure { margin: 0; display: grid; gap: var(--sp-4); }
+  .proofmod__item img {
+    inline-size: 100%;
+    block-size: auto;
+    border: var(--rule);
+    background: var(--surface-sunk);
+  }
+  .proofmod__item figcaption { display: grid; gap: 0.3rem; }
+  .proofmod__title { font-size: var(--step-0); font-weight: var(--weight-medium); }
+  .proofmod__note { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
+  .proofmod__anon { color: var(--ink-muted); }
+  .proofmod__disclosure {
+    margin-block-start: var(--sp-6);
+    max-inline-size: 68ch;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--signal);
+  }
+</style>

@@ -1,0 +1,769 @@
+{
+  "meta": {
+    "title": "Custom Plastic Projects: Reverse Engineering, DFM and Tooling | Metal Form",
+    "description": "No drawing, no file, no supplier. Send a photograph, a sample or a problem. We return a manufacturable model, a tooling route and a supply plan. Response in 48 business hours."
+  },
+  "name": "Custom Projects",
+  "tile": "Your project does not need to fit a category. A photograph, a broken part, a competitor product, a sketch or a problem you have not solved yet — all of them are a starting point.",
+  "tileParts": "Anything · Any input · Any stage",
+  "hero": {
+    "kicker": "Custom Projects",
+    "headline": [
+      "You do not need",
+      "a drawing to start."
+    ],
+    "lead": "A photograph. A part that broke. A product you want made locally. A sketch. A STEP file with nothing around it. A tool sitting in someone else's building. A cost that stopped working. Send what you have. We tell you what it tells us, what we still have to ask, and what the tooling route looks like.",
+    "markers": [
+      "Reverse engineering from a sample or a photograph",
+      "Injection · PET · blow · die-cast tooling",
+      "First response within 48 business hours"
+    ]
+  },
+  "blocks": {
+    "sheet": {
+      "callsHeading": "Open on this sheet",
+      "calls": [
+        {
+          "n": "01",
+          "q": "What does this face do?"
+        },
+        {
+          "n": "02",
+          "q": "Pressed fit or sliding fit?"
+        },
+        {
+          "n": "03",
+          "q": "Which resin, and which grade?"
+        },
+        {
+          "n": "04",
+          "q": "How many of these per year?"
+        }
+      ],
+      "blockHeading": "Title block",
+      "block": [
+        {
+          "k": "Project",
+          "v": "Not yet named"
+        },
+        {
+          "k": "Sheet",
+          "v": "1 of 1"
+        },
+        {
+          "k": "Scale",
+          "v": "Not to scale"
+        },
+        {
+          "k": "Revision",
+          "v": "A"
+        },
+        {
+          "k": "Status",
+          "v": "Incomplete"
+        }
+      ],
+      "note": "Every custom project arrives as an unfinished drawing. Finishing it is the work."
+    },
+    "arrivals": {
+      "index": "01",
+      "kicker": "What arrives",
+      "heading": "Most projects arrive in someone's hand, not in a file.",
+      "body": "This is what actually turns up. A phone photograph taken in a machine room. The part that broke. A sample with a caliper still on it. A drawing folded into four. A file with no drawing around it. None of them is a specification. Every one of them is a starting point, and every one of them tells us something different.",
+      "items": [
+        {
+          "label": "A phone photograph",
+          "note": "Material family, roughly. Proportion, probable pull direction, often the gate and the parting line. No dimension at all until something in the frame gives us a scale."
+        },
+        {
+          "label": "The part that broke",
+          "note": "The failure is data. Where it broke, how the surface looks and what was around it separate a design problem from a material problem from a service problem."
+        },
+        {
+          "label": "A sample and a caliper",
+          "note": "Measured features and the constraints they serve. As-moulded geometry, which is not the geometry the part was designed to and, on an old part, not even the geometry it left the tool with."
+        },
+        {
+          "label": "A drawing folded in four",
+          "note": "Datums, tolerances and a revision number. The fastest input on this page, and the rarest one."
+        },
+        {
+          "label": "A file with no drawing",
+          "note": "Geometry exactly, to the last radius. Intent not at all. Somebody still has to say which dimensions decide whether the part works."
+        }
+      ],
+      "close": "Send the weakest of these and you still get an engineering answer. Send the strongest and you get a tooling route. Nothing on this list is too little to write with."
+    },
+    "triage": {
+      "index": "02",
+      "kicker": "Triage",
+      "heading": "Pick what you actually have.",
+      "body": "Ten starting points. Each one has a real route from here: what the input tells us, what we will ask you for, what comes back, and what the first step actually is. The drawing beside the list does not change as you move down it. What we know about the drawing is what changes.",
+      "railLabel": "Starting points",
+      "tellsHeading": "What this tells us",
+      "askHeading": "What we will ask you for",
+      "backHeading": "What comes back to you",
+      "firstHeading": "The first step",
+      "items": [
+        {
+          "id": "photo",
+          "no": "01",
+          "label": "A photograph and nothing else",
+          "mark": "Outline",
+          "tells": [
+            "Material family, roughly, from surface, sheen and the context it was photographed in.",
+            "Proportion and probable pull direction. Often the gate position and the parting line as well.",
+            "How the part sits in the machine or the assembly it came out of."
+          ],
+          "ask": [
+            "One known dimension in the frame, or a ruler laid alongside the part.",
+            "What the part does, and what happens on the line when it fails.",
+            "Roughly how many you need in a year, even as a range."
+          ],
+          "back": [
+            "A feasibility opinion written in plain language.",
+            "A list of exactly what to measure, and where to measure it.",
+            "Whether a physical sample needs to travel at all."
+          ],
+          "first": "A photograph with a ruler in it is enough to get a written answer. It is not enough to quote a tool, and we would rather say so than price the guess."
+        },
+        {
+          "id": "broken",
+          "no": "02",
+          "label": "A part that broke",
+          "mark": "Fracture",
+          "tells": [
+            "Where the load went, and where the wall could not carry it.",
+            "Whether the break follows a weld line, a boss, a sharp internal corner or the gate.",
+            "Wear, discolouration and embrittlement, which date the failure and often name its cause."
+          ],
+          "ask": [
+            "What changed before it started failing: supplier, resin, duty cycle, temperature, cleaning agent.",
+            "How long it lasted, and how long it was supposed to last.",
+            "Whether the failed part is the only one you have."
+          ],
+          "back": [
+            "A view on whether to reproduce the part or to fix it.",
+            "The design changes that address the failure, kept separate from the ones that are only cosmetic.",
+            "A tooling route for whichever version you decide to make."
+          ],
+          "first": "Send the broken one and, if you have it, an unbroken one. Two states of the same part answer questions that one sample cannot."
+        },
+        {
+          "id": "benchmark",
+          "no": "03",
+          "label": "A competitor's product",
+          "mark": "Envelope",
+          "tells": [
+            "The functional envelope, the assembly boundary and the moulding decisions somebody else already made and paid for.",
+            "How many separate parts the function was split into, which is usually the most useful thing in the box.",
+            "Where the cost was spent: cavitation, undercuts, finish, insert work."
+          ],
+          "ask": [
+            "Is this your design, is it covered by a live patent or a registered design right, and do you have the right to have it reproduced.",
+            "What you want to keep, and what you want to be different.",
+            "Which market it is going into, and at what volume."
+          ],
+          "back": [
+            "A written statement of what we will and will not reproduce.",
+            "A scope proposal covering the parts, the assembly boundary and the tooling.",
+            "Where a redesign is cheaper than a copy, and the reason."
+          ],
+          "first": "The rights question comes before any engineering. It is a short conversation and it is far better held now than after steel has been cut."
+        },
+        {
+          "id": "sketch",
+          "no": "04",
+          "label": "A hand sketch",
+          "mark": "Intent",
+          "tells": [
+            "Intent, proportion and the features you already know you need.",
+            "Nothing dimensional. A sketch is a brief, not a geometry, and treating it as one is how projects go wrong early."
+          ],
+          "ask": [
+            "Function: what it does, and what it must not do.",
+            "Environment: service temperature, chemical or UV exposure, load character, expected life.",
+            "Size envelope, quantity per year, and the cost the finished part has to live inside."
+          ],
+          "back": [
+            "A modelling scope, not a mould quotation.",
+            "The features that will drive tool cost, named before you commit to them.",
+            "A first solid model with a revision number, which is the thing every later decision hangs off."
+          ],
+          "first": "Expect to buy a model before you buy a tool. On a sketch, quoting tooling first is guessing with your money."
+        },
+        {
+          "id": "cad",
+          "no": "05",
+          "label": "A CAD file",
+          "mark": "Solid",
+          "tells": [
+            "Geometry exactly, to the last radius.",
+            "Nothing about intent: which dimensions matter, which faces are seen, what the part assembles into.",
+            "Whether what you hold is a solid you can edit or a mesh you cannot."
+          ],
+          "ask": [
+            "Which dimensions are critical to quality, and which are reference.",
+            "Which faces are cosmetic, and against which finish standard.",
+            "Resin grade and acceptable equivalents, first order quantity and annual usage."
+          ],
+          "back": [
+            "A design-for-manufacture review: wall, draft, undercuts, gate position, weld-line location, ejection, tolerance feasibility against the resin.",
+            "A short critical-dimension list for you to confirm or correct.",
+            "A tooling proposal once that list is agreed."
+          ],
+          "first": "If what you have is a mesh, send it anyway. Turning a shell of triangles into an editable solid is engineering, not a file conversion, and it is quoted as engineering."
+        },
+        {
+          "id": "obsolete",
+          "no": "06",
+          "label": "An obsolete part, no drawings",
+          "mark": "Datum",
+          "tells": [
+            "As-moulded geometry, the parting line, the gate vestige, the ejector witness and the draft direction of the tool that made it.",
+            "Its current state. Plastic moves under heat and load, so an old part records its history as well as its design.",
+            "Sometimes that it was already a workaround for a problem nobody wrote down."
+          ],
+          "ask": [
+            "What it mates with, and whether that fit is pressed or sliding.",
+            "Which dimensions were ever controlled, if anyone still knows.",
+            "How many a year, and how long the equipment stays in service."
+          ],
+          "back": [
+            "A rebuilt solid model with datums we place and record, not a copy of a worn surface.",
+            "The assumptions we had to make, written down rather than absorbed silently into a price.",
+            "A tooling route with every uncertain dimension cut steel-safe."
+          ],
+          "first": "This is the most common arrival on the page. Send the sample and, if one exists, the part it mates with. Half the tolerance problems on a reverse-engineered component belong to a part nobody sent."
+        },
+        {
+          "id": "production",
+          "no": "07",
+          "label": "A production problem",
+          "mark": "Sink",
+          "tells": [
+            "Whether the defect comes and goes during a run, or appears on every run.",
+            "Where on the part it lands, which usually names the mechanism before anyone opens the tool.",
+            "Whether the wall thickness the part was designed with is the wall thickness it actually has."
+          ],
+          "ask": [
+            "Intermittent or constant. That single answer separates process drift and material variation from part design and tool construction.",
+            "Wall thickness measured at several points, not at one.",
+            "What the tool has done since it was last serviced, and whether a tool history card exists."
+          ],
+          "back": [
+            "A root-cause route: process sheet, design change or steel, named rather than guessed at.",
+            "The design-side items ranked, starting with wall uniformity, which is the most common origin of sink, voids, warpage and fill problems.",
+            "A change list with what each item costs in tooling and in cycle."
+          ],
+          "first": "Send parts, not descriptions. Good parts and bad parts from the same run, and if you can, from two different runs."
+        },
+        {
+          "id": "cost",
+          "no": "08",
+          "label": "A cost problem",
+          "mark": "Wall",
+          "tells": [
+            "That four decisions taken before steel was cut are still being paid for on every shot: cavity count, wall thickness, how many undercuts survived, and which runner.",
+            "Whether the tool is a bottleneck or an idle asset against the volume the programme actually reached."
+          ],
+          "ask": [
+            "Cavity count, cycle time, and the annual usage you really run rather than the one that was forecast.",
+            "Wall thickness, and where it varies across the part.",
+            "Which dimensions are genuinely critical, and which were tightened because tightening looked safer."
+          ],
+          "back": [
+            "The review run backwards: wall, cooling, cycle, cavitation, then the critical-dimension list.",
+            "Whether the answer is a change to the part, a change to the tool, or a different tool.",
+            "A position on whether the work is worth doing at all."
+          ],
+          "first": "We will not print a savings percentage. The arithmetic is yours — your resin price, your machine rate, your volume. What we can tell you is which of the four levers is still moveable."
+        },
+        {
+          "id": "supplier",
+          "no": "09",
+          "label": "A supplier problem",
+          "mark": "Split",
+          "tells": [
+            "That the asset you need is not only the steel. It is the model, the mould specification and the process knowledge that go with it.",
+            "Whether you are insuring against a tool, a supplier, a border, or all three."
+          ],
+          "ask": [
+            "Where the tool is, who owns it in writing, and what it last produced.",
+            "What documentation exists: latest 2D and 3D with revision history, steel certificates, hot runner specification and controller settings, maintenance and repair logs, last approved process parameters, agreed reference samples.",
+            "Whether the same tool has to move, or a second one has to be built."
+          ],
+          "back": [
+            "A condition-assessment scope before anyone commits to moving anything: wear, shut-off integrity, vent depth, cooling condition, undocumented weld repairs.",
+            "A documentation audit that names what is missing while it can still be asked for.",
+            "A second-source proposal built from your own data, at a cavitation sized to the risk it covers rather than to the primary tool."
+          ],
+          "first": "Transfers fail on missing paperwork and uninspected steel, not on distance. Start with the documents, not with the crate."
+        },
+        {
+          "id": "idea",
+          "no": "10",
+          "label": "Nothing but an idea",
+          "mark": "Open",
+          "tells": [
+            "Nothing yet. That is a legitimate position and it is where a fair number of projects genuinely start."
+          ],
+          "ask": [
+            "What the thing has to do, for whom, and in what environment.",
+            "How many in the first order, and how many in a year.",
+            "What it has to cost, landed, for the idea to be worth making at all."
+          ],
+          "back": [
+            "An honest answer about whether tooling is the right route at that volume.",
+            "A staged scope: model first, then a review, then a tooling decision — each one small enough to stop at.",
+            "Where the volume does not justify a tool, we say that instead of selling you one."
+          ],
+          "first": "The cheapest hour on any project is the first one, spent deciding whether it should be a moulded part at all."
+        }
+      ],
+      "close": "Whichever position you are in, the route from here has the same shape: read the input, name the assumptions out loud, close them with questions, then commit steel."
+    },
+    "reverse": {
+      "index": "03",
+      "kicker": "From nothing",
+      "heading": "As-moulded is not nominal. An old sample is not even as-moulded.",
+      "body": "Where no drawing has ever existed, the model is reconstructed rather than copied. A sample gives current geometry. It does not give the dimension the part was designed to, and it does not give the shrink factor the cavity was cut with. Both have to be put back before anything is machined.",
+      "stepsLabel": "Sequence",
+      "steps": [
+        {
+          "index": "01",
+          "label": "Read the part",
+          "note": "Parting line, gate vestige, weld lines, ejector witness, draft direction. A moulded part is a record of the tool that made it, and that record narrows the tooling route before anything is measured."
+        },
+        {
+          "index": "02",
+          "label": "Place the datums",
+          "note": "A sample arrives with no datums. Deciding where they go is the first engineering decision on the project, and every dimension downstream is taken from them."
+        },
+        {
+          "index": "03",
+          "label": "Measure against function",
+          "note": "Measured features and the constraints they serve: what locates, what seals, what retains, what has to slide. Geometry can be measured. Design intent has to be reconstructed from what the part does."
+        },
+        {
+          "index": "04",
+          "label": "Rebuild as features",
+          "note": "Extrusions, revolves, fillets, bosses and holes with real dimensions, in CATIA or SolidWorks. A smoothed surface is not a model anybody can change later, and change is the whole point of building one."
+        },
+        {
+          "index": "05",
+          "label": "Apply the shrink factor",
+          "note": "The cavity is cut to the part dimension scaled by the shrink of the specific grade, not of the resin family. Copy a measured dimension straight into steel and the cavity comes out undersize by the shrink rate."
+        },
+        {
+          "index": "06",
+          "label": "Cut it steel-safe",
+          "note": "Every dimension carrying an assumption is machined with metal left in the cavity. The feature runs small on first shots, is measured, and is opened to requirement. Steel can be removed. It cannot be put back without welding, and a welded insert is never quite the insert that was designed."
+        }
+      ],
+      "labels": {
+        "arrived": "As arrived",
+        "datum": "Datum",
+        "measured": "Measured",
+        "feature": "Feature",
+        "part": "Part",
+        "cavity": "Cavity",
+        "steelLeft": "Steel left",
+        "detail": "Detail"
+      },
+      "shrinkHeading": "Published mould shrinkage, by resin family",
+      "shrinkCols": [
+        "Resin family",
+        "Typical mould shrinkage"
+      ],
+      "shrinkRows": [
+        {
+          "r": "ABS",
+          "v": "0.4 – 0.8 %"
+        },
+        {
+          "r": "PC",
+          "v": "0.5 – 0.7 %"
+        },
+        {
+          "r": "PA6, unfilled",
+          "v": "0.8 – 1.5 %"
+        },
+        {
+          "r": "PP",
+          "v": "1.0 – 2.5 %"
+        },
+        {
+          "r": "POM",
+          "v": "1.8 – 2.5 %"
+        }
+      ],
+      "shrinkNote": "Figures in this table are published industry practice, not Metal Form measurements. The grade datasheet governs in every case. A 30 percent glass-filled grade shrinks far less, and shrinks unequally along and across the flow direction, which is why fibre orientation shows up later as warp.",
+      "close": "Where the resin cannot be stated, we select a grade against the requirements you can state, record it as an assumption on the mould specification sheet, and cut the dimensions that assumption affects steel-safe. Independent laboratory identification of a sample is available on the market. Commissioning it is your call, not ours.",
+      "scanHeading": "The one honest limit on this section",
+      "scanNote": "Feature reconstruction from measurement has a boundary, and free-form surfaces are past it. A blade profile, an impeller, a styled outer face: if that geometry has to be reproduced faithfully, send captured surface data and we will work from your mesh. We accept scan and mesh data as an input. We do not capture it."
+    },
+    "questions": {
+      "index": "04",
+      "kicker": "Intake",
+      "heading": "Every blank becomes an assumption. Assumptions get priced as risk.",
+      "body": "These are the questions that turn an unclear input into a manufacturable project. They are not a form and nothing here blocks anything. Answer what you can, and say so where you cannot: a stated unknown is worth more to us than a guessed answer, because we can cut steel around a stated unknown.",
+      "cols": {
+        "q": "The question",
+        "why": "Why it is asked",
+        "assume": "If unanswered, we assume"
+      },
+      "groups": [
+        {
+          "group": "Function",
+          "items": [
+            {
+              "q": "What does the part do, and what must it not do?",
+              "why": "Function decides which dimensions matter. Everything else on the part is reference, whatever the drawing says.",
+              "assume": "That every dimension on the sample was intended, including the ones that were never controlled."
+            },
+            {
+              "q": "What is it fixed to, and how is it loaded?",
+              "why": "Load character — steady, cyclic, impact, abrasive — chooses the resin and the rib strategy before it chooses geometry.",
+              "assume": "A benign static load, and a resin selected on stiffness alone."
+            }
+          ]
+        },
+        {
+          "group": "Environment",
+          "items": [
+            {
+              "q": "Service temperature range, and for how long at the top of it?",
+              "why": "Continuous temperature sets the resin family. A short peak and a permanent soak are different problems with different answers.",
+              "assume": "Indoor ambient. It is the cheapest assumption available and the easiest one to get wrong."
+            },
+            {
+              "q": "Chemical, UV or moisture exposure?",
+              "why": "Exposure narrows the grade and occasionally rules out a whole family, which is better known before the cavity is cut than after.",
+              "assume": "None, and no stabiliser package in the grade."
+            }
+          ]
+        },
+        {
+          "group": "Interface",
+          "items": [
+            {
+              "q": "What does it assemble to, and is the fit pressed or sliding?",
+              "why": "Half the tolerance problems on a reverse-engineered part belong to a mating component nobody sent.",
+              "assume": "That the fit is controlled by this part, when it may always have been controlled by the other one."
+            },
+            {
+              "q": "Which dimensions actually control that fit?",
+              "why": "A short critical-dimension list is cheaper and more honest than a tight general tolerance across a whole drawing.",
+              "assume": "A general tolerance applied everywhere: paid in machining, paid again in bench fitting, and paid forever in process control."
+            }
+          ]
+        },
+        {
+          "group": "Appearance",
+          "items": [
+            {
+              "q": "Which faces are visible in service?",
+              "why": "A cosmetic face constrains gate position, weld-line location, ejector layout and the acceptance criteria all at once.",
+              "assume": "That any face may carry a gate vestige, an ejector witness or a weld line."
+            },
+            {
+              "q": "Texture and colour, against which standard?",
+              "why": "A texture named against a published reference is a specification. A texture described in words is an argument waiting to happen at first shots.",
+              "assume": "A standard tool polish, no texture, and colour matched to a masterbatch you supply."
+            }
+          ]
+        },
+        {
+          "group": "Quantity",
+          "items": [
+            {
+              "q": "First order quantity, and annual usage?",
+              "why": "Cavitation, steel intent and runner type are arithmetic against annual usage. This is the number most often left blank.",
+              "assume": "Low volume and low cavitation, which caps your output the moment the programme grows."
+            },
+            {
+              "q": "How firm is that number?",
+              "why": "A forecast that was never a forecast is the most expensive input on this page. Too few cavities caps output. Too many burn capital and run the tool half loaded.",
+              "assume": "That the number is firm, and the tool gets sized as if it were."
+            }
+          ]
+        },
+        {
+          "group": "Commercial",
+          "items": [
+            {
+              "q": "When are parts needed, and where are they delivered?",
+              "why": "Tooling, sampling and supply are separate lead times, and international delivery adds freight and border time to a component whose value is small and whose consequence is not.",
+              "assume": "No fixed date, which means the schedule ends up set by the slowest decision rather than by your line."
+            },
+            {
+              "q": "Who owns the tool and the model at the end, and where is the tool stored?",
+              "why": "The asset is the model and the mould specification as much as the steel. A customer who holds both can have a second tool built without negotiating with anybody.",
+              "assume": "Nothing. This one we always ask, and the answer goes into the quotation rather than into a conversation."
+            }
+          ]
+        },
+        {
+          "group": "Rights",
+          "items": [
+            {
+              "q": "Is this your design, and do you have the right to have it reproduced?",
+              "why": "Analysing a lawfully acquired product is one thing. Reproducing a design covered by a live patent, a registered design right or a contract clause is a different thing entirely.",
+              "assume": "Nothing. We ask before quoting, and a project stops here rather than later if the answer is unclear."
+            }
+          ]
+        }
+      ],
+      "close": "A blank in an enquiry does not make a quotation cheaper. It makes it padded, or it makes it a list of questions, or it makes it slow. We would rather send you the questions."
+    },
+    "route": {
+      "index": "05",
+      "kicker": "The route",
+      "heading": "Ten starting points. One gated route.",
+      "body": "Whatever arrives, the project runs the same sequence. Two of these gates are yours: the model you sign, and the moment before steel is cut. After the second one, revisions stop being cheap — the cheapest change is on the screen, the next cheapest is metal left in the cavity, and the most expensive is a welded and re-cut insert.",
+      "leavesLabel": "Leaves the gate as",
+      "holdLabel": "Your signature",
+      "gates": [
+        {
+          "code": "G0",
+          "name": "Intake",
+          "body": "What you sent, what it is, and what is missing from it.",
+          "leaves": "A written statement of scope and open questions."
+        },
+        {
+          "code": "G1",
+          "name": "Feasibility",
+          "body": "Can it be made, should it be made this way, and is the volume real.",
+          "leaves": "An opinion with every assumption listed beside it."
+        },
+        {
+          "code": "G2",
+          "name": "Model",
+          "body": "A revision-controlled solid model with datums, rebuilt from a sample or received as CAD.",
+          "leaves": "The model, and a critical-dimension list where there is no drawing to sign against.",
+          "hold": true
+        },
+        {
+          "code": "G3",
+          "name": "Design for manufacture",
+          "body": "Wall thickness and its uniformity, draft, undercuts, gate and weld-line position, ejection, tolerance feasibility against the resin.",
+          "leaves": "A closed change list, with what each change costs."
+        },
+        {
+          "code": "G4",
+          "name": "Mould specification",
+          "body": "Cavity count, mould base standard, core and cavity steel intent, runner and gate concept, cooling layout, texture standard, steel-safe register.",
+          "leaves": "A specification sheet you sign. This is the steel-cut release and the last cheap moment in the project.",
+          "hold": true
+        },
+        {
+          "code": "G5",
+          "name": "Manufacture",
+          "body": "The tool is built: CNC milling, turning and manual machining, hot or cold runner, slides, lifters, unscrewing and collapsible cores where the geometry needs them.",
+          "leaves": "A tool, and a spares list specified at design time rather than after a breakage."
+        },
+        {
+          "code": "G6",
+          "name": "First shots",
+          "body": "Trial samples, dimensional results, cosmetic assessment, and the steel-safe corrections that were planned for from the start.",
+          "leaves": "Measurements. On a project built partly from inference, first shots are a measurement exercise, not a verdict."
+        },
+        {
+          "code": "G7",
+          "name": "Acceptance and supply",
+          "body": "Agreed reference samples, tool history card opened, spares and change parts, maintenance interval, and the supply arrangement if we are producing.",
+          "leaves": "Parts, on a rolling supply where that is what the programme needs."
+        }
+      ],
+      "close": "Tooling warranty terms are defined per project and against the mould specification for that project. Initial technical response within 48 business hours, and an NDA before detailed disclosure if you want one."
+    },
+    "routes": {
+      "index": "06",
+      "kicker": "Routes",
+      "heading": "It does not have to be plastic.",
+      "body": "A moulded part is one answer. At the volume, the tolerance or the temperature some projects actually have, it is the wrong one. These are the routes available, what each one changes, and what we need from you to choose between them honestly.",
+      "tabsLabel": "Manufacturing route",
+      "whenLabel": "When this is the right answer",
+      "changesLabel": "What it changes",
+      "needLabel": "What we need from you",
+      "items": [
+        {
+          "id": "injection",
+          "name": "Injection tooling",
+          "mark": "Cavity",
+          "when": "Volume that justifies a tool, and a geometry that will release from one.",
+          "changes": "Cavitation, runner type and the number of undercuts that survive review decide most of the recurring cost. Cold runner is the default first answer on a custom project: cheaper to build, simpler to maintain, forgiving on colour change and easier to diagnose while the resin assumption is still being tested. Hot runner earns its capital when cycle time or material cost dominates.",
+          "need": "Annual usage, resin grade or the requirements to select one, and which faces are cosmetic."
+        },
+        {
+          "id": "pet",
+          "name": "PET tooling",
+          "mark": "Preform",
+          "when": "Preforms and PET packaging geometry.",
+          "changes": "The neck finish becomes the interface that the container, the closure and the line all have to agree on, and the preform has to be designed for the container rather than as a part in its own right.",
+          "need": "The container, the closure, the neck standard and an annual volume."
+        },
+        {
+          "id": "blow",
+          "name": "Blow tooling",
+          "mark": "Parison",
+          "when": "Hollow parts where a blown wall is the right structure rather than a moulded one.",
+          "changes": "Wall distribution is set by the parison and the mould rather than by a cavity, so the design conversation moves upstream of the tool.",
+          "need": "The container, what goes in it, and what it has to survive in filling and handling."
+        },
+        {
+          "id": "diecast",
+          "name": "Die-cast tooling",
+          "mark": "Die",
+          "when": "Metal is required for stiffness, temperature, conductivity or wear, and the section can be cast.",
+          "changes": "Different shrink, different draft, different die life and a different family of defects. The tooling discipline is the same discipline, and the gate, vent and cooling arguments do not change character.",
+          "need": "The load case, the service temperature, and whether the surface is finished afterwards."
+        },
+        {
+          "id": "machined",
+          "name": "CNC and manual machining",
+          "mark": "Cutter",
+          "when": "Low volume, a jig or a fixture, a one-off replacement, or a spare needed long before any tool could be built.",
+          "changes": "No tool, no shrink, no cavitation arithmetic and nothing frozen at a steel-cut release. Cost per part stays flat instead of falling, which is exactly right up to a point and wrong after it.",
+          "need": "The part, the quantity and the date."
+        }
+      ],
+      "close": "Where a project runs across two of these, it stays one project with one engineering contact. Second-source and duplicate tooling, spares and change parts sit inside the same conversation rather than being handed to somebody else."
+    },
+    "boundary": {
+      "index": "07",
+      "kicker": "Boundary",
+      "heading": "What we supply, and what stays with you.",
+      "body": "This is the strongest thing on the page, so it is not in small print. A custom project has two sides, and the line between them should be visible before you send anything rather than discovered at first shots.",
+      "line": "We build tooling and we make parts. We do not test, certify or approve your finished product, and we do not hold the sector approvals some buyers need. If that is the deciding factor on your project, decide it before you send anything — it is a shorter conversation now than later.",
+      "supplyHeading": "What Metal Form supplies",
+      "supply": [
+        "An engineering read of whatever you send: a physical sample, a photograph, a mesh, a STEP file or a written description of the problem.",
+        "A revision-controlled solid model built in CATIA or SolidWorks, with datums we place and record, in a form you can take elsewhere.",
+        "Design-for-manufacture review, and redesign for manufacture where it earns its place: wall uniformity, rib strategy, designing out undercuts, consolidating two parts into one.",
+        "A tooling route stated as a decision rather than a menu: cavitation, runner concept, straight pull against slides, lifters, unscrewing and collapsible cores, and the reasoning behind each.",
+        "Mould design and manufacture across injection, PET, blow and die-cast. Multi-cavity, hot and cold runner, insert tooling. Tooling experience up to 46 cavities where the volume genuinely justifies it.",
+        "CNC milling, turning and manual machining, for tooling and for components.",
+        "Component production and rolling supply, so a project does not stop at a tool handover.",
+        "Second-source and duplicate tooling built from your own data, plus spares and change parts.",
+        "International delivery, an NDA before detailed disclosure, and tooling warranty with terms agreed per project.",
+        "An initial technical response within 48 business hours, from someone who has read the geometry."
+      ],
+      "stayHeading": "What stays with you",
+      "stay": [
+        "The decision on rights. We ask the question; you answer it, and you carry it.",
+        "Captured surface data. Where a free-form surface has to be reproduced from a scan, send the mesh — we work from it, we do not capture it.",
+        "Independent material identification, where certainty about a resin grade is required. It is available on the market and it is yours to commission.",
+        "Testing, certification and approval of the finished product, in whichever regime your market runs.",
+        "The real annual usage, and the consequences of the number you give us, in either direction.",
+        "The mating parts and the assembly the component has to agree with, which are the things that most often never get sent.",
+        "Your own production process, if you are moulding the parts yourself rather than buying them."
+      ],
+      "refuseHeading": "What makes a project genuinely unsuitable",
+      "refuse": [
+        "A design you do not have the right to have reproduced. This one is not negotiable, and it is asked at intake rather than after.",
+        "A project where the deciding factor is a certified quality system, a controlled-environment or validated process, or documented capability studies. We do not run those regimes and we will not imply that we do.",
+        "A finished product that has to be tested, certified or approved by the supplier who makes it.",
+        "A free-form surface with no captured data and no way of obtaining any. Measurement and feature reconstruction have a limit, and a blade profile sits past it.",
+        "A volume that does not justify a tool. Where a machined part or a bought standard component is the right answer, that is the answer you will get.",
+        "A project that needs a guaranteed date before anyone has seen the geometry. We commit to a first technical response within 48 business hours, and to nothing we cannot hold."
+      ]
+    },
+    "package": {
+      "index": "08",
+      "kicker": "Sending",
+      "heading": "Send what you have.",
+      "body": "Three tiers. You do not need the third one to write to us. The first is enough to get a real answer, and knowing which tier you are at is worth more than pretending you are at the next one.",
+      "tiers": [
+        {
+          "code": "T1",
+          "name": "Enough to start a conversation",
+          "note": "You get a written engineering opinion and a list of what to measure.",
+          "items": [
+            "A photograph with a ruler, a caliper or any known dimension in the frame.",
+            "What the part does, and where it is used.",
+            "Roughly how many per year, even as a range."
+          ]
+        },
+        {
+          "code": "T2",
+          "name": "Enough to quote tooling",
+          "note": "You get a tooling route with the assumptions written down beside it.",
+          "items": [
+            "The physical sample, or a 3D file.",
+            "The resin if you know it, and what the part mates with.",
+            "Which faces are visible in service.",
+            "First order quantity, annual usage, and when parts are needed."
+          ]
+        },
+        {
+          "code": "T3",
+          "name": "Enough to cut steel",
+          "note": "You get a mould specification sheet to sign, and a steel-cut release.",
+          "items": [
+            "A revision-controlled model, and a critical-dimension list or a 2D drawing with datums.",
+            "Resin grade and acceptable equivalents.",
+            "Texture and colour standard, named against a published reference.",
+            "Tool life intent, ownership and storage.",
+            "Packaging and the delivery point."
+          ]
+        }
+      ],
+      "close": "Tier one is enough. If what you have is a photograph taken on a phone in a machine room at eleven at night, send that.",
+      "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    },
+    "panels": {
+      "heading": "Deeper detail",
+      "items": [
+        {
+          "title": "What a moulded sample records about the tool that made it",
+          "bullets": [
+            "Parting line: where the two halves met, and therefore how the tool was split.",
+            "Gate vestige: the gate type and position, and by inference the way the cavity filled.",
+            "Weld lines: where two flow fronts met and fused, which maps the flow path and marks the weaker sections.",
+            "Ejector witness: which face was hidden, and where the tool pushed on the part.",
+            "Draft direction: which way the part released, and therefore how the original tool pulled.",
+            "Texture and gloss: the finish standard, best named against a published reference rather than described in words.",
+            "Sink and local distortion: where the wall was too thick, or a rib too heavy for the wall behind it."
+          ],
+          "source": "Reading a part this way is standard practice in the trade. It is described here as industry method, not as a Metal Form measurement service."
+        },
+        {
+          "title": "What a sample will not tell you",
+          "bullets": [
+            "The resin grade. The family can often be narrowed; the grade cannot be read off a part, and grade is what governs shrink and tolerance capability.",
+            "The shrink factor that was applied when the cavity was cut.",
+            "The nominal dimension the part was designed to, before shrinkage.",
+            "Which dimensions carried a tolerance, and which were only reference.",
+            "Whether this is the current revision, a superseded one, or a field repair somebody made.",
+            "Whether the part has moved since it was made. Plastic warps under heat and time, and an old sample records its history rather than its drawing.",
+            "What it mates with, and whether the fit was ever controlled by this part at all."
+          ],
+          "source": "This is why an intake that asks questions is cheaper than an intake that assumes."
+        },
+        {
+          "title": "Frozen at the steel-cut release",
+          "bullets": [
+            "Cavity count, decided against a stated annual usage rather than a hope.",
+            "Mould base standard, and compatibility with the press the tool is intended for.",
+            "Core and cavity steel intent, matched to shot-life expectation and to whether the resin is filled and abrasive.",
+            "Runner and gate concept, including gate position relative to the cosmetic faces and to where the weld line will land.",
+            "Cooling layout and its balance across cavities, which sets cycle time and therefore the recurring cost of every part the tool will ever make.",
+            "Venting depth and location: the cheapest fix on a tool, and the item most often missing on a tool that has changed hands.",
+            "Texture standard named against a published reference, the critical-dimension list, the resin assumption and the steel-safe register.",
+            "After this point, the cheap revisions are behind you."
+          ]
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Send the part.",
+    "body": "A photograph, a sample, a file, or a paragraph describing the problem. You get an engineering reply rather than a price list: what we can determine, what we still have to ask, and what the tooling route looks like. First response within 48 business hours. NDA before you send anything, if you want one.",
+    "action": "Send your project",
+    "actionAlt": "See all contact options",
+    "prefill": "Metal Form — custom project.\n\nWhat I have: photo / sample part / broken part / sketch / STEP file / drawing pack / existing mould / a production, cost or supply problem\nWhat the part does: \nWhere it is used: \nApproximate annual quantity, if known: \nWhat I need from you: ",
+    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+  }
+}

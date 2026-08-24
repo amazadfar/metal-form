@@ -1,0 +1,434 @@
+{
+  "meta": {
+    "title": "Sulama kalıpları ve enjeksiyon parçaları | Metal Form",
+    "description": "Damla sulama ve tarım için kalıp tasarımı, imalatı ve parça tedariki: damlatıcılar, bağlantı parçaları, konnektörler, mikro yağmurlayıcılar, vana ve filtre parçaları. 2006'dan beri."
+  },
+  "name": "Tarım ve Sulama",
+  "tile": "Yüz milyonlarla üretilen damlatıcılar ve bağlantı parçaları. Birkaç onda bir milimetre genişliğinde bir labirent; çok yüksek göz sayısında, her atımda, her sezon tekrarlanıyor.",
+  "tileParts": "Damlatıcılar · Bağlantı parçaları · Yüksek göz sayısı",
+  "hero": {
+    "kicker": "Tarım ve Sulama",
+    "headline": [
+      "Damlatıcı bir geometridir.",
+      "Ürün, kalıbın kendisidir."
+    ],
+    "lead": "Damlatıcılar, bağlantı parçaları, konnektörler, mikro yağmurlayıcılar, vana ve filtre parçaları. Geometriyi gönderin. Akış yolunu, kalıp rotasını, göz stratejisini ve tedarik planını değerlendiririz.",
+    "markers": [
+      "Damlatıcı, bağlantı parçası ve mekanizma kalıpları",
+      "Göz ve akış yolu insertleri",
+      "İkiz ve ikinci kaynak kalıpları"
+    ]
+  },
+
+  "blocks": {
+    "scale": {
+      "index": "01",
+      "kicker": "Büyütme",
+      "heading": "Bir tarla, bir milimetre genişliğinde bir kanaldan sulanır.",
+      "body": "Bir parsel lateraller üzerinden sulanır. Lateral, sabit bir aralıkla tekrarlanan tek bir parçayı taşıyan bir borudur. Parça bir tırnaktan küçüktür. İçinde, bir sıra diş hâlinde işlenmiş, kabaca bir milimetre genişliğinde bir kanal vardır. Ölçekte beş kademe aşağı ve her biri sonuçta bir kademe yukarı.",
+      "overture": {
+        "magLabel": "Büyütülmüş",
+        "trueLabel": "Teslim edildiği ölçüde",
+        "ruleLabel": "milimetre cetveli",
+        "note": "Yukarıdaki kanal, aşağıdaki kanaldır. Bu sınıftan yayımlanmış yassı bir hat içi damlatıcı yaklaşık 26 × 9,5 × 3 mm ölçüsünde ve 0,26 g civarında ağırlıktadır. Bu bir sektör değeridir, Metal Form şartnamesi değildir."
+      },
+      "scaleLabel": "Ölçek çubuğu",
+      "stepsLabel": "Büyütme kademeleri",
+      "marks": {
+        "b": "b",
+        "h": "h",
+        "s": "s",
+        "theta": "θ",
+        "emitter": "26 mm"
+      },
+      "steps": [
+        {
+          "label": "Tarla parseli",
+          "scale": "20 m",
+          "note": "Lateraller bir manifolddan çıkarak sıraların boyunca uzanır. Bu ölçekte su bir dağıtım problemidir ve henüz hiçbir yönü bir kalıplama sorusu değildir."
+        },
+        {
+          "label": "Lateral",
+          "scale": "1 m",
+          "note": "Tek bir parçayı sabit aralıkla taşıyan tek bir boru. Aralık bir kolaylık değil, bir ürün şartnamesidir ve hat boyunca hiç değişmez."
+        },
+        {
+          "label": "Damlatıcı",
+          "scale": "10 mm",
+          "note": "Referans sınıfındaki yassı bir hat içi damlatıcı yaklaşık 26 × 9,5 × 3 mm'dir. Bir ucunda giriş filtresi, ortasında labirent, diğer ucunda çıkış."
+        },
+        {
+          "label": "Labirent",
+          "scale": "1 mm",
+          "note": "Hat basıncını damlaya çeviren kanal. Dört ticari silindirik damlatıcı üzerinde yayımlanmış ölçümler, akış yolu genişliklerini kabaca 0,89 ila 1,47 mm veriyor."
+        },
+        {
+          "label": "Tek diş",
+          "scale": "0,1 mm",
+          "note": "Genişlik b, yükseklik h, aralık s, açı θ. Aynı yayımlanmış sette diş yükseklikleri yaklaşık 1,13 ila 1,43 mm, aralık 2,37 ila 3,26 mm ve tepe açıları kabaca 37 ila 65 derece arasında."
+        }
+      ],
+      "sourceNote": "Bu listedeki ölçüler ticari damlatıcıların yayımlanmış ölçümleridir. Sektörün ürününü tarif ederler, Metal Form'un toleranslarını değil.",
+      "close": "Bu dizide hiçbir şey süs değildir. Son kare, bir sezonda birkaç yüz milyon kez tekrarlanan karedir ve çelikte var olan tek karedir."
+    },
+
+    "repeat": {
+      "index": "02",
+      "kicker": "Adet",
+      "heading": "Gözdeki bir hata ortalamaya karışmaz. Çoğaltılır.",
+      "body": "Bir damlatıcı bir kez üretilmez. Ekstrüzyon hattı boru ürettiği hızda, sürekli üretilir. Yayımlanmış bant ve damla sulama borusu hatları dakikada 180 ila 250 metre bandında çalışır; damlatıcılar da eşleşmiş hızda ve sabit aralıkla beslenir, yönlendirilir ve hâlâ ergimiş hâldeki boruya ısıyla kaynatılır.",
+      "body2": "Yani tüketim bir sipariş miktarı değildir. Dakikadaki metrenin aralığa bölümüdür. Göz ne yaparsa hat da onu yapar — hat çalıştığı sürece; ve hat kontrol etmek için durmaz.",
+      "railLabel": "Lateral, sabit aralıkta damlatıcılar. Sıra bu sayfanın iki kenarından da devam ediyor.",
+      "consequences": [
+        "Konumu bir kesir kadar kaymış bir akış yolu cidarı; her parçada, her metrede ve kalıbın ömrü boyunca kaymış demektir.",
+        "Besleme ünitesine takılan bir yolluk girişi izi, parça olarak hurdaya ayrılmaz. Bitmiş boru olarak, metreyle ve boru maliyetiyle hurdaya ayrılır.",
+        "Duran bir kalıp tek bir parçayı durdurmaz. Arkasında bekleyen ekstrüzyon hattını durdurur."
+      ],
+      "sourceNote": "Hat hızları yayımlanmış ekstrüzyon hattı şartnameleridir; burada sektöre ilişkin bir olgu olarak belirtilmiştir.",
+      "close": "Bu bölümün geri kalanının muayene değil çelik üzerine olmasının bütün nedeni budur. Parça; kötü bir kalıptan muayeneyle kurtulmak için fazla küçük, fazla ucuz ve fazla çoktur."
+    },
+
+    "labyrinth": {
+      "index": "03",
+      "kicker": "Akış yolu",
+      "heading": "Bütün mühendislik problemi o kanalın toleransıdır.",
+      "body": "Labirent, hat basıncını ardışık dişler üzerinden söndürür. Her diş bir dönüş zorlar, her dönüş enerjinin bir kısmını alır ve çıkıştan bir jet yerine bir damla çıkar. Elektronik yok, ayar yok, montaj yok. Mekanizma kanalın kendisidir ve mekanizma bir biçimdir.",
+      "body2": "Kanal öylece daraltılamaz. Ticari silindirik damlatıcılar üzerine yayımlanmış çalışmalar; daha dar, eğrisel sınırlı yolların daha az partikül ama daha çok kimyasal çökelti biriktirdiğini ve çökeltilerin yol boyunca eşit dağılmak yerine çıkış ucuna doğru yoğunlaştığını buldu. Geometri bir tıkanma mekanizmasını diğerine karşı takas eder; hiçbirini ortadan kaldırmaz.",
+      "figureLabel": "Dişli akış yolu, ortografik",
+      "marks": {
+        "b": "b",
+        "h": "h",
+        "s": "s",
+        "theta": "θ"
+      },
+      "params": [
+        {
+          "symbol": "b",
+          "name": "Akış yolu genişliği",
+          "value": "0,89 – 1,47 mm",
+          "note": "Suyun gerçekte kat ettiği geçit. Aynı anda hem hidroliği hem tıkanma hassasiyetini belirler; yalnızca biri için optimize edilememesinin nedeni budur."
+        },
+        {
+          "symbol": "h",
+          "name": "Diş yüksekliği",
+          "value": "1,13 – 1,43 mm",
+          "note": "Her dişin kanala ne kadar girdiği; dolayısıyla tek bir dönüşün akıştan ne kadar enerji aldığı."
+        },
+        {
+          "symbol": "s",
+          "name": "Diş aralığı",
+          "value": "2,37 – 3,26 mm",
+          "note": "Dişlerin yol boyunca adımı; dolayısıyla suyun giriş ile çıkış arasında yaptığı dönüş sayısı."
+        },
+        {
+          "symbol": "θ",
+          "name": "Diş açısı",
+          "value": "37 – 65°",
+          "note": "Tepe açısı. Aynı zamanda temiz işlenmesi, iz bırakmadan havalandırılması ve milyonlarca çevrim boyunca korunması en zor detaydır."
+        }
+      ],
+      "paramsSource": "Bu sütundaki değerler dört ticari silindirik damlatıcının yayımlanmış ölçümleridir. Sektör verisidir, Metal Form ölçümleri değildir.",
+      "callHeading": "Bu çizimin bozulduğu üç yer",
+      "calls": [
+        {
+          "n": "1",
+          "title": "Diş tepesinde çapak",
+          "note": "Su, yapması gereken dönüşü kısa devre yapar ve damlatıcı fazla su verir. Parça kutuda doğru görünür."
+        },
+        {
+          "n": "2",
+          "title": "Son dişlerde eksik dolum",
+          "note": "Yolun sonu, dolum basıncının en düşük ve diş tanımının en zayıf olduğu yerdir. Tamamlanmamış bir labirent az su verir ve görsel kontrolden yine geçer."
+        },
+        {
+          "n": "3",
+          "title": "Yolun çıkış ucu",
+          "note": "Yayımlanmış çalışmalar çökelti yoğunlaşmasını kanal boyunca eşit dağılmış değil, burada konumlandırıyor; bu da bu uçtaki yüzey durumunu ve havalandırma konumunu orantısız biçimde önemli kılıyor."
+        }
+      ],
+      "tolerance": {
+        "heading": "Onda bir milimetrelerle ölçülen bir kanalı, yüzde birlerle ölçülen bir çelik tutar.",
+        "body": "Yukarıdaki iki arıza da parça üzerinde görünmez ve tarlada apaçıktır; aylar sonra bir düzgünlük şikâyeti olarak gelir. Hiçbiri bir proses ayarı değildir. İkisi de profil işlenirken, havalandırılırken ve parlatılırken kararlaştırılır ve ikisi de çelik aşındıkça geri gelir. İnsertli yapının gerekçesi budur: aşınma, bir plakayla göğüslenecek bir şey değil, bir parça numarasıyla servis edilecek bir şey olmalıdır."
+      },
+      "diaphragm": {
+        "heading": "Basınç ayarı bir ikinci malzeme ve bir montaj adımı ekler",
+        "body": "Basınç ayarlı bir damlatıcı, akış yolunun üzerinde elastomer bir diyafram taşır. Giriş basıncı yükseldikçe diyafram kanala doğru esner, kesitini daraltır ve beyan edilen düzenleme aralığı boyunca debiyi kabaca sabit tutar. Ürün standardı bu davranışı bir sıfat olarak değil, bir üstel olarak ifade eder.",
+        "keys": [
+          "Gövdede kalıplanmış kanal",
+          "Diyafram, gevşek",
+          "Diyafram, basınç altında esnemiş"
+        ],
+        "boundary": "Basınç ayarlı damlatıcılar burada bir sektör kategorisi olarak geçer. Metal Form, bunların gerektirdiği üzeri kalıplama ya da çok malzemeli montaj konusunda iddiada bulunmaz."
+      },
+      "exponent": {
+        "heading": "Basınç ayarı, bir sayı olarak",
+        "formula": "q = k · p",
+        "formulaExp": "m",
+        "tabsLabel": "Damlatıcı üsteli",
+        "axisNote": "Yatay eksen: giriş basıncı. Dikey eksen: debi. İkisi de nominale göre normalize edilmiştir.",
+        "items": [
+          {
+            "id": "m0",
+            "name": "m = 0",
+            "summary": "Tam basınç ayarlı. Beyan edilen düzenleme aralığı içinde debi giriş basıncıyla değişmez; böylece uzun bir lateralin uzak ucu, yakın ucun verdiğini verir."
+          },
+          {
+            "id": "m05",
+            "name": "m = 0,5",
+            "summary": "Kısmen basınç ayarlı. Debi basınçla birlikte yine yükselir, ama basınca göre çok daha yavaş. Ayarın büyük bölümü bir diyaframla değil, geometriyle satın alınmıştır."
+          },
+          {
+            "id": "m1",
+            "name": "m = 1",
+            "summary": "Ayarsız. Debi basınçla doğrusal değişir. O zaman bir parselde düzgünlük bir hidrolik tasarım problemine dönüşür — lateral uzunluğu, eğim ve baştaki basınç."
+          }
+        ],
+        "note": "Ayarsız bir damlatıcı için nominal test basıncı, üretici aksini belirtmedikçe 100 kPa'dır. Üstel de test basıncı da damlatıcılara ilişkin ürün standardı ISO 9261'den alınmış tanımlardır. Ürünü tarif ederler. Metal Form'un sahip olduğu bir belge değildirler."
+      }
+    },
+
+    "cavities": {
+      "index": "04",
+      "kicker": "Aritmetik",
+      "heading": "Çıktı, göz sayısının çevrime bölümüdür. İki yarısı da oynar.",
+      "body": "Bir sezonda yüz milyonlarla tüketilen bir parça, parçayla satın alınmaz. Atımla satın alınır. Göz sayısı üzerine sektör yazıları, ilk sayıyı zorladığınızda ne olduğu konusunda açık sözlüdür: kalıp maliyeti orantılı değil, doğrusal olmayan biçimde yükselir; çevrim süresi sabit kalmaz, uzar; pres boyu ve saatlik maliyet kalıpla birlikte tırmanır ve yüksek gözlü kalıpların büyük bir bölümü hiçbir zaman tam göz sayısında çalışmaz.",
+      "body2": "Yani kazanç asla etiketteki oran kadar değildir. Yayımlanmış bir karşılaştırma, aynı parçanın dört gözlü kalıbını 35 saniyeye karşılık on altı gözlü hâlini 42 ila 48 saniyeye koyuyor — göz sayısı dört kat, çıktı ise üç kata daha yakın.",
+      "figureLabel": "Dengeli besleme, şematik. Bir nozul devre dışı.",
+      "figureNote": "Göz sayısı; bilinen bir prese ve bilinen bir hat hızına karşı verilen bir tekliftir. Bir çizim değildir ve bir manşet hiç değildir.",
+      "worst": {
+        "heading": "Atım, en kötü gözüne göre notlandırılır.",
+        "body": "Denge, sayıdan daha değerlidir. Ölü gözlerle çalışan bir plaka, kısmi bir atım için tam bir çevrim öder — her atımda ve kalıbın ömrünün geri kalanı boyunca. Büyük bir sıcak yolluklu kalıpta tıkanan tek bir nozul kalıbın tamamını bir anda indirir ve sektör yazıları bu kalıplarda soğuk başlangıç dengelenmesini saatlerle, düşük gözlü kalıplarda ise otuz ila doksan dakikayla veriyor.",
+        "points": [
+          "Büyük bir plaka boyunca yolluk ve ısıl dengesizlik baskın gizli maliyettir; çünkü kayma geçmişi her dallanmada değişir.",
+          "Gözler arasındaki soğutma farkı bir sıcaklık sorunu olarak görünmez. Önce ağırlık saçılımı, sonra debi saçılımı, sonra da bir müşteri şikâyeti olarak görünür.",
+          "Çeyrek gramlık bir parçada soğuk yolluk, beslediği parçalardan ağır gelebilir. Sektörün damlatıcılarda yolluksuz beslemeyi standartlaştırmasının ve başka pek az şeyde bunu yapmamasının nedeni budur.",
+          "Büyük bir kalıpta bir tasarım değişikliğinin her gözde birebir aynı yapılması gerekir ve besleme sisteminin de onunla birlikte elden geçirilmesi gerekebilir."
+        ]
+      },
+      "band": {
+        "heading": "Bizim bandımız nerede duruyor, nerede durmuyor.",
+        "body": "Bu sektörde damlatıcı kalıpları, bizim imal ettiğimizin epeyce üzerinde göz sayılarıyla teklif edilir. Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bu dürüst bir tavandır ve bir teklifin içinde keşfetmek zorunda kalmayın diye burada yazılıdır.",
+        "body2": "Aynı zamanda kalıplanan ailenin büyük bölümünün gerçekte çalıştığı banttır. Bağlantı parçaları, çıkış parçaları, sıkma gövdeleri, somunlar ve halkalar, hat sonu tıpaları, vana gövdeleri ve kolları, filtre gövdeleri ve disk elemanları, mikro yağmurlayıcı gövdeleri ve nozulları, boşalma önleyici ve basınç tahliye mekanizma parçaları. Çok gözlü kalıplar, sıcak ve soğuk yolluk, insertli kalıplar, sürgüler, lifterlar, diş sökücü ve katlanabilir maçalar burada doğrudan geçerlidir.",
+        "body3": "Tesisiniz damlatıcının kendisinde bundan yüksek göz sayısıyla çalışıyorsa, işe yarayan teklif başkadır. Tasarım aşamasında kalıpla birlikte tanımlanmış göz ve akış yolu insertleri ile bir yedek takımı. Tek bir kalıp ailesi içinde debi ve renk varyantları için değişim parçaları. Aynı teknik resimlere göre yapılmış ikiz kalıplar. Başkasının yaptığı ve halihazırda üretimde olan bir kalıp için sorun — cevap teknik resimlere ve çeliğe bağlıdır ve size iyimser değil, dosdoğru verilir.",
+        "note": "Kalıp garantisi, proje ve kalıp şartnamesi bazında kararlaştırılan şartlarla. Atım sayısı garantisi yok; çünkü sizinle mutabık kalmadığımız bir sayıyı yayımlamayız."
+      },
+      "sourceNote": "Bu bölümdeki göz sayısı ekonomisi, çevrim değerleri ve soğuk başlangıç süreleri yayımlanmış sektör yazılarıdır, Metal Form ölçümleri değildir."
+    },
+
+    "season": {
+      "index": "05",
+      "kicker": "Sezon",
+      "heading": "Kapasite, sezon zirvesinden önce var olmalıdır. Zirvenin içinde satın alınamaz.",
+      "body": "Sulama talebi bir seviye değil, bir profildir. Birkaç ay tam kapasite çalışmak zorunda olan hat, yılın geri kalanında sessiz durur. Bu profile göre sipariş edilen kalıp, profilden önce gelir. Bu profil yüzünden sipariş edilen kalıp ise profilin içinde gelir.",
+      "body2": "Zirvenin içinde duran bir kalıbın maliyeti onarım değildir. Arkasında bekleyen ekstrüzyon hattı, üretilmeyen boru, karşılanmayan sipariş ve kimse için kaymayan bir zaman penceresidir.",
+      "figureLabel": "İmalat zamanlamasına karşı talep profili",
+      "profileLabel": "Sezonluk talep",
+      "peakLabel": "Zirve",
+      "rails": [
+        {
+          "name": "Erken sipariş edildi",
+          "note": "Hat sessizken çelik işlenir ve teslim edilir. Kalıp gerçek malzemede ispatlanır, yedekler rafta durur ve zirve, aynı parçanın iki kaynağıyla açılır."
+        },
+        {
+          "name": "Geç sipariş edildi",
+          "note": "İmalat, hizmet etmesi gereken talebin içine girer. Teslimatın, devreye almanın ve ilk atım kalifikasyonunun her günü, sessiz aylardan değil, o pencereden çıkar."
+        }
+      ],
+      "axisNote": "Görelidir, takvim değildir. Sezon, bu sayfanın okunduğu her pazarda başka bir aya denk gelir; bu yüzden çizimde tarih de teslim süresi de yoktur.",
+      "second": {
+        "heading": "İkinci kaynak, açık açık",
+        "points": [
+          "Ürün başına tek kalıp demek, tek bir arızanın ürünü durdurması demektir.",
+          "Aynı teknik resimlere göre yapılmış ikiz bir kalıp, bir kalıp arızasını bir kalıp değişimine dönüştürür.",
+          "Değiştirilebilir parça olarak tasarlanmış akış yolu ve göz insertleri, hasar gören bir gözün plakanın tamamını mahkûm etmesini önler.",
+          "Yedekler sezondan önce hazırda tutulur. Sezonun içinde sipariş etmek bir yedek politikası değildir.",
+          "İkinci kalıp, kapasitenin zirvede kiralanamadığı bir pazarda sahip olduğunuz kapasitedir.",
+          "Aynı zamanda kendi geometrinizdir; iki yerde ve sizin belirlediğiniz şartlarla tutulur."
+        ],
+        "readiness": "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir; size hangisinin teklif edildiğini açıkça söyleriz."
+      }
+    },
+
+    "material": {
+      "index": "06",
+      "kicker": "Malzemeler",
+      "heading": "Güneş ışığı bir yük durumudur. Sudaki gübre de öyle.",
+      "body": "Malzeme şartnamesini herhangi bir enjeksiyoncudan önce ürün standardı belirler. Malzemelerin gübrelere ve tarımsal sulamada yaygın kullanılan kimyasallara dayanması ve 60 °C'ye kadar sıcaklıktaki suya uygun olması gerekir. Işığa maruz kalan parçalar opak ve UV bozunmasına karşı korunmuş olmalı, mümkün olduğunca yosun ve bakteri üremesini desteklememelidir.",
+      "body2": "Burada renk kozmetik olduğu kadar işlevseldir de. Standart, nominal debinin damlatıcının bir parçasının rengiyle gösterilmesine izin verir; bu da masterbatch tutarlılığını bir yüzey işi olmaktan çıkarıp bir şartname hâline getirir.",
+      "tableLabel": "Malzeme tablosu",
+      "columns": ["Malzeme", "Kullanım yeri", "Belirleyen", "Maruziyet ve ömür"],
+      "rows": [
+        {
+          "name": "PP",
+          "use": "Bağlantı parçası gövdeleri, somunlar ve sıkma halkaları, filtre gövdeleri, disk elemanları, mikro yağmurlayıcı gövdeleri ve köprüleri",
+          "governs": "Diş formu, sızdırmazlık yüzeyi düzlüğü, cidar kesiti ve ıslak bir hendekte bir elin uygulayabileceği kuvvet",
+          "exposure": "Yıllarca yer üstünde. Ya opak ve UV korumalıdır ya da satıldığı tesisatın ömrünü çıkaramaz."
+        },
+        {
+          "name": "PE",
+          "use": "Lateraller ve bant, boruya kaynatılan damlatıcı gövdeleri, tırtıllı çıkış parçaları, hat sonu tıpaları ve yıkama parçaları",
+          "governs": "Boru cidarıyla kaynak uyumu, çalışma sıcaklığındaki rijitlik, sürekli birim uzama altındaki davranış",
+          "exposure": "Yer üstünde ve altında. Geçmeli tip bağlantı parçalarında çevresel gerilme çatlaması klasik uzun vadeli arızadır."
+        },
+        {
+          "name": "POM",
+          "use": "Vana iç parçaları, boşalma önleyici ve basınç tahliye elemanları, dişli mekanizma parçaları",
+          "governs": "Ölçüsel kararlılık, hareketli bir yatağa karşı sürtünme, sürekli yük altında sünme",
+          "exposure": "Genellikle kapalı. Compound tarafından değil, gövde tarafından korunur."
+        },
+        {
+          "name": "PA",
+          "use": "Dişli ve yaylı detaylar, daha yüksek yüklü mekanizma parçaları",
+          "governs": "Rijitlik, diş mukavemeti, nem alımı ve onu izleyen ölçüsel değişim",
+          "exposure": "Kapalı ya da gölgede. Öyle olmadığı yerde işi stabilizatör paketi yapar."
+        },
+        {
+          "name": "Elastomer",
+          "use": "Basınç ayarlı diyaframlar",
+          "governs": "Kanala esneme ve yıllarca süren basınç çevrimi boyunca kalıcı deformasyon",
+          "exposure": "Damlatıcının içinde kapalı. Burada anlatılan sektör uygulamasıdır, bir Metal Form yetkinliği değildir."
+        }
+      ],
+      "uv": {
+        "heading": "UV, sektörün kendi diliyle",
+        "body": "Karbon siyahı; gömülü ve açıkta çalışan poliolefin sulama ürünlerinde standart ve en ekonomik UV stabilizatörü olmayı sürdürüyor. Ultraviyoleyi soğurur ve serbest radikal oluşumunu yavaşlatır; yayımlanmış kılavuzlar katkı oranlarını kesit kalınlığına ve maruziyete göre tipik olarak yüzde 2 ila 2,5 bandında veriyor — ve sonucu katkı oranı kadar dağılım kalitesinin de belirlediğini açıkça söylüyor."
+      },
+      "boundary": "Malzeme compound etmiyor, stabilize etmiyor, renk eşleştirmiyor ve ömür testi yapmıyoruz; bir ömür de belgelendirmiyoruz. Belirlediğiniz malzemeyi kalıplarız ve bir cidar kesitinin, bir yolluk girişi konumunun ya da bir birleşme izinin seçtiğiniz stabilizatör paketiyle nerede çatışacağını size söyleriz.",
+      "sourceNote": "Burada anılan standart gereklilikleri ve stabilizatör oranları yayımlanmış sektör uygulamalarıdır. Metal Form bunların hiçbirine karşı belgeye sahip değildir."
+    },
+
+    "boundary": {
+      "index": "07",
+      "kicker": "Kapsam",
+      "heading": "Önleyebildiğimiz kusurlar, ilk atımdan önce çelikte önlenir.",
+      "body": "Bir kalıp, bu sektörde ters giden şeylerin bir kısmını düzeltir, geri kalanının hiçbirini düzeltmez. Hangisinin hangisi olduğunu sipariş vermeden önce bilmek, hepsini düzeltmeyi teklif eden bir tedarikçiden daha değerlidir. Dürüst ayrım budur ve teklif verirken de aynı ayrıma göre çalışırız.",
+      "ours": {
+        "heading": "Bizim ve hesabını veririz",
+        "items": [
+          "Diş tepesindeki çapak ve onunla gelen kısa devre olmuş labirent",
+          "Diş tanımının en zayıf olduğu yerde, akış yolunun sonundaki eksik dolum",
+          "Birleşme izlerinin, cephelerin denk geldiği yere değil; akış yolu cidarlarından ve sızdırmazlık yüzeylerinden uzağa bilinçle yerleştirilmesi",
+          "Yolluk girişi konumu ve izi; en kolay dolan yere göre değil, süreç sonundaki besleme, yönlendirme ve kaynak üzerinden savunularak",
+          "Milimetre altı bir kanalın, suyun temas ettiği yüzeyde iz bırakmadan havalandırılması",
+          "Sert itilemeyecek kadar hafif bir parçanın itilmesi ve kalıptan hangi yönde çıktığı",
+          "Plaka boyunca dengeli besleme ve simetrik soğutma; çünkü soğutma farkı önce ağırlık, sonra debi olarak okunur",
+          "Aşınmanın, bir plakanın sonuna kadar göğüslenmesi yerine değiştirilebilir insertlerle servis edilmesi"
+        ]
+      },
+      "yours": {
+        "heading": "Sizin ve aksini iddia etmeyiz",
+        "items": [
+          "Su kimyası. Kalsiyum, magnezyum ve demir; kanalı kim işlemiş olursa olsun akış yolunun içinde çökelir.",
+          "Filtrasyon. Bu geçitleri korumak için yaygın uygulama yaklaşık 120 mesh, kabaca 130 mikrondur; kullanılabilir bant ise 80 ila 200 mesh'tir. Bu, kontrol başında alınan bir sistem kararıdır, bir kalıp kararı değil.",
+          "Arıtılmış ya da geri kazanılmış suyun kullanıldığı yerlerde baskın olan biyolojik kirlenme.",
+          "Yer altı hatlarında kök girişi. Gerçektir ve beş yıllık bir şeker kamışı çalışması bunu toplam tıkanmanın yüzde 5'inin altına koydu — yani bazen satıldığı kadar büyük bir başlık değildir.",
+          "Debi, CV, damlatıcı üsteli ve su dağılım düzgünlüğü. Bunları sizin test düzeneğiniz ve hattınız ispatlar. Biz test etmeyiz ve belgelendirmeyiz.",
+          "Agronomi, aralık, parsel hidroliği ve tarla montajı.",
+          "Ekstrüzyon hatları, yerleştirme üniteleri, kaynak istasyonları ve bandın kendisi. Bunları imal etmiyoruz ve teklif vermiyoruz."
+        ]
+      },
+      "never": {
+        "heading": "Size söylemeyeceklerimiz",
+        "items": [
+          "Parçayı görmeden bir tasarruf yüzdesi vermeyiz.",
+          "Sizin teknik resminize karşı mutabık kalmadığımız bir toleransı beyan etmeyiz.",
+          "Presinizi, kontrol ünitenizi, hat hızınızı ve bakım disiplininizi bilmeden bir göz sayısı söylemeyiz.",
+          "Damlatıcılara ilişkin ürün standardına karşı hiçbir belgemiz yoktur ve olduğunu ima etmeyiz.",
+          "Mevcut parçanız zaten doğruya yakınsa alacağınız cevap budur."
+        ]
+      },
+      "close": "Su kimyası, filtrasyon, biyolojik kirlenme ve kök girişi birer kalıp sorunu değildir; öyleymiş gibi size kalıp satmayız. Bir kalıbın karar verdiği şeye bir kalıp bir kez karar verir — çelikte, ilk atımdan önce."
+    },
+
+    "work": {
+      "index": "08",
+      "kicker": "Çalışma biçimi",
+      "heading": "Parçayı gönderin. Firmadan değil, geometriden başlarız.",
+      "body": "Bu istasyonların yanındaki çizgi, bu bölümün başındaki labirentin düzleştirilmiş hâlidir. Sırayla dört istasyon ve hiçbiri sizin elinizde kusursuz veri olmasına bağlı değil.",
+      "figureLabel": "Düzleştirilmiş yol",
+      "stations": [
+        {
+          "label": "Geometri",
+          "note": "Parçayı, teknik resmi, ölçeklendirebileceğimiz bir ölçüsü olan bir fotoğrafı ya da bir metre bandı gönderin. Kullanılabilir 3B veri yoksa numuneden tersine mühendislik yaparız. Akış işlevine, sızdırmazlık yüzeylerine, cidar kesitlerine ve parçanın süreç sonunda beslemede ve kaynakta nasıl davranması gerektiğine bakarız."
+        },
+        {
+          "label": "Rota",
+          "note": "Geri gelen şey; bir göz ve insert stratejisi, bir besleme sistemi önerisi — sıcak yolluk, soğuk yolluk ya da karma; varsayılmadan, bu parçaya göre değerlendirilmiş — ve her tercihin gerekçesiyle birlikte bir kalıp rotasıdır. 48 iş saati içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
+        },
+        {
+          "label": "İmalat",
+          "note": "CATIA ve SolidWorks'te tasarım. Parçanın gerektirdiği yerlerde çok gözlü kalıplar, insertli kalıplar, sürgüler, lifterlar, diş sökücü ve katlanabilir maçalar; arkalarında CNC frezeleme, tornalama ve manuel talaşlı imalat. Proje ve kalıp şartnamesi için kararlaştırılan şartlarla kalıp garantisi."
+        },
+        {
+          "label": "Tedarik",
+          "note": "Kalıp yerine parça satın almayı tercih ederseniz parça üretimi ve sürekli tedarik. Kalıptan sonra değil, kalıpla birlikte tanımlanan yedekler ve değişim parçaları. Tek bir ürün hattının arkasındaki tek kalıbı taşımamaya karar verdiğiniz yerde ikiz ya da ikinci kaynak kalıbı. Dünya geneline sevkiyat."
+        }
+      ],
+      "factsLabel": "Doğrulanmış",
+      "facts": [
+        "2006'dan beri üretim",
+        "1.000'den fazla tamamlanmış proje",
+        "46 göze kadar kalıp deneyimi",
+        "CATIA ve SolidWorks",
+        "Ayrıntılı paylaşımdan önce NDA",
+        "Dünya geneline sevkiyat"
+      ],
+      "close": "Bu sektörde ürün, damlatıcı geometrisinin kendisidir ve rutin olarak kopyalanır. Biz de öyle ele alırız: önce gizlilik, teknik resimler saklanır ve ikinci kalıp bizim değil, sizin teknik resimlerinize göre yapılır."
+    },
+
+    "panels": {
+      "heading": "Daha ayrıntılı",
+      "items": [
+        {
+          "title": "Ürün standardının bir damlatıcıdan istedikleri",
+          "bullets": [
+            "Yıkama sırasında hariç, çıkış başına 24 l/h'ten fazla su vermeyen damlatıcılar ve damlatıcılı borular için geçerlidir.",
+            "Damlatıcılar hat içi, hat üstü ya da boruda oluşturulmuş olarak ve ayarlı ya da ayarsız olarak sınıflandırılır.",
+            "Ayarsız bir damlatıcı için nominal test basıncı, üretici aksini belirtmedikçe 100 kPa'dır.",
+            "Test numunesi boyunca debinin imalat değişkenlik katsayısı yüzde 7'yi aşmamalı ve numune ortalaması beyan edilen nominalin ±%7'si içinde kalmalıdır; test 25 damlatıcı ya da damlatma birimi üzerinde yapılır.",
+            "Basınca karşı davranış bir üstel olarak ifade edilir: q = k · pᵐ; m = 0 tam basınç ayarlı, m = 1 ise basınçla doğrusal değişendir.",
+            "Malzemelerin gübrelere ve tarımsal sulamada yaygın kullanılan kimyasallara dayanması ve 60 °C'ye kadar sıcaklıktaki suya uygun olması gerekir.",
+            "Işığa maruz kalan parçalar opak ve UV bozunmasına karşı korunmuş olmalı, mümkün olduğunca yosun ve bakteri üremesini desteklememelidir.",
+            "Damlatıcılı boru üzerindeki işaretler en fazla 5 m aralıkla tekrarlanır ve nominal debi, damlatıcının bir parçasının rengiyle meşru biçimde gösterilebilir."
+          ],
+          "source": "Kaynak: ISO 9261:2004, damlatıcılar ve damlatıcılı borular için ürün standardı. Burada ürüne ilişkin bir olgu olarak belirtilmiştir. Metal Form bu standarda karşı belgeye sahip değildir, damlatıcıları bu standarda göre test etmez ve kapsamında onay iddia etmez."
+        },
+        {
+          "title": "Milimetre cinsinden akış yolu",
+          "bullets": [
+            "Dört ticari silindirik damlatıcı üzerinde yayımlanmış ölçümler, akış yolu genişliklerini kabaca 0,89 ila 1,47 mm veriyor.",
+            "Aynı çalışmada diş yükseklikleri yaklaşık 1,13 ila 1,43 mm, aralık kabaca 2,37 ila 3,26 mm ve tepe açıları kabaca 37 ila 65 derece arasında.",
+            "Saha uzmanları damlatıcı iç akış yollarını daha geniş biçimde kabaca 0,5 ila 2 mm olarak anıyor.",
+            "Çökeltiler kanal boyunca eşit dağılmak yerine yolun çıkış ucuna doğru yoğunlaşır.",
+            "Daha dar, eğrisel sınırlı yollar daha az partikül ama daha çok kimyasal çökelti biriktirdi — geometri bir tıkanma mekanizmasını diğeriyle takas eder.",
+            "Bu geçitleri korumak için yaygın pratik filtrasyon yaklaşık 120 mesh, kabaca 130 mikrondur; kullanılabilir bant 80 ila 200 mesh'tir.",
+            "Bu listedeki her satır, bir kalıbın tutmak ve milyonlarca çevrim boyunca tutmaya devam etmek zorunda olduğu bir ölçüdür."
+          ],
+          "source": "Bu panodaki değerler yayımlanmış sektör ölçümleri ve yayımlanmış saha kılavuzlarıdır, Metal Form ölçümleri değildir."
+        },
+        {
+          "title": "Gramın kesri nereye gidiyor",
+          "bullets": [
+            "Atım ağırlığı, çevrim başına hammadde kütlesidir; parçalar ve yolluk birlikte. Bu sınıftan yayımlanmış yassı bir hat içi damlatıcı yaklaşık 26 × 9,5 × 3 mm ve kabaca 0,26 g'dır.",
+            "Bu ağırlıktaki bir parçada soğuk yolluk, beslediği parçalardan ağır gelebilir — sektörün damlatıcılarda yolluksuz beslemeyi standartlaştırmasının nedeni budur.",
+            "Göz sayısı çıktıyı çoğaltır ama orantılı olarak değil: çevrim uzar, pres boyu ve saatlik maliyet yükselir ve tek bir onarım her şeyi aynı anda durdurur.",
+            "Sektör yazıları büyük sıcak yolluklu kalıplarda soğuk başlangıç dengelenmesini saatlerle, düşük gözlü kalıplarda otuz ila doksan dakikayla veriyor.",
+            "Ölü gözlerle çalışan bir kalıp, kısmi bir atım için tam bir çevrim öder — her atımda ve ömrünün geri kalanı boyunca.",
+            "Yayımlanmış kalıp maliyeti kılavuzları on altı gözlü bir kalıbı tek gözlünün on altı katı değil, kabaca beş katı olarak veriyor — maliyet eğrisi hiçbir yönde doğrusal değildir.",
+            "Bu sektörde birim maliyet tasarım aşamasında kararlaştırılır ve sonra birkaç yüz milyon kez ödenir."
+          ],
+          "source": "Bu panodaki değerler yayımlanmış sektör uygulamalarıdır. Tasarruf yüzdeleri yayımlamıyoruz ve parçanızı görmeden sizinkini hesaplamayız."
+        }
+      ]
+    }
+  },
+
+  "cta": {
+    "headline": "Parçayı gönderin. Ya da teknik resmi. Ya da bir metre bandı.",
+    "body": "Bir kalıp rotası, bir göz ve insert stratejisi ve ikisinin de gerekçesiyle dönüş yaparız. 48 iş saati içinde ilk teknik dönüş. Talep hâlinde NDA. Proje bazında kararlaştırılan şartlarla kalıp garantisi. Dünya geneline sevkiyat.",
+    "action": "Projenizi gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form — sulama parçası hakkında.\n\nParça: damlatıcı / bağlantı parçası / konnektör / çıkış parçası / mikro yağmurlayıcı / vana veya filtre parçası\nMalzeme: \nYaklaşık yıllık adet: \nŞu anda bunu [ ] kalıpta üretiyoruz\nİhtiyacım: yeni kalıp / ikiz kalıp / insert ve yedekler / parça tedariki\n\n3B veri ve fiziksel numune gönderebilirim.",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+  }
+}

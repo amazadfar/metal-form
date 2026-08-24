@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "Toys & Consumer Goods Tooling — Metal Form",
+    "description": "Injection mould design and manufacture for consumer products and toys. DFM and redesign for moulding, family and multi-cavity tooling, colour and finish specification, technical mechanisms, ongoing component supply and second-source tooling. Persian engineering since 2006. Response within 48 business hours."
+  },
+  "name": "Toys & Consumer Goods",
+  "tile": "Productisation: from an idea, a sample or a 3D print to a tooled part at a unit cost that works. Part consolidation, family tools and the cost of volume.",
+  "tileParts": "Productisation · Family tools · Volume",
+  "hero": {
+    "kicker": "Toys & Consumer Goods",
+    "headline": ["The unit cost is decided", "in the steel."],
+    "lead": "Consumer products and toys, from a sketch, a sample or CAD to tooled production. Send the part. We evaluate the geometry, the tooling route, the production economics and the supply options.",
+    "markers": [
+      "Productisation from a sketch, a sample or CAD",
+      "Family tools and interchangeable cavity inserts",
+      "Tooling experience up to 46 cavities"
+    ]
+  },
+
+  "blocks": {
+    "stack": {
+      "figureLabel": "Exploded assembly, one axis",
+      "thesis": "Cavity count sets seconds per part. Wall thickness sets the cooling that dominates the cycle. Both are fixed in the week the tool is designed, and both are paid again on every shot for as long as the product sells.",
+      "partsLabel": "Parts list",
+      "parts": [
+        {
+          "no": "1",
+          "name": "Upper shell",
+          "spec": "ABS · 1 CAV · VDI 24",
+          "note": "The show face. Gated on the B-side, weld lines steered off the snap arms, draft matched to the texture the designer chose."
+        },
+        {
+          "no": "2",
+          "name": "Lens",
+          "spec": "PC · 4 CAV · POLISH",
+          "note": "Every flow mark is visible through the part rather than only on it. High-polish cavity, tight thickness control, gate position decided early."
+        },
+        {
+          "no": "3",
+          "name": "Button",
+          "spec": "ABS · 8 CAV",
+          "note": "Small, high cavitation, cosmetically exposed. It has to move in a hole without rattling or binding, so gate vestige and tolerance stack both matter."
+        },
+        {
+          "no": "4",
+          "name": "Chassis",
+          "spec": "PP · 1 CAV",
+          "note": "Never seen, always blamed. Cored bosses, rib support and weld-line position decide whether the product survives a drop or an over-tightened screw."
+        },
+        {
+          "no": "5",
+          "name": "Lower shell",
+          "spec": "ABS · 1 CAV · VDI 24",
+          "note": "Consumed one-to-one with the upper shell, which is what makes the pair a family-tool candidate rather than two separate tools."
+        },
+        {
+          "no": "6",
+          "name": "Hinged lid",
+          "spec": "PP · 2 CAV",
+          "note": "Living hinge, moulded as one piece with its own body. No pin, no separate lid, no assembly step."
+        }
+      ],
+      "meta": ["6 moulded parts", "3 tools", "PP / ABS / PC", "VDI 24"],
+      "caption": "Illustrative consumer product, drawn for this figure. The part count, materials, cavity counts and finish grades are not taken from a project.",
+      "proofLabel": "On record",
+      "proof": [
+        "Manufacturing since 2006",
+        "1,000+ completed projects",
+        "Tooling experience up to 46 cavities",
+        "CATIA and SolidWorks",
+        "Initial technical response within 48 business hours"
+      ]
+    },
+
+    "intake": {
+      "index": "01",
+      "kicker": "Intake",
+      "heading": "A photograph is enough to start.",
+      "body": "You do not need finished CAD to have this conversation. Four inputs arrive here and all four converge on one first deliverable: a read on whether the geometry moulds, what it takes to tool it, and what the part costs afterwards.",
+      "nodeLabel": "Geometry read",
+      "lanesLabel": "Four inputs",
+      "lanes": [
+        {
+          "no": "1",
+          "name": "A sketch or a photograph",
+          "action": "We build the CAD, then read it.",
+          "need": "Two or three views and one dimension we can scale from."
+        },
+        {
+          "no": "2",
+          "name": "A physical sample",
+          "action": "Reverse engineering into production CAD, then the same read.",
+          "need": "The part itself. A competitor's part works the same way."
+        },
+        {
+          "no": "3",
+          "name": "3D data",
+          "action": "Straight to geometry review.",
+          "need": "STEP, IGES or native CATIA and SolidWorks files."
+        },
+        {
+          "no": "4",
+          "name": "A part you already sell",
+          "action": "We work out how it was made and what a duplicate tool would take.",
+          "need": "The part, the annual volume and the markets it ships to."
+        }
+      ],
+      "close": "What comes back is the geometry read, the tooling route, the production economics and the supply options. Initial technical response within 48 business hours. An NDA can be signed before detailed technical disclosure.",
+      "figureNote": "Convergence schematic. Every route ends at the same first deliverable."
+    },
+
+    "consolidate": {
+      "index": "02",
+      "kicker": "Part count",
+      "heading": "Three mouldings and a pin become one part.",
+      "body": "Part consolidation is a tooling decision taken before steel is cut. Merging components removes a tool, removes a purchased fastener, and removes an assembly operation that would otherwise be paid on every unit for the life of the product.",
+      "body2": "Published examples of the practice are blunt about the scale of it: a multi-piece drill housing rebuilt as a single moulding with an integrated handle, battery receptacle and motor guard; six shaft hangers totalling forty-two parts consolidated into one moulded component. Those are industry-published outcomes, not Metal Form results.",
+      "beforeLabel": "As drawn",
+      "afterLabel": "As tooled",
+      "transitionLabel": "consolidate",
+      "before": {
+        "heading": "As drawn",
+        "rows": [
+          { "value": "3", "label": "Moulded parts" },
+          { "value": "1", "label": "Purchased pin" },
+          { "value": "3", "label": "Tools" },
+          { "value": "1", "label": "Assembly operation" }
+        ]
+      },
+      "after": {
+        "heading": "As tooled",
+        "rows": [
+          { "value": "1", "label": "Moulded part" },
+          { "value": "0", "label": "Purchased pin" },
+          { "value": "1", "label": "Tool" },
+          { "value": "0", "label": "Assembly operations" }
+        ]
+      },
+      "consequenceHeading": "What actually disappears",
+      "consequences": [
+        "One tool, with its correction rounds, its maintenance interval and its spare cores",
+        "One purchased component, with its inbound lead time and its own minimum order quantity",
+        "One assembly operation, paid on every unit for as long as the product sells",
+        "One tolerance stack, between two parts that no longer have to meet",
+        "One failure mode: a pin that works its way out"
+      ],
+      "cautionHeading": "Where it stops being free",
+      "caution": "Consolidation is not automatically the right answer. One part means one material, one colour and one wall discipline across geometry that used to be three separate compromises, and it concentrates the whole product into a single tool that has to be corrected as a whole. It is worth doing where the parts share a material and a function. It is worth refusing where they do not, and we will say so.",
+      "figureNote": "Consolidation schematic. A hinge pin, a separate lid and a body become one moulding with a living hinge."
+    },
+
+    "volume": {
+      "index": "03",
+      "kicker": "Amortisation",
+      "heading": "Tooling is one number divided by a number you do not have yet.",
+      "body": "A moulded part's price is an identity: resin, plus press time divided by cavity count, plus handling and any secondary operation, plus yield loss, plus the tool spread across the programme. Only the last term moves with volume, and it moves hard.",
+      "railLabel": "Tooling cost per part, as annual volume rises",
+      "axisLabel": "units / year",
+      "rungs": [
+        {
+          "volume": "2,000",
+          "title": "Launch or validation",
+          "note": "The tool is the dominant term in the piece price, and it should be. At this volume the tool is not buying parts, it is buying information: a process window, a first sample in a buyer's hand, and a market answer."
+        },
+        {
+          "volume": "10,000",
+          "title": "Proving the product",
+          "note": "The tool still shows in every part. Low cavitation, in a steel that will still be serviceable when the volume arrives, is usually worth more than the cheapest tool available."
+        },
+        {
+          "volume": "50,000",
+          "title": "Amortisation stops being the argument",
+          "note": "The tooling term flattens out. Cycle time and cavity count take over as the numbers that decide the price, and they are geometry decisions, not commercial ones."
+        },
+        {
+          "volume": "250,000",
+          "title": "Seconds per part is the price",
+          "note": "This is where higher cavitation starts to recover its own steel, and where the thickest section on the part becomes an expensive place to have been generous."
+        },
+        {
+          "volume": "1,000,000",
+          "title": "Commodity arithmetic",
+          "note": "Cavity count, nominal wall and runner-to-part weight ratio are the whole conversation. Metal Form has tooling experience up to 46 cavities, which is the band this end of the category actually runs in."
+        }
+      ],
+      "flipHeading": "Where the family tool flips",
+      "flipLabel": "family tool flips",
+      "flip": "A family tool puts different cavities — an upper and a lower shell, a body and a lid — in one block, and it is usually chosen for price. It is the right answer while the parts are consumed in a fixed ratio and have comparable wall sections and shot volumes. Put a heavy part and a light part in the same tool and the runner packs one while it starves the other. Past the volume where each part wants its own cavitation, the family tool stops being a saving and becomes a constraint: one cavity needing correction takes every part off the press at once.",
+      "modelHeading": "What this rail is and is not",
+      "model": "The rail is drawn to shape, not to price. Your tooling cost per part is your tool divided by the parts you actually make, and nobody can draw that for you on a web page. One published illustrative model runs the same arithmetic three ways — a very low-volume tool over a hundred parts, a machined aluminium tool over five thousand, a steel tool over a hundred thousand — and the tooling term in the piece price falls roughly fivefold across that span. That is a teaching figure from a published industry source. It is not a quotation, and it is not our number.",
+      "close": "We run this arithmetic against the volume you will really do this year, then against ten times that, and we say plainly when the bigger tool does not pay back inside the programme's life. Sometimes the right answer is a smaller tool now and a production tool when the order book is real.",
+      "figureNote": "Amortisation schematic. Relative shape only — no currency, no quotation."
+    },
+
+    "ledger": {
+      "index": "04",
+      "kicker": "Before steel",
+      "heading": "Five things arrive drawn wrong.",
+      "body": "None of these are preferences. They are what the material does on its way out of the cavity. All five are cheap to fix in the week before the tool is designed and expensive to fix in any week after it.",
+      "drawnLabel": "As drawn",
+      "fixedLabel": "As tooled",
+      "items": [
+        {
+          "no": "01",
+          "title": "The undercut",
+          "drawn": "A hook, a lip or a side hole the tool cannot pull straight off.",
+          "fixed": "Redesigned away where the styling survives it, or priced honestly as a slide, a lifter or an unscrewing core.",
+          "cost": "Every undercut you keep is tool cost, cycle time and a wear item with a service interval attached. Some are worth it. Most were drawn without anyone knowing the price."
+        },
+        {
+          "no": "02",
+          "title": "The wall",
+          "drawn": "A wall that thickens where the designer wanted strength and thins where the surface had to sweep.",
+          "fixed": "One nominal wall, everything else dimensioned from it, ribs proportioned to it and radiused at the root, bosses cored rather than solid.",
+          "cost": "The thickest section on the part sets the cooling time, and cooling is most of the cycle. Published guidance keeps the thinnest section at roughly 40–60% of the thickest and runs flow thick to thin. A solid boss gives you a sink, a void and a boss that splits under a self-tapping screw."
+        },
+        {
+          "no": "03",
+          "title": "The draft",
+          "drawn": "Vertical walls, because vertical walls look correct on a screen.",
+          "fixed": "Draft on every face parallel to the opening direction, matched to the finish that face will carry.",
+          "cost": "Published practice puts half a degree as a minimum on a polished wall and two degrees as far better behaved, with textured faces needing substantially more. Without it you get drag and scrape lines down the show face, and parts that stay in the cavity."
+        },
+        {
+          "no": "04",
+          "title": "The tolerance",
+          "drawn": "Machined-metal tolerances copied onto a moulding, called on dimensions that do no work.",
+          "fixed": "Tolerance the features that locate, seal, retain or carry load. Standard ranges everywhere else, and a datum chosen so error does not accumulate across the part.",
+          "cost": "ISO 20457 defines nine tolerance grades and separates tool-related from non-tool-related dimensions; DIN 16742 gives the general tolerances for mouldings. Published practical bands run roughly ±0.02 mm very tight to ±0.35 mm loose at 0–20 mm nominal, widening with size. Precision on a decorative dimension buys inspection and rejection and nothing else."
+        },
+        {
+          "no": "05",
+          "title": "The colour",
+          "drawn": "A colour approved from a screen or a printed swatch, then argued about when the first samples land.",
+          "fixed": "A Pantone or RAL reference, a physical chip, a measured tolerance agreed in writing, and a regrind percentage agreed before the first production run.",
+          "cost": "The same masterbatch does not give the same shade in ABS and in PP — the resin's own base colour, gloss and pigment absorption all move the result. Colour route follows volume, and the minimums attached to each route are usually the surprise."
+        }
+      ],
+      "close": "Design change after steel is cut is the single largest schedule and budget event in a consumer programme. That is why the geometry read comes first, and why it is the cheapest line on the whole job.",
+      "figureNote": "Correction schematics. Geometry exaggerated for legibility.",
+      "deltaLabel": "ΔE"
+    },
+
+    "detail": {
+      "index": "05",
+      "kicker": "Magnification",
+      "heading": "Two features decide whether the product survives being used.",
+      "body": "Both are moulded in rather than bought. Both replace hardware and an assembly step. Both are strain problems rather than shape problems, and at product scale both are invisible until they fail — which is why they are drawn here at magnification.",
+      "tabsLabel": "Feature",
+      "legendLabel": "Callouts",
+      "items": [
+        {
+          "id": "snap",
+          "name": "Cantilever snap-fit",
+          "summary": "A moulded arm with a hook that deflects during assembly and returns. It is the closure, the retention and the service access, all in one feature that costs nothing to buy.",
+          "callouts": [
+            { "no": "1", "name": "Arm", "note": "Length and section set the deflection available. Too short and it is strained past the material's elastic limit at assembly; too long and it relaxes under load and the housing rattles." },
+            { "no": "2", "name": "Hook and interference", "note": "The interference is the dimension that assembles the product. It is also the first dimension to change as the tool wears, so late parts fit differently from early ones unless it is designed with that in mind." },
+            { "no": "3", "name": "Root radius", "note": "The highest-stress point on the whole feature. A sharp root is where the arm breaks, usually somewhere between the hundredth part and the ten-thousandth." },
+            { "no": "4", "name": "Weld line", "note": "Steered away from the arm root deliberately. Cosmetically it is a line; structurally it is a crack initiation site, and on a snap arm it is directly in the load path." }
+          ],
+          "scope": "We design the arm and the tool together, name the wear items, and specify the spare cores before the tool runs rather than after it stops."
+        },
+        {
+          "id": "hinge",
+          "name": "Living hinge",
+          "summary": "A thin flexed section moulded integrally, so a lid and a body leave the tool already joined. A textbook consolidation: no pin, no separate lid, no assembly operation.",
+          "callouts": [
+            { "no": "1", "name": "Hinge land", "note": "A thin land with generous radii either side. Too thick and it will not fold; too sharp and it splits on the first flex or whitens on the hundredth." },
+            { "no": "2", "name": "Flow direction", "note": "Gated so the melt runs through the hinge rather than across it. Flow direction decides molecular orientation across the land, and orientation decides whether the hinge lasts thousands of cycles or a hundred." },
+            { "no": "3", "name": "Material", "note": "Polypropylene is the working choice here. The hinge depends on the polymer's ability to orient across a thin flexed section, which is not a property every consumer resin has." },
+            { "no": "4", "name": "First flex", "note": "Published practice flexes the hinge while the part is still warm, immediately after ejection. A hinge that is left to cool unflexed behaves differently for the rest of its life." }
+          ],
+          "scope": "The hinge, the gate position and the tool are one decision, made together. We do not tool a hinge and hope the gate lands somewhere convenient."
+        }
+      ],
+      "note": "Geometry, materials and practice described in this section are published industry engineering, not Metal Form measurements.",
+      "figureNote": "Feature schematic at magnification. Deflection shown dashed."
+    },
+
+    "surface": {
+      "index": "06",
+      "kicker": "Surface",
+      "heading": "Texture and draft are one decision.",
+      "body": "On a consumer product the surface is the product. It is also the hardest thing to change once the cavity is cut: texture is burned into the steel by EDM with a shaped electrode, and it cannot be added afterwards without reworking the tool.",
+      "body2": "The grade you choose sets the draft you owe. Choose the texture first and the geometry adapts to it. Choose the geometry first and you get whatever texture the draft will allow.",
+      "rowLabel": "VDI 3400 reference grades",
+      "colGrade": "Grade",
+      "colRa": "Ra, approximate",
+      "colDraft": "Draft owed",
+      "grades": [
+        { "grade": "VDI 18", "ra": "≈ 0.80 µm", "draft": "under 1.5°", "anchor": false },
+        { "grade": "VDI 21", "ra": "≈ 1.12 µm", "draft": "under 1.5°", "anchor": false },
+        { "grade": "VDI 24", "ra": "≈ 1.60 µm", "draft": "1.5 – 2.0°", "anchor": true },
+        { "grade": "VDI 27", "ra": "≈ 2.24 µm", "draft": "over 2.0°", "anchor": false },
+        { "grade": "VDI 33", "ra": "≈ 4.50 µm", "draft": "approaching 4.0°", "anchor": false },
+        { "grade": "VDI 36", "ra": "≈ 6.30 µm", "draft": "4.0° and up", "anchor": true }
+      ],
+      "anchorNote": "Two of these are published anchors: roughly 1.5 – 2.0° of draft at VDI 24, and at least 4.0° at VDI 36. The rest scale between them, and filled grades want more again. Grades, Ra values and draft angles are approximate by definition — they get confirmed against the standard and against a physical sample before a cavity is textured. They are published industry practice, not Metal Form measurements.",
+      "colourHeading": "Colour is a specification, not an approval",
+      "colourBody": "The failure here is not one bad part. It is a range that no longer matches itself on a shelf, because the colour was agreed as an opinion rather than as a number.",
+      "driftLabel": "The same colour, lot to lot",
+      "driftNote": "Specify against a Pantone or RAL reference and a physical chip. Agree a measured colour tolerance in writing before production, so that 'close enough' stops being an opinion. Agree the regrind percentage at the same time — regrind moves colour as well as mechanical consistency.",
+      "routesLabel": "Three colour routes, and what each one costs you",
+      "routes": [
+        {
+          "name": "Pre-compounded resin",
+          "volume": "High volume",
+          "note": "Colour compounded into the pellet before it reaches the press. The most consistent shade lot to lot, and the most expensive per kilogram."
+        },
+        {
+          "name": "Masterbatch",
+          "volume": "Mid volume",
+          "note": "Concentrate let down into natural pellets — a 24:1 let-down ratio is a commonly cited example. Cheaper per kilogram, with minimums measured in tonnes, which is how brands end up writing off colour they never used."
+        },
+        {
+          "name": "Hopper blending",
+          "volume": "Short runs only",
+          "note": "Pigment blended with natural pellets at the machine. The cheapest and the least controlled: dispersion, pigment burning and moisture are all in play, and streaking shows first on light colours."
+        }
+      ],
+      "colourBoundary": "Colour route, colour house and material supply are commercial decisions that sit with you unless we agree otherwise in the order. We engineer the geometry, the gate and the tool around the colour and finish you specify.",
+      "figureNote": "Surface profile schematic. Vertical scale exaggerated."
+    },
+
+    "boundary": {
+      "index": "07",
+      "kicker": "Scope",
+      "heading": "We engineer to your requirement. We do not certify your product.",
+      "body": "Children's products and consumer goods are governed by market requirements that differ by territory. Naming them is category literacy. Meeting them is the brand owner's obligation and their testing house's judgement, and no mould shop can take that off you.",
+      "standardsHeading": "Named here as industry facts, and nothing more",
+      "standards": [
+        { "name": "ASTM F963", "note": "The consumer safety specification for toy safety in the United States, mandatory under CPSIA." },
+        { "name": "EN 71", "note": "The European toy safety standard, applied under CE marking." },
+        { "name": "ISO 8124", "note": "The international toy safety series, used where neither of the above governs." },
+        { "name": "Small-parts cylinder", "note": "The fixture that simulates the throat of a child under 36 months and decides whether a component — or a piece liberated by use-and-abuse testing — counts as a choking hazard." }
+      ],
+      "standardsNote": "Metal Form holds no toy or consumer product safety approval, performs no product testing, and makes no compliance claim of any kind.",
+      "supplyHeading": "What Metal Form supplies",
+      "supply": [
+        "A manufacturability read on a sketch, a photograph, a physical sample or a CAD file",
+        "Reverse engineering into production CAD where there are no drawings",
+        "Redesign for moulding: nominal wall, rib and boss proportion, draft matched to finish, undercut removal, part consolidation",
+        "Mould design and manufacture in CATIA and SolidWorks — injection, PET, blow and die-cast tooling",
+        "Multi-cavity and family tools, hot and cold runner, insert tooling, slides, lifters, unscrewing and collapsible cores",
+        "Interchangeable cavity inserts, so one tool carries several SKU, branding or market variants",
+        "Technical mechanisms — hinges, latches, ratchets, gear trains, sliders and click stops — designed and tooled as a working assembly",
+        "CNC milling, turning and manual machining; spares and change parts",
+        "Component production and rolling supply once the tool is proven",
+        "Second-source and duplicate tooling, proved against the parts you sell today",
+        "International delivery, an NDA before detailed disclosure, and tooling warranty on terms agreed per project"
+      ],
+      "keepHeading": "What stays with you",
+      "keep": [
+        "Testing, certification and compliance sign-off, through your own testing house",
+        "The requirement itself — feature sizes, joint retention, captive fasteners, no liberated parts. You state it; we engineer the geometry to it",
+        "Market access, and the differences between territories: one component specification does not automatically serve every market you sell into",
+        "Decoration. Printing, labelling, plating and finishing are downstream steps. We design the tool knowing they are coming; we do not perform them",
+        "Product-level approval, labelling and the declarations that go with it",
+        "The commercial decision on volume, colour minimums and how much steel to buy before the product has proven itself"
+      ],
+      "line": "Metal Form engineers geometry to a requirement you state. We do not test finished products, we do not certify them, and we do not sign off compliance. If a supplier tells you they will, ask whose accreditation stands behind it."
+    },
+
+    "after": {
+      "index": "08",
+      "kicker": "After sign-off",
+      "heading": "A tool's life is counted in shots, not months.",
+      "body": "First samples are a checkpoint, not a delivery. Sign-off is when the process window is agreed, not when the first good part appears. Everything after that is measured against the tool rather than against a calendar.",
+      "axisLabel": "Shots",
+      "events": [
+        {
+          "mark": "T0 / T1",
+          "title": "First samples",
+          "note": "Dimensional and cosmetic review, against the drawing and against the part in your hand. Correction rounds are part of the job, not the beginning of a dispute."
+        },
+        {
+          "mark": "T2",
+          "title": "Correction and re-sample",
+          "note": "Steel added, steel removed, gate and cooling adjusted. Then the samples that actually get signed."
+        },
+        {
+          "mark": "SIGN-OFF",
+          "title": "The process window is agreed",
+          "note": "Not the first good part. The settings that reliably make good parts, written down so somebody else can reproduce them."
+        },
+        {
+          "mark": "PILOT",
+          "title": "Pilot run",
+          "note": "The first parts made the way production will make them, in the colour production will use, on the material production will run."
+        },
+        {
+          "mark": "RAMP",
+          "title": "Production ramp",
+          "note": "Cavity-to-cavity consistency matters more here than any absolute dimension: a mating pair taken from two different cavities still has to assemble."
+        },
+        {
+          "mark": "SERVICE",
+          "title": "First service interval",
+          "note": "Wear items and spare cores identified before the tool runs, not after it stops. Published steel shot-life bands — a pre-hardened grade cited at roughly 80,000 to 150,000 shots, hardened grades higher again — are supplier-typical figures, never guarantees. The maintenance interval is what decides real tool life."
+        },
+        {
+          "mark": "SUPPLY",
+          "title": "Rolling supply",
+          "note": "Once the tool is proven, the component arrives without a project attached to it each time."
+        },
+        {
+          "mark": "SECOND TOOL",
+          "title": "Second source",
+          "note": "One tool, at one supplier, on one site, in one country is the standard consumer-goods single point of failure. We build the second tool, prove it against the parts you sell today, and hold it ready in a different country under NDA. This is readiness, not reserved capacity — capacity is reserved by contract or not at all, and we will say which."
+        }
+      ],
+      "close": "Tooling warranty terms are defined per project and per mould specification. Tool ownership, storage and transfer belong in the order, not in a conversation eighteen months later."
+    },
+
+    "panels": {
+      "heading": "Deeper detail",
+      "items": [
+        {
+          "title": "Wall, rib and boss",
+          "bullets": [
+            "Hold one nominal wall and dimension every other feature from it.",
+            "Published guidance keeps the thinnest section at roughly 40–60% of the thickest, with flow running thick to thin.",
+            "Ribs proportioned to the wall and radiused at the root; an over-thick rib is a sink on the opposite face.",
+            "Bosses cored and supported by ribs, never solid — a solid boss gives you a sink, a void and a boss that splits under a self-tapping screw.",
+            "Radius every wall transition; sharp internal corners concentrate stress and disturb flow.",
+            "The thickest section on the part sets the cooling time, and cooling dominates the cycle.",
+            "On deep cores — a cup, a grip, a battery well — the core is the hot spot and needs baffles or bubblers rather than a perimeter circuit."
+          ],
+          "source": "Figures in this panel are published industry practice, not Metal Form measurements."
+        },
+        {
+          "title": "Cavitation and the crossover",
+          "bullets": [
+            "Seconds per part equals cycle time divided by cavity count, and that ratio is most of the piece price.",
+            "A higher-cavitation tool only wins when the saved seconds recover the extra steel inside the programme's life.",
+            "Multi-cavity tools need a runner system; direct gating is not available, so gate vestige becomes a design decision rather than an accident.",
+            "Small parts favour sub or tunnel gates, so the runner separates at ejection and there is no manual degating operation to pay for forever.",
+            "Hot runner against cold runner is decided on runner-to-part weight ratio and colour-change frequency, not on tooling price.",
+            "Family tools work where parts are consumed in a fixed ratio and have comparable wall sections and shot volumes.",
+            "Interchangeable cavity inserts handle SKU, branding and market variants without a second tool.",
+            "Metal Form has tooling experience up to 46 cavities."
+          ],
+          "source": "Cavitation bands and runner economics quoted here are published industry practice."
+        },
+        {
+          "title": "Tolerance on a moulded part",
+          "bullets": [
+            "Machined-metal tolerances do not transfer: moulded dimensions are governed by shrinkage, tool geometry and process variation.",
+            "ISO 20457 defines nine tolerance grades and separates tool-related from non-tool-related dimensions; DIN 16742 gives general tolerances for mouldings; DIN 16901 remains widely quoted.",
+            "Published practical bands run roughly ±0.02 mm very tight to ±0.35 mm loose at 0–20 mm nominal, roughly ±0.03 to ±0.40 at 20–50 mm, and roughly ±0.04 to ±0.60 at 50–120 mm.",
+            "Error grows with distance from the datum, which is why datum choice matters more than the tolerance number written next to it.",
+            "Filled grades shrink anisotropically: a stiffer part, and more warp on flat panels.",
+            "Tolerance the dimensions that do a job. Standard ranges elsewhere."
+          ],
+          "source": "Standards and bands cited here are published industry practice, not tolerances Metal Form guarantees."
+        }
+      ]
+    }
+  },
+
+  "cta": {
+    "headline": "Send the part.",
+    "body": "A photo, a hand sketch, a physical sample, a STEP file or a part you already sell. We come back inside 48 business hours with the geometry read, the tooling route and the production economics. NDA on request.",
+    "action": "Send your project",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form. I have a consumer product I want to tool. Product: [what it is]. Stage: [sketch / prototype / CAD / already in production elsewhere]. Annual volume: [units per year]. Material: [if known]. Can you review the geometry and propose a tooling route?",
+    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "metal-form",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "build:fast": "astro build",
+    "preview": "astro preview --host",
+    "check": "astro check",
+    "fonts": "node scripts/fetch-fonts.mjs",
+    "check:content": "node scripts/check-content.mjs",
+    "shots": "node scripts/shots.mjs",
+    "seed": "node scripts/seed-industry-content.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "check:a11y": "node scripts/check-a11y.mjs",
+    "audit": "node scripts/audit-components.mjs",
+    "verify": "astro check && astro build && node scripts/check-content.mjs && node scripts/audit-components.mjs && node scripts/check-links.mjs",
+    "og": "node scripts/make-og.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.2.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@axe-core/playwright": "^4.13.0",
+    "axe-core": "^4.13.0",
+    "playwright": "^1.62.1",
+    "sharp": "^0.34.2",
+    "typescript": "^5.7.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "sharp@0.34.5": true
+  }
+}

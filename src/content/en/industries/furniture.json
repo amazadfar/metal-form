@@ -1,0 +1,544 @@
+{
+  "meta": {
+    "title": "Furniture Component Tooling and Moulded Parts | Metal Form",
+    "description": "Injection tooling and moulded components for furniture: castors, chair bases, glides, mechanisms, connectors, runner parts and shells. Engineering, DFM, mould manufacture and ongoing supply. Response within 48 business hours."
+  },
+  "name": "Furniture & Decor",
+  "tile": "Castors, mechanisms, glides and fittings that carry load and get sat on. Rib design, glass-filled materials and part consolidation that takes assembly labour out.",
+  "tileParts": "Castors · Mechanisms · Fittings",
+  "hero": {
+    "kicker": "Furniture & Decor",
+    "headline": [
+      "A furniture part is judged twice.",
+      "On the shelf, and after a hundred thousand cycles."
+    ],
+    "lead": "Castors, chair bases, glides, mechanisms, connectors, runner parts, shells and trim. Send the part. We evaluate the geometry, the load case, the tooling route, the finish and the production economics."
+  },
+  "blocks": {
+    "hero": {
+      "plate": "FD-01",
+      "caption": "Swivel castor in elevation. The load path from stem to floor.",
+      "labels": {
+        "load": "load",
+        "reaction": "reaction",
+        "stem": "stem",
+        "raceway": "raceway",
+        "fork": "fork",
+        "tread": "tread",
+        "offset": "offset"
+      },
+      "rail": [
+        "Manufacturing since 2006",
+        "1,000+ completed projects",
+        "Tooling experience to 46 cavities",
+        "CATIA and SolidWorks",
+        "International delivery",
+        "NDA on request"
+      ]
+    },
+    "objects": {
+      "index": "01",
+      "kicker": "The objects",
+      "heading": "Furniture plastic is two businesses in one catalogue.",
+      "body": "Small hardware — glides, caps, cams, dowels, clips, shelf supports — is sold by the million, and its price is set by cavitation and a disciplined runner. Large parts — bases, shells, seats, table components — are sold by the shot, and their price is set by wall thickness and cycle time. Most furniture programmes contain both. That is why the tooling strategy is decided part by part, never project by project.",
+      "listLabel": "Part families",
+      "rows": [
+        {
+          "code": "FD-02",
+          "name": "Twin-wheel and single-wheel castors",
+          "note": "Hub, tread, fork, swivel raceway and stem — usually two materials and two tools. The socket the stem snaps into is often moulded into the chair base itself, which makes the pair a tolerance problem rather than two separate parts."
+        },
+        {
+          "code": "FD-03",
+          "name": "Five-star chair bases",
+          "note": "The highest-value moulding in office seating and the most demanding. Glass-filled polyamide or filled polypropylene, deep ribs, a taper bore for the gas lift, five sockets. Gate position decides where the weld line lands at the arm-to-column transition."
+        },
+        {
+          "code": "FD-04",
+          "name": "Seat shells and backrests",
+          "note": "Long flow length, a cosmetic surface across the whole part, integrated flex zones and moulded-in colour. This is where tiger striping and gloss variation appear if the melt has too far to travel."
+        },
+        {
+          "code": "FD-05",
+          "name": "Mechanism housings, levers and covers",
+          "note": "Acetal and polyamide parts running against metal, plus the covers that hide them. Small, tight and high-cavitation: on these the tool sets the price, not the resin."
+        },
+        {
+          "code": "FD-06",
+          "name": "Glides, feet and levelling feet",
+          "note": "Fractions of a unit each, millions a year. Entirely a cavitation-and-runner problem, and the retention geometry has to hold across the full tolerance band of the tube or leg it fits, not just the nominal."
+        },
+        {
+          "code": "FD-07",
+          "name": "Cams, dowels and knock-down connectors",
+          "note": "The core of flat-pack and ready-to-assemble furniture. Judged on holding force, on how the cam feels at lock, and on dimensional consistency into a 5 mm or 8 mm bore."
+        },
+        {
+          "code": "FD-08",
+          "name": "Drawer runner and damper components",
+          "note": "Rollers, retainer clips, front-fixing brackets, end stops and soft-close damper bodies, usually acetal for friction and wear. On these parts cycle life is the specification."
+        },
+        {
+          "code": "FD-09",
+          "name": "Cable management, cover caps and trim",
+          "note": "Desk grommets, port bezels, cable spines, flap covers, clips and trays. Low structural demand, high colour-match demand, and a category that changes with every desk range."
+        }
+      ],
+      "close": "Also: armrest carriers, sliders and latches; hinge cover caps and mounting plates; tube ferrules and leg inserts; shelf supports and pegs; table and frame connectors; screw caps, edge trims and decorative bezels; lamp bodies, planter shells and moulded screens."
+    },
+    "loadpath": {
+      "index": "02",
+      "kicker": "The load path",
+      "heading": "Load enters at the column and leaves at the floor.",
+      "body": "A five-star base carries a person, a gas lift and a swivel. In plan the route is simple: down the column, out through five arms, into five sockets, into five castors. The part is only as good as the four places that route has to pass through.",
+      "plate": "FD-10",
+      "labels": {
+        "load": "load",
+        "reaction": "reaction",
+        "column": "column",
+        "socket": "socket",
+        "weld": "weld line"
+      },
+      "calloutsLabel": "Four places it breaks",
+      "callouts": [
+        {
+          "n": "1",
+          "title": "The arm-to-column transition",
+          "body": "Where two melt fronts meet, the fibres turn across the flow instead of reinforcing it, and the notch at the meeting front concentrates the stress. Published work on reinforced nylons puts the loss at roughly nothing to 17 per cent in an unfilled grade, and 50 per cent or more at about 30 per cent glass. That is not a refinement. It can be half the part."
+        },
+        {
+          "n": "2",
+          "title": "The screw boss",
+          "body": "A thread-forming screw cuts its own thread and generates hoop stress doing it. With no cored centre, no fillet at the base, or a pilot hole outside the screw maker's figure, the boss splits — usually on the second assembly rather than the first."
+        },
+        {
+          "n": "3",
+          "title": "Sustained load",
+          "body": "Nothing in furniture is loaded once. Published creep data puts polypropylene at around 1.5 per cent strain over a year at about 5 MPa at room temperature. Long-term design uses creep modulus, not the short-term figure on the datasheet. This is the sagging shelf, the splayed leg and the base that has developed a wobble."
+        },
+        {
+          "n": "4",
+          "title": "Rib termination",
+          "body": "An abrupt section change is a crack front waiting for the fatigue rig. Ribs are terminated with a radius and the wall is stepped rather than dropped, or the transition becomes the first thing to fail."
+        }
+      ],
+      "sourceNote": "Figures quoted in this section are published industry practice, not Metal Form measurements.",
+      "close": "Three of these four are settled by gate position, wall and radius — that is, at tool design, months before the first shot. Send the load case with the part: what carries what, in which direction, for how long."
+    },
+    "rib": {
+      "index": "03",
+      "kicker": "Rib and boss",
+      "heading": "A rib as thick as the wall behind it prints on the visible face.",
+      "body": "Sink is the most common cosmetic rejection on a furniture part, and it is a geometry problem rather than a moulding problem. The rib shrinks after the wall around it has frozen and pulls the visible surface in behind it. The same arithmetic decides whether a boss survives a screw.",
+      "wrong": {
+        "plate": "FD-11",
+        "title": "As drawn",
+        "labels": {
+          "wall": "wall",
+          "rib": "rib",
+          "sink": "sink",
+          "crack": "crack",
+          "boss": "boss",
+          "t": "t",
+          "ratio": "1.0 t"
+        },
+        "note": "Rib at full wall thickness, square into the wall. Boss walls thickened and set straight onto the underside with no radius at the foot. The rib prints through to the visible face. The boss splits at the base under a thread-forming screw, usually on the second assembly."
+      },
+      "right": {
+        "plate": "FD-12",
+        "labels": {
+          "wall": "wall",
+          "rib": "rib",
+          "fillet": "fillet",
+          "core": "core",
+          "t": "t",
+          "ratio": "0.6 t"
+        },
+        "title": "As it should be",
+        "note": "Rib proportioned to the wall and drafted, radius at the base. Boss cored, filleted at the foot, its wall proportioned to the nominal wall rather than to the screw. The aim is the same stiffness without the heavy section that causes the sink, the split and the long cooling time."
+      },
+      "rulesHeading": "Published design guidance",
+      "rules": [
+        {
+          "k": "Working wall",
+          "v": "4.5 – 12.7 mm on thick-wall structural mouldings; 6.35 mm cited as the optimum"
+        },
+        {
+          "k": "Rib thickness",
+          "v": "60 – 120 % of the wall it stands on, depending on the wall band"
+        },
+        {
+          "k": "Boss outside diameter",
+          "v": "1.6 – 2.0 × the cored hole"
+        },
+        {
+          "k": "Fillet at the boss foot",
+          "v": "roughly 1.5 – 3 mm"
+        },
+        {
+          "k": "Inside radius",
+          "v": "about 0.6 × wall; not below 1.5 mm, and 3 mm on load and impact sections"
+        },
+        {
+          "k": "Draft",
+          "v": "0.5 – 3°; 1° untextured, 2° textured, plus 1° for every 0.025 mm of texture depth"
+        }
+      ],
+      "rulesNote": "Published guidance for thick-wall structural mouldings, converted from the source's imperial figures. Industry practice, not Metal Form measurements — your part gets its own numbers from its own load case.",
+      "close": "The stiffness a designer wants from a thick wall is usually available from a thinner wall and a correct rib, and the heavy section that sets the cooling time goes with it. On a part carried over from a wood or metal predecessor, that is normally the first change we propose."
+    },
+    "fatigue": {
+      "index": "04",
+      "kicker": "Load and fatigue",
+      "heading": "The test is not the first load. It is the hundred-thousandth.",
+      "body": "Furniture is sold into a test-report culture. The cycle counts below are what furniture engineers quote from memory when they specify a component. They belong to the customer's programme, not to ours: the finished product is tested, by the customer's laboratory, against the customer's standard.",
+      "plate": "FD-13",
+      "labels": {
+        "load": "load",
+        "flex": "flex",
+        "column": "column",
+        "cycles": "cycles"
+      },
+      "cyclesCaption": "Cycle expectations quoted in the sector",
+      "cycles": [
+        {
+          "n": "≈ 100,000",
+          "label": "Seat and back fatigue",
+          "note": "The count commonly quoted against EN 1335 for office seating."
+        },
+        {
+          "n": "≈ 120,000",
+          "label": "Office chair fatigue",
+          "note": "The count commonly quoted against BIFMA X5.1. Premium programmes specify higher."
+        },
+        {
+          "n": "50,000 – 60,000",
+          "label": "Five-star base swivel",
+          "note": "Swivel testing quoted at roughly 10 revolutions per minute. Cycle counts on this page are the published test regimes, not our results."
+        },
+        {
+          "n": "Tens of thousands",
+          "label": "Soft-close drawer parts",
+          "note": "The rated cycle life normally published for damper and runner components."
+        }
+      ],
+      "standardsHeading": "The test families your product meets",
+      "standards": [
+        "EN 1728",
+        "EN 12520",
+        "EN 16139",
+        "EN 581-2",
+        "EN 1730",
+        "EN 12521",
+        "EN 16122",
+        "EN 14749",
+        "EN 1022",
+        "BIFMA X5.1",
+        "BIFMA X5.5",
+        "BIFMA X5.9"
+      ],
+      "standardsNote": "Static load, fatigue cycling, impact and tip-over. These are your obligations and your accreditations, never ours. We design the part around the sequence it has to survive; we do not test it and we do not certify it.",
+      "glass": {
+        "heading": "Where glass fill changes the answer",
+        "body": "Glass raises stiffness and cuts creep, which is exactly what a load-bearing furniture part needs. It also makes the weld line the design constraint, because at the meeting front the fibres turn ninety degrees to the flow and reinforce nothing.",
+        "barsCaption": "Published loss of bulk strength at a weld line",
+        "bars": [
+          {
+            "label": "Unfilled polyamide",
+            "value": "0 – 17 %",
+            "pct": 17
+          },
+          {
+            "label": "About 30 % glass",
+            "value": "50 % or more",
+            "pct": 50
+          }
+        ],
+        "note": "The published mitigations are known and none of them are free: raise mould and melt temperature within the degradation limits, fill faster, raise the packing pressure, keep release agents off the tool. The one that costs nothing is made at tool design — put the gate where the weld line lands somewhere that carries nothing."
+      },
+      "close": "A part that passes at ten thousand cycles and fails at eighty thousand was designed against the wrong number. Tell us the standard the finished product will be tested to, and the part gets designed around it rather than around the drawing."
+    },
+    "consolidation": {
+      "index": "05",
+      "kicker": "Part count",
+      "heading": "The plastic is not the expensive part. The minute is.",
+      "body": "On furniture, the labour to assemble the finished product is often a larger line than the mouldings in it. Every fastener a moulded snap feature removes comes straight off the assembly minute, on every unit, for the life of the range. That is what buys tooling budget, and it is the argument a furniture buyer responds to fastest.",
+      "before": {
+        "plate": "FD-14",
+        "title": "As specified",
+        "tally": [
+          {
+            "k": "Mouldings",
+            "v": "4"
+          },
+          {
+            "k": "Fasteners",
+            "v": "6"
+          },
+          {
+            "k": "Assembly operations",
+            "v": "9"
+          }
+        ]
+      },
+      "after": {
+        "plate": "FD-15",
+        "title": "As consolidated",
+        "tally": [
+          {
+            "k": "Mouldings",
+            "v": "2"
+          },
+          {
+            "k": "Fasteners",
+            "v": "1"
+          },
+          {
+            "k": "Assembly operations",
+            "v": "3"
+          }
+        ]
+      },
+      "caption": "Schematic. The counts illustrate the argument; they are not a measured case.",
+      "tradeoff": {
+        "heading": "What consolidation costs",
+        "body": "Snap features are not free. They buy undercuts, and undercuts buy slides, lifters and a more complicated tool. The trade is worth making where the part is assembled once and never opened again. It is worth refusing where the part will be serviced, or where a customer will open it in the field and a broken hook becomes a warranty return. We will say which of the two we think you have."
+      },
+      "close": "Send the assembly, not only the part. On a furniture programme the parts nobody asked us to quote are usually where the consolidation is, and we cannot see them if we only see one drawing."
+    },
+    "finish": {
+      "index": "06",
+      "kicker": "Surface and colour",
+      "heading": "Colour is a materials problem. The tool cannot fix it.",
+      "body": "A furniture range has to match across mouldings, across base materials and across years, and buyers treat that as a hard gate rather than a preference. The mould decides gloss, grain, draft and where a gate blush lands. It does not decide colour. Colour is pigment, carrier, let-down percentage and dispersion, and it drifts for reasons that live on the moulding floor and in the masterbatch, not in the steel.",
+      "matrix": {
+        "caption": "Texture grade against range colour",
+        "columns": [
+          {
+            "code": "VDI 12",
+            "note": "polished"
+          },
+          {
+            "code": "VDI 24",
+            "note": "fine grain"
+          },
+          {
+            "code": "VDI 30",
+            "note": "matte"
+          },
+          {
+            "code": "VDI 36",
+            "note": "coarse"
+          }
+        ],
+        "rows": [
+          "Bone",
+          "Oat",
+          "Olive",
+          "Walnut"
+        ],
+        "draftLabel": "Draft it demands",
+        "draft": [
+          "≈ 1°",
+          "1.5 – 2°",
+          "2 – 3°",
+          "≥ 4°"
+        ],
+        "note": "Drawn as an illustration of the relationship between grade and draft, not as a colour or texture reference. A real match is made against a physical plaque under agreed light."
+      },
+      "specHeading": "The language of a furniture finish specification",
+      "spec": [
+        {
+          "k": "Texture standard",
+          "v": "VDI 3400, roughly VDI 12 to VDI 45"
+        },
+        {
+          "k": "Roughness band",
+          "v": "Ra ≈ 0.40 – 18 µm, logarithmic; about six VDI numbers doubles it"
+        },
+        {
+          "k": "Colour tolerance",
+          "v": "Delta E of about 1 is the common industry pass/fail"
+        },
+        {
+          "k": "Reference",
+          "v": "A retained master plaque, judged under agreed light"
+        },
+        {
+          "k": "Everyday drift",
+          "v": "Let-down percentage error, poor dispersion, hopper static"
+        }
+      ],
+      "points": [
+        "Texture sets draft. Around 1.5 to 2 degrees at a moderate grade, at least 4 degrees at a coarse one. The grade is therefore a geometry decision and it has to be agreed before the cavity is finished — a texture chosen after the steel is cut is a tool modification, not a finishing operation.",
+        "Texture also hides. A grain diffuses reflection and covers minor sink and gate blemish. High gloss shows everything, including the ejector marks.",
+        "Two base materials in one range need two masterbatch formulations to read as one colour. A polypropylene glide and an ABS trim cap in the same nominal colour are two different jobs.",
+        "Long-flow polypropylene shells are where tiger striping appears — alternating gloss and matt bands across the flow, worst on filled and pigmented compounds. It is a flow problem and it is fought at the gate, not at the paint shop."
+      ],
+      "boundaryNote": "What we do not do here: we do not operate colour measurement equipment and we do not certify a colour. We design the tool so the part can be moulded in every colour in the range without a geometry consequence, and we work to the plaque and the let-down percentage you or your masterbatch supplier specify.",
+      "sourceNote": "Draft angles, VDI grades and roughness values on this page are published industry practice, not Metal Form measurements. The figures for your part belong to your texture house and your steel."
+    },
+    "tooling": {
+      "index": "07",
+      "kicker": "The tooling decision",
+      "heading": "Cavity count is decided once and paid for the life of the range.",
+      "body": "Cavitation is a commercial decision dressed as an engineering one. A hardware part tooled at 8 cavities when the volume justified 32 carries the wrong price on every thousand pieces until the range is discontinued. It is set by annual volume and part size, and by nothing else — least of all by the tool budget.",
+      "ruler": {
+        "caption": "Cavity bands by part class",
+        "axisLabel": "cavities",
+        "marker": "46",
+        "markerNote": "Metal Form tooling experience runs to 46 cavities.",
+        "plate": "FD-16"
+      },
+      "bands": [
+        {
+          "range": "1 – 2",
+          "cls": "Large structural and cosmetic",
+          "note": "Bases, shells, seats, backs, table components. The argument moves off cavitation entirely and onto wall, cooling, cycle time and press size."
+        },
+        {
+          "range": "4 – 16",
+          "cls": "Mid-size functional",
+          "note": "Mechanism housings, runner components, connectors, carriers. Balanced filling is the controlling requirement here, not the cavity count."
+        },
+        {
+          "range": "20 – 46",
+          "cls": "Small hardware",
+          "note": "Glides, caps, cams, dowels, clips, shelf supports. High cavitation and a disciplined runner are the only route to a competitive price per thousand."
+        }
+      ],
+      "runner": {
+        "heading": "Hot or cold",
+        "hot": {
+          "name": "Hot runner",
+          "note": "Where cavitation is high, colour changes are frequent, or the gate has to sit exactly where the weld line must be controlled. Removes runner regrind and shortens the cycle."
+        },
+        "cold": {
+          "name": "Cold runner",
+          "note": "Where volumes are moderate, the grade is heavily filled and abrasive, or the part is small enough that runner waste is not the dominant cost."
+        },
+        "balance": "On a multi-cavity hardware tool the real question is neither: it is balance. An unbalanced runner produces cavity-to-cavity dimensional and colour differences, and those arrive at your line as a fit problem at assembly rather than as a moulding defect anyone reports."
+      },
+      "family": {
+        "heading": "One tool, a whole size range",
+        "body": "A catalogue of tube caps, ferrules or levelling feet is usually better served by one mould base with interchangeable inserts than by six separate tools. The investment is made once and the range extends by cutting an insert."
+      },
+      "ask": "Send the annual volume with the part. Without it a tooling proposal gets built around the tool price, which is the one number that stops mattering after the first year."
+    },
+    "supply": {
+      "index": "08",
+      "kicker": "Supply and scope",
+      "heading": "The part still has to exist in year seven.",
+      "body": "A furniture range is exposed by its smallest single-sourced part. A glide, a cam housing or a castor socket that only one supplier can produce will stop an assembly line as effectively as a missing frame — and a discontinued range still under warranty needs spares from somewhere.",
+      "ledgerHeads": {
+        "risk": "The exposure",
+        "route": "The route"
+      },
+      "ledger": [
+        {
+          "risk": "One single-sourced small part can stop the whole assembly line.",
+          "route": "Backup or duplicate tooling, built before it is needed rather than during the shortage."
+        },
+        {
+          "risk": "A part still in production, with no usable drawings and no available tool.",
+          "route": "Reverse engineering from the sample or from a photograph, back to CAD in CATIA or SolidWorks."
+        },
+        {
+          "risk": "The range is discontinued and still inside its warranty period.",
+          "route": "Component production and rolling supply against call-offs, including the small batches at the end of the tail."
+        },
+        {
+          "risk": "The tool sits with a supplier you no longer want to work with.",
+          "route": "A second tool you control, built to your specification, with spares and change parts specified alongside it."
+        },
+        {
+          "risk": "The range is unreleased and the geometry is commercially sensitive.",
+          "route": "NDA and confidentiality as standard, from the first drawing you send us."
+        }
+      ],
+      "boundary": {
+        "heading": "What we supply, and what stays with you",
+        "lead": "The scope limit is the useful part of this page. A supplier who is vague about it now will be vague about it at the point where it costs you a launch date.",
+        "ours": {
+          "heading": "Metal Form supplies",
+          "items": [
+            "Product engineering and CAD in CATIA and SolidWorks, from concept geometry to a mouldable part",
+            "Reverse engineering from a sample or a photograph where no drawing survives",
+            "Design for manufacture: wall, ribs, boss geometry, draft against texture, gate and weld-line placement",
+            "Mould design and manufacture — injection, PET, blow and die-cast tooling, multi-cavity, hot and cold runner, insert tooling",
+            "Slides, lifters, unscrewing and collapsible cores for undercut and threaded geometry",
+            "CNC milling, turning and manual machining",
+            "Component production and rolling supply, second-source and duplicate tooling, spares and change parts",
+            "International delivery, tooling warranty with terms set per project, NDA and confidentiality"
+          ]
+        },
+        "yours": {
+          "heading": "Stays with you",
+          "items": [
+            "The test programme. EN and BIFMA sequences are run on your finished product, in your programme, by your laboratory. They are your obligations, never our accreditations.",
+            "Soft-touch and overmoulded surfaces. Armrest pads and soft glide faces are normally a separate elastomer part or a two-component process at the assembler. We make the rigid carrier, the slider, the latch and the mechanism.",
+            "Decoration. Hot stamping, metallisation, in-mould labelling and electroplating are not our processes.",
+            "Colour approval. The master plaque, the let-down specification and the sign-off stay with you or your masterbatch supplier; we do not operate colour measurement equipment.",
+            "Flow simulation. Our gate, weld-line and cooling strategy is engineering judgement set out in words and drawings, not a simulation report.",
+            "Final assembly of the finished product, packing for retail, and certification of anything that leaves your factory."
+          ]
+        },
+        "close": "The first column is what we do. The second is what we say out loud at the quotation rather than after it."
+      },
+      "response": "Initial technical response within 48 business hours."
+    },
+    "panels": {
+      "heading": "Deeper detail",
+      "items": [
+        {
+          "title": "Where load-bearing furniture parts fail",
+          "bullets": [
+            "Weld line in a loaded section — in polyamide with about 30 per cent glass a knit line can carry half or less of the bulk strength, because the fibres cross the flow instead of reinforcing it.",
+            "Boss cracking under a thread-forming screw, where there is no base fillet, no cored centre, or a pilot hole outside the screw maker's recommendation.",
+            "Creep under sustained load — polypropylene deforms around 1.5 per cent over a year at about 5 MPa at room temperature, which reads as a sagging shelf, a splayed leg or a base that has developed a wobble.",
+            "Abrupt section change and rib termination, where the transition becomes the crack front.",
+            "Castor axle pull-out and hub cracking under shock load and repeated swivel.",
+            "Snap features that survive first assembly and fail on the third disassembly.",
+            "Stress whitening and later cracking at ejector locations and sharp internal corners.",
+            "Glide and foot inserts working loose in tube ends, because the retention ribs were designed for a nominal tube tolerance only."
+          ],
+          "source": "Failure modes and figures in this panel are published industry practice, not Metal Form measurements."
+        },
+        {
+          "title": "Design rules we apply to furniture parts",
+          "bullets": [
+            "Gate position chosen to keep weld lines off loaded surfaces and off the visible surface.",
+            "Rib thickness proportioned to the wall so the visible face stays free of sink.",
+            "Bosses cored, filleted at the base, wall proportioned to the nominal wall, entry chamfered against splitting.",
+            "Draft matched to the specified texture grade rather than to a default.",
+            "Shrinkage allowance set for the specific filled grade and for flow direction, not from a generic table — filled grades shrink anisotropically.",
+            "Cooling laid out around the ribs and bosses, because the last section to freeze is what pulls the part out of shape.",
+            "Snap features where the part is assembled once; screws where it will be serviced.",
+            "Tool steel and gate protection chosen for the abrasion of a glass-filled grade, where that is the material."
+          ]
+        },
+        {
+          "title": "What we need in order to quote properly",
+          "bullets": [
+            "The part: a STEP file, a drawing — or the physical part, if that is all that still exists.",
+            "The load case: what carries what, in which direction, for how long.",
+            "Annual volume and expected programme life, including the spares tail.",
+            "Colour references and the texture grade, or the range this part has to match.",
+            "Any standard the finished product will be tested to.",
+            "Whether this is a new part, a redesign, or a second source for a tool that already exists.",
+            "Whether the part is assembled once or serviced in the field — it changes the fastening strategy.",
+            "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+          ]
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Send the part.",
+    "body": "A STEP file, a drawing, or the part in your hand. We come back with the geometry issues, the load case we think you have, the tooling route and the production economics.",
+    "action": "Send your project",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form — furniture enquiry.\n\nPart: castor / chair base / glide / connector / drawer component / shell / trim\nNew part / redesign / second source for an existing tool\nMaterial: \nAnnual volume: \nColour and texture the part has to match: \nStandard the finished product is tested to: \n\nI can send a STEP file, a drawing or the physical part.",
+    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+  }
+}

@@ -1,0 +1,329 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   SHARED BRAND COMPONENTS
+   The pieces that must feel identical on all thirteen industry pages.
+   Anything that should differ per vertical lives in that page's own scope.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Buttons ───────────────────────────────────────────────────────────────
+   Square-cornered, rule-based. The primary action is a filled block; the
+   secondary is a ruled block; the tertiary is an underline that grows. */
+
+.btn {
+  --btn-py: 0.95em;
+  --btn-px: 1.5em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  padding: var(--btn-py) var(--btn-px);
+  font-size: var(--step--1);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  border-radius: var(--r-1);
+  position: relative;
+  isolation: isolate;
+  transition:
+    background-color var(--dur-2) var(--ease-out),
+    color var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out),
+    transform var(--dur-2) var(--ease-out);
+  text-wrap: balance;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn__arrow {
+  inline-size: 0.85em;
+  flex: none;
+  transition: transform var(--dur-3) var(--ease-out);
+}
+[dir='rtl'] .btn__arrow { transform: scaleX(-1); }
+.btn:hover .btn__arrow { transform: translateX(3px); }
+[dir='rtl'] .btn:hover .btn__arrow { transform: scaleX(-1) translateX(3px); }
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn--primary:hover { background: var(--accent-deep); }
+
+.btn--solid {
+  background: var(--btn-bg, var(--ink));
+  color: var(--btn-fg, var(--surface));
+}
+.btn--solid:hover { background: color-mix(in oklab, var(--btn-bg, var(--ink)) 82%, var(--accent)); }
+
+.btn--ruled {
+  border: var(--hair) solid color-mix(in oklab, var(--ink) 26%, transparent);
+  color: var(--ink);
+  background: transparent;
+}
+.btn--ruled:hover {
+  border-color: var(--accent);
+  color: var(--accent-deep);
+  background: color-mix(in oklab, var(--accent) 6%, transparent);
+}
+
+.btn--ghost { padding-inline: 0; color: var(--ink); }
+.btn--ghost::after {
+  content: '';
+  position: absolute;
+  inset-block-end: calc(var(--btn-py) - 0.55em);
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: var(--hair);
+  background: currentColor;
+  transform-origin: var(--underline-origin, left);
+  transform: scaleX(var(--u, 1));
+  opacity: 0.35;
+  transition: opacity var(--dur-2) var(--ease-out), transform var(--dur-3) var(--ease-out);
+}
+[dir='rtl'] .btn--ghost::after { --underline-origin: right; }
+.btn--ghost:hover::after { opacity: 1; }
+
+.btn--lg { --btn-py: 1.15em; --btn-px: 2em; font-size: var(--step-0); }
+.btn--sm { --btn-py: 0.75em; --btn-px: 1.1em; font-size: var(--step--2); }
+
+/* WhatsApp is the primary conversion route across the whole site: it always
+   looks the same so a returning visitor recognises it instantly. */
+/* --btn-bg / --btn-fg let an inverted block flip the button with it. Without
+   them the button inherits the section's remapped --ink and ends up light text
+   on a light fill. */
+.btn--whatsapp {
+  background: var(--btn-bg, var(--ink));
+  color: var(--btn-fg, var(--surface));
+  padding-inline-start: 1.25em;
+}
+.btn--whatsapp:hover { background: var(--btn-hover, var(--accent-deep)); color: #fff; }
+.btn--whatsapp .btn__glyph { inline-size: 1.15em; flex: none; }
+
+/* ── Eyebrow / section index ───────────────────────────────────────────────
+   Numbered like a drawing sheet. */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+:where(html[lang='zh'], html[lang='th'], html[lang='ar'], html[lang='fa'], html[lang='ur']) .eyebrow {
+  font-family: var(--font-body);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: var(--step--1);
+}
+.eyebrow::before {
+  content: '';
+  inline-size: var(--sp-6);
+  block-size: var(--hair);
+  background: var(--accent);
+  flex: none;
+}
+.eyebrow--plain::before { display: none; }
+
+/* ── Plate: the ruled panel that carries technical content ────────────────
+   A rule and a surface change — no shadow, no rounded corner, no gradient. */
+.plate {
+  background: var(--surface-raise);
+  border: var(--rule);
+  border-radius: var(--r-1);
+  padding: var(--sp-6);
+  position: relative;
+}
+.plate--sunk { background: var(--surface-sunk); border-color: transparent; }
+.plate--flush { padding: 0; }
+.plate--tick::before {
+  /* Corner tick, like a drawing frame. */
+  content: '';
+  position: absolute;
+  inset-block-start: -1px;
+  inset-inline-start: -1px;
+  inline-size: var(--sp-5);
+  block-size: var(--hair-strong);
+  background: var(--accent);
+}
+
+/* ── Data rows ─────────────────────────────────────────────────────────────
+   Specification tables read as a drawing's parts list. */
+.spec { border-block-start: var(--rule); }
+.spec__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+  gap: var(--sp-4);
+  padding-block: var(--sp-4);
+  border-block-end: var(--rule);
+  align-items: baseline;
+}
+@media (max-width: 620px) { .spec__row { grid-template-columns: 1fr; gap: var(--sp-1); } }
+.spec__k {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+:where(html[lang='zh'], html[lang='th'], html[lang='ar'], html[lang='fa'], html[lang='ur']) .spec__k {
+  font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: var(--step--1);
+}
+.spec__v { font-size: var(--step-0); }
+
+/* ── Disclosure — layer 3 of the progressive-disclosure model ─────────────── */
+.disc { border-block-end: var(--rule); }
+.disc__btn {
+  inline-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-block: var(--sp-5);
+  font-size: var(--step-1);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--track-head);
+  color: var(--ink);
+  transition: color var(--dur-2) var(--ease-out);
+}
+.disc__btn:hover { color: var(--accent-deep); }
+.disc__sign {
+  flex: none;
+  inline-size: 1.1rem; block-size: 1.1rem;
+  position: relative;
+}
+.disc__sign::before, .disc__sign::after {
+  content: '';
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: var(--hair-strong);
+  background: currentColor;
+  transition: transform var(--dur-3) var(--ease-mech);
+}
+.disc__sign::after { transform: rotate(90deg); }
+.disc[data-open='true'] .disc__sign::after { transform: rotate(0deg); }
+.disc__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-4) var(--ease-out);
+}
+.disc[data-open='true'] .disc__panel { grid-template-rows: 1fr; }
+.disc__inner { overflow: hidden; }
+.disc__inner > * { padding-block-end: var(--sp-6); }
+
+/* ── Pills / capability tags ───────────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.42em 0.85em;
+  border: var(--hair) solid color-mix(in oklab, var(--ink) 16%, transparent);
+  border-radius: var(--r-1);
+  font-size: var(--step--2);
+  color: var(--ink-muted);
+  background: color-mix(in oklab, var(--surface-raise) 60%, transparent);
+  white-space: nowrap;
+}
+.tag--accent { border-color: color-mix(in oklab, var(--accent) 40%, transparent); color: var(--accent-deep); background: var(--accent-wash); }
+
+/* ── Rules with a label sitting in them ───────────────────────────────────── */
+.ruled-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--sp-5);
+  align-items: start;
+  padding-block-start: var(--sp-5);
+  border-block-start: var(--rule-strong);
+}
+@media (max-width: 720px) { .ruled-head { grid-template-columns: 1fr; gap: var(--sp-3); } }
+
+/* ── Figure caption / disclosure of illustrative media ────────────────────
+   Every generated visual on the site is labelled as a schematic so it can
+   never be mistaken for a photograph of a real machine or a real project. */
+.figure-note {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+:where(html[lang='zh'], html[lang='th'], html[lang='ar'], html[lang='fa'], html[lang='ur']) .figure-note {
+  font-family: var(--font-body); text-transform: none; letter-spacing: 0;
+}
+.figure-note::before {
+  content: '';
+  inline-size: 0.6rem; block-size: 0.6rem;
+  border: var(--hair) solid currentColor;
+  flex: none;
+  align-self: center;
+}
+
+/* ── Steppers ───────────────────────────────────────────────────────────────
+   A stepper dims its inactive steps so the reader can see which one the figure
+   beside them is showing. Fading prose is the wrong way to do that: body copy
+   already sits close to the 4.5:1 floor, so any meaningful fade takes it under.
+
+   The distinction is carried by the marker instead — the active step gets a
+   rule on its leading edge and its index in full accent, the inactive ones a
+   muted index. The prose stays readable at every step.
+
+   Declared here, after the chapter styles are authored, with a doubled
+   attribute selector so it wins over a chapter's own `opacity` rule without
+   `!important`. */
+[data-stepper] [data-station-step][data-station-step] {
+  opacity: 1;
+  position: relative;
+  transition: border-color var(--dur-3) var(--ease-out);
+}
+[data-stepper] [data-station-step][data-station-step]::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: calc(var(--sp-5) * -1);
+  inset-block: 0.9rem auto;
+  inline-size: 2px;
+  block-size: 1.4em;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity var(--dur-3) var(--ease-out);
+}
+[data-stepper][data-step='0'] [data-station-step='0']::before,
+[data-stepper][data-step='1'] [data-station-step='1']::before,
+[data-stepper][data-step='2'] [data-station-step='2']::before,
+[data-stepper][data-step='3'] [data-station-step='3']::before,
+[data-stepper][data-step='4'] [data-station-step='4']::before,
+[data-stepper][data-step='5'] [data-station-step='5']::before,
+[data-stepper][data-step='6'] [data-station-step='6']::before,
+[data-stepper][data-step='7'] [data-station-step='7']::before { opacity: 1; }
+
+/* The index marker dims instead of the prose — it is a marker, not content. */
+[data-stepper] [data-station-step][data-station-step] > .t-mono,
+[data-stepper] [data-station-step][data-station-step] [class*='__n'],
+[data-stepper] [data-station-step][data-station-step] [class*='__i'] {
+  color: var(--ink-muted);
+  transition: color var(--dur-3) var(--ease-out);
+}
+[data-stepper][data-step='0'] [data-station-step='0'] > .t-mono,
+[data-stepper][data-step='1'] [data-station-step='1'] > .t-mono,
+[data-stepper][data-step='2'] [data-station-step='2'] > .t-mono,
+[data-stepper][data-step='3'] [data-station-step='3'] > .t-mono,
+[data-stepper][data-step='4'] [data-station-step='4'] > .t-mono,
+[data-stepper][data-step='5'] [data-station-step='5'] > .t-mono,
+[data-stepper][data-step='6'] [data-station-step='6'] > .t-mono,
+[data-stepper][data-step='7'] [data-station-step='7'] > .t-mono,
+[data-stepper][data-step='0'] [data-station-step='0'] [class*='__n'],
+[data-stepper][data-step='1'] [data-station-step='1'] [class*='__n'],
+[data-stepper][data-step='2'] [data-station-step='2'] [class*='__n'],
+[data-stepper][data-step='3'] [data-station-step='3'] [class*='__n'],
+[data-stepper][data-step='4'] [data-station-step='4'] [class*='__n'],
+[data-stepper][data-step='0'] [data-station-step='0'] [class*='__i'],
+[data-stepper][data-step='1'] [data-station-step='1'] [class*='__i'],
+[data-stepper][data-step='2'] [data-station-step='2'] [class*='__i'],
+[data-stepper][data-step='3'] [data-station-step='3'] [class*='__i'],
+[data-stepper][data-step='4'] [data-station-step='4'] [class*='__i'] {
+  color: var(--accent-deep);
+}

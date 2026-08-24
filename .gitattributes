@@ -1,0 +1,11 @@
+* text=auto eol=lf
+
+*.woff2 binary
+*.png binary
+*.jpg binary
+*.webp binary
+
+# Generated. Collapse in diffs and exclude from language stats.
+public/fonts/css/*.css linguist-generated=true
+public/fonts/manifest.json linguist-generated=true
+research/*.json linguist-documentation=true

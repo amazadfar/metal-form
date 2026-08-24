@@ -1,0 +1,508 @@
+{
+  "meta": {
+    "title": "Kimya ve deterjan ambalajı için kapak kalıpları — Metal Form",
+    "description": "Deterjan, ev kimyasalları ve zirai kimyasallar için kapak, çocuk kilitli ve emniyet bantlı sistemler ile dozajlama parçalarının kalıp tasarımı ve imalatı. Parçayı gönderin — 48 iş saati içinde dönüş."
+  },
+  "name": "Kimya ve Deterjan",
+  "tile": "Yüksek adette kapaklar, dişler ve sızdırmazlık geometrisi. Açılma emniyeti, çocuk kilidi ve kapalı ile sızdıran arasındaki bir milimetrelik diş.",
+  "tileParts": "Kapaklar · Kapama sistemleri · Bidonlar",
+  "hero": {
+    "kicker": "Kimya ve Deterjan",
+    "headline": [
+      "Kapak bir sızdırmazlıktır,",
+      "bir örtü değil."
+    ],
+    "lead": "Deterjan, ev kimyasalları ve zirai kimyasallar için kapaklar, çocuk kilitli ve emniyet bantlı sistemler ile dozajlama parçaları. Parçayı gönderin. Sızdırmazlık geometrisini, diş rotasını, göz sayısını ve üretim ekonomisini değerlendiririz.",
+    "markers": [
+      "Kapak ve dozajlama kalıpları",
+      "46 göze kadar çok gözlü deneyim",
+      "Elinizdeki parçadan ikinci kaynak"
+    ]
+  },
+
+  "blocks": {
+    "engagement": {
+      "index": "01",
+      "kicker": "Arayüz",
+      "heading": "Diş bir kelepçedir. Sızdırmazlığı oturma yüzeyi yapar.",
+      "body": "Bir kapak dişinden sızdırmazlık yapmaz. Boynun tepesindeki düz halka yüzeyde sızdırmazlık yapar; diş yalnızca onu orada tutan şeydir. Sızdıran bir ambalaj üzerine yürütülen her tartışma iki yerden birinde biter: o oturma yüzeyindeki temas ya da dişin tutamadığı sıkma kuvveti.",
+      "body2": "İkisi de geometridir ve ikisi de tek bir parça var olmadan aylar önce çeliğe işlenir. Oturma yüzeyinde bırakılmış bir yolluk girişi izi bir sızıntı yoludur; giriş konumu teknik resimde bedavadır, kalıp yapıldıktan sonra pahalıdır. İşe yarayan konuşmanın fiyat üzerinden değil, teknik resim üzerinden yürümesinin nedeni budur.",
+      "figCaption": "Büyütmede diş kavraması",
+      "heroLabels": {
+        "closure": "Kapak",
+        "neck": "Boyun",
+        "land": "Oturma yüzeyi",
+        "band": "Bant",
+        "thread": "Diş"
+      },
+      "labels": {
+        "crest": "Diş tepesi",
+        "root": "Diş dibi",
+        "flank": "Diş yanağı",
+        "contact": "Temas",
+        "clearance": "Boşluk"
+      },
+      "stepsLabel": "Kavramayı okumak",
+      "steps": [
+        {
+          "label": "Temas bandı",
+          "note": "Her diş turunda bir kez, milimetrenin kesri genişliğinde bir bant boyunca temas eden iki diş yanağı. Sıkma yükünü sızdırmazlık yüzeyine indiren o banttır. Bir diş yanağındaki çapak, üzerinden geçen bir ayırma yüzeyi ya da etekteki ovallik; ölçülen tek bir değeri değiştirmeden o bandı daraltır."
+        },
+        {
+          "label": "Diş tepesi ve dibi",
+          "note": "Kavrama derinliği ikisi arasındaki farktır ve ambalaj sıcakken, polimer sünerken kapağın tutmaya devam etmesi gereken şey odur. Yayımlanmış uygulama 400 profilini kabaca 2,5 mm, 410'u 3,5 mm ve fazladan bir turla 415'i 4,5 mm diş derinliğinde veriyor."
+        },
+        {
+          "label": "Yanak ve boşluk",
+          "note": "Boşluk, parçanın kalıptan çıkmasını ve kapağın şişeye takılmasını sağlayan şeydir. Aynı zamanda bir 410 kapağın 400 boyuna vidalanmasının, torka gelmesinin, doğru görünmesinin ve altı hafta sonra sıcak bir palette sızdırmasının da nedenidir. Yayımlanmış kaynaklar bunu tekrarlayan bir saha arızası olarak anıyor ve hiçbir sipariş formunda görünmüyor."
+        },
+        {
+          "label": "T · E · S · H",
+          "note": "Diş çapı, boyun dış çapı, diş başlangıcı, boyun yüksekliği. Her kapak anlaşmazlığı eninde sonunda bu dört harften birine iner; bu yüzden bir e-postaya girmeden önce teknik resme girmeleri gerekir."
+        }
+      ],
+      "lettersHeading": "Dört boyun ölçüsü",
+      "letters": [
+        { "k": "T", "v": "Diş çapı" },
+        { "k": "E", "v": "Boyun dış çapı" },
+        { "k": "S", "v": "Diş başlangıcı" },
+        { "k": "H", "v": "Boyun yüksekliği" }
+      ],
+      "profilesHeading": "Yayımlandığı hâliyle diş profili",
+      "profiles": [
+        {
+          "name": "400",
+          "depth": "≈ 2,5 mm",
+          "note": "En kısa profil. Bir tam tur, en az mekanik kilit, en az tork toleransı."
+        },
+        {
+          "name": "410",
+          "depth": "≈ 3,5 mm",
+          "note": "Daha yüksek. 24 mm'de losyon ve sıvı sabun için varsayılan; 28 mm'de temizlik ürünleri ve viskoz sıvılar için varsayılan."
+        },
+        {
+          "name": "415",
+          "depth": "≈ 4,5 mm",
+          "note": "Bir kademe daha yüksek ve fazladan bir turlu. Bir pompanın ya da tetiğin geri dönüş yayı kuvvetinin tutulması gerektiği yerlerde."
+        }
+      ],
+      "profilesNote": "Profil derinlikleri, ambalaj kaynaklarından alıntılanan yayımlanmış GPI/SPI uygulamasıdır; Metal Form ölçümleri değildir. 28-410 gibi bir gösterimde kısa çizgiden önceki sayı milimetre cinsinden boyun çapıdır; sonraki sayı bir ölçü değil, bir profildir.",
+      "close": "Daha yüksek profiller daha güçlü bir mekanik kilit ve daha geniş tork toleransı verir; pompaların ve tetikli spreylerin 410 ve üzerinde oturmasının nedeni budur. Hâlihazırda sahip olduğunuz gösterimi bize gönderin. Kapak değişir; şişe kalıbının değişmesi gerekmez."
+    },
+
+    "seal": {
+      "index": "02",
+      "kicker": "Sızdırmazlık rotaları",
+      "heading": "Aynı milimetreyi kapatmanın dört yolu.",
+      "body": "Sızdırmazlık oturma yüzeyinde olur. Onun üzerinde ne duracağı ise bir kalıp sonucu ve bir tedarik zinciri taşıyan bir karardır. Bu dördünden ikisi kapak geometrisini değiştirir, biri ambalajdan bir bileşeni tümüyle çıkarır ve dördünün de göz işlenmeden önce karara bağlanması gerekir.",
+      "figCaption": "Kesitte sızdırmazlık rotaları",
+      "labels": {
+        "liner": "Conta",
+        "bore": "İç çeper",
+        "foil": "Folyo",
+        "vent": "Havalandırma",
+        "land": "Oturma yüzeyi"
+      },
+      "colWhat": "Nedir",
+      "colTooling": "Kalıba etkisi",
+      "colLimit": "Yapmadığı şey",
+      "routes": [
+        {
+          "name": "Conta (pul)",
+          "what": "LDPE, HDPE, PP ya da EVOH-PE yüzeyli köpük; diş tarafından oturma yüzeyine bastırılır.",
+          "tooling": "Kapağın conta tutuşunu taşıması gerekir: bir tutucu bilezik, düz bir oturma yüzeyi ve pulun oturduğu yerde yolluk girişi izinin bulunmaması.",
+          "limit": "Yayımlanmış kılavuz açıktır — köpük conta tek başına ne açılma emniyeti sağlar ne de hermetik kapama."
+        },
+        {
+          "name": "İç çeper sızdırmazlığı / tıpa",
+          "what": "Kapağın içinde, boynun iç cidarına sızdırmazlık yapan kalıplanmış bir nervür. Ayrı bir pul hiç yok.",
+          "tooling": "Tamamen bir kalıp sonucudur. Sıkı geçme çeliğe işlenir ve açma torkunu da aynı çelik belirler.",
+          "limit": "Bir bileşen ve bir tedarik zinciri daha az — içeriğin izin verdiği yerde; bu ise bir iddia değil, bir test sorusudur."
+        },
+        {
+          "name": "İndüksiyon folyosu",
+          "what": "Kapaklamadan sonra indüksiyonla kabın oturma yüzeyine yapıştırılan folyo lamine. Hermetik ve açılma emniyeti sağlar.",
+          "tooling": "Tutma detaylarının contayı, bobinin altında dönmesine ya da kalkmasına izin vermeden tutması gerekir.",
+          "limit": "Tek parça contanın taşan kenarı bir çocuk kilidi mekanizmasına takılabilir. Bu bir geçme sorunudur; ya teknik resimde yakalanır ya da hiç yakalanmaz."
+        },
+        {
+          "name": "Havalandırmalı conta",
+          "what": "Yağlarda, parfümlerde ve gaz yapan kimyasallarda ambalajın sızdırmazlığını kaybetmeden gaz atmasını sağlayan gözenekler ya da havalandırma delikleri.",
+          "tooling": "Kapağın, ambalajın kendi bulduğu yerden değil, tanımlı bir yoldan havalandırma yapması gerekir.",
+          "limit": "Havalandırma ile emme aynı yoldan gider. Hangisinin kazanacağına geometri karar verir."
+        }
+      ],
+      "routesNote": "Yukarıdaki conta sınıflandırması, indüksiyon yapıları ve havalandırmalı conta uygulamaları yayımlanmış sektör uygulamalarıdır. Metal Form conta üretmez; dolum, kapaklama ve indüksiyonla kapama yapmaz.",
+      "close": "Agresif içerikler için yayımlanmış rota, folyo ile ısıyla yapışan katman arasına konan koruyucu bir bariyer katmanıdır. Bu bir conta şartnamesidir ve kapağa; oturma yüzeyinde, tutucu bilezikte ve bazen etekte bir değişiklik olarak yansır. Onu da parçayla birlikte gönderin."
+    },
+
+    "tamper": {
+      "index": "03",
+      "kicker": "Açılma emniyeti",
+      "heading": "Bant kapaklamadan sağ çıkar, ilk çevirişte kopar.",
+      "body": "Parçanın en ince detayı ve doğru yapılması en zor şeydir. En son dolar, ilk o eksik kalır ve bütün tasarımı köprülerdir: bir kapaklama kafasından ve sıcak bir dorsedeki bir paletten geçecek kadar güçlü, bir el kapağı çevirdiği anda kopacak kadar zayıf.",
+      "body2": "Köprü kalınlığının tutarsız olması, bazı ambalajların hatta kopması ve bazılarının hiç kopmaması demektir. Erken kopan bir bant, hat çalışırken ürünü satılamaz hâle getirir. Hiç kopmayan bir bant ise açılma emniyetinin sessizce var olmadığı anlamına gelir.",
+      "figCaption": "Bant, köprüler ve köprü deseni",
+      "labels": {
+        "skirt": "Etek",
+        "band": "Bant",
+        "bridge": "Köprü",
+        "bead": "Bilezik",
+        "pitch": "Adım"
+      },
+      "ledgerHeading": "Her detayın neyi belirlediği",
+      "colPart": "Detay",
+      "colGoverns": "Neyi belirler",
+      "ledger": [
+        {
+          "part": "Etek",
+          "governs": "Diş kavraması ve yuvarlaklık. Oval bir etek, ölçülen her değer toleransta olsa bile sızdırmazlık yapmaz; ovallik ise her şeyden önce bir soğutma sorunudur."
+        },
+        {
+          "part": "Bant",
+          "governs": "Takma sırasında şişe bileziğinin üzerinden genişleme. Düzgün olmayan genişleme genellikle boyun bileziğine kadar izlenir — kapak sorunu gibi görünen bir şişe sorunu."
+        },
+        {
+          "part": "Köprüler",
+          "governs": "İlk açılıştaki kopma kuvveti ve kapaklama, paletleme ve nakliyeden sağ çıkma. Birkaç onda bir milimetreyle ifade edilen açılma emniyetinin tamamı budur."
+        },
+        {
+          "part": "Köprü deseni",
+          "governs": "Bandın önce nereden bırakacağı ve çevresinden temiz mi yırtılacağı yoksa tüketicinin gözü önünde sağ kalan tek bir bağdan mı sallanacağı."
+        },
+        {
+          "part": "Tutma detayı",
+          "governs": "Bandın ayrıldıktan sonra boyunda mı kalacağı yoksa kapakla birlikte mi yukarı geleceği; ikincisi alışveriş yapan kişiye çoktan açılmış bir ambalaj olarak okunur."
+        }
+      ],
+      "routesHeading": "Yapmanın iki yolu",
+      "routes": [
+        {
+          "name": "Kalıpta oluşturma",
+          "note": "Köprüler çelikte şekillenir. İkincil işlem yok, bıçak aşınması yok — ama köprü, gözde en son dolan detayın dolumu ne kadar tutarlıysa o kadar tutarlıdır."
+        },
+        {
+          "name": "Kalıp sonrası bıçakla kesme",
+          "note": "Bant, kalıplamadan sonra etek cidarı boyunca kesilir. Köprü geometrisini bıçak belirler; bıçak ise kendi ret imzası olan bir sarf malzemesidir."
+        }
+      ],
+      "routesNote": "Bıçakla kesme, enjeksiyon hattında yürütülen kalıp sonrası bir işlemdir. Metal Form kalıp ve enjeksiyon parçası tedarik eder; kesme ekipmanı tedarik etmez.",
+      "close": "Köprü geometrisi sonradan ayarlanmaz, çizilir. Kapaklama makinesinin tork penceresi ve boyun bileziği önünüzdeyken, göz işlenmeden karara bağlayın."
+    },
+
+    "cr": {
+      "index": "04",
+      "kicker": "Çocuk kilidi",
+      "heading": "Bininci açılışta da çalışmak zorunda olan bir mekanizma.",
+      "body": "Bastır-çevir; iki enjeksiyon parçası, iki malzeme ve bir montaj adımıdır: cırcır dişli bir dış gövdenin içinde dişli bir iç kapak. Aşağı doğru bastırma cırcır dişlerini kavratır ve tork dişe ulaşır. Bırakıldığında dış gövde boşta döner, iç kapak dönmez.",
+      "body2": "Mekanizma dişlerin kendisidir. Diş yanak açısı, kavrama stroku ve çıkma açısı; çocuk kilidini, yaşlı kullanıcıya uygun açılabilirliği ve itmeyi aynı anda, aynı çelik parçası üzerinde belirler.",
+      "figCaption": "İki durumda bastır-çevir cırcır mekanizması",
+      "tabsLabel": "Mekanizma durumu",
+      "labels": {
+        "outer": "Dış",
+        "inner": "İç",
+        "tooth": "Diş",
+        "gap": "Boşluk",
+        "load": "Yük"
+      },
+      "states": [
+        {
+          "id": "released",
+          "name": "Serbest",
+          "note": "Aşağı yönlü yük yok. Dış gövde iç kapağın üzerinde serbestçe döner, cırcır dişleri birbirinin üzerinden atlar ve dişe hiç tork ulaşmaz. Mekanizmanın her açılıştan sonra dönmesi gereken durum budur — sıcak bir depoda, nakliyeden sonra ve ambalajın ömrü boyunca."
+        },
+        {
+          "id": "engaged",
+          "name": "Kavramış",
+          "note": "Aşağı bastırın, iki gövde birbirine kapanır. Dişler kavrar, tork iç kapağa aktarılır ve diş döner. Diş fazla agresifse ambalaj, içeriğe ihtiyacı olan kişiye açılmaz; fazla sığsa zaten hiç kavramamıştır."
+        }
+      ],
+      "archHeading": "Üç arketip, üç farklı kalıp",
+      "arch": [
+        {
+          "name": "Bastır-çevir",
+          "type": "Type I",
+          "note": "İki parçalı. İki kalıp, iki malzeme, bir montaj adımı ve nakliyede ısıl deformasyondan sağ çıkması gereken bir mekanizma."
+        },
+        {
+          "name": "Tırnaklı boyun",
+          "type": "Type II",
+          "note": "Sürekli bir diş yerine boyundaki tırnaklara kavrar. Mekanizmanın yarısını şişe taşır; dolayısıyla iki kalıp tek bir tasarım problemidir."
+        },
+        {
+          "name": "Geçmeli / cırcır",
+          "type": "Type III",
+          "note": "Sık-çevir yaygın tek parçalı biçimdir: tırnaklı, deforme olan bir etek. Tek kalıp, montaj yok — ve cidarın hem kontrollü bir sıkma kuvveti vermesi hem de torku tutması gerekir."
+        }
+      ],
+      "boundaryHeading": "Bu bölümün olmadığı şey",
+      "boundaryBody": "ISO 8317 ve EN 862 yeniden kapatılabilir ve kapatılamaz çocuk kilitli ambalajları kapsar; 16 CFR 1700.20 ABD Zehirlenmeyi Önleyici Ambalaj Yasası altındadır; ASTM D3475 ambalajları sınıflandırır ve BS EN ISO 13127 mekanik test setini ortaya koyar. EN ISO 11683 dokunsal tehlike uyarısını tanımlar — içeriğe ulaşılmadan önce hissedilebilmesi gereken kabartma bir detay ve dolayısıyla hem kalıplanan hem de kalıba işlenen bir detay. CLP kapsamında bu yükümlülükler yalnızca profesyonel kullanıma yönelik ambalajlara değil, genel tüketiciye sunulan ambalajlara bağlanır; metanol %3'te ve diklorometan %1'de yalnızca derişimleriyle bu yükümlülükleri tetikler.",
+      "boundaryClaim": "Metal Form çocuk kilidi testi yapmaz, onaylamaz ve belgelendirmez. Bu test, sizin ambalajınız üzerinde akredite test kuruluşlarınca yapılır ve yükümlülük ürünü piyasaya arz eden tarafa aittir. Biz, testin üzerinde yürütüldüğü geometriyi işleriz.",
+      "close": "Yayımlanmış test kapsamı ısıl deformasyonu, kalıplama kusurlarını ve tekrarlı kullanımda bozulmayı açıkça kapsar. Mekanizmanın ilk açılışından değil, ambalajın bütün ömründen sağ çıkması gerekir — bu da diş aşınmasını, çıkma açısını ve itme izini bir üretim sorusu değil, bir tasarım sorusu yapar."
+    },
+
+    "route": {
+      "index": "05",
+      "kicker": "Çelikten çıkarmak",
+      "heading": "Diş bir geçmedir. Kalıptan bir şekilde çıkması gerekir.",
+      "body": "Dört rota vardır. Farklı miktarda çevrim, karmaşıklık ve aşınmaya mal olurlar ve doğrusu son kalıbın ne yaptığına göre değil; geometriye, hammaddeye ve adede göre seçilir.",
+      "figCaptionA": "Dişin üzerinden sıyırarak çıkarma",
+      "figCaptionB": "Adıma göre dişli bağlanmış diş sökücü maça",
+      "labels": {
+        "core": "Maça",
+        "part": "Parça",
+        "stripper": "Sıyırıcı",
+        "rotate": "Döndür",
+        "eject": "İt"
+      },
+      "colHow": "Nasıl çalışır",
+      "colSuits": "Neye uygun",
+      "colCost": "Bedeli",
+      "colWear": "Aşınma",
+      "pair": [
+        {
+          "name": "Sıyırma / zorlamalı çıkarma",
+          "how": "Parça, PP ya da PE'nin esnekliği kullanılarak dişin üzerinden zorlanır. Bir sıyırıcı halka banta bastırırken diş, maçanın üzerinden deforme olarak geçer.",
+          "suits": "Sığ, geniş adımlı kapak dişleri. Yayımlanmış uygulamada şişe kapakları için standart rota olarak anılır.",
+          "cost": "Dördü içinde en ucuz ve en hızlı rota. Dönme yok, dişli grubu yok, en kısa çevrim.",
+          "wear": "Sıyırıcı halkalar ve zorlamalı çıkarma yüzeyleri aşınır — üstelik sızdırmazlığa en yakın yüzeylerde aşınır. Rijit hammaddelerde kullanılamaz ve diş derinliğinde hata kaldırmaz."
+        },
+        {
+          "name": "Diş sökücü maça",
+          "how": "Kalıp açılırken maça döner ve parçayı kendi üzerinden söker. Dönme ile itme stroku diş adımına göre dişli bağlanmıştır.",
+          "suits": "Derin ya da ince adımlı dişler ve sıyırmanın zarar vereceği her diş. Diş formunda daha yüksek ölçüsel hassasiyet.",
+          "cost": "Çevrim süresi ve kalıp karmaşıklığı. Kazanç, başka türlü kalıplayamayacağınız bir diştir.",
+          "wear": "Dişli grubundaki aşınma ya da zamanlama kayması, kalıbın tamamındaki dişleri aynı anda sıyırır. Bir onarım kalemi değil, planlı bir bakım kalemidir."
+        }
+      ],
+      "othersHeading": "Diğer iki rota",
+      "others": [
+        {
+          "name": "Bölünmüş göz (sürgü)",
+          "note": "Göz yarımları dış dişi serbest bırakmak için yanlara açılır. Hızlıdır — ama diş yanağının tam ortasına bir ayırma yüzeyi koyar ve oradaki çapak doğrudan kapaklama torkuna girer."
+        },
+        {
+          "name": "Katlanabilir maça",
+          "note": "Segmentler dar bir hacimdeki iç dişi serbest bırakmak için içeri çekilir. Kalıp maliyeti daha yüksektir ve tak-unut bir eleman değil, gerçek bir aşınma kalemidir."
+        }
+      ],
+      "rulesHeading": "Rotadan çıkan dört kural",
+      "rules": [
+        "İç dişler temiz çıkabilmek için genellikle dış dişlerden daha fazla çıkma açısı ister.",
+        "Yuvarlatılmış diş dipleri gerilmeyi keskin olanlardan daha iyi dağıtır ve tekrarlı açılıştan sağ çıkar.",
+        "Kalıplanmış dişler işlenmiş diş toleranslarına ulaşmaz. Bir tornacının tablosuna göre değil, kalıplamaya göre tasarlayın.",
+        "Çekme hammaddeye göre değişir; dolayısıyla aynı çelik, PP homopolimerde ve HDPE'de farklı bir diş verir."
+      ],
+      "rulesNote": "Yukarıdaki diş oluşturma rotaları, çıkma açısı davranışı ve çekme telafisi yayımlanmış sektör uygulamalarıdır.",
+      "close": "Metal Form; diş sökücü maçalı, katlanabilir maçalı, sürgülü ve lifterlı, sıcak ve soğuk yolluklu, tek ve çok gözlü enjeksiyon kalıpları ile çok parçalı kapaklar ve sprey iç parçaları için insertli kalıplar imal eder. Kapakların sıkıştırma kalıplama ile üretimi bir sektör rotasıdır. Bizim rotamız değildir ve teklif vermek yerine bunu açıkça söyleriz."
+    },
+
+    "cavity": {
+      "index": "06",
+      "kicker": "Aritmetik",
+      "heading": "Göz sayısı, mühendislik kılığına girmiş bir finansman kararıdır.",
+      "body": "Kapak adetlerinde kalıp, parçanın içinde kaybolur. On milyonlarca atıma yayıldığında kalıp, adede sentin bir kesrini ekler — yani kalıp fiyatı neredeyse hiçbir zaman pahalı karar değildir. Pahalı kararlar gram, saniye ve gözdür; üçü de tek bir parça var olmadan işlenmiş bir geometriyle kilitlenir.",
+      "figCaption": "Kesitte tek göz — maça, soğutma, giriş, havalandırma",
+      "labels": {
+        "cavity": "Göz",
+        "core": "Maça",
+        "cooling": "Soğutma",
+        "gate": "Giriş",
+        "vent": "Havalandırma"
+      },
+      "leversHeading": "Üç kaldıraç, büyüklük sırasıyla",
+      "levers": [
+        {
+          "k": "Gram",
+          "body": "Adette baskın değişken maliyet ağırlıktır ve aritmetik affetmez. Yılda 20 milyon adet üretilen bir kapaktan 0,2 g alın; yıldan dört ton hammadde çıkarmış olursunuz. Bu sizin hammadde fiyatınız ve sizin adediniz — bizim iddia ettiğimiz bir tasarruf değil, kontrol edebileceğiniz bir aritmetiktir."
+        },
+        {
+          "k": "Saniye",
+          "body": "Kapak çevrimini dolum değil, soğutma belirler. Maça incedir ve eteğin iç yüzünde plastikle sarılıdır; bu yüzden kalıbın soğutulması en zor parçasıdır ve hem çevrim süresini hem yuvarlaklığı o belirler. Dört saniyelik bir çevrimden bir saniye almak, aynı presten ve aynı operatörden dörtte bir daha fazla çıktı demektir."
+        },
+        {
+          "k": "Göz",
+          "body": "Gerçekten inandığınız tahmine ve gerçekten sahip olduğunuz prese göre boyutlandırılır. Kısmi kapasiteyle çalışan bir kalıp, çeliğe park edilmiş sermayedir. Hasardan sonra iki gözü kapatılmış ve bir daha onarılmamış bir kalıp, bir programı yıllarca ve sessizce düşük çıktıyla yürütür. İki tesiste iki orta kalıp, tek tesiste tek büyük kalıbı hem riskte hem makine saati maliyetinde sık sık yener."
+        }
+      ],
+      "windowsHeading": "Yayımlanmış çalışma pencereleri",
+      "windows": [
+        {
+          "k": "Havalandırma derinliği",
+          "v": "0,02–0,05 mm",
+          "note": "Kapak kalıplarında kısa bantlarla anılan çalışma penceresi. Fazla derini ayırma yüzeyinde çapak verir; fazla sığı eksik dolum ve yanık verir."
+        },
+        {
+          "k": "Ayırma yüzeyi düzlüğü",
+          "v": "0,01 mm mertebesinde",
+          "note": "Anılan hedef. Çapak her şeyden önce bir ayırma yüzeyi durumudur — ve diş yanağındaki çapak bir tork sorunudur."
+        },
+        {
+          "k": "Soğutma bölgeleri",
+          "v": "çok sayıda, bağımsız",
+          "note": "Bubblerlar, spiral insertler ve ayrı bölgelenmiş devreler. Kapak kalıplarında standart uygulama olarak tanımlanır."
+        }
+      ],
+      "windowsNote": "Bu değerler yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir. Sizin kendi pencereleriniz sizin çeliğinize, hammaddenize ve presinize aittir.",
+      "cavityHeading": "Bizim göz sayımız nerede duruyor, nerede durmuyor",
+      "cavityBody": "Kimya ve deterjan programlarının çoğu içecek kapağı değildir ve içecek kapağı göz sayısına ihtiyaç duymaz. Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bu dikeyde işe yarayan bant genellikle bunun epeyce altındadır — tahmine göre, prese göre ve ilk arızadan sonra değil en baştan tanımlanmış bir yedek göz takımıyla.",
+      "cavityBody2": "Bir program gerçekten bunun üzerine ihtiyaç duyuyorsa bunu size söyleriz; dürüst cevap farklı bir tedarikçi ya da farklı bir stratejidir. Yanlış kalıbı yapmaktansa talebi kaybetmeyi tercih ederiz.",
+      "close": "Kalıp sıcaklığını düşürerek kazanılan çevrim ise tasarruf değil, borçtur. İçeride kilitli kalan gerilme, çevresel gerilme çatlamasının yarısıdır. Diğer yarısı sizin yüzey aktif maddenizdir. Parça hattan geçer ve aylar sonra, yazın, sahada çuvallar — üstelik gösterilecek hiçbir proses değişikliği yoktur."
+    },
+
+    "material": {
+      "index": "07",
+      "kicker": "Malzeme",
+      "heading": "Hammadde değişikliği bir satın alma olayı değil, bir kalıp olayıdır.",
+      "body": "Çekme kaliteye göre değişir ve çekme çelikte telafi edilir. Kalıbı yeniden kalifiye etmeden hammadde değiştirin; diş kayar, sızdırmazlık kuvveti kayar ve gerilme çatlaması davranışı onlarla birlikte kayar. Aşağıdaki tablo, sektörün bir seçime başladığı yerdir. Bir cevap değil, bir varsayımdır.",
+      "figCaption": "Cidar kesitleri — kapak eteği ve ko-ekstrüde kap",
+      "labels": {
+        "root": "Diş dibi",
+        "skirt": "Etek",
+        "hdpe": "HDPE",
+        "evoh": "EVOH",
+        "tie": "Bağ katmanı"
+      },
+      "colA": "Kapak ve mekanizma",
+      "colB": "Kap ve cidar",
+      "closureRows": [
+        { "name": "PP homopolimer", "note": "Rijitlik ve diş mukavemeti. Kapaklarda varsayılan." },
+        { "name": "PP random kopolimer", "note": "Berraklık ve menteşe ömrü; bir film menteşenin on binlerce çevrimden sağ çıkması gerektiği yerlerde." },
+        { "name": "HDPE", "note": "Daha yumuşak iç çeper sızdırmazlıkları ve deforme olan çocuk kilitli etekler." },
+        { "name": "LDPE", "note": "Conta yüzeyleri." },
+        { "name": "ABS", "note": "Hem rijitlik hem yüzey kalitesi istenen tetik gövdeleri, kolları ve kapakları." },
+        { "name": "POM", "note": "Sprey pistonları ve valf yatakları — dar çap geçmeleri ve aşınma yükü." },
+        { "name": "PE", "note": "Emiş boruları, bilye yatakları ve küçük iç parçalar; genellikle geri kalanla birlikte aile kalıbında." }
+      ],
+      "containerRows": [
+        { "name": "HDPE", "note": "Ev ve endüstriyel bidonlarda varsayılan." },
+        { "name": "Ko-ekstrüde HDPE / EVOH", "note": "Aksi hâlde geçerek ambalajın içeri çökmesine yol açacak solvent içerikler için bariyer cidar." },
+        { "name": "Florlanmış HDPE", "note": "Yüzey işlemli bariyer; zirai kimyasal ambalajlarında yaygın." },
+        { "name": "PET", "note": "Şartnameyi bariyerin değil, berraklığın ya da geri dönüştürülmüş içeriğin belirlediği yerlerde." }
+      ],
+      "escHeading": "Çevresel gerilme çatlaması",
+      "escBody": "Yüzey aktif madde teması artı gerilme, polietilenin klasik arıza biçimidir ve ikisinin aynı anda bulunması gerekir — hiçbiri tek başına yeterli değildir. Yayımlanmış yöntemler; laboratuvarlar arası tekrarlanabilirliği açıkça zayıf olan, yüzey aktif madde içinde çentikli bükülmüş şerit testi ASTM D1693 ile hizmet koşullarını daha iyi temsil eden ASTM D2561 gibi sabit gerilme yöntemleridir. Daha düşük yoğunluk daha düşük kristalinlik ve daha iyi çatlak direnci demektir; yayımlanmış uygulama bunu ders kitabı bilgisi değil, gerçek bir üretim kaldıracı sayar.",
+      "escNote": "Yukarıdaki yöntemler, tekrarlanabilirlik ve yoğunluk davranışı yayımlanmış sektör uygulamalarıdır. Metal Form, kalıbını yaptığı hiçbir parçanın gerilme çatlaması performansı hakkında iddiada bulunmaz.",
+      "close": "Ne deneyeceğimizi ve nedenini size söyleriz. Bunun kanıtlanmış olduğunu söylemeyiz."
+    },
+
+    "boundary": {
+      "index": "08",
+      "kicker": "Kapsam",
+      "heading": "Geometriyi biz işleriz. İçerik sizindir.",
+      "body": "Bir kimyasal ambalaj konuşmasının tedarikçilerin genellikle bulanıklaştırdığı bölümü budur. Burada açık açık duruyor; çünkü bu sayfadaki en işe yarar şey o sınırın kendisidir.",
+      "figCaption": "Tedarikin bittiği yer",
+      "labels": {
+        "steel": "Çelik",
+        "contents": "İçerik"
+      },
+      "compat": "Kimyasal uyum bir malzeme seçimi konusudur; kendi formülasyonunuzla, kendi sıcaklığınızda, kendi raf ömrünüz boyunca ve kendi testinizle ortaya konur. Yayımlanmış kalite verileri alanı daraltır. Kapatmaz. Metal Form; hiçbir hammaddenin, hiçbir kapağın ve hiçbir kalıbın belirli bir kimyasala dayanıklı olduğunu garanti etmez.",
+      "suppliesHeading": "Metal Form'un sağladıkları",
+      "supplies": [
+        "CATIA ve SolidWorks'te modellenen enjeksiyon kapakları, dozajlama kapakları ve teknik mekanizmalar için kalıp tasarımı ve imalatı.",
+        "Çok gözlü kalıplar, sıcak ve soğuk yolluk; kalıp deneyimimiz 46 göze kadar uzanır.",
+        "Çok parçalı kapaklar ve sprey iç parçaları için diş sökücü ve katlanabilir maçalar, sürgüler, lifterlar ve insertli kalıplar.",
+        "Teknik resimlerin kaybolduğu olağan durum için mevcut bir kapaktan, numuneden ya da fotoğraftan tersine mühendislik.",
+        "Çelik işlenmeden önce sızdırmazlık geometrisi, diş rotası, yolluk girişi konumu, köprü geometrisi ve itme üzerinde DFM.",
+        "Mevcut parçayı mevcut boyun profilinde birebir veren ikinci kaynak ve ikiz kalıplar.",
+        "Parça üretimi ve sürekli tedarik ile kalıpla birlikte tanımlanan yedekler ve değişim parçaları.",
+        "CNC frezeleme, tornalama ve manuel talaşlı imalat. Dünya geneline sevkiyat. Ayrıntılı paylaşımdan önce NDA. Proje bazında kararlaştırılan şartlarla kalıp garantisi."
+      ],
+      "staysHeading": "Sizde kalanlar",
+      "stays": [
+        "Kimyasal uyum; kendi formülasyonunuz üzerinde test ederek teyit edilir.",
+        "Çocuk kilidi testi ve belgelendirmesi. ISO 8317, EN 862 ve 16 CFR 1700.20; bizim tarafımızdan değil, akredite test kuruluşlarınca sizin ambalajınız üzerinde yürütülür.",
+        "Tehlikeli maddeler için UN onaylı ambalaj onayı. Bizde yoktur ve iddia etmiyoruz.",
+        "Conta imalatı ve conta şartnamesi; bariyer yapıları ve indüksiyon folyoları dâhil.",
+        "Dolum, kapaklama, indüksiyonla kapama ve kalıp sonrası bant kesme. Hattınızı biz çalıştırmıyoruz.",
+        "Kapaklama makinesinin tork penceresi ve onu tutan kafaların kalibrasyonu.",
+        "Ürünün mevzuata göre sınıflandırılması ile bunu izleyen etiketleme ve taşıma dosyası."
+      ],
+      "notHeading": "Ve neyimiz yok",
+      "not": [
+        "Kapakların sıkıştırma kalıplaması yok. Enjeksiyon ile sıkıştırma karşılaştırması bu sayfada bir sektör karşılaştırması olarak geçer, asla bizim teklifimiz olarak değil.",
+        "Hiçbir türde belgemiz yok; kontrollü ortamda, valide ya da kalifiye edilmiş üretimimiz de yok.",
+        "Adı geçen bir simülasyon yazılımı yok, 3B tarama yok, CMM ya da kalite kontrol departmanı yok.",
+        "Çok malzemeli kalıplama yok; sıcak yaldız, metalizasyon, kalıp içi etiketleme ya da galvano kaplama gibi dekorasyon prosesleri yok; bitmiş ambalajların testi ya da belgelendirmesi yok.",
+        "46'nın üzerinde göz sayısı iddiası yok ve garanti edilmiş rezerve üretim kapasitesi yok."
+      ],
+      "secondHeading": "Tek kalıp, tek tesis",
+      "secondBody": "Kapak programlarının çoğu tek tesiste tek kalıpla yürür ve hat durana kadar bunu kimse yazıya dökmez. Bir yedeğin kalıbı değil, parçayı birebir vermesi gerekir: aynı boyun profili, aynı diş kavraması, aynı sızdırmazlık rotası, aynı tork penceresi, aynı kapaklama makinesinde aynı davranış. Bunun dışındaki her şey, kendi kalifikasyonu olan ikinci bir üründür ve bu, bir tedarik sıkıntısı sırasında fark edilir.",
+      "secondBody2": "Teknik resimler genellikle kayıptır. Bu bir engel değil, olağan başlangıç durumudur — NDA altında, elimizdeki parçadan çalışır ve imal edilebilir bir model teslim ederiz.",
+      "sendHeading": "Ne göndermeli",
+      "send": [
+        "Kapağın kendisi, bir fotoğrafı ya da hayatta kaldıysa teknik resmi.",
+        "Boyun profili. Başlamak için tek başına gösterim yeterlidir.",
+        "Sızdırmazlık rotası — conta, indüksiyon folyosu ya da iç çeper sızdırmazlığı — varsa conta şartnamesiyle birlikte.",
+        "Hattınızın gerçekte çalıştığı kapaklama tork penceresi; orijinal şartnamedeki değil.",
+        "Gerçekten beklediğiniz yıllık adet; lansman sunumundaki değil.",
+        "Bunun yeni bir parça mı, bir ikinci kaynak mı, yoksa birebir yerine geçmek zorunda olan bir yeniden tasarım mı olduğu."
+      ],
+      "getHeading": "Geri gelen",
+      "get": [
+        "Çizildiği hâliyle geometri için bir kalıp rotası ve bir diş oluşturma stratejisi.",
+        "Tahmininize ve presinize göre göz sayısı seçenekleri ve her birinin size riskte neye mal olduğu.",
+        "Yapacağımız değişiklikler; hoşunuza gitmeyecek olanlar dâhil.",
+        "Bir üretim pozisyonu: yalnızca kalıp, kalıp artı ilk numuneler ya da sürekli parça tedariki.",
+        "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz önce NDA — genellikle öyle olur."
+      ]
+    },
+
+    "panels": {
+      "heading": "Daha ayrıntılı",
+      "items": [
+        {
+          "title": "Boyun profili: her şeyi belirleyen dört harf",
+          "bullets": [
+            "28-410; 410 diş biçiminde 28 mm boyun çapı demektir. Kısa çizgiden sonraki sayı bir ölçü değil, bir profildir.",
+            "T diş çapı, E boyun dış çapı, S diş başlangıcı, H boyun yüksekliğidir.",
+            "400 kabaca 2,5 mm diş derinliğiyle en kısa profildir; 410 kabaca 3,5 mm ile daha yüksektir; 415 fazladan bir turla kabaca 4,5 mm'de bir kademe daha yüksektir.",
+            "Daha yüksek profiller daha fazla mekanik kilit ve daha geniş tork toleransı taşır; geri dönüş yayı kuvveti yüksek pompaların ve tetiklerin 410 ve üzerinde oturmasının nedeni budur.",
+            "Bir 410 kapak, 400 boyuna fiziksel olarak vidalanır ve güvenilir biçimde sızdırmazlık yapmaz. Arıza sipariş formunda görünmez, palette pahalıya patlar.",
+            "Bu sektördeki sürekli dişli kapaklar kabaca 13 mm ile 120 mm arasında değişir ve tamamen çıkarılmadan hiçbir dozajlama vermez.",
+            "Ev kimyasalları ambalajlarındaki tetikli spreyler neredeyse tamamen 28 mm boyunda oturur; jet, sis ve konik püskürtme desenlerini nozul ve spinner belirler.",
+            "Şartname izin verdiği sürece standart bir GPI/SPI boyun profilinde kalın. Özel bir boyun profili, yeniden tedarik edebilme imkânınızı kalıcı olarak ortadan kaldırır."
+          ],
+          "source": "Ambalaj mühendisliği kaynaklarında yayımlandığı hâliyle boyun profili gösterimi ve profil derinlikleri. Sektör uygulamasıdır, Metal Form ölçümleri değildir."
+        },
+        {
+          "title": "Sızdırmazlık rotaları, contalar ve her birinin yapmadığı şey",
+          "bullets": [
+            "LDPE, HDPE, PP ya da EVOH-PE yüzeyli köpük contalar iyi sızdırmazlık yapar ve az maliyetlidir. Yayımlanmış kılavuz, tek başlarına ne açılma emniyeti ne de hermetik kapama sağladıklarını açıkça belirtir.",
+            "Basınca duyarlı contalar tek kullanımlıktır ve sıvılara uygun değildir.",
+            "İndüksiyon contaları tek parça (folyo lamine) ya da iki parça (folyo, mum ve mum çözüldüğünde geride kalıp yeniden kapatan bir selüloz ya da köpük arkalık) olarak gelir.",
+            "Temiz soyulan, sekmeli ve kaynaklı varyantları vardır. Sekme bir tüketici kararıdır ve kapağa bir geçme sorunu olarak ulaşır.",
+            "Tek parça contanın taşan kenarı, çocuk kilitli bir kapağın mekanizmasına takılabilir.",
+            "Agresif kimyasal içerikler için yayımlanmış rota, folyo ile ısıyla yapışan katman arasında koruyucu bir bariyer katmanıdır.",
+            "Havalandırmalı contalar; yağlar, parfümler ve aksi hâlde ambalajı şişirecek ev ve endüstriyel kimyasallar için belirlenir.",
+            "Polikon tipi tıpa insertleri yeniden kapatır ve kimyasal ambalajlarda kullanılır. Kalıplanmış bir iç çeper sızdırmazlığı aynı işi bir bileşen ve bir tedarik zinciri eksiğiyle yapar."
+          ],
+          "source": "Conta sınıflandırması, yayımlanmış kapak contası kılavuzlarından alınmıştır. Metal Form conta üretmez ve conta yerleştirme tedarik etmez."
+        },
+        {
+          "title": "Soğutma, çevrim ve kimsenin gelişini görmediği arıza",
+          "bullets": [
+            "Kapak çevrimine soğutma hâkimdir. Maça incedir ve eteğin iç yüzünde plastikle sarılıdır; bu yüzden hem çevrim süresini hem yuvarlaklığı o belirler.",
+            "Kalın diş dibi ile ince etek arasındaki düzensiz soğuma ovallik üretir ve oval bir etek, ölçülen her değer toleransta olsa bile sızdırmazlık yapmaz.",
+            "İnce detaylar en son dolar. Emniyet bantları ve film menteşeler her şeyden önce eksik kalır ve en son dolan göz, hepsine uygulanan ütüleme basıncını belirler.",
+            "Kapak kalıplarında havalandırma derinlikleri yaygın olarak kısa bantlarla 0,02 ile 0,05 mm bandında anılır; çapak hedefi olarak ayırma yüzeyi düzlüğü 0,01 mm mertebesinde verilir.",
+            "Çevresel gerilme çatlaması için kimyasal olarak aktif bir ortam ile gerilmenin aynı anda bulunması gerekir. Birincisini yüzey aktif maddeler, ikincisini kalıplamadan kalan donmuş gerilme sağlar.",
+            "ASTM D1693 yüzey aktif madde içinde çentikli bükülmüş şerit testidir ve laboratuvarlar arası tekrarlanabilirliği açıkça zayıftır. ASTM D2561 gibi sabit gerilme yöntemleri hizmet koşullarını daha iyi temsil eder.",
+            "Daha düşük yoğunluk daha düşük kristalinlik ve daha iyi çatlak direnci demektir — yayımlanmış uygulamada laboratuvar merakı değil, gerçek bir üretim kaldıracı olarak anılır.",
+            "Sıcaklık hepsini katlar. Yayımlanmış değerler, dorselerin 145 °F'ye ulaştığını ve kapalı ambalajlarda iç basınç oluşturduğunu; oluklu mukavvanın ise yaz neminde basma dayanımının yarısına kadarını kaybettiğini anlatıyor."
+          ],
+          "source": "Havalandırma, soğutma ve gerilme çatlaması değerleri teknik basından ve yayımlanmış ASTM yöntem tanımlarından alıntılanmıştır. Sektör uygulamasıdır, Metal Form ölçümleri değildir."
+        }
+      ]
+    }
+  },
+
+  "cta": {
+    "headline": "Kapağı gönderin. Size bir rota gönderelim.",
+    "body": "Parçanın kendisi, bir teknik resim ya da postayla bir numune. Karşılığında kalıp rotasını, diş stratejisini, göz sayısı seçeneklerini ve bir üretim pozisyonu alırsınız. 48 iş saati içinde ilk dönüş. Talep hâlinde her zaman NDA. 2006'dan beri, 1.000'den fazla proje, dünya geneline sevkiyat.",
+    "action": "Projenizi gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form — kapak kalıbı hakkında. Ürün tipi: [sıvı deterjan / ev temizlik ürünü / zirai kimyasal / diğer]. Kapak tipi: [sürekli dişli / çocuk kilitli / emniyet bantlı / flip-top / tetikli sprey / dozaj kapağı]. Boyun profili: [örn. 28-410]. Sızdırmazlık: [conta / indüksiyon / iç çeper]. Yıllık adet: [adet/yıl]. Elimde: [mevcut parça / teknik resim / 3B model / hiçbiri]. Lütfen bir NDA gönderin.",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+  }
+}

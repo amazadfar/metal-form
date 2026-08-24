@@ -1,0 +1,103 @@
+---
+/**
+ * The trust layer.
+ *
+ * Six facts, and not one of them is invented. There is deliberately no stat
+ * wall: an industrial buyer discounts a grid of large numbers, but reads a
+ * short qualified statement — particularly one that says what it does *not*
+ * mean. The 48-hour line says it is not a quotation; the warranty line says
+ * the terms live in the order, not here.
+ */
+import { FACTS } from '../config/site.ts';
+import { getCommon } from '../content/index.ts';
+import type { Locale } from '../i18n/locales.ts';
+
+interface Props {
+  locale: Locale;
+  layout?: 'stack' | 'row';
+  /** Trim to the four that matter most, for use inside a dense page. */
+  compact?: boolean;
+}
+const { locale, layout = 'row', compact = false } = Astro.props;
+const c = getCommon(locale);
+
+const all = [
+  { k: 'since', value: String(FACTS.sinceYear), label: c.trust.since, note: c.trust.projectsNote },
+  { k: 'projects', value: `${FACTS.projectsCompleted.toLocaleString('en-US')}+`, label: c.trust.projects, note: c.trust.projectsNote },
+  { k: 'cavities', value: String(FACTS.maxCavitiesDelivered), label: c.trust.cavities, note: c.trust.cavitiesNote },
+  { k: 'software', value: null, label: c.trust.software, note: c.trust.softwareNote },
+  { k: 'warranty', value: null, label: c.trust.warranty, note: c.trust.warrantyNote },
+  { k: 'delivery', value: null, label: c.trust.delivery, note: c.trust.deliveryNote },
+  { k: 'response', value: `${FACTS.responseWindowHours}h`, label: c.trust.response, note: c.trust.responseNote },
+];
+
+/**
+ * The labels are complete statements because they are reused on their own in
+ * the call-to-action block and on the contact page. That makes the large figure
+ * a repeat wherever the statement already contains it — "1,000+" above
+ * "1,000+ completed projects". Numerals are Latin in all nine locales, so a
+ * containment test is a safe, language-independent way to drop the duplicate.
+ */
+const withoutRepeats = all.map((item) =>
+  item.value && item.label.includes(item.value) ? { ...item, value: null } : item,
+);
+
+const items = compact
+  ? withoutRepeats.filter((i) => ['since', 'cavities', 'response', 'warranty'].includes(i.k))
+  : withoutRepeats.filter((i) => i.k !== 'since');
+---
+
+<ul class:list={['trust', `trust--${layout}`]}>
+  {items.map((item, i) => (
+    <li class="trust__item" data-reveal style={`--reveal-delay:${i * 50}ms`}>
+      <div class="trust__head">
+        {item.value && <span class="trust__value t-mono">{item.value}</span>}
+        <span class="trust__label">{item.label}</span>
+      </div>
+      <p class="trust__note">{item.note}</p>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .trust { display: grid; border-block-start: var(--rule); }
+  .trust--row {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0;
+  }
+  .trust--row .trust__item { border-inline-end: var(--rule); padding-inline-end: var(--sp-5); }
+  .trust--row .trust__item:last-child { border-inline-end: 0; }
+  @media (max-width: 720px) {
+    .trust--row { grid-template-columns: 1fr; }
+    .trust--row .trust__item { border-inline-end: 0; padding-inline-end: 0; }
+  }
+
+  .trust__item {
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+    display: grid;
+    gap: 0.4rem;
+    align-content: start;
+  }
+
+  .trust__head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; }
+  .trust__value {
+    font-size: var(--step-2);
+    font-weight: var(--weight-medium);
+    color: var(--accent-deep);
+    line-height: 1;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .trust__label {
+    font-size: var(--step-0);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--track-head);
+    line-height: 1.25;
+  }
+  .trust__note {
+    font-size: var(--step--1);
+    line-height: 1.55;
+    color: var(--ink-muted);
+    max-inline-size: 46ch;
+  }
+</style>

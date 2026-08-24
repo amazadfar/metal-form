@@ -1,0 +1,335 @@
+---
+/**
+ * HERO FIGURE — one part, five readings.
+ *
+ * The same component is drawn five times and the *way* it is drawn changes:
+ * a rough sketch becomes dimensioned geometry, geometry becomes a tool, the
+ * tool makes a part, one part becomes production. The object never moves, so
+ * the eye reads it as one thing evolving rather than five illustrations.
+ *
+ * That is the whole business proposition, stated before anybody reads a word.
+ *
+ * Built from a single inline SVG: no library, no canvas, no images. Under
+ * reduced motion the sequence resolves to its last state immediately, which is
+ * also the most informative one.
+ */
+interface Props {
+  /** Labels for the five states, localised. */
+  labels: string[];
+  /** Labels drawn inside the figure itself. */
+  d: Record<string, string>;
+  class?: string;
+}
+const { labels, d, class: className = '' } = Astro.props;
+
+// Silhouette of a generic stepped, flanged component in elevation. Deliberately
+// not a bottle, a cap or a connector — the homepage speaks to thirteen sectors.
+const PART =
+  'M200 110 L400 110 L400 150 L365 150 L365 320 L340 320 L340 380 L325 392 L275 392 L260 380 L260 320 L235 320 L235 150 L200 150 Z';
+---
+
+<figure class:list={['hf', className]} aria-hidden="true">
+  <svg viewBox="0 0 600 520" class="hf__svg" role="img" data-nomirror>
+    <defs>
+      {/* Hand-drawn wobble for the sketch state. */}
+      <filter id="hf-rough" x="-12%" y="-12%" width="124%" height="124%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="2" seed="7" result="n" />
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="5.5" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+
+      {/* Dimension arrowheads. */}
+      <marker id="hf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 1.5 L9.5 5 L0 8.5 Z" fill="currentColor" />
+      </marker>
+
+      {/* 45° section hatch, the drawing convention for cut steel. */}
+      <pattern id="hf-hatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+        <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.8" opacity="0.42" />
+      </pattern>
+
+      <clipPath id="hf-partclip"><path d={PART} /></clipPath>
+    </defs>
+
+    {/* ── 01 · SKETCH ───────────────────────────────────────────────────── */}
+    <g class="hf__state hf__state--sketch">
+      <g filter="url(#hf-rough)" class="hf__ink">
+        <path d={PART} fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" />
+        {/* The stray marks a real sketch always has. */}
+        <path d="M206 116 L394 116" stroke="currentColor" stroke-width="1.1" opacity="0.35" />
+        <path d="M244 158 L244 312" stroke="currentColor" stroke-width="1.1" opacity="0.28" />
+        <path d="M356 158 L356 312" stroke="currentColor" stroke-width="1.1" opacity="0.28" />
+        <path d="M268 402 L332 402" stroke="currentColor" stroke-width="1.4" opacity="0.4" />
+      </g>
+      <g class="hf__note">
+        <path d="M412 168 L470 138" stroke="currentColor" stroke-width="1" opacity="0.5" />
+        <text x="474" y="136" class="hf__hand">{d.sketchNoteA}</text>
+        <path d="M188 330 L128 356" stroke="currentColor" stroke-width="1" opacity="0.5" />
+        <text x="52" y="372" class="hf__hand">{d.sketchNoteB}</text>
+      </g>
+    </g>
+
+    {/* ── 02 · GEOMETRY ─────────────────────────────────────────────────── */}
+    <g class="hf__state hf__state--cad">
+      <path d={PART} fill="none" stroke="currentColor" stroke-width="1.7" class="hf__draw" />
+
+      {/* Centre line, dash-dot as convention requires. */}
+      <line x1="300" y1="86" x2="300" y2="418" stroke="currentColor" stroke-width="0.9"
+        stroke-dasharray="14 4 2 4" opacity="0.6" />
+
+      {/* Bore, shown as hidden detail. */}
+      <line x1="285" y1="110" x2="285" y2="392" stroke="currentColor" stroke-width="1" stroke-dasharray="6 4" opacity="0.55" />
+      <line x1="315" y1="110" x2="315" y2="392" stroke="currentColor" stroke-width="1" stroke-dasharray="6 4" opacity="0.55" />
+
+      {/* Overall width dimension. */}
+      <g class="hf__dim">
+        <line x1="200" y1="74" x2="400" y2="74" marker-start="url(#hf-arrow)" marker-end="url(#hf-arrow)" />
+        <line x1="200" y1="66" x2="200" y2="104" class="hf__ext" />
+        <line x1="400" y1="66" x2="400" y2="104" class="hf__ext" />
+        <text x="300" y="64" text-anchor="middle" class="hf__figure">Ø 52.0</text>
+      </g>
+
+      {/* Overall height dimension. */}
+      <g class="hf__dim">
+        <line x1="446" y1="110" x2="446" y2="392" marker-start="url(#hf-arrow)" marker-end="url(#hf-arrow)" />
+        <line x1="404" y1="110" x2="454" y2="110" class="hf__ext" />
+        <line x1="344" y1="392" x2="454" y2="392" class="hf__ext" />
+        <text x="458" y="256" class="hf__figure">72.4</text>
+      </g>
+
+      {/* Draft callout — the DFM point, made visually. */}
+      <g class="hf__dim">
+        <line x1="152" y1="320" x2="228" y2="320" class="hf__ext" />
+        <text x="60" y="316" class="hf__figure">{d.draft}</text>
+      </g>
+      <g class="hf__dim">
+        <line x1="152" y1="152" x2="196" y2="152" class="hf__ext" />
+        <text x="34" y="148" class="hf__figure">{d.wall}</text>
+      </g>
+    </g>
+
+    {/* ── 03 · TOOL ─────────────────────────────────────────────────────── */}
+    <g class="hf__state hf__state--tool">
+      {/* Fixed half. */}
+      <g class="hf__steel hf__steel--fixed">
+        <path d="M96 40 H504 V251 H96 Z" fill="url(#hf-hatch)" stroke="currentColor" stroke-width="1.4" />
+        <path d={PART} fill="var(--hf-surface, #fff)" stroke="none" clip-path="url(#hf-partclip)" />
+      </g>
+      {/* Moving half. */}
+      <g class="hf__steel hf__steel--moving">
+        <path d="M96 251 H504 V462 H96 Z" fill="url(#hf-hatch)" stroke="currentColor" stroke-width="1.4" />
+      </g>
+
+      {/* The cavity, punched through both halves. */}
+      <path d={PART} fill="var(--hf-surface, #fff)" stroke="currentColor" stroke-width="1.7" />
+
+      {/* Parting line. */}
+      <line x1="76" y1="251" x2="524" y2="251" stroke="currentColor" stroke-width="1.2" class="hf__parting" />
+      <text x="76" y="243" class="hf__figure">{d.partingLine}</text>
+
+      {/* Sprue and gate. */}
+      <path d="M292 40 L308 40 L303 104 L297 104 Z" fill="currentColor" opacity="0.75" />
+      <text x="322" y="60" class="hf__figure">{d.gate}</text>
+
+      {/* Cooling circuit. */}
+      <g class="hf__cool">
+        <circle cx="160" cy="150" r="11" /><circle cx="160" cy="200" r="11" />
+        <circle cx="440" cy="150" r="11" /><circle cx="440" cy="200" r="11" />
+        <circle cx="176" cy="330" r="11" /><circle cx="424" cy="330" r="11" />
+        <text x="106" y="112" class="hf__figure">{d.cooling}</text>
+      </g>
+
+      {/* Ejectors. */}
+      <g class="hf__eject">
+        <line x1="276" y1="462" x2="276" y2="392" /><line x1="324" y1="462" x2="324" y2="392" />
+        <text x="336" y="440" class="hf__figure">{d.ejectors}</text>
+      </g>
+    </g>
+
+    {/* ── 04 · PART ─────────────────────────────────────────────────────── */}
+    <g class="hf__state hf__state--part">
+      <path d={PART} class="hf__solid" />
+      {/* A single specular edge — enough to read as a moulded surface. */}
+      <path d="M205 114 L205 146 M240 156 L240 314" stroke="var(--hf-surface, #fff)" stroke-width="3" opacity="0.55" />
+      <path d={PART} fill="none" stroke="currentColor" stroke-width="1.5" />
+      {/* Gate vestige — the mark a real moulding actually carries. */}
+      <circle cx="300" cy="110" r="4" fill="none" stroke="currentColor" stroke-width="1.2" />
+      <line x1="300" y1="106" x2="330" y2="78" stroke="currentColor" stroke-width="0.9" opacity="0.6" />
+      <text x="334" y="76" class="hf__figure">{d.gateVestige}</text>
+    </g>
+
+    {/* ── 05 · PRODUCTION ───────────────────────────────────────────────── */}
+    <g class="hf__state hf__state--array">
+      {Array.from({ length: 12 }).map((_, i) => {
+        const col = i % 4;
+        const row = Math.floor(i / 4);
+        const x = 96 + col * 118;
+        const y = 78 + row * 128;
+        return (
+          <g
+            transform={`translate(${x} ${y}) scale(0.30) translate(-300 -251)`}
+            class="hf__unit"
+            style={`--u:${i}`}
+          >
+            <path d={PART} class="hf__solid" />
+            <path d={PART} fill="none" stroke="currentColor" stroke-width="4.6" />
+          </g>
+        );
+      })}
+      <g class="hf__rate">
+        <line x1="76" y1="470" x2="524" y2="470" stroke="currentColor" stroke-width="1" opacity="0.5" />
+        {Array.from({ length: 15 }).map((_, i) => (
+          <line x1={80 + i * 32} y1="464" x2={80 + i * 32} y2="476" stroke="currentColor" stroke-width="1" opacity="0.5" />
+        ))}
+        <text x="76" y="496" class="hf__figure">{d.supply}</text>
+      </g>
+    </g>
+  </svg>
+
+  <ol class="hf__legend">
+    {labels.map((label, i) => (
+      <li class="hf__leg" style={`--s:${i}`}>
+        <span class="hf__leg-n">{String(i + 1).padStart(2, '0')}</span>
+        <span class="hf__leg-t">{label}</span>
+      </li>
+    ))}
+  </ol>
+</figure>
+
+<style>
+  .hf {
+    position: relative;
+    display: grid;
+    gap: var(--sp-5);
+    margin: 0;
+    color: var(--ink);
+    --hf-surface: var(--surface);
+    /* One state every 2.8s; the cycle is the sum. */
+    --hf-step: 2.8s;
+    --hf-cycle: 14s;
+  }
+
+  .hf__svg {
+    inline-size: 100%;
+    block-size: auto;
+    overflow: visible;
+  }
+
+  /* ── State cross-fade ────────────────────────────────────────────────────
+     Each group holds full opacity for its slice of the cycle and hands over
+     with a short overlap, so the object reads as continuous. */
+  .hf__state { opacity: 0; }
+
+  @keyframes hf-state {
+    0%,   1%  { opacity: 0; }
+    4%,  17%  { opacity: 1; }
+    20%, 100% { opacity: 0; }
+  }
+
+  /* The slot each state occupies in the cycle. Carried as a custom property
+     rather than as a separate `animation-delay` rule, because the `animation`
+     shorthand below would reset a lower-specificity delay back to zero and every
+     state would fire at once. */
+  .hf__state--sketch { --d: 0; }
+  .hf__state--cad    { --d: 1; }
+  .hf__state--tool   { --d: 2; }
+  .hf__state--part   { --d: 3; }
+  .hf__state--array  { --d: 4; }
+
+  :global(html.js) .hf__state {
+    animation: hf-state var(--hf-cycle) linear infinite;
+    animation-delay: calc(var(--hf-step) * var(--d, 0));
+  }
+
+  /* Without JS — and for search engines — the resolved production state shows. */
+  :global(html:not(.js)) .hf__state--array { opacity: 1; }
+
+  /* ── Drawing conventions ─────────────────────────────────────────────── */
+  .hf__hand {
+    font-family: var(--font-latin);
+    font-size: 15px;
+    font-style: italic;
+    fill: currentColor;
+    opacity: 0.55;
+  }
+  .hf__figure {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    fill: currentColor;
+    opacity: 0.62;
+  }
+  .hf__dim { color: var(--accent-deep); }
+  .hf__dim line { stroke: currentColor; stroke-width: 1; }
+  .hf__dim .hf__ext { opacity: 0.45; stroke-dasharray: none; }
+  .hf__dim .hf__figure { fill: var(--accent-deep); opacity: 1; }
+
+  .hf__steel { color: var(--ink-muted); }
+  .hf__parting { stroke-dasharray: 18 5 3 5; opacity: 0.8; }
+  .hf__cool circle { fill: none; stroke: var(--accent); stroke-width: 1.3; opacity: 0.85; }
+  .hf__eject line { stroke: currentColor; stroke-width: 2.4; opacity: 0.5; }
+
+  .hf__solid { fill: color-mix(in oklab, var(--accent) 16%, var(--surface-raise)); }
+
+  /* The mould halves separate as the tool state resolves. */
+  @keyframes hf-open-up   { from { transform: translateY(0); } to { transform: translateY(-14px); } }
+  @keyframes hf-open-down { from { transform: translateY(0); } to { transform: translateY(14px); } }
+  :global(html.js) .hf__steel--fixed {
+    animation: hf-open-up var(--hf-cycle) var(--ease-mech) infinite;
+    animation-delay: calc(var(--hf-step) * 2);
+  }
+  :global(html.js) .hf__steel--moving {
+    animation: hf-open-down var(--hf-cycle) var(--ease-mech) infinite;
+    animation-delay: calc(var(--hf-step) * 2);
+  }
+
+  /* Units land one after another rather than all at once. */
+  @keyframes hf-unit {
+    0%, 2% { opacity: 0; }
+    6%, 100% { opacity: 1; }
+  }
+  :global(html.js) .hf__unit {
+    opacity: 0;
+    animation: hf-unit var(--hf-cycle) linear infinite;
+    animation-delay: calc(var(--hf-step) * 4 + var(--u) * 90ms);
+  }
+
+  /* ── Legend ──────────────────────────────────────────────────────────── */
+  .hf__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.35rem;
+    border-block-start: var(--rule);
+    padding-block-start: var(--sp-4);
+  }
+  .hf__leg {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-size: var(--step--2);
+    color: var(--ink-muted);
+    opacity: 0.42;
+    transition: opacity var(--dur-3) var(--ease-out), color var(--dur-3) var(--ease-out);
+  }
+  @keyframes hf-leg {
+    0%,   1%  { opacity: 0.42; }
+    4%,  17%  { opacity: 1; }
+    20%, 100% { opacity: 0.42; }
+  }
+  :global(html.js) .hf__leg {
+    animation: hf-leg var(--hf-cycle) linear infinite;
+    animation-delay: calc(var(--hf-step) * var(--s));
+  }
+  .hf__leg-n {
+    font-family: var(--font-mono);
+    letter-spacing: 0.1em;
+    color: var(--accent-deep);
+  }
+  .hf__leg-t { letter-spacing: 0.04em; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hf__state { opacity: 0 !important; animation: none !important; }
+    .hf__state--array { opacity: 1 !important; }
+    .hf__unit { opacity: 1 !important; animation: none !important; }
+    .hf__leg { opacity: 1 !important; animation: none !important; }
+  }
+</style>

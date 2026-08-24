@@ -1,0 +1,127 @@
+---
+/**
+ * Base document.
+ *
+ * Owns everything that must be identical on all 153 pages: language and
+ * direction, per-script typography, canonical and hreflang, structured data,
+ * font preloading and the reveal runtime. Individual pages own their own
+ * atmosphere and nothing else.
+ */
+import '../styles/index.css';
+import { LOCALES, type Locale } from '../i18n/locales.ts';
+import { BRAND, SITE } from '../config/site.ts';
+import { PRELOAD, SELECTOR_PRELOAD, FONT_CSS, SELECTOR_CSS } from '../lib/fonts.ts';
+import { absoluteUrl, alternates, organizationSchema, siteRoot } from '../lib/seo.ts';
+import { IS_PRODUCTION_ORIGIN } from '../config/origin.ts';
+import { SITE as SITE_CONF } from '../config/site.ts';
+import type { PageMeta } from '../content/types.ts';
+
+interface Props {
+  locale: Locale;
+  meta: PageMeta;
+  /** Route within the locale, e.g. 'industries/beverage'. '' for the home page. */
+  route?: string;
+  /** The language selector opts out of locale routing and hreflang alternates. */
+  isSelector?: boolean;
+  /** Inline CSS custom properties — how a vertical applies its palette. */
+  paletteStyle?: string;
+  /** Extra classes on <body>, used by pages that set their own atmosphere. */
+  bodyClass?: string;
+  /** Additional JSON-LD graphs appended after the organisation schema. */
+  schemas?: Record<string, unknown>[];
+}
+
+const {
+  locale,
+  meta,
+  route = '',
+  isSelector = false,
+  paletteStyle,
+  bodyClass = '',
+  schemas = [],
+} = Astro.props;
+
+const def = LOCALES[locale];
+const canonical = isSelector ? `${siteRoot()}/` : absoluteUrl(locale, route);
+const alts = isSelector ? [] : alternates(route);
+const preloads = isSelector ? SELECTOR_PRELOAD : PRELOAD[locale];
+const fontSheets = isSelector ? SELECTOR_CSS : FONT_CSS[locale];
+
+const jsonLd = [organizationSchema(locale), ...schemas];
+---
+
+<!doctype html>
+<html
+  lang={def.tag}
+  dir={def.dir}
+  style={`--type-scale:${def.typeScale};--leading-scale:${def.leading};`}
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <link rel="canonical" href={canonical} />
+
+    {/*
+      Set synchronously so reveal targets are hidden before first paint rather
+      than flashing in and animating back out.
+    */}
+    <script is:inline>document.documentElement.classList.add('js');</script>
+
+    {/* Only this locale's script. See src/lib/fonts.ts for why. */}
+    {fontSheets.map((href) => <link rel="stylesheet" href={href} />)}
+
+    {preloads.map((f) => (
+      <link rel="preload" href={f.href} as="font" type={f.type} crossorigin="anonymous" />
+    ))}
+
+    {alts.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={BRAND.name} />
+    <meta property="og:locale" content={def.tag.replace('-', '_')} />
+    <meta property="og:title" content={meta.ogTitle ?? meta.title} />
+    <meta property="og:description" content={meta.ogDescription ?? meta.description} />
+    <meta property="og:url" content={canonical} />
+    {/* One card for the whole site. These links are pasted into WhatsApp and
+        email threads with buyers, so the preview is often the first thing a
+        decision-maker sees. */}
+    <meta property="og:image" content={`${siteRoot()}/og.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={meta.ogTitle ?? meta.title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={`${siteRoot()}/og.png`} />
+    <meta name="twitter:title" content={meta.ogTitle ?? meta.title} />
+    <meta name="twitter:description" content={meta.ogDescription ?? meta.description} />
+
+    <meta name="theme-color" content="#14161A" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icon-180.png" />
+    {/* A preview or branch deployment must not compete with the real site in
+        search results, so anything not served from the production origin is
+        kept out of the index entirely. */}
+    <meta
+      name="robots"
+      content={IS_PRODUCTION_ORIGIN ? 'index, follow, max-image-preview:large' : 'noindex, nofollow'}
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+
+    <slot name="head" />
+  </head>
+
+  <body class={bodyClass} style={paletteStyle}>
+    <slot />
+
+    <script>
+      import { boot } from '../scripts/reveal.ts';
+      import { initAnalytics } from '../scripts/analytics.ts';
+      boot();
+      initAnalytics();
+    </script>
+  </body>
+</html>

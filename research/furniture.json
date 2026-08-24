@@ -1,0 +1,575 @@
+{
+  "key": "furniture",
+  "displayName": "Furniture & Decor",
+  "researchedAt": "2026-08",
+  "sources": [
+    {
+      "title": "The weak link in reinforced nylons — Machine Design",
+      "url": "https://www.machinedesign.com/archive/article/21813954/the-weak-link-in-reinforced-nylons",
+      "whatItEstablished": "Read in full. Unfilled nylon loses roughly 0-17% of bulk strength at a knit line; nylon with 30 wt.% glass may lose 50% or more. Fibres that turn 90 degrees to principal flow add no strength and the V-notch at the meeting front concentrates stress. Mitigations: raise mould and melt temperature within degradation limits, fill faster, raise packing pressure, remove release agents, and above all keep knit lines off load-bearing surfaces. This is the single most useful technical fact for load-bearing furniture parts in glass-filled material."
+    },
+    {
+      "title": "Ensuring Furniture Durability: Strength and Load-Bearing Tests Explained — Eurofins",
+      "url": "https://www.eurofins.com/toys-hardlines/resources/articles/ensuring-furniture-durability-strength-and-load-bearing-tests-explained/",
+      "whatItEstablished": "Read in full. The actual standards map furniture buyers work to: seating EN 1728, EN 12520:2024 (domestic), EN 16139:2025 (non-domestic), EN 581-2 (outdoor), BIFMA X5.1 (office chairs), BIFMA X6.1 (educational); tables EN 1730, EN 12521:2023, EN 15372, BIFMA X5.5; storage EN 16122, EN 14749, BIFMA X5.9, ASTM F2057-23; stability EN 1022, ISO 7174. Test families: static load, dynamic/fatigue cycling, impact, tip-over. EU General Product Safety Regulation 2023/988 applied from 13 December 2024. Establishes that a furniture component supplier is selling into a test-report culture, not a taste culture."
+    },
+    {
+      "title": "Understanding Colour Variation and How It Occurs — PlastikCity (Silvergate Plastics)",
+      "url": "https://www.plastikcity.co.uk/blog/understanding-colour-variation-and-how-it-occurs/",
+      "whatItEstablished": "Read in full. Delta E is the accepted metric for colour difference against standard; Delta E of 1 is the common industry pass/fail and is usually visually accepted as a good match. Pigment batch variance is cumulative across a multi-pigment formulation. The two dominant process causes of drift are let-down rate error (weight percentage other than specified gives the wrong colour) and poor distribution/static in the hopper causing streaking. Retaining a master plaque is standard control practice."
+    },
+    {
+      "title": "Structural Foam Feature Guidelines — Wall Thickness, Bosses and Ribs",
+      "url": "https://structuralfoammolding.net/designing-for-structural-foam/design-rules.html",
+      "whatItEstablished": "Read in full. Hard numbers for the thick-wall route used on large furniture panels and structural furniture parts: working wall 0.180-0.500 in (4.5-12.7 mm), 0.250 in (6.35 mm) optimal; rib thickness scales 60% to 120% of wall depending on wall band; ribs under 0.180 in do not foam; boss minimum wall 0.080 in, boss OD 1.6-2.0x cored hole, base fillet 0.06-0.125 in; draft 0.5-3 degrees, 1 degree untextured, 2 degrees textured plus 1 degree per 0.001 in of texture depth; inside radius minimum 0.060 in, 0.125 in on load/impact sections, rule of thumb 0.6x wall."
+    },
+    {
+      "title": "Caster Terminology — A Guide, CE Clarke & Son",
+      "url": "https://clarkecasters.com/blog/post/caster-terminology.html",
+      "whatItEstablished": "Read in full. The exact vocabulary a castor buyer uses: rig (alternate term for yoke), fork (the section of the yoke the wheel installs into, two legs, sometimes three on dual-wheel), swivel raceway (rows of ball bearings allowing 360 degree swivel), swivel lead/offset (horizontal distance from raceway centre to axle centre), tread (wheel surface contacting the floor), durometer (tread hardness), capacity, hollow kingpin, thread guard (fitted in pairs to stop thread and hair wrapping the axle)."
+    },
+    {
+      "title": "Injection Molding for Furniture Parts and Components — Retlaw Industries",
+      "url": "https://www.retlawindustries.com/Products/Furniture",
+      "whatItEstablished": "Read in full. Positioning intelligence only. A furniture-focused moulder sells: single-piece chair shells, seats and backrests, table legs, arms, connectors, complete foldable chairs and tables; bundles design and engineering, tooling, prototyping and assembly; leads on material consultation (HDPE/PP outdoors, PC/PA indoors premium) and on integrated colour that will not chip or peel. Their proof points are machine count, floor area and ISO certification — none of which Metal Form may use. The lesson is that the differentiator we can own is engineering judgement and tooling, not plant statistics."
+    },
+    {
+      "title": "Nylon vs Aluminum Chair Bases: Stability Compared — Eureka Ergonomic",
+      "url": "https://eurekaergonomic.com/blogs/eureka-ergonomic-blog/nylon-vs-aluminum-chair-base-stability",
+      "whatItEstablished": "The commercial trade-off on the highest-value furniture moulding: nylon bases flex elastically and absorb cyclic load, but are creep-sensitive over long duration; heavy daily use by heavier users is where perceptible wobble appears. Named failure modes in the field: cracked castor hubs, axle pull-out, broken base legs. Aluminium is the upsell the moulder is competing against."
+    },
+    {
+      "title": "BIFMA X5.1 vs EN 1335: Understanding Office Chair Standards — CXstyle; plus Goodtone chair durability tests",
+      "url": "https://cxstyle.com/blog/bifma-x5-1-vs-en-1335-office-chair-standards/",
+      "whatItEstablished": "Cycle counts that furniture engineers quote from memory: EN 1335 seat/back fatigue around 100,000 cycles versus BIFMA around 120,000, with premium programmes specifying higher; five-star base swivel testing in the 50,000-60,000 cycle range at roughly 10 rpm. Useful as an industry benchmark, not as a Metal Form test capability."
+    },
+    {
+      "title": "VDI 3400 Surface Finish: Grades, Ra and Draft Angle",
+      "url": "https://moldtexturingguide.com/standards/vdi-3400/",
+      "whatItEstablished": "VDI 3400 (Verein Deutscher Ingenieure) is the texture standard normally used to specify matte and grained cavity finishes, graded roughly VDI 12 (smoothest) to VDI 45 (roughest), Ra approximately 0.40 to 18 micrometres, logarithmic — about 6 VDI numbers doubles roughness. Coarser texture demands more draft: around 1.5-2 degrees at VDI 24, at least 4 degrees at VDI 36. Texture diffuses reflection and hides minor sink and gate blemish. This is the language of a furniture finish specification."
+    },
+    {
+      "title": "Thermoplastics: creep, the descriptive term for long-term deformation — Hardie Polymers",
+      "url": "https://www.hardiepolymers.com/knowledge/creep-descriptive-term-for-long-term-deformation/",
+      "whatItEstablished": "Polypropylene under a modest 5 MPa sustained load at room temperature creeps around 1.5% in one year. Creep is reduced by crystallinity, fillers and crosslinking, and worsens above the glass transition. Design under sustained load must use creep modulus, not short-term modulus. This is the physics behind sagging shelves, splayed legs and loosening joints in furniture."
+    }
+  ],
+  "buyer": {
+    "whoBuys": "Two distinct buyers with different clocks. First: the furniture OEM — office seating, contract and hospitality furniture, kitchen and wardrobe systems, flat-pack casegoods, outdoor and garden ranges. Their plastic parts are bought by a technical purchaser working alongside a product engineer, against a range launch date and a test report. Second: the furniture hardware and fittings brand — castors, glides, connectors, runners, mechanisms — who sells components to the OEMs and lives or dies on unit cost, catalogue breadth and stock availability. The first buys a programme. The second buys a tool and a price per thousand. Both are approached the same way: through the part, the load case and the volume.",
+    "jobTitles": [
+      "Purchasing Manager / Technical Buyer (furniture OEM)",
+      "Product Engineer / Design Engineer (seating or casegoods)",
+      "Head of Product Development / Range Manager",
+      "Head of Hardware or Components (fittings brand)",
+      "Supply Chain Manager / Category Buyer",
+      "Quality Manager (owns the test-report file)",
+      "Operations or Assembly Manager (owns the assembly minute)",
+      "Owner / Managing Director in a mid-size furniture manufacturer"
+    ],
+    "whatTheyActuallyBuy": [
+      "A tool that will still hold dimension and finish after several hundred thousand shots",
+      "A part that passes the sequence in EN 1335, EN 12520, EN 16139 or BIFMA X5.1 when the assembled product is tested",
+      "A colour that matches the rest of the range across materials, batches and years",
+      "A per-part price that survives a retail price point set two years ago",
+      "Fewer parts in the assembly, so the assembly minute drops",
+      "Continuity of supply for the whole life of the range, including spares long after the range is discontinued",
+      "A second source for a part that is currently single-sourced",
+      "Someone who will look at the part and say what is wrong with it before quoting"
+    ],
+    "decisionDrivers": [
+      "Total landed cost per part, not tool price in isolation",
+      "Whether the supplier can read a load case and say where the part will crack",
+      "Colour and texture match to an existing range — this is a hard gate, not a preference",
+      "Tool lead time against the range launch or trade fair date",
+      "Willingness to carry the tool and supply parts over years, in small and large calls",
+      "Confidentiality — a new range is commercially sensitive until launch",
+      "Evidence the supplier understands assembly, not only moulding",
+      "Reaction speed on the first enquiry"
+    ],
+    "whatKeepsThemAwake": [
+      "A range that has already been photographed and catalogued failing its test sequence",
+      "One single-sourced part stopping an entire assembly line",
+      "Warranty returns on a component that passed initial testing but crept, cracked or wobbled after eighteen months in the field",
+      "A colour drift between the moulded part and the rest of the range noticed by a retail customer, not by QC",
+      "A tool sitting at a supplier they no longer want to work with",
+      "Being unable to supply a spare part for a range that is still under warranty",
+      "Assembly labour cost rising faster than the retail price can move"
+    ]
+  },
+  "economics": {
+    "unitEconomics": "Furniture plastics split into two economic regimes and they behave in opposite directions. Small hardware — castors, glides, cams, dowels, clips, caps, shelf supports — is a fractions-of-a-unit part where tooling amortisation and cycle time dominate and the only route to a competitive price is cavitation and a disciplined runner. Large parts — seat shells, backs, five-star bases, table-top components, decorative shells — are material-dominated: shot weight, wall thickness and cycle time set the price, cavitation is low, and the tool is heavy and expensive. A furniture programme almost always contains both, which is why the tooling strategy has to be decided per part and not per project. Above both sits the assembly minute: on furniture, labour to assemble is often a larger line than the plastic itself, which is why part consolidation and snap features are worth real tooling money.",
+    "costDrivers": [
+      "Shot weight and wall thickness — on large shells and bases the resin is the price",
+      "Cycle time, driven mainly by the thickest section and the cooling in the tool",
+      "Cavitation — the difference between an 8-cavity and a 32-cavity cam housing is the whole business case",
+      "Runner strategy: cold runner sprue and runner waste versus hot runner investment and drop count",
+      "Glass or mineral loading — filled grades cost more per kilo, run at higher tool temperature and are abrasive on the tool",
+      "Colour: number of colours in a range, changeover losses, masterbatch let-down percentage",
+      "Texture grade — coarser VDI texture forces more draft, which changes the part geometry and sometimes the tool",
+      "Secondary operations: inserts, pad printing, assembly of multi-part components, packing for retail",
+      "Assembly minutes at the OEM, which the part geometry directly controls",
+      "Freight and packaging volume — bulky low-value parts can cost more to ship than to mould"
+    ],
+    "volumeProfile": "Wide. Hardware components run continuously in hundreds of thousands to millions of pieces a year across a catalogue, in stable colours, with call-offs against a frame agreement. Range-specific parts run in campaign batches tied to a season or a launch and then taper into a long, low-volume spares tail that can last a decade. Contract and hospitality projects arrive as one-off blocks with hard dates. A supplier who only wants the high-volume half is not useful to a furniture OEM, because the spares tail is exactly where they get abandoned.",
+    "whereMoneyIsLost": [
+      "Tool built to the drawing rather than to the load case — the part is dimensionally correct and cracks at the boss",
+      "Cavitation decided by tool budget instead of annual volume, so the part price is wrong for the life of the range",
+      "Wall thickness carried over from a metal or wood design, producing sink, warp and a cycle time nobody costed",
+      "Colour approved from a plaque under one light source and rejected on the shop floor next to the rest of the range",
+      "A second, third and fourth fastener designed in because nobody looked at whether the part could be consolidated",
+      "Late texture change that forces a draft change and a tool modification",
+      "Regrind ratio drifting on a moulding floor, taking colour and mechanical properties with it",
+      "Single-sourcing a small part with a long tool lead time — the shortage costs more than the part ever earned"
+    ]
+  },
+  "risk": {
+    "failureModes": [
+      "Crack at the base of a screw boss — thread-forming screws generate hoop stress and split a boss with no base fillet or with walls too thick or too thin",
+      "Fracture along a weld line in a load-bearing part; in nylon with about 30% glass the weld line can carry half or less of the bulk strength",
+      "Creep under sustained load: polypropylene under about 5 MPa at room temperature deforms roughly 1.5% over a year, which reads as a sagging shelf, a splayed leg or a base that has developed a wobble",
+      "Castor axle pull-out and hub cracking under shock load and repeated swivel",
+      "Chair base arm fracture at the transition into the central column, where section changes abruptly",
+      "Snap feature fatigue: over-stressed cantilever arms that pass first assembly and fail on the third disassembly",
+      "Stress whitening and later cracking at ejector locations and sharp internal corners",
+      "Glide and foot inserts working loose in tube ends because the retention ribs were designed for a nominal tube tolerance only",
+      "Environmental stress cracking where a moulded-in stress meets a cleaning chemical or a plasticiser from an adjacent material",
+      "UV and thermal degradation on outdoor furniture — chalking, embrittlement and colour fade"
+    ],
+    "qualityDefects": [
+      "Sink marks over ribs, bosses and thick sections on visible surfaces",
+      "Warp and twist on large flat parts, aggravated by fibre orientation in filled grades",
+      "Visible weld lines, cosmetic on a decorative part and structural on a load-bearing one",
+      "Tiger stripes — alternating gloss and matt bands perpendicular to flow on long-flow polypropylene parts, worst on filled and pigmented compounds",
+      "Flow marks, jetting and gate blush near the gate on cosmetic surfaces",
+      "Colour drift beyond a Delta E of about 1 between batches, cavities or materials",
+      "Streaking from poor masterbatch dispersion or static in the hopper",
+      "Short shot and non-fill in thin rib tips and long thin features",
+      "Flash on parting lines and around slides, which on a furniture part means a deburring operation nobody costed",
+      "Gloss and texture mismatch between two parts of the same assembly moulded in different tools",
+      "Drag marks and scuffing from insufficient draft on textured surfaces",
+      "Voids in thick sections that show up as reduced strength rather than as a visible defect"
+    ],
+    "downtimeCauses": [
+      "Tool damage from an unejected part or a broken core pin",
+      "Wear on gates, slides and shut-offs in abrasive glass-filled grades",
+      "Hot runner drop blockage or heater failure on a multi-drop tool",
+      "Cooling circuit fouling and scaling, which quietly lengthens cycle time before it stops the tool",
+      "Colour changeover and purge losses on multi-colour ranges",
+      "Material supply interruption on a specific filled or UV-stabilised grade",
+      "Waiting on a single-source tool that is in another country and not accessible"
+    ],
+    "supplyRisks": [
+      "Single-source tooling with no drawings, no tool book and no second-source route",
+      "Tool ownership disputes — the customer paid for the tool but cannot physically retrieve it",
+      "Long spares tail on a discontinued range with no supplier willing to run small batches",
+      "Resin grade discontinued or reformulated mid-programme, changing shrinkage and colour",
+      "Freight and customs delay on bulky low-value parts, where the delay costs more than the goods",
+      "Consolidation among fittings brands leaving an OEM with fewer alternatives on a catalogue part",
+      "Currency and resin price movement against a retail price fixed a season in advance"
+    ]
+  },
+  "components": [
+    {
+      "name": "Twin-wheel and single-wheel castors",
+      "note": "Hub, tread, fork or rig, swivel raceway, thread guard, stem. The tread and the hub are usually different materials and different tools. Grip-ring and expanding stems dominate furniture; the mating socket is frequently a moulded part in the chair base itself, which makes the pair a tolerance problem, not two separate parts."
+    },
+    {
+      "name": "Five-star chair bases",
+      "note": "The highest-value moulded part in office seating and the most demanding. Glass-filled polyamide or filled polypropylene, deep ribbed structure, a taper bore for the gas lift, five castor sockets. The critical engineering decisions are gate location and weld-line placement relative to the arm-to-column transition, plus creep under sustained load."
+    },
+    {
+      "name": "Seat shells and backrests",
+      "note": "Single-piece polypropylene or filled polypropylene shells, often with integrated flex zones and moulded-in colour. Large tool, high tonnage, long flow length, cosmetic A-surface across the whole part — which is exactly where tiger stripes and gloss variation appear."
+    },
+    {
+      "name": "Chair mechanism housings, levers and covers",
+      "note": "Acetal and polyamide functional parts running against metal, plus cosmetic covers. Small, tight-tolerance, high-cavitation parts where the tool decides the price."
+    },
+    {
+      "name": "Armrest carriers, pads and height-adjust components",
+      "note": "A rigid moulded carrier with a soft top surface. The soft layer is usually a separate elastomer part or a two-component process at the assembler; the rigid carrier, the slider and the latch are conventional single-material mouldings and are the sensible part of this assembly to source."
+    },
+    {
+      "name": "Glides, feet and levelling feet",
+      "note": "Fixed glides, felt-carrier glides, threaded levelling feet, tube-end glides. Very high volume, very low unit value, entirely a cavitation-and-runner problem. Retention geometry has to work across the full tolerance band of the tube or leg it fits."
+    },
+    {
+      "name": "Tube end caps, ferrules and leg inserts",
+      "note": "Round, square and oval sections, internal and external fits. A catalogue business — one family of parts across many sizes — which favours family tooling and interchangeable inserts."
+    },
+    {
+      "name": "Cam housings, dowels and knock-down connectors",
+      "note": "The core of flat-pack and ready-to-assemble furniture. Cams, cam housings, dowels, pre-inserted nuts, shelf pegs, hanging brackets. Sold by the million, judged on holding force, engagement feel and dimensional consistency into a 5 mm or 8 mm bore."
+    },
+    {
+      "name": "Drawer runner components",
+      "note": "Rollers, retainer clips, front-fixing brackets, soft-close damper bodies and end stops, typically acetal for low friction and wear. Cycle life is the specification — soft-close mechanisms in this sector are commonly rated in the tens of thousands of cycles."
+    },
+    {
+      "name": "Hinge components and covers",
+      "note": "Cover caps, mounting plates, damper carriers and trim on concealed cabinet hinges. Cosmetic on the visible face, functional on the hidden face, in the same part."
+    },
+    {
+      "name": "Cable management parts",
+      "note": "Desk grommets and port bezels, cable spines and flap covers, clips, trays and tube segments for office furniture. Low structural demand, high cosmetic and colour-match demand, and a category that changes with every desk range."
+    },
+    {
+      "name": "Cover caps, screw caps, edge trims and decorative bezels",
+      "note": "The parts that make an assembly look finished. Individually trivial, collectively a colour-matching programme across a whole range and often across several base materials."
+    },
+    {
+      "name": "Table and frame connectors, corner brackets, knock-down joints",
+      "note": "Load-carrying moulded joints in table and frame construction. Where a furniture designer most often overestimates what an unribbed plastic section will hold, and where consolidation savings are largest."
+    },
+    {
+      "name": "Decorative and structural moulded parts",
+      "note": "Lamp bodies and shades, planter shells, panel infills, moulded screens and stackable elements. Design-led geometry with real tooling consequences: undercuts, draft on textured surfaces, and gate positions that cannot be anywhere visible."
+    }
+  ],
+  "tooling": {
+    "whyToolingMatters": "In furniture, the tool sets three things that cannot be corrected afterwards: where the weld line lands, how thick the wall is, and what the surface looks like. A weld line in the wrong place on a chair base or a connector is a fracture waiting for the fatigue test. A wall carried over from a wooden or metal predecessor gives sink on the visible face and a cycle time that destroys the part price. A texture chosen after the cavity is cut forces a draft change and a tool modification. Everything a furniture buyer worries about — the test report, the colour match, the per-part price, the assembly minute — is decided at tool design, months before the first shot.",
+    "toolingTopics": [
+      "Gate position chosen for weld-line placement, not for convenience — keep knit lines off loaded surfaces and off the A-surface",
+      "Weld line management in glass-filled grades, where a knit line can carry half or less of the bulk strength",
+      "Wall thickness discipline and rib proportioning to avoid sink on visible surfaces",
+      "Boss design: cored centre, base fillet, wall proportioned to the nominal wall, pilot hole sized for the screw maker's recommendation, entry chamfer to stop splitting",
+      "Snap-fit geometry moulded in to remove separate fasteners, balanced against undercuts and tool complexity",
+      "Draft matched to the specified texture grade, agreed before cavity finishing",
+      "Family tooling for catalogue ranges — one base, interchangeable inserts across sizes",
+      "Cooling layout in ribbed and thick-sectioned structural parts, which sets cycle time and warp",
+      "Tool steel selection and gate protection for abrasive filled grades",
+      "Ejection strategy on textured and cosmetic surfaces to avoid drag and stress whitening",
+      "Shrinkage allowance that differs between unfilled and filled grades, and differs with flow direction in filled grades",
+      "Designing the tool so the part can be moulded in every colour in the range without a geometry consequence"
+    ],
+    "cavityStrategy": "Set by annual volume and part size, not by tool budget. Small hardware — glides, caps, cams, dowels, clips, shelf supports — justifies high cavitation, and Metal Form has built tooling up to 46 cavities. Mid-size functional parts such as mechanism housings, runner components and connectors typically sit in the 4 to 16 cavity band with balanced filling as the controlling requirement. Large structural and cosmetic parts — bases, shells, seats, backs — are single or twin cavity and the argument moves from cavitation to cycle time and press size. For a catalogue family, a single base with interchangeable inserts is usually a better answer than several separate tools. Cavity count is a commercial decision that has to be made with a real volume forecast in front of both parties.",
+    "runnerStrategy": "Hot runner where cavitation is high, colour changes are frequent or the part is large and gate-position-critical: it removes runner regrind, shortens cycle time and allows the gate to sit where the weld line has to be controlled. Cold runner where volumes are moderate, the material is heavily filled and abrasive, or the part is small enough that runner waste is not the dominant cost. On multi-cavity hardware tools the real question is balance — an unbalanced runner produces cavity-to-cavity dimensional and colour differences that show up as a fit problem at assembly, not as a moulding defect.",
+    "coolingNotes": "Furniture parts are ribbed and thick-sectioned, and cooling is where cycle time and warp are won or lost. Conformal-intent circuits following ribs and bosses matter more here than uniform plate cooling, because the last section to freeze pulls the part out of shape. On large shells and bases, differential cooling between the ribbed core side and the cosmetic cavity side is a primary cause of warp. Mould temperature is also a mechanical parameter, not only a cycle parameter: raising mould and melt temperature within the polymer's degradation limits measurably improves weld-line strength in reinforced grades.",
+    "materialNotes": "Polypropylene, filled and unfilled, for shells, seats, caps and outdoor parts — cheap, tough, moulded-in colour, but creep-sensitive under sustained load, around 1.5% strain in a year at about 5 MPa at room temperature. Polyamide, usually with 30% glass, for five-star bases, castor components and load-carrying connectors — high strength, but the weld line is the design constraint and the material is abrasive on the tool. Acetal for drawer runners, dampers, mechanism parts and anything sliding against metal. ABS and ASA for cosmetic and decorative parts and for outdoor colour stability. Glass and mineral fillers raise stiffness and reduce creep but raise the weld-line penalty and shrink anisotropically, so the shrinkage allowance in the tool differs with flow direction. UV stabilisation is non-negotiable on outdoor ranges. Regrind policy needs stating in writing, because uncontrolled regrind moves colour and mechanical properties together."
+  },
+  "vocabulary": [
+    {
+      "term": "Rig / yoke",
+      "meaning": "The swivelling frame of a castor that carries the wheel; the fork is the two-leg section the wheel installs into.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Swivel raceway",
+      "meaning": "The bearing race in a swivel castor that lets it rotate through 360 degrees.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Swivel lead (offset)",
+      "meaning": "Horizontal distance from the centre of the swivel raceway to the centre of the axle. Sets how the castor trails and how it behaves under load.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Grip-ring stem",
+      "meaning": "A castor stem with a compression ring that snaps into a bore or socket. In furniture the mating socket is often moulded into the chair base itself.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Durometer",
+      "meaning": "Hardness of a castor tread. Softer treads protect hard floors; harder treads roll better on carpet.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Weld line / knit line",
+      "meaning": "Where two melt fronts meet in the cavity. In nylon with about 30% glass it can carry half or less of the bulk material strength, because fibres cross the flow rather than reinforce it.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Boss",
+      "meaning": "A moulded cylindrical feature that receives a screw or a pin. Cored centre, base fillet, wall proportioned to the nominal wall — get one wrong and it cracks.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Thread-forming screw",
+      "meaning": "A screw that forms its own thread in a plain moulded hole. It generates hoop stress in the boss, which is why the pilot hole diameter and entry chamfer are specification items, not details.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Cantilever snap",
+      "meaning": "A moulded hook that deflects on assembly and returns. Removes a fastener and an assembly operation; over-stress it and it survives assembly but not service.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Draft angle",
+      "meaning": "The taper that lets the part leave the cavity. Fixed by the texture: roughly 1.5 to 2 degrees at a moderate VDI grade, at least 4 degrees at a coarse one.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "VDI 3400",
+      "meaning": "German texture standard for cavity surfaces, roughly VDI 12 to VDI 45, Ra about 0.40 to 18 micrometres. About six VDI numbers doubles the roughness.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Delta E",
+      "meaning": "Measured colour difference from the standard. A Delta E of about 1 is the common industry pass/fail and is normally read as a good visual match.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Masterbatch and let-down ratio",
+      "meaning": "Concentrated pigment carrier dosed into the natural polymer at a specified weight percentage. Dose it at the wrong percentage and the colour is wrong, regardless of the pigment.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Master plaque",
+      "meaning": "The retained physical colour reference a batch is judged against. The one object in a colour argument that both sides accept.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Creep / creep modulus",
+      "meaning": "Slow deformation under sustained load. Long-term furniture design uses creep modulus, not short-term modulus — the difference is a shelf that sags in year two.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Sink mark",
+      "meaning": "A depression on a visible surface where a rib or boss behind it shrank more than the wall. The most common cosmetic rejection on furniture parts.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Tiger stripe",
+      "meaning": "Alternating gloss and matt bands perpendicular to flow on long-flow polypropylene, worst on filled and pigmented compounds. A large-shell problem, not a small-part problem.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Knock-down fitting",
+      "meaning": "The cam, housing, dowel and nut set that lets flat-pack furniture be assembled and disassembled. Judged on holding force and on how the cam feels at lock.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Family tool",
+      "meaning": "One mould base carrying interchangeable inserts so a whole size range is produced from a single tool investment.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Assembly minute",
+      "meaning": "The labour time to build the finished product. Every fastener removed by part consolidation comes straight off it, which is why consolidation buys tooling budget.",
+      "useIn": "copy"
+    }
+  ],
+  "metalFormAngle": {
+    "credibleOffers": [
+      "Take an existing furniture part — a castor, a base, a connector, a glide — and review the geometry, load case and tooling route before quoting",
+      "Product engineering and CAD in CATIA and SolidWorks, from concept geometry through to a mouldable part",
+      "Reverse engineering of a part that is in production but has no usable drawings or no available tool",
+      "Design for manufacture: wall thickness, ribbing, boss geometry, draft against texture, gate and weld-line placement",
+      "Redesign to consolidate several parts and fasteners into fewer mouldings",
+      "Tooling strategy per part — cavitation, runner type, family tooling — decided against a real annual volume",
+      "Mould design and manufacture for injection tooling, including multi-cavity, hot and cold runner and insert moulds",
+      "Multi-cavity hardware tooling, with experience up to 46 cavities",
+      "Technical mechanisms: moving, latching and adjusting assemblies rather than single static parts",
+      "Production of the parts and ongoing component supply against call-offs, including the long spares tail",
+      "Second-source or backup tooling for a part that is currently single-sourced",
+      "International delivery, with confidentiality under NDA for unreleased ranges"
+    ],
+    "dfmAngles": [
+      "Move the gate so the weld line leaves the loaded section — in a 30% glass grade that is not a refinement, it can be half the part's strength",
+      "Proportion the boss to the wall, core the centre, fillet the base and size the pilot hole to the screw maker's figure, so a thread-forming screw does not split it",
+      "Cut wall thickness inherited from a wood or metal predecessor and put the stiffness back as ribs, which buys both cycle time and a clean visible surface",
+      "Agree the texture grade before the cavity is finished, because the texture sets the draft and the draft changes the part",
+      "Replace fasteners with moulded snap features where the part is assembled once, and keep screws where it will be serviced",
+      "Consolidate a bracket, a cover and two fasteners into one moulding and take the saving out of the assembly minute, not the resin",
+      "Design the shrinkage allowance for the specific filled grade and flow direction, not from a generic table",
+      "Design the cooling around the ribs and bosses, since the last section to freeze is what warps the part"
+    ],
+    "secondSourceAngle": "A furniture range is exposed by its smallest single-sourced part. A glide, a cam housing or a castor socket that only one supplier can produce will stop an assembly line as effectively as a missing frame. Metal Form can build backup tooling for an existing part, from the part itself where drawings no longer exist, so the tool is in your control and a second route to supply exists before it is needed. The same route serves the spares tail: when a range is discontinued but still under warranty, the parts still have to come from somewhere. Confidential throughout, under NDA.",
+    "costOptimisationAngle": "Furniture part cost is decided in three places and only one of them is the resin. First, cavitation against real annual volume — a hardware part tooled at 8 cavities when the volume justified 32 carries the wrong price for the life of the range. Second, wall and cooling, which set cycle time and therefore the machine cost in every part. Third, part count, because on furniture the assembly minute is often a bigger line than the moulding. Send the annual volume with the part and the tooling proposal can be built around the economics instead of around the tool budget.",
+    "whatWeMustNotClaim": [
+      "No ISO 9001, ISO 13485, IATF, GMP or FDA claims of any kind",
+      "No cleanroom, sterile or validated manufacturing",
+      "No Moldflow or named simulation software — describe engineering judgement, gate and weld-line strategy in words instead",
+      "No 3D scanning, CMM department or QC department",
+      "No two-shot or multi-component moulding, and no grinding — soft-touch and overmoulded surfaces must be described as an industry practice, with the rigid carrier as what we make",
+      "No claims to run furniture standard testing ourselves — EN 1335, EN 12520, EN 16139, EN 581, BIFMA X5.1 are what the customer's product is tested to, not our accreditations",
+      "No machine counts, press tonnages, factory area, headcount, production volumes or shot capacities",
+      "No exact tolerances, exact cycle times or exact cost savings percentages",
+      "No named furniture clients, brands or logos, and no awards or certifications",
+      "No implied approval by any furniture retailer or OEM supplier programme"
+    ]
+  },
+  "page": {
+    "heroHeadline": "A furniture part is judged twice: on the shelf, and after a hundred thousand cycles.",
+    "heroSub": "Castors, chair bases, glides, mechanisms, connectors, runner parts, shells and trim. Send the part. We evaluate the geometry, the load case, the tooling route, the finish and the production economics.",
+    "heroVisualConcept": "No photograph, no hero image, no giant empty band. The hero is a plate: on warm bone paper, a large, precise orthographic line drawing of a five-star chair base in plan, drawn in hairline ink, with the central column bore and five castor sockets. Two things break the drawing's neutrality — a single clay load arrow at the column, and five thin clay reaction arrows at the sockets. Bottom-left carries a scale bar and a plate number set in mono (FD-01). Headline sits left in the display serif at large size; the drawing occupies the right two-thirds and bleeds slightly off the right edge, as an object photographed on a bench would. On load, the drawing does not fade in: it draws itself once, stroke by stroke, over about 1.2 seconds, then the load arrow settles. Nothing floats and nothing glows.",
+    "narrativeSpine": "Follow one object from drawing to shelf. The object (what furniture actually buys in plastic) → the load (where these parts really break) → the material (honest trade-offs, no hero material) → the surface (texture and colour, where furniture is unforgiving) → the assembly (part count and the assembly minute) → the tool (cavitation, runner, cooling, decided against volume) → the supply (call-offs, spares tail, second source). Each section is one turn of the same object, not a new topic.",
+    "sections": [
+      {
+        "id": "hero",
+        "title": "A furniture part is judged twice",
+        "purpose": "State the sector's actual test in one line and establish the visual grammar: warm paper, hairline drawing, plate number, one clay accent.",
+        "layout": "Asymmetric two-thirds plate. Headline block left on a four-column measure, orthographic drawing right, bleeding off the right edge. Thin rule under the whole band. No card, no box, no gradient.",
+        "contentOutline": "Headline, two-sentence sub, and a single line of quiet capability text below the rule: since 2006, over 1,000 projects, tooling experience up to 46 cavities, CATIA and SolidWorks, international delivery, NDA on request. No badges, no icon row.",
+        "interaction": "Self-drawing SVG stroke animation on the base outline, then the load arrow settles into place. Runs once. Respects prefers-reduced-motion by rendering the finished drawing."
+      },
+      {
+        "id": "parts-index",
+        "title": "The parts list",
+        "purpose": "Show category depth without a grid of rounded cards. Prove we know what furniture actually buys.",
+        "layout": "Catalogue back-matter: sticky drawing panel on the left holding one hairline object at a time, and a long numbered ledger on the right — a two-column index of components with a one-line note each, separated by hairline rules, part codes in mono. Reads like the index of a fittings catalogue.",
+        "contentOutline": "Fourteen entries drawn from the components list: castors, five-star bases, seat shells and backs, mechanism housings and levers, armrest carriers, glides and levelling feet, tube caps and ferrules, cams, dowels and knock-down connectors, drawer runner and damper parts, hinge components, cable management, cover caps and trim, table and frame connectors, decorative and structural mouldings. One honest technical note per line.",
+        "interaction": "Hovering or focusing a ledger row swaps the sticky drawing with a cross-fade under 200 ms and updates the plate number. On scroll, the drawing follows the row nearest the vertical midpoint. Keyboard navigable; on mobile the drawing collapses into a small inline plate above each group."
+      },
+      {
+        "id": "load-path",
+        "title": "Where these parts actually break",
+        "purpose": "The technical centrepiece. Demonstrate that we read load cases, not just drawings.",
+        "layout": "Full-bleed oat panel, single large centred SVG anatomy of a five-star base with four numbered callouts running to the margins. Text sits in the margins as annotation, not as paragraphs under a heading.",
+        "contentOutline": "Four callouts: (1) weld line at the arm-to-column transition — in a 30% glass nylon a knit line can carry half or less of the bulk strength; (2) boss and screw joint — thread-forming screws generate hoop stress and split an unfilleted boss; (3) sustained load and creep — polypropylene deforms around 1.5% in a year at about 5 MPa at room temperature; (4) section change and rib termination — where a sharp transition becomes a crack front. Closing line: gate position decides callout one, and gate position is decided at tool design.",
+        "interaction": "A two-state toggle labelled AS DESIGNED / AS IT FAILS. In the second state the drawing does not animate wildly: the four failure locations bloom in clay, hairline crack paths draw in over 600 ms, and the load arrow thickens. Toggling back retracts them. Scroll-linked as a fallback on touch."
+      },
+      {
+        "id": "material-bench",
+        "title": "Material, honestly",
+        "purpose": "Show material judgement without pretending one material wins. Furniture engineers distrust suppliers who have a favourite resin.",
+        "layout": "A horizontal bench of five material swatch plates, each a tall panel rendered purely in CSS — surface colour, a subtle CSS texture appropriate to the material, a hairline frame, a mono code. Underneath each swatch, a four-row property ledger with values expressed as short honest phrases and a small hairline bar, not as numbers we cannot defend.",
+        "contentOutline": "PP and filled PP: cheap, tough, moulded-in colour, creep-sensitive under sustained load. PA with 30% glass: strong and stiff, weld line is the design constraint, abrasive on the tool. POM: low friction and wear, for runners, dampers and anything sliding on metal. ABS and ASA: cosmetic and colour-stable, ASA for outdoors. TPE: the soft layer on armrests and glide faces, and a note that this is normally a separate part or a two-component process at the assembler. One closing line: material is chosen after the load case, not before it.",
+        "interaction": "Horizontal scroll-snap on the bench, with the active swatch's ledger rising slightly, as if picked up. No carousel dots, no auto-advance."
+      },
+      {
+        "id": "surface-and-colour",
+        "title": "The surface is the product",
+        "purpose": "Own the topic furniture buyers care most about and moulders talk about least.",
+        "layout": "Split panel. Left: a colour and texture matrix rendered in CSS — a five-by-four grid of small plates, columns as texture grades from polished to coarse (rendered with SVG turbulence and dot patterns), rows as range colours in warm neutrals. Right: a narrow column of running text and one mono spec block.",
+        "contentOutline": "Texture is specified to VDI 3400, roughly VDI 12 to VDI 45, Ra about 0.40 to 18 micrometres, and about six VDI numbers doubles the roughness. Coarser texture demands more draft — around 1.5 to 2 degrees at a moderate grade, at least 4 degrees at a coarse one — so texture is a geometry decision and has to be agreed before the cavity is finished. Colour is judged as Delta E against a retained master plaque, with a Delta E of about 1 the common pass/fail. Two colours in two different base materials need two masterbatch formulations to look like one range. Let-down percentage error and hopper static are the two everyday causes of drift.",
+        "interaction": "A single horizontal drag handle across the matrix that moves a soft raking light across the plates, so texture depth reads visually. Slow, weighted, one axis only. Falls back to a static rendered light on reduced motion."
+      },
+      {
+        "id": "consolidation",
+        "title": "Count the parts, then count the minutes",
+        "purpose": "Make the commercial argument that furniture people respond to fastest — labour, not resin.",
+        "layout": "A single wide horizontal band split by one vertical hairline. Left of the line: a row of small hairline object drawings — bracket, cover, two washers, four fasteners — each with its own plate number, spread out like parts on a bench. Right of the line: two objects. Under each side, a mono tally.",
+        "contentOutline": "Left tally: parts, fasteners, assembly operations. Right tally: the same rows, lower. Body text: on furniture, the labour to assemble is often a larger line than the plastic. Every fastener removed by a moulded snap feature comes off the assembly minute. Snaps cost tooling complexity — undercuts, slides — and that trade is worth making where the part is assembled once, and worth refusing where the part will be serviced. Closing line: send the assembly, not only the part.",
+        "interaction": "Scroll-scrubbed consolidation: as the band enters the viewport, the loose parts on the left translate and merge toward the right along short, straight paths, then settle. No easing overshoot, no rotation, no particles. Reduced motion shows both states side by side."
+      },
+      {
+        "id": "tooling-route",
+        "title": "The tooling decision, made against a volume",
+        "purpose": "Convert engineering credibility into a commercial proposal, and set up the ask for annual volume.",
+        "layout": "A horizontal ruler, not a card row. A single hairline baseline runs the width with graduated tick marks; six stations sit on it, each with a mono station number, a short title above the line and a two-line note below. Reads as a bench scale.",
+        "contentOutline": "Stations: geometry and load-case review; DFM and redesign; tooling strategy (cavitation, runner, family tooling) decided against annual volume; mould design and manufacture, injection tooling including multi-cavity, hot and cold runner and insert moulds, with experience up to 46 cavities; trial and first-article parts; production and ongoing supply. Body note: cavitation is a commercial decision. Tell us the annual volume and the tooling proposal is built around the part price rather than the tool price.",
+        "interaction": "The baseline draws left to right as the section enters view; station notes fade up in sequence at 80 ms intervals. Static on reduced motion."
+      },
+      {
+        "id": "supply",
+        "title": "The part still has to exist in year seven",
+        "purpose": "Own the spares tail and the second-source conversation — the strongest differentiator we can honestly claim.",
+        "layout": "Two-column ledger on oat, divided by a hairline, set like a balance sheet. Left column: the exposure. Right column: the route. Rows align across the divide so each risk sits opposite its answer.",
+        "contentOutline": "Rows — single-sourced small part stops an assembly line / backup tooling built now, before it is needed. No drawings for a part still in production / reverse engineering from the part itself, in CATIA or SolidWorks. Range discontinued but still under warranty / ongoing component supply against call-offs, including small batches. Tool sitting with a supplier you no longer want / a second tool you control. Unreleased range, commercially sensitive / NDA and confidentiality as standard. Closing line: mould warranty, terms per project. International delivery.",
+        "interaction": "Rows reveal in pairs on scroll, left then right with a 120 ms offset, so the exposure is read before the answer. No hover states beyond a hairline weight change."
+      },
+      {
+        "id": "cta",
+        "title": "Send the part",
+        "purpose": "Close with the lowest-friction, most concrete ask in the sector.",
+        "layout": "A calm plate on bone with generous margin. Short headline in the display serif, one sub-line, two actions set as underlined text links with a hairline rule beneath, not as filled buttons. A mono line at the bottom carrying the response commitment.",
+        "contentOutline": "Headline and sub below. Actions: start a project, or send the part on WhatsApp. Mono line: initial project response within 48 business hours. NDA on request.",
+        "interaction": "None beyond a link underline that thickens on hover. The page ends quietly."
+      }
+    ],
+    "technicalPanels": [
+      {
+        "title": "Where load-bearing furniture parts fail",
+        "bullets": [
+          "Weld line in a loaded section — in polyamide with about 30% glass a knit line can carry half or less of the bulk strength, because fibres cross the flow instead of reinforcing it",
+          "Boss cracking under a thread-forming screw, where there is no base fillet, no cored centre, or a pilot hole outside the screw maker's recommendation",
+          "Creep under sustained load — polypropylene deforms around 1.5% over a year at about 5 MPa at room temperature, which shows up as a sagging shelf or a splayed leg",
+          "Abrupt section change and rib termination, where the transition becomes the crack front",
+          "Castor axle pull-out and hub cracking under shock load and repeated swivel",
+          "Snap features that survive first assembly and fail on the third"
+        ]
+      },
+      {
+        "title": "Cavitation and runner, decided against volume",
+        "bullets": [
+          "Small hardware — glides, caps, cams, dowels, clips — justifies high cavitation; Metal Form has built tooling up to 46 cavities",
+          "Mid-size functional parts such as mechanism housings and runner components typically sit in the 4 to 16 cavity band, where balanced filling is the controlling requirement",
+          "Large structural and cosmetic parts run single or twin cavity, and the argument moves from cavitation to cycle time",
+          "A catalogue of sizes is often better served by one family tool with interchangeable inserts than by several separate tools",
+          "Hot runner where cavitation is high, colour changes are frequent, or the gate has to sit where the weld line must be controlled",
+          "Cold runner where volumes are moderate and the grade is heavily filled and abrasive",
+          "An unbalanced multi-cavity runner shows up as a fit problem at assembly, not as a moulding defect"
+        ]
+      },
+      {
+        "title": "Surface, texture and colour",
+        "bullets": [
+          "Texture specified to VDI 3400, roughly VDI 12 to VDI 45, Ra about 0.40 to 18 micrometres; about six VDI numbers doubles the roughness",
+          "Texture sets draft — around 1.5 to 2 degrees at a moderate grade, at least 4 degrees at a coarse one — so it is agreed before the cavity is finished",
+          "Texture diffuses reflection and hides minor sink and gate blemish; high gloss shows everything",
+          "Colour judged as Delta E against a retained master plaque; Delta E of about 1 is the common industry pass/fail",
+          "Two base materials in one range need two masterbatch formulations to read as one colour",
+          "The everyday causes of colour drift are let-down percentage error, poor dispersion and hopper static",
+          "Long-flow polypropylene shells are where tiger striping appears — alternating gloss and matt bands perpendicular to flow, worst on filled and pigmented compounds"
+        ]
+      },
+      {
+        "title": "Design rules we apply to furniture parts",
+        "bullets": [
+          "Gate position chosen to keep weld lines off loaded and cosmetic surfaces",
+          "Rib thickness proportioned to the wall so the visible face stays free of sink",
+          "Bosses cored, filleted at the base, wall proportioned to the nominal wall, entry chamfered against splitting",
+          "Draft matched to the specified texture grade, not to a default",
+          "Shrinkage allowance set for the specific filled grade and for flow direction, not from a generic table",
+          "Cooling laid out around ribs and bosses, because the last section to freeze is what warps the part",
+          "Snap features where the part is assembled once; screws where it will be serviced"
+        ]
+      },
+      {
+        "title": "What we need to quote properly",
+        "bullets": [
+          "The part, a STEP file or a drawing — or the physical part, if that is all that exists",
+          "The load case: what carries what, in which direction, for how long",
+          "Annual volume and expected programme life, including the spares tail",
+          "Colour references and the texture grade, or the range the part has to match",
+          "Any standard the finished product will be tested to",
+          "Whether this is a new part, a redesign, or a second source for an existing tool",
+          "Initial project response within 48 business hours. NDA on request."
+        ]
+      }
+    ],
+    "ctaHeadline": "Send the part.",
+    "ctaSub": "A STEP file, a drawing, or the part in your hand. We come back with the geometry issues, the tooling route and the production economics.",
+    "whatsappPrefill": "Hello Metal Form. We are a furniture manufacturer. We need [castors / chair base / glide / connector / runner part / shell]. Annual volume approx [ ]. Material [ ]. New part / redesign / second source. Can you review the part and the tooling route?",
+    "metaTitle": "Furniture Component Tooling and Moulded Parts | Metal Form",
+    "metaDescription": "Injection tooling and moulded components for furniture: castors, chair bases, glides, mechanisms, connectors, runner parts and shells. Engineering, DFM, mould manufacture and ongoing supply. Response within 48 business hours."
+  },
+  "artDirection": {
+    "moodInOneLine": "A furniture maker's technical plate book — warm paper, hairline ink drawings, one pigment colour, objects set down rather than staged.",
+    "palette": {
+      "surface": "#F7F3ED",
+      "surfaceAlt": "#E9E1D5",
+      "ink": "#211E19",
+      "inkMuted": "#6F675C",
+      "accent": "#B15737",
+      "accent2": "#6C7A5E",
+      "rationale": "Bone and oat are the paper and board of a furniture showroom and a sample library, and they let a hairline drawing read as a drawn object rather than as UI. The ink is warm near-black, never pure black, so it sits on paper instead of on a screen. Clay is a pigment colour, not a warning colour — it carries every load arrow, failure callout and active state, and it is the only saturated element on the page, so a single clay arrow reads as emphasis without any other device. Sage carries data and secondary annotation so measured information never competes with load information. Total saturated area on the page should stay under roughly five percent. The whole palette is warm and low-chroma, which keeps it inside the bright, clean, engineered master direction while being unmistakably a different chapter from any cool or technical vertical."
+    },
+    "typographyNote": "Display in a low-contrast serif with optical sizing — Fraunces or Newsreader — used only for section titles and the hero, set large with tight tracking and a slightly loose line height, because furniture is the one vertical where a serif is legitimate and it immediately marks this chapter as different. Body in a neutral grotesque (Inter) at a generous 17 to 18 px with a 68 to 72 character measure. Everything measured — plate numbers, part codes, dimensions, material codes, tallies, the response commitment — in a mono (IBM Plex Mono) at small size with wide tracking and uppercase, so the technical register is carried by the typeface rather than by boxes or badges. Three faces, three jobs, no exceptions. Always give real fallback stacks.",
+    "compositionNote": "A plate grid. Every drawing sits on a warm paper plate with a hairline frame, a plate number in the corner and a scale bar, at a consistent drawing scale across the whole page so objects can be compared by eye. A persistent left gutter of about 72 px carries section numerals and a continuous vertical hairline that runs the length of the page like a binding edge. Margins are generous and asymmetric — text sets on a four to six column measure while drawings run wide and are allowed to bleed off one edge, the way an object photographed on a bench extends past the frame. Hairlines at 1 px do all structural work: no filled cards, no rounded corners above 2 px, no shadows, no glass, no gradients. Vertical rhythm is deliberately uneven — a dense ledger section followed by a spacious single-drawing section — so the page breathes like a book rather than scrolling like a template.",
+    "motionLanguage": "Set down, not flown in. Everything moves as if a hand placed an object on a table: short travel (8 to 16 px), weighted easing with no overshoot and no bounce, 300 to 500 ms. Drawings arrive by drawing themselves — SVG stroke-dashoffset, once, never looping. Failure states bloom rather than flash. Scroll-linked motion is used exactly twice, in the consolidation merge and the load-path callouts, and both are short, straight and reversible. Nothing floats, drifts, pulses, parallaxes or glows. Every effect has a rendered static equivalent under prefers-reduced-motion, and the page must be fully legible with all motion disabled.",
+    "signatureMotif": "The plate: a hairline-framed warm paper rectangle carrying one orthographic line drawing at a fixed scale, a mono plate number (FD-01, FD-02), a scale bar, and — where the object carries load — a single clay arrow. It repeats at every scale on the page, from the hero at full width to 40 px thumbnails in the parts ledger, and it is the one device that must never be broken.",
+    "diagramConcept": "The load path. One large SVG of a five-star chair base, drawn in plan with an inset section cut, where load enters at the column and travels out through the five arms to the castor sockets. Flow is shown as thin clay lines, not as filled arrows. Four numbered callouts pin to the weld line at the arm-to-column transition, the screw boss, the sustained-load section, and the rib termination. A two-state toggle switches between AS DESIGNED and AS IT FAILS, where the second state draws hairline crack paths at the four callout points. This is a mechanism diagram, not a decoration: a chair engineer should be able to point at it and agree or disagree.",
+    "howThisDiffersFromOtherIndustries": "This is the only chapter set on warm paper with a serif display face, and the only one where the drawing is an object rather than a system, a flow or a process. Other verticals get cool neutrals, grotesque and mono only, dense data or process diagrams, and a technical or clinical register. Furniture gets a catalogue and plate-book rhythm: a sticky object index, a horizontal material bench, a texture and colour matrix, a parts-consolidation bench and a balance-sheet supply ledger — five layouts that would look wrong in any other chapter. Its palette is the warmest and lowest-chroma in the set, its motion the slowest and most restrained, and its single accent is a pigment rather than a signal colour. If a reader flips from the furniture page to any other industry page, the paper, the serif and the plate frames should tell them instantly that the chapter changed."
+  },
+  "openQuestions": [
+    "Does Metal Form have any furniture-sector work in its 1,000+ project history that can be described generically and without naming a client — for example a category of part or a cavity count — because one concrete, anonymised example would carry more weight on this page than any amount of general capability language?",
+    "Can the mould warranty be described in one sentence that is true for a typical furniture tool, given terms are set per project? A vague warranty line reads worse than a specific one.",
+    "Do we want to invite tool transfers explicitly on this page? It is the strongest second-source play in the sector, but it needs a clear internal position on receiving and reconditioning tools built elsewhere.",
+    "Is there capacity and willingness to take the small-batch spares tail? It is the differentiator most furniture buyers say they cannot get, but it is commercially unattractive if it is not priced deliberately.",
+    "Which furniture sub-sector should the page lean toward — office seating, kitchen and wardrobe fittings, contract and hospitality, or outdoor? They have different buyers, different volumes and different standards, and the page currently spans all four. A lean would make it sharper but narrower.",
+    "Should the page carry a materials note on regrind policy? Furniture buyers care about it and stating a clear policy would be a differentiator, but only if the policy actually exists.",
+    "Do we have permission to reference the standards (EN 1335, EN 12520, EN 16139, BIFMA X5.1) as the customer's test framework? The copy is written so they are the customer's obligations and never our accreditations, but this needs a legal read before publication."
+  ],
+  "recommendations": [
+    "Lead the page with the load case, not with the machine. Every credible differentiator we can honestly claim in this sector is engineering judgement — weld-line placement, boss geometry, creep, texture-versus-draft — and none of the plant statistics competitors lead with are available to us. This is an advantage: it forces the page to be about the part.",
+    "Make the second-source and spares-tail argument the commercial spine. It is the one thing furniture buyers consistently cannot get, it maps exactly onto verified capabilities (reverse engineering, tooling, ongoing supply, NDA, international delivery), and it requires no certification, no volume claim and no client name.",
+    "Ask for annual volume everywhere. Cavitation is the single largest lever on furniture part price, the 46-cavity experience is a verified fact, and the request itself signals that we price the part rather than the tool.",
+    "Do not build a colour or texture claim we cannot support. State the physics — Delta E, master plaque, let-down, VDI grades and draft — as industry practice and describe how we design for it. Never imply we operate colour measurement equipment or a QC department.",
+    "Keep the two-component and soft-touch topic explicitly on the customer's side of the line. Armrest pads and soft glide faces are real furniture parts, so the honest position is that we make the rigid carrier and the mechanism, and that is enough. Silence would look like a gap; a clear boundary looks like discipline.",
+    "Use at most two scroll-linked animations on this page. The plate-book art direction dies the moment the page starts behaving like a template, and restraint is itself the differentiator against every competitor page in this sector.",
+    "Commission nothing photographic. The whole art direction is built to work with zero photography, and the SVG plates will look more premium than any stock furniture image — which is the failure mode this vertical is most prone to.",
+    "Honest assessment on Food / FMCG Packaging versus Furniture & Decor, as requested — Food/FMCG Packaging would very probably be the commercially stronger category, for four reasons. First, volume: packaging runs continuously in millions of units against annual contracts, whereas furniture runs in range campaigns with a long low-value spares tail, so the moulding revenue per tool is structurally higher. Second, tooling intensity: closures, thin-wall containers, caps and preforms are exactly the high-cavitation, hot-runner, stack-and-family tooling work where the verified 46-cavity experience is a headline rather than a footnote, and where a mould buyer's first question is cavity count. Third, buyer clock: packaging buyers replace and add tooling continuously as SKUs change, while a furniture OEM tools a range and then goes quiet for years. Fourth, second-sourcing behaviour: FMCG procurement dual-sources on principle, so the backup-tooling offer sells itself rather than needing to be explained. The counterweights are real, though: packaging is the vertical where hygiene, food-contact and audit claims dominate competitor pages, and Metal Form cannot claim ISO, GMP, FDA, cleanroom or validated manufacturing, so the page would have to be written around a hole that buyers actively probe — whereas furniture asks for no certification at all and rewards exactly the engineering judgement we can demonstrate. Furniture is also more defensible against the low-cost tooling competition, because colour matching, texture and range continuity are relationship problems that price alone does not solve. Recommendation for a later build: keep Furniture & Decor, and treat Food / FMCG Packaging as the strongest candidate for a future addition — but only once there is a clear, legally reviewed position on what can be said about food-contact tooling without implying certification we do not hold. Do not change the category in this build."
+  ]
+}

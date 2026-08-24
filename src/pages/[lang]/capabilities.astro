@@ -1,0 +1,251 @@
+---
+/**
+ * Capabilities.
+ *
+ * The one page on the site that is deliberately a list — a buyer checking
+ * whether a supplier can do a specific thing wants a list, not a narrative.
+ *
+ * It ends with what Metal Form does *not* do. That section is the reason the
+ * rest of the page is believable: a capability list that stops somewhere is a
+ * capability list somebody wrote honestly.
+ */
+import Base from '../../layouts/Base.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import CtaBlock from '../../components/CtaBlock.astro';
+import TrustRow from '../../components/TrustRow.astro';
+import { LOCALE_ORDER, type Locale } from '../../i18n/locales.ts';
+import { getCapabilities, getCommon } from '../../content/index.ts';
+import { absoluteUrl, breadcrumbSchema } from '../../lib/seo.ts';
+import { BRAND } from '../../config/site.ts';
+
+export function getStaticPaths() {
+  return LOCALE_ORDER.map((lang) => ({ params: { lang } }));
+}
+
+const locale = Astro.params.lang as Locale;
+const p = getCapabilities(locale);
+const c = getCommon(locale);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: BRAND.name, url: absoluteUrl(locale) },
+    { name: c.nav.capabilities, url: absoluteUrl(locale, 'capabilities') },
+  ]),
+];
+---
+
+<Base locale={locale} meta={p.meta} route="capabilities" schemas={schemas}>
+  <a class="skip-link" href="#main">{c.a11y.skipToContent}</a>
+  <SiteHeader locale={locale} current="capabilities" />
+
+  <main id="main">
+    <header class="cp-hero">
+      <div class="shell--wide cp-hero__inner">
+        <div>
+          <p class="eyebrow">{p.hero.kicker}</p>
+          <h1 class="cp-hero__head">
+            {p.hero.headline.map((line) => <span>{line}</span>)}
+          </h1>
+        </div>
+        <div class="cp-hero__side">
+          <p class="t-lead">{p.hero.lead}</p>
+          <p class="cp-hero__intro t-small">{p.intro}</p>
+        </div>
+      </div>
+    </header>
+
+    {p.groups.map((group, gi) => (
+      <section class="cp-group" data-alt={gi % 2 === 1} data-reveal>
+        <div class="shell--wide cp-group__inner">
+          <div class="cp-group__head">
+            <p class="cp-group__n t-mono">{group.index}</p>
+            <h2 class="cp-group__t">{group.title}</h2>
+            <p class="cp-group__b">{group.body}</p>
+          </div>
+
+          <dl class="cp-items">
+            {group.items.map((item) => (
+              <div class="cp-item">
+                <dt>{item.name}</dt>
+                <dd>{item.note}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+    ))}
+
+    <section class="cp-mod">
+      <div class="shell cp-mod__inner">
+        <h2 class="t-h3 cp-mod__t">{p.modularity.heading}</h2>
+        <p class="t-lead cp-mod__b">{p.modularity.body}</p>
+        <ol class="cp-mod__list">
+          {p.modularity.points.map((point, i) => (
+            <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{point}</li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="cp-sw">
+      <div class="shell cp-sw__inner">
+        <h2 class="t-h5 cp-sw__t">{p.software.heading}</h2>
+        <p class="cp-sw__b">{p.software.body}</p>
+      </div>
+    </section>
+
+    {/* The boundary section. Set apart deliberately — it is the credibility
+        instrument on this page, not an afterthought. */}
+    <section class="cp-bounds">
+      <div class="shell cp-bounds__inner">
+        <h2 class="t-h3 cp-bounds__t">{p.boundaries.heading}</h2>
+        <p class="t-lead cp-bounds__b">{p.boundaries.body}</p>
+        <ul class="cp-bounds__list">
+          {p.boundaries.points.map((point) => <li>{point}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="cp-trust">
+      <div class="shell--wide">
+        <TrustRow locale={locale} layout="row" />
+      </div>
+    </section>
+
+    <CtaBlock locale={locale} cta={p.cta} source="capabilities" index="—" />
+  </main>
+
+  <SiteFooter locale={locale} />
+</Base>
+
+<style>
+  .cp-hero { padding-block: clamp(3rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem); }
+  .cp-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: end;
+  }
+  @media (max-width: 900px) { .cp-hero__inner { grid-template-columns: 1fr; align-items: start; } }
+
+  .cp-hero__head {
+    margin-block-start: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(2.1rem, 4.6vw, 3.7rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+  }
+  .cp-hero__head span { display: block; }
+  .cp-hero__head span:last-child { color: var(--accent-deep); }
+  .cp-hero__side { display: grid; gap: var(--sp-5); }
+  .cp-hero__intro { color: var(--ink-muted); max-inline-size: 56ch; }
+
+  /* ── Groups ───────────────────────────────────────────────────────────── */
+  .cp-group { padding-block: clamp(2.5rem, 5.5vw, 4.5rem); border-block-start: var(--rule); }
+  .cp-group[data-alt='true'] { background: var(--surface-sunk); }
+
+  .cp-group__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .cp-group__inner { grid-template-columns: 1fr; } }
+
+  .cp-group__head { position: sticky; inset-block-start: clamp(5.5rem, 12vh, 7rem); }
+  @media (max-width: 900px) { .cp-group__head { position: static; } }
+
+  .cp-group__n { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }
+  .cp-group__t {
+    margin-block-start: var(--sp-4);
+    font-size: var(--step-4);
+    letter-spacing: var(--track-display);
+  }
+  .cp-group__b {
+    margin-block-start: var(--sp-5);
+    color: var(--ink-muted);
+    max-inline-size: 46ch;
+  }
+
+  .cp-items { border-block-start: var(--rule-strong); }
+  .cp-item {
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+    display: grid;
+    gap: 0.35rem;
+  }
+  .cp-item dt {
+    font-size: var(--step-0);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--track-head);
+  }
+  .cp-item dd {
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-inline-size: 62ch;
+  }
+
+  /* ── Modularity ───────────────────────────────────────────────────────── */
+  .cp-mod { padding-block: var(--section-y); border-block-start: var(--rule); }
+  .cp-mod__t { max-inline-size: 20ch; }
+  .cp-mod__b { margin-block-start: var(--sp-5); }
+  .cp-mod__list { margin-block-start: var(--sp-7); border-block-start: var(--rule); }
+  .cp-mod__list li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    font-size: var(--step-0);
+    align-items: baseline;
+  }
+  .cp-mod__list li span {
+    font-size: var(--step--2);
+    letter-spacing: 0.14em;
+    color: var(--accent-deep);
+  }
+
+  /* ── Software ─────────────────────────────────────────────────────────── */
+  .cp-sw { padding-block: var(--section-y-tight); background: var(--surface-sunk); border-block: var(--rule); }
+  .cp-sw__b { margin-block-start: var(--sp-4); color: var(--ink-muted); max-inline-size: 72ch; }
+
+  /* ── Boundaries ───────────────────────────────────────────────────────── */
+  .cp-bounds {
+    padding-block: var(--section-y);
+    background: var(--inverse);
+    color: var(--inverse-ink);
+    --ink: var(--inverse-ink);
+    --signal: var(--signal-inverse);
+    --signal-ink: var(--signal-inverse);
+    --accent: var(--accent-inverse);
+    --accent-deep: var(--accent-inverse);
+    --ink-muted: color-mix(in oklab, var(--inverse-ink) 66%, transparent);
+    --line: color-mix(in oklab, var(--inverse-ink) 18%, transparent);
+  }
+  .cp-bounds__t { max-inline-size: 18ch; }
+  .cp-bounds__b { margin-block-start: var(--sp-5); }
+  .cp-bounds__list { margin-block-start: var(--sp-7); border-block-start: var(--line); }
+  .cp-bounds__list li {
+    padding-block: var(--sp-5);
+    padding-inline-start: var(--sp-6);
+    border-block-end: 1px solid var(--line);
+    font-size: var(--step--1);
+    line-height: 1.62;
+    color: var(--ink-muted);
+    max-inline-size: 78ch;
+    position: relative;
+  }
+  .cp-bounds__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.85rem;
+    inline-size: 0.85rem;
+    block-size: 1px;
+    background: var(--signal);
+  }
+
+  .cp-trust { padding-block: var(--section-y-tight); }
+</style>

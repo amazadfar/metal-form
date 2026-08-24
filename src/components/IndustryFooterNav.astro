@@ -1,0 +1,148 @@
+---
+/**
+ * Chapter navigation.
+ *
+ * Sits at the foot of every industry page. Two jobs: let a reader who picked
+ * the wrong door find the right one without going back to the homepage, and let
+ * a salesperson jump between sectors mid-presentation.
+ */
+import { INDUSTRY_LIST, type IndustryKey } from '../config/industries.ts';
+import { localePath, type Locale } from '../i18n/locales.ts';
+import { getIndustry, getCommon } from '../content/index.ts';
+
+interface Props {
+  locale: Locale;
+  current: IndustryKey;
+}
+const { locale, current } = Astro.props;
+const c = getCommon(locale);
+
+const list = INDUSTRY_LIST.map((ind) => ({
+  ind,
+  name: getIndustry(locale, ind.key).name,
+  href: localePath(locale, 'industries', ind.slug),
+}));
+
+const idx = INDUSTRY_LIST.findIndex((i) => i.key === current);
+const prev = list[(idx - 1 + list.length) % list.length];
+const next = list[(idx + 1) % list.length];
+---
+
+<nav class="chnav" aria-label={c.nav.allIndustries} data-chapter-nav data-prev={prev.href} data-next={next.href}>
+  <div class="shell--wide">
+    <div class="chnav__steps">
+      <a class="chnav__step chnav__step--prev" href={prev.href}>
+        <span class="t-label">{c.actions.previous}</span>
+        <span class="chnav__name">{prev.name}</span>
+      </a>
+      <a class="chnav__step chnav__step--next" href={next.href}>
+        <span class="t-label">{c.actions.next}</span>
+        <span class="chnav__name">{next.name}</span>
+      </a>
+    </div>
+
+    <div class="chnav__all">
+      <h2 class="t-label chnav__h">{c.nav.allIndustries}</h2>
+      <ul class="chnav__list">
+        {list.map(({ ind, name, href }) => (
+          <li>
+            <a
+              href={href}
+              style={`--dot:${ind.palette.accent}`}
+              aria-current={ind.key === current ? 'page' : undefined}
+            >
+              <span class="chnav__dot" aria-hidden="true"></span>{name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  /**
+   * Presentation shortcuts. `[` and `]` step between chapters.
+   *
+   * Deliberately not the arrow keys — those belong to scrolling, and this site
+   * is read as much as it is presented. Ignored while a field or the navigation
+   * overlay has focus so it can never fire during typing.
+   *
+   * The two targets arrive as data attributes rather than through `define:vars`
+   * so this can be a bundled module: an inline script cannot carry a Content
+   * Security Policy hash.
+   */
+  const nav = document.querySelector<HTMLElement>('[data-chapter-nav]');
+  if (nav) {
+    const prevHref = nav.dataset.prev;
+    const nextHref = nav.dataset.next;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const el = document.activeElement as HTMLElement | null;
+      if (el && /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName)) return;
+      if (el?.isContentEditable) return;
+      if (document.querySelector<HTMLElement>('[data-nav-overlay]')?.hidden === false) return;
+
+      if (e.key === '[' && prevHref) { e.preventDefault(); location.href = prevHref; }
+      else if (e.key === ']' && nextHref) { e.preventDefault(); location.href = nextHref; }
+    });
+  }
+</script>
+
+<style>
+  .chnav { padding-block: var(--section-y-tight); border-block-start: var(--rule); }
+
+  .chnav__steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+    margin-block-end: var(--sp-8);
+  }
+  @media (max-width: 620px) { .chnav__steps { grid-template-columns: 1fr; } }
+
+  .chnav__step {
+    display: grid;
+    gap: 0.4rem;
+    padding: var(--sp-5) var(--sp-6);
+    background: var(--surface);
+    transition: background-color var(--dur-2) var(--ease-out);
+  }
+  .chnav__step--next { text-align: end; }
+  @media (max-width: 620px) { .chnav__step--next { text-align: start; } }
+  .chnav__step:hover { background: var(--accent-wash); }
+  .chnav__name {
+    font-size: var(--step-1);
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--track-head);
+  }
+
+  .chnav__h { display: block; margin-block-end: var(--sp-4); }
+  .chnav__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    gap: 0.35rem 1.5rem;
+  }
+  .chnav__list a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+    padding-block: 0.25rem;
+    transition: color var(--dur-2) var(--ease-out);
+  }
+  .chnav__list a:hover { color: var(--ink); }
+  .chnav__list a[aria-current='page'] { color: var(--ink); font-weight: var(--weight-medium); }
+  .chnav__dot {
+    inline-size: 0.4rem;
+    block-size: 0.4rem;
+    background: var(--dot);
+    flex: none;
+    opacity: 0.5;
+  }
+  .chnav__list a:hover .chnav__dot,
+  .chnav__list a[aria-current='page'] .chnav__dot { opacity: 1; }
+</style>

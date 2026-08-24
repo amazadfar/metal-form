@@ -1,0 +1,603 @@
+{
+  "key": "custom",
+  "displayName": "Custom Projects",
+  "researchedAt": "2026-08",
+  "sources": [
+    {
+      "title": "Reverse Engineering in Plastics Processing — Plastics Engineering (SPE)",
+      "url": "https://www.plasticsengineering.org/2024/10/reverse-engineering-in-plastics-processing-006940/",
+      "whatItEstablished": "Read in full. Establishes the four-stage reverse engineering sequence used in plastics: data collection and analysis, material characterisation, simulation and design optimisation, prototype validation and refinement. Confirms that material characterisation for plastics means rheology and PvT (pressure, specific volume, temperature) data, not just 'it looks like ABS'. Confirms the industry practice of using pilot tools to learn a part's real behaviour at lower financial risk than committing serial tooling. Confirms 'point cloud' as the standard term for captured geometry."
+    },
+    {
+      "title": "Injection Molding RFQ Template & Buyer Checklist — Plastics Technology Alliance",
+      "url": "https://plasticstechnologyalliance.com/injection-molding-rfq-template/",
+      "whatItEstablished": "Read in full. The single most useful source for this page. Gives the full field list of a competent RFQ (STEP/native/Parasolid 3D, 2D drawing with datums and critical dimensions, resin family and grade plus acceptable equivalents, performance requirements, colour and matching method, texture and SPI finish, cosmetic vs non-cosmetic surfaces, estimated annual usage, first order quantity, prototype/bridge/production intent, preferred cavitation or 'supplier to recommend', expected tool life, tool ownership and storage, timeline, secondary operations, packaging, inspection scope). Critically, it maps each missing field to the assumption a supplier makes in its absence, and states the principle the whole page is built on: every blank in an RFQ becomes a supplier assumption, and assumptions get priced conservatively."
+    },
+    {
+      "title": "Injection Molding Checklists by Project Stage: RFQ, DFM, Steel Cut, Trial & Acceptance — Super-Ingenuity",
+      "url": "https://super-ingenuity.cn/guides/injection-molding-checklists/",
+      "whatItEstablished": "Read in full. Establishes the real gate structure of a tooling project and what is decided at each gate: RFQ and kickoff (revision-controlled files, resin grade, annual volume, tool life, CTQ dimensions, finish standard), DFM review (wall and draft feasibility, gate location and fill strategy, shrinkage and tolerance assumptions, ejection and parting line, cooling circuit, warpage risk), pre-steel-cut release (cavity count, mould standard, core/cavity steel grade, runner and gate concept, cooling layout, risk register closed, customer signs a Mould Specification Sheet), T0/T1/T2 trials (condition sheets, dimensional results, cosmetic defect classification, corrective actions), acceptance, then production control (shot count against PM interval, tool history card, ECN revisions, spares). Also establishes the important distinction between a DFM checklist (is the part mouldable) and a Mould Specification Sheet (what hardware gets built)."
+    },
+    {
+      "title": "The Mold Transfer Checklist: Moving Tooling to a New Custom Plastic Molder — Ulite",
+      "url": "https://ulitemech.com/articles/mold-transfer-checklist-custom-plastic-molder/",
+      "whatItEstablished": "Read in full. Establishes why tooling moves supplier at all: piece-price erosion, rising scrap over consecutive quarters, capacity ceiling, supplier instability (acquisition, closure, loss of key people), and consolidation of moulding with downstream operations. Establishes what must travel with a tool: written ownership letter, latest 2D and 3D with revision history, mould classification and rated life, steel certifications (P20, 718H, H13, S136), hot runner specification and controller settings, maintenance and repair logs, last approved process parameters, golden and boundary samples, texture and gloss standards (VDI 3400, Mold-Tech reference), resin compliance documents. Establishes the physical condition assessment items: cavity and core wear, corrosion, cracks, undocumented welds, shut-off and parting line integrity, vent depth and blockage, cooling circuit flow and scale, ejection components, slides, gibs, angle pins, wear plates, sprue bushing radius and locating ring diameter compatibility, mould base squareness and clamp slots, rust protection and crate condition. Confirms transfers fail on missing paperwork, uninspected steel and unvalidated process, not on geography."
+    },
+    {
+      "title": "How to Bridge the Gap with Aluminum Tooling — MoldMaking Technology",
+      "url": "https://www.moldmakingtechnology.com/articles/how-to-bridge-the-gap-with-aluminum-tooling-",
+      "whatItEstablished": "Read in full. Establishes the vocabulary set 'bridge tooling / soft tooling / pilot production / semi-production / aluminium production tooling' as interchangeable trade terms, and that bridge tooling exists to surface processing problems that originate in design and resin selection (warpage in particular) before a production tool is committed. Also confirms aluminium's faster thermal response as a real processing advantage and case hardening as the answer to glass-filled resins."
+    },
+    {
+      "title": "Reverse Engineering Legacy Parts — Tangent",
+      "url": "https://www.usetangent.com/reverse-engineering-legacy-parts/",
+      "whatItEstablished": "Read in full. Establishes the legacy-part arrival state: components old enough that CAD was never created or has been lost, still vital to running operations. Establishes that design intent is recovered from functional context, not only geometry: assembly relationship (press-fit versus slip-fit), operating environment (temperature, chemical exposure, durability), and load character (repetitive wear, heavy load, abrasive force). Confirms that the sample gives current geometry, which may record degradation rather than original intent."
+    },
+    {
+      "title": "The Complete Guide to Reverse Engineering 3D Scanning — 3D Scantech",
+      "url": "https://www.3d-scantech.com/the-complete-guide-to-reverse-engineering-3d-scanning/",
+      "whatItEstablished": "Establishes the caution that matters most when working from an old plastic sample: plastic parts warp over time from heat and age, so captured data represents the current state of the part and the model normally has to be straightened or re-aligned in CAD toward the intended design. Directly supports the 'as-moulded is not nominal, and an old sample is not even as-moulded' argument."
+    },
+    {
+      "title": "From Mesh to Milestone: The Scan-to-CAD Workflow Explained — Structure",
+      "url": "https://structure.io/blog/from-mesh-to-milestone-the-scantocad-workflow-explained/",
+      "whatItEstablished": "Establishes the distinction between a mesh (STL/OBJ, a shell of triangles) and a parametric solid (STEP, editable by dimension and constraint), and that the real work is extracting design intent: identifying planes, establishing datums, and rebuilding with real features (extrusions, revolves, sweeps, fillets, holes, bosses) rather than 'fixing' the scan. Establishes 'deviation check' as the term for validating a rebuilt model back against the captured geometry."
+    },
+    {
+      "title": "How to Troubleshoot 9 Common Defects in Injection Molded Parts — RJG",
+      "url": "https://rjginc.com/how-to-troubleshoot-9-common-defects-in-injection-molded-parts/",
+      "whatItEstablished": "Establishes the root-cause categories for moulding defects (process, material, part design, mould construction) and the practical triage rule used to separate them: defects that come and go during a run point at process drift or material variation; defects that appear consistently across runs point at design or tooling. Also confirms non-uniform wall thickness as the single most common design-side root cause behind sink, voids, warpage and fill problems."
+    },
+    {
+      "title": "Reverse Engineering and Intellectual Property Rights — TT Consultants",
+      "url": "https://ttconsultants.com/reverse-engineering-and-intellectual-property-rights-balancing-innovation-and-legal-considerations/",
+      "whatItEstablished": "Establishes that reverse engineering a lawfully acquired product is broadly lawful as an analytical act, but that reproducing and selling a design covered by a live patent or registered design right is a separate matter, and that contractual anti-reverse-engineering clauses can bind independently of IP law. Supports putting an explicit rights question into the intake rather than discovering it late."
+    }
+  ],
+  "buyer": {
+    "whoBuys": "The widest buyer set of any page on the site, unified by one condition: the visitor has a problem that does not fit a supplier's product catalogue. Four recognisable arrivals. First, the technical owner inside a small or mid-size manufacturer who needs a plastic component that nobody sells any more, or needs one made differently. Second, the maintenance or spare-parts engineer whose machine is down for a component whose original supplier is gone, discontinued it, or quotes a long import lead time. Third, the product owner or founder who has an idea, a sketch, or a benchmark product bought off a shelf, and no tooling knowledge at all. Fourth, the buyer with a running part and a commercial problem: price drift, scrap, one single-source supplier, or tooling sitting in someone else's building. All four are looking for an engineering counterpart who will read the part and answer, not a form that returns a price.",
+    "jobTitles": [
+      "Technical Manager / Technical Director",
+      "Production Manager",
+      "Maintenance and Reliability Engineer",
+      "Spare Parts / After-Sales Manager",
+      "Design Engineer",
+      "R&D Engineer",
+      "Product Manager / Product Owner",
+      "Purchasing or Procurement Manager",
+      "Supply Chain / Sourcing Lead",
+      "Managing Director or Owner of an SME manufacturer",
+      "Hardware lead at an early-stage product company",
+      "Importer or distributor localising a product they currently buy finished"
+    ],
+    "whatTheyActuallyBuy": [
+      "A judgement on whether the thing in their hand can be made, and roughly what it costs to be wrong",
+      "A manufacturable 3D model with a revision number, where previously there was a part and no data",
+      "A tooling route stated as a decision, not a menu: cavitation, runner type, steel intent, and why",
+      "Transfer of risk. Someone who will state assumptions in writing rather than absorb them silently into a price",
+      "A named engineering contact who reads the geometry rather than forwarding it",
+      "A route to repeatable supply of a component, not one transaction",
+      "Independence from a single supplier: a second tool, or their own data and tool specification",
+      "Time. Most of these buyers are late by the time they write"
+    ],
+    "decisionDrivers": [
+      "Whether the first reply contains engineering content or only a price",
+      "How fast the first reply arrives, and whether it names what is still unknown",
+      "Willingness to say no, or to say the volume does not justify the tool",
+      "Confidentiality before anything is sent, not after",
+      "Who owns the CAD model and the tool at the end, stated up front",
+      "Ability to carry a project from sample through tooling to ongoing supply without a handover to a third party",
+      "Total landed cost including freight, duty and lead time, not the tool price alone",
+      "Evidence the supplier has seen this shape of problem before"
+    ],
+    "whatKeepsThemAwake": [
+      "Paying for a tool that never produces an accepted part, with no clear owner of the failure",
+      "T1 samples that miss, followed by an argument about whether it was the model, the tool or the process",
+      "The line stopping for one small component nobody stocks",
+      "Discovering after steel is cut that the annual volume assumption was wrong in either direction",
+      "The supplier holding the model, the tool and the process knowledge",
+      "Reproducing a part they do not actually have the right to reproduce",
+      "A project that stalls for weeks because no one will make a decision without data that does not exist",
+      "Sending a competitor's part or their own design to a stranger"
+    ]
+  },
+  "economics": {
+    "unitEconomics": "Two separate money conversations that buyers routinely collapse into one. The tool is capital committed once and amortised across the programme. The part is a recurring cost driven by material mass, cycle time divided by cavity count, machine rate, scrap and packaging. A custom project is decided at the point where those two curves cross, and that point is set almost entirely by annual usage. The distinctive economics of this page is that most of the money is committed before anything is made: cavitation, runner type, steel intent and the number of undercuts that survive DFM are all fixed at intake, and every one of them is chosen from information the customer often has not supplied. Sources are consistent that missing information does not produce a cheaper quote. It produces a padded one, a list of questions, or a deprioritised enquiry.",
+    "costDrivers": [
+      "Cavity count. The dominant lever on part cost and a step change in tool cost. Cavities do not scale linearly with price because the mould base and much of the structure is shared",
+      "Undercuts. Every feature that needs a slide, lifter or collapsible core adds mechanism, adds bench time, adds wear, and adds lead time",
+      "Runner choice. Cold runner is cheaper to build and forgiving on colour change. Hot runner removes runner regrind and shortens cycle, and is a real capital line of its own",
+      "Steel and hardness intent, driven by expected shot life and whether the resin is filled and abrasive",
+      "Tolerance band. Tight dimensions cost in machining, in bench fitting, and again forever in process control",
+      "Cosmetic requirement. A visible face constrains gate position, texture, weld-line location and acceptance criteria",
+      "Wall thickness and its uniformity, which set cycle time and therefore the machine cost of every part ever made",
+      "The volume of unknowns at quotation. Unstated volume, unstated resin, unstated tolerance and unstated finish are each priced as risk"
+    ],
+    "volumeProfile": "Undefined by nature, and defining it is the highest-value question the page asks. Real arrivals span a single obsolete replacement, a few hundred spares a year for a machine fleet, a few thousand units for a first production run, and six-figure annual programmes. The same enquiry text covers all of them. Until annual usage and programme life are stated, cavitation, steel intent and runner type cannot be chosen, so a responsible supplier either asks or assumes. Tooling experience up to 46 cavities gives the upper bound of what can be engineered when the volume genuinely justifies it, but the honest position on this page is that most custom projects start at low cavitation and earn their way up.",
+    "whereMoneyIsLost": [
+      "Quoting on assumption. Two quotes for the same part diverge because they are pricing two different sets of guesses",
+      "Cavitation chosen against a forecast that was never a forecast. Too few cavities caps output, too many burns capital and runs the tool half loaded",
+      "Over-specification. Tolerance and surface finish applied everywhere instead of where function requires them",
+      "Undercuts that survive into steel because nobody challenged them during DFM",
+      "Design change after the steel-cut release. The cheapest revision is on the screen, the next cheapest is steel-safe metal left in the cavity, the most expensive is a welded and re-cut insert",
+      "Taking over an existing tool without a condition assessment, then discovering wear, blocked vents or scaled cooling after it is installed",
+      "Buying a tool price rather than a route. A cheap tool with no spares list, no tool history card and no maintenance interval is a deferred cost",
+      "Re-engineering the same part twice because the first model was a mesh nobody could edit"
+    ]
+  },
+  "risk": {
+    "failureModes": [
+      "Reproducing a worn, deformed or aged sample instead of the design it started as. Plastic parts move over time under heat and load, so a sample records its current state, not its drawing",
+      "Copying measured as-moulded dimensions into cavity steel without applying shrinkage compensation, producing a cavity cut undersize by roughly the shrink rate of the resin",
+      "Applying the wrong shrink factor because the resin is unknown or was substituted at some point in the part's life",
+      "Fit achieved originally by the mating part's tolerance, not this part's. Copying the sample perfectly still fails in an assembly nobody sent",
+      "The sample being an obsolete revision, or a field repair, or already a workaround for an earlier problem",
+      "Warpage that only appears at cavity count, because the single-cavity trial had a different fill and cooling balance",
+      "Undercuts discovered after quotation, converting a straight-pull tool into a slide tool",
+      "Volume assumption wrong in either direction, so the tool is either a bottleneck or an idle asset",
+      "A transferred tool that arrives with undocumented weld repairs, worn shut-offs or blocked vents",
+      "Reproducing a design covered by a live patent or registered design right, or bound by a contract clause the buyer forgot about"
+    ],
+    "qualityDefects": [
+      "Short shot: cavity not filled. Points at gate size or position, flow length, melt or mould temperature, or a wall too thin for the flow it has to carry",
+      "Sink marks: local shrinkage over a thick section or a heavy rib, insufficiently compensated by packing",
+      "Voids: the same mechanism as sink, resolved internally instead of at the surface",
+      "Flash: material escaping the shut-off. Points at clamp, injection pressure, parting line condition or worn steel",
+      "Weld and meld lines: two flow fronts meeting cold. A fill-pattern and gate-position problem before it is a process problem",
+      "Warpage and out-of-flat: differential shrinkage from non-uniform wall, unbalanced cooling, or fibre orientation in a filled grade",
+      "Burn marks and trapped gas: venting, injection speed",
+      "Drag marks and ejection witness: insufficient draft, polish direction, ejector layout",
+      "Dimensional drift across the run as the tool reaches thermal equilibrium",
+      "Gate vestige or ejector witness landing on a face the customer considers cosmetic, which is an intake failure rather than a moulding failure"
+    ],
+    "downtimeCauses": [
+      "One discontinued component with no drawings and no alternate source",
+      "Single tool, single site. No backup steel anywhere",
+      "Import lead time on a part that is trivial to mould locally",
+      "Tool damage or a broken core with no spares kit and no supplier record of what the insert was",
+      "A supplier that has stopped answering, been acquired, or lost the person who knew the job",
+      "Scrap rate climbing quietly until a batch is rejected downstream"
+    ],
+    "supplyRisks": [
+      "Original manufacturer out of business, or the part deleted from their catalogue",
+      "Tooling physically owned by, or contractually entangled with, the incumbent supplier",
+      "Documentation, process parameters and the last good model held by the incumbent and not contractually retrievable",
+      "One approved source with no qualified second source and no plan to create one",
+      "Cross-border lead time, freight and customs exposure on a low-value, high-consequence component",
+      "Resin grade discontinued or reformulated, forcing a substitution that changes shrink and mechanical behaviour",
+      "Key-person knowledge: the process that works exists in one operator's head and one machine's memory"
+    ]
+  },
+  "components": [
+    {
+      "name": "Obsolete machine spare part",
+      "note": "The most common arrival. A moulded component from equipment still in service whose maker no longer supplies it. Usually delivered as one worn sample, often the failed one. The engineering problem is separating the design from the damage."
+    },
+    {
+      "name": "Technical mechanism: latch, hinge, cam, ratchet, detent",
+      "note": "Function lives in tolerance and in material behaviour, not in shape. Cannot be reverse engineered from geometry alone: the mating part, the required force and the expected cycle count all have to be asked for."
+    },
+    {
+      "name": "Housing or enclosure for an electro-mechanical assembly",
+      "note": "Large surface, thin wall, many bosses and ribs, usually a cosmetic face. Wall uniformity and boss-to-wall ratio decide whether it sinks. Gate position decides where the weld line lands."
+    },
+    {
+      "name": "Snap-fit clip, retainer or fastener",
+      "note": "Small, cheap, high volume, and unforgiving. Deflection and retention force depend on resin modulus, so a material substitution silently changes the product. Natural candidate for high cavitation once volume is established."
+    },
+    {
+      "name": "Closure, cap or dispensing component",
+      "note": "Thread form, sealing land and torque behaviour are the whole specification. The mating neck must come with the part. High-cavitation economics apply as soon as annual usage is real."
+    },
+    {
+      "name": "Moulded gear, pinion, cam or bushing",
+      "note": "Tooth form and centre distance are function-critical, and shrink is not uniform across a filled grade. This is where the difference between as-moulded geometry and design intent stops being academic."
+    },
+    {
+      "name": "Handle, lever or grip with a metal insert",
+      "note": "Insert moulding brings insert location, insert tolerance, preheat and knit-around into scope. The insert supply chain becomes part of the project."
+    },
+    {
+      "name": "Threaded bush or metal insert carrier",
+      "note": "Either moulded in or installed afterwards. Which one is chosen changes the tool, the cycle and the assembly line, and should be decided at intake rather than after T1."
+    },
+    {
+      "name": "Fluid-path part: valve body, filter housing, manifold cover",
+      "note": "Sealing faces, flatness and internal geometry that cannot be measured from outside. Frequently requires the part to be sectioned, which means the sample is consumed."
+    },
+    {
+      "name": "Impeller, fan or rotating component",
+      "note": "Free-form blade surfaces are the one geometry class where feature-based reconstruction from hand measurement is genuinely inadequate, and captured surface data should be supplied by the customer."
+    },
+    {
+      "name": "Crate, tray, spacer or internal handling component",
+      "note": "Low value per part, high value in aggregate, usually thick-walled and cycle-dominated. Cooling and wall thickness are the entire cost conversation."
+    },
+    {
+      "name": "Seal carrier, gasket retainer or over-moulded sealing part",
+      "note": "Two materials, two shrink rates and a bond that is either mechanical or chemical. Scope has to be settled early because it changes the tool architecture."
+    },
+    {
+      "name": "Jig, fixture or line-side tooling part",
+      "note": "Often an internal need rather than a product. Low volume, tolerance-driven, and a good candidate for a pilot tool or a machined route instead of production tooling."
+    },
+    {
+      "name": "A product rather than a part",
+      "note": "Two or more moulded components plus fasteners and a function. The intake question is not 'can you mould this' but 'where does the assembly boundary sit and who owns it'. Frequently the highest-value arrival on this page."
+    }
+  ],
+  "tooling": {
+    "whyToolingMatters": "On every other page the tool serves a known part. Here the tool has to be committed while part of the input is still inference. That changes how a tool should be specified: the design has to hold its assumptions somewhere it can still change them. Two disciplines carry a custom project across that gap. The first is steel-safe machining, where any dimension carrying uncertainty is cut with metal left in the cavity so the feature can be opened after the first shots. Steel can be removed later. It cannot be put back without welding, and a welded insert is never quite the insert you designed. The second is treating T1 as a measurement rather than a verdict. First shots on a steel-safe tool are how an inferred shrink rate becomes a measured one.",
+    "toolingTopics": [
+      "Steel-safe strategy: which dimensions get metal left on, and the written record of where and how much",
+      "Shrinkage compensation: the cavity is cut to the part dimension scaled by the shrink factor of the specific grade, not the resin family",
+      "Straight pull versus slides and lifters: how many undercuts survive DFM, and what each one costs in mechanism, bench time and cycle",
+      "Parting line placement, and where the visitor is prepared to accept a witness line",
+      "Gate type and position, decided against cosmetic faces, weld-line location and fill balance rather than convenience",
+      "Venting: depth and location, the cheapest fix on a tool and the one most often missing on transferred tools",
+      "Cooling layout: line placement, balance across cavities, and its direct effect on cycle time and warp",
+      "Ejection layout: pins, sleeves, blades, stripper plates, and the marks they leave",
+      "Mould base standard, locating ring and sprue bushing compatibility with the intended press",
+      "Texture standard named against a published reference rather than described in words",
+      "Tool life intent, hardness and the spares list that goes with it",
+      "Pilot and bridge tooling as a deliberate first step where the volume forecast is not yet real",
+      "Second-source tooling as a defined asset with its own drawings and spare inserts",
+      "Assessment and refurbishment of an existing tool: wear, shut-off integrity, vent depth, cooling condition, undocumented weld repairs"
+    ],
+    "cavityStrategy": "Cavitation is not a preference, it is arithmetic against annual usage, cycle time, working hours and required output. Most custom projects start at one, two or four cavities because the volume is either unknown or genuinely small, and that is the right answer for a first tool. Cavity count is stepped up when the annual number is proven, the part is stable and the resin is settled. Where volume genuinely justifies it, tooling has been engineered up to 46 cavities, and the constraint at that end is no longer the cavity, it is fill balance, cooling balance and part-to-part consistency across the plate. The practical intake rule for the page: state a first order quantity and an annual usage, even as a range, or the supplier will pick one for you and price the risk that they picked wrong.",
+    "runnerStrategy": "Cold runner is the default first answer on a custom project. It is cheaper to build, simpler to maintain, forgiving on colour change and easier to diagnose when the part is new and the resin assumption is still being tested. Hot runner earns its capital when cycle time or material cost dominates: no runner to regrind, shorter cycle, better control over fill in a multi-cavity plate, and gate positions that a cold runner cannot reach. Hot half selection also brings a controller, tip selection and a maintenance obligation with it. Insulated and hot-to-cold hybrids sit between the two. On a first tool built from inferred data, there is a real argument for cold runner simply because there are fewer variables to hold still while the part is being learned.",
+    "coolingNotes": "Cooling sets cycle time, and cycle time sets the recurring cost of every part the tool ever makes, so it is a commercial decision disguised as a technical one. It also sets warp: differential cooling between core and cavity side pulls a part out of shape more reliably than almost anything else. On a reverse-engineered part the cooling layout has to be designed against an assumed wall thickness distribution taken from a sample that may itself be non-uniform, which is another reason to measure wall in several places rather than one. On a taken-over tool, cooling circuits should be flow-tested rather than assumed. Scale and partial blockage present as slow, unstable cycles and inconsistent dimensions, and they look exactly like a process problem.",
+    "materialNotes": "The resin is the first thing a sample refuses to tell you. Family can often be narrowed by density, surface, sound, stiffness and application; the specific grade cannot, and grade is what governs shrink, tolerance capability and mechanical performance. Typical published mould shrinkage ranges give the scale of the problem: ABS around 0.4 to 0.8 percent, PC around 0.5 to 0.7, PA6 unfilled around 0.8 to 1.5, PP around 1.0 to 2.5, POM around 1.8 to 2.5. A 30 percent glass-filled grade shrinks far less and shrinks unequally along and across the flow direction, which is why fibre orientation shows up as warp. The grade datasheet governs in every case. Where a customer cannot state the resin, the honest route is to select a grade against the application requirements the customer can state, record it as an assumption on the specification sheet, and cut the tool steel-safe on the dimensions that assumption affects. Where certainty is required, independent laboratory identification of the sample is available on the market and is the customer's call to commission."
+  },
+  "vocabulary": [
+    {
+      "term": "As-moulded",
+      "meaning": "The dimensions a part actually has after it has cooled and shrunk, as opposed to the dimensions it was designed to. Every sample a customer sends is as-moulded, and an old one has moved further still.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Nominal",
+      "meaning": "The intended design dimension, before shrink, before wear, before age. Reverse engineering is the act of getting from as-moulded back to nominal.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Design intent",
+      "meaning": "Why a feature is the size it is: what it locates, what it seals, what it retains. Geometry can be measured. Intent has to be reconstructed from function.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Mould shrinkage / shrink factor",
+      "meaning": "The proportional contraction of a moulded part as it cools, specific to the grade and affected by wall, pressure and fill direction. The cavity is cut oversize by this factor.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Steel-safe",
+      "meaning": "Machining a feature so that excess metal remains in the cavity. The feature can be opened out after first shots. Steel can always be removed later, never added back cleanly.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "CTQ (critical to quality)",
+      "meaning": "The short list of dimensions and characteristics that actually decide whether the part works. Everything else is reference. Identifying the CTQ list is usually cheaper than tightening every dimension.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Datum",
+      "meaning": "The reference from which dimensions are taken. A sample arrives with no datums, so the first engineering decision on any reverse-engineered part is where to put them.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "DFM (design for manufacture)",
+      "meaning": "The review that tests whether a geometry can be moulded before it is tooled: wall thickness, draft, undercuts, gate location, ejection, tolerance feasibility against the resin.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Draft",
+      "meaning": "The taper on surfaces parallel to the pull direction that lets a part release. Textured faces need more of it. A sample tells you which way the original tool pulled.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Undercut",
+      "meaning": "A feature that blocks straight ejection and therefore requires a slide, a lifter or a collapsible core. Each one adds mechanism, lead time and wear.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Parting line",
+      "meaning": "Where the two halves of the tool meet, visible on the part as a fine witness line. On a sample, it is a direct record of how the original tool was split.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Gate vestige",
+      "meaning": "The small mark left where material entered the cavity. On a sample it shows the original gate type and position, which is evidence of the fill pattern the part was designed around.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Weld line",
+      "meaning": "The line where two flow fronts met and fused, weaker than surrounding material. Its position on a sample maps the flow path of the tool that made it.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Ejector witness",
+      "meaning": "The faint circular or rectangular marks left by ejector pins. On a sample they show where the original tool pushed, and therefore which face was hidden.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Mesh versus solid",
+      "meaning": "A mesh (STL, OBJ) is a shell of triangles describing a surface. A solid (STEP, native CAD) is editable by dimension and feature. Tooling needs the second, and converting is engineering, not file conversion.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Deviation check",
+      "meaning": "Comparing a rebuilt CAD model against the captured or measured geometry to see where and by how much they disagree. The honest version of 'we matched your sample'.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Press-fit / slip-fit",
+      "meaning": "Whether a mating feature is meant to be forced together or to slide. A single question that decides a tolerance band nobody can read off a sample.",
+      "useIn": "copy"
+    },
+    {
+      "term": "EAU (estimated annual usage)",
+      "meaning": "How many parts per year. The number that decides cavitation, steel intent and runner type, and the one most often left blank.",
+      "useIn": "copy"
+    },
+    {
+      "term": "T0 / T1 / T2",
+      "meaning": "The successive tool trials. T1 is the first sampling of a finished tool. On a project built from inferred data, T1 is a measurement exercise, not a pass or fail.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Steel-cut release",
+      "meaning": "The point at which the mould specification is frozen and machining starts. The last cheap moment in a tooling project.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Mould specification sheet",
+      "meaning": "The document that fixes cavity count, mould standard, steel intent, runner and gate concept, cooling layout and texture standard. Distinct from the DFM report, which is about the part.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Tool history card",
+      "meaning": "The running record of a tool: shot count, maintenance, repairs, modifications and revisions. Its absence is the single biggest problem when a tool changes hands.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Golden sample / boundary sample",
+      "meaning": "An agreed reference part, and an agreed worst-still-acceptable part. Together they turn a cosmetic argument into a comparison.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Bridge or pilot tool",
+      "meaning": "A deliberately shorter-life tool used to produce real parts and learn real behaviour before a production tool is committed. Also called soft tooling or semi-production tooling.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Second source",
+      "meaning": "A qualified alternative route to the same part. In tooling terms it is usually a second tool, sometimes at lower cavitation, sized to the risk it is insuring against.",
+      "useIn": "copy"
+    }
+  ],
+  "metalFormAngle": {
+    "credibleOffers": [
+      "Read a physical sample and return an engineering assessment: how it was moulded, where it was gated, how it was ejected, what is measurable and what still has to be asked",
+      "Rebuild a manufacturable solid model from a sample and its measured features, reconstructing datums and design intent rather than copying a surface",
+      "Work from whatever CAD arrives, including a customer-supplied mesh or a STEP file with no drawing, and produce a revision-controlled model",
+      "Engineer from incomplete input: select and record assumptions explicitly rather than absorb them into a price",
+      "DFM review of a customer's own design before tooling, with the change list written down and priced",
+      "Redesign for manufacture: wall uniformity, rib strategy, designing out undercuts, consolidating two parts into one",
+      "Tooling strategy stated as a decision: cavitation against a real annual usage, runner concept, straight pull versus slides, and why",
+      "Mould design and manufacture across injection, PET, blow and die-cast",
+      "Multi-cavity tooling, with experience up to 46 cavities where volume justifies it",
+      "Hot runner and cold runner tooling, insert moulds and technical mechanism tooling",
+      "Second-source and backup tooling built from the customer's own data, sized to the risk it covers",
+      "Production and ongoing supply of the component, so the project does not stop at a tool handover",
+      "International delivery of tooling and parts",
+      "NDA before anything is sent, and confidentiality across the project",
+      "Mould warranty, terms agreed per project",
+      "First response to a project enquiry within 48 business hours",
+      "CATIA and SolidWorks as the working environment, so models leave in a form the customer can use elsewhere",
+      "Since 2006, and more than 1,000 completed projects, which on this page means more than 1,000 versions of the same conversation"
+    ],
+    "dfmAngles": [
+      "Wall thickness uniformity first. Non-uniform wall is the most common design-side root cause of sink, voids, warpage and fill problems, and it is usually inherited unexamined from the sample",
+      "Ribs instead of thick sections for stiffness, with rib thickness kept a fraction of the wall it stands on to avoid sink on the show face",
+      "Draft on every face parallel to the pull, and more of it on textured faces",
+      "Challenge each undercut individually. Some are function. Some are habit inherited from a part that was machined, not moulded",
+      "Gate position decided against the cosmetic face and against where the weld line will land, not against what is convenient to machine",
+      "Tolerance only where a function needs it. A CTQ list of six dimensions is cheaper and more honest than a drawing with a tight general tolerance",
+      "Cut steel-safe where the input was inferred, and open the feature after first shots",
+      "Ask what the part mates with. Half the tolerance problems on a reverse-engineered part belong to a component nobody sent"
+    ],
+    "secondSourceAngle": "A second source is not a duplicate expense, it is the price of not being stopped. The argument to make on this page is about what the asset actually is: the tool is steel, but the asset is the model, the mould specification and the process knowledge that goes with them. A customer who holds those can have a second tool built without negotiating with anyone. Metal Form can build that second tool from the customer's own data, and it does not have to match the first. Backup tooling at lower cavitation costs less capital and still keeps a line running while the primary tool is repaired, transferred or replaced. Where the primary tool sits in another country, the case is stronger again, because the risk being insured is freight and border time as much as steel.",
+    "costOptimisationAngle": "The cheapest engineering happens before steel is cut. Almost all of the recurring cost of a component is fixed by four decisions made at intake: how many cavities, what wall thickness, how many undercuts survive, and which runner. After the steel-cut release, those decisions can only be revisited expensively. So the offer is not a discount, it is a review at the moment the money is being committed. Where a part is already running and the problem is cost, the same review applies backwards: cycle time driven by wall and cooling, cavitation against the volume the programme actually reached rather than the one it was forecast to reach, and features that were tolerance-critical on paper but never were in service. No savings figure should ever be printed on this page.",
+    "whatWeMustNotClaim": [
+      "No 3D scanning. The page must not imply Metal Form captures point clouds or operates scanning equipment. Customer-supplied scan or mesh data is accepted as an input; that distinction has to be visible in the copy",
+      "No CMM, no metrology laboratory, no QC department, no inspection department",
+      "No Moldflow, Moldex3D or any named flow-simulation software, and no simulation imagery on the page",
+      "No FTIR, DSC, rheology or material-testing laboratory. Material identification by test is described as available on the market and commissioned by the customer, never as an in-house service",
+      "No PPAP, FAI, Cpk or capability-study deliverables offered as a service, and no IQ/OQ/PQ language",
+      "No ISO 9001, ISO 13485, IATF, GMP or FDA. No certifications, no awards",
+      "No cleanroom, no sterile, no validated manufacturing, no two-shot moulding, no grinding",
+      "No machine counts, no factory area, no headcount, no press tonnages presented as inventory",
+      "No exact tolerance claims, no cycle-time claims, no scrap-rate claims, no percentage savings, no price figures",
+      "No named clients, no logos, no case studies with identifiable customers. Every example on this page must be a shape of problem, not a company",
+      "No claim to reproduce a protected design. The page should state that the rights question is asked at intake",
+      "Do not imply guaranteed delivery dates. The verified commitment is a first response within 48 business hours, and nothing more",
+      "Do not present the industry cost and lead-time figures found in research as Metal Form's numbers. They are market context and stay out of the page"
+    ]
+  },
+  "page": {
+    "heroHeadline": "You do not need a drawing to start.",
+    "heroSub": "A photograph. A part that broke. A product you want made locally. A sketch. A STEP file with nothing around it. A tool sitting in someone else's building. A cost that stopped working. Send what you have. We tell you what it tells us, what we still have to ask, and what the tooling route looks like. First response within 48 business hours.",
+    "heroVisualConcept": "A drafting sheet, not a hero image. Centre-left, an orthographic three-view of an unidentifiable moulded part drawn in graphite hairlines on paper. The drawing is deliberately unfinished: some edges are solid and confident, others are dashed, and four balloon callouts on leader lines point at features whose labels read as question marks. On load the construction lines draw themselves along their length, the outline follows, the balloons snap into position with no bounce, and two of the four question marks resolve into values while the other two stay open in ochre. Bottom right, a real title block: project, sheet, scale, revision, date, and a status field that reads INCOMPLETE. The headline sits in the sheet's upper-left field like a drawing title, not floating over an image. No photography, no gradient, no glow. The message is legible in three seconds: your part arrives as an unfinished drawing, and finishing it is the work.",
+    "narrativeSpine": "Every custom project is an incomplete drawing. The page starts by letting the visitor point at their own starting point and see it treated as legitimate rather than inadequate. It then shows the questions that close the gaps between that starting point and a manufacturable project, and is honest about which answers a sample can give and which it cannot. From there it converges: whatever the entry, every project runs the same gated route, and the two gates that matter are the model sign-off and the moment before steel is cut. It then splits again at the forks where projects genuinely differ, tooling route, cavitation, ownership and supply model. It closes by letting the visitor grade the package they are about to send, so the enquiry that arrives is already half answered. Emotional arc: you are not unprepared, you are at a known starting point, and here is the next move.",
+    "sections": [
+      {
+        "id": "starting-points",
+        "title": "Where you are right now",
+        "purpose": "The centrepiece. Convert 'I don't have what suppliers ask for' into 'I am at position 04 and position 04 has a defined next step'. This is the section the whole page exists to deliver.",
+        "layout": "Full-bleed drafting sheet split 30/70. Left: a vertical index rail of nine numbered starting points set in monospace, hairline-ruled, behaving like a parts list on a drawing. Right: a fixed wireframe part that never moves, over which the annotation layer redraws. Under the part, three stacked annotation panels with mono headers: WHAT THIS TELLS US / WHAT WE STILL HAVE TO ASK / WHAT COMES BACK TO YOU. Sticky title block bottom right shows the selected index and a revision letter that increments as the visitor explores.",
+        "contentOutline": "Nine starting points, each written in the visitor's own words, each answered in ours. 01 A photograph and nothing else: tells us family, rough scale, probable moulding orientation, sometimes the gate; we have to ask for a dimension we can scale from, the application and the quantity; you get back a feasibility opinion and a list of what to measure. 02 A part that works: tells us geometry, wall, draft direction, parting line, gate and ejection; we ask for the resin if you know it, what it mates with, and the annual quantity; you get back an assessment and a route. 03 A part that failed: the failure is data, and the fracture surface, the wear pattern and the location tell us whether this was a design problem, a material problem or a service problem; we ask what changed before it started failing; you get back a view on whether to reproduce it or fix it. 04 A benchmark product you want made locally: we ask the rights question first, then function; you get back a scope proposal and a clear statement of what we will and will not reproduce. 05 A sketch or an idea: no geometry yet, so we ask function, environment, size envelope, quantity and target cost; you get back a modelling scope, not a mould quote. 06 A 3D file with no drawing: tells us geometry exactly and intent not at all; we ask which dimensions are critical, what is cosmetic and what it assembles into; you get back a DFM review and a CTQ list to confirm. 07 A complete drawing pack: the fastest route on the page; we ask about volume, resin equivalents and tool ownership; you get back a tooling proposal. 08 An existing mould: we ask where it is, who owns it, what it last produced, and what documentation exists; you get back a condition-assessment scope before anyone commits to moving anything. 09 A running part with a problem: quality, cost or supply; we ask whether the defect is intermittent or constant across runs, because that alone separates process from design; you get back a diagnosis route.",
+        "interaction": "The core interaction of the site. Click or arrow-key through the nine positions. The part geometry stays fixed; only the annotation layer changes, leader lines redrawing to different features, panel text cross-fading. Each position owns a URL hash so a visitor can send a colleague the exact line they are on. The selection persists to the intake section at the bottom of the page and prefills both the contact form and the WhatsApp message. On mobile the rail becomes a horizontally scrolled numbered index above the fixed drawing."
+      },
+      {
+        "id": "questions",
+        "title": "The questions that turn a part into a project",
+        "purpose": "Show the visitor exactly what a serious supplier asks, and make the consequence of each unanswered question explicit. This is the section that proves competence without claiming anything.",
+        "layout": "A specification form, not a card grid. Full-width table of hairline-ruled rows on paper. Left column: the question in monospace, as a form field label. Right column: one line of annotation text explaining why it is asked. Seven grouped blocks with mono group headers in the left margin. No boxes, no shadows, no rounded corners anywhere.",
+        "contentOutline": "FUNCTION: what does it do, and what must it not do. ENVIRONMENT: service temperature range, chemical or UV exposure, load, expected life, indoor or outdoor. INTERFACE: what does it assemble to, is the fit press or slip, and which dimensions actually control that fit. APPEARANCE: which faces are visible, is there a texture standard, is colour matched to a standard or a supplied masterbatch. QUANTITY: first order, annual usage, programme life, and how confident that number is. COMMERCIAL: target landed cost, when parts are needed, who owns the tool and where it is stored. RIGHTS: is this your design, is it covered by a patent or registered design, and do you have the right to have it reproduced. Closing line for the section: every blank becomes an assumption, and assumptions get priced as risk.",
+        "interaction": "Each row expands in place on click to a single additional line set in ochre: IF UNANSWERED, WE ASSUME. That line states the default a supplier is forced into. No accordion chrome, no plus icons; the row simply grows and a leader line drops from the label. A running counter in the title block reads OPEN ASSUMPTIONS: n and decreases as rows are opened and read, which quietly teaches the point."
+      },
+      {
+        "id": "sample-evidence",
+        "title": "A sample is a record of the tool that made it",
+        "purpose": "The technical credibility set piece. Show that we read a part forensically. This is where a technically literate visitor decides whether we are engineers or a sales page.",
+        "layout": "One wide diagram dominating the viewport: a moulded part drawn in half-section, with pinned annotations reading outward on both sides. Left side annotations in graphite and accent (what the part physically records). Right side annotations in ochre (what it refuses to tell you). Short text column below, centred and narrow, at most 60 characters per line.",
+        "contentOutline": "What the part records: the parting line shows how the tool was split. The gate vestige shows where material entered and therefore how the cavity filled. Weld lines map where the flow fronts met. Ejector witness shows which face was hidden and where the tool pushed. Draft direction shows the pull. Texture and gloss show the finish standard. Sink marks show where the wall was too thick or a rib too heavy. What it will not tell you: the resin grade, only the family at best. The shrink factor that was applied. The nominal dimension before shrink. Which dimensions were toleranced and which were reference. Whether this is the current revision or a superseded one. Whether it has moved since it was made, because plastic warps under heat and time and an old sample records its history, not its drawing. Whether it was already a workaround for a problem nobody wrote down.",
+        "interaction": "Two. First, a shrink slider from 0 to 2.5 percent: dragging it separates the part outline from the cavity outline in exaggerated scale, with a live readout of the two dimensions, making shrinkage compensation physically obvious in about four seconds. Second, a scroll-scrubbed reveal in which the graphite annotations write themselves in first, then the ochre ones, so the honest half of the message arrives second and lands harder."
+      },
+      {
+        "id": "route",
+        "title": "One route, whatever the starting point",
+        "purpose": "Convergence. After a section built on nine different entries, show that they all join the same gated sequence, and name the two moments where the customer's signature actually changes the outcome.",
+        "layout": "A full-width horizontal gate track occupying its own band, rendered as a drawing revision strip rather than a timeline. Eight gate columns, each with a mono code, a name, the deliverable that leaves it, and the hold point. Hairline verticals between gates. The two customer hold points are marked with a different rule weight and a small flag, not a colour change.",
+        "contentOutline": "G0 INTAKE: what you sent, what it is, what is missing. Leaves as a written statement of scope and open questions. G1 FEASIBILITY: can it be made, should it be made this way, is the volume real. Leaves as an opinion with assumptions listed. G2 MODEL: a revision-controlled solid model with datums, whether rebuilt from a sample or received as CAD. Customer hold point: you sign the model, and if there is no drawing to sign against, you sign against a stated CTQ list. G3 DFM: wall, draft, undercuts, gate and weld-line position, ejection, tolerance feasibility against the resin. Leaves as a closed change list. G4 TOOLING SPECIFICATION: cavity count, mould standard, steel intent, runner and gate concept, cooling layout, texture standard, steel-safe register. Customer hold point: the steel-cut release, and the last cheap moment in the project. G5 MANUFACTURE: the tool is built. G6 T1 AND SAMPLING: first shots, dimensional results, cosmetic assessment, and the steel-safe corrections that were planned for. Not a verdict, a measurement. G7 ACCEPTANCE AND SUPPLY: agreed reference samples, tool history card opened, spares list, maintenance interval, and the supply arrangement if we are producing.",
+        "interaction": "Scroll-scrubbed. Gates lock in one at a time as the band passes, each locking with a short line-draw and a state change in the title block. Clicking any gate opens a drawer directly beneath the track containing that gate's checklist, and the drawer pushes the page rather than overlaying it. The two hold points are permanently expandable and default to open, because they carry the commercial message."
+      },
+      {
+        "id": "forks",
+        "title": "Where projects actually differ",
+        "purpose": "Prevent the page from reading as one-size-fits-all after the convergence section, and route the visitor to a decision they can recognise as theirs. Also the natural place to link out to the other twelve industry pages.",
+        "layout": "A dense technical matrix, monospaced, hairline-ruled, no cards, no icons, deliberately closer to a spec sheet than to marketing. Rows are the decisions: tooling route, cavity count, runner, steel intent, model ownership, supply model, what we would advise against. Columns are the situations: volume not yet real, volume proven, spare part for equipment in service, second source for an existing part, cost problem on a running part, tool already exists elsewhere.",
+        "contentOutline": "Volume not yet real: pilot or low-cavitation tool, cold runner, learn the part before committing steel, and expect to reuse the model rather than the tool. Volume proven: cavitation calculated against annual usage and cycle, runner chosen on material cost and colour-change frequency, steel intent matched to shot life. Spare part in service: single cavity is usually correct, the interesting question is whether one order or a standing supply. Second source: build from the customer's data, consider lower cavitation than the primary, and treat the specification and spares list as part of the deliverable. Cost problem on a running part: the review runs backwards through wall, cycle, cavitation and CTQ list before anyone talks about price. Tool exists elsewhere: nothing moves until a condition assessment and a documentation audit are done, because transfers fail on paperwork and uninspected steel rather than on distance.",
+        "interaction": "Select your column and the matrix dims every other column to inkMuted while your values stay in full ink, with a single consequence line printing beneath the table in ochre. The selection carries into the intake section. Each column footer holds a quiet text link to the relevant industry page where one applies, making this section the router for the whole site."
+      },
+      {
+        "id": "steel-safe",
+        "title": "Cut it steel-safe",
+        "purpose": "Answer the deepest unspoken objection on the page: if you are working partly from inference, why is my tool not a gamble. One idea, given its own space, expressed as engineering rather than reassurance.",
+        "layout": "The quietest section on the page. A narrow centred text column, at most 58 characters wide, with a single section diagram to its right at small scale: cavity steel in half-section with an intentionally undersized feature, then the same feature opened out. Generous vertical space above and below. No other content competes.",
+        "contentOutline": "Where an input is inferred rather than given, the cavity is cut with metal left on. The feature runs small on the first shots, gets measured, and is opened to the measured requirement. Steel can be removed. It cannot be put back without welding, and a welded insert is never quite the insert that was designed. This is why an uncertain dimension is not a reason to stop a project, and why the steel-safe register belongs on the mould specification sheet where the customer can see it. It is also why first shots are treated as a measurement rather than a verdict: an inferred shrink rate becomes a measured one the first time the tool runs.",
+        "interaction": "One two-state diagram with a wipe transition between as-cut and as-opened, driven by scroll position rather than a control, so it resolves once and stays resolved. No autoplay loop."
+      },
+      {
+        "id": "package",
+        "title": "Send what you have",
+        "purpose": "Convert. Turn the page's argument into an action by grading the visitor's package and telling them the single most valuable thing they could add, then composing the enquiry for them.",
+        "layout": "A form-shaped checklist across three tiers set as three columns under mono headers: ENOUGH TO START A CONVERSATION / ENOUGH TO QUOTE TOOLING / ENOUGH TO CUT STEEL. Items are checkboxes drawn as hairline squares, not styled controls. A live status block sits in the sticky title block: PACKAGE STATUS, TIER REACHED, NEXT MOST USEFUL ITEM.",
+        "contentOutline": "Tier 1: a photograph with a ruler or a known dimension in frame, what it does, where it is used, roughly how many per year. Tier 2: the physical sample or a 3D file, the resin if known, what it mates with, which faces are visible, first order and annual usage, when parts are needed. Tier 3: a revision-controlled model, a CTQ list or a 2D drawing with datums, resin grade and acceptable equivalents, texture and colour standard, tool life and ownership intent, packaging and delivery point. Closing line: you do not need tier three to write to us. Tier one is enough to get a real answer.",
+        "interaction": "The most functional interaction on the page. Ticking items updates the tier readout live and names the single highest-value missing item. A copy-to-clipboard button assembles a plain-text intake summary from the ticks plus the starting point chosen in section one and the situation chosen in the forks matrix, so the visitor can paste it into email, WhatsApp or their own ERP enquiry. The WhatsApp CTA is prefilled from the same state. Nothing is required, nothing is validated, no field blocks progress."
+      }
+    ],
+    "technicalPanels": [
+      {
+        "title": "What a moulded sample records about the tool that made it",
+        "bullets": [
+          "Parting line: where the two halves met, and therefore how the tool was split",
+          "Gate vestige: gate type and position, and by inference the fill pattern",
+          "Weld lines: where flow fronts met, which maps the flow path and marks the weaker sections",
+          "Ejector witness: which face was hidden and where the tool pushed",
+          "Draft direction: which way the part released",
+          "Texture and gloss: the finish standard, best named against a published reference rather than described",
+          "Sink and local distortion: where wall was too thick, or a rib too heavy for the wall behind it"
+        ]
+      },
+      {
+        "title": "What a sample will not tell you",
+        "bullets": [
+          "The resin grade. Family can often be narrowed, grade cannot be read off a part",
+          "The shrink factor that was applied when the cavity was cut",
+          "The nominal dimension the part was designed to, before shrinkage",
+          "Which dimensions carried a tolerance and which were reference",
+          "Whether this is the current revision, a superseded one, or a field repair",
+          "Whether the part has moved since it was made. Plastic warps under heat and time",
+          "What it mates with, and whether that fit was ever controlled by this part at all"
+        ]
+      },
+      {
+        "title": "Steel-safe: why an uncertain dimension does not stop a tool",
+        "bullets": [
+          "Where an input is inferred, the cavity is cut with metal left in",
+          "The feature runs small on first shots, is measured, and is opened to requirement",
+          "Steel can be removed later. It cannot be added back without welding",
+          "The steel-safe register is written into the mould specification sheet, not held informally",
+          "First shots are a measurement exercise. An inferred shrink rate becomes a measured one"
+        ]
+      },
+      {
+        "title": "Frozen at the steel-cut release",
+        "bullets": [
+          "Cavity count, decided against a stated annual usage",
+          "Mould base standard, and compatibility with the intended press",
+          "Core and cavity steel intent, matched to shot life and to whether the resin is filled",
+          "Runner and gate concept, including gate position relative to cosmetic faces",
+          "Cooling layout and balance",
+          "Texture standard named against a published reference",
+          "CTQ list, resin assumption, and the steel-safe register",
+          "After this point the cheap revisions are behind you"
+        ]
+      },
+      {
+        "title": "Intermittent or constant: the first question on any running-part problem",
+        "bullets": [
+          "Defects that come and go during a run point at process drift or material variation",
+          "Defects that appear consistently across runs point at part design or tool construction",
+          "Non-uniform wall thickness is the most common design-side root cause: sink, voids, warpage and fill problems all trace back to it",
+          "Flash points at shut-off condition, clamp or worn steel before it points at the operator",
+          "Burn marks point at venting before they point at injection speed",
+          "This single distinction decides whether the answer is a process sheet, a design change or steel"
+        ]
+      }
+    ],
+    "ctaHeadline": "Send the part.",
+    "ctaSub": "A photograph, a sample, a file, or a paragraph describing the problem. You get an engineering reply, not a price list: what we can determine, what we still have to ask, and what the tooling route looks like. First response within 48 business hours. NDA before you send anything, if you want one.",
+    "whatsappPrefill": "Metal Form — custom project. What I have: [photo / sample part / broken part / sketch / STEP file / drawing pack / existing mould / a production, cost or supply problem]. What the part does: ___. Where it is used: ___. Approximate annual quantity, if known: ___. What I need from you: ___",
+    "metaTitle": "Custom Plastic Projects: Reverse Engineering, DFM and Tooling | Metal Form",
+    "metaDescription": "No drawing, no file, no supplier. Send a photograph, a sample or a problem. We return a manufacturable model, a tooling route and a supply plan. Response in 48 business hours."
+  },
+  "artDirection": {
+    "moodInOneLine": "A drafting sheet on an engineer's desk, half finished, being annotated in front of you.",
+    "palette": {
+      "surface": "#F2F2EF",
+      "surfaceAlt": "#E3E4DF",
+      "ink": "#171A19",
+      "inkMuted": "#6F756E",
+      "accent": "#1E5F7B",
+      "accent2": "#B4762A",
+      "rationale": "Paper and graphite carry ninety percent of the page, which is the point: this chapter is about a document, not a product. The two accents are semantic and must never be decorative. Accent, a drafting blue-teal, marks anything measured or known and draws every leader line and dimension. Accent2, an ochre, marks anything unresolved: open assumptions, missing information, the questions we still have to ask. Because the entire page is an argument about the difference between what is known and what is assumed, the palette is the argument. A visitor who reads nothing still learns that ochre means we have to ask. This also keeps the page unmistakably distinct from the more chromatic industry chapters without going dark or grey-on-grey."
+    },
+    "typographyNote": "Two families and a hard rule about which does what. A neutral grotesque for prose, set at a modest scale with generous leading and measures capped near 60 characters, because this page asks people to read. A true monospace with tabular figures for every technical artefact: field labels, gate codes, index numbers, dimensions, panel headers, matrix cells, title block. Nothing in the mono family is ever set large. Headlines are small by the standards of the other twelve pages, at most around 3rem, tightly tracked, sentence case, and positioned in the sheet's title field rather than centred over the viewport. Section titles carry a mono sheet number prefix such as 03 / SAMPLE EVIDENCE. All caps is reserved for mono labels only. The visual drama comes from rules, spacing and annotation, never from type scale.",
+    "compositionNote": "Build the whole page as a drawing sheet. A visible outer border rule set in one consistent margin, a persistent sticky title block in the lower right carrying project name, current section, revision letter and a live status field that different sections write into. A twelve-column grid whose hairline guides are normally invisible but fade in at 6 to 8 percent opacity during the interactive sections, so the underlying system becomes briefly visible and then recedes. Content aligns to that grid ruthlessly, including deliberate asymmetry: the index rail at 3 columns, the drawing at 6, annotations at 3, with wide unfilled margins that are left unfilled. Full-bleed is used exactly twice, for the starting-point board and the gate track. Everything else sits inside the border. Nothing is centred except the two narrow text columns in the sample-evidence and steel-safe sections, where centring reads as a note on a drawing rather than a hero statement.",
+    "motionLanguage": "Drafting, not animation. Four permitted behaviours and nothing else. First, lines draw themselves along their length via stroke-dashoffset, at a constant rate so a long line takes longer than a short one, which is what makes it read as drawn rather than revealed. Second, annotation balloons and leader lines snap into position with no overshoot and no bounce, over roughly 120ms. Third, layers cross-fade over fixed geometry: when a starting point changes, the part does not move, only the annotation on it changes, which is the entire motion thesis of the page. Fourth, dimension arrows extend from their witness lines and the value counts up in tabular figures. Nothing floats, nothing parallaxes, nothing pulses, nothing loops. Scroll advances a revision, it does not move a camera. Every transition is linear or a very gentle ease-out; no springs. Full respect for prefers-reduced-motion, where every draw-in resolves instantly to its final state and the shrink slider still works because it is user-driven.",
+    "signatureMotif": "The annotation balloon on a leader line. A small hairline circle containing a mono index number or a question mark, connected by a thin leader with a dot terminator to the exact feature it refers to. Every unknown on the page carries an ochre balloon with a question mark; every established fact carries an accent balloon with a number. Balloons appear in the hero, on the starting-point board, across the sample-evidence diagram, on the gate track and in the package checklist, at consistent size and stroke weight throughout. By the end of the page the visitor has learned to read them without being told, which is exactly what a drawing does.",
+    "diagramConcept": "One part, many annotation layers. A single abstract moulded component, drawn once as an orthographic three-view plus one half-section, deliberately not identifiable as any product, is the only object on the page. It never changes and never moves. What changes is the annotation layer drawn over it: starting-point evidence in section one, forensic tool evidence in section three, cavity-versus-part outlines under the shrink slider, and gate deliverables on the track. Building it as one reusable SVG with switchable annotation groups keeps the page light, keeps it coherent, and makes the central argument structurally: the part is constant, what we know about it is what changes.",
+    "howThisDiffersFromOtherIndustries": "Every other chapter has a product world to draw: a bottle, a bumper, a fitting, a housing. This one has no product, because its subject is a process and an unknown, so it is the only page in the book with no recognisable object on it. Consequences that must hold: almost no colour, and what colour there is carries meaning rather than mood. The smallest headline type on the site. The only page whose grid is deliberately made visible. The only page built as a document rather than a composition. And by a wide margin the most interactive, because the argument cannot be made by looking, only by pointing at your own situation and watching the page respond. Where the other pages move objects, this one draws lines and answers questions."
+  },
+  "openQuestions": [
+    "Does Metal Form accept customer-supplied 3D scan or mesh data as project input, and in which formats (STL, OBJ, PLY, or STEP only)? The page currently states that it does, which is the honest alternative to claiming scanning capability, and this must be confirmed.",
+    "How may the measurement of physical samples be described publicly? The page deliberately says 'measured features and functional constraints' without naming instruments. Confirm what may be stated.",
+    "Is there a stated turnaround for a feasibility opinion beyond the verified 48-business-hour first response? If a typical figure exists and can be committed to, it strengthens the intake section considerably. If not, the page must not imply one.",
+    "Does the site have a file upload on the contact form, with what size limit and what accepted extensions? The package checklist section assumes files can be sent, and it degrades badly if the only route is email.",
+    "Will Metal Form sign a customer's own NDA template, or only issue its own? The hero and CTA both offer an NDA before anything is sent, which is a real commitment.",
+    "Is production of parts on tooling built elsewhere in scope, and on what condition-assessment terms? Section five (forks) includes 'tool exists elsewhere' as a column and needs a defensible position.",
+    "Are pilot or bridge tools offered as a deliberate first step, and in what steel or aluminium? The economics argument in the 'volume not yet real' column depends on this being real.",
+    "What is the stated position when a customer asks for a part they may not have the right to reproduce? The page puts the rights question on screen at intake, which is a differentiator, but the answer needs to be a policy rather than an improvisation.",
+    "Who owns the CAD model Metal Form creates from a customer's sample, and is that written into the quotation? This is one of the top decision drivers for this buyer and the page is stronger if it can be answered outright.",
+    "Does the mould warranty apply to tooling built from reverse-engineered input on the same terms as tooling built from customer CAD? Buyers will ask, and an unclear answer here undermines the steel-safe argument.",
+    "Should this page be the site's router, linking outward to the other twelve verticals from the forks matrix, or should it stand alone? The recommendation is router, but it affects the whole information architecture.",
+    "Is there an internal intake form or questionnaire already in use? If so, the questions section should mirror it exactly so that the website and the sales process ask the same things in the same order."
+  ],
+  "recommendations": [
+    "Make the starting-point board the reason this page exists. It should be deep-linkable per position, keyboard-navigable, and its state must survive into the contact form and the WhatsApp prefill. A visitor who arrives at the CTA having selected position 03 and situation 'spare part in service' should find both already written into the message.",
+    "Publish no prices, no lead-time promises and no savings percentages anywhere on this page. The market figures gathered in research are context for the copywriter, not content. This page sells judgement, and a number invites a comparison it will lose for the wrong reasons.",
+    "Put the rights question on the page in plain language. Asking 'is this your design, and do you have the right to have it reproduced' reads as seriousness rather than friction, pre-empts an awkward conversation, and separates Metal Form from suppliers who quote anything sent to them.",
+    "Be explicit about the scanning boundary rather than silent. 'If your part needs captured surface data, send it and we will work from your mesh' is a stronger sentence than any implied capability, and it is the only version that survives a technical buyer's follow-up question.",
+    "Build the shrink slider. It is a few dozen lines of SVG and it teaches the single concept that separates people who understand moulding from people who do not. Nothing else on the site will demonstrate competence as cheaply.",
+    "Reuse one SVG part across every diagram on the page. It is the art direction, it is the argument, and it keeps the page fast. Resist the temptation to draw a different part per section.",
+    "Give the sample-evidence section room. It is the section a sceptical engineer will read closely, and the temptation to compress it into a card grid must be refused. Wide diagram, narrow text, plenty of empty margin.",
+    "Let the title block do real work. A sticky title block whose status field changes as the visitor moves through sections is memorable, costs almost nothing, and reinforces that this page is a document rather than a brochure.",
+    "Use the forks matrix as the site's router, with a quiet link from each column to the relevant industry page. This page then earns a second job: catching every visitor whose need does not match a vertical and delivering them somewhere useful.",
+    "Ban the word 'solutions' from this page specifically, along with any sentence that begins 'Whether you need'. The register is a written engineering note: short sentences, concrete nouns, and a willingness to say what is not known.",
+    "Offer a copy-to-clipboard intake summary rather than a file download. It works on every device, needs no backend, and produces a better enquiry than a form the visitor abandons at field six.",
+    "Keep the nine starting points written in the visitor's language, not the industry's. 'A part that broke' beats 'failed component analysis' every time, and the engineering vocabulary belongs in the answer, not the question."
+  ]
+}

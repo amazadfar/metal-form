@@ -1,0 +1,418 @@
+{
+  "meta": {
+    "title": "İçecek üreticileri için PET preform ve kapak kalıpları | Metal Form",
+    "description": "46 göze kadar preform kalıpları, kapak ve bağlı kapak kalıpları, şişirme kalıbı değişim parçaları, boyun standardı dönüşümü ve gram ağırlığı çalışmaları. Dolum tesisleri için soğuk yarım yedekleri ve ikinci kaynak kalıpları. 2006'dan beri üretim."
+  },
+  "name": "İçecek ve PET Ambalaj",
+  "tile": "Preform ve kapak kalıpları, boyun standardı dönüşümü ve gram ağırlığı çalışmaları. Kalıptaki en hafif göz, ürettiğiniz her şişenin ağırlığını belirler — hammadde parası tam da orada gider.",
+  "tileParts": "Preform · Kapak · Şişirme kalıbı parçaları",
+  "hero": {
+    "kicker": "İçecek ve PET Ambalaj",
+    "headline": [
+      "Her gram.",
+      "Her saniye.",
+      "Her göz."
+    ],
+    "lead": "Preform kalıpları, kapak kalıpları, şişirme kalıbı değişim parçaları ve arkalarındaki mühendislik. Bir şişe ve bir kapak gönderin. Size geometri, göz sayısı, kalıp rotası ve üretim maliyeti üzerinden dönüş yaparız.",
+    "markers": [
+      "46 göze kadar preform kalıbı",
+      "Boyun standardı dönüşümü",
+      "Soğuk yarım yedekleri ve ikinci kaynak"
+    ]
+  },
+  "blocks": {
+    "grams": {
+      "index": "01",
+      "kicker": "Para nerede",
+      "heading": "Şişe demek hammadde demek. Birim ise gramdır.",
+      "body": "Bir PET şişenin maliyetinin yaklaşık üçte ikisi, içindeki hammaddedir. Geri kalan her şey — kalıp, makine, işçilik, elektrik — hem daha küçük hem daha az değişkendir. Dolayısıyla bir dolum hattında gerçekten bileşik büyüyen tek sayı preform ağırlığıdır ve preform ağırlığını kalıp belirler.",
+      "body2": "Aşağıdakiler, 500 ml preformlar için boyun standardına göre yayımlanmış ağırlık bantlarıdır. Bunlar bizim değil, sektörün rakamlarıdır; sizin preformunuz da ürününüze özgü nedenlerle bu ölçeğin bir yerinde duracaktır.",
+      "scaleLabel": "500 ml preform ağırlığı, gram",
+      "rows": [
+        {
+          "weight": "12,7 – 13,7",
+          "standard": "29/25",
+          "note": "Modern kısa su boynu. Yeni sakin su hatlarında hacim standardı."
+        },
+        {
+          "weight": "13,5 – 14,5",
+          "standard": "30/25",
+          "note": "Eski tip uzun su boynu. Aynı şişe için 29/25'e göre kabaca 0,8 – 1,0 g daha ağır."
+        },
+        {
+          "weight": "18 – 20",
+          "standard": "PCO 1881",
+          "note": "Kısa gazlı içecek boynu. Yeni gazlı içecek hatlarında varsayılan."
+        },
+        {
+          "weight": "21 – 23",
+          "standard": "PCO 1810",
+          "note": "Eski tip uzun gazlı içecek boynu. Yalnızca mevcut kurulu hatlarda — kapaklar 1881 ile birbirinin yerine geçmez."
+        }
+      ],
+      "close": "Bir gram, yuvarlama hatası değildir. Yılda yüz milyon şişe üreten bir hatta bir gram, yüz ton hammaddedir. Bu sayfanın konusu o aritmetiktir ve o sizin aritmetiğinizdir: sizin hammadde fiyatınız, sizin adediniz, sizin şişeniz. Hesaplamadığımız bir tasarruf yüzdesini size söylemeyeceğiz."
+    },
+    "cavities": {
+      "index": "02",
+      "kicker": "Asıl argüman",
+      "heading": "En hafif göz, bütün gözlerin ağırlığını belirler.",
+      "body": "Tesisiniz asgari bir et kalınlığını ve asgari bir ağırlığı garanti etmek zorundadır: basınç için, dikey yük için, raf ömrü için. Bu yüzden proses, kalıptaki en hafif göz bile bu alt sınırı geçene kadar kısılır. Diğer bütün gözler de saçılım ne kadarsa o kadar bu sınırın üzerinde çalışır.",
+      "body2": "Bu fark, kalıbın tüm ömrü boyunca her atımda, her gözde yeniden satın alınır. Kalıp fiyatı tek seferlik bir rakamdır. Gözler arası saçılım ise hammadde tedarikçinize ödenen bir yıllık gelirdir.",
+      "chartCaption": "Göz ağırlığı dağılımının şartname alt sınırına göre konumu",
+      "chartFloor": "Şartname alt sınırı",
+      "chartMean": "Fiilen çalışılan ortalama ağırlık",
+      "chartGap": "Bu aralık, satın alıp ihtiyaç duymadığınız hammaddedir",
+      "close": "Saçılımı yarıya indirin; şişeyi hiç değiştirmeden ortalama, tasarım niyetine doğru aşağı iner. Ergiyik dengesi, soğutma dengesi ve gözler arası imalat tutarlılığı asıl bunun içindir. Bunlar mühendislik gösterişi değil, ticari bir gerekçedir.",
+      "cavityHeading": "Göz sayımız nerede duruyor, nerede durmuyor",
+      "cavityBody": "Çıktı, göz sayısının çevrim süresine bölünmesidir. Yayımlanmış kılavuzlar, yılda kabaca 50 milyon preformun altında ekonomik bandı 16 – 48 göz, yüz milyonlarla ölçülen programlarda 72 – 96 göz olarak veriyor; 128 – 192 gözü ise yalnızca çok yüksek adedin sürdürüldüğü ve bunu destekleyecek bakım örgütünün bulunduğu yerlere bırakıyor.",
+      "cavityBody2": "Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bu, bölgesel dolum tesislerinin, bağımsız dönüştürücülerin ve ikinci kaynak programlarının fiilen çalıştığı banttır — bir kalıbın yalnızca işletilmekle kalmayıp hâlâ dengelenebildiği, bakımının yapılabildiği ve üzerine akıl yürütülebildiği bant.",
+      "cavityBody3": "Tesisiniz bundan daha yüksek göz sayısıyla çalışıyorsa dürüst teklif farklıdır ve çoğu zaman daha işe yarar: soğuk yarım bileşenleri. Göz insertleri, maça çubukları, bölünmüş boyun halkaları ve kilit halkaları; başkasının yaptığı bir kalıp için yedek ya da alternatif kaynak olarak."
+    },
+    "neck": {
+      "index": "03",
+      "kicker": "Arayüz",
+      "heading": "Boyun, sözleşmenin kendisidir.",
+      "body": "Boyun profili; şişenin, kapağın ve kapaklama makinesinin üzerinde anlaşmak zorunda olduğu tek geometri parçasıdır. Bir boyun değişikliğinin asla yalnızca bir preform kalıbı değişikliği olmamasının nedeni budur — dönüşüm projelerinin de genellikle en son sipariş edilen parçada tıkanmasının nedeni.",
+      "tabsLabel": "Boyun standardı",
+      "standards": [
+        {
+          "id": "pco1881",
+          "name": "PCO 1881",
+          "summary": "ISBT kısa boyun, 28 mm, kabaca 1,75 diş turu, yaklaşık 17 mm boyun yüksekliği.",
+          "use": "Yeni gazlı içecek hatlarında varsayılan.",
+          "weight": "500 ml preform tipik olarak 18 – 20 g",
+          "warning": "Kapaklar PCO 1810 ile birbirinin yerine geçmez."
+        },
+        {
+          "id": "pco1810",
+          "name": "PCO 1810",
+          "summary": "Eski tip uzun 28 mm gazlı içecek boynu, kabaca 2,5 diş turu.",
+          "use": "Yalnızca mevcut kurulu hatlar. Yeni hatlar için nadiren tercih edilir.",
+          "weight": "500 ml preform tipik olarak 21 – 23 g",
+          "warning": "1881'e geçmek; preform kalıbını, şişirme kalıbının boyun insertini, kapaklama makinesinin değişim parçalarını ve kapak tedarikini değiştirir."
+        },
+        {
+          "id": "n2925",
+          "name": "29/25",
+          "summary": "Modern kısa su boynu.",
+          "use": "Yeni sakin su hatlarında hacim standardı.",
+          "weight": "500 ml preform tipik olarak 12,7 – 13,7 g",
+          "warning": "Sakin su, bu sayfadaki en affetmez uygulamadır — asetaldehit sorununu örtecek bir aroma yoktur."
+        },
+        {
+          "id": "n3025",
+          "name": "30/25",
+          "summary": "Eski tip uzun su boynu.",
+          "use": "Yaygın olarak kurulu; giderek 29/25'e dönüştürülüyor.",
+          "weight": "500 ml preform tipik olarak 13,5 – 14,5 g",
+          "warning": "Aynı şişe için 29/25'e göre kabaca 0,8 – 1,0 g daha ağır."
+        },
+        {
+          "id": "n2622",
+          "name": "26/22 · GME 30.37",
+          "summary": "Daha küçük Avrupa boyun ve kapak sistemi.",
+          "use": "Hafifletmenin en sert zorlandığı yerlerde.",
+          "weight": "Daha da hafif; bedeli, kapağın tümüyle değişmesi",
+          "warning": "Buna geçmek kapağı da değiştirir — bu bir kalıp kararı değil, bir ambalaj kararıdır."
+        },
+        {
+          "id": "n38",
+          "name": "38 mm",
+          "summary": "Viskoz ürünler için geniş ağız profili.",
+          "use": "Meyve suyu, süt ürünleri ve sıcak dolum.",
+          "weight": "Farklı bir ısıl geçmiş ve farklı bir şişe cidarı gereksinimi",
+          "warning": "Sıcak dolum, yalnızca daha geniş bir boyun değil, vakuma göre tasarlanmış bir şişe ister."
+        }
+      ],
+      "conversionHeading": "Bir boyun dönüşümü bir değil, dört iştir",
+      "conversion": [
+        "Preform kalıbı — gözler, maçalar ve bölünmüş boyun halkaları",
+        "Şişirme kalıbının boyun inserti",
+        "Kapaklama makinesinin değişim parçaları",
+        "Kapağın tedarikinin kendisi"
+      ],
+      "conversionNote": "Darboğaz genellikle boyun insertleri ve değişim parçalarıdır; çünkü genellikle en son sipariş edilirler. Biz bunları birlikte fiyatlandırırız.",
+      "specLabels": {
+        "geometry": "Geometri",
+        "use": "Nerede kullanılır",
+        "weight": "Preform ağırlığı",
+        "warning": "Dikkat"
+      }
+    },
+    "stretch": {
+      "index": "04",
+      "kicker": "Fizik",
+      "heading": "Boyun kalır. Gövde uzar.",
+      "body": "Boyun profili, preform kalıbından nihai ölçüsünde çıkar ve bir daha hiç dokunulmaz: şişirilmez, gerilmez, yeniden şekillendirilmez. Destek halkasının altındaki her şey ise şekillendirilir. Preformun ayrı bir parça gibi ele alınmak yerine şişe için tasarlanması gerekmesinin nedeni budur.",
+      "stages": [
+        {
+          "label": "Preform",
+          "note": "Kalın cidar, kısa gövde, bitmiş boyun. Enjeksiyonla üretilir ve stoklanır."
+        },
+        {
+          "label": "Yeniden ısıtma",
+          "note": "Yönlenme penceresine kadar kızılötesi ısıtma. Gövde boyunca profillendirilir, türdeş değildir."
+        },
+        {
+          "label": "Germe",
+          "note": "Çubuk eksenel olarak iterken ön şişirme havası radyal genişlemeyi başlatır."
+        },
+        {
+          "label": "Şişirme",
+          "note": "Yüksek basınç cidarı kalıba oturtur; çift eksenli yönlenme şişeye mukavemetini verir."
+        },
+        {
+          "label": "Şişe",
+          "note": "Aynı kütle, aynı boyun, ilk kalınlığının çok altında bir cidar."
+        }
+      ],
+      "close": "Yan cidar yönlenmeyle güçlenirken, tabandaki yolluk girişi bölgesi amorf kalır. Sahada gerilme çatlaması işte o amorf bölgede başlar — bu yüzden yolluk girişi geometrisi kozmetik bir karar değil, bir ürün ömrü kararıdır."
+    },
+    "defects": {
+      "index": "05",
+      "kicker": "Dürüstlük",
+      "heading": "Ne ters gider ve gerçekte nerede başlar.",
+      "body": "Yeni bir kalıp bunların bir kısmını çözer, diğerlerini hiç çözmez. Satın almadan önce hangisinin hangisi olduğunu bilmek, hepsini çözmeyi vaat eden bir tedarikçiden daha değerlidir.",
+      "columns": [
+        "Hammadde ve kurutma",
+        "Ergiyik ve sıcak yolluk",
+        "Kalıp ve yolluk girişi",
+        "Soğutma",
+        "Şişirme ve elleçleme"
+      ],
+      "toolSide": "Kalıp kaynaklı sorun",
+      "processSide": "Proses ya da malzeme kaynaklı sorun",
+      "rows": [
+        {
+          "defect": "Sakin suda asetaldehit",
+          "origins": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "side": "process",
+          "note": "Ergiyiğin bekleme süresi ve manifolddaki ölü noktalar bir kalıp meselesidir; kırma malzeme oranı ve kurutma değildir."
+        },
+        {
+          "defect": "Gözler arası ağırlık saçılımı",
+          "origins": [
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "side": "tool",
+          "note": "Kalıp genelinde ergiyik dengesi ve soğutma dengesi. Bu tam anlamıyla bizim işimiz."
+        },
+        {
+          "defect": "Siyah lekeler",
+          "origins": [
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "side": "process",
+          "note": "Bir yerde takılıp bozunan malzeme. Ergiyik yolundaki ölü noktalar ya tasarıma konur ya da tasarımdan çıkarılır."
+        },
+        {
+          "defect": "Düşük IV, kırılgan şişe",
+          "origins": [
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "side": "process",
+          "note": "Ergiyikteki nem zinciri hidrolize eder. Hiçbir kalıp ıslak hammaddeyi düzeltmez."
+        },
+        {
+          "defect": "Giriş izi fazla yüksek",
+          "origins": [
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "side": "tool",
+          "note": "İğneli giriş ayarı ve yolluk girişi geometrisi. Şişirme makinesinin preformu besleyip kavraması gerekir."
+        },
+        {
+          "defect": "Sızdırmazlık yüzeyinde çapak",
+          "origins": [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "side": "tool",
+          "note": "Boyun halkası ayrım çizgisinin konumu ve aşınması. Önce bir tasarım kararı, sonra bir bakım meselesi."
+        },
+        {
+          "defect": "Uzun çevrim",
+          "origins": [
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "side": "tool",
+          "note": "Maça soğutma geometrisi, kalıptaki su sıcaklığı ve alma plakasındaki kalıp sonrası soğutma istasyonu sayısı."
+        },
+        {
+          "defect": "Sahada gerilme çatlaması",
+          "origins": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "side": "tool",
+          "note": "Taban ve yolluk girişi geometrisi, hammadde ve şişenin ne kadar sert hafifletildiği."
+        }
+      ]
+    },
+    "closures": {
+      "index": "06",
+      "kicker": "Ambalajın diğer yarısı",
+      "heading": "Kapaklar 2024'te değişti.",
+      "body": "Bağlı kapak zorunluluğu, kapak geometrisini dönel simetrikten asimetriğe taşıdı: menteşeler, tırnaklar ve köprü desenleri. Bu; kalıbı, itmeyi ve yuvarlak kapak varsayan tüm hat sonrası ekipmanı değiştirir. AB'ye giden ürünler için isteğe bağlı değildir; diğer herkes için hangi pazarlara hizmet verebilmek istediğinizle ilgili bir karardır.",
+      "tracks": [
+        {
+          "name": "Enjeksiyon",
+          "note": "Daha uzun çevrim, daha fazla geometrik serbestlik, göz başına daha düşük kalıp giriş maliyeti. Teknik kapaklar, spor kapaklar ve bağlı kapak geometrisi genellikle buradadır."
+        },
+        {
+          "name": "Sıkıştırma",
+          "note": "Daha kısa çevrim, çok yüksek çıktı, daha dar tasarım zarfı. Yüksek adetli standart kapaklar genellikle buradadır."
+        }
+      ],
+      "tracksNote": "İki rota aynı zaman ekseninde çizildi: çevrim farkı bir iddia değil, bir uzunluktur.",
+      "capHeading": "Bağlı 28 mm kapak, açıklamalı",
+      "capParts": [
+        {
+          "name": "Emniyet bandı",
+          "note": "Ya kalıpta oluşturulur ya da sonradan kesilir. İki farklı kalıp, iki farklı tesis."
+        },
+        {
+          "name": "Köprüler",
+          "note": "Desen ve kalınlık; açma torkunu ve bandın kapaklamadan sağ çıkıp çıkmayacağını belirler."
+        },
+        {
+          "name": "Menteşe",
+          "note": "Bağlantının kendisi. Tekrarlanan açmalara dayanmalı, ama çapak yuvasına da dönüşmemeli."
+        },
+        {
+          "name": "Sızdırmazlık contası geometrisi",
+          "note": "Boyun profilinin tanımladığı sözleşmenin diğer yarısı."
+        }
+      ],
+      "boundary": "Kapsamımızın bittiği yer: biz kapak kalıbı yaparız. Kesme ve katlama ekipmanı, kapaklama makinesi ya da hat ekipmanı tedarik etmiyoruz; bunu teklif sonrasında değil, teklif aşamasında söyleriz."
+    },
+    "freight": {
+      "index": "07",
+      "kicker": "Lojistik",
+      "heading": "Şişirilmiş bir şişenin çoğu havadır.",
+      "body": "Birkaç on bin şişirilmiş şişe taşıyan konteynerin aynısı, birkaç yüz bin preform taşır. Bitmiş boş şişeleri sınır ötesine göndermek, hava için navlun satın almaktır; bu yüzden neredeyse kimse yapmaz ve bu yüzden buradaki uluslararası konuşma preform, kapak, kalıp ve mühendislik üzerinedir.",
+      "figureA": "Bir konteyner şişirilmiş şişe",
+      "figureB": "Aynı konteyner dolusu preform",
+      "figureNote": "Gerçek göreli orana göre çizildi. Argümanı geometri kuruyor.",
+      "close": "Şişirilmiş şişe üretimi, yerelde ticari olarak anlamlı olduğu yerlerde bir yetkinlik olarak kalır. Size ihraç etmeyi önereceğimiz şey değildir; bunu öneren bir tedarikçi sizin varış maliyetinizi hiç düşünmemiştir."
+    },
+    "start": {
+      "index": "08",
+      "kicker": "Başlangıç",
+      "heading": "Ne göndermeli.",
+      "body": "Bunların hepsi gerekmez. Bir şişe, bir kapak ve bir yıllık adet, ilk teknik görüş için yeter.",
+      "sendHeading": "Sizin göndereceğiniz",
+      "send": [
+        "Şişe: hacim, format, sakin ya da gazlı, sıcak dolum ya da ortam sıcaklığı",
+        "Kullandığınız boyun standardı ya da geçmeyi düşündüğünüz standart",
+        "Mevcut preform ağırlığı ve varsa bir hedef",
+        "Numune bir şişe ve kapak, teknik resimler ya da ölçeklendirebileceğimiz bir ölçü içeren fotoğraflar",
+        "Yıllık adet ve sezonunuzun biçimi",
+        "Hammadde kalitesi ve IV değeri; karışımda geri dönüştürülmüş içerik olup olmadığı",
+        "Enjeksiyon makinesi: marka, model, kolon aralığı, tabla ölçüsü, mengene tonajı, atım kapasitesi",
+        "Alma plakası: robot tipi ve soğutma istasyonu sayısı",
+        "Kalıpta fiilen sağlanabilen soğutma suyu sıcaklığı",
+        "Eşleştirilecek, değiştirilecek ya da ikinci kaynağa açılacak mevcut kalıplar"
+      ],
+      "getHeading": "Size geri gelecek olan",
+      "get": [
+        "Elinizdeki geometrinin, olması gereken geometri olup olmadığı",
+        "Adedinize ve hâlihazırda sahip olduğunuz makineye göre gerekçelendirilmiş bir göz sayısı önerisi",
+        "Tanımlanmış soğuk yarım: göz insertleri, maça çubukları, bölünmüş boyun halkaları, kilit halkaları",
+        "Ergiyik dengesinin ve giriş izi yüksekliğinin birer tasarım çıktısı olarak ele alındığı sıcak yolluk ve giriş stratejisi",
+        "Tesisinizin fiilen sağlayabildiği su sıcaklığına göre tasarlanmış bir soğutma devresi",
+        "Tasarım aşamasında belirlenmiş ve kalıpla birlikte fiyatlandırılmış yedek parça seti",
+        "Bu projeye ve bu kalıp şartnamesine göre tanımlanmış kalıp garanti şartları",
+        "İyileştirilecek bir şey olmadığını düşünüyorsak, bunu da söyleriz"
+      ],
+      "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    },
+    "panels": {
+      "heading": "Daha ayrıntılı",
+      "items": [
+        {
+          "title": "Kalıbınızın dayanması gereken koşullar",
+          "bullets": [
+            "Şişe kalitesi PET, kabaca 0,70 – 0,80 dL/g içsel viskozitede çalışır ve tüm proses onu orada tutma mücadelesidir.",
+            "PET higroskopiktir: yaklaşık 50 ppm nem ya da altına kadar kurutulur; kabaca −40 °C çiy noktasında kurutucu hava, yaklaşık 150 – 175 °C, dört ila altı saat.",
+            "Ergiyikteki su zinciri hidrolize eder. IV düşer ve şişe, görünüşte hiçbir farkı yokken zayıflar. Yayımlanmış uygulama, IV kaybını yaklaşık 0,04 dL/g'nin altında tutar.",
+            "Asetaldehit, saf hammaddede 1 – 3 ppm düzeyindedir ve kırma malzemeyle 10 – 15 ppm ya da daha yükseğe çıkabilir.",
+            "Hammadde tedarikçileri, 4 mm'ye kadar cidarlarda göz başına saniyede 8 – 12 g dolum hızı öneriyor.",
+            "Soğutma, çok kalın preformlarda kabaca 1,5 s alt sınırından 20 s'ye kadar çıkar; en kısa çevrimler için 8 – 10 °C soğutma suyu belirtiliyor.",
+            "İnce preformlar daha soğuk sudan az kazanır; kalın olanlar çok kazanır. Soğutma devresinin bir devreye alma kararı değil, bir tasarım kararı olmasının nedeni budur."
+          ],
+          "source": "Bu panodaki rakamlar Metal Form ölçümleri değil, yayımlanmış sektör uygulamalarıdır."
+        },
+        {
+          "title": "Bir preform kalıbıyla birlikte neyi tanımlıyoruz",
+          "bullets": [
+            "Yıllık adede ve kurulu makineye göre gerekçelendirilmiş göz sayısı — deneyimimiz 46 göze kadar uzanır.",
+            "Soğuk yarım: göz insertleri, maça çubukları, bölünmüş boyun halkaları, kilit halkaları.",
+            "İğneli girişli sıcak yolluk ve giriş stratejisi; ergiyik yolu dengesi ve giriş izi yüksekliği birer tasarım çıktısı olarak.",
+            "Kalın cidarlarda çevrimi belirleyen maça soğutma geometrisi.",
+            "Makine arayüzü: kolon aralığı, tabla, tonaj, atım kapasitesi, alma plakası istasyonları.",
+            "Boyunda ve ayırma yüzeyinde havalandırma; ayrım çizgisi sızdırmazlık yüzeyinden uzak tutularak.",
+            "Aşınmanın asıl olduğu yer olan boyun halkaları ve maçalarda çelik seçimi ve yüzey işlemi.",
+            "Tasarım aşamasında belirlenmiş ve kalıpla birlikte fiyatlandırılmış bir yedek parça seti.",
+            "Şartları her proje bazında kararlaştırılan kalıp garantisi."
+          ]
+        },
+        {
+          "title": "İkinci kaynak, yedekler ve dönüşüm",
+          "bullets": [
+            "Bölünmüş boyun halkası takımları, bir preform kalıbındaki sonucu en ağır aşınma parçasıdır: dişleri, destek halkasını ve sızdırmazlık yüzeyini onlar oluşturur. Yedek takımı olmayan bir tesis, üretimin durmasına tek bir olay uzaklıktadır.",
+            "Maça çubukları ve göz insertleri, sınırlı ömürlü değiştirilebilir kalemlerdir; ikisi de doğal ikinci kaynak adayıdır.",
+            "Soğuk yarım bileşenleri, başkasının yaptığı bir kalıp için de tedarik edilebilir.",
+            "Hâlihazırda çalışan kalıpların boyun standardı dönüşümü; şişirme kalıbı boyun insertleri ve kapaklama makinesi değişim parçalarıyla birlikte fiyatlandırılır.",
+            "Aynı şartnameye göre yapılmış ve bir kesintiye karşı hazırda tutulan ikiz bir soğuk yarım.",
+            "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmez; hangisi olduğunu açıkça söyleriz."
+          ]
+        }
+      ]
+    },
+    "hero": {
+      "dimension": "Ø 24,94 · değişmez",
+      "plateCaption": "32 · göz dizisi"
+    }
+  },
+  "cta": {
+    "headline": "Şişeyi gönderin. Kapağı gönderin.",
+    "body": "Teknik resimler, fiziksel bir numune ya da bir fotoğrafla birlikte hedef gram ağırlığı — herhangi biri başlamak için yeter. Size geometri, kalıp rotası, göz sayısı ve üretim maliyeti üzerinden dönüş yaparız.",
+    "action": "Şişenizi ve kapağınızı gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form — PET ambalaj talebi.\n\nİhtiyacım: preform kalıbı / kapak kalıbı / şişirme kalıbı değişim parçaları / boyun halkası ve maça yedekleri / preform veya kapak tedariki\nBoyun standardı: PCO 1881 / 29/25 / PCO 1810 / 30/25 / diğer\nŞişe: 500 ml sakin su / 1,5 L gazlı / diğer\nMevcut preform ağırlığı: \nHedef ağırlık: \nYıllık adet: \nEnjeksiyon makinesi (marka, model, kolon aralığı, tonaj): \n\nTeknik resim veya numune gönderebilirim.",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+  }
+}

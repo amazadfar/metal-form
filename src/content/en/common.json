@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "industries": "Industries",
+    "capabilities": "Capabilities",
+    "about": "About",
+    "contact": "Contact",
+    "language": "Language",
+    "menu": "Menu",
+    "close": "Close",
+    "home": "Home",
+    "backToIndustries": "Back to industries",
+    "allIndustries": "All industries"
+  },
+  "actions": {
+    "whatsapp": "Send your project on WhatsApp",
+    "sendProject": "Send your project",
+    "talkToEngineer": "Talk to an engineer",
+    "viewIndustry": "Open this industry",
+    "more": "More detail",
+    "less": "Less detail",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "selector": {
+    "kicker": "Select language",
+    "headline": "Engineering. Tooling. Manufacturing. Supply.",
+    "note": "Nine languages. One accountable partner.",
+    "continueIn": "Continue in"
+  },
+  "trust": {
+    "since": "Since 2006",
+    "projects": "1,000+ completed projects",
+    "projectsNote": "Tooling, engineering and production work delivered since the workshop opened.",
+    "cavities": "Tooling to 46 cavities",
+    "cavitiesNote": "Our multi-cavity experience runs to 46 cavities. High cavitation is a tooling discipline, not a machine specification.",
+    "software": "CATIA · SolidWorks",
+    "softwareNote": "Part models, tool design and reverse-engineered geometry are produced in CATIA and SolidWorks. Native or neutral formats both work — STEP, IGES, X_T, STL.",
+    "warranty": "Tooling warranty",
+    "warrantyNote": "Warranty terms are defined per project and mould specification, and written into the order rather than into a marketing claim.",
+    "delivery": "International delivery",
+    "deliveryNote": "Tools and components ship internationally. Terms, route and documentation are agreed with the quotation.",
+    "response": "Initial response in 48 business hours",
+    "responseNote": "A first technical read — feasibility direction, what is missing, and the next step. Not a final quotation, and we will not pretend otherwise."
+  },
+  "nda": {
+    "heading": "Confidentiality and NDA",
+    "body": "An NDA can be signed before any detailed technical disclosure. Your geometry, drawings, tolerances and volumes stay with the engineers working on the project.",
+    "points": [
+      "We sign your NDA, or send ours, before detailed drawings change hands.",
+      "Customer geometry is never used as a portfolio piece without written permission.",
+      "Where a project is shown publicly, identifying details are removed — and we say so."
+    ]
+  },
+  "contact": {
+    "heading": "Send the project",
+    "body": "A photograph, a sample, a sketch or a full CAD package — any of them is a starting point. Tell us what the part has to do and how many you need.",
+    "whatsappLabel": "WhatsApp",
+    "whatsappNote": "Fastest route. Send photographs, drawings or a video of the part directly.",
+    "emailLabel": "Email",
+    "phoneLabel": "Telephone",
+    "addressLabel": "Registered address",
+    "responseLabel": "Response time",
+    "pendingNote": "Direct messaging is being connected. Until it is live, this button opens the contact page with every channel currently available."
+  },
+  "footer": {
+    "tagline": "One accountable partner for engineering, tooling, production and supply of moulded components.",
+    "industriesHeading": "Industries",
+    "companyHeading": "Company",
+    "contactHeading": "Contact",
+    "rights": "All rights reserved.",
+    "mediaNote": "Drawings, diagrams and animations on this site are schematics produced to explain engineering and manufacturing. They are not photographs of Metal Form equipment, facilities or completed projects. Real project media is published only with the customer's written permission."
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "languageSelector": "Change language",
+    "mainNavigation": "Main navigation",
+    "schematicLabel": "Schematic drawing",
+    "scrollForMore": "Scroll"
+  },
+  "schematic": "Schematic"
+}

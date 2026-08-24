@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Metal Form iletişim — bir parça, bir teknik resim ya da bir fotoğraf gönderin",
+    "description": "Bir fotoğraf, bir numune, bir teknik resim ya da bir CAD dosyası gönderin. 48 iş saati içinde ilk teknik dönüş: üretilebilirlik yönü, eksik olanlar ve bir sonraki adım. Ayrıntılı paylaşımdan önce NDA."
+  },
+  "hero": {
+    "kicker": "İletişim",
+    "headline": ["Parçayı gönderin.", "Ya da parçanın", "fotoğrafını."],
+    "lead": "Doldurulacak bir form ya da ön eleme anketi yok. Elinizde ne varsa gönderin, parçanın ne iş yapması gerektiğini yazın; biz size teknik bir görüşle döneriz."
+  },
+  "send": {
+    "heading": "Göndermeye değer olanlar",
+    "body": "Bunlardan herhangi biri bir görüşme başlatmaya yeter. Hepsi bir arada olursa daha iyi olur, ama kimsede hepsi bulunmaz.",
+    "items": [
+      "Parçanın fotoğrafı; mümkünse yanında bir cetvel ya da kumpasla",
+      "Kargolayabiliyorsanız fiziksel numunenin kendisi",
+      "2B bir teknik resim; eski olsa da, tarama olsa da",
+      "3B bir model — STEP, IGES, X_T, STL ya da CATIA veya SolidWorks'ün kendi dosyası",
+      "Kabaca bir eskiz ve parçanın ne iş yapması gerektiğinin tarifi",
+      "Yılda kabaca kaç adet gerektiği; tahmin bile olsa",
+      "Biliyorsanız malzeme; bilmiyorsanız parçanın nelere dayanması gerektiği",
+      "Asıl çözmeye çalıştığınız sorun: maliyet, tedarik, kalite ya da henüz var olmayan bir parça"
+    ]
+  },
+  "expect": {
+    "heading": "Bundan sonra ne oluyor",
+    "steps": [
+      { "index": "01", "title": "Siz gönderirsiniz", "body": "En hızlısı WhatsApp; çünkü fotoğraflar, teknik resimler ve parçanın kısa videoları e-posta ek boyutu sınırına takılmadan iletilir." },
+      { "index": "02", "title": "Biz okuruz", "body": "Geometriye, fiyat listesine bakan bir satışçı değil, bir mühendis bakar. 48 iş saati içinde üretilebilirlik yönünü, eksik olanların listesini ve bir sonraki adımı alırsınız." },
+      { "index": "03", "title": "İsterseniz NDA", "body": "Bizimkini imzalayın ya da kendinizinkini gönderin. Olağan bir adımdır, hızlıdır ve ayrıntılı teknik paylaşımdan sonra değil, önce yapılır." },
+      { "index": "04", "title": "Sonra gerçek bir teklif", "body": "Geometri, adet ve toleranslar anlaşıldıktan sonra. Öncesinde değil — bunlar bilinmeden verilen bir rakam, sonradan değişen bir rakamdır." }
+    ]
+  },
+  "cta": {
+    "headline": "Şimdi gönderin.",
+    "body": "Şu anda telefonla çekilmiş bir fotoğraf, üç hafta sonra gelecek kusursuz tanımlanmış bir talepten bizim için daha değerlidir.",
+    "action": "WhatsApp'ı açın",
+    "prefill": "Merhaba Metal Form.\n\nParça: \nSektör: \nYıllık adet: \nMalzeme (biliniyorsa): \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: \n\nÇözmek istediğim sorun: ",
+    "note": "48 iş saati içinde ilk teknik dönüş."
+  }
+}

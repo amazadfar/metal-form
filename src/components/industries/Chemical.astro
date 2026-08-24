@@ -1,0 +1,1662 @@
+---
+/**
+ * CHEMICAL & DETERGENT — the section-cut chapter.
+ *
+ * Every section of this page opens on a cross-section. That repetition is the
+ * identity: the reader is looking at one continuous drawing sheet, not a page
+ * with pictures on it. Three scales of the same motif carry it — the full-bleed
+ * hero section, the small silhouettes in the dimension gutter, and the 45°
+ * hatched rules that divide the sections.
+ *
+ * The argument: a closure has to work twice. Once on the capper at line speed,
+ * and again in a hand months later after transport, heat and continuous contact
+ * with the formulation. Everything that decides whether it works twice is
+ * geometry, and geometry is cut in steel before a single part exists.
+ *
+ * Drawing conventions used throughout: hairline outlines, 45° section hatch on
+ * cut material, dash-dot centre lines, orthogonal leader lines with a dot at the
+ * anchor and a mono label at the shelf, and a surface-coloured mask under every
+ * leader so it breaks the hatch the way a real drawing does.
+ */
+import type { Locale } from '../../i18n/locales.ts';
+import type { Industry } from '../../config/industries.ts';
+import type { IndustryContent, CommonContent } from '../../content/types.ts';
+
+interface Props {
+  locale: Locale;
+  industry: Industry;
+  content: IndustryContent;
+  common: CommonContent;
+}
+const { content, common } = Astro.props;
+const b = content.blocks as any;
+
+/* ── Drawing primitives ─────────────────────────────────────────────────── */
+
+type Pt = [number, number];
+const n1 = (v: number) => Math.round(v * 10) / 10;
+const L = (pts: Pt[]) => pts.map(([x, y]) => `L ${n1(x)} ${n1(y)}`).join(' ');
+const rev = (pts: Pt[]) => pts.slice().reverse();
+
+/** A thread profile in section: n teeth from y0, root at xr, crest at xc. */
+function teeth(xr: number, xc: number, y0: number, n: number, p: number): Pt[] {
+  const pts: Pt[] = [];
+  for (let i = 0; i < n; i++) {
+    const y = y0 + i * p;
+    pts.push([xr, y], [xc, y + p * 0.26], [xc, y + p * 0.5], [xr, y + p * 0.76]);
+  }
+  pts.push([xr, y0 + n * p]);
+  return pts;
+}
+
+/**
+ * Orthogonal leader: out from the anchor, along, then a shelf to the label.
+ * Never diagonal — this chapter's annotations turn at right angles only.
+ */
+const lead = (ax: number, ay: number, mx: number, ty: number, lx: number) =>
+  `M ${n1(ax)} ${n1(ay)} H ${n1(mx)} V ${n1(ty)} H ${n1(lx)}`;
+/** The anchor a leader starts on, read back off its own path data. */
+const dotX = (d: string) => d.split(' ')[1];
+const dotY = (d: string) => d.split(' ')[2];
+
+/** Ratchet zigzag: teeth hanging below a baseline. */
+function zig(x0: number, x1: number, y: number, amp: number, step: number): Pt[] {
+  const pts: Pt[] = [[x0, y]];
+  for (let x = x0; x < x1 - 0.001; x += step) pts.push([x + step / 2, y + amp], [x + step, y]);
+  return pts;
+}
+
+/* ── Hero: closure seated on a neck finish, sectioned on the centreline ──── */
+
+const H_CT_R = teeth(154, 130, 152, 3, 44);
+const H_CT_L = teeth(-154, -130, 152, 3, 44);
+const H_NT_R = teeth(124, 148, 174, 3, 44);
+const H_NT_L = teeth(-124, -148, 174, 3, 44);
+
+const HERO_CLOSURE =
+  `M -180 336 L -180 88 L 180 88 L 180 336 Z ` +
+  `M -154 336 L -154 284 ${L(rev(H_CT_L))} L -154 108 L 154 108 ${L(H_CT_R)} L 154 336 Z`;
+
+const HERO_NECK_R: Pt[] = [
+  [130, 116], [124, 126], ...H_NT_R,
+  [124, 316], [142, 322], [142, 334], [124, 340], [124, 660],
+];
+const HERO_NECK_L: Pt[] = [
+  [-130, 116], [-124, 126], ...H_NT_L,
+  [-124, 316], [-142, 322], [-142, 334], [-124, 340], [-124, 660],
+];
+const HERO_NECK =
+  `M -130 116 ${L(HERO_NECK_L.slice(1))} L 124 660 ${L(rev(HERO_NECK_R))} Z ` +
+  `M -100 116 L 100 116 L 100 660 L -100 660 Z`;
+
+const HERO_BAND_R = 'M 156 344 L 180 344 L 180 404 L 156 404 L 156 372 L 136 364 L 136 354 L 156 346 Z';
+const HERO_BAND_L = 'M -156 344 L -180 344 L -180 404 L -156 404 L -156 372 L -136 364 L -136 354 L -156 346 Z';
+
+/* ── 01 · thread engagement, magnified ──────────────────────────────────── */
+
+const EN_C = teeth(210, 280, -20, 3, 120);   // closure internal thread
+const EN_N = teeth(295, 225, 33.3, 3, 120);  // neck external thread
+const EN_CLOSURE = `M -10 -20 ${L(EN_C)} L -10 340 Z`;
+const EN_NECK = `M 630 -20 L 295 -20 ${L(EN_N)} L 630 393 Z`;
+/** Contact bands: where the two flanks share a line. One per turn. */
+const EN_CONTACT = [0, 1, 2].map((i) => `M 280 ${40 + i * 120} L 225 ${64.5 + i * 120}`);
+
+/* ── 04 · child-resistant ratchet, two states ───────────────────────────── */
+
+function crOuter(top: number, yO: number) {
+  return `M 100 ${top} H 540 V 250 H 510 V ${yO} ${L(rev(zig(160, 480, yO, 20, 40)))} L 130 ${yO} V 250 H 100 Z`;
+}
+function crInner(yI: number) {
+  return `M 140 ${yI} ${L(zig(160, 480, yI, 20, 40))} L 500 ${yI} V 268 H 140 Z`;
+}
+const CR_MESH = (y: number) => `M 160 ${y} ${L(zig(160, 480, y, 20, 40).slice(1))}`;
+
+/* ── 05 · thread forming: one core, two release routes ──────────────────── */
+
+const RT_CORE_R = teeth(34, 54, 60, 4, 42);
+const RT_CORE_L = teeth(-34, -54, 81, 4, 42);
+const RT_CORE =
+  `M -34 40 ${L(RT_CORE_L)} L -34 268 L 34 268 ${L(rev(RT_CORE_R))} L 34 40 Z`;
+
+/* ── Gutter silhouettes. The signature motif at its smallest scale. ─────── */
+
+const GUT: Record<string, string[]> = {
+  engagement: ['M7 4 V72', 'M7 16 H19 V26 H7', 'M7 40 H19 V50 H7', 'M27 4 V72', 'M27 28 H17 V38 H27', 'M27 52 H17 V62 H27'],
+  seal: ['M5 8 H29 V18 H5 Z', 'M9 22 H25 V28 H9 Z', 'M9 32 V72', 'M25 32 V72'],
+  tamper: ['M9 6 H25 V34 H9 Z', 'M9 42 H25 V70 H9 Z', 'M14 34 V42', 'M20 34 V42'],
+  cr: ['M5 10 H29 V20 H5 Z', 'M9 30 l5 6 l5 -6 l5 6', 'M9 44 l5 -6 l5 6 l5 -6', 'M5 54 H29 V68 H5 Z'],
+  route: ['M11 6 V72', 'M23 6 V72', 'M11 20 H5 V30 H11', 'M23 20 H29 V30 H23', 'M11 46 H5 V56 H11', 'M23 46 H29 V56 H23'],
+  cavity: ['M4 8 H30 V66 H4 Z', 'M11 18 H23 V66 H11 Z', 'M15 28 V66', 'M19 28 V66'],
+  material: ['M6 14 H28 V24 H6 Z', 'M6 24 H28 V30 H6 Z', 'M6 30 H28 V40 H6 Z', 'M6 40 H28 V62 H6 Z'],
+  boundary: ['M5 12 H15 V64 H5 Z', 'M19 12 H29 V64 H19 Z', 'M17 4 V72'],
+};
+---
+
+<article class="chm">
+
+  {/* ═══ HERO — one closure, one neck, one sealing interface ═══════════════ */}
+  <header class="chm-hero">
+    <div class="shell--wide chm-hero__inner">
+      <div class="chm-hero__copy">
+        <p class="eyebrow">{content.hero.kicker}</p>
+        <h1 class="chm-hero__head">
+          {content.hero.headline.map((line: string, i: number) => (
+            <span style={`--l:${i}`}>{line}</span>
+          ))}
+        </h1>
+        <p class="chm-hero__lead">{content.hero.lead}</p>
+        {content.hero.markers && (
+          <ul class="chm-hero__markers">
+            {content.hero.markers.map((m: string) => <li class="t-mono">{m}</li>)}
+          </ul>
+        )}
+      </div>
+
+      <figure class="chm-hero__fig">
+        <svg viewBox="-340 52 760 568" data-nomirror role="img" aria-label={common.schematic}>
+          <defs>
+            <pattern id="chm-hatch-hero" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+            </pattern>
+            <marker id="chm-ar-hero" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" class="chm-arrowhead" />
+            </marker>
+          </defs>
+
+          <line x1="0" y1="60" x2="0" y2="660" class="chm-cl" />
+
+          {/* Neck — fixed. It runs off the bottom edge on purpose. */}
+          <path d={HERO_NECK} fill-rule="evenodd" fill="url(#chm-hatch-hero)" class="chm-hero__cut" />
+          <path d={HERO_NECK} fill-rule="evenodd" class="chm-out chm-hero__draw" pathLength="1" />
+
+          {/* Closure — seats downward once, on load, and stops hard. */}
+          <g class="chm-hero__cap">
+            <path d={HERO_CLOSURE} fill-rule="evenodd" fill="url(#chm-hatch-hero)" class="chm-hero__cut" />
+            <path d={HERO_BAND_R} fill="url(#chm-hatch-hero)" class="chm-hero__cut" />
+            <path d={HERO_BAND_L} fill="url(#chm-hatch-hero)" class="chm-hero__cut" />
+            <rect x="-140" y="108" width="280" height="8" class="chm-solid chm-hero__cut" />
+            <path d={HERO_CLOSURE} fill-rule="evenodd" class="chm-out chm-hero__draw" pathLength="1" />
+            <path d={HERO_BAND_R} class="chm-out chm-hero__draw" pathLength="1" />
+            <path d={HERO_BAND_L} class="chm-out chm-hero__draw" pathLength="1" />
+            <rect x="160" y="336" width="16" height="8" class="chm-out chm-hero__draw" />
+            <rect x="-176" y="336" width="16" height="8" class="chm-out chm-hero__draw" />
+          </g>
+
+          {/* The single place colour is spent in the hero: the sealing land. */}
+          <path d="M -130 116 H -100 M 100 116 H 130" class="chm-hot chm-hero__hot" />
+
+          {/* Finish height, drawn as a dimension rather than stated. */}
+          <g class="chm-hero__ann" style="--a:0">
+            <path d="M -136 116 H -258 M -124 340 H -258" class="chm-ext" />
+            <path d="M -250 116 V 340" class="chm-dim" marker-start="url(#chm-ar-hero)" marker-end="url(#chm-ar-hero)" />
+            <text x="-244" y="232" class="chm-lbl">H</text>
+          </g>
+
+          {[
+            { d: lead(180, 130, 250, 104, 292), tx: 298, ty: 107.5, t: b.engagement.heroLabels.closure, end: false },
+            { d: lead(148, 218, 262, 176, 292), tx: 298, ty: 179.5, t: b.engagement.heroLabels.thread, end: false },
+            { d: lead(115, 116, 274, 248, 292), tx: 298, ty: 251.5, t: b.engagement.heroLabels.land, end: false },
+            { d: lead(-124, 470, -214, 440, -258), tx: -264, ty: 443.5, t: b.engagement.heroLabels.neck, end: true },
+            { d: lead(-180, 378, -214, 352, -258), tx: -264, ty: 355.5, t: b.engagement.heroLabels.band, end: true },
+          ].map((a: any, i: number) => (
+            <g class="chm-hero__ann" style={`--a:${i + 1}`}>
+              <path d={a.d} class="chm-lead__mask" />
+              <path d={a.d} class="chm-lead" />
+              <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+              <text x={a.tx} y={a.ty} class="chm-lbl" text-anchor={a.end ? 'end' : 'start'}>{a.t}</text>
+            </g>
+          ))}
+        </svg>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <hr class="chm-rule" />
+
+  {/* ═══ 01 · THREAD ENGAGEMENT ════════════════════════════════════════════ */}
+  <section class="chm-sec chm-eng" id="engagement" data-stepper data-step="0">
+    <div class="shell--wide chm-sec__inner">
+      <div class="chm-gut" aria-hidden="true">
+        <span class="chm-gut__n t-mono">{b.engagement.index}</span>
+        <svg class="chm-gut__fig" viewBox="0 0 34 76" data-nomirror>
+          {GUT.engagement.map((d: string) => <path d={d} class="chm-gsil" />)}
+        </svg>
+      </div>
+
+      <div class="chm-body">
+        <p class="eyebrow">{b.engagement.kicker}</p>
+        <h2 class="chm-h2">{b.engagement.heading}</h2>
+        <p class="t-lead chm-lead-p">{b.engagement.body}</p>
+        <p class="chm-sub">{b.engagement.body2}</p>
+
+        <div class="chm-eng__grid">
+          <figure class="chm-fig chm-eng__fig">
+            <svg viewBox="0 0 620 360" data-nomirror role="img" aria-label={common.schematic}>
+              <defs>
+                <pattern id="chm-hatch-eng" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+                </pattern>
+              </defs>
+
+              <path d={EN_CLOSURE} fill="url(#chm-hatch-eng)" />
+              <path d={EN_NECK} fill="url(#chm-hatch-eng)" />
+              <path d={EN_CLOSURE} class="chm-out" />
+              <path d={EN_NECK} class="chm-out" />
+
+              <g data-ann="0">
+                {EN_CONTACT.map((d: string) => <path d={d} class="chm-hot" />)}
+              </g>
+
+              {[
+                { g: '1', d: lead(280, 25, 150, 40, 100), tx: 94, ty: 43.5, t: b.engagement.labels.crest, end: true },
+                { g: '2', d: lead(245, 115, 150, 130, 100), tx: 94, ty: 133.5, t: b.engagement.labels.flank, end: true },
+                { g: '1', d: lead(210, 200, 150, 215, 100), tx: 94, ty: 218.5, t: b.engagement.labels.root, end: true },
+                { g: '0', d: lead(252, 172, 370, 150, 430), tx: 436, ty: 153.5, t: b.engagement.labels.contact, end: false },
+                { g: '2', d: lead(217, 320, 370, 300, 430), tx: 436, ty: 303.5, t: b.engagement.labels.clearance, end: false },
+              ].map((a: any) => (
+                <g data-ann={a.g}>
+                  <path d={a.d} class="chm-lead__mask" />
+                  <path d={a.d} class="chm-lead" />
+                  <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+                  <text x={a.tx} y={a.ty} class="chm-lbl" text-anchor={a.end ? 'end' : 'start'}>{a.t}</text>
+                </g>
+              ))}
+            </svg>
+            <figcaption class="figure-note">{b.engagement.figCaption} · {common.schematic}</figcaption>
+          </figure>
+
+          <ol class="chm-steps" aria-label={b.engagement.stepsLabel}>
+            {b.engagement.steps.map((s: any, i: number) => (
+              <li class="chm-step" data-station-step={i}>
+                <span class="t-mono chm-step__n">{String(i + 1).padStart(2, '0')}</span>
+                <h3 class="chm-h5">{s.label}</h3>
+                <p>{s.note}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="chm-eng__data">
+          <div class="chm-letters">
+            <h3 class="t-label chm-cap">{b.engagement.lettersHeading}</h3>
+            <dl class="chm-letters__list">
+              {b.engagement.letters.map((l: any) => (
+                <div><dt class="t-mono">{l.k}</dt><dd>{l.v}</dd></div>
+              ))}
+            </dl>
+          </div>
+
+          <div class="chm-profiles">
+            <h3 class="t-label chm-cap">{b.engagement.profilesHeading}</h3>
+            <ul class="chm-profiles__list">
+              {b.engagement.profiles.map((p: any, i: number) => (
+                <li>
+                  <svg class="chm-profiles__fig" viewBox="0 0 44 58" data-nomirror aria-hidden="true">
+                    <path d="M8 4 V54" class="chm-out chm-thin" />
+                    {[0, 1, 2].slice(0, i + 1).map((t: number) => (
+                      <path d={`M8 ${10 + t * 15} H${16 + i * 7} V${20 + t * 15} H8`} class="chm-out chm-thin" />
+                    ))}
+                  </svg>
+                  <span class="chm-profiles__n t-mono">{p.name}</span>
+                  <span class="chm-profiles__d t-mono">{p.depth}</span>
+                  <span class="chm-profiles__t">{p.note}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="t-fine chm-src">{b.engagement.profilesNote}</p>
+          </div>
+        </div>
+
+        <p class="chm-close">{b.engagement.close}</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="chm-rule" />
+
+  {/* ═══ 02 · SEAL ROUTES ══════════════════════════════════════════════════ */}
+  <section class="chm-sec" id="seal">
+    <div class="shell--wide chm-sec__inner">
+      <div class="chm-gut" aria-hidden="true">
+        <span class="chm-gut__n t-mono">{b.seal.index}</span>
+        <svg class="chm-gut__fig" viewBox="0 0 34 76" data-nomirror>
+          {GUT.seal.map((d: string) => <path d={d} class="chm-gsil" />)}
+        </svg>
+      </div>
+
+      <div class="chm-body">
+        <p class="eyebrow">{b.seal.kicker}</p>
+        <h2 class="chm-h2">{b.seal.heading}</h2>
+        <p class="t-lead chm-lead-p">{b.seal.body}</p>
+
+        <figure class="chm-fig" data-reveal>
+          <svg viewBox="0 0 620 215" data-nomirror role="img" aria-label={common.schematic}>
+            <defs>
+              <pattern id="chm-hatch-seal" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+              </pattern>
+            </defs>
+
+            {[80, 235, 390, 545].map((cx: number, i: number) => (
+              <g>
+                <rect x={cx - 58} y="26" width="116" height="18" fill="url(#chm-hatch-seal)" />
+                <rect x={cx - 58} y="26" width="116" height="18" class="chm-out chm-thin" />
+                <rect x={cx - 50} y="62" width="18" height="128" fill="url(#chm-hatch-seal)" />
+                <rect x={cx + 32} y="62" width="18" height="128" fill="url(#chm-hatch-seal)" />
+                <rect x={cx - 50} y="62" width="18" height="128" class="chm-out chm-thin" />
+                <rect x={cx + 32} y="62" width="18" height="128" class="chm-out chm-thin" />
+                <line x1={cx} y1="66" x2={cx} y2="196" class="chm-cl" />
+
+                {i === 0 && <rect x={cx - 46} y="48" width="92" height="12" class="chm-solid" />}
+                {i === 1 && (
+                  <g>
+                    <rect x={cx - 38} y="44" width="10" height="34" fill="url(#chm-hatch-seal)" />
+                    <rect x={cx + 28} y="44" width="10" height="34" fill="url(#chm-hatch-seal)" />
+                    <rect x={cx - 38} y="44" width="10" height="34" class="chm-out chm-thin" />
+                    <rect x={cx + 28} y="44" width="10" height="34" class="chm-out chm-thin" />
+                    <path d={`M ${cx - 32} 62 V 76 M ${cx + 32} 62 V 76`} class="chm-contact" />
+                  </g>
+                )}
+                {i === 2 && <path d={`M ${cx - 50} 60 H ${cx + 50}`} class="chm-contact" />}
+                {i === 3 && (
+                  <g>
+                    <rect x={cx - 46} y="48" width="28" height="12" class="chm-solid" />
+                    <rect x={cx - 8} y="48" width="16" height="12" class="chm-solid" />
+                    <rect x={cx + 18} y="48" width="28" height="12" class="chm-solid" />
+                  </g>
+                )}
+              </g>
+            ))}
+
+            {[
+              { d: lead(118, 62, 118, 14, 150), tx: 156, ty: 17.5, t: b.seal.labels.land, end: false },
+              { d: lead(80, 60, 80, 194, 30), tx: 24, ty: 197.5, t: b.seal.labels.liner, end: true },
+              { d: lead(263, 70, 263, 194, 190), tx: 184, ty: 197.5, t: b.seal.labels.bore, end: true },
+              { d: lead(390, 60, 390, 194, 350), tx: 344, ty: 197.5, t: b.seal.labels.foil, end: true },
+              { d: lead(545, 54, 545, 194, 510), tx: 504, ty: 197.5, t: b.seal.labels.vent, end: true },
+            ].map((a: any) => (
+              <g>
+                <path d={a.d} class="chm-lead__mask" />
+                <path d={a.d} class="chm-lead" />
+                <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+                <text x={a.tx} y={a.ty} class="chm-lbl" text-anchor={a.end ? 'end' : 'start'}>{a.t}</text>
+              </g>
+            ))}
+          </svg>
+          <figcaption class="figure-note">{b.seal.figCaption} · {common.schematic}</figcaption>
+        </figure>
+
+        <div class="chm-scroll">
+          <table class="chm-table">
+            <thead>
+              <tr>
+                <th scope="col"><span class="vh">{b.seal.figCaption}</span></th>
+                <th scope="col">{b.seal.colWhat}</th>
+                <th scope="col">{b.seal.colTooling}</th>
+                <th scope="col">{b.seal.colLimit}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {b.seal.routes.map((r: any) => (
+                <tr>
+                  <th scope="row">{r.name}</th>
+                  <td>{r.what}</td>
+                  <td>{r.tooling}</td>
+                  <td>{r.limit}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="t-fine chm-src">{b.seal.routesNote}</p>
+        <p class="chm-close">{b.seal.close}</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="chm-rule" />
+
+  {/* ═══ 03 · TAMPER EVIDENCE ══════════════════════════════════════════════ */}
+  <section class="chm-sec" id="tamper">
+    <div class="shell--wide chm-sec__inner">
+      <div class="chm-gut" aria-hidden="true">
+        <span class="chm-gut__n t-mono">{b.tamper.index}</span>
+        <svg class="chm-gut__fig" viewBox="0 0 34 76" data-nomirror>
+          {GUT.tamper.map((d: string) => <path d={d} class="chm-gsil" />)}
+        </svg>
+      </div>
+
+      <div class="chm-body">
+        <p class="eyebrow">{b.tamper.kicker}</p>
+        <h2 class="chm-h2">{b.tamper.heading}</h2>
+        <p class="t-lead chm-lead-p">{b.tamper.body}</p>
+        <p class="chm-sub">{b.tamper.body2}</p>
+
+        <div class="chm-pair" data-reveal>
+          <figure class="chm-fig">
+            <svg viewBox="0 0 440 400" data-nomirror role="img" aria-label={common.schematic}>
+              <defs>
+                <pattern id="chm-hatch-tam" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+                </pattern>
+              </defs>
+
+              <line x1="170" y1="8" x2="170" y2="392" class="chm-cl" />
+
+              {/* Neck wall with the finish bead the band has to climb. */}
+              <path d="M 136 50 L 136 110 L 118 118 L 118 132 L 136 140 L 136 390 L 156 390 L 156 50 Z" fill="url(#chm-hatch-tam)" />
+              <path d="M 204 50 L 204 110 L 222 118 L 222 132 L 204 140 L 204 390 L 184 390 L 184 50 Z" fill="url(#chm-hatch-tam)" />
+              <path d="M 136 50 L 136 110 L 118 118 L 118 132 L 136 140 L 136 390 L 156 390 L 156 50 Z" class="chm-out" />
+              <path d="M 204 50 L 204 110 L 222 118 L 222 132 L 204 140 L 204 390 L 184 390 L 184 50 Z" class="chm-out" />
+
+              {/* Closure panel, skirt, bridges and band. */}
+              <path d="M 92 14 H 248 V 30 H 92 Z" fill="url(#chm-hatch-tam)" />
+              <path d="M 92 30 H 116 V 160 H 92 Z M 224 30 H 248 V 160 H 224 Z" fill="url(#chm-hatch-tam)" />
+              <path d="M 92 14 H 248 V 30 H 92 Z" class="chm-out" />
+              <path d="M 92 30 H 116 V 160 H 92 Z M 224 30 H 248 V 160 H 224 Z" class="chm-out" />
+
+              <path d="M 116 172 H 92 V 270 H 116 V 210 L 134 202 V 190 L 116 182 Z" fill="url(#chm-hatch-tam)" />
+              <path d="M 224 172 H 248 V 270 H 224 V 210 L 206 202 V 190 L 224 182 Z" fill="url(#chm-hatch-tam)" />
+              <path d="M 116 172 H 92 V 270 H 116 V 210 L 134 202 V 190 L 116 182 Z" class="chm-out" />
+              <path d="M 224 172 H 248 V 270 H 224 V 210 L 206 202 V 190 L 224 182 Z" class="chm-out" />
+
+              <rect x="96" y="160" width="16" height="12" class="chm-hot-fill" />
+              <rect x="228" y="160" width="16" height="12" class="chm-hot-fill" />
+
+              {[
+                { d: lead(236, 60, 290, 44, 320), tx: 326, ty: 47.5, t: b.tamper.labels.skirt },
+                { d: lead(214, 125, 290, 130, 320), tx: 326, ty: 133.5, t: b.tamper.labels.bead },
+                { d: lead(236, 230, 290, 217, 320), tx: 326, ty: 220.5, t: b.tamper.labels.band },
+              ].map((a: any) => (
+                <g>
+                  <path d={a.d} class="chm-lead__mask" />
+                  <path d={a.d} class="chm-lead" />
+                  <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+                  <text x={a.tx} y={a.ty} class="chm-lbl">{a.t}</text>
+                </g>
+              ))}
+            </svg>
+            <figcaption class="figure-note">{b.tamper.figCaption} · {common.schematic}</figcaption>
+          </figure>
+
+          <figure class="chm-fig">
+            <svg viewBox="0 0 440 260" data-nomirror role="img" aria-label={common.schematic}>
+              <defs>
+                <pattern id="chm-hatch-dev" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+                </pattern>
+                <marker id="chm-ar-tam" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" class="chm-arrowhead" />
+                </marker>
+              </defs>
+
+              <rect x="20" y="40" width="380" height="60" fill="url(#chm-hatch-dev)" />
+              <rect x="20" y="40" width="380" height="60" class="chm-out" />
+              <rect x="20" y="120" width="380" height="60" fill="url(#chm-hatch-dev)" />
+              <rect x="20" y="120" width="380" height="60" class="chm-out" />
+
+              {[34, 100, 166, 232, 298, 364].map((x: number) => (
+                <rect x={x} y="100" width="18" height="20" class="chm-hot-fill" />
+              ))}
+
+              <path d="M 43 180 V 224 M 109 180 V 224" class="chm-ext" />
+              <path d="M 43 214 H 109" class="chm-dim" marker-start="url(#chm-ar-tam)" marker-end="url(#chm-ar-tam)" />
+
+              {[
+                { d: lead(43, 110, 43, 20, 90), tx: 96, ty: 23.5, t: b.tamper.labels.bridge },
+                { d: lead(76, 214, 76, 242, 120), tx: 126, ty: 245.5, t: b.tamper.labels.pitch },
+              ].map((a: any) => (
+                <g>
+                  <path d={a.d} class="chm-lead__mask" />
+                  <path d={a.d} class="chm-lead" />
+                  <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+                  <text x={a.tx} y={a.ty} class="chm-lbl">{a.t}</text>
+                </g>
+              ))}
+            </svg>
+            <figcaption class="figure-note">{b.tamper.labels.bridge} · {common.schematic}</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="t-label chm-cap">{b.tamper.ledgerHeading}</h3>
+        <dl class="chm-ledger">
+          {b.tamper.ledger.map((row: any) => (
+            <div class="chm-ledger__row">
+              <dt>{row.part}</dt>
+              <dd>{row.governs}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <h3 class="t-label chm-cap chm-cap--gap">{b.tamper.routesHeading}</h3>
+        <div class="chm-two">
+          {b.tamper.routes.map((r: any) => (
+            <div class="chm-two__col">
+              <h4 class="chm-h5">{r.name}</h4>
+              <p>{r.note}</p>
+            </div>
+          ))}
+        </div>
+        <p class="t-fine chm-src">{b.tamper.routesNote}</p>
+        <p class="chm-close">{b.tamper.close}</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="chm-rule" />
+
+  {/* ═══ 04 · CHILD RESISTANCE — one mechanism, two states ═════════════════ */}
+  <section class="chm-sec" id="child-resistance">
+    <div class="shell--wide chm-sec__inner">
+      <div class="chm-gut" aria-hidden="true">
+        <span class="chm-gut__n t-mono">{b.cr.index}</span>
+        <svg class="chm-gut__fig" viewBox="0 0 34 76" data-nomirror>
+          {GUT.cr.map((d: string) => <path d={d} class="chm-gsil" />)}
+        </svg>
+      </div>
+
+      <div class="chm-body">
+        <p class="eyebrow">{b.cr.kicker}</p>
+        <h2 class="chm-h2">{b.cr.heading}</h2>
+        <p class="t-lead chm-lead-p">{b.cr.body}</p>
+        <p class="chm-sub">{b.cr.body2}</p>
+
+        <div class="chm-tabs" data-tabs>
+          <div class="chm-tabs__list" role="tablist" aria-label={b.cr.tabsLabel}>
+            {b.cr.states.map((s: any) => (
+              <button
+                class="chm-tabs__btn"
+                type="button"
+                role="tab"
+                data-tab={s.id}
+                aria-selected="false"
+                id={`chm-tab-${s.id}`}
+                aria-controls={`chm-panel-${s.id}`}
+              >{s.name}</button>
+            ))}
+          </div>
+
+          {b.cr.states.map((s: any, i: number) => (
+            <div
+              class="chm-tabs__panel"
+              data-panel={s.id}
+              role="tabpanel"
+              id={`chm-panel-${s.id}`}
+              aria-labelledby={`chm-tab-${s.id}`}
+              hidden
+            >
+              <figure class="chm-fig chm-fig--flush">
+                <svg viewBox="0 0 700 300" data-nomirror role="img" aria-label={common.schematic}>
+                  <defs>
+                    <pattern id={`chm-hatch-cr-${s.id}`} width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                      <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+                    </pattern>
+                    <marker id={`chm-ar-cr-${s.id}`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                      <path d="M0 0 L10 5 L0 10 z" class="chm-arrowhead" />
+                    </marker>
+                  </defs>
+
+                  <path d={crOuter(i === 0 ? 30 : 50, i === 0 ? 84 : 104)} fill={`url(#chm-hatch-cr-${s.id})`} />
+                  <path d={crOuter(i === 0 ? 30 : 50, i === 0 ? 84 : 104)} class="chm-out" />
+                  <path d={crInner(i === 0 ? 110 : 108)} fill={`url(#chm-hatch-cr-${s.id})`} />
+                  <path d={crInner(i === 0 ? 110 : 108)} class="chm-out" />
+                  {i === 1 && <path d={CR_MESH(108)} class="chm-contact" />}
+
+                  {i === 1 && (
+                    <g>
+                      {[220, 320, 420].map((x: number) => (
+                        <path d={`M ${x} 12 V 42`} class="chm-dim" marker-end={`url(#chm-ar-cr-${s.id})`} />
+                      ))}
+                    </g>
+                  )}
+
+                  {[
+                    { d: lead(540, 60, 570, 40, 590), tx: 596, ty: 43.5, t: b.cr.labels.outer },
+                    { d: lead(180, i === 0 ? 104 : 124, 566, 110, 590), tx: 596, ty: 113.5, t: b.cr.labels.tooth },
+                    {
+                      d: i === 0 ? lead(240, 97, 562, 180, 590) : lead(320, 26, 562, 180, 590),
+                      tx: 596, ty: 183.5, t: i === 0 ? b.cr.labels.gap : b.cr.labels.load,
+                    },
+                    { d: lead(500, 220, 566, 250, 590), tx: 596, ty: 253.5, t: b.cr.labels.inner },
+                  ].map((a: any) => (
+                    <g>
+                      <path d={a.d} class="chm-lead__mask" />
+                      <path d={a.d} class="chm-lead" />
+                      <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+                      <text x={a.tx} y={a.ty} class="chm-lbl">{a.t}</text>
+                    </g>
+                  ))}
+                </svg>
+                <figcaption class="figure-note">{b.cr.figCaption} · {common.schematic}</figcaption>
+              </figure>
+              <p class="chm-tabs__note">{s.note}</p>
+            </div>
+          ))}
+        </div>
+
+        <h3 class="t-label chm-cap chm-cap--gap">{b.cr.archHeading}</h3>
+        <ul class="chm-arch">
+          {b.cr.arch.map((a: any) => (
+            <li>
+              <span class="chm-arch__type t-mono">{a.type}</span>
+              <h4 class="chm-h5">{a.name}</h4>
+              <p>{a.note}</p>
+            </li>
+          ))}
+        </ul>
+
+        <div class="chm-note">
+          <h3 class="chm-h5">{b.cr.boundaryHeading}</h3>
+          <p>{b.cr.boundaryBody}</p>
+          <p class="chm-note__claim">{b.cr.boundaryClaim}</p>
+        </div>
+        <p class="chm-close">{b.cr.close}</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="chm-rule" />
+
+  {/* ═══ 05 · THREAD FORMING ═══════════════════════════════════════════════ */}
+  <section class="chm-sec" id="thread-route">
+    <div class="shell--wide chm-sec__inner">
+      <div class="chm-gut" aria-hidden="true">
+        <span class="chm-gut__n t-mono">{b.route.index}</span>
+        <svg class="chm-gut__fig" viewBox="0 0 34 76" data-nomirror>
+          {GUT.route.map((d: string) => <path d={d} class="chm-gsil" />)}
+        </svg>
+      </div>
+
+      <div class="chm-body">
+        <p class="eyebrow">{b.route.kicker}</p>
+        <h2 class="chm-h2">{b.route.heading}</h2>
+        <p class="t-lead chm-lead-p">{b.route.body}</p>
+
+        <div class="chm-pair chm-pair--routes" data-reveal>
+          {b.route.pair.map((r: any, i: number) => (
+            <div class="chm-route">
+              <figure class="chm-fig chm-fig--flush">
+                <svg viewBox="-120 0 380 310" data-nomirror role="img" aria-label={common.schematic}>
+                  <defs>
+                    <pattern id={`chm-hatch-rt${i}`} width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                      <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+                    </pattern>
+                    <marker id={`chm-ar-rt${i}`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                      <path d="M0 0 L10 5 L0 10 z" class="chm-arrowhead" />
+                    </marker>
+                  </defs>
+
+                  <line x1="0" y1="14" x2="0" y2="300" class="chm-cl" />
+                  <path d={RT_CORE} fill={`url(#chm-hatch-rt${i})`} />
+                  <path d={RT_CORE} class="chm-out" />
+                  <path d="M -70 252 V 44 H 70 V 252" class="chm-part" />
+                  <path d="M -54 252 V 60 H 54 V 252" class="chm-part" />
+
+                  {i === 0 && (
+                    <g>
+                      <rect x="70" y="248" width="26" height="22" fill={`url(#chm-hatch-rt${i})`} />
+                      <rect x="-96" y="248" width="26" height="22" fill={`url(#chm-hatch-rt${i})`} />
+                      <rect x="70" y="248" width="26" height="22" class="chm-out" />
+                      <rect x="-96" y="248" width="26" height="22" class="chm-out" />
+                      <path d="M 83 244 V 214 M -83 244 V 214" class="chm-dim" marker-end={`url(#chm-ar-rt${i})`} />
+                    </g>
+                  )}
+                  {i === 1 && (
+                    <g>
+                      <path d="M -70 40 A 90 90 0 0 1 70 40" class="chm-dim" marker-end={`url(#chm-ar-rt${i})`} />
+                      <path d="M 0 274 V 302" class="chm-dim" marker-end={`url(#chm-ar-rt${i})`} />
+                    </g>
+                  )}
+
+                  {(i === 0
+                    ? [
+                        { d: lead(0, 150, 120, 60, 150), tx: 156, ty: 63.5, t: b.route.labels.core },
+                        { d: lead(70, 130, 132, 110, 150), tx: 156, ty: 113.5, t: b.route.labels.part },
+                        { d: lead(83, 258, 138, 200, 150), tx: 156, ty: 203.5, t: b.route.labels.stripper },
+                        { d: lead(83, 224, 118, 252, 150), tx: 156, ty: 255.5, t: b.route.labels.eject },
+                      ]
+                    : [
+                        { d: lead(0, 150, 120, 60, 150), tx: 156, ty: 63.5, t: b.route.labels.core },
+                        { d: lead(70, 130, 132, 110, 150), tx: 156, ty: 113.5, t: b.route.labels.part },
+                        { d: lead(60, 30, 120, 160, 150), tx: 156, ty: 163.5, t: b.route.labels.rotate },
+                        { d: lead(0, 290, 118, 252, 150), tx: 156, ty: 255.5, t: b.route.labels.eject },
+                      ]
+                  ).map((a: any) => (
+                    <g>
+                      <path d={a.d} class="chm-lead__mask" />
+                      <path d={a.d} class="chm-lead" />
+                      <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+                      <text x={a.tx} y={a.ty} class="chm-lbl">{a.t}</text>
+                    </g>
+                  ))}
+                </svg>
+                <figcaption class="figure-note">{i === 0 ? b.route.figCaptionA : b.route.figCaptionB} · {common.schematic}</figcaption>
+              </figure>
+
+              <h3 class="chm-h4 chm-route__h">{r.name}</h3>
+              <dl class="chm-route__spec">
+                <div><dt class="t-label">{b.route.colHow}</dt><dd>{r.how}</dd></div>
+                <div><dt class="t-label">{b.route.colSuits}</dt><dd>{r.suits}</dd></div>
+                <div><dt class="t-label">{b.route.colCost}</dt><dd>{r.cost}</dd></div>
+                <div><dt class="t-label">{b.route.colWear}</dt><dd>{r.wear}</dd></div>
+              </dl>
+            </div>
+          ))}
+        </div>
+
+        <h3 class="t-label chm-cap chm-cap--gap">{b.route.othersHeading}</h3>
+        <div class="chm-two">
+          {b.route.others.map((o: any) => (
+            <div class="chm-two__col">
+              <h4 class="chm-h5">{o.name}</h4>
+              <p>{o.note}</p>
+            </div>
+          ))}
+        </div>
+
+        <h3 class="t-label chm-cap chm-cap--gap">{b.route.rulesHeading}</h3>
+        <ol class="chm-rules">
+          {b.route.rules.map((r: string, i: number) => (
+            <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span><p>{r}</p></li>
+          ))}
+        </ol>
+        <p class="t-fine chm-src">{b.route.rulesNote}</p>
+        <p class="chm-close">{b.route.close}</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="chm-rule" />
+
+  {/* ═══ 06 · CAVITY ARITHMETIC ════════════════════════════════════════════ */}
+  <section class="chm-sec" id="cavities">
+    <div class="shell--wide chm-sec__inner">
+      <div class="chm-gut" aria-hidden="true">
+        <span class="chm-gut__n t-mono">{b.cavity.index}</span>
+        <svg class="chm-gut__fig" viewBox="0 0 34 76" data-nomirror>
+          {GUT.cavity.map((d: string) => <path d={d} class="chm-gsil" />)}
+        </svg>
+      </div>
+
+      <div class="chm-body">
+        <p class="eyebrow">{b.cavity.kicker}</p>
+        <h2 class="chm-h2">{b.cavity.heading}</h2>
+        <p class="t-lead chm-lead-p">{b.cavity.body}</p>
+
+        <figure class="chm-fig" data-reveal>
+          <svg viewBox="-300 0 760 400" data-nomirror role="img" aria-label={common.schematic}>
+            <defs>
+              <pattern id="chm-hatch-cav" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+              </pattern>
+              <pattern id="chm-hatch-cavb" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+                <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+              </pattern>
+              <marker id="chm-ar-cav" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" class="chm-arrowhead" />
+              </marker>
+            </defs>
+
+            <path d="M -190 40 H 190 V 214 H -190 Z M -84 60 H 84 V 214 H -84 Z" fill-rule="evenodd" fill="url(#chm-hatch-cav)" />
+            <path d="M -190 40 H 190 V 214 H -190 Z M -84 60 H 84 V 214 H -84 Z" fill-rule="evenodd" class="chm-out" />
+            <path d="M -66 76 H 66 V 340 H -66 Z" fill="url(#chm-hatch-cavb)" />
+            <path d="M -66 76 H 66 V 340 H -66 Z" class="chm-out" />
+            <path d="M -84 60 H 84 V 210 H -84 Z M -66 76 H 66 V 210 H -66 Z" fill-rule="evenodd" class="chm-solid" />
+
+            <path d="M -190 214 H 190" class="chm-cl" />
+
+            <path d="M -10 340 V 116 H 10 V 340" class="chm-out chm-thin" />
+            <path d="M 0 340 V 132" class="chm-out chm-thin" />
+            <path d="M -5 368 V 346" class="chm-dim" marker-end="url(#chm-ar-cav)" />
+            <path d="M 5 346 V 368" class="chm-dim" marker-end="url(#chm-ar-cav)" />
+
+            <rect x="-11" y="36" width="22" height="26" class="chm-mask-fill" />
+            <path d="M -8 38 L -3 60 M 8 38 L 3 60 M 0 16 V 58" class="chm-out chm-thin" />
+
+            {/* Magnified detail: the vent land at the parting line. */}
+            <path d="M 120 214 H 180 V 135 H 230" class="chm-link" />
+            <rect x="230" y="70" width="200" height="130" class="chm-detail" />
+            <rect x="240" y="80" width="170" height="46" fill="url(#chm-hatch-cav)" />
+            <rect x="240" y="80" width="170" height="46" class="chm-out chm-thin" />
+            <rect x="240" y="134" width="170" height="46" fill="url(#chm-hatch-cavb)" />
+            <rect x="240" y="134" width="170" height="46" class="chm-out chm-thin" />
+            <path d="M 232 126 H 272 M 232 134 H 272" class="chm-ext" />
+            <path d="M 252 104 V 126" class="chm-dim" marker-end="url(#chm-ar-cav)" />
+            <path d="M 252 156 V 134" class="chm-dim" marker-end="url(#chm-ar-cav)" />
+
+            {[
+              { d: lead(0, 46, 130, 24, 170), tx: 176, ty: 27.5, t: b.cavity.labels.gate, end: false },
+              { d: lead(320, 130, 320, 56, 350), tx: 356, ty: 59.5, t: b.cavity.labels.vent, end: false },
+              { d: lead(10, 250, 120, 290, 160), tx: 166, ty: 293.5, t: b.cavity.labels.cooling, end: false },
+              { d: lead(-150, 180, -150, 330, -190), tx: -196, ty: 333.5, t: b.cavity.labels.cavity, end: true },
+              { d: lead(-30, 270, -30, 368, -60), tx: -66, ty: 371.5, t: b.cavity.labels.core, end: true },
+            ].map((a: any) => (
+              <g>
+                <path d={a.d} class="chm-lead__mask" />
+                <path d={a.d} class="chm-lead" />
+                <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+                <text x={a.tx} y={a.ty} class="chm-lbl" text-anchor={a.end ? 'end' : 'start'}>{a.t}</text>
+              </g>
+            ))}
+          </svg>
+          <figcaption class="figure-note">{b.cavity.figCaption} · {common.schematic}</figcaption>
+        </figure>
+
+        <h3 class="t-label chm-cap chm-cap--gap">{b.cavity.leversHeading}</h3>
+        <ol class="chm-levers">
+          {b.cavity.levers.map((l: any, i: number) => (
+            <li style={`--reveal-delay:${i * 80}ms`} data-reveal>
+              <span class="chm-levers__k">{l.k}</span>
+              <p>{l.body}</p>
+            </li>
+          ))}
+        </ol>
+
+        <h3 class="t-label chm-cap chm-cap--gap">{b.cavity.windowsHeading}</h3>
+        <dl class="chm-ledger chm-ledger--win">
+          {b.cavity.windows.map((w: any) => (
+            <div class="chm-ledger__row chm-ledger__row--win">
+              <dt>{w.k}</dt>
+              <dd class="t-mono chm-win__v">{w.v}</dd>
+              <dd>{w.note}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="t-fine chm-src">{b.cavity.windowsNote}</p>
+
+        <div class="chm-band">
+          <h3 class="chm-h4">{b.cavity.cavityHeading}</h3>
+          <p>{b.cavity.cavityBody}</p>
+          <p class="chm-band__b">{b.cavity.cavityBody2}</p>
+        </div>
+        <p class="chm-close">{b.cavity.close}</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="chm-rule" />
+
+  {/* ═══ 07 · MATERIAL LEDGER ══════════════════════════════════════════════ */}
+  <section class="chm-sec" id="material">
+    <div class="shell--wide chm-sec__inner">
+      <div class="chm-gut" aria-hidden="true">
+        <span class="chm-gut__n t-mono">{b.material.index}</span>
+        <svg class="chm-gut__fig" viewBox="0 0 34 76" data-nomirror>
+          {GUT.material.map((d: string) => <path d={d} class="chm-gsil" />)}
+        </svg>
+      </div>
+
+      <div class="chm-body">
+        <p class="eyebrow">{b.material.kicker}</p>
+        <h2 class="chm-h2">{b.material.heading}</h2>
+        <p class="t-lead chm-lead-p">{b.material.body}</p>
+
+        <div class="chm-pair" data-reveal>
+          <figure class="chm-fig">
+            <svg viewBox="0 0 400 250" data-nomirror role="img" aria-label={common.schematic}>
+              <defs>
+                <pattern id="chm-hatch-mata" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+                </pattern>
+              </defs>
+              <path d="M 120 30 H 190 V 110 L 158 126 V 220 H 120 Z" fill="url(#chm-hatch-mata)" />
+              <path d="M 120 30 H 190 V 110 L 158 126 V 220 H 120 Z" class="chm-out" />
+              {[
+                { d: lead(160, 70, 240, 54, 270), tx: 276, ty: 57.5, t: b.material.labels.root },
+                { d: lead(140, 170, 240, 176, 270), tx: 276, ty: 179.5, t: b.material.labels.skirt },
+              ].map((a: any) => (
+                <g>
+                  <path d={a.d} class="chm-lead__mask" />
+                  <path d={a.d} class="chm-lead" />
+                  <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+                  <text x={a.tx} y={a.ty} class="chm-lbl">{a.t}</text>
+                </g>
+              ))}
+            </svg>
+            <figcaption class="figure-note">{b.material.labels.root} · {b.material.labels.skirt} · {common.schematic}</figcaption>
+          </figure>
+
+          <figure class="chm-fig">
+            <svg viewBox="0 0 400 250" data-nomirror role="img" aria-label={common.schematic}>
+              <defs>
+                <pattern id="chm-hatch-matb" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+                </pattern>
+                <pattern id="chm-hatch-matc" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+                  <line x1="0" y1="0" x2="0" y2="7" class="chm-hl" />
+                </pattern>
+              </defs>
+              <rect x="60" y="40" width="90" height="150" fill="url(#chm-hatch-matb)" />
+              <rect x="150" y="40" width="14" height="150" class="chm-solid" />
+              <rect x="164" y="40" width="72" height="150" fill="url(#chm-hatch-matc)" />
+              <rect x="236" y="40" width="14" height="150" class="chm-solid" />
+              <rect x="250" y="40" width="90" height="150" fill="url(#chm-hatch-matb)" />
+              <rect x="60" y="40" width="280" height="150" class="chm-out" />
+              <path d="M 150 40 V 190 M 164 40 V 190 M 236 40 V 190 M 250 40 V 190" class="chm-out chm-thin" />
+              {[
+                { d: lead(105, 190, 105, 212, 70), tx: 64, ty: 215.5, t: b.material.labels.hdpe, end: true },
+                { d: lead(157, 40, 157, 22, 200), tx: 206, ty: 25.5, t: b.material.labels.tie, end: false },
+                { d: lead(200, 190, 200, 212, 250), tx: 256, ty: 215.5, t: b.material.labels.evoh, end: false },
+              ].map((a: any) => (
+                <g>
+                  <path d={a.d} class="chm-lead__mask" />
+                  <path d={a.d} class="chm-lead" />
+                  <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+                  <text x={a.tx} y={a.ty} class="chm-lbl" text-anchor={a.end ? 'end' : 'start'}>{a.t}</text>
+                </g>
+              ))}
+            </svg>
+            <figcaption class="figure-note">{b.material.figCaption} · {common.schematic}</figcaption>
+          </figure>
+        </div>
+
+        <div class="chm-mat">
+          <section class="chm-mat__col">
+            <h3 class="t-label chm-cap">{b.material.colA}</h3>
+            <dl class="chm-mat__list">
+              {b.material.closureRows.map((row: any) => (
+                <div><dt class="t-mono">{row.name}</dt><dd>{row.note}</dd></div>
+              ))}
+            </dl>
+          </section>
+          <section class="chm-mat__col">
+            <h3 class="t-label chm-cap">{b.material.colB}</h3>
+            <dl class="chm-mat__list">
+              {b.material.containerRows.map((row: any) => (
+                <div><dt class="t-mono">{row.name}</dt><dd>{row.note}</dd></div>
+              ))}
+            </dl>
+          </section>
+        </div>
+
+        <div class="chm-esc">
+          <h3 class="chm-h4">{b.material.escHeading}</h3>
+          <p>{b.material.escBody}</p>
+          <p class="t-fine chm-src">{b.material.escNote}</p>
+        </div>
+        <p class="chm-close chm-close--loud">{b.material.close}</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="chm-rule" />
+
+  {/* ═══ 08 · THE BOUNDARY ═════════════════════════════════════════════════ */}
+  <section class="chm-sec" id="boundary">
+    <div class="shell--wide chm-sec__inner">
+      <div class="chm-gut" aria-hidden="true">
+        <span class="chm-gut__n t-mono">{b.boundary.index}</span>
+        <svg class="chm-gut__fig" viewBox="0 0 34 76" data-nomirror>
+          {GUT.boundary.map((d: string) => <path d={d} class="chm-gsil" />)}
+        </svg>
+      </div>
+
+      <div class="chm-body">
+        <p class="eyebrow">{b.boundary.kicker}</p>
+        <h2 class="chm-h2">{b.boundary.heading}</h2>
+        <p class="t-lead chm-lead-p">{b.boundary.body}</p>
+
+        <figure class="chm-fig" data-reveal>
+          <svg viewBox="0 0 620 230" data-nomirror role="img" aria-label={common.schematic}>
+            <defs>
+              <pattern id="chm-hatch-bnd" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="9" class="chm-hl" />
+              </pattern>
+            </defs>
+
+            <path d="M 70 40 H 210 V 130 H 184 V 56 H 96 V 130 H 70 Z" fill="url(#chm-hatch-bnd)" />
+            <path d="M 70 40 H 210 V 130 H 184 V 56 H 96 V 130 H 70 Z" class="chm-out" />
+            <path d="M 100 62 H 118 V 215 H 100 Z M 162 62 H 180 V 215 H 162 Z" fill="url(#chm-hatch-bnd)" />
+            <path d="M 100 62 H 118 V 215 H 100 Z M 162 62 H 180 V 215 H 162 Z" class="chm-out" />
+
+            <rect x="288" y="10" width="24" height="205" fill="url(#chm-hatch-bnd)" />
+            <path d="M 288 10 V 215 M 312 10 V 215" class="chm-out chm-thin" />
+
+            <path d="M 360 40 H 380 V 215 H 360 Z M 540 40 H 560 V 215 H 540 Z" fill="url(#chm-hatch-bnd)" />
+            <path d="M 360 40 H 380 V 215 H 360 Z M 540 40 H 560 V 215 H 540 Z" class="chm-out" />
+            <path d="M 380 102 Q 420 92 460 102 T 540 102 V 215 H 380 Z" class="chm-solid" />
+
+            {[
+              { d: lead(140, 48, 140, 24, 100), tx: 94, ty: 27.5, t: b.boundary.labels.steel, end: true },
+              { d: lead(460, 150, 460, 24, 500), tx: 506, ty: 27.5, t: b.boundary.labels.contents, end: false },
+            ].map((a: any) => (
+              <g>
+                <path d={a.d} class="chm-lead__mask" />
+                <path d={a.d} class="chm-lead" />
+                <circle cx={dotX(a.d)} cy={dotY(a.d)} r="2.4" class="chm-dot" />
+                <text x={a.tx} y={a.ty} class="chm-lbl" text-anchor={a.end ? 'end' : 'start'}>{a.t}</text>
+              </g>
+            ))}
+          </svg>
+          <figcaption class="figure-note">{b.boundary.figCaption} · {common.schematic}</figcaption>
+        </figure>
+
+        {/* The single largest body paragraph on the page. Deliberately. */}
+        <p class="chm-compat">{b.boundary.compat}</p>
+
+        <div class="chm-scope">
+          <section class="chm-scope__col">
+            <h3 class="chm-h5 chm-scope__h">{b.boundary.suppliesHeading}</h3>
+            <ul class="chm-scope__list chm-scope__list--in">
+              {b.boundary.supplies.map((s: string) => <li>{s}</li>)}
+            </ul>
+          </section>
+          <section class="chm-scope__col">
+            <h3 class="chm-h5 chm-scope__h">{b.boundary.staysHeading}</h3>
+            <ul class="chm-scope__list">
+              {b.boundary.stays.map((s: string) => <li>{s}</li>)}
+            </ul>
+          </section>
+        </div>
+
+        <div class="chm-not">
+          <h3 class="t-label chm-cap">{b.boundary.notHeading}</h3>
+          <ul class="chm-not__list">
+            {b.boundary.not.map((s: string) => <li>{s}</li>)}
+          </ul>
+        </div>
+
+        <div class="chm-second">
+          <h3 class="chm-h4">{b.boundary.secondHeading}</h3>
+          <p>{b.boundary.secondBody}</p>
+          <p class="chm-second__b">{b.boundary.secondBody2}</p>
+        </div>
+
+        <div class="chm-scope chm-scope--send">
+          <section class="chm-scope__col">
+            <h3 class="chm-h5 chm-scope__h">{b.boundary.sendHeading}</h3>
+            <ul class="chm-scope__list">
+              {b.boundary.send.map((s: string) => <li>{s}</li>)}
+            </ul>
+          </section>
+          <section class="chm-scope__col">
+            <h3 class="chm-h5 chm-scope__h">{b.boundary.getHeading}</h3>
+            <ul class="chm-scope__list chm-scope__list--in">
+              {b.boundary.get.map((s: string) => <li>{s}</li>)}
+            </ul>
+          </section>
+        </div>
+
+        <div class="chm-panels">
+          <h3 class="t-label chm-cap">{b.panels.heading}</h3>
+          {b.panels.items.map((panel: any, i: number) => (
+            <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+              <h4>
+                <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
+                  <span>{panel.title}</span>
+                  <span class="disc__sign" aria-hidden="true"></span>
+                </button>
+              </h4>
+              <div class="disc__panel">
+                <div class="disc__inner">
+                  <div>
+                    <ul class="chm-panel__list">
+                      {panel.bullets.map((bullet: string) => <li>{bullet}</li>)}
+                    </ul>
+                    {panel.source && <p class="chm-src t-fine">{panel.source}</p>}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<style>
+  /* ═══ Chapter scope — the drawing sheet ═════════════════════════════════
+     Deep alkaline teal on a cool near-white, one acid-lime signal spent three
+     times on the whole page: the sealing land in the hero, the contact bands in
+     section 01, the tamper bridges in section 03. Nothing else may take it. */
+
+  .chm {
+    --chm-field: var(--surface-raise);
+    --chm-gut: 6rem;
+  }
+
+  .chm-h2 {
+    font-size: clamp(1.85rem, 3.9vw, 3.05rem);
+    line-height: 1.06;
+    letter-spacing: -0.028em;
+    font-weight: 500;
+    margin-block-start: var(--sp-5);
+    max-inline-size: 19ch;
+  }
+  .chm-h4 { font-size: var(--step-2); letter-spacing: var(--track-head); max-inline-size: 26ch; }
+  .chm-h5 { font-size: var(--step-1); letter-spacing: var(--track-head); line-height: 1.24; }
+
+  /* ── Drawing conventions, shared by every figure in the chapter ────────── */
+  .chm-hl { stroke: var(--accent); stroke-width: 0.9; opacity: 0.4; }
+  .chm-out { fill: none; stroke: var(--accent-deep); stroke-width: 1.5; stroke-linejoin: miter; }
+  .chm-thin { stroke-width: 1; }
+  .chm-cl { fill: none; stroke: var(--accent); stroke-width: 0.7; stroke-dasharray: 11 3 2 3; opacity: 0.55; }
+  .chm-solid { fill: var(--accent-wash); stroke: var(--accent-deep); stroke-width: 1; }
+  .chm-part { fill: none; stroke: var(--ink); stroke-width: 1.2; opacity: 0.5; }
+  .chm-contact { fill: none; stroke: var(--accent-deep); stroke-width: 2.6; }
+  .chm-hot { fill: none; stroke: var(--signal); stroke-width: 3; stroke-linecap: square; }
+  .chm-hot-fill { fill: var(--signal); stroke: none; }
+  .chm-mask-fill { fill: var(--chm-field); stroke: none; }
+  .chm-dim { fill: none; stroke: var(--accent); stroke-width: 1; }
+  .chm-ext { fill: none; stroke: var(--ink-muted); stroke-width: 0.7; opacity: 0.6; }
+  .chm-arrowhead { fill: var(--accent); }
+  .chm-link { fill: none; stroke: var(--ink-muted); stroke-width: 0.9; stroke-dasharray: 5 4; opacity: 0.7; }
+  .chm-detail { fill: none; stroke: var(--ink-muted); stroke-width: 1; stroke-dasharray: 7 4; opacity: 0.75; }
+
+  /* Orthogonal leaders. The mask breaks the hatch the way a drawing does. */
+  .chm-lead { fill: none; stroke: var(--accent); stroke-width: 0.9; }
+  .chm-lead__mask { fill: none; stroke: var(--chm-field); stroke-width: 5; }
+  .chm-dot { fill: var(--accent); }
+  .chm-lbl {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    fill: var(--ink-muted);
+  }
+
+  /* ── Hero ─────────────────────────────────────────────────────────────── */
+  .chm-hero { position: relative; padding-block: clamp(2rem, 5vw, 4rem) clamp(2.5rem, 6vw, 5rem); overflow: clip; }
+  .chm-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  @media (max-width: 940px) { .chm-hero__inner { grid-template-columns: 1fr; } }
+
+  .chm-hero__head {
+    margin-block-start: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(2.3rem, 5.6vw, 4.6rem);
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    font-weight: 500;
+  }
+  .chm-hero__head span { display: block; }
+  .chm-hero__head span:last-child { color: var(--accent-deep); }
+
+  .chm-hero__lead {
+    margin-block-start: clamp(1.25rem, 2.5vw, 1.8rem);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-inline-size: 48ch;
+  }
+  .chm-hero__markers { margin-block-start: var(--sp-6); display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .chm-hero__markers li {
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    padding: 0.4em 0.75em;
+    border: 1px solid color-mix(in oklab, var(--accent) 34%, transparent);
+    color: var(--accent-deep);
+    background: color-mix(in oklab, var(--surface-raise) 70%, transparent);
+  }
+  .chm-hero__fig { --chm-field: var(--surface); margin: 0; }
+  .chm-hero__fig svg { inline-size: 100%; block-size: auto; }
+  .chm-hero__fig .figure-note { margin-block-start: var(--sp-4); }
+
+  @keyframes chm-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes chm-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes chm-seat { from { transform: translateY(-16px); } to { transform: translateY(0); } }
+
+  .chm-hero__draw { stroke-dasharray: 1; animation: chm-draw var(--dur-6) var(--ease-glide) both; }
+  .chm-hero__cut { animation: chm-fade var(--dur-4) var(--ease-out) 820ms both; }
+  .chm-hero__cap { animation: chm-seat 820ms var(--ease-mech) 220ms both; }
+  .chm-hero__hot { animation: chm-fade var(--dur-3) var(--ease-out) 1320ms both; }
+  .chm-hero__ann { animation: chm-fade var(--dur-3) var(--ease-out) both; animation-delay: calc(1180ms + var(--a) * 90ms); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .chm-hero__draw, .chm-hero__cut, .chm-hero__cap, .chm-hero__hot, .chm-hero__ann { animation: none; }
+  }
+
+  /* ── The hatched section rule. No coloured bands anywhere on this page. ── */
+  .chm-rule {
+    block-size: 15px;
+    border: 0;
+    border-block: var(--hair) solid var(--line);
+    background-image: repeating-linear-gradient(
+      45deg,
+      color-mix(in oklab, var(--accent) 36%, transparent) 0 1px,
+      transparent 1px 8px
+    );
+  }
+
+  /* ── The dimension gutter. This chapter's structural signature. ────────── */
+  .chm-sec { padding-block: var(--section-y); }
+  .chm-sec__inner {
+    display: grid;
+    grid-template-columns: var(--chm-gut) minmax(0, 1fr);
+    gap: clamp(1rem, 3vw, 2.5rem);
+    align-items: start;
+  }
+  .chm-gut {
+    position: sticky;
+    inset-block-start: clamp(5.5rem, 12vh, 7.5rem);
+    display: grid;
+    gap: var(--sp-5);
+    justify-items: start;
+  }
+  .chm-gut__n {
+    font-size: var(--step--1);
+    letter-spacing: 0.16em;
+    color: var(--accent-deep);
+    padding-block-end: var(--sp-2);
+    border-block-end: var(--hair-strong) solid var(--accent);
+  }
+  .chm-gut__fig { inline-size: 2.1rem; block-size: auto; }
+  .chm-gsil { fill: none; stroke: var(--ink-muted); stroke-width: 1.4; opacity: 0.5; }
+  @media (max-width: 900px) {
+    .chm { --chm-gut: 1.6rem; }
+    .chm-gut__fig { display: none; }
+    .chm-gut__n { font-size: var(--step--2); letter-spacing: 0.1em; }
+  }
+
+  .chm-lead-p { margin-block-start: var(--sp-5); max-inline-size: 68ch; }
+  .chm-sub {
+    margin-block-start: var(--sp-4);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-inline-size: 66ch;
+  }
+  .chm-close {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    max-inline-size: 66ch;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--accent);
+  }
+  .chm-close--loud { font-size: var(--step-2); line-height: 1.35; letter-spacing: var(--track-head); max-inline-size: 30ch; }
+  .chm-src { margin-block-start: var(--sp-4); max-inline-size: 68ch; }
+  .chm-cap { display: block; margin-block-end: var(--sp-4); }
+  .chm-cap--gap { margin-block-start: clamp(2.25rem, 5vw, 3.5rem); }
+
+  .chm-fig {
+    margin-block-start: clamp(1.75rem, 4vw, 2.75rem);
+    background: var(--surface-raise);
+    border: var(--rule);
+    padding: clamp(0.9rem, 2.2vw, 1.75rem);
+  }
+  .chm-fig--flush { margin-block-start: 0; }
+  .chm-fig svg { inline-size: 100%; block-size: auto; }
+  .chm-fig .figure-note { margin-block-start: var(--sp-4); }
+
+  .chm-pair {
+    margin-block-start: clamp(1.75rem, 4vw, 2.75rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 2.25rem);
+    align-items: start;
+  }
+  .chm-pair .chm-fig { margin-block-start: 0; }
+  @media (max-width: 900px) { .chm-pair { grid-template-columns: 1fr; } }
+
+  .chm-two {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
+  @media (max-width: 760px) { .chm-two { grid-template-columns: 1fr; } }
+  .chm-two__col p { margin-block-start: var(--sp-3); font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  /* ── 01 Engagement ────────────────────────────────────────────────────── */
+  .chm-eng__grid {
+    margin-block-start: clamp(1.75rem, 4vw, 2.75rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+  }
+  @media (max-width: 960px) { .chm-eng__grid { grid-template-columns: 1fr; } }
+  .chm-eng__fig { margin-block-start: 0; position: sticky; inset-block-start: clamp(5.5rem, 12vh, 7.5rem); }
+  @media (max-width: 960px) { .chm-eng__fig { position: static; } }
+
+  .chm-steps { border-block-start: var(--rule-strong); }
+  .chm-step { padding-block: var(--sp-5); border-block-end: var(--rule); display: grid; gap: 0.4rem; }
+  .chm-step__n { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
+  .chm-step p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  :global(html.js) .chm-step { opacity: 0.42; transition: opacity var(--dur-3) var(--ease-mech); }
+  :global(html.js) .chm-eng[data-step='0'] .chm-step[data-station-step='0'],
+  :global(html.js) .chm-eng[data-step='1'] .chm-step[data-station-step='1'],
+  :global(html.js) .chm-eng[data-step='2'] .chm-step[data-station-step='2'],
+  :global(html.js) .chm-eng[data-step='3'] .chm-step[data-station-step='3'] { opacity: 1; }
+
+  :global(html.js) .chm-eng [data-ann] { opacity: 0.28; transition: opacity var(--dur-3) var(--ease-mech); }
+  :global(html.js) .chm-eng[data-step='0'] [data-ann='0'],
+  :global(html.js) .chm-eng[data-step='1'] [data-ann='1'],
+  :global(html.js) .chm-eng[data-step='2'] [data-ann='2'],
+  :global(html.js) .chm-eng[data-step='3'] [data-ann] { opacity: 1; }
+  @media (max-width: 960px) {
+    :global(html.js) .chm-step,
+    :global(html.js) .chm-eng [data-ann] { opacity: 1; }
+  }
+
+  .chm-eng__data {
+    margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+  }
+  @media (max-width: 860px) { .chm-eng__data { grid-template-columns: 1fr; } }
+
+  .chm-letters__list { border-block-start: var(--rule-strong); }
+  .chm-letters__list > div {
+    display: grid;
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    align-items: baseline;
+  }
+  .chm-letters__list dt { font-size: var(--step-1); color: var(--accent-deep); }
+  .chm-letters__list dd { font-size: var(--step--1); line-height: 1.5; }
+
+  .chm-profiles__list { border-block-start: var(--rule-strong); }
+  .chm-profiles__list li {
+    display: grid;
+    grid-template-columns: 2.6rem 3rem 5rem minmax(0, 1fr);
+    gap: var(--sp-4);
+    align-items: center;
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+  }
+  @media (max-width: 640px) {
+    .chm-profiles__list li { grid-template-columns: 2.6rem 3rem minmax(0, 1fr); }
+    .chm-profiles__t { grid-column: 1 / -1; }
+  }
+  .chm-profiles__fig { inline-size: 100%; block-size: auto; }
+  .chm-profiles__n { font-size: var(--step-1); color: var(--accent-deep); }
+  .chm-profiles__d { font-size: var(--step--1); color: var(--ink); }
+  .chm-profiles__t { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
+
+  /* ── Tables ───────────────────────────────────────────────────────────── */
+  .chm-scroll { margin-block-start: clamp(1.75rem, 4vw, 2.5rem); overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
+  .chm-table {
+    inline-size: 100%;
+    min-inline-size: 46rem;
+    border-collapse: collapse;
+    font-size: var(--step--1);
+  }
+  .chm-table th, .chm-table td { text-align: start; vertical-align: top; }
+  .chm-table thead th {
+    padding: 0 var(--sp-4) var(--sp-4) 0;
+    border-block-end: var(--rule-strong);
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: var(--weight-regular);
+  }
+  .chm-table tbody th {
+    padding: var(--sp-4) var(--sp-4) var(--sp-4) 0;
+    border-block-end: var(--rule);
+    font-weight: var(--weight-medium);
+    font-size: var(--step-0);
+    inline-size: 11rem;
+  }
+  .chm-table tbody td {
+    padding: var(--sp-4) var(--sp-4) var(--sp-4) 0;
+    border-block-end: var(--rule);
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+  :where(html[lang='zh'], html[lang='th'], html[lang='ar'], html[lang='fa'], html[lang='ur']) .chm-table thead th {
+    font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: var(--step--1);
+  }
+
+  /* ── Ledgers ──────────────────────────────────────────────────────────── */
+  .chm-ledger { border-block-start: var(--rule-strong); }
+  .chm-ledger__row {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: var(--sp-5);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    align-items: baseline;
+  }
+  .chm-ledger__row--win { grid-template-columns: 11rem 9rem minmax(0, 1fr); }
+  @media (max-width: 720px) {
+    .chm-ledger__row, .chm-ledger__row--win { grid-template-columns: 1fr; gap: 0.3rem; }
+  }
+  .chm-ledger dt { font-size: var(--step-0); font-weight: var(--weight-medium); }
+  .chm-ledger dd { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+  .chm-win__v { color: var(--accent-deep); }
+
+  /* ── 04 Child resistance ──────────────────────────────────────────────── */
+  .chm-tabs { margin-block-start: clamp(1.75rem, 4vw, 2.75rem); }
+  .chm-tabs__list { display: flex; flex-wrap: wrap; gap: 1px; background: var(--line); border: var(--rule); }
+  .chm-tabs__btn {
+    flex: 1 1 9rem;
+    padding: 0.85rem 1rem;
+    background: var(--surface);
+    font-size: var(--step--1);
+    font-weight: var(--weight-medium);
+    color: var(--ink-muted);
+    transition: background-color var(--dur-2) var(--ease-mech), color var(--dur-2) var(--ease-mech);
+  }
+  .chm-tabs__btn:hover { background: var(--accent-wash); color: var(--accent-deep); }
+  .chm-tabs__btn[aria-selected='true'] { background: var(--accent-deep); color: #fff; }
+  .chm-tabs__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(1.25rem, 3vw, 2.25rem);
+    padding: clamp(1rem, 2.5vw, 1.75rem);
+    border: var(--rule);
+    border-block-start: 0;
+    background: var(--surface-raise);
+    align-items: center;
+  }
+  .chm-tabs__panel[hidden] { display: none; }
+  @media (max-width: 900px) { .chm-tabs__panel { grid-template-columns: 1fr; } }
+  .chm-tabs__panel .chm-fig { border: 0; padding: 0; background: transparent; }
+  .chm-tabs__note { font-size: var(--step--1); line-height: 1.65; color: var(--ink-muted); }
+
+  .chm-arch {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+  }
+  .chm-arch li { background: var(--surface); padding: var(--sp-5); display: grid; gap: 0.45rem; align-content: start; }
+  .chm-arch__type { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
+  .chm-arch p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  .chm-note {
+    margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+    padding-block: var(--sp-6);
+    border-block: var(--rule-strong);
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .chm-note p { font-size: var(--step--1); line-height: 1.65; color: var(--ink-muted); max-inline-size: 78ch; }
+  .chm-note__claim { color: var(--ink) !important; font-size: var(--step-0) !important; }
+
+  /* ── 05 Thread forming ────────────────────────────────────────────────── */
+  .chm-pair--routes { align-items: stretch; }
+  .chm-route { border: var(--rule); background: var(--surface-raise); padding: clamp(1rem, 2.5vw, 1.75rem); }
+  .chm-route .chm-fig { border: 0; padding: 0; background: transparent; }
+  .chm-route__h { margin-block-start: var(--sp-5); }
+  .chm-route__spec { margin-block-start: var(--sp-4); border-block-start: var(--rule); }
+  .chm-route__spec > div {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    align-items: baseline;
+  }
+  @media (max-width: 560px) { .chm-route__spec > div { grid-template-columns: 1fr; gap: 0.2rem; } }
+  .chm-route__spec dd { font-size: var(--step--1); line-height: 1.6; }
+
+  .chm-rules { display: grid; gap: 0; border-block-start: var(--rule-strong); }
+  .chm-rules li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    align-items: baseline;
+  }
+  .chm-rules span { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); font-family: var(--font-mono); }
+  .chm-rules p { font-size: var(--step--1); line-height: 1.6; max-inline-size: 70ch; }
+
+  /* ── 06 Arithmetic ────────────────────────────────────────────────────── */
+  .chm-levers { display: grid; border-block-start: var(--rule-strong); }
+  .chm-levers li {
+    display: grid;
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: var(--sp-5);
+    padding-block: var(--sp-6);
+    border-block-end: var(--rule);
+    align-items: start;
+  }
+  @media (max-width: 720px) { .chm-levers li { grid-template-columns: 1fr; gap: var(--sp-3); } }
+  .chm-levers__k {
+    font-size: var(--step-2);
+    letter-spacing: var(--track-head);
+    color: var(--accent-deep);
+    line-height: 1.1;
+  }
+  .chm-levers p { font-size: var(--step-0); line-height: 1.62; max-inline-size: 66ch; }
+
+  .chm-band {
+    margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: var(--rule);
+    background: var(--surface-raise);
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .chm-band p { font-size: var(--step--1); line-height: 1.65; color: var(--ink-muted); max-inline-size: 72ch; }
+  .chm-band__b { color: var(--ink) !important; }
+
+  /* ── 07 Material ──────────────────────────────────────────────────────── */
+  .chm-mat {
+    margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  @media (max-width: 820px) { .chm-mat { grid-template-columns: 1fr; } }
+  .chm-mat__list { border-block-start: var(--rule-strong); }
+  .chm-mat__list > div {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    align-items: baseline;
+  }
+  @media (max-width: 520px) { .chm-mat__list > div { grid-template-columns: 1fr; gap: 0.2rem; } }
+  .chm-mat__list dt { font-size: var(--step--1); color: var(--accent-deep); }
+  .chm-mat__list dd { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
+
+  .chm-esc {
+    margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+    padding-block-start: var(--sp-6);
+    border-block-start: var(--rule-strong);
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .chm-esc p { font-size: var(--step--1); line-height: 1.65; color: var(--ink-muted); max-inline-size: 76ch; }
+
+  /* ── 08 Boundary ──────────────────────────────────────────────────────── */
+  .chm-compat {
+    margin-block-start: clamp(2rem, 5vw, 3.25rem);
+    font-size: var(--step-2);
+    line-height: 1.42;
+    letter-spacing: var(--track-head);
+    max-inline-size: 44ch;
+    padding-block: var(--sp-7);
+    border-block: var(--hair-strong) solid var(--accent);
+  }
+
+  .chm-scope {
+    margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  @media (max-width: 820px) { .chm-scope { grid-template-columns: 1fr; } }
+  .chm-scope__h { max-inline-size: 22ch; }
+  .chm-scope__list { margin-block-start: var(--sp-5); border-block-start: var(--rule-strong); }
+  .chm-scope__list li {
+    padding-block: var(--sp-4);
+    padding-inline-start: var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.6;
+    position: relative;
+  }
+  .chm-scope__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.45rem;
+    inline-size: 0.7rem;
+    block-size: 1px;
+    background: var(--ink-muted);
+  }
+  .chm-scope__list--in li::before { background: var(--accent); block-size: 2px; }
+
+  .chm-not {
+    margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: var(--rule);
+    background: var(--surface-sunk);
+  }
+  .chm-not__list { display: grid; gap: var(--sp-3); }
+  .chm-not__list li {
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .chm-not__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.72em;
+    inline-size: 0.6rem;
+    block-size: 1px;
+    background: var(--ink-muted);
+  }
+
+  .chm-second {
+    margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+    padding-block-start: var(--sp-6);
+    border-block-start: var(--rule-strong);
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .chm-second p { font-size: var(--step-0); line-height: 1.62; max-inline-size: 70ch; color: var(--ink-muted); }
+  .chm-second__b { color: var(--ink) !important; }
+
+  .chm-panels { margin-block-start: clamp(2.5rem, 6vw, 4rem); }
+  .chm-panel__list { display: grid; gap: var(--sp-3); max-inline-size: 82ch; }
+  .chm-panel__list li {
+    font-size: var(--step--1);
+    line-height: 1.62;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .chm-panel__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.75em;
+    inline-size: 0.6rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+</style>

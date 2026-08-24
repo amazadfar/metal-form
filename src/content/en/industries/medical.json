@@ -1,0 +1,503 @@
+{
+  "meta": {
+    "title": "Medical & pharmaceutical tooling — multi-cavity moulds | Metal Form",
+    "description": "Part engineering, reverse engineering, DFM and multi-cavity injection tooling for medical and pharmaceutical plastic components. Tool documentation, spares, second-source and duplicate tooling. Validated manufacture stays with you. Response within 48 business hours."
+  },
+  "name": "Medical & Pharmaceutical",
+  "tile": "High-cavitation tooling for components where cavity 1 and cavity 32 have to be the same part. We build the tool and the engineering behind it — validated manufacture stays with you.",
+  "tileParts": "Multi-cavity · DFM · Second tools",
+  "hero": {
+    "kicker": "Medical & Pharmaceutical",
+    "headline": [
+      "Every cavity has to",
+      "make the same part."
+    ],
+    "lead": "Engineering, DFM and multi-cavity tooling for medical and pharmaceutical plastic components. We build the tool and the engineering behind it. The validated process stays with you — and we will be precise about where that line falls.",
+    "markers": [
+      "Tooling experience to 46 cavities",
+      "Full tool documentation released",
+      "Duplicate and second-source tools"
+    ]
+  },
+  "blocks": {
+    "atlas": {
+      "index": "01",
+      "kicker": "Scope",
+      "heading": "What we tool.",
+      "body": "The components below are the volume end of medical and pharmaceutical plastics: simple geometry, enormous quantities, and a tolerance that has to repeat across every cavity for the life of the tool. Each one is difficult for a different reason.",
+      "listLabel": "Component family",
+      "items": [
+        {
+          "id": "syringe",
+          "name": "Syringe barrels and plungers",
+          "hard": "A long thin-walled tube around a core pin. Core deflection under injection pressure is the whole problem — it becomes wall variation, which becomes a plunger that binds or leaks.",
+          "spec": [
+            "Core pin support and cooling",
+            "Draw polish on the bore",
+            "Graduation detail in the steel",
+            "Concentricity across cavities"
+          ]
+        },
+        {
+          "id": "luer",
+          "name": "Luer fittings and connectors",
+          "hard": "A conical sealing taper that has to mate with a fitting made by somebody else, on another continent, on another tool. The taper is the product.",
+          "spec": [
+            "Taper angle and surface",
+            "Gate position off the sealing face",
+            "Parting line placement",
+            "Cavity-to-cavity taper consistency"
+          ]
+        },
+        {
+          "id": "tips",
+          "name": "Pipette tips",
+          "hard": "Very high cavitation, very short cycles, and an aperture whose diameter is the entire function. A tip that is 20 microns wide is a tip that dispenses the wrong volume.",
+          "spec": [
+            "High cavitation",
+            "Tip aperture tolerance",
+            "Cavity marking for traceability",
+            "Short cooling on a thin wall"
+          ]
+        },
+        {
+          "id": "closures",
+          "name": "Vial and bottle closures",
+          "hard": "Thread, sealing land and tamper band on one small moulding, on a tool that has to unscrew or strip every shot without wearing the thread form.",
+          "spec": [
+            "Unscrewing or collapsible cores",
+            "Tamper band geometry",
+            "Sealing land finish",
+            "Thread form wear life"
+          ]
+        },
+        {
+          "id": "iv",
+          "name": "IV and infusion set components",
+          "hard": "A family of small parts that must assemble to each other. The tolerance problem is not any one part — it is the stack across four of them.",
+          "spec": [
+            "Family or matched tooling",
+            "Assembly tolerance stack",
+            "Multi-cavity balance",
+            "Consistent shrinkage across resins"
+          ]
+        },
+        {
+          "id": "diagnostic",
+          "name": "Diagnostic consumables",
+          "hard": "Cartridges, tubes and wells where a fluid path or an optical window is a functional surface. Flash, weld lines and sink marks are not cosmetic defects here.",
+          "spec": [
+            "Optical or draw-polished surfaces",
+            "Weld-line placement",
+            "Venting at the far extremity",
+            "Flatness on sealing faces"
+          ]
+        },
+        {
+          "id": "inhaler",
+          "name": "Inhaler and delivery-device parts",
+          "hard": "Mechanism-heavy, lower volume, higher part count. The tool has slides, lifters and cores rather than cavitation, and the engineering content per part is far higher.",
+          "spec": [
+            "Slides, lifters and cores",
+            "4 to 16 cavities",
+            "Mechanism repeatability",
+            "Prototype-to-production route"
+          ]
+        },
+        {
+          "id": "packaging",
+          "name": "Pharmaceutical packaging components",
+          "hard": "Droppers, measuring caps, spoons, plugs and liners. Long-lived SKUs — one closure can outlive three product generations, so tool life and spares matter more than tool price.",
+          "spec": [
+            "Long programme life",
+            "Spares and change parts",
+            "Re-tooling of worn assets",
+            "Cavity marking"
+          ]
+        }
+      ]
+    },
+    "arithmetic": {
+      "index": "02",
+      "kicker": "The arithmetic",
+      "heading": "Two levers, both decided in the tool.",
+      "body": "The price of a high-volume disposable is resin, plus machine time divided by cavity count, plus scrap, plus amortised tooling. Cavity count and cycle time are the only two levers with real magnitude, and both are settled before any steel is cut.",
+      "body2": "Every buyer in this sector does this arithmetic in their head. So does the page.",
+      "calcLabel": "Output",
+      "controls": [
+        {
+          "id": "cavities",
+          "label": "Cavities",
+          "unit": ""
+        },
+        {
+          "id": "cycle",
+          "label": "Cycle",
+          "unit": "s"
+        },
+        {
+          "id": "hours",
+          "label": "Hours per day",
+          "unit": "h"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "hour",
+          "label": "Parts per hour"
+        },
+        {
+          "id": "day",
+          "label": "Parts per day"
+        },
+        {
+          "id": "year",
+          "label": "Parts per year at 300 days"
+        }
+      ],
+      "note": "This is arithmetic, not a quotation. It says nothing about whether your part can hold that cycle, which is a question about wall section, cooling layout and ejection — and that is the conversation worth having.",
+      "amortHeading": "And the other half of the number",
+      "amort": "Tooling amortises the same way. Spread across twenty million parts a tool adds a fraction of a cent to each one. Spread across two hundred thousand it dominates the price. Which is why the honest conversation starts at your volume forecast and your required tool life, and only then arrives at a mould price."
+    },
+    "imbalance": {
+      "index": "03",
+      "kicker": "The physics",
+      "heading": "Why cavity 1 and cavity 32 are not the same part.",
+      "body": "A balanced runner layout does not produce balanced cavities. This surprises people, and it is the single most useful thing on this page.",
+      "steps": [
+        {
+          "label": "The runner tree",
+          "body": "Geometrically symmetrical. Every cavity is the same distance from the sprue, through the same channel section. On the drawing it is perfect."
+        },
+        {
+          "label": "The melt is not uniform",
+          "body": "Flow is laminar. Material at the channel wall is sheared and hot; material at the core is cooler. Published measurements report differences of 100 to 300 °F across a single runner cross-section."
+        },
+        {
+          "label": "The split does not mix",
+          "body": "At each branch the hot outer laminate and the cool core divide unevenly between the two paths. The imbalance is inherited, then inherited again at the next branch."
+        },
+        {
+          "label": "Cavities disagree by flow group",
+          "body": "Inner cavities fill first. Weight and dimension group by flow path, not by cavity number — which is why a defect map that sorts by cavity number tells you nothing and one that sorts by flow group tells you everything."
+        }
+      ],
+      "evidence": "Research cited in the moulding literature attributes 60 to 70 per cent of product variation in multi-cavity tools to shear-induced imbalance rather than to steel dimensions or cooling. One published case reduced a 16-cavity tool from 95 per cent cavity-to-cavity variation to under 5 per cent by rotating the melt.",
+      "methodHeading": "How it is actually proven",
+      "method": [
+        "Fill to roughly 95 to 98 per cent with short shots.",
+        "Label every part by cavity — which requires the cavities to be marked in the steel in the first place.",
+        "Weigh on a precision scale and repeat the run.",
+        "Plot the spread. A well-balanced tool typically stays inside 5 per cent part-weight variation."
+      ],
+      "diagnosisHeading": "And how the result is read",
+      "diagnosis": [
+        {
+          "symptom": "A few light cavities",
+          "cause": "Gate size or venting on those cavities."
+        },
+        {
+          "symptom": "A gradual gradient across cavities",
+          "cause": "Runner design and melt delivery."
+        },
+        {
+          "symptom": "Random scatter, no pattern",
+          "cause": "Material or temperature, not the tool."
+        }
+      ],
+      "close": "That last row matters commercially. It is how a tooling supplier tells a customer that the problem is not the tool — which is worth more over ten years than a supplier who agrees with everything.",
+      "figureMark": "100–300 °F"
+    },
+    "line": {
+      "index": "04",
+      "kicker": "The boundary",
+      "heading": "Where the line is.",
+      "body": "This is the most important section on this page. Metal Form is a tooling and engineering supplier. It is not a validated, certified or regulated manufacturer, and it will not present itself as one.",
+      "body2": "Supplier controls in this sector are risk-proportionate by design. A tooling and engineering supplier can legitimately serve a regulated customer — provided everybody is precise about which side of the line each activity falls on. Being precise about it is the point of this section.",
+      "supplyHeading": "Metal Form supplies",
+      "supply": [
+        "Part engineering, reverse engineering and DFM before the tool exists",
+        "Mould design: cavity and core, mechanisms, gating, cooling, venting",
+        "Multi-cavity tool manufacture, to our experience of up to 46 cavities",
+        "Sampling and tool correction until the part is dimensionally right",
+        "The full tool documentation package — 3D assembly, plate drawings, bill of materials with steel grades and hardness, hot runner make and model, cooling circuit map, spare parts list",
+        "Sampling evidence you can carry into your own qualification work",
+        "Spare cavity inserts, core pins and wear parts, specified at design time",
+        "Duplicate, backup and second-source tooling to the same part specification",
+        "Component production and supply where the part sits outside a sterile or regulated scope"
+      ],
+      "staysHeading": "Stays with you",
+      "stays": [
+        "Any quality-system certification — ISO 13485, GMP, or your national equivalent",
+        "Cleanroom manufacture and any controlled-environment production",
+        "Sterilisation and its validation",
+        "IQ, OQ and PQ, and the validated process window that comes out of them",
+        "Design history, design transfer and device master record",
+        "Regulatory submission, market approval and post-market obligations",
+        "Batch traceability, release testing and certificates of analysis",
+        "The decision that a component is fit for its clinical or pharmaceutical use"
+      ],
+      "close": "If a supplier tells you it can hand you all of both columns, ask which certificate it holds and who audited it. We hold none, and we would rather you heard that here than discovered it during your own audit.",
+      "howHeading": "How this works in practice",
+      "how": "Most of our medical and pharmaceutical work reaches an end user through a contract moulder or a manufacturer who already holds the certification and runs the validated process. We build and document the tool; they qualify and run it. That division is normal, it is how a large share of this industry actually operates, and it is the arrangement we are set up for."
+    },
+    "anatomy": {
+      "index": "05",
+      "kicker": "The tool",
+      "heading": "What is actually in it.",
+      "body": "A quotation that names only a cavity count and a price is a quotation you cannot compare. These are the specifications a toolroom manager checks, and the ones we write into an order.",
+      "stack": [
+        {
+          "name": "Clamp plate",
+          "note": "Interface to your press. Tie-bar spacing, platen size and ejector pattern are checked against the machine you already own."
+        },
+        {
+          "name": "Hot runner manifold",
+          "note": "Make, model, tip count and controller zones stated by name — because serviceability and spare availability in your country are your problem after we hand over."
+        },
+        {
+          "name": "Cavity plate and inserts",
+          "note": "Inserts designed to be interchangeable and face-mounted, so a change is a shift rather than a strip-down."
+        },
+        {
+          "name": "Core plate and cores",
+          "note": "Where the cooling that governs cycle actually lives, and where core deflection has to be engineered out."
+        },
+        {
+          "name": "Mechanisms",
+          "note": "Slides, lifters, unscrewing and collapsible cores where the geometry needs them — and not where it does not."
+        },
+        {
+          "name": "Stripper and ejector assembly",
+          "note": "Ejection is a surface-quality decision on thin-walled parts, not an afterthought."
+        },
+        {
+          "name": "Cooling circuits",
+          "note": "Mapped and released as a drawing, so the plant knows what water it has to supply and where."
+        },
+        {
+          "name": "Venting",
+          "note": "At the far extremity of fill. Under-vented tools burn, trap gas and short-fill, and it is almost always designed in rather than added later."
+        }
+      ],
+      "classHeading": "Tool class is a commercial decision, not a compliment",
+      "classNote": "The SPI classes below are the grammar buyers quote in enquiries. They are industry definitions, not Metal Form ratings — the class we build to is agreed against your programme volume and written into the order.",
+      "classes": [
+        {
+          "name": "Class 101",
+          "life": "Over 1,000,000 cycles",
+          "spec": "Mould base 280 BHN minimum; cavities and cores 48 Rc minimum; extensive cooling."
+        },
+        {
+          "name": "Class 102",
+          "life": "Up to 1,000,000 cycles",
+          "spec": "Base 28 Rc minimum; cavity and core 48 Rc minimum."
+        },
+        {
+          "name": "Class 103",
+          "life": "Up to 500,000 cycles",
+          "spec": "Base 18 Rc minimum; cavity and core 28 Rc minimum."
+        },
+        {
+          "name": "Class 104",
+          "life": "Up to 100,000 cycles",
+          "spec": "Lower-volume programmes and bridge tooling."
+        },
+        {
+          "name": "Class 105",
+          "life": "Under 500 cycles",
+          "spec": "Prototype only. Not a production asset."
+        }
+      ],
+      "classClose": "Buying Class 103 tooling for a Class 101 programme is the most expensive saving in this industry. Buying Class 101 for a product that may not survive its first year is the second most expensive."
+    },
+    "wear": {
+      "index": "06",
+      "kicker": "The long run",
+      "heading": "At shot two million.",
+      "body": "The fear nobody puts in an enquiry: a tool that samples beautifully and then drifts. Tools wear. Which parts wear, how fast, and whether the spare is on your shelf or on a twelve-week lead time is a conversation to have before the order, not after the failure.",
+      "axisLabel": "Shots",
+      "marks": [
+        {
+          "at": "0",
+          "label": "Sampling and correction",
+          "note": "Dimensional evidence, cavity-by-cavity, handed to you."
+        },
+        {
+          "at": "250k",
+          "label": "First scheduled service",
+          "note": "Vents cleaned, sealing faces checked, cooling circuits flushed."
+        },
+        {
+          "at": "500k",
+          "label": "Wear items reviewed",
+          "note": "Gate inserts, sealing lands and shut-off faces are where it shows first."
+        },
+        {
+          "at": "1M",
+          "label": "Class 102 design life reached",
+          "note": "For a Class 101 tool, roughly the halfway point of its rated life."
+        },
+        {
+          "at": "2M",
+          "label": "Beyond Class 101 rated life",
+          "note": "Refurbishment, insert replacement, or the second tool you had built in advance."
+        }
+      ],
+      "sparesHeading": "What should be on your shelf",
+      "spares": [
+        "Cavity inserts for the cavities that carry the critical dimension",
+        "Core pins, especially long thin ones",
+        "Gate inserts",
+        "Slide and lifter wear components",
+        "Thread-forming components on unscrewing tools",
+        "Seals, O-rings and cooling fittings"
+      ],
+      "sparesNote": "We specify the spare set at design time and quote it with the tool, rather than leaving it to be negotiated during a breakdown. Interchangeable, face-mounted inserts are a design decision that makes that spare set usable in a shift rather than in a week.",
+      "warranty": "Tooling warranty terms are defined per project and against the mould specification, and written into the order. We do not publish a shot count here, because a shot count that ignores your resin, your cycle and your maintenance is a number that means nothing."
+    },
+    "second": {
+      "index": "07",
+      "kicker": "The commercial argument",
+      "heading": "The second tool.",
+      "body": "One tool, in one plant, in one country, is a single point of failure for a product line that people depend on. Strong Western medical tooling suppliers rarely offer to build the duplicate — it competes with their own installed asset. We will.",
+      "risks": [
+        {
+          "n": "01",
+          "scenario": "A cavity insert cracks and no spare is on the shelf.",
+          "consequence": "Production stops for the lead time of a single insert."
+        },
+        {
+          "n": "02",
+          "scenario": "The tool is in a plant that has a fire, a flood or a labour dispute.",
+          "consequence": "The asset and the product line are in the same building."
+        },
+        {
+          "n": "03",
+          "scenario": "Your moulder's commercial position changes.",
+          "consequence": "The tool is where their leverage is."
+        },
+        {
+          "n": "04",
+          "scenario": "Demand rises faster than the forecast the tool was sized for.",
+          "consequence": "Cavity count is fixed in steel and cannot be increased."
+        },
+        {
+          "n": "05",
+          "scenario": "A market requires production in a second geography.",
+          "consequence": "Moving one tool means stopping supply while it is in transit and requalified."
+        },
+        {
+          "n": "06",
+          "scenario": "The original toolmaker is gone and holds the design data.",
+          "consequence": "The tool cannot be repaired, copied or corrected by anyone else."
+        }
+      ],
+      "offerHeading": "What we can do about it",
+      "offer": [
+        "Build a duplicate tool to the same part specification, held in reserve or run in parallel.",
+        "Build a second-source tool for a component already running somewhere else, from your data or reverse-engineered from the part.",
+        "Supply cavity inserts, cores and wear parts for a tool somebody else built.",
+        "Re-tool a component whose original tool is worn out, lost or obsolete.",
+        "Release the full design data with the tool, so you are never locked to us either."
+      ],
+      "honesty": "This is readiness, not reserved capacity, and a duplicate tool does not requalify itself. A second tool has its own qualification path in your quality system, and it is your system that decides how long that takes. We are telling you that rather than letting you find out."
+    },
+    "start": {
+      "index": "08",
+      "kicker": "Starting",
+      "heading": "How a project starts.",
+      "body": "A model or a sample is enough. Everything else can follow.",
+      "steps": [
+        {
+          "label": "Send",
+          "note": "A 3D model, a 2D drawing, a physical sample, or a photograph with one dimension we can scale from."
+        },
+        {
+          "label": "Read",
+          "note": "An engineer looks at the geometry, the tolerance realism and the tooling route. Within 48 business hours."
+        },
+        {
+          "label": "NDA",
+          "note": "Before detailed technical disclosure, not after. Sign ours or send yours."
+        },
+        {
+          "label": "Quote",
+          "note": "Once cavitation, tool class, mechanisms and machine interface are agreed. Not before."
+        }
+      ],
+      "needHeading": "What we need to quote",
+      "need": [
+        "3D model or 2D drawing, or a sample we can measure",
+        "Resin grade, and whether it is radiation-stabilised or a specialty polymer",
+        "Annual volume, and the forecast beyond year one",
+        "Required tool life in shots, or the programme life we should size for",
+        "Critical dimensions and which ones are functional",
+        "Cavity count required, or the output you need per hour",
+        "Press: tonnage, platen size, tie-bar spacing, ejector pattern",
+        "Hot runner preference, if your plant standardises on one make",
+        "Cavity marking and traceability requirement",
+        "Destination country for delivery"
+      ],
+      "getHeading": "What we hand over",
+      "get": [
+        "3D tool assembly and plate drawings",
+        "Bill of materials with steel grades and hardness stated",
+        "Hot runner make, model and controller configuration",
+        "Cooling circuit map",
+        "Spare parts list, with the recommended set quoted",
+        "Sampling dimensional evidence, cavity by cavity",
+        "Cavity identification scheme, marked in the steel",
+        "Tooling warranty terms defined against this specification"
+      ]
+    },
+    "panels": {
+      "heading": "Deeper detail",
+      "items": [
+        {
+          "title": "Cavitation: how the number actually gets chosen",
+          "bullets": [
+            "Cavity count follows from a cost target and a volume forecast, not from an ambition. The DFM document comes first and defines core and cavity, sliders, gate position, size and location; the mould specification follows it.",
+            "One published medical case: a forecast of 12 million pieces in year one rising to 24 million in year two led to a 64-cavity tool, with a 22-second cycle required to hold the cost target.",
+            "Output is cavities divided by cycle. At a 10-second cycle a tool runs 360 shots per hour — 32 cavities gives 11,520 parts per hour, 64 gives 23,040, 96 gives 34,560.",
+            "Higher cavitation drives tooling cost, machine tonnage, hot-runner zone count, chilled water demand, and the consequence of any single cavity misbehaving.",
+            "Metal Form's tooling experience runs to 46 cavities. Above that, the useful offer is different: cavity inserts, core pins and wear parts as spares or as an alternative source for a tool built elsewhere.",
+            "Device sub-assemblies, autoinjector and inhaler components and diagnostic cartridges usually sit at 4 to 16 cavities with a mechanism-heavy tool — a different problem entirely, and one we are equally set up for."
+          ],
+          "source": "Figures in this panel are published industry practice and published case data, not Metal Form measurements."
+        },
+        {
+          "title": "The vocabulary, and what each term commits somebody to",
+          "bullets": [
+            "CTQ — critical to quality. The dimensions that actually matter. Naming them changes the tool, because they decide where the gate goes and which cavity gets the closest attention.",
+            "DFM — design for manufacturability. The document that precedes the mould specification. Ours, before your steel.",
+            "FAI — first article inspection. Yours or your moulder's, against your own procedure.",
+            "IQ, OQ, PQ — installation, operational and performance qualification. Owned by the moulder or manufacturer. IQ does reference the tool: identification, revision control, cavity count, sensor configuration and hot runner setup — which is precisely why the documentation package matters.",
+            "Validated window and action limits — outputs of OQ and PQ. They belong to the process, not to the tool.",
+            "Design transfer — moving a design into routine production. A tool is an input to it, not a substitute for it.",
+            "Regrind policy — a process and material decision that a tool cannot make for you."
+          ]
+        },
+        {
+          "title": "Traceability that starts in the steel",
+          "bullets": [
+            "Cavities marked individually in the steel, so a rejected part can be traced to the cavity that made it.",
+            "Date and revision inserts where your part allows them.",
+            "A cavity identification scheme released as part of the documentation, not held by us.",
+            "Interchangeable, face-mounted inserts so replacing a cavity does not change the identification scheme.",
+            "Sampling evidence recorded cavity by cavity rather than as a single average — an average across 32 cavities hides exactly the thing you need to see.",
+            "Change notification in writing before anything on the tool is altered."
+          ]
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Send the part.",
+    "body": "A model or a sample is enough to start. We come back on geometry, tooling route, cavitation and production economics within 48 business hours. NDA first if you prefer.",
+    "action": "Send your component",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form — medical / pharmaceutical component.\n\nPart: \nResin: \nAnnual volume: \nRequired tool life (shots): \nCavities required: \nCritical dimensions: \nI have: 3D model / 2D drawing / physical sample / existing tool\nPress (tonnage, platen, tie-bar spacing): \nDelivery to: \nNDA required: yes / no",
+    "note": "Initial technical response within 48 business hours. We are a tooling and engineering supplier — validated manufacture stays with you."
+  }
+}

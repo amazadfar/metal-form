@@ -1,0 +1,343 @@
+---
+/**
+ * Contact.
+ *
+ * Not a form. Industrial buyers abandon long RFQ forms, and a photograph taken
+ * on a phone right now is worth more to an engineer than a perfectly structured
+ * enquiry that never gets sent. So the page does two things: it tells you what
+ * is worth sending, and it tells you exactly what happens next.
+ *
+ * Channels that are not configured yet do not appear at all. There are no dead
+ * links and no placeholder telephone numbers on this page.
+ */
+import Base from '../../layouts/Base.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+import { LOCALE_ORDER, type Locale } from '../../i18n/locales.ts';
+import { getContact, getCommon } from '../../content/index.ts';
+import { absoluteUrl, breadcrumbSchema } from '../../lib/seo.ts';
+import { BRAND, CONTACT, resolved } from '../../config/site.ts';
+import { availableChannels, mailtoLink, telLink } from '../../lib/contact.ts';
+
+export function getStaticPaths() {
+  return LOCALE_ORDER.map((lang) => ({ params: { lang } }));
+}
+
+const locale = Astro.params.lang as Locale;
+const p = getContact(locale);
+const c = getCommon(locale);
+
+const channels = availableChannels();
+const email = resolved(CONTACT.email);
+const phone = resolved(CONTACT.phone);
+const whatsappDisplay = resolved(CONTACT.whatsappDisplay);
+const street = resolved(CONTACT.address.line1);
+const city = resolved(CONTACT.address.city);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: BRAND.name, url: absoluteUrl(locale) },
+    { name: c.nav.contact, url: absoluteUrl(locale, 'contact') },
+  ]),
+];
+---
+
+<Base locale={locale} meta={p.meta} route="contact" schemas={schemas}>
+  <a class="skip-link" href="#main">{c.a11y.skipToContent}</a>
+  <SiteHeader locale={locale} current="contact" />
+
+  <main id="main">
+    <header class="ct-hero">
+      <div class="shell--wide ct-hero__inner">
+        <div>
+          <p class="eyebrow">{p.hero.kicker}</p>
+          <h1 class="ct-hero__head">
+            {p.hero.headline.map((line) => <span>{line}</span>)}
+          </h1>
+          <p class="t-lead ct-hero__lead">{p.hero.lead}</p>
+
+          <div class="ct-hero__act">
+            <WhatsAppButton
+              locale={locale}
+              prefill={p.cta.prefill}
+              label={p.cta.action}
+              source="contact_page"
+              size="lg"
+            />
+            <p class="t-fine ct-hero__note">{p.cta.note}</p>
+          </div>
+        </div>
+
+        {/* Channel list. Only what actually works today. */}
+        <aside class="ct-channels">
+          <h2 class="t-label ct-channels__h">{c.contact.heading}</h2>
+          <dl class="ct-channels__list">
+            <div class="ct-channel">
+              <dt>{c.contact.whatsappLabel}</dt>
+              <dd>
+                {channels.whatsapp && whatsappDisplay
+                  ? <span class="t-mono" dir="ltr">{whatsappDisplay}</span>
+                  : <span class="ct-channel__pending">{c.contact.pendingNote}</span>}
+                <span class="ct-channel__note">{c.contact.whatsappNote}</span>
+              </dd>
+            </div>
+
+            {channels.email && email && (
+              <div class="ct-channel">
+                <dt>{c.contact.emailLabel}</dt>
+                <dd><a href={mailtoLink(BRAND.name)} class="t-mono" dir="ltr">{email}</a></dd>
+              </div>
+            )}
+
+            {channels.phone && phone && (
+              <div class="ct-channel">
+                <dt>{c.contact.phoneLabel}</dt>
+                <dd><a href={telLink()} class="t-mono" dir="ltr">{phone}</a></dd>
+              </div>
+            )}
+
+            <div class="ct-channel">
+              <dt>{c.contact.responseLabel}</dt>
+              <dd>
+                <span>{c.trust.response}</span>
+                <span class="ct-channel__note">{c.trust.responseNote}</span>
+              </dd>
+            </div>
+
+            {(street || city) && (
+              <div class="ct-channel">
+                <dt>{c.contact.addressLabel}</dt>
+                <dd>
+                  <address class="ct-address">
+                    {street && <span>{street}</span>}
+                    {city && <span>{city}</span>}
+                    <span>{CONTACT.address.country}</span>
+                  </address>
+                </dd>
+              </div>
+            )}
+          </dl>
+        </aside>
+      </div>
+    </header>
+
+    <section class="ct-send">
+      <div class="shell--wide ct-send__inner">
+        <div class="ct-send__head">
+          <h2 class="t-h3">{p.send.heading}</h2>
+          <p class="t-lead">{p.send.body}</p>
+        </div>
+        <ul class="ct-send__list">
+          {p.send.items.map((item, i) => (
+            <li>
+              <span class="t-mono">{String(i + 1).padStart(2, '0')}</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="ct-expect">
+      <div class="shell--wide">
+        <h2 class="t-h3 ct-expect__h">{p.expect.heading}</h2>
+        <ol class="ct-expect__steps">
+          {p.expect.steps.map((step) => (
+            <li class="ct-step" data-reveal>
+              <span class="ct-step__n t-mono">{step.index}</span>
+              <h3 class="ct-step__t">{step.title}</h3>
+              <p class="ct-step__b">{step.body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="ct-nda">
+      <div class="shell ct-nda__inner">
+        <h2 class="t-h5">{c.nda.heading}</h2>
+        <p class="ct-nda__b">{c.nda.body}</p>
+        <ul class="ct-nda__list">
+          {c.nda.points.map((point) => <li>{point}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="ct-final">
+      <div class="shell ct-final__inner">
+        <h2 class="t-h2 ct-final__h">{p.cta.headline}</h2>
+        <p class="t-lead ct-final__b">{p.cta.body}</p>
+        <WhatsAppButton
+          locale={locale}
+          prefill={p.cta.prefill}
+          label={p.cta.action}
+          source="contact_page"
+          size="lg"
+        />
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter locale={locale} />
+</Base>
+
+<style>
+  .ct-hero { padding-block: clamp(3rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem); }
+  .ct-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .ct-hero__inner { grid-template-columns: 1fr; } }
+
+  .ct-hero__head {
+    margin-block-start: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(2.1rem, 4.8vw, 3.9rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+  }
+  .ct-hero__head span { display: block; }
+  .ct-hero__head span:last-child { color: var(--accent-deep); }
+  .ct-hero__lead { margin-block-start: clamp(1.25rem, 2.5vw, 1.75rem); max-inline-size: 52ch; }
+  .ct-hero__act { margin-block-start: var(--sp-7); display: grid; gap: var(--sp-4); justify-items: start; }
+  .ct-hero__note { max-inline-size: 46ch; }
+
+  /* ── Channels ─────────────────────────────────────────────────────────── */
+  .ct-channels {
+    background: var(--surface-sunk);
+    border: var(--rule);
+    padding: var(--sp-6);
+  }
+  .ct-channels__h { display: block; margin-block-end: var(--sp-5); }
+  .ct-channels__list { display: grid; }
+  .ct-channel {
+    padding-block: var(--sp-4);
+    border-block-start: var(--rule);
+    display: grid;
+    gap: 0.35rem;
+  }
+  .ct-channel dt {
+    font-size: var(--step--2);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-family: var(--font-mono);
+  }
+  :global(html[lang='zh']) .ct-channel dt,
+  :global(html[lang='th']) .ct-channel dt,
+  :global(html[lang='ar']) .ct-channel dt,
+  :global(html[lang='fa']) .ct-channel dt,
+  :global(html[lang='ur']) .ct-channel dt {
+    font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: var(--step--1);
+  }
+  .ct-channel dd { display: grid; gap: 0.3rem; font-size: var(--step-0); }
+  .ct-channel a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .ct-channel a:hover { color: var(--accent-deep); }
+  .ct-channel__note { font-size: var(--step--1); line-height: 1.5; color: var(--ink-muted); }
+  .ct-channel__pending {
+    font-size: var(--step--1);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-4);
+    border-inline-start: 2px solid var(--signal);
+  }
+  .ct-address { font-style: normal; display: grid; gap: 0.1rem; font-size: var(--step--1); color: var(--ink-muted); }
+
+  /* ── What to send ─────────────────────────────────────────────────────── */
+  .ct-send { padding-block: var(--section-y); border-block-start: var(--rule); }
+  .ct-send__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .ct-send__inner { grid-template-columns: 1fr; } }
+  .ct-send__head { display: grid; gap: var(--sp-5); }
+  .ct-send__head h2 { max-inline-size: 16ch; }
+  .ct-send__list { border-block-start: var(--rule-strong); }
+  .ct-send__list li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    font-size: var(--step-0);
+    align-items: baseline;
+  }
+  .ct-send__list li span:first-child {
+    font-size: var(--step--2);
+    letter-spacing: 0.14em;
+    color: var(--accent-deep);
+  }
+
+  /* ── What happens next ────────────────────────────────────────────────── */
+  .ct-expect { padding-block: var(--section-y); background: var(--surface-sunk); border-block: var(--rule); }
+  .ct-expect__h { max-inline-size: 16ch; }
+  .ct-expect__steps {
+    margin-block-start: clamp(2rem, 4vw, 3.5rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0;
+    border-block-start: var(--rule-strong);
+  }
+  .ct-step {
+    padding: var(--sp-5) var(--sp-5) var(--sp-7) 0;
+    border-inline-end: var(--rule);
+    display: grid;
+    gap: var(--sp-3);
+    align-content: start;
+  }
+  .ct-step:last-child { border-inline-end: 0; }
+  @media (max-width: 760px) {
+    .ct-step { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: 0; }
+  }
+  .ct-step__n { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }
+  .ct-step__t { font-size: var(--step-1); letter-spacing: var(--track-head); }
+  .ct-step__b { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); max-inline-size: 36ch; }
+
+  /* ── NDA ──────────────────────────────────────────────────────────────── */
+  .ct-nda { padding-block: var(--section-y-tight); }
+  .ct-nda__b { margin-block-start: var(--sp-4); max-inline-size: 66ch; color: var(--ink-muted); }
+  .ct-nda__list { margin-block-start: var(--sp-5); border-block-start: var(--rule); max-inline-size: 72ch; }
+  .ct-nda__list li {
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .ct-nda__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.5rem;
+    inline-size: 0.7rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+
+  /* ── Final ────────────────────────────────────────────────────────────── */
+  .ct-final {
+    padding-block: var(--section-y);
+    background: var(--inverse);
+    color: var(--inverse-ink);
+    --ink: var(--inverse-ink);
+    --signal: var(--signal-inverse);
+    --signal-ink: var(--signal-inverse);
+    --accent: var(--accent-inverse);
+    --accent-deep: var(--accent-inverse);
+    --ink-muted: color-mix(in oklab, var(--inverse-ink) 66%, transparent);
+    --btn-bg: var(--surface-raise);
+    --btn-fg: #14161A;
+    --btn-hover: var(--accent-wash);
+  }
+  .ct-final .btn--whatsapp:hover { color: #14161A; }
+  .ct-final__inner { display: grid; gap: var(--sp-6); justify-items: start; }
+  .ct-final__h { max-inline-size: 14ch; }
+  .ct-final__b { max-inline-size: 54ch; }
+</style>

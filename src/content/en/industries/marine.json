@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "title": "Marine & Offshore Tooling and Component Supply — Metal Form",
+    "description": "Injection, blow and die-cast tooling for marine hardware, hatches, fittings, fuel-system components and floats. Reverse engineering from a worn or obsolete part. Low-volume tooling strategy, second-source tooling, international delivery. Persian engineering since 2006."
+  },
+  "name": "Marine & Offshore",
+  "tile": "Awkward geometry, larger parts and low-to-medium volumes where a full production tool is hard to justify — plus components whose drawings nobody kept.",
+  "tileParts": "Fittings · Hatches · Reverse engineering",
+  "hero": {
+    "kicker": "Marine & Offshore",
+    "headline": [
+      "Salt, sun,",
+      "and volumes too small",
+      "to justify a normal tool."
+    ],
+    "lead": "Marine parts are awkward geometry in small numbers, expected to survive twenty years of ultraviolet, salt and immersion. Most of them arrive here as objects rather than drawings. We measure the part, recover the geometry the wear has hidden, and size the tooling to the volume you actually build.",
+    "markers": [
+      "Since 2006",
+      "1,000+ completed projects",
+      "International delivery"
+    ]
+  },
+
+  "blocks": {
+    "opening": {
+      "figure": {
+        "datumStart": "Datum A",
+        "datumEnd": "Baseline",
+        "dim": "Ø nom",
+        "centre": "CL"
+      },
+      "legendHeading": "Two outlines, one part",
+      "legend": [
+        { "key": "worn", "label": "The sample, as found" },
+        { "key": "nominal", "label": "The recovered nominal" },
+        { "key": "point", "label": "Where the two are reconciled" }
+      ],
+      "movementsLabel": "The sequence",
+      "movements": [
+        { "num": "I", "label": "The part arrives" },
+        { "num": "II", "label": "It is measured" },
+        { "num": "III", "label": "It is modelled" },
+        { "num": "IV", "label": "It is tooled" }
+      ]
+    },
+
+    "arrival": {
+      "index": "01",
+      "movement": "Movement I · The part arrives",
+      "kicker": "Obsolete components",
+      "heading": "Nobody kept the drawing.",
+      "body": "In this sector the tool outlives the paperwork and the hull outlives both. A model runs for a few seasons; the boats stay in the water for twenty or thirty years. By the time the part is needed again the supplier has changed hands, the tool has been scrapped or sits in a corner nobody will open, and the drawing — if one was ever made — left with the engineer who understood it. What survives is the component itself, still bolted to a boat.",
+      "chainHeading": "The chain, read backwards",
+      "chain": [
+        { "label": "Design", "note": "The intent. Rarely written down in a form anyone kept." },
+        { "label": "Drawing", "note": "On paper, and paper follows the person who drew it." },
+        { "label": "Tool", "note": "Scrapped, sold, or held by a supplier who will not release it." },
+        { "label": "Supplier", "note": "Closed, bought, or no longer answering on a part this small." },
+        { "label": "Part", "note": "Still on the boat. Worn, cracked, or in somebody's box of spares." }
+      ],
+      "chainReturn": "Recovery",
+      "chainNote": "Four of the five links are usually gone. The fifth is the only one that has to survive.",
+      "term": {
+        "name": "NLA — No Longer Available",
+        "meaning": "The trade's own term for a discontinued part. Where hulls stay in service for decades it is not an exception. It is a permanent, structural class of demand that most moulders decline to serve."
+      },
+      "survivesHeading": "What is still available to work from",
+      "survives": [
+        { "name": "The part", "note": "One is enough to start. Two or three are far better, because what several worn samples agree on is closer to the design than what any one of them shows." },
+        { "name": "The mating component", "note": "The hole, the bore, the gasket groove, the fastener pattern. Interfaces were cut to a nominal and have usually worn less than the part that moved against them." },
+        { "name": "The person who lived with it", "note": "How it failed, how long it lasted, where it sat relative to the waterline and what it was asked to hold. None of that is on a drawing and all of it changes the answer." }
+      ],
+      "ipHeading": "Asked before anything is measured",
+      "ip": [
+        "Who owns the geometry, and whether a contract with the original supplier restricts copying it.",
+        "Whether the part is in patent, and in which jurisdiction you intend to sell or fit it.",
+        "Whether it sits in a regulated path — fuel, buoyancy, steering — because that raises the scrutiny on every decision after it.",
+        "We work from what you can lawfully share. These questions come before the work, not after it."
+      ]
+    },
+
+    "measurement": {
+      "index": "02",
+      "movement": "Movement II · It is measured",
+      "kicker": "Design intent against wear",
+      "heading": "Copying the part reproduces the wear.",
+      "body": "A component that has run for fifteen seasons is a record of its service, not a record of its design. The bearing face is polished undersize. The flange has crept. The sealing land has taken a permanent set. Measure that and copy it faithfully and you manufacture a brand-new worn part, one that begins its life at the end of somebody else's. Recovering the nominal is the actual work, and it is the only part of this that is difficult.",
+      "figureLabels": {
+        "worn": "As found",
+        "nominal": "Nominal",
+        "radius": "R"
+      },
+      "figureCaption": "The flange-to-body junction, magnified",
+      "methodsHeading": "How the nominal is recovered",
+      "methods": [
+        "Compare two or three samples. Wear is rarely symmetrical and rarely identical between parts. What the samples agree on is design; what they disagree on is service.",
+        "Back-calculate from the mating component. The bore, the counterbore, the gasket groove and the fastener pattern were made to a nominal and are usually the better witness.",
+        "Read the symmetry. A part designed about a centreline was made about a centreline, whatever twenty years have done to one side of it.",
+        "Recognise standard sizes. Fastener threads, bearing bores, elastomer seal sections and hose bores come from short standard lists. A measurement of 7.9 mm is an M8 clearance hole that a decade of movement has opened up.",
+        "Separate the wear signatures. Abrasion, fretting, creep and plastic deformation each leave a different mark and each is subtracted differently."
+      ],
+      "tableCaption": "Reading a worn sample",
+      "columns": ["What the sample shows", "What it is", "What it means for the nominal"],
+      "rows": [
+        {
+          "shows": "A bright, polished bearing face",
+          "is": "Abrasive wear under movement",
+          "means": "Material has gone. The nominal sits outside anything you can measure on this part, and the mating component tells you how far outside."
+        },
+        {
+          "shows": "Chalk, colour loss, a surface that powders",
+          "is": "Ultraviolet photo-oxidation",
+          "means": "Dimensionally almost nothing. But it records the exposure the part actually saw, which decides the material rather than the geometry."
+        },
+        {
+          "shows": "A flange that no longer sits flat",
+          "is": "Creep under sustained load",
+          "means": "The part has moved in service. Flatness is recovered from the face it seals against, never from the sample."
+        },
+        {
+          "shows": "Cracks radiating from a sharp internal corner",
+          "is": "A stress concentration plus aged material",
+          "means": "A design defect, not a manufacturing one. Reproducing it faithfully reproduces the failure on a fixed schedule."
+        },
+        {
+          "shows": "A permanent groove in the gasket land",
+          "is": "Compression set printed into the plastic",
+          "means": "The groove is the seal's history, not the part's geometry. The sealing land nominal is flat."
+        },
+        {
+          "shows": "One wall thinner than the wall opposite",
+          "is": "Wear, or a tool that ran out of alignment",
+          "means": "Two more samples settle which. One sample cannot."
+        }
+      ],
+      "caveatHeading": "What comes back with the model",
+      "caveat": "Which dimensions we can establish with confidence, which we are inferring from the mating part or from symmetry, and which cannot be determined from what exists. Critical interfaces are agreed with you before steel is cut. The measurement is physical — hand metrology, several samples and the component it mates with. There is no scanner in that description and this sector does not need one; it needs somebody willing to say which numbers are inferred."
+    },
+
+    "sequence": {
+      "index": "03",
+      "movement": "Movements I – IV",
+      "kicker": "The sequence",
+      "heading": "One part, four states.",
+      "body": "The same drawing, redrawn four times. Nothing here is a figure of speech: this is the order the work happens in, and each state exists on paper and is agreed before the next one starts. The subject is a skin fitting in section — a flanged body passing through a hull shell, and the part this trade breaks most predictably.",
+      "figureLabels": {
+        "found": "As found",
+        "nominal": "Nominal",
+        "datum": "A",
+        "radius": "R",
+        "cavity": "Cavity",
+        "core": "Core",
+        "gate": "Gate",
+        "weld": "Weld line"
+      },
+      "stations": [
+        {
+          "label": "As found",
+          "note": "The sample arrives with its service history on it: a chip out of the flange rim, a crack running from the junction where the body meets the underside of the flange, a bore that has grown. It is photographed, weighed and recorded, and what it did on the boat is written down before a single dimension is taken."
+        },
+        {
+          "label": "Measured",
+          "note": "Datums are chosen from how the part is used — the face it seats on, the bore it locates in, the centreline it was made about. Every dimension is taken from those, compared across samples, and checked against the component it mates with. Ghost outlines here are the other samples; the disagreement between them is the wear."
+        },
+        {
+          "label": "Modelled",
+          "note": "Clean parametric geometry in CATIA or SolidWorks. A radius where the original had a sharp internal corner, wall transitions that can actually be filled, and tolerance applied where the part locates, seals or rotates — and deliberately relaxed everywhere else, because tolerance you do not need is cost you pay for twice."
+        },
+        {
+          "label": "Tooled",
+          "note": "The parting line placed as a sealing decision rather than a convenience. The gate positioned so the weld line lands away from the load path, not across the flange that holds. Ejection planned onto a face that can carry it. Cavity count sized to what you build in a year, not to the forecast."
+        }
+      ],
+      "close": "Where a state cannot be completed — a dimension nothing surviving can establish, an interface nobody can confirm — the sequence stops there and we say so, rather than carrying an assumption forward into steel."
+    },
+
+    "environment": {
+      "index": "04",
+      "movement": "Movement III · It is modelled",
+      "kicker": "The service environment",
+      "heading": "The sea is four loads, not a mood.",
+      "body": "Ultraviolet, salt, water and movement. Each attacks a different property, each has a published test method behind it, and each one narrows the material list before any geometry is discussed. The shortlist arrives from the environment, not from a catalogue.",
+      "zoneLabels": {
+        "atmosphere": "Atmosphere",
+        "splash": "Splash",
+        "immersion": "Immersion",
+        "waterline": "Waterline"
+      },
+      "zoneNote": "Above the line the dominant load is ultraviolet and thermal cycling. In the splash zone it is intermittent wetting and salt fog. Below it, constant wetting, hydrostatic load and fouling. The same-looking part is three different engineering problems depending on which band it lives in.",
+      "columns": ["Load", "Mechanism", "What it does to the part", "What it demands of the polymer"],
+      "rows": [
+        {
+          "load": "Ultraviolet",
+          "mechanism": "Photo-oxidative chain scission at the surface, driven by sunlight and heat.",
+          "effect": "Chalking first, then colour loss, then embrittlement. The part cracks under a load it carried without complaint when it was new.",
+          "demand": "A weatherable backbone rather than a surface treatment. ASA is the reference for permanently exposed parts because its stability sits in the polymer, not only in an additive. Where a stabiliser package carries the claim instead, that package is specified and locked — ultraviolet absorbers with hindered amine light stabilisers — because two grades with the same polymer name are not the same part."
+        },
+        {
+          "load": "Salt spray",
+          "mechanism": "Continuous or intermittent chloride wetting, with drying and crystallisation between.",
+          "effect": "Polymers do not corrode, but pigments and coatings erode, surfaces degrade, and every dissimilar-metal interface inside the assembly becomes an electrochemical cell.",
+          "demand": "Chemical indifference to chloride, and a part drawn to keep the stainless off the aluminium. Where the moulded component sits between two metals it is the dielectric isolator, and it should be designed as one rather than left to be an incidental spacer."
+        },
+        {
+          "load": "Hydrolysis",
+          "mechanism": "Water uptake and chain scission in polymers that absorb it.",
+          "effect": "Dimensional growth, loss of stiffness, and a fit that was correct on the bench and is not correct after two seasons in the water.",
+          "demand": "PA12 ahead of PA6 and PA66 wherever dimension matters, because it takes up less moisture and holds its size. POM is strong against water and fuel and genuinely needs stabilising against ultraviolet. HDPE and UHMWPE are inherently hydrophobic and excellent against salt, and weak on ultraviolet untreated."
+        },
+        {
+          "load": "Constant flexing",
+          "mechanism": "Wave slam, the hull working, and a part handled by people bracing themselves on a moving deck.",
+          "effect": "Fatigue at hinge lines and at the boss-to-wall junction. Creep under a mooring line held for a season. Fastener pull-through where a self-tapper has aged in a thin skin.",
+          "demand": "Impact and flexural performance retained after exposure, not measured before it. Glass reinforcement buys stiffness and buys back warp through fibre orientation, which makes gate position a structural decision rather than a filling one."
+        }
+      ],
+      "evidenceHeading": "Where the evidence comes from",
+      "evidence": "The test methods a buyer will ask about are published standards: ASTM G154 and ISO 4892-3 for accelerated weathering, ASTM B117 and ISO 9227 for salt fog, ASTM D570 for water absorption, ASTM D256 and ASTM D790 for impact and flexural performance. Those figures belong to the resin producer's datasheet or to an independent laboratory engaged by whoever is making the claim. Metal Form does not run weathering, salt-fog or material qualification testing. Nothing in this section is a Metal Form measurement, and nothing on this page should be read as one."
+    },
+
+    "geometry": {
+      "index": "05",
+      "movement": "Movement III · It is modelled",
+      "kicker": "Large parts, small numbers",
+      "heading": "A big part in small numbers changes every line of the quotation.",
+      "body": "Marine geometry runs large and sculptural — hatch frames, console panels, seat bases, deck mouldings — while the annual quantity stays exactly where it always was. Those two facts pull against each other, and most of the money sits in what happens where they meet.",
+      "scaleLabels": {
+        "frame": "Hatch frame",
+        "plate": "Deck plate",
+        "gland": "Cable gland"
+      },
+      "scaleNote": "Drawn to one scale. The size relationship is the argument, and it is why a marine tooling list cannot be quoted at an average.",
+      "points": [
+        "Projected area sets clamp force, and clamp force sets the hourly rate. On a large part the press is the dominant cost per shot, not the cycle.",
+        "Long flow lengths reach thin ribs last. Short shots and weak knit lines arrive at the far corner of the part, which is usually the corner nobody inspects until it fails.",
+        "Thick sections cool slowly and sink over ribs and bosses. Marine hardware is habitually over-thick out of caution, and that caution buys sink marks, voids, internal stress and cycle time rather than strength.",
+        "Glass-filled polyamide aligns with the flow and pulls itself out of shape as it cools. On a large flat panel that is warp you can see from across a deck.",
+        "Big hollow parts ship as air. Packing volume, not weight, sets the freight, and how the part nests is worth settling before the tool is cut rather than after the first container.",
+        "A large tool is heavy. Heavy tools are harder to move, store and duplicate, which turns a workshop detail into a programme decision."
+      ],
+      "tradeHeading": "The trade we would rather quote openly",
+      "trade": "On a large part at low volume the honest answer is usually a longer cycle. A simpler cooling package, a lower cavity count and a tool that can be modified when the model changes will cost you less across an eight-hundred-piece year than any second shaved off the cycle. That trade belongs in the quotation where you can see it, not buried inside a cycle-time figure.",
+      "contextHeading": "Where the industry goes on very large parts",
+      "context": "Published industry practice on consoles, seat bases and large panels reaches for structural foam or gas-assist moulding to hold clamp tonnage and sink under control — structural foam is described as roughly twenty per cent lighter than solid with several times the rigidity, at the cost of a matte swirled surface that is normally painted; gas assist hollows thick channels after partial fill to suppress sink on cosmetic faces. Both are named here as context about your options. Neither is a Metal Form process. If that is where your part belongs, we would tell you so rather than quote around it."
+    },
+
+    "economics": {
+      "index": "06",
+      "movement": "Movement IV · It is tooled",
+      "kicker": "Low-volume tooling economics",
+      "heading": "The tool will cost more than every part it ever makes.",
+      "body": "A component fitted four times to a hull, on a model that builds two hundred hulls a year, is an eight-hundred-piece annual line. Across a fifteen-year model life that is twelve thousand pieces in total — less than a day's output on a tool built for a volume sector. Piece price is small money here. The tool, its cavitation and its lead time are the entire decision.",
+      "body2": "Which makes the useful question the one most quotations avoid. Over how many pieces am I amortising this steel, and what happens to my cost per part if the model sells half of what the forecast says. A higher piece price on a cheaper, simpler tool is very often the correct commercial answer in marine, and a supplier who cannot say that out loud is optimising for their own machine utilisation rather than your programme.",
+      "arithHeading": "The arithmetic, in four lines",
+      "arith": [
+        { "k": "Fitted per hull", "v": "4" },
+        { "k": "Hulls per year", "v": "200" },
+        { "k": "Annual quantity", "v": "800" },
+        { "k": "Model life", "v": "15 years" },
+        { "k": "Lifetime quantity", "v": "12,000" }
+      ],
+      "arithNote": "An illustration built from published boat-building scale — small yards, a few dozen to a few hundred hulls a year, hundreds of builders and thousands of models. It is not a Metal Form figure and it is not your programme. Put your own numbers into the same four lines; the conclusion rarely changes.",
+      "tabsLabel": "Annual volume band",
+      "axisX": "Annual volume",
+      "axisY": "Tooling capital",
+      "bandLabel": "Marine",
+      "axisNote": "The vertical axis carries no numbers. Tooling capital is quoted against a specific part, a specific steel and a specific cavity count, and there is no honest way to publish it as a curve. The shape is the argument; the figure is a conversation.",
+      "bands": [
+        {
+          "id": "b1",
+          "tick": "<500",
+          "name": "Under 500 a year",
+          "route": "Single cavity, soft or pre-hardened steel",
+          "body": "Prove the model and supply it while the forecast turns into a sales figure. The industry calls this bridge tooling. In marine it is frequently not a bridge at all — it is the correct permanent answer for a part that will never exceed a few thousand a year.",
+          "trade": "You accept a longer cycle and a tool with a finite life, in exchange for capital you never have to earn back."
+        },
+        {
+          "id": "b2",
+          "tick": "500–2k",
+          "name": "500 to 2,000 a year",
+          "route": "Single cavity hardened, or a family tool",
+          "body": "A long-life line at low annual volume that will still be wanted in fifteen years earns hardened steel. Where the part belongs to a hardware set, a family tool shooting the base, the cap and the ring together matters more than throughput: the set cannot drift in colour or gloss between components, because it was made in one shot.",
+          "trade": "You pay more for the tool once and stop paying for colour-match scrap and mismatched hardware families for the rest of the programme."
+        },
+        {
+          "id": "b3",
+          "tick": "2k–10k",
+          "name": "2,000 to 10,000 a year",
+          "route": "Two to four cavities, or interchangeable inserts in one bolster",
+          "body": "This is where the chandlery and aftermarket channel adds real volume on top of the yard's demand. It is also where a range with size variants, or a console restyled between model years, is better served by one bolster carrying interchangeable cavity inserts. The change then costs an insert, not a tool.",
+          "trade": "More capital and a more complex tool, in exchange for a piece price that finally starts to matter and a range that can be extended without re-tooling."
+        },
+        {
+          "id": "b4",
+          "tick": ">10k",
+          "name": "Above 10,000 a year",
+          "route": "Higher cavitation, and the argument reverses",
+          "body": "Deck plates, drain plugs, small fittings and bimini hardware sold in tens of thousands are the marine parts where cavitation earns its keep, and that case should be made just as plainly as the case against it. Metal Form has built tooling to 46 cavities. Marine rarely calls for it, and the useful part of that experience here is knowing precisely where more cavitation stops paying.",
+          "trade": "You commit real capital and a maintenance obligation, and you get the only piece price in this sector that behaves like a volume industry."
+        }
+      ],
+      "bandsNote": "The bands are industry rules of thumb, convergent across independent low-volume moulders and quoted here to describe the shape of a decision. They are not thresholds we will hold you to, and no price appears anywhere on this page.",
+      "lossHeading": "Where the money is actually lost",
+      "loss": [
+        "Over-tooling. Four hardened cavities bought for an eight-hundred-piece line never return their capital, and the buyer carries that in cash flow for a decade.",
+        "Under-tooling in the other direction. A prototype tool pushed through eight years of production, then failing mid-season with nothing standing behind it.",
+        "Cosmetic specification nobody asked for. A hand-polished finish costs money in the tool and in lead time. At arm's length on a wet deck a texture usually looks better and hides moulding witness.",
+        "Field failure. A cracked flange, or a galvanic cell nobody isolated at design, costs the warranty claim, the yard labour and the reputation — many times over the part's lifetime revenue.",
+        "Retro-fixing in the field what a change before steel would have cost almost nothing to prevent."
+      ]
+    },
+
+    "continuity": {
+      "index": "07",
+      "movement": "After the sequence · Continuity",
+      "kicker": "Second source and scope",
+      "heading": "One tool, one supplier, one season.",
+      "body": "Most marine lines sit on exactly one tool at exactly one supplier, and the build calendar has no slack in it. That is a single point of failure on a production line, and it stays invisible until the day it is not.",
+      "ledgerHeading": "What a second source actually covers",
+      "ledger": [
+        { "name": "Duplicate tooling", "note": "Built from your existing part, drawing or sample, under NDA. A second tool for a component that can stop a line." },
+        { "name": "The tool stays yours", "note": "Ownership and physical possession agreed in writing at the start rather than at renewal. We ask who owns the existing tool before we quote a copy of it." },
+        { "name": "Held, not running", "note": "A duplicate tool can sit ready. That is readiness, not reserved capacity — capacity is reserved by contract or it is not reserved at all, and we will tell you which one you are being offered." },
+        { "name": "Supply against call-off", "note": "Component production and rolling supply timed against a seasonal build, with international delivery." },
+        { "name": "Spares and change parts", "note": "Wear items specified at design time and quoted with the tool, rather than discovered on the day one breaks." },
+        { "name": "The supplier who went quiet", "note": "The same route covers a supplier who has stopped answering, raised price at renewal, or is holding the only tool for a part you cannot buy anywhere else." }
+      ],
+      "figureLabels": {
+        "running": "In production",
+        "held": "Held",
+        "package": "Data package"
+      },
+      "figureNote": "A tool is moveable only when the data package moves with it: model, tool drawings, steel and grade specification, gate and cooling layout, and the spare-part list.",
+
+      "boundaryHeading": "What we supply, and what stays with you",
+      "boundaryLead": "This is the section worth reading twice. In a sector governed by standards that nobody on this page is entitled to certify against, the scope line is the credibility — so it is written out in full rather than left as small print.",
+      "boundaryLine": "We design and build the tooling, and we can make the part. Certification, weathering evidence and the right to copy the geometry stay with you — and we will tell you which of the three is missing before steel is cut.",
+      "oursHeading": "Metal Form supplies",
+      "ours": [
+        "Reverse engineering from a worn, broken or unsupported sample, from a photograph, or from an incomplete drawing, into clean parametric CAD in CATIA or SolidWorks.",
+        "Design for manufacture aimed at marine service life: radii at the junctions that crack, weld lines moved off the load path, wall and rib discipline to kill sink over thick hardware bosses, gate position chosen for fibre orientation and warp.",
+        "Injection, PET, blow and die-cast tooling. Single and low-cavity tools, family tools, interchangeable cavity inserts on a shared bolster, hot and cold runner systems, insert tooling with moulded-in metal inserts.",
+        "Mechanisms that have to keep working in salt: slides, lifters, unscrewing and collapsible cores.",
+        "CNC milling, turning and manual machining. Spares and change parts. Second-source and duplicate tooling.",
+        "Component production and rolling supply, with international delivery. NDA before geometry is shared. Tooling warranty on terms agreed per project. Initial technical response within 48 business hours."
+      ],
+      "yoursHeading": "Stays with you",
+      "yours": [
+        "Certification and approval. ABYC standards, 33 CFR 183 Subpart J, EPA permeation limits, the ISO fuel-system standards and any class society requirement are the boat builder's compliance burden. We build tooling for parts that you certify. We certify nothing.",
+        "Material qualification. Weathering, salt-fog, water-absorption and mechanical evidence comes from the resin producer's datasheet or from an independent laboratory. We do not run those tests and we will not imply that we do.",
+        "The grade decision, and the requalification risk if that grade is discontinued or reformulated in the middle of a programme.",
+        "The functional specification: what the part must hold, seal, isolate and survive. We will propose, question and quantify where we can, and critical interfaces are agreed with you before steel is cut.",
+        "The right to have the geometry copied — ownership, contract restrictions and patent status. We ask, you answer, and we work from what you can lawfully share.",
+        "Installation on the boat: bonding, fastening, sealant choice and assembly sequence. A moulded component can be designed to isolate two metals from each other. It cannot make somebody fit it."
+      ],
+      "boundaryNote": "One detail from that world, so the distinction is concrete. On a gasoline system a metallic fill body is bonded into the vessel bonding system, and a plastic fill body with a metallic cap and chain deliberately is not, because of the electrostatic discharge risk when the boat is out of the water. We can build the tool for either. The decision, and the certificate, belong to the builder."
+    },
+
+    "panels": {
+      "heading": "Deeper detail",
+      "items": [
+        {
+          "title": "Material shortlist for marine duty",
+          "bullets": [
+            "ASA — the reference for permanently sun-exposed parts. Its ultraviolet stability sits in the polymer backbone rather than only in an additive package.",
+            "Polypropylene copolymer, ultraviolet stabilised — floats, containers and low-cost hardware. Naturally buoyant and chemically resistant, and weak on ultraviolet without stabilisation.",
+            "HDPE and UHMWPE — inherently hydrophobic and excellent against salt; ultraviolet performance depends entirely on treatment. UHMWPE where there is sliding, wear or dock-side abrasion.",
+            "PA12 ahead of PA6 and PA66 wherever dimension matters, because it absorbs less moisture and holds its size. That is the hydrolysis argument in one line.",
+            "POM — strong against water and fuel, dimensionally stable, and genuinely ultraviolet-sensitive without stabilising for exposed use.",
+            "Glass-reinforced polyamide — buys stiffness for structural fittings and buys back warp through fibre orientation, which moves gate position into the structural conversation.",
+            "TPE and TPU — seals, grips, gaskets and cushioning, where a defined shore hardness and long-term compatibility with the mating polymer both matter.",
+            "Lock the stabiliser package, not only the base polymer. And settle the grade before the cavity: shrinkage differences between a PP-family and an ASA-family material are large enough that a late change can invalidate steel that is already cut."
+          ],
+          "source": "Material behaviour described here is published industry practice, not Metal Form measurement."
+        },
+        {
+          "title": "The weathering evidence a buyer will ask for",
+          "bullets": [
+            "ASTM G154 and ISO 4892-3 — accelerated weathering under fluorescent ultraviolet with cyclic condensation or spray. The standard evidence behind an ultraviolet claim.",
+            "ASTM B117 and ISO 9227 — continuous salt fog. Polymers do not corrode as metals do, but the test reveals surface degradation, erosion and coating loss.",
+            "ASTM D570 — water absorption by immersion, quantified. The number behind any hydrolysis and dimensional-stability argument.",
+            "ASTM D256 impact and ASTM D790 flexural — the mechanical baseline. The figure that matters is the one measured after exposure, not before it.",
+            "Where the evidence comes from: the resin producer's datasheet, or an independent testing laboratory engaged by whoever is making the claim. Metal Form does not perform weathering, salt-fog or material qualification testing and will say so in writing."
+          ],
+          "source": "Standards are cited as the buyer's evidence chain. They are not Metal Form accreditations."
+        },
+        {
+          "title": "Reverse engineering: what to send",
+          "bullets": [
+            "The part. Two or three of the same part if you can find them, because comparing worn samples is how the nominal is recovered.",
+            "The mating component, or the assembly it fits into. Interfaces back-calculate dimensions a worn part can no longer tell us.",
+            "Photographs from three angles with something of known size in the frame, plus close-ups of any fracture or wear surface.",
+            "What the part does: the loads it carries, where it sits relative to the waterline, what it seals or isolates, and how long the original lasted.",
+            "Any surviving evidence — an old drawing, a catalogue page, a part number, a colour reference.",
+            "Annual quantity, honestly estimated, and whether this is a one-off restoration or continuing supply.",
+            "Whether you have the right to have it copied. If that is uncertain, say so at the start and we will work out what can be done."
+          ]
+        }
+      ]
+    }
+  },
+
+  "cta": {
+    "headline": "Send the part.",
+    "body": "A photograph, a worn sample, or a drawing. We come back with the geometry problems, the material shortlist for the exposure it actually sees, the tooling route that suits your real annual volume, and what it takes to hold that part in supply. Initial project response within 48 business hours. NDA before geometry is shared.",
+    "action": "Send your project",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form. I have a marine component — [deck hardware / hatch / fitting / fuel-system part / float / other]. Approximate annual quantity: ___. I can send photographs, a worn sample, or a drawing. Please advise on the tooling route.",
+    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+  }
+}

@@ -1,0 +1,587 @@
+{
+  "key": "appliances",
+  "displayName": "Home Appliances",
+  "researchedAt": "2026-08",
+  "sources": [
+    {
+      "title": "Large Part Injection Molding: The Engineer's Guide to High-Tonnage Production — RapidDirect",
+      "url": "https://www.rapiddirect.com/blog/large-part-injection-molding/",
+      "whatItEstablished": "Industrial large-part moulding runs on 1,000–3,000+ ton presses. Rib thickness should be limited to ~60% of nominal wall to avoid sink. Failure map for big parts: warpage from uneven cooling across large surfaces; short shots from high flow resistance (answered with multi-gate hot runners); sink from volumetric shrinkage in thick sections (answered with gas assist and rib/wall ratio); knit lines from premature flow-front freeze (answered with sequential valve gating). Large-format mould pricing was quoted at USD 50k–150k with 6–10 week lead times — treat as an industry-level order of magnitude, not a Metal Form quote."
+    },
+    {
+      "title": "Refrigerator Thermoforming: ABS vs HIPS Liner — UREXCEED",
+      "url": "https://urexceed.com/en/blog/refrigerator-thermoforming-abs-hips-liner-production/",
+      "whatItEstablished": "Critical process-boundary fact: refrigerator inner liners and door liners are THERMOFORMED from extruded sheet, not injection moulded. Sheet 1.5–3.0 mm pre-forming, thinning to 0.6–1.0 mm at corners and deep draws; minimum wall should stay >=60% of original sheet. ABS ~40–55 MPa tensile, HDT 90–105 C, sheet USD 1.8–2.5/kg; HIPS ~20–35 MPa, HDT 75–85 C, sheet USD 1.2–1.6/kg. Regrind above ~20% (ABS) / 25% (HIPS) degrades impact. ABS must be pre-dried if stored above 60% RH. If the liner cannot take the PU foam exotherm (60–80 C peak), warranty returns rise sharply. ABS/PMMA co-extruded sheet with a ~0.1 mm PMMA skin is used for gloss on premium models."
+    },
+    {
+      "title": "Techniques for Reducing Warp and Sink in Injection Molded Parts — RJG, Inc.",
+      "url": "https://rjginc.com/techniques-for-reducing-warp-and-sink-in-injection-molded-parts/",
+      "whatItEstablished": "Mechanism-level confirmation that warp is a differential-shrinkage problem, not a press problem: wall thickness variation produces differential cooling rates and locked-in stress. Countermeasures are design-side first (uniform wall or gradual transitions, ribs/gussets for rigidity, balanced runner and gate system filling the cavity uniformly, adequate venting to avoid air traps causing uneven cooling) and process-side second (packing pressure and hold time long enough to freeze thick sections, uniform mould cooling, stable melt temperature). Also confirms multiple gates are the standard answer on large or complex parts."
+    },
+    {
+      "title": "Improving Sequential Molding — MoldMaking Technology",
+      "url": "https://www.moldmakingtechnology.com/articles/improving-sequential-molding",
+      "whatItEstablished": "Hard numbers on why long cosmetic panels use cascade fill. Knit-line strength can be as low as ~20% of nominal material strength, so weld-line placement is a structural decision, not only cosmetic. Sequential valve gating repositions or eliminates knit lines. A servo-driven valve gate case showed ~20% clamp force reduction on an automotive spoiler tool, ~5% part weight reduction from uniform fill pressure, and a 50 bar (725 psi) cavity pressure drop that reduced tool deflection. Also documents the honest downside: hesitation and flow marks can still appear at gate hand-over and need process tuning."
+    },
+    {
+      "title": "Technical Plastic Injection Molded Parts — Household & White Goods — ENGEL",
+      "url": "https://www.engelglobal.com/en/us/industries/technical-injection-molding/technical-plastic-injection-molded-parts-household-white-goods",
+      "whatItEstablished": "Positioning intelligence from a machine-side incumbent. Their named white-goods part list: dishwasher interiors (cutlery trays, control panels), refrigerator/freezer drawers and dividers, water dispensers, washing machine drums and housings, vacuum bodies, seals and gaskets, storage containers. Their pitch is organised around buyer anxieties rather than machine specs: cycle time (they quote a ~40 s refrigerator drawer), tolerance of fluctuating recycled material, early detection of process drift, downtime risk, and surface quality on consumer-visible parts. Two-platen machines are named for large components, tie-barless for multi-cavity. Confirms the vertical's real conversation is cycle seconds, recyclate tolerance and cosmetic yield."
+    },
+    {
+      "title": "Appliance Injection Molding for Durable Plastic Parts — FirstMold",
+      "url": "https://firstmold.com/tips/appliance-injection-molding/",
+      "whatItEstablished": "Part inventory by appliance type: refrigerator sliding drawer frames, in-door shelf units, handles, ice-maker augers; dishwasher detergent hatches, racks, cutlery caddies, spray arms; washing machine detergent dispensers, control knobs, outer casings; air conditioner grilles, fan blades and housings; vacuum handles, casings, wheels, hose attachments; small-appliance housings for kettles, irons, hair dryers. Common resins named as PC, PP, ABS. Process routes named alongside straight injection: insert moulding for metal fasteners, gas- and water-assisted moulding, foam injection for sound damping, fusible core for complex internal geometry."
+    },
+    {
+      "title": "HIPS Refrigerator Liner Material: Formulations and Performance Engineering — PatSnap Eureka",
+      "url": "https://eureka.patsnap.com/materials/hips-refrigerator-liner",
+      "whatItEstablished": "The chemistry behind the appliance industry's signature failure mode. Unmodified HIPS shows crack initiation within 48–72 hours under cyclopentane vapour at 0.5 MPa and 2% strain; modified formulations exceed 500 hours, and block-copolymer modification raises cyclopentane ESCR lifetime ~250%. Low-temperature impact drops toward freezer conditions (>6 kJ/m2 at -30 C, Izod notched) as the polybutadiene rubber phase approaches Tg. Rubber phase 5–15 wt%, particles 0.5–5 microns, bimodal distributions preferred. Surface specs of Ra < 0.5 microns and gloss > 70 GU. Thermoformed sections show 20–40% thickness variation between flat and deep-drawn regions; thermal cycling can craze some parts after 200–300 cycles. Food-contact reality: resistance to cooking oils at 60–70 C and alkaline detergent at pH 10–11."
+    },
+    {
+      "title": "Multi-Cavity Molds vs Family Molds — RapidDirect",
+      "url": "https://www.rapiddirect.com/blog/multi-cavity-molds-vs-family-molds/",
+      "whatItEstablished": "Family tools carry parts with different cooling demands and different flow behaviour in one steel, so holding equal quality across the set is the core difficulty; multi-cavity tools of identical parts are simpler to balance and maintain. Balancing levers are gate size, runner geometry and cooling channel layout. Family tools trade a single mould base against changeover complexity and coupled maintenance risk. Corroborated at search level by several tooling suppliers who put single-cavity ahead on total cost below roughly 5,000 shots/year and family tools ahead mainly when the SKUs ship as a matched set."
+    },
+    {
+      "title": "Gas Assist Injection Molding — Universal Plastics",
+      "url": "https://www.universalplastics.com/gas-assist-injection-molding/",
+      "whatItEstablished": "Gas assist as an established industry route for large panels and thick sections: parts from roughly 10 to 80 inches long, presses 85–1500 tons, and claimed operation at about one third the clamp force of conventional moulding. Gas packs the resin from inside as it solidifies, which is why it removes sink over thick handles and ribs and improves dimensional stability over long distances. Typical geometry family named: enclosures, covers, doors, bezels, cabinets, large handles. Useful as an industry fact and a DFM route to discuss — never as a Metal Form capability."
+    },
+    {
+      "title": "Injection Molding Cost Breakdown: 2026 Pricing & DFM Strategy — RapidDirect (read at search level)",
+      "url": "https://www.rapiddirect.com/blog/injection-molding-costs/",
+      "whatItEstablished": "Unit economics shape. Cooling is 50–80% of cycle time; cycle time drives roughly 60% of final part cost. Material is 10–30% of part cost at production volume and becomes the dominant driver above ~100,000 units, while tooling dominates below ~1,000. Indicative 2026 resin: PP USD 1.50–3.50/kg, ABS USD 2.00–4.50/kg, PA6/66 USD 3.00–6.00/kg, PC USD 4.00–8.00/kg; colourants and additives add 5–15%. Machine rates: 150–400 t at USD 75–125/hr, 400–1,000+ t at USD 125–200/hr. Use these as industry orders of magnitude in diagrams, never as a Metal Form price list."
+    }
+  ],
+  "buyer": {
+    "whoBuys": "Appliance OEMs and the tier-1 plastics suppliers who feed them. Two distinct buying moments sit inside one company. The first is a new model programme: a platform is being drawn, the tooling budget is being set, and the tooling engineer needs a partner who can take a large housing or an interior set from CAD to first-off without three rounds of steel changes. The second is running production: a tool is worn, a supplier has become a single point of failure, a part costs too many grams, or a model has gone out of production and the spares obligation still runs for years with no usable drawings. The second buyer is usually the easier sale and the one competitors ignore.",
+    "jobTitles": [
+      "Tooling Manager / Tool Room Manager",
+      "Category Buyer — Plastics and Mouldings",
+      "Head of Procurement / Strategic Sourcing",
+      "Product Development Engineer (Refrigeration or Laundry platform)",
+      "Mould Design Engineer",
+      "Manufacturing / Process Engineer (moulding shop)",
+      "NPI or Programme Manager",
+      "Cost Engineer / VAVE Engineer",
+      "Quality Manager (cosmetic and dimensional yield)",
+      "After-sales and Spare Parts Manager",
+      "Plant Manager / Operations Director",
+      "R&D Manager, White Goods"
+    ],
+    "whatTheyActuallyBuy": [
+      "A launch date they can hold. Tooling lead time sits on the critical path of a model programme; the tool is late or the model is late.",
+      "A part price expressed in grams and seconds, because at appliance volumes that is what the price actually is.",
+      "Fit across a large dimension — a door bin that engages every time on a 600 mm span, a fascia whose gap does not visibly open at one end.",
+      "Capacity insurance: a second tool, or a tool that can be moved, so one plant is not the whole supply.",
+      "A route out of a dead tool — a worn or lost mould for a part still under spares obligation, rebuilt from a sample.",
+      "Fewer part numbers: variant features consolidated into interchangeable inserts instead of separate tools.",
+      "Engineering judgement before steel — someone who will say the nominal wall is too thick before it is machined, not after.",
+      "Confidentiality. Appliance geometry is competitive and the buyer will ask about NDA early."
+    ],
+    "decisionDrivers": [
+      "Tooling lead time and its position on the programme critical path",
+      "Total landed cost per part over the model life, not the mould quote in isolation",
+      "Demonstrated understanding of large-part behaviour — cooling, warp, flow length — rather than a machine list",
+      "Willingness to engage on DFM and take responsibility for the geometry, not just cut what is sent",
+      "Tool ownership, transferability and documentation from day one",
+      "Track record depth and duration; a supplier that has been building tools since 2006 reads differently to one that has not",
+      "Response speed at enquiry stage, read as a proxy for responsiveness during a launch crisis",
+      "International delivery and customs competence for the tool itself, which is heavy freight",
+      "Warranty terms on the mould and what happens when a cavity needs correction"
+    ],
+    "whatKeepsThemAwake": [
+      "A large tool arriving that fills but will not hold flat, discovered at trials with the launch date already public",
+      "A cosmetic part whose weld line lands on the visible face and cannot be moved without new steel",
+      "Field cracking on styrenic interior parts months after shipping — an ESCR problem that looks like a design failure to management",
+      "Field returns on drawer and bin breakage, which are visible to the consumer and expensive in reputation",
+      "One tool in one plant that cannot be moved, insured or duplicated in time",
+      "A spares obligation on a model whose tool is worn out and whose original drawings no longer exist",
+      "A cost-down target on a part where the only remaining lever is wall thickness, and nobody wants to sign off thinner",
+      "Cavity-to-cavity gloss or colour mismatch showing up as a visible stripe across an assembled product"
+    ]
+  },
+  "economics": {
+    "unitEconomics": "At appliance volumes the mould is close to a rounding error per part. The part price is grams of resin plus seconds of machine time. A large housing may weigh several hundred grams and run on a minute-scale cycle on a high-tonnage press; industry figures put cooling at 50–80% of cycle time and cycle time at roughly 60% of the final part cost, with material at 10–30% of part cost at production volume and dominant above roughly 100,000 units. Amortised tooling only dominates below about a thousand parts — which no appliance model is. The commercial consequence is simple and worth saying plainly on the page: paying more for a tool that removes grams and seconds is almost always the cheaper decision over a model life.",
+    "costDrivers": [
+      "Shot weight — nominal wall carried over from a previous model is the single most common source of avoidable grams",
+      "Cycle time, dominated by cooling, which is dominated by the cooling layout designed into the tool",
+      "Press tonnage, set by projected area times a clamp factor (commonly 2–8 tons per square inch, around 4–5 for most parts) with a safety factor; large parts push into 400–1,000+ ton classes where machine rates are highest",
+      "Resin grade — impact-modified and ESCR-improved styrenics, talc-filled PP, PC/ABS for fascias all price differently, and colourants and additives add roughly 5–15%",
+      "Cosmetic yield: a Class A fascia scrapped for a flow mark costs the full part, the full cycle and the handling",
+      "Cavity count and whether the geometry can carry high cavitation at all",
+      "Secondary operations — assembly, welding, insert placement, packing — on parts too bulky to nest",
+      "Freight and packing volume: appliance mouldings ship air, and cube usually prices before weight",
+      "Regrind ratio, which is a real cost lever and a real risk lever at the same time"
+    ],
+    "volumeProfile": "Model platforms typically live three to seven years. Annual volumes per model run from tens of thousands to the low millions, with derivative variants sharing most of the geometry and differing in trim, fascia and badge features. Demand is seasonal on cooling products and promotion-driven on laundry. After production ends, a spares tail runs for years at very low annual volume — a different economic regime on the same steel, and the moment when tooling condition and tooling documentation suddenly matter.",
+    "whereMoneyIsLost": [
+      "Nominal wall inherited from the previous model and never re-examined; every gram is multiplied by the whole model life",
+      "Cooling designed after the geometry is frozen, so cycle time is set by whatever channels could still be drilled",
+      "A tool built to the drawing when the drawing was wrong — steel changes at trials cost weeks, not only money",
+      "Cosmetic scrap on visible parts, which is the quietest and largest loss in an appliance moulding shop",
+      "A family tool forced to run for one part in the set, so the rest of the shot is scrap or unwanted stock",
+      "Over-specified tolerances on hidden structural parts that add cost with no functional return",
+      "Line stoppage from a single tool in a single plant with no duplicate and no transfer plan",
+      "Emergency tooling procurement for a spares part after the original mould has been scrapped"
+    ]
+  },
+  "risk": {
+    "failureModes": [
+      "Warpage and bow on long panels and frames, driven by differential shrinkage between thick and thin sections and by core-to-cavity temperature difference — visible on an appliance as an opening gap at one end",
+      "Environmental stress cracking of styrenic interior parts against blowing-agent vapour, food oils and alkaline cleaners; documented crack initiation on unmodified HIPS within 48–72 hours under cyclopentane at 0.5 MPa and 2% strain, versus over 500 hours for properly modified grades",
+      "Low-temperature embrittlement of impact-modified styrenics as the rubber phase approaches its glass transition — the reason a bin that survives on the bench snaps in a freezer",
+      "Snap-fit hooks shearing or fatiguing at the root, usually from a sharp internal corner where a root radius of roughly half the wall thickness was needed",
+      "Creep in loaded parts — a door bin carrying bottles for five years deflects permanently if the section and rib layout were sized for a static test only",
+      "Sealing-face distortion in detergent drawers and water paths, where a fraction of a millimetre of warp becomes a leak",
+      "Weld-line fracture on structural parts, where knit-line strength can fall to around 20% of nominal material strength",
+      "Rail and slide binding on drawers, where the tolerance stack of two large mouldings plus a metal rail exceeds the available clearance",
+      "Crazing under thermal cycling — some thermoformed and moulded components show crazing after a few hundred cycles when residual stress is high"
+    ],
+    "qualityDefects": [
+      "Sink marks over ribs, bosses and thick handle sections — the classic large-part cosmetic defect and the reason for the 60% rib-to-wall rule",
+      "Weld and knit lines landing on visible faces, addressed by gate placement or sequential valve gating rather than by process alone",
+      "Hesitation and flow marks at gate hand-over on cascade-filled long panels — a real residual defect of the technique, not a myth",
+      "Short shots at the extremities of long flow paths where flow-length-to-wall-thickness runs out",
+      "Flash from tool deflection on large plates under cavity pressure, worst at the centre of an unsupported span",
+      "Gloss and texture mismatch between cavities or between a repaired and an original area of steel — highly visible on assembled products",
+      "Colour and gloss drift between resin lots, magnified when regrind ratio moves",
+      "Drag marks and scuffing from insufficient draft for the specified texture depth",
+      "Gate vestige and witness lines from slides and lifters appearing on cosmetic surfaces",
+      "Voids in thick sections that pass visual inspection and fail structurally later"
+    ],
+    "downtimeCauses": [
+      "Tool changes on high-tonnage presses, which are slow and consume the most expensive machine hours in the plant",
+      "Hot runner faults — a failed heater, a leaking drop, a valve pin that will not stroke — on a tool that cannot be run without it",
+      "Wear on slides, lifters and core pins that form snap undercuts, which are the highest-cycle moving features in appliance tools",
+      "Cooling circuits scaling or partially blocking, which lengthens cycle quietly before it fails loudly",
+      "Ejection problems on deep-draw boxes such as crisper drawers, where vacuum and draft interact",
+      "Family-tool changeovers and the inventory imbalance that forces them",
+      "High-tonnage press availability, which constrains what can be moved where in a crisis"
+    ],
+    "supplyRisks": [
+      "Single tool in a single plant with no duplicate, no transfer plan and no current tool documentation",
+      "Tooling ownership ambiguity — the OEM believes it owns the mould, the moulder believes it owns the design, and neither is written down clearly enough to move the steel",
+      "Long replacement lead time for a large tool; industry lead times for large-format moulds sit in the six-to-ten-week range at best and stretch under load",
+      "Resin grade discontinuation or reformulation, which changes shrinkage and can invalidate a qualified tool",
+      "Regrind and recyclate content variation, which shifts flow and shrink batch to batch",
+      "Spares obligation outliving the tool's usable life",
+      "Freight cost and customs exposure on bulky mouldings and on the tool itself, which is heavy and high-value",
+      "Geographic concentration — a whole category of appliance tooling sourced from one region, exposed to one set of tariffs, one currency and one logistics corridor"
+    ]
+  },
+  "components": [
+    {
+      "name": "Refrigerator door bin / balcony",
+      "note": "Large, often clear or tinted, cosmetic on every visible face and structurally loaded by bottles. Typically styrenic (SAN, PS, ABS). Fails on ESCR crazing, low-temperature impact and long-term creep. High-visibility warranty part."
+    },
+    {
+      "name": "Crisper drawer and drawer front",
+      "note": "Deep-draw box with a separate or integrated cosmetic front. Clear PP or styrenics. Ejection and draft dominate the tool design; the front carries gap-and-flush to the cabinet, so warp shows immediately."
+    },
+    {
+      "name": "Shelf frame and glass shelf surround",
+      "note": "Long, thin, closed-loop frame moulded around or clipped to tempered glass. Flatness across the span is the whole quality specification. A frame that bows will not sit level on its supports."
+    },
+    {
+      "name": "Evaporator cover, air duct and fan shroud",
+      "note": "Large hidden mouldings in ABS, HIPS or PP. Nobody sees them, but they are dimensionally critical, they sit against foam and cold, and they set airflow. A good place to remove grams because cosmetics do not constrain the geometry."
+    },
+    {
+      "name": "Hinge cover, toe grille and kick plate",
+      "note": "Long cosmetic strips with very little section to stiffen them. Bow reads directly against the straight edge of the cabinet, which makes them warp-sensitive out of proportion to their cost."
+    },
+    {
+      "name": "Control panel bezel and fascia",
+      "note": "Class A surface, textured or high gloss, tight gap and flush to display and buttons. Often insert-moulded or assembled with light guides and metal fasteners. Weld-line placement is a design decision here, not a process setting."
+    },
+    {
+      "name": "Door handle",
+      "note": "Long and thick-sectioned, so the sink-mark problem in its purest form. The industry route is gas assist or coring; the DFM route is to keep the nominal wall honest and hollow the section deliberately."
+    },
+    {
+      "name": "Washing machine detergent drawer and drawer housing",
+      "note": "A multi-part assembly with water paths and sealing faces. Warp on the housing becomes a leak, not a cosmetic complaint. Chemical exposure to concentrated detergent and softener is continuous."
+    },
+    {
+      "name": "Porthole door frame and bellows retaining ring",
+      "note": "Large closed rings, usually two mouldings around a glass. Roundness and flatness across the diameter decide whether the door seals and whether it closes with the right feel."
+    },
+    {
+      "name": "Pulsator or agitator (top-load machines)",
+      "note": "Thick central hub, deep ribs, cyclic torque loading, permanently wet. A structural moulding disguised as a cosmetic one; hub section thickness and rib ratio drive both sink and fatigue life."
+    },
+    {
+      "name": "Dishwasher rack components, tine clips and cutlery basket",
+      "note": "High part-count, repetitive-cycle snap features, POM and PP. This is the appliance family where high cavitation genuinely pays, and where snap-fit root geometry decides field life."
+    },
+    {
+      "name": "Dishwasher spray arm",
+      "note": "Hollow, flow-critical, made either as welded halves or as a gas-assisted moulding. Internal geometry that nobody sees determines the wash result the customer does see."
+    },
+    {
+      "name": "Air conditioner grille and fan blade",
+      "note": "Large thin grilles with long flow paths and many small openings; fan blades are balanced rotating parts where shrinkage symmetry matters. Both are unforgiving of gate position."
+    },
+    {
+      "name": "Clips, spacers, standoffs, cable guides and shelf supports",
+      "note": "The commodity tail of an appliance BOM. Individually trivial, collectively a large annual spend, and the natural home for multi-cavity and family tooling."
+    },
+    {
+      "name": "Refrigerator inner liner and door liner",
+      "note": "Included deliberately as a boundary: these are thermoformed from extruded ABS or HIPS sheet, not injection moulded. Saying so on the page is a credibility signal — it proves we know where injection moulding actually sits in a refrigerator, and it frames what we do supply around it."
+    }
+  ],
+  "tooling": {
+    "whyToolingMatters": "On a large appliance part the tool is the process. Once the steel is cut, the cooling layout, the gate positions and the wall thickness are fixed, and those three decide cycle time, flatness and scrap rate for the entire life of the model. A moulder can adjust pressure, temperature and hold time, but no process window recovers a part that was drawn too thick or cooled from one side. This is why the useful conversation happens before steel, and why an appliance buyer who has been burned once will pay for engineering judgement up front.",
+    "toolingTopics": [
+      "Cooling layout on large cores — series versus parallel circuits, baffles and bubblers into deep cores, and controlling the temperature difference between core and cavity rather than chasing raw flow rate",
+      "Gate count and position on long parts: multiple drops are standard on large geometry, and each one adds a weld line that has to land somewhere acceptable",
+      "Sequential valve gating and cascade fill on long cosmetic panels — repositions or removes knit lines, and in documented cases reduced clamp force by about 20% and cavity pressure by 50 bar, at the cost of hesitation marks that need tuning",
+      "Tool deflection on large plates: support pillars, plate thickness and steel selection, because flash at the centre of a big tool is a stiffness problem, not a clamp problem",
+      "Slides, lifters and collapsing features for snap undercuts, which are the highest-wear moving parts in appliance tooling",
+      "Ejection strategy on deep-draw boxes — stripper plates, air poppets and draft interaction on drawers and bins",
+      "Texture and draft matched to each other; a deep texture with shallow draft produces drag marks that no process setting removes",
+      "Steel selection for large mould bases — pre-hardened grades in the P20 / 718H family are the industry standard for large appliance tools, chosen for machinability and stability at size rather than maximum hardness",
+      "Interchangeable cavity and core inserts so one base runs several model variants — the most under-used cost lever in appliance tooling",
+      "Venting on long flow paths, where trapped air causes both burn marks and localised cooling asymmetry"
+    ],
+    "cavityStrategy": "Appliances demand two opposite strategies inside the same programme, and the page should show them side by side because most suppliers only talk about one. Large parts — housings, drawers, frames, fascias — run one or two cavities, often a 1+1 base with interchangeable inserts so a single tool covers a variant family. Small high-count parts — clips, tine caps, shelf supports, spacers, standoffs — run high cavitation, and this is exactly where Metal Form's verified experience with tooling up to 46 cavities is relevant and should be stated. The family tool sits between them: it consolidates several different parts of one assembly into one base, which lowers total tooling cost when the parts genuinely ship as a matched set, and creates scrap or unwanted stock the moment the set stops shipping in balance. Family tools are also harder to balance because different parts have different volumes, wall sections and cooling demands in the same shot.",
+    "runnerStrategy": "Hot runner with multiple drops is the default on large panels and housings, because the flow length demands it and because it removes a runner mass that would otherwise be a significant proportion of the shot on a large part. Valve gates are justified wherever a weld line would otherwise land on a cosmetic face, and sequential opening turns several gates into one continuous flow front on long panels. Cold runners remain entirely reasonable on hidden structural parts where the runner mass is small relative to the part and regrind is acceptable. On multi-cavity small parts, sub-gates and tunnel gates keep the tool automatic and remove a de-gating operation. The commercial framing for the buyer: the runner is not a technical detail, it is a decision about where scrap and cosmetics live for the next five years.",
+    "coolingNotes": "Cooling is where large-part cycle time is won or lost. Industry figures put cooling at 50–80% of cycle, and cycle at around 60% of part cost, so cooling layout is a pricing decision disguised as an engineering one. On big parts the core side is the harder problem: it is enclosed by plastic, it heats up, and an unbalanced core-to-cavity temperature is one of the main drivers of bow across a long part. Deep cores need baffles or bubblers rather than straight-drilled lines. Circuits should be short enough that coolant does not arrive warm at the far end of a long part, which is a quiet and common source of one-sided shrinkage. Uniform cooling is also the first defence against sink, because packing can only compensate for what the cooling has not already frozen off.",
+    "materialNotes": "Cold interior parts are styrenic: HIPS and ABS for structure and liners, SAN and clear PS for transparent bins and drawer fronts. The controlling property is not tensile strength but environmental stress cracking resistance against blowing-agent vapour, food oils and alkaline cleaners, combined with impact retention at freezer temperature — impact falls as the rubber phase approaches its glass transition, and ESCR-modified grades exist precisely for this. Laundry and dishwasher parts run mostly PP, often talc-filled for stiffness and dimensional stability, with POM where wear and latch feel matter. Fascias use ABS and PC/ABS for surface and heat. Filled grades shrink anisotropically, which changes the direction as well as the magnitude of warp — a filled and unfilled version of the same part are not the same tooling problem. Regrind is a legitimate cost lever with a real ceiling: industry practice caps it around 20% for ABS and 25% for HIPS before impact properties degrade measurably."
+  },
+  "vocabulary": [
+    {
+      "term": "Projected area",
+      "meaning": "The two-dimensional shadow of the part seen along the direction of injection. It is the only geometric input to clamp force, which is why a large flat panel needs a huge press even when it weighs little.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Clamp tonnage",
+      "meaning": "Projected area multiplied by a clamp factor — commonly 2–8 tons per square inch, around 4–5 for typical parts — plus a safety factor. Large appliance parts land in the 400–1,000+ ton classes.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Flow length to wall thickness ratio (L/T)",
+      "meaning": "How far melt can travel before it freezes, expressed relative to wall. It is the number that decides how many gates a long part needs, and the reason thinning a wall is never free.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Nominal wall",
+      "meaning": "The baseline thickness the part is designed around. On appliance parts it is usually inherited from the previous model and is the largest single source of avoidable grams.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Rib-to-wall ratio",
+      "meaning": "Rib thickness as a fraction of nominal wall, kept at roughly 60% or below so the rib does not create a local thick section and pull a sink mark into the visible face opposite it.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Differential shrinkage",
+      "meaning": "Different regions of a part shrinking by different amounts because they cooled at different rates or in different orientations. It is the actual mechanism behind warpage; heat is the symptom, geometry is the cause.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Bow and twist",
+      "meaning": "The two directions a large panel goes wrong. Bow is a single curve across a span, twist is a corner lifting. On an appliance both show up as an uneven gap, not as a measurement.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Gap and flush",
+      "meaning": "The two numbers an appliance is judged by on a showroom floor: the width of the line between panels, and whether adjacent surfaces sit level. The consumer never measures either and always sees both.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Tolerance stack",
+      "meaning": "The accumulation of individual part tolerances across an assembly. Across a large door the stack is bigger than any single tolerance in it, which is why fit must be designed at assembly level, not part level.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Weld line / knit line",
+      "meaning": "Where two flow fronts meet and fuse imperfectly. Cosmetically a visible line; structurally a weak section where strength can fall to around 20% of nominal.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Sequential valve gating / cascade fill",
+      "meaning": "Opening hot runner gates in timed sequence along a long part so one flow front travels the full length instead of several fronts colliding. Removes weld lines and lowers peak cavity pressure.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Gas assist (GAIM)",
+      "meaning": "Injecting pressurised nitrogen to hollow out thick sections and pack the part from inside. An industry-standard route for handles, large panels and thick ribs; it removes sink and can cut required clamp force substantially.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Sink mark",
+      "meaning": "A surface depression over a thick section, caused by the interior shrinking after the skin has frozen. On appliances it appears where the customer looks — opposite a rib or a boss on a visible panel.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Gate freeze and hold time",
+      "meaning": "The moment the gate solidifies and stops further packing. Everything the part needs to compensate for shrinkage must arrive before it, which is why gate size and position control sink as much as pressure does.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Baffles and bubblers",
+      "meaning": "Inserts that force coolant down into a deep core and back out. On tall cores in drawers, bins and boxes they are the difference between a cooled core and a hot one.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Core-to-cavity delta-T",
+      "meaning": "The temperature difference between the two halves of the tool. A large gap on a large part produces a predictable curve, because one face shrinks more than the other.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "ESCR — environmental stress cracking resistance",
+      "meaning": "A material's resistance to cracking under modest sustained stress in the presence of a chemical. The controlling property for refrigerator interior plastics against blowing-agent vapour, food oils and cleaners.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Cyclopentane",
+      "meaning": "The blowing agent widely used in appliance insulation foam. It is in contact with the interior plastic for the life of the product, which makes it the reference chemical for ESCR testing on those parts.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Family tool",
+      "meaning": "One mould base producing several different parts of one assembly in a single shot. Cheaper than separate tools when the parts ship as a matched set; a scrap generator the moment they do not.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Interchangeable insert",
+      "meaning": "A cavity or core block swapped inside a common base so one tool serves several model variants. The most direct way to cut tooling spend across a platform.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Draft and texture depth",
+      "meaning": "The taper that lets a part leave the steel, and the depth of the grain on it. They are one specification, not two — deep texture with insufficient draft produces drag marks that no process setting will remove.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Regrind ratio",
+      "meaning": "The proportion of reprocessed material in the feed. A genuine cost lever with a real ceiling; industry practice caps it near 20% for ABS and 25% for HIPS before impact properties measurably fall.",
+      "useIn": "copy"
+    }
+  ],
+  "metalFormAngle": {
+    "credibleOffers": [
+      "DFM review of an existing or proposed appliance moulding — wall thickness, rib and boss layout, snap geometry, draft and texture, gate and weld-line placement, ejection and draft on deep boxes",
+      "Product engineering and CAD in CATIA and SolidWorks, including redesign of a part that is failing in the field or costing too many grams",
+      "Reverse engineering from a physical sample where the drawings no longer exist — the standard situation on a spares part for a discontinued model",
+      "Tooling strategy: single tool versus family tool versus multi-cavity, presented as a cost and risk comparison rather than a recommendation with no working shown",
+      "Mould design and manufacture for large appliance mouldings — housings, drawers, frames, ducts, covers, fascias",
+      "Multi-cavity tooling for the high-count appliance tail — clips, tine caps, shelf supports, spacers — with verified experience up to 46 cavities",
+      "Hot runner and cold runner tooling, insert moulds, and technical mechanisms such as drawer rails, latches and hinge assemblies",
+      "Second-source and backup tooling: a duplicate tool built to the same print so one plant is not the whole supply",
+      "Production and ongoing component supply, including long-tail spares volumes after a model leaves production",
+      "International delivery of tooling and parts, with NDA and confidentiality from first contact",
+      "Initial project response within 48 business hours",
+      "Mould warranty, terms agreed per project"
+    ],
+    "dfmAngles": [
+      "Take the grams out before the steel is cut. Nominal wall inherited from a previous model is the cheapest cost reduction available and the only one that also shortens cycle.",
+      "Hold ribs at or below roughly 60% of nominal wall so a stiffening feature does not become a sink mark on the visible face behind it.",
+      "Decide where the weld lines go rather than discovering it at trials. Gate positions, and where justified sequential valve gating, put knit lines on hidden faces instead of cosmetic ones.",
+      "Give every snap hook a root radius. A sharp internal corner at the base of a cantilever is the standard cause of field breakage on bins, racks and clips.",
+      "Design cooling with the geometry, not after it. Deep cores in drawers and boxes need baffles or bubblers planned while the part is still editable.",
+      "Match draft to texture depth as one specification so cosmetic parts do not leave the tool already scratched.",
+      "Consolidate variant features into interchangeable inserts so a platform runs on fewer tools.",
+      "Where the customer's moulder runs gas assist or structural foam, design the thick sections to suit that route rather than fighting it with process."
+    ],
+    "secondSourceAngle": "Most appliance plastic parts exist as exactly one tool, in exactly one plant, in exactly one country. That is a single point of failure sitting under a production line that cannot stop. We build the second tool. Working from your part, your drawings or a physical sample, we produce a tool that runs the same part to the same print — held ready, or running in parallel to split volume. It also resolves the quieter problem: when the original tool is worn out and the model still carries a spares obligation, a second tool is not a contingency, it is the only remaining supply. Confidentiality is assumed and covered by NDA before geometry is shared.",
+    "costOptimisationAngle": "Attack grams and seconds, not the tool price. At appliance volumes the mould is close to a rounding error per part while resin mass and cycle time set the price for the whole model life — cooling alone is most of the cycle, and the cycle is most of the cost. So the cheaper decision is usually the more expensive tool: better cooling layout, honest wall thickness, gates placed to fill rather than to be convenient. We will tell you where the grams are and what removing them costs in tooling. We will not put a percentage on it before we have seen the part.",
+    "whatWeMustNotClaim": [
+      "No ISO 9001, ISO 13485, IATF, GMP or FDA claims of any kind",
+      "No food-contact certification or compliance claim for the parts we tool — this is an appliance-specific trap because refrigerator interiors are food-contact",
+      "No IEC 60335, UL, CE, energy-label or appliance safety certification claims",
+      "No Moldflow or named simulation software; describe flow and cooling as engineering judgement, never as a simulation output",
+      "No 3D scanning, no CMM, no metrology or QC department",
+      "No cleanroom, sterile or validated manufacturing",
+      "No two-shot or multi-material moulding, no grinding department",
+      "No thermoforming line — say plainly that liners are thermoformed and that this sits outside what we make",
+      "No exact machine counts, press tonnages, factory area, headcount or production volumes",
+      "No exact tolerances, cycle times, scrap rates or savings percentages",
+      "No named appliance brands, client logos, case-study customer names, awards or certifications",
+      "Never convert an industry fact found in research — gas assist, structural foam, conformal cooling, sequential valve gating — into a Metal Form capability; these appear on the page as industry routes we design for, not as equipment we own"
+    ]
+  },
+  "page": {
+    "heroHeadline": "The part is large. The tolerance is not.",
+    "heroSub": "Tooling and engineering for appliance mouldings — door bins, drawers, ducts, frames, fascias, housings. On parts this size, flatness, cycle time and cost are all decided in the steel. We work the geometry, the cooling and the fit before it is cut.",
+    "heroVisualConcept": "A single large orthographic line drawing, drawn as an architect draws an elevation: a refrigerator door assembly and a laundry front, shown flat-on, in hairline stroke on a warm porcelain ground, at a scale that lets one edge run off the viewport. No perspective, no shading, no photograph. Dimension lines with fine arrow terminators bracket the overall height and width and one deliberately small gap between two panels, labelled in mono type. On load, the dimension lines draw themselves in from their extension lines over about 900 ms and the panels settle apart by a few pixels along one axis — the whole hero moves only orthogonally. Headline sits left in the drawing's own margin, as a title block would.",
+    "narrativeSpine": "Start where the buyer already is: a big part that has to fit. Establish credibility immediately by drawing the honest boundary — here is what is actually injection moulded in an appliance and what is not. Then explain why size changes the physics, so the reader recognises their own problems described accurately. Move from physics to the thing they are judged on, gap and flush, which is the emotional centre of the page. Turn to money and show that at their volumes the tool is not the cost — grams and seconds are — which reframes tooling spend as an investment rather than a price. Offer the strategy choice openly, single versus family versus multi-cavity, with the trade-offs stated against us as well as for us. Then raise the risk they have not budgeted for: one tool, one plant. Close by making the next step small and concrete — send the part.",
+    "sections": [
+      {
+        "id": "hero-elevation",
+        "title": "The part is large. The tolerance is not.",
+        "purpose": "Establish register instantly: architectural, calm, dimensional, engineered. Signal that this page is about fit at scale, not about machines.",
+        "layout": "Full-bleed drawing sheet. A 12-column grid with faint hairline column rules visible at about 4% opacity. Headline and sub occupy columns 1–4 in the lower-left quadrant like a drawing title block; the orthographic elevation occupies columns 5–12 and deliberately bleeds off the right edge. Vertical rhythm is generous — the hero is tall and mostly empty. No button cluster; one text link with a rule under it.",
+        "contentOutline": "Headline, two-sentence sub, one line of capability shorthand set in mono and separated by thin vertical rules: SINCE 2006 · 1,000+ PROJECTS · CATIA & SOLIDWORKS · INTERNATIONAL DELIVERY. Single call to action: Send the part.",
+        "interaction": "Dimension lines draw in on load. On pointer move, the drawing shifts by no more than 6 px on each axis with heavy damping — a suggestion of parallax, never a float. Reduced-motion renders the final state immediately."
+      },
+      {
+        "id": "what-is-moulded",
+        "title": "What is actually moulded",
+        "purpose": "Credibility through honesty. Show that we know a refrigerator liner is thermoformed sheet and a door bin is an injection moulding — the single fastest way to be recognised as a real supplier by an appliance engineer.",
+        "layout": "Horizontal band, full viewport width, split 55/45. Left is a sticky exploded elevation of one appliance — a refrigerator door assembly — with its layers separated along a single horizontal axis: outer skin, foam, inner liner, bin set, gasket channel, hinge cover. Right is a plain indexed list, no cards, each row a number, a part name, and a process tag set in mono (INJECTION MOULDED / THERMOFORMED / EXTRUDED / SHEET METAL / ASSEMBLED). Hairline rules between rows, nothing else.",
+        "contentOutline": "Short lead-in: an appliance is four processes pretending to be one product. Rows for liner (thermoformed), bin and drawer (injection moulded), gasket (extruded), cabinet (sheet metal), fascia (injection moulded, Class A). Closing line stating plainly which of these we tool and which we do not, and that the ones we do not are still part of the conversation because they set the fit.",
+        "interaction": "Scroll-linked: as the section is scrolled, the exploded layers separate further along the axis and the corresponding row highlights. Hovering a row isolates its layer by fading the others to 20%. A second appliance — laundry front — can be swapped in by a small mono toggle above the list."
+      },
+      {
+        "id": "big-part-physics",
+        "title": "Size changes the physics",
+        "purpose": "Demonstrate real technical literacy on the four problems every appliance tooling engineer has personally lost time to. This section earns the right to talk about money later.",
+        "layout": "A 2x2 orthogonal field of four wide, short panels divided by hairline rules that run edge to edge — a grid, not four cards. Each cell: a mono numeral, a four-word title, three lines of copy, and a small inline SVG diagram drawn in the same hairline language as the hero. Panels are wider than they are tall to keep the page calm.",
+        "contentOutline": "01 Flow runs out — flow length to wall thickness sets the gate count, and each gate adds a weld line that has to land somewhere. 02 Cooling sets the price — cooling is most of the cycle and the cycle is most of the cost; deep cores need baffles, not straight lines. 03 The tool bends — cavity pressure across a large plate deflects steel, and flash at the centre of a big tool is a stiffness problem, not a clamp problem. 04 Shrinkage curves the part — differential shrinkage across a span and a core-to-cavity temperature difference produce bow and twist that read as an uneven gap.",
+        "interaction": "Each SVG animates once on entry — flow fronts advance and meet, coolant traces a circuit, a plate deflects by an exaggerated amount and returns, a panel bows. Animations run once, slowly, and hold their end state. No loops."
+      },
+      {
+        "id": "gap-and-flush",
+        "title": "Gap and flush",
+        "purpose": "The emotional centre. Connect abstract tooling engineering to the thing the buyer is actually judged on, in front of a retail customer, with their name on the product.",
+        "layout": "Wide, short, near-empty band on the alternate surface. Two very large panel shapes fill most of the width, separated by a hairline vertical gap dead centre. The signature dimension-line motif brackets that gap and reports it in mono. Copy sits in a narrow single column below, no wider than about 58 characters, centred under the gap.",
+        "contentOutline": "A consumer never measures the gap and always sees it. Across a 600 mm door the tolerance stack is larger than any tolerance in it. Fit is designed at assembly level and delivered by the tool: nominal wall, cooling balance, gate position, draft. State plainly that this is why we ask to see the assembly, not just the part.",
+        "interaction": "As the section enters the viewport the two panels drift apart by a few pixels and the dimension value ticks up, then settles — a controlled demonstration of the thing going slightly wrong and being caught. One cycle only."
+      },
+      {
+        "id": "grams-and-seconds",
+        "title": "Where the cost actually is",
+        "purpose": "Reframe tooling spend. Move the buyer from mould price to lifetime part cost, which is the argument that justifies engineering effort and better cooling.",
+        "layout": "Full-width data band. Two horizontal stacked bars, each the full content width, set one above the other with mono labels above and below rather than in a legend. Bar one: the cycle, segmented fill / pack / cool / open and eject, with cooling visibly dominating. Bar two: the part cost, segmented material / machine time / amortised tooling / secondary, shown at three volume points. Numerals in mono, tabular figures. No pie charts, no cards, no icons.",
+        "contentOutline": "At appliance volumes the mould is close to a rounding error per part. Cooling is most of the cycle; the cycle is most of the cost; material dominates as volume climbs. Therefore the cheaper decision is usually the more expensive tool. Explicit note under the bars that the proportions shown are industry figures, not a quotation, and that we price a specific part only after seeing it.",
+        "interaction": "A slider or three discrete mono buttons move the volume point between low, mid and high annual volume; the second bar re-proportions with a slow width transition and the numerals count to their new values. Segments are labelled in place, so nothing depends on hover."
+      },
+      {
+        "id": "tool-strategy",
+        "title": "One tool, a family, or forty-six cavities",
+        "purpose": "Show the strategy conversation openly, including the arguments against each option. Stating a downside is the most persuasive thing on a B2B page. This is also where the verified 46-cavity fact earns its place.",
+        "layout": "A true comparison matrix — row labels down the left, three columns across: Single / low-cavity large tool, Family tool, High-cavitation tool. Hairline rules only, generous cell padding, no fills except a single accent underline on the active column. Rows: typical appliance parts, tooling cost shape, part cost shape, changeover behaviour, maintenance risk, when it is wrong.",
+        "contentOutline": "Large housings and drawers run one or two cavities, often a 1+1 base with interchangeable inserts so one tool covers a variant family. Family tools consolidate an assembly into one base and lower total tooling cost when the parts genuinely ship as a set — and generate scrap or unwanted stock when they stop shipping in balance; they are also harder to balance because different parts carry different volumes and wall sections in one shot. High cavitation belongs to the appliance tail — clips, tine caps, shelf supports — and Metal Form has built tooling up to 46 cavities. Closing line: the right answer depends on the BOM, not on the supplier's preference.",
+        "interaction": "Hovering or focusing a column raises its rule weight and fades the other two to 40%; the 'when it is wrong' row stays at full contrast in all states so the caveat is never hidden."
+      },
+      {
+        "id": "second-source",
+        "title": "One tool, one plant, one country",
+        "purpose": "Introduce a risk the buyer has probably not budgeted for, and attach a specific, small, purchasable answer to it. This is the highest-conversion section on the page for the running-production buyer.",
+        "layout": "Narrow measure, centred, maximum calm — the quietest section of the page. A single wide diagram above the copy showing two supply states side by side: one tool feeding one line, and the same part fed by two tools. Drawn in the same hairline language; the second state is initially ghosted.",
+        "contentOutline": "Most appliance plastic parts exist as exactly one tool in exactly one plant. State the failure plainly: if the tool stops, the line stops. We build the second tool, from your part, your drawings or a physical sample, to the same print — held ready or running in parallel to split volume. Note the quieter case: a worn tool on a discontinued model with a spares obligation still running. NDA before geometry is shared.",
+        "interaction": "On entry, the second tool and its supply path draw themselves in over about 1.2 seconds and the first path dims slightly — the page demonstrating redundancy rather than describing it. Single pass."
+      },
+      {
+        "id": "send-the-part",
+        "title": "Send the part",
+        "purpose": "Close with the smallest possible next step and set expectations precisely. No form-heavy funnel; a specific list of what to send and what comes back.",
+        "layout": "Full-width band on the deepest surface tone in the palette. Two columns: left, the CTA headline and sub with the contact action; right, a mono checklist titled WHAT TO SEND. Below both, a single hairline rule and one line of small mono type carrying the verified facts.",
+        "contentOutline": "Left: CTA headline and sub, WhatsApp and email actions. Right: a 3D model or a drawing, or a photograph of the part with a ruler if neither exists; the material if you know it; the annual volume; whether it is a new tool, a replacement, or a second source. Bottom rule line: SINCE 2006 · 1,000+ PROJECTS · UP TO 46 CAVITIES · NDA ON REQUEST · INTERNATIONAL DELIVERY · FIRST RESPONSE WITHIN 48 BUSINESS HOURS.",
+        "interaction": "None beyond focus states. The page ends still, deliberately."
+      }
+    ],
+    "technicalPanels": [
+      {
+        "title": "Before the steel is cut — large part checklist",
+        "bullets": [
+          "Nominal wall reviewed on its own merits, not inherited from the previous model",
+          "Ribs at or below roughly 60% of nominal wall, with radiused roots",
+          "Flow length to wall thickness checked at the furthest point from every candidate gate",
+          "Gate positions chosen so weld lines land on hidden faces",
+          "Cooling planned into deep cores with baffles or bubblers while the part is still editable",
+          "Core-to-cavity temperature strategy decided, not left to the moulding shop",
+          "Draft matched to the specified texture depth as one specification",
+          "Ejection resolved for deep-draw boxes before the geometry is frozen",
+          "Plate thickness and support pillars sized for cavity pressure across the span"
+        ]
+      },
+      {
+        "title": "Materials by location in the appliance",
+        "bullets": [
+          "Cold interior — styrenics: HIPS and ABS for structure, SAN and clear PS for transparent bins and drawer fronts",
+          "The controlling property is ESCR against blowing-agent vapour, food oils and alkaline cleaners, not tensile strength",
+          "Impact falls at freezer temperature as the rubber phase approaches its glass transition; grade selection matters more than section thickness",
+          "Laundry and dishwasher — mostly PP, often talc-filled for stiffness and dimensional stability; POM where wear and latch feel matter",
+          "Fascias and bezels — ABS and PC/ABS for surface quality and heat resistance",
+          "Filled grades shrink anisotropically: a filled and an unfilled version of the same part are different tooling problems",
+          "Regrind is a genuine cost lever with a real ceiling — industry practice caps it near 20% for ABS and 25% for HIPS"
+        ]
+      },
+      {
+        "title": "Cosmetic defects and where they come from",
+        "bullets": [
+          "Sink over a rib or boss — local thick section; fix in geometry, not in hold pressure",
+          "Weld line on a visible face — gate position; fix with gate placement or sequential gating",
+          "Hesitation and flow marks on a long panel — gate hand-over timing on cascade fill; a real residual effect that needs tuning",
+          "Short shot at the far end — flow length exceeded; add a gate or revisit the wall",
+          "Flash at the centre of a large tool — plate deflection under cavity pressure, not insufficient clamp",
+          "Gloss or texture mismatch across a face — steel finish variation, most often after a repair",
+          "Drag marks — texture depth specified without matching draft",
+          "Colour drift between lots — pigment and regrind ratio moving together"
+        ]
+      },
+      {
+        "title": "Second-source tooling package",
+        "bullets": [
+          "Duplicate tool built to the same print as the original, from your drawings, your CAD or a physical sample",
+          "Reverse engineering where drawings no longer exist — the normal case on a discontinued model",
+          "Design and CAD in CATIA and SolidWorks",
+          "Tool held ready, or run in parallel to split volume between plants",
+          "Mould warranty, terms agreed per project",
+          "NDA before any geometry is shared",
+          "International delivery"
+        ]
+      },
+      {
+        "title": "What we make, and what we do not",
+        "bullets": [
+          "We make: injection tooling for large appliance mouldings — housings, drawers, bins, frames, ducts, covers, fascias",
+          "We make: multi-cavity tooling for the high-count appliance tail, with experience up to 46 cavities",
+          "We make: hot and cold runner tools, insert moulds, and technical mechanisms such as rails, latches and hinges",
+          "We do: product engineering, CAD, reverse engineering, DFM, redesign and tooling strategy",
+          "We do: production and ongoing component supply, including long-tail spares volumes",
+          "We do not: thermoform liners or extrude sheet — those sit outside our process, and we will say so rather than take the work"
+        ]
+      }
+    ],
+    "ctaHeadline": "Send the part.",
+    "ctaSub": "A model, a drawing, or a photograph with a ruler next to it. We evaluate the geometry, the tooling route, the production economics and the supply options, and come back within 48 business hours. NDA before anything is shared.",
+    "whatsappPrefill": "Hello Metal Form. We build home appliances. I have a part to discuss — name: [part], approx size: [L x W x H mm], material: [if known], annual volume: [if known]. I need: [new tool / replacement tool / second-source tool / cost review]. Can we start under NDA?",
+    "metaTitle": "Appliance Tooling and Mouldings | Metal Form",
+    "metaDescription": "Injection tooling and engineering for home appliance parts — door bins, drawers, ducts, frames, fascias and housings. Large-part DFM, cooling and cavity strategy, second-source tooling. Since 2006."
+  },
+  "artDirection": {
+    "moodInOneLine": "A quiet architectural drawing sheet — large calm geometry, hairline dimension lines and a great deal of white, as if the appliance were a building shown in elevation.",
+    "palette": {
+      "surface": "#F4F2ED",
+      "surfaceAlt": "#FFFFFF",
+      "ink": "#16191C",
+      "inkMuted": "#767E86",
+      "accent": "#2C6E7F",
+      "accent2": "#B5822F",
+      "rationale": "Warm porcelain rather than cool grey, because appliances live in kitchens and laundries and read as enamel and painted steel, not as screens. Graphite ink and a light muted grey give a drafting-sheet contrast rather than a UI contrast. The two accents are a deliberate two-temperature system that maps to the industry itself: a cold glacial teal-blue for everything refrigeration — cold-chain parts, ESCR, low-temperature impact, cooling circuits in the diagrams — and a restrained warm brass for everything thermal and mechanical: laundry, dishwashing, cycle time, cost bars. Each accent carries meaning, so colour is never decorative and the page stays almost monochrome except where a temperature is being stated. No red, no black background, no gradient."
+    },
+    "typographyNote": "Three roles, tightly held. Display: a wide, low-contrast neo-grotesque set very large with tight leading and no letter-spacing tricks — headlines sit like a title block, not like a hero banner. Body: the same family at comfortable size, 1.7 line height, measure capped near 62 characters, and set left-aligned in a narrow column even inside wide sections, so whitespace does the work. Annotation: a mono at 11–12px, uppercase, generously letter-spaced, used for every dimension, every process tag, every numeral and every table label — this is the voice of the drawing sheet and it should appear on every screen. Tabular figures everywhere numbers can change. No italics anywhere.",
+    "compositionNote": "Everything is an elevation. A persistent 12-column grid with hairline column rules exposed at very low opacity in two or three sections, so the reader feels a drawing sheet underneath. Sections are wide and short rather than tall and stacked; the page reads as horizontal bands, not as a vertical scroll of cards. Content aligns hard to the grid and is allowed to sit in one corner of a large empty field. Large geometry runs off the edge of the viewport at least twice, which is what gives scale. Rules are 1px hairlines at low opacity — there are no borders, no shadows, no radii above 2px, and no filled cards anywhere on the page.",
+    "motionLanguage": "Drawer motion. Everything translates along X or Y only — nothing rotates, scales, bounces or fades upward. Easing is a long deceleration with no overshoot, durations 700–1200 ms, as though a heavy well-fitted panel were being slid. Dimension lines draw themselves in from their extension lines. Diagrams animate once on entry and hold their end state; nothing loops, nothing idles, nothing floats. Scroll-linked motion is used only in the exploded-assembly section, where scroll position maps directly to separation distance. Reduced-motion renders every end state immediately with no loss of meaning.",
+    "signatureMotif": "The dimensioned gap. A hairline dimension line with fine arrow terminators bracketing the small distance between two very large shapes, with a mono numeral sitting in the break of the line. It is the visual argument of the whole page — the part is huge, the number that matters is tiny. It appears at three scales: as the hero's overall dimensions, as the section divider between every band (a single dimension line replacing a rule), and full-width as the gap-and-flush section itself.",
+    "diagramConcept": "Two diagram families, both orthographic and both drawn in the same hairline stroke. First, the exploded elevation: an appliance door or laundry front separated into labelled layers along a single horizontal axis, each layer tagged with its real process, driven by scroll — this is the page's centrepiece and its credibility proof. Second, the band chart: full-width stacked horizontal bars for cycle composition and part cost composition, mono-labelled in place, re-proportioning as the volume point changes. Supporting these are four small inline SVGs in the physics grid — advancing flow fronts meeting at a weld line, a cooling circuit with baffles descending a deep core, a plate deflecting under cavity pressure, and a panel bowing across a span. Everything is line; nothing is rendered, shaded or perspectival.",
+    "howThisDiffersFromOtherIndustries": "This is the quietest, brightest, most spacious chapter in the book and the only one drawn as architecture. Where other verticals will want density, dark grounds, tight technical detail or fast motion, appliances gets the largest geometry, the biggest empty fields, the slowest movement and orthographic projection with no perspective anywhere. It is the only page whose accent system encodes a physical variable — cold versus warm — and the only one built on a two-temperature palette. Its motion vocabulary is pure orthogonal translation, which no other page should use. Where a medical or automotive page might lead with tolerance numbers and a packaging page with speed and repetition, this page leads with scale and fit: the recurring image is not a machine or a part but a measured gap between two large flat things."
+  },
+  "openQuestions": [
+    "Which appliance categories does Metal Form actually want to lead with? Refrigeration, laundry and small appliances are three different buyer conversations, and the page currently carries all three. If refrigeration is the strongest, the exploded-assembly diagram should be a refrigerator door only and the laundry toggle should be dropped.",
+    "What is the largest tool Metal Form has built, expressed in a way that is verifiable and safe to state? The page argues about large-part behaviour without ever claiming a size. A single verified qualitative statement would strengthen it considerably; without one, the argument must stay purely on engineering reasoning.",
+    "Does Metal Form supply moulded parts for appliance customers today, or tooling only? The ongoing-supply and second-source sections read very differently depending on the answer, and the spares-tail argument only fully closes if parts supply is real.",
+    "Is there an appliance-specific reference project that can be described anonymously — part type, tool type, cavity count — without naming a client? Anonymous specificity is far more persuasive than general capability language.",
+    "How should the 46-cavity fact be framed here? It is verified and valuable, but it belongs to the small-parts tail, not to large housings. If it is placed carelessly it will read as a claim about large tooling and a technical buyer will catch it.",
+    "Do we want to state resin and machine cost ranges at all in the cost band? They are genuine industry figures from published sources, but any number on the page invites a buyer to treat it as a quotation. A version showing proportions only, with no currency, may be safer.",
+    "Is there an existing appliance part sample or a legacy tool that could be photographed as a line-traced silhouette, to give the diagrams a grounding in something real without claiming a client?"
+  ],
+  "recommendations": [
+    "Lead with honesty about process boundaries. Stating early and plainly that refrigerator liners are thermoformed sheet — and that this sits outside what Metal Form makes — will do more for credibility with an appliance engineer than any capability list. It also makes every other claim on the page more believable.",
+    "Keep every number on the page framed as an industry figure with its source logic visible, never as a Metal Form performance claim. The cost band in particular needs an explicit line saying these are industry proportions, not a quotation.",
+    "Place the 46-cavity fact only in the tool-strategy matrix, attached to the high-cavitation column and to small appliance parts. Do not let it appear anywhere near the large-housing copy.",
+    "Include the arguments against our own options — family tools generating scrap, cascade fill leaving hesitation marks, second tooling costing money that may never be used. A B2B buyer reads a stated downside as evidence of competence, and this vertical's buyers are experienced enough to know the downsides already.",
+    "Build the second-source section as a standalone, linkable block. It is the strongest offer on the page for the running-production buyer, it is the one competitors in this vertical almost never articulate, and it converts without requiring a new model programme.",
+    "Make the WhatsApp and enquiry path ask for a part, not for a meeting. The whole page is built on 'send the part' and the funnel should match that promise exactly.",
+    "Resist adding photography placeholders. This page is designed to work entirely in line drawing, and a stock appliance photograph would break both the art direction and the honesty of a company with no photography of its own work.",
+    "Hold the section count at eight and the palette at two accents. The temptation on a vertical this broad is to add categories until the page becomes a catalogue; the architectural direction only survives if the page stays empty enough to feel deliberate."
+  ]
+}

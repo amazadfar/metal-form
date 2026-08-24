@@ -1,0 +1,611 @@
+{
+  "key": "chemical",
+  "displayName": "Chemical & Detergent",
+  "researchedAt": "2026-08",
+  "sources": [
+    {
+      "title": "Get a Handle on Stress-Cracking in HDPE Bottles — Plastics Technology",
+      "url": "https://www.ptonline.com/articles/get-a-handle-on-stress-cracking-in-hdpe-bottles",
+      "whatItEstablished": "Environmental stress cracking (ESC) is the classic failure mode where surfactants and detergents attack semi-crystalline polyethylene under simultaneous stress. Established: surfactant contact plus residual (moulded-in) stress is the combination that fails, not either alone; ASTM D1693 uses Igepal surfactant at 50C on notched bent strips and reports F0/F50/F100, with poor inter-laboratory precision (~2.9 at 2 sigma); constant-stress tests (ASTM D2561 sustained internal pressure, constant-top-load) represent field conditions better than bent-strip; lower density means lower crystallinity and better crack resistance (0.954 vs 0.950 g/cc cited as a real production lever); differential cooling between thick and thin sections concentrates stress; heat multiplies risk (trailers at 145F generating 4-5 psi internal pressure, corrugated losing up to 50% compressive strength in summer humidity)."
+    },
+    {
+      "title": "Closure Liner Guide — MJS Packaging",
+      "url": "https://www.mjspackaging.com/resources/technical-specs/closure-liner-guide/",
+      "whatItEstablished": "The full liner taxonomy and what each does and does not do. Established: foam liners (LDPE/HDPE/PP/EVOH-PE facings) seal but are NOT tamper evident and are not hermetic; pressure-sensitive liners are single-use and unsuitable for liquids; polycone/plug inserts reseal and are used for chemicals; induction heat-seal liners come as two-piece (foil + wax + pulp/foam backing, resealable after the wax releases) and one-piece foil laminate, with clean-peel, tab and weld-seal variants; one-piece liner overhang can interfere with child-resistant closures; vented liners exist specifically for oils, fragrances and household/industrial chemicals to stop bloating; for aggressive chemical contents a protective barrier layer is added between the foil and the heat-seal layer."
+    },
+    {
+      "title": "Plastic Molded Threads: Injection Molded Thread Design, Manufacturing and Applications — GEMS Manufacturing",
+      "url": "https://gems-mfg.com/plastic-molded-threads-part-a-complete-guide-to-injection-molded-thread-design-manufacturing-and-applications/",
+      "whatItEstablished": "The four thread-forming routes in a mould and the selection logic. Established: unscrewing cores suit deep or fine-pitch threads where stripping would damage the part, give high dimensional accuracy, and cost cycle time and tooling complexity; collapsible cores free internal threads in confined spaces at higher tooling cost and wear; stripping/bump-off exploits material flexibility, is the cheapest route, works for shallow wide-pitch threads in PP and PE (explicitly named for bottle caps) and cannot be used with rigid resins; metal inserts serve high-torque applications; internal threads need more draft than external; rounded thread roots distribute stress better; moulded threads rarely reach machined-thread tolerances and resin-specific shrinkage must be compensated in the steel."
+    },
+    {
+      "title": "Child-Resistant Closure Testing — Mecmesin closuretesting.com",
+      "url": "https://www.closuretesting.com/methods/child-resistant-closure-testing",
+      "whatItEstablished": "The CR standards landscape and what is actually measured. Established: ISO 8317 (reclosable child-resistant packaging), BS EN ISO 13127 (ten mechanical tests covering CRC types), ASTM D3475 (classification of child-resistant packages), 16 CFR Ch. II Subchapter E (Poison Prevention Packaging Act), plus ASTM D3198/D3472/D3481/D3810/D7257; three closure archetypes — push-down-and-turn (Type I), lug finish (Type II), snap/ratchet (Type III); measurements are release torque, application/removal force and squeeze-lug force; senior-friendliness is a co-requirement, not an afterthought; and manufacturing variation, heat distortion, moulding defects and repeated-use degradation are explicitly part of the test scope."
+    },
+    {
+      "title": "Hot Runner Stack Molds: A Great Cost-Cutting Solution — MoldMaking Technology",
+      "url": "https://www.moldmakingtechnology.com/articles/hot-runner-stack-molds-a-great-cost-cutting-solution",
+      "whatItEstablished": "The cavitation-versus-press economics that govern closure tooling. Established: an 8+8 stack needs a machine roughly half the size of a 16-cavity single-face tool, cited at ~43% lower machine-hour rate; fill, pack and cooling times are unchanged by stacking — only mould open/close is added, so the gain is output per cycle, not faster cycles; gate-to-gate melt transfer across the parting line seals at around 2,000 bar / 30,000 psi; sequentially controlled valve-gate manifolds are standard; thin-wall packaging and caps/closures are named as the primary application."
+    },
+    {
+      "title": "The Different Types of Chemical Packaging Caps and Triggers — Royal Chemical",
+      "url": "https://www.royalchemical.com/blog/the-different-types-of-chemical-packaging-caps-and-triggers",
+      "whatItEstablished": "The working vocabulary of closures on chemical and household-chemical packs. Established: continuous-thread (CT) closures span roughly 13 mm to 120 mm and give no dispensing without full removal; the dispensing family is twist-open/twist-close, push-pull, ribbon applicator, yorker, disc-top and turret/flip-top; trigger sprayers are the household-cleaner default and are almost always on a 28 mm finish with jet/mist/cone patterns; polypropylene dominates closure manufacture; liner selection (3-ply PE foam, pressure sensitive, induction) is driven entirely by contents; child-resistant closures for harmful chemicals require a simultaneous push-or-squeeze plus turn."
+    },
+    {
+      "title": "Solution for Common Cap Defects: Short Shots, Flash, and Warpage — ZSMOLD",
+      "url": "https://www.zsmold.com/News/725.html",
+      "whatItEstablished": "Mould-side root causes and the numbers a toolmaker actually works to on closures. Established: short shots on caps appear first in the thinnest features — tamper bands and hinges — and at the point furthest from the gate, driven by premature gate freeze, poor venting and low melt temperature; vent depths in the 0.02-0.05 mm range with 1-2 mm lands are the working window for closure tools (too deep and you get flash, too shallow and you get short shots and burn); flash is a parting-line condition, with flatness on the order of 0.01 mm cited as the target; warpage on caps is an uneven-cooling and uneven-wall problem, addressed by multiple independent cooling zones, balanced gating and holding wall-thickness variation tight."
+    },
+    {
+      "title": "Child-resistant fastening (CRF) and tactile warning of danger (TWD) under CLP — Chem Consulting",
+      "url": "https://www.chem-consulting.si/post/child-resistant-fastening-tactile-warning-requirement",
+      "whatItEstablished": "The regulatory frame that makes closures a compliance component in this vertical, not just a lid. Established: the CLP Regulation's CRF and TWD requirements apply only to packaging supplied to the general public, not to professional-use-only packs; EN ISO 8317 governs reclosable child-resistant packaging and EN 862 governs non-reclosable; EN ISO 11683 specifies the tactile warning; the tactile warning must be perceptible before the contents can be reached and must survive normal use; methanol (3%) and dichloromethane (1%) trigger the provisions on concentration alone regardless of other classification; aerosols with sealed spray attachments are exempt unless otherwise classified."
+    },
+    {
+      "title": "Neck Finishes Explained: What 24-410 and 28-400 Mean — PackVue (corroborated by Propacks bottle neck finish guide)",
+      "url": "https://packvue.com/learn/neck-finishes",
+      "whatItEstablished": "The GPI/SPI neck-finish notation that every conversation in this vertical runs on. Established: the first number is the finish diameter in mm, the second is the standardised thread style; 400 is the shortest thread profile (~2.5 mm depth), 410 taller (~3.5 mm), 415 taller again (~4.5 mm) with an extra turn; taller 410/415 profiles give a stronger mechanical lock and more torque tolerance, which is why pumps and triggers with high return-spring force sit on them; 24-410 is the lotion/hand-soap default and 28-410 the cleaning-product and viscous-liquid default; a 410 closure will physically thread onto a 400 finish and will not seal — a real and common field failure; the finish is described by T (thread diameter), E (neck OD), S (thread start) and H (finish height)."
+    }
+  ],
+  "buyer": {
+    "whoBuys": "Two distinct buyers with different clocks. First: packaging development and technical procurement at detergent, household-chemical and personal-care fillers — high volume, few SKUs, closures measured per thousand, and a filling line that must not stop. Second: agrochemical formulators and their contract fillers — lower volume per SKU, many SKUs, many neck sizes, hazardous contents, and a regulatory and transport file attached to the pack. Behind both sit closure converters and moulders who buy tooling directly and resell parts. The person who signs is rarely the person who first sends the part: the enquiry usually arrives from a packaging engineer who already has a leak, a capacity ceiling, or a supplier they no longer trust.",
+    "jobTitles": [
+      "Packaging Development Manager",
+      "Packaging Engineer / Rigid Packaging Engineer",
+      "Technical Purchasing Manager",
+      "Category Buyer, Rigid Packaging",
+      "Filling Line / Plant Manager",
+      "Production Manager (closure moulder)",
+      "Tooling / Mould Engineer",
+      "R&D Formulation Manager (as the veto on material contact)",
+      "Quality Manager",
+      "Supply Chain / Resilience Manager",
+      "Owner-operator of a mid-size closure converter"
+    ],
+    "whatTheyActuallyBuy": [
+      "A closure that seals twice: once on the capper at line speed, and again in a user's hand after transport, heat and months of contact with the formulation",
+      "A guaranteed torque window their existing capping heads can hit without stripping the thread or under-tightening",
+      "Drop-in compatibility with a neck finish they already own — the closure changes, the bottle mould does not",
+      "Output: a cavitation that matches the forecast and fits the presses they or their moulder already run",
+      "A second source for a closure they currently buy from exactly one supplier",
+      "Tooling they own outright, with drawings and CAD, so the tool can move",
+      "Reverse engineering: an existing closure with no surviving drawings turned back into a manufacturable model",
+      "Someone to argue with about the geometry before steel is cut, not after",
+      "Ongoing part supply, so the tool and the parts are one conversation",
+      "Spare cavity sets and wear parts that arrive before the tool is down, not after"
+    ],
+    "decisionDrivers": [
+      "Leak performance after transport simulation, not just off the line",
+      "Torque retention over shelf life and through thermal cycling",
+      "Whether the part is a true drop-in on the existing neck finish and existing capper",
+      "Cavity count matched to real annual volume — over-cavitation is dead capital, under-cavitation is a bottleneck",
+      "Lead time from approved drawing to first article",
+      "Total landed cost per thousand including freight (closures ship air by volume)",
+      "Tool ownership, IP position and the confidentiality of the geometry",
+      "Whether the supplier will discuss failure modes candidly instead of quoting a price",
+      "Warranty terms and the realistic availability of spares",
+      "How fast the first substantive technical response arrives"
+    ],
+    "whatKeepsThemAwake": [
+      "A pallet arriving at a retailer's DC with detergent running out of the bottom layer",
+      "A tamper band that breaks on the filling line — the pack is unsellable and the line is already running",
+      "A tamper band that does not break on first opening — tamper evidence has silently failed",
+      "A child-resistance complaint on a consumer chemical pack",
+      "One tool, one site, no backup, and a supplier who has gone quiet",
+      "Caps backing off in a warm container, discovered by a customer and not by QC",
+      "Stress cracks appearing weeks after fill, in the field, in summer, with no process change to point at",
+      "A closure that only runs at reduced cavitation because two cavities were blocked off and never fixed",
+      "A resin grade change made upstream that nobody flagged, and a seal that stops behaving",
+      "Being told the drawings for the incumbent closure no longer exist"
+    ]
+  },
+  "economics": {
+    "unitEconomics": "Closures are traded per thousand at cents-level unit prices. At real volumes the tool disappears into the part: a closure tool amortised across tens of millions of shots contributes a fraction of a cent per piece, so tooling is almost never the expensive decision — the expensive decisions are grams of resin, seconds of cycle, and points of scrap, all of which are locked in by the geometry the tool carries. The arithmetic that decides programmes is simple and brutal: 0.2 g removed from a cap running 20 million pieces a year is 4 tonnes of resin a year; one second removed from a 4-second cycle on a 32-cavity tool is a 25% output increase from the same press and the same operator. Both of those are tooling outcomes, not purchasing outcomes.",
+    "costDrivers": [
+      "Resin grade and part weight — the single largest variable cost at volume",
+      "Cycle time, which in a closure is dominated by cooling, not by fill",
+      "Cavitation versus press tonnage and machine-hour rate (stack and higher-cavitation strategies exist precisely to move this)",
+      "Scrap and start-up waste, worst on colour changes and on unbalanced fill across cavities",
+      "The liner, when there is one — induction foil laminates are a real per-piece cost and a separate supply chain",
+      "Post-mould operations: tamper-band slitting, liner insertion, assembly of multi-piece CR and dispensing closures",
+      "Changeover time between SKUs, colours and neck sizes — punishing where there are many small agrochemical SKUs",
+      "Freight: closures are low-density, so international shipment is priced by volume and every millimetre of stacking efficiency counts",
+      "Tool maintenance and spares — unscrewing gear trains, stripper rings and hot-runner tips are consumables at these shot counts"
+    ],
+    "volumeProfile": "Household detergent and cleaning SKUs concentrate volume: a single closure reference commonly runs into the millions or tens of millions of pieces a year, flat across the year, which is what justifies high cavitation and hot runners. Agrochemical is the inverse — lower annual volume per reference but a long tail of references across several neck sizes, with a pronounced seasonal peak around the spray season, which rewards moderate cavitation, fast changeover and family tooling. Trigger sprayers and dispensing closures sit between the two, with volume high but split across a multi-part assembly, so the programme is several tools rather than one.",
+    "whereMoneyIsLost": [
+      "Leaks: the cost is never the closure, it is the returned pallet, the credit note and the retailer's confidence",
+      "Cavitation bought against an optimistic forecast — a 64-cavity tool running at 60% duty is a financing mistake in steel",
+      "Cavities blocked off after damage and never repaired, so the programme quietly runs at reduced output for years",
+      "Unbalanced fill: the cavity that short-shots sets the process for all the others, so every part gets over-packed",
+      "Slitting rejects on tamper bands, and bridge geometry that is either too strong or too weak",
+      "Commissioning a bespoke neck finish where a standard GPI/SPI finish would have worked — it permanently removes the option to re-source",
+      "Cycle chased at the cost of frozen-in stress, which returns months later as field stress cracking",
+      "Tool downtime with no spare cavity set, on a part that has no second source",
+      "Shipping air: closures freighted loose instead of nested or bulk-optimised"
+    ]
+  },
+  "risk": {
+    "failureModes": [
+      "Leak at the sealing land — the closure threads on and still does not seal, usually a mismatch between seal type, liner and finish",
+      "Back-off: torque loss over time as the polymer creeps and the pack sees thermal cycling, until the closure is finger-loose",
+      "Cross-threading and stripped threads on the capping head, often a lead-in geometry problem rather than a capper problem",
+      "Wrong-profile fit: a 410 closure will physically thread onto a 400 finish and will not seal — a documented, recurring field failure",
+      "Environmental stress cracking where surfactant contact meets residual moulded-in stress; it is the classic polyethylene failure and it appears in the field, not on the line",
+      "Tamper-evident band fracturing during capping or transport — pack is unsellable",
+      "Tamper-evident band failing to fracture on first opening — tamper evidence silently does not exist",
+      "Child-resistant mechanism that stops re-engaging after repeated use, or that heat-distorts in transit",
+      "Induction liner failing to bond to the land, or lifting after fill",
+      "Container panelling under solvent permeation or vacuum, which then unloads the seal",
+      "Drip and residue on measuring/dosing caps, which reads to the consumer as a leaking pack"
+    ],
+    "qualityDefects": [
+      "Short shot in the thinnest features first — tamper band, live hinge, thin skirt — and at the point furthest from the gate",
+      "Flash on the parting line and, worse, on the thread flank, where it interferes with capping torque",
+      "Ovality of the skirt from uneven cooling, which destroys the seal even when every other dimension is in tolerance",
+      "Warpage from non-uniform wall and uneven ejection",
+      "Sink marks at the thickest section, typically where the thread root meets the skirt",
+      "Gate vestige left inside or near the sealing land — a seal killer that is entirely a gating decision",
+      "Weld line at a flip-top hinge or around a core feature, which becomes the crack initiation site",
+      "Ejection witness on a sealing surface from stripper or ejector geometry",
+      "Inconsistent bridge thickness on tamper bands, so some break early and some do not break at all",
+      "Core shift producing uneven skirt wall and therefore uneven thread engagement",
+      "Burn marks and short shots traced to venting outside the workable depth window",
+      "Contamination and black specks from a degraded hot-runner residence pocket"
+    ],
+    "downtimeCauses": [
+      "Unscrewing gear train wear or timing drift, which strips threads across the whole tool at once",
+      "Stripper ring and bump-off surface wear on strip-eject closure tools",
+      "Hot-runner tip leakage, drool or a plugged nozzle taking cavities out of service",
+      "Cooling circuit fouling and scale where water quality is poor, which shows up first as ovality and cycle creep",
+      "Cavity corrosion on tools left standing with humid air or aggressive residues inside",
+      "Slitting knife wear on tamper-band operations",
+      "Capper torque-head drift, which is blamed on the closure until someone calibrates it",
+      "Resin lot or grade change made upstream without notice"
+    ],
+    "supplyRisks": [
+      "Single tool, single site, no backup — the default position in most closure programmes and the one nobody writes down",
+      "Converter capacity allocated to a larger customer during a peak",
+      "Long lead times on replacement cavity sets and hot-runner spares",
+      "An incumbent tool with no drawings and no CAD, so it cannot be reproduced without reverse engineering the part",
+      "Tool owned by the converter rather than the brand, so the programme cannot move",
+      "A bespoke neck finish that permanently locks the closure to one supplier",
+      "Freight, customs and documentation on international tooling and part shipments",
+      "Resin grade substitution without requalification, changing shrinkage, seal force and stress-crack behaviour",
+      "Regulatory change on child-resistant fastening or tactile warning obligations reaching a pack that was designed before it"
+    ]
+  },
+  "components": [
+    {
+      "name": "Continuous-thread (CT) closure",
+      "note": "The workhorse. Roughly 13 mm to 120 mm across the range, no dispensing without full removal. Seals by liner, bore seal or top land. Everything else in this list is a CT closure with something added."
+    },
+    {
+      "name": "Child-resistant closure, push-and-turn (two-piece)",
+      "note": "Inner threaded cap plus outer ratcheted shell. Two tools, two materials, an assembly step, and a mechanism that must survive repeated use and heat distortion. Ratchet tooth geometry and draft decide both the child-resistance and the ejection."
+    },
+    {
+      "name": "Child-resistant closure, squeeze-and-turn (single piece)",
+      "note": "Deforming skirt with lugs. One tool, no assembly, but the material and wall must deliver a controlled squeeze force and still hold torque. Senior-friendly opening is a co-requirement, not an afterthought."
+    },
+    {
+      "name": "Tamper-evident closure with band and bridges",
+      "note": "The band is the hardest thing on the part. Bridges must survive capping and transport and fail cleanly on first opening. Band and bridges are formed in the mould or cut by a post-mould slitting operation; both routes have their own scrap signature."
+    },
+    {
+      "name": "Induction-seal-ready closure",
+      "note": "Carries the liner retention features — retaining bead, land flatness, no vestige in the seal area. The liner is a separate supply chain (foil laminate, one-piece or two-piece, clean-peel or weld-seal); the tool has to hold it without letting it spin or lift."
+    },
+    {
+      "name": "Vented closure for solvent-bearing and gassing products",
+      "note": "Used where a pack would otherwise bloat or panel — oils, fragrances, some household and industrial chemicals. The vent may be in the liner or designed into the closure. Geometry has to vent without wicking product."
+    },
+    {
+      "name": "Dosing / measuring cap for liquid laundry detergent",
+      "note": "Serves as closure, dose cup and consumer touchpoint. Graduations must be legible after moulding, the rim must not trap residue, and the cap has to reseal on a bottle whose neck the user has just poured over."
+    },
+    {
+      "name": "Drain-back spout fitment",
+      "note": "The insert that makes a measuring cap workable. Residual liquid runs back into the bottle instead of down the outside. Typically a three-part system — bottle, fitment, measuring cup — which means three tools and a fit stack to control."
+    },
+    {
+      "name": "Flip-top / disc-top / turret dispensing closure",
+      "note": "Live hinge or snap hinge, plus a sealing plug on the lid. The hinge is a thin section that must fill reliably at the end of flow and survive tens of thousands of cycles; the plug must seal without needing a fingernail to open."
+    },
+    {
+      "name": "Trigger sprayer housing, trigger lever and shroud",
+      "note": "The household-cleaner default, almost always on a 28 mm finish. Aesthetic and structural at once. Multi-cavity tools with slides, and a part that has to feel right in the hand as well as measure right on the drawing."
+    },
+    {
+      "name": "Trigger sprayer piston, cylinder and check-valve seat",
+      "note": "The functional core. Tight diametral fits between mating mouldings, no flash tolerated on sealing diameters, and a spring or ball to locate. This is a technical mechanism programme, not a cap programme."
+    },
+    {
+      "name": "Nozzle and spinner assembly",
+      "note": "Sets the spray pattern — jet, fine mist, cone. Small features and precise concentricity; the pattern is decided by geometry measured in tenths of a millimetre and by how well the two mouldings register to each other."
+    },
+    {
+      "name": "Agrochemical closure on a large-diameter finish",
+      "note": "Commonly 50 mm and above, on co-extruded or fluorinated barrier bottles, with induction seal and CR/TE requirements stacked on top. The pack carries a transport and regulatory file; the closure is part of it."
+    },
+    {
+      "name": "Dip tube, ball seat and small internal components",
+      "note": "Low-value, high-consequence parts. Length, straightness and the seat diameter decide whether a sprayer primes. Usually family-tooled with the other internals."
+    },
+    {
+      "name": "Wide-mouth closure for powders and scoop retention",
+      "note": "Powder detergents and granular agrochemicals. Large diameter, low thread count, and a seal that has to work against powder in the thread. Often carries a scoop feature or retention rib."
+    }
+  ],
+  "tooling": {
+    "whyToolingMatters": "The seal is not something you specify, it is something you cut. Torque window, thread engagement, band bridge thickness, sealing land flatness, gate vestige position and skirt roundness are all geometry, and all of them are decided in steel before a single part exists. A closure programme that goes wrong almost never goes wrong at the capper — it goes wrong in a decision made on the tooling drawing, and it presents six months later as a leaking pallet. That is why the useful conversation happens before the tool is cut and why it is a geometry conversation, not a price conversation.",
+    "toolingTopics": [
+      "Thread forming route: strip / bump-off, unscrewing core, split cavity with slides, or collapsible core",
+      "Where the parting line crosses the thread, and what that flash does to capping torque",
+      "Draft on internal versus external threads, and rounded thread roots for stress distribution",
+      "Shrinkage compensation per resin — the same steel gives a different thread in PP homopolymer and in HDPE",
+      "Gate type and gate position, and keeping the vestige out of the sealing land",
+      "Hot runner with valve gates versus cold sub-gates: vestige control and colour-change cost",
+      "Manifold balance across cavities — the worst cavity sets the process for all of them",
+      "Cooling layout for a slender core: bubblers, spiral inserts, independent zones",
+      "Venting depth window and vent land length on thin band and hinge features",
+      "Ejection strategy that leaves no witness on a sealing surface",
+      "Steel selection and surface treatment where the tool sees aggressive residues or humid storage",
+      "Cavity numbering and traceability, so a bad cavity can be found instead of guessed at",
+      "Spare cavity sets and wear parts specified with the tool, not after the first failure",
+      "Tamper band: formed in the mould versus cut in a post-mould slitting operation",
+      "For multi-piece closures and sprayers: fit stack across mating mouldings, and whether parts are family-tooled or dedicated"
+    ],
+    "cavityStrategy": "Cavitation is a financing decision disguised as an engineering one. Industry practice spans everything from single-figure prototype tools to very high cavitation closure systems, but most chemical and detergent programmes are not beverage caps and do not need beverage-cap cavitation. The honest question is: what is the real annual volume, what press is available, and what happens when one cavity is damaged? Our own tooling experience runs up to 46 cavities, and the useful range for this vertical usually sits between 8 and 32 — matched to the forecast, matched to the press, with a spare cavity set specified from the start. Two moderate tools on two sites frequently beat one large tool on one site, both on risk and on the machine-hour rate. For multi-part closures and sprayers, the choice between family tooling and dedicated tools is a changeover and balance decision, and family tools only work where the parts share wall thickness and material.",
+    "runnerStrategy": "Hot runner is the default at closure volumes: no cold-runner scrap, zone control across cavities, and valve gates that let you place the gate where the part needs it and still control the vestige. The vestige position is the point — a valve gate on the top panel is fine, a vestige in or near the sealing land is not, no matter how small it is. Manifold balance matters more on closures than almost anywhere else, because the thin band and hinge features fill last and the slowest cavity dictates the pack pressure applied to all of them. Cold runners remain a rational choice at lower cavitation, on frequent colour changes, and on small agrochemical SKU families where the runner scrap costs less than hot-runner complexity. On stacked configurations the cycle gain comes from parts per cycle and a smaller press, not from a faster cycle: fill, pack and cool are unchanged.",
+    "coolingNotes": "Cooling dominates the closure cycle. The core is slender and surrounded by plastic on the inside of the skirt, so it is the hardest part of the tool to cool and the part that decides both cycle time and roundness. Bubblers, spiral inserts and independently zoned circuits exist for exactly this. Two consequences follow and both matter commercially: uneven cooling between the thick thread root and the thin skirt produces ovality, and an oval skirt does not seal even when every dimension is nominally in tolerance; and cycle chased by dropping mould temperature or shortening cooling leaves frozen-in stress, which is one half of the environmental stress cracking equation. The other half is the customer's surfactant. A closure tooled to run fast and cool badly will pass the line and fail the field.",
+    "materialNotes": "Polypropylene dominates closures — homopolymer for stiffness and thread strength, random copolymer where clarity or hinge life matters. HDPE appears where a softer bore seal or a deformable child-resistant skirt is wanted, and LDPE in liner facings. Trigger internals move to ABS, POM and PE depending on the fit and the wear duty. Containers in this sector are HDPE, co-extruded HDPE/EVOH or fluorinated HDPE for solvent-bearing agrochemicals, and increasingly PET where PCR content is the driver. Two disciplines apply. First, resin choice changes shrinkage, so it changes the steel — a material substitution is a tooling event, not a purchasing event. Second, and this is the line we do not cross: material selection is a starting hypothesis, and chemical compatibility with a specific formulation, at a specific temperature, over a specific shelf life, is established by testing on that formulation. Grade families and published data narrow the field. They do not close it."
+  },
+  "vocabulary": [
+    {
+      "term": "Neck finish (e.g. 28-410)",
+      "meaning": "The standardised description of a container's threaded opening: first number is the finish diameter in millimetres, second is the GPI/SPI thread style. It is the coordinate system the whole vertical talks in.",
+      "useIn": "copy"
+    },
+    {
+      "term": "400 / 410 / 415 thread profile",
+      "meaning": "Thread styles of increasing height — roughly 2.5 mm, 3.5 mm and 4.5 mm thread depth, with 415 adding a turn. Taller profiles give more mechanical lock and more torque tolerance, which is why pumps and triggers sit on 410 and above.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "T, E, S, H",
+      "meaning": "The four finish dimensions: T is thread diameter, E is neck outside diameter, S is thread start, H is finish height. Every closure argument eventually resolves to one of these four letters.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Sealing land",
+      "meaning": "The flat annular surface on the container's top face where the closure or liner actually makes contact. The seal happens here, not on the thread. The thread only supplies the clamping force.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Bore seal / plug seal",
+      "meaning": "A moulded rib or plug on the inside of the closure that seals against the inner wall of the neck, allowing a linerless closure. Fully a tooling outcome — its interference fit is cut in steel.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Liner (wad)",
+      "meaning": "The disc inside a closure that makes the seal. Foam, pulp, polycone or foil laminate. Cheap, decisive, and a separate supply chain the closure has to be designed around.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Induction seal liner",
+      "meaning": "A foil laminate heated by induction after capping so it bonds to the container land. One-piece or two-piece (foil, wax, pulp or foam backing). Gives a hermetic, tamper-evident seal; one-piece overhang can foul child-resistant mechanisms.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Vented liner",
+      "meaning": "A liner with pores or vent holes that lets a pack de-gas without losing its seal. Used for oils, fragrances and some household and industrial chemicals that would otherwise bloat.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Tamper-evident band (pilfer band)",
+      "meaning": "The ring below the closure skirt that stays on the bottle when the pack is first opened. It has to survive capping and transport, then fail cleanly on first turn.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Bridges",
+      "meaning": "The small material links joining the band to the skirt, either moulded in or left by a slitting operation. Bridge geometry is the whole tamper-evidence design: too strong and the pack will not open, too weak and the band breaks on the line.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Application torque / removal torque",
+      "meaning": "The torque applied by the capper and the torque a user needs to open the pack. The gap between them, and how it drifts over time, is the seal's real specification.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Torque retention (back-off)",
+      "meaning": "How much clamping force survives creep, thermal cycling and transport. A closure that measures correctly at the capper and finger-loose at the customer has failed torque retention, not sealing.",
+      "useIn": "copy"
+    },
+    {
+      "term": "CRF — child-resistant fastening",
+      "meaning": "Under CLP, required on consumer packs of certain hazardous mixtures. EN ISO 8317 covers reclosable packs, EN 862 non-reclosable. Professional-only packs are outside the requirement.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "TWD — tactile warning of danger",
+      "meaning": "A raised triangle, per EN ISO 11683, that must be perceptible by touch before the contents can be reached. A moulded feature, so a tooling feature.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Push-and-turn / squeeze-and-turn",
+      "meaning": "The two dominant child-resistant mechanisms: a two-piece cap with a ratchet that engages under downward pressure, or a single deforming skirt with lugs. Different part counts, different tools, different failure modes.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Unscrewing core",
+      "meaning": "A rotating core that threads the part off itself as the mould opens. Chosen where deep or fine-pitch threads would be damaged by stripping. Rotation and ejection stroke must be geared to the thread pitch, or the tool strips the threads it just made.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Bump-off / strip ejection",
+      "meaning": "Forcing the part over the thread using the flexibility of PP or PE. The cheapest and fastest route, standard for shallow wide-pitch closure threads. Not available in rigid resins and unforgiving of thread depth.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Split cavity (slide)",
+      "meaning": "Cavity halves that open sideways to release an external thread or an undercut. Fast, but it puts a parting line straight across the thread flank, and that parting line has to be perfect.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Gate vestige",
+      "meaning": "The small remnant of material at the gate. Trivial everywhere except on a closure, where a vestige in the sealing land is a leak path and a vestige on a bore seal is a scratch on the neck.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Ovality",
+      "meaning": "Out-of-roundness of the closure skirt, usually from uneven cooling. An oval closure can be dimensionally in tolerance at every measured point and still leak.",
+      "useIn": "copy"
+    },
+    {
+      "term": "ESCR — environmental stress cracking resistance",
+      "meaning": "How well a polyolefin resists cracking under simultaneous chemical contact and stress. Surfactants are the classic aggressor. Measured by ASTM D1693 bent-strip and, more representatively, by constant-stress methods such as ASTM D2561.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Panelling",
+      "meaning": "A container collapsing inward as solvent permeates out or the headspace goes to vacuum. It unloads the seal, and the closure gets blamed.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Cavitation",
+      "meaning": "The number of cavities in the tool. In this vertical it is a financing decision: it fixes the output, the press size, the machine-hour rate and the cost of a single damaged cavity.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Drain-back spout fitment",
+      "meaning": "The insert that returns residual liquid to the bottle so a measuring cap does not drip. Turns a two-part pack into a three-part fit stack, with three sets of tolerances.",
+      "useIn": "diagram"
+    }
+  ],
+  "metalFormAngle": {
+    "credibleOffers": [
+      "Send the closure or the drawing. We return the tooling route, cavitation options and a production position — initial response within 48 business hours.",
+      "Reverse engineering: an existing closure with no surviving drawings turned back into a manufacturable CAD model in CATIA or SolidWorks.",
+      "DFM review on the sealing geometry, thread route, gate position, band bridges and ejection — before steel is cut.",
+      "Mould design and manufacture for injection closures, dispensing closures and technical mechanisms.",
+      "Multi-cavity closure tooling, with tooling experience up to 46 cavities.",
+      "Hot runner and cold runner tooling, with the runner decision argued on vestige position, colour-change frequency and cavitation.",
+      "Insert moulds and technical mechanism tooling for trigger sprayers, pistons, valve seats and multi-piece child-resistant closures.",
+      "Second-source and backup tooling that reproduces the incumbent part on the incumbent neck finish.",
+      "Production and ongoing component supply, so the tool and the parts are one relationship.",
+      "International delivery, NDA and confidentiality as standard, and mould warranty with terms agreed per project.",
+      "Redesign of an existing closure for weight, cycle or manufacturability without changing the neck finish it has to fit."
+    ],
+    "dfmAngles": [
+      "Move the gate vestige out of the sealing land. It is a free decision on a drawing and an expensive one after tooling.",
+      "Even out the wall between thread root and skirt: it buys roundness, and roundness is what seals.",
+      "Choose the thread route from geometry and volume — bump-off, unscrewing, split cavity — not from what the last tool did.",
+      "Design bridge geometry explicitly: strong enough to survive the capper and transport, weak enough to fail on the first turn.",
+      "Stay on a standard GPI/SPI finish wherever the brief allows. A bespoke finish permanently removes your ability to re-source.",
+      "Design the liner retention so the liner cannot spin, lift or shift under induction heat.",
+      "Check the closure against the filling line's real capper torque window before the tool is cut, not during commissioning.",
+      "Do not buy cycle time by dropping mould temperature — the stress you freeze in comes back as field cracking months later.",
+      "Consider a bore seal instead of a liner where the contents allow it: one fewer component, one fewer supply chain.",
+      "On multi-piece closures and sprayers, control the fit stack across mating mouldings deliberately rather than tolerancing each part in isolation."
+    ],
+    "secondSourceAngle": "Most closure programmes run on one tool at one site, and nobody writes that down until the line stops. A second tool costs a fraction of a week of lost filling. The discipline is that a backup must reproduce the part, not the tool: same neck finish, same thread engagement, same seal type, same torque window, same behaviour on the same capper — otherwise it is not a backup, it is a second product with its own qualification. We work from the part in hand. Send the closure, the neck finish, the capper settings and the liner specification, and we will reverse engineer, model and tool a true drop-in. NDA first, always. If the drawings are gone, that is the normal starting condition, not an obstacle.",
+    "costOptimisationAngle": "Three levers, in order of size. Grams: weight is the dominant variable cost at volume, and the arithmetic is unforgiving — 0.2 g across 20 million pieces is 4 tonnes of resin a year. Seconds: closure cycle is cooling-dominated, so cycle time is a core-cooling and wall-uniformity problem, which means it is a tooling problem. Cavities: cavitation should be sized to the actual forecast and the actual press, not to the biggest number the tool shop will quote — an over-cavitated tool running at partial duty is capital parked in steel, and two moderate tools on two sites often beat one large tool on both risk and machine-hour rate. Below those sit scrap and changeover, which is where multi-SKU agrochemical programmes quietly lose their margin.",
+    "whatWeMustNotClaim": [
+      "No ISO 9001, ISO 13485, IATF, GMP or FDA registration, and no certification of any kind",
+      "No cleanroom, sterile, validated or qualified manufacturing environment",
+      "No claim that our closures are chemically compatible with, or resistant to, any specific formulation — compatibility is established by the customer's testing on their own product",
+      "No claim that we certify, test or approve child-resistance; ISO 8317 / EN 862 / 16 CFR 1700.20 testing is done by accredited test houses, not by us",
+      "No claim of UN-rated or approved hazardous-goods packaging",
+      "No Moldflow or any named simulation package, no 3D scanning, no CMM department, no QC department",
+      "No two-shot / multi-material moulding, no grinding",
+      "No compression moulding of closures — injection vs compression is presented as an industry comparison, never as our offer",
+      "No filling, capping, induction sealing or liner manufacture — we do not run the customer's line",
+      "No exact machine counts, factory area, headcount, production volumes, tolerances, cycle times or savings percentages attributed to us",
+      "No named clients, client logos, brand references or awards",
+      "No claim about ESCR performance, leak rate, torque retention or shot life expressed as a guaranteed number",
+      "No implication that we routinely build 96, 128 or 216-cavity closure systems — our stated experience is up to 46 cavities"
+    ]
+  },
+  "page": {
+    "heroHeadline": "A closure is a seal, not a lid.",
+    "heroSub": "Caps, closures, child-resistant and tamper-evident systems, and dispensing components for detergents, household chemicals and agrochemicals. Send the part. We evaluate the sealing geometry, the thread route, the cavitation and the production economics.",
+    "heroVisualConcept": "No photograph. A single, oversized engineering cross-section, drawn in hairlines on a near-white ground: a closure seated on a neck finish, sectioned on the vertical centreline, with 45-degree section hatch on the cut material. It is scaled deliberately too large — the section bleeds off the right edge of the viewport, so the reader sees the sealing land, two thread turns, the band and the bridges at a scale nobody puts on a website. On load, the outline draws itself with stroke-dashoffset over about 1.2 seconds, then the hatch fills in behind it, then the dimension leaders for T, E, S and H extend from the left with a 60 ms stagger and set their labels in mono. One chartreuse detail only: the contact line at the sealing land, 2 px, which is the single place on the whole hero where the accent colour is spent. The closure geometry rotates a slow 0.6 degrees and stops hard, like a cap reaching torque — it does this once, on load, and never again. Headline sits in the left five columns over plain ground; the section owns the right seven.",
+    "narrativeSpine": "The page argues one thing and returns to it in every section: the closure is the only component in a chemical pack that has to work twice — once on the filling line at speed, and again in a user's hand months later, after transport, heat and continuous contact with the formulation. Everything that decides whether it works twice is geometry, and geometry is cut in steel before a single part exists. So the page moves outward from the seal itself: where the seal actually happens, what we tool, how the thread gets out of the mould, what goes wrong and which decision it traces back to, what a cavity really costs, how material is chosen and why compatibility is proven by testing rather than claimed, and why a second tool is cheap insurance against a stopped line. It ends where it should end: send the part.",
+    "sections": [
+      {
+        "id": "seal-stack",
+        "title": "The seal is cut in steel",
+        "purpose": "Establish immediate technical credibility by showing, at scale, that we understand where a closure actually seals — and that the thread is only a clamp. This is the section a packaging engineer decides on.",
+        "layout": "Full-bleed sticky diagram. The cross-section pins to the viewport for roughly three screen-heights while an annotation column scrolls past it on the left in the dimension gutter. No cards, no boxes — annotations are mono labels on hairline leader lines that terminate on the geometry. A horizontal torque scale runs along the bottom edge of the diagram, full width, as a ruled axis rather than a UI slider.",
+        "contentOutline": "Four advancing annotations, each one screen: (1) the sealing land — the seal is the flat annular contact on the container's top face, not the thread; (2) the clamp — thread turns and profile height (400 / 410 / 415) supply and hold the clamping force, and this is why pumps and triggers sit on taller profiles; (3) the seal route — liner, bore seal or top land, each with a different tooling consequence and a different supply chain; (4) the band — bridges below the skirt that must survive the capper and fail on first turn. Closing line: every one of these four is a decision on a tooling drawing.",
+        "interaction": "Dragging along the bottom torque axis (or scrolling, on touch) increases clamping force in the drawing: the closure descends fractionally, the sealing land contact line thickens and takes the chartreuse accent, and a mono readout tracks 'engagement'. Past the working window the drawing shows the thread flank deforming and the readout switches to 'stripped'. Deliberately unlabelled in absolute units — the point is the window, not a number we do not own. Reduced-motion: static end-state with all four annotations shown at once."
+      },
+      {
+        "id": "component-index",
+        "title": "What we tool",
+        "purpose": "Show range and specificity at once. A buyer should find their exact part in under five seconds and see that we know what it is for, not just what it is called.",
+        "layout": "A typographic index, not a card grid. Two columns of ruled rows across the full content width: component name left in the heading face, one-line technical note right in body. Hairline rule between every row, no boxes, no rounded corners, no icons. Row numbering (01-15) sits out in the left dimension gutter in mono.",
+        "contentOutline": "The full component list — CT closures, push-and-turn and squeeze-and-turn CR closures, tamper-evident band closures, induction-seal-ready closures, vented closures, dosing and measuring caps, drain-back spout fitments, flip-top and disc-top dispensers, trigger housings and levers, pistons and cylinders and valve seats, nozzle and spinner assemblies, large-diameter agrochemical closures, dip tubes and small internals, wide-mouth powder closures. Each note says what the part has to survive, not what it is made of.",
+        "interaction": "Hovering or focusing a row draws that component's hairline silhouette into the dimension gutter at small scale, as an inline SVG that renders in about 200 ms with the same section-line language as the hero. On mobile the silhouette appears inline below the row on tap. Nothing moves, nothing expands, no accordion."
+      },
+      {
+        "id": "thread-route",
+        "title": "Getting the thread out of the mould",
+        "purpose": "The most technically differentiating section on the page. Any closure buyer who reads it knows within thirty seconds whether we are a real toolmaker.",
+        "layout": "A three-track comparison table with a synchronised motion strip along the top. Three vertical columns — strip / bump-off, unscrewing core, split cavity — sharing seven aligned rows: how it works, thread geometry it suits, materials it suits, cycle consequence, tooling complexity, wear parts, typical use in this vertical. Ruled table, square corners, mono for the row labels. Above the table, one full-width strip animates the demoulding motion of the active column.",
+        "contentOutline": "Strip / bump-off: the part is forced over the thread using the flexibility of PP or PE. Cheapest and fastest, standard for shallow wide-pitch closure threads, unavailable in rigid resins, unforgiving of thread depth, wears the stripper surfaces. Unscrewing core: the core rotates the part off itself as the mould opens; suits deep or fine-pitch threads that stripping would damage; rotation and ejection stroke must be geared to the pitch or the tool strips the threads it just made; adds cycle time, complexity and a gear train that is a maintenance item. Split cavity: cavity halves open sideways to release the thread; fast, but it puts a parting line across the thread flank, and that line has to be perfect or capping torque suffers. Collapsible cores noted as the fourth route for confined internal threads. Closing line: the route is chosen from geometry, volume and material — not from what the last tool did.",
+        "interaction": "Selecting a column (click, or scroll-linked on mobile) redraws the motion strip: a hairline section of the core and part performing that specific demoulding action on a two-second loop — the part sliding over the thread, the core counter-rotating, the halves parting sideways. The non-active columns drop to inkMuted. Motion is linear and mechanical: no easing curves that look organic."
+      },
+      {
+        "id": "failure-matrix",
+        "title": "What goes wrong, and where it came from",
+        "purpose": "The trust section. Nobody in this industry believes a supplier who only lists capabilities. Naming the failure modes accurately, and tracing each back to its origin, is the strongest credibility move available to us.",
+        "layout": "A matrix. Symptoms down the left (leak at the land, back-off, band breaks early, band never breaks, stripped thread at the capper, stress cracking in the field, ovality, drip on the dose cup, CR mechanism stops re-engaging). Origins across the top (part design, tool, process, material, filling line). Cells are hairline squares; a filled cell means that origin is a real cause of that symptom. Below the matrix sits a fixed reading panel, full width, ruled top and bottom, where the selected explanation is written out.",
+        "contentOutline": "Roughly twenty filled cells, each with two or three sentences of genuine explanation. Examples worth writing carefully: leak at the land traced to gate vestige position (tool) and to seal-type/liner mismatch (part design); ovality traced to uneven core cooling (tool) and to cycle chased at low mould temperature (process); stress cracking traced to surfactant contact plus frozen-in stress — a material and process pair, not a closure defect, and the section should say so plainly; band breaking early traced to bridge geometry and to capper torque head drift; stripped thread traced to lead-in geometry before it is traced to the capper. A standing note: most symptoms have more than one origin, which is why a leak argument between filler and supplier lasts three weeks.",
+        "interaction": "Clicking any filled cell writes its explanation into the reading panel; the row and column highlight in accent, and every other filled cell in that row stays visible in chartreuse to make the multi-cause point physically. Keyboard-navigable as a grid. Default state on load: one cell pre-selected so the panel is never empty."
+      },
+      {
+        "id": "cavity-economics",
+        "title": "The arithmetic of a cavity",
+        "purpose": "Speak to the buyer who signs. Move the conversation off tool price and onto grams, seconds and cavities — the three numbers that actually decide programme cost — while being honest about our own cavitation range.",
+        "layout": "A single full-width instrument, not a stats row. One long horizontal rail representing a production year, segmented proportionally by cost driver: resin, cycle, cavitation/machine hours, scrap and start-up, changeover, freight. Above it, three ruled input tracks — part weight, cycle seconds, cavity count — styled as engineering scales with mono tick labels. No cards. No large numbers floating on their own.",
+        "contentOutline": "The three levers, in order of size. Grams: weight is the dominant variable cost at volume; the arithmetic is stated plainly — 0.2 g removed from a part running 20 million pieces a year is 4 tonnes of resin a year. Seconds: closure cycle is cooling-dominated, so it is a core-cooling and wall-uniformity problem, which makes it a tooling problem; one second off a four-second cycle is 25% more output from the same press. Cavities: cavitation is a financing decision — sized to the real forecast and the real press, with a spare cavity set specified from the start; two moderate tools on two sites frequently beat one large tool on one site. Explicit honesty paragraph: most chemical and detergent programmes are not beverage caps; the useful range here is usually 8 to 32 cavities, and our tooling experience runs up to 46.",
+        "interaction": "The three scales are draggable. Moving any of them re-proportions the rail in real time with a hard, non-elastic transition and updates a mono summary line beneath it ('annual output', 'resin per year', 'press class'). All outputs are computed arithmetic from the reader's own inputs and are labelled as such — the page states in a footnote that these are the reader's numbers, not our claims. Reduced-motion: instant re-proportioning, no transition."
+      },
+      {
+        "id": "material-selection",
+        "title": "Material selection, and the line we do not cross",
+        "purpose": "Handle chemical compatibility with complete integrity and turn that integrity into the section's persuasive force. Suppliers who over-claim resistance are the norm in this vertical; refusing to is a differentiator.",
+        "layout": "A vertical decision spine: a single hairline running down the centre of the content column with short branch stubs left and right, each stub carrying a resin family and a one-line note. It reads like a selection ladder in a technical manual. At the foot of the spine the line does not terminate in an answer — it terminates in a ruled block, full width, containing the testing statement.",
+        "contentOutline": "Down the spine: PP homopolymer (stiffness, thread strength, the closure default), PP random copolymer (clarity, hinge life), HDPE (softer bore seals, deformable CR skirts), LDPE (liner facings), ABS / POM / PE (trigger internals, wear duty and fit). Containers noted alongside: HDPE, co-extruded HDPE/EVOH and fluorinated HDPE for solvent-bearing agrochemicals, PET where PCR content drives the brief. Two disciplines stated: (1) resin choice changes shrinkage, so it changes the steel — a material substitution is a tooling event, not a purchasing event; (2) the terminating block, set apart and given real weight: material selection is a starting hypothesis. Chemical compatibility with a specific formulation, at a specific temperature, over a specific shelf life, is established by testing on that formulation. Published grade data narrows the field. It does not close it. We will tell you what we would try and why. We will not tell you it is proven.",
+        "interaction": "Almost none, deliberately. The spine draws in on scroll, top to bottom, at reading pace. The terminating block does not animate at all — it is simply there, in ink on surface, the only place on the page where a paragraph is set at a larger size than its neighbours. Restraint is the interaction."
+      },
+      {
+        "id": "second-source",
+        "title": "One tool, one site",
+        "purpose": "Sell backup tooling — the highest-conversion offer in this vertical — by making the exposure visible rather than describing it.",
+        "layout": "Two parallel horizontal timeline tracks running the full width, one above the other, sharing a common time axis ruled in weeks. Upper track: single-source position. Lower track: dual-tool position. The two tracks are identical until an event marker, after which they visibly diverge. Text sits beneath each track, not inside a card.",
+        "contentOutline": "The event is neutral and realistic — tool damage, a converter reallocating capacity in a peak, a site interruption. Upper track after the event: line stops, then diagnosis, then spares lead time, then repair, then requalification, and the track runs on far past the right edge. Lower track: transfer to the second tool, short qualification, production resumes. The copy makes the discipline explicit: a backup must reproduce the part, not the tool — same neck finish, same thread engagement, same seal type, same torque window, same behaviour on the same capper. Anything else is a second product with its own qualification. And the standard starting condition: the drawings are usually gone. That is normal. We work from the part.",
+        "interaction": "Scroll-scrubbed. As the section enters the viewport the two tracks extend left to right in step; at the event marker the upper track's colour drops to inkMuted and it keeps extending past the edge while the lower track terminates cleanly in accent. No looping, no replay button. It happens once and stays in its end state."
+      },
+      {
+        "id": "programme-ledger",
+        "title": "How a closure programme runs with us",
+        "purpose": "Convert the technical trust built above into a concrete, low-friction next step, and set expectations honestly about what we need from the buyer.",
+        "layout": "A numbered ledger, not a stepper with connecting arrows. Six ruled rows across the content width; the step number and a mono duration label sit out in the left dimension gutter, the substance in the content column. Deliberately the plainest section on the page — after seven sections of drawn geometry, the closing move is to stop drawing.",
+        "contentOutline": "01 Send the part, the drawing, or a sample in the post. NDA first if you prefer — it usually is. 02 We evaluate: sealing geometry, thread route, cavitation options, material hypothesis, production economics. Initial response within 48 business hours. 03 DFM: we tell you what we would change and what it buys you, including the changes you will not like. 04 Design in CATIA or SolidWorks, drawings and model released to you. 05 Manufacture, trial, first articles, adjustment. Mould warranty, terms agreed per project. 06 Production and ongoing supply, or the tool ships to you. International delivery. Closing note on what we need from you to be useful: the neck finish, the capper torque window, the liner specification, and the annual volume you actually expect.",
+        "interaction": "None beyond a quiet fade-up per row on entry. Rows are anchored so the sales team can link directly to a step."
+      }
+    ],
+    "technicalPanels": [
+      {
+        "title": "Neck finish: the four letters that decide everything",
+        "bullets": [
+          "Notation: 28-410 means a 28 mm finish diameter on the 410 thread style. The number after the hyphen is not a size, it is a profile.",
+          "T — thread diameter. E — neck outside diameter. S — thread start. H — finish height. Every closure dispute resolves to one of these four.",
+          "400 is the shortest profile at roughly 2.5 mm thread depth; 410 is taller at roughly 3.5 mm; 415 is taller again at roughly 4.5 mm with an extra turn.",
+          "Taller profiles give a stronger mechanical lock and more torque tolerance, which is why pumps and triggers with high return-spring force sit on 410 and above.",
+          "A 410 closure will physically thread onto a 400 finish and will not seal reliably. It is a common, expensive field failure and it is invisible on a purchase order.",
+          "Trigger sprayers on household chemical packs are near-universally on a 28 mm finish. Continuous-thread closures across this sector span roughly 13 mm to 120 mm."
+        ]
+      },
+      {
+        "title": "Seal routes: liner, bore seal, land",
+        "bullets": [
+          "Liner (wad): foam with LDPE, HDPE, PP or EVOH-PE facings. Seals well, is cheap, and is explicitly not tamper evident and not hermetic on its own.",
+          "Induction seal liner: foil laminate bonded to the container land by induction after capping. Gives a hermetic, tamper-evident seal. Available one-piece or two-piece (foil, wax, pulp or foam backing), with clean-peel, tab or weld-seal variants.",
+          "One-piece induction liner overhang can interfere with the mechanism of a child-resistant closure. It is a fit problem, and it is caught on a drawing or not at all.",
+          "For aggressive chemical contents the industry practice is a protective barrier layer between the foil and the heat-seal layer.",
+          "Vented liners exist for oils, fragrances and household and industrial chemicals that would otherwise bloat the pack — pores or vent holes that de-gas without losing the seal.",
+          "Bore seal / plug seal: a moulded rib sealing against the inner neck wall, allowing a linerless closure. One fewer component and one fewer supply chain — and entirely a tooling outcome, because the interference fit is cut in steel.",
+          "Polycone-type plug inserts are a further route used on chemical packs where a reseal is required."
+        ]
+      },
+      {
+        "title": "Thread forming in the mould",
+        "bullets": [
+          "Strip / bump-off: the part is forced over the thread using the flexibility of PP or PE. Cheapest, fastest, standard for shallow wide-pitch closure threads. Not available in rigid resins.",
+          "Unscrewing core: a rotating core threads the part off itself as the mould opens. For deep or fine-pitch threads that stripping would damage. Rotation and ejection stroke must be geared to the thread pitch, or the tool strips the threads it has just formed.",
+          "Split cavity (slide): cavity halves open sideways. Fast, but it lays a parting line across the thread flank — and flash there directly affects capping torque.",
+          "Collapsible core: segments that retract inward to free an internal thread in a confined space. Higher tooling cost and a genuine wear item.",
+          "Internal threads generally need more draft than external threads to release cleanly. Too little and the part sticks; too much and the fit suffers.",
+          "Rounded thread roots distribute stress better than sharp ones and extend part life under repeated opening.",
+          "Moulded threads do not reach machined-thread tolerances, and shrinkage differs by resin — so a material change is a tooling change, not a purchasing change."
+        ]
+      },
+      {
+        "title": "Tamper evidence and child resistance as geometry",
+        "bullets": [
+          "The tamper-evident band is joined to the skirt by bridges — either formed in the mould or left by a post-mould slitting operation across the skirt wall.",
+          "Bridge geometry is the entire design: strong enough to survive capping and transport, weak enough to fail cleanly on the first turn. Inconsistent bridge thickness means some packs break early and some never break at all.",
+          "On application, the band has to expand uniformly over the bottle's bead. The geometry of the finish bead is a leading cause of non-uniform expansion — which makes it a bottle problem presenting as a closure problem.",
+          "Child-resistant archetypes: push-down-and-turn (Type I), lug finish (Type II), and snap/ratchet (Type III). Each has a different part count and a different tool.",
+          "Standards in the field: ISO 8317 and EN 862 (reclosable and non-reclosable, under CLP), 16 CFR 1700.20 under the US Poison Prevention Packaging Act, ASTM D3475 for classification, BS EN ISO 13127 for the mechanical test set.",
+          "Under CLP, child-resistant fastening and tactile warning obligations apply to packs supplied to the general public, not to professional-use-only packs. Methanol at 3% and dichloromethane at 1% trigger the provisions on concentration alone.",
+          "The tactile warning of danger, per EN ISO 11683, must be perceptible before the contents can be reached — a moulded raised feature, and therefore a tooling feature.",
+          "CR testing explicitly covers heat distortion, moulding defects and degradation over repeated use. The mechanism has to survive the pack's whole life, not the first opening."
+        ]
+      },
+      {
+        "title": "Cooling, cycle and the field failure nobody sees coming",
+        "bullets": [
+          "Cooling dominates the closure cycle. The core is slender and wrapped in plastic, so it is the hardest part of the tool to cool and it sets both cycle time and roundness.",
+          "Bubblers, spiral inserts and independently zoned circuits exist for exactly this. Multiple independent cooling zones are standard practice on closure tools.",
+          "Uneven cooling between the thick thread root and the thin skirt produces ovality — and an oval skirt does not seal even when every measured dimension is in tolerance.",
+          "Thin features fill last: tamper bands and live hinges short-shoot before anything else, and the last-to-fill cavity sets the pack pressure for the whole tool.",
+          "Venting depth on closure tools works in a narrow window — commonly cited around 0.02 to 0.05 mm with short lands. Too deep gives flash on the parting line; too shallow gives short shots and burn.",
+          "Environmental stress cracking needs two things at once: a chemically active environment and stress. Surfactants supply the first. Frozen-in moulding stress supplies the second.",
+          "So cycle time chased by dropping mould temperature is borrowed, not saved. The part passes the line and fails in the field, months later, in summer, with no process change to point at.",
+          "ESCR is measured by ASTM D1693 bent-strip in surfactant, though inter-laboratory precision is poor; constant-stress methods such as ASTM D2561 represent real service conditions better."
+        ]
+      }
+    ],
+    "ctaHeadline": "Send the closure. We will send back a route.",
+    "ctaSub": "The part, a drawing, or a sample in the post. You get the tooling route, the thread strategy, cavitation options and a production position. Initial response within 48 business hours. NDA on request, always. Since 2006, 1,000+ projects, international delivery.",
+    "whatsappPrefill": "Hello Metal Form — closure tooling enquiry. Product type: [liquid detergent / household cleaner / agrochemical / other]. Closure type: [continuous thread / child-resistant / tamper-evident / flip-top / trigger sprayer / dosing cap]. Neck finish: [e.g. 28-410]. Seal: [liner / induction / bore seal]. Annual volume: [pcs/year]. I have: [existing part / drawing / 3D model / neither]. Please send an NDA.",
+    "metaTitle": "Closure & Cap Tooling for Chemical and Detergent Packaging — Metal Form",
+    "metaDescription": "Mould design and manufacture for caps, closures, child-resistant and tamper-evident systems, and dispensing components for detergents, household chemicals and agrochemicals. Send the part — response within 48 business hours."
+  },
+  "artDirection": {
+    "moodInOneLine": "A technical section drawing on a clean bench: hairline geometry, hard contrast, generous white, and exactly one place where colour is spent.",
+    "palette": {
+      "surface": "#F2F4F3",
+      "surfaceAlt": "#FFFFFF",
+      "ink": "#0D1418",
+      "inkMuted": "#5A6B72",
+      "accent": "#0E6B7C",
+      "accent2": "#AFC80F",
+      "rationale": "Surface is a very slightly cool, very slightly green off-white — the colour of a clean laboratory bench or a fresh drawing sheet, not the warm paper of a foundry vertical. surfaceAlt is pure white, reserved for the drawing fields so the geometry sits on the brightest possible ground and hairlines stay crisp. Ink is near-black with a cool cast, giving genuine high contrast for the fine section lines the whole page depends on. The accent is a deep alkaline teal: it reads as chemical and clean without touching hazard-red or the sparks-and-grease cliche, it is dark enough to carry body-weight type at accessible contrast on both whites, and it is unmistakably not the accent of a mould-shop website. accent2 is an optical-brightener chartreuse, the colour every detergent brand in the world uses in its brightener chemistry and its packaging — deployed at 1 to 2 percent coverage only, never as a fill: the contact line at a sealing land, the second cause in a failure row, the surviving track in the second-source timeline. Because it appears so rarely, it means something every time it appears. No gradients anywhere. Ink, muted ink, teal, chartreuse, two whites. That is the whole system."
+    },
+    "typographyNote": "Three roles, strictly kept. Headings in a tight, squared grotesque (Archivo, with a system grotesque fallback) at heavy weights and negative tracking, set large and left, never centred. Body in a neutral workhorse (Inter, fallback system sans) at comfortable measure — 62 to 70 characters, never full-width. All technical content in a monospace (IBM Plex Mono, fallback ui-monospace) — dimension letters, torque readouts, cavity counts, standard numbers, step numbers, row numbers — set small, letter-spaced, uppercase for labels. The mono is not decoration: it is the page's signal that a number is a measurement rather than a marketing figure, and it is what makes T / E / S / H read as drawing callouts. One rule enforced everywhere: no number that Metal Form does not own appears in the heading face. Claims are set in body. Measurements are set in mono.",
+    "compositionNote": "A strict 12-column grid with one distinctive feature: a persistent left dimension gutter, roughly 96 px on desktop, that runs the full length of the page and carries only section numbers, dimension letters, step numbers and hairline leader stubs — exactly the way the margin of an engineering drawing carries its annotations. Body content lives in columns 3 to 11 and never enters the gutter; drawings are the only elements permitted to break out to full bleed. Vertical rhythm is generous and consistent, with sections separated by a 45-degree hatched rule rather than by cards or coloured bands. Nothing on this page has a rounded corner. There are no shadows, no glass, no floating panels. Where a container is genuinely needed it is a hairline rectangle with square corners, ruled top and bottom only. On mobile the dimension gutter collapses to a 24 px rail that keeps the section numbering, so the drawing-margin identity survives the breakpoint.",
+    "motionLanguage": "Rotational and mechanical. Things on this page arrive by turning and engaging, not by fading up from below. Three rules. First, engagement easing: every transition decelerates hard and stops dead, the way a cap stops when it reaches torque — no bounce, no elastic overshoot, no spring. Second, drawn-not-faded: geometry appears by stroke-dashoffset, outline first then hatch, at a speed that reads as a pen moving rather than a wipe. Third, once only: the hero rotation, the timeline divergence and the spine draw each happen a single time and remain in their end state; nothing on this page loops except the demoulding motion strip in the thread-route section, which loops because it is demonstrating a repeating machine cycle and should feel like one. Durations are short — 200 to 600 ms for interface response, up to 1.2 s for the hero draw. prefers-reduced-motion collapses every animation to its end state with no exceptions and no degraded content.",
+    "signatureMotif": "The section cut. A hairline cross-section with 45-degree hatch on the cut material, used at three deliberate scales: full-bleed as the hero and the seal diagram; small as the component silhouettes that appear in the dimension gutter; and reduced to pure pattern as the hatched rule that separates every section. Alongside it, a second-order motif: the leader line — a hairline that starts on geometry, turns once at a right angle, and terminates in a mono label. Every annotation on the page uses it. Together they mean the entire site reads as one continuous drawing sheet rather than a page with pictures on it.",
+    "diagramConcept": "The sealing stack, interactive. A large SVG cross-section on the vertical centreline of a closure seated on a neck finish, showing in one image: the sealing land, two thread turns with the profile height called out, the liner or bore seal, the tamper band and its bridges, and the T / E / S / H dimension set. A ruled torque axis along the bottom edge drives it: dragging increases clamping force, the closure descends fractionally in the drawing, the contact line at the land thickens and takes the chartreuse accent, and past the working window the thread flank visibly deforms and the readout switches to 'stripped'. It is deliberately not calibrated in absolute units — it teaches the window, which is a true industry concept, rather than asserting a number we do not own. Pure inline SVG plus a few dozen lines of JavaScript: no library, no canvas, no WebGL needed, and it degrades to a labelled static drawing with zero loss of meaning.",
+    "howThisDiffersFromOtherIndustries": "This is the drawing-sheet chapter of the book. Where an automotive or heavy-equipment page would go graphite and mass, and a medical page would go soft, white and clinical, this one goes hard-line and cartographic: near-white ground, black hairlines, 45-degree hatch, mono callouts in a drawing margin. Its colour identity is alkaline teal with a single chartreuse signal, which no other vertical in the set should touch. Its motion is rotational and terminal — turn, engage, stop — where other chapters can use assembly, flow or lamination. Its diagram type is the sectioned assembly with dimension leaders, not an exploded view, a flow schematic or a process timeline. And its composition rule, the persistent dimension gutter, is unique to this page: no other industry page should carry that left margin, so a reader flipping between chapters can identify this one from the layout alone with the type unreadable."
+  },
+  "openQuestions": [
+    "Which sub-segment leads the page: household detergent (high volume, few SKUs, cavitation story) or agrochemical (lower volume, many SKUs, regulatory and barrier story)? They want different emphasis in the hero and different first sections. Current draft balances both; sales should tell us which enquiries actually arrive.",
+    "Do we want to actively promote trigger sprayer and dispensing mechanism tooling, or keep the page on caps and closures? Trigger internals are a technical-mechanism programme with a very different sales cycle and a much higher engineering content — it may deserve its own treatment rather than five rows in a component index.",
+    "What is our honest position on tamper-band slitting equipment and post-mould operations? The page currently treats slitting as an industry fact and does not claim we supply the operation. Confirm that is correct.",
+    "Are there closure programmes among the 1,000+ projects that we can describe generically — closure type, cavity count, neck finish, no client name — or must the page stay entirely abstract? A single anonymised programme sketch would materially strengthen the second-source section.",
+    "Does the mould warranty have any consistent baseline (shot count, period, coverage) that can be stated as a range, or must it remain 'terms per project' with no figure at all? The page currently states no figure.",
+    "Can we accept a physical sample by post reliably, and what is the realistic customs path for an inbound closure sample? The second-source offer depends on 'send us the part' being genuinely frictionless.",
+    "For the interactive torque diagram: are we comfortable with an uncalibrated demonstrator, or would sales prefer it removed entirely to avoid any implication that we specify torque windows? Recommend keeping it uncalibrated and explicitly labelled as illustrative.",
+    "Do any target markets impose regulatory expectations on the tooling supplier itself, rather than on the pack? Our current understanding is that CR and TWD obligations sit with the party placing the product on the market, not with the mould maker, and the page is written on that basis."
+  ],
+  "recommendations": [
+    "Lead the whole page on the seal, not on the mould. The hero line 'A closure is a seal, not a lid' is the strongest available position because it reframes the purchase from a commodity part to an engineered function — and it is the reframe that makes tooling expertise the relevant expertise.",
+    "Make the failure matrix the section we invest most writing time in. In this vertical, accurate naming of failure modes converts better than any list of capabilities, because every buyer reading it has personally lived through at least three of the cells.",
+    "Be explicit and unembarrassed about the cavitation range. Saying 'most chemical and detergent programmes need 8 to 32 cavities, and our experience runs to 46' is more credible than implying beverage-cap capability, and it filters out enquiries we would lose anyway.",
+    "Treat the chemical compatibility disclaimer as a selling point, not a legal footnote. Give it the largest body type on the page. Suppliers who over-claim resistance are the norm here; refusing to is memorable, and it is the sentence a formulation manager will quote to their colleagues.",
+    "Put the second-source offer above the general capability list in the page's implicit priority. It is the highest-intent, fastest-closing enquiry in this vertical, and 'we work from the part, the drawings are usually gone' removes the single biggest perceived obstacle.",
+    "Keep chartreuse below two percent of the pixel area. Its entire value is scarcity — the moment it becomes a background or a button fill, the page loses the crisp, controlled, high-contrast quality the vertical is supposed to carry.",
+    "Do not photograph or render a shiny cap. Every competitor in this sector shows a product photo of a closure. A hairline cross-section at absurd scale says 'we make the thing that makes the cap' in a way no product shot can, and it is the only visual route that is honest given we hold no photography.",
+    "Have the WhatsApp prefill ask for the neck finish and the capper torque window by name. It qualifies the enquiry instantly, and asking the question at all demonstrates competence before a human has replied.",
+    "Reuse the dimension-gutter grid nowhere else in the site. It is this chapter's structural signature; if a second industry page borrows it, the thirteen-chapters-of-one-book effect collapses into a template."
+  ]
+}

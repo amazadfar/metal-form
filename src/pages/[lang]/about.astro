@@ -1,0 +1,170 @@
+---
+/**
+ * About.
+ *
+ * Short on purpose. It says what the company is, how the work is organised and
+ * where the engineering comes from — and it does not explain the internal
+ * structure of the business, because that is not what a buyer is asking.
+ */
+import Base from '../../layouts/Base.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import CtaBlock from '../../components/CtaBlock.astro';
+import { LOCALE_ORDER, type Locale } from '../../i18n/locales.ts';
+import { getAbout, getCommon } from '../../content/index.ts';
+import { absoluteUrl, breadcrumbSchema } from '../../lib/seo.ts';
+import { BRAND } from '../../config/site.ts';
+
+export function getStaticPaths() {
+  return LOCALE_ORDER.map((lang) => ({ params: { lang } }));
+}
+
+const locale = Astro.params.lang as Locale;
+const p = getAbout(locale);
+const c = getCommon(locale);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: BRAND.name, url: absoluteUrl(locale) },
+    { name: c.nav.about, url: absoluteUrl(locale, 'about') },
+  ]),
+];
+---
+
+<Base locale={locale} meta={p.meta} route="about" schemas={schemas}>
+  <a class="skip-link" href="#main">{c.a11y.skipToContent}</a>
+  <SiteHeader locale={locale} current="about" />
+
+  <main id="main">
+    <header class="ab-hero">
+      <div class="shell--wide">
+        <p class="eyebrow">{p.hero.kicker}</p>
+        <h1 class="ab-hero__head">
+          {p.hero.headline.map((line) => <span>{line}</span>)}
+        </h1>
+        <p class="t-lead ab-hero__lead">{p.hero.lead}</p>
+      </div>
+    </header>
+
+    {/* Four facts, set as a drawing's title block rather than as a stat wall. */}
+    <section class="ab-facts">
+      <div class="shell--wide">
+        <dl class="ab-facts__grid">
+          {p.facts.map((fact, i) => (
+            <div class="ab-fact" data-reveal style={`--reveal-delay:${i * 60}ms`}>
+              <dt class="ab-fact__v t-mono">{fact.value}</dt>
+              <dd>
+                <span class="ab-fact__l">{fact.label}</span>
+                <span class="ab-fact__n">{fact.note}</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+
+    {p.sections.map((section, si) => (
+      <section class="ab-sec" data-alt={si % 2 === 1}>
+        <div class="shell--wide ab-sec__inner">
+          <div class="ab-sec__head">
+            <p class="ab-sec__n t-mono">{section.index}</p>
+            <h2 class="ab-sec__t">{section.title}</h2>
+          </div>
+          <div class="ab-sec__body">
+            {section.body.map((para) => <p>{para}</p>)}
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="ab-acc">
+      <div class="shell ab-acc__inner">
+        <h2 class="t-h3 ab-acc__t">{p.accountability.heading}</h2>
+        <div class="ab-acc__body">
+          {p.accountability.body.map((para) => <p>{para}</p>)}
+        </div>
+      </div>
+    </section>
+
+    <CtaBlock locale={locale} cta={p.cta} source="about" index="—" />
+  </main>
+
+  <SiteFooter locale={locale} />
+</Base>
+
+<style>
+  .ab-hero { padding-block: clamp(3rem, 7vw, 6rem) clamp(2rem, 4vw, 3.5rem); }
+  .ab-hero__head {
+    margin-block-start: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(2.1rem, 4.8vw, 3.9rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+    max-inline-size: 20ch;
+  }
+  .ab-hero__head span { display: block; }
+  .ab-hero__head span:last-child { color: var(--accent-deep); }
+  .ab-hero__lead { margin-block-start: clamp(1.25rem, 2.5vw, 1.75rem); max-inline-size: 60ch; }
+
+  /* ── Facts ────────────────────────────────────────────────────────────── */
+  .ab-facts { padding-block: var(--section-y-tight); }
+  .ab-facts__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 0;
+    border-block-start: var(--rule-strong);
+  }
+  .ab-fact {
+    padding: var(--sp-5) var(--sp-5) var(--sp-6) 0;
+    border-block-end: var(--rule);
+    border-inline-end: var(--rule);
+    display: grid;
+    gap: var(--sp-3);
+    align-content: start;
+  }
+  .ab-fact:last-child { border-inline-end: 0; }
+  @media (max-width: 720px) { .ab-fact { border-inline-end: 0; } }
+
+  .ab-fact__v {
+    font-size: var(--step-4);
+    line-height: 1;
+    color: var(--accent-deep);
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .ab-fact dd { display: grid; gap: 0.4rem; }
+  .ab-fact__l { font-size: var(--step-0); font-weight: var(--weight-medium); }
+  .ab-fact__n { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); max-inline-size: 34ch; }
+
+  /* ── Sections ─────────────────────────────────────────────────────────── */
+  .ab-sec { padding-block: clamp(2.5rem, 5.5vw, 4.5rem); border-block-start: var(--rule); }
+  .ab-sec[data-alt='true'] { background: var(--surface-sunk); }
+  .ab-sec__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .ab-sec__inner { grid-template-columns: 1fr; } }
+
+  .ab-sec__n { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }
+  .ab-sec__t {
+    margin-block-start: var(--sp-4);
+    font-size: var(--step-3);
+    letter-spacing: var(--track-head);
+    max-inline-size: 18ch;
+  }
+  .ab-sec__body { display: grid; gap: var(--sp-5); max-inline-size: 68ch; color: var(--ink-muted); }
+
+  /* ── Accountability ───────────────────────────────────────────────────── */
+  .ab-acc { padding-block: var(--section-y); border-block-start: var(--rule); }
+  .ab-acc__t { max-inline-size: 24ch; }
+  .ab-acc__body {
+    margin-block-start: var(--sp-6);
+    display: grid;
+    gap: var(--sp-5);
+    max-inline-size: 68ch;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-6);
+    border-inline-start: 2px solid var(--accent);
+  }
+</style>

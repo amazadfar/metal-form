@@ -1,0 +1,215 @@
+---
+/**
+ * Footer.
+ *
+ * Carries the one piece of transparency the whole project depends on: a plain
+ * statement that the drawings and diagrams throughout the site are schematics,
+ * not photographs of company equipment or completed work. It sits here, in
+ * every language, on every page.
+ */
+import Wordmark from './Wordmark.astro';
+import { localePath, LOCALES, LOCALE_ORDER, swapLocale, type Locale } from '../i18n/locales.ts';
+import { getCommon, getIndustry } from '../content/index.ts';
+import { INDUSTRY_LIST } from '../config/industries.ts';
+import { BRAND, CONTACT, FACTS, resolved } from '../config/site.ts';
+import { availableChannels, mailtoLink, telLink } from '../lib/contact.ts';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+
+const c = getCommon(locale);
+const channels = availableChannels();
+const email = resolved(CONTACT.email);
+const phone = resolved(CONTACT.phone);
+const street = resolved(CONTACT.address.line1);
+const city = resolved(CONTACT.address.city);
+const pathname = Astro.url.pathname;
+
+const companyLinks = [
+  { label: c.nav.capabilities, href: localePath(locale, 'capabilities') },
+  { label: c.nav.about, href: localePath(locale, 'about') },
+  { label: c.nav.contact, href: localePath(locale, 'contact') },
+];
+
+const year = 2026;
+---
+
+<footer class="ftr">
+  <div class="shell--wide ftr__top">
+    <div class="ftr__brand">
+      <Wordmark href={localePath(locale)} size="md" inverse />
+      <p class="ftr__tagline">{c.footer.tagline}</p>
+      <p class="ftr__est t-mono">
+        {BRAND.discipline}
+      </p>
+    </div>
+
+    <nav class="ftr__cols" aria-label={c.footer.companyHeading}>
+      <section class="ftr__col ftr__col--wide">
+        <h2 class="ftr__h t-label">{c.footer.industriesHeading}</h2>
+        <ul class="ftr__inds">
+          {INDUSTRY_LIST.map((ind) => (
+            <li>
+              <a href={localePath(locale, 'industries', ind.slug)}>
+                {getIndustry(locale, ind.key).name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="ftr__col">
+        <h2 class="ftr__h t-label">{c.footer.companyHeading}</h2>
+        <ul class="ftr__list">
+          {companyLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </section>
+
+      <section class="ftr__col">
+        <h2 class="ftr__h t-label">{c.footer.contactHeading}</h2>
+        <ul class="ftr__list">
+          {channels.email && email && <li><a href={mailtoLink(BRAND.name)}>{email}</a></li>}
+          {channels.phone && phone && <li><a href={telLink()} dir="ltr">{phone}</a></li>}
+          <li><a href={localePath(locale, 'contact')}>{c.contact.whatsappLabel}</a></li>
+        </ul>
+        {(street || city) && (
+          <address class="ftr__addr t-fine">
+            {street && <span>{street}</span>}
+            {city && <span>{city}</span>}
+            <span>{CONTACT.address.country}</span>
+          </address>
+        )}
+      </section>
+    </nav>
+  </div>
+
+  <div class="shell--wide ftr__langs-wrap">
+    <h2 class="ftr__h t-label">{c.nav.language}</h2>
+    <ul class="ftr__langs">
+      {LOCALE_ORDER.map((code) => (
+        <li>
+          <a
+            href={swapLocale(pathname, code)}
+            lang={LOCALES[code].tag}
+            dir={LOCALES[code].dir}
+            aria-current={code === locale ? 'true' : undefined}
+          >{LOCALES[code].native}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="shell--wide ftr__base">
+    <p class="t-fine">© {year} {BRAND.name}. {c.footer.rights}</p>
+    <p class="t-fine ftr__media-note">{c.footer.mediaNote}</p>
+  </div>
+</footer>
+
+<style>
+  .ftr {
+    background: var(--inverse, #101215);
+    color: var(--inverse-ink, #EDEDEA);
+    /* The whole token set has to flip, not just the background. Leaving
+       --ink-muted at its light-surface value put grey text on near-black. */
+    --ink: var(--inverse-ink, #EDEDEA);
+    --ink-muted: color-mix(in oklab, var(--inverse-ink, #EDEDEA) 74%, transparent);
+    --signal: var(--signal-inverse);
+    --signal-ink: var(--signal-inverse);
+    --accent: var(--accent-inverse);
+    --accent-deep: var(--accent-inverse);
+    --line: color-mix(in oklab, currentColor 16%, transparent);
+    padding-block-start: var(--section-y-tight);
+    margin-block-start: auto;
+  }
+
+  .ftr__top {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 2fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    padding-block-end: var(--sp-9);
+  }
+  @media (max-width: 900px) { .ftr__top { grid-template-columns: 1fr; } }
+
+  .ftr__tagline {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step-0);
+    line-height: 1.5;
+    max-inline-size: 30ch;
+    color: color-mix(in oklab, currentColor 72%, transparent);
+  }
+  .ftr__est {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    color: color-mix(in oklab, currentColor 72%, transparent);
+  }
+
+  .ftr__cols {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+  }
+  @media (max-width: 760px) { .ftr__cols { grid-template-columns: 1fr; gap: var(--sp-7); } }
+
+  .ftr__h {
+    display: block;
+    color: color-mix(in oklab, currentColor 70%, transparent);
+    margin-block-end: var(--sp-4);
+    padding-block-end: var(--sp-3);
+    border-block-end: 1px solid var(--line);
+  }
+
+  .ftr__inds {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: 0.45rem 1.5rem;
+  }
+  .ftr__list { display: grid; gap: 0.45rem; }
+
+  .ftr__inds a, .ftr__list a {
+    font-size: var(--step--1);
+    color: color-mix(in oklab, currentColor 74%, transparent);
+    transition: color var(--dur-2) var(--ease-out);
+  }
+  .ftr__inds a:hover, .ftr__list a:hover { color: currentColor; }
+
+  .ftr__addr {
+    margin-block-start: var(--sp-5);
+    display: grid;
+    gap: 0.15rem;
+    font-style: normal;
+    color: color-mix(in oklab, currentColor 72%, transparent);
+  }
+
+  .ftr__langs-wrap { padding-block: var(--sp-6); border-block-start: 1px solid var(--line); }
+  .ftr__langs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.4rem;
+  }
+  .ftr__langs a {
+    font-size: var(--step--1);
+    color: color-mix(in oklab, currentColor 60%, transparent);
+    transition: color var(--dur-2) var(--ease-out);
+  }
+  .ftr__langs a:hover { color: currentColor; }
+  .ftr__langs a[aria-current='true'] { color: currentColor; text-decoration: underline; text-underline-offset: 4px; }
+  .ftr__langs a[lang='ur'] { font-family: var(--font-urdu); }
+  .ftr__langs a[lang='hy'] { font-family: var(--font-armenian); }
+  .ftr__langs a[lang='th'] { font-family: var(--font-thai); }
+  .ftr__langs a[lang='zh-Hans'] { font-family: var(--font-han); }
+  .ftr__langs a[lang='ar'] { font-family: var(--font-arabic); }
+  .ftr__langs a[lang='fa'] { font-family: var(--font-persian); }
+  .ftr__langs a[lang='ru'] { font-family: var(--font-cyrillic); }
+
+  .ftr__base {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--sp-5);
+    flex-wrap: wrap;
+    padding-block: var(--sp-6);
+    border-block-start: 1px solid var(--line);
+    color: color-mix(in oklab, currentColor 70%, transparent);
+  }
+  .ftr__media-note { max-inline-size: 64ch; }
+</style>

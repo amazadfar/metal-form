@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "industries": "Sektörler",
+    "capabilities": "Yetkinlikler",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "language": "Dil",
+    "menu": "Menü",
+    "close": "Kapat",
+    "home": "Ana sayfa",
+    "backToIndustries": "Sektörlere dön",
+    "allIndustries": "Tüm sektörler"
+  },
+  "actions": {
+    "whatsapp": "Projenizi WhatsApp'tan gönderin",
+    "sendProject": "Projenizi gönderin",
+    "talkToEngineer": "Bir mühendisle görüşün",
+    "viewIndustry": "Bu sektörü inceleyin",
+    "more": "Daha fazla ayrıntı",
+    "less": "Daha az ayrıntı",
+    "next": "Sonraki",
+    "previous": "Önceki"
+  },
+  "selector": {
+    "kicker": "Dil seçin",
+    "headline": "Mühendislik. Kalıp. Üretim. Tedarik.",
+    "note": "Dokuz dil. Tek muhatap, tek sorumlu.",
+    "continueIn": "Şu dilde devam edin"
+  },
+  "trust": {
+    "since": "2006'dan beri",
+    "projects": "1.000'den fazla tamamlanmış proje",
+    "projectsNote": "Atölye açıldığından bu yana teslim edilen kalıp, mühendislik ve üretim işleri.",
+    "cavities": "46 göze kadar kalıp",
+    "cavitiesNote": "Çok gözlü kalıp deneyimimiz 46 göze kadar uzanır. Yüksek göz sayısı bir makine özelliği değil, bir kalıpçılık disiplinidir.",
+    "software": "CATIA · SolidWorks",
+    "softwareNote": "Parça modelleri, kalıp tasarımı ve tersine mühendislikle elde edilen geometri CATIA ve SolidWorks'te üretilir. Kendi formatları da nötr formatlar da çalışır — STEP, IGES, X_T, STL.",
+    "warranty": "Kalıp garantisi",
+    "warrantyNote": "Garanti şartları her proje ve kalıp şartnamesi bazında belirlenir; bir pazarlama iddiasına değil, siparişin kendisine yazılır.",
+    "delivery": "Dünya geneline sevkiyat",
+    "deliveryNote": "Kalıplar ve parçalar yurt dışına sevk edilir. Teslim şartları, güzergâh ve evraklar teklifle birlikte karara bağlanır.",
+    "response": "48 iş saati içinde ilk dönüş",
+    "responseNote": "İlk teknik görüş: üretilebilirlik yönü, eksik kalan bilgiler ve bir sonraki adım. Nihai fiyat teklifi değildir; öyleymiş gibi de göstermeyiz."
+  },
+  "nda": {
+    "heading": "Gizlilik ve NDA",
+    "body": "Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir. Geometriniz, teknik resimleriniz, toleranslarınız ve adetleriniz yalnızca projede çalışan mühendislerde kalır.",
+    "points": [
+      "Ayrıntılı teknik resimler el değiştirmeden önce sizin NDA'nızı imzalarız ya da kendi metnimizi göndeririz.",
+      "Müşteri geometrisi yazılı izin olmadan hiçbir zaman referans çalışması olarak kullanılmaz.",
+      "Bir proje kamuya açık şekilde gösterilecekse tanımlayıcı ayrıntılar çıkarılır — ve bunu açıkça belirtiriz."
+    ]
+  },
+  "contact": {
+    "heading": "Projeyi gönderin",
+    "body": "Bir fotoğraf, bir numune, bir eskiz ya da eksiksiz bir CAD paketi — hepsi başlangıç noktasıdır. Parçanın ne iş yapması gerektiğini ve kaç adet ihtiyacınız olduğunu yazın.",
+    "whatsappLabel": "WhatsApp",
+    "whatsappNote": "En hızlı yol. Parçanın fotoğrafını, teknik resmini veya videosunu doğrudan gönderin.",
+    "emailLabel": "E-posta",
+    "phoneLabel": "Telefon",
+    "addressLabel": "Kayıtlı adres",
+    "responseLabel": "Yanıt süresi",
+    "pendingNote": "Doğrudan mesajlaşma hattı henüz bağlanıyor. Devreye girene kadar bu düğme, şu anda açık olan tüm kanalların yer aldığı iletişim sayfasını açar."
+  },
+  "footer": {
+    "tagline": "Enjeksiyon parçalarının mühendisliği, kalıbı, üretimi ve tedariki için tek muhatap, tek sorumlu.",
+    "industriesHeading": "Sektörler",
+    "companyHeading": "Kurumsal",
+    "contactHeading": "İletişim",
+    "rights": "Tüm hakları saklıdır.",
+    "mediaNote": "Bu sitedeki çizimler, şemalar ve animasyonlar; mühendislik ve üretimi anlatmak için hazırlanmış şematik görsellerdir. Metal Form'un ekipmanlarının, tesislerinin veya tamamlanmış projelerinin fotoğrafı değildir. Gerçek proje görselleri yalnızca müşterinin yazılı izniyle yayımlanır."
+  },
+  "a11y": {
+    "skipToContent": "İçeriğe geç",
+    "languageSelector": "Dili değiştir",
+    "mainNavigation": "Ana menü",
+    "schematicLabel": "Şematik çizim",
+    "scrollForMore": "Kaydırın"
+  },
+  "schematic": "Şematik"
+}

@@ -1,0 +1,1401 @@
+{
+  "key": "_terminology",
+  "title": "Nine-language industrial terminology and localisation reference",
+  "scope": "Plastic injection mould / tooling / manufacturing company website. Covers core trade terminology, commercial phrase adaptation, script and typography constraints, digit conventions, and register guidance for en, ru, hy, tr, th, zh, ur, ar, fa.",
+  "researchedAt": "2026-08",
+  "method": "Terminology was verified against native-language technical sources rather than translated from English: Russian, Chinese, Persian, Arabic, Turkish and Thai Wikipedia articles on moulds, injection moulding, mould making, hot runners, machining and plastics, read in the original; plus cross-language article-title data from the Wikipedia langlinks API, which shows how each language community itself names each concept. Negative findings were treated as evidence: the complete absence of tooling vocabulary from Urdu Wikipedia, and of any injection-moulding article in Thai, Armenian or Urdu, is what establishes that those markets run on loanwords and English terms rather than native coinages.",
+  "sources": [
+    {
+      "title": "Пресс-форма — Русская Википедия",
+      "url": "https://ru.wikipedia.org/wiki/Пресс-форма",
+      "lang": "ru",
+      "established": "Verbatim Russian mould vocabulary: пресс-форма, матрица (cavity half), пуансон (core half), литниковая система, формообразующая полость, плоскость разъёма, литник, система выталкивания, каналы охлаждения, многоместные (multi-cavity). Confirms матрица/пуансон is the Russian cavity/core pair — not a calque of 'cavity/core'."
+    },
+    {
+      "title": "Литьё пластмасс под давлением — Русская Википедия",
+      "url": "https://ru.wikipedia.org/wiki/Литьё_пластмасс_под_давлением",
+      "lang": "ru",
+      "established": "Confirms литьё пластмасс под давлением as the process name, литниковые каналы, термопластавтомат (ТПА) as the machine, плоскость разъёма пресс-формы, отливка. Search index also surfaced 'Основы конструирования литьевых форм для термопластов', confirming литьевая форма as the engineering-literature term alongside commercial пресс-форма."
+    },
+    {
+      "title": "Литниковая система / поиск по ru.wikipedia (пресс-форма литьё пластмасс)",
+      "url": "https://ru.wikipedia.org/w/api.php?action=query&list=search&srsearch=пресс-форма%20литье%20пластмасс",
+      "lang": "ru",
+      "established": "Confirms литниковая система as the gating/runner system and its parts (центральный, разводящий литник). Confirms Пресс-форма and Термопластавтомат exist as standalone Russian technical articles."
+    },
+    {
+      "title": "注塑模具 — 中文维基百科",
+      "url": "https://zh.wikipedia.org/wiki/注塑模具",
+      "lang": "zh",
+      "established": "Full verbatim Chinese mould component set: 模架, 型腔, 型芯, 分型面, 热流道, 冷流道, 浇口, 主流道, 分流道, 顶针/推杆, 滑块, 镶件, 一模多腔, 锁模力, 试模, 模具钢, 缩水率, 熔接线, 飞边, 缩痕, 翘曲, 拔模角. Also two-plate/three-plate mould construction (两板/三板模具)."
+    },
+    {
+      "title": "模具 — 中文维基百科",
+      "url": "https://zh.wikipedia.org/wiki/模具",
+      "lang": "zh",
+      "established": "Confirms 模具 as the umbrella word for tooling/dies of every kind, and the family split 鑄造模具 / 鍛造模具 / 射出模具 / 沖壓模具. Confirms 注塑 and 吹塑 as process words, and that Mainland Simplified prefers 注塑模具 where Taiwan writes 射出模具 — a real zh-Hans vs zh-Hant divergence."
+    },
+    {
+      "title": "注塑 (注射成型) — 中文维基百科",
+      "url": "https://zh.wikipedia.org/wiki/注塑",
+      "lang": "zh",
+      "established": "Confirms 型腔, 型芯, 主流道, 分流道, 浇口, 分型, 缩水 in running Chinese prose, and 射出週期 for the moulding cycle."
+    },
+    {
+      "title": "قالب‌گیری تزریقی — ویکی‌پدیای فارسی",
+      "url": "https://fa.wikipedia.org/wiki/قالب‌گیری_تزریقی",
+      "lang": "fa",
+      "established": "Persian process and mould vocabulary: قالب‌گیری تزریقی, قالب, حفره, راهگاه, سیستم پران, حفره قالب, راهگاه‌ها. Establishes قالب‌گیری تزریقی as the process and قالب as the tool."
+    },
+    {
+      "title": "قالب‌سازی — ویکی‌پدیای فارسی",
+      "url": "https://fa.wikipedia.org/wiki/قالب‌سازی",
+      "lang": "fa",
+      "established": "The single most useful Persian source. Confirms قالب‌سازی as the word for tooling / mould-making as a trade, ماهیچه as core (NOT مغز, which the process article used loosely), حفره cavity, راهگاه runner, پران ejector, فولاد قالب mould steel, نمونه‌سازی prototyping. Also confirms Iranian shops classify moulds by production class (A/B/C) exactly as Western tool shops do."
+    },
+    {
+      "title": "راهگاه گرم — ویکی‌پدیای فارسی",
+      "url": "https://fa.wikipedia.org/wiki/راهگاه_گرم",
+      "lang": "fa",
+      "established": "Confirms راهگاه گرم as hot runner in Persian, حفره‌های قالب for mould cavities, زمان چرخهٔ تولید for cycle time, دروازه for gate, and سوپاپ سوزنی for valve gate. Confirms the 10–30% cycle-time claim is the standard Persian-language framing of hot-runner benefit."
+    },
+    {
+      "title": "جستجوی fa.wikipedia: قالب تزریق پلاستیک‌سازی",
+      "url": "https://fa.wikipedia.org/w/api.php?action=query&list=search&srsearch=قالب%20تزریق%20پلاستیک%20سازی",
+      "lang": "fa",
+      "established": "Surfaces the real commercial Persian collocations: دستگاه تزریق پلاستیک (injection moulding machine), قالب تزریق پلاستیک (plastic injection mould — the commercial noun phrase, more natural on a website than the process noun قالب‌گیری تزریقی), صنعت قالب‌سازی, سیستم رونده سرد / سیستم رونده گرم as a cold/hot runner variant, قالب‌گیری بادی for blow moulding."
+    },
+    {
+      "title": "حقن اللدائن — ويكيبيديا العربية",
+      "url": "https://ar.wikipedia.org/wiki/حقن_اللدائن",
+      "lang": "ar",
+      "established": "Arabic core set: القالب, التجويف (cavity), اللبّ (core), الحقن, اللدائن / مادة لدنة, الآلة, التبريد, التصلب. Establishes حقن اللدائن as the encyclopaedic Arabic name of the process."
+    },
+    {
+      "title": "بحث ar.wikipedia: قالب الحقن البلاستيك",
+      "url": "https://ar.wikipedia.org/w/api.php?action=query&list=search&srsearch=قالب%20الحقن%20البلاستيك",
+      "lang": "ar",
+      "established": "Critical register finding. Surfaces ماكينة حقن القوالب and the phrase 'آلة لتصنيع المنتجات البلاستيكية عن طريق عملية قولبة الحقن' — confirming قولبة الحقن and ماكينة الحقن as the working commercial Arabic, alongside encyclopaedic حقن اللدائن. Also confirms صناعة البلاستيك and تشكيل بالنفخ (blow moulding), and that البلاستيك (loanword) dominates commercial writing while اللدائن is the academic Arabised term."
+    },
+    {
+      "title": "Plastik enjeksiyon — Türkçe Vikipedi",
+      "url": "https://tr.wikipedia.org/wiki/Plastik_enjeksiyon",
+      "lang": "tr",
+      "established": "Confirms Turkish machine architecture vocabulary in running prose: Enjeksiyon Ünitesi, Kalıp Ünitesi ('Parçaya şekil veren takımdır' — confirming takım as the Turkish word for tooling), Mengene Ünitesi (clamping unit — hence mengene kuvveti for clamping force), Kontrol Ünitesi. Also the cycle steps plastikleştirme, kalıbın kapanması, enjeksiyon, ütüleme (packing/holding), soğutma, kalıbın açılması, parçanın çıkarılması; and seri üretim for mass production."
+    },
+    {
+      "title": "Talaşlı imalat — Türkçe Vikipedi",
+      "url": "https://tr.wikipedia.org/wiki/Talaşlı_imalat",
+      "lang": "tr",
+      "established": "Confirms Turkish machining vocabulary: talaşlı imalat (machining as a discipline), tornalama (turning), frezeleme (milling), delik delme, broşlama, taşlama, and 'daha hassas tolerans aralıklarına' confirming tolerans."
+    },
+    {
+      "title": "พลาสติก — วิกิพีเดียภาษาไทย",
+      "url": "https://th.wikipedia.org/wiki/พลาสติก",
+      "lang": "th",
+      "established": "Confirms Thai material and forming vocabulary: พลาสติก, เทอร์โมพลาสติก, เทอร์โมเซตติ้งพลาสติก, การขึ้นรูป (forming/shaping), แม่พิมพ์ (mould/die), ฉีด (inject), ผลิตภัณฑ์, ชิ้นส่วน."
+    },
+    {
+      "title": "ค้นหา th.wikipedia: ฉีดพลาสติก / แม่พิมพ์",
+      "url": "https://th.wikipedia.org/w/api.php?action=query&list=search&srsearch=ฉีดพลาสติก",
+      "lang": "th",
+      "established": "Attests the real Thai collocations in running text: 'เชื่อมกับเครื่องที่ใช้ฉีดพลาสติกโดยเฉพาะ' and 'ผลิตเครื่องของฉีดพลาสติก' (Sumitomo Heavy Industries article) confirming เครื่องฉีดพลาสติก as the machine; 'โดยการฉีดเข้าไปในแม่พิมพ์' confirming ฉีดเข้าแม่พิมพ์. Equally important negative finding: Thai Wikipedia has NO injection-moulding or mould-making article, confirming that Thai tooling vocabulary lives in industry usage and transliteration, not in formal Thai reference works."
+    },
+    {
+      "title": "Որոնում hy.wikipedia: ձուլում / կաղապար / պլաստմասսա",
+      "url": "https://hy.wikipedia.org/w/api.php?action=query&list=search&srsearch=ձուլում%20մետաղ%20կաղապար",
+      "lang": "hy",
+      "established": "Confirms Armenian industrial base vocabulary: կաղապար as a physical manufacturing mould — attested in Կոշկակաղապար, 'մետաղե կաղապար' (metal mould) — plus ձուլում (casting), ձուլվածք (the casting), and Պլաստմասսա as the Armenian word for plastic (a Russian loan, պլաստմասսա < пластмасса). Confirms that Armenian technical vocabulary in this field is Russian-derived rather than English-derived."
+    },
+    {
+      "title": "Wikipedia langlinks API — Injection moulding, Molding (process), Die casting, Blow molding, Machining",
+      "url": "https://en.wikipedia.org/w/api.php?action=query&titles=Injection%20moulding&prop=langlinks&lllimit=500&format=json",
+      "lang": "multi",
+      "established": "Cross-language article titles, i.e. how each Wikipedia community actually names the concept: ar حقن اللدائن, tr Plastik enjeksiyon, fa قالب‌گیری تزریقی, ru Литьё пластмасс под давлением, zh 注射製模. Die casting: tr Basınçlı döküm, fa ریخته‌گری تحت فشار, ar سبك في قوالب, ru Литьё металлов под давлением, zh 壓鑄. Blow moulding: tr Şişirmeli kalıplama, fa قالب‌گیری بادی, ar تشكيل بالنفخ, zh 吹氣成型. Machining: tr Talaşlı imalat, fa ماشین‌کاری, ar تشغيل آلي, ru Обработка резанием, zh 机械加工. Also the hard negative: no Thai, Armenian or Urdu article exists for injection moulding at all."
+    },
+    {
+      "title": "Wikipedia langlinks API — CAD, NDA, RFQ, mass production, prototype, tolerance, engineering drawing, reverse engineering, DFM, PET, supply chain",
+      "url": "https://en.wikipedia.org/w/api.php?action=query&titles=Computer-aided%20design|Non-disclosure%20agreement|Request%20for%20quotation|Mass%20production|Prototype&prop=langlinks&lllimit=500&format=json",
+      "lang": "multi",
+      "established": "Commercial-layer vocabulary across languages: NDA — ar اتفاقية عدم إفصاح, tr Gizlilik sözleşmesi, fa پیمان‌نامه عدم افشا, ru Соглашение о неразглашении, zh 保密協議. RFQ — ar طلب بيان أسعار, ru Запрос цены, zh 詢價. Mass production — tr Seri üretim, fa تولید انبوه, ar إنتاج كبير, zh 大量生產. Prototype — tr Prototip, fa نمونه اولیه, ar نموذج مبدئي. Tolerance — ar درجة التفاوت, fa تلرانس, ru Допуск, zh 公差, ur مہندسی برداشت. Reverse engineering — tr Tersine mühendislik, fa مهندسی معکوس, ar هندسة عكسية, th วิศวกรรมผันกลับ, ru Обратная разработка, zh 逆向工程. DFM — ar تصميم لأجل التصنيعية, fa طراحی برای ساخت‌پذیری, ru Технологичность, zh 为制造设计. Turning/milling — tr Tornacılık/Frezeleme, fa تراشکاری/فرزکاری, ar خراطة/تفريز, ru Токарная обработка/Фрезерование, hy Շրջատաշում, zh 銑削. DECISIVE FINDING: Armenian Wikipedia's article for computer-aided design is titled simply 'CAD' — the Armenian technical community keeps the Latin acronym untranslated. Urdu's is کمپیوٹر امدادی ڈیزائن, a lexicographic coinage no Pakistani engineer uses in speech."
+    },
+    {
+      "title": "تلاش ur.wikipedia: پلاسٹک / صنعت / کارخانہ",
+      "url": "https://ur.wikipedia.org/w/api.php?action=query&list=search&srsearch=صنعت%20کارخانہ%20پیداوار",
+      "lang": "ur",
+      "established": "Confirms پلاسٹک as the Urdu word for plastic ('پلاسٹک مختلف اقسام کے مصنوعی یا نیم مصنوعی مواد کا مجموعہ ہیں جن میں پولیمر مرکزی جزو کے طور پر'), کارخانہ as factory/plant, صنعت / صنعت کاری as industry/manufacturing. Decisive negative finding: a search for سانچہ پلاسٹک (plastic mould) returns zero results and Urdu Wikipedia contains no tooling, mould or injection-moulding content whatsoever — confirming that Pakistani industrial practice runs on English terms, in Latin script or transliterated into Urdu script, and that inventing pure-Urdu tooling terms would make the site unusable to its own audience."
+    }
+  ],
+  "languages": [
+    {
+      "code": "en",
+      "name": "English",
+      "endonym": "English",
+      "script": "Latin",
+      "direction": "ltr",
+      "distinctFontNeeded": false,
+      "fontNotes": "Base Latin face. Everything else on the site is measured against this. Needs a face with genuine tabular figures — the whole site is dimensions, tonnages and cavity counts, and proportional figures in a spec table look amateurish.",
+      "digits": "Western Arabic (0–9)",
+      "digitNote": "Reference convention. Decimal point, comma thousands separator (1,000). Metric units throughout for an export audience; if imperial appears at all it is parenthetical.",
+      "expansionConfigured": 1.0,
+      "expansionTypical": "1.0 (baseline)",
+      "expansionNote": "Baseline. English industrial copy is unusually terse — 'hot runner', 'draft angle', 'T1' — and every other language on this site will need more room than the English mock-up suggests.",
+      "capitalisation": "Sentence case for headings and buttons. Do NOT Title Case navigation or CTAs — Title Case reads as American consumer marketing and undercuts the engineering register. Product/process names are lowercase (injection moulding, hot runner), acronyms uppercase (DFM, NDA, RFQ, CNC, PET).",
+      "punctuation": "British-leaning spelling is the safer default for this audience: 'mould', 'tooling', 'programme' — 'mold' signals a US-domestic supplier to a European or Middle-Eastern buyer. Be consistent; never mix mould/mold on one site. Use en dashes for ranges (48–72 h), non-breaking space before units (500 t).",
+      "register": "Declarative, specific, unhedged. State capability and constraint in the same breath — 'tool life is quoted per project, typically 500k–1M shots in P20' outperforms 'long-lasting tools'. Avoid superlatives; a buyer's engineer discounts them automatically.",
+      "pitfalls": [
+        "'Mold' vs 'mould' is a market signal, not a typo. This audience (Russia/CIS, Türkiye, Middle East, South Asia) reads British-convention English. Pick 'mould' and hold it.",
+        "'Tool' unqualified is ambiguous — to a machinist it is a cutting tool, to a moulder it is the mould. Say 'mould' or 'mould tool' on first use.",
+        "'Molding' with one L is a US spelling; 'moulding' in British English also means decorative trim. Context disambiguates, but avoid it as a bare noun in navigation."
+      ]
+    },
+    {
+      "code": "ru",
+      "name": "Russian",
+      "endonym": "Русский",
+      "script": "Cyrillic",
+      "direction": "ltr",
+      "distinctFontNeeded": false,
+      "fontNotes": "No separate family needed, but the Latin face must actually carry a designed Cyrillic — not an auto-generated one. Watch д, ж, з, к, л, у, ф, ц, щ, ъ, ы, э, я: a poorly drawn Cyrillic cut is instantly legible as foreign-made to a Russian reader and quietly damages credibility on a site whose whole pitch is engineering competence. Inter, Roboto, Noto Sans, PT Sans and Manrope all have genuine Cyrillic.",
+      "digits": "Western Arabic (0–9)",
+      "digitNote": "Comma as DECIMAL separator (0,15 мм) and thin space (U+2009 or non-breaking thin space) as thousands separator (1 000, 500 000). Writing '0.15' or '1,000' in Russian copy reads as an untranslated string. GOST usage: dimensions in mm, tonnage in тс or кН.",
+      "expansionConfigured": 1.15,
+      "expansionTypical": "1.15–1.30 for running prose, up to 1.5 for short UI labels",
+      "expansionNote": "Russian is the worst expansion case on this site. Short English CTAs blow out badly: 'Request a quote' (16 chars) becomes 'Запросить коммерческое предложение' (34). Buttons and nav need to be designed against the Russian string, not the English one.",
+      "capitalisation": "Only the first word of a heading or sentence is capitalised, plus proper nouns. Russian has no Title Case — capitalising Every Word In A Heading is one of the most immediate tells of machine translation. Job titles, department names, industry names are all lowercase (инженер-конструктор, литьё под давлением).",
+      "punctuation": "Guillemets «…» for quotation, not \"…\". Em dash — with spaces, used far more than in English, including as a copula ('Пресс-форма — это оснастка'). No serial comma. Non-breaking space between number and unit (500 т). Ё is optional but be consistent; technical writing usually drops it except where ambiguity arises.",
+      "register": "Formal, вы-form, but not bureaucratic. Russian industrial buyers respond to concrete numbers and process names; they are actively suspicious of adjectival marketing. Use verbal nouns and passive constructions where an English writer would use an imperative — «Расчёт стоимости выполняется в течение…» rather than «Мы рассчитаем…». Never use ты. Avoid exclamation marks entirely — in Russian business writing they read as shouting or as a hard sell.",
+      "pitfalls": [
+        "пресс-форма vs литьевая форма: пресс-форма is the commercial and shop-floor word and what buyers search for; литьевая форма is the GOST/engineering-literature term and is strictly speaking more correct for injection (пресс- properly belongs to compression moulding). Lead with пресс-форма for discoverability, use литьевая форма in engineering body copy. Never invent 'инжекционная форма' — nobody says it.",
+        "оснастка is the Russian word for tooling as a category. Do NOT translate 'tooling' as инструменты (that means hand tools / cutting tools) or as оборудование (that means machines). Технологическая оснастка is the full form.",
+        "матрица and пуансон are the Russian cavity/core pair. Do NOT calque as 'полость' and 'сердечник' — полость is fine for the void itself (формообразующая полость) but a Russian toolmaker says матрица; 'сердечник' means a transformer core.",
+        "'массовое производство' sounds Soviet and implies undifferentiated commodity volume. Серийное производство (serial) or крупносерийное (large-series) is what a Russian engineer says about a moulding programme.",
+        "'доставка' is the courier word and reads consumer-grade for pallets and tooling. Use поставка / поставки.",
+        "Avoid 'качественный' as a standalone claim — it is the single most devalued word in Russian marketing and signals a low-tier supplier."
+      ]
+    },
+    {
+      "code": "hy",
+      "name": "Armenian",
+      "endonym": "Հայերեն",
+      "script": "Armenian",
+      "direction": "ltr",
+      "distinctFontNeeded": true,
+      "fontNotes": "REQUIRES a dedicated family. Armenian is covered by almost no mainstream Latin webfont, and browser fallback to a default Armenian face produces a jarring style break mid-page. Use Noto Sans Armenian / Noto Serif Armenian, Mardoto, Arian AMU or GHEA Grapalat. Armenian x-height and stroke rhythm sit lighter than most Latin faces — the codebase's 0.98 typeScale bump is right, and Armenian needs slightly more leading than Latin (1.05 in the config).",
+      "digits": "Western Arabic (0–9)",
+      "digitNote": "Western digits universally in modern Armenian technical and commercial writing. Classical Armenian numerals (Ա, Բ, Գ…) are liturgical/decorative only and would be absurd in a spec. Decimal comma is common (0,15 մմ) under Russian influence, but the decimal point is also seen; pick the comma for consistency with the Russian locale. Thin-space thousands (1 000).",
+      "expansionConfigured": 1.12,
+      "expansionTypical": "1.10–1.25",
+      "expansionNote": "Armenian words are long and the script is wide. Compound technical nouns get very long (կաղապարաշինություն, տեխնոլոգիականություն). Reserve space in nav and card headings.",
+      "capitalisation": "Sentence case only. Armenian has upper and lower case, but Title Case is not an Armenian convention and reads as a foreign import. Note that Armenian capitalisation historically marks the first letter of a sentence and proper nouns only.",
+      "punctuation": "Armenian uses its own marks and they matter: վերջակետ ։ (U+0589) ends a sentence, NOT a Latin full stop — using '.' is the single most common tell of a non-native or machine-translated Armenian page. Question mark is ՞ placed over the stressed vowel of the questioned word, exclamation is ՜, emphasis ՛. Hyphenation mark է ֊ (U+058A). Comma is , as in Latin. The Armenian abbreviation mark ՟ is rare in modern text.",
+      "register": "Formal Դուք throughout. Armenian B2B writing is more formal and more explicitly courteous than Russian. Armenia's tooling and manufacturing sector is small and relationship-driven, so an Armenian page should read as an invitation to a working conversation rather than as a catalogue.",
+      "pitfalls": [
+        "Armenia's industrial vocabulary is Russian-derived, not English-derived. Engineers trained in the Soviet and post-Soviet system say պրես-ֆորմա (< пресс-форма), օսնաստկա (< оснастка), դոպուսկ (< допуск), խառատային (< токарный) in the shop. A purist Armenian page that uses only Academy-approved neologisms will be *correct* and simultaneously unreadable to the buyer. The workable register is native Armenian in prose with the Russian-derived term in parentheses on first mention.",
+        "Armenian Wikipedia titles its computer-aided-design article simply 'CAD'. Keep Latin acronyms (CAD, CAM, CNC, DFM, NDA, PET) untranslated in Armenian — attempts to Armenianise them are unidiomatic and unsearchable.",
+        "կաղապար covers mould, form, template and — in linguistics — 'pattern'. On a tooling site always qualify it on first use: ձուլման կաղապար or ներարկային ձուլման կաղապար, so it cannot be read abstractly.",
+        "Do not use the Latin full stop to end Armenian sentences. Use ։. This alone separates a real Armenian page from a translated one.",
+        "Armenian and Eastern vs Western Armenian differ. Armenia's domestic industry uses Eastern Armenian; Western Armenian (diaspora) orthography and vocabulary would read as foreign for a Yerevan buyer. Target Eastern Armenian, reformed orthography."
+      ]
+    },
+    {
+      "code": "tr",
+      "name": "Turkish",
+      "endonym": "Türkçe",
+      "script": "Latin (Turkish extended)",
+      "direction": "ltr",
+      "distinctFontNeeded": false,
+      "fontNotes": "Same Latin family, but the face must carry ı İ ğ Ğ ş Ş ç Ç ö Ö ü Ü properly — particularly dotless ı and dotted İ, which many display faces botch or omit. Verify the İ has a visible dot above the cap height and does not collide with the line above at tight leading.",
+      "digits": "Western Arabic (0–9)",
+      "digitNote": "Comma as DECIMAL separator (0,15 mm), period as thousands separator (1.000 — note this is the OPPOSITE of English). Getting this backwards turns '1.000 projects' into 'one project' for a Turkish reader. Ordinals take a period: 2. kavite. Suffixes on numerals are joined with an apostrophe: 2006'dan, 48'den, 1.000'den.",
+      "expansionConfigured": 1.1,
+      "expansionTypical": "1.05–1.20",
+      "expansionNote": "Turkish agglutination makes single words long (değerlendirilmesi, üretilebilirlik) but drops articles and often whole auxiliary constructions, so overall expansion is moderate. The risk is not paragraph length but unbreakable long words in narrow columns — allow hyphenation or a wider min-width for Turkish cards.",
+      "capitalisation": "Sentence case. Turkish DOES use Title Case for proper names of organisations and products, but not for headings or buttons. CRITICAL: Turkish has locale-specific casing — uppercase of 'i' is 'İ' (dotted) and uppercase of 'ı' is 'I'. A CSS `text-transform: uppercase` without `lang=\"tr\"` on the element will render 'İSTANBUL' as 'ISTANBUL' and 'kalıp' as 'KALIP' vs 'KALİP' incorrectly. Set lang correctly or avoid text-transform on Turkish.",
+      "punctuation": "Standard Latin punctuation. Apostrophe before suffixes attached to proper nouns and numerals (Türkiye'de, 2006'dan, ISO'ya). Turkish uses the same quotation marks as English (\"…\") though « » appears in older typography. No serial comma.",
+      "register": "Formal siz throughout — never sen. Turkish B2B is warm but hierarchical: 'Firmamız' / 'olarak' constructions and a courteous close are expected, and a purely clipped Anglo-American style reads cold. Turkish manufacturers are proud, competitive and experienced buyers of tooling — Türkiye has a very large domestic mould industry — so the page must not read as if it is explaining injection moulding to a novice.",
+      "pitfalls": [
+        "Türkiye has one of the world's larger mould-making sectors (Bursa, İstanbul, Konya, İzmir). Do NOT write introductory copy explaining what a mould is. Speak to a peer: cavitation, tool steel grade, cycle time, tonnage.",
+        "'göz' is the Turkish word for a mould cavity — '4 gözlü kalıp' is a four-cavity mould. Translating 'cavity' as 'boşluk' (empty space) or 'oyuk' (hollow) is technically parseable but marks the writer as an outsider.",
+        "'maça' is core/side-core and is the everyday word; 'çekirdek' (literally kernel) is used for the core insert in some shops but 'maça' is safer. 'erkek/dişi kalıp' (male/female) is common shop language for core/cavity halves.",
+        "'yolluk' is runner, 'sıcak yolluk' hot runner — these are fully native and universally used. Do not import 'runner' or 'hot runner' in Latin unless naming a brand system (e.g. a Mold-Masters system).",
+        "Do not use 'kalıplama' where you mean the tool. 'Kalıplama' is the process (moulding); 'kalıp' is the mould. 'Enjeksiyon kalıplama' = injection moulding; 'enjeksiyon kalıbı' = the injection mould.",
+        "Thousands/decimal separators are inverted vs English — the single highest-consequence number bug on a Turkish page."
+      ]
+    },
+    {
+      "code": "th",
+      "name": "Thai",
+      "endonym": "ไทย",
+      "script": "Thai",
+      "direction": "ltr",
+      "distinctFontNeeded": true,
+      "fontNotes": "REQUIRES a dedicated family. Choose a LOOPLESS (modern/sans) Thai face for a technical B2B site — Noto Sans Thai, IBM Plex Sans Thai, Prompt or Kanit. Looped faces (Sarabun, TH SarabunPSK) are the Thai government-document standard and will make the site read as officialdom or as a school worksheet. Thai has four vertical levels (upper vowel, tone mark, base, lower vowel) so it needs substantially more leading — the config's 1.28 multiplier is correct and should not be reduced. Thai has no inter-word spaces, so line breaking depends on the browser's Thai dictionary; test that headings do not break mid-word.",
+      "digits": "Western Arabic (0–9)",
+      "digitNote": "Western digits everywhere in technical and commercial Thai. Thai digits ๐๑๒๓ are ceremonial/decorative and would look bizarre in a tolerance. Decimal point, comma thousands (1,000). Year: use ค.ศ. (Gregorian) explicitly, because Thai commercial writing defaults to พ.ศ. (Buddhist Era, = Gregorian + 543) and an unmarked '2006' can be misread.",
+      "expansionConfigured": 0.95,
+      "expansionTypical": "0.85–1.0 in width, but 1.25–1.35 in vertical space",
+      "expansionNote": "Thai is compact horizontally — it drops articles, plurals, tense and often the subject — but expands vertically because of stacked diacritics. The layout risk is line-height collision and clipped tone marks in tight components, not overflow. Never set Thai with a fixed px line-height inherited from the Latin scale.",
+      "capitalisation": "Thai script has no case. All Latin fragments embedded in Thai (CNC, PET, CAD, NDA, T1) keep their own casing. Because there is no case, headings rely entirely on size and weight for hierarchy — do not lean on capitalisation-based emphasis patterns carried over from the English design.",
+      "punctuation": "No spaces between words; spaces function as phrase and clause separators (roughly where English uses a comma) and at sentence ends. Thai does not use a full stop to end sentences — a space does that job. Avoid importing English commas into Thai. ๆ marks repetition. Parentheses and the colon behave as in English. Do not justify Thai text; ragged right only, or the word-break heuristics produce ugly rivers.",
+      "register": "Polite formal, but Thai B2B is notably less stiff than Thai officialdom. Use ครับ/ค่ะ sparingly or not at all in body copy (they belong to speech); keep sentences declarative. Thai buyers in the plastics sector (Rayong, Samut Prakan, Chonburi, the Eastern Economic Corridor) are used to dealing with Japanese and Taiwanese suppliers and expect precision plus visible courtesy. Address the reader as คุณ, never with informal pronouns.",
+      "pitfalls": [
+        "Thai tooling shops speak in transliterated English for most mould components: คาวิตี้ (cavity), คอร์ (core), รันเนอร์ (runner), เกท (gate), สไลด์ (slide), อีเจ็คเตอร์ (ejector), โมลด์เบส (mould base), ไซเคิลไทม์ (cycle time). Pure-Thai coinages (โพรงแม่พิมพ์, ทางวิ่ง) exist in textbooks and are understood, but a page written entirely in them reads academic. Best practice: transliteration first, pure Thai in parentheses, or vice versa in body copy.",
+        "แม่พิมพ์ alone means mould/die/matrix/printing plate. Always qualify: แม่พิมพ์ฉีดพลาสติก (plastic injection mould), แม่พิมพ์เป่า (blow mould). Unqualified แม่พิมพ์ also means 'role model' idiomatically (แม่พิมพ์ของชาติ = teacher), which is a genuinely odd resonance on a manufacturing page.",
+        "The Buddhist Era trap. 'ตั้งแต่ปี 2006' can be parsed by a Thai reader as B.E. 2006 (= 1463 CE) for a fraction of a second. Write ตั้งแต่ปี ค.ศ. 2006 or, better, พ.ศ. 2549 if the audience is purely domestic. For an export B2B site, mark it ค.ศ.",
+        "Do not machine-translate 'part' as ส่วน (a portion/section). The moulding word is ชิ้นงาน (workpiece) or ชิ้นส่วน (component).",
+        "Thai has no plural marking. Resist the urge to force plurals; 'แม่พิมพ์' covers one mould or a hundred.",
+        "Avoid ผลิตจำนวนมาก as a standalone headline for 'mass production' — it reads as 'making a lot of stuff'. ผลิตเชิงพาณิชย์ (commercial production) or การผลิตจริง (real/serial production) carries the intended B2B meaning better."
+      ]
+    },
+    {
+      "code": "zh",
+      "name": "Chinese (Simplified)",
+      "endonym": "简体中文",
+      "script": "Han (Simplified)",
+      "direction": "ltr",
+      "distinctFontNeeded": true,
+      "fontNotes": "REQUIRES a dedicated family and it is the heaviest asset on the site — a full Simplified Chinese face is several megabytes. Either subset aggressively to the characters actually used, or lean on a system stack (PingFang SC, Microsoft YaHei, Source Han Sans SC / Noto Sans SC, Hiragino Sans GB) and accept per-OS variation. Do NOT let a Japanese face (Noto Sans JP) resolve for Chinese — shared codepoints render with Japanese glyph forms (直, 骨, 今) that read as subtly wrong to a Chinese reader. Set lang=\"zh-Hans\" so the correct regional glyph variants are selected.",
+      "digits": "Western Arabic (0–9)",
+      "digitNote": "Western digits for all specifications, dimensions, cavity counts and years. Chinese numerals (一二三) appear only in formal/legal contexts and in idiomatic set phrases (一模多腔, 二供). Decimal point, comma thousands (1,000). Always put 年 after a year (2006 年) and a thin space around Latin digits/letters embedded in Han text — this is a real typographic convention (盘古之白) and its absence looks unpolished.",
+      "expansionConfigured": 0.6,
+      "expansionTypical": "0.5–0.7",
+      "expansionNote": "Chinese is by far the most compact language here — a 60-character English heading becomes ~20 Han characters. The design risk is the opposite of the others: Chinese text under-fills containers sized for English and leaves headings looking stranded. Chinese pages usually need a larger type size (config uses 1.02) and tighter, deliberately re-composed layouts rather than the English layout with shorter strings dropped in.",
+      "capitalisation": "Han script has no case. Latin acronyms embedded in Chinese keep their casing (CNC, PET, DFM, NDA, T1, CAD). Because there is no case and no italic tradition, emphasis must come from weight, size, colour or 着重号 — never from fake italics, which distort Han glyphs badly.",
+      "punctuation": "Use full-width CJK punctuation: 。 ， 、 ； ： 「」 or 《》, （）. A Latin comma or period in Chinese body text is an immediate quality tell. 、 (enumeration comma) separates list items, ， separates clauses — they are not interchangeable. No spaces after punctuation (the glyphs carry their own sidebearing). Do insert a hair/thin space between Han and adjoining Latin or digits.",
+      "register": "Professional, dense, specification-forward. Chinese B2B manufacturing copy is comfortable with high information density and long noun compounds. The reader is very likely themselves a mould buyer or a competitor — China is the world's largest mould-making base — so the page must offer a reason to buy outside China: second-source risk, tariff exposure, IP protection, proximity to the customer's plant. Avoid the vague uplift register of Chinese consumer marketing (匠心, 赋能, 一站式 as an empty claim).",
+      "pitfalls": [
+        "Mainland vs Taiwan divergence is real in exactly this vocabulary. Simplified Mainland: 注塑模具, 注塑机, 模架, 顶针, 飞边. Taiwan/Traditional: 射出模具, 射出成型機, 模座, 頂針, 毛邊. Target zh-Hans and use the Mainland set; using 射出 in a Simplified page reads as a Taiwanese or converted text.",
+        "This is the hardest market to sound credible in. Chinese buyers know tooling costs and lead times precisely. Generic claims about quality will be discounted instantly; concrete differentiators (二供 readiness, geographic risk, delivery terms, IP terms) are what land.",
+        "试模 (mould trial) and T1 are both used; T1/T2 shorthand is understood in export-facing Chinese tool shops. 打样 means sampling more loosely and can imply a prototype rather than a tool trial.",
+        "'量产' is the natural word for mass/serial production. 大规模生产 reads like an economics textbook and 大批量生产 is acceptable but heavier.",
+        "Do not translate 'delivery' as 送货 (consumer/food delivery). Use 发货 / 交货 / 供货 for trade shipment, and 交期 for lead time.",
+        "保修 (warranty/repair service) vs 质保 (quality guarantee) differ in implication. For a mould, 模具保修 or 模具质保 both work but the specification-defined hedge must be explicit (按项目约定)."
+      ]
+    },
+    {
+      "code": "ur",
+      "name": "Urdu",
+      "endonym": "اردو",
+      "script": "Arabic (Nastaliq / Naskh)",
+      "direction": "rtl",
+      "distinctFontNeeded": true,
+      "fontNotes": "REQUIRES a dedicated family and this is a genuine design decision, not a fallback question. Urdu is properly set in NASTALIQ (Noto Nastaliq Urdu, Jameel Noori Nastaleeq), a cascading diagonal style that needs dramatically more line-height than Naskh — the config's 1.35 leading is a minimum, and Nastaliq descenders will clip in any tightly-set component. Setting Urdu in an Arabic Naskh face is technically legible and much easier to lay out, but it reads to a Pakistani reader as 'this is Arabic', which subtly signals that nobody localised for them specifically. Recommendation for a B2B technical site: Nastaliq for headings and display where the layout can afford the leading, Naskh for dense spec tables where Nastaliq becomes unreadable at small sizes. Whatever is chosen, set lang=\"ur\" so the correct glyph forms of ہ, ی, ے, ک, گ are selected.",
+      "digits": "Western Arabic (0–9) — recommended. Eastern Arabic-Indic (۰۱۲۳۴۵۶۷۸۹) common in prose.",
+      "digitNote": "Urdu prose (newspapers, literature, government) conventionally uses Eastern Arabic-Indic digits ۰۱۲۳۴۵۶۷۸۹. Urdu TECHNICAL and commercial writing — invoices, specifications, engineering documents, WhatsApp business messages — overwhelmingly uses Western digits, because the numbers usually sit next to Latin units and part numbers. For this site: Western digits everywhere, without exception. Mixing (Eastern in prose, Western in specs) is what real documents do but it looks inconsistent on a single web page and complicates scanning. Decimal point, comma thousands.",
+      "expansionConfigured": 1.05,
+      "expansionTypical": "0.9–1.1 in character count, but 1.3–1.5 in vertical space if set in Nastaliq",
+      "expansionNote": "Urdu is roughly English-length in words but the Nastaliq line-height requirement is the real layout cost. Budget vertical space, not horizontal.",
+      "capitalisation": "No case in the Arabic script. Latin acronyms embedded in Urdu keep their casing (CNC, CAD, NDA, PET, DFM, RFQ). No text-transform is meaningful; do not apply uppercase transforms to mixed Urdu/Latin strings.",
+      "punctuation": "Urdu uses its own marks: the full stop is ۔ (U+06D4, Urdu full stop), NOT a Latin '.'. The comma is ، (U+060C) and the question mark is ؟ (U+061F) — all mirrored for RTL. Using Latin . , ? in Urdu is the clearest sign of an unlocalised page. Quotation uses ” “ or « ». Parentheses mirror automatically under bidi but must be balanced in the source.",
+      "register": "Formal آپ throughout — never تم or تو. Pakistani industrial correspondence is courteous and slightly more formal than English equivalents; a bare imperative reads brusque and is usually softened (…کر سکتے ہیں / …بھیج دیجیے rather than …بھیجیں). Note that a large share of Pakistani B2B is conducted in English; the Urdu page's job is warmth, accessibility and trust rather than being the sole technical reference.",
+      "pitfalls": [
+        "The dominant pitfall is over-translation. Pakistani tooling and plastics practitioners use English terms — mould, cavity, core, runner, gate, cycle time, shot, tonnage — either in Latin script or transliterated into Urdu script. Inventing or reviving pure-Urdu equivalents (سانچہ for mould, خلا for cavity) produces text that is 'correct' and functionally unreadable to the intended buyer. Urdu Wikipedia contains no tooling vocabulary at all, which is itself the evidence.",
+        "سانچہ is the dictionary word for mould and is fine in general prose or as a gloss, but a Karachi or Lahore mould shop says 'مولڈ' / 'mould'. Use مولڈ (سانچہ) on first mention and مولڈ thereafter.",
+        "کمپیوٹر امدادی ڈیزائن (Urdu Wikipedia's title for CAD) is a lexicographic coinage that no engineer uses. Keep CAD, CAM, CNC, DFM, NDA, PET as Latin acronyms.",
+        "Do not use the Latin full stop. Use ۔ — this single character does more for perceived localisation quality than any vocabulary choice.",
+        "Bidi mixing is the top technical risk: Urdu sentences will contain Latin acronyms, part numbers, dimensions and units. Wrap every Latin/numeric run so the browser's bidi algorithm cannot strand parentheses, units or hyphens on the wrong side. Test '500 t', '48 hours', 'PET preform' and '0.15 mm' inside Urdu sentences specifically.",
+        "Urdu and Arabic are not interchangeable despite sharing a script. Urdu-specific letters (ٹ ڈ ڑ ں ہ ھ ے گ چ پ ژ) must render; an Arabic-only font subset will drop or substitute them."
+      ]
+    },
+    {
+      "code": "ar",
+      "name": "Arabic",
+      "endonym": "العربية",
+      "script": "Arabic (Naskh)",
+      "direction": "rtl",
+      "distinctFontNeeded": true,
+      "fontNotes": "REQUIRES a dedicated family. Use a modern Naskh or a contemporary Arabic sans: Noto Sans Arabic, IBM Plex Sans Arabic, Cairo, Tajawal, Almarai. Arabic glyphs sit lower and have a larger effective x-height than Latin, so the Latin type scale must be adjusted (config uses 1.05) and leading increased (1.22). Ensure the face supports full contextual shaping and the lam-alef ligature; avoid faces where the kashida/tatweel behaves unpredictably. Do not fake-bold Arabic — synthesised bold destroys the joins; use a real weight axis.",
+      "digits": "Western Arabic (0–9) — recommended",
+      "digitNote": "The naming is genuinely confusing: '٠١٢٣' are called Eastern Arabic-Indic digits and are used in Egypt, Sudan, Yemen and the Gulf to varying degrees, while '0123' — called Western Arabic digits — are standard across the Maghreb, in Levantine business writing, and in technical and international commerce almost everywhere. For a B2B technical site targeting the whole Arabic-speaking market: Western digits, always. They match the drawings, the units, the ISO references and the part numbers the reader is already holding. Decimal point, comma thousands. Note that the CSS/Unicode digit shaping property can flip these — set font-variant-numeric and numbering system explicitly rather than relying on font defaults.",
+      "expansionConfigured": 1.0,
+      "expansionTypical": "1.2–1.3 in prose, 0.9–1.1 in headings",
+      "expansionNote": "The configured 1.0 is optimistic for running prose. Arabic drops short vowels and articles compactly but builds long analytic constructions with prepositions (…من أجل, …فيما يتعلق بـ) that run longer than English. Headlines compress well; paragraphs do not. Consider raising the reserved expansion for Arabic body copy.",
+      "capitalisation": "No case in the Arabic script. Latin acronyms keep their casing. Hierarchy must be built from weight, size and colour. Never apply text-transform to Arabic.",
+      "punctuation": "Arabic comma ، (U+060C), Arabic semicolon ؛ (U+061B) and Arabic question mark ؟ (U+061F) are mirrored and MUST be used instead of the Latin , ; ?. The full stop is the ordinary '.' in Arabic (unlike Urdu's ۔). Quotation uses « » or “ ”. Parentheses and brackets mirror under bidi. Do not justify Arabic with letter-spacing — Arabic justification uses kashida elongation, and letter-spacing breaks the cursive joins entirely (a very common and very visible bug).",
+      "register": "Modern Standard Arabic (فصحى) — never dialect. Formal, but MSA business writing rewards clarity over ornament: the flowery honorific register of older correspondence now reads dated in industrial procurement. Address the reader in the plural formal or impersonally. Passive and impersonal constructions (تُحدَّد, يتم تحديد) are the correct register for terms, conditions and process descriptions.",
+      "pitfalls": [
+        "اللدائن vs البلاستيك. اللدائن is the Arabised academic term for plastics used in encyclopaedias and standards; البلاستيك is the loanword everyone in the trade actually uses. Use البلاستيك in commercial copy, اللدائن only where a formal or standards-facing register is wanted.",
+        "قالب means mould, mould/die, cast, template and — in language — grammatical pattern. Always qualify: قالب حقن (injection mould), قالب النفخ (blow mould), قالب الصب (casting die).",
+        "'الإنتاج الضخم' for mass production reads like state propaganda. Use الإنتاج الكمي or الإنتاج بكميات كبيرة. 'إنتاج كبير' (Wikipedia's title) is flat and slightly odd in commercial copy.",
+        "Arabic-script letter-spacing is the single most destructive CSS property on this site. Any global letter-spacing rule inherited from a Latin design will shatter Arabic cursive joins. Scope it to :not(:lang(ar)):not(:lang(fa)):not(:lang(ur)).",
+        "Machine-translated Arabic in this field is very common and very recognisable — it typically produces التشكيل بالحقن where the trade says قولبة الحقن or حقن البلاستيك, and it calques English word order. Prefer noun-first Arabic constructions.",
+        "Do not use the Latin comma. ، is a one-character quality signal.",
+        "Gulf, Levant and Maghreb readers all read MSA, but term preferences differ slightly (ماكينة vs آلة for machine; both are fine, ماكينة is more colloquially industrial). Prefer ماكينة for shop-floor equipment and آلة in formal descriptions."
+      ]
+    },
+    {
+      "code": "fa",
+      "name": "Persian (Farsi)",
+      "endonym": "فارسی",
+      "script": "Arabic (Persian variant)",
+      "direction": "rtl",
+      "distinctFontNeeded": true,
+      "fontNotes": "REQUIRES a dedicated family, and specifically a PERSIAN one — not an Arabic one. Persian uses four letters Arabic lacks (پ چ ژ گ) and draws ک and ی differently from Arabic ك and ي (no final dots on ی, different final ک). An Arabic-only face will substitute or misdraw them, which Persian readers notice immediately. Use Vazirmatn, Sahel, Estedad, Noto Sans Arabic with Persian coverage, or IRANSans. Set lang=\"fa\" so the shaping engine picks Persian forms.",
+      "digits": "Western Arabic (0–9) — recommended. Eastern (۰۱۲۳۴۵۶۷۸۹) common in prose.",
+      "digitNote": "Persian prose overwhelmingly uses Persian/Eastern digits ۰۱۲۳۴۵۶۷۸۹ (note ۴ ۵ ۶ differ in shape from the Arabic ٤ ٥ ٦). Persian TECHNICAL writing — engineering drawings, specifications, tolerances, machine tonnages, catalogue data — routinely uses Western digits, because they sit beside Latin units, standards and part numbers. For this site: Western digits everywhere. A page that writes ۴۸ ساعت in the hero and 0.15 mm in the spec table looks inconsistent and forces the reader to switch numeral systems mid-scan. Decimal point; thousands separator in Iran is the period (1.000) though the comma is also seen — pick one and hold it. Solar Hijri vs Gregorian years: use Gregorian for an export site and it will be read correctly, since Iranian technical/export documents use Gregorian throughout.",
+      "expansionConfigured": 1.0,
+      "expansionTypical": "1.1–1.25",
+      "expansionNote": "Persian uses ezafe constructions and compound noun chains (زمان چرخهٔ تولید, سیستم راهگاه گرم) that run longer than the English. The configured 1.0 is tight; treat 1.15 as the practical planning figure for body copy.",
+      "capitalisation": "No case. Latin acronyms keep their casing (CAD, CNC, PET, NDA, DFM, RFQ). No text-transform.",
+      "punctuation": "Persian comma is ، (U+060C), semicolon ؛, question mark ؟ — all mirrored, all mandatory instead of the Latin forms. Full stop is '.'. Persian uses the ZERO-WIDTH NON-JOINER (U+200C) extensively and correctly — قالب‌گیری, پیش‌فاکتور, می‌شود, تأمین‌کننده. Stripping ZWNJ (a very common bug in copy-paste and in naive slugification) produces قالبگیری and میشود, which read as illiterate. Preserve U+200C through the whole pipeline: CMS, JSON, URL slugs, search index. Persian ezafe is usually unwritten but sometimes marked with ٔ (e.g. چرخهٔ).",
+      "register": "Formal شما, polite and slightly more elaborate than English. Iranian B2B correspondence values courtesy markers and complete sentences; clipped English-style fragments read curt. Iran has a substantial domestic mould-making industry (قالب‌سازی) concentrated around Tehran, Tabriz and Mashhad, so the reader is a knowledgeable peer. Sanctions realities mean payment, shipping and documentation terms carry disproportionate weight — being explicit about international delivery and paperwork is more persuasive here than anywhere else on the site.",
+      "pitfalls": [
+        "Persian is NOT Arabic and must not share a font, a numeral shaping rule or a term list with it. پ چ ژ گ, and the Persian forms of ک and ی, are the tell.",
+        "ماهیچه is the Persian word for a mould core in the tooling trade (confirmed on the Persian قالب‌سازی article). مغز (literally 'brain/kernel') appears in loose process descriptions but a قالب‌ساز says ماهیچه. Getting this one right is a strong credibility signal.",
+        "قالب تزریق پلاستیک (the tool) vs قالب‌گیری تزریقی (the process). A website selling moulds should lead with the noun phrase قالب تزریق پلاستیک — that is what Iranian buyers search for — and use قالب‌گیری تزریقی when describing the process.",
+        "گارانتی vs ضمانت. گارانتی is the commercial/consumer loanword; ضمانت / ضمانت‌نامه is the contractual one. In a warranty-terms sentence use ضمانت; گارانتی in legal copy reads like a household appliance leaflet.",
+        "ZWNJ loss is the highest-frequency Persian bug. Verify every string round-trips through JSON, the CMS and URL generation with U+200C intact.",
+        "Letter-spacing destroys Persian cursive joins exactly as it does Arabic. Exclude fa from any global tracking rule.",
+        "Do not use تحویل for 'delivery' meaning shipment — تحویل is handover/acceptance. Use ارسال or حمل و نقل for shipping, and زمان تحویل specifically for lead time (where it is correct and idiomatic)."
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "en": "injection mould / injection tool",
+      "ru": "пресс-форма для литья под давлением (литьевая форма)",
+      "hy": "ներարկային ձուլման կաղապար (պրես-ֆորմա)",
+      "tr": "plastik enjeksiyon kalıbı",
+      "th": "แม่พิมพ์ฉีดพลาสติก",
+      "zh": "注塑模具",
+      "ur": "انجیکشن مولڈ (پلاسٹک سانچہ)",
+      "ar": "قالب حقن البلاستيك",
+      "fa": "قالب تزریق پلاستیک",
+      "note": "The headline term of the whole site. Russian: пресс-форма is the commercial/search term, литьевая форма the engineering-correct one — lead with пресс-форма. Chinese: 注塑模具 for zh-Hans; 射出模具 is Taiwanese. Persian: use the noun phrase قالب تزریق پلاستیک (the tool), not قالب‌گیری تزریقی (the process). Turkish: enjeksiyon kalıbı (the tool) vs enjeksiyon kalıplama (the process) — do not confuse. Armenian and Urdu both carry a loanword in parentheses because the native form alone is not what a buyer says."
+    },
+    {
+      "en": "mould maker / toolmaker",
+      "ru": "изготовитель пресс-форм; инструментальщик",
+      "hy": "կաղապարագործ (կաղապարաշինարար)",
+      "tr": "kalıpçı; kalıp imalatçısı",
+      "th": "ผู้ผลิตแม่พิมพ์; ช่างแม่พิมพ์",
+      "zh": "模具制造商; 模具师傅",
+      "ur": "مولڈ میکر (سانچہ ساز)",
+      "ar": "صانع القوالب; مصنّع القوالب",
+      "fa": "قالب‌ساز; سازنده قالب",
+      "note": "Two registers everywhere: the company (изготовитель пресс-форм / kalıp imalatçısı / 模具制造商 / صانع القوالب) and the craftsman (инструментальщик / kalıpçı / 模具师傅 / ช่างแม่พิมพ์). A company page wants the first; an 'our people' section wants the second. Russian инструментальщик is specifically the toolroom trade and carries real prestige."
+    },
+    {
+      "en": "tooling",
+      "ru": "оснастка (технологическая оснастка)",
+      "hy": "տեխնոլոգիական հանդերձանք (կաղապարային օսնաստկա)",
+      "tr": "kalıp ve aparatlar; takım",
+      "th": "งานแม่พิมพ์ (ทูลลิ่ง)",
+      "zh": "模具工装; 工装",
+      "ur": "ٹولنگ (سانچہ سازی)",
+      "ar": "القوالب والعُدد",
+      "fa": "قالب‌سازی; تجهیزات قالب",
+      "note": "The most mistranslated word on the list. Russian оснастка is the correct category word — NOT инструменты (hand/cutting tools) and NOT оборудование (machines). Turkish takım is confirmed in the Vikipedi definition of the mould unit ('Parçaya şekil veren takımdır'). Chinese 工装 is the industrial-engineering word for tooling/fixturing; 模具 alone means the moulds only. Thai and Urdu both take the English word directly."
+    },
+    {
+      "en": "mould design",
+      "ru": "конструирование пресс-форм; проектирование пресс-формы",
+      "hy": "կաղապարի նախագծում",
+      "tr": "kalıp tasarımı",
+      "th": "การออกแบบแม่พิมพ์",
+      "zh": "模具设计",
+      "ur": "مولڈ ڈیزائن",
+      "ar": "تصميم القوالب",
+      "fa": "طراحی قالب",
+      "note": "Russian distinguishes конструирование (detailed mechanical design of the tool) from проектирование (project-level design). A tool shop advertises конструирование. All nine are stable and low-risk."
+    },
+    {
+      "en": "cavity",
+      "ru": "формообразующая полость; гнездо; матрица",
+      "hy": "կաղապարախոռոչ; խոռոչ (մատրիցա)",
+      "tr": "göz; dişi kalıp; kalıp boşluğu",
+      "th": "คาวิตี้ (โพรงแม่พิมพ์)",
+      "zh": "型腔",
+      "ur": "کیویٹی",
+      "ar": "التجويف (تجويف القالب)",
+      "fa": "حفره (کاویتی)",
+      "note": "Three different concepts hide under English 'cavity': the void, the cavity plate/female half, and the count. Russian: полость = the void, матрица = the female half, гнездо = a cavity as a countable unit ('8-гнёздная'). Turkish göz is the countable unit — '4 gözlü kalıp'. Do NOT render Turkish cavity as boşluk/oyuk in a headline. Thai and Persian both prefer the transliteration in shop use with the native word as gloss."
+    },
+    {
+      "en": "core",
+      "ru": "пуансон; знак (стержень)",
+      "hy": "միջուկ (պուանսոն)",
+      "tr": "maça; erkek kalıp; çekirdek",
+      "th": "คอร์ (แกนแม่พิมพ์)",
+      "zh": "型芯",
+      "ur": "کور",
+      "ar": "اللبّ (النواة)",
+      "fa": "ماهیچه (کور)",
+      "note": "Persian ماهیچه is the tooling-trade word, confirmed on the Persian قالب‌سازی article — مغز appears in loose prose but marks an outsider. Russian пуансон is the male half; знак is a core pin/insert forming a specific feature. Turkish maça is universal; çekirdek is understood but less shop-native. Do NOT calque Russian core as сердечник (that is an electrical/magnetic core)."
+    },
+    {
+      "en": "multi-cavity",
+      "ru": "многогнёздная пресс-форма",
+      "hy": "բազմախոռոչ կաղապար",
+      "tr": "çok gözlü kalıp",
+      "th": "แม่พิมพ์หลายคาวิตี้",
+      "zh": "一模多腔 (多腔模具)",
+      "ur": "ملٹی کیویٹی مولڈ",
+      "ar": "قالب متعدد التجاويف",
+      "fa": "قالب چند حفره‌ای",
+      "note": "Always state the number in practice: 8-гнёздная / 8 gözlü / 一模八腔 / 8 คาวิตี้ / قالب ۸ حفره‌ای (with Western digits: قالب 8 حفره‌ای). Chinese 一模多腔 is a fixed idiomatic construction and is the phrase buyers use. Russian also uses многоместная, confirmed on the Пресс-форма article."
+    },
+    {
+      "en": "hot runner",
+      "ru": "горячеканальная система (горячий канал)",
+      "hy": "տաք հոսքուղու համակարգ",
+      "tr": "sıcak yolluk",
+      "th": "ฮอทรันเนอร์ (ระบบทางวิ่งร้อน)",
+      "zh": "热流道",
+      "ur": "ہاٹ رنر",
+      "ar": "نظام القنوات الساخنة",
+      "fa": "راهگاه گرم (سیستم رونده گرم)",
+      "note": "Persian راهگاه گرم is confirmed as a standalone Wikipedia article title — it is fully established, no need to import 'hot runner'. Turkish sıcak yolluk likewise fully native. Russian: горячеканальная as an adjective ('горячеканальная пресс-форма') is the natural construction. Hot-runner brand names (Mold-Masters, HUSKY, Synventive, YUDO) stay Latin in every language and are a credibility signal — name the system if you can."
+    },
+    {
+      "en": "cold runner",
+      "ru": "холодноканальная система",
+      "hy": "սառը հոսքուղու համակարգ",
+      "tr": "soğuk yolluk",
+      "th": "โคลด์รันเนอร์ (ระบบทางวิ่งเย็น)",
+      "zh": "冷流道",
+      "ur": "کولڈ رنر",
+      "ar": "نظام القنوات الباردة",
+      "fa": "راهگاه سرد (سیستم رونده سرد)",
+      "note": "Mirrors hot runner exactly in all nine. The Persian variant سیستم رونده سرد is attested in Iranian machine-vendor copy alongside راهگاه سرد."
+    },
+    {
+      "en": "gate",
+      "ru": "впускной литник; точка впуска",
+      "hy": "ներարկման կետ (լցման անցք)",
+      "tr": "giriş; yolluk girişi",
+      "th": "เกท (ทางเข้าน้ำพลาสติก)",
+      "zh": "浇口",
+      "ur": "گیٹ",
+      "ar": "البوابة (مدخل الحقن)",
+      "fa": "دروازه (گِیت)",
+      "note": "The commercially important sub-types keep their English names in most markets: pin-point / sub / edge / valve gate. Persian سوپاپ سوزنی = valve gate (confirmed). Russian точка впуска is the modern engineering phrasing; впускной литник is the classic. Do not translate Arabic 'gate' as بوابة without قالب context — بوابة alone reads as a portal/website gateway."
+    },
+    {
+      "en": "runner",
+      "ru": "литниковый канал; литниковая система",
+      "hy": "հոսքուղի (լցման ջրանցք)",
+      "tr": "yolluk",
+      "th": "รันเนอร์ (ทางวิ่ง)",
+      "zh": "流道 (主流道 / 分流道)",
+      "ur": "رنر",
+      "ar": "القناة; مجرى التغذية",
+      "fa": "راهگاه",
+      "note": "Russian литниковая система is the whole gating system (confirmed as a standalone article) and splits into центральный литник (sprue) and разводящие каналы (runners). Chinese splits 主流道 (sprue) / 分流道 (runner) / 浇口 (gate) — a three-way distinction English collapses. Persian راهگاه covers both runner and gating system; qualify when precision matters."
+    },
+    {
+      "en": "parting line",
+      "ru": "плоскость разъёма (линия разъёма)",
+      "hy": "բաժանման հարթություն",
+      "tr": "ayırma yüzeyi; kalıp ayrım çizgisi",
+      "th": "พาร์ทติ้งไลน์ (เส้นแบ่งแม่พิมพ์)",
+      "zh": "分型面",
+      "ur": "پارٹنگ لائن",
+      "ar": "خط الانفصال (سطح الانفصال)",
+      "fa": "خط جدایش (سطح جدایش)",
+      "note": "Note that most languages call it a SURFACE, not a line: плоскость разъёма, 分型面, ayırma yüzeyi, سطح الانفصال, سطح جدایش. That is the technically better term and the one engineers use. English 'parting line' refers to the witness mark it leaves on the part; if the copy means the visible mark, Russian uses след разъёма and Chinese 分型线."
+    },
+    {
+      "en": "ejector",
+      "ru": "толкатель; система выталкивания",
+      "hy": "հրիչ (դուրսմղիչ համակարգ)",
+      "tr": "itici (itici pim)",
+      "th": "อีเจ็คเตอร์ (เข็มกระทุ้ง)",
+      "zh": "顶针 (顶出机构)",
+      "ur": "ایجیکٹر",
+      "ar": "القاذف (دبابيس الطرد)",
+      "fa": "پران (سیستم پران، پین پران)",
+      "note": "Persian پران is confirmed on both the process and the قالب‌سازی articles. Russian система выталкивания is confirmed on the Пресс-форма article; толкатель is the individual pin. Chinese 顶针 (pin) vs 顶出机构 (system); Taiwan writes 頂針/頂出. Thai เข็มกระทุ้ง is descriptive and correct but shops say อีเจ็คเตอร์."
+    },
+    {
+      "en": "slide / side action",
+      "ru": "ползун (шибер); боковой знак",
+      "hy": "սահիչ (կողային շարժում)",
+      "tr": "sürgü; yan maça; yan hareket",
+      "th": "สไลด์ (แกนเลื่อนข้าง)",
+      "zh": "滑块 (侧抽芯)",
+      "ur": "سلائیڈ / سائیڈ ایکشن",
+      "ar": "المزلاج (الحركة الجانبية)",
+      "fa": "کشویی (حرکت جانبی، اسلاید)",
+      "note": "Chinese 侧抽芯 literally 'side core-pulling' is the functional term and is more precise than 滑块 (the sliding block itself) — use 滑块/侧抽芯 together. Turkish yan maça is the working phrase. This term is a strong technical-competence signal in a quotation: naming slides and lifters shows the mould has been thought through."
+    },
+    {
+      "en": "insert",
+      "ru": "вставка (формообразующая вставка)",
+      "hy": "ներդիր",
+      "tr": "insert; gömme parça",
+      "th": "อินเสิร์ต (ชิ้นสอด)",
+      "zh": "镶件",
+      "ur": "انسرٹ",
+      "ar": "الحشوة (القطعة المدمجة)",
+      "fa": "اینسرت (قطعه جاسازی‌شده)",
+      "note": "Ambiguous in English between a mould insert (steel) and an insert-moulded component (metal part overmoulded into plastic). Distinguish explicitly: Russian формообразующая вставка (mould) vs закладная деталь (insert-moulded part); Chinese 镶件 (mould) vs 嵌件 (overmoulded part) — these are different characters and confusing them is a real error; Turkish kalıp inserti vs insert enjeksiyon."
+    },
+    {
+      "en": "mould base",
+      "ru": "пакет пресс-формы; блок пресс-формы (мольдбаза)",
+      "hy": "կաղապարի հիմնաբլոկ",
+      "tr": "kalıp seti; kalıp gövdesi",
+      "th": "โมลด์เบส (ฐานแม่พิมพ์)",
+      "zh": "模架",
+      "ur": "مولڈ بیس",
+      "ar": "قاعدة القالب; هيكل القالب",
+      "fa": "بیس قالب; بدنه قالب",
+      "note": "Chinese 模架 is confirmed and is the standard term across the whole Asian supply chain; Taiwan writes 模座. Standard mould-base brands (HASCO, DME, MEUSBURGER, LKM, FUTABA) stay Latin everywhere and naming yours is a strong credibility marker in Türkiye, Russia and Iran especially. Russian shops often just say мольдбаза (loanword) or DME/HASCO-пакет."
+    },
+    {
+      "en": "mould steel",
+      "ru": "инструментальная сталь для пресс-форм",
+      "hy": "կաղապարային պողպատ (գործիքային պողպատ)",
+      "tr": "kalıp çeliği",
+      "th": "เหล็กทำแม่พิมพ์",
+      "zh": "模具钢",
+      "ur": "مولڈ اسٹیل",
+      "ar": "فولاذ القوالب (صلب القوالب)",
+      "fa": "فولاد قالب",
+      "note": "In practice buyers care about the GRADE, not the word: 1.2311 / P20, 1.2344 / H13, 1.2083 / 420, 1.2738, S136, NAK80. Those designations are Latin/numeric in all nine languages and should never be localised. Russian may also use the GOST equivalents (4Х5МФС ≈ H13) — quoting both the DIN/AISI and the GOST grade is a distinct credibility move for the Russian page."
+    },
+    {
+      "en": "mould trial / T1 sampling",
+      "ru": "испытание пресс-формы; первые пробы (T1)",
+      "hy": "կաղապարի փորձարկում; առաջին նմուշառում (T1)",
+      "tr": "kalıp denemesi; ilk numune (T1)",
+      "th": "การทดลองแม่พิมพ์; ทดลองฉีด (T1)",
+      "zh": "试模 (T1 试模)",
+      "ur": "مولڈ ٹرائل؛ پہلا نمونہ (T1)",
+      "ar": "تجربة القالب؛ العيّنة الأولى (T1)",
+      "fa": "تست قالب؛ نمونه‌گیری اولیه (T1)",
+      "note": "T1/T2/T3 shorthand is understood by export-facing tool shops in every one of these markets and should be retained in Latin. Chinese 试模 is confirmed on the 注塑模具 article. Do not translate T1 as 'first test' in any language — it is a project milestone name, not a description. Russian отработка пресс-формы is the phrase for the tuning loop after T1."
+    },
+    {
+      "en": "cycle time",
+      "ru": "время цикла",
+      "hy": "ցիկլի տևողություն",
+      "tr": "çevrim süresi",
+      "th": "ไซเคิลไทม์ (รอบเวลาการผลิต)",
+      "zh": "成型周期 (周期时间)",
+      "ur": "سائیکل ٹائم",
+      "ar": "زمن الدورة",
+      "fa": "زمان چرخه (زمان سیکل)",
+      "note": "Persian زمان چرخهٔ تولید confirmed on the راهگاه گرم article. Note the ezafe ٔ. Chinese 成型周期 is the moulding-specific form; 周期时间 is generic industrial-engineering. Always give the unit (seconds) and say whether it is the moulding cycle or the full takt including secondary operations — a distinction buyers in Türkiye and China will probe."
+    },
+    {
+      "en": "shot",
+      "ru": "впрыск; доза впрыска (отливка)",
+      "hy": "ներարկման չափաբաժին",
+      "tr": "atım; enjeksiyon dozu; baskı",
+      "th": "ช็อต (ปริมาณฉีดต่อรอบ)",
+      "zh": "一模 (单次注射量)",
+      "ur": "شاٹ",
+      "ar": "الطلقة (كمية الحقن)",
+      "fa": "شات (حجم تزریق)",
+      "note": "'Shot' does triple duty in English: the injected volume, one machine cycle, and the count of cycles a tool has run. Split them per language. Tool life is counted in shots: Russian циклов/впрысков, Chinese 模次 (the correct unit — '100万模次'), Turkish baskı, Persian شات/سیکل. Chinese 模次 is the term to use for the shot COUNT and is much better than 次数."
+    },
+    {
+      "en": "part / component",
+      "ru": "деталь; изделие",
+      "hy": "դետալ; արտադրատեսակ",
+      "tr": "parça",
+      "th": "ชิ้นงาน; ชิ้นส่วน",
+      "zh": "零件; 部件",
+      "ur": "پرزہ; کمپوننٹ",
+      "ar": "قطعة; مكوّن",
+      "fa": "قطعه",
+      "note": "Thai: use ชิ้นงาน (workpiece) or ชิ้นส่วน (component) — NOT ส่วน, which means a portion or section. Russian деталь is the machined/moulded piece, изделие the finished product; a moulder makes детали that become part of an изделие. Chinese 零件 (piece part) vs 部件 (sub-assembly) — do not swap them."
+    },
+    {
+      "en": "moulded component",
+      "ru": "литьевая деталь; отливка из пластмассы",
+      "hy": "ձուլված դետալ (պլաստմասսայե դետալ)",
+      "tr": "enjeksiyon parçası; kalıplanmış parça",
+      "th": "ชิ้นงานฉีดพลาสติก",
+      "zh": "注塑件",
+      "ur": "مولڈڈ پرزہ",
+      "ar": "قطعة مقولبة بالحقن",
+      "fa": "قطعه تزریقی",
+      "note": "Chinese 注塑件 is the compact idiomatic form and is what a Chinese buyer will use. Persian قطعه تزریقی likewise. Russian отливка is technically a casting and is used for plastics too, but литьевая деталь is unambiguous."
+    },
+    {
+      "en": "injection moulding machine",
+      "ru": "термопластавтомат (ТПА); литьевая машина",
+      "hy": "ջերմապլաստավտոմատ (ТПА); ներարկային ձուլման մեքենա",
+      "tr": "plastik enjeksiyon makinesi",
+      "th": "เครื่องฉีดพลาสติก",
+      "zh": "注塑机",
+      "ur": "انجیکشن مولڈنگ مشین",
+      "ar": "ماكينة حقن البلاستيك (آلة الحقن)",
+      "fa": "دستگاه تزریق پلاستیک",
+      "note": "Russian ТПА is the abbreviation every Russian moulder uses in speech and in equipment lists — use термопластавтомат (ТПА) on first mention. Armenian inherits the same Russian abbreviation. Persian دستگاه تزریق پلاستیک is confirmed as an article title and is exactly what Iranian buyers search. Arabic ماكينة حقن القوالب / ماكينة الحقن confirmed. Chinese 注塑机; Taiwan 射出成型機."
+    },
+    {
+      "en": "clamping force / tonnage",
+      "ru": "усилие смыкания (тоннаж)",
+      "hy": "սեղմման ուժ (տոննաժ)",
+      "tr": "mengene kuvveti; kapama kuvveti (tonaj)",
+      "th": "แรงปิดแม่พิมพ์ (ขนาดตัน)",
+      "zh": "锁模力 (吨位)",
+      "ur": "کلیمپنگ فورس (ٹنیج)",
+      "ar": "قوة الإطباق (التونيج)",
+      "fa": "نیروی قفل‌کن (تناژ دستگاه)",
+      "note": "Turkish mengene kuvveti follows from Mengene Ünitesi, the clamping unit, confirmed on the Turkish article. Chinese 锁模力 confirmed. Units matter as much as the word: state tonnes (т / ton / ตัน / 吨 / طن / تن) and note that Russian technical writing uses тс (тонна-сила) or кН. Machine size is universally quoted in tonnes across all nine markets, so '160 t' communicates instantly."
+    },
+    {
+      "en": "wall thickness",
+      "ru": "толщина стенки",
+      "hy": "պատի հաստություն",
+      "tr": "et kalınlığı",
+      "th": "ความหนาผนังชิ้นงาน",
+      "zh": "壁厚",
+      "ur": "وال تھکنس (دیوار کی موٹائی)",
+      "ar": "سماكة الجدار",
+      "fa": "ضخامت دیواره",
+      "note": "Turkish 'et kalınlığı' literally 'meat/flesh thickness' — this is the correct and universal engineering term in Turkish, not a mistranslation; 'duvar kalınlığı' would read as a building wall. A designer-facing page should pair this with the uniformity rule, which is the actual DFM message."
+    },
+    {
+      "en": "draft angle",
+      "ru": "литейный уклон; угол уклона",
+      "hy": "ձուլման թեքության անկյուն",
+      "tr": "çıkma açısı; koniklik",
+      "th": "มุมถอดแบบ (มุมเอียง)",
+      "zh": "拔模角 (脱模斜度)",
+      "ur": "ڈرافٹ اینگل",
+      "ar": "زاوية السحب (زاوية الخلع)",
+      "fa": "زاویه شیب (زاویه خروج از قالب)",
+      "note": "Chinese 拔模角 confirmed; 脱模斜度 is the fuller engineering form. Russian уклон alone is enough in context ('уклон 1°'). Every language expresses it as the angle that lets the part LEAVE the mould, which is the right way to explain it in DFM copy in all nine."
+    },
+    {
+      "en": "warpage",
+      "ru": "коробление",
+      "hy": "կորացում (ծռվածություն)",
+      "tr": "çarpılma; eğilme",
+      "th": "การบิดงอ (วาร์ป)",
+      "zh": "翘曲",
+      "ur": "وارپیج (ٹیڑھا پن)",
+      "ar": "الالتواء (التشوّه)",
+      "fa": "تاب‌برداشتن (وارپیج)",
+      "note": "Russian коробление is the exact term and covers both warp and distortion; деформация is broader and weaker. Chinese 翘曲 confirmed. Persian تاب‌برداشتن requires the ZWNJ. Distinguish from shrinkage in the copy — warpage is differential shrinkage, and saying so demonstrates competence."
+    },
+    {
+      "en": "sink mark",
+      "ru": "утяжина",
+      "hy": "ներփոսվածք (ձգվածք)",
+      "tr": "çöküntü; çökme izi",
+      "th": "รอยยุบ (ซิงค์มาร์ค)",
+      "zh": "缩痕",
+      "ur": "سنک مارک",
+      "ar": "علامة الانخساف (الغوص)",
+      "fa": "فرورفتگی سطحی (سینک مارک)",
+      "note": "Russian утяжина is a specific moulding-defect noun that non-specialists do not know — using it correctly is an immediate expertise signal on the Russian page. Chinese 缩痕 confirmed. Do not translate as 'depression/вмятина/dent' in any language: a dent is impact damage, a sink is a shrinkage artefact."
+    },
+    {
+      "en": "weld line / knit line",
+      "ru": "линия спая (шов спая)",
+      "hy": "զոդման գիծ (միացման գիծ)",
+      "tr": "birleşme izi; kaynak izi",
+      "th": "เวลด์ไลน์ (รอยประสาน)",
+      "zh": "熔接线 (熔接痕)",
+      "ur": "ویلڈ لائن",
+      "ar": "خط اللحام",
+      "fa": "خط جوش (خط اتصال مذاب)",
+      "note": "Every language borrows the welding metaphor, which is convenient but can mislead a non-specialist reader into thinking something was welded. In body copy it is worth one clause of explanation (where two flow fronts meet). Chinese 熔接线 confirmed; 夹水纹 is a shop-floor synonym in southern China."
+    },
+    {
+      "en": "flash",
+      "ru": "облой (грат)",
+      "hy": "ավելցուկային շերտ (գրատ)",
+      "tr": "çapak",
+      "th": "ครีบ (แฟลช)",
+      "zh": "飞边 (毛边)",
+      "ur": "فلیش",
+      "ar": "الزوائد (الحواف الزائدة)",
+      "fa": "پلیسه",
+      "note": "Russian облой is specifically moulding flash; грат is the metalworking burr and is used loosely. Turkish çapak covers both burr and flash and is universal. Chinese 飞边 confirmed (Taiwan 毛邊). Persian پلیسه is the trade word. Thai ครีบ literally 'fin' is the native term, แฟลช the transliteration."
+    },
+    {
+      "en": "shrinkage",
+      "ru": "усадка",
+      "hy": "կծկում (նստվածք)",
+      "tr": "çekme; çekme payı",
+      "th": "การหดตัว",
+      "zh": "收缩率 (缩水率)",
+      "ur": "شرنکیج (سکڑاؤ)",
+      "ar": "الانكماش",
+      "fa": "انقباض (جمع‌شدگی)",
+      "note": "Distinguish the phenomenon from the allowance: Turkish çekme (shrinkage) vs çekme payı (shrink allowance designed into the steel); Russian усадка vs усадочный припуск; Chinese 收缩 vs 收缩率 (the rate). The rate is what appears in a quotation — express as % and name the resin, because the number is meaningless without it."
+    },
+    {
+      "en": "tolerance",
+      "ru": "допуск",
+      "hy": "թույլատրելի շեղում (դոպուսկ)",
+      "tr": "tolerans",
+      "th": "ค่าความเผื่อ (โทเลอรานซ์)",
+      "zh": "公差",
+      "ur": "ٹالرنس",
+      "ar": "التفاوت المسموح (السماحية)",
+      "fa": "تلرانس",
+      "note": "Reference the standard rather than arguing about the word: DIN 16742 for moulded plastics, ISO 2768 for general. Those designations stay Latin in all nine. Russian допуск is exact. Urdu Wikipedia's مہندسی برداشت is a coinage nobody uses — say ٹالرنس. Thai ค่าความเผื่อ is correct but พิกัดความเผื่อ is the standards-register form."
+    },
+    {
+      "en": "DFM (design for manufacturability)",
+      "ru": "технологичность конструкции; проектирование с учётом технологичности (DFM)",
+      "hy": "արտադրելիության հաշվառմամբ նախագծում (DFM)",
+      "tr": "üretilebilirlik için tasarım; imalata uygun tasarım (DFM)",
+      "th": "การออกแบบเพื่อการผลิต (DFM)",
+      "zh": "可制造性设计 (DFM)",
+      "ur": "ڈیزائن فار مینوفیکچریبلٹی (DFM)",
+      "ar": "التصميم لأجل التصنيع (DFM)",
+      "fa": "طراحی برای تولیدپذیری (DFM)",
+      "note": "Russian has a genuinely native and much stronger concept here: технологичность конструкции изделия (ТКИ) is a formal GOST concept meaning exactly manufacturability, and using it signals engineering depth that 'DFM' does not. Keep the Latin acronym alongside in every language — it is what buyers recognise from Western supplier decks. Chinese 可制造性设计 confirmed as the term (Wikipedia's 为制造设计 is a literal calque and less used)."
+    },
+    {
+      "en": "reverse engineering",
+      "ru": "обратное проектирование (реверс-инжиниринг)",
+      "hy": "հակադարձ ինժեներիա",
+      "tr": "tersine mühendislik",
+      "th": "วิศวกรรมย้อนกลับ",
+      "zh": "逆向工程",
+      "ur": "ریورس انجینئرنگ",
+      "ar": "الهندسة العكسية",
+      "fa": "مهندسی معکوس",
+      "note": "All nine confirmed via cross-language article titles. Thai Wikipedia uses วิศวกรรมผันกลับ but industry usage is วิศวกรรมย้อนกลับ or the transliteration. Sensitivity note: in Russian, Chinese and Persian markets 'reverse engineering' can carry an IP-copying implication — pair it with the confidentiality/NDA message on the same screen, and frame it as recreating the CUSTOMER'S OWN part, which is what it actually is here."
+    },
+    {
+      "en": "CAD",
+      "ru": "САПР; CAD",
+      "hy": "CAD",
+      "tr": "CAD; bilgisayar destekli tasarım",
+      "th": "CAD (การออกแบบด้วยคอมพิวเตอร์)",
+      "zh": "CAD (计算机辅助设计)",
+      "ur": "CAD",
+      "ar": "CAD (التصميم بمساعدة الحاسوب)",
+      "fa": "CAD (طراحی به کمک رایانه)",
+      "note": "Keep the Latin acronym in all nine. Armenian Wikipedia's article for this concept is literally titled 'CAD', which settles the question for Armenian. Urdu's کمپیوٹر امدادی ڈیزائن is a dictionary coinage no engineer uses. Russian САПР is real and widely used but CAD is equally understood; use САПР (CAD) on first mention. What actually matters commercially is naming the FILE FORMATS — STEP, IGES, Parasolid, SolidWorks, CATIA, NX — which stay Latin everywhere."
+    },
+    {
+      "en": "technical drawing",
+      "ru": "чертёж (технический чертёж)",
+      "hy": "տեխնիկական գծագիր",
+      "tr": "teknik resim",
+      "th": "แบบเทคนิค (ดรออิ้ง)",
+      "zh": "技术图纸 (工程图)",
+      "ur": "تکنیکی ڈرائنگ",
+      "ar": "الرسم الفني (الرسم الهندسي)",
+      "fa": "نقشه فنی",
+      "note": "Turkish teknik resim (literally 'technical picture') is the exact and universal term — do not use 'çizim'. Russian чертёж is a specific word for an engineering drawing and is not the same as рисунок. Persian نقشه is drawing/map/plan and is correct here. Thai adds ดรออิ้ง in shop use. The commercially useful phrasing everywhere is 'a 2D drawing with critical dimensions and tolerances', not just 'a drawing'."
+    },
+    {
+      "en": "prototype",
+      "ru": "прототип; опытный образец",
+      "hy": "նախատիպ (փորձնական նմուշ)",
+      "tr": "prototip",
+      "th": "ต้นแบบ (โปรโตไทป์)",
+      "zh": "样品; 手板 (原型)",
+      "ur": "پروٹوٹائپ (نمونہ)",
+      "ar": "النموذج الأولي",
+      "fa": "نمونه اولیه (پروتوتایپ)",
+      "note": "Chinese 手板 is the specific term for a prototype/mock-up part made without production tooling and is the phrase used in the Shenzhen/Dongguan supply chain — much more precise than 原型. Russian опытный образец is the formal engineering register (a pilot sample submitted for approval) and carries more weight than прототип in a Russian technical proposal."
+    },
+    {
+      "en": "mass production / serial production",
+      "ru": "серийное производство; крупносерийное производство",
+      "hy": "սերիական արտադրություն",
+      "tr": "seri üretim",
+      "th": "การผลิตจำนวนมาก; ผลิตเชิงพาณิชย์",
+      "zh": "量产 (批量生产)",
+      "ur": "بڑے پیمانے پر پیداوار (ماس پروڈکشن)",
+      "ar": "الإنتاج الكمي; الإنتاج بكميات كبيرة",
+      "fa": "تولید انبوه",
+      "note": "Turkish seri üretim confirmed. Russian: use серийное, NOT массовое — массовое производство sounds Soviet and implies undifferentiated commodity output. Chinese 量产 is the natural word; 大规模生产 is textbook. Arabic: avoid الإنتاج الضخم (propaganda register). Thai: ผลิตเชิงพาณิชย์ carries the B2B meaning better than ผลิตจำนวนมาก in a headline."
+    },
+    {
+      "en": "mould warranty / tooling warranty",
+      "ru": "гарантия на пресс-форму",
+      "hy": "կաղապարի երաշխիք",
+      "tr": "kalıp garantisi",
+      "th": "การรับประกันแม่พิมพ์",
+      "zh": "模具保修 (模具质保)",
+      "ur": "مولڈ وارنٹی",
+      "ar": "ضمان القالب",
+      "fa": "ضمانت قالب",
+      "note": "Always expressed as shots or years, and always project-specific — never as an unqualified promise. Persian: use ضمانت (contractual) not گارانتی (consumer) in the terms sentence. Russian гарантийный ресурс (guaranteed shot count) is the precise phrasing a Russian buyer's lawyer will look for."
+    },
+    {
+      "en": "second source / dual sourcing",
+      "ru": "второй поставщик; альтернативный источник поставки",
+      "hy": "երկրորդ մատակարար; այլընտրանքային մատակարարում",
+      "tr": "ikinci kaynak; alternatif tedarikçi",
+      "th": "ซัพพลายเออร์รายที่สอง; แหล่งผลิตสำรอง",
+      "zh": "二供 (第二供应商)",
+      "ur": "سیکنڈ سورس; متبادل سپلائر",
+      "ar": "المصدر الثاني; المورّد البديل",
+      "fa": "تأمین‌کننده دوم; منبع دوم",
+      "note": "A procurement term of art, not a manufacturing one — the reader is a buyer, not an engineer. Chinese 二供 is genuine purchasing jargon and lands harder than 第二供应商. Russian: avoid дублирующий поставщик in marketing (it positions you as the spare tyre); альтернативный источник поставки is the neutral procurement phrasing. Frame it as risk reduction for the customer, never as 'we'll take your competitor's work'."
+    },
+    {
+      "en": "preform",
+      "ru": "преформа",
+      "hy": "պրեֆորմ",
+      "tr": "preform",
+      "th": "พรีฟอร์ม",
+      "zh": "预成型坯 (瓶胚)",
+      "ur": "پری فارم",
+      "ar": "بريفورم (القطعة الأولية)",
+      "fa": "پریفرم",
+      "note": "A loanword in eight of nine. Chinese is the exception and it matters: 瓶胚 (literally 'bottle embryo') is what the Chinese PET industry actually says; 预成型坯 is the generic technical term. Use 瓶胚 for bottle preforms."
+    },
+    {
+      "en": "PET preform",
+      "ru": "ПЭТ-преформа",
+      "hy": "ՊԵՏ-պրեֆորմ",
+      "tr": "PET preform",
+      "th": "พรีฟอร์ม PET",
+      "zh": "PET 瓶胚",
+      "ur": "PET پری فارم",
+      "ar": "بريفورم PET",
+      "fa": "پریفرم PET",
+      "note": "Russian uses the Cyrillic acronym ПЭТ (ПЭТ-преформа, ПЭТ-бутылка) — writing 'PET-преформа' in Latin looks untranslated to a Russian packaging buyer. Everyone else keeps Latin PET. Preform specs are quoted by weight in grams and by neck standard, both of which are Latin/numeric in all nine markets."
+    },
+    {
+      "en": "neck finish",
+      "ru": "горловина (резьба горловины); венчик",
+      "hy": "վզիկի պրոֆիլ (պարուրակ)",
+      "tr": "boyun ölçüsü; ağız profili",
+      "th": "ปากขวด (เกลียวปากขวด)",
+      "zh": "瓶口尺寸 (瓶口标准)",
+      "ur": "نیک فنش (بوتل کا منہ)",
+      "ar": "مقاس العنق (فوهة العبوة)",
+      "fa": "اندازه دهانه (رزوه دهانه)",
+      "note": "In practice this is never translated — it is quoted by STANDARD: PCO 1810, PCO 1881, 29/25, 30/25, 38 mm, BPF. Those designations stay Latin/numeric in all nine languages, and quoting them correctly is the single strongest competence signal on a preform page. The local words above are for surrounding prose only."
+    },
+    {
+      "en": "closure / cap",
+      "ru": "колпачок; крышка (укупорочное средство)",
+      "hy": "խցան; կափարիչ",
+      "tr": "kapak",
+      "th": "ฝา; ฝาปิด",
+      "zh": "瓶盖",
+      "ur": "کیپ (ڈھکن)",
+      "ar": "الغطاء (السدادة)",
+      "fa": "درب (درپوش)",
+      "note": "Russian укупорочное средство is the formal packaging-industry category term used in tenders and standards; колпачок is a screw cap, крышка a lid. Choose by product. Arabic السدادة is a stopper/plug, الغطاء a cap/lid. Turkish kapak covers all of it."
+    },
+    {
+      "en": "blow mould",
+      "ru": "выдувная форма (пресс-форма для выдува)",
+      "hy": "փչման կաղապար",
+      "tr": "şişirme kalıbı",
+      "th": "แม่พิมพ์เป่า",
+      "zh": "吹塑模具",
+      "ur": "بلو مولڈ",
+      "ar": "قالب النفخ",
+      "fa": "قالب بادی (قالب بادکن)",
+      "note": "Persian قالب‌گیری بادی confirmed as the Wikipedia title for the process; the tool is قالب بادی. Turkish Şişirmeli kalıplama confirmed for the process, şişirme kalıbı for the tool. Arabic تشكيل بالنفخ (process) / قالب النفخ (tool). Chinese 吹塑 (Mainland) vs 吹氣成型 (Taiwan). Distinguish EBM / ISBM / SBM — those acronyms stay Latin everywhere and matter to a preform customer."
+    },
+    {
+      "en": "die casting",
+      "ru": "литьё металлов под давлением",
+      "hy": "մետաղի ձուլում ճնշման տակ",
+      "tr": "basınçlı döküm",
+      "th": "ไดคาสติ้ง (การหล่อฉีดโลหะ)",
+      "zh": "压铸",
+      "ur": "ڈائی کاسٹنگ",
+      "ar": "السبك بالقالب (الصب تحت الضغط)",
+      "fa": "ریخته‌گری تحت فشار (دایکاست)",
+      "note": "All confirmed via cross-language titles. Russian is a genuine trap: литьё под давлением unqualified means EITHER plastic injection moulding OR metal die casting — always qualify as литьё металлов под давлением or литьё пластмасс под давлением. Turkish basınçlı döküm confirmed. Persian دایکاست is the everyday loanword alongside the formal ریخته‌گری تحت فشار."
+    },
+    {
+      "en": "CNC machining",
+      "ru": "обработка на станках с ЧПУ",
+      "hy": "CNC մշակում (ԹՎՂ մշակում)",
+      "tr": "CNC işleme; CNC talaşlı imalat",
+      "th": "งาน CNC (การกัดกลึง CNC)",
+      "zh": "CNC 加工 (数控加工)",
+      "ur": "CNC مشیننگ",
+      "ar": "التشغيل بالتحكم الرقمي CNC",
+      "fa": "ماشین‌کاری CNC",
+      "note": "Russian ЧПУ (числовое программное управление) is the standard Cyrillic abbreviation and 'станок с ЧПУ' is what a Russian machinist says — but CNC is also fully understood; use 'с ЧПУ (CNC)'. Chinese 数控 is the native abbreviation and 数控加工 is standard, with CNC 加工 equally common. Keep CNC Latin in the other seven. Axis counts (3-axis, 5-axis / 5-осевой / 五轴 / 5 eksen) are a stronger signal than the word itself."
+    },
+    {
+      "en": "turning",
+      "ru": "токарная обработка",
+      "hy": "խառատային մշակում (շրջատաշում)",
+      "tr": "tornalama",
+      "th": "งานกลึง",
+      "zh": "车削",
+      "ur": "ٹرننگ (خراد)",
+      "ar": "الخراطة",
+      "fa": "تراشکاری",
+      "note": "Turkish tornalama confirmed. Armenian: Wikipedia's շրջատաշում is the Academy term, but Armenian machine shops say խառատային (from Russian токарный) — give both. Urdu خراد is the traditional lathe word and is genuinely used in Pakistani workshops alongside 'turning'."
+    },
+    {
+      "en": "milling",
+      "ru": "фрезерование (фрезерная обработка)",
+      "hy": "ֆրեզերային մշակում",
+      "tr": "frezeleme",
+      "th": "งานกัด (งานมิลลิ่ง)",
+      "zh": "铣削",
+      "ur": "ملنگ",
+      "ar": "التفريز",
+      "fa": "فرزکاری",
+      "note": "Turkish frezeleme confirmed. All nine derive from the same European root except Chinese and Thai. For a mould shop the relevant sub-terms are high-speed milling (HSM), hard milling and EDM — EDM stays Latin everywhere (Russian: электроэрозионная обработка / ЭЭО, Chinese 电火花)."
+    },
+    {
+      "en": "NDA / confidentiality agreement",
+      "ru": "соглашение о неразглашении (NDA)",
+      "hy": "գաղտնիության համաձայնագիր (NDA)",
+      "tr": "gizlilik sözleşmesi (NDA)",
+      "th": "ข้อตกลงรักษาความลับ (NDA)",
+      "zh": "保密协议 (NDA)",
+      "ur": "رازداری کا معاہدہ (NDA)",
+      "ar": "اتفاقية عدم الإفصاح (NDA)",
+      "fa": "قرارداد محرمانگی (NDA)",
+      "note": "Keep the Latin acronym NDA in all nine — it is what procurement staff recognise and search for, including in Arabic, Persian and Urdu documents. Local phrase + (NDA) is the pattern that works. In the three RTL locales, wrap 'NDA' in a bidi-isolating span or the parenthesis will land on the wrong side."
+    },
+    {
+      "en": "RFQ / quotation",
+      "ru": "запрос коммерческого предложения (RFQ); коммерческое предложение (КП)",
+      "hy": "գնային հարցում; առևտրային առաջարկ",
+      "tr": "teklif talebi; fiyat teklifi",
+      "th": "การขอใบเสนอราคา; ใบเสนอราคา",
+      "zh": "询价; 报价",
+      "ur": "کوٹیشن کی درخواست (RFQ)؛ کوٹیشن",
+      "ar": "طلب عرض سعر؛ عرض السعر",
+      "fa": "درخواست استعلام قیمت (RFQ)؛ پیش‌فاکتور",
+      "note": "Two distinct things: the request (RFQ) and the answer (quotation). Russian КП (коммерческое предложение) is the near-universal abbreviation for the quotation document. Persian پیش‌فاکتور (proforma invoice) is what Iranian buyers actually ask for and is more concrete than 'quotation' — note the ZWNJ. Chinese 询价 (enquiry) vs 报价 (quote). Thai ใบเสนอราคา is the quotation document itself."
+    },
+    {
+      "en": "lead time",
+      "ru": "срок изготовления; срок поставки",
+      "hy": "պատրաստման ժամկետ",
+      "tr": "teslim süresi",
+      "th": "ระยะเวลาส่งมอบ (ลีดไทม์)",
+      "zh": "交期 (交货周期)",
+      "ur": "لیڈ ٹائم (ترسیل کا دورانیہ)",
+      "ar": "مدة التنفيذ (مهلة التسليم)",
+      "fa": "زمان تحویل",
+      "note": "Chinese 交期 is the compact trade word and beats Wikipedia's 前置時間 (a management-textbook calque). Russian distinguishes срок изготовления (manufacturing time) from срок поставки (including shipping) — a Russian buyer will read them as different commitments, so state which you mean. Persian زمان تحویل is correct and idiomatic (unlike تحویل used for 'delivery' as shipment)."
+    },
+    {
+      "en": "unit cost / cost per part",
+      "ru": "себестоимость детали; цена за единицу",
+      "hy": "մեկ դետալի ինքնարժեք",
+      "tr": "birim maliyet; parça başı maliyet",
+      "th": "ต้นทุนต่อชิ้น (ราคาต่อชิ้น)",
+      "zh": "单件成本 (单价)",
+      "ur": "فی پرزہ لاگت",
+      "ar": "تكلفة القطعة الواحدة",
+      "fa": "قیمت تمام‌شده هر قطعه",
+      "note": "Careful with cost vs price: Russian себестоимость is the internal cost of production, цена is what the customer pays — a supplier page should say цена за единицу / цена за деталь, not себестоимость (which reveals your own margin structure conceptually). Same distinction in Turkish (maliyet vs fiyat) and Persian (قیمت تمام‌شده vs قیمت فروش)."
+    },
+    {
+      "en": "lightweighting",
+      "ru": "снижение массы изделия; облегчение конструкции",
+      "hy": "զանգվածի նվազեցում",
+      "tr": "hafifletme; ağırlık azaltma",
+      "th": "การลดน้ำหนักชิ้นงาน",
+      "zh": "轻量化",
+      "ur": "وزن میں کمی",
+      "ar": "تخفيف الوزن",
+      "fa": "سبک‌سازی",
+      "note": "Chinese 轻量化 is a well-established single word and a live commercial theme in automotive and packaging. In PET preforms this is THE cost lever (gram weight reduction) — express it as grams saved per unit, which reads identically in all nine. Persian سبک‌سازی takes a ZWNJ."
+    },
+    {
+      "en": "tooling life / mould life",
+      "ru": "ресурс пресс-формы (стойкость)",
+      "hy": "կաղապարի ռեսուրս",
+      "tr": "kalıp ömrü",
+      "th": "อายุการใช้งานแม่พิมพ์",
+      "zh": "模具寿命",
+      "ur": "مولڈ کی عمر (ٹولنگ لائف)",
+      "ar": "عمر القالب (العمر الإنتاجي للقالب)",
+      "fa": "عمر قالب",
+      "note": "Always quantified in shots, never in years alone: 500 000 / 1 000 000 циклов, 模次, baskı, شات. Russian ресурс is the exact word for designed service life and pairs with гарантийный ресурс for the warranted portion — a distinction Russian buyers care about a great deal. Tie the number to the steel grade and the resin's abrasiveness (glass-filled resins cut tool life), which is the answer a real engineer is looking for."
+    }
+  ],
+  "phrases": [
+    {
+      "en": "From an idea, photo, sample or drawing to mass production",
+      "ru": "От идеи, фотографии, образца или чертежа — до серийного производства",
+      "hy": "Գաղափարից, լուսանկարից, նմուշից կամ գծագրից՝ մինչև սերիական արտադրություն",
+      "tr": "Fikirden, fotoğraftan, numuneden ya da teknik resimden seri üretime",
+      "th": "จากไอเดีย ภาพถ่าย ชิ้นงานตัวอย่าง หรือแบบเทคนิค สู่การผลิตจริง",
+      "zh": "从一个想法、一张照片、一件样品或一张图纸，到量产",
+      "ur": "خیال، تصویر، نمونہ یا ڈرائنگ سے لے کر بڑے پیمانے پر پیداوار تک",
+      "ar": "من فكرة أو صورة أو عيّنة أو رسم فني إلى الإنتاج الكمي",
+      "fa": "از ایده، عکس، نمونه یا نقشه فنی تا تولید انبوه",
+      "adaptationNote": "The 'from X to Y' arc survives intact in all nine, which is lucky — it is the spine of the sentence. What does NOT survive is the ending. Russian: серийного, never массового (массовое производство reads Soviet and implies undifferentiated commodity output). Chinese: 量产, not 大规模生产 (economics textbook). Thai: การผลิตจริง or ผลิตเชิงพาณิชย์ beats a literal การผลิตจำนวนมาก, which a Thai reader parses as 'making a lot of stuff' rather than 'production intent'. Arabic: الإنتاج الكمي, never الإنتاج الضخم (state-propaganda register). Punctuation: Russian and Armenian want the dash before the destination (Armenian uses ՝, the bowed comma, before the final clause); Chinese uses the enumeration comma 、 between list items and ， before the destination, never Latin commas."
+    },
+    {
+      "en": "Send your part for technical evaluation",
+      "ru": "Пришлите деталь на техническую оценку",
+      "hy": "Ուղարկեք ձեր դետալը տեխնիկական գնահատման",
+      "tr": "Parçanızı teknik değerlendirme için gönderin",
+      "th": "ส่งชิ้นงานของคุณมาให้เราประเมินทางเทคนิค",
+      "zh": "把您的零件发给我们，做一次技术评估",
+      "ur": "اپنا پرزہ تکنیکی جائزے کے لیے بھیجیں",
+      "ar": "أرسل قطعتك للتقييم الفني",
+      "fa": "قطعه خود را برای ارزیابی فنی ارسال کنید",
+      "adaptationNote": "'Evaluation' is the load-bearing word and it must not drift into 'test'. Arabic: التقييم الفني — NOT الفحص (inspection, implies looking for defects) and NOT الاختبار (laboratory testing). Chinese: 技术评估 — NOT 鉴定, which implies a formal appraisal with legal or certification weight. Turkish: değerlendirme, not inceleme (which suggests a customs or audit inspection). Thai reads more naturally with the beneficiary made explicit (มาให้เรา, 'send it to us so we can…') because a bare Thai imperative with no recipient sounds abrupt. Chinese also gains from 做一次 ('do one'), which frames it as a discrete, bounded, free service rather than an open-ended commitment."
+    },
+    {
+      "en": "Send whatever you have",
+      "ru": "Присылайте то, что есть — этого достаточно, чтобы начать",
+      "hy": "Ուղարկեք այն, ինչ ունեք — մնացածը մեր գործն է",
+      "tr": "Elinizde ne varsa gönderin, yeterli",
+      "th": "มีข้อมูลแค่ไหน ส่งมาได้เลย เราต่อยอดให้เอง",
+      "zh": "有什么发什么，缺的我们来补",
+      "ur": "آپ کے پاس جو کچھ بھی ہے، وہی بھیج دیجیے — شروع کرنے کے لیے کافی ہے",
+      "ar": "أرسل ما لديك مهما كان — يكفينا للبدء",
+      "fa": "هرچه در اختیار دارید بفرستید؛ همان برای شروع کافی است",
+      "adaptationNote": "The hardest phrase in the set. The English works because of a permissive shrug that most of these languages do not have; translated literally it lands as careless or even rude. Chinese 随便发点什么 ('just send whatever, don't care') is actively insulting in B2B — the idiomatic fix is the paired construction 有什么发什么 ('send what you have'), which is warm and competent, plus 缺的我们来补 ('we'll fill in what's missing') to complete the promise. Russian «Пришлите что угодно» reads flippant; «то, что есть» plus the reassurance clause is the natural register. Every language needs the second half made EXPLICIT — 'that's enough to start' / 'the rest is our job' — because without it the phrase reads as the supplier not caring what they receive. Armenian's «մնացածը մեր գործն է» ('the rest is our business') is the strongest version of the idea in any of the nine and is worth using as the model."
+    },
+    {
+      "en": "Initial response within 48 business hours",
+      "ru": "Первичный ответ — в течение 48 рабочих часов",
+      "hy": "Առաջին պատասխանը՝ 48 աշխատանքային ժամվա ընթացքում",
+      "tr": "İlk dönüş 48 iş saati içinde",
+      "th": "ตอบกลับเบื้องต้นภายใน 48 ชั่วโมงทำการ",
+      "zh": "48 个工作小时内给出初步回复",
+      "ur": "ابتدائی جواب 48 کاروباری گھنٹوں کے اندر",
+      "ar": "رد أولي خلال 48 ساعة عمل",
+      "fa": "پاسخ اولیه ظرف 48 ساعت کاری",
+      "adaptationNote": "'Business HOURS' as a counting unit is an Anglo-American convention and is genuinely unnatural in Russian, Armenian, Thai and Urdu, where the norm is business DAYS. All four render it understandably, but many readers will silently convert to '2 working days' — so if that is what you actually mean, consider saying it: «в течение 2 рабочих дней», ภายใน 2 วันทำการ. Turkish 'ilk dönüş' (first return/come-back) is the native business idiom and is warmer than a literal 'ilk cevap'. Chinese 初步回复 is right; 首次回应 sounds like a press office. Keep 48 in Western digits in all nine (see digitPolicy) and use a non-breaking space before the unit so '48' never orphans at a line end."
+    },
+    {
+      "en": "One accountable partner: engineering, tooling, production, supply",
+      "ru": "Один ответственный партнёр: разработка, оснастка, производство, поставка",
+      "hy": "Մեկ պատասխանատու գործընկեր՝ ինժեներիա, կաղապար, արտադրություն, մատակարարում",
+      "tr": "Tek muhatap, tek sorumlu: mühendislik, kalıp, üretim, tedarik",
+      "th": "พาร์ทเนอร์รายเดียวที่รับผิดชอบครบวงจร: วิศวกรรม แม่พิมพ์ การผลิต และการส่งมอบ",
+      "zh": "一家负责到底：设计、模具、生产、供货",
+      "ur": "ایک ذمہ دار پارٹنر: انجینئرنگ، ٹولنگ، پروڈکشن، سپلائی",
+      "ar": "شريك واحد مسؤول: الهندسة، القوالب، الإنتاج، التوريد",
+      "fa": "یک شریک پاسخگو: مهندسی، قالب، تولید، تأمین",
+      "adaptationNote": "'Accountable' has no clean one-word equivalent anywhere and each language solves it differently. Russian ответственный is right; подотчётный means 'reports to' and is wrong. Turkish gains enormously from the native idiom 'tek muhatap' — 'one counterpart to deal with' — which carries the exact B2B promise (you will not be handed between departments); a literal 'tek sorumlu ortak' is flatter, so the doubled 'Tek muhatap, tek sorumlu' is the strongest Turkish version. Chinese 负责到底 ('responsible all the way to the end') is the idiom; 一个负责任的伙伴 sounds like a slogan about being a nice person. Persian پاسخگو is precisely 'answerable' and is exactly the right register. Note the list separators: Chinese must use 、 between the four items, Arabic and Urdu must use ، and Armenian uses ՝ after the colon position. The colon itself: Armenian conventionally uses ՝ rather than a Latin colon in this construction."
+    },
+    {
+      "en": "Second-source readiness",
+      "ru": "Готовы стать вашим вторым поставщиком",
+      "hy": "Պատրաստ ենք դառնալ ձեր երկրորդ մատակարարը",
+      "tr": "İkinci kaynak olmaya hazırız",
+      "th": "พร้อมเป็นซัพพลายเออร์รายที่สองให้คุณ",
+      "zh": "具备二供承接能力",
+      "ur": "سیکنڈ سورس کے طور پر تیار",
+      "ar": "جاهزية العمل كمصدر ثانٍ",
+      "fa": "آمادگی برای ایفای نقش تأمین‌کننده دوم",
+      "adaptationNote": "This is procurement jargon compressed into an English noun phrase, and the compression does not travel. Turkish, Thai, Russian and Armenian all have to unpack it into a statement of capability ('we are ready to be your second source'), which is stronger copy anyway. Chinese 二供 is real purchasing shorthand and lands far better in a headline than 第二供应商; 承接能力 ('capacity to take on') is the natural completion. Russian: avoid дублирующий поставщик in marketing — it positions you as the spare tyre; готовы стать вашим вторым поставщиком puts the customer's risk management first. The whole message must be framed as de-risking the CUSTOMER's supply chain, never as taking work from a competitor — in Türkiye, China and Russia especially, the latter framing reads as predatory."
+    },
+    {
+      "en": "Better production economics",
+      "ru": "Более выгодная экономика производства",
+      "hy": "Ավելի ձեռնտու արտադրական ինքնարժեք",
+      "tr": "Daha rekabetçi birim maliyet",
+      "th": "ต้นทุนการผลิตที่ดีกว่า",
+      "zh": "更优的生产成本结构",
+      "ur": "بہتر پیداواری لاگت",
+      "ar": "تكلفة إنتاج أفضل",
+      "fa": "صرفهٔ اقتصادی بهتر در تولید",
+      "adaptationNote": "'Production economics' is an English-language abstraction and the literal translation lands as an ACADEMIC DISCIPLINE in several of these languages: Armenian տնտեսագիտություն and Urdu معاشیات both mean 'the science of economics', so 'better production economics' becomes 'improved manufacturing-economics scholarship'. The fix everywhere except Russian and Chinese is to resolve the abstraction into COST: Turkish 'daha rekabetçi birim maliyet' (more competitive unit cost), Armenian ինքնարժեք (cost base), Urdu لاگت, Arabic تكلفة, Thai ต้นทุน. Chinese is the exception in the other direction — 成本结构 (cost structure) keeps the sophistication without the academic reading and is exactly what a Chinese procurement manager thinks in. Russian «экономика производства» is a real and unremarkable industrial phrase, so the literal works there."
+    },
+    {
+      "en": "Since 2006",
+      "ru": "С 2006 года",
+      "hy": "2006 թվականից",
+      "tr": "2006'dan beri",
+      "th": "ตั้งแต่ปี ค.ศ. 2006",
+      "zh": "自 2006 年",
+      "ur": "2006 سے",
+      "ar": "منذ عام 2006",
+      "fa": "از سال 2006",
+      "adaptationNote": "Three separate traps. (1) Thai: Thai commercial writing defaults to the Buddhist Era (พ.ศ., = Gregorian + 543), so an unmarked '2006' can be misparsed for a beat. Mark it ค.ศ. 2006 on an export site, or use พ.ศ. 2549 for a purely domestic Thai audience — but never leave it bare. (2) Turkish REQUIRES the apostrophe before a suffix on a numeral: 2006'dan beri. '2006 dan' or '2006dan' is a plain spelling error and Turkish readers notice instantly. (3) Chinese requires 年 after the digits (2006 年) and a thin space between the Han text and the Latin digits. Russian needs года (or the abbreviation г.) — bare «С 2006» is incomplete. Arabic منذ عام 2006 is smoother than bare منذ 2006. Persian and Urdu keep Western digits here for consistency with the rest of the site, even though ۲۰۰۶ would be the prose default."
+    },
+    {
+      "en": "1,000+ successful projects",
+      "ru": "Более 1 000 реализованных проектов",
+      "hy": "Ավելի քան 1 000 իրականացված նախագիծ",
+      "tr": "1.000'den fazla başarıyla tamamlanmış proje",
+      "th": "กว่า 1,000 โปรเจกต์ที่ส่งมอบสำเร็จ",
+      "zh": "1,000+ 成功案例",
+      "ur": "1,000 سے زائد کامیاب منصوبے",
+      "ar": "أكثر من 1,000 مشروع منجز",
+      "fa": "بیش از 1.000 پروژه اجراشده",
+      "adaptationNote": "The number formatting is a real localisation bug waiting to happen and it differs four ways: Russian and Armenian use a THIN SPACE (1 000); Turkish and Iranian Persian use a PERIOD (1.000) — which in English reads as 'one point zero'; Thai, Chinese, Arabic and Urdu use a COMMA (1,000). Getting Turkish wrong turns 1,000 projects into 1 project. Separately, 'successful' is weaker than it looks: Russian B2B distrusts self-praise, so «реализованных» (delivered/executed) is more persuasive than «успешных». Same instinct in Chinese, where 成功案例 ('successful cases', i.e. references you could check) is the trusted phrasing over 成功项目. Arabic منجز (completed) likewise outperforms ناجح. Thai ส่งมอบสำเร็จ ('successfully delivered') is more concrete than a bare สำเร็จ. Also: the '+' sign works in all nine but Russian/Armenian prefer the word (Более / Ավելի քան)."
+    },
+    {
+      "en": "Request a technical evaluation",
+      "ru": "Запросить техническую оценку",
+      "hy": "Պատվիրել տեխնիկական գնահատում",
+      "tr": "Teknik değerlendirme talep edin",
+      "th": "ขอรับการประเมินทางเทคนิค",
+      "zh": "申请技术评估",
+      "ur": "تکنیکی جائزے کی درخواست کریں",
+      "ar": "اطلب تقييماً فنياً",
+      "fa": "درخواست ارزیابی فنی",
+      "adaptationNote": "Button copy, so grammatical mood matters. Russian and Armenian UI convention is the INFINITIVE on buttons («Запросить…», «Պատվիրել…») — an imperative («Запросите!») reads as a nagging advertisement. Turkish, Thai, Urdu and Arabic buttons take the imperative naturally. Chinese buttons drop the pronoun and any politeness particle entirely: 申请技术评估, never 请申请您的技术评估. Persian works as a bare noun phrase (درخواست ارزیابی فنی) which is the standard Persian button register. Keep this label EXACTLY consistent with the 'Send your part for technical evaluation' phrasing above — using two different words for 'evaluation' on one page destroys the sense that a single named service exists."
+    },
+    {
+      "en": "Talk to an engineer",
+      "ru": "Связаться с инженером",
+      "hy": "Խոսել ինժեների հետ",
+      "tr": "Bir mühendisle görüşün",
+      "th": "คุยกับวิศวกรของเราโดยตรง",
+      "zh": "直接与工程师沟通",
+      "ur": "انجینئر سے براہِ راست بات کریں",
+      "ar": "تحدّث مباشرةً مع مهندس",
+      "fa": "مستقیم با مهندس صحبت کنید",
+      "adaptationNote": "The real promise is 'not a salesperson', and that has to be carried explicitly in most of these languages or it evaporates. Chinese needs 直接 ('directly') — 与工程师交谈 alone sounds like making small talk. Arabic, Persian and Urdu all benefit from مباشرةً / مستقیم / براہِ راست for the same reason. Russian «Поговорить с инженером» is too casual for B2B; «Связаться с инженером» keeps the promise while staying businesslike. Thai adds ของเรา ('our') because a bare indefinite 'an engineer' is oddly unanchored in Thai, and โดยตรง carries the no-middleman promise. Turkish 'görüşün' (have a meeting/talk with) is more businesslike than 'konuşun' (chat)."
+    },
+    {
+      "en": "Confidentiality and NDA",
+      "ru": "Конфиденциальность и NDA",
+      "hy": "Գաղտնիություն և NDA",
+      "tr": "Gizlilik ve NDA",
+      "th": "การรักษาความลับและ NDA",
+      "zh": "保密与 NDA",
+      "ur": "رازداری اور NDA",
+      "ar": "السرية واتفاقية عدم الإفصاح (NDA)",
+      "fa": "محرمانگی و NDA",
+      "adaptationNote": "Keep the Latin acronym NDA in all nine. It is what procurement and legal staff recognise and search for, including inside Arabic, Persian and Urdu documents — spelling it out only in the local language loses the recognition cue. The pattern that works is local phrase + (NDA), or the acronym alone where the local word already appears nearby. Technical warning for the three RTL locales: 'NDA' is a left-to-right run inside a right-to-left sentence, so the Unicode bidi algorithm can strand an adjoining parenthesis or slash on the wrong side. Wrap it (<bdi>NDA</bdi> or a span with dir=\"ltr\") and visually verify — this exact string is one of the most common bidi bugs on multilingual industrial sites. Chinese: note the thin space around the Latin acronym (保密与 NDA)."
+    },
+    {
+      "en": "International delivery",
+      "ru": "Поставки по всему миру",
+      "hy": "Առաքում աշխարհի ցանկացած կետ",
+      "tr": "Dünya geneline sevkiyat",
+      "th": "จัดส่งทั่วโลก",
+      "zh": "全球发货",
+      "ur": "بین الاقوامی ترسیل",
+      "ar": "الشحن إلى جميع أنحاء العالم",
+      "fa": "ارسال به سراسر جهان",
+      "adaptationNote": "'Delivery' must become SHIPMENT or SUPPLY, not the parcel-courier word, or the whole page drops a tier. Russian «доставка» is the courier verb (pizza, parcels) and reads consumer-grade for pallets and tooling — «поставки» is the trade word. Chinese 全球发货 is trade phrasing; 国际送货 sounds like food delivery. Persian: تحویل means handover/acceptance, not shipping — use ارسال or حمل و نقل. Turkish sevkiyat is the freight word, teslimat is closer to 'delivery to the door'. Note also that most of these languages prefer 'worldwide' to 'international' as the positive claim, which is stronger copy in English too."
+    },
+    {
+      "en": "Tooling warranty terms are defined per project and mould specification",
+      "ru": "Условия гарантии на пресс-форму определяются по каждому проекту и фиксируются в спецификации пресс-формы",
+      "hy": "Կաղապարի երաշխիքի պայմանները սահմանվում են յուրաքանչյուր նախագծի համար՝ ըստ կաղապարի բնութագրի",
+      "tr": "Kalıp garanti şartları her proje ve kalıp şartnamesi bazında belirlenir",
+      "th": "เงื่อนไขการรับประกันแม่พิมพ์กำหนดเป็นรายโครงการ ตามสเปคของแม่พิมพ์",
+      "zh": "模具保修条款按项目和模具规格逐一约定",
+      "ur": "مولڈ کی وارنٹی کی شرائط ہر پروجیکٹ اور مولڈ اسپیسیفیکیشن کے مطابق طے کی جاتی ہیں",
+      "ar": "تُحدَّد شروط ضمان القالب لكل مشروع على حدة ووفقاً لمواصفات القالب",
+      "fa": "شرایط ضمانت قالب برای هر پروژه و بر اساس مشخصات فنی قالب تعیین می‌شود",
+      "adaptationNote": "This is a legal hedge and must not soften into a promise in any language. Two idioms carry 'per project' precisely and should be used: Turkish '…bazında belirlenir' (determined on a per-X basis) and Chinese 逐一约定 ('agreed one by one'). Arabic uses the passive تُحدَّد plus على حدة ('separately/case by case'), which is exactly the right contractual register — an active 'we define' would read as unilateral. Persian register warning: use ضمانت (the legal/contractual word) here, NOT گارانتی (the commercial loanword) — گارانتی in a terms sentence reads like a household-appliance leaflet and weakens the clause. Russian: adding «и фиксируются в спецификации» ('and are recorded in the specification') is worth the extra words, because a Russian buyer's legal review looks for the document reference, not just the principle. Persian می‌شود needs its ZWNJ."
+    }
+  ],
+  "pitfalls": {
+    "summary": "The recurring failure mode across all nine languages is not vocabulary — it is REGISTER. Machine translation reliably produces terms that are dictionary-correct and simultaneously mark the writer as an outsider to the trade: сердечник instead of пуансон, boşluk instead of göz, مغز instead of ماهیچه, ส่วน instead of ชิ้นงาน. A buyer's engineer detects this in one sentence and downgrades the supplier before reading the specification. The second failure mode is typographic: Latin punctuation in Armenian, Urdu, Arabic and Chinese; letter-spacing applied to Arabic-script text; lost ZWNJ in Persian; inverted decimal separators in Turkish.",
+    "crossLanguage": [
+      {
+        "issue": "Consumer-grade word for 'delivery'",
+        "affects": [
+          "ru",
+          "zh",
+          "fa"
+        ],
+        "detail": "Russian доставка, Chinese 国际送货 and Persian تحویل all mean parcel/courier delivery or handover, not freight supply. Use поставка / 发货 / ارسال. This single word choice is the difference between reading as an industrial supplier and reading as an online shop."
+      },
+      {
+        "issue": "'Mass production' rendered with the wrong connotation",
+        "affects": [
+          "ru",
+          "ar",
+          "th",
+          "zh"
+        ],
+        "detail": "Russian массовое производство reads Soviet-commodity; Arabic الإنتاج الضخم reads as state propaganda; Thai ผลิตจำนวนมาก reads as 'a lot of stuff'; Chinese 大规模生产 reads as an economics textbook. Correct: серийное производство, الإنتاج الكمي, ผลิตเชิงพาณิชย์ / การผลิตจริง, 量产."
+      },
+      {
+        "issue": "Title Case imported from the English design",
+        "affects": [
+          "ru",
+          "hy",
+          "tr"
+        ],
+        "detail": "None of these languages Title Case headings or buttons. Capitalising Every Word is one of the fastest tells of an unlocalised page. Sentence case only. (Thai, Chinese, Arabic, Persian and Urdu have no case at all, so the English design's capitalisation-based hierarchy has to be rebuilt from weight and size in five of nine locales.)"
+      },
+      {
+        "issue": "Latin punctuation left in non-Latin scripts",
+        "affects": [
+          "hy",
+          "ur",
+          "ar",
+          "fa",
+          "zh"
+        ],
+        "detail": "Armenian sentences end with ։ not '.'; Urdu with ۔ not '.'. Arabic, Persian and Urdu use ، ؛ ؟ not , ; ?. Chinese uses full-width 。， 、 ； ：（）. Each of these is a single-character change that disproportionately affects perceived quality."
+      },
+      {
+        "issue": "letter-spacing / tracking inherited from the Latin design",
+        "affects": [
+          "ar",
+          "fa",
+          "ur"
+        ],
+        "detail": "CSS letter-spacing breaks the cursive joins of Arabic-script text, shattering words into disconnected letters. Any global tracking rule must be scoped away from ar/fa/ur. This is the single most visually destructive CSS property on this site."
+      },
+      {
+        "issue": "Bidi mishandling of embedded Latin runs",
+        "affects": [
+          "ur",
+          "ar",
+          "fa"
+        ],
+        "detail": "Every RTL sentence on this site will contain Latin/numeric runs: NDA, PET, CNC, T1, PCO 1881, 0.15 mm, 500 t, 1.2344, DIN 16742. Without bidi isolation the algorithm strands parentheses, slashes, hyphens and units on the wrong side. Wrap them (<bdi> or dir=\"ltr\" spans) and visually verify each pattern. Test strings: 'قالب 8 حفره‌ای', 'قوة الإطباق 500 t', 'PET پری فارم', 'اتفاقية عدم الإفصاح (NDA)'."
+      },
+      {
+        "issue": "Number separators wrong for the locale",
+        "affects": [
+          "ru",
+          "hy",
+          "tr",
+          "fa"
+        ],
+        "detail": "Turkish and Iranian Persian: period = thousands, comma = decimal (1.000 and 0,15). Russian and Armenian: thin space = thousands, comma = decimal (1 000 and 0,15). English/Thai/Chinese/Arabic/Urdu: comma = thousands, point = decimal. Rendering '1,000+ projects' unchanged into Turkish states 'more than one project'."
+      },
+      {
+        "issue": "Font falls back to a default system face",
+        "affects": [
+          "hy",
+          "th",
+          "zh",
+          "ur",
+          "ar",
+          "fa"
+        ],
+        "detail": "Six of nine locales need a genuinely different font family. Armenian and Thai fall back to system faces that clash with the Latin design; Chinese may resolve to a JAPANESE face (wrong glyph forms for 直, 骨, 今); Persian may resolve to an Arabic face lacking پ چ ژ گ and using Arabic ک/ی forms; Urdu may resolve to Arabic Naskh, which reads as 'this is Arabic, not for us'."
+      },
+      {
+        "issue": "Explaining the basics to expert markets",
+        "affects": [
+          "tr",
+          "zh",
+          "fa",
+          "ru"
+        ],
+        "detail": "Türkiye (Bursa, Konya, İstanbul), China, Iran (Tehran, Tabriz) and Russia all have substantial domestic mould-making sectors. Introductory copy explaining what injection moulding is will read as condescending. Speak peer to peer: steel grades, cavitation, cycle time, tonnage, tool life in shots."
+      },
+      {
+        "issue": "Reverse engineering framed without an IP guard",
+        "affects": [
+          "ru",
+          "zh",
+          "fa",
+          "tr"
+        ],
+        "detail": "In these markets the phrase can carry an implication of copying someone else's product. Always pair it on-screen with the confidentiality/NDA message and frame it explicitly as recreating the customer's own part from their own sample."
+      },
+      {
+        "issue": "Untranslatable acronyms translated anyway",
+        "affects": [
+          "hy",
+          "ur",
+          "ar",
+          "fa",
+          "th"
+        ],
+        "detail": "CAD, CAM, CNC, DFM, NDA, RFQ, PET, EDM, T1 and steel grades (P20, H13, 1.2344, S136) and neck standards (PCO 1881) must stay Latin in all nine. Armenian Wikipedia titles its CAD article simply 'CAD'; Urdu's کمپیوٹر امدادی ڈیزائن is a coinage no engineer uses. Localising these makes the page both unidiomatic and unsearchable."
+      }
+    ],
+    "perLanguageTop": {
+      "en": "Choosing 'mold' over 'mould' quietly signals a US-domestic supplier to a Russian, Turkish or Gulf buyer. Pick British convention and never mix the two spellings on one site.",
+      "ru": "Translating 'tooling' as инструменты or оборудование instead of оснастка, and 'core' as сердечник instead of пуансон. Either one identifies the page as machine-translated to any Russian moulder within a sentence.",
+      "hy": "Writing purist Academy Armenian that the actual buyer cannot read. Armenia's tooling vocabulary is Russian-derived (պրես-ֆորմա, դոպուսկ, խառատային). Use native Armenian in prose with the Russian-derived term in parentheses on first mention — and end sentences with ։, not a full stop.",
+      "tr": "Inverted decimal/thousands separators (1.000 vs 1,000) and the Turkish dotted-İ casing bug from text-transform without lang=\"tr\". Both are silent, both are immediately visible to a Turkish reader. Vocabulary-wise: 'göz' for cavity, never boşluk.",
+      "th": "Setting Thai in a looped government-document face (Sarabun) and with Latin line-height, which clips tone marks. Vocabulary-wise: unqualified แม่พิมพ์ (which also idiomatically means 'role model'), and the Buddhist-Era year ambiguity on 'Since 2006'.",
+      "zh": "Mixing Taiwanese Traditional vocabulary (射出模具, 模座, 毛邊) into a Simplified page, and letting a Japanese font resolve for Han text. Commercially: generic quality claims are discounted instantly by a market that knows tooling costs precisely.",
+      "ur": "Over-translation. Inventing pure-Urdu tooling terms (سانچہ, خلا) produces text that is correct and unreadable to Pakistani practitioners, who work in English terms. Use مولڈ, کیویٹی, رنر. And use ۔ not '.' — it is the single highest-leverage character on the page.",
+      "ar": "Global letter-spacing shattering the cursive joins, and اللدائن (academic) used where the trade says البلاستيك. Also الإنتاج الضخم for mass production, which reads as propaganda.",
+      "fa": "Lost ZWNJ (U+200C) turning قالب‌گیری into قالبگیری and می‌شود into میشود — the highest-frequency Persian bug, and it makes the page read as illiterate. Vocabulary-wise: مغز instead of ماهیچه for core, and گارانتی instead of ضمانت in contractual sentences."
+    }
+  },
+  "digitPolicy": {
+    "decision": "Western Arabic digits (0–9) in all nine locales, without exception, including Urdu, Arabic and Persian.",
+    "rationale": [
+      "This is a technical B2B site. Every number on it — wall thickness 1.8 mm, tolerance ±0.05, tonnage 500 t, cavitation 8, tool life 1 000 000 shots, steel grade 1.2344, neck standard PCO 1881, PET preform 24.5 g — sits adjacent to a Latin unit, a Latin standard designation or a Latin grade code. Eastern digits next to Latin units force the reader to switch numeral systems mid-scan.",
+      "Persian and Urdu genuinely differ between prose and technical registers: prose (newspapers, literature, general web) uses Eastern digits ۰۱۲۳۴۵۶۷۸۹, while engineering drawings, specifications, catalogues, invoices and export documents use Western digits. A page that writes ۴۸ ساعت in the hero and 0.15 mm in the spec table is internally inconsistent — and the spec table is the part that cannot change.",
+      "Arabic is split geographically: Eastern digits ٠١٢٣ dominate in Egypt and parts of the Gulf, Western digits across the Maghreb, in Levantine business writing and in essentially all international commerce. Western digits are the only choice that reads correctly across the whole Arabic-speaking market.",
+      "The codebase already encodes this: every locale in src/i18n/locales.ts is set to numerals: 'latn', with the comment that Eastern digits 'would read as consumer-facing and complicate scanning'. This reference confirms that decision rather than revisiting it.",
+      "Searchability and data entry: buyers copy part numbers, tonnages and standards out of the page into RFQs and ERP systems. Eastern digits break that copy path."
+    ],
+    "safestChoice": "Western digits everywhere. If a marketing-led exception is ever wanted for Persian or Urdu, confine it to a purely rhetorical number in display type (a headline count of years or projects) and never let it touch a specification, tolerance, dimension, tonnage, shot count, standard designation or date. Do not mix within a single page section.",
+    "separators": {
+      "en": {
+        "decimal": ".",
+        "thousands": ", (comma)",
+        "example": "1,000 · 0.15 mm"
+      },
+      "ru": {
+        "decimal": ", (comma)",
+        "thousands": "thin space (U+2009 / U+202F)",
+        "example": "1 000 · 0,15 мм"
+      },
+      "hy": {
+        "decimal": ", (comma)",
+        "thousands": "thin space",
+        "example": "1 000 · 0,15 մմ"
+      },
+      "tr": {
+        "decimal": ", (comma)",
+        "thousands": ". (period)",
+        "example": "1.000 · 0,15 mm",
+        "warning": "Inverted vs English. Highest-consequence number bug on the site."
+      },
+      "th": {
+        "decimal": ".",
+        "thousands": ", (comma)",
+        "example": "1,000 · 0.15 มม."
+      },
+      "zh": {
+        "decimal": ".",
+        "thousands": ", (comma)",
+        "example": "1,000 · 0.15 mm",
+        "note": "Add a thin space between Han characters and adjoining Latin digits; append 年 to years (2006 年)."
+      },
+      "ur": {
+        "decimal": ".",
+        "thousands": ", (comma)",
+        "example": "1,000 · 0.15 mm"
+      },
+      "ar": {
+        "decimal": ".",
+        "thousands": ", (comma)",
+        "example": "1,000 · 0.15 mm",
+        "note": "Numbers stay LTR inside RTL text — isolate the run so units and parentheses do not migrate."
+      },
+      "fa": {
+        "decimal": ".",
+        "thousands": ". (period) is the Iranian convention; comma also seen — pick one",
+        "example": "1.000 · 0.15 mm"
+      }
+    },
+    "implementation": [
+      "Set the numbering system explicitly rather than trusting font or locale defaults: font-variant-numeric and, where Intl is used, the -u-nu-latn extension on the locale tag (e.g. new Intl.NumberFormat('fa-u-nu-latn')). Intl.NumberFormat('fa') alone will emit Eastern digits.",
+      "Use tabular figures for every spec table and number-led stat so digits align in columns.",
+      "Non-breaking space between value and unit in all nine (500 t, 48 ساعت, 1,000 模次) so a number never orphans across a line break.",
+      "In ar/fa/ur, wrap numeric+unit runs in a bidi isolate so the unit stays attached to its number."
+    ]
+  },
+  "registerGuidance": {
+    "universal": [
+      "Sell competence, not enthusiasm. In every one of these nine markets the reader is an engineer or a buyer who discounts adjectives and reads numbers. One concrete figure (tool life in shots, cycle time in seconds, tonnage, steel grade) is worth a paragraph of adjectives.",
+      "Name the constraint alongside the capability. Stating that warranty terms are per-project, or that tool life depends on resin abrasiveness, reads as expertise in all nine languages; an unqualified promise reads as a sales pitch in all nine.",
+      "Keep one term per concept across the whole site, per language. If the CTA says 'technical evaluation' the body copy must not say 'technical review' — in translation this multiplies, and a page using three words for one service stops looking like a service.",
+      "Formal address everywhere: вы, Դուք, siz, คุณ, 您, آپ, حضرتكم/plural formal, شما. Never the informal form in any of the nine.",
+      "No exclamation marks in body copy. Russian, Chinese, Arabic and Persian business writing all read them as shouting or hard selling.",
+      "Latin technical designations are a trust signal, not an untranslated string: steel grades, mould base brands, hot-runner brands, neck standards, file formats, ISO/DIN references. Use more of them, not fewer."
+    ],
+    "byLanguage": {
+      "en": "Declarative and unhedged, British spelling, sentence case. Terse is credible. Avoid superlatives entirely — this audience discounts them automatically.",
+      "ru": "Formal вы, no exclamation marks, verbal-noun and passive constructions where English uses imperatives. Russian industrial buyers are actively suspicious of adjectival marketing and respond to process names and figures. Avoid качественный as a standalone claim — it is the most devalued word in Russian B2B. Use серийное (not массовое), поставка (not доставка), оснастка (not инструменты).",
+      "hy": "Formal Դուք, more explicitly courteous than Russian. Armenia's sector is small and relationship-driven — write as an invitation to a working conversation, not as a catalogue. Native Armenian in prose, Russian-derived shop terms in parentheses on first use, Latin acronyms untouched. End sentences with ։.",
+      "tr": "Formal siz, warm but businesslike; 'Firmamız olarak…' constructions are expected and a purely clipped Anglo style reads cold. Do NOT explain injection moulding — Türkiye has a major domestic mould sector and the reader is a peer. Native Turkish tooling vocabulary throughout (kalıp, göz, maça, yolluk, itici, çapak) rather than English imports.",
+      "th": "Polite formal, declarative, without spoken particles (ครับ/ค่ะ) in body copy. Thai buyers in the EEC plastics cluster are used to Japanese and Taiwanese suppliers and expect precision plus visible courtesy. Transliterated English for mould components is normal and expected — pure-Thai coinages read academic.",
+      "zh": "Dense and specification-forward; Chinese B2B copy tolerates high information density and long noun compounds. The reader may be a competitor. Avoid consumer-marketing uplift vocabulary (匠心, 赋能, empty 一站式). The persuasive content is the reason to buy OUTSIDE China: second-source risk, tariff exposure, IP terms, proximity to the customer's plant. Simplified Mainland vocabulary only.",
+      "ur": "Formal آپ, courteous, softened imperatives (…بھیج دیجیے rather than a bare …بھیجیں). Much Pakistani B2B runs in English, so the Urdu page's job is accessibility and trust rather than being the sole technical reference — keep English terms and let the Urdu carry warmth and clarity.",
+      "ar": "Modern Standard Arabic, never dialect. Formal but clear — the ornate honorific register of older correspondence now reads dated in procurement. Passive and impersonal constructions (تُحدَّد, يتم) are correct for terms and process descriptions. Use البلاستيك (trade) over اللدائن (academic) in commercial copy.",
+      "fa": "Formal شما, complete sentences, more elaborate courtesy than English. The reader is likely a knowledgeable peer from a real domestic قالب‌سازی sector. Payment, shipping and documentation terms carry disproportionate weight in this market — being explicit about international delivery and paperwork persuades more here than anywhere else on the site. Use ضمانت in legal copy, گارانتی only in commercial copy."
+    },
+    "toneCalibrationForThisBusiness": "The offer is 'send us anything and we will take it to production, and we can be your second source'. That proposition is trust-limited, not information-limited: the reader's real question is whether their drawing is safe and whether the supplier will still be there at T3. So confidentiality, accountability (one named partner, one contact), and specificity about what happens next do more work than capability lists in every one of the nine languages. The 'Send whatever you have' message is the emotional core and is also the phrase most damaged by literal translation — treat its rendering in each language as a design decision, not a string."
+  }
+}

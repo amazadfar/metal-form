@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "industries": "行业",
+    "capabilities": "工艺能力",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "language": "语言",
+    "menu": "菜单",
+    "close": "关闭",
+    "home": "首页",
+    "backToIndustries": "返回行业列表",
+    "allIndustries": "全部行业"
+  },
+  "actions": {
+    "whatsapp": "用 WhatsApp 发送项目资料",
+    "sendProject": "发送项目资料",
+    "talkToEngineer": "直接与工程师沟通",
+    "viewIndustry": "进入该行业",
+    "more": "展开详情",
+    "less": "收起详情",
+    "next": "下一个",
+    "previous": "上一个"
+  },
+  "selector": {
+    "kicker": "选择语言",
+    "headline": "设计。模具。制造。供货。",
+    "note": "九种语言。一家负责到底。",
+    "continueIn": "继续使用"
+  },
+  "trust": {
+    "since": "自 2006 年",
+    "projects": "1,000+ 个已完成项目",
+    "projectsNote": "自车间开办以来交付的模具、工程与生产项目总数。",
+    "cavities": "一模最多 46 腔",
+    "cavitiesNote": "我们的一模多腔经验做到 46 腔。高腔数考验的是模具设计与制造的功底，而不是注塑机的规格。",
+    "software": "CATIA · SolidWorks",
+    "softwareNote": "零件建模、模具设计和逆向建模都在 CATIA 与 SolidWorks 中完成。原生格式或中性格式都可以——STEP、IGES、X_T、STL。",
+    "warranty": "模具质保",
+    "warrantyNote": "质保条款按项目和模具规格逐一约定，写进订单，而不是写进宣传语。",
+    "delivery": "全球发货",
+    "deliveryNote": "模具和零件都可以发往海外。贸易条款、运输路线和单证随报价一并确认。",
+    "response": "48 个工作小时内初步回复",
+    "responseNote": "第一轮技术判断：可行性方向、还缺哪些资料、下一步怎么走。这不是最终报价，我们也不会把它说成报价。"
+  },
+  "nda": {
+    "heading": "保密与 NDA",
+    "body": "在交换任何详细技术资料之前，都可以先签 NDA。您的几何数据、图纸、公差和用量只留在负责该项目的工程师手里。",
+    "points": [
+      "在详细图纸交接之前，我们签您的 NDA，或者把我们的版本发给您。",
+      "未经书面许可，客户的几何数据绝不会拿来做案例展示。",
+      "项目对外展示时，可识别信息一律去掉——并且我们会注明这一点。"
+    ]
+  },
+  "contact": {
+    "heading": "把项目发过来",
+    "body": "一张照片、一件样品、一份草图，或者一整套 CAD 文件——任何一样都可以当起点。告诉我们这个零件要做什么用，以及需要多少数量。",
+    "whatsappLabel": "WhatsApp",
+    "whatsappNote": "最快的方式。直接发送零件的照片、图纸或视频。",
+    "emailLabel": "邮箱",
+    "phoneLabel": "电话",
+    "addressLabel": "注册地址",
+    "responseLabel": "回复时间",
+    "pendingNote": "在线消息功能正在接入。开通之前，这个按钮会打开联系页面，上面列出了目前可用的所有联系方式。"
+  },
+  "footer": {
+    "tagline": "注塑件的设计、模具、生产与供货，一家负责到底。",
+    "industriesHeading": "行业",
+    "companyHeading": "公司",
+    "contactHeading": "联系方式",
+    "rights": "保留所有权利。",
+    "mediaNote": "本网站上的图纸、示意图和动画，都是为说明工程与制造原理而绘制的示意图，不是 Metal Form 的设备、厂房或已完成项目的照片。真实项目影像只有在取得客户书面许可后才会发布。"
+  },
+  "a11y": {
+    "skipToContent": "跳到正文",
+    "languageSelector": "切换语言",
+    "mainNavigation": "主导航",
+    "schematicLabel": "示意图",
+    "scrollForMore": "向下滚动"
+  },
+  "schematic": "示意图"
+}

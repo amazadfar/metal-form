@@ -1,0 +1,1549 @@
+---
+/**
+ * COSMETICS & PERSONAL CARE — the light study.
+ *
+ * Every other chapter on this site is composed around information. This one is
+ * composed around a surface, because a surface is the only thing this buyer's
+ * customer will ever look at.
+ *
+ * The signature motif is a travelling specular highlight: a soft band crossing a
+ * curved wall that visibly BREAKS where the parting line falls and STEPS where
+ * the gate sits. It appears at four scales — the hero light study, the gloss
+ * ladder, the gate triptych, and as a 2 px champagne bar sitting on every
+ * section hairline, so even the still page carries the same idea.
+ *
+ * Composition is centred and unusually empty. Larger type, fewer words, more
+ * air than any other chapter. Warm ivory ground, deep aubergine ink, rose-taupe
+ * accent, one champagne highlight — all from the vertical's palette tokens.
+ */
+import type { Locale } from '../../i18n/locales.ts';
+import type { Industry } from '../../config/industries.ts';
+import type { IndustryContent, CommonContent } from '../../content/types.ts';
+
+interface Props {
+  locale: Locale;
+  industry: Industry;
+  content: IndustryContent;
+  common: CommonContent;
+}
+const { content, common } = Astro.props;
+const b = content.blocks as any;
+
+/* ── Drawing constants ──────────────────────────────────────────────────────
+   Geometry only. Every readable string comes out of the content JSON. */
+
+const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
+
+/* Gloss ladder. Index-matched to blocks.gloss.rungs, mirror grade first.
+   `c` is where the highlight sits across the wall, `half` its falloff radius,
+   `peak` its brightness, `grain` the number of texture ticks drawn on it. */
+const GLOSS = [
+  { c: 0.34, half: 0.055, peak: 0.98, grain: 0 },
+  { c: 0.34, half: 0.090, peak: 0.86, grain: 0 },
+  { c: 0.34, half: 0.135, peak: 0.71, grain: 0 },
+  { c: 0.35, half: 0.185, peak: 0.57, grain: 6 },
+  { c: 0.35, half: 0.255, peak: 0.43, grain: 12 },
+  { c: 0.36, half: 0.340, peak: 0.31, grain: 20 },
+  { c: 0.38, half: 0.440, peak: 0.21, grain: 30 },
+  { c: 0.40, half: 0.550, peak: 0.15, grain: 40 },
+];
+
+/* Cavitation plot. Published industry practice gives the shape of both curves:
+   tooling cost scales sub-linearly (16 cavities ≈ 5×, not 16×) and part cost
+   falls then flattens because cooling dominates the cycle. */
+const CAVS = Array.from({ length: 48 }, (_, i) => i + 1);
+const PX = (n: number) => 70 + ((n - 1) / 47) * 760;
+const PY = (v: number) => 340 - v * 250;
+const toolAt = (n: number) => Math.pow(n, 0.58) / Math.pow(48, 0.58);
+const partAt = (n: number) => 0.3 + 0.7 / Math.pow(n, 0.62);
+const toolPts = CAVS.map((n) => `${PX(n).toFixed(1)},${PY(toolAt(n)).toFixed(1)}`).join(' ');
+const partPts = CAVS.map((n) => `${PX(n).toFixed(1)},${PY(partAt(n)).toFixed(1)}`).join(' ');
+const CROSS_N = 13;
+const crossX = PX(CROSS_N);
+const crossY = PY(toolAt(CROSS_N));
+const markX = PX(46);
+
+/* One closure section, reused at four scales. Drawing it once is what makes the
+   gate triptych and the parting-line rail read as the same object. */
+const CAP_OUT = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 V200';
+const CAP_IN = 'M58 200 V112 C58 88 74 78 104 78 H216 C246 78 262 88 262 112 V200';
+const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 V200 H40 Z';
+---
+
+<article class="cos">
+
+  {/* ═══ HERO — one curved surface, one travelling highlight ═══════════════ */}
+  <header class="cos-hero">
+    <div class="cos-hero__wash" aria-hidden="true"></div>
+
+    <div class="shell cos-hero__inner">
+      <p class="eyebrow">{content.hero.kicker}</p>
+      <h1 class="cos-hero__head">
+        {content.hero.headline.map((line: string, i: number) => (
+          <span style={`--l:${i}`}>{line}</span>
+        ))}
+      </h1>
+
+      <figure class="cos-hero__fig" data-reveal>
+        <p class="t-label cos-hero__figlabel">{b.surface.heroLabels.highlight}</p>
+        <svg viewBox="0 0 820 420" data-nomirror role="img" aria-label={common.schematic}>
+          <defs>
+            <linearGradient id="cos-sheen" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
+              <stop offset="0.34" stop-color="var(--signal)" stop-opacity="0.34" />
+              <stop offset="0.5" stop-color="var(--surface-raise)" stop-opacity="0.96" />
+              <stop offset="0.66" stop-color="var(--signal)" stop-opacity="0.34" />
+              <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
+            </linearGradient>
+            <clipPath id="cos-clip-dome">
+              <path d="M120 236 C120 110 240 76 380 76 C520 76 640 110 640 236 Z" />
+            </clipPath>
+            <clipPath id="cos-clip-domeL" clip-path="url(#cos-clip-dome)">
+              <rect x="0" y="0" width="352" height="420" />
+            </clipPath>
+            <clipPath id="cos-clip-domeG" clip-path="url(#cos-clip-dome)">
+              <rect x="352" y="0" width="56" height="420" />
+            </clipPath>
+            <clipPath id="cos-clip-domeR" clip-path="url(#cos-clip-dome)">
+              <rect x="408" y="0" width="420" height="420" />
+            </clipPath>
+            <clipPath id="cos-clip-wall">
+              <path d="M120 236 H640 V372 H120 Z" />
+            </clipPath>
+          </defs>
+
+          {/* The surface itself: a wash so light has something to fall on. */}
+          <path d="M120 236 C120 110 240 76 380 76 C520 76 640 110 640 236 Z" class="cos-face" />
+          <path d="M120 236 H640 V372 H120 Z" class="cos-face" />
+
+          {/* Four bands, one gesture. The wall band is offset from the dome band,
+              so the highlight breaks at the parting line; the gate strip is
+              offset again, so it steps at the gate. */}
+          <g class="cos-sweep" style="--dx:0" clip-path="url(#cos-clip-domeL)">
+            <rect x="-160" y="-80" width="150" height="560" fill="url(#cos-sheen)" transform="rotate(-15 380 220)" />
+          </g>
+          <g class="cos-sweep" style="--dx:17" clip-path="url(#cos-clip-domeG)">
+            <rect x="-160" y="-80" width="150" height="560" fill="url(#cos-sheen)" transform="rotate(-15 380 220)" />
+          </g>
+          <g class="cos-sweep" style="--dx:0" clip-path="url(#cos-clip-domeR)">
+            <rect x="-160" y="-80" width="150" height="560" fill="url(#cos-sheen)" transform="rotate(-15 380 220)" />
+          </g>
+          <g class="cos-sweep" style="--dx:38" clip-path="url(#cos-clip-wall)">
+            <rect x="-160" y="-80" width="150" height="560" fill="url(#cos-sheen)" transform="rotate(-15 380 220)" />
+          </g>
+
+          {/* Outline over the light. */}
+          <path d="M120 236 C120 110 240 76 380 76 C520 76 640 110 640 236" class="cos-line cos-draw" />
+          <path d="M138 236 C138 126 246 94 380 94 C514 94 622 126 622 236" class="cos-line cos-line--faint" />
+          <path d="M120 236 V372 M640 236 V372 M138 236 V372 M622 236 V372" class="cos-line" />
+          <path d="M120 372 H640" class="cos-line" />
+
+          {/* Parting line, drawn as a witness line and called out. */}
+          <path d="M84 236 H676" class="cos-cl" />
+          <circle cx="120" cy="236" r="3.2" class="cos-dot" />
+          <path d="M120 236 H96" class="cos-ldr" />
+          <text x="90" y="232" text-anchor="end" class="cos-mono">{b.surface.heroLabels.parting}</text>
+
+          {/* Gate at the crown — the step in the band sits here. */}
+          <circle cx="380" cy="76" r="4" class="cos-dot" />
+          <path d="M380 76 V44 H446" class="cos-ldr" />
+          <text x="452" y="48" class="cos-mono">{b.surface.heroLabels.gate}</text>
+
+          {/* Sealing land — inside, hidden, unforgiving. */}
+          <path d="M556 236 V214 H600" class="cos-line cos-line--faint" />
+          <rect x="556" y="206" width="46" height="8" class="cos-wash" />
+          <circle cx="600" cy="210" r="3.2" class="cos-dot" />
+          <path d="M600 210 L682 318" class="cos-ldr" />
+          <text x="688" y="322" class="cos-mono">{b.surface.heroLabels.land}</text>
+        </svg>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+
+      <p class="cos-hero__lead">{content.hero.lead}</p>
+
+      {content.hero.markers && (
+        <ul class="cos-hero__markers">
+          {content.hero.markers.map((m: string) => <li class="t-mono">{m}</li>)}
+        </ul>
+      )}
+
+      <div class="cos-rail">
+        <p class="cos-rail__item">{b.surface.railAttribution}</p>
+        <p class="cos-rail__item cos-rail__item--nda">{b.surface.railNda}</p>
+      </div>
+    </div>
+  </header>
+
+  {/* ═══ 01 · THE SHOW SURFACE — the light table ════════════════════════════ */}
+  <section class="cos-sec cos-lt" id="surface">
+    <div class="shell cos-head">
+      <p class="eyebrow">{b.surface.index} · {b.surface.kicker}</p>
+      <h2 class="cos-h2">{b.surface.heading}</h2>
+      <p class="cos-lead">{b.surface.body}</p>
+    </div>
+
+    <div class="shell--wide cos-lt__table">
+      <figure class="cos-lt__fig">
+        <p class="t-label cos-lt__figlabel">{b.surface.figureLabel}</p>
+        <svg viewBox="0 0 1200 360" data-nomirror role="img" aria-label={b.surface.figureLabel}>
+          <defs>
+            <linearGradient id="cos-lt-sheen" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
+              <stop offset="0.34" stop-color="var(--signal)" stop-opacity="0.34" />
+              <stop offset="0.5" stop-color="var(--surface-raise)" stop-opacity="0.96" />
+              <stop offset="0.66" stop-color="var(--signal)" stop-opacity="0.34" />
+              <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
+            </linearGradient>
+            <clipPath id="cos-lt-crown"><path d="M250 74 H950 V96 H250 Z" /></clipPath>
+          </defs>
+
+          {/* Closure in section, drawn once at full width. */}
+          <path d="M150 300 V150 C150 96 186 74 250 74 H950 C1014 74 1050 96 1050 150 V300" class="cos-line" />
+          <path d="M178 300 V152 C178 116 206 100 254 100 H946 C994 100 1022 116 1022 152 V300" class="cos-line cos-line--faint" />
+          <path d="M150 300 H1050" class="cos-line" />
+
+          {/* Internal thread turns. */}
+          {[196, 226, 256, 286].map((y: any) => (
+            <g>
+              <path d={`M178 ${y} l16 -7 v14 z`} class="cos-line cos-line--thin" />
+              <path d={`M1022 ${y} l-16 -7 v14 z`} class="cos-line cos-line--thin" />
+            </g>
+          ))}
+
+          {/* A static highlight on the crown — the same motif at rest. */}
+          <g clip-path="url(#cos-lt-crown)">
+            <rect x="560" y="60" width="120" height="30" fill="url(#cos-lt-sheen)" />
+          </g>
+
+          {/* 01 parting line */}
+          <path d="M120 210 H1080" class="cos-cl" />
+          <circle cx="150" cy="210" r="3.4" class="cos-dot" />
+          <path d="M150 210 V318" class="cos-ldr" />
+
+          {/* 02 gate on the crown */}
+          <path d="M392 74 q8 -9 16 0" class="cos-line cos-line--thin" />
+          <circle cx="400" cy="74" r="3.4" class="cos-dot" />
+          <path d="M400 74 V318" class="cos-ldr" />
+
+          {/* 03 polish grade */}
+          <circle cx="620" cy="74" r="3.4" class="cos-dot" />
+          <path d="M620 74 V318" class="cos-ldr" />
+
+          {/* 04 sealing land */}
+          <rect x="836" y="100" width="52" height="9" class="cos-wash" />
+          <path d="M836 109 H888" class="cos-line cos-line--thin" />
+          <circle cx="862" cy="105" r="3.4" class="cos-dot" />
+          <path d="M862 105 V318" class="cos-ldr" />
+
+          {/* 05 draft on the outer skirt */}
+          <path d="M1050 300 L1064 150" class="cos-cl cos-cl--fine" />
+          <path d="M1050 240 A 62 62 0 0 1 1056 240" class="cos-line cos-line--thin" />
+          <circle cx="1050" cy="240" r="3.4" class="cos-dot" />
+          <path d="M1050 240 V318" class="cos-ldr" />
+
+          {/* The measuring rail every leader lands on. */}
+          <path d="M100 318 H1130" class="cos-rule" />
+          {[150, 400, 620, 862, 1050].map((x: any) => (
+            <path d={`M${x} 318 V330`} class="cos-rule" />
+          ))}
+          {b.surface.callouts.map((c: any, i: number) => (
+            <text x={[150, 400, 620, 862, 1050][i]} y="348" text-anchor="middle" class="cos-mono cos-mono--mark">{c.mark}</text>
+          ))}
+        </svg>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+
+      <ol class="cos-lt__notes">
+        {b.surface.callouts.map((c: any, i: number) => (
+          <li class="cos-note" data-k={c.mark} tabindex="0" style={`--reveal-delay:${i * 70}ms`} data-reveal>
+            <span class="t-mono cos-note__mark">{c.mark}</span>
+            <h3 class="cos-note__term">{c.term}</h3>
+            <p class="cos-note__body">{c.note}</p>
+          </li>
+        ))}
+      </ol>
+
+      <p class="cos-lt__close">{b.surface.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 02 · THE GLOSS LADDER ══════════════════════════════════════════════ */}
+  <section class="cos-sec cos-gloss" id="gloss">
+    <div class="shell cos-head">
+      <p class="eyebrow">{b.gloss.index} · {b.gloss.kicker}</p>
+      <h2 class="cos-h2">{b.gloss.heading}</h2>
+      <p class="cos-lead">{b.gloss.body}</p>
+    </div>
+
+    <div class="shell--wide cos-gloss__work" data-tabs>
+      {/* The large sample re-renders at the selected grade. */}
+      {b.gloss.rungs.map((r: any, i: number) => (
+        <div
+          class="cos-gloss__panel"
+          data-panel={r.id}
+          role="tabpanel"
+          id={`cos-panel-${r.id}`}
+          aria-labelledby={`cos-tab-${r.id}`}
+          hidden={i !== 0}
+        >
+          <figure class="cos-gloss__sample">
+            <svg viewBox="0 0 420 250" data-nomirror role="img" aria-label={common.schematic}>
+              <defs>
+                <linearGradient id={`cos-gp-${r.id}`} x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
+                  <stop offset={clamp01(GLOSS[i].c - GLOSS[i].half).toFixed(3)} stop-color="var(--signal)" stop-opacity="0" />
+                  <stop offset={clamp01(GLOSS[i].c - GLOSS[i].half * 0.4).toFixed(3)} stop-color="var(--signal)" stop-opacity={(GLOSS[i].peak * 0.42).toFixed(2)} />
+                  <stop offset={GLOSS[i].c.toFixed(3)} stop-color="var(--surface-raise)" stop-opacity={GLOSS[i].peak.toFixed(2)} />
+                  <stop offset={clamp01(GLOSS[i].c + GLOSS[i].half * 0.4).toFixed(3)} stop-color="var(--signal)" stop-opacity={(GLOSS[i].peak * 0.42).toFixed(2)} />
+                  <stop offset={clamp01(GLOSS[i].c + GLOSS[i].half).toFixed(3)} stop-color="var(--signal)" stop-opacity="0" />
+                  <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
+                </linearGradient>
+                <clipPath id={`cos-gpc-${r.id}`}>
+                  <path d="M46 22 C16 82 16 168 46 228 L374 228 C404 168 404 82 374 22 Z" />
+                </clipPath>
+              </defs>
+              <path d="M46 22 C16 82 16 168 46 228 L374 228 C404 168 404 82 374 22 Z" class="cos-face cos-face--deep" />
+              <rect x="0" y="0" width="420" height="250" fill={`url(#cos-gp-${r.id})`} clip-path={`url(#cos-gpc-${r.id})`} />
+              {/* Texture grain, drawn only where the grade actually has any. */}
+              <g clip-path={`url(#cos-gpc-${r.id})`}>
+                {Array.from({ length: GLOSS[i].grain }).map((_: any, k: number) => (
+                  <line
+                    x1={30 + ((k * 97) % 360)}
+                    y1={30 + ((k * 53) % 196)}
+                    x2={30 + ((k * 97) % 360) + 7}
+                    y2={30 + ((k * 53) % 196) + 3}
+                    class="cos-grain"
+                  />
+                ))}
+              </g>
+              <path d="M46 22 C16 82 16 168 46 228 L374 228 C404 168 404 82 374 22 Z" class="cos-line" />
+            </svg>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+
+          <div class="cos-gloss__spec">
+            <p class="cos-gloss__grade">{r.name}</p>
+            <p class="t-mono cos-gloss__ra">{r.ra}</p>
+            <dl class="spec cos-gloss__rows">
+              <div class="spec__row"><dt class="spec__k">{b.gloss.specLabels.method}</dt><dd class="spec__v">{r.method}</dd></div>
+              <div class="spec__row"><dt class="spec__k">{b.gloss.specLabels.cost}</dt><dd class="spec__v">{r.cost}</dd></div>
+              <div class="spec__row"><dt class="spec__k">{b.gloss.specLabels.steel}</dt><dd class="spec__v">{r.steel}</dd></div>
+              <div class="spec__row cos-gloss__draft"><dt class="spec__k">{b.gloss.specLabels.draft}</dt><dd class="spec__v">{r.draft}</dd></div>
+            </dl>
+          </div>
+        </div>
+      ))}
+
+      {/* The ladder itself: the same wall, eight grades, in order. */}
+      <div class="cos-ladder">
+        <p class="t-label cos-ladder__cap">{b.gloss.ladderLabel}</p>
+        <div class="cos-ladder__scroll">
+          <div class="cos-ladder__row" role="tablist" aria-label={b.gloss.tabsLabel}>
+            {b.gloss.rungs.map((r: any, i: number) => (
+              <button
+                class="cos-rung"
+                type="button"
+                role="tab"
+                data-tab={r.id}
+                id={`cos-tab-${r.id}`}
+                aria-controls={`cos-panel-${r.id}`}
+                aria-selected={i === 0 ? 'true' : 'false'}
+              >
+                <svg viewBox="0 0 60 130" data-nomirror aria-hidden="true">
+                  <defs>
+                    <linearGradient id={`cos-gl-${r.id}`} x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
+                      <stop offset={clamp01(GLOSS[i].c - GLOSS[i].half).toFixed(3)} stop-color="var(--signal)" stop-opacity="0" />
+                      <stop offset={GLOSS[i].c.toFixed(3)} stop-color="var(--surface-raise)" stop-opacity={GLOSS[i].peak.toFixed(2)} />
+                      <stop offset={clamp01(GLOSS[i].c + GLOSS[i].half).toFixed(3)} stop-color="var(--signal)" stop-opacity="0" />
+                      <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
+                    </linearGradient>
+                    <clipPath id={`cos-glc-${r.id}`}>
+                      <path d="M10 8 C3 44 3 94 10 122 L50 122 C57 94 57 44 50 8 Z" />
+                    </clipPath>
+                  </defs>
+                  <path d="M10 8 C3 44 3 94 10 122 L50 122 C57 94 57 44 50 8 Z" class="cos-face cos-face--deep" />
+                  <rect x="0" y="0" width="60" height="130" fill={`url(#cos-gl-${r.id})`} clip-path={`url(#cos-glc-${r.id})`} />
+                  <path d="M10 8 C3 44 3 94 10 122 L50 122 C57 94 57 44 50 8 Z" class="cos-line cos-line--thin" />
+                </svg>
+                <span class="cos-rung__name">{r.name}</span>
+                <span class="cos-rung__scale t-mono">{r.scale}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+        <p class="cos-ladder__note t-small">{b.gloss.note}</p>
+      </div>
+    </div>
+
+    <div class="shell cos-gloss__tail">
+      <p class="cos-close">{b.gloss.close}</p>
+      <p class="cos-boundaryline">{b.gloss.downstream}</p>
+    </div>
+  </section>
+
+  {/* ═══ 03 · GATE AND PARTING LINE ═════════════════════════════════════════ */}
+  <section class="cos-sec cos-gate" id="gate">
+    <div class="shell cos-head">
+      <p class="eyebrow">{b.gate.index} · {b.gate.kicker}</p>
+      <h2 class="cos-h2">{b.gate.heading}</h2>
+      <p class="cos-lead">{b.gate.body}</p>
+    </div>
+
+    <div class="shell--wide cos-gate__trip">
+      {b.gate.cases.map((g: any, i: number) => (
+        <figure class="cos-gate__case" data-reveal style={`--reveal-delay:${i * 110}ms`}>
+          <svg viewBox="0 0 320 236" data-nomirror role="img" aria-label={common.schematic}>
+            <defs>
+              <linearGradient id={`cos-gs-${i}`} x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
+                <stop offset="0.34" stop-color="var(--signal)" stop-opacity="0.34" />
+                <stop offset="0.5" stop-color="var(--surface-raise)" stop-opacity="0.96" />
+                <stop offset="0.66" stop-color="var(--signal)" stop-opacity="0.34" />
+                <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
+              </linearGradient>
+              <clipPath id={`cos-gc-${i}`}><path d={CAP_CROWN} /></clipPath>
+              <marker id={`cos-flow-${i}`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)" />
+              </marker>
+            </defs>
+
+            <path d={CAP_CROWN} class="cos-face" />
+
+            {/* The highlight, at rest, stepping where this gate sits. */}
+            <g clip-path={`url(#cos-gc-${i})`}>
+              <rect x="60" y="52" width={i === 1 ? 200 : 100} height="26" fill={`url(#cos-gs-${i})`} />
+              {i !== 1 && (
+                <rect x="160" y={i === 0 ? 62 : 55} width="100" height="26" fill={`url(#cos-gs-${i})`} />
+              )}
+            </g>
+
+            <path d={CAP_OUT} class="cos-line" />
+            <path d={CAP_IN} class="cos-line cos-line--faint" />
+            <path d="M40 200 H280" class="cos-line" />
+            {[126, 152, 178].map((y: any) => (
+              <g>
+                <path d={`M58 ${y} l12 -5 v10 z`} class="cos-line cos-line--thin" />
+                <path d={`M262 ${y} l-12 -5 v10 z`} class="cos-line cos-line--thin" />
+              </g>
+            ))}
+
+            {/* Gate marker + fill vector, in this case's position. */}
+            {i === 0 && (
+              <g>
+                <path d="M152 58 q8 -10 16 0" class="cos-line cos-line--thin" />
+                <circle cx="160" cy="58" r="4" class="cos-dot cos-dot--gate" />
+                <path d="M160 26 V44" class="cos-flow" marker-end={`url(#cos-flow-${i})`} />
+                <path d="M160 58 H214" class="cos-ldr" />
+                <text x="220" y="52" class="cos-mono">{b.gate.gateLabel}</text>
+              </g>
+            )}
+            {i === 1 && (
+              <g>
+                <circle cx="58" cy="176" r="4" class="cos-dot cos-dot--gate" />
+                <path d="M30 176 H46" class="cos-flow" marker-end={`url(#cos-flow-${i})`} />
+                <path d="M58 176 H108" class="cos-ldr" />
+                <text x="114" y="170" class="cos-mono">{b.gate.gateLabel}</text>
+              </g>
+            )}
+            {i === 2 && (
+              <g>
+                <rect x="150" y="56" width="20" height="4" class="cos-wash" />
+                <circle cx="160" cy="58" r="4" class="cos-dot cos-dot--gate" />
+                <path d="M160 22 V40" class="cos-flow" marker-end={`url(#cos-flow-${i})`} />
+                <path d="M160 58 H214" class="cos-ldr" />
+                <text x="220" y="52" class="cos-mono">{b.gate.gateLabel}</text>
+              </g>
+            )}
+
+            <text x="40" y="228" class="cos-mono cos-mono--mark">{g.mark}</text>
+          </svg>
+          <figcaption class="cos-gate__cap">
+            <p class="cos-gate__name">{g.name}</p>
+            <p class="t-mono cos-gate__short">{g.short}</p>
+            <p class="cos-gate__note">{g.consequence}</p>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <div class="shell--wide cos-part">
+      <div class="cos-part__head">
+        <h3 class="cos-h3">{b.gate.partingHeading}</h3>
+        <p class="cos-part__body">{b.gate.partingBody}</p>
+      </div>
+
+      <figure class="cos-part__fig" data-reveal>
+        <svg viewBox="0 0 900 250" data-nomirror role="img" aria-label={common.schematic}>
+          <defs>
+            <linearGradient id="cos-pl-sheen" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
+              <stop offset="0.34" stop-color="var(--signal)" stop-opacity="0.34" />
+              <stop offset="0.5" stop-color="var(--surface-raise)" stop-opacity="0.96" />
+              <stop offset="0.66" stop-color="var(--signal)" stop-opacity="0.34" />
+              <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
+            </linearGradient>
+            <clipPath id="cos-pl-crown"><path d="M120 200 V90 C120 46 156 26 220 26 H680 C744 26 780 46 780 90 V200 H120 Z" /></clipPath>
+          </defs>
+          <path d="M120 200 V90 C120 46 156 26 220 26 H680 C744 26 780 46 780 90 V200 H120 Z" class="cos-face" />
+          <g clip-path="url(#cos-pl-crown)">
+            <rect x="300" y="20" width="150" height="40" fill="url(#cos-pl-sheen)" />
+            <rect x="440" y="30" width="150" height="40" fill="url(#cos-pl-sheen)" />
+          </g>
+          <path d="M120 200 V90 C120 46 156 26 220 26 H680 C744 26 780 46 780 90 V200" class="cos-line" />
+          <path d="M120 200 H780" class="cos-line" />
+
+          {/* Three candidate splits on one object. */}
+          <path d="M90 62 H810" class="cos-cl" />
+          <text x="836" y="66" class="cos-mono cos-mono--mark">{b.gate.partingCases[0].mark}</text>
+          <path d="M90 104 H810" class="cos-cl" />
+          <text x="836" y="108" class="cos-mono cos-mono--mark">{b.gate.partingCases[1].mark}</text>
+          <path d="M90 164 H810" class="cos-cl" />
+          <text x="836" y="168" class="cos-mono cos-mono--mark">{b.gate.partingCases[2].mark}</text>
+
+          {/* Knurl on the skirt, so C has something to hide behind. */}
+          {Array.from({ length: 22 }).map((_: any, k: number) => (
+            <path d={`M${132 + k * 30} 174 V196`} class="cos-line cos-line--thin" />
+          ))}
+        </svg>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+
+      <ol class="cos-part__list">
+        {b.gate.partingCases.map((p: any, i: number) => (
+          <li data-reveal style={`--reveal-delay:${i * 80}ms`}>
+            <span class="t-mono cos-part__mark">{p.mark}</span>
+            <h4 class="cos-part__name">{p.name}</h4>
+            <p class="cos-part__note">{p.note}</p>
+          </li>
+        ))}
+      </ol>
+
+      <p class="cos-close">{b.gate.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 04 · COMPONENT ATLAS ═══════════════════════════════════════════════ */}
+  <section class="cos-sec cos-atlas" id="atlas">
+    <div class="shell cos-head">
+      <p class="eyebrow">{b.atlas.index} · {b.atlas.kicker}</p>
+      <h2 class="cos-h2">{b.atlas.heading}</h2>
+      <p class="cos-lead">{b.atlas.body}</p>
+    </div>
+
+    <div class="shell--wide cos-atlas__rows">
+      {b.atlas.rows.map((row: any, i: number) => (
+        <article class="cos-row" data-reveal style={`--reveal-delay:${(i % 4) * 70}ms`}>
+          <span class="t-mono cos-row__i">{String(i + 1).padStart(2, '0')}</span>
+
+          <figure class="cos-row__fig">
+            <svg viewBox="0 0 170 116" data-nomirror role="img" aria-label={b.atlas.rowLabel}>
+              {i === 0 && (
+                <g>
+                  <path d="M20 100 V44 C20 26 30 18 48 18 H122 C140 18 150 26 150 44 V100" class="cos-line" />
+                  <path d="M32 100 V46 C32 34 40 28 54 28 H116 C130 28 138 34 138 46 V100" class="cos-line cos-line--faint" />
+                  <path d="M20 100 H150" class="cos-line" />
+                  {[56, 72, 88].map((y: any) => (
+                    <g>
+                      <path d={`M32 ${y} l8 -4 v8 z`} class="cos-line cos-line--thin" />
+                      <path d={`M138 ${y} l-8 -4 v8 z`} class="cos-line cos-line--thin" />
+                    </g>
+                  ))}
+                  <path d="M85 10 V106" class="cos-cl cos-cl--fine" />
+                </g>
+              )}
+              {i === 1 && (
+                <g>
+                  <path d="M28 104 V52 H96 V104 Z" class="cos-line" />
+                  <path d="M36 104 V60 H88 V104" class="cos-line cos-line--faint" />
+                  <path d="M98 50 l40 -24 l8 14 l-40 24 z" class="cos-line" />
+                  <path d="M96 52 q6 -6 4 -12" class="cos-line cos-hinge" />
+                  <circle cx="97" cy="47" r="3" class="cos-dot" />
+                  <path d="M116 30 a30 30 0 0 0 -20 16" class="cos-cl cos-cl--fine" />
+                </g>
+              )}
+              {i === 2 && (
+                <g>
+                  <path d="M26 100 V54 C26 32 50 20 86 20 C122 20 146 32 146 54 V100" class="cos-line" />
+                  <path d="M26 100 H146" class="cos-line" />
+                  <path d="M56 44 L114 32" class="cos-line" />
+                  <path d="M56 44 L114 32 L116 40 L58 52 Z" class="cos-line cos-line--faint" />
+                  <circle cx="115" cy="36" r="3.4" class="cos-dot" />
+                  <path d="M52 40 h8 v8 h-8 z" class="cos-line cos-line--thin" />
+                  <path d="M70 20 V10" class="cos-flow" />
+                </g>
+              )}
+              {i === 3 && (
+                <g>
+                  <path d="M18 104 V38 C18 26 28 20 44 20 H126 C142 20 152 26 152 38 V104" class="cos-line" />
+                  <path d="M18 104 H152" class="cos-line" />
+                  <path d="M44 104 V50 C44 42 50 38 60 38 H110 C120 38 126 42 126 50 V104" class="cos-line" />
+                  <path d="M56 104 V58 H114 V104" class="cos-line cos-line--faint" />
+                  <path d="M31 30 V104 M139 30 V104" class="cos-cl cos-cl--fine" />
+                </g>
+              )}
+              {i === 4 && (
+                <g>
+                  <path d="M85 6 V110" class="cos-cl cos-cl--fine" />
+                  <path d="M54 16 H116 V32 H98 V44 H72 V32 H54 Z" class="cos-line" />
+                  <path d="M74 44 H96 V66 H74 Z" class="cos-line cos-line--faint" />
+                  <path d="M50 66 H120 V104 H50 Z" class="cos-line" />
+                  <path d="M72 74 l14 5 l-14 5 l14 5 l-14 5" class="cos-line cos-line--thin" />
+                  <path d="M85 104 V112" class="cos-line cos-line--thin" />
+                </g>
+              )}
+              {i === 5 && (
+                <g>
+                  <path d="M44 12 H126 M44 12 V106 M126 12 V106" class="cos-line" />
+                  <path d="M52 12 V106 M118 12 V106" class="cos-line cos-line--faint" />
+                  <path d="M52 66 H118 V86 H52 Z" class="cos-face cos-face--deep" />
+                  <path d="M52 66 H118 V86 H52 Z" class="cos-line" />
+                  <path d="M30 76 H46" class="cos-flow" />
+                  <path d="M140 76 H124" class="cos-flow" />
+                  <path d="M85 6 V110" class="cos-cl cos-cl--fine" />
+                </g>
+              )}
+              {i === 6 && (
+                <g>
+                  <path d="M46 16 V100 M124 16 V100" class="cos-line" />
+                  <path d="M46 52 L76 68 M124 52 L94 68" class="cos-line" />
+                  <path d="M76 8 H94 V108 H76 Z" class="cos-line cos-line--faint" />
+                  <rect x="76" y="60" width="18" height="12" class="cos-wash" />
+                  {[16, 26, 36, 46].map((d: any) => (
+                    <g>
+                      <path d={`M100 ${76 + (d - 16) / 2} h14`} class="cos-line cos-line--thin" />
+                      <path d={`M56 ${76 + (d - 16) / 2} h-14`} class="cos-line cos-line--thin" />
+                    </g>
+                  ))}
+                </g>
+              )}
+              {i === 7 && (
+                <g>
+                  <path d="M16 42 H154 V58 H16 Z" class="cos-line" />
+                  <path d="M48 58 V80 H62 V58" class="cos-line cos-line--faint" />
+                  <path d="M106 58 V80 H120 V58" class="cos-line cos-line--faint" />
+                  <path d="M44 42 q11 6 22 0" class="cos-line cos-hinge" />
+                  <path d="M102 42 q11 6 22 0" class="cos-line cos-hinge" />
+                  <path d="M16 96 H154" class="cos-cl cos-cl--fine" />
+                  <path d="M16 42 H154" class="cos-cl cos-cl--fine" />
+                </g>
+              )}
+            </svg>
+          </figure>
+
+          <div class="cos-row__copy">
+            <h3 class="cos-row__name">{row.name}</h3>
+            <p class="t-mono cos-row__spec">{row.spec}</p>
+            <p class="cos-row__note">{row.note}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="shell">
+      <p class="cos-close">{b.atlas.close}</p>
+      <p class="figure-note cos-atlas__note">{common.schematic}</p>
+    </div>
+  </section>
+
+  {/* ═══ 05 · THREAD, LAND AND SEAL — at magnification ══════════════════════ */}
+  <section class="cos-sec cos-seal" id="seal">
+    <div class="shell cos-head">
+      <p class="eyebrow">{b.seal.index} · {b.seal.kicker}</p>
+      <h2 class="cos-h2">{b.seal.heading}</h2>
+      <p class="cos-lead">{b.seal.body}</p>
+    </div>
+
+    <div class="shell--wide cos-seal__grid">
+      <figure class="cos-seal__fig" data-reveal>
+        <svg viewBox="0 0 820 470" data-nomirror role="img" aria-label={common.schematic}>
+          <defs>
+            <pattern id="cos-sec-hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="8" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.42" />
+            </pattern>
+            <marker id="cos-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--ink-muted)" />
+            </marker>
+          </defs>
+
+          {/* Half section. The centre line is the datum everything hangs from. */}
+          <path d="M150 20 V450" class="cos-cl" />
+
+          {/* Neck wall, in section. */}
+          <path d="M250 120 H300 V400 H250 Z" fill="url(#cos-sec-hatch)" />
+          <path d="M250 120 H300 V400 H250 Z" class="cos-line" />
+          <path d="M150 120 H250" class="cos-line cos-line--faint" />
+          {[168, 204, 240, 276].map((y: any) => (
+            <path d={`M300 ${y} l20 -10 v20 z`} class="cos-line cos-line--thin" />
+          ))}
+
+          {/* Sealing land — the flat that actually does the work. */}
+          <rect x="250" y="112" width="50" height="8" class="cos-wash cos-wash--hot" />
+
+          {/* Cap crown and skirt, engaging. */}
+          <path d="M150 66 H352 V100 H150 Z" fill="url(#cos-sec-hatch)" />
+          <path d="M150 66 H352 V100 H150 Z" class="cos-line" />
+          <path d="M320 100 H352 V344 H320 Z" fill="url(#cos-sec-hatch)" />
+          <path d="M320 100 H352 V344 H320 Z" class="cos-line" />
+          {[186, 222, 258, 294].map((y: any) => (
+            <path d={`M320 ${y} l-20 -10 v20 z`} class="cos-line cos-line--thin" />
+          ))}
+          <rect x="250" y="100" width="50" height="12" class="cos-wash" />
+
+          {/* Detail circle. */}
+          <circle cx="276" cy="108" r="66" class="cos-cl cos-cl--fine" />
+          <path d="M330 66 L470 40" class="cos-ldr" />
+          <text x="476" y="38" class="cos-mono">{b.seal.figLabels.detail}</text>
+
+          {/* Leaders. */}
+          <circle cx="336" cy="200" r="3.2" class="cos-dot" />
+          <path d="M336 200 H400" class="cos-ldr" />
+          <text x="406" y="204" class="cos-mono">{b.seal.figLabels.cap}</text>
+
+          <circle cx="275" cy="330" r="3.2" class="cos-dot" />
+          <path d="M275 330 H400" class="cos-ldr" />
+          <text x="406" y="334" class="cos-mono">{b.seal.figLabels.neck}</text>
+
+          <circle cx="310" cy="240" r="3.2" class="cos-dot" />
+          <path d="M310 240 L214 396" class="cos-ldr" />
+          <text x="208" y="400" text-anchor="end" class="cos-mono">{b.seal.figLabels.thread}</text>
+
+          {/* Dimension line back to the datum. */}
+          <path d="M150 432 H300" class="cos-dim" marker-start="url(#cos-dim)" marker-end="url(#cos-dim)" />
+          <path d="M150 420 V444 M300 400 V444" class="cos-line cos-line--thin" />
+          <text x="225" y="424" text-anchor="middle" class="cos-mono">{b.seal.codes[3]}</text>
+
+          {/* Detail A, magnified: two faces and the contact between them. */}
+          <rect x="500" y="70" width="290" height="230" class="cos-inset" />
+          <path d="M520 150 H770 V176 H520 Z" fill="url(#cos-sec-hatch)" />
+          <path d="M520 150 H770 V176 H520 Z" class="cos-line" />
+          <rect x="580" y="176" width="140" height="22" class="cos-wash cos-wash--hot" />
+          <path d="M580 198 H720 V276 H580 Z" fill="url(#cos-sec-hatch)" />
+          <path d="M580 198 H720 V276 H580 Z" class="cos-line" />
+          <circle cx="650" cy="187" r="3.2" class="cos-dot" />
+          <path d="M650 187 H730" class="cos-ldr" />
+          <text x="736" y="191" class="cos-mono cos-mono--inset">{b.seal.figLabels.land}</text>
+        </svg>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+
+      <div class="cos-seal__copy">
+        <div class="cos-seal__block">
+          <h3 class="cos-h4">{b.seal.codeHeading}</h3>
+          <p class="cos-seal__body">{b.seal.codeBody}</p>
+          <ul class="cos-codes">
+            {b.seal.codes.map((code: string) => <li class="t-mono">{code}</li>)}
+          </ul>
+          <p class="t-fine cos-seal__fine">{b.seal.codesNote}</p>
+        </div>
+
+        <div class="cos-seal__block cos-seal__block--trap">
+          <h3 class="cos-h4">{b.seal.trapHeading}</h3>
+          <p class="cos-seal__body">{b.seal.trapBody}</p>
+        </div>
+
+        <div class="cos-seal__block">
+          <h3 class="cos-h4">{b.seal.torqueHeading}</h3>
+          <p class="cos-seal__body">{b.seal.torqueBody}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="shell--wide cos-fail">
+      <h3 class="t-label cos-fail__cap">{b.seal.failuresHeading}</h3>
+      <ol class="cos-fail__list">
+        {b.seal.failures.map((f: any, i: number) => (
+          <li data-reveal style={`--reveal-delay:${i * 60}ms`}>
+            <span class="cos-fail__term">{f.term}</span>
+            <span class="cos-fail__note">{f.note}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="shell">
+      <p class="cos-boundaryline">{b.seal.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 06 · THE ARITHMETIC OF CAVITATION ══════════════════════════════════ */}
+  <section class="cos-sec cos-cav" id="cavities">
+    <div class="shell cos-head">
+      <p class="eyebrow">{b.cavities.index} · {b.cavities.kicker}</p>
+      <h2 class="cos-h2">{b.cavities.heading}</h2>
+      <p class="cos-lead">{b.cavities.body}</p>
+    </div>
+
+    <div class="shell--wide">
+      <figure class="cos-plot" data-reveal>
+        <svg viewBox="0 0 1040 420" data-nomirror role="img" aria-label={b.cavities.chart.note}>
+          {/* Faint measuring grid. */}
+          {Array.from({ length: 7 }).map((_: any, k: number) => (
+            <path d={`M${70 + k * 126.7} 60 V340`} class="cos-grid" />
+          ))}
+          {Array.from({ length: 6 }).map((_: any, k: number) => (
+            <path d={`M70 ${60 + k * 56} H830`} class="cos-grid" />
+          ))}
+          <path d="M70 340 H830 M70 60 V340" class="cos-axis" />
+
+          <polyline points={toolPts} class="cos-curve cos-curve--tool" />
+          <polyline points={partPts} class="cos-curve cos-curve--part" />
+
+          {/* Break-even, annotated where the curves actually meet. */}
+          <circle cx={crossX} cy={crossY} r="4.5" class="cos-dot cos-dot--gate" />
+          <path d={`M${crossX} ${crossY} L${crossX + 52} ${crossY - 82} H${crossX + 140}`} class="cos-ldr" />
+          <text x={crossX + 146} y={crossY - 86} class="cos-mono">{b.cavities.chart.cross}</text>
+
+          {/* Where our own experience tops out. */}
+          <path d={`M${markX} 52 V346`} class="cos-cl" />
+          <text x={markX} y="42" text-anchor="middle" class="cos-mono cos-mono--mark">{b.cavities.chart.mark}</text>
+
+          <text x="450" y="374" text-anchor="middle" class="cos-mono">{b.cavities.chart.xLabel}</text>
+          <text x="840" y={PY(toolAt(48)) + 4} class="cos-mono cos-mono--tool">{b.cavities.chart.yA}</text>
+          <text x="840" y={PY(partAt(48)) + 4} class="cos-mono cos-mono--part">{b.cavities.chart.yB}</text>
+        </svg>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+
+      <p class="cos-plot__note t-fine">{b.cavities.chart.note}</p>
+
+      <ol class="cos-facts">
+        {b.cavities.facts.map((f: any, i: number) => (
+          <li data-reveal style={`--reveal-delay:${i * 80}ms`}>
+            <span class="t-mono cos-facts__mark">{f.mark}</span>
+            <h3 class="cos-facts__term">{f.term}</h3>
+            <p class="cos-facts__note">{f.note}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="shell cos-cav__tail">
+      <div class="cos-cav__risk">
+        <h3 class="cos-h4">{b.cavities.riskHeading}</h3>
+        <p>{b.cavities.riskBody}</p>
+      </div>
+      <div class="cos-cav__ours">
+        <h3 class="cos-h4">{b.cavities.oursHeading}</h3>
+        <p>{b.cavities.oursBody}</p>
+        <p class="cos-cav__bridge">{b.cavities.bridgeBody}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 07 · THE BOUNDARY ══════════════════════════════════════════════════ */}
+  <section class="cos-sec cos-bound" id="boundary">
+    <div class="shell cos-head">
+      <p class="eyebrow">{b.boundary.index} · {b.boundary.kicker}</p>
+      <h2 class="cos-h2">{b.boundary.heading}</h2>
+      <p class="cos-lead">{b.boundary.body}</p>
+    </div>
+
+    <div class="shell--wide cos-bound__cols">
+      <section class="cos-bound__col">
+        <h3 class="t-label cos-bound__cap">{b.boundary.supplyHeading}</h3>
+        <ul class="cos-bound__list">
+          {b.boundary.supply.map((item: string) => <li>{item}</li>)}
+        </ul>
+      </section>
+
+      <section class="cos-bound__col cos-bound__col--out">
+        <h3 class="t-label cos-bound__cap">{b.boundary.customerHeading}</h3>
+        <dl class="cos-bound__dl">
+          {b.boundary.customer.map((item: any) => (
+            <div>
+              <dt>{item.term}</dt>
+              <dd>{item.note}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    </div>
+
+    <div class="shell">
+      <p class="cos-close cos-close--strong">{b.boundary.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 08 · ONE TOOL, ONE COUNTRY ═════════════════════════════════════════ */}
+  <section class="cos-sec cos-cont" id="continuity">
+    <div class="shell--wide cos-cont__frame">
+      <div class="cos-cont__copy">
+        <p class="eyebrow">{b.continuity.index} · {b.continuity.kicker}</p>
+        <h2 class="cos-h2 cos-h2--start">{b.continuity.heading}</h2>
+        {b.continuity.body.map((para: string) => <p class="cos-cont__p">{para}</p>)}
+        <ul class="cos-cont__facts">
+          {b.continuity.facts.map((f: string) => <li class="t-mono">{f}</li>)}
+        </ul>
+        <p class="cos-cont__readiness">{b.continuity.readiness}</p>
+      </div>
+
+      <figure class="cos-cont__fig" data-reveal>
+        <svg viewBox="0 0 640 250" data-nomirror role="img" aria-label={common.schematic}>
+          <defs>
+            <marker id="cos-transfer" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)" />
+            </marker>
+          </defs>
+
+          <g class="cos-tool">
+            <path d="M30 44 H250 V110 H190 C190 84 172 76 140 76 C108 76 90 84 90 110 H30 Z" class="cos-line" />
+            <path d="M30 130 H250 V196 H30 Z" class="cos-line" />
+            <path d="M90 130 C90 118 108 112 140 112 C172 112 190 118 190 130" class="cos-line" />
+            <path d="M14 120 H266" class="cos-cl" />
+            <text x="140" y="228" text-anchor="middle" class="cos-mono">{b.continuity.figLabels.toolA}</text>
+          </g>
+
+          <g class="cos-tool cos-tool--b">
+            <path d="M390 44 H610 V110 H550 C550 84 532 76 500 76 C468 76 450 84 450 110 H390 Z" class="cos-line" />
+            <path d="M390 130 H610 V196 H390 Z" class="cos-line" />
+            <path d="M450 130 C450 118 468 112 500 112 C532 112 550 118 550 130" class="cos-line" />
+            <path d="M374 120 H626" class="cos-cl" />
+            <text x="500" y="228" text-anchor="middle" class="cos-mono">{b.continuity.figLabels.toolB}</text>
+          </g>
+
+          <path d="M280 120 H358" class="cos-transfer" marker-end="url(#cos-transfer)" />
+          <text x="320" y="104" text-anchor="middle" class="cos-mono">{b.continuity.figLabels.path}</text>
+        </svg>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+    </div>
+
+    <div class="shell cos-cont__send">
+      <h3 class="cos-h4">{b.continuity.sendHeading}</h3>
+      <ul class="cos-send__list">
+        {b.continuity.send.map((item: string) => <li>{item}</li>)}
+      </ul>
+      <p class="cos-cont__note">{b.continuity.note}</p>
+    </div>
+
+    {/* Layer three: the depth, folded away until it is wanted. */}
+    <div class="shell cos-panels">
+      <h3 class="t-label cos-panels__cap">{b.panels.heading}</h3>
+      {b.panels.items.map((panel: any, i: number) => (
+        <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+          <h4>
+            <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
+              <span>{panel.title}</span>
+              <span class="disc__sign" aria-hidden="true"></span>
+            </button>
+          </h4>
+          <div class="disc__panel">
+            <div class="disc__inner">
+              <div>
+                <ul class="cos-panel__list">
+                  {panel.bullets.map((bullet: string) => <li>{bullet}</li>)}
+                </ul>
+                {panel.source && <p class="cos-panel__src t-fine">{panel.source}</p>}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</article>
+
+<style>
+  /* ═══════════════════════════════════════════════════════════════════════
+     COSMETICS — chapter scope.
+
+     Everything is prefixed `cos-`. Warm ivory ground, deep aubergine ink,
+     rose-taupe accent, one champagne highlight. Hairlines and space carry the
+     structure; there is not a single filled card on this page.
+     ═══════════════════════════════════════════════════════════════════════ */
+
+  .cos { --cos-hair: 1.3; }
+
+  /* ── Shared drawing conventions ───────────────────────────────────────── */
+  .cos-line { fill: none; stroke: var(--accent-deep); stroke-width: var(--cos-hair); stroke-linejoin: round; }
+  .cos-line--faint { stroke-width: 0.9; opacity: 0.45; }
+  .cos-line--thin { stroke-width: 0.85; opacity: 0.7; }
+  .cos-face { fill: color-mix(in oklab, var(--accent-deep) 9%, transparent); stroke: none; }
+  .cos-face--deep { fill: color-mix(in oklab, var(--accent-deep) 20%, transparent); }
+  .cos-cl { fill: none; stroke: var(--accent); stroke-width: 0.8; stroke-dasharray: 12 4 2 4; opacity: 0.62; }
+  .cos-cl--fine { stroke-width: 0.7; opacity: 0.4; stroke-dasharray: 7 3 1.5 3; }
+  .cos-ldr { fill: none; stroke: var(--ink-muted); stroke-width: 0.75; opacity: 0.75; }
+  .cos-rule { stroke: var(--ink-muted); stroke-width: 0.9; opacity: 0.5; fill: none; }
+  .cos-dot { fill: var(--accent-deep); }
+  .cos-dot--gate { fill: var(--signal); }
+  .cos-wash { fill: color-mix(in oklab, var(--accent) 22%, transparent); }
+  .cos-wash--hot { fill: color-mix(in oklab, var(--signal) 34%, transparent); }
+  .cos-grain { stroke: var(--accent-deep); stroke-width: 0.8; opacity: 0.32; }
+  .cos-hinge { stroke: var(--signal); stroke-width: 1.8; fill: none; }
+  .cos-flow { fill: none; stroke: var(--accent); stroke-width: 1.3; }
+  .cos-dim { fill: none; stroke: var(--ink-muted); stroke-width: 0.9; }
+  .cos-inset { fill: none; stroke: var(--line); stroke-width: 1; }
+  .cos-transfer { fill: none; stroke: var(--accent); stroke-width: 1.2; stroke-dasharray: 7 5; }
+  .cos-grid { stroke: var(--grid-line); stroke-width: 1; }
+  .cos-axis { fill: none; stroke: var(--ink-muted); stroke-width: 1; opacity: 0.55; }
+  .cos-curve { fill: none; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
+  .cos-curve--tool { stroke: var(--accent-deep); }
+  .cos-curve--part { stroke: var(--signal); stroke-dasharray: 8 4; }
+
+  .cos-mono {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    fill: var(--ink-muted);
+    text-transform: uppercase;
+  }
+  .cos-mono--mark { fill: var(--accent); letter-spacing: 0.14em; }
+  .cos-mono--tool { fill: var(--accent-deep); }
+  .cos-mono--part { fill: var(--signal); }
+  .cos-mono--inset { fill: var(--accent-deep); }
+
+  /* ── Type ─────────────────────────────────────────────────────────────── */
+  .cos-h2 {
+    margin-block-start: var(--sp-5);
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    line-height: 1.07;
+    letter-spacing: -0.028em;
+    font-weight: 500;
+    text-wrap: balance;
+  }
+  .cos-h2--start { text-align: start; max-inline-size: 16ch; }
+  .cos-h3 { font-size: var(--step-2); letter-spacing: var(--track-head); font-weight: 500; max-inline-size: 26ch; }
+  .cos-h4 { font-size: var(--step-1); letter-spacing: var(--track-head); font-weight: 500; }
+
+  .cos-lead {
+    margin-block-start: var(--sp-6);
+    font-size: var(--step-1);
+    line-height: 1.52;
+    color: var(--ink-muted);
+    max-inline-size: 56ch;
+    margin-inline: auto;
+  }
+  .cos-close {
+    margin-block-start: clamp(2.5rem, 5vw, 4rem);
+    margin-inline: auto;
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-inline-size: 46ch;
+    text-align: center;
+    text-wrap: balance;
+  }
+  .cos-close--strong { font-size: var(--step-2); letter-spacing: var(--track-head); max-inline-size: 34ch; }
+  .cos-boundaryline {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    margin-inline: auto;
+    max-inline-size: 62ch;
+    font-size: var(--step--1);
+    line-height: 1.65;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--signal);
+  }
+
+  /* Section frame. The champagne bar sitting on the hairline is the motif at
+     its smallest scale — the still page still carries the highlight. */
+  .cos-sec {
+    position: relative;
+    padding-block: var(--section-y-loose);
+    border-block-start: var(--rule);
+  }
+  .cos-sec::before {
+    content: '';
+    position: absolute;
+    inset-block-start: -1px;
+    inset-inline: 0;
+    margin-inline: auto;
+    inline-size: 5rem;
+    block-size: 2px;
+    background: var(--signal);
+    opacity: 0.85;
+  }
+  .cos-head { text-align: center; max-inline-size: 62rem; }
+  .cos-head .eyebrow { justify-content: center; }
+
+  /* ── Hero ─────────────────────────────────────────────────────────────── */
+  .cos-hero { position: relative; padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3.5rem, 8vw, 7rem); overflow: clip; }
+  .cos-hero__wash {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(120% 80% at 50% 0%, color-mix(in oklab, var(--signal) 12%, transparent), transparent 62%);
+    pointer-events: none;
+  }
+  .cos-hero__inner { position: relative; text-align: center; }
+  .cos-hero .eyebrow { justify-content: center; }
+
+  .cos-hero__head {
+    margin-block-start: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(2.6rem, 7vw, 5.4rem);
+    line-height: 1.0;
+    letter-spacing: -0.036em;
+    font-weight: 500;
+  }
+  .cos-hero__head span { display: block; }
+  .cos-hero__head span:last-child { color: var(--accent-deep); }
+
+  .cos-hero__fig { margin-block-start: clamp(2rem, 4.5vw, 3.5rem); }
+  .cos-hero__figlabel { display: block; margin-block-end: var(--sp-4); text-align: center; }
+  .cos-hero__fig svg { inline-size: 100%; block-size: auto; max-inline-size: 56rem; margin-inline: auto; display: block; }
+  .cos-hero__fig .figure-note { margin-block-start: var(--sp-4); justify-content: center; }
+
+  /* The signature move: one sweep, decelerating to rest. It never loops. */
+  .cos-sweep { transform-box: view-box; transform-origin: 0 0; }
+  @keyframes cos-sweep {
+    from { transform: translateX(calc((-300px + var(--dx, 0) * 1px) * var(--dir))); }
+    to   { transform: translateX(calc((300px + var(--dx, 0) * 1px) * var(--dir))); }
+  }
+  .cos-hero__fig .cos-sweep { transform: translateX(calc((300px + var(--dx, 0) * 1px) * var(--dir))); }
+  :global(html.js) .cos-hero__fig[data-reveal='in'] .cos-sweep {
+    animation: cos-sweep 2600ms cubic-bezier(0.22, 0.61, 0.36, 1) 240ms both;
+  }
+  @keyframes cos-draw { from { stroke-dashoffset: 900; } to { stroke-dashoffset: 0; } }
+  :global(html.js) .cos-hero__fig[data-reveal='in'] .cos-draw {
+    stroke-dasharray: 900;
+    animation: cos-draw 1100ms var(--ease-out) both;
+  }
+
+  .cos-hero__lead {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    margin-inline: auto;
+    font-size: var(--step-1);
+    line-height: 1.55;
+    color: var(--ink-muted);
+    max-inline-size: 54ch;
+  }
+  .cos-hero__markers {
+    margin-block-start: var(--sp-6);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.45rem;
+  }
+  .cos-hero__markers li {
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    padding: 0.4em 0.8em;
+    border: 1px solid color-mix(in oklab, var(--accent) 36%, transparent);
+    color: var(--accent-deep);
+    background: color-mix(in oklab, var(--surface-raise) 70%, transparent);
+  }
+  :global(html[lang='zh']) .cos-hero__markers li,
+  :global(html[lang='th']) .cos-hero__markers li,
+  :global(html[lang='ar']) .cos-hero__markers li,
+  :global(html[lang='fa']) .cos-hero__markers li,
+  :global(html[lang='ur']) .cos-hero__markers li { letter-spacing: 0; font-size: var(--step--1); }
+
+  .cos-rail {
+    margin-block-start: clamp(2.5rem, 5vw, 4rem);
+    margin-inline: auto;
+    max-inline-size: 74rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    gap: var(--sp-5) clamp(2rem, 5vw, 4rem);
+    padding-block-start: var(--sp-5);
+    border-block-start: var(--rule);
+    text-align: start;
+  }
+  .cos-rail__item { font-size: var(--step--2); line-height: 1.6; color: var(--ink-muted); }
+  .cos-rail__item--nda { color: var(--accent-deep); }
+
+  /* ── 01 The light table ───────────────────────────────────────────────── */
+  .cos-lt__table { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
+  .cos-lt__figlabel { display: block; margin-block-end: var(--sp-4); text-align: center; }
+  .cos-lt__fig { color: var(--accent-deep); }
+  .cos-lt__fig svg { inline-size: 100%; block-size: auto; }
+  .cos-lt__fig .figure-note { margin-block-start: var(--sp-4); justify-content: center; }
+
+  .cos-lt__notes {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    border-block-start: var(--rule-strong);
+  }
+  @media (max-width: 1080px) { .cos-lt__notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .cos-lt__notes { grid-template-columns: 1fr; } }
+
+  .cos-note {
+    padding-block: var(--sp-5) var(--sp-7);
+    padding-inline: 0 var(--sp-5);
+    border-inline-end: var(--rule);
+    display: grid;
+    gap: 0.4rem;
+    align-content: start;
+    transition: opacity var(--dur-3) var(--ease-out);
+  }
+  .cos-note:last-child { border-inline-end: 0; }
+  @media (max-width: 1080px) {
+    .cos-note { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: var(--sp-6); }
+  }
+  .cos-note:focus-visible { outline: var(--focus); outline-offset: var(--focus-offset); }
+  .cos-note__mark { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }
+  .cos-note__term { font-size: var(--step-0); font-weight: 500; letter-spacing: var(--track-head); }
+  .cos-note__body { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  /* Focusing one callout quiets the other four. Nothing is hidden by it — the
+     information is on the page either way. */
+  .cos-lt__table:has(.cos-note:hover) .cos-note:not(:hover),
+  .cos-lt__table:has(.cos-note:focus-visible) .cos-note:not(:focus-visible) { opacity: 0.42; }
+
+  .cos-lt__close {
+    margin-block-start: clamp(2.5rem, 5vw, 4rem);
+    margin-inline: auto;
+    max-inline-size: 40ch;
+    text-align: center;
+    font-size: var(--step-2);
+    line-height: 1.34;
+    letter-spacing: var(--track-head);
+    text-wrap: balance;
+  }
+
+  /* ── 02 The gloss ladder ──────────────────────────────────────────────── */
+  .cos-gloss__work { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
+
+  .cos-gloss__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+    padding-block-end: clamp(2rem, 4vw, 3rem);
+  }
+  .cos-gloss__panel[hidden] { display: none; }
+  @media (max-width: 900px) { .cos-gloss__panel { grid-template-columns: 1fr; } }
+  .cos-gloss__sample svg { inline-size: 100%; block-size: auto; }
+  .cos-gloss__sample .figure-note { margin-block-start: var(--sp-4); }
+
+  .cos-gloss__grade { font-size: var(--step-3); letter-spacing: var(--track-head); font-weight: 500; }
+  .cos-gloss__ra { margin-block-start: var(--sp-2); color: var(--accent-deep); font-variant-numeric: tabular-nums; }
+  .cos-gloss__rows { margin-block-start: var(--sp-5); }
+  .cos-gloss__draft dd { color: var(--accent-deep); }
+
+  .cos-ladder { margin-block-start: clamp(1.5rem, 3vw, 2.5rem); }
+  .cos-ladder__cap { display: block; margin-block-end: var(--sp-4); }
+  .cos-ladder__scroll { overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; padding-block-end: var(--sp-2); }
+  .cos-ladder__row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(7rem, 1fr);
+    gap: 1px;
+    min-inline-size: 56rem;
+    background: var(--line);
+    border: var(--rule);
+  }
+  .cos-rung {
+    background: var(--surface);
+    display: grid;
+    justify-items: center;
+    gap: 0.35rem;
+    padding-block: var(--sp-4);
+    padding-inline: var(--sp-3);
+    transition: background-color var(--dur-2) var(--ease-out);
+  }
+  .cos-rung svg { inline-size: 3.4rem; block-size: auto; }
+  .cos-rung__name { font-size: var(--step--1); font-weight: 500; white-space: nowrap; }
+  .cos-rung__scale { font-size: var(--step--2); color: var(--ink-muted); white-space: nowrap; }
+  .cos-rung:hover { background: var(--accent-wash); }
+  .cos-rung[aria-selected='true'] { background: var(--accent-wash); }
+  .cos-rung[aria-selected='true'] .cos-rung__name { color: var(--accent-deep); }
+  .cos-rung[aria-selected='true'] .cos-line { stroke-width: 2; }
+  .cos-ladder__note {
+    margin-block-start: var(--sp-5);
+    margin-inline: auto;
+    max-inline-size: 62ch;
+    color: var(--ink-muted);
+  }
+  .cos-gloss__tail { margin-block-start: clamp(1rem, 2vw, 2rem); }
+
+  /* ── 03 Gate and parting line ─────────────────────────────────────────── */
+  .cos-gate__trip {
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+  }
+  @media (max-width: 900px) { .cos-gate__trip { grid-template-columns: 1fr; } }
+  .cos-gate__case svg { inline-size: 100%; block-size: auto; }
+  .cos-gate__cap { margin-block-start: var(--sp-4); padding-block-start: var(--sp-4); border-block-start: var(--rule); }
+  .cos-gate__name { font-size: var(--step-1); font-weight: 500; letter-spacing: var(--track-head); }
+  .cos-gate__short { margin-block-start: var(--sp-2); font-size: var(--step--2); color: var(--accent-deep); }
+  .cos-gate__note { margin-block-start: var(--sp-4); font-size: var(--step--1); line-height: 1.62; color: var(--ink-muted); }
+
+  .cos-part { margin-block-start: clamp(4rem, 9vw, 8rem); }
+  .cos-part__head { text-align: center; max-inline-size: 62rem; margin-inline: auto; }
+  .cos-part__head .cos-h3 { margin-inline: auto; }
+  .cos-part__body {
+    margin-block-start: var(--sp-5);
+    margin-inline: auto;
+    max-inline-size: 54ch;
+    font-size: var(--step-0);
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+  .cos-part__fig { margin-block-start: clamp(2rem, 4vw, 3rem); }
+  .cos-part__fig svg { inline-size: 100%; block-size: auto; }
+  .cos-part__fig .figure-note { margin-block-start: var(--sp-4); justify-content: center; }
+
+  .cos-part__list {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-block-start: var(--rule-strong);
+  }
+  @media (max-width: 820px) { .cos-part__list { grid-template-columns: 1fr; } }
+  .cos-part__list li {
+    padding-block: var(--sp-5) var(--sp-6);
+    padding-inline: 0 var(--sp-6);
+    border-inline-end: var(--rule);
+    display: grid;
+    gap: 0.4rem;
+    align-content: start;
+  }
+  .cos-part__list li:last-child { border-inline-end: 0; }
+  @media (max-width: 820px) { .cos-part__list li { border-inline-end: 0; border-block-end: var(--rule); } }
+  .cos-part__mark { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }
+  .cos-part__name { font-size: var(--step-0); font-weight: 500; letter-spacing: var(--track-head); }
+  .cos-part__note { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  /* ── 04 Component atlas ───────────────────────────────────────────────── */
+  .cos-atlas__rows { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); border-block-start: var(--rule-strong); }
+  .cos-row {
+    display: grid;
+    grid-template-columns: 3rem 12rem minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 3rem);
+    align-items: start;
+    padding-block: clamp(1.75rem, 3.5vw, 3rem);
+    border-block-end: var(--rule);
+  }
+  @media (max-width: 820px) {
+    .cos-row { grid-template-columns: 3rem minmax(0, 1fr); }
+    .cos-row__fig { grid-column: 2; }
+    .cos-row__copy { grid-column: 2; }
+  }
+  .cos-row__i { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); padding-block-start: 0.4rem; }
+  .cos-row__fig svg { inline-size: 100%; block-size: auto; max-inline-size: 12rem; }
+  .cos-row__name { font-size: var(--step-2); font-weight: 500; letter-spacing: var(--track-head); max-inline-size: 22ch; }
+  .cos-row__spec { margin-block-start: var(--sp-3); font-size: var(--step--2); color: var(--accent-deep); }
+  .cos-row__note { margin-block-start: var(--sp-4); font-size: var(--step--1); line-height: 1.68; color: var(--ink-muted); max-inline-size: 62ch; }
+  .cos-atlas__note { margin-block-start: var(--sp-6); justify-content: center; }
+
+  /* ── 05 Thread, land and seal ─────────────────────────────────────────── */
+  .cos-seal__grid {
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+  @media (max-width: 980px) { .cos-seal__grid { grid-template-columns: 1fr; } }
+  .cos-seal__fig svg { inline-size: 100%; block-size: auto; }
+  .cos-seal__fig .figure-note { margin-block-start: var(--sp-4); }
+
+  .cos-seal__copy { display: grid; gap: clamp(2rem, 4vw, 3rem); }
+  .cos-seal__body { margin-block-start: var(--sp-4); font-size: var(--step--1); line-height: 1.68; color: var(--ink-muted); max-inline-size: 52ch; }
+  .cos-seal__block--trap { padding-inline-start: var(--sp-5); border-inline-start: 2px solid var(--signal); }
+  .cos-seal__block--trap .cos-seal__body { color: var(--ink); }
+  .cos-seal__fine { margin-block-start: var(--sp-3); max-inline-size: 48ch; }
+  .cos-codes { margin-block-start: var(--sp-4); display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .cos-codes li {
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    padding: 0.35em 0.7em;
+    border: 1px solid var(--line);
+    color: var(--accent-deep);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cos-fail { margin-block-start: clamp(3rem, 7vw, 6rem); }
+  .cos-fail__cap { display: block; text-align: center; margin-block-end: var(--sp-5); }
+  .cos-fail__list { border-block-start: var(--rule-strong); }
+  .cos-fail__list li {
+    display: grid;
+    grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+    gap: clamp(1rem, 3vw, 3rem);
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+    align-items: baseline;
+  }
+  @media (max-width: 720px) { .cos-fail__list li { grid-template-columns: 1fr; gap: 0.35rem; } }
+  .cos-fail__term { font-size: var(--step-1); font-weight: 500; letter-spacing: var(--track-head); }
+  .cos-fail__note { font-size: var(--step--1); line-height: 1.62; color: var(--ink-muted); }
+
+  /* ── 06 Cavity arithmetic — first of the two greige bands ─────────────── */
+  .cos-cav { background: var(--surface-sunk); }
+  .cos-plot { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
+  .cos-plot svg { inline-size: 100%; block-size: auto; }
+  .cos-plot .figure-note { margin-block-start: var(--sp-4); justify-content: center; }
+  .cos-plot__note { margin-block-start: var(--sp-5); margin-inline: auto; max-inline-size: 64ch; text-align: center; }
+  @keyframes cos-plot { from { stroke-dashoffset: 1400; } to { stroke-dashoffset: 0; } }
+  :global(html.js) .cos-plot[data-reveal='in'] .cos-curve--tool {
+    stroke-dasharray: 1400;
+    animation: cos-plot 1400ms var(--ease-out) 120ms both;
+  }
+
+  .cos-facts {
+    margin-block-start: clamp(3rem, 6vw, 5rem);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-block-start: var(--rule-strong);
+  }
+  @media (max-width: 900px) { .cos-facts { grid-template-columns: 1fr; } }
+  .cos-facts li {
+    padding-block: var(--sp-5) var(--sp-6);
+    padding-inline: 0 clamp(1.5rem, 3vw, 3rem);
+    border-inline-end: var(--rule);
+    display: grid;
+    gap: 0.45rem;
+    align-content: start;
+  }
+  .cos-facts li:last-child { border-inline-end: 0; }
+  @media (max-width: 900px) { .cos-facts li { border-inline-end: 0; border-block-end: var(--rule); } }
+  .cos-facts__mark { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }
+  .cos-facts__term { font-size: var(--step-1); font-weight: 500; letter-spacing: var(--track-head); }
+  .cos-facts__note { font-size: var(--step--1); line-height: 1.65; color: var(--ink-muted); }
+
+  .cos-cav__tail {
+    margin-block-start: clamp(3rem, 6vw, 5rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  .cos-cav__tail p { margin-block-start: var(--sp-4); font-size: var(--step--1); line-height: 1.68; color: var(--ink-muted); max-inline-size: 54ch; }
+  .cos-cav__ours p:first-of-type { color: var(--ink); }
+  .cos-cav__bridge { padding-inline-start: var(--sp-5); border-inline-start: 2px solid var(--accent); }
+
+  /* ── 07 The boundary ──────────────────────────────────────────────────── */
+  .cos-bound__cols {
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .cos-bound__cols { grid-template-columns: 1fr; } }
+  .cos-bound__cap { display: block; margin-block-end: var(--sp-5); }
+  .cos-bound__list { border-block-start: var(--rule-strong); }
+  .cos-bound__list li {
+    padding-block: var(--sp-4);
+    padding-inline-start: var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.6;
+    position: relative;
+  }
+  .cos-bound__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.5em;
+    inline-size: 0.7rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .cos-bound__dl { border-block-start: var(--rule-strong); }
+  .cos-bound__dl > div { padding-block: var(--sp-5); border-block-end: var(--rule); display: grid; gap: 0.35rem; }
+  .cos-bound__dl dt { font-size: var(--step-1); font-weight: 500; letter-spacing: var(--track-head); color: var(--accent-deep); }
+  .cos-bound__dl dd { font-size: var(--step--1); line-height: 1.68; color: var(--ink-muted); max-inline-size: 64ch; }
+
+  /* ── 08 One tool, one country — second greige band, deliberately quiet ── */
+  .cos-cont { background: var(--surface-sunk); }
+  .cos-cont__frame {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: end;
+    min-block-size: clamp(22rem, 52vh, 36rem);
+  }
+  @media (max-width: 900px) { .cos-cont__frame { grid-template-columns: 1fr; align-items: start; } }
+  .cos-cont__p {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step-0);
+    line-height: 1.68;
+    color: var(--ink-muted);
+    max-inline-size: 46ch;
+  }
+  .cos-cont__p:nth-of-type(3) { color: var(--accent-deep); font-size: var(--step-1); }
+  .cos-cont__facts {
+    margin-block-start: var(--sp-7);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .cos-cont__facts li {
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    padding: 0.35em 0.75em;
+    border: 1px solid var(--line);
+    color: var(--accent-deep);
+  }
+  .cos-cont__readiness {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step--2);
+    line-height: 1.62;
+    color: var(--ink-muted);
+    max-inline-size: 46ch;
+  }
+  .cos-cont__fig { max-inline-size: 32rem; margin-inline-start: auto; }
+  .cos-cont__fig svg { inline-size: 100%; block-size: auto; }
+  .cos-cont__fig .figure-note { margin-block-start: var(--sp-4); }
+  .cos-tool--b { opacity: 0.34; }
+  :global(html.js) .cos-cont__fig[data-reveal='in'] .cos-tool--b {
+    animation: cos-fade 700ms var(--ease-out) 320ms both;
+  }
+  @keyframes cos-fade { from { opacity: 0; } to { opacity: 0.34; } }
+  @keyframes cos-path { from { stroke-dashoffset: 90; } to { stroke-dashoffset: 0; } }
+  :global(html.js) .cos-cont__fig[data-reveal='in'] .cos-transfer {
+    stroke-dasharray: 7 5;
+    animation: cos-path 700ms var(--ease-out) 700ms both;
+  }
+
+  .cos-cont__send { margin-block-start: clamp(3.5rem, 8vw, 7rem); }
+  .cos-send__list { margin-block-start: var(--sp-5); border-block-start: var(--rule-strong); max-inline-size: 62ch; }
+  .cos-send__list li {
+    padding-block: var(--sp-4);
+    padding-inline-start: var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.6;
+    position: relative;
+  }
+  .cos-send__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.5em;
+    inline-size: 0.7rem;
+    block-size: 1px;
+    background: var(--signal);
+  }
+  .cos-cont__note { margin-block-start: var(--sp-5); font-size: var(--step--1); color: var(--accent-deep); max-inline-size: 54ch; }
+
+  /* ── Panels ───────────────────────────────────────────────────────────── */
+  .cos-panels { margin-block-start: clamp(3rem, 7vw, 6rem); }
+  .cos-panels__cap { display: block; margin-block-end: var(--sp-4); }
+  .cos-panel__list { display: grid; gap: var(--sp-3); max-inline-size: 80ch; }
+  .cos-panel__list li {
+    font-size: var(--step--1);
+    line-height: 1.68;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .cos-panel__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.8em;
+    inline-size: 0.6rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .cos-panel__src { margin-block-start: var(--sp-4); max-inline-size: 60ch; }
+
+  /* ── Motion off ───────────────────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    .cos-sweep,
+    .cos-draw,
+    .cos-curve,
+    .cos-tool--b,
+    .cos-transfer { animation: none !important; }
+    .cos-hero__fig .cos-sweep { transform: translateX(calc((120px + var(--dx, 0) * 1px) * var(--dir))); }
+  }
+</style>

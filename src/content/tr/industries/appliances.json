@@ -1,0 +1,414 @@
+{
+  "meta": {
+    "title": "Beyaz eşya kalıpları ve enjeksiyon parçaları | Metal Form",
+    "description": "Beyaz eşya parçaları için enjeksiyon kalıbı ve mühendislik — kapak rafları, çekmeceler, kanallar, çerçeveler, ön paneller ve gövdeler. Büyük parça DFM'i, soğutma ve göz stratejisi, ikinci kaynak kalıpları. 2006'dan beri."
+  },
+  "name": "Beyaz Eşya",
+  "tile": "Düz kalmak ve bir montaja oturmak zorunda olan büyük enjeksiyon parçaları. Maliyeti malzeme ile makine zamanının belirlediği parçalarda soğutma düzeni, cidar kesiti ve çevrim süresi.",
+  "tileParts": "Gövdeler · İç gövdeler · Yapısal parçalar",
+  "hero": {
+    "kicker": "Beyaz Eşya",
+    "headline": [
+      "Parça büyük.",
+      "Tolerans değil."
+    ],
+    "lead": "Beyaz eşya enjeksiyon parçaları için kalıp ve mühendislik — kapak rafları, çekmeceler, kanallar, çerçeveler, ön paneller, gövdeler. Bu boyuttaki parçalarda düzlük, çevrim süresi ve maliyetin üçü de çelikte kararlaştırılır. Geometriyi, soğutmayı ve geçmeyi çelik işlenmeden önce çalışırız.",
+    "markers": [
+      "2006'dan beri üretim",
+      "1.000'den fazla tamamlanmış proje",
+      "CATIA ve SolidWorks",
+      "Dünya geneline sevkiyat"
+    ]
+  },
+
+  "blocks": {
+    "heroFig": {
+      "gapValue": "1,5",
+      "spanValue": "600",
+      "gapLabel": "boşluk",
+      "spanLabel": "açıklık",
+      "note": "Görünüş, oranı anlatmak için çizilmiştir. Bir şartname değildir."
+    },
+
+    "process": {
+      "index": "01",
+      "kicker": "Önce sınır",
+      "heading": "Bir beyaz eşya, tek ürün gibi görünen dört ayrı prosestir.",
+      "body": "Yetkinlikten önce dürüst harita. Bir buzdolabı kapağı; preslenmiş bir sac yüzey, köpükle doldurulmuş bir çekirdek, termoformla çekilmiş bir iç gövde, ekstrüzyonla üretilmiş bir conta ve bir dizi enjeksiyon parçasından oluşur. Dört proses, genellikle dört fabrika. Bir mühendis, bir tedarikçinin hangisinin hangisi olduğunu bilip bilmediğini bir dakikada anlar.",
+      "figHeading": "Buzdolabı kapak montajı, dıştan içe",
+      "rows": [
+        {
+          "index": "01",
+          "short": "sac",
+          "name": "Dış kapak sacı",
+          "process": "SAC İŞLEME",
+          "note": "Preslenmiş ve boyanmış sac. Yanındaki her enjeksiyon parçasının kendisine göre yargılandığı düz kenarı o belirler."
+        },
+        {
+          "index": "02",
+          "short": "köpük",
+          "name": "Yalıtım çekirdeği",
+          "process": "YERİNDE KÖPÜRTME",
+          "note": "Sac ile iç gövde arasına enjekte edilen poliüretan. Verdiği ısı, temas ettiği her şey için bir yük durumudur; yayımlanmış tepe değerler 60–80 °C civarındadır."
+        },
+        {
+          "index": "03",
+          "short": "iç gövde",
+          "name": "İç kapak gövdesi",
+          "process": "TERMOFORM",
+          "note": "Ekstrüzyonla üretilmiş ABS ya da HIPS levhadan çekilir; şekillendirmeden önce 1,5–3,0 mm, derin çekimlerde incelir. Bir enjeksiyon parçası değildir ve bizim yaptığımız bir iş değildir."
+        },
+        {
+          "index": "04",
+          "short": "raf",
+          "name": "Kapak rafları ve balkonlar",
+          "process": "ENJEKSİYON",
+          "note": "Stiren bazlı, görünen her yüzeyde kozmetik ve ürünün ömrü boyunca şişe taşıyor. Bizim işimiz."
+        },
+        {
+          "index": "05",
+          "short": "conta",
+          "name": "Conta ve mıknatıs kanalı",
+          "process": "EKSTRÜZYON",
+          "note": "Mıknatıs insertli profil ekstrüzyonu. Kapağın düzlüğü nihayetinde bu contanın ne kadar sıkıştığından okunur."
+        },
+        {
+          "index": "06",
+          "short": "çıta",
+          "name": "Menteşe kapağı ve dekor çıtası",
+          "process": "ENJEKSİYON",
+          "note": "Uzun, ince ve kendini rijitleştirecek neredeyse hiç kesiti yok. Bel verme, kabin kenarından doğrudan okunur. Bizim işimiz."
+        }
+      ],
+      "close": "Bu listedeki iki satır bizim. Dördü değil ve bunu siparişten sonra değil, talep aşamasında söylüyoruz. Yine de konuşmanın içinde kalırlar; çünkü bizim parçalarımızın oturması gereken boşluğu onlar belirler.",
+      "sourceNote": "Buradaki levha kalınlığı ve köpük ısınma değerleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
+    },
+
+    "flow": {
+      "index": "02",
+      "kicker": "Cidar ve akış",
+      "heading": "Cidardan aldığınız her gramı, yolluk girişi olarak geri ödersiniz.",
+      "body": "Akış uzunluğunun cidar kalınlığına oranı, belirli bir malzeme ve proses penceresi için neredeyse sabittir. Cidarı inceltirsiniz, ergiyik daha erken donar; aynı paneli doldurmak için daha çok giriş gerekir. Her giriş bir birleşme izi daha demektir ve o izin bir yere düşmesi gerekir.",
+      "figLabel": "Tek panel, üç farklı nominal cidar, sabit akış uzunluğu / cidar oranında",
+      "wallLabel": "cidar",
+      "reachLabel": "erişim",
+      "gatesLabel": "giriş",
+      "lanes": [
+        {
+          "wall": "×1,00",
+          "gates": "6",
+          "name": "İnce cidar",
+          "note": "En hafif atım ve en kısa soğutma süresi. Açıklığı doldurmak için altı giriş ve görünen yüzeyden uzak tutulması gereken altı birleşme izi."
+        },
+        {
+          "wall": "×1,25",
+          "gates": "5",
+          "name": "Nominal cidar",
+          "note": "Alışılmış, devralınan kesit. Kimse yeniden incelemez; bu yüzden önceki modelin ihtiyacı ne idiyse onu taşır."
+        },
+        {
+          "wall": "×1,50",
+          "gates": "4",
+          "name": "Kalın cidar",
+          "note": "En az giriş ve en kolay dolum; bedeli her atımda daha çok hammadde ve her çevrimde daha uzun soğutma."
+        }
+      ],
+      "weldHeading": "Birleşme izi yapısal bir karardır",
+      "weldBody": "Yayımlanmış çalışmalar birleşme izi mukavemetini malzemenin nominal mukavemetinin yaklaşık yüzde 20'sine kadar düşük veriyor. Bu da yolluk girişi konumunu önce bir yük yolu sorusu, sonra kozmetik bir soru hâline getirir. Uzun bir ön panelde sektörün cevabı kademeli dolumdur: sıcak yolluk girişleri zamanlanmış bir sırayla açılır, böylece birkaç akış cephesi çarpışmak yerine tek bir cephe bütün uzunluğu kat eder. Belgelenmiş bir vakada mengene kuvveti kabaca yüzde 20, göz basıncı 50 bar ve parça ağırlığı yaklaşık yüzde 5 düşürüldü.",
+      "weldWarn": "Faydasının yanında yayımlanan dürüst dezavantajı: bir girişin diğerine devrettiği yerde duraklama ve akış izleri yine de görülebilir ve bunların temizlenmesi proses ayarı ister.",
+      "boundaryNote": "Kademeli dolum, gaz destekli enjeksiyon ve yapısal köpük birer sektör rotasıdır. Bize değil, enjeksiyon atölyesine ve onun ekipmanına aittir. Biz kalıbı, gerçekte çalıştıracağınız rotanın geometriye uyacağı şekilde tasarlarız.",
+      "close": "Nominal cidar; gramı, çevrim süresini ve giriş sayısını aynı anda hareket ettiren tek kaldıraçtır ve genellikle bunları ters yönlerde hareket ettirir. Çelik işlenmeden önce karara bağlanmasının bütün gerekçesi budur.",
+      "sourceNote": "Birleşme izi mukavemeti, mengene kuvveti ve basınç değerleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
+    },
+
+    "warp": {
+      "index": "03",
+      "kicker": "Çarpılma incelemesi",
+      "heading": "Parçayı hiçbir şey bükmez. Bir taraf diğerinden fazla çeker.",
+      "body": "Çarpılma bir mengene sorunu ya da bir pres sorunu değildir. Farklı çekmedir — tek bir parçanın iki bölgesi farklı hızlarda ya da farklı yönlenmelerle soğur ve parça dışarı çıkarken bu farkı içine kilitler. Isı belirtidir. Neden ise geometri ve soğutma düzenidir; ikisi de çelik işlendiği anda sabitlenir.",
+      "figLabels": {
+        "cavity": "göz",
+        "core": "maça",
+        "inlet": "giriş",
+        "outlet": "çıkış",
+        "bow": "bel"
+      },
+      "stages": [
+        {
+          "label": "Düz",
+          "note": "Maça ve göz aynı sıcaklıkta tutulur, soğutma suyu devrenin iki ucuna da soğuk ulaşır. Panel kalıptan, çizildiği biçimde çıkar."
+        },
+        {
+          "label": "Sıcaklık farkı",
+          "note": "Bir devre fazla uzun. Su uzak uca ılık ulaşır ve her yüzeyi plastikle sarılı olan maça, gözden daha sıcak çalışır. Henüz hiçbir şey yanlış görünmez."
+        },
+        {
+          "label": "Bel verme",
+          "note": "Daha sıcak yüzey, itmeden sonra da çekmeye devam eder. Panel açıklığı boyunca tek bir eğri alır. Montajda bu, bir uçta açılan bir boşluk olarak okunur."
+        }
+      ],
+      "coolingHeading": "Derin maçalara soğutma suyunun itilerek götürülmesi gerekir",
+      "coolingBody": "Bir çekmecede, bir kapak rafında ya da bir sebzelikte maça, plastikle sarılmış yüksek bir bloktur. Isınır ve düz delinmiş bir kanal ona ulaşamaz. Baffle ve bubbler elemanları suyu maçanın içine iter ve geri çıkarır. Devreler, uzun bir parçanın uzak ucuna soğutma suyunun ılık ulaşmayacağı kadar kısa tutulur — tek taraflı çekmenin sessiz ve çok yaygın bir kaynağıdır.",
+      "close": "Önlemler önce tasarım tarafındadır: düzgün cidar ya da kademeli geçişler, rijitlik için nervürler ve destek nervürleri, bir takviyenin arkasındaki yüzeye çöküntü çekmemesi için nominal cidarın kabaca yüzde 60'ında ya da altında tutulan nervürler, eşit dolduran bir giriş düzeni ve hapsolan havanın kendi soğuk noktasını yaratmaması için havalandırma. Proses ikinci sıradadır. Hiçbir proses penceresi, tek taraftan soğutulmuş bir parçayı kurtarmaz.",
+      "sourceNote": "Nervür / cidar oranı için yüzde 60 kılavuzu ve soğutmanın çevrim süresindeki yüzde 50–80'lik payı yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
+    },
+
+    "fit": {
+      "index": "04",
+      "kicker": "Boşluk ve hiza",
+      "heading": "Tüketici boşluğu hiç ölçmez. Ama her zaman görür.",
+      "body": "Bir beyaz eşyanın imal edilmiş mi yoksa monte edilmiş mi göründüğüne iki sayı karar verir: iki panel arasındaki çizginin genişliği ve yüzeylerin o çizgi boyunca aynı düzlemde durup durmadığı. İkisi de müşterinin şartnamesinde yoktur. İkisi de mağaza rafında ilk görülen şeydir.",
+      "gapValue": "1,5",
+      "gapCaption": "Tek boşluk, iki büyük panel. Parça devasa; önemli olan sayı değil.",
+      "stackHeading": "Yığılma, içindeki her tolerans tan büyüktür.",
+      "stackBody": "Büyük bir kapak ya da çekmece açıklığında geçme, tek bir parçanın toleransı değildir. Kabin açıklığı, artı bir enjeksiyon parçası, artı bir metal kızak, artı ikinci bir enjeksiyon parçasının tek yönde birikmiş hâlidir. Hepsi kendi sınırının içinde dururken montaj kendi sınırının dışında kalabilir.",
+      "stackTotal": "yığılma",
+      "stackItems": [
+        { "short": "açıklık", "name": "Kabin açıklığı", "note": "Preslenmiş sac. Geri kalan her şeyin kendisine göre ölçüldüğü referans ve hiçbir enjeksiyon parçasının düzeltemeyeceği tek katkı." },
+        { "short": "çerçeve", "name": "Çerçeve parçası", "note": "Uzun, kapalı çevrimli, çarpılmaya duyarlı. Bütün şartname, açıklık boyunca düzlüktür." },
+        { "short": "kızak", "name": "Çekmece kızağı", "note": "Kendi toleransı ve kendi boşluk gereksinimi olan, dışarıdan satın alınan bir metal parça." },
+        { "short": "ön panel", "name": "Çekmece ön paneli", "note": "Bir yüzü Class A, diğer yüzü yapısal ve müşterinin gözünün ilk gittiği parça." }
+      ],
+      "close": "Yalnızca parçayı değil, montajı da görmek istememizin nedeni budur. Geçme montaj seviyesinde tasarlanır ve kalıp tarafından teslim edilir — nominal cidar, soğutma dengesi, yolluk girişi konumu, doku derinliğine göre verilmiş çıkma açısı. Bize tek bir enjeksiyon parçası gönderirseniz, soracağımız ilk şey onun neyin içine oturacağı olur.",
+      "failures": [
+        { "name": "Bel verme", "note": "Açıklık boyunca tek bir eğri. Uzun bir panelin bir ucunda açılan bir boşluk olarak okunur." },
+        { "name": "Burulma", "note": "Bir köşenin düzlemden kalkması. Boşluk hatası değil, hiza hatası olarak okunur." },
+        { "name": "Sıkışma", "note": "İki büyük enjeksiyon parçası artı bir metal kızak, mevcut boşluğu tüketir ve çekmece sürtmeye başlar." },
+        { "name": "Sızdırmazlık yüzeyinde bozulma", "note": "Bir deterjan çekmecesinde ya da bir su yolunda milimetrenin kesri kadar çarpılma bir şikâyet değil, bir sızıntıdır." }
+      ]
+    },
+
+    "machine": {
+      "index": "05",
+      "kicker": "Makineden istenen",
+      "heading": "Mengene kuvvetini parçanın ağırlığı ilgilendirmez.",
+      "body": "Tonajı izdüşüm alanı belirler — parçanın enjeksiyon yönündeki iki boyutlu gölgesi — ve bu alan bir mengene katsayısı ile bir emniyet payıyla çarpılır. Büyük ve düz bir panel hafif olabilir ve yine de çok büyük bir pres isteyebilir. Yayımlanmış uygulama mengene katsayısını inç kare başına 2 ile 8 ton arasında, yaygın olarak 4 ila 5 civarında veriyor ve büyük beyaz eşya parçalarını 400 ile 1.000+ ton sınıflarına yerleştiriyor.",
+      "areaLabel": "alan",
+      "forceLabel": "mengene",
+      "scaleLabel": "Pres sınıfı, ton",
+      "ticks": ["150", "400", "1.000+"],
+      "bands": [
+        { "name": "Küçük parçalar ve çok gözlü kalıplar", "range": "150 – 400 t" },
+        { "name": "Büyük beyaz eşya parçaları", "range": "400 – 1.000+ t" }
+      ],
+      "deflectHeading": "Büyük bir kalıbın ortasındaki çapak bir rijitlik sorunudur",
+      "deflectBody": "Büyük bir plaka boyunca etkiyen göz basıncı çeliği eğer. En kötüsü desteksiz açıklığın tam ortasındadır; çapak da tam orada çıkar. Cevap makinede daha fazla mengene kuvveti değil, tasarım aşamasında plaka kalınlığı, destek pimleri ve çelik seçimidir.",
+      "cycleHeading": "Çevrimin büyük bölümü soğutmadır. Maliyetin büyük bölümü çevrimdir.",
+      "cycleBars": [
+        {
+          "name": "Çevrim süresi",
+          "note": "Yayımlanmış dağılımlar enjeksiyon parçalarında soğutmayı çevrim süresinin yüzde 50 ila 80'i olarak veriyor.",
+          "segments": [
+            { "label": "Dolum", "value": "10", "w": 10 },
+            { "label": "Ütüleme ve tutma", "value": "16", "w": 16 },
+            { "label": "Soğutma", "value": "64", "w": 64 },
+            { "label": "Açma ve itme", "value": "10", "w": 10 }
+          ]
+        },
+        {
+          "name": "Seri üretim adedinde parça maliyeti",
+          "note": "Çevrim süresi nihai parça maliyetinin kabaca yüzde 60'ını belirler; malzeme yüzde 10 ila 30 arasında seyreder ve yaklaşık 100.000 adedin üzerinde baskın pay hâline gelir.",
+          "segments": [
+            { "label": "Malzeme", "value": "24", "w": 24 },
+            { "label": "Makine zamanı", "value": "58", "w": 58 },
+            { "label": "Amortismana yayılmış kalıp", "value": "5", "w": 5 },
+            { "label": "İkincil işlem ve ambalaj", "value": "13", "w": 13 }
+          ]
+        }
+      ],
+      "unitLabel": "yüzde",
+      "close": "Beyaz eşya adetlerinde kalıp, parça başına neredeyse bir yuvarlama hatasıdır. Amortismana yayılmış kalıp ancak kabaca bin parçanın altında belirleyici olur ve hiçbir beyaz eşya modeli o bantta değildir. Dolayısıyla bir model ömrü boyunca daha ucuz karar, genellikle daha pahalı kalıptır: daha iyi soğutma düzeni, dürüst bir nominal cidar, kolay olduğu için değil doldurduğu için yerleştirilmiş girişler. Gramların ve saniyelerin nerede olduğunu size söyleriz. Parçayı görmeden bunun üzerine bir yüzde koymayız.",
+      "sourceNote": "Bu banttaki oranlar ve aralıklar yayımlanmış sektör değerleridir. Metal Form ölçümleri değildir, bir performans iddiası değildir ve bir fiyat teklifi değildir."
+    },
+
+    "strategy": {
+      "index": "06",
+      "kicker": "Kalıp stratejisi",
+      "heading": "Parça başına bir kalıp mı, takım için tek kalıp mı.",
+      "body": "Beyaz eşya, tek bir program içinde birbirine zıt iki strateji ister ve tedarikçilerin çoğu yalnızca tercih ettiğinden söz eder. Karşılaştırma burada; her iki tarafın aleyhindeki argümanlar da yerinde bırakıldı.",
+      "rowLabels": [
+        "Tipik beyaz eşya parçaları",
+        "Kalıp harcaması",
+        "Parça maliyeti davranışı",
+        "Ürün değişimi",
+        "Bakım riski",
+        "Ne zaman yanlış cevaptır"
+      ],
+      "columns": [
+        {
+          "id": "single",
+          "name": "Tekli kalıp",
+          "sub": "Tek kalıp seti, bir ya da iki göz",
+          "cav": "1",
+          "cells": [
+            "Büyük gövdeler, çekmeceler, kapak rafları, çerçeveler, ön paneller, kanallar ve kapaklar — izdüşüm alanı zaten tablayı dolduran her parça.",
+            "En yüksek toplam harcama; çünkü her ürün kodu kendi kalıp setini ister.",
+            "En düşük ve en öngörülebilir. Atımı bir kez dengeleyin, dengeli kalır.",
+            "Yok. Kalıp tek bir şey üretir ve siz durdurana kadar çalışır.",
+            "Ayrışmıştır. Duran bir kalıp bir takımı değil, bir ürün kodunu durdurur.",
+            "Platform yalnızca bir logo yuvası ve bir havalandırma deseniyle ayrışan altı varyant çalıştırdığında. O zaman tek parçayı altı kez üretmek için altı kalıp seti almış olursunuz."
+          ]
+        },
+        {
+          "id": "family",
+          "name": "Aile kalıbı",
+          "sub": "Tek kalıp seti, birkaç farklı parça",
+          "cav": "4",
+          "cells": [
+            "Gerçekten takım hâlinde sevk edilen bir montaj — çekmece ön paneli, yanları, arkası ve kızak kapağı tek atımda.",
+            "Takım için daha düşük toplam harcama. Tek kalıp seti, tek plaka takımı, tek makine arayüzü.",
+            "Bağlıdır. Parçaların ya hepsini ya hiçbirini üretirsiniz; üstelik kalıbın işlendiği orana göre.",
+            "Yüksek ve aile kalıplarının kazandırmayı bırakmasının nedeni de budur. Stoğu yeniden dengelemek, tesisin en yavaş preslerinde ürün değişimi zorlar.",
+            "Bağlıdır. Hasar gören tek bir göz, takımın tamamını üretimden çıkarır.",
+            "Takım dengeli sevk edilmeyi bıraktığı an. Atımdaki bir parça istenmediğinde atımın geri kalanı ya firedir ya da sipariş etmediğiniz stoktur — üstelik tek çelikteki farklı parçalar farklı adetler, farklı cidar kesitleri ve farklı soğutma ihtiyaçları taşır; onları dengelemeyi baştan zorlaştıran da budur."
+          ]
+        }
+      ],
+      "insertHeading": "İkisinin arasında, platformların en az kullandığı kaldıraç duruyor",
+      "insertBody": "Tek bir ortak kalıp setinde birbirinin yerine geçebilen göz ve maça insertleri; böylece tek bir kalıp bir varyant ailesinin tamamını karşılar. Daha az kalıp seti, daha az ürün kodu, bakımı yapılacak tek çelik takımı ve planlanacak tek makine arayüzü. Bir platform genelinde kalıp harcamasını kısmanın en doğrudan yoludur ve en sık talep edilmeden kalan seçenektir.",
+      "tailHeading": "Ürün ağacının diğer ucu",
+      "tailBody": "Klipsler, sepet teli uçları, raf destekleri, ara parçaları, ara pimleri, kablo kılavuzları. Tek tek önemsiz, toplamda büyük bir yıllık harcama ve bir beyaz eşya ürün ağacında yüksek göz sayısının gerçekten kazandırdığı tek yer. Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bu bilgi, büyük bir gövdeye değil, buraya — küçük parça ucuna — aittir.",
+      "close": "Doğru cevap bir tedarikçinin tercihinden değil, sizin ürün ağacınızdan çıkar. Parça listesini ve adetleri gönderin, hesabı gösterelim."
+    },
+
+    "source": {
+      "index": "07",
+      "kicker": "Tedarik",
+      "heading": "Tek kalıp. Tek fabrika. Tek ülke.",
+      "body": "Beyaz eşya plastik parçalarının çoğu tam olarak tek bir kalıp hâlinde, tam olarak tek bir binada ve duramayacak bir hattın altında vardır. Kalıp durursa hat durur. Bu risk genellikle geldiği haftaya kadar kimsenin bütçesinde yer almaz.",
+      "figLabels": {
+        "toolA": "kalıp",
+        "toolB": "ikinci kalıp",
+        "line": "hat"
+      },
+      "states": [
+        {
+          "label": "Mevcut hâl",
+          "note": "Tek kalıp, tek fabrika, hatta çıkan tek yol. Çatlayan bir göz, arızalanan bir sıcak yolluk nozulu, bir gümrük beklemesi ve bir fabrika duruşu aynı olaydır."
+        },
+        {
+          "label": "İkinci kaynaklı",
+          "note": "Sizin teknik resminizden, CAD'inizden ya da fiziksel bir numuneden aynı resme göre yapılmış ikiz bir kalıp. Hazırda bekletilir ya da adedi iki fabrika arasında bölmek için paralel çalıştırılır."
+        }
+      ],
+      "quietHeading": "Daha sessiz olan ve daha sık karşılaşılan durum",
+      "quietBody": "Bir model üretimden kalkar. Yedek parça yükümlülüğü yıllarca, çok düşük yıllık adetlerle sürer. Orijinal kalıp ya aşınmıştır ya hurdaya ayrılmıştır ve teknik resimler kullanılabilir hiçbir biçimde mevcut değildir. İkinci kalıp o noktada bir yedek plan değildir. Geriye kalan tek tedarik yoludur ve oraya giden olağan rota, hayatta kalmış bir numuneden tersine mühendisliktir.",
+      "readiness": "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmez; hangisi olduğunu size söyleriz. Herhangi bir geometri paylaşılmadan önce NDA imzalanabilir.",
+      "package": [
+        "Teknik resimden, CAD'den ya da fiziksel numuneden, aynı resme göre yapılmış ikiz kalıp",
+        "Teknik resimlerin kaybolduğu durumlarda numuneden ya da fotoğraftan tersine mühendislik",
+        "CATIA ve SolidWorks'te tasarım ve CAD",
+        "Hazırda bekletilen ya da adedi fabrikalar arasında bölmek için paralel çalıştırılan kalıp",
+        "Kalıpla birlikte tanımlanan yedekler ve değişim parçaları",
+        "Kalıp garantisi; şartlar proje bazında kararlaştırılır",
+        "Dünya geneline sevkiyat"
+      ]
+    },
+
+    "scope": {
+      "index": "08",
+      "kicker": "Kapsam ve sonraki adım",
+      "heading": "Neyi yapıyoruz, neyi yapmıyoruz.",
+      "body": "Sayfanın iki kez okunmaya değer bölümü budur. Talep aşamasında her şeye evet diyen bir tedarikçi, sipariş hakkında size hiçbir şey söylemiyordur.",
+      "makeHeading": "Yaptıklarımız",
+      "make": [
+        "Büyük beyaz eşya parçaları için enjeksiyon kalıbı — gövdeler, çekmeceler, kapak rafları, çerçeveler, kanallar, kapaklar, ön paneller",
+        "Beyaz eşyanın küçük parça ucu için çok gözlü kalıplar; kalıp deneyimimiz 46 göze kadar uzanır",
+        "Sıcak ve soğuk yolluklu kalıplar, insertli kalıplar ve teknik mekanizmalar — sürgüler, lifterlar, diş sökücü ve katlanabilir maçalar",
+        "CATIA ve SolidWorks'te ürün mühendisliği ve CAD, DFM incelemesi ve arıza veren ya da fazla gram yiyen bir parçanın yeniden tasarımı",
+        "Teknik resimlerin artık mevcut olmadığı durumlarda numuneden ya da fotoğraftan tersine mühendislik",
+        "İkinci kaynak ve ikiz kalıplar, yedekler ve değişim parçaları",
+        "Uzun kuyruklu yedek parça adetleri dâhil olmak üzere parça üretimi ve sürekli tedarik",
+        "CNC frezeleme, tornalama ve manuel talaşlı imalat"
+      ],
+      "notHeading": "Yapmadıklarımız",
+      "not": [
+        "Termoform ya da levha ekstrüzyonu. Buzdolabı iç gövdeleri ve kapak gövdeleri, ekstrüzyonla üretilmiş ABS ya da HIPS levhadan termoformla çekilir. Bu bizim prosesimizin dışındadır ve işi almak yerine bunu açıkça söyleriz.",
+        "Gaz destekli enjeksiyon, yapısal köpük ve konformal soğutma. Bu sayfada, kalıbı uyumlu tasarladığımız sektör rotaları olarak geçerler. Bize değil, bir enjeksiyon atölyesine ve onun ekipmanına aittirler.",
+        "Akış, soğutma ve çarpılma simülasyonu. Bunları geometri üzerinde mühendislik muhakemesiyle çalışırız. Bir simülasyon çıktısı iddia etmiyoruz.",
+        "Bitmiş bir beyaz eşyanın testi, belgelendirmesi ya da uygunluğu. Kalıbını yaptığımız hiçbir parça için burada gıdayla temas, elektriksel güvenlik ya da enerji etiketi iddiasında bulunulmuyor.",
+        "Metroloji raporlaması, muayene departmanları ve belgelendirilmiş kalite sistemleri. Neyimiz olduğunu sorun, açıkça cevaplayalım."
+      ],
+      "sendHeading": "Ne göndermeli",
+      "send": [
+        "3B model ya da teknik resim — ikisi de yoksa yanında bir cetvelle çekilmiş bir parça fotoğrafı",
+        "Genel ölçüler ve parçanın neyin içine oturacağı",
+        "Biliyorsanız malzeme ve beslemede kırma malzeme olup olmadığı",
+        "Yıllık adet ve beklenen model ömrü",
+        "Bunun yeni bir kalıp mı, bir yenileme mi, bir ikinci kaynak mı yoksa bir maliyet incelemesi mi olduğu",
+        "Varsa kozmetik gereklilikler: doku, parlaklık ve hangi yüzeylerin göründüğü",
+        "Çalışacağı pres, eğer çoktan kararlaştırıldıysa"
+      ],
+      "getHeading": "Geri gelen",
+      "get": [
+        "Elinizdeki nominal cidarın, ihtiyacınız olan nominal cidar olup olmadığı",
+        "Birleşme izlerinin nereye düşeceği ve yerlerini değiştirmenin bedeli",
+        "Derin maçalar için, parça hâlâ değiştirilebilirken planlanmış bir soğutma stratejisi",
+        "Bir kalıp rotası: tekli, aile, insert tabanlı ya da yüksek gözlü — ve arkasındaki aritmetik",
+        "Belirlediğiniz dokuya karşı nervür, göbek, tırnak kökü ve çıkma açısı görüşleri",
+        "Derin kutularda itmenin, geometri dondurulmadan önce çözülmesi",
+        "Bu projeye ve bu kalıp şartnamesine göre tanımlanmış kalıp garanti şartları",
+        "Değiştirmeye değer bir şey olmadığını düşündüğümüz yerde, bunu da söyleriz"
+      ],
+      "note": "48 iş saati içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
+    },
+
+    "panels": {
+      "heading": "Daha ayrıntılı",
+      "items": [
+        {
+          "title": "Çelik işlenmeden önce — büyük parça kontrol listesi",
+          "bullets": [
+            "Nominal cidar önceki modelden devralınmak yerine kendi gerekçeleriyle yeniden incelenir.",
+            "Nervürler nominal cidarın kabaca yüzde 60'ında ya da altında, kökleri radyuslu.",
+            "Akış uzunluğu / cidar kalınlığı oranı, aday her yolluk girişinden en uzak noktada kontrol edilir.",
+            "Yolluk girişi konumları birleşme izleri görünmeyen yüzeylere düşecek şekilde seçilir ve kademeli dolumun gerekli olup olmadığına karar verilir.",
+            "Derin maçalara soğutma, parça hâlâ değiştirilebilirken baffle ya da bubbler ile planlanır.",
+            "Maça / göz sıcaklık stratejisi enjeksiyon atölyesine bırakılmaz, tasarım aşamasında kararlaştırılır.",
+            "Çıkma açısı, belirlenen doku derinliğiyle birlikte tek bir şartname olarak ele alınır, iki ayrı şartname olarak değil.",
+            "Derin kutularda itme çözülür — sıyırıcı plakalar, hava valfleri ve çıkma açısı ile vakumun nasıl etkileştiği.",
+            "Plaka kalınlığı ve destek pimleri, açıklık boyunca göz basıncına göre boyutlandırılır.",
+            "Her geçmeli tırnağa cidar kalınlığının kabaca yarısı kadar kök radyusu verilir."
+          ]
+        },
+        {
+          "title": "Beyaz eşyada konuma göre malzemeler",
+          "bullets": [
+            "Soğuk iç hacim — stiren bazlılar. Yapı için HIPS ve ABS, şeffaf raflar ve çekmece ön panelleri için SAN ve şeffaf PS.",
+            "Orada belirleyici özellik çekme mukavemeti değil, ESCR'dir: köpürtücü gaz buharı, gıda yağları ve alkali temizleyiciler varlığında ılımlı ve sürekli gerilme altında çatlamaya direnç.",
+            "Yayımlanmış testler, modifiye edilmemiş HIPS'te 0,5 MPa ve yüzde 2 birim uzamada siklopentan altında 48–72 saat içinde çatlak başladığını, uygun şekilde modifiye edilmiş kalitelerde ise bu sürenin 500 saatin üzerine çıktığını gösteriyor.",
+            "Kauçuk faz camsı geçiş sıcaklığına yaklaştıkça darbe dayanımı derin dondurucu sıcaklığında düşer. Kalite seçimi kesit kalınlığından daha önemlidir — tezgâhta sağlam duran bir rafın −30 °C'de kırılmasının nedeni budur.",
+            "Çamaşır ve bulaşık tarafı — ağırlıklı olarak PP, rijitlik ve ölçüsel kararlılık için sık sık talk dolgulu; aşınma ve mandal hissinin önem taşıdığı yerlerde POM.",
+            "Ön paneller ve çerçeveler — yüzey kalitesi ve ısı dayanımı için ABS ve PC/ABS.",
+            "Dolgulu kaliteler anizotropik çeker. Aynı parçanın dolgulu ve dolgusuz hâli, fiyatı farklı aynı problem değil, iki ayrı kalıp problemidir.",
+            "Kırma malzeme gerçek bir maliyet kaldıracıdır ve gerçek bir tavanı vardır: yayımlanmış uygulama, darbe özellikleri ölçülebilir biçimde düşmeden önceki sınırı ABS için yüzde 20, HIPS için yüzde 25 civarında veriyor."
+          ],
+          "source": "Bu panodaki rakamlar yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir. Malzeme testi, belgelendirmesi ya da onayı yapmıyoruz."
+        },
+        {
+          "title": "Kozmetik kusurlar ve gerçekte nereden başladıkları",
+          "bullets": [
+            "Bir nervür ya da göbeğin üzerinde çöküntü — yerel kalın kesit. Tutma basıncında değil, geometride düzeltilir.",
+            "Görünen yüzeyde birleşme izi — yolluk girişi konumu. Yalnızca prosesle değil, girişi taşıyarak ya da sıralı girişle düzeltilir.",
+            "Uzun bir panelde duraklama ve akış izleri — kademeli dolumda girişten girişe devir zamanlaması. Tekniğin faydalarının yanında belgelenmiş, gerçek bir artık etkisidir.",
+            "Uzak uçta eksik dolum — akış uzunluğu aşılmıştır. Bir giriş ekleyin ya da cidarı yeniden ele alın.",
+            "Büyük bir kalıbın ortasında çapak — yetersiz mengene kuvveti değil, göz basıncı altında plaka sehimi.",
+            "Bir yüzey boyunca parlaklık ya da doku uyumsuzluğu — çelik yüzey farkı; çoğunlukla bir tamirden sonra ortaya çıkar ve ürün monte edildiğinde fazlasıyla görünür.",
+            "Sürtme ve çizik izleri — doku derinliği, ona uygun çıkma açısı verilmeden belirlenmiştir.",
+            "Partiler arası renk kayması — pigment ile kırma malzeme oranının birlikte oynaması.",
+            "Kalın kesitlerde boşluklar — görsel muayeneden geçer, sonradan yapısal olarak çuvallar."
+          ]
+        }
+      ]
+    }
+  },
+
+  "cta": {
+    "headline": "Parçayı gönderin.",
+    "body": "Bir model, bir teknik resim ya da yanında bir cetvelle çekilmiş bir fotoğraf. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendirir, 48 iş saati içinde dönüş yaparız. Hiçbir şey paylaşılmadan önce NDA.",
+    "action": "Projenizi gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form. Beyaz eşya üretiyoruz. Konuşmak istediğim bir parça var — adı: [parça], yaklaşık ölçü: [U x G x Y mm], malzeme: [biliniyorsa], yıllık adet: [biliniyorsa]. İhtiyacım: [yeni kalıp / yenileme kalıbı / ikinci kaynak kalıbı / maliyet incelemesi]. NDA ile başlayabilir miyiz?",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+  }
+}

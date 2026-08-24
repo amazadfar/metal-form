@@ -1,0 +1,587 @@
+{
+  "meta": {
+    "title": "Boru ek parçası kalıpları — tesisat | Metal Form",
+    "description": "Plastik boru ek parçaları için kalıp ve mühendislik: dirsekler, teler, manşonlar, dişli adaptörler, vana gövdeleri ve atık su parçaları. Katlanabilir ve diş sökücü maçalar, yüksek gözlü ve modüler aile kalıpları, ikinci kaynak kalıpları. 2006'dan beri."
+  },
+  "name": "Tesisat ve İnşaat",
+  "tile": "Tek bir kalıp mantığının kırk ürün koduna hizmet etmek zorunda olduğu ek parça aileleri. Dişler, sızdırmazlık geometrisi, diş sökücü ve katlanabilir maçalar ve ürün ailesi boyunca ölçüsel tutarlılık.",
+  "tileParts": "Ek parçalar · Dişler · Aileler",
+  "hero": {
+    "kicker": "Tesisat ve İnşaat",
+    "headline": [
+      "Bir ek parça ailesi, katalog olmadan önce",
+      "bir kalıp problemidir."
+    ],
+    "lead": "Dirsekler, teler, manşonlar, dişli adaptörler, vana gövdeleri, geçmeli, elektrofüzyonlu ve atık su parçaları. Ölçü tablosunu, malzemeyi ve yıllık adedi gönderin. Kalıp rotasını, göz sayısını, mekanizmayı ve parça ağırlığını geri veririz.",
+    "markers": [
+      "Katlanabilir ve diş sökücü maçalar",
+      "46 göze kadar kalıp deneyimi",
+      "Ürün kodu kuyruğu için modüler şaseler"
+    ]
+  },
+
+  "blocks": {
+    "plate": {
+      "label": "Ürün ailesi paftası · tek ızgara, tek ölçek",
+      "note": "On iki ek parça tipi, birbiriyle aynı ölçekte ve ince konturla çizilmiş. Turkuaz polimeri, pirinç rengi metali gösterir. Bu sayfadaki her çizim buna uyar.",
+      "keyPolymer": "Polimer",
+      "keyMetal": "Metal insert",
+      "cells": [
+        { "id": "el90", "name": "Dirsek 90°", "code": "EL-90", "range": "20–110" },
+        { "id": "el45", "name": "Dirsek 45°", "code": "EL-45", "range": "20–110" },
+        { "id": "teeEq", "name": "Eş çaplı te", "code": "TE-EQ", "range": "20–110" },
+        { "id": "teeRd", "name": "Redüksiyonlu te", "code": "TE-RD", "range": "25–110" },
+        { "id": "socket", "name": "Manşon", "code": "SO-EQ", "range": "20–110" },
+        { "id": "socketRd", "name": "Redüksiyonlu manşon", "code": "SO-RD", "range": "25–90" },
+        { "id": "cap", "name": "Kör tapa", "code": "CP", "range": "20–110" },
+        { "id": "adM", "name": "Erkek dişli adaptör", "code": "AD-M", "range": "20–75" },
+        { "id": "adF", "name": "Dişi dişli adaptör", "code": "AD-F", "range": "20–75" },
+        { "id": "union", "name": "Rakor", "code": "UN", "range": "25–63" },
+        { "id": "wall", "name": "Duvar dirseği", "code": "WP", "range": "20–32" },
+        { "id": "valve", "name": "Vana gövdesi", "code": "VB", "range": "25–63" }
+      ]
+    },
+
+    "range": {
+      "index": "01",
+      "kicker": "Ürün ailesinin kendisi üründür",
+      "heading": "Tek geometri, dokuz çap, on iki konfigürasyon.",
+      "body": "Çalışan bir ek parça ailesi tipik olarak 200 ila 900 aktif ürün kodudur. Bunların bir avuç dolusu adedin büyük bölümünü taşır. Geri kalanı kalıp maliyetinin büyük bölümünü taşır. Bu dengesizlik sektörün belirleyici ticari problemidir ve bir katalog problemi olmadan çok önce bir kalıp problemidir.",
+      "body2": "Aşağıda bir ürün ailesinin biçimi matris olarak çizilmiştir: dokuz nominal çapa karşı on iki ek parça tipi. Bir ürün ailesinin nasıl çoğaldığının bir örneğidir; bir Metal Form projesi değildir ve sizinki için bir öneri değildir.",
+      "tabsLabel": "Kalıp stratejisi",
+      "views": [
+        {
+          "id": "split",
+          "name": "Ürün kodu başına bir kalıp",
+          "headline": "Matriste dolu olan her konum kendi kalıp setini alır.",
+          "note": "Her kalıp seti kendi itme sistemini, kendi soğutma devresini ve kendi bakım geçmişini taşır. Yüksek adetli ölçüler doğru şekilde karşılanır. Kuyruk ise aynı fiyata ödenir ve bunu hiçbir zaman geri kazandırmaz."
+        },
+        {
+          "id": "family",
+          "name": "Adanmış baş, modüler kuyruk",
+          "headline": "Adet neredeyse orada yüksek göz sayısı. Olmadığı yerde ortak şaseler.",
+          "note": "Standart bir şase makinede kalırken göz ve maça insertleri değişir. Komple kalıp seti yerine maça ve göz satın alırsınız; kalıphanenin işleme saatleri de insertlere gider."
+        }
+      ],
+      "arith": {
+        "positions": "Matriste dolu konum",
+        "bases": "Gereken kalıp seti",
+        "inserts": "Göz ve maça insert takımı",
+        "dedicated": "Adanmış yüksek gözlü kalıp",
+        "frames": "Standart şase"
+      },
+      "matrixLabel": "Ek parça tipi × nominal çap, mm",
+      "typeColumn": "Ek parça tipi",
+      "diameters": ["20", "25", "32", "40", "50", "63", "75", "90", "110"],
+      "matrix": [
+        [1, 1, 1, 2, 2, 2, 2, 2, 2],
+        [1, 1, 1, 2, 2, 2, 2, 2, 2],
+        [1, 1, 1, 2, 2, 2, 2, 2, 2],
+        [0, 2, 2, 2, 2, 2, 2, 2, 2],
+        [1, 1, 1, 2, 2, 2, 2, 2, 2],
+        [0, 2, 2, 2, 2, 2, 2, 2, 0],
+        [2, 2, 2, 2, 2, 2, 2, 2, 2],
+        [2, 2, 2, 2, 2, 2, 2, 0, 0],
+        [2, 2, 2, 2, 2, 2, 2, 0, 0],
+        [0, 2, 2, 2, 2, 2, 0, 0, 0],
+        [2, 2, 2, 0, 0, 0, 0, 0, 0],
+        [0, 2, 2, 2, 2, 2, 0, 0, 0]
+      ],
+      "legend": {
+        "dedicated": "Adanmış kalıp",
+        "frame": "Şase artı insert takımı",
+        "absent": "Ailede yok"
+      },
+      "frames": [
+        { "name": "Şase A", "span": "20–32" },
+        { "name": "Şase B", "span": "40–63" },
+        { "name": "Şase C", "span": "75–90" },
+        { "name": "Şase D", "span": "110" }
+      ],
+      "framesLabel": "Parça hacmine göre şase ölçüleri",
+      "notes": [
+        {
+          "heading": "Baş",
+          "body": "20, 25 ve 32 mm'deki dirsekler, teler ve manşonlar fiilen durmadan çalışır. Küçük izdüşüm alanı, kısa akış yolları, kesintisiz talep. Ailedeki, göz sayısının makine saatini doğrudan böldüğü tek geometri budur ve yüksek göz sayısını tartışmasız kaldırır. Metal Form 46 göze kadar kalıp imal etmiştir."
+        },
+        {
+          "heading": "Kuyruk",
+          "body": "90 mm'lik redüksiyonlu bir te yılda üç kez çalışabilir. Bir duvar dirseği kampanyalarla çalışır. Bu parçalar adanmış bir kalıp setini taşıyamaz ve onlara birer kalıp seti yaptırmak, bir kalıp bütçesinin hiçbir şey üretmeden yok olmasının en yaygın yoludur."
+        },
+        {
+          "heading": "Mutabakat",
+          "body": "Bir parça hangi rotadan giderse gitsin, matristeki her manşonun aynı boruyla anlaşması gerekir. Şase bu gerekliliği gevşetmez. Yalnızca işleme saatlerinin nereye gideceğini değiştirir."
+        }
+      ],
+      "close": "Göz eklemeden önce düzeni dengeleyin. Eşit dolmayan 32 gözlü bir kalıp, sekiz reddi olan 24 gözlü bir kalıptır ve bedeli 32 gözlüymüş gibi ödenir."
+    },
+
+    "mechanism": {
+      "index": "02",
+      "kicker": "Geçmeyi dışarı çıkarmak",
+      "heading": "Geçme mekanizmayı belirler. Mekanizma çevrimi belirler.",
+      "body": "Neredeyse her ek parçada öylece itilemeyecek bir şey vardır: bir iç kanal, kalıplanmış bir diş, bir conta yuvası, 360°'lik bir detay. O noktada kalıp bir kap olmaktan çıkar ve bir mekanizma hâline gelir. Maliyetin, çevrimin, duruşların ve saha arızalarının büyük bölümünün kaynağı orasıdır. Bir ek parça mühendisinin ilk okuduğu bölüm budur; bu yüzden düz yazılmıştır.",
+      "options": [
+        {
+          "id": "collapsible",
+          "name": "Katlanabilir maça",
+          "summary": "Segmentleri radyal olarak içeri çekilen ve hiçbir şeyi döndürmeden 360°'lik bir iç detayı serbest bırakan, yarıklı çelik bir kovan.",
+          "figureLabel": "Katlanabilir maça · plan kesiti ve yan kesit",
+          "legend": [
+            { "n": "1", "text": "Yarıklı segmentler. Standart tasarım on iki tane kullanır; kırlangıç kuyruklu tasarımlar tek tek onarılabilen altı büyük segment kullanır." },
+            { "n": "2", "text": "Merkez pim. Önce o geri çekilir; segmentler sonra onun üzerine içeri katlanır." },
+            { "n": "3", "text": "Katlanma stroku. Kanalı, conta yuvasını ya da kısmi dişi serbest bırakan budur." },
+            { "n": "4", "text": "Maça flanşı ile merkez pim flanşı arasındaki kafa boşluğu. Tam tutulur; aksi hâlde mekanizma doğru katlanmaz." }
+          ]
+        },
+        {
+          "id": "unscrewing",
+          "name": "Diş sökücü maça",
+          "summary": "Genellikle kremayer-pinyon tahrikli, oluşturduğu kalıplanmış dişten kendini söken döner bir maça.",
+          "figureLabel": "Diş sökücü maça · yan kesit",
+          "legend": [
+            { "n": "1", "text": "Maça milindeki pinyon." },
+            { "n": "2", "text": "Kremayer. Stroku dönmeyi belirler ve düzendeki her gözün onunla senkron kalması gerekir." },
+            { "n": "3", "text": "Maçadaki diş formu. Tam form; bu mekanizmanın var olma nedeni de budur." },
+            { "n": "4", "text": "Kalıplanmış parça. Maça içinden dönerek çıkarken parçanın dönmeye karşı tutulması gerekir." }
+          ]
+        }
+      ],
+      "compare": {
+        "label": "İki mekanizma, aynı satırlarda",
+        "featureColumn": "Karşılaştırma başlığı",
+        "rows": [
+          {
+            "k": "Kapsam",
+            "a": "360°'lik kanallar, conta yuvaları ve kısmi dişler. Yayımlanmış mini maça verileri Ø 10,8 mm'ye kadar iner ve %80 tam dişe kadar çıkar.",
+            "b": "Katlanan bir segmentin kapatamayacağı formlar dâhil tam diş formu."
+          },
+          {
+            "k": "Çevrim",
+            "a": "Yayımlanmış karşılaştırmalar katlanabilir maçaları diş sökücü mekanizmalardan %30'a varan oranda daha hızlı veriyor.",
+            "b": "Daha yavaş. Parça itilmeden önce maçanın dönerek çıkması gerekir."
+          },
+          {
+            "k": "Mekanizmadaki parçalar",
+            "a": "Segmentler, merkez pim, flanşlar. Standartta on iki segment, kırlangıç kuyruklu tasarımlarda altı.",
+            "b": "Kremayer, pinyon, rulmanlar, keçeler, redüktör ve gözler arasındaki senkronizasyon."
+          },
+          {
+            "k": "Eşleştirilen şey",
+            "a": "Her maça numaralı bir merkez pime eşleştirilir. Maçalar kalıptaki konumlar arasında birbirinin yerine geçmez.",
+            "b": "Düzendeki her gözde dönme sayısı ve zamanlama."
+          },
+          {
+            "k": "Belgelenmiş arıza biçimleri",
+            "a": "Kafa boşluğunun kaybı, hasarlı segmentler, yanlış pime monte edilmiş bir segment, on iki çelik parçanın buluştuğu çizgilerde çapak.",
+            "b": "Kırık makaralar, hasarlı kremayerler, su ve yağ kaçakları. Parçada ise: sürtme izi, ovallik, çapak ve gres bulaşması."
+          },
+          {
+            "k": "Bakım talebi",
+            "a": "Rutin iş segment onarımıdır. Kırlangıç kuyruklu tasarımlar tek tek segment değiştirilerek onarılır.",
+            "b": "Yayımlanmış kaynaklarda imal edilen en karmaşık kalıplar arasında ve bir enjeksiyon salonundaki en bakım yoğun mekanizma olarak tanımlanır."
+          }
+        ],
+        "source": "Bu tablodaki karşılaştırmalı değerler yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
+      },
+      "third": {
+        "heading": "Yan ağızlar, sıyırma ve her birinin durduğu yer",
+        "body": "Telerdeki, haçlardaki ve kolektörlerdeki yan ağızlar birer sürgüdür. Ayırma yüzeyini kalıptaki başka her şeyden önce belirlerler; en son değil en önce kararlaştırılmalarının nedeni budur. Sığ bir geçmeli tırnak ya da alçak bir bilezik, malzemenin kendi esnekliği kullanılarak sıyrılabilir — zorlamalı çıkarılabilir — ve detay gerçekten sığ, hammadde gerçekten affediciyse en ucuz cevap budur. Bunun ötesine zorlandığında itme olmaktan çıkar, bir çatlak yayıcıya dönüşür."
+      },
+      "close": "Mekanizmayı sizin geometrinize ve kendi salonunuzun kaldırabileceği bakıma göre belirleriz. Sizin parçanızda kullanmayacağımız bir mekanizma varsa bunu tekliften sonra değil, teklifte söyleriz."
+    },
+
+    "thread": {
+      "index": "03",
+      "kicker": "Diş ve sızdırmazlık",
+      "heading": "Konik diş yanaklarından sızdırmazlık yapar. Silindirik diş bir conta yuvası ister.",
+      "body": "Teknik resimde birbirine benzeyen iki diş, bir ek parçada hiç de benzer davranmaz ve farklı çelik ister. Konik diş, kavradıkça sıkı geçmeyle sızdırmazlık sağlar. Silindirik diş tek başına hiç sızdırmazlık yapmaz — bunu başka bir şeyin yapması gerekir ve o şey bir kanal, bir yüzey ya da bir elastomerdir. Bunu yanlış yapmak; monte olan, şöyle bir bakışta geçen ve duvarın içinde terleyen bir ek parça üretir.",
+      "figures": [
+        {
+          "id": "taper",
+          "name": "Konik diş",
+          "figureLabel": "Konik iç diş · yarım kesit",
+          "note": "Delik daralır. Kavrama yanaklarda sıkışır ve sızdırmazlığı dişin kendisi yapar.",
+          "legend": [
+            { "n": "1", "text": "Bölüm çizgisindeki koniklik." },
+            { "n": "2", "text": "Yanak sıkı geçmesi. Sızdırmazlık yüzeyi burasıdır." },
+            { "n": "3", "text": "Kalıptaki kapama yanaklara oturur; bu formu hem işlemesi hem bakımı zor kılan da budur." }
+          ]
+        },
+        {
+          "id": "parallel",
+          "name": "Silindirik diş",
+          "figureLabel": "Silindirik iç diş · yarım kesit",
+          "note": "Delik paralel kalır. Diş yalnızca yük taşır, başka bir şey yapmaz. Sızdırmazlığı bir pul, bir yüzey ya da bir O-ring sağlar.",
+          "legend": [
+            { "n": "1", "text": "Paralel diş tepesi çizgisi." },
+            { "n": "2", "text": "Yüzey ya da pul yatağı. Sızdırmazlık dişte değil, burada." },
+            { "n": "3", "text": "Bir montajcı fazla tork uyguladığında çevresel gerilmeyi taşıyan göbek. Buradaki çatlama bir montajcı hatası değil, bir tasarım sonucudur." }
+          ]
+        },
+        {
+          "id": "gland",
+          "name": "O-ring kanalı",
+          "figureLabel": "Delik içinde O-ring kanalı · kesit",
+          "note": "Bir delik içinde 360°'lik bir kanal. Çalışma derinliğinde hiçbir şey bunun üzerinden temiz sıyrılmaz; kalıba katlanabilir maçayı sokan da bu kanaldır.",
+          "legend": [
+            { "n": "1", "text": "Kanal genişliği." },
+            { "n": "2", "text": "Kanal derinliği. Sıkışmayı o belirler: az sıkışan terler, çok sıkışan kalıcı deformasyona uğrar." },
+            { "n": "3", "text": "Köşe durumu. Keskin köşeler contayı keser; fazla yumuşak köşeler contanın taşmasına izin verir." },
+            { "n": "4", "text": "Kanal ile karşı delik arasında sıkışan elastomer." }
+          ]
+        }
+      ],
+      "ledgerLabel": "Detay ve onu oluşturan çelik",
+      "ledgerColumns": ["Ek parçadaki detay", "Kalıpta olması gereken"],
+      "ledger": [
+        { "k": "Konik iç diş", "v": "Konikliği üzerine işlenmiş diş sökücü maça. Kapama diş yanaklarına oturur." },
+        { "k": "Silindirik iç diş", "v": "Diş sökücü maça; ya da formun segmentlerin temiz kapamasına izin verdiği yerde katlanabilir maça." },
+        { "k": "Dış diş", "v": "Ayırma yüzeyinde bölünmüş göz; ya da ayrım çizgisine tahammül edilemediği yerde diş sökücü kovan." },
+        { "k": "Delik içinde O-ring kanalı", "v": "Katlanabilir maça. Kanal 360°'lik bir geçmedir ve sıyrılmaz." },
+        { "k": "Geçmeli bağlantı kovan gövdesi", "v": "Conta yuvası için katlanabilir maça, serbest bırakma bileziği detayları için sürgüler ve tutucu halkanın kabul edeceği bir delik yüzeyi." },
+        { "k": "Üzeri kalıplanmış pirinç diş", "v": "İnsert taşıyan kalıp. İnsertin konumlandırılması, tırtıla karşı dönme emniyeti ve insertin kendi yanaklarında kapama." },
+        { "k": "Te ya da kolektörde yan ağız", "v": "Sürgü ya da yan maça. Kalıbın tamamı için ayırma yüzeyini o sabitler." }
+      ],
+      "insert": {
+        "heading": "Polimerin metalle buluştuğu yer",
+        "body": "Dişli bir adaptör, plastik bir sistemle metal bir sistem arasındaki arayüzdür ve belgelenmiş iki biçimde çuvallar. Polimer tırtıla hiç kavramadığı için insert çeker ya da boşta döner. Ya da bir montajcı, o cidardaki çevresel gerilmenin taşıyabileceğinden fazla tork uyguladığı için çevresindeki göbek yarılır. İkisi de tasarımda kararlaştırılır: tırtıl kavraması, insertin konumu, insertin çevresindeki cidar ve kalıbın insert üzerinde, dişe çapak taşımayacak kadar temiz kapayıp kapamadığı. İnsert yerleştirme aynı zamanda hücrenin ekonomisini de değiştirir; çünkü artık her atımda kalıba metal koyacak bir insan ya da bir robot gerekir."
+      }
+    },
+
+    "material": {
+      "index": "04",
+      "kicker": "Kalıba malzeme karar verir",
+      "heading": "Yolluğu, çeliği ve havalandırmayı hammadde seçer.",
+      "body": "Dört farklı polimerle temas ettikten sonra ayakta kalan bir ev reçetesi yoktur. PVC bekleme süresini cezalandırır. Polipropilen düzensiz soğutmayı cezalandırır. PE100 kalıcı gerilmeyi cezalandırır. Her biri yolluk kararını, çelik kararını ve havalandırma kararını değiştirir ve sırayı yanlış yapmanın bedeli her seferinde başka türlü ağır olur.",
+      "columns": [
+        "Malzeme",
+        "Kalıptaki davranışı",
+        "Çekme",
+        "Yolluk",
+        "Çelik ve yüzey",
+        "Havalandırma",
+        "Karakteristik risk"
+      ],
+      "rows": [
+        {
+          "name": "PVC · PVC-U",
+          "window": "Ergiyik kabaca 173–190 °C bandında. Yaklaşık 200 °C'nin üzerinde bozunur ve HCl açığa çıkarır.",
+          "shrink": "Düşük ve öngörülebilir. Amorf.",
+          "runner": "Temkinli varsayılan olarak soğuk yolluk. Isıtmalı bir manifoldda uzun bekleme gerçek bir bozunma riskidir.",
+          "steel": "Sertlikten önce korozyon direnci. Paslanmaz ya da kaplanmış göz yüzeyleri.",
+          "vent": "Yayımlanmış kılavuz kabaca 0,03–0,05 mm veriyor.",
+          "risk": "Siyah noktalar, yanıklar ve bozunma ürünlerinin kendisinden kaynaklanan göz korozyonu."
+        },
+        {
+          "name": "PP · PP-R",
+          "window": "Yarı kristalin. Kalıp sıcaklığı; yüzey, çarpılma ve çevrim arasında canlı bir takastır ve üretimde keşfedilmek yerine parça bazında kararlaştırılmalıdır.",
+          "shrink": "Tipik olarak %1–2,5; soğuma hızı ve cidar kalınlığıyla birlikte oynar.",
+          "runner": "Yüksek adetlerde sıcak yolluk kendini geri öder. Valfli giriş, kalın bir manşon oturma bölgesinde ütüleme ve giriş donması kontrolü verir.",
+          "steel": "Derin paralel manşonlarda parlatma ve çıkma açısı. İtme, bir kuvvet sorunu olmadan önce bir yüzey sorunudur.",
+          "vent": "En son dolan bölgelere konumlandırılır — bir dirseğin topuğu, bir tenin kolu.",
+          "risk": "Manşon oturma bölgesinin düzensiz soğumasından kaynaklanan ovallik. Hiçbir proses ayarı onu yeniden yuvarlak yapmaz."
+        },
+        {
+          "name": "PE100",
+          "window": "Gömülü sistemler ve elektrofüzyon. Belirleyici özellik rijitlik değil, gerilme çatlaması direncidir.",
+          "shrink": "PP'de olduğu gibi yüksek ve soğumaya bağlı.",
+          "runner": "Adette sıcak yolluk. Yolluk girişi konumu kolaylığa göre değil, kalıcı gerilmeye göre seçilir.",
+          "steel": "Manşon gövdelerinde delik eş merkezliliği; elektrofüzyon parçalarında rezistans yatağı geometrisi.",
+          "vent": "Standart poliolefin uygulaması; en son dolan bölgeye göre ölçülendirilir.",
+          "risk": "Kalıptan kalan gerilmenin sürekli yük ve agresif bir ortamla buluşması. Çevresel gerilme çatlaması."
+        },
+        {
+          "name": "PEX sistem polimerleri",
+          "window": "Polisülfon ailesinden polimerler ve metal varyantlarda pirinç. Yüksek ergiyik sıcaklığı, sıkı kurutma.",
+          "shrink": "Düşük. Amorf mühendislik polimeri.",
+          "runner": "Bekleme süresi dikkatle kontrol edilen sıcak yolluk.",
+          "steel": "Yüksek sıcaklığa uygun yüzeyler; gövdenin pirinç maçalı olduğu yerde insert konumlandırması.",
+          "vent": "Yüksek viskoziteli, yüksek sıcaklıklı bir ergiyiğe göre ölçülendirilir.",
+          "risk": "Kalıpta değil, sahada: aseton içeren solventli temizleyiciler, UV ve sprey köpük; bu polimerlere saldırdığı belgelenmiş etkenlerdir."
+        },
+        {
+          "name": "ABS",
+          "window": "Yer üstü ve yer altı atık su hatları. Geniş ve affedici.",
+          "shrink": "Düşük ve kararlı.",
+          "runner": "İki rota da olur. Adet ve renk değişim sıklığı belirler.",
+          "steel": "Standart kalıp çelikleri. Solventle yapıştırılan bir manşonun temiz bir delik istediği yerde parlatma.",
+          "vent": "Standart uygulama.",
+          "risk": "Büyük atık su gövdelerinde kol birleşimlerindeki birleşme izleri; iki cephenin, gömülene kadar kimsenin basınç testi yapmadığı bir parçada buluştuğu yer."
+        }
+      ],
+      "note": "Beşinde de geçerli tek bir kural var. Veri sayfasındaki çekme bir ölçü değil, bir başlangıç varsayımıdır. İlk göz çelik fazlası bırakılarak işlenir ve gerçek parçalara karşı düzeltilir; çünkü bir ek parça ailesinin kendisiyle anlaşması gerekir ve bir el kitabı değeri bunu vermez.",
+      "source": "Bu tablodaki proses değerleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
+    },
+
+    "agreement": {
+      "index": "05",
+      "kicker": "Ölçüsel mutabakat",
+      "heading": "Yuvarlak olmayan bir manşon, yapılmamış bir bağlantıdır.",
+      "body": "Soket kaynağı borunun dışını ve manşonun deliğini birlikte eritir ve ikisini iç içe iter. Düzensiz temas oturmayı engeller. Bağlantı yapılmış görünür, görsel muayeneden geçer ve sonradan sızdırır. Ovallik ve manşon derinliği tutarsızlığı; bu sektörde hurda kutunuza değil, müşterinin şantiyesine ulaşan iki ölçüsel arızadır — bu da onları verim kaybı değil, ticari hasar yapar.",
+      "figA": {
+        "label": "Manşon deliği, bütün gözler üst üste",
+        "note": "Tek kalıp, çok göz, tek nominal delik. Saçılım, bir kalıbın tutabildiği ya da tutamadığı şeydir. Yuvarlaklıktan çıkmış profil, oturmayacak olandır.",
+        "legend": [
+          { "n": "1", "text": "Nominal delik." },
+          { "n": "2", "text": "Gözler arası saçılım. Tek numunede görünmez, bir sevkiyat boyunca belirleyicidir." },
+          { "n": "3", "text": "Yuvarlaklıktan çıkmış. Bu parça çap bandının içindedir ve yine de bir bağlantı yapmaz." }
+        ]
+      },
+      "figB": {
+        "label": "Manşon ve boru ucu · kavrama kesiti",
+        "note": "İşlevsel ölçüler kimsenin fotoğrafını çekmediği ölçülerdir: geçme derinliği, o derinlik boyunca sıkı geçme payı ve deliğin bu boyun tamamında yuvarlak olup olmadığı.",
+        "legend": [
+          { "n": "1", "text": "Geçme derinliği." },
+          { "n": "2", "text": "Geçme boyunca sıkı geçme payı — bilinçlidir ve solventle yapıştırılan bir manşonun yapıştırılmış bir boşluk değil, çimentolanmış bir bağlantı yapmasının nedenidir." },
+          { "n": "3", "text": "Kaynak ya da yapıştırma bölgesi. Yalnızca iki yüzeyin gerçekten temas ettiği yerde vardır." }
+        ]
+      },
+      "toleranceLabel": "Yayımlanmış referans değerler",
+      "tolerance": [
+        { "k": "SDR", "v": "dn / en — nominal dış çapın cidar kalınlığına bölümü. Sektörün cidar sınıfı için kısaltması." },
+        { "k": "Yaygın seriler", "v": "SDR 11, SDR 17.6, SDR 26." },
+        { "k": "Çap toleransı, ≤ 40 mm", "v": "Kabaca ± 0,04 mm bandında." },
+        { "k": "Çap toleransı, ≤ 50 mm", "v": "Kabaca ± 0,06 mm bandında." },
+        { "k": "Soket kaynağı aralığı", "v": "PP-R Ø20–63 elle, aparatla Ø125'e kadar. Isıtıcı ayar noktası 260 ± 10 °C olarak yayımlanmıştır." }
+      ],
+      "source": "Bu değerler PP-R boru sistemleri ve standartları üzerine yayımlanmış malzemeden alıntılanmıştır — DIN 8077, DIN 8078, EN ISO 15874 ve DVS 2207. Burada standartların değerleri olarak anılmaktadır. Bir Metal Form yetkinlik beyanı değildir ve teklif ettiğimiz bir tolerans değildir.",
+      "canHeading": "Bir kalıbın karar verebildikleri",
+      "can": [
+        "Düzen boyunca gözler arası mutabakat",
+        "Dolum basıncı altında cidar düzgünlüğü ve maça konumu",
+        "Manşon oturma bölgesinin çevresinde soğutma simetrisi; ovalliğin kazanıldığı ya da kaybedildiği yer",
+        "Yolluk girişi konumu; dolayısıyla birleşme izinin nereye düşeceği",
+        "Havalandırma konumu; böylece en son dolan bölge yanan bölge olmaz"
+      ],
+      "cannotHeading": "Bir kalıbın karar veremedikleri",
+      "cannot": [
+        "Bitmiş ek parçanın hangi basınç sınıfına beyan edileceği",
+        "Seçtiğiniz hammaddenin sıcaklık altında on yıllar boyunca performans gösterip göstermeyeceği",
+        "Montajcının elektrofüzyon bağlantısından önce boruyu kazıyıp kazımadığı",
+        "Şantiyedeki ısıtıcının gerçekten ayar noktasında olup olmadığı",
+        "Borunun ve ek parçanın SDR'sinin birbirine uyacak şekilde belirlenip belirlenmediği"
+      ],
+      "close": "Ovalliğe prosesten değil, soğutma düzeninden yüklenin. Düzensiz soğutulmuş bir manşon düzensiz çeker ve hiçbir ayar onu yeniden yuvarlak yapmaz."
+    },
+
+    "economics": {
+      "index": "06",
+      "kicker": "Bin adet başına maliyet",
+      "heading": "Her atımda üç sayı ödenir.",
+      "body": "Parça başına gram. Atım başına saniye. Atım başına parça. Kalıp fiyatı bir kez ödenir. Bu üçü ise ürün ailesinin bütün ömrü boyunca ödenir ve bin adet başına maliyetinizi gerçekte oluşturan da bunlardır. Bu üçünü karşılaştırmadan iki kalıp teklifini karşılaştıran bir alıcı, yanlış şeyi karşılaştırmıştır.",
+      "numbers": [
+        {
+          "n": "01",
+          "name": "Parça başına gram",
+          "note": "Hammadde, işletmedeki en büyük tekrar eden kalemdir ve akışı hiç durmaz. Katalog ek parçalarının çoğunda cidar kalınlığı, ilk yapıldığından beri kimsenin yeniden incelemediği bir teknik resimden devralınmıştır."
+        },
+        {
+          "n": "02",
+          "name": "Atım başına saniye",
+          "note": "Kalın cidarlı bir ek parçada çevrimin büyük bölümü soğutmadır. Yayımlanmış kılavuz, 3 mm üzerindeki PP kesitlerinde yalnızca soğutmayı yirmi ila otuz saniye veriyor. O süre; soğutmanın kalıbın etrafına değil, manşon oturma bölgesinin etrafına serilmesiyle geri kazanılır."
+        },
+        {
+          "n": "03",
+          "name": "Atım başına parça",
+          "note": "Göz sayısı; makine saatinin, işçiliğin ve genel giderin bölenidir. Yalnızca düzen eşit dolup eşit soğuduğunda işe yarar; göz sayısı seçilmeden önce dengenin mühendislikle kurulmasının nedeni de budur."
+        }
+      ],
+      "workedLabel": "Aritmetiğin biçimi",
+      "inputsHeading": "Girdiler",
+      "inputs": [
+        { "k": "Yıllık adet, parça", "v": "8.000.000" },
+        { "k": "Göz", "v": "16" },
+        { "k": "Parça ağırlığı, g", "v": "12,0" },
+        { "k": "Çevrim, s", "v": "24" }
+      ],
+      "outputsHeading": "Şu şekilde çıkar",
+      "outputs": [
+        { "k": "Yıllık atım", "v": "500.000" },
+        { "k": "Parçalardaki hammadde, yılda ton", "v": "96" },
+        { "k": "Yıllık makine saati", "v": "3.333" }
+      ],
+      "deltasHeading": "Ve her girdide tek bir adımın değeri",
+      "deltas": [
+        { "k": "Parçadan bir gram", "v": "Yılda 8 ton hammadde" },
+        { "k": "Çevrimden iki saniye", "v": "Yılda 278 makine saati" },
+        { "k": "16 gözden 24 göze", "v": "Yılda 1.111 makine saati" }
+      ],
+      "disclaimer": "Yukarıdaki rakamlar okunabilir olsun diye seçilmiş, keyfî rakamlardır. Aritmetiğin biçimidir; bir fiyat teklifi değildir, bir kıyaslama değildir ve sizin parçanızda iddia edilen bir sonuç değildir. Sizin rakamlarınız sizindir ve önemli olan yalnızca onlardır.",
+      "lostHeading": "Paranın gerçekte kaybolduğu yer",
+      "lost": [
+        {
+          "k": "Devralınıp taşınan cidar kalınlığı",
+          "v": "Eski bir teknik resim bir cidar belirler, cidar gramı belirler ve o gram sekiz yıl boyunca her atımda yeniden satın alınır. Parça çalıştığı için kimse dosyayı yeniden açmaz."
+        },
+        {
+          "k": "Bir çöküntüyü gizlemek için şişirilmiş çevrim",
+          "v": "Bir soğutma revizyonunun kalıcı olarak ortadan kaldıracağı bir çöküntü izini bastırmak için makinede eklenen iki üç saniye. Proses teknisyeni haksız değil. Haksız olan kalıp."
+        },
+        {
+          "k": "Tek şasenin işini yapan beş kalıp seti",
+          "v": "Aynı gövdenin beş varyantı için yapılmış beş bağımsız kalıp; oysa tek bir standart şase ve beş insert takımı aynı katalog konumlarını karşılardı."
+        }
+      ],
+      "close": "Parçayı ve ölçü tablosunu gönderin. Sizin geometrinizde bu üç sayının şu anda ne olduğunu ve hangisinin, katalogunuzun bağlı olduğu bir ölçüye dokunmadan hareket ettiğini söyleriz."
+    },
+
+    "boundary": {
+      "index": "07",
+      "kicker": "Kapsam",
+      "heading": "Bir kalıp basınç sınıfı vermez.",
+      "body": "Sayfadaki en net çizgi budur ve kimse sormadan söylenmeye değer. Biz kalıp yaparız ve parça üretebiliriz. Bitmiş ek parçanın neyi taşımaya onaylandığı bizim beyan edeceğimiz bir şey değildir; aksini ima eden bir tedarikçi de size kendisi hakkında işe yarar bir şey söylemiştir.",
+      "supplyHeading": "Metal Form'un sağladıkları",
+      "supply": [
+        "Kalıp tasarımı ve imalatı — enjeksiyon, PET, şişirme ve basınçlı döküm; çok gözlü; sıcak ve soğuk yolluk",
+        "Mekanizma mühendisliği — katlanabilir maçalar, diş sökücü maçalar, sürgüler, lifterlar",
+        "Üzeri kalıplanmış pirinç için insertli kalıplar",
+        "CNC frezeleme, tornalama ve manuel talaşlı imalat",
+        "Parça üretimi ve sürekli tedarik",
+        "İkinci kaynak ve ikiz kalıplar, yedekler ve değişim parçaları",
+        "CATIA ve SolidWorks'te numuneden ya da fotoğraftan tersine mühendislik",
+        "İmal ettiğimiz her şeyin 3B verisi, proje bazında belirlenen şartlarla kalıp garantisi, dünya geneline sevkiyat"
+      ],
+      "customerHeading": "Sizde ve belgelendirme kuruluşunuzda kalanlar",
+      "customer": [
+        "Ürününüzün beyan edildiği basınç sınıfı ve PN değeri",
+        "İçme suyu uygunluğu ve ülkenizdeki muadili her türlü onay",
+        "EN, DIN, ISO ya da ASTM ürün standartlarına karşı belgelendirme",
+        "Bitmiş ek parçanın patlatma, sürekli basınç ve ısıl çevrim testleri",
+        "Malzeme seçimi, kalite onayı ve hammadde sertifikasyonu",
+        "Ürün ailesinin sağlaması gereken ölçü tablosu",
+        "Montaj, kaynak parametreleri ve şantiyedeki kaynak prosedürü"
+      ],
+      "statement": "Kalıbı biz yaparız ve parçayı üretebiliriz. Bitmiş ek parçanın bir basınç sınıfı ya da içme suyu uygulaması için onaylanması size, malzemenize ve belgelendirme kuruluşunuza aittir. Hiçbir ürün belgemiz yoktur, ek parça testi yapmayız ve sizin adınıza bir standart iddia etmeyiz. Bu sayfada anılan her yayımlanmış değer, geldiği kaynağa ya da standarda aittir ve bir yetkinlik olarak değil, bağlam olarak alıntılanmıştır."
+    },
+
+    "start": {
+      "index": "08",
+      "kicker": "Süreklilik",
+      "heading": "Tek kalıp, en çok satan tek ölçü, ikizi yok.",
+      "body": "Yarın dursa fabrikayı durduracak tek kalıbın hangisi olduğunu sorun. Bir ek parça ailesinde bu neredeyse her zaman vardır — cironun orantısız bir bölümünü tek bir kalıpta taşıyan 25 mm'lik bir dirsek ya da 32 mm'lik bir te; ikizi yok, çoğu zaman CAD'i de yok. Bu sektördeki üreticiler bir rota kapandığında talebi kaydırabilmek için hammaddede ve satın alınan parçalarda zaten çift kaynak çalıştırıyor. Kalıp aynı muameleyi nadiren görüyor.",
+      "auditHeading": "Cevaplarına ihtiyaç duymadan önce cevaplanmaya değer altı soru",
+      "audit": [
+        {
+          "q": "En yüksek adetli ürün kodunuz için ikiz bir kalıp var mı?",
+          "c": "Yoksa tek bir mekanizma arızası, duran bir katalog numarası ve karşılayamadığınız açık bir bayi siparişi demektir."
+        },
+        {
+          "q": "Elinizde 3B veri var mı, yoksa yalnızca çelik mi?",
+          "c": "CAD'i olmayan çelik hiçbir yerde, hiç kimse tarafından yeniden yapılamaz, revize edilemez ya da çoğaltılamaz — siz de dâhil."
+        },
+        {
+          "q": "Orijinal kalıpçı hâlâ faaliyette mi ve hâlâ dönüş yapıyor mu?",
+          "c": "2011'de kurulmuş ve o günden beri kapanmış bir atölyenin yaptığı bir ürün ailesinin ne yedek parça rotası vardır ne de revizyon rotası."
+        },
+        {
+          "q": "Kalıptan çıkan parçalar hâlâ teknik resme uyuyor mu?",
+          "c": "Kalıplar kayar. Müşterilerinizin kaynattığı boru, dosyadaki teknik resimle değil, parçayla anlaşır."
+        },
+        {
+          "q": "Yedek maçalar ve segmentler nerede ve birini değiştirmek ne kadar sürer?",
+          "c": "Numaralı bir pime eşleştirilmiş bir katlanabilir maça segmenti dünyanın hiçbir yerinde stok kalem değildir."
+        },
+        {
+          "q": "Kalıp teslim süreniz inşaat sezonunuzun neresinde duruyor?",
+          "c": "Şubatta sipariş edilip ekimde gelen bir kalıp, çoktan kapanmış bir sezon için satın alınmıştır."
+        }
+      ],
+      "positionHeading": "Bir ikinci kaynak neyden kurulur",
+      "position": [
+        "Var olduğu yerde sizin 3B verinizden. En hızlı rota ve en düşük risk.",
+        "Verinin olmadığı yerde bize gönderdiğiniz üretim parçalarından; böylece ikiz kalıp, müşterilerinizin hâlihazırda kaynattığı boruyla anlaşır.",
+        "Yalnızca çelik ve parça hayatta kaldıysa numuneden tersine mühendislikle.",
+        "Orijinal kalıp kaydıysa ikiz kalıp, o kaymayı çoğaltmak değil düzeltmek için bir fırsattır.",
+        "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da edilmez ve hangisi olduğunu söyleriz."
+      ],
+      "sendHeading": "Ne göndermeli",
+      "send": [
+        "3B veri; veri artık yoksa fiziksel bir numune",
+        "Ek parçanın sağlaması gereken ölçü tablosu ya da teknik resim — manşon derinliği, delik ve varsa sızdırmazlık geometrisi",
+        "Malzeme ve kalite; çünkü yolluğa, çeliğe, yüzeye ve havalandırmaya hammadde karar verir",
+        "Ürün ailesinin tamamı için değil, ürün kodu bazında yıllık adet",
+        "Hangi ürün kodlarının aynı gövdenin varyantı olduğu; böylece modüler bir şase, ayrı kalıplara karşı değerlendirilebilir",
+        "Kalıbın hâlihazırda sahip olduğunuz ekipmanda çalışması gerekiyorsa hedef makine, tonaj ve tabla ölçüsü",
+        "İnsert kullanılıyorsa pirinç insert teknik resimleri",
+        "Bu bir yenileme ya da ikinci kaynaksa mevcut kalıptan çıkan parçalar"
+      ],
+      "getHeading": "Geri gelen",
+      "get": [
+        "Kalıp rotası — mekanizma, göz sayısı, yolluk ve çelik — sizin geometriniz üzerinden gerekçelendirilmiş hâlde",
+        "Hangi ürün kodlarına adanmış kalıp, hangilerine ortak şase vereceğimiz",
+        "Gönderdiğiniz geometri üzerinde bir parça ağırlığı ve çevrim değerlendirmesi",
+        "Bir yolluk girişini, bir cidarı ya da bir soğutma kanalını nereye taşıyacağımız ve her değişikliğin neye mal olup ne getirdiği",
+        "Sizin parçanızda hangi mekanizmayı kullanmayacağımız ve nedeni",
+        "Tasarım aşamasında tanımlanmış ve kalıpla birlikte fiyatlandırılmış yedek listesi",
+        "Değiştirmeye değer bir şey yoksa o cevap da"
+      ],
+      "factsLabel": "Bir kez belirtildi",
+      "facts": [
+        "2006'dan beri üretim",
+        "1.000'den fazla tamamlanmış proje",
+        "46 göze kadar kalıp deneyimi",
+        "CATIA ve SolidWorks",
+        "Kalıp garantisi, proje bazında şartlar",
+        "Dünya geneline sevkiyat"
+      ],
+      "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    },
+
+    "panels": {
+      "heading": "Daha ayrıntılı",
+      "items": [
+        {
+          "title": "Maça mekanizması seçimi",
+          "bullets": [
+            "Katlanabilir maça — 360°'lik iç kanallar, conta yuvaları ve kısmi dişler için. Standart tasarımlar on iki yarıklı segment kullanır; kırlangıç kuyruklu tasarımlar tek tek onarılabilen altı büyük segment kullanır.",
+            "Yayımlanmış mini katlanabilir maçalar kabaca 10,8 mm çapa kadar iner ve %80 tam dişe kadar kapsar.",
+            "Maça flanşı ile merkez pim flanşı arasındaki kafa boşluğunun hassas biçimde tutulması gerekir ve her maça numaralı bir pime eşleştirilir. Kalıptaki konumlar arasında değiştirilemezler.",
+            "Diş sökücü maça — katlanabilir maçanın kapatamayacağı yerlerde tam diş formu için. Yayımlanmış kaynaklar diş sökücü kalıpları, imal edilen en karmaşık enjeksiyon kalıpları arasında tanımlar.",
+            "Belgelenmiş diş sökücü arıza biçimleri: kırık makaralar, hasarlı kremayerler, su ve yağ kaçakları; parçada ise sürtme izi, ovallik, çapak ve gres bulaşması.",
+            "Sürgüler ve yan maçalar — telerdeki, haçlardaki ve kolektörlerdeki yan ağızlar için. Ayırma yüzeyini başka her şeyden önce onlar belirler.",
+            "Sıyırma ve zorlamalı çıkarma — yalnızca sığ detaylarda ve affedici hammaddelerde uygulanabilir. Ötesinde bir çatlak yayıcıdır.",
+            "Seçimi sizin geometrinize ve bakım kapasitenize göre yaparız ve kullanmayacağımız mekanizmayı adıyla söyleriz."
+          ],
+          "source": "Bu panodaki mekanizma değerleri ve arıza biçimleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
+        },
+        {
+          "title": "Bir ek parça kalıbında yolluk, soğutma ve havalandırma",
+          "bullets": [
+            "PVC, 173–190 °C civarındaki dar bir pencerede işlenir ve yaklaşık 200 °C'nin üzerinde bozunarak HCl açığa çıkarır. Bu, bir operatör güvenliği sorunu olduğu kadar bir kalıp korozyonu sorunudur da.",
+            "Bu da PVC'de soğuk yollukları, kısa beklemeyi, korozyona dayanıklı ya da kaplanmış göz yüzeylerini ve kabaca 0,03–0,05 mm havalandırmayı gerektirir.",
+            "Yüksek adetlerde poliolefinler genellikle sıcak yolluğu haklı çıkarır: optimize edilmiş bir soğuk yolluk bile %50–100 daha fazla çevrim süresi taşır; çünkü yolluğun da parçayla birlikte soğuması gerekir ve her atımda kırma malzeme üretir.",
+            "Valfli giriş, sıcak nozulun veremediği ütüleme ve giriş donması kontrolünü kalın bir manşon oturma bölgesinde verir.",
+            "Ürün kodu kuyruğu tersini savunur. Düşük adet ve sık renk değişimi soğuk yolluğu tercih ettirir; bu yüzden herhangi bir büyüklükteki bir ürün ailesi ikisiyle birden çalışır.",
+            "Bir ek parçada çevrimin büyük bölümü soğutmadır. Yayımlanmış kılavuz, 3 mm üzerindeki kalın PP kesitlerinde yalnızca soğutmayı yirmi ila otuz saniye veriyor.",
+            "Soğutma düzeni kalıbın etrafına değil, manşon oturma bölgesinin etrafına aittir. Çevrim süresi gerçekte orada kazanılır ve standart ek parça kalıplarının en sık az yatırım yaptığı yer de orasıdır.",
+            "PVC için yayımlanmış tasarım kılavuzu: cidar geçişleri nominalin %10–15'i içinde, dik cidarlarda 0,5–1° çıkma açısı, köşe radyusları cidarın %25–75'i kadar."
+          ],
+          "source": "Bu panodaki proses değerleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
+        },
+        {
+          "title": "İkinci kaynak, ikizler ve eski ürün aileleri",
+          "bullets": [
+            "Şu anda tek kalıbı olan ürün kodu için bağımsız ve ölçüsel olarak eşleşen bir kalıp.",
+            "Orijinal kalıpçısı artık var olmayan ya da artık dönüş yapmayan bir ürün ailesi için yenileme kalıbı.",
+            "Yalnızca çeliğin ve numune parçaların hayatta kaldığı eski bir ek parçanın CAD'inin yeniden kurgulanması.",
+            "Artık onu tarif etmiyor olabilecek bir teknik resme göre değil, mevcut kalıbınızın gerçekte ürettiği parçalara göre kurulan ikiz ve ikinci kaynak kalıpları.",
+            "Yedekler, değişim parçaları ve insert takımları; başkasının yaptığı şaseler için olanlar dâhil.",
+            "Geçme sabit kalırken parça ağırlığının azaltılması — katalogunuzun ya da ölçü tablonuzun bağlı olduğu hiçbir ölçüye dokunmadan alınan gramlar.",
+            "İmal ettiğimiz her şeyin 3B verisini alırsınız. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir.",
+            "Kalıp garantisi; şartlar proje ve kalıp şartnamesi bazında tanımlanır. Dünya geneline sevkiyat."
+          ]
+        }
+      ]
+    }
+  },
+
+  "cta": {
+    "headline": "Parçayı gönderin. Kalıbın ne olması gerektiğini söyleyelim.",
+    "body": "Bir ek parça, bir ölçü tablosu ya da eski bir kalıbın hâlâ ürettiği bir şeyin numunesi. Mekanizma, göz sayısı, yolluk rotası ve parça ağırlığıyla — ve neyi yapmayacağımızla — dönüş yaparız. 48 iş saati içinde ilk proje dönüşü. Tercih ederseniz önce NDA.",
+    "action": "Projenizi gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form. Plastik boru ek parçası üretiyoruz ve kalıp konusunu görüşmek istiyorum.\n\nMalzeme: PP-R / PVC-U / PE100 / PEX sistem / ABS\nÖlçüler: [__] mm\nEk parça tipleri: dirsekler / teler / manşonlar / dişli adaptörler / vana gövdeleri / atık su\nÜrün kodu bazında yıllık adet: \nYenilenecek ya da ikinci kaynağı yapılacak mevcut kalıp: var / yok\n\nÖlçü tablosunu ve 3B veriyi NDA altında gönderebilirim.",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+  }
+}

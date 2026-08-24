@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "About Metal Form — manufacturing since 2006",
+    "description": "A mould-making workshop that grew into an engineering, tooling, manufacturing and supply business. Since 2006, more than a thousand completed projects. One accountable partner for the whole route."
+  },
+  "hero": {
+    "kicker": "About",
+    "headline": ["Twenty years", "of cutting steel", "for other people's parts."],
+    "lead": "Metal Form has built moulds and manufactured components since 2006. What began as a tooling workshop now coordinates engineering, tooling, production and supply — as one contract, with one party answerable for the result."
+  },
+  "sections": [
+    {
+      "index": "01",
+      "title": "What we actually are",
+      "body": [
+        "A tooling business first. Injection moulds, PET and closure tooling, blow and die-cast work, multi-cavity tools, hot and cold runner systems, insert tooling and the mechanisms that make awkward geometry possible. More than a thousand projects have gone through the workshop since 2006.",
+        "Around that foundation the company now takes on the parts of a project that sit either side of the tool: the engineering that decides whether a part can be made economically at all, and the production and supply that follow once it can.",
+        "To a customer that means one contract, one technical contact and one party accountable for the outcome — whether the work is a single tool or a component supplied every month for years."
+      ]
+    },
+    {
+      "index": "02",
+      "title": "How the work is organised",
+      "body": [
+        "Metal Form coordinates the route. Engineering, tool manufacture, production and supply are managed as one project against one specification, and the responsibility for the result does not move between parties when something goes wrong.",
+        "That is the part that matters commercially. The usual failure in this industry is not a bad tool — it is a three-way argument between a designer, a toolmaker and a moulder, each of whom is technically correct about their own stage. Removing that argument is worth more to most buyers than any single technical capability.",
+        "We are not a multinational and we do not present ourselves as one. What the size buys you is a short line between the person who reads your drawing and the person who cuts the steel, and a company small enough to take an unusual project seriously."
+      ]
+    },
+    {
+      "index": "03",
+      "title": "Where the engineering comes from",
+      "body": [
+        "Persian engineering has a long tooling tradition, and the workshop sits inside it — a generation of mould-making experience, working across sectors that in a larger market would each have their own specialist supplier.",
+        "That breadth is unusual and it is genuinely useful. A dripper tool teaches you things about high cavitation that a heavy-vehicle bracket never will; a cosmetic closure teaches you things about show surfaces that a fitting never will. Both turn up again in the next project.",
+        "The company is registered in Iran. Where country of origin matters — contracts, customs, shipping documentation — it is stated plainly, and the logistics are agreed with the quotation rather than promised in advance."
+      ]
+    },
+    {
+      "index": "04",
+      "title": "Where we are going",
+      "body": [
+        "The intention is to keep growing the engineering and supply side of the business rather than only the workshop: more engineering capacity, more production routes, more capability to take responsibility for a component from concept through to a rolling delivery schedule.",
+        "That is stated as an intention, not a capability. Everything on this site describes what Metal Form can do now. When that changes, the site changes."
+      ]
+    }
+  ],
+  "facts": [
+    { "value": "2006", "label": "Manufacturing since", "note": "The year the workshop opened and the year the project count starts from." },
+    { "value": "1,000+", "label": "Completed projects", "note": "Tooling, engineering and production work delivered since 2006. Stated as a minimum, because it is one." },
+    { "value": "46", "label": "Cavities", "note": "The highest cavitation we have tooled. High cavitation is a tooling discipline — balance, cooling and consistency — not a machine specification." },
+    { "value": "48h", "label": "Initial response", "note": "A first technical read on a project within 48 business hours: feasibility direction, what is missing, and the next step." }
+  ],
+  "accountability": {
+    "heading": "One accountable partner is the whole proposition.",
+    "body": [
+      "Metal Form works with engineers, toolmakers, machinists and production partners, and the mix is chosen for the project rather than fixed. What does not change is who the customer holds responsible.",
+      "Design decisions are taken with the tool already in view. Tool corrections are handled without a commercial argument about whose fault it was. Spares come from the people who cut the originals. If a component has to be produced somewhere else, it is still our specification that it is produced to.",
+      "That is what we mean by single accountability, and it is a more honest claim than pretending every machine in the chain sits in one building."
+    ]
+  },
+  "cta": {
+    "headline": "Start with a part, not with a meeting.",
+    "body": "The fastest way to find out whether we are useful to you is to send something concrete — a photograph, a sample, a drawing, or a description of the problem you have not solved yet.",
+    "action": "Send your project",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form. I found you through your website and I would like to discuss:\n\nPart / project: \nIndustry: \nAnnual volume: \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: ",
+    "note": "Initial technical response within 48 business hours. We can sign an NDA before you send anything detailed."
+  }
+}

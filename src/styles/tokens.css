@@ -1,0 +1,197 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   METAL FORM — DESIGN TOKENS
+   One brand DNA. Thirteen atmospheres layered on top of it.
+
+   Rules this system enforces:
+   · Corners are near-square. Precision reads as a crisp edge, not a soft one.
+   · Colour is structural, never decorative. An accent marks meaning.
+   · Rules and hairlines carry the technical register — not drop shadows.
+   · Every inline direction is logical, so RTL is a property of the document
+     rather than a set of overrides.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  color-scheme: light;
+
+  /* ── Type ──────────────────────────────────────────────────────────────
+     Per-script stacks. A locale sets --font-body / --font-display to its own
+     script variable, so a Thai or Armenian page never falls back to a Latin
+     face that cannot render it. */
+  /* The Latin face leads every stack. A neck designation, a resin grade, a
+     tolerance or a cavity count stays in Latin characters in all nine
+     languages, and it should carry the same skeleton in Tehran as in Yerevan —
+     the script face below it only ever picks up characters Latin cannot set. */
+  --font-latin:    'Metal Grotesk', 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-cyrillic: 'Metal Grotesk', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-armenian: 'Metal Grotesk', 'Metal Armenian', 'Noto Sans Armenian', system-ui, sans-serif;
+  --font-thai:     'Metal Grotesk', 'Metal Thai', 'IBM Plex Sans Thai', 'Noto Sans Thai', system-ui, sans-serif;
+  --font-han:      'Metal Grotesk', 'Metal Han', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --font-arabic:   'Metal Grotesk', 'Metal Arabic', 'IBM Plex Sans Arabic', 'Noto Sans Arabic', system-ui, sans-serif;
+  --font-persian:  'Metal Grotesk', 'Metal Persian', 'Vazirmatn', system-ui, sans-serif;
+  --font-urdu:     'Metal Grotesk', 'Metal Urdu', 'Noto Nastaliq Urdu', system-ui, sans-serif;
+  --font-mono:     'Metal Mono', 'IBM Plex Mono', ui-monospace, 'SF Mono', 'Cascadia Mono', monospace;
+
+  --font-body: var(--font-latin);
+  --font-display: var(--font-latin);
+
+  /* Locale optical corrections, overridden per <html lang>. */
+  --type-scale: 1;
+  --leading-scale: 1;
+
+  /* Fluid scale. Ratio ~1.22 at mobile widening to ~1.28 at desktop, so display
+     sizes grow faster than body copy and the hierarchy opens up on a projector. */
+  --step--2: calc(clamp(0.694rem, 0.68rem + 0.07vw, 0.75rem) * var(--type-scale));
+  --step--1: calc(clamp(0.833rem, 0.80rem + 0.16vw, 0.938rem) * var(--type-scale));
+  --step-0:  calc(clamp(1rem, 0.96rem + 0.20vw, 1.125rem) * var(--type-scale));
+  --step-1:  calc(clamp(1.2rem, 1.13rem + 0.35vw, 1.44rem) * var(--type-scale));
+  --step-2:  calc(clamp(1.44rem, 1.32rem + 0.58vw, 1.84rem) * var(--type-scale));
+  --step-3:  calc(clamp(1.728rem, 1.54rem + 0.94vw, 2.36rem) * var(--type-scale));
+  --step-4:  calc(clamp(2.074rem, 1.79rem + 1.42vw, 3.02rem) * var(--type-scale));
+  --step-5:  calc(clamp(2.488rem, 2.06rem + 2.14vw, 3.86rem) * var(--type-scale));
+  --step-6:  calc(clamp(2.986rem, 2.36rem + 3.13vw, 4.94rem) * var(--type-scale));
+  --step-7:  calc(clamp(3.583rem, 2.68rem + 4.51vw, 6.32rem) * var(--type-scale));
+
+  --leading-tight:   calc(1.04 * var(--leading-scale));
+  --leading-display: calc(1.08 * var(--leading-scale));
+  --leading-snug:    calc(1.28 * var(--leading-scale));
+  --leading-body:    calc(1.62 * var(--leading-scale));
+  --leading-loose:   calc(1.78 * var(--leading-scale));
+
+  /* Optical tracking. Display sizes tighten; small caps-label sizes open up. */
+  --track-display: -0.022em;
+  --track-head: -0.014em;
+  --track-body: -0.002em;
+  --track-label: 0.14em;
+  --track-mono: 0.01em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semi: 600;
+  --weight-bold: 700;
+
+  /* ── Space ─────────────────────────────────────────────────────────────
+     A fixed rhythm; section padding is fluid on top of it. */
+  --sp-1: 0.25rem;  --sp-2: 0.5rem;   --sp-3: 0.75rem;  --sp-4: 1rem;
+  --sp-5: 1.5rem;   --sp-6: 2rem;     --sp-7: 2.5rem;   --sp-8: 3rem;
+  --sp-9: 4rem;     --sp-10: 5rem;    --sp-11: 6.5rem;  --sp-12: 8rem;
+  --sp-13: 10rem;   --sp-14: 13rem;
+
+  --section-y: clamp(4.5rem, 9vw, 10rem);
+  --section-y-tight: clamp(3rem, 5.5vw, 6rem);
+  --section-y-loose: clamp(6rem, 13vw, 15rem);
+
+  /* ── Measure + layout ─────────────────────────────────────────────────── */
+  --measure: 62ch;
+  --measure-tight: 46ch;
+  --measure-wide: 78ch;
+
+  --shell: 84rem;        /* standard content shell */
+  --shell-wide: 102rem;  /* full-bleed-ish, for bento + cinematic sections */
+  --shell-narrow: 52rem; /* long-form reading */
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+
+  /* ── Radius — deliberately minimal ────────────────────────────────────── */
+  --r-0: 0px;
+  --r-1: 2px;
+  --r-2: 3px;
+  --r-pill: 999px;
+
+  /* ── Hairlines ────────────────────────────────────────────────────────── */
+  --hair: 1px;
+  --hair-strong: 1.5px;
+  --rule: var(--hair) solid var(--line);
+  --rule-strong: var(--hair-strong) solid color-mix(in oklab, var(--ink) 22%, transparent);
+
+  /* ── Elevation — used rarely; the system prefers rules to shadows ─────── */
+  --lift-1: 0 1px 2px -1px rgb(16 24 32 / 0.06), 0 2px 8px -4px rgb(16 24 32 / 0.06);
+  --lift-2: 0 2px 4px -2px rgb(16 24 32 / 0.07), 0 8px 24px -8px rgb(16 24 32 / 0.10);
+  --lift-3: 0 4px 10px -4px rgb(16 24 32 / 0.09), 0 22px 50px -18px rgb(16 24 32 / 0.16);
+
+  /* ── Motion ────────────────────────────────────────────────────────────
+     Engineered easing: things arrive decisively and settle without bounce. */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-mech: cubic-bezier(0.83, 0, 0.17, 1);   /* clamps, slides, tool close */
+  --ease-glide: cubic-bezier(0.33, 1, 0.68, 1);
+
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 520ms;
+  --dur-5: 800ms;
+  --dur-6: 1200ms;
+
+  /* ── Z ─────────────────────────────────────────────────────────────────── */
+  --z-base: 0;
+  --z-raise: 10;
+  --z-sticky: 100;
+  --z-nav: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+
+  /* ── Brand-neutral surface, used before a vertical palette is applied ─── */
+  --surface: #FBFBFA;
+  --surface-sunk: #F1F1EF;
+  --surface-raise: #FFFFFF;
+  --ink: #14161A;
+  --ink-muted: #5B6167;
+  --line: #DCDDDA;
+  --accent: #1F4E66;
+  --accent-deep: #123647;
+  --accent-wash: #E3EDF1;
+  --signal: #B4531B;
+  /* The same signal, retuned for an inverted band. One colour cannot clear
+     4.5:1 against both a near-white and a near-black ground, so inverse
+     sections switch to this one — see the codemod note in base.css. */
+  --signal-inverse: #F0A265;
+  /* The signal, darkened for use as TEXT on a light surface. The mark colour
+     and the text colour cannot be the same value and both clear 4.5:1. */
+  --signal-ink: #8A3D10;
+  /* The accent, lightened for an inverted band — same reasoning as the signal. */
+  --accent-inverse: #7FB6CE;
+  --inverse: #101215;
+  --inverse-ink: #EDEDEA;
+
+  /* Direction sign for physical-axis transforms. `translateX` has no logical
+     equivalent, so anything that must move with the reading direction — a part
+     settling inward, an arrow nudging forward — multiplies its X by this. */
+  --dir: 1;
+
+  /* Focus ring — one visible, high-contrast treatment everywhere. */
+  --focus: 2px solid var(--accent);
+  --focus-offset: 3px;
+}
+
+/* Technical grid, used as a background on engineering-register surfaces. */
+:root {
+  --grid-unit: 28px;
+  --grid-line: color-mix(in oklab, var(--ink) 6%, transparent);
+  --grid-line-strong: color-mix(in oklab, var(--ink) 11%, transparent);
+}
+
+/* ── Per-locale typography ─────────────────────────────────────────────────
+   Set on <html>. Each locale picks its script's stack and its optical
+   corrections in one place. */
+html[lang='en'], html[lang='tr'] { --font-body: var(--font-latin);    --font-display: var(--font-latin); }
+html[lang='ru']                  { --font-body: var(--font-cyrillic); --font-display: var(--font-cyrillic); }
+html[lang='hy']                  { --font-body: var(--font-armenian); --font-display: var(--font-armenian); }
+html[lang='th']                  { --font-body: var(--font-thai);     --font-display: var(--font-thai); }
+html[lang='zh']                  { --font-body: var(--font-han);      --font-display: var(--font-han); }
+html[lang='ar']                  { --font-body: var(--font-arabic);   --font-display: var(--font-arabic); }
+html[lang='fa']                  { --font-body: var(--font-persian);  --font-display: var(--font-persian); }
+html[lang='ur']                  { --font-body: var(--font-urdu);     --font-display: var(--font-urdu); }
+
+/* Scripts without a true small-caps / letterspacing tradition must not be
+   tracked out like a Latin label — it damages legibility and, in Arabic script,
+   breaks the joins outright. */
+html[lang='th'], html[lang='zh'], html[lang='ar'], html[lang='fa'], html[lang='ur'] {
+  --track-label: 0.02em;
+  --track-display: 0;
+  --track-head: 0;
+  --track-body: 0;
+}
+html[lang='ar'], html[lang='fa'], html[lang='ur'] {
+  /* Arabic-script faces carry more x-height presence; display sizes come down. */
+  --track-mono: 0;
+}

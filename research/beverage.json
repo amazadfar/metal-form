@@ -1,0 +1,644 @@
+{
+  "key": "beverage",
+  "displayName": "Beverage & PET Packaging",
+  "researchedAt": "2026-08",
+  "sources": [
+    {
+      "title": "Ten Tips to Slash Cycles in PET Preform Molding - Plastics Technology",
+      "url": "https://www.ptonline.com/articles/ten-tips-to-slash-cycles-in-pet-preform-molding",
+      "whatItEstablished": "The ten variables that actually set preform cycle time: injection time, hold time, cooling time, robotic take-out, demould temperature, machine dry cycle, water temperature, water pressure, coolant composition, tool construction. Concrete figures: resin suppliers suggest 8-12 g/sec/cavity fill speed for walls up to 4 mm; cooling time from a minimum of about 1.5 s up to 20 s for very thick preforms; chilled water at 8-10 C gives the shortest cycles; raising water from 10 C to 20 C adds roughly 2 s on a 35 g preform but only about 0.9 s on a 10 g preform; machine dry-cycle times run 2-6 s; multi-station servo take-out cuts cycle substantially; a final demould temperature around 45 C is cited for best surface quality. Also established that thin preforms gain little from ultra-cold water while thick ones gain a lot - the physics behind why cooling dominates the cycle."
+    },
+    {
+      "title": "How to Dry PET for Container Applications - Plastics Technology",
+      "url": "https://www.ptonline.com/articles/how-to-dry-pet-for-container-applications",
+      "whatItEstablished": "PET drying discipline and why it is upstream of every preform defect. Target moisture 0.005 percent or below; dehumidifying dryers to -30 to -40 F dew point; drying temperature 300-350 F; roughly 4-5 hours residence; IV retention is critical because water drives hydrolytic degradation at melt temperature; virgin PET carries 1-3 ppm acetaldehyde while reground material can reach 10-15 ppm or higher; 13X desiccant is used because it adsorbs both water and acetaldehyde from the return air. Establishes that IV degradation is the most common processing failure and that it traces to water."
+    },
+    {
+      "title": "Decoding the Numbers: A Deep Dive into PET Neck Finishes (1881, 1810, 29/25, 30/25) - iBottler",
+      "url": "https://ibottler.com/decoding-the-numbers-a-deep-dive-into-pet-neck-finishes-1881-1810-29-25-30-25/",
+      "whatItEstablished": "The working map of neck finishes. PCO 1810: ISBT code, tall neck, legacy CSD, roughly 2.5 thread turns, 500 ml preforms typically 21-23 g, declining. PCO 1881: ISBT short neck, roughly 1.75 thread turns, about 17 mm finish height, 500 ml preforms typically 18-20 g, now the default for new CSD lines. 30/25: legacy tall water neck, 500 ml preforms typically 13.5-14.5 g. 29/25: modern short water neck, typically 12.7-13.7 g, roughly 0.8-1.0 g lighter than 30/25. 38 mm for juice, dairy and hot fill. Critically: caps are not interchangeable across standards, a neck change means a new preform mould, new blow-mould neck inserts and capper change parts, and the visual tell is neck height above the support ring."
+    },
+    {
+      "title": "How to Reduce PET Bottle Costs with Lightweight Preform Design - Husky Technologies",
+      "url": "https://www.husky.co/en/resources/blog/how-to-reduce-your-production-costs-with-lightweight-beverage-packaging/",
+      "whatItEstablished": "Supplier-published lightweighting arithmetic at bottler scale: a neck-and-closure conversion from PCO 1881 to 26/22 GME 30.37 cited as saving 1.88 g of resin per unit, which across a 12 billion unit per year programme on virgin resin is quoted as 22,560 tonnes of resin and USD 26.6 million a year. Also names a base-geometry design claimed to cut base resin by up to 2.5 percent. Establishes the register in which the industry argues about grams, and that neck standard choice and closure choice are one decision, not two. Treat all figures as that supplier's published example about its own system."
+    },
+    {
+      "title": "Systemic and Systematic Approach to Advance PET Preform Production - Petnology",
+      "url": "https://www.petnology.com/magazine/article/systemic-and-systematic-approach-to-advance-pet-preform-production",
+      "whatItEstablished": "The top end of the preform machine market and its performance metrics: clamping forces from 2,500 to 5,000 kN across 250/350/500 tonne classes; 96, 128 and 180 cavity moulds in series, with a 192-cavity system built for a premium customer; a 25.7 g preform on a 96-cavity mould at 9.1 s cycle; 5.4 s cycles on 180 cavities; throughput to 1,350 kg/h; energy below 0.2 kWh/kg quoted as best in class; melt distribution measured by pressure drop across the hot runner; five million cycles quoted before worn components need replacement on a dust-control system for rPET. Establishes the benchmark ladder that a bottler will mentally compare any tooling quote against."
+    },
+    {
+      "title": "Effects of the EU Directive on Single-Use Plastics on Plastic Closures - Intravis",
+      "url": "https://www.intravis.com/en/blog/eu-directive-tethered-caps",
+      "whatItEstablished": "What tethering actually changed in closure manufacturing. SUP Directive 2019/904 requires plastic closures to remain attached to containers up to 3 litres from July 2024. Closure geometry moved from rotationally symmetrical to asymmetrical designs with hinges and tabs, which breaks the assumptions in feeding, orientation and inspection equipment. Caps are getting thinner, so the whole process chain has to be adapted to reduced wall thickness. Estimated industry-wide investment of EUR 2.7 to 8.7 billion. Establishes that tethering is a tooling and handling problem, not just a design gesture."
+    },
+    {
+      "title": "All Plastic Caps To Be Tethered To Bottles In The EU From July 2024 - ESM Magazine / Plastics News coverage of Directive (EU) 2019/904",
+      "url": "https://www.plasticsnews.com/news/tethered-caps-mandatory-eu-summer-2024/",
+      "whatItEstablished": "Scope and rationale of the tethered cap rule: applies from 3 July 2024 to beverage containers up to three litres including bottles and cartons; metal closures and closures for glass bottles are outside it; the justification is that caps make up roughly 15 percent of packaging litter and that detached caps are too small and light for sorting equipment. Establishes the compliance clock for any producer exporting into the EU."
+    },
+    {
+      "title": "Closure Molding Clash: Compression vs. Injection - PlasticsToday, with supporting supplier commentary",
+      "url": "https://www.plasticstoday.com/blow-molding/closure-molding-clash-compression-vs-injection",
+      "whatItEstablished": "The two routes to a beverage closure. Continuous compression moulding runs melt roughly 30-40 C cooler than injection, so the cap cools faster in the tool and cycles are shorter, with lightweight caps quoted under 2 seconds; there is no gate and therefore no gate vestige, and no hot runner, so colour changes are fast. Compression is quoted as holding more than 60 percent of the Chinese water and beverage cap market. Injection offers greater design freedom, can form tamper-evident features in the tool without a post-moulding step, and handles complex and asymmetric geometry - which matters more since tethering. Establishes that a mould supplier must know which route the customer runs before quoting anything."
+    },
+    {
+      "title": "PET Preform Mould Maintenance and Refurbishment - MAIWEI and SIPA mould service material",
+      "url": "https://sipasolutions.com/products/moulds/refurbishment-conversion",
+      "whatItEstablished": "Wear-part reality on preform tooling. The consumable set is neck rings, cores, cavities, lock rings, valve pins, nozzle tips, heaters, thermocouples and seals. Mould life is set by steel and surface treatment; systematic preventive maintenance and timely refurbishment materially extend productive life; suppliers advertise cold halves running to around 12 million cycles before first maintenance and coated neck rings to very high shot counts. Also establishes that neck-standard conversion of an existing mould is a recognised commercial service, not a rebuild. Treat specific shot-life numbers as supplier marketing, not as industry constants."
+    },
+    {
+      "title": "Common PET Preform Defects and Root Causes - Delta El Nile and ASTR PET technical notes",
+      "url": "https://www.deltaelnile.com/en/insights/common-pet-preform-defects.html",
+      "whatItEstablished": "The defect vocabulary a bottler uses on the phone: short shot from low injection pressure, cold melt or a blocked gate; bubbles from moisture, traced back to dryer dew point and residence time; haze and pearlescence from crystallinity caused by excessive heat or slow cooling; acetaldehyde from overheated melt and hot-runner dead spots, which is specifically a flavour risk in still water; black specks from degraded material or contamination in the hot runner; cavity-to-cavity weight variation from imbalance in the injection system. Establishes which defects are process-side and which are tooling-side."
+    },
+    {
+      "title": "Stress-Cracking of PET Bottles as a Factor Limiting the Commercial Life of Carbonated Soft Drinks - peer-reviewed packaging research",
+      "url": "https://www.researchgate.net/publication/234208944_Stress-cracking_of_PET_bottle_as_an_unpredictable_factor_limiting_the_commercial_life_of_carbonated_soft_drinks",
+      "whatItEstablished": "Field failure mechanism for carbonated PET. Stress cracking initiates at the injection point in the base because that zone stays amorphous while the sidewalls gain strength from biaxial orientation. Environmental stress cracking is attributed to roughly 15 percent of packaging problems for carbonated beverages. Contributing factors act in combination: excess carbonation pressure, poor material distribution, reduced intrinsic viscosity, UV and heat exposure, and above all contact with caustic substances. Establishes the direct line from gate geometry and material distribution to product returned from the market."
+    },
+    {
+      "title": "Turnkey System for the Water Market: Armenian Bottler Grows with KHS Technology - KHS / Petnology, plus market background on bottled water in Armenia",
+      "url": "https://www.petnology.com/online/news-detail/turnkey-system-for-the-water-market-armenian-bottler-grows-with-khs-technology",
+      "whatItEstablished": "Positioning intelligence for the first target market. Armenia's largest mineral-water bottler produces its own PET preforms in-house, explicitly for flexibility and independence from suppliers and to avoid delays. Other producers run modern PET and glass lines at meaningful line speeds and fill both still and carbonated mineral water. Roughly a quarter to a third of Armenian mineral water production is exported, principally to Russia and then the United States. Establishes that the buyer is plausibly a self-converting bottler who owns preform tooling and needs moulds, spares and second-source capacity - not merely a preform purchaser - and that export exposure makes EU packaging rules commercially relevant to them."
+    }
+  ],
+  "buyer": {
+    "whoBuys": "Two overlapping buyers. First, the integrated bottler who blows and fills in-house and, increasingly in this region, injects its own preforms - so it owns preform moulds, cap moulds and blow-mould change parts and lives with them for years. Second, the independent preform and closure converter who sells into those bottlers and competes on cost per thousand. Both buy tooling as a production asset, not as a purchase order. The decision is usually made by a technical person and signed by an owner or commercial director, and in mid-size regional producers those are often two people in the same room.",
+    "jobTitles": [
+      "Technical Director / Chief Engineer",
+      "Plant Manager",
+      "Production Manager, Blowing and Filling",
+      "Packaging Development Manager",
+      "Maintenance and Tooling Manager",
+      "Procurement / Purchasing Manager",
+      "Quality Manager",
+      "Owner or Commercial Director (mid-size regional bottlers)",
+      "Preform and closure converter plant owner"
+    ],
+    "whatTheyActuallyBuy": [
+      "Preform moulds sized to the machine they already own",
+      "Replacement cold-half components: neck ring sets, cores, cavity inserts",
+      "Closure and cap moulds, including tethered 28 mm designs",
+      "Blow-mould shells, base inserts and neck change parts",
+      "Gram-weight redesign of an existing preform",
+      "Neck-standard conversion projects, tooling and cap side together",
+      "Second-source tooling that duplicates an existing tool's machine interface",
+      "Ongoing supply of preforms, caps, handles and crates where freight allows",
+      "Technical mechanisms around the pack: dispenser taps, sports and push-pull closures",
+      "Engineering time - DFM review, CAD reconstruction from a sample, tooling strategy"
+    ],
+    "decisionDrivers": [
+      "Cost per thousand preforms, which is mostly resin, which is mostly gram weight",
+      "Whether the tool fits the machine they already have: tie-bar spacing, platen, tonnage, shot size, take-out plate stations",
+      "Cavity count matched to real annual volume rather than to ambition",
+      "Cavity-to-cavity consistency, because the process is set by the worst cavity",
+      "Spare-part availability and lead time, in season, not in theory",
+      "Not being locked to one OEM for every wear part",
+      "Warranty terms and who pays when a cavity goes",
+      "Speed and seriousness of the first technical response",
+      "Confidentiality on bottle geometry, which is often the brand",
+      "Ability to actually deliver across a border with documentation that clears"
+    ],
+    "whatKeepsThemAwake": [
+      "A blowing or filling line down in peak season with no spare neck ring on the shelf",
+      "One cavity out of tolerance quietly making rejects for a whole shift",
+      "Resin price moving against a contract already priced to the trade",
+      "A neck-standard conversion that strands a warehouse of caps",
+      "Export shipments rejected for haze or an acetaldehyde taint in still water",
+      "Bottles that pass at the plant and stress-crack in the field after handling",
+      "A single preform supplier with a single tool and no second source",
+      "A tooling quote whose lead time lands after the season starts",
+      "Being told a defect is a tooling problem when it is a dryer problem, or the reverse"
+    ]
+  },
+  "economics": {
+    "unitEconomics": "A PET bottle is a resin conversion, not a manufactured product. Industry commentary consistently puts resin at roughly 60-70 percent of the cost of a finished PET bottle, with the remainder split across energy, labour, closure, tooling amortisation and freight. That single ratio governs every decision on this page. The preform gram weight is therefore the main cost lever the producer actually controls, and it is fixed by tooling and part design long before anyone negotiates a resin contract. Tooling itself is a small number amortised over a very large one: a preform tool that runs for years across hundreds of millions of shots is priced in fractions of a cent per part. Which means the purchase price of the tool is almost never the real economic question. The real question is what gram weight that tool lets you run, how tightly it holds it across every cavity, and how many hours a year it is not running.",
+    "costDrivers": [
+      "Resin price and the gram weight of the preform - the dominant term",
+      "Cavity count and cycle time together, since they set output per machine hour",
+      "Cavity-to-cavity weight spread, which raises the mean weight you must run",
+      "Energy: resin drying, chilled water for cooling, clamp and plasticising",
+      "Scrap and rejects, at the injection stage and again at the blower",
+      "Changeover time between formats and neck standards",
+      "Wear parts and unplanned downtime waiting for them",
+      "Closure cost, which moves with neck diameter and with tethering",
+      "Freight, where shipping blown bottles means shipping air"
+    ],
+    "volumeProfile": "Beverage is a rhythm business with a seasonal spike. The arithmetic that decides tooling is simple and worth doing openly: a 48-cavity preform tool on a 10-second cycle is 4.8 preforms a second, 17,280 an hour, and a little over 400,000 a day on continuous running. A 32-cavity tool on the same cycle is around 11,500 an hour. Published industry guidance puts 16-48 cavity configurations as the sensible band below roughly 50 million preforms a year, with 72 and 96 cavity systems belonging to programmes in the hundreds of millions, and the very high cavitations - 128, 144, 180, 192 - reserved for sustained mega-volume where the higher tooling cost and heavier maintenance burden can be absorbed. Most regional bottlers and independent converters, including the ones that matter in the Caucasus and the wider region, live squarely in the lower and middle of that band, often running two or three tools across formats rather than one very large one.",
+    "whereMoneyIsLost": [
+      "Running heavier than necessary because the tool cannot hold weight across cavities - the single largest silent loss on this page",
+      "Buying cavitation the annual volume never justified, then paying for its maintenance forever",
+      "Over-specified gram weight carried forward from an old design nobody has revisited",
+      "Unplanned downtime waiting on a wear part that costs a fraction of an hour of lost output",
+      "Preforms rejected at the blower for gate defects, haze or bubbles - resin already paid for, converted, and thrown away",
+      "Neck conversions done piecemeal, so preform, blow-mould insert, capper change parts and cap inventory fall out of step",
+      "Product returned from the market for stress cracking or CO2 loss after it has already been sold",
+      "Paying international freight on air inside finished bottles",
+      "Chasing a process fix for a tooling defect, or a tooling fix for a drying defect, for weeks"
+    ]
+  },
+  "risk": {
+    "failureModes": [
+      "Base stress cracking initiating at the injection point, which stays amorphous while the sidewall gains strength from biaxial orientation",
+      "Environmental stress cracking after distribution, driven by combinations of excess carbonation, poor material distribution, reduced IV, UV and heat exposure, and above all contact with caustic cleaning agents",
+      "CO2 loss through the wall over shelf life, ending the commercial life of a carbonated product before its date",
+      "Top-load collapse in the warehouse or on the pallet after lightweighting has gone one gram too far",
+      "Neck ovality or thread damage producing slow leakers that pass the line and fail in the trade",
+      "Panelling and deformation in hot-fill formats where the bottle was not designed for the vacuum",
+      "Loss of intrinsic viscosity through hydrolysis when resin reaches the melt wet, producing a weak and brittle bottle from a geometrically perfect preform"
+    ],
+    "qualityDefects": [
+      "Bubbles - moisture in the resin; the investigation starts at dryer dew point and residence time, not at the mould",
+      "Haze and pearlescence - crystallinity from excessive heat or from cooling too slowly",
+      "Acetaldehyde - overheated melt and dead spots in the hot runner; specifically a taste risk in still water, where there is no flavour to hide behind",
+      "Black specks - degraded material or contamination; purge and inspect the hot runner",
+      "Short shot - low injection pressure, cold melt, or a blocked gate",
+      "Gate crystallinity and gate cracks - a tooling and gate-geometry problem that shows up as rejects at the blower",
+      "Cavity-to-cavity weight variation - imbalance in melt delivery and in cooling; a tooling problem, paid for in resin",
+      "Flash at the neck parting line, which lands on the sealing surface where it matters most",
+      "Sink and vestige height at the gate, which interferes with feeding on the blower",
+      "Neck ovality and out-of-round support ring, which upsets capping torque"
+    ],
+    "downtimeCauses": [
+      "Waiting for a wear part: neck ring, core, cavity insert, valve pin, nozzle tip, heater, thermocouple, seal",
+      "Hot runner leak or a failed heater zone",
+      "Mould damage from a preform that did not release cleanly",
+      "Changeover between formats or between neck standards",
+      "Dryer or desiccant failure, which does not stop the machine but ruins what it makes",
+      "Chiller capacity falling short in summer, which lengthens cycle exactly when demand peaks",
+      "Robot and take-out plate faults, which on a modern preform system take the whole cycle with them"
+    ],
+    "supplyRisks": [
+      "Single-OEM lock-in on tooling and on every consumable that fits it",
+      "Long lead times on spares quoted from a factory on another continent",
+      "One preform source for an entire plant, with no qualified alternative",
+      "Resin price volatility and availability, including rPET grades",
+      "A neck-standard shift by a customer or a market that strands existing cap stock and tooling",
+      "Customs, documentation and payment routes on capital tooling crossing borders",
+      "Regulatory exposure for exporters: tethered closures for EU-bound product, and recycled-content expectations that change how resin behaves in the tool"
+    ]
+  },
+  "components": [
+    {
+      "name": "PET preform, still water",
+      "note": "The volume product. Short-neck standards dominate new work - 29/25 has largely replaced 30/25, with 500 ml preforms typically in the 12.7-13.7 g band against 13.5-14.5 g for the older tall neck. Thin walls, short cooling, high cavitation, and no flavour to mask an acetaldehyde problem."
+    },
+    {
+      "name": "PET preform, carbonated soft drink",
+      "note": "Heavier and structurally different. PCO 1881 is the default on new CSD lines, roughly 1.75 thread turns and about 17 mm finish height, with 500 ml preforms typically 18-20 g against 21-23 g on the legacy PCO 1810 tall neck. Must hold pressure and survive the base geometry, so lightweighting runs into stress cracking before it runs into anything else."
+    },
+    {
+      "name": "PET preform, juice, dairy and hot fill",
+      "note": "Usually 38 mm, because viscous product needs a wider mouth and hot fill needs a bottle designed for the vacuum. Different thermal history, different bottle wall requirement, different closure family."
+    },
+    {
+      "name": "Preform mould cold half",
+      "note": "The assembly that actually defines the part: cavity inserts, core rods, split neck rings and lock rings. This is where geometry, wear and weight consistency live, and it is the half that is most often bought as spares or as a second source independently of the hot half."
+    },
+    {
+      "name": "Split neck ring sets",
+      "note": "The highest-consequence wear part on the tool. They form the threads, the support ring and the sealing surface - the three features the closure has to meet. They wear, they are consumable, and a plant without a spare set is one incident away from stopped production."
+    },
+    {
+      "name": "Core rods and cavity inserts",
+      "note": "Cores set the internal wall and carry the cooling that dominates cycle time. Cavities set the outer surface. Both are replaceable items with finite life, and both are natural second-source candidates."
+    },
+    {
+      "name": "Closure mould, 28 mm tethered",
+      "note": "Post-July-2024 designs for EU-bound product. Tethering moved cap geometry from rotationally symmetric to asymmetric, with hinges, tabs and bridge patterns - which changes the tool, the ejection and everything downstream that used to assume a round cap."
+    },
+    {
+      "name": "Closure mould, water and CSD, untethered",
+      "note": "Still the majority of production for domestic and non-EU markets. HDPE and PP, high cavitation, very short cycles, and a tamper-evident band that is either formed in the tool or cut afterwards."
+    },
+    {
+      "name": "Sports, push-pull and flip-top closures",
+      "note": "Multi-part technical mechanisms rather than simple caps. Assembly, sealing force and repeated actuation are the design problem, and they carry a much higher engineering content per gram than a plain screw cap."
+    },
+    {
+      "name": "Blow-mould shells and base insert",
+      "note": "A stretch-blow tool is two halves plus a moving base insert, the push-up. Modern practice uses thin shell moulds mounted on bases shared across a family of containers, so a new bottle shape can be a shell change rather than a new tool."
+    },
+    {
+      "name": "Blow-mould neck inserts and change parts",
+      "note": "The parts that have to change when a neck standard changes, alongside the preform tool and the capper change parts. Frequently the bottleneck in a conversion project because they are ordered last."
+    },
+    {
+      "name": "Handles for 5 L and 10 L containers",
+      "note": "Injection-moulded and applied to the blown container. Simple part, unforgiving duty - it fails in the customer's hand, in public, with a full container attached to it."
+    },
+    {
+      "name": "19 L returnable water bottle closures and seals",
+      "note": "Home and office delivery. Sealing integrity across repeated handling and long distribution, and a closure that has to work with a dispenser rather than a human hand."
+    },
+    {
+      "name": "Dispenser taps and valve mechanisms",
+      "note": "Technical mechanisms attached to bulk water packs. Multi-component, sealing-critical, and a category where engineering content and margin are both higher than in commodity closures."
+    },
+    {
+      "name": "Crates, trays and bottle carriers",
+      "note": "The unglamorous half of a bottling plant's plastics spend. Large tools, long life, high resin content per part, and a direct effect on line handling and warehouse damage."
+    }
+  ],
+  "tooling": {
+    "whyToolingMatters": "In most industries the tool decides whether the part can be made. In PET packaging the tool decides what the part costs, forever. Resin is roughly two thirds of a bottle, gram weight is set by the tool, and the gram weight you can actually run is set not by the average cavity but by the worst one. A tool that holds weight tightly across every cavity lets the process sit closer to the design minimum. A tool that does not forces the process to run heavy so the lightest cavity still passes - and that extra weight is bought again on every shot, on every cavity, for the entire life of the tool. Tooling price is a one-off number. Cavity spread is an annuity paid to the resin supplier.",
+    "toolingTopics": [
+      "Cavity count selection against real annual volume and against the machine already installed",
+      "Machine interface: tie-bar spacing, platen size, clamp tonnage, shot capacity, take-out plate stations",
+      "Hot runner layout, melt path balance and pressure drop across the manifold",
+      "Valve gating, gate geometry and vestige height, and what the blower will tolerate",
+      "Melt residence and dead spots, which drive acetaldehyde and black specks",
+      "Neck ring split-line placement so flash never lands on the sealing surface",
+      "Thread, support ring and sealing surface detail as the interface to the closure",
+      "Core cooling geometry, because cooling dominates cycle on thick walls",
+      "Cavity cooling and the water circuit the plant can actually supply",
+      "Venting at the neck and at the parting line",
+      "Steel selection and surface treatment on neck rings and cores, where the wear is",
+      "Spare-part strategy designed in at the start rather than negotiated during a breakdown",
+      "Refurbishment and neck-standard conversion of tooling already in service"
+    ],
+    "cavityStrategy": "Cavity count is an arithmetic problem dressed up as an ambition. Output is cavities divided by cycle: 48 cavities at a 10-second cycle is 17,280 preforms an hour; 32 cavities on the same cycle is around 11,500. Published guidance places 16-48 cavities as the economic band below roughly 50 million preforms a year, 72-96 for programmes in the hundreds of millions, and 128-192 only where mega-volume is sustained and the maintenance organisation exists to support it. More cavities means more of everything: more tooling capital, more wear parts, more hot-runner zones to balance, more clamp force, more chilled water, and more consequence when one cavity misbehaves. Metal Form works up to 46 cavities. That is not a limitation to apologise for on this page - it is precisely the band that regional bottlers, independent converters and second-source programmes actually run, and it is where a tool can still be balanced, maintained and reasoned about rather than merely operated. Where a plant runs higher cavitation than that, the honest offer is different and equally useful: cold-half components, neck ring sets, cores and cavity inserts as spares and as an alternative source.",
+    "runnerStrategy": "PET preform tooling is valve-gated hot runner work. The manifold has to deliver the same melt, at the same pressure, at the same moment, to every cavity - because any imbalance in melt delivery becomes weight variation between cavities, and weight variation becomes resin cost. The second job of the melt path is thermal: PET degrades, and the products of that degradation are acetaldehyde and black specks. Smooth, continuously curved channels with no dead spots where material can stall are not a refinement, they are the difference between a tool that can run still water and a tool that cannot. Valve gating controls vestige height and eliminates stringing, which matters downstream because the blower has to feed and grip the preform. Gate design is also a product-life decision: the gate zone in the finished bottle base stays amorphous while the sidewall is strengthened by biaxial orientation, and that amorphous zone is where stress cracking starts in the field.",
+    "coolingNotes": "Cooling is the cycle. Published guidance puts cooling time from a minimum of around 1.5 seconds up to as much as 20 seconds for very thick preforms, and shows that thin preforms gain almost nothing from colder water while thick ones gain a great deal - moving chilled water from 10 C to 20 C costs roughly 2 seconds on a 35 g preform but only around 0.9 seconds on a 10 g one. Water in the 8-10 C band is cited for the shortest cycles, which is a plant-services question as much as a tooling one, and a chiller that copes in April may not cope in August. The structural answer is post-mould cooling: the preform leaves the cavity while still hot and finishes cooling in a multi-station servo take-out plate, so the mould can close again on the next shot instead of waiting. Three-station take-out is standard practice on modern systems for exactly this reason. Fill speed guidance from resin suppliers sits at 8-12 g per second per cavity for walls up to 4 mm. A final demould temperature around 45 C is cited where surface quality is critical. Every one of these numbers is a trade against the others, which is why cooling circuit design belongs in the tooling conversation and not in the commissioning conversation.",
+    "materialNotes": "Bottle-grade PET runs in an intrinsic viscosity window of roughly 0.70-0.80 dL/g, and the whole process is a fight to keep it there. PET is hygroscopic; if it reaches the melt wet, water hydrolyses the chain, IV falls, and the bottle is weak and brittle no matter how good the tool is. Practice is to dry to around 50 ppm moisture or below - 0.005 percent - with desiccant air at roughly -40 C dew point, at about 150-175 C, for four to six hours, and to keep IV loss under about 0.04 dL/g. Acetaldehyde runs at 1-3 ppm in virgin resin and can reach 10-15 ppm or higher with reground material, which is why still water is the most demanding application on this list and why 13X desiccant is used to strip AA as well as water from the return air. Recycled content changes all of this - drying behaviour, colour, IV, and the abrasion the tool sees. Closures are HDPE or PP, and tethered designs are pushing wall thickness down further, which is a moulding problem before it is a design problem.",
+    "cavityToCavityNote": "Weight spread across cavities is the most under-discussed cost in PET packaging. A plant must guarantee a minimum wall and a minimum weight for pressure, top load and shelf life. So the process is set until the lightest cavity in the tool clears that floor - which means the mean weight of everything the tool produces sits above the floor by whatever the spread is. Halve the spread and the mean can move down toward the design intent without touching the design at all. This is why melt balance, cooling balance and manufacturing consistency across cavities are commercial arguments, not engineering vanity."
+  },
+  "vocabulary": [
+    {
+      "term": "Preform",
+      "meaning": "The injection-moulded test-tube-shaped part that is later reheated and stretch-blown into a bottle. It carries the finished neck already - the neck is never blown.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Neck finish",
+      "meaning": "The standardised geometry at the top of the preform and bottle: thread profile, thread diameter, support ring position and finish height. It is the interface contract between bottle, cap and capping machine.",
+      "useIn": "copy"
+    },
+    {
+      "term": "PCO 1881",
+      "meaning": "ISBT short-neck 28 mm standard, roughly 1.75 thread turns and about 17 mm finish height, now the default on new carbonated lines. Replaced the taller PCO 1810.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "PCO 1810",
+      "meaning": "The legacy tall 28 mm carbonated standard, roughly 2.5 thread turns. Still running on installed lines; not chosen for new projects. Its caps do not fit an 1881 neck.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "29/25 and 30/25",
+      "meaning": "Dimensionally named water necks - thread diameter over bore. 30/25 is the older tall version; 29/25 is the modern short one and around 0.8-1.0 g lighter on a 500 ml preform.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "26/22 GME 30.37",
+      "meaning": "A smaller-diameter European neck-and-closure system used where lightweighting is pushed hardest. Changing to it changes the cap as well as the bottle.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Support ring",
+      "meaning": "The flange below the threads. It is not decoration - it is what the blower and the filler grip and index the bottle by. Damage it and the line stops.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Cavitation",
+      "meaning": "How many parts the tool makes per shot. In preform work it is the primary output decision and the primary maintenance burden.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Cold half and hot half",
+      "meaning": "The two halves of a preform tool. The cold half holds cavities, cores and neck rings and defines the part. The hot half is the heated melt distribution system.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Neck ring",
+      "meaning": "The split insert that forms the threads and support ring. The highest-consequence wear part in the tool, and the one a plant should never be without a spare of.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Core rod",
+      "meaning": "The pin that forms the inside of the preform and carries the cooling that governs most of the cycle time.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Valve gate and gate vestige",
+      "meaning": "A mechanically closed gate and the small residual mark it leaves. Vestige height matters because the blower has to handle the preform and because the gate zone is where the finished bottle cracks.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Gate crystallinity",
+      "meaning": "A hazy, whitened, brittle gate caused by heat and slow cooling in the thickest part of the preform. It shows up as rejects at the blower and as base failures in the field.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Acetaldehyde (AA)",
+      "meaning": "A degradation product of overheated PET. It migrates into the product and is tasted as a sweet-fruity taint. Still water is the least forgiving application because there is no flavour to hide it.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Intrinsic viscosity (IV)",
+      "meaning": "The measure of PET chain length, roughly 0.70-0.80 dL/g for bottle grade. Water in the melt destroys it and the bottle gets weaker without looking any different.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Pearlescence and haze",
+      "meaning": "Milky or opalescent preform appearance caused by crystallinity from excessive heat or slow cooling. Visible to the customer, so it is a commercial defect as much as a technical one.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Hoop and axial stretch ratio",
+      "meaning": "How far the material is stretched around the bottle versus along it. Typical designs use more hoop than axial - broadly hoop in the 5.6-6.5 range and axial in the 2.4-2.7 range, with overall ratios around 12-16.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Biaxial orientation",
+      "meaning": "The alignment of polymer chains in two directions during stretch-blowing. It is what gives a thin PET wall its strength - and why the un-stretched gate zone stays the weak point.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Post-mould cooling",
+      "meaning": "Finishing the cooling outside the mould in a servo take-out plate, so the tool can close on the next shot. Multi-station take-out is standard practice and is the main reason modern cycles are short.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Shell mould and base insert (push-up)",
+      "meaning": "A stretch-blow tool is two thin shells plus a vertically moving base insert. The base must retract before the mould opens or the container base cannot release.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Petaloid base",
+      "meaning": "The multi-footed base geometry used on carbonated bottles to resist internal pressure without rolling out flat.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Tamper-evident band and bridges",
+      "meaning": "The ring below the cap and the thin connections that break on first opening. Either formed in the tool or cut afterwards by slitting.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Tethered cap",
+      "meaning": "A closure that stays attached to the bottle after opening, required in the EU for beverage containers up to three litres since July 2024. It moved cap geometry from symmetric to asymmetric.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Slitting and folding",
+      "meaning": "The post-moulding operations that cut the tamper band and pre-fold the tether. They happen on separate equipment, downstream of the mould - a distinction worth being precise about.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Continuous compression moulding (CCM)",
+      "meaning": "The alternative route to a cap: melt is extruded and compressed rather than injected, at roughly 30-40 C lower melt temperature, giving faster cooling, no gate mark and fast colour change.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Cavity-to-cavity weight spread",
+      "meaning": "The difference between the heaviest and lightest cavity in the tool. Because the process is set so the lightest cavity still passes, spread is paid for in resin on every shot.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Environmental stress cracking (ESC)",
+      "meaning": "Cracking under sustained stress in the presence of an aggressive agent - typically caustic cleaning residue. It is attributed to a significant share of carbonated packaging failures and starts at the base gate.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Change parts",
+      "meaning": "The set of components that must be swapped to run a different format or neck standard, across the preform tool, the blow mould and the capper. Conversions fail when one of the three is forgotten.",
+      "useIn": "copy"
+    }
+  ],
+  "metalFormAngle": {
+    "credibleOffers": [
+      "PET preform moulds in the 16 to 46 cavity band, designed around the machine the customer already runs",
+      "Cold-half components as spares or as an alternative source: split neck ring sets, core rods, cavity inserts, lock rings",
+      "Closure and cap moulds, including tethered 28 mm designs for EU-bound product",
+      "Blow-mould shells, base inserts and neck change parts for stretch-blow tooling",
+      "Preform redesign for gram weight, and neck-standard conversion handled as one project across preform tool, blow-mould inserts and closure",
+      "Reverse engineering from a physical sample and drawings into CATIA or SolidWorks, where no usable data exists",
+      "DFM review of a bottle, preform or closure before any steel is cut",
+      "Second-source and backup tooling that reproduces an existing tool's machine interface and part geometry",
+      "Technical mechanisms around the pack: sports closures, push-pull caps, dispenser taps and valves",
+      "Ongoing supply of moulded components - preforms, closures, handles, crates - where the freight economics support it",
+      "Mould warranty with terms agreed per project, NDA, international delivery, and an initial project response within 48 business hours"
+    ],
+    "dfmAngles": [
+      "Gram weight is not a target you set, it is an outcome of wall thickness, stretch ratio and the bottle you actually need - so the conversation starts with the bottle, not with the preform",
+      "Neck standard is a system decision: preform tool, blow-mould neck insert, capper change parts and cap supply move together or the conversion fails",
+      "Cavity balance is a resin argument. Tighter spread lets the process run closer to the design minimum without redesigning anything",
+      "Gate geometry and vestige height are downstream decisions: the blower has to feed it and the finished base has to survive the market with it",
+      "Core cooling geometry is where cycle time is won or lost on thick-walled preforms, and it is fixed at design time",
+      "Neck ring split-line placement keeps flash off the sealing surface, which is the one surface the closure has to meet",
+      "The tool is designed around the customer's installed machine - tie-bar spacing, platen, tonnage, shot size, take-out plate stations - not the other way round",
+      "Spares are specified with the tool, at the start, when they are cheap and unhurried",
+      "Where our scope ends is stated plainly: we make the cap mould; slitting and folding of the tamper band and tether happen on separate downstream equipment"
+    ],
+    "secondSourceAngle": "Most bottling plants are one component away from a stopped line, and the component is usually small. A neck ring set. A core. A cavity insert. The tooling OEM will supply it, eventually, from wherever the factory is, at whatever the lead time is that month. That is a purchasing arrangement being asked to behave like an insurance policy. Metal Form's proposition is straightforward: a second source that is qualified before it is needed. Send the drawings or send the worn part. We reproduce the geometry and the interface, and you hold a set on the shelf. The same logic scales up to a complete backup tool - a duplicate of a preform or closure mould, built to the same machine interface, sitting ready. For producers exporting into markets with their own regulatory clocks, second sourcing also means capacity that can be brought up without renegotiating with the incumbent. Confidentiality is assumed: bottle and closure geometry is brand property and is handled under NDA.",
+    "costOptimisationAngle": "The cost conversation in PET is not about the price of the tool. Resin is roughly two thirds of a bottle, so the entire argument is about grams and about hours. Grams: what the part actually needs to weigh, which is a design question, and what the tool lets you run it at, which is a consistency question. A tool that holds weight tightly across every cavity lets the process sit closer to the design minimum, because the process is always set so the lightest cavity still passes. Hours: cavity count matched honestly to volume, cooling designed for the plant's real water temperature, and wear parts on the shelf before they are needed. Metal Form does not publish savings figures, because a savings figure that does not know your resin price, your gram weight, your cavity spread and your volume is a marketing number. What we do is the arithmetic with your inputs, in the open, before anyone commits to steel.",
+    "whatWeMustNotClaim": [
+      "No cavity count above 46 - verified experience is up to 46 cavities and nothing on the page may imply 72, 96, 128 or higher",
+      "No flow simulation, Moldflow or any named simulation package",
+      "No 3D scanning - reverse engineering is described as working from a physical sample and drawings into CAD",
+      "No CMM, metrology department, QC department or inspection laboratory",
+      "No ISO 9001, ISO 13485, IATF, GMP, FDA, EU food-contact compliance or any certification, and no claim of ISBT, CETIE or GME membership or approval",
+      "No guaranteed gram-weight reduction, cycle-time reduction, output figure or savings percentage",
+      "No stated acetaldehyde level, weight tolerance, dimensional tolerance or wear life achieved by Metal Form tooling",
+      "No claim to supply slitting and folding machines, blowers, fillers, cappers or any line equipment",
+      "No claim to manufacture hot runner systems in-house until the company confirms it - describe hot runner and gate strategy as specified with the tool",
+      "No cleanroom, sterile, validated, two-shot moulding or grinding claims",
+      "No named bottlers, brands, logos, awards, machine counts, factory area, headcount or production volumes",
+      "No claim that Metal Form manufactures blown bottles for export - the export proposition is preforms, closures, tooling and engineering",
+      "Nothing that borrows a competitor capability found in research and restates it as ours"
+    ]
+  },
+  "page": {
+    "heroHeadline": "Every gram. Every second. Every cavity.",
+    "heroSub": "Preform moulds, closure moulds, blow-mould change parts and the engineering behind them. Send a bottle and a cap. We come back with the geometry, the cavity count, the tooling route and the production economics.",
+    "heroVisualConcept": "No hero image and no bottle photography. The right two-thirds of the viewport carries a single large SVG pair drawn in hairline: a preform and the bottle it becomes, aligned on a shared vertical axis, with the neck finish region - threads, support ring, finish height - drawn identically on both and dimensioned in mono type. Everything below the support ring morphs: the preform is short and thick with a cyan wall-thickness fill, the bottle is tall and thin with the fill almost gone. A thin measurement rail runs down the left edge of the page with tick marks and a moving readout, the way a mould drawing is dimensioned. Behind both silhouettes, a very soft vertical refraction band - a CSS gradient with a slight horizontal displacement applied to the ruled background lines passing behind the glass - so the page reads as looking through PET rather than at a picture of it. The type block sits lower-left, generous white space above it. One thing moves: the wall-thickness fill breathes on a slow 3.2 second beat, the page's cycle time.",
+    "narrativeSpine": "Grams, cavities, seconds, sources - in that order, because that is the order the money moves in. A PET bottle is mostly resin, so the gram is the unit of profit. But the gram you can actually run is not set by the design, it is set by the worst cavity in the tool, because the process is always trimmed until the lightest cavity still passes. So cavity spread is paid for in resin, on every shot, for the life of the tool. That single idea connects tooling quality to the P&L in a way no bottler can dismiss. From there the page follows the physical chain: the neck finish, which is the contract between bottle, cap and capper and cannot be changed in isolation; the stretch, where the neck stays and the body becomes a bottle; the defects, sorted honestly into the ones a tool causes and the ones it does not; the closure, which changed in 2024; the freight, which is why the export proposition is preforms and tooling rather than blown bottles; and finally what to send us to start.",
+    "sections": [
+      {
+        "id": "grams",
+        "title": "Resin is the bottle. The gram is the unit.",
+        "purpose": "Establish immediately that we understand the buyer's real cost structure, and hand them a tool that does arithmetic with their numbers rather than asserting savings with ours.",
+        "layout": "Full-bleed horizontal measurement scale. A three-column annotation block on the left holds the argument; the remaining nine columns are a single continuous ruler running edge to edge, with preform silhouettes pinned along it at their gram positions and mono labels beneath - 12.7 g, 13.7 g, 18 g, 20 g, 21 g, 23 g - grouped by neck standard. No cards, no boxes, one ruled line carrying everything. Beneath the ruler, a slim full-width arithmetic strip in a contrasting surface tone.",
+        "contentOutline": "Industry commentary puts resin at roughly 60-70 percent of the cost of a finished PET bottle. State it, attribute it to the industry, and move on. Then the ladder: 500 ml still water preforms typically sit in the 12.7-13.7 g band on modern 29/25 necks against 13.5-14.5 g on the older 30/25; 500 ml carbonated preforms typically 18-20 g on PCO 1881 against 21-23 g on PCO 1810. Then the honest framing: we do not publish savings figures, because a savings figure that does not know your resin price, your volume and your current gram weight is a marketing number. The arithmetic strip is yours to drive.",
+        "interaction": "Three inputs in the strip - grams saved per unit, annual units, resin price per tonne - all empty by default with placeholder hints. The page multiplies and shows tonnes and currency in large mono figures. Nothing is pre-filled with a flattering number and no result is stored or sent. A small permanent line under the result reads: this is your arithmetic, not our claim."
+      },
+      {
+        "id": "cavities",
+        "title": "The lightest cavity sets the weight of every cavity.",
+        "purpose": "Deliver the flagship insight of the page - the one argument that converts a tooling conversation into a cost conversation - and place Metal Form's honest 16-46 cavity band inside it without apology.",
+        "layout": "The only inverted section on the page: deep ink surface, everything drawn in cyan and pale hairlines. Two figures side by side on a 7/5 split. Left, a cavity plate seen from above - a true positional array of small circles laid out as a real 32 or 48 cavity plate would be. Right, a dot plot of cavity weights against a horizontal spec-floor line, with the mean drawn as a second line visibly above the floor and the gap between them shaded. Below both, spanning the full width, a horizontal cavitation ruler: 16, 24, 32, 48, 72, 96, 128, 192, with the 16-46 span marked as ours and the rest marked simply as where the industry goes.",
+        "contentOutline": "Open with the mechanism in plain language: you must guarantee a minimum wall and a minimum weight, so the process is set until the lightest cavity in the tool clears the floor, which means everything else runs heavier than it needs to. Halve the spread and the mean moves down without redesigning the part. Then the causes - melt balance across the manifold, cooling balance, manufacturing consistency cavity to cavity - and the framing that these are commercial arguments, not engineering vanity. Then the cavity count arithmetic, done openly: 48 cavities on a 10-second cycle is 17,280 preforms an hour; 32 on the same cycle is around 11,500. Published guidance puts 16-48 cavities as the band below roughly 50 million preforms a year, 72-96 for hundreds of millions, and the very high counts for sustained mega-volume with the maintenance organisation to match. Close with the honest position: we work up to 46 cavities, which is where regional bottlers, independent converters and second-source programmes actually live. Above that band we supply cold-half components rather than complete tools.",
+        "interaction": "Dragging a single slider labelled cavity spread tightens or widens the dot plot; the mean line moves and the shaded gap grows or shrinks in step. The cavity plate dims cavities that fall outside the band. No monetary figure is attached to the movement - the mechanism is shown, the money was already the visitor's to calculate in the previous section."
+      },
+      {
+        "id": "neck",
+        "title": "The neck is the contract.",
+        "purpose": "Demonstrate fluency in the one standard vocabulary every bottler uses daily, and reframe neck choice as a system decision that we can run end to end - which is a project, not a part.",
+        "layout": "A horizontal filmstrip rail of six true-relative-scale SVG neck cross-sections drawn in hairline profile: PCO 1810, PCO 1881, 30/25, 29/25, 26/22, 38 mm. They sit on a single shared baseline at the support ring so the height difference reads instantly. Selecting one drops a two-column spec ledger below, hairline-ruled, no card, no shadow: left column the geometry and typical preform weight, right column what changes if you convert to it.",
+        "contentOutline": "For each standard: what it is, what it is used for, typical 500 ml preform weight where the industry publishes one, and its status - PCO 1881 and 29/25 are where new work goes, PCO 1810 and 30/25 are installed base. Then the point of the section: a cap for one standard will not seal on another, and a conversion is never just a preform tool. It is the preform mould, the blow-mould neck insert, the capper change parts and the cap supply, moving together. Conversions fail when one of the four is ordered last. Metal Form can carry the tooling side of that as a single project - preform tool, blow-mould inserts and closure mould designed against one another.",
+        "interaction": "Clicking a standard on the rail morphs the highlighted profile and swaps the ledger. A second toggle overlays two profiles on top of each other, aligned at the support ring, so the difference in finish height is visible as a shape rather than as a number. Keyboard-navigable; the profiles carry accessible descriptions."
+      },
+      {
+        "id": "stretch",
+        "title": "The neck stays. The body stretches.",
+        "purpose": "Show, in one continuous figure, the physical relationship that governs everything upstream - so the buyer sees that we design the preform for the bottle rather than treating them as separate parts.",
+        "layout": "Full-bleed, pinned on scroll, a single five-stage horizontal sequence on one continuous baseline: preform, infrared reheat, stretch rod and pre-blow, high-pressure blow, finished bottle. Stage labels in mono beneath the line, dimension callouts above it. This is the only section on the page that uses the amber accent, and it uses it only on the reheat stage, where the heat physically is.",
+        "contentOutline": "The neck finish is injection-moulded and never blown - it leaves the preform tool finished and arrives at the filler unchanged. Everything below the support ring is stretched in two directions at once. Typical designs stretch more around the bottle than along it, broadly hoop ratios in the 5.6-6.5 range against axial ratios of 2.4-2.7, with overall ratios around 12-16. That biaxial orientation is what makes a thin PET wall strong. The consequence, and the reason this section exists on a tooling page: the gate zone in the base never gets stretched, stays amorphous, and stays the weak point - which is where stress cracking starts in the field, aggravated by caustic contact, over-carbonation and reduced IV. So gate geometry and material distribution in the preform are shelf-life decisions, decided at tool design.",
+        "interaction": "Scroll-scrubbed, not autoplaying. The preform silhouette elongates along the baseline as the section scrolls, the amber reheat gradient rises and falls across the preform wall at the second stage, and wall-thickness shading thins as the body expands. Fully static and legible at any scroll position, and the whole sequence collapses to five stacked stills under prefers-reduced-motion."
+      },
+      {
+        "id": "defects",
+        "title": "What goes wrong, and where it actually starts.",
+        "purpose": "Buy credibility by telling a bottler which of their problems a new mould will not fix. A supplier who draws that line is worth more than one who claims everything.",
+        "layout": "A matrix, not cards. Rows are defects; columns are the five origins - resin and drying, melt and hot runner, mould and gate, cooling, blowing and handling. A filled hairline square marks the origin. Rows are colour-keyed by a single binary: tooling-side or process-side. Dense, technical, deliberately unglamorous - it should read like a page torn out of a plant manual.",
+        "contentOutline": "Bubbles: moisture. Start at the dryer dew point and residence time, not at the mould. Haze and pearlescence: crystallinity from excessive heat or slow cooling. Acetaldehyde: overheated melt and dead spots in the melt path - a taste problem, and still water is the least forgiving application because there is no flavour to hide it. Black specks: degraded material or contamination in the hot runner. Short shot: injection pressure, cold melt or a blocked gate. Gate crystallinity and gate cracks: tooling. Cavity-to-cavity weight variation: tooling. Flash on the neck sealing surface: tooling. Neck ovality: tooling and cooling together. Base stress cracking in the field: material distribution and gate geometry, aggravated by caustic contact. Closing line, plainly stated: roughly half of this list is not a tooling problem, and we will tell you which half before you buy a tool.",
+        "interaction": "Filter chips along the top switch the matrix between all defects, tooling-side only and process-side only. Selecting a row expands one line of technical detail in place - no modal, no overlay. On narrow viewports the matrix becomes a scrollable table inside its own overflow container, never the page body."
+      },
+      {
+        "id": "closures",
+        "title": "Caps changed in 2024.",
+        "purpose": "Show current regulatory and manufacturing fluency, open a second product line that has nothing to do with preforms, and be explicit about where our scope stops.",
+        "layout": "Two parallel horizontal process tracks running left to right across the full width - injection above, compression below - sharing a common time axis so the cycle difference is visible as length rather than as a number. To the right, a detail callout: a tethered 28 mm cap drawn in plan and section, with the tamper band, the bridge pattern and the hinge annotated in mono.",
+        "contentOutline": "The rule first: under the EU Single-Use Plastics Directive, closures on beverage containers up to three litres must stay attached to the container from July 2024; metal closures and closures for glass bottles are outside it. The reason given is that caps are roughly 15 percent of packaging litter and are too small for sorting equipment once detached. What it did to manufacturing: cap geometry moved from rotationally symmetric to asymmetric, with hinges, tabs and bridge patterns, which breaks assumptions in the tool, in ejection, in feeding and in inspection - and it arrived at the same time as caps getting thinner. Then the two routes. Compression runs melt roughly 30-40 C cooler, so caps cool faster in the tool, cycles are shorter, there is no gate and no vestige, and colour changes are quick because there is no hot runner; it holds a majority of the water and beverage cap market in some regions. Injection gives design freedom, can form tamper-evident features in the tool, and handles complex asymmetric geometry - which matters more now than it did before tethering. Then the scope line, stated without hedging: we make the cap mould. Slitting the tamper band and folding the tether happen on separate downstream equipment which we do not supply.",
+        "interaction": "A single toggle switches which track is emphasised, dimming the other and expanding its stage detail. The tethered cap callout has a small three-step sequence on demand - moulded, slit, folded - explicitly labelled to show which step is ours and which two are not."
+      },
+      {
+        "id": "freight",
+        "title": "A blown bottle is mostly air.",
+        "purpose": "Make the export logic obvious and self-evident rather than asserted, and steer the international conversation onto preforms, closures and tooling - which is where it belongs commercially.",
+        "layout": "A volumetric comparison drawn to true relative scale: two identical container outlines side by side in hairline, one packed with bottle silhouettes, one packed with preform silhouettes at the same true proportions. Nothing is labelled with a multiplier. The geometry does the arguing. Wide, low, centred, with a short paragraph beneath rather than beside.",
+        "contentOutline": "A preform and the bottle it becomes contain the same resin. One of them occupies a small fraction of the space of the other. That is the entire international logic of this business and it does not need a statistic. So what crosses a border sensibly is preforms, closures, moulds, tooling and engineering. Blowing stays where the filling is, because that is where it is commercially sensible. Metal Form delivers internationally, works under NDA, and agrees warranty terms per project. What we ship is the part of the value chain that survives the journey.",
+        "interaction": "A single horizontal wipe control moves the boundary between the two packed containers, so the visitor fills the same volume with one and then the other. Deliberately no counter, no number, no ratio - the moment the page prints a multiplier it becomes a claim we would have to defend."
+      },
+      {
+        "id": "start",
+        "title": "What to send.",
+        "purpose": "Convert, and qualify at the same time. The list itself proves competence - a supplier who knows to ask for tie-bar spacing and take-out plate stations has built these tools before.",
+        "layout": "A two-column ledger with hairline rules and generous leading. Left: what you send. Right: what comes back. No form fields in the ledger itself; the contact action sits below it as a single quiet block. Deliberately the plainest section on the page - after seven sections of figures, this one is just type.",
+        "contentOutline": "What you send: a sample bottle and cap, or drawings, or a photograph and a target gram weight - any one of them is enough to start. If you have it: neck standard, bottle volume and format, current preform weight, annual volume, resin grade and IV, and the machine you will run the tool on - make and model, tie-bar spacing, platen size, clamp tonnage, shot capacity, and how many stations the take-out plate has. What comes back: an assessment of the geometry, a tooling route, a cavity count reasoned against your volume and your machine, the spare-part set we would specify with it, and the production and supply options - tooling only, tooling plus sampling, or ongoing component supply. Under NDA if you need one. Initial project response within 48 business hours. Then the credibility line, stated once and not repeated: Persian engineering since 2006, more than 1,000 completed projects, tooling experience up to 46 cavities, CATIA and SolidWorks, mould warranty with terms per project, international delivery.",
+        "interaction": "None beyond the contact action. This section does not move. After the pinned stretch sequence and the interactive figures above it, stillness is the point."
+      }
+    ],
+    "technicalPanels": [
+      {
+        "title": "Preform tooling: what we specify with the tool",
+        "bullets": [
+          "Cavitation reasoned against annual volume and against the machine already installed - Metal Form works up to 46 cavities",
+          "Cold half: cavity inserts, core rods, split neck rings, lock rings",
+          "Hot runner and gate strategy specified with the tool, valve-gated, with melt path balance and vestige height treated as design outputs",
+          "Cooling circuit designed for the water temperature the plant can actually supply, not for an ideal one",
+          "Core cooling geometry, which governs cycle on thick walls",
+          "Machine interface: tie-bar spacing, platen, tonnage, shot capacity, take-out plate stations",
+          "Venting at the neck and at the parting line, with the split line kept off the sealing surface",
+          "Spare-part set specified at design time and quoted with the tool",
+          "Mould warranty with terms agreed per project"
+        ]
+      },
+      {
+        "title": "Data we need before we can quote",
+        "bullets": [
+          "Bottle: volume, format, still or carbonated, hot fill or ambient",
+          "Neck standard in use, or the one you intend to move to",
+          "Current preform weight and the target, if you have one",
+          "Sample bottle and cap, drawings, or photographs with a dimension we can scale from",
+          "Annual volume and the shape of your season",
+          "Resin grade and IV, and whether recycled content is in the mix",
+          "Injection machine: make, model, tie-bar spacing, platen size, clamp tonnage, shot capacity",
+          "Take-out plate: robot type and number of cooling stations",
+          "Chilled water temperature available at the tool",
+          "Existing tooling to be matched, replaced or second-sourced"
+        ]
+      },
+      {
+        "title": "Neck finish quick reference",
+        "bullets": [
+          "PCO 1881 - ISBT short neck, 28 mm, about 1.75 thread turns, roughly 17 mm finish height. Default for new carbonated lines; 500 ml preforms typically 18-20 g",
+          "PCO 1810 - legacy tall 28 mm carbonated neck, about 2.5 thread turns; 500 ml preforms typically 21-23 g. Installed base only; caps are not interchangeable with 1881",
+          "29/25 - modern short water neck; 500 ml preforms typically 12.7-13.7 g",
+          "30/25 - legacy tall water neck; 500 ml preforms typically 13.5-14.5 g, roughly 0.8-1.0 g heavier than 29/25",
+          "26/22 GME 30.37 - smaller European neck-and-closure system used where lightweighting is pushed hardest; changing to it changes the cap as well",
+          "38 mm - juice, dairy and hot fill, where a wider mouth is needed for viscous product",
+          "A conversion is four things, not one: preform mould, blow-mould neck insert, capper change parts, cap supply"
+        ]
+      },
+      {
+        "title": "The conditions your tool has to survive",
+        "bullets": [
+          "Bottle-grade PET runs at roughly 0.70-0.80 dL/g intrinsic viscosity, and the whole process is a fight to keep it there",
+          "PET is hygroscopic: dry to around 50 ppm moisture or below, desiccant air at roughly -40 C dew point, about 150-175 C, four to six hours",
+          "Water in the melt hydrolyses the chain; IV falls and the bottle is weaker without looking any different. Keep IV loss under about 0.04 dL/g",
+          "Acetaldehyde sits at 1-3 ppm in virgin resin and can reach 10-15 ppm or higher with regrind - still water is the least forgiving application on this page",
+          "Resin suppliers suggest fill speeds of 8-12 g per second per cavity for walls up to 4 mm",
+          "Cooling runs from a minimum of around 1.5 s to as much as 20 s on very thick preforms; chilled water at 8-10 C is cited for the shortest cycles",
+          "Thin preforms gain little from colder water; thick ones gain a great deal - which is why the cooling circuit is a design decision, not a commissioning one",
+          "Recycled content changes drying behaviour, colour, IV and the abrasion the tool sees"
+        ]
+      },
+      {
+        "title": "Wear parts, spares and second source",
+        "bullets": [
+          "The consumable set on a preform tool: split neck rings, core rods, cavity inserts, lock rings, valve pins, nozzle tips, heaters, thermocouples, seals",
+          "Neck rings form the threads, the support ring and the sealing surface - the three features the closure has to meet, and the ones that wear",
+          "Preventive maintenance and timely refurbishment materially extend a tool's productive life; the alternative is discovering the limit during your season",
+          "Spares specified with the tool are cheap and unhurried; spares specified during a breakdown are neither",
+          "A qualified second source is an operational decision, not a purchasing one - it has to exist before it is needed",
+          "Send drawings or send the worn part: we reproduce the geometry and the machine interface",
+          "The same logic scales to a complete backup tool, built to the same interface and held ready",
+          "Bottle and closure geometry is brand property and is handled under NDA"
+        ]
+      }
+    ],
+    "ctaHeadline": "Send the bottle. Send the cap.",
+    "ctaSub": "Drawings, a physical sample, or a photograph and a target gram weight - any one of them is enough to start. We come back with the geometry, the tooling route, the cavity count and the production economics. Under NDA if you need one. Initial project response within 48 business hours.",
+    "whatsappPrefill": "Hello Metal Form. I am a beverage producer and I need: [preform mould / closure mould / blow-mould change parts / spare neck rings and cores / preform or cap supply]. Neck standard: [PCO 1881 / 29/25 / PCO 1810 / 30/25 / other]. Bottle: [500 ml still / 1.5 L carbonated / other]. Current preform weight: [g]. Target: [g]. Annual volume: [units]. Injection machine: [make and model, tie-bar spacing, clamp tonnage]. I can send drawings or a sample.",
+    "metaTitle": "PET Preform & Closure Tooling for Beverage Producers | Metal Form",
+    "metaDescription": "Preform moulds to 46 cavities, closure and tethered-cap moulds, blow-mould change parts, neck-standard conversion and gram-weight redesign for bottlers. Since 2006."
+  },
+  "artDirection": {
+    "moodInOneLine": "Cold clean water seen through precision glass - a bright technical drawing that happens to be about liquid, running on a machine beat.",
+    "palette": {
+      "surface": "#F2F7F9",
+      "surfaceAlt": "#E2ECF0",
+      "ink": "#0A1D25",
+      "inkMuted": "#5B7783",
+      "accent": "#0093B5",
+      "accent2": "#DE8A2B",
+      "rationale": "The surface is a near-white with a measurable cool cast - the colour of light through clear PET, not the colour of paper. surfaceAlt is one step deeper and is used only for the arithmetic strip and the defect matrix, so a change of surface always means a change of function. Ink is a deep teal-black rather than neutral black, which keeps hairlines from reading as engineering-CAD grey and keeps the whole page inside one temperature. Accent cyan is the water and cooling colour and carries every line, fill and data mark on the page. Accent amber is the discipline: it appears in exactly one place, the infrared reheat stage of the stretch sequence, because that is the only place on a real bottling line where heat is applied to a formed part. Amber is never used for a button, a hover, an underline or a highlight. A reader who notices that the only warm colour on the page is where the heat physically is has understood the page. In dark mode the roles invert - ink becomes the surface, cyan holds, amber holds, and the hairlines lighten rather than the fills darkening.",
+      "hairline": "rgba(10,29,37,0.16) in light, rgba(226,236,240,0.20) in dark - all technical linework is drawn at this weight and never heavier"
+    },
+    "typographyNote": "Two families, strictly divided by function. Headings and body in a tight, slightly condensed grotesque - Inter Tight or Archivo - set at generous size with negative tracking on the largest sizes and a very short measure, so headline lines break like specification statements rather than like marketing sentences. Every number, unit, dimension, neck code and gram weight is set in a monospace - IBM Plex Mono or JetBrains Mono - in tabular figures, uppercase for codes. This is not a stylistic flourish: practitioners read PCO 1881 and 29/25 as codes, and setting them in the body face makes them look like prose and lose their authority. The rule is absolute and it is the fastest way to make the page feel written by someone who has been in a plant. Dimension callouts sit at small sizes with wide letter-spacing, the way they do on a mould drawing. No italic anywhere. Section titles are sentence case with a full stop, because they are statements.",
+    "compositionNote": "A strict 12-column grid with a persistent left dimension rail - a thin vertical measurement scale with tick marks running the full height of the page, carrying a small mono readout that updates with scroll position. Every section aligns its content to that rail, so the page reads as one continuously dimensioned drawing rather than as stacked blocks. Composition is deliberately vertical and axial, because bottles are: figures are built on shared vertical centrelines and shared baselines, and comparisons are made by aligning two silhouettes on the same axis rather than by putting them in two boxes. Sections are wide and low with a lot of air above the type. There are no cards anywhere on this page, no shadows, no rounded containers, no filled panels except the two functional surfaceAlt regions and the single inverted cavities section. Separation is done with hairlines and with white space only. Content sits low in each section, which leaves a consistent band of quiet above every heading and gives the page its spaciousness.",
+    "motionLanguage": "Periodic, not easing. The page has a cycle time: a 3.2 second beat that a small number of elements share - the hero wall-thickness fill, the cavity plate, the closure tracks - so that scrolling past them feels like walking past a line that is running. Timing functions are linear or stepped, never bouncy, never elastic; nothing overshoots, because nothing on a bottling line overshoots. Scroll-driven motion is used exactly once, in the stretch sequence, and it is scrubbed rather than triggered, so the visitor controls the stretch the way a stretch rod does. Interactive figures respond instantly and without transition delay - a slider moves a line, immediately. Entrance animation is limited to a short opacity and 8px vertical rise, staggered along the dimension rail, and only on first view. Under prefers-reduced-motion the beat stops, the stretch sequence becomes five stacked stills, and every interactive figure keeps working - none of the information on this page lives in the motion.",
+    "signatureMotif": "Constant neck, stretched body. A repeating hairline silhouette pair in which the top region - threads, support ring, finish height - is drawn identically on both figures and dimensioned in mono, while everything below the support ring morphs from thick, short and cyan-filled to tall, thin and almost empty. It appears full-size in the hero, small in the section rules, and as a repeating unit in the freight comparison. It is the truest single idea in PET packaging - the neck is injection-moulded and never blown - and it works as a logo-scale mark, as a diagram and as a piece of page furniture.",
+    "diagramConcept": "Five distinct figure types, one per idea, none of them a chart in the generic sense. One: the gram ruler, a single continuous horizontal measurement line with preform silhouettes pinned at their weights. Two: the cavity dot plot against a spec-floor line with the shaded gap between floor and mean - the flagship figure of the page. Three: the neck profile rack, six true-scale hairline cross-sections sharing a support-ring baseline, overlayable in pairs. Four: the scrubbed stretch sequence on one continuous baseline, with the single amber reheat moment. Five: the true-scale volumetric freight comparison, two identical container outlines packed with two different silhouettes and no multiplier printed anywhere. All are inline SVG with hairline strokes, all are legible in both themes, all carry accessible descriptions, and all wide figures scroll inside their own overflow container so the page body never scrolls sideways.",
+    "howThisDiffersFromOtherIndustries": "This is the brightest and coolest chapter in the book and the only one composed on a vertical axis. Where an automotive or machinery chapter would run horizontally along an assembly logic and a medical chapter would run on a sterile neutral ground, this one is built like a dimensioned drawing of a tall transparent object: a left measurement rail, shared vertical centrelines, hairline profiles rather than solid forms, and a cyan that is unmistakably water and cooling rather than a generic tech blue. Two things belong to this chapter alone and must not be reused elsewhere. First, the single-amber rule - one warm accent appearing in exactly one physically justified place. Second, the machine beat - a shared periodic timing that makes the page feel like it is running rather than sitting. Its diagram language is measurement and comparison by superposition, where other chapters should use flow, exploded assembly, sequence or section. And its emotional register is restraint: transparent, quiet, exact - a page about a product whose entire virtue is that you can see through it."
+  },
+  "openQuestions": [
+    "Does Metal Form manufacture hot runner systems in-house, or integrate a bought-in system? This changes how the preform mould offer is worded throughout, and the brief currently uses the neutral phrasing hot runner and gate strategy specified with the tool.",
+    "Has Metal Form built PET preform moulds specifically, and at what cavity counts? The verified 46-cavity figure is a general tooling fact - confirm whether it applies to preform tooling or to another product family before the page implies it does.",
+    "Can Metal Form supply cold-half spare components - neck ring sets, cores, cavity inserts - for third-party or OEM preform moulds? The second-source proposition in this brief depends on it and it is the single highest-value offer on the page.",
+    "Does Metal Form have stretch-blow mould experience - shells, base inserts, neck change parts? The neck-conversion-as-one-project argument depends on this.",
+    "Can Metal Form run sampling or a trial shot and supply sample preforms, and if so from whose machine? This determines whether the start section can offer tooling plus sampling as a distinct option.",
+    "Does Metal Form supply preforms and closures as production parts, and at what volume bands? The ongoing supply offer needs a realistic floor and ceiling.",
+    "What steel grades and surface treatments are used on neck rings and cores, and can anything be said about them publicly without straying into wear-life claims?",
+    "Is any material documentation available for supplied moulded parts - resin certificates from the resin supplier, for example - given that Metal Form holds no certifications of its own? Beverage buyers will ask, and the answer needs to be prepared rather than improvised.",
+    "Lead-time bands: what is realistic for a 32-48 cavity preform tool, for a closure mould, and for a spare neck ring set? The page currently avoids all lead-time claims, which is safe but leaves a buyer question unanswered.",
+    "Incoterms, payment route and customs handling for capital tooling into Armenia and the wider EAEU - a practical blocker that a technical page cannot address but a follow-up conversation must.",
+    "Does Metal Form want to state a position on recycled content and rPET processing? Regional exporters into the EU will face recycled-content expectations, and silence is currently the safe choice."
+  ],
+  "recommendations": [
+    "Lead with grams and with cavity spread. The insight that the process is set by the lightest cavity, so spread is paid for in resin on every shot, is the strongest commercial argument available to a mould maker in this sector and no competitor page found in research makes it plainly.",
+    "Put the 16-46 cavity band in plain sight and frame it as the band regional bottlers and second-source programmes actually run. Hiding it invites the buyer to assume more; stating it converts a limitation into a positioning statement.",
+    "Make every economic number on the page the visitor's own arithmetic. The gram calculator takes their resin price, their volume and their gram delta and multiplies - so the page never owns a savings claim it would have to defend.",
+    "State where our scope ends, twice: we do not supply slitting and folding equipment, and we do not supply line equipment. A supplier who draws that line is more believable about everything else on the page.",
+    "Include the defect matrix even though half of it says not our problem. Telling a bottler that bubbles are a dryer issue before they buy a tool is the highest-trust move available and costs nothing.",
+    "Keep the amber accent to the reheat stage only. The rule is the art direction; the moment amber appears on a button the page loses its logic.",
+    "Do not name the Armenian target or any bottler anywhere in copy or in research shown to the client. The market intelligence that the region's largest producer converts its own preforms is valuable for positioning the offer - moulds and spares, not just preform supply - but it must never appear as an implied reference.",
+    "Write for a buyer who may be reading in a second or third language. Short sentences, concrete nouns, codes in mono, and no idiom. The register the brief uses throughout is the register the page should ship in.",
+    "Build the what-to-send list as a genuinely useful checklist. Asking for tie-bar spacing and take-out plate stations proves more competence than any adjective on the page, and it qualifies the enquiry before the first call.",
+    "No photography, no renders that imply a factory we cannot show. Everything is inline SVG hairline work and CSS. Where the page needs to feel physical it should do so through precise geometry and true relative scale, not through simulated materials.",
+    "Every figure must survive being screenshotted and sent to a plant engineer. Assume the page will be scrutinised out of context by someone who has run these tools for twenty years - which is exactly what will happen if the first pitch lands."
+  ]
+}

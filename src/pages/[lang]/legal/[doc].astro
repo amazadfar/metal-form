@@ -1,0 +1,82 @@
+---
+/**
+ * LEGAL PAGES — architecture only.
+ *
+ * `getStaticPaths` returns an empty array while `FEATURES.legalPages` is off,
+ * so nothing is generated and nothing is linked. The routing, the layout and the
+ * content contract are in place; the text is not, because inventing enforceable
+ * legal language would be worse than having none.
+ *
+ * To bring these live:
+ *   1. Have a privacy policy and terms drafted for the jurisdictions the company
+ *      actually sells into.
+ *   2. Add `legal/privacy.json` and `legal/terms.json` under each locale folder,
+ *      following the shape below.
+ *   3. Switch `FEATURES.legalPages` on in `src/config/site.ts`.
+ *   4. Add the links to the footer.
+ *
+ * A cookie notice is only required once an analytics provider that sets cookies
+ * is connected — see `FEATURES.analytics`. Today nothing is set and nothing is
+ * sent anywhere, so there is nothing to consent to.
+ */
+import Base from '../../../layouts/Base.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import { LOCALE_ORDER, type Locale } from '../../../i18n/locales.ts';
+import { getCommon } from '../../../content/index.ts';
+import { FEATURES } from '../../../config/site.ts';
+
+/** The documents this route will serve once approved text exists. */
+const DOCS = ['privacy', 'terms'] as const;
+
+export interface LegalDoc {
+  meta: { title: string; description: string };
+  heading: string;
+  updated: string;
+  intro: string;
+  sections: Array<{ heading: string; body: string[] }>;
+}
+
+export function getStaticPaths() {
+  if (!FEATURES.legalPages) return [];
+  return LOCALE_ORDER.flatMap((lang) => DOCS.map((doc) => ({ params: { lang, doc } })));
+}
+
+const locale = Astro.params.lang as Locale;
+const doc = Astro.params.doc as (typeof DOCS)[number];
+const c = getCommon(locale);
+
+// Only reached once FEATURES.legalPages is on and the content files exist.
+const content = (await import(`../../../content/${locale}/legal/${doc}.json`)) as { default: LegalDoc };
+const p = content.default;
+---
+
+<Base locale={locale} meta={p.meta} route={`legal/${doc}`}>
+  <a class="skip-link" href="#main">{c.a11y.skipToContent}</a>
+  <SiteHeader locale={locale} />
+
+  <main id="main" class="legal">
+    <div class="shell--narrow">
+      <h1 class="t-h3">{p.heading}</h1>
+      <p class="legal__updated t-fine">{p.updated}</p>
+      <p class="t-lead legal__intro">{p.intro}</p>
+
+      {p.sections.map((section) => (
+        <section class="legal__section">
+          <h2 class="t-h5">{section.heading}</h2>
+          {section.body.map((para) => <p>{para}</p>)}
+        </section>
+      ))}
+    </div>
+  </main>
+
+  <SiteFooter locale={locale} />
+</Base>
+
+<style>
+  .legal { padding-block: clamp(3rem, 7vw, 6rem) var(--section-y); }
+  .legal__updated { margin-block-start: var(--sp-4); }
+  .legal__intro { margin-block-start: var(--sp-6); }
+  .legal__section { margin-block-start: var(--sp-8); }
+  .legal__section p { margin-block-start: var(--sp-4); color: var(--ink-muted); max-inline-size: var(--measure); }
+</style>

@@ -1,0 +1,1881 @@
+---
+/**
+ * AUTOMOTIVE & HEAVY VEHICLES — the drawing-sheet chapter.
+ *
+ * This page is composed as engineering documentation rather than as a web page.
+ * It opens on a full drawing sheet — inset border, tick rulers, orthographic
+ * assembly, title block carrying the verified facts as drawing fields — and it
+ * closes on a revision block.
+ *
+ * The signature motif is the BALLOON-AND-LEADER CALLOUT. Every annotation on the
+ * page arrives as a numbered circle at the end of a drawn leader with a short
+ * horizontal landing, exactly as a part is ballooned on an assembly drawing.
+ * The balloon carries a number and nothing else — the names live in the parts
+ * list beside the drawing, which is both the correct convention and the only way
+ * a drawing survives translation into nine languages.
+ *
+ * Amber is rationed to balloons, dimension figures and active states. Everything
+ * else is graphite on paper.
+ *
+ * The argument the page turns on is in the sheet header: a passenger-car maker
+ * retools with the model cycle, a heavy-vehicle builder runs the same tool for a
+ * decade. That inverts which savings are real.
+ */
+import type { Locale } from '../../i18n/locales.ts';
+import type { Industry } from '../../config/industries.ts';
+import type { IndustryContent, CommonContent } from '../../content/types.ts';
+
+interface Props {
+  locale: Locale;
+  industry: Industry;
+  content: IndustryContent;
+  common: CommonContent;
+}
+const { content, common } = Astro.props;
+const b = content.blocks as any;
+
+/* ── Drawing geometry ─────────────────────────────────────────────────────
+   Coordinates are the component's own, not content: they belong to the
+   drawing, never to the translator. */
+
+/** Hero sheet balloons: circle, landing end, anchor dot. */
+const SHEET_BALLOONS = [
+  { cx: 556, cy: 96, ax: 452, ay: 146 },
+  { cx: 556, cy: 168, ax: 400, ay: 210 },
+  { cx: 200, cy: 400, ax: 276, ay: 221 },
+  { cx: 108, cy: 400, ax: 58, ay: 227 },
+];
+
+/** Component-register balloons on the vehicle elevation, in register order. */
+const VEHICLE = [
+  { bx: 292, by: 44, ax: 216, ay: 160 },
+  { bx: 112, by: 44, ax: 140, ay: 190 },
+  { bx: 242, by: 336, ax: 176, ay: 172 },
+  { bx: 180, by: 336, ax: 150, ay: 200 },
+  { bx: 352, by: 44, ax: 300, ay: 224 },
+  { bx: 428, by: 336, ax: 350, ay: 231 },
+  { bx: 44, by: 44, ax: 62, ay: 150 },
+  { bx: 490, by: 336, ax: 390, ay: 252 },
+  { bx: 56, by: 336, ax: 66, ay: 204 },
+  { bx: 172, by: 44, ax: 150, ay: 148 },
+  { bx: 232, by: 44, ax: 186, ay: 138 },
+  { bx: 118, by: 336, ax: 104, ay: 208 },
+  { bx: 304, by: 336, ax: 232, ay: 236 },
+  { bx: 366, by: 336, ax: 270, ay: 232 },
+  { bx: 496, by: 44, ax: 450, ay: 219 },
+];
+
+/** Balloons for the six mould subsystems, in step order. */
+const TOOL_BALLOONS = [
+  { cx: 40, cy: 300, ax: 170, ay: 224 },
+  { cx: 720, cy: 150, ax: 540, ay: 210 },
+  { cx: 720, cy: 96, ax: 386, ay: 150 },
+  { cx: 40, cy: 100, ax: 150, ay: 136 },
+  { cx: 40, cy: 200, ax: 236, ay: 222 },
+  { cx: 720, cy: 330, ax: 500, ay: 210 },
+];
+
+/** Anisotropic-shrinkage balloons. */
+const WARP_BALLOONS = [
+  { cx: 54, cy: 214, ax: 100, ay: 120 },
+  { cx: 340, cy: 214, ax: 388, ay: 120 },
+  { cx: 520, cy: 214, ax: 462, ay: 152 },
+  { cx: 330, cy: 30, ax: 360, ay: 55 },
+];
+
+/** Leader geometry: short horizontal landing at the balloon, then a straight run. */
+function leader(p: { cx?: number; cy?: number; bx?: number; by?: number; ax: number; ay: number }, r: number) {
+  const cx = p.cx ?? p.bx ?? 0;
+  const cy = p.cy ?? p.by ?? 0;
+  const dir = p.ax >= cx ? 1 : -1;
+  const land = cx + dir * (r + 14);
+  return `M${cx + dir * r} ${cy} H${land} L${p.ax} ${p.ay}`;
+}
+
+/* ── Register: four zones flattened to one balloon sequence ─────────────── */
+const zones = (b.parts?.zones ?? []) as any[];
+let acc = 0;
+const zoneBlocks = zones.map((z: any) => {
+  const start = acc;
+  const items = (z.items ?? []) as any[];
+  acc += items.length;
+  return { name: z.name, note: z.note, items, start };
+});
+const partItems = zoneBlocks.flatMap((z: any) => z.items);
+
+/* Cumulative tolerance envelope, per grade. Half-band added by each part. */
+const ENVELOPE = [11, 6];
+const toolSteps = (b.tool?.steps ?? []) as any[];
+const lifeMarkers = (b.life?.markers ?? []) as any[];
+const routeItems = (b.routes?.items ?? []) as any[];
+const grades = (b.fit?.grades ?? []) as any[];
+---
+
+<article class="av">
+
+  {/* ── Shared drawing definitions. One set of ids for the whole chapter. ── */}
+  <svg class="av-defs" data-nomirror aria-hidden="true" focusable="false">
+    <defs>
+      <pattern id="av-h-a" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <path d="M0 0 V10" class="av-hatch" />
+      </pattern>
+      <pattern id="av-h-b" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <path d="M0 0 V7" class="av-hatch" />
+      </pattern>
+      <pattern id="av-h-c" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+        <path d="M0 0 V5" class="av-hatch" />
+      </pattern>
+      <pattern id="av-h-d" width="13" height="13" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <path d="M0 0 V13" class="av-hatch" />
+      </pattern>
+      <pattern id="av-h-e" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <path d="M0 0 V8 M0 0 H8" class="av-hatch" />
+      </pattern>
+      <pattern id="av-h-f" width="15" height="15" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+        <path d="M0 0 V15" class="av-hatch" />
+      </pattern>
+      <pattern id="av-h-g" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <path d="M0 0 V9" class="av-hatch av-hatch--dash" />
+      </pattern>
+      <pattern id="av-h-h" width="17" height="17" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+        <path d="M0 0 V17" class="av-hatch" />
+      </pattern>
+      {/* Steel is hatched at +45°, the moulded part at −45°, as a section is drawn. */}
+      <pattern id="av-h-steel" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <path d="M0 0 V11" class="av-hatch" />
+      </pattern>
+      <pattern id="av-h-part" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+        <path d="M0 0 V6" class="av-hatch av-hatch--part" />
+      </pattern>
+      <marker id="av-arw-e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M0 1 L9 5 L0 9" class="av-arw" />
+      </marker>
+      <marker id="av-arw-s" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M10 1 L1 5 L10 9" class="av-arw" />
+      </marker>
+    </defs>
+  </svg>
+
+  {/* ═══ SHEET HEADER ══════════════════════════════════════════════════════ */}
+  <header class="av-sheet">
+    <div class="av-sheet__frame" aria-hidden="true"></div>
+    <div class="av-sheet__ruler av-sheet__ruler--block" aria-hidden="true"></div>
+    <div class="av-sheet__ruler av-sheet__ruler--inline" aria-hidden="true"></div>
+
+    <div class="shell--wide av-sheet__inner">
+      <div class="av-sheet__copy">
+        <p class="av-kick">
+          <span class="av-bal">{b.sheet.index}</span>
+          <span class="av-lead" aria-hidden="true"></span>
+          <span class="t-label">{content.hero.kicker}</span>
+        </p>
+
+        <h1 class="av-sheet__head">
+          {content.hero.headline.map((line: string, i: number) => (
+            <span style={`--l:${i}`}>{line}</span>
+          ))}
+        </h1>
+
+        <p class="av-sheet__orient t-mono">{b.sheet.orientation}</p>
+        <p class="av-sheet__lead">{content.hero.lead}</p>
+        <p class="av-sheet__pivot">{b.sheet.pivot}</p>
+      </div>
+
+      <figure class="av-sheet__fig" data-reveal>
+        <svg viewBox="0 0 600 440" data-nomirror role="img" aria-label={b.sheet.figureLabel}>
+          {/* ── Front elevation ───────────────────────────────────────── */}
+          <g transform="translate(60 60)">
+            <path d="M0 150 h230 v34 h-230 z" class="av-ln" />
+            <path d="M18 150 v-92" class="av-ln" />
+            <path d="M76 150 v-92" class="av-ln" />
+            <circle cx="47" cy="48" r="29" class="av-ln" />
+            <circle cx="47" cy="48" r="13" class="av-ln" />
+            <path d="M76 150 v-44 l70 44 z" class="av-ln" />
+            <circle cx="180" cy="167" r="8" class="av-ln" />
+            <circle cx="210" cy="167" r="8" class="av-ln" />
+            {/* External undercut — a groove in the end face, formed by a slide */}
+            <path d="M230 156 h-18 v10 h18" class="av-ln" />
+            {/* Gate mark on the end face */}
+            <path d="M0 161 l-9 6 l9 6 z" class="av-solid" />
+            {/* Hidden detail — the bore behind the cut plane */}
+            <path d="M34 58 v92 M60 58 v92" class="av-hid" />
+            {/* Centre lines */}
+            <path d="M47 8 v196" class="av-cl" />
+            <path d="M4 48 h90" class="av-cl" />
+            <path d="M168 167 h54 M180 153 v28 M210 153 v28" class="av-cl" />
+            {/* Cutting plane */}
+            <path d="M47 2 v14 M47 190 v14" class="av-cut" />
+            <text x="56" y="12" class="av-mi">A</text>
+            <text x="56" y="212" class="av-mi">A</text>
+            {/* Overall dimension */}
+            <path d="M0 188 v22 M230 188 v22" class="av-ext" />
+            <path d="M0 204 H230" class="av-dim" marker-start="url(#av-arw-s)" marker-end="url(#av-arw-e)" />
+            <text x="115" y="199" text-anchor="middle" class="av-fig">{b.sheet.dimWidth}</text>
+          </g>
+
+          {/* ── Section A–A ───────────────────────────────────────────── */}
+          <g transform="translate(370 60)">
+            <path d="M0 150 h150 v34 h-150 z" class="av-ln av-fill-steel" />
+            <path d="M18 40 h16 v110 h-16 z" class="av-ln av-fill-steel" />
+            <path d="M60 40 h16 v110 h-16 z" class="av-ln av-fill-steel" />
+            <path d="M-16 150 H166" class="av-part-ln" />
+            <path d="M47 20 v180" class="av-cl" />
+            <path d="M34 56 v28 M60 56 v28" class="av-ext" />
+            <path d="M34 70 H60" class="av-dim" marker-start="url(#av-arw-s)" marker-end="url(#av-arw-e)" />
+            <text x="47" y="50" text-anchor="middle" class="av-fig">{b.sheet.dimBore}</text>
+            <text x="75" y="212" text-anchor="middle" class="av-mi">{b.sheet.sectionMark}</text>
+          </g>
+
+          {/* ── Balloons ─────────────────────────────────────────────── */}
+          {SHEET_BALLOONS.map((p: any, i: number) => (
+            <g class="av-bln" style={`--i:${i}`}>
+              <path d={leader(p, 13)} class="av-ldr" />
+              <circle cx={p.ax} cy={p.ay} r="2.8" class="av-anchor" />
+              <circle cx={p.cx} cy={p.cy} r="13" class="av-bln__c" />
+              <text x={p.cx} y={p.cy + 3.8} text-anchor="middle" class="av-bln__t">
+                {b.sheet.balloons[i]?.n}
+              </text>
+            </g>
+          ))}
+        </svg>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+
+      {/* ── Parts list ─────────────────────────────────────────────────── */}
+      <div class="av-sheet__list">
+        <p class="t-label av-sheet__list-h">{b.sheet.legendLabel}</p>
+        <dl class="av-parts">
+          {b.sheet.balloons.map((item: any) => (
+            <div class="av-parts__row">
+              <dt><span class="av-bal av-bal--sm">{item.n}</span><span class="av-parts__name">{item.label}</span></dt>
+              <dd>{item.note}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      {/* ── Title block: the verified facts, as drawing fields ─────────── */}
+      <div class="av-title">
+        <p class="t-label av-title__h">{b.sheet.titleBlockLabel}</p>
+        <dl class="av-title__grid">
+          {b.sheet.fields.map((f: any) => (
+            <div class="av-title__cell">
+              <dt class="t-label">{f.k}</dt>
+              <dd class="t-mono">{f.v}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <p class="av-sheet__note t-fine">{b.sheet.borderNote}</p>
+    </div>
+  </header>
+
+  {/* ═══ 01 · COMPONENT REGISTER ══════════════════════════════════════════ */}
+  <section class="av-sec av-map" id="register" data-stepper>
+    <div class="shell--wide">
+      <div class="av-head">
+        <p class="av-kick">
+          <span class="av-bal">{b.parts.index}</span>
+          <span class="av-lead" aria-hidden="true"></span>
+          <span class="t-label">{b.parts.kicker}</span>
+        </p>
+        <h2 class="av-h2">{b.parts.heading}</h2>
+        <p class="t-lead">{b.parts.body}</p>
+      </div>
+
+      <div class="av-map__grid">
+        <figure class="av-map__fig">
+          <svg viewBox="0 0 560 380" data-nomirror role="img" aria-label={b.parts.figureLabel}>
+            <g class="av-veh">
+              <path d="M20 288 H540" class="av-ground" />
+              {/* Cab */}
+              <path d="M70 218 v-72 l18 -34 h118 v106 z" class="av-ln" />
+              <path d="M92 142 l12 -22 h96 v22 z" class="av-ln av-ln--fine" />
+              <path d="M112 218 v-68 h56 v68" class="av-ln av-ln--fine" />
+              {/* Mirror */}
+              <path d="M88 132 l-28 -12 M60 120 v34" class="av-ln av-ln--fine" />
+              <path d="M52 146 h12 v26 h-12 z" class="av-ln av-ln--fine" />
+              {/* Marker lamp */}
+              <path d="M70 196 h-10 v18 h10" class="av-ln av-ln--fine" />
+              {/* Engine bay, hidden */}
+              <path d="M96 156 h100 v60 h-100 z" class="av-hid" />
+              {/* Intake stack */}
+              <path d="M208 130 h14 v88 h-14 z" class="av-ln av-ln--fine" />
+              {/* Body */}
+              <path d="M220 118 h284 v100 h-284 z" class="av-ln" />
+              {/* Chassis rails */}
+              <path d="M74 218 H496 M74 230 H496 M74 218 v12 M496 218 v12" class="av-ln av-ln--fine" />
+              {/* Tank */}
+              <path d="M240 234 h84 v34 h-84 z" class="av-ln av-ln--fine" />
+              {/* Arches */}
+              <path d="M100 218 a36 36 0 0 1 72 0" class="av-ln av-ln--fine" />
+              <path d="M352 218 a38 38 0 0 1 76 0" class="av-ln av-ln--fine" />
+              <path d="M424 218 a38 38 0 0 1 76 0" class="av-ln av-ln--fine" />
+              {/* Wheels */}
+              {[136, 390, 462].map((x: any) => (
+                <g>
+                  <circle cx={x} cy="252" r="34" class="av-ln" />
+                  <circle cx={x} cy="252" r="15" class="av-ln av-ln--fine" />
+                  <path d={`M${x - 26} 252 h52 M${x} 226 v52`} class="av-cl" />
+                </g>
+              ))}
+            </g>
+
+            {partItems.map((item: any, i: number) => {
+              const p = VEHICLE[i] ?? VEHICLE[0];
+              return (
+                <g class="av-bln av-vbln" style={`--b:${i}`}>
+                  <path d={leader(p, 12)} class="av-ldr" />
+                  <circle cx={p.ax} cy={p.ay} r="2.6" class="av-anchor" />
+                  <circle cx={p.bx} cy={p.by} r="12" class="av-bln__c" />
+                  <text x={p.bx} y={p.by + 3.6} text-anchor="middle" class="av-bln__t">{item.n}</text>
+                </g>
+              );
+            })}
+          </svg>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+        </figure>
+
+        <div class="av-reg">
+          {zoneBlocks.map((zone: any) => (
+            <section class="av-reg__zone">
+              <header class="av-reg__zh">
+                <h3 class="t-label">{zone.name}</h3>
+                <p class="t-fine">{zone.note}</p>
+              </header>
+              <ol class="av-reg__rows">
+                {zone.items.map((item: any, j: number) => (
+                  <li
+                    class="av-reg__row"
+                    data-station-step={zone.start + j}
+                    style={`--b:${zone.start + j}`}
+                  >
+                    <span class="av-bal av-bal--sm">{item.n}</span>
+                    <div class="av-reg__body">
+                      <h4 class="av-reg__name">{item.name}</h4>
+                      <p class="av-reg__note">{item.note}</p>
+                      <p class="av-reg__mat t-mono">{item.material}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          ))}
+        </div>
+      </div>
+
+      <p class="av-close">{b.parts.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 02 · MATERIAL RAIL — breaks the vertical rhythm ══════════════════ */}
+  <section class="av-sec av-mat" id="material">
+    <div class="shell--wide">
+      <div class="av-head">
+        <p class="av-kick">
+          <span class="av-bal">{b.materials.index}</span>
+          <span class="av-lead" aria-hidden="true"></span>
+          <span class="t-label">{b.materials.kicker}</span>
+        </p>
+        <h2 class="av-h2">{b.materials.heading}</h2>
+        <p class="t-lead">{b.materials.body}</p>
+      </div>
+      <p class="t-label av-mat__rail-h">{b.materials.railLabel}</p>
+    </div>
+
+    <div class="av-rail" tabindex="0" role="group" aria-label={b.materials.railLabel}>
+      {b.materials.items.map((m: any, i: number) => (
+        <article class="av-rail__item" style={`--i:${i}`}>
+          <div class="av-swatch">
+            <svg viewBox="0 0 200 90" data-nomirror aria-hidden="true" focusable="false">
+              <path d="M10 14 h180 v62 h-180 z" class="av-ln" style={`fill:url(#av-h-${m.hatch})`} />
+              <path d="M10 14 H190" class="av-cutface" />
+            </svg>
+          </div>
+          <p class="av-rail__code t-mono">{m.code}</p>
+          <p class="av-rail__name">{m.name}</p>
+          <dl class="av-rail__spec">
+            <div><dt class="t-label">{b.materials.headings.shrink}</dt><dd class="t-mono">{m.shrink}</dd></div>
+            <div><dt class="t-label">{b.materials.headings.use}</dt><dd>{m.use}</dd></div>
+            <div><dt class="t-label">{b.materials.headings.tool}</dt><dd class="av-rail__tool">{m.tool}</dd></div>
+          </dl>
+        </article>
+      ))}
+    </div>
+
+    <div class="shell--wide">
+      <div class="av-rail__foot">
+        <p class="figure-note">{common.schematic}</p>
+        <p class="av-rail__hint t-fine">{common.a11y.scrollForMore}</p>
+      </div>
+      <ol class="av-mat__notes">
+        {b.materials.notes.map((n: string, i: number) => (
+          <li><span class="av-bal av-bal--sm">{String(i + 1).padStart(2, '0')}</span><span>{n}</span></li>
+        ))}
+      </ol>
+      <p class="av-source t-fine">{b.materials.sourceNote}</p>
+    </div>
+  </section>
+
+  {/* ═══ 03 · INSIDE THE TOOL ═════════════════════════════════════════════ */}
+  <section class="av-sec av-tool" id="tool" data-stepper>
+    <div class="shell--wide">
+      <div class="av-head">
+        <p class="av-kick">
+          <span class="av-bal">{b.tool.index}</span>
+          <span class="av-lead" aria-hidden="true"></span>
+          <span class="t-label">{b.tool.kicker}</span>
+        </p>
+        <h2 class="av-h2">{b.tool.heading}</h2>
+        <p class="t-lead">{b.tool.body}</p>
+      </div>
+
+      <div class="av-tool__grid">
+        <figure class="av-tool__fig">
+          <svg viewBox="0 0 760 480" data-nomirror role="img" aria-label={b.tool.figureLabel}>
+            {/* Base assembly — always legible */}
+            <g class="av-asm">
+              <path d="M80 70 h600 v154 h-180 v-30 h-240 v30 h-180 z" class="av-ln av-fill-steel" />
+              <path d="M80 378 h600 v-154 h-194 v-18 h-212 v18 h-194 z" class="av-ln av-fill-steel" />
+              <path d="M80 378 h56 v70 h-56 z" class="av-ln av-fill-steel" />
+              <path d="M624 378 h56 v70 h-56 z" class="av-ln av-fill-steel" />
+              <path d="M260 224 v-30 h240 v30 h-14 v-18 h-212 v18 z" class="av-ln av-fill-part" />
+              <path d="M380 30 v420" class="av-cl" />
+            </g>
+
+            {/* 01 The split */}
+            <g class="av-sub" data-sub="0">
+              <path d="M40 224 H720" class="av-pl" />
+              <path d="M256 194 H206 M256 224 H206" class="av-ext" />
+              <path d="M212 194 V224" class="av-dim" marker-start="url(#av-arw-s)" marker-end="url(#av-arw-e)" />
+              <path d="M260 224 v-14 M500 224 v-14" class="av-shut" />
+            </g>
+
+            {/* 02 The mechanisms */}
+            <g class="av-sub" data-sub="1">
+              <g class="av-slide">
+                <path d="M500 194 h74 v30 h-74 z" class="av-ln av-fill-steel" />
+                <path d="M500 194 v30" class="av-wear" />
+              </g>
+              <path d="M596 76 L556 218 M606 79 L566 221" class="av-rod" />
+              <path d="M592 66 h20 v12 h-20 z" class="av-ln" />
+              <path d="M598 150 h52 v74 h-26 z" class="av-ln av-fill-steel" />
+              <text x="626" y="130" text-anchor="middle" class="av-fig">{b.tool.camAngle}</text>
+              <g class="av-lifter">
+                <path d="M196 404 L262 206 M208 408 L274 210" class="av-rod" />
+                <path d="M188 396 h30 v18 h-30 z" class="av-ln" />
+              </g>
+              <path d="M160 404 h440 v24 h-440 z" class="av-ln av-fill-steel" />
+            </g>
+
+            {/* 03 The feed */}
+            <g class="av-sub" data-sub="2">
+              <path d="M300 84 h160 v26 h-160 z" class="av-ln av-fill-steel" />
+              <path d="M374 110 v84 M386 110 v84" class="av-ln av-ln--fine" />
+              <path d="M374 190 l6 8 l6 -8 z" class="av-solid" />
+              <path d="M366 128 H394 M366 148 H394 M366 168 H394" class="av-ln av-ln--fine" />
+              <circle cx="200" cy="224" r="8" class="av-ln" />
+              <path d="M208 224 H258" class="av-ln av-ln--fine" />
+            </g>
+
+            {/* 04 The cooling */}
+            <g class="av-sub" data-sub="3">
+              {[150, 226, 302, 458, 534, 610].map((x: any) => (
+                <g>
+                  <circle cx={x} cy="136" r="11" class="av-ln" />
+                  <path d={`M${x - 16} 136 h32 M${x} 120 v32`} class="av-cl" />
+                </g>
+              ))}
+              {[150, 226, 302, 458, 534, 610].map((x: any) => (
+                <g>
+                  <circle cx={x} cy="306" r="11" class="av-ln" />
+                  <path d={`M${x - 16} 306 h32 M${x} 290 v32`} class="av-cl" />
+                </g>
+              ))}
+              <path d="M300 300 V262 H330 V244 H430 V262 H460 V300" class="av-cool" />
+            </g>
+
+            {/* 05 The venting */}
+            <g class="av-sub" data-sub="4">
+              <path d="M236 222 H260 M500 222 H524" class="av-vent" />
+              <path d="M232 218 H200" class="av-dim" marker-end="url(#av-arw-e)" />
+              <path d="M528 218 H560" class="av-dim" marker-end="url(#av-arw-e)" />
+            </g>
+
+            {/* 06 The steel */}
+            <g class="av-sub" data-sub="5">
+              <path d="M260 224 V194 H500 V224" class="av-face" />
+              <path d="M274 224 V206 H486 V224" class="av-face" />
+              <circle cx="380" cy="194" r="20" class="av-detail" />
+              <text x="614" y="262" text-anchor="middle" class="av-fig">{b.tool.hardness}</text>
+            </g>
+
+            {/* Subsystem balloons */}
+            {toolSteps.map((s: any, i: number) => {
+              const p = TOOL_BALLOONS[i] ?? TOOL_BALLOONS[0];
+              return (
+                <g class="av-bln av-sub" data-sub={String(i)}>
+                  <path d={leader(p, 13)} class="av-ldr" />
+                  <circle cx={p.ax} cy={p.ay} r="2.8" class="av-anchor" />
+                  <circle cx={p.cx} cy={p.cy} r="13" class="av-bln__c" />
+                  <text x={p.cx} y={p.cy + 3.8} text-anchor="middle" class="av-bln__t">{s.n}</text>
+                </g>
+              );
+            })}
+          </svg>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+        </figure>
+
+        <ol class="av-steps">
+          {toolSteps.map((s: any, i: number) => (
+            <li class="av-step" data-station-step={i}>
+              <p class="av-step__h">
+                <span class="av-bal av-bal--sm">{s.n}</span>
+                <span class="av-step__label">{s.label}</span>
+              </p>
+              <p class="av-step__body">{s.body}</p>
+              <ul class="av-step__spec">
+                {s.spec.map((k: string) => <li class="t-mono">{k}</li>)}
+              </ul>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <p class="av-close">{b.tool.close}</p>
+      <p class="av-source t-fine">{b.tool.sourceNote}</p>
+    </div>
+  </section>
+
+  {/* ═══ 04 · DIMENSION AND FIT ═══════════════════════════════════════════ */}
+  <section class="av-sec av-fit" id="fit">
+    <div class="shell--wide">
+      <div class="av-head">
+        <p class="av-kick">
+          <span class="av-bal">{b.fit.index}</span>
+          <span class="av-lead" aria-hidden="true"></span>
+          <span class="t-label">{b.fit.kicker}</span>
+        </p>
+        <h2 class="av-h2">{b.fit.heading}</h2>
+        <p class="t-lead">{b.fit.body}</p>
+      </div>
+
+      <div class="av-stack" data-tabs>
+        <div class="av-stack__tabs" role="tablist" aria-label={b.fit.tabsLabel}>
+          {grades.map((g: any) => (
+            <button
+              class="av-stack__tab"
+              type="button"
+              role="tab"
+              data-tab={g.id}
+              aria-selected="false"
+              id={`av-tab-${g.id}`}
+              aria-controls={`av-panel-${g.id}`}
+            >{g.name}</button>
+          ))}
+        </div>
+
+        {grades.map((g: any, gi: number) => {
+          const e = ENVELOPE[gi] ?? 8;
+          const up = `M60 192 L190 ${192 - e} L312 ${192 - 2 * e} L452 ${192 - 3 * e} L562 ${192 - 4 * e}`;
+          const dn = `M60 192 L190 ${192 + e} L312 ${192 + 2 * e} L452 ${192 + 3 * e} L562 ${192 + 4 * e}`;
+          return (
+            <div
+              class="av-stack__panel"
+              data-panel={g.id}
+              role="tabpanel"
+              id={`av-panel-${g.id}`}
+              aria-labelledby={`av-tab-${g.id}`}
+              hidden
+            >
+              <figure class="av-stack__fig">
+                <p class="t-label">{b.fit.stackLabel}</p>
+                <svg viewBox="0 0 700 250" data-nomirror role="img" aria-label={b.fit.stackLabel}>
+                  {[[60, 190], [190, 312], [312, 452], [452, 562]].map((seg: any, i: number) => (
+                    <g>
+                      <path d={`M${seg[0]} 46 H${seg[1]} V126 H${seg[0]} z`} class="av-ln av-fill-part" />
+                      <text x={(seg[0] + seg[1]) / 2} y="144" text-anchor="middle" class="av-mi">
+                        {String(i + 1).padStart(2, '0')}
+                      </text>
+                      <path d={`M${seg[1] - 5} 26 v14 M${seg[1] + 5} 26 v14`} class="av-tolmark" />
+                    </g>
+                  ))}
+                  <path d="M40 126 H620" class="av-datum" />
+                  <path d="M60 156 H600 M60 228 H600" class="av-limit" />
+                  <path d={up} class="av-env" />
+                  <path d={dn} class="av-env" />
+                  <path d="M60 192 H562" class="av-cl" />
+                  <text x="576" y="196" class="av-fig">{g.env}</text>
+                </svg>
+                <div class="av-stack__legend">
+                  <p class="t-fine"><span class="av-sw av-sw--env"></span>{b.fit.envLabel}</p>
+                  <p class="t-fine"><span class="av-sw av-sw--limit"></span>{b.fit.limitLabel}</p>
+                </div>
+                <figcaption class="figure-note">{common.schematic}</figcaption>
+              </figure>
+
+              <dl class="av-stack__spec">
+                <div><dt class="t-label">{b.fit.gradeHeadings.small}</dt><dd class="t-mono">{g.small}</dd></div>
+                <div><dt class="t-label">{b.fit.gradeHeadings.large}</dt><dd class="t-mono">{g.large}</dd></div>
+                <div><dt class="t-label">{b.fit.gradeHeadings.env}</dt><dd>{g.stack}</dd></div>
+              </dl>
+              <p class="av-stack__note">{g.note}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <div class="av-fit__cols">
+        <section class="av-classes">
+          <h3 class="av-h4">{b.fit.classesHeading}</h3>
+          <ol class="av-classes__list">
+            {b.fit.classes.map((c: any, i: number) => (
+              <li>
+                <span class="av-bal av-bal--sm">{String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <p class="av-classes__name">{c.name}</p>
+                  <p class="av-classes__note">{c.note}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section class="av-signs">
+          <h3 class="t-label">{b.fit.signsHeading}</h3>
+          <ul class="av-signs__list">
+            {b.fit.signs.map((s: string) => <li>{s}</li>)}
+          </ul>
+        </section>
+      </div>
+
+      <div class="av-warp">
+        <div class="av-warp__copy">
+          <h3 class="av-h3">{b.fit.warpHeading}</h3>
+          <p class="av-warp__body">{b.fit.warpBody}</p>
+          <dl class="av-parts av-parts--tight">
+            {b.fit.warpBalloons.map((item: any) => (
+              <div class="av-parts__row">
+                <dt><span class="av-bal av-bal--sm">{item.n}</span><span class="av-parts__name">{item.label}</span></dt>
+                <dd>{item.note}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <figure class="av-warp__fig" data-reveal>
+          <svg viewBox="0 0 660 250" data-nomirror role="img" aria-label={b.fit.warpFigureLabel}>
+            <path d="M100 70 H560 V170 H100 Z" class="av-nominal" />
+            <path d="M100 74 Q330 36 560 74" class="av-ln" />
+            <path d="M100 166 Q330 128 560 166" class="av-ln" />
+            <path d="M100 74 V166 M560 74 V166" class="av-ln" />
+            <path d="M100 120 l-12 -9 v18 z" class="av-solid" />
+            <path d="M116 96 H300 M116 120 H320 M116 144 H300" class="av-flow" marker-end="url(#av-arw-e)" />
+            <path d="M370 120 H386" class="av-vec" marker-end="url(#av-arw-e)" />
+            <path d="M410 120 H394" class="av-vec" marker-end="url(#av-arw-e)" />
+            <path d="M462 61 V92" class="av-vec" marker-end="url(#av-arw-e)" />
+            <path d="M462 153 V124" class="av-vec" marker-end="url(#av-arw-e)" />
+            {WARP_BALLOONS.map((p: any, i: number) => (
+              <g class="av-bln">
+                <path d={leader(p, 12)} class="av-ldr" />
+                <circle cx={p.ax} cy={p.ay} r="2.6" class="av-anchor" />
+                <circle cx={p.cx} cy={p.cy} r="12" class="av-bln__c" />
+                <text x={p.cx} y={p.cy + 3.6} text-anchor="middle" class="av-bln__t">
+                  {b.fit.warpBalloons[i]?.n}
+                </text>
+              </g>
+            ))}
+          </svg>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+        </figure>
+      </div>
+
+      <p class="av-close">{b.fit.close}</p>
+      <p class="av-source t-fine">{b.fit.sourceNote}</p>
+    </div>
+  </section>
+
+  {/* ═══ 05 · PROGRAMME LIFE — the dimension chain ════════════════════════ */}
+  <section class="av-sec av-life" id="life">
+    <div class="shell--wide">
+      <div class="av-head">
+        <p class="av-kick">
+          <span class="av-bal">{b.life.index}</span>
+          <span class="av-lead" aria-hidden="true"></span>
+          <span class="t-label">{b.life.kicker}</span>
+        </p>
+        <h2 class="av-h2">{b.life.heading}</h2>
+        <p class="t-lead">{b.life.body}</p>
+      </div>
+
+      <div class="av-life__key">
+        <p class="t-label"><span class="av-life__sw av-life__sw--above"></span>{b.life.aboveLabel}</p>
+        <p class="t-label"><span class="av-life__sw av-life__sw--below"></span>{b.life.belowLabel}</p>
+        <p class="t-label av-life__unit">{b.life.chainLabel}</p>
+      </div>
+    </div>
+
+    <div class="av-chain" tabindex="0" role="group" aria-label={b.life.chainLabel}>
+      <ol class="av-chain__grid">
+        {lifeMarkers.map((m: any, i: number) => (
+          <li
+            class:list={['av-mk', m.side === 'below' ? 'av-mk--below' : 'av-mk--above']}
+            style={`--c:${i + 1}`}
+          >
+            <p class="av-mk__label"><span class="vh">{m.at}</span>{m.label}</p>
+            <p class="av-mk__note">{m.note}</p>
+          </li>
+        ))}
+        {lifeMarkers.map((m: any, i: number) => (
+          <li class="av-tick" style={`--c:${i + 1}`} aria-hidden="true">
+            <span class="av-tick__fig t-mono">{m.at}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="shell--wide">
+      <p class="av-rail__hint t-fine">{common.a11y.scrollForMore}</p>
+      <p class="av-close">{b.life.close}</p>
+      <p class="av-source t-fine">{b.life.sourceNote}</p>
+    </div>
+  </section>
+
+  {/* ═══ 06 · ROUTES AND BOUNDARY ═════════════════════════════════════════ */}
+  <section class="av-sec av-routes-sec" id="routes">
+    <div class="shell--wide">
+      <div class="av-head">
+        <p class="av-kick">
+          <span class="av-bal">{b.routes.index}</span>
+          <span class="av-lead" aria-hidden="true"></span>
+          <span class="t-label">{b.routes.kicker}</span>
+        </p>
+        <h2 class="av-h2">{b.routes.heading}</h2>
+        <p class="t-lead">{b.routes.body}</p>
+      </div>
+
+      <div class="av-routes" data-tabs>
+        <div class="av-routes__tabs" role="tablist" aria-label={b.routes.diagramLabel}>
+          {routeItems.map((r: any) => (
+            <button
+              class="av-routes__tab"
+              type="button"
+              role="tab"
+              data-tab={r.id}
+              aria-selected="false"
+              id={`av-rt-${r.id}`}
+              aria-controls={`av-rp-${r.id}`}
+            >
+              <span class="av-bal av-bal--sm">{r.n}</span>
+              <span>{r.name}</span>
+            </button>
+          ))}
+        </div>
+
+        <figure class="av-routes__fig">
+          <svg viewBox="0 0 660 260" data-nomirror role="img" aria-label={b.routes.diagramLabel}>
+            <path d="M37 56 H210 M210 56 H300 L410 130 H600" class="av-rt av-rt--a" />
+            <path d="M37 130 H210 M210 130 H600" class="av-rt av-rt--b" />
+            <path d="M37 204 H210 M210 204 H300 L410 130 H600" class="av-rt av-rt--c" />
+            <path d="M600 130 H624" class="av-rt av-rt--out" marker-end="url(#av-arw-e)" />
+            {[56, 130, 204].map((y: any) => <circle cx="210" cy={y} r="4" class="av-node" />)}
+            <circle cx="410" cy="130" r="4" class="av-node" />
+            {routeItems.map((r: any, i: number) => (
+              <g class="av-bln">
+                <circle cx="24" cy={56 + i * 74} r="13" class="av-bln__c" />
+                <text x="24" y={60 + i * 74} text-anchor="middle" class="av-bln__t">{r.n}</text>
+              </g>
+            ))}
+          </svg>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+        </figure>
+
+        {routeItems.map((r: any) => (
+          <div
+            class="av-routes__panel"
+            data-panel={r.id}
+            role="tabpanel"
+            id={`av-rp-${r.id}`}
+            aria-labelledby={`av-rt-${r.id}`}
+            hidden
+          >
+            <p class="av-routes__sit">{r.situation}</p>
+            <p class="av-routes__body">{r.body}</p>
+            <div class="av-routes__in">
+              <p class="t-label">{b.routes.inputsLabel}</p>
+              <ul>{r.inputs.map((x: string) => <li class="t-mono">{x}</li>)}</ul>
+            </div>
+          </div>
+        ))}
+
+        <p class="av-routes__out">
+          <span class="t-label">{b.routes.outputLabel}</span>
+          <span class="t-mono">{b.routes.output}</span>
+        </p>
+      </div>
+
+      <div class="av-notes">
+        <p>{b.routes.readinessNote}</p>
+        <p>{b.routes.ipNote}</p>
+      </div>
+
+      {/* ── The boundary. The page's strongest credibility instrument. ──── */}
+      <div class="av-bound">
+        <h3 class="av-h3">{b.routes.boundaryHeading}</h3>
+        <p class="av-bound__lead">{b.routes.boundaryLead}</p>
+        <div class="av-bound__cols">
+          <section class="av-bound__col av-bound__col--in">
+            <h4 class="t-label">{b.routes.supplyHeading}</h4>
+            <ul>{b.routes.supply.map((x: string) => <li>{x}</li>)}</ul>
+          </section>
+          <section class="av-bound__col av-bound__col--out">
+            <h4 class="t-label">{b.routes.keepHeading}</h4>
+            <ul>{b.routes.keep.map((x: string) => <li>{x}</li>)}</ul>
+          </section>
+        </div>
+        <p class="av-bound__close">{b.routes.boundaryClose}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 07 · REVISION BLOCK ══════════════════════════════════════════════ */}
+  <section class="av-sec av-rev" id="revision">
+    <div class="av-sheet__frame av-sheet__frame--close" aria-hidden="true"></div>
+    <div class="av-sheet__ruler av-sheet__ruler--block" aria-hidden="true"></div>
+
+    <div class="shell--wide av-rev__inner">
+      <div class="av-head">
+        <p class="av-kick">
+          <span class="av-bal">{b.close.index}</span>
+          <span class="av-lead" aria-hidden="true"></span>
+          <span class="t-label">{b.close.kicker}</span>
+        </p>
+        <h2 class="av-h2 av-h2--big">{b.close.heading}</h2>
+        <p class="t-lead">{b.close.body}</p>
+      </div>
+
+      <div class="av-rev__scroll">
+        <table class="av-rev__table">
+          <caption class="vh">{b.close.tableLabel}</caption>
+          <thead>
+            <tr>
+              <th scope="col">{b.close.columns.rev}</th>
+              <th scope="col">{b.close.columns.description}</th>
+              <th scope="col">{b.close.columns.by}</th>
+              <th scope="col">{b.close.columns.date}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {b.close.rows.map((row: any) => (
+              <tr>
+                <th scope="row" class="t-mono">{row.rev}</th>
+                <td>{row.description}</td>
+                <td class="t-mono">{row.by}</td>
+                <td class="t-mono">{row.date}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="av-terms">
+        <p class="t-label">{b.close.termsLabel}</p>
+        <ul>{b.close.terms.map((t: string) => <li>{t}</li>)}</ul>
+      </div>
+
+      <div class="av-panels">
+        <h3 class="t-label av-panels__h">{b.panels.heading}</h3>
+        {b.panels.items.map((panel: any, i: number) => (
+          <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+            <h4>
+              <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
+                <span>{panel.title}</span>
+                <span class="disc__sign" aria-hidden="true"></span>
+              </button>
+            </h4>
+            <div class="disc__panel">
+              <div class="disc__inner">
+                <div>
+                  <ul class="av-panel__list">
+                    {panel.bullets.map((x: string) => <li>{x}</li>)}
+                  </ul>
+                  {panel.source && <p class="av-source t-fine">{panel.source}</p>}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="av-sheet__note t-fine">{b.sheet.borderNote}</p>
+    </div>
+  </section>
+</article>
+
+<style>
+  /* ═══════════════════════════════════════════════════════════════════════
+     AUTOMOTIVE — graphite on drawing paper.
+     Amber (--signal) appears only on balloons, dimension figures and active
+     states. Everything structural is a hairline.
+     ═══════════════════════════════════════════════════════════════════════ */
+
+  .av {
+    --av-ink-soft: color-mix(in oklab, var(--ink) 62%, var(--surface));
+    --av-frame: color-mix(in oklab, var(--ink) 34%, transparent);
+    --av-tick: color-mix(in oklab, var(--ink) 20%, transparent);
+    --av-tick-major: color-mix(in oklab, var(--ink) 42%, transparent);
+  }
+
+  .av-defs {
+    position: absolute;
+    inline-size: 0;
+    block-size: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  /* ── Shared drawing conventions ───────────────────────────────────────── */
+  .av-hatch { stroke: color-mix(in oklab, var(--ink) 46%, transparent); stroke-width: 0.7; fill: none; }
+  .av-hatch--dash { stroke-dasharray: 3 3; }
+  .av-hatch--part { stroke: color-mix(in oklab, var(--accent) 70%, transparent); stroke-width: 0.8; }
+
+  .av-ln { fill: none; stroke: var(--ink); stroke-width: 1.3; stroke-linejoin: miter; }
+  .av-ln--fine { stroke-width: 0.9; stroke: var(--av-ink-soft); }
+  .av-solid { fill: var(--ink); stroke: none; }
+  .av-fill-steel { fill: url(#av-h-steel); }
+  .av-fill-part { fill: url(#av-h-part); }
+  .av-hid { fill: none; stroke: var(--av-ink-soft); stroke-width: 0.9; stroke-dasharray: 6 4; }
+  .av-cl { fill: none; stroke: color-mix(in oklab, var(--accent) 60%, transparent); stroke-width: 0.7; stroke-dasharray: 10 3 2 3; }
+  .av-cut { fill: none; stroke: var(--ink); stroke-width: 2; }
+  .av-ext { fill: none; stroke: var(--av-ink-soft); stroke-width: 0.7; }
+  .av-dim { fill: none; stroke: var(--signal); stroke-width: 0.9; }
+  .av-arw { fill: var(--signal); stroke: none; }
+  .av-ground { fill: none; stroke: var(--line); stroke-width: 1; }
+  .av-part-ln { fill: none; stroke: var(--ink); stroke-width: 1; stroke-dasharray: 14 4 2 4; }
+  .av-cutface { fill: none; stroke: var(--ink); stroke-width: 2; }
+
+  /* Drawing annotation reads over hatch, so it carries a paper-coloured halo —
+     the drawing-office equivalent of breaking the hatch around a figure. */
+  .av-mi {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    fill: var(--ink-muted);
+    stroke: var(--surface-raise);
+    stroke-width: 3px;
+    paint-order: stroke fill;
+  }
+  .av-fig {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    fill: var(--signal);
+    stroke: var(--surface-raise);
+    stroke-width: 3.5px;
+    paint-order: stroke fill;
+  }
+
+  /* ── The balloon. The only place amber lives. ─────────────────────────── */
+  .av-bln__c { fill: var(--surface); stroke: var(--signal); stroke-width: 1.3; }
+  .av-bln__t {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    fill: var(--signal);
+    font-variant-numeric: tabular-nums;
+  }
+  .av-ldr { fill: none; stroke: var(--signal); stroke-width: 0.9; }
+  .av-anchor { fill: var(--signal); stroke: none; }
+
+  .av-bal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: 2.2rem;
+    block-size: 2.2rem;
+    flex: none;
+    border: var(--hair) solid var(--signal);
+    border-radius: 50%;
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    color: var(--signal-ink);
+    background: transparent;
+  }
+  .av-bal--sm { inline-size: 1.85rem; block-size: 1.85rem; }
+
+  /* ── Section head: balloon, leader, kicker ────────────────────────────── */
+  .av-kick { display: flex; align-items: center; gap: var(--sp-3); }
+  .av-lead {
+    inline-size: var(--sp-7);
+    block-size: var(--hair);
+    background: var(--line);
+    flex: none;
+  }
+  .av-head { max-inline-size: 74ch; }
+  .av-head .t-lead { margin-block-start: var(--sp-5); max-inline-size: 68ch; }
+
+  .av-h2 {
+    margin-block-start: var(--sp-5);
+    font-size: clamp(1.85rem, 3.8vw, 3.05rem);
+    line-height: 1.07;
+    letter-spacing: -0.028em;
+    font-weight: 500;
+    max-inline-size: 22ch;
+  }
+  .av-h2--big { max-inline-size: 14ch; font-size: clamp(2.2rem, 5vw, 4rem); }
+  .av-h3 { font-size: var(--step-3); line-height: 1.15; letter-spacing: var(--track-head); max-inline-size: 24ch; }
+  .av-h4 { font-size: var(--step-1); letter-spacing: var(--track-head); }
+
+  .av-sec { padding-block: var(--section-y); border-block-start: var(--rule); position: relative; }
+
+  .av-close {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-inline-size: 66ch;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: var(--hair-strong) solid var(--signal);
+  }
+  .av-source { margin-block-start: var(--sp-5); max-inline-size: 70ch; }
+
+  /* ── Sheet frame + tick rulers ────────────────────────────────────────── */
+  .av-sheet__frame {
+    position: absolute;
+    inset: clamp(0.75rem, 2vw, 2rem);
+    border: var(--hair) solid var(--av-frame);
+    pointer-events: none;
+  }
+  .av-sheet__frame--close { inset-block-end: clamp(0.75rem, 2vw, 2rem); }
+
+  .av-sheet__ruler { position: absolute; pointer-events: none; }
+  .av-sheet__ruler--block {
+    inset-block-start: 0;
+    inset-inline: 0;
+    block-size: 12px;
+    background-image:
+      linear-gradient(90deg, var(--av-tick) 0 1px, transparent 1px),
+      linear-gradient(90deg, var(--av-tick-major) 0 1px, transparent 1px);
+    background-size: 12px 6px, 60px 12px;
+    background-repeat: repeat-x;
+  }
+  .av-sheet__ruler--inline {
+    inset-inline-start: 0;
+    inset-block: 0;
+    inline-size: 12px;
+    background-image:
+      linear-gradient(180deg, var(--av-tick) 0 1px, transparent 1px),
+      linear-gradient(180deg, var(--av-tick-major) 0 1px, transparent 1px);
+    background-size: 6px 12px, 12px 60px;
+    background-repeat: repeat-y;
+  }
+
+  /* ── Sheet header ─────────────────────────────────────────────────────── */
+  .av-sheet {
+    position: relative;
+    padding-block: clamp(3rem, 7vw, 6rem) clamp(3rem, 7vw, 6rem);
+    overflow: clip;
+  }
+  .av-sheet__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.15fr);
+    grid-template-areas:
+      'copy fig'
+      'list fig'
+      'title note';
+    column-gap: clamp(2rem, 5vw, 4.5rem);
+    row-gap: clamp(1.75rem, 4vw, 3rem);
+    align-items: start;
+  }
+  .av-sheet__copy { grid-area: copy; }
+  .av-sheet__fig { grid-area: fig; }
+  .av-sheet__list { grid-area: list; }
+  .av-title { grid-area: title; }
+  .av-sheet__note { grid-area: note; align-self: end; }
+
+  @media (max-width: 900px) {
+    .av-sheet__inner {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: 'copy' 'fig' 'list' 'title' 'note';
+    }
+  }
+
+  .av-sheet__head {
+    margin-block-start: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    font-weight: 500;
+  }
+  .av-sheet__head span { display: block; }
+  .av-sheet__head span:last-child { color: var(--av-ink-soft); }
+
+  .av-sheet__orient {
+    margin-block-start: var(--sp-6);
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    max-inline-size: 46ch;
+    line-height: 1.7;
+  }
+  :global(html[lang='zh']) .av-sheet__orient,
+  :global(html[lang='th']) .av-sheet__orient,
+  :global(html[lang='ar']) .av-sheet__orient,
+  :global(html[lang='fa']) .av-sheet__orient,
+  :global(html[lang='ur']) .av-sheet__orient {
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: var(--step--1);
+  }
+
+  .av-sheet__lead {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-inline-size: 48ch;
+  }
+  .av-sheet__pivot {
+    margin-block-start: var(--sp-6);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    max-inline-size: 50ch;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: var(--hair-strong) solid var(--signal);
+  }
+
+  .av-sheet__fig svg { inline-size: 100%; block-size: auto; }
+  .av-sheet__fig .figure-note { margin-block-start: var(--sp-4); }
+
+  /* The sheet draws itself the way it would be drawn: construction and centre
+     lines first, then the outline, then the dimensions, then the balloons
+     arriving along their leaders. Strokes travel along their own length —
+     nothing floats, nothing fades up from nowhere. */
+  .av-sheet__fig { --reveal-y: 0px; }
+  :global(html.js) .av-sheet__fig .av-cl,
+  :global(html.js) .av-sheet__fig .av-hid,
+  :global(html.js) .av-sheet__fig .av-part-ln { opacity: 0; }
+  :global(html.js) .av-sheet__fig[data-reveal='in'] .av-cl,
+  :global(html.js) .av-sheet__fig[data-reveal='in'] .av-hid,
+  :global(html.js) .av-sheet__fig[data-reveal='in'] .av-part-ln {
+    opacity: 1;
+    transition: opacity var(--dur-4) var(--ease-out);
+  }
+  :global(html.js) .av-sheet__fig .av-ln,
+  :global(html.js) .av-sheet__fig .av-cut,
+  :global(html.js) .av-sheet__fig .av-ext,
+  :global(html.js) .av-sheet__fig .av-dim {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  :global(html.js) .av-sheet__fig[data-reveal='in'] .av-ln,
+  :global(html.js) .av-sheet__fig[data-reveal='in'] .av-cut {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1100ms var(--ease-out) 200ms;
+  }
+  :global(html.js) .av-sheet__fig[data-reveal='in'] .av-ext,
+  :global(html.js) .av-sheet__fig[data-reveal='in'] .av-dim {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 700ms var(--ease-out) 800ms;
+  }
+  :global(html.js) .av-sheet__fig .av-bln { opacity: 0; }
+  :global(html.js) .av-sheet__fig[data-reveal='in'] .av-bln {
+    opacity: 1;
+    transition: opacity var(--dur-3) var(--ease-out);
+    transition-delay: calc(1050ms + var(--i) * 120ms);
+  }
+
+  .av-sheet__list-h { display: block; margin-block-end: var(--sp-4); }
+  .av-parts { border-block-start: var(--rule-strong); }
+  .av-parts__row {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    align-items: start;
+  }
+  @media (max-width: 620px) { .av-parts__row { grid-template-columns: 1fr; gap: var(--sp-2); } }
+  .av-parts__row dt { display: flex; align-items: center; gap: var(--sp-3); }
+  .av-parts__name { font-size: var(--step--1); font-weight: var(--weight-medium); }
+  .av-parts__row dd { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
+  .av-parts--tight { margin-block-start: var(--sp-6); }
+
+  .av-title__h { display: block; margin-block-end: var(--sp-4); }
+  .av-title__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--hair) solid var(--av-frame);
+  }
+  .av-title__cell {
+    background: var(--surface-raise);
+    padding: var(--sp-4);
+    display: grid;
+    gap: var(--sp-2);
+    align-content: start;
+  }
+  .av-title__cell dd { font-size: var(--step-0); color: var(--ink); }
+  .av-sheet__note { max-inline-size: 52ch; line-height: 1.6; }
+
+  /* ── 01 Component register ────────────────────────────────────────────── */
+  .av-map { --station: 0; }
+  .av-map__grid {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .av-map__grid { grid-template-columns: 1fr; } }
+
+  .av-map__fig {
+    position: sticky;
+    inset-block-start: clamp(4.5rem, 10vh, 7rem);
+    background: var(--surface-raise);
+    border: var(--hair) solid var(--av-frame);
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+  }
+  @media (max-width: 900px) { .av-map__fig { position: static; } }
+  .av-map__fig svg { inline-size: 100%; block-size: auto; }
+  .av-map__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  .av-vbln { --d: max(calc(var(--b) - var(--station)), calc(var(--station) - var(--b))); }
+  :global(html.js) .av-vbln {
+    opacity: calc(0.3 + 0.7 * (1 - min(1, var(--d))));
+    transition: opacity var(--dur-3) var(--ease-out);
+  }
+  :global(html.js) .av-vbln .av-ldr {
+    stroke-dasharray: 380;
+    stroke-dashoffset: calc(380px * min(1, var(--d)));
+    transition: stroke-dashoffset var(--dur-4) var(--ease-out);
+  }
+
+  .av-reg__zone + .av-reg__zone { margin-block-start: var(--sp-8); }
+  .av-reg__zh { padding-block-end: var(--sp-3); border-block-end: var(--rule-strong); }
+  .av-reg__zh h3 { display: block; color: var(--ink); }
+  .av-reg__zh p { margin-block-start: var(--sp-2); max-inline-size: 52ch; }
+
+  .av-reg__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-5);
+    padding-inline-start: var(--sp-4);
+    border-block-end: var(--rule);
+    align-items: start;
+    --d: max(calc(var(--b) - var(--station)), calc(var(--station) - var(--b)));
+  }
+  .av-reg__row::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block: var(--sp-4);
+    inline-size: var(--hair-strong);
+    background: var(--signal);
+    opacity: 0.28;
+  }
+  :global(html.js) .av-reg__row {
+    opacity: calc(0.46 + 0.54 * (1 - min(1, var(--d))));
+    transition: opacity var(--dur-3) var(--ease-out);
+  }
+  :global(html.js) .av-reg__row::before {
+    opacity: calc(1 - min(1, var(--d)));
+    transition: opacity var(--dur-3) var(--ease-out);
+  }
+  .av-reg__name { font-size: var(--step-0); font-weight: var(--weight-medium); line-height: 1.3; }
+  .av-reg__note { margin-block-start: var(--sp-2); font-size: var(--step--1); line-height: 1.58; color: var(--ink-muted); }
+  .av-reg__mat {
+    margin-block-start: var(--sp-3);
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    color: var(--accent-deep);
+  }
+
+  /* ── 02 Material rail ─────────────────────────────────────────────────── */
+  .av-mat__rail-h { display: block; margin-block-start: clamp(2rem, 4vw, 3rem); margin-block-end: var(--sp-4); }
+  .av-rail {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(16rem, 21rem);
+    overflow-x: auto; min-inline-size: 0; max-inline-size: 100%;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline-start: var(--gutter);
+    padding-inline: var(--gutter);
+    border-block: var(--hair-strong) solid var(--av-frame);
+    background: var(--surface-raise);
+  }
+  .av-rail:focus-visible { outline: var(--focus); outline-offset: calc(var(--focus-offset) * -1); }
+  .av-rail__item {
+    scroll-snap-align: start;
+    padding-block: var(--sp-6) var(--sp-7);
+    padding-inline: var(--sp-5);
+    border-inline-end: var(--rule);
+    display: grid;
+    align-content: start;
+    gap: var(--sp-3);
+  }
+  .av-rail__item:last-child { border-inline-end: 0; }
+  .av-swatch svg { inline-size: 100%; block-size: auto; color: var(--ink); }
+  .av-rail__code { font-size: var(--step-1); letter-spacing: 0.02em; color: var(--ink); }
+  .av-rail__name { font-size: var(--step--1); color: var(--ink-muted); }
+  .av-rail__spec { margin-block-start: var(--sp-3); border-block-start: var(--rule); }
+  .av-rail__spec > div { padding-block: var(--sp-3); border-block-end: var(--rule); display: grid; gap: var(--sp-1); }
+  .av-rail__spec dd { font-size: var(--step--1); line-height: 1.55; }
+  .av-rail__tool { color: var(--ink); }
+  .av-rail__foot {
+    margin-block-start: var(--sp-4);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-4);
+  }
+  .av-rail__hint { margin-block-start: var(--sp-4); letter-spacing: 0.1em; text-transform: uppercase; }
+  :global(html[lang='zh']) .av-rail__hint,
+  :global(html[lang='th']) .av-rail__hint,
+  :global(html[lang='ar']) .av-rail__hint,
+  :global(html[lang='fa']) .av-rail__hint,
+  :global(html[lang='ur']) .av-rail__hint { text-transform: none; letter-spacing: 0; }
+
+  .av-mat__notes {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    border-block-start: var(--rule-strong);
+    padding-block-start: var(--sp-6);
+  }
+  .av-mat__notes li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--sp-4);
+    align-items: start;
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+
+  /* ── 03 Inside the tool ───────────────────────────────────────────────── */
+  .av-tool { background: var(--surface-sunk); }
+  .av-tool__grid {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  @media (max-width: 980px) { .av-tool__grid { grid-template-columns: 1fr; } }
+
+  .av-tool__fig {
+    position: sticky;
+    inset-block-start: clamp(4.5rem, 10vh, 7rem);
+    background: var(--surface-raise);
+    border: var(--hair) solid var(--av-frame);
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+  }
+  @media (max-width: 980px) { .av-tool__fig { position: static; } }
+  .av-tool__fig svg { inline-size: 100%; block-size: auto; }
+  .av-tool__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  .av-pl { fill: none; stroke: var(--ink); stroke-width: 1.8; }
+  .av-shut { fill: none; stroke: var(--ink); stroke-width: 2.4; }
+  .av-wear { fill: none; stroke: var(--signal); stroke-width: 2.2; }
+  .av-rod { fill: none; stroke: var(--ink); stroke-width: 1.2; }
+  .av-cool { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 7 4; }
+  .av-vent { fill: none; stroke: var(--ink); stroke-width: 3; }
+  .av-face { fill: none; stroke: var(--signal); stroke-width: 2.2; }
+  .av-detail { fill: none; stroke: var(--av-ink-soft); stroke-width: 0.9; stroke-dasharray: 5 4; }
+
+  :global(html.js) .av-tool .av-sub { opacity: 0.12; transition: opacity var(--dur-3) var(--ease-out); }
+  :global(html.js) .av-tool[data-step='0'] .av-sub[data-sub='0'],
+  :global(html.js) .av-tool[data-step='1'] .av-sub[data-sub='1'],
+  :global(html.js) .av-tool[data-step='2'] .av-sub[data-sub='2'],
+  :global(html.js) .av-tool[data-step='3'] .av-sub[data-sub='3'],
+  :global(html.js) .av-tool[data-step='4'] .av-sub[data-sub='4'],
+  :global(html.js) .av-tool[data-step='5'] .av-sub[data-sub='5'] { opacity: 1; }
+
+  /* Mechanism travel: the slide runs out along its cam, the lifter along its own. */
+  :global(html.js) .av-slide,
+  :global(html.js) .av-lifter { transition: transform var(--dur-4) var(--ease-mech); }
+  :global(html.js) .av-tool[data-step='1'] .av-slide { transform: translateX(34px); }
+  :global(html.js) .av-tool[data-step='1'] .av-lifter { transform: translate(13px, -38px); }
+
+  .av-steps { border-block-start: var(--rule-strong); }
+  .av-step {
+    padding-block: var(--sp-6);
+    border-block-end: var(--rule);
+  }
+  :global(html.js) .av-step { opacity: 0.44; transition: opacity var(--dur-3) var(--ease-out); }
+  :global(html.js) .av-tool[data-step='0'] .av-step:nth-child(1),
+  :global(html.js) .av-tool[data-step='1'] .av-step:nth-child(2),
+  :global(html.js) .av-tool[data-step='2'] .av-step:nth-child(3),
+  :global(html.js) .av-tool[data-step='3'] .av-step:nth-child(4),
+  :global(html.js) .av-tool[data-step='4'] .av-step:nth-child(5),
+  :global(html.js) .av-tool[data-step='5'] .av-step:nth-child(6) { opacity: 1; }
+  @media (max-width: 980px) {
+    :global(html.js) .av-step { opacity: 1; }
+  }
+  .av-step__h { display: flex; align-items: center; gap: var(--sp-3); }
+  .av-step__label { font-size: var(--step-1); letter-spacing: var(--track-head); font-weight: var(--weight-medium); }
+  .av-step__body { margin-block-start: var(--sp-4); font-size: var(--step--1); line-height: 1.62; color: var(--ink-muted); }
+  .av-step__spec { margin-block-start: var(--sp-4); display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+  .av-step__spec li {
+    font-size: var(--step--2);
+    letter-spacing: 0.06em;
+    padding: 0.35em 0.7em;
+    border: var(--hair) solid var(--line);
+    color: var(--accent-deep);
+    background: var(--surface-raise);
+  }
+
+  /* ── 04 Dimension and fit ─────────────────────────────────────────────── */
+  .av-datum { fill: none; stroke: var(--ink); stroke-width: 1.2; }
+  .av-limit { fill: none; stroke: var(--av-ink-soft); stroke-width: 0.9; stroke-dasharray: 8 5; }
+  .av-env { fill: none; stroke: var(--signal); stroke-width: 1.6; }
+  .av-tolmark { fill: none; stroke: var(--signal); stroke-width: 1.2; }
+  .av-nominal { fill: none; stroke: var(--av-ink-soft); stroke-width: 0.9; stroke-dasharray: 7 4; }
+  .av-flow { fill: none; stroke: var(--accent); stroke-width: 1.1; }
+  .av-vec { fill: none; stroke: var(--signal); stroke-width: 1.8; }
+
+  .av-stack { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
+  .av-stack__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    background: var(--line);
+    border: var(--hair) solid var(--av-frame);
+  }
+  .av-stack__tab {
+    flex: 1 1 10rem;
+    padding: 0.9rem 1rem;
+    background: var(--surface);
+    font-size: var(--step--1);
+    font-weight: var(--weight-medium);
+    color: var(--ink-muted);
+    transition: background-color var(--dur-2) var(--ease-out), color var(--dur-2) var(--ease-out);
+  }
+  .av-stack__tab:hover { color: var(--ink); }
+  .av-stack__tab[aria-selected='true'] { background: var(--ink); color: var(--surface); }
+
+  .av-stack__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.75fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+    border: var(--hair) solid var(--av-frame);
+    border-block-start: 0;
+    background: var(--surface-raise);
+    align-items: start;
+  }
+  .av-stack__panel[hidden] { display: none; }
+  @media (max-width: 860px) { .av-stack__panel { grid-template-columns: 1fr; } }
+  .av-stack__fig svg { inline-size: 100%; block-size: auto; margin-block: var(--sp-4); }
+  .av-stack__legend { display: grid; gap: var(--sp-2); margin-block-end: var(--sp-4); }
+  .av-stack__legend p { display: flex; align-items: center; gap: var(--sp-3); }
+  .av-sw { inline-size: 1.4rem; block-size: 0; flex: none; }
+  .av-sw--env { border-block-start: 1.6px solid var(--signal); }
+  .av-sw--limit { border-block-start: 1px dashed var(--av-ink-soft); }
+  .av-stack__spec { border-block-start: var(--rule); }
+  .av-stack__spec > div { padding-block: var(--sp-4); border-block-end: var(--rule); display: grid; gap: var(--sp-2); }
+  .av-stack__spec dd { font-size: var(--step--1); line-height: 1.55; }
+  .av-stack__note {
+    grid-column: 1 / -1;
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-inline-size: 76ch;
+  }
+
+  .av-fit__cols {
+    margin-block-start: clamp(2.5rem, 5vw, 4rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  @media (max-width: 860px) { .av-fit__cols { grid-template-columns: 1fr; } }
+  .av-classes__list { margin-block-start: var(--sp-5); border-block-start: var(--rule-strong); }
+  .av-classes__list li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+    align-items: start;
+  }
+  .av-classes__name { font-size: var(--step-0); font-weight: var(--weight-medium); }
+  .av-classes__note { margin-block-start: var(--sp-2); font-size: var(--step--1); line-height: 1.58; color: var(--ink-muted); }
+  .av-signs h3 { display: block; }
+  .av-signs__list { margin-block-start: var(--sp-4); border-block-start: var(--rule); }
+  .av-signs__list li {
+    padding-block: var(--sp-4);
+    padding-inline-start: var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.5;
+    position: relative;
+  }
+  .av-signs__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.35em;
+    inline-size: 0.7rem;
+    block-size: var(--hair);
+    background: var(--signal);
+  }
+
+  .av-warp {
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    padding-block-start: clamp(2rem, 4vw, 3rem);
+    border-block-start: var(--rule-strong);
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .av-warp { grid-template-columns: 1fr; } }
+  .av-warp__body { margin-block-start: var(--sp-5); font-size: var(--step-0); line-height: 1.62; color: var(--ink-muted); max-inline-size: 52ch; }
+  .av-warp__fig svg { inline-size: 100%; block-size: auto; }
+  .av-warp__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  /* ── 05 Dimension chain ───────────────────────────────────────────────── */
+  .av-life__key {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-6);
+    align-items: center;
+  }
+  .av-life__key p { display: flex; align-items: center; gap: var(--sp-3); }
+  .av-life__sw { inline-size: 1.1rem; block-size: var(--hair-strong); flex: none; background: var(--ink); }
+  .av-life__sw--below { background: var(--signal); }
+  .av-life__unit { margin-inline-start: auto; }
+
+  .av-chain {
+    margin-block-start: var(--sp-6);
+    overflow-x: auto; min-inline-size: 0; max-inline-size: 100%;
+    padding-inline: var(--gutter);
+    padding-block: var(--sp-4);
+    border-block: var(--hair-strong) solid var(--av-frame);
+    background: var(--surface-raise);
+  }
+  .av-chain:focus-visible { outline: var(--focus); outline-offset: calc(var(--focus-offset) * -1); }
+  .av-chain__grid {
+    display: grid;
+    grid-template-rows: minmax(9rem, auto) auto minmax(9rem, auto);
+    grid-auto-columns: minmax(14rem, 1fr);
+    align-items: start;
+  }
+  .av-mk { grid-column: var(--c); padding-inline-end: var(--sp-5); position: relative; }
+  .av-mk--above { grid-row: 1; align-self: end; padding-block-end: var(--sp-6); }
+  .av-mk--below { grid-row: 3; padding-block-start: var(--sp-6); }
+  .av-mk::after {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inline-size: var(--hair);
+    background: var(--line);
+    block-size: var(--sp-6);
+  }
+  .av-mk--above::after { inset-block-end: 0; }
+  .av-mk--below::after { inset-block-start: 0; background: var(--signal); }
+  .av-mk__label { font-size: var(--step--1); font-weight: var(--weight-medium); line-height: 1.3; }
+  .av-mk__note { margin-block-start: var(--sp-2); font-size: var(--step--2); line-height: 1.55; color: var(--ink-muted); }
+
+  .av-tick {
+    grid-row: 2;
+    grid-column: var(--c);
+    border-block-start: var(--hair-strong) solid var(--ink);
+    position: relative;
+    padding-block-start: var(--sp-3);
+    padding-inline-end: var(--sp-5);
+  }
+  .av-tick::before {
+    content: '';
+    position: absolute;
+    inset-block-start: -6px;
+    inset-inline-start: 0;
+    inline-size: var(--hair);
+    block-size: 12px;
+    background: var(--ink);
+  }
+  .av-tick__fig {
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    color: var(--signal-ink);
+  }
+
+  /* ── 06 Routes and boundary ───────────────────────────────────────────── */
+  .av-routes-sec { background: var(--surface-sunk); }
+  .av-routes { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
+  .av-routes__tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--hair) solid var(--av-frame);
+  }
+  .av-routes__tab {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    padding: var(--sp-5);
+    background: var(--surface);
+    font-size: var(--step-0);
+    font-weight: var(--weight-medium);
+    color: var(--ink-muted);
+    text-align: start;
+    transition: color var(--dur-2) var(--ease-out), background-color var(--dur-2) var(--ease-out);
+  }
+  .av-routes__tab:hover { color: var(--ink); }
+  .av-routes__tab[aria-selected='true'] { background: var(--surface-raise); color: var(--ink); }
+  .av-routes__tab[aria-selected='true'] .av-bal { background: var(--signal); color: var(--surface); }
+
+  .av-routes__fig {
+    border: var(--hair) solid var(--av-frame);
+    border-block-start: 0;
+    background: var(--surface-raise);
+    padding: clamp(1rem, 2.5vw, 2rem);
+  }
+  .av-routes__fig svg { inline-size: 100%; block-size: auto; }
+  .av-routes__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  .av-rt { fill: none; stroke: var(--ink); stroke-width: 1.2; opacity: 0.28; transition: opacity var(--dur-3) var(--ease-out), stroke-width var(--dur-3) var(--ease-out); }
+  .av-rt--b { stroke-dasharray: 9 5; }
+  .av-rt--c { stroke-dasharray: 13 4 2 4; }
+  .av-rt--out { opacity: 1; }
+  .av-node { fill: var(--ink); }
+  .av-routes[data-active='new'] .av-rt--a,
+  .av-routes[data-active='second'] .av-rt--b,
+  .av-routes[data-active='obsolete'] .av-rt--c { opacity: 1; stroke-width: 2.2; }
+
+  .av-routes__panel {
+    border: var(--hair) solid var(--av-frame);
+    border-block-start: 0;
+    background: var(--surface-raise);
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    align-items: start;
+  }
+  .av-routes__panel[hidden] { display: none; }
+  @media (max-width: 820px) { .av-routes__panel { grid-template-columns: 1fr; } }
+  .av-routes__sit {
+    grid-column: 1 / -1;
+    font-size: var(--step-1);
+    line-height: 1.4;
+    letter-spacing: var(--track-head);
+  }
+  .av-routes__body { font-size: var(--step--1); line-height: 1.62; color: var(--ink-muted); }
+  .av-routes__in ul { margin-block-start: var(--sp-3); border-block-start: var(--rule); }
+  .av-routes__in li {
+    padding-block: var(--sp-3);
+    border-block-end: var(--rule);
+    font-size: var(--step--2);
+    letter-spacing: 0.05em;
+    color: var(--accent-deep);
+  }
+  .av-routes__out {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--sp-4);
+    padding: var(--sp-5);
+    border: var(--hair) solid var(--av-frame);
+    border-block-start: 0;
+    background: var(--surface);
+  }
+  .av-routes__out .t-mono { font-size: var(--step-0); letter-spacing: 0.06em; }
+
+  .av-notes {
+    margin-block-start: clamp(1.5rem, 3vw, 2.5rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+  }
+  .av-notes p {
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    border-inline-start: var(--hair) solid var(--line);
+  }
+
+  .av-bound {
+    margin-block-start: clamp(3rem, 6vw, 5rem);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: var(--hair-strong) solid var(--ink);
+    background: var(--surface-raise);
+  }
+  .av-bound__lead {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-inline-size: 58ch;
+  }
+  .av-bound__cols {
+    margin-block-start: clamp(1.75rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.75rem, 4vw, 3.5rem);
+  }
+  @media (max-width: 820px) { .av-bound__cols { grid-template-columns: 1fr; } }
+  .av-bound__col ul { margin-block-start: var(--sp-4); border-block-start: var(--rule-strong); }
+  .av-bound__col li {
+    padding-block: var(--sp-4);
+    padding-inline-start: var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.58;
+    position: relative;
+  }
+  .av-bound__col li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.4em;
+    inline-size: 0.7rem;
+    block-size: var(--hair);
+    background: var(--ink-muted);
+  }
+  .av-bound__col--out li { color: var(--ink-muted); }
+  .av-bound__col--out li::before { background: var(--signal); }
+  .av-bound__close {
+    margin-block-start: clamp(1.75rem, 4vw, 2.5rem);
+    padding-block-start: var(--sp-5);
+    border-block-start: var(--rule);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    max-inline-size: 74ch;
+  }
+
+  /* ── 07 Revision block ────────────────────────────────────────────────── */
+  .av-rev { padding-block: clamp(4rem, 9vw, 8rem); overflow: clip; }
+  .av-rev__inner { position: relative; }
+  .av-rev__scroll { margin-block-start: clamp(2rem, 5vw, 3.5rem); overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
+  .av-rev__table {
+    inline-size: 100%;
+    min-inline-size: 44rem;
+    border-collapse: collapse;
+    font-size: var(--step--1);
+  }
+  .av-rev__table th, .av-rev__table td { text-align: start; vertical-align: top; }
+  .av-rev__table thead th {
+    padding-block-end: var(--sp-4);
+    padding-inline-end: var(--sp-4);
+    border-block-end: var(--hair-strong) solid var(--ink);
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    letter-spacing: var(--track-label);
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: var(--weight-regular);
+  }
+  :global(html[lang='zh']) .av-rev__table thead th,
+  :global(html[lang='th']) .av-rev__table thead th,
+  :global(html[lang='ar']) .av-rev__table thead th,
+  :global(html[lang='fa']) .av-rev__table thead th,
+  :global(html[lang='ur']) .av-rev__table thead th {
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .av-rev__table thead th:first-child { inline-size: 4rem; }
+  .av-rev__table thead th:nth-child(3) { inline-size: 9rem; }
+  .av-rev__table thead th:nth-child(4) { inline-size: 12rem; }
+  .av-rev__table tbody th,
+  .av-rev__table tbody td {
+    padding-block: var(--sp-5);
+    padding-inline-end: var(--sp-4);
+    border-block-end: var(--rule);
+    font-weight: var(--weight-regular);
+  }
+  .av-rev__table tbody th { color: var(--signal-ink); font-size: var(--step-1); }
+  .av-rev__table tbody td { line-height: 1.55; }
+
+  .av-terms { margin-block-start: clamp(2rem, 4vw, 3rem); }
+  .av-terms ul {
+    margin-block-start: var(--sp-4);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: var(--sp-4) clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .av-terms li {
+    font-size: var(--step--1);
+    line-height: 1.5;
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .av-terms li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.7em;
+    inline-size: 0.7rem;
+    block-size: var(--hair);
+    background: var(--signal);
+  }
+
+  .av-panels { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
+  .av-panels__h { display: block; margin-block-end: var(--sp-4); }
+  .av-panel__list { display: grid; gap: var(--sp-3); max-inline-size: 82ch; }
+  .av-panel__list li {
+    font-size: var(--step--1);
+    line-height: 1.62;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .av-panel__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.78em;
+    inline-size: 0.6rem;
+    block-size: var(--hair);
+    background: var(--signal);
+  }
+
+  /* ── Motion discipline ────────────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    /* Same selector shape as the rules above, so these actually win. Nothing
+       travels; the isolation and illumination states survive, because they are
+       information rather than decoration. */
+    :global(html.js) .av-tool[data-step] .av-slide,
+    :global(html.js) .av-tool[data-step] .av-lifter { transform: none; transition: none; }
+    :global(html.js) .av-vbln,
+    :global(html.js) .av-vbln .av-ldr,
+    :global(html.js) .av-reg__row,
+    :global(html.js) .av-reg__row::before,
+    :global(html.js) .av-tool .av-sub,
+    :global(html.js) .av-step,
+    .av-rt { transition: none; }
+    :global(html.js) .av-vbln .av-ldr { stroke-dashoffset: 0; }
+    :global(html.js) .av-sheet__fig .av-ln,
+    :global(html.js) .av-sheet__fig .av-cut,
+    :global(html.js) .av-sheet__fig .av-ext,
+    :global(html.js) .av-sheet__fig .av-dim { stroke-dasharray: none; stroke-dashoffset: 0; }
+    :global(html.js) .av-sheet__fig[data-reveal='in'] .av-ln,
+    :global(html.js) .av-sheet__fig[data-reveal='in'] .av-cut,
+    :global(html.js) .av-sheet__fig[data-reveal='in'] .av-ext,
+    :global(html.js) .av-sheet__fig[data-reveal='in'] .av-dim,
+    :global(html.js) .av-sheet__fig[data-reveal='in'] .av-cl,
+    :global(html.js) .av-sheet__fig[data-reveal='in'] .av-hid,
+    :global(html.js) .av-sheet__fig[data-reveal='in'] .av-part-ln,
+    :global(html.js) .av-sheet__fig[data-reveal='in'] .av-bln { transition: none; }
+    :global(html.js) .av-sheet__fig .av-cl,
+    :global(html.js) .av-sheet__fig .av-hid,
+    :global(html.js) .av-sheet__fig .av-part-ln,
+    :global(html.js) .av-sheet__fig .av-bln { opacity: 1; }
+  }
+</style>

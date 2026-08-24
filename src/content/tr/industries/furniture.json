@@ -1,0 +1,544 @@
+{
+  "meta": {
+    "title": "Mobilya parçası kalıpları ve enjeksiyon parçaları | Metal Form",
+    "description": "Mobilya için enjeksiyon kalıpları ve parça üretimi: tekerlekler, sandalye ayakları, pabuçlar, mekanizmalar, bağlantı elemanları, çekmece rayı parçaları ve kabuklar. Mühendislik, DFM, kalıp imalatı ve sürekli tedarik. 48 iş saati içinde dönüş."
+  },
+  "name": "Mobilya ve Dekorasyon",
+  "tile": "Yük taşıyan ve üzerine oturulan tekerlekler, mekanizmalar, pabuçlar ve bağlantı elemanları. Nervür tasarımı, cam elyaf dolgulu malzemeler ve montaj işçiliğini ortadan kaldıran parça birleştirme.",
+  "tileParts": "Tekerlekler · Mekanizmalar · Bağlantı elemanları",
+  "hero": {
+    "kicker": "Mobilya ve Dekorasyon",
+    "headline": [
+      "Bir mobilya parçası iki kez yargılanır.",
+      "Rafta ve yüz bin çevrimden sonra."
+    ],
+    "lead": "Tekerlekler, sandalye ayakları, pabuçlar, mekanizmalar, bağlantı elemanları, çekmece rayı parçaları, kabuklar ve dekor parçaları. Parçayı gönderin. Geometriyi, yük durumunu, kalıp rotasını, yüzeyi ve üretim ekonomisini değerlendiririz."
+  },
+  "blocks": {
+    "hero": {
+      "plate": "FD-01",
+      "caption": "Görünüşte döner tekerlek. Pimden zemine uzanan yük yolu.",
+      "labels": {
+        "load": "yük",
+        "reaction": "tepki",
+        "stem": "pim",
+        "raceway": "bilye yatağı",
+        "fork": "çatal",
+        "tread": "banda",
+        "offset": "kaçıklık"
+      },
+      "rail": [
+        "2006'dan beri üretim",
+        "1.000'den fazla tamamlanmış proje",
+        "46 göze kadar kalıp deneyimi",
+        "CATIA ve SolidWorks",
+        "Dünya geneline sevkiyat",
+        "Talep hâlinde NDA"
+      ]
+    },
+    "objects": {
+      "index": "01",
+      "kicker": "Parçalar",
+      "heading": "Mobilya plastiği, tek katalogda iki ayrı iştir.",
+      "body": "Küçük donanım — pabuçlar, tapalar, eksantrikler, dübeller, klipsler, raf destekleri — milyonlarla satılır ve fiyatını göz sayısı ile disiplinli bir yolluk belirler. Büyük parçalar — ayaklar, kabuklar, oturaklar, masa parçaları — atımla satılır ve fiyatını cidar kalınlığı ile çevrim süresi belirler. Mobilya programlarının çoğunda ikisi birden vardır. Kalıp stratejisinin proje bazında değil, parça bazında kararlaştırılmasının nedeni budur.",
+      "listLabel": "Parça aileleri",
+      "rows": [
+        {
+          "code": "FD-02",
+          "name": "Çift makaralı ve tek makaralı tekerlekler",
+          "note": "Göbek, banda, çatal, döner bilye yatağı ve pim — genellikle iki malzeme ve iki kalıp. Pimin geçtiği yuva çoğu zaman sandalye ayağının kendisine kalıplanır; bu da ikiliyi iki ayrı parça olmaktan çıkarıp bir tolerans problemi hâline getirir."
+        },
+        {
+          "code": "FD-03",
+          "name": "Beş kollu yıldız ayaklar",
+          "note": "Ofis koltuğundaki en yüksek değerli ve en zorlu enjeksiyon parçası. Cam elyaf dolgulu poliamit ya da dolgulu polipropilen, derin nervürler, gaz pistonu için konik yuva, beş adet tekerlek yuvası. Yolluk girişi konumu, birleşme izinin kol / kolon geçişinde nereye düşeceğini belirler."
+        },
+        {
+          "code": "FD-04",
+          "name": "Oturak kabukları ve sırtlıklar",
+          "note": "Uzun akış yolu, parçanın tamamında kozmetik yüzey, bütünleşik esneme bölgeleri ve kalıpta verilmiş renk. Ergiyiğin kat edeceği yol fazla uzunsa kaplan çizgileri ve parlaklık farkları burada ortaya çıkar."
+        },
+        {
+          "code": "FD-05",
+          "name": "Mekanizma gövdeleri, kollar ve kapaklar",
+          "note": "Metale karşı çalışan asetal ve poliamit parçalar ile onları gizleyen kapaklar. Küçük, dar toleranslı ve yüksek gözlü: bunlarda fiyatı hammadde değil, kalıp belirler."
+        },
+        {
+          "code": "FD-06",
+          "name": "Pabuçlar, ayaklar ve ayarlı ayaklar",
+          "note": "Tanesi kuruşun kesri, yılda milyonlarca. Tamamen bir göz sayısı ve yolluk problemi; tutma geometrisinin de yalnızca nominalde değil, geçtiği borunun ya da ayağın tolerans bandının tamamında tutması gerekir."
+        },
+        {
+          "code": "FD-07",
+          "name": "Eksantrikler, dübeller ve demonte bağlantı elemanları",
+          "note": "Düz paket ve demonte mobilyanın çekirdeği. Tutma kuvvetine, eksantriğin kilitlenirken verdiği hisse ve 5 mm ya da 8 mm deliğe giren ölçüsel tutarlılığa göre yargılanır."
+        },
+        {
+          "code": "FD-08",
+          "name": "Çekmece rayı ve amortisör parçaları",
+          "note": "Makaralar, tutucu klipsler, ön sabitleme braketleri, hat sonu stoperleri ve yumuşak kapanma amortisör gövdeleri; sürtünme ve aşınma nedeniyle genellikle asetal. Bu parçalarda şartname çevrim ömrüdür."
+        },
+        {
+          "code": "FD-09",
+          "name": "Kablo düzenleme, kör tapalar ve dekor parçaları",
+          "note": "Masa kablo kapakları, priz çerçeveleri, kablo omurgaları, kapaklar, klipsler ve tepsiler. Yapısal talep düşük, renk uyumu talebi yüksek; üstelik her masa serisiyle birlikte değişen bir kategori."
+        }
+      ],
+      "close": "Ayrıca: kolçak taşıyıcıları, sürgüler ve mandallar; menteşe kapakları ve montaj plakaları; boru pabuçları ve ayak içi tapaları; raf destekleri ve pimleri; masa ve gövde bağlantı elemanları; vida kapakları, kenar profilleri ve dekoratif çerçeveler; lamba gövdeleri, saksı gövdeleri ve enjeksiyon paravanlar."
+    },
+    "loadpath": {
+      "index": "02",
+      "kicker": "Yük yolu",
+      "heading": "Yük kolondan girer, zeminden çıkar.",
+      "body": "Bir beş kollu yıldız ayak; bir insanı, bir gaz pistonunu ve bir döner mekanizmayı taşır. Planda yol basittir: kolondan aşağı, beş koldan dışarı, beş yuvaya, beş tekerleğe. Parça, o yolun geçmek zorunda olduğu dört yer kadar iyidir.",
+      "plate": "FD-10",
+      "labels": {
+        "load": "yük",
+        "reaction": "tepki",
+        "column": "kolon",
+        "socket": "yuva",
+        "weld": "birleşme izi"
+      },
+      "calloutsLabel": "Kırıldığı dört yer",
+      "callouts": [
+        {
+          "n": "1",
+          "title": "Kol / kolon geçişi",
+          "body": "İki ergiyik cephesinin buluştuğu yerde elyaflar akışı takviye etmek yerine akışa dik döner ve buluşma cephesindeki çentik gerilmeyi yoğunlaştırır. Takviyeli naylonlar üzerine yayımlanmış çalışmalar kaybı dolgusuz kalitede kabaca sıfır ile yüzde 17 arasında, yüzde 30 civarı cam elyafta ise yüzde 50 ve üzerinde veriyor. Bu bir ince ayar değildir. Parçanın yarısı olabilir."
+        },
+        {
+          "n": "2",
+          "title": "Vida göbeği",
+          "body": "Yiv açan bir vida kendi dişini açar ve bunu yaparken çevresel gerilme üretir. Merkezi maçalanmamışsa, tabanında radyus yoksa ya da kılavuz delik vida üreticisinin verdiği değerin dışındaysa göbek yarılır — genellikle ilk montajda değil, ikinci montajda."
+        },
+        {
+          "n": "3",
+          "title": "Sürekli yük",
+          "body": "Mobilyada hiçbir şey bir kez yüklenmez. Yayımlanmış sünme verileri polipropileni oda sıcaklığında, yaklaşık 5 MPa altında bir yılda yüzde 1,5 civarı birim uzamada veriyor. Uzun vadeli tasarım, veri sayfasındaki kısa süreli değeri değil, sünme modülünü kullanır. Sarkan raf, açılan ayak ve zamanla sallanmaya başlayan taban budur."
+        },
+        {
+          "n": "4",
+          "title": "Nervür sonlandırması",
+          "body": "Ani kesit değişimi, yorulma test düzeneğini bekleyen bir çatlak cephesidir. Nervürler radyusla sonlandırılır ve cidar düşürülmek yerine kademelendirilir; aksi hâlde ilk kırılan yer o geçiş olur."
+        }
+      ],
+      "sourceNote": "Bu bölümde anılan değerler yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir.",
+      "close": "Bu dördünden üçü yolluk girişi konumu, cidar ve radyusla karara bağlanır — yani kalıp tasarımında, ilk atımdan aylar önce. Yük durumunu parçayla birlikte gönderin: neyin neyi, hangi yönde, ne kadar süre taşıdığını."
+    },
+    "rib": {
+      "index": "03",
+      "kicker": "Nervür ve göbek",
+      "heading": "Arkasındaki cidar kadar kalın bir nervür, görünen yüzeye basar.",
+      "body": "Çöküntü, bir mobilya parçasındaki en yaygın kozmetik rettir ve bir kalıplama sorunu değil, bir geometri sorunudur. Nervür, çevresindeki cidar donduktan sonra çeker ve görünen yüzeyi arkasından içeri doğru çeker. Aynı aritmetik, bir göbeğin vidaya dayanıp dayanmayacağına da karar verir.",
+      "wrong": {
+        "plate": "FD-11",
+        "title": "Çizildiği hâliyle",
+        "labels": {
+          "wall": "cidar",
+          "rib": "nervür",
+          "sink": "çöküntü",
+          "crack": "çatlak",
+          "boss": "göbek",
+          "t": "t",
+          "ratio": "1,0 t"
+        },
+        "note": "Nervür tam cidar kalınlığında ve cidara dik giriyor. Göbek cidarları kalınlaştırılmış ve alt yüzeye, dibinde radyus olmadan doğrudan oturtulmuş. Nervür görünen yüzeye basar. Göbek, yiv açan bir vida altında tabanından yarılır; genellikle ikinci montajda."
+      },
+      "right": {
+        "plate": "FD-12",
+        "labels": {
+          "wall": "cidar",
+          "rib": "nervür",
+          "fillet": "radyus",
+          "core": "maça",
+          "t": "t",
+          "ratio": "0,6 t"
+        },
+        "title": "Olması gerektiği hâliyle",
+        "note": "Nervür cidara oranlanmış ve çıkma açısı verilmiş, tabanında radyus var. Göbek maçalanmış, dibinde radyuslanmış, cidarı vidaya değil nominal cidara oranlanmış. Amaç; çöküntüye, yarılmaya ve uzun soğutma süresine yol açan kalın kesit olmadan aynı rijitliği elde etmektir."
+      },
+      "rulesHeading": "Yayımlanmış tasarım kılavuzu",
+      "rules": [
+        {
+          "k": "Çalışma cidarı",
+          "v": "Kalın cidarlı yapısal parçalarda 4,5 – 12,7 mm; optimum olarak 6,35 mm anılır"
+        },
+        {
+          "k": "Nervür kalınlığı",
+          "v": "Cidar bandına bağlı olarak üzerinde durduğu cidarın %60 – 120'si"
+        },
+        {
+          "k": "Göbek dış çapı",
+          "v": "Maçalanmış deliğin 1,6 – 2,0 katı"
+        },
+        {
+          "k": "Göbek dibinde radyus",
+          "v": "kabaca 1,5 – 3 mm"
+        },
+        {
+          "k": "İç radyus",
+          "v": "cidarın yaklaşık 0,6 katı; 1,5 mm'nin altına inmez, yük ve darbe kesitlerinde 3 mm"
+        },
+        {
+          "k": "Çıkma açısı",
+          "v": "0,5 – 3°; dokusuzda 1°, dokuluda 2° ve her 0,025 mm doku derinliği için 1° daha"
+        }
+      ],
+      "rulesNote": "Kalın cidarlı yapısal parçalar için yayımlanmış kılavuz; kaynağın inç değerlerinden dönüştürülmüştür. Sektör uygulamasıdır, Metal Form ölçümleri değildir — sizin parçanız kendi rakamlarını kendi yük durumundan alır.",
+      "close": "Bir tasarımcının kalın cidardan beklediği rijitlik genellikle daha ince bir cidar ve doğru bir nervürle de elde edilir; soğutma süresini belirleyen kalın kesit de onunla birlikte gider. Ahşap ya da metal bir öncülünden devralınmış bir parçada önerdiğimiz ilk değişiklik normalde budur."
+    },
+    "fatigue": {
+      "index": "04",
+      "kicker": "Yük ve yorulma",
+      "heading": "Sınav ilk yük değildir. Yüz bininci yüktür.",
+      "body": "Mobilya, bir test raporu kültürüne satılır. Aşağıdaki çevrim sayıları, mobilya mühendislerinin bir parça belirlerken ezberden söylediği rakamlardır. Bize değil, müşterinin programına aittirler: bitmiş ürün, müşterinin laboratuvarında ve müşterinin standardına göre test edilir.",
+      "plate": "FD-13",
+      "labels": {
+        "load": "yük",
+        "flex": "esneme",
+        "column": "kolon",
+        "cycles": "çevrim"
+      },
+      "cyclesCaption": "Sektörde anılan çevrim beklentileri",
+      "cycles": [
+        {
+          "n": "≈ 100.000",
+          "label": "Oturak ve sırtlık yorulması",
+          "note": "Ofis koltuklarında EN 1335'e karşı yaygın olarak anılan sayı."
+        },
+        {
+          "n": "≈ 120.000",
+          "label": "Ofis koltuğu yorulması",
+          "note": "BIFMA X5.1'e karşı yaygın olarak anılan sayı. Üst segment programlar daha yükseğini şart koşar."
+        },
+        {
+          "n": "50.000 – 60.000",
+          "label": "Beş kollu ayak döndürme",
+          "note": "Döndürme testi kabaca dakikada 10 devirde anılır. Bu sayfadaki çevrim sayıları yayımlanmış test rejimleridir, bizim sonuçlarımız değildir."
+        },
+        {
+          "n": "On binlerce",
+          "label": "Yumuşak kapanan çekmece parçaları",
+          "note": "Amortisör ve ray parçaları için normalde yayımlanan beyan edilmiş çevrim ömrü."
+        }
+      ],
+      "standardsHeading": "Ürününüzün karşıladığı test aileleri",
+      "standards": [
+        "EN 1728",
+        "EN 12520",
+        "EN 16139",
+        "EN 581-2",
+        "EN 1730",
+        "EN 12521",
+        "EN 16122",
+        "EN 14749",
+        "EN 1022",
+        "BIFMA X5.1",
+        "BIFMA X5.5",
+        "BIFMA X5.9"
+      ],
+      "standardsNote": "Statik yük, yorulma çevrimi, darbe ve devrilme. Bunlar sizin yükümlülükleriniz ve sizin akreditasyonlarınızdır, asla bizim değil. Parçayı, dayanması gereken diziye göre tasarlarız; test etmeyiz ve belgelendirmeyiz.",
+      "glass": {
+        "heading": "Cam elyafın cevabı değiştirdiği yer",
+        "body": "Cam elyaf rijitliği yükseltir ve sünmeyi düşürür; yük taşıyan bir mobilya parçasının ihtiyacı da tam olarak budur. Aynı zamanda birleşme izini tasarımın kısıtı hâline getirir; çünkü buluşma cephesinde elyaflar akışa doksan derece döner ve hiçbir şeyi takviye etmez.",
+        "barsCaption": "Birleşme izinde yayımlanmış mukavemet kaybı",
+        "bars": [
+          {
+            "label": "Dolgusuz poliamit",
+            "value": "%0 – 17",
+            "pct": 17
+          },
+          {
+            "label": "Yaklaşık %30 cam elyaf",
+            "value": "%50 ve üzeri",
+            "pct": 50
+          }
+        ],
+        "note": "Yayımlanmış önlemler bilinir ve hiçbiri bedelsiz değildir: bozunma sınırları içinde kalıp ve ergiyik sıcaklığını yükseltin, daha hızlı doldurun, ütüleme basıncını artırın, kalıp ayırıcıyı kalıptan uzak tutun. Bedeli olmayan tek önlem kalıp tasarımında alınır — girişi, birleşme izi hiçbir şey taşımayan bir yere düşecek şekilde koyun."
+      },
+      "close": "On bin çevrimde geçip seksen bin çevrimde kırılan bir parça, yanlış sayıya göre tasarlanmıştır. Bitmiş ürünün hangi standarda göre test edileceğini söyleyin; parça teknik resme göre değil, ona göre tasarlansın."
+    },
+    "consolidation": {
+      "index": "05",
+      "kicker": "Parça sayısı",
+      "heading": "Pahalı olan plastik değildir. Dakikadır.",
+      "body": "Mobilyada bitmiş ürünü monte etme işçiliği, çoğu zaman içindeki enjeksiyon parçalarından daha büyük bir kalemdir. Kalıplanmış bir geçme detayının ortadan kaldırdığı her bağlantı elemanı, ürün ailesinin ömrü boyunca ve her adette doğrudan montaj dakikasından düşer. Kalıp bütçesini alan da budur ve bir mobilya alıcısının en hızlı karşılık verdiği argüman da odur.",
+      "before": {
+        "plate": "FD-14",
+        "title": "Şartnamedeki hâliyle",
+        "tally": [
+          {
+            "k": "Enjeksiyon parçası",
+            "v": "4"
+          },
+          {
+            "k": "Bağlantı elemanı",
+            "v": "6"
+          },
+          {
+            "k": "Montaj işlemi",
+            "v": "9"
+          }
+        ]
+      },
+      "after": {
+        "plate": "FD-15",
+        "title": "Birleştirilmiş hâliyle",
+        "tally": [
+          {
+            "k": "Enjeksiyon parçası",
+            "v": "2"
+          },
+          {
+            "k": "Bağlantı elemanı",
+            "v": "1"
+          },
+          {
+            "k": "Montaj işlemi",
+            "v": "3"
+          }
+        ]
+      },
+      "caption": "Şematiktir. Sayılar argümanı örneklemek içindir; ölçülmüş bir vaka değildir.",
+      "tradeoff": {
+        "heading": "Birleştirmenin bedeli",
+        "body": "Geçme detayları bedava değildir. Beraberinde geçme alırlar; geçmeler de sürgü, lifter ve daha karmaşık bir kalıp alır. Parça bir kez monte edilip bir daha hiç açılmayacaksa bu takas yapmaya değer. Parça serviste açılacaksa ya da müşteri sahada açacak ve kırılan bir tırnak bir garanti iadesine dönüşecekse reddetmeye değer. İkisinden hangisi olduğunu düşündüğümüzü size söyleriz."
+      },
+      "close": "Yalnızca parçayı değil, montajı gönderin. Bir mobilya programında birleştirme, genellikle kimsenin bizden teklif istemediği parçalardadır ve tek bir teknik resim görürsek onları göremeyiz."
+    },
+    "finish": {
+      "index": "06",
+      "kicker": "Yüzey ve renk",
+      "heading": "Renk bir malzeme sorunudur. Kalıp onu düzeltemez.",
+      "body": "Bir mobilya serisinin; parçalar arasında, farklı ana malzemeler arasında ve yıllar boyunca tutması gerekir ve alıcılar bunu bir tercih değil, sert bir eşik olarak ele alır. Kalıp; parlaklığa, dokuya, çıkma açısına ve giriş bulanıklığının nereye düşeceğine karar verir. Renge karar vermez. Renk; pigment, taşıyıcı, let-down oranı ve dağılımdır ve nedenleri çelikte değil, enjeksiyon salonunda ve masterbatch'te yaşayan sebeplerle kayar.",
+      "matrix": {
+        "caption": "Doku sınıfına karşı seri rengi",
+        "columns": [
+          {
+            "code": "VDI 12",
+            "note": "parlatılmış"
+          },
+          {
+            "code": "VDI 24",
+            "note": "ince doku"
+          },
+          {
+            "code": "VDI 30",
+            "note": "mat"
+          },
+          {
+            "code": "VDI 36",
+            "note": "kaba"
+          }
+        ],
+        "rows": [
+          "Kemik",
+          "Yulaf",
+          "Zeytin",
+          "Ceviz"
+        ],
+        "draftLabel": "Gerektirdiği çıkma açısı",
+        "draft": [
+          "≈ 1°",
+          "1,5 – 2°",
+          "2 – 3°",
+          "≥ 4°"
+        ],
+        "note": "Sınıf ile çıkma açısı arasındaki ilişkiyi göstermek için çizilmiştir; bir renk ya da doku referansı değildir. Gerçek eşleştirme, mutabık kalınan ışık altında fiziksel bir plakaya karşı yapılır."
+      },
+      "specHeading": "Bir mobilya yüzey şartnamesinin dili",
+      "spec": [
+        {
+          "k": "Doku standardı",
+          "v": "VDI 3400, kabaca VDI 12 ile VDI 45 arası"
+        },
+        {
+          "k": "Pürüzlülük bandı",
+          "v": "Ra ≈ 0,40 – 18 µm, logaritmik; yaklaşık altı VDI numarası bunu ikiye katlar"
+        },
+        {
+          "k": "Renk toleransı",
+          "v": "Sektörde yaygın geçer/kalır eşiği yaklaşık 1 Delta E'dir"
+        },
+        {
+          "k": "Referans",
+          "v": "Saklanan bir referans plaka; mutabık kalınan ışık altında değerlendirilir"
+        },
+        {
+          "k": "Gündelik kayma",
+          "v": "Let-down oranı hatası, kötü dağılım, haznede statik yüklenme"
+        }
+      ],
+      "points": [
+        "Çıkma açısını doku belirler. Orta bir sınıfta kabaca 1,5 ila 2 derece, kaba bir sınıfta en az 4 derece. Dolayısıyla sınıf bir geometri kararıdır ve göz bitirilmeden önce mutabık kalınması gerekir — çelik işlendikten sonra seçilen bir doku, bir yüzey işlemi değil, bir kalıp modifikasyonudur.",
+        "Doku aynı zamanda gizler. Bir desen yansımayı dağıtır ve küçük çöküntüleri ve giriş izlerini örter. Yüksek parlaklık her şeyi gösterir; itici izleri dâhil.",
+        "Tek bir seride iki ana malzeme, tek renk olarak okunmak için iki ayrı masterbatch formülasyonu ister. Aynı nominal renkteki bir polipropilen pabuç ile bir ABS dekor kapağı iki ayrı iştir.",
+        "Uzun akışlı polipropilen kabuklar kaplan çizgilerinin ortaya çıktığı yerdir — akış boyunca değişen parlak ve mat bantlar; en kötüsü dolgulu ve pigmentli compoundlarda görülür. Bir akış sorunudur ve boyahanede değil, girişte çözülür."
+      ],
+      "boundaryNote": "Burada yapmadıklarımız: renk ölçüm ekipmanı işletmiyoruz ve bir rengi belgelendirmiyoruz. Kalıbı, parçanın serideki her renkte hiçbir geometri sonucu doğmadan kalıplanabileceği şekilde tasarlarız ve sizin ya da masterbatch tedarikçinizin belirlediği plakaya ve let-down oranına göre çalışırız.",
+      "sourceNote": "Bu sayfadaki çıkma açıları, VDI sınıfları ve pürüzlülük değerleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir. Sizin parçanızın değerleri sizin doku firmanıza ve sizin çeliğinize aittir."
+    },
+    "tooling": {
+      "index": "07",
+      "kicker": "Kalıp kararı",
+      "heading": "Göz sayısına bir kez karar verilir ve bedeli ürün ailesinin ömrü boyunca ödenir.",
+      "body": "Göz sayısı, mühendislik kılığına girmiş ticari bir karardır. Adedin 32 gözü haklı çıkardığı bir donanım parçasının 8 gözde kalıplanması, seri kaldırılana kadar her bin adette yanlış fiyatı taşır. Bunu yıllık adet ve parça boyu belirler, başka hiçbir şey değil — hele hiç kalıp bütçesi değil.",
+      "ruler": {
+        "caption": "Parça sınıfına göre göz bantları",
+        "axisLabel": "göz",
+        "marker": "46",
+        "markerNote": "Metal Form'un kalıp deneyimi 46 göze kadar uzanır.",
+        "plate": "FD-16"
+      },
+      "bands": [
+        {
+          "range": "1 – 2",
+          "cls": "Büyük yapısal ve kozmetik",
+          "note": "Ayaklar, kabuklar, oturaklar, sırtlıklar, masa parçaları. Tartışma tamamen göz sayısından çıkar; cidara, soğutmaya, çevrim süresine ve pres boyuna geçer."
+        },
+        {
+          "range": "4 – 16",
+          "cls": "Orta boy işlevsel",
+          "note": "Mekanizma gövdeleri, ray parçaları, bağlantı elemanları, taşıyıcılar. Burada belirleyici gereklilik göz sayısı değil, dengeli dolumdur."
+        },
+        {
+          "range": "20 – 46",
+          "cls": "Küçük donanım",
+          "note": "Pabuçlar, tapalar, eksantrikler, dübeller, klipsler, raf destekleri. Bin adet başına rekabetçi bir fiyata giden tek yol yüksek göz sayısı ve disiplinli bir yolluktur."
+        }
+      ],
+      "runner": {
+        "heading": "Sıcak mı, soğuk mu",
+        "hot": {
+          "name": "Sıcak yolluk",
+          "note": "Göz sayısının yüksek, renk değişimlerinin sık olduğu ya da girişin tam olarak birleşme izinin kontrol edilmesi gereken yere oturması gerektiği durumlarda. Yolluk kırmasını ortadan kaldırır ve çevrimi kısaltır."
+        },
+        "cold": {
+          "name": "Soğuk yolluk",
+          "note": "Adetlerin orta düzeyde olduğu, kalitenin yoğun dolgulu ve aşındırıcı olduğu ya da parçanın yolluk firesinin baskın maliyet olmayacağı kadar küçük olduğu durumlarda."
+        },
+        "balance": "Çok gözlü bir donanım kalıbında asıl soru bunların hiçbiri değildir: dengedir. Dengesiz bir yolluk gözler arasında ölçüsel ve renk farkları üretir ve bunlar sizin hattınıza, kimsenin bildirdiği bir kalıplama kusuru olarak değil, montajda bir geçme sorunu olarak ulaşır."
+      },
+      "family": {
+        "heading": "Tek kalıp, bütün bir ölçü ailesi",
+        "body": "Boru tapaları, pabuçlar ya da ayarlı ayaklardan oluşan bir kataloğa, altı ayrı kalıp yerine birbirinin yerine geçebilen insertli tek bir kalıp seti genellikle daha iyi hizmet eder. Yatırım bir kez yapılır ve ürün ailesi bir insert işlenerek genişler."
+      },
+      "ask": "Yıllık adedi parçayla birlikte gönderin. O olmadan bir kalıp önerisi, kalıp fiyatının etrafında kurulur; oysa ilk yıldan sonra önemi kalmayan tek sayı odur."
+    },
+    "supply": {
+      "index": "08",
+      "kicker": "Tedarik ve kapsam",
+      "heading": "Parçanın yedinci yılda da var olması gerekir.",
+      "body": "Bir mobilya serisini, tek kaynaktan gelen en küçük parçası açığa düşürür. Yalnızca tek bir tedarikçinin üretebildiği bir pabuç, bir eksantrik gövdesi ya da bir tekerlek yuvası; montaj hattını eksik bir gövde kadar etkili biçimde durdurur — ve garantisi hâlâ süren, üretimden kalkmış bir serinin de bir yerden yedek parçaya ihtiyacı olur.",
+      "ledgerHeads": {
+        "risk": "Açık nokta",
+        "route": "Rota"
+      },
+      "ledger": [
+        {
+          "risk": "Tek kaynaktan gelen tek bir küçük parça, montaj hattının tamamını durdurabilir.",
+          "route": "Sıkıntı sırasında değil, ihtiyaç duyulmadan önce yapılmış yedek ya da ikiz kalıp."
+        },
+        {
+          "risk": "Hâlâ üretimde olan, kullanılabilir teknik resmi ve elde edilebilir kalıbı olmayan bir parça.",
+          "route": "Numuneden ya da fotoğraftan tersine mühendislikle CATIA ya da SolidWorks'te CAD'e geri dönüş."
+        },
+        {
+          "risk": "Seri üretimden kalktı ve hâlâ garanti süresi içinde.",
+          "route": "Siparişe göre parça üretimi ve sürekli tedarik; kuyruğun sonundaki küçük partiler dâhil."
+        },
+        {
+          "risk": "Kalıp, artık çalışmak istemediğiniz bir tedarikçide duruyor.",
+          "route": "Sizin kontrolünüzde, sizin şartnamenize göre yapılmış ve yanında yedekleri ile değişim parçaları tanımlanmış ikinci bir kalıp."
+        },
+        {
+          "risk": "Seri henüz piyasaya çıkmadı ve geometri ticari açıdan hassas.",
+          "route": "Bize gönderdiğiniz ilk teknik resimden itibaren standart olarak NDA ve gizlilik."
+        }
+      ],
+      "boundary": {
+        "heading": "Neyi biz sağlıyoruz, ne sizde kalıyor",
+        "lead": "Bu sayfanın işe yarar bölümü kapsam sınırıdır. Şimdi bu konuda muğlak davranan bir tedarikçi, bunun size bir lansman tarihine mal olacağı noktada da muğlak davranacaktır.",
+        "ours": {
+          "heading": "Metal Form sağlar",
+          "items": [
+            "CATIA ve SolidWorks'te ürün mühendisliği ve CAD; konsept geometriden kalıplanabilir parçaya",
+            "Hiçbir teknik resmin kalmadığı yerde numuneden ya da fotoğraftan tersine mühendislik",
+            "Üretilebilirlik için tasarım: cidar, nervürler, göbek geometrisi, dokuya göre çıkma açısı, yolluk girişi ve birleşme izi konumu",
+            "Kalıp tasarımı ve imalatı — enjeksiyon, PET, şişirme ve basınçlı döküm kalıpları, çok gözlü, sıcak ve soğuk yolluklu, insertli kalıplar",
+            "Geçmeli ve dişli geometri için sürgüler, lifterlar, diş sökücü ve katlanabilir maçalar",
+            "CNC frezeleme, tornalama ve manuel talaşlı imalat",
+            "Parça üretimi ve sürekli tedarik, ikinci kaynak ve ikiz kalıplar, yedekler ve değişim parçaları",
+            "Dünya geneline sevkiyat, proje bazında belirlenen şartlarla kalıp garantisi, NDA ve gizlilik"
+          ]
+        },
+        "yours": {
+          "heading": "Sizde kalanlar",
+          "items": [
+            "Test programı. EN ve BIFMA dizileri sizin bitmiş ürününüz üzerinde, sizin programınızda ve sizin laboratuvarınızda yürütülür. Bunlar sizin yükümlülüklerinizdir, asla bizim akreditasyonlarımız değil.",
+            "Soft-touch ve üzeri kalıplanmış yüzeyler. Kolçak pedleri ve yumuşak pabuç yüzeyleri normalde ayrı bir elastomer parçadır ya da montajcıda iki bileşenli bir prosestir. Biz rijit taşıyıcıyı, sürgüyü, mandalı ve mekanizmayı yaparız.",
+            "Dekorasyon. Sıcak yaldız, metalizasyon, kalıp içi etiketleme ve galvano kaplama bizim proseslerimiz değildir.",
+            "Renk onayı. Referans plaka, let-down şartnamesi ve onay sizde ya da masterbatch tedarikçinizde kalır; renk ölçüm ekipmanı işletmiyoruz.",
+            "Akış simülasyonu. Yolluk girişi, birleşme izi ve soğutma stratejimiz; bir simülasyon raporu değil, sözle ve çizimle ortaya konmuş mühendislik muhakemesidir.",
+            "Bitmiş ürünün nihai montajı, perakende ambalajı ve fabrikanızdan çıkan her şeyin belgelendirmesi."
+          ]
+        },
+        "close": "Birinci sütun yaptıklarımızdır. İkincisi ise teklifden sonra değil, teklifte yüksek sesle söylediklerimizdir."
+      },
+      "response": "48 iş saati içinde ilk teknik dönüş."
+    },
+    "panels": {
+      "heading": "Daha ayrıntılı",
+      "items": [
+        {
+          "title": "Yük taşıyan mobilya parçalarının kırıldığı yerler",
+          "bullets": [
+            "Yüklü bir kesitteki birleşme izi — yaklaşık yüzde 30 cam elyaflı poliamitte bir birleşme izi, kütle mukavemetinin yarısını ya da daha azını taşıyabilir; çünkü elyaflar akışı takviye etmek yerine akışı keser.",
+            "Yiv açan bir vida altında göbek çatlaması; taban radyusu yoksa, merkez maçalanmamışsa ya da kılavuz delik vida üreticisinin önerisinin dışındaysa.",
+            "Sürekli yük altında sünme — polipropilen oda sıcaklığında, yaklaşık 5 MPa altında bir yılda yüzde 1,5 civarı deforme olur; bu da sarkan bir raf, açılan bir ayak ya da zamanla sallanmaya başlayan bir taban olarak okunur.",
+            "Ani kesit değişimi ve nervür sonlandırması; geçişin çatlak cephesine dönüştüğü yer.",
+            "Darbe yükü ve tekrarlı dönme altında tekerlek mili sıyrılması ve göbek çatlaması.",
+            "İlk montajdan sağ çıkıp üçüncü sökümde kırılan geçme detayları.",
+            "İtici konumlarında ve keskin iç köşelerde gerilme beyazlaması ve ardından çatlama.",
+            "Boru uçlarında gevşeyen pabuçlar ve ayak tapaları; çünkü tutma nervürleri yalnızca nominal boru toleransına göre tasarlanmıştır."
+          ],
+          "source": "Bu panodaki arıza biçimleri ve değerler yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
+        },
+        {
+          "title": "Mobilya parçalarında uyguladığımız tasarım kuralları",
+          "bullets": [
+            "Yolluk girişi konumu; birleşme izlerini yüklü yüzeylerden ve görünen yüzeyden uzak tutacak şekilde seçilir.",
+            "Nervür kalınlığı cidara oranlanır; böylece görünen yüzey çöküntüsüz kalır.",
+            "Göbekler maçalanır, tabanında radyuslanır, cidarı nominal cidara oranlanır, girişi yarılmaya karşı pahlanır.",
+            "Çıkma açısı varsayılan bir değere göre değil, belirlenen doku sınıfına göre verilir.",
+            "Çekme payı genel bir tablodan değil, belirli dolgulu kaliteye ve akış yönüne göre belirlenir — dolgulu kaliteler anizotropik çeker.",
+            "Soğutma nervürlerin ve göbeklerin çevresine serilir; çünkü parçayı biçiminden çıkaran şey en son donan kesittir.",
+            "Bir kez monte edilen parçada geçme detayı; serviste açılacak parçada vida.",
+            "Malzeme cam elyaf dolguluysa kalıp çeliği ve yolluk girişi koruması onun aşındırıcılığına göre seçilir."
+          ]
+        },
+        {
+          "title": "Düzgün teklif verebilmek için ihtiyacımız olanlar",
+          "bullets": [
+            "Parça: bir STEP dosyası, bir teknik resim — ya da elde kalan tek şey oysa fiziksel parçanın kendisi.",
+            "Yük durumu: neyin neyi, hangi yönde, ne kadar süre taşıdığı.",
+            "Yıllık adet ve yedek parça kuyruğu dâhil beklenen program ömrü.",
+            "Renk referansları ve doku sınıfı ya da bu parçanın uyması gereken seri.",
+            "Bitmiş ürünün test edileceği her türlü standart.",
+            "Bunun yeni bir parça mı, bir yeniden tasarım mı, yoksa hâlihazırda var olan bir kalıp için ikinci kaynak mı olduğu.",
+            "Parçanın bir kez mi monte edildiği yoksa sahada servis mi göreceği — bağlantı stratejisini bu değiştirir.",
+            "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+          ]
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Parçayı gönderin.",
+    "body": "Bir STEP dosyası, bir teknik resim ya da elinizdeki parçanın kendisi. Geometri sorunları, sizde olduğunu düşündüğümüz yük durumu, kalıp rotası ve üretim ekonomisiyle dönüş yaparız.",
+    "action": "Projenizi gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form — mobilya hakkında.\n\nParça: tekerlek / sandalye ayağı / pabuç / bağlantı elemanı / çekmece parçası / kabuk / dekor parçası\nYeni parça / yeniden tasarım / mevcut bir kalıp için ikinci kaynak\nMalzeme: \nYıllık adet: \nParçanın uyması gereken renk ve doku: \nBitmiş ürünün test edildiği standart: \n\nSTEP dosyası, teknik resim ya da fiziksel parça gönderebilirim.",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+  }
+}

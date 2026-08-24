@@ -1,0 +1,508 @@
+{
+  "meta": {
+    "title": "Closure & Cap Tooling for Chemical and Detergent Packaging — Metal Form",
+    "description": "Mould design and manufacture for caps, closures, child-resistant and tamper-evident systems, and dispensing components for detergents, household chemicals and agrochemicals. Send the part — response within 48 business hours."
+  },
+  "name": "Chemical & Detergent",
+  "tile": "Closures, threads and sealing geometry at high volume. Tamper evidence, child-resistance and the millimetre of thread that separates contained from leaking.",
+  "tileParts": "Caps · Closures · Containers",
+  "hero": {
+    "kicker": "Chemical & Detergent",
+    "headline": [
+      "A closure is a seal,",
+      "not a lid."
+    ],
+    "lead": "Caps, closures, child-resistant and tamper-evident systems, and dispensing components for detergents, household chemicals and agrochemicals. Send the part. We evaluate the sealing geometry, the thread route, the cavitation and the production economics.",
+    "markers": [
+      "Closure and dispensing tooling",
+      "Multi-cavity experience to 46",
+      "Second source from the part in hand"
+    ]
+  },
+
+  "blocks": {
+    "engagement": {
+      "index": "01",
+      "kicker": "The interface",
+      "heading": "The thread is a clamp. The land is the seal.",
+      "body": "A closure does not seal on its thread. It seals on the flat annular land at the top of the neck, and the thread is only what holds it there. Every argument about a leaking pack ends in one of two places: the contact at that land, or the clamping force the thread failed to keep.",
+      "body2": "Both are geometry, and both are cut in steel months before a single part exists. A gate vestige left in the land is a leak path; gate position is free on a drawing and expensive after tooling. That is why the useful conversation happens over a drawing and not over a price.",
+      "figCaption": "Thread engagement at magnification",
+      "heroLabels": {
+        "closure": "Closure",
+        "neck": "Neck",
+        "land": "Land",
+        "band": "Band",
+        "thread": "Thread"
+      },
+      "labels": {
+        "crest": "Crest",
+        "root": "Root",
+        "flank": "Flank",
+        "contact": "Contact",
+        "clearance": "Clearance"
+      },
+      "stepsLabel": "Reading the engagement",
+      "steps": [
+        {
+          "label": "The contact band",
+          "note": "Two flanks touching over a band a fraction of a millimetre wide, once per thread turn. That band is what carries clamping load down onto the sealing land. Flash on a thread flank, a parting line laid across it, or ovality in the skirt all narrow it without changing a single measured dimension."
+        },
+        {
+          "label": "Crest and root",
+          "note": "Engagement depth is the difference between them, and it is what the closure has to keep holding while the pack is warm and the polymer is creeping. Published practice puts the 400 profile at roughly 2.5 mm thread depth, 410 at 3.5 mm and 415 at 4.5 mm with an extra turn."
+        },
+        {
+          "label": "Flank and clearance",
+          "note": "Clearance is what lets the part leave the mould and the closure go onto the bottle. It is also why a 410 closure threads onto a 400 finish, torques, looks correct, and leaks on a warm pallet six weeks later. Published references call it a recurring field failure, and nothing on a purchase order shows it."
+        },
+        {
+          "label": "T · E · S · H",
+          "note": "Thread diameter, neck outside diameter, thread start, finish height. Every closure dispute eventually resolves to one of these four letters, which is why they belong on a drawing before they belong in an email."
+        }
+      ],
+      "lettersHeading": "The four finish dimensions",
+      "letters": [
+        { "k": "T", "v": "Thread diameter" },
+        { "k": "E", "v": "Neck outside diameter" },
+        { "k": "S", "v": "Thread start" },
+        { "k": "H", "v": "Finish height" }
+      ],
+      "profilesHeading": "Thread profile, as published",
+      "profiles": [
+        {
+          "name": "400",
+          "depth": "≈ 2.5 mm",
+          "note": "The shortest profile. One full turn, the least mechanical lock, the least torque tolerance."
+        },
+        {
+          "name": "410",
+          "depth": "≈ 3.5 mm",
+          "note": "Taller. The lotion and hand-soap default at 24 mm; the cleaning-product and viscous-liquid default at 28 mm."
+        },
+        {
+          "name": "415",
+          "depth": "≈ 4.5 mm",
+          "note": "Taller again, with an extra turn. Where return-spring force from a pump or trigger has to be held."
+        }
+      ],
+      "profilesNote": "Profile depths are published GPI/SPI practice quoted from packaging references, not Metal Form measurements. The number before the hyphen in a designation such as 28-410 is the finish diameter in millimetres; the number after it is a profile, not a size.",
+      "close": "Taller profiles give a stronger mechanical lock and more torque tolerance, which is why pumps and trigger sprayers sit on 410 and above. Send us the designation you already own. The closure changes; the bottle mould does not have to."
+    },
+
+    "seal": {
+      "index": "02",
+      "kicker": "Seal routes",
+      "heading": "Four ways to close the same millimetre.",
+      "body": "The land is where the seal happens. What sits on it is a decision with a tooling consequence and a supply chain attached. Two of these four change the closure geometry, one of them removes a component from the pack entirely, and all four have to be settled before the cavity is cut.",
+      "figCaption": "Seal routes in section",
+      "labels": {
+        "liner": "Liner",
+        "bore": "Bore",
+        "foil": "Foil",
+        "vent": "Vent",
+        "land": "Land"
+      },
+      "colWhat": "What it is",
+      "colTooling": "What it does to the tool",
+      "colLimit": "What it does not do",
+      "routes": [
+        {
+          "name": "Liner (wad)",
+          "what": "Foam with LDPE, HDPE, PP or EVOH-PE facings, compressed against the land by the thread.",
+          "tooling": "The closure has to carry liner retention: a retaining bead, a flat land, and no gate vestige where the disc sits.",
+          "limit": "Published guidance is explicit — a foam liner is neither tamper evident nor hermetic on its own."
+        },
+        {
+          "name": "Bore seal / plug",
+          "what": "A moulded rib inside the closure sealing against the inner neck wall. No separate disc at all.",
+          "tooling": "Entirely a tooling outcome. The interference fit is cut in steel, and the same steel decides removal torque.",
+          "limit": "One fewer component and one fewer supply chain — where the contents allow it, which is a testing question, not a claim."
+        },
+        {
+          "name": "Induction foil",
+          "what": "A foil laminate bonded to the container land by induction after capping. Hermetic and tamper evident.",
+          "tooling": "Retention features have to hold the liner without letting it spin or lift under the coil.",
+          "limit": "One-piece liner overhang can foul a child-resistant mechanism. It is a fit problem, caught on a drawing or not at all."
+        },
+        {
+          "name": "Vented liner",
+          "what": "Pores or vent holes that let a pack de-gas without losing its seal, on oils, fragrances and gassing chemicals.",
+          "tooling": "The closure has to vent along a defined path rather than wherever the pack finds one.",
+          "limit": "Venting and wicking travel the same route. Geometry decides which one wins."
+        }
+      ],
+      "routesNote": "Liner taxonomy, induction constructions and vented-liner applications above are published industry practice. Metal Form does not manufacture liners, and does not fill, cap or induction-seal.",
+      "close": "For aggressive contents the published route is a protective barrier layer between the foil and the heat-seal layer. That is a liner specification, and it lands on the closure as a change to the land, the retention bead and sometimes the skirt. Send it with the part."
+    },
+
+    "tamper": {
+      "index": "03",
+      "kicker": "Tamper evidence",
+      "heading": "The band survives the capper and fails on the first turn.",
+      "body": "It is the thinnest feature on the part and the hardest thing to get right. It fills last, it short-shoots first, and its entire design is the bridges: strong enough to pass a capping head and a pallet in a warm trailer, weak enough to break the moment a hand turns the cap.",
+      "body2": "Inconsistent bridge thickness means some packs break on the line and some never break at all. A band that breaks early makes the pack unsellable while the line is already running. A band that never breaks means tamper evidence silently does not exist.",
+      "figCaption": "Band, bridges and bridge pattern",
+      "labels": {
+        "skirt": "Skirt",
+        "band": "Band",
+        "bridge": "Bridge",
+        "bead": "Bead",
+        "pitch": "Pitch"
+      },
+      "ledgerHeading": "What each feature governs",
+      "colPart": "Feature",
+      "colGoverns": "What it governs",
+      "ledger": [
+        {
+          "part": "Skirt",
+          "governs": "Thread engagement and roundness. An oval skirt does not seal even when every measured dimension is in tolerance, and ovality is a cooling problem before it is anything else."
+        },
+        {
+          "part": "Band",
+          "governs": "Expansion over the bottle bead on application. Non-uniform expansion usually traces to the finish bead — a bottle problem presenting as a closure problem."
+        },
+        {
+          "part": "Bridges",
+          "governs": "Break force on first opening, and survival through capping, palletising and transport. This is the whole of tamper evidence, expressed in a few tenths of a millimetre."
+        },
+        {
+          "part": "Bridge pattern",
+          "governs": "Where the band lets go first, and whether it tears cleanly around or hangs on one surviving link in front of the consumer."
+        },
+        {
+          "part": "Retention feature",
+          "governs": "Whether the band stays down on the neck after separation or rides back up with the closure, which reads to a shopper as a pack that was already opened."
+        }
+      ],
+      "routesHeading": "Two ways to make it",
+      "routes": [
+        {
+          "name": "Moulded in",
+          "note": "Bridges formed in the steel. No secondary operation and no knife wear — but the bridge is only ever as consistent as the fill at the last feature in the cavity to fill."
+        },
+        {
+          "name": "Post-mould slitting",
+          "note": "The band cut across the skirt wall after moulding. Bridge geometry is set by the knife, and the knife is a consumable with a reject signature of its own."
+        }
+      ],
+      "routesNote": "Slitting is a post-mould operation run on the moulding line. Metal Form supplies tooling and moulded components; it does not supply slitting equipment.",
+      "close": "Bridge geometry is drawn, not adjusted afterwards. Decide it with the capper torque window and the finish bead in front of you, before the cavity is cut."
+    },
+
+    "cr": {
+      "index": "04",
+      "kicker": "Child resistance",
+      "heading": "A mechanism that has to work on the thousandth opening.",
+      "body": "Push-and-turn is two mouldings, two materials and an assembly step: an inner threaded cap inside an outer ratcheted shell. Downward pressure meshes the ratchet teeth and torque reaches the thread. Released, the shell spins and the cap does not.",
+      "body2": "The teeth are the mechanism. Tooth flank angle, engagement travel and draft decide the child-resistance, the senior-friendly opening and the ejection at the same time, in the same piece of steel.",
+      "figCaption": "Push-and-turn ratchet in two states",
+      "tabsLabel": "Mechanism state",
+      "labels": {
+        "outer": "Outer",
+        "inner": "Inner",
+        "tooth": "Tooth",
+        "gap": "Gap",
+        "load": "Load"
+      },
+      "states": [
+        {
+          "id": "released",
+          "name": "Released",
+          "note": "No downward load. The outer shell rotates freely over the inner cap, the ratchet teeth ride over one another, and no torque reaches the thread. This is the state the mechanism has to return to after every single opening — in a warm warehouse, after transport, for the life of the pack."
+        },
+        {
+          "id": "engaged",
+          "name": "Engaged",
+          "note": "Push down and the two shells close on each other. The teeth mesh, torque transfers to the inner cap, and the thread turns. Too aggressive a tooth and the pack will not release for the person who needs the contents; too shallow and it never engaged in the first place."
+        }
+      ],
+      "archHeading": "Three archetypes, three different tools",
+      "arch": [
+        {
+          "name": "Push-down-and-turn",
+          "type": "Type I",
+          "note": "Two-piece. Two tools, two materials, an assembly step, and a mechanism that must survive heat distortion in transit."
+        },
+        {
+          "name": "Lug finish",
+          "type": "Type II",
+          "note": "Engages against lugs on the finish rather than a continuous thread. The bottle carries half the mechanism, so the two tools are one design problem."
+        },
+        {
+          "name": "Snap / ratchet",
+          "type": "Type III",
+          "note": "Squeeze-and-turn is the common single-piece form: a deforming skirt with lugs. One tool, no assembly — and the wall has to deliver a controlled squeeze force and still hold torque."
+        }
+      ],
+      "boundaryHeading": "What this section is not",
+      "boundaryBody": "ISO 8317 and EN 862 cover reclosable and non-reclosable child-resistant packaging, 16 CFR 1700.20 sits under the US Poison Prevention Packaging Act, ASTM D3475 classifies the packages and BS EN ISO 13127 sets out the mechanical test suite. EN ISO 11683 specifies the tactile warning of danger — a raised feature that must be perceptible before the contents can be reached, and therefore a moulded feature and a tooling feature. Under CLP these obligations attach to packs supplied to the general public, not to professional-use-only packs, and methanol at 3% and dichloromethane at 1% trigger them on concentration alone.",
+      "boundaryClaim": "Metal Form does not test, approve or certify child resistance. That testing is done by accredited test houses on your pack, and the obligation sits with the party placing the product on the market. We cut the geometry the test is run on.",
+      "close": "Published test scope explicitly covers heat distortion, moulding defects and degradation over repeated use. The mechanism has to survive the pack's whole life, not its first opening — which makes tooth wear, draft and ejection witness a design question rather than a production one."
+    },
+
+    "route": {
+      "index": "05",
+      "kicker": "Getting it out of the steel",
+      "heading": "A thread is an undercut. It has to leave the mould somehow.",
+      "body": "There are four routes. They cost different amounts of cycle, complexity and wear, and the right one is chosen from the geometry, the resin and the volume — not from whatever the last tool did.",
+      "figCaptionA": "Strip ejection over the thread",
+      "figCaptionB": "Unscrewing core, geared to pitch",
+      "labels": {
+        "core": "Core",
+        "part": "Part",
+        "stripper": "Stripper",
+        "rotate": "Rotate",
+        "eject": "Eject"
+      },
+      "colHow": "How it works",
+      "colSuits": "What it suits",
+      "colCost": "What it costs",
+      "colWear": "Wear",
+      "pair": [
+        {
+          "name": "Strip / bump-off",
+          "how": "The part is forced over the thread using the flexibility of PP or PE. A stripper ring pushes on the band while the thread deforms past the core.",
+          "suits": "Shallow, wide-pitch closure threads. Named in published practice as the standard route for bottle caps.",
+          "cost": "The cheapest and fastest route. No rotation, no gear train, the shortest cycle of the four.",
+          "wear": "Stripper rings and bump-off surfaces wear — and they wear on the surfaces nearest the seal. Not available in rigid resins, and unforgiving of thread depth."
+        },
+        {
+          "name": "Unscrewing core",
+          "how": "The core rotates and threads the part off itself as the mould opens. Rotation and ejection stroke are geared to the thread pitch.",
+          "suits": "Deep or fine-pitch threads, and any thread that stripping would damage. Higher dimensional accuracy on the thread form.",
+          "cost": "Cycle time and tooling complexity. The gain is a thread you could not otherwise mould.",
+          "wear": "Gear train wear or timing drift strips threads across the whole tool at once. A scheduled maintenance item, not a repair item."
+        }
+      ],
+      "othersHeading": "The other two routes",
+      "others": [
+        {
+          "name": "Split cavity (slide)",
+          "note": "Cavity halves open sideways to release an external thread. Fast — but it lays a parting line straight across the thread flank, and flash there goes directly into capping torque."
+        },
+        {
+          "name": "Collapsible core",
+          "note": "Segments retract inward to free an internal thread in a confined space. Higher tooling cost, and a genuine wear item rather than a fit-and-forget one."
+        }
+      ],
+      "rulesHeading": "Four rules that follow from the route",
+      "rules": [
+        "Internal threads generally need more draft than external threads to release cleanly.",
+        "Rounded thread roots distribute stress better than sharp ones and survive repeated opening.",
+        "Moulded threads do not reach machined-thread tolerances. Design to the moulding, not to a machinist's table.",
+        "Shrinkage differs by resin, so the same steel gives a different thread in PP homopolymer and in HDPE."
+      ],
+      "rulesNote": "Thread-forming routes, draft behaviour and shrinkage compensation above are published industry practice.",
+      "close": "Metal Form builds injection tooling with unscrewing cores, collapsible cores, slides and lifters, hot and cold runner, single and multi-cavity, plus insert tooling for multi-piece closures and sprayer internals. Compression moulding of closures is an industry route. It is not ours, and we will say so rather than quote it."
+    },
+
+    "cavity": {
+      "index": "06",
+      "kicker": "The arithmetic",
+      "heading": "Cavitation is a financing decision in an engineering costume.",
+      "body": "At closure volumes the tool disappears into the part. Amortised across tens of millions of shots, tooling contributes a fraction of a cent a piece — so tooling price is almost never the expensive decision. The expensive decisions are grams, seconds and cavities, and all three are locked in by geometry cut before a single part exists.",
+      "figCaption": "One cavity in section — core, cooling, gate, vent",
+      "labels": {
+        "cavity": "Cavity",
+        "core": "Core",
+        "cooling": "Cooling",
+        "gate": "Gate",
+        "vent": "Vent"
+      },
+      "leversHeading": "Three levers, in order of size",
+      "levers": [
+        {
+          "k": "Grams",
+          "body": "Weight is the dominant variable cost at volume and the arithmetic is unforgiving. Take 0.2 g off a cap running 20 million pieces a year and you have taken four tonnes of resin out of the year. That is your resin price and your volume — arithmetic you can check, not a saving we are claiming."
+        },
+        {
+          "k": "Seconds",
+          "body": "Closure cycle is cooling-dominated, not fill-dominated. The core is slender and wrapped in plastic on the inside of the skirt, so it is the hardest part of the tool to cool and it sets both cycle time and roundness. One second off a four-second cycle is a quarter more output from the same press and the same operator."
+        },
+        {
+          "k": "Cavities",
+          "body": "Sized to the forecast you actually believe and the press you actually have. A tool at partial duty is capital parked in steel. A tool with two cavities blocked off after damage and never repaired runs a programme at reduced output for years, quietly. Two moderate tools on two sites frequently beat one large tool on one, on risk and on the machine-hour rate."
+        }
+      ],
+      "windowsHeading": "Published working windows",
+      "windows": [
+        {
+          "k": "Vent depth",
+          "v": "0.02–0.05 mm",
+          "note": "Cited working window on closure tools, with short lands. Too deep gives flash on the parting line; too shallow gives short shots and burn."
+        },
+        {
+          "k": "Parting-line flatness",
+          "v": "order of 0.01 mm",
+          "note": "Cited target. Flash is a parting-line condition before it is anything else — and flash on a thread flank is a torque problem."
+        },
+        {
+          "k": "Cooling zones",
+          "v": "multiple, independent",
+          "note": "Bubblers, spiral inserts and separately zoned circuits. Described as standard practice on closure tooling."
+        }
+      ],
+      "windowsNote": "These figures are published industry practice, not Metal Form measurements. Your own windows belong to your steel, your resin and your press.",
+      "cavityHeading": "Where our cavity count sits, and where it does not",
+      "cavityBody": "Most chemical and detergent programmes are not beverage caps and do not need beverage-cap cavitation. Metal Form's tooling experience runs up to 46 cavities. For this vertical the useful band usually sits well below that — matched to the forecast, matched to the press, with a spare cavity set specified from the start rather than after the first failure.",
+      "cavityBody2": "If a programme genuinely needs more than that, we will tell you, and the honest answer is a different supplier or a different strategy. We would rather lose the enquiry than build the wrong tool.",
+      "close": "And cycle bought by dropping mould temperature is borrowed, not saved. Frozen-in stress is one half of environmental stress cracking. Your surfactant is the other half. The part passes the line and fails in the field, months later, in summer, with no process change to point at."
+    },
+
+    "material": {
+      "index": "07",
+      "kicker": "Material",
+      "heading": "A resin change is a tooling event, not a purchasing event.",
+      "body": "Shrinkage differs by grade, and shrinkage is compensated in the steel. Substitute a resin without requalifying the tool and the thread moves, the seal force moves, and stress-crack behaviour moves with them. The ledger below is where the industry starts a selection. It is a hypothesis, not an answer.",
+      "figCaption": "Wall sections — closure skirt and co-extruded container",
+      "labels": {
+        "root": "Root",
+        "skirt": "Skirt",
+        "hdpe": "HDPE",
+        "evoh": "EVOH",
+        "tie": "Tie"
+      },
+      "colA": "Closure and mechanism",
+      "colB": "Container and wall",
+      "closureRows": [
+        { "name": "PP homopolymer", "note": "Stiffness and thread strength. The closure default." },
+        { "name": "PP random copolymer", "note": "Clarity and hinge life, where a live hinge has to survive tens of thousands of cycles." },
+        { "name": "HDPE", "note": "Softer bore seals and deformable child-resistant skirts." },
+        { "name": "LDPE", "note": "Liner facings." },
+        { "name": "ABS", "note": "Trigger housings, levers and shrouds, where stiffness and finish are both wanted." },
+        { "name": "POM", "note": "Sprayer pistons and valve seats — tight diametral fits and wear duty." },
+        { "name": "PE", "note": "Dip tubes, ball seats and small internals, usually family-tooled with the rest." }
+      ],
+      "containerRows": [
+        { "name": "HDPE", "note": "The household and industrial container default." },
+        { "name": "Co-extruded HDPE / EVOH", "note": "Barrier wall for solvent-bearing contents that would otherwise permeate and panel the pack." },
+        { "name": "Fluorinated HDPE", "note": "Surface-treated barrier, common on agrochemical packs." },
+        { "name": "PET", "note": "Where clarity or recycled content drives the brief rather than barrier." }
+      ],
+      "escHeading": "Environmental stress cracking",
+      "escBody": "Surfactant contact plus stress is the classic polyethylene failure, and it needs both at once — neither alone does it. Published methods are ASTM D1693, a notched bent-strip test in surfactant whose inter-laboratory precision is openly poor, and constant-stress methods such as ASTM D2561 which represent service conditions better. Lower density means lower crystallinity and better crack resistance, and published practice treats that as a real production lever rather than a textbook one.",
+      "escNote": "Methods, precision and density behaviour above are published industry practice. Metal Form makes no claim about the stress-crack performance of any part it tools.",
+      "close": "We will tell you what we would try, and why. We will not tell you it is proven."
+    },
+
+    "boundary": {
+      "index": "08",
+      "kicker": "Scope",
+      "heading": "We cut the geometry. You own the contents.",
+      "body": "This is the part of a chemical packaging conversation that suppliers usually blur. Here it is in plain terms, because the boundary is the most useful thing on this page.",
+      "figCaption": "Where the supply stops",
+      "labels": {
+        "steel": "Steel",
+        "contents": "Contents"
+      },
+      "compat": "Chemical compatibility is a material-selection topic, established by your own testing, on your own formulation, at your own temperature, over your own shelf life. Published grade data narrows the field. It does not close it. Metal Form does not warrant that any resin, any closure or any tool is resistant to a specific chemistry.",
+      "suppliesHeading": "What Metal Form supplies",
+      "supplies": [
+        "Mould design and manufacture for injection closures, dispensing closures and technical mechanisms, modelled in CATIA and SolidWorks.",
+        "Multi-cavity tooling, hot runner and cold runner, with tooling experience up to 46 cavities.",
+        "Unscrewing and collapsible cores, slides, lifters and insert tooling for multi-piece closures and sprayer internals.",
+        "Reverse engineering from an existing closure, a sample or a photograph, for the normal case where the drawings are gone.",
+        "DFM on the sealing geometry, thread route, gate position, bridge geometry and ejection — before steel is cut.",
+        "Second-source and duplicate tooling that reproduces the incumbent part on the incumbent neck finish.",
+        "Component production and rolling supply, plus spares and change parts specified with the tool.",
+        "CNC milling, turning and manual machining. International delivery. NDA before detailed disclosure. Tooling warranty with terms agreed per project."
+      ],
+      "staysHeading": "What stays with you",
+      "stays": [
+        "Chemical compatibility, confirmed by testing on your formulation.",
+        "Child-resistance testing and certification. ISO 8317, EN 862 and 16 CFR 1700.20 are run by accredited test houses on your pack, not by us.",
+        "UN-rated packaging approval for hazardous goods. We hold none and claim none.",
+        "Liner manufacture and liner specification, including barrier constructions and induction foils.",
+        "Filling, capping, induction sealing and post-mould band slitting. We do not run your line.",
+        "The capper torque window, and the calibration of the heads that hold it.",
+        "Regulatory classification of the product and the labelling and transport file that follow it."
+      ],
+      "notHeading": "And what we do not have",
+      "not": [
+        "No compression moulding of closures. Injection versus compression appears on this page as an industry comparison, never as our offer.",
+        "No certification of any kind, and no controlled-environment, validated or qualified manufacturing.",
+        "No named simulation software, no 3D scanning, no CMM or QC department.",
+        "No multi-material moulding, no decoration processes such as hot stamping, metallisation, in-mould labelling or electroplating, and no testing or certification of finished packs.",
+        "No claim of a cavity count above 46, and no guaranteed reserved production capacity."
+      ],
+      "secondHeading": "One tool, one site",
+      "secondBody": "Most closure programmes run on one tool at one site, and nobody writes that down until the line stops. A backup has to reproduce the part, not the tool: same neck finish, same thread engagement, same seal route, same torque window, same behaviour on the same capper. Anything else is a second product with its own qualification, and it will be discovered during a shortage.",
+      "secondBody2": "The drawings are usually gone. That is the normal starting condition, not an obstacle — we work from the part in hand, under NDA, and return a manufacturable model.",
+      "sendHeading": "What to send",
+      "send": [
+        "The closure, a photograph of it, or the drawing if one survives.",
+        "The neck finish. The designation on its own is enough to start.",
+        "The seal route — liner, induction foil or bore seal — with the liner specification if there is one.",
+        "The capper torque window your line actually runs, not the one in the original specification.",
+        "The annual volume you genuinely expect, not the one in the launch deck.",
+        "Whether this is a new part, a second source, or a redesign that has to stay a drop-in."
+      ],
+      "getHeading": "What comes back",
+      "get": [
+        "A tooling route and a thread-forming strategy for the geometry as drawn.",
+        "Cavitation options against your forecast and your press, with what each one costs you in risk.",
+        "The changes we would make, including the ones you will not like.",
+        "A production position: tool only, tool plus first articles, or rolling component supply.",
+        "An initial technical response within 48 business hours. An NDA first if you prefer — it usually is."
+      ]
+    },
+
+    "panels": {
+      "heading": "Deeper detail",
+      "items": [
+        {
+          "title": "Neck finish: the four letters that decide everything",
+          "bullets": [
+            "28-410 means a 28 mm finish diameter on the 410 thread style. The number after the hyphen is a profile, not a size.",
+            "T is thread diameter, E is neck outside diameter, S is thread start, H is finish height.",
+            "400 is the shortest profile at roughly 2.5 mm thread depth; 410 is taller at roughly 3.5 mm; 415 is taller again at roughly 4.5 mm with an extra turn.",
+            "Taller profiles carry more mechanical lock and more torque tolerance, which is why pumps and triggers with high return-spring force sit on 410 and above.",
+            "A 410 closure will physically thread onto a 400 finish and will not seal reliably. The failure is invisible on a purchase order and expensive on a pallet.",
+            "Continuous-thread closures across this sector span roughly 13 mm to 120 mm, and give no dispensing without full removal.",
+            "Trigger sprayers on household chemical packs are near-universally on a 28 mm finish, with jet, mist and cone patterns set by the nozzle and spinner.",
+            "Stay on a standard GPI/SPI finish wherever the brief allows. A bespoke finish permanently removes your ability to re-source."
+          ],
+          "source": "Neck-finish notation and profile depths as published in packaging engineering references. Industry practice, not Metal Form measurements."
+        },
+        {
+          "title": "Seal routes, liners, and what each one does not do",
+          "bullets": [
+            "Foam liners with LDPE, HDPE, PP or EVOH-PE facings seal well and cost little. Published guidance is explicit that they are neither tamper evident nor hermetic on their own.",
+            "Pressure-sensitive liners are single-use and unsuitable for liquids.",
+            "Induction liners come one-piece (foil laminate) or two-piece (foil, wax, and a pulp or foam backing that stays behind as a reseal once the wax releases).",
+            "Clean-peel, tab and weld-seal variants exist. The tab is a consumer decision that arrives at the closure as a fit problem.",
+            "One-piece liner overhang can interfere with the mechanism of a child-resistant closure.",
+            "For aggressive chemical contents the published route is a protective barrier layer between the foil and the heat-seal layer.",
+            "Vented liners are specified for oils, fragrances and household and industrial chemicals that would otherwise bloat the pack.",
+            "Polycone-type plug inserts reseal and are used on chemical packs. A moulded bore seal does the same job with one fewer component and one fewer supply chain."
+          ],
+          "source": "Liner taxonomy from published closure-liner guidance. Metal Form does not manufacture liners and does not supply liner insertion."
+        },
+        {
+          "title": "Cooling, cycle, and the failure nobody sees coming",
+          "bullets": [
+            "Cooling dominates the closure cycle. The core is slender and wrapped in plastic on the inside of the skirt, so it sets both cycle time and roundness.",
+            "Uneven cooling between the thick thread root and the thin skirt produces ovality, and an oval skirt does not seal even when every measured dimension is in tolerance.",
+            "Thin features fill last. Tamper bands and live hinges short-shoot before anything else, and the last cavity to fill sets the pack pressure applied to all of them.",
+            "Vent depths on closure tools are commonly cited in the 0.02 to 0.05 mm range with short lands; parting-line flatness on the order of 0.01 mm is cited as the flash target.",
+            "Environmental stress cracking needs a chemically active environment and stress at the same time. Surfactants supply the first; frozen-in moulding stress supplies the second.",
+            "ASTM D1693 is the notched bent-strip test in surfactant, and its inter-laboratory precision is openly poor. Constant-stress methods such as ASTM D2561 represent service conditions better.",
+            "Lower density means lower crystallinity and better crack resistance — cited in published practice as a real production lever rather than a laboratory curiosity.",
+            "Heat multiplies all of it. Published figures describe trailers reaching 145 °F and generating internal pressure in sealed packs, with corrugated losing up to half its compressive strength in summer humidity."
+          ],
+          "source": "Venting, cooling and stress-cracking figures quoted from technical press and published ASTM method descriptions. Industry practice, not Metal Form measurements."
+        }
+      ]
+    }
+  },
+
+  "cta": {
+    "headline": "Send the closure. We will send back a route.",
+    "body": "The part, a drawing, or a sample in the post. You get the tooling route, the thread strategy, cavitation options and a production position. Initial response within 48 business hours. NDA on request, always. Since 2006, 1,000+ projects, international delivery.",
+    "action": "Send your project",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form — closure tooling enquiry. Product type: [liquid detergent / household cleaner / agrochemical / other]. Closure type: [continuous thread / child-resistant / tamper-evident / flip-top / trigger sprayer / dosing cap]. Neck finish: [e.g. 28-410]. Seal: [liner / induction / bore seal]. Annual volume: [pcs/year]. I have: [existing part / drawing / 3D model / neither]. Please send an NDA.",
+    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+  }
+}

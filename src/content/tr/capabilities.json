@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Yetkinlikler — mühendislik, kalıp, üretim ve tedarik | Metal Form",
+    "description": "Parça mühendisliği, tersine mühendislik ve DFM. 46 göze kadar enjeksiyon, PET, şişirme ve basınçlı döküm kalıpları. Sıcak ve soğuk yolluk, sürgü, lifter ve diş sökme. Üretim, parça tedariki ve ikinci kaynak kalıpları. Her aşama tek başına da alınabilir."
+  },
+  "hero": {
+    "kicker": "Yetkinlikler",
+    "headline": ["Dört aşama.", "Zinciri alın,", "ya da tek halkasını."],
+    "lead": "Projelerin çoğu hepsine birden ihtiyaç duyarak gelir. Bazıları ise yalnızca tek bir teknik resmin incelenmesini, bir kalıbın düzeltilmesini ya da başkasının yaptığı bir kalıptan parça tedarik edilmesini ister. İkisi de bizim için olağan iştir."
+  },
+  "intro": "Aşağıdakiler, yaptığımız işin sade bir dökümüdür. Sorumluluğunu üstlenemeyeceğimiz bir konu varsa, proje sırasında keşfetmenize bırakılmaz; bu sayfanın sonunda açıkça yazılır.",
+  "groups": [
+    {
+      "index": "01",
+      "title": "Mühendislik",
+      "body": "Hiçbir şey işlenmeden önce parçanın üretilebilir bir parça olması gerekir. Bu, bir ürünü tasarlamaktan ayrı bir disiplindir ve bir enjeksiyon parçasının maliyetinin büyük bölümü gerçekte burada belirlenir.",
+      "items": [
+        { "name": "CATIA ve SolidWorks'te parça modelleme", "note": "Kendi formatları ya da nötr formatlar. STEP, IGES, X_T ve STL girdi olarak da çıktı olarak da çalışır." },
+        { "name": "Fiziksel numuneden tersine mühendislik", "note": "Aşınmış bir parça, rakip bir ürün, teknik resimlerini kimsenin saklamadığı bir bileşen. Ölçülerek kalıplanabilir bir modele geri çıkarılır." },
+        { "name": "Eksik girdiyle mühendislik", "note": "Bir fotoğraf ve bir ölçü. Bir eskiz ve parçanın ne iş yapması gerektiğinin tarifi. Başlamak için yeterli olan şey, çoğu kişinin sandığından azdır." },
+        { "name": "Üretilebilirlik (DFM) incelemesi", "note": "Et kalınlığı ve tutarlılığı, çıkma açısı, yolluk girişi konumu ve sonuçları, ters açılar, radyuslar, kaburgalar ve bosslar, tolerans gerçekçiliği, ayırma yüzeyinin konumu." },
+        { "name": "Üretim maliyeti için yeniden tasarım", "note": "Malzeme hacmi, parça birleştirme, göz stratejisi ve çevrim süresi. Bir kataloğa göre değil, gerçek yıllık adedinize göre değerlendirilir." },
+        { "name": "Mevcut bir tasarımın teknik değerlendirmesi", "note": "Başkasının teknik resmi; başkasının kalıp sorununa dönüşmeden önce incelenir." }
+      ]
+    },
+    {
+      "index": "02",
+      "title": "Kalıp",
+      "body": "Atölyenin temeli ve işin geri kalanının üzerinde büyüdüğü disiplin. Kalıp bir emtia değildir: göz sayısı, yolluk, soğutma, çelik ve mekanizma; belirli bir parça ve belirli bir üretim adedi için alınan bir kararlar bütünüdür.",
+      "items": [
+        { "name": "Enjeksiyon kalıbı tasarımı ve imalatı", "note": "Tek gözden yüksek göz sayısına kadar. Çok gözlü kalıp deneyimimiz 46 göze kadar uzanır." },
+        { "name": "PET preform ve kapak kalıpları", "note": "Boyun profili geometrisi, preform ağırlığı, göz ve maça takımları, boyun halkaları ve değişim parçaları." },
+        { "name": "Şişirme kalıpları", "note": "Ticari olarak anlamlı olduğu durumlarda şişirme kalıpları ve değişim parçaları." },
+        { "name": "Basınçlı döküm kalıpları", "note": "Bir parçanın polimer yerine metal olmasının daha doğru olduğu durumlarda; kalıpçılık disiplini oraya da taşınır." },
+        { "name": "Sıcak ve soğuk yolluk sistemleri", "note": "Yolluk stratejisi; denge, malzeme, parça maliyeti ve üçüncü yılda bir nozul arızalandığında ne olacağı düşünülerek seçilir." },
+        { "name": "Mekanizmalar", "note": "Sürgüler ve yan hareketler, lifterlar, katlanabilir ve diş sökücü maçalar, insert kalıpları ve bunları gerektiren geometri." },
+        { "name": "Yedekler, değişim parçaları ve kalıp düzeltmeleri", "note": "Maçalar, gözler ve insertler; orijinallerini işleyen ekipten." },
+        { "name": "İkiz ve yedek kalıplar", "note": "Aynı parça şartnamesine göre yapılmış ikinci bir kalıp; ihtiyaç doğduktan sonra değil, öncesinde." }
+      ]
+    },
+    {
+      "index": "03",
+      "title": "Talaşlı imalat",
+      "body": "Kalıbın arkasındaki metal işleri; müşteri enjeksiyon parçası yerine talaşlı imal edilmiş bir parçaya ihtiyaç duyduğunda tek başına da alınabilir.",
+      "items": [
+        { "name": "CNC frezeleme", "note": "Göz ve maça işleri, plakalar, insertler ve talaşlı imal parçalar." },
+        { "name": "Tornalama", "note": "Dairesel işler, maçalar, kovanlar ve talaşlı imal parçalar." },
+        { "name": "Manuel işleme ve alıştırma", "note": "Bir kalıbın talaşlı imalat ile ilk numune arasında ihtiyaç duyduğu tezgâh işi; hiçbir CNC programı onun yerini tutmaz." }
+      ]
+    },
+    {
+      "index": "04",
+      "title": "Üretim ve tedarik",
+      "body": "Kalıp, ticari ilişkinin sonu değil başlangıcıdır. Müşterinin uzun vadede istediği şey genellikle parçanın kendisidir: teslim edilmiş ve bir programa bağlanmış hâlde.",
+      "items": [
+        { "name": "Enjeksiyon parçası üretimi", "note": "Bizim kalıbımızdan ya da hâlihazırda size ait olup başka bir yerde çalıştırmak istediğiniz bir kalıptan." },
+        { "name": "Sürekli parça tedariki", "note": "Sipariş sipariş değil, bir programa bağlı tekrar üretim." },
+        { "name": "İkinci kaynak geliştirme", "note": "Hâlihazırda başka bir tedarikçide üretilen bir parça için ikinci bir üretim rotası." },
+        { "name": "Taşma ve ek kapasite", "note": "Talep zirvesi, sezonluk bir pencere ya da güvenilirliğini yitirmiş bir tedarikçi için." },
+        { "name": "Dünya geneline sevkiyat", "note": "Kalıplar ve parçalar yurt dışına sevk edilir. Güzergâh, teslim şartları ve evraklar teklifle birlikte karara bağlanır." }
+      ]
+    }
+  ],
+  "modularity": {
+    "heading": "Hepsini almak zorunda değilsiniz.",
+    "body": "Bir proje genellikle en iyi zincirin bütünüyle yürür; çünkü projeler zamanı ve parayı asıl mühendislik, kalıp ve üretim arasındaki devir noktalarında kaybeder. Yine de her aşama tek başına durur ve bir aşama için teklif almanız sizi bir sonrakine bağlamaz.",
+    "points": [
+      "Yalnızca mühendislik — bir model, tersine mühendislikle çıkarılmış bir parça, bir DFM incelemesi. Mühendislik işi olarak satılır.",
+      "Yalnızca kalıp — sizin teknik resminize göre yapılır, tesisinize sevk edilir, sizin tarafınızdan çalıştırılır.",
+      "Yalnızca üretim — hâlihazırda size ait bir kalıptan.",
+      "Yalnızca tedarik — bitmiş parça, bir programa bağlı olarak.",
+      "Ya da rotanın tamamı; tek sözleşme ve tek teknik muhatapla."
+    ]
+  },
+  "software": {
+    "heading": "Yazılım ve dosya formatları",
+    "body": "Parça modelleri, kalıp tasarımı ve tersine mühendislikle elde edilen geometri CATIA ve SolidWorks'te üretilir. Kendi formatlarında ya da nötr formatta gönderin — STEP, IGES, X_T ve STL üzerinde çalışılabilir; ölçülendirilmiş 2B bir PDF teknik resim de öyle. Elinizde yalnızca bir fotoğraf ve bir kumpas ölçüsü varsa bunu yazın; düzenli olarak bu noktadan başladığımız oluyor."
+  },
+  "boundaries": {
+    "heading": "Neyi iddia etmiyoruz",
+    "body": "Bir yetkinlik listesi ancak bir yerde bittiğinde işe yarar. Aşağıdakiler, Metal Form'un bugün sorumluluğunu üstlendiği alanların dışındadır; bunu proje sırasında öğrenmenizdense şimdi bilmenizi tercih ederiz.",
+    "points": [
+      "Hiçbir kalite sistemi, tıbbi, otomotiv ya da gıdayla temas sertifikamız yoktur. Pazarınız böyle bir belge gerektiriyorsa bu yükümlülük size ve sertifikalı iş ortaklarınıza aittir.",
+      "Temiz oda işletmiyoruz; steril, valide edilmiş ya da regülasyona tabi üretim yapmıyoruz.",
+      "Bitmiş ürünleri test etmiyor ve belgelendirmiyoruz — yanıcılık, elektriksel güvenlik, basınç sınıfı, kimyasal direnç, oyuncak güvenliği ve ambalaj onayları hammadde tedarikçinize, test kuruluşunuza ve kendi onay süreçlerinize aittir.",
+      "Akış, soğutma veya çarpılma simülasyon yazılımı kullanmıyoruz. Bu konular deneyimle mühendislik edilir ve kalıp denemesinde çözülür; bir sorunun gerçekten simülasyon gerektirdiği durumda bunu söyleriz.",
+      "3B tarama ya da koordinat ölçüm (CMM) bölümümüz yoktur. Buradaki tersine mühendislik, klasik ölçme ve modellemedir.",
+      "Geometriyi, adedi ve toleransı anlamadan fiyat vermiyoruz. Yayımlanmış bir fiyat listemiz yok; çünkü bir enjeksiyon parçası için yayımlanmış fiyat kurgudan ibaret olurdu."
+    ]
+  },
+  "cta": {
+    "headline": "Bunun hangi kısmına ihtiyacınız var?",
+    "body": "Projenin gerçekte hangi noktada olduğunu yazın. Teknik resmi olmayan bir konsept, incelenmesi gereken bir teknik resim, yapılması gereken bir kalıp, düzeltilmesi gereken bir kalıp ya da ikinci kaynak arayan bir parça.",
+    "action": "Projenizi gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form. İlgilendiğim konu:\n\n[ ] Mühendislik / CAD / tersine mühendislik\n[ ] DFM veya tasarım incelemesi\n[ ] Yeni bir kalıp\n[ ] Mevcut bir kalıbın düzeltilmesi veya revizyonu\n[ ] Mevcut bir kalıptan üretim\n[ ] Sürekli parça tedariki\n[ ] İkinci kaynak\n\nParça: \nYıllık adet: \nElimde olanlar: ",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+  }
+}

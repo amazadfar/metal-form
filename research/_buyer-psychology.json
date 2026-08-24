@@ -1,0 +1,976 @@
+{
+  "key": "_buyer-psychology",
+  "displayName": "Industrial B2B Buyer Psychology & International Tooling Sourcing Behaviour",
+  "researchedAt": "2026-08",
+  "appliesTo": "Metal Form — an Iran-based engineering, tooling, moulding and supply business selling to buyers in Armenia, Turkey, the Gulf, Russia, South Asia, South-East Asia, China and Europe. Site locales: en, ru, hy, tr, th, zh, ur, ar, fa.",
+  "readThisFirst": "Two facts from src/config/claims.ts govern every recommendation below. (1) ISO 9001, IATF 16949, ISO 13485, FDA, GMP, cleanroom, Moldflow, CMM department, named clients, machine lists, floor area, headcount, tolerances, lead times and pricing are all either PROHIBITED or NEEDS-VERIFICATION. The single largest source of industrial trust — third-party certification — is unavailable. (2) The supplier country is Iran. Therefore the entire trust architecture has to be rebuilt out of the only two materials that remain: demonstrated engineering judgement, and visible operational honesty about what is and is not agreed. Everything in this file is written to that constraint.",
+
+  "sources": [
+    {
+      "title": "B2B Website Usability — Nielsen Norman Group",
+      "url": "https://www.nngroup.com/articles/b2b-usability/",
+      "whatItEstablished": "Read in full. 79 participants, 179 B2B websites, focus groups plus user testing plus field studies. B2B sites achieved only a 58% task success rate against 66% for mainstream sites; the diagnosis is that B2B sites are 'stuck in the 1990s' and internally focused. Pricing information scored 29% higher than product availability as the single most important information type buyers want. What drives users away: registration barriers before credibility is established; site segmentation that does not match how customers think of themselves; missing pricing (the most problematic gap, where sites offer 'excuses' rather than solutions); incomplete product information causing 'much skepticism'; absent credibility signals. Guidance: provide price indicators even without exact figures, make substantial information available pre-registration, explain industry jargon, support the whole buying process rather than the transaction, and treat the website as a lead generator during the research phase."
+    },
+    {
+      "title": "Trustworthiness in Web Design: 4 Credibility Factors — Nielsen Norman Group",
+      "url": "https://www.nngroup.com/articles/trustworthy-design/",
+      "whatItEstablished": "Read in full. Four factors govern credibility. (1) Design quality: well-organised navigation with meaningful labels, professional appearance appropriate to the industry, adequate white space; 'typos, broken links, and other mistakes quickly degrade credibility'. (2) Upfront disclosure: prominently displayed contact information, clear base costs and additional fees, transparent timelines; hidden pricing that requires contacting the company, login walls and gated content destroy trust, as does requesting personal information before allowing exploration. (3) Comprehensive, correct, current content: thorough information demonstrating expertise, 'photos from all stages of service, not just final results', content covering the full range of what is offered; generic filler images and thin content on a service line signal that the line is not valued. (4) Connected to the rest of the web: external review presence, links to third-party sources, social/media visibility — 'people have learned to trust these external sources more than company-sponsored content'; an isolated website with no external presence reads as untrustworthy."
+    },
+    {
+      "title": "B2B Buyer Experience Report — 6sense",
+      "url": "https://www.6sense.com/b2b-buyer-experience-report/",
+      "whatItEstablished": "Read in full. Buyers now make first contact with a vendor at 61% of the way through their buying journey (down from 69%). They evaluate an average of 5.1 vendors and already have prior experience with 3.8 of them. Four vendors fill the shortlist on Day One and 95% of purchases come from that Day One shortlist. 94% of buyers had already ordered their shortlist by preference before any seller engagement. The vendor contacted first wins roughly 80% of the time (77–81% across waves) — but where buyers had NOT pre-ranked, first contact only won 57%, proving that preference drives contact order rather than the reverse. The journey splits roughly 60% Selection (independent research, preference formation) / 40% Validation (seller conversations). The Selection-phase preferred vendor is the final winner 77% of the time. Direct implication: the website is not a lead-capture device, it is the ranking device. It decides where the supplier sits in a list that is written before anyone gets in touch."
+    },
+    {
+      "title": "How to Choose Custom Manufacturing Suppliers: A Strategic Vetting Guide — RapidDirect",
+      "url": "https://www.rapiddirect.com/blog/how-to-choose-custom-manufacturing-suppliers/",
+      "whatItEstablished": "Read in full. The most directly applicable vetting sequence found. Stage 1 facility auditing: demand 'unedited video of' active production floors and metrology labs rather than accepting documentation. Stage 2 quality documentation: material test reports tracing raw stock to original mills, XRF/PMI testing at intake, high-resolution surface-finish portfolios, mould flow analysis for injection moulding. Stage 3 capability assessment: cross-process scalability from prototype to production, SPI class tooling designations (101–105), real-time production tracking. Named red flags for broker-versus-factory: 'Refuses live video tours; uses stock photos' is the primary one; also manual quote processing taking 48–72 hours, outsourced rather than in-house CMM, generic surface-finish claims with no portfolio evidence, delayed or post-submission DFM feedback, and 'borrowed' certificates from a supplier network rather than entity-owned certification. States that brokers 'do not own CNC mills, 3D printers, or injection presses' and typically add 20–40% hidden markup."
+    },
+    {
+      "title": "Chinese CNC Manufacturers vs Local CNC Shops: Cost, Speed & Quality — RapidDirect",
+      "url": "https://www.rapiddirect.com/blog/chinese-cnc-manufacturers-vs-local-cnc/",
+      "whatItEstablished": "Read in full. Enumerates the standard objection set raised against any overseas supplier and how a supplier answers each. Cost: local $80–150/machine hour versus 30–50% overseas savings, driven by labour ($30–50/hr versus $8–15/hr) and proximity to material mills. Lead time: the objection is that overseas is slower; the counter is total elapsed time, 3–5 days production plus 3–5 days air freight equals 7–10 days against 2–3 weeks locally once queuing is counted. Shipping: acknowledged as higher, argued to be offset on small-to-medium batches. Communication: 'late-night emails and language barriers' named as the historical concern, answered with platform transparency and tracking. Quality: answered with certification and stated tolerance capability. IP: answered with willingness to sign NDAs. Tariffs, payment terms and warranty are conspicuously NOT addressed — which is itself evidence that these are the objections suppliers avoid, and therefore the ones a competitor gains by answering."
+    },
+    {
+      "title": "Total Cost of Ownership in B2B Manufacturing: A Guide for Procurement Managers — RapidDirect",
+      "url": "https://www.rapiddirect.com/blog/total-cost-of-ownership-b2b-manufacturing/",
+      "whatItEstablished": "Read in full. 'Total Cost of Ownership reframes procurement from a price negotiation exercise into a lifecycle value decision.' Four cost stages: acquisition (sourcing time, vendor management, tooling investment), usage and operation (assembly efficiency, finish consistency), risk and performance (lead-time variance, quality failures, resilience), end-of-life (inventory obsolescence from high MOQs). Estimates that hidden costs consume 60–80% of total budget over the product lifecycle. 'The cost of a non-conforming part is not just the refund value; it is the cost of the halted production line.' Names engineering time spent managing supplier communication as an opportunity cost. Conclusion: 'a lower unit price often increases TCO if it comes with high MOQs, long lead times, or poor quality.' This is the vocabulary a procurement manager actually thinks in, and the argument that lets a supplier compete without quoting a price."
+    },
+    {
+      "title": "CNC Machining RFQ: 6 Steps to Avoid Costly Quote Delays — RapidDirect",
+      "url": "https://www.rapiddirect.com/blog/cnc-machining-rfq-guide/",
+      "whatItEstablished": "Read in full. A complete RFQ needs six things: 3D CAD (STEP/IGES) because 'suppliers cannot run CAM simulations to calculate machine time' without it; a 2D drawing with GD&T, dimensions and revision; material grade, temper and form; quantity tiers; surface finish with roughness values, coatings and masking; and business terms including specific delivery dates and inspection requirements (FAI, CMM). What causes delay: conflicting revisions between 3D and 2D, vague material callouts, ambiguous tolerances (which cause suppliers to 'add risk premiums'), 'ASAP' delivery language triggering expedite-fee assumptions, and unspecified inspection scope. The governing principle for RFQ copy: every blank becomes a supplier assumption, and assumptions are priced conservatively."
+    },
+    {
+      "title": "Injection Molding Quote Breakdown: Tooling, Cycle Time, Materials — RapidDirect",
+      "url": "https://www.rapiddirect.com/blog/injection-molding-quote-cost-breakdown/",
+      "whatItEstablished": "Read in full. Establishes the cost vocabulary a buyer expects a competent moulder to use unprompted. Tooling NRE: aluminium/P20 $1,000–5,000 for 1k–50k cycles at ~15-day lead; hardened H13/S136 required above 100k cycles or for abrasive materials. Cavitation trades tooling capex against machine time per part. Sliders and lifters for undercuts add $1,000–3,000+ per feature. Cooling is 50–70% of cycle time; consistent 2–3 mm wall enables uniform heat dissipation; ribs replace mass; addressing excessive wall can cut unit price 15–30%. Cold runners can double material consumption; hot runners become economical above 20,000–30,000 units. Engineering resins such as PEEK can be up to 50x polypropylene. Amortisation worked example: a $300 setup fee is $0.60/part over 500 and $0.06/part over 5,000. Buyers are told to verify shipping basis (EXW versus DDP), finish (SPI-A2 versus C3) and tolerances before comparing two quotes."
+    },
+    {
+      "title": "Who Owns Your Molds? How Overseas Factories Hold Tooling Hostage — Harris Sliwoski",
+      "url": "https://harris-sliwoski.com/chinalawblog/who-owns-your-molds-how-overseas-factories-hold-tooling-hostage-and-how-to-stop-them/",
+      "whatItEstablished": "Read in full. The single most important source for this project. Hostage tactics: engineering-fee demands claiming the original price excluded CAD, testing or revisions; conceding physical mould ownership while asserting rights over designs and specifications; filing patent or design applications in the factory's own name; and simple non-response or 'the moulds cannot be located'. The core sentence: 'Possession gives the factory leverage even when your ownership claim is strong.' What the contract must contain: tooling defined to include 'molds, dies, jigs, fixtures, gauges, templates, testing equipment, prototypes, software, CAD files, engineering drawings, specifications'; the factory holding tooling 'as custodian, not as owner' with storage and maintenance creating no ownership right or lien; explicit ownership of native design files, drawings and improvements, with editable source and neutral formats (STEP, IGES) obtained while the relationship is healthy; prohibition of unauthorised copies, excess production, third-party sales, use of rejected product as samples and use of the tooling for competing products; written approval before any tooling subcontracting with subcontractors bound at least as strongly; price finality covering all design, engineering, fabrication, testing and modification; a defined release procedure stating when, how fast, where, who transports and which files and records accompany the tool; and tooling kept 'marked, segregated from other customers' property, and maintained in suitable condition'. Red-flag supplier behaviours: undisclosed mould-shop subcontracting, refusing editable CAD, filing IP without the buyer's knowledge, withholding tooling at the end of the relationship, claiming unpaid engineering or storage fees, moving tooling to undisclosed locations, and conditioning release on unrelated payment obligations. 'Settle the ownership, file-delivery, subcontracting, handover, and enforcement terms before the steel is cut.'"
+    },
+    {
+      "title": "Molds and Tooling in International Manufacturing: The 30 Essential FAQs — Harris Sliwoski",
+      "url": "https://harris-sliwoski.com/chinalawblog/molds-and-tooling-in-international-manufacturing-the-30-essential-faqs/",
+      "whatItEstablished": "Read in full. Ownership depends entirely on the contract, and payment alone does not confer it without explicit language; 'waiting until after the fact weakens your legal position'. Payment structures ranked by buyer protection: paying for the tool upfront gives 'the strongest protection', while 'free' tooling recovered through higher per-unit price carries 'the highest risk'. Agreements should contain clear ownership language, usage restrictions, IP assignment, physical labelling requirements, return and inspection rights, maintenance responsibilities, insurance provisions and dispute resolution. Exclusive-use clauses should prohibit third-party production, and 'all upgrades — regardless of who proposed or implemented them — belong to the original owner unless expressly agreed otherwise'. Anti-hostage protection combines ownership clauses, return rights and financial penalties 'that make hostage-taking too costly to attempt', plus a right to retrieve tooling 'at any time' with specific notice periods and procedures. Maintenance: the factory should maintain tooling and cover minor repairs, larger repairs split or owner-handled, with defined standards to preserve tool life. Insurance: the party in possession should carry cover against theft, fire and flood, verified rather than assumed. Termination: immediate recovery rights and, ideally, tooling immune from creditor claims on factory bankruptcy. Documentation: a Tooling Description Inventory Form with serial numbers, photos, specs and location, audited quarterly or more often when tools move. End-of-life: replacement terms, cost sharing and timelines agreed in advance — 'Don't wait for failure.'"
+    },
+    {
+      "title": "25 FAQs on Manufacturing Overseas: Product Quality, IP, and Legal Risks — Harris Sliwoski",
+      "url": "https://harris-sliwoski.com/chinalawblog/25-faqs-on-manufacturing-overseas/",
+      "whatItEstablished": "Read in full. The three risks buyers actually name: quality-control failure, IP theft, and the supplier becoming a direct competitor; then payment disputes, supply disruption and regulatory non-compliance. Due diligence means 'on-site visits or third-party audits, financial checks, references from other clients, and local legal background checks'. Payment: staged payments tied to milestones — down payment, inspection payment, final payment on verified delivery — because that structure preserves buyer leverage throughout production. Quality: third-party inspection beats self-inspection, and 'quality fade' (gradual decline after approval) requires unannounced inspection and strict specification monitoring. IP: register in the country of manufacture even if not selling there. Contracts: a purchase order alone is insufficient; the agreement must be enforceable locally, in the supplier's jurisdiction, with quality standards, dispute resolution and penalties."
+    },
+    {
+      "title": "China NNN Agreements: The Ten Most Asked Questions Answered — Harris Sliwoski",
+      "url": "https://harris-sliwoski.com/chinalawblog/china-nnn-agreements-the-ten-most-asked-questions-answered/",
+      "whatItEstablished": "Read in full. A conventional Western NDA protects disclosure of trade secrets only, leaving the buyer exposed to competitive use of information that is not secret. The three-pronged alternative is Non-Use, Non-Disclosure and Non-Circumvention: non-disclosure stops sharing, non-use stops the factory using the information to make a competing or parallel product, non-circumvention stops the factory going around the buyer to its customers. Enforceability turns on drafting in the local governing language, naming the counterparty's exact registered legal name in that language, sealing with the company chop, choosing local jurisdiction, and specifying liquidated damages as a predetermined amount per breach rather than requiring proof of loss. The transferable lesson for any cross-border supplier: the promise that reassures a buyer is NON-USE, not non-disclosure, and specificity about entity, language and remedy is what separates a real undertaking from a gesture."
+    },
+    {
+      "title": "Dual Sourcing — Definition, Advantages, and Disadvantages — Procurement Tactics",
+      "url": "https://procurementtactics.com/dual-sourcing/",
+      "whatItEstablished": "Read in full. 'Dual sourcing is the practice of using two different suppliers for a specific component, raw material, product, or service.' Operationally, orders are split between a primary and a secondary supplier; splits are sometimes 50/50 but more commonly weighted 60/40, 70/30 or 80/20 to the incumbent, specifically to keep the second supplier active and able to scale during disruption. The second supplier must demonstrate 'production capacity, financial stability, quality control processes, and ability to scale when needed'. Advantages: price competition between two bidders, regional efficiency reducing shipping and tariff exposure, backup capacity, and faster delivery cadence. Disadvantages: quality consistency across two sources, contract and relationship management burden, and higher unit cost from lost volume leverage. Adoption drivers named: climate change, material shortages, natural disasters and political unrest."
+    },
+    {
+      "title": "Sole Sourcing vs Single Sourcing — 6 Crucial Differences — Procurement Tactics",
+      "url": "https://procurementtactics.com/sole-sourcing-vs-single-sourcing/",
+      "whatItEstablished": "Read in full. Single sourcing is a choice — 'the organization does have the choice to select multiple suppliers, but they choose to obtain a particular product or service from only one'. Sole sourcing is not — 'the organization has no choice but to select a supplier as only a few or one supplier provides that product or service', and 'the terms are in the hands of the sole source supplier'. Sole sourcing exposes the buyer to higher procurement cost and to being unable to meet demand when 'calamity arises'. The remedy: 'Regular supplier audits, market scans, and category reviews can reveal overlooked alternatives and reduce dependency risk', maintaining 'one to three alternative suppliers' for critical items. This is precisely the procurement job a new overseas supplier is being hired into on first contact — the buyer is usually not replacing anyone yet, they are reducing a dependency."
+    },
+    {
+      "title": "Supplier Evaluation — Definition and Process Explained — Procurement Tactics",
+      "url": "https://procurementtactics.com/supplier-evaluation/",
+      "whatItEstablished": "Read in full. Six steps: define criteria; collect data from 'internal databases, market research, previous collaborations, surveys, and references from other companies'; quantitative and qualitative analysis; ranking and selection; negotiation and terms; continuous monitoring. Nine criteria: price, cost (movement, packaging, delivery, disposal), quantity accuracy, quality (defects, rejections, returns), service and response time, delivery timeliness, payment terms, financial health and credit rating, and compliance. Disqualifiers named: 'additional charges or surprise costs', inconsistent quantity delivery, poor financial health, non-compliance."
+    },
+    {
+      "title": "Supplier Due Diligence Process — Definition, Steps + Best Practices — Procurement Tactics",
+      "url": "https://procurementtactics.com/supplier-due-diligence-process/",
+      "whatItEstablished": "Read in full. Seven steps. Step 1 defines risk tiers using 'spend volume, operational criticality, availability of alternatives, geographic exposure, regulatory sensitivity, and dependency risk' — note that geographic exposure and regulatory sensitivity are formal, scored inputs, not vague prejudice. Step 2 sends a standardised information package combining questionnaires with mandatory document requests. Step 3 applies a weighted framework across 'financial, operational, compliance, reputational, and ESG risk'. Step 4 routes findings to approvers. Step 5 converts risks into contractual obligations and defines what evidence the supplier must supply during the contract and how often. Step 6 monitors continuously with automated alerts. Step 7 reassesses on trigger events: 'contract expansion, ownership changes, financial deterioration, or regulatory developments'. Validation uses 'third-party sources such as financial databases, sanction lists, certification registries, and adverse media monitoring tools' plus site visits for high-risk suppliers. Sanction-list screening is therefore a routine automated step in any mature procurement function — it happens whether or not the website mentions it."
+    },
+    {
+      "title": "Supplier Capability Assessment: Definition, Process + Examples — Procurement Tactics",
+      "url": "https://procurementtactics.com/supplier-capability-assessment/",
+      "whatItEstablished": "Read in full. Assessment dimensions: technical and operational capability evidenced by 'documented processes and standard operating procedures' and 'capacity utilization rates and flexibility to scale up or down'; quality systems evidenced by 'quality control checkpoints and inspection routines' and certification; workforce training and leadership engagement; financial capacity including debt ratio; and equipment and production lines observed directly in audit. Process: define weighted criteria, collect data, audit on-site or virtually, evaluate on-time delivery rate, defect and rejection percentage and lead-time consistency, then classify suppliers as Preferred, Approved, Conditional or Disqualified. That four-tier classification matters: a new overseas supplier is realistically competing for 'Conditional' on first pass, not 'Preferred', and copy should be written to win the conditional slot."
+    },
+    {
+      "title": "Low-Cost Country Sourcing — Definition, Process + 7 Tips — Procurement Tactics",
+      "url": "https://procurementtactics.com/low-cost-country-sourcing/",
+      "whatItEstablished": "Read in full. Defines LCCS and insists on total cost of ownership over unit price, evaluating 'logistics costs, lead times, quality risks, compliance requirements, inventory levels, and potential disruption risks'. Seven-step process, notable for splitting RFI from RFQ: the RFI screens suppliers on CAPABILITY, and only then does the RFQ evaluate commercial terms. Risks named: less mature quality systems, longer lead times and logistics complexity, hidden costs from 'travel, audits, inventory carrying costs, and currency fluctuations', ESG and labour-standard exposure, and 'language differences and time zones can slow coordination and cause misunderstandings'. Tip 4 is 'Mitigate risk through dual or multi-country sourcing' — confirming that low-cost-country suppliers are frequently hired specifically as a second source."
+    },
+    {
+      "title": "Online Form Statistics and Facts — WPForms",
+      "url": "https://wpforms.com/online-form-statistics-facts/",
+      "whatItEstablished": "Read in full. Aggregated form-conversion evidence with attributions. Average form has 5 fields (HubSpot); over 30% of marketers report highest conversion from 4-field forms (HubSpot); reducing 4 fields to 3 raises conversion by roughly 50% (Quicksprout). Multi-step forms convert 86% higher, yet only 40% of marketers use them (HubSpot). 81% of people have abandoned at least one web form (The Manifest). Abandonment reasons: security concerns 29%, form length 27%, adverts/upsell 11%, unclear purpose of data collection 10% (The Manifest). Two-thirds of form starters complete (Zuko). Average abandonment occurs at 1 minute 43 seconds (Feathery). Password fields show the highest abandonment, with email and phone also problematic (Zuko). Desktop/tablet conversion 3% versus mobile 2%; 84% prefer to complete forms on laptop or desktop (The Manifest). Radio buttons complete 2.5 seconds faster than dropdowns (CXL)."
+    },
+    {
+      "title": "Internet censorship in Russia — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Internet_censorship_in_Russia",
+      "whatItEstablished": "Read the relevant sections. Load-bearing sentence: 'By 2026, internet censorship had escalated to the point of widespread mobile Internet outages, VPN restrictions, and the blocking and throttling of Telegram and WhatsApp in favor of the state-controlled Max.' Also establishes that WhatsApp was explicitly excluded from the March 2022 Meta 'extremist' ruling because it was treated as 'a means of communication, not a source of information' — i.e. its later restriction is a separate, deliberate 2025–26 action. Foreign messengers including Discord, Microsoft Teams, Signal, Skype for Business, Snapchat, Telegram, Threema, Viber, WhatsApp and WeChat have been banned for use in Russian government organisations (2023, 2024). Direct consequence for this project: a WhatsApp-first CTA on the Russian-language pages is pointed at a channel the state is actively degrading."
+    },
+    {
+      "title": "Max (app) — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Max_(app)",
+      "whatItEstablished": "Read in full. Russia's state-backed messenger launched 26 March 2025. Federal law published 24 June 2025 requiring MAX pre-installation on all devices officially released in Russia after 1 September 2025. Officially designated the 'national messenger' on 15 July 2025. Claimed users: 1 million June 2025, 2 million July 2025, 40 million registered October 2025, 75 million December 2025, over 100 million March 2026 — figures sourced solely from VK's press service and questioned as possibly overstated. 'By September 2025, Russian regulator Roskomnadzor was imposing restrictions of the use of WhatsApp.' Confirms the direction of travel for Russian buyers: messenger access is politically contingent, so a foreign supplier must offer a channel that is not."
+    },
+    {
+      "title": "Telecommunications in the United Arab Emirates — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Telecommunications_in_the_United_Arab_Emirates",
+      "whatItEstablished": "Read the censorship section. 'All or most VoIP services are blocked. Both WhatsApp and Snapchat calling functions were also blocked in the UAE, to comply with VoIP regulations.' Etisalat and du block SIP-based services. A March 2020 COVID-era partial relaxation of the VoIP ban still left WhatsApp, FaceTime and Skype blocked, narrowing users to premium paid services owned by state telecoms. Direct consequence: for a Gulf buyer WhatsApp TEXT works and is business-normal, but 'call us on WhatsApp' fails, and offering a voice call over WhatsApp as the escalation path makes the supplier look like it does not know the region."
+    },
+    {
+      "title": "WhatsApp — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/WhatsApp",
+      "whatItEstablished": "Read for regional penetration and bans. 3 billion monthly active users as of May 2025, the most popular messenger globally; WhatsApp Business approximately 200 million monthly users in 2023. By 2016 it had 'become the primary means of Internet communication in regions including the Americas, the Indian subcontinent, and large parts of Europe and Africa'. India, Brazil, Russia, China, Turkey and the UAE all appear in the bans/restrictions section. Establishes the split that matters here: WhatsApp is the default business channel across the Indian subcontinent, Turkey and the Gulf, and simultaneously a restricted or blocked channel in China and Russia."
+    },
+    {
+      "title": "Armenia Country Commercial Guide — Trade Financing — U.S. International Trade Administration",
+      "url": "https://www.trade.gov/country-commercial-guides/armenia-trade-financing",
+      "whatItEstablished": "Read in full. New exporters should require advance payment until trust is established; credit follows a track record. Mechanisms available through large Armenian banks: letters of credit, collections, guarantees, bank transfer, and barter. Transactions above 300,000 AMD (about $780) must be cashless via electronic or bank transfer. The economy remains 'largely cash based'. A liberal foreign-exchange regime allows residents and foreign nationals to hold and move currency relatively freely. Crucially: 'No U.S. banks operate in Armenia', so settlement depends on local correspondent networks. Armenia has one licensed credit bureau (ACRA) and no licensed collection agencies — meaning receivables enforcement is weak, which is exactly why buyers in this region default to advance payment and stage-gated releases."
+    },
+    {
+      "title": "Armenia Country Commercial Guide — Market Challenges — U.S. International Trade Administration",
+      "url": "https://www.trade.gov/country-commercial-guides/armenia-market-challenges",
+      "whatItEstablished": "Read in full. 'Closed borders with two of its four neighbors (Turkiye and Azerbaijan) tend to cap opportunities for merchandise trade and increase logistics costs.' 'Transport costs through Georgia, Armenia's major trade outlet, are high, and frequent delays at the sole border crossing point between Georgia and Russia create a chokepoint for Armenian trade.' Also: 'Businesses frequently observe shortcomings in intellectual property rights (IPR) enforcement'; 'perception problems persist with respect to the predictability, reliability, and fairness of court decisions'; and internal EAEU barriers plus uncertainty around EAEU standards 'can hinder trade opportunities with non-EAEU countries'. Establishes that an Armenian buyer's logistics anxiety is real and specific — and that a supplier with a direct land route into Armenia is answering a problem the buyer feels weekly."
+    },
+    {
+      "title": "Armenia Country Commercial Guide — Selling Factors and Techniques — U.S. International Trade Administration",
+      "url": "https://www.trade.gov/country-commercial-guides/armenia-selling-factors-techniques",
+      "whatItEstablished": "Read in full. 'Personal contact is key in Armenia. Visits to key contacts in government and customers can go a long way in demonstrating the value a firm attaches to its relationships.' Thorough due diligence is expected before commitment, and conservative payment terms are advised until a track record exists — avoid open account. Armenian is the official language for advertising material, with foreign-language text permitted in smaller script. Internet advertising has grown significantly; television and social media dominate advertising revenue. Trade shows and exhibitions in Yerevan are a primary channel. 'In-person vendor interaction is standard for customer support; phone-based support remains uncommon.' Price sensitivity is considerable. Confirms that in this market a website is a credibility artefact that supports a human relationship — it does not replace one."
+    },
+    {
+      "title": "Armenia Country Commercial Guide — Market Overview and Trade Barriers — U.S. International Trade Administration",
+      "url": "https://www.trade.gov/country-commercial-guides/armenia-market-overview",
+      "whatItEstablished": "Read both pages. Upper-middle-income, per-capita GDP about $8,500, average monthly salary about $734 in 2024. EAEU member since 2015 with tariff-free access to Russia, Belarus, Kazakhstan and Kyrgyzstan — a combined market of about 190 million. Armenia faces 'substantial geopolitical risks' from 'ongoing regional tensions and international sanctions against Russia and Iran, both of which are important trading partners.' The 2017 EU–Armenia Comprehensive and Enhanced Partnership Agreement deepens the other direction. On barriers: 'cumbersome and ambiguous laws and procedures as well as their poor and inconsistent administration are major obstacles' in customs; Armenia now follows Russia's standardisation regime under EAEU accession. This is the plainest confirmation in the source set that Armenia sits deliberately between two sanctioned neighbours and one EU partnership — and that Armenian buyers navigate that daily and do not need it explained to them."
+    }
+  ],
+
+  "evaluationSequence": {
+    "principle": "Trust is not accumulated evenly. It is spent in a fixed order, and each gate has a different currency. A supplier that pays the wrong currency at the wrong gate is eliminated even when it would have passed later gates easily. The 6sense data is decisive: 94% of buyers rank their shortlist by preference BEFORE contacting anyone, and 95% of purchases come from the Day One shortlist. The website is not a lead-capture surface. It is the ranking surface.",
+    "gates": [
+      {
+        "gate": 0,
+        "name": "Is this real?",
+        "duration": "0–15 seconds",
+        "who": "Whoever opened the tab. Usually not the decision maker.",
+        "currency": "Physical plausibility",
+        "questionInTheirHead": "Am I looking at a factory, a trading company pretending to be a factory, or a template?",
+        "whatTheyLookAt": [
+          "Whether the page loads at all, and fast, from their country",
+          "Whether the language reads as written by a person who does this work",
+          "Whether a country and a city appear anywhere without hunting",
+          "Whether the imagery is of THIS place or of the same stock CNC spindle every other site uses",
+          "Whether the first sentence describes a part or describes the company"
+        ],
+        "whatKillsInSixtySeconds": [
+          "Stock photography. RapidDirect names 'uses stock photos' as the primary broker red flag; NN/g names 'generic filler images rather than substantive content' as a trust destroyer. A single obvious stock image can end the visit.",
+          "No country. A supplier who does not say where it is gets assumed to be hiding something, and the assumption is always worse than the truth.",
+          "Machine-translated copy on a page selling precision. If the sentences are not controlled, the tolerances are assumed not to be either.",
+          "A stat wall of round numbers with no units and no period — '500+ clients', '99% satisfaction', '20 years excellence'. These read as decoration, and decoration signals that nothing measurable was available.",
+          "Typos and broken links. NN/g: these 'quickly degrade credibility'.",
+          "Adjective stacks — world-class, state-of-the-art, one-stop-shop, cutting-edge. Every one of these is already banned by FORBIDDEN_PHRASES in claims.ts, and the ban is correct.",
+          "A certification badge grid where the badges are unclickable images with no certificate number, body or expiry. RapidDirect explicitly names 'borrowed certificates from supplier networks' as a red flag — a badge that cannot be verified is worse than no badge.",
+          "Only a form. No email, no phone, no human name."
+        ]
+      },
+      {
+        "gate": 1,
+        "name": "Can they do MY part?",
+        "duration": "15 seconds – 3 minutes",
+        "who": "Usually the engineer or the production manager",
+        "currency": "Process specificity",
+        "questionInTheirHead": "Does this supplier's world contain my problem?",
+        "whatTheyLookAt": [
+          "Named processes rather than categories: injection, PET preform, blow, die-cast, hot runner versus cold runner, insert moulding, multi-cavity",
+          "Whether cavitation is discussed as a decision with consequences, or quoted as a boast",
+          "Material families and whether the supplier knows how they behave, not just their names",
+          "Whether the supplier can start from an incomplete input — a sample, a photo, a worn part with no drawing",
+          "Photographs of tools and parts, ideally mid-process. NN/g: 'photos from all stages of service, not just final results'",
+          "An industry page that describes the buyer's own defect modes back to them"
+        ],
+        "whatKills": [
+          "A capability list that could belong to any of 4,000 shops",
+          "Any technical error. One wrong statement about shrinkage, draft or gate position and the engineer stops reading and tells procurement the supplier is not serious.",
+          "Claiming a process the site cannot show. In this project two-shot, grinding, cleanroom, 3D scanning and named simulation software are all prohibited — claiming any of them would be both a policy breach and a credibility bet the site cannot cover."
+        ]
+      },
+      {
+        "gate": 2,
+        "name": "Is the risk survivable?",
+        "duration": "3–15 minutes, often across two or three sessions",
+        "who": "Procurement manager, sometimes with the owner",
+        "currency": "Operational honesty",
+        "questionInTheirHead": "If this goes wrong, what happens to me personally?",
+        "whatTheyLookAt": [
+          "Who owns the tool, and can it leave",
+          "What happens to the CAD",
+          "How payment is structured — milestones, not method",
+          "What arrives when, and what the supplier will NOT promise",
+          "Whether the supplier tells them what it cannot do"
+        ],
+        "whatKills": [
+          "Silence on tooling ownership. Harris Sliwoski: 'Possession gives the factory leverage even when your ownership claim is strong.' A buyer who has been burned once reads silence as intent.",
+          "Over-promising. 'We guarantee', '100%', 'zero defects', 'immediately'. A procurement manager has heard all of them from suppliers who then failed, and treats them as negative evidence.",
+          "No stated limits. A supplier who claims no boundary is assumed to have no process."
+        ]
+      },
+      {
+        "gate": 3,
+        "name": "First contact",
+        "duration": "The message, and the reply",
+        "who": "Anyone",
+        "currency": "Response quality, not response speed",
+        "questionInTheirHead": "Did a person who understands this read my message?",
+        "whatTheyLookAt": [
+          "Whether the reply asks the right question back",
+          "Whether it names something about their part that they had not mentioned",
+          "Whether it arrives inside the window the site promised"
+        ],
+        "whatKills": [
+          "A reply that is a price with no questions. It proves nobody looked.",
+          "A reply that asks for everything at once. It proves nobody triaged.",
+          "Missing the stated window by even a few hours. The window is the first testable promise on the whole site, and buyers test it deliberately."
+        ],
+        "note": "6sense: the vendor contacted first wins ~80% of the time, but only because 94% of buyers had already ranked the shortlist. Speed of reply matters far less than being ranked first before contact. The site's job is the ranking; the reply's job is to not lose it."
+      },
+      {
+        "gate": 4,
+        "name": "Technical validation",
+        "duration": "Days to weeks",
+        "currency": "DFM judgement",
+        "whatTheyLookAt": [
+          "Does the supplier push back on the geometry, or accept whatever it is sent",
+          "Does the quote separate tooling NRE from part price, and state cavitation, steel, runner type, finish and shipping basis",
+          "Can the supplier say what it does not yet know"
+        ],
+        "whatKills": [
+          "Accepting a bad drawing without comment. RapidDirect names 'delayed DFM feedback or rejection after submission' as a red flag; accepting silently is worse.",
+          "A single lump-sum price. It cannot be compared, and an uncomparable quote is usually discarded rather than queried."
+        ]
+      },
+      {
+        "gate": 5,
+        "name": "Commercial and legal",
+        "duration": "Weeks",
+        "currency": "Contract specificity",
+        "whatTheyLookAt": [
+          "Tooling ownership and release language",
+          "Payment milestones tied to verifiable events, per Harris Sliwoski: down payment, inspection payment, final on verified delivery",
+          "What the warranty covers and excludes",
+          "Governing law, and whether it is enforceable anywhere the buyer can reach"
+        ]
+      },
+      {
+        "gate": 6,
+        "name": "Verification",
+        "duration": "Weeks",
+        "currency": "Willingness to be looked at",
+        "whatTheyLookAt": [
+          "A live, unedited video walkthrough — RapidDirect calls this non-negotiable and names refusal as the primary broker red flag",
+          "T0/T1 samples with a dimensional report",
+          "Third-party inspection acceptance",
+          "A named person who is the same person every time"
+        ],
+        "whatKills": [
+          "Refusing a live video call while offering an edited factory film instead."
+        ]
+      },
+      {
+        "gate": 7,
+        "name": "Qualification as a second source",
+        "duration": "Months",
+        "currency": "Repeatability",
+        "note": "This is where the relationship actually begins for most overseas suppliers. Per Procurement Tactics, suppliers are classified Preferred / Approved / Conditional / Disqualified. A new overseas supplier is realistically competing for CONDITIONAL on first pass. Copy written to win 'Preferred' overshoots and reads as bluffing; copy written to win 'Conditional' reads as competent."
+      }
+    ],
+    "theSixtySecondSummary": "In the first sixty seconds a buyer is not evaluating capability. They are running a forgery test. Everything that looks generic is evidence of forgery; everything that could only have been written by someone who does this work is evidence against it. Specificity is not a style preference here — it is the entire proof."
+  },
+
+  "objections": [
+    {
+      "objection": "Where actually are you? The site does not say.",
+      "raisedBy": "Everyone, within the first minute",
+      "defusable": true,
+      "honestWording": "Name the country and the city in the first screen and in the footer, plainly and without apology or explanation. 'Manufacturing since 2006. [City], Iran.' No hedging phrase, no 'global presence' euphemism, no flag icons in place of a word.",
+      "why": "A buyer who has to hunt for the country assumes the country is being hidden, and the assumption is always worse than the fact. Stating it early also filters out buyers who cannot proceed, which protects the enquiry pipeline from time-wasting. NN/g lists prominently displayed contact information as a primary credibility factor."
+    },
+    {
+      "objection": "Can I legally buy from you at all? Am I creating a compliance problem for my company?",
+      "raisedBy": "European, UK and US buyers; any buyer with a Western parent company, a Western bank, or Western customers; listed companies anywhere",
+      "defusable": false,
+      "honestWording": "This cannot be resolved by copy, and any attempt to resolve it by copy will destroy the site's credibility with the buyers it CAN serve. The only honest treatment: state the markets the company supplies, invite an enquiry, and let the buyer's own compliance function reach its own conclusion. Never publish reassurance about a buyer's legal position — the supplier is not competent to give it and offering it looks like a sales tactic applied to a legal question. Never publish anything that reads as a method, route or structure for getting around a restriction. Per Procurement Tactics, sanction-list screening is a routine automated step in supplier due diligence; it will happen regardless of what the site says.",
+      "why": "A mature procurement function screens against sanction lists automatically as part of due diligence. Attempting to pre-empt that on a marketing page reads as either naive or evasive, and both readings are fatal. The correct strategic response is not better copy — it is accepting that a large part of the European and US market is not addressable, and directing the site's effort at the regions that are."
+    },
+    {
+      "objection": "How would I even pay you?",
+      "raisedBy": "Every buyer, in every region, and it is usually the second question after price",
+      "defusable": "partially",
+      "honestWording": "Answer the STRUCTURE, never the mechanism. 'Payment is staged against events you can verify: a deposit at order, a payment at tool trial when you have seen the samples and the dimensional report, the balance before shipment. The settlement route is agreed in writing per customer and per country before the quotation is issued, because it differs by market.' Publish the milestone structure — that is what a procurement manager needs in order to build a risk case — and keep every banking detail off the public internet.",
+      "why": "Harris Sliwoski establishes that staged payment tied to milestones is the structure that preserves buyer leverage, and buyers recognise it as the mark of a supplier who has done this before. The milestone structure is the reassuring part and it is safe to publish. The routing is not reassuring, is different for every counterparty, and publishing it is bad for everyone. Saying 'agreed in writing before the quotation' converts an evasion into a process — which is exactly what a procurement manager wants to hear about anything difficult."
+    },
+    {
+      "objection": "Your bank cannot receive a normal letter of credit and I cannot run this through my usual trade-finance desk.",
+      "raisedBy": "Larger buyers, EU and Gulf corporates, anyone whose finance department controls supplier onboarding",
+      "defusable": false,
+      "honestWording": "Do not attempt this on the website. It is a conversation between two finance functions, and it either works for a given buyer or it does not. Copy that tries to pre-solve it will read as a sales pitch aimed at circumventing a control, which is the single fastest way to lose a serious buyer. The site's only job here is to have already established enough engineering credibility that the buyer is willing to have the conversation at all.",
+      "why": "The ITA Armenia guide shows that even in an unsanctioned neighbouring market, 'no U.S. banks operate in Armenia' and settlement depends on local correspondent networks — i.e. payment friction is normal, structural and negotiated privately in this whole region. Buyers in Turkey, the Gulf, Armenia, Central Asia and South Asia already know this and do not expect a website to solve it. Buyers who do expect a website to solve it are, by definition, buyers for whom it cannot be solved."
+    },
+    {
+      "objection": "How long will it take? Your site does not say.",
+      "raisedBy": "Production manager, first; procurement, second",
+      "defusable": "partially",
+      "honestWording": "Publish the SHAPE of the schedule, not a number. 'Five stages: input, engineering, tooling, trial, production. Each stage has a gate, and each gate needs something specific from you — a decision on cavitation, an approval of the mould specification, a sign-off on T1 samples. The calendar is set at quotation against your part and your volume, because a 2-cavity cold-runner tool and a 16-cavity hot-runner tool are not the same project.' Then state what governs the duration: cavity count, steel selection, undercut count, finish class. lead-time figures are NEEDS-VERIFICATION in claims.ts and must not be published.",
+      "why": "RapidDirect's quote breakdown shows buyers already understand that steel grade, cavitation and slider count drive both cost and schedule. A supplier who explains the drivers instead of quoting a number is demonstrating exactly the judgement the buyer is shopping for, and is more credible than a supplier who publishes '25 days' — which every buyer discounts anyway. It also protects against the RFQ trap: 'ASAP' delivery language triggers expedite-fee assumptions."
+    },
+    {
+      "objection": "Will I be able to communicate with you? Different language, different time zone, different working week.",
+      "raisedBy": "Everyone outside the region; acutely for European and East Asian buyers",
+      "defusable": true,
+      "honestWording": "Demonstrate it rather than claim it. Nine languages already exist in this project — that IS the answer, provided the translations are genuinely written rather than machine-produced. Add the working week explicitly ('our working week is Saturday to Wednesday; enquiries arriving Thursday are answered Saturday') because a buyer who does not know this reads silence as being ignored. Name the person who replies and their role. Never write 'we speak your language' — show it.",
+      "why": "Procurement Tactics names 'language differences and time zones can slow coordination and cause misunderstandings' as a core LCCS risk, and RapidDirect names 'late-night emails and language barriers' as the historical objection. The working-week difference is the specific detail almost no supplier states and every buyer eventually discovers — stating it up front converts a future irritation into present evidence of candour."
+    },
+    {
+      "objection": "What stops you copying my design and selling it to my competitor?",
+      "raisedBy": "The design engineer and the owner, always; the strongest emotional objection in the set",
+      "defusable": "partially",
+      "honestWording": "Two moves. First, reduce what the buyer has to hand over: 'You do not need to send the full package to get a first read. A photograph and one dimension gets a feasibility answer. The CAD comes later, if you want it to.' Second, make a NON-USE commitment, not just a confidentiality one: 'Your drawings, models and samples are used to quote and to build your tool. They are not used to make the same part for anyone else, and they are not shown to another customer.' An NDA can be signed before detailed technical disclosure — that is a confirmed claim and can be stated. Do NOT claim enforceability, jurisdiction reach or legal remedy.",
+      "why": "Harris Sliwoski establishes that a conventional NDA protects disclosure only, leaving the buyer exposed to competitive USE of information that is not a trade secret; the substantive promise is non-use plus non-circumvention. And enforceability across this particular border is genuinely weak, so a promise of remedy would be a lie the buyer can check. Staged disclosure is the credible defusal because it reduces the buyer's exposure instead of promising to compensate for it — it costs the buyer nothing to test, which is why it works."
+    },
+    {
+      "objection": "Who owns the tool once I have paid for it, and can I get it back?",
+      "raisedBy": "Procurement manager and owner. The highest-leverage objection on this entire list.",
+      "defusable": true,
+      "honestWording": "State a position as policy, in the order's language, not marketing's: the tool is the customer's property from the moment it is paid for; it is held in custody, marked with the customer's tool number, segregated from other customers' tooling, and released on written request; native and neutral CAD (STEP, IGES) belongs to the customer; storage and maintenance create no lien and no ownership; improvements to the tool belong to the tool's owner; no part of the tool is subcontracted without written approval. Then say the sentence that closes it: 'This is written into the order, not into this page.' NOTE: ownership terms are not yet in claims.ts as a confirmed claim — this must be confirmed with the client and added before publishing.",
+      "why": "This is the fear that keeps buyers with expensive incumbents. Harris Sliwoski documents the full hostage playbook — surprise engineering fees, design-rights claims, filing IP in the factory's own name, non-response, 'the moulds cannot be located' — and states plainly that 'possession gives the factory leverage even when your ownership claim is strong.' Almost no competitor site addresses it. A supplier that volunteers a clean ownership position, unprompted, before being asked, differentiates itself more cheaply and more completely than any certification could. It is also the one place where a supplier without certifications can outrank a supplier with them, because it speaks to a risk certification does not cover."
+    },
+    {
+      "objection": "What happens when the tool wears, breaks, or needs a spare cavity — and I am 3,000 km away?",
+      "raisedBy": "Production manager",
+      "defusable": "partially",
+      "honestWording": "Describe the mechanism, not a guarantee. 'Spare cores, cavities and wear items are identified and priced with the tool, not after it fails. The tool has a record — what was changed, when, and at what shot count. When a wear item needs replacing, the replacement is made from the same drawing as the original.' Tooling warranty terms are 'defined per project and mould specification' — that is the confirmed wording and it is enough. Do not publish shot counts, year figures or spare-part terms; all are prohibited.",
+      "why": "Harris Sliwoski's FAQ set establishes that maintenance responsibility, insurance, end-of-life replacement terms and cost-sharing are all things experienced buyers expect to be settled in advance — 'Don't wait for failure' — and that a Tooling Description Inventory Form with serial numbers, photos, specs and location is standard practice. Offering the tool record proactively signals that the supplier operates that way, without promising an outcome the site cannot guarantee."
+    },
+    {
+      "objection": "What is your warranty and what does it actually cover?",
+      "raisedBy": "Procurement",
+      "defusable": "partially",
+      "honestWording": "'Tooling warranty terms are defined per project and written into the mould specification and the order.' That is the confirmed claim and it should be stated exactly. Add one clarifying sentence about WHY it is per project — 'a 2-cavity aluminium bridge tool and a hardened 46-cavity production tool cannot carry the same warranty, and a supplier who offers both the same number is not being careful' — which turns a non-answer into a demonstration of judgement.",
+      "why": "A specific warranty figure is prohibited here, but the reason for its absence is genuinely good engineering logic, and buyers respect a reasoned refusal far more than an unreasoned promise. NN/g's finding that pricing opacity is the number one B2B trust problem applies to terms as well as prices: the failure mode is offering 'excuses' instead of information. Explaining the variable IS information."
+    },
+    {
+      "objection": "How does it physically get to me, and who handles customs?",
+      "raisedBy": "Production manager and logistics; acute for Armenia and landlocked Central Asia",
+      "defusable": "partially",
+      "honestWording": "'International delivery' is confirmed and may be stated; Incoterms, lead times and customs promises are explicitly excluded. Safe expansion: 'Tools and components ship internationally. Route, terms and documentation are agreed with the quotation — because the route to Yerevan, to Istanbul, to Dubai and to Karachi are four different problems.' Naming real routes signals regional literacy without promising anything.",
+      "why": "The ITA Armenia guide documents that Armenia's logistics are structurally difficult — two closed borders, high transit cost through Georgia, a single congested Georgia–Russia crossing acting as a chokepoint. An Armenian buyer lives with this. A supplier who shows awareness that routes differ per destination is credible; a supplier who prints one lead time for all destinations is not."
+    },
+    {
+      "objection": "If the parts are wrong, what is my recourse? I cannot sue you.",
+      "raisedBy": "Procurement, and it is usually unspoken",
+      "defusable": "partially",
+      "honestWording": "Answer with sequence, not remedy: 'You see the part before it ships. T1 samples with a dimensional report against the drawing, and nothing goes into production until you have approved them. Third-party inspection before shipment is accepted and normal.' Then be explicit about the limit: recourse is commercial and reputational, not litigious, and it is better to say so than to imply a legal remedy that does not exist.",
+      "why": "Harris Sliwoski establishes that third-party inspection beats self-inspection and that 'quality fade' after approval requires unannounced inspection. Accepting third-party inspection is the single most persuasive quality statement available to a supplier that cannot claim ISO 9001, because it hands verification to someone the buyer chooses and pays. It converts 'trust us' into 'check us', which is the only version of that sentence a procurement manager believes."
+    },
+    {
+      "objection": "You have no ISO 9001. Every other supplier on my list does.",
+      "raisedBy": "Procurement, at the qualification stage, and it may be a hard gate in regulated supply chains",
+      "defusable": false,
+      "honestWording": "Do not mention certification at all — not to claim it, not to dismiss it, not to explain its absence. A page that argues against certification sounds exactly like a page written by someone who failed to get one. Instead, occupy the space certification would occupy with things certification is a proxy for: a written mould specification signed before steel is cut, a documented gate at T0/T1/T2, a dimensional report against the drawing, a tool record with shot counts, acceptance of third-party inspection, and a defined change-control route. Certification is a proxy for process; show the process.",
+      "why": "ISO 9001, IATF 16949 and ISO 13485 are all PROHIBITED in claims.ts and are in FORBIDDEN_PHRASES. RapidDirect independently names 'borrowed certificates from supplier networks' as a broker red flag, which means a fake or ambiguous badge is worse than none. Meanwhile Procurement Tactics' capability-assessment framework shows that what buyers actually score is 'evidence of documented processes and standard operating procedures' and 'quality control checkpoints and inspection routines' — certification is only the shorthand for those. The shorthand is unavailable; the substance is not. Accept that some regulated buyers will be a hard no, and win the rest."
+    },
+    {
+      "objection": "Do you actually own a factory, or are you a broker with a website?",
+      "raisedBy": "Engineers and owners, and it is the objection behind most of the others",
+      "defusable": true,
+      "honestWording": "The claim register draws the line precisely: never claim ownership of every facility, and never describe the company as a broker either. The honest position is single accountability — 'One chain, five stages, one accountable partner' as the existing home.json already puts it. Strengthen it by being explicit about the seam: 'Engineering and tooling are ours. Where a production process sits outside our own floor, it is still our order, our specification and our responsibility — you deal with one company and one engineer throughout.' Offer a live video walkthrough on request.",
+      "why": "RapidDirect names the broker test as the central vetting question and 'refuses live video tours; uses stock photos' as its primary indicator, alongside a 20–40% hidden broker markup. Offering the video before it is demanded inverts the test. Being explicit about where the seams are is far more credible than implying a vertically integrated plant that photographs would eventually contradict — and it is the only version that survives an actual factory visit."
+    },
+    {
+      "objection": "How big are you? How many machines, what tonnage, how many people?",
+      "raisedBy": "Procurement, at capability assessment",
+      "defusable": false,
+      "honestWording": "Machine lists, tonnages, floor area, headcount and country count are all NEEDS-VERIFICATION and must not be published. Substitute the one capacity fact that IS confirmed and happens to be the most meaningful one: 'Tooling experience up to 46 cavities.' Cavitation is a harder capability signal than tonnage anyway, because high cavitation is a tooling discipline — balance, cooling, ejection, gate consistency across every cavity — that cannot be bought with a bigger machine.",
+      "why": "The existing common.json note already makes this argument correctly: 'High cavitation is a tooling discipline, not a machine specification.' It is the strongest single sentence on the site because it reframes an absence into a distinction, truthfully. Keep it."
+    },
+    {
+      "objection": "Show me who else you have done this for.",
+      "raisedBy": "Everyone",
+      "defusable": "partially",
+      "honestWording": "No client name, logo or identifiable project may be published without written permission. Substitute anonymised but SPECIFIC problem descriptions: the sector, the part type, the constraint, the decision taken and why. 'A heavy-vehicle component, no drawing in existence, one worn sample. Re-modelled from the sample, wall thickness rationalised for a stable fill, gate moved off the sealing face.' No customer, no volume, no date — none of which the buyer needed anyway. And never write 'all our work is under NDA' as the explanation.",
+      "why": "claims.ts flags this explicitly: an NDA 'must never be used as an excuse for an absent project history.' The phrase is a recognised tell — buyers have heard it from suppliers with no history. A specific anonymised engineering narrative proves more than a logo does, because a logo proves someone bought, while a narrative proves someone thought."
+    },
+    {
+      "objection": "You want me to message you on WhatsApp. I do not want a chat thread with a number from that country in my phone.",
+      "raisedBy": "Unspoken, and much more common than any supplier realises — European procurement staff, listed-company employees, Gulf traders with Western banking, Russian buyers under scrutiny",
+      "defusable": true,
+      "honestWording": "Offer a plain email address at equal visual weight to WhatsApp on every page, and offer it without commentary. Never explain, never draw attention to why. Email is forwardable, archivable, attachable to a requisition, and leaves no personal mobile number anywhere. Give it a human name if possible rather than info@.",
+      "why": "This is the most under-addressed objection in international industrial selling and the cheapest to fix. It costs one line of markup. The moment it is explained, it becomes conspicuous — so it must be solved silently, by the presence of an equally weighted alternative. See whatsappByRegion below for the full channel analysis."
+    },
+    {
+      "objection": "Forty-eight hours is slow. Your competitor quotes instantly.",
+      "raisedBy": "Buyers who have used instant-quote platforms",
+      "defusable": true,
+      "honestWording": "Make the window a deliverable rather than a duration. The existing common.json note already does this well: 'A first technical read — feasibility direction, what is missing, and the next step. Not a final quotation, and we will not pretend otherwise.' Strengthen by contrasting honestly: an instant price on an incomplete drawing is a price with the assumptions priced in, and the buyer pays for those assumptions.",
+      "why": "RapidDirect's own RFQ guide concedes that ambiguous tolerances cause suppliers to 'add risk premiums' — the instant quote and the risk premium are the same phenomenon. And it names 'manual quote processing taking 48 to 72 hours' as a red flag, which is precisely why the 48-hour window must be sold as a considered technical read rather than as processing time. A promise that names its own limits is more believable than one that does not."
+    }
+  ],
+
+  "secondSourceLanguage": {
+    "whatItActuallyMeansOperationally": "Dual sourcing is splitting a specific part number across two qualified suppliers. The split is rarely 50/50 — it is more often 80/20, 70/30 or 60/40 weighted to the incumbent, and the minority share exists specifically to keep the second supplier warm, tooled and able to scale. This matters enormously for tone: the second-source volume is small by design, and the second supplier is expected to accept that without treating it as an insult or as a foot in the door. A supplier who behaves as though the 20% is a probationary step toward the 80% reads as opportunistic; a supplier who treats the 20% as the actual job reads as competent.",
+    "whatTheBuyerIsActuallyBuying": "Not capacity. Optionality. The procurement manager is buying the removal of a single point of failure from their own risk register, and often the ability to walk into a renewal negotiation with a real alternative rather than a threat. The second source is a hedge and a lever at the same time.",
+    "triggers": [
+      {
+        "trigger": "The incumbent raised prices and the buyer has no comparison",
+        "signal": "The most common trigger by far and the least often admitted. Procurement Tactics: single sourcing forfeits the ability to 'compare prices to determine your best match'; sole sourcing puts 'the terms in the hands of the sole source supplier'.",
+        "whatTheyNeedFromThePage": "A quote structure they can put side by side with the incumbent's — tooling NRE separated from part price, cavitation stated, steel stated, runner type stated, finish class stated, shipping basis stated. An uncomparable quote does not lose the comparison, it is excluded from it."
+      },
+      {
+        "trigger": "The incumbent missed a delivery, or a line stopped",
+        "signal": "Urgent, emotional, and short-lived. The search happens in days and closes in days.",
+        "whatTheyNeedFromThePage": "Evidence that a conversation can start immediately with an engineer, and an honest statement of what CANNOT be fast. 'If your machine breaks tomorrow we can produce your part immediately' is prohibited in claims.ts and is correctly prohibited — it is physically implausible when the customer's tool is in another country, and any buyer under real pressure knows that, so the claim converts urgency into contempt."
+      },
+      {
+        "trigger": "A tooling package is coming up for renewal or the tool is near end of life",
+        "signal": "The single best moment to enter, because tooling is the switching cost and it is about to be re-spent anyway.",
+        "whatTheyNeedFromThePage": "Ownership and transfer language, tool-record practice, and the willingness to build a duplicate tool from the same specification. Harris Sliwoski: end-of-life replacement terms, cost sharing and timelines should be agreed in advance — a supplier who talks about this fluently is speaking directly to why the buyer is looking."
+      },
+      {
+        "trigger": "Geographic or geopolitical concentration on the risk register",
+        "signal": "Procurement Tactics lists geographic exposure and regulatory sensitivity as formal scored inputs in due diligence, and names 'political unrest' among dual-sourcing drivers. Post-2022 this is a standing agenda item, not an occasional one.",
+        "whatTheyNeedFromThePage": "Honest regional positioning. For buyers in Turkey, the Gulf, Armenia, Central Asia and South Asia, a supplier reachable overland or by short sea from their own region is genuinely a diversification away from a long, contested sea lane. That is a legitimate argument and it can be made without naming anyone."
+      },
+      {
+        "trigger": "A new programme where the buyer never intended a single source",
+        "signal": "Best-case entry. No incumbent to displace, and the second source is planned from the start.",
+        "whatTheyNeedFromThePage": "Evidence of DFM capability at the front end, because at this stage the part is not frozen and the supplier who improves the design gets the tool."
+      },
+      {
+        "trigger": "An internal audit or a customer requirement demands a documented alternative",
+        "signal": "Procedural rather than commercial. Often the buyer needs a qualified supplier on file more than they need volume placed.",
+        "whatTheyNeedFromThePage": "Something a procurement manager can attach to a file. This is the strongest argument for a downloadable capability document."
+      }
+    ],
+    "languageThatReadsAsCompetent": [
+      "'Second-source readiness' — readiness, not guarantee. claims.ts prohibits guaranteed reserved capacity for good reason: it is only true where a contract actually reserves it.",
+      "'Most second-source work starts small on purpose. A duplicate tool, a qualification run, a share of the volume. That is the correct way to do it and we are not going to pretend otherwise.'",
+      "'We can build to your existing tool specification, or re-engineer the part if the original design is the reason you are looking.' — offers both the humble and the ambitious version and lets the buyer choose.",
+      "'You do not have to move the existing tool. A second tool built to the same specification removes the switching risk entirely.' — this is the sentence that unlocks the most stalled second-source conversations, because tool transfer is the thing buyers fear most.",
+      "'Tell us what the incumbent does well. It is faster to match a known standard than to discover it.' — signals that the objective is compatibility, not replacement.",
+      "'A qualification run before any volume commitment.' — mirrors the buyer's own process language.",
+      "Naming the deliverables of qualification: first-article dimensional report, agreed inspection scope, a signed mould specification, a documented change-control route."
+    ],
+    "languageThatReadsAsOpportunistic": [
+      "Anything that positions the incumbent as the problem. The buyer usually chose the incumbent, and often still works with them. Criticising them criticises the buyer.",
+      "'Switch to us and save X%.' Percentage savings claims are NEEDS-VERIFICATION here and are a marketing tell everywhere.",
+      "'Cheaper than China' — explicitly prohibited in claims.ts, and it reframes the supplier as a price, which is the one category where a distant unknown supplier can never win a risk-adjusted comparison.",
+      "'We can take over your production immediately.' Prohibited and implausible.",
+      "'Backup supplier' as a self-description — it sounds like accepting second place, and buyers unconsciously price it that way.",
+      "Urgency devices — limited slots, capacity filling, act now. Industrial procurement cycles run in quarters; urgency signals a shop that needs the work.",
+      "Any implication that the buyer's current arrangement is naive."
+    ],
+    "positioningNote": "For this supplier specifically, second-source work is the right primary proposition — it is already in the home.json meta description and that instinct is correct. It asks for a smaller decision, it carries a smaller risk, it fits how procurement actually onboards unfamiliar suppliers (Conditional before Approved before Preferred), and it does not require the buyer to resolve every objection on the list before starting. The page should ask for a small, reversible first step, because that is the only step this buyer can approve without a committee."
+  },
+
+  "trustSignals": [
+    {
+      "signal": "A wall of round-number statistics (500+ clients, 99% satisfaction, 20 years of excellence)",
+      "movesTheNeedle": false,
+      "why": "Round numbers with no unit and no period are read as decoration. Worse, they occupy the position where evidence would go, so their presence implies that evidence was sought and not found. NN/g's credibility research finds that generic content actively degrades trust rather than being neutral."
+    },
+    {
+      "signal": "'1,000+ completed projects since 2006' — a count bound to a start date",
+      "movesTheNeedle": true,
+      "why": "This one works because it has a period, an implied rate (roughly 50 a year, which is plausible for a tooling shop and therefore believable), and it is rendered as a minimum rather than a suspicious exact figure. Longevity is also a genuine procurement criterion — Procurement Tactics lists financial health and stability among the nine evaluation criteria, and twenty years of continuous operation is the only financial evidence a private company can offer publicly."
+    },
+    {
+      "signal": "'Tooling experience up to 46 cavities'",
+      "movesTheNeedle": true,
+      "why": "The strongest single trust signal available to this site. It is oddly specific (46, not 'up to 48'), which reads as measured rather than marketed; it is a discipline claim rather than an equipment claim, so it cannot be bought; and any moulding engineer immediately understands what it implies about balance, cooling, ejection and gate consistency. Specific odd numbers are believed; round numbers are discounted."
+    },
+    {
+      "signal": "Certification badges (ISO 9001, IATF 16949, ISO 13485)",
+      "movesTheNeedle": true,
+      "why": "Genuinely and strongly — for suppliers that have them. Procurement Tactics lists certification within quality-system assessment and compliance is one of the nine scored criteria. But they are PROHIBITED for this project, and RapidDirect names 'borrowed certificates from supplier networks' as a broker red flag, so an unverifiable badge is worse than an absent one. Treat this as a genuine competitive disadvantage to be routed around, never faked and never argued with."
+    },
+    {
+      "signal": "Client logos",
+      "movesTheNeedle": true,
+      "why": "Real, permitted, named logos work — NN/g's fourth credibility factor is being 'connected to the rest of the web', and buyers 'have learned to trust these external sources more than company-sponsored content'. But unpermitted logos are a legal and reputational risk, greyed-out anonymous logo grids fool nobody, and 'a leading European automotive manufacturer' is a phrase that signals the opposite of what it intends. Prohibited here without written permission — so this route is closed."
+    },
+    {
+      "signal": "A named response-time promise",
+      "movesTheNeedle": "conditional",
+      "why": "A duration alone ('we reply within 24 hours') is noise — every site says it and no buyer believes it. A duration bound to a DELIVERABLE is a strong signal because it is testable and because defining what will NOT arrive demonstrates process discipline. The existing wording — a first technical read covering feasibility direction, what is missing, and the next step, explicitly not a final quotation — is the correct construction and is better than most competitors' instant-quote promise. Its power depends entirely on being kept."
+    },
+    {
+      "signal": "Concrete engineering detail — gate position, draft, wall thickness, runner strategy, shrinkage, ejection, parting line",
+      "movesTheNeedle": true,
+      "why": "The highest-value signal available, and the only one this site can produce without limit. It cannot be faked by a broker, it cannot be copied convincingly, it is checkable by the engineer who is the real gatekeeper, and it is what certification is a proxy for anyway. NN/g: thorough, relevant information demonstrating expertise is a primary credibility factor. Every unit of engineering specificity added is a unit of the certification gap closed."
+    },
+    {
+      "signal": "Technical vocabulary used decoratively",
+      "movesTheNeedle": false,
+      "why": "Actively harmful and worse than plain language. An engineer reading a term used slightly wrongly concludes the writer does not do this work, and that conclusion is final and unrecoverable. Terminology must earn its place by carrying a decision — 'hot runner' as a word is decoration; 'hot runner becomes economical above roughly 20–30,000 units, below that the runner waste is cheaper than the manifold' is evidence."
+    },
+    {
+      "signal": "Named process capability — PET preform, blow, die-cast, insert moulding, hot and cold runner, multi-cavity, technical mechanisms",
+      "movesTheNeedle": true,
+      "why": "Named processes let a buyer self-qualify in seconds, which is exactly what Gate 1 requires. All of these are confirmed claims here. Category language ('plastic manufacturing solutions') fails the same test that stock photography fails: it could describe anyone."
+    },
+    {
+      "signal": "Photographs of actual tools, parts and the floor — including mid-process",
+      "movesTheNeedle": true,
+      "why": "NN/g: 'photos from all stages of service, not just final results'. RapidDirect: refusing live video and using stock photos is the primary broker indicator. A slightly ugly real photograph of a tool on a bench outperforms a beautiful render, because the render proves only that someone bought a render. NOTE: FEATURES.realProjectMedia is currently false — until real media exists this signal is unavailable, and the design must not pretend otherwise by substituting stock."
+    },
+    {
+      "signal": "Stock photography of generic machinery",
+      "movesTheNeedle": false,
+      "why": "Not neutral — actively destructive, and the single fastest way to lose Gate 0. Named explicitly as a broker red flag by RapidDirect and as a credibility destroyer by NN/g. Better to ship a page with no imagery, or with typographic and diagrammatic treatment, than one stock image."
+    },
+    {
+      "signal": "An offered live, unedited video walkthrough on request",
+      "movesTheNeedle": true,
+      "why": "RapidDirect calls this non-negotiable in vetting and names refusal as the primary broker indicator. Offering it before it is demanded inverts the whole broker test at zero cost, and it is the strongest available substitute for a certificate: it hands verification to the buyer."
+    },
+    {
+      "signal": "A physical address and a real telephone number",
+      "movesTheNeedle": true,
+      "why": "NN/g lists prominently displayed contact information as a primary credibility factor. A company with a street address is a company that can be visited, audited and found. Currently pending in site.ts — this is a blocking item, not a nice-to-have."
+    },
+    {
+      "signal": "A named human with a role",
+      "movesTheNeedle": true,
+      "why": "The ITA Armenia guide: 'Personal contact is key'; in-person and personal interaction is standard across this whole region. A named engineer converts an anonymous foreign entity into a counterparty. Anonymity in a market where relationships are the primary trust mechanism reads as evasion."
+    },
+    {
+      "signal": "Unattributed testimonials",
+      "movesTheNeedle": false,
+      "why": "'Excellent quality and service — Purchasing Manager, Europe' is read as fabricated by default, and correctly so. Either a named, permitted reference or nothing."
+    },
+    {
+      "signal": "Downloadable technical documents — an RFQ checklist, a DFM checklist, a mould specification template, a tooling handover checklist",
+      "movesTheNeedle": true,
+      "why": "The most under-used signal in this industry and probably the highest-return single addition available to this site. It proves process the way a certificate proves process, it gives the procurement manager something to attach to a file (which is literally their job on an audit-driven second-source search), it is genuinely useful so it gets forwarded internally to the buying committee, and — per NN/g — making substantial information available BEFORE registration is a specific trust builder. Critically it must be ungated: NN/g finds registration barriers and login walls destroy trust before credibility is established."
+    },
+    {
+      "signal": "Published prices or 'starting from' figures",
+      "movesTheNeedle": true,
+      "why": "NN/g found pricing scored 29% higher than any other information type and named its absence the single most problematic B2B gap — sites offer 'excuses' rather than solutions. But published pricing is PROHIBITED here. The available substitute is genuinely good and almost nobody does it: publish the COST STRUCTURE instead of the cost. What drives tooling price (cavitation, steel, sliders, finish class), what drives part price (cycle time, wall thickness, runner type, material), and the amortisation arithmetic. NN/g's own guidance is to 'provide pricing indicators even without exact figures' — an explained cost model is a pricing indicator, and it teaches the buyer to read every competitor's quote, which is a durable favour."
+    },
+    {
+      "signal": "Awards and membership badges from unrecognised bodies",
+      "movesTheNeedle": false,
+      "why": "Unrecognised authority adds no authority and consumes credibility, because the buyer now wonders why the recognised ones are missing."
+    },
+    {
+      "signal": "'24/7 support' and similar availability claims",
+      "movesTheNeedle": false,
+      "why": "Untestable, universally claimed, and in direct tension with a stated 48-hour window — a page that says both has told the buyer that at least one of its promises is decorative. Stating the actual working week is more credible than claiming continuous availability."
+    },
+    {
+      "signal": "Nine genuinely written language versions",
+      "movesTheNeedle": true,
+      "why": "For this audience this is a major signal and a real moat — it evidences that the company actually trades into those markets, which is the claim it would otherwise have to assert. It inverts instantly if the translations are machine-produced: a fluent Turkish or Russian page proves presence, a clumsy one proves absence and simultaneously fails Gate 0 in that market."
+    },
+    {
+      "signal": "An honest statement of a limit — what the company does not do, will not promise, or cannot yet show",
+      "movesTheNeedle": true,
+      "why": "The most counter-intuitive finding in the whole research set and the one most worth acting on. Every supplier claims capability; almost none states a boundary. A stated boundary is unfakeable evidence that the other statements were also filtered. This is the mechanism that converts the claim register's constraints from a handicap into the site's actual voice."
+    }
+  ],
+
+  "personas": [
+    {
+      "persona": "Procurement / purchasing manager",
+      "region": "Dominant in Turkey, Europe, India, Gulf corporates, larger Russian buyers",
+      "realJob": "Not to find the best supplier. To place a defensible order that does not become their problem later. Every decision is made against the question 'can I explain this if it goes wrong'.",
+      "wants": [
+        "Comparability — a quote structure that can sit in a table next to two others",
+        "Total cost of ownership vocabulary rather than unit price",
+        "Payment structured against verifiable events",
+        "Tooling ownership and release terms",
+        "Something documentary to attach to a supplier file",
+        "Evidence the company will still exist in three years"
+      ],
+      "fears": "Being the person who onboarded the supplier that stopped the line, or who paid for a tool the company cannot get back.",
+      "killers": ["No address", "No terms of any kind", "An uncomparable lump-sum price", "Absent tooling-ownership position", "Urgency tactics"],
+      "servedBy": "A commercial band — how a quote is structured, how payment is staged, how tooling is owned and released, what the response window contains — plus one ungated downloadable document. Written in flat, unexcited prose. This persona is repelled by enthusiasm.",
+      "note": "Per Procurement Tactics' four-tier classification, this person is deciding between Conditional and Disqualified on a first pass, not between Preferred and Approved. Write for the conditional slot."
+    },
+    {
+      "persona": "Production / operations manager",
+      "region": "Everywhere; often the person who actually started the search",
+      "realJob": "Keep the line running. They are usually the reason a second source is being sought, and they carry the memory of the last failure.",
+      "wants": [
+        "Continuity — what happens when a tool wears, a cavity blocks, a shipment slips",
+        "Whether the part will run on their existing machine and their existing packaging",
+        "Delivery cadence rather than a single lead time",
+        "Spare wear items identified in advance",
+        "A named person who answers when something is wrong"
+      ],
+      "fears": "A stopped line, and being told about a problem after it has already happened.",
+      "killers": ["Vague delivery language", "No mention of spares", "'We guarantee' anything", "The implausible instant-switchover promise"],
+      "servedBy": "The process route section, made concrete: five stages, what each gate needs, the tool record, spares identified with the tool, samples approved before production. This persona reads for mechanism, not for reassurance."
+    },
+    {
+      "persona": "Design / manufacturing engineer",
+      "region": "Everywhere; the gatekeeper in Europe, India, Turkey and China",
+      "realJob": "Determine whether the supplier understands the part. Has a veto but rarely a budget. Their verdict is delivered in one sentence to the person who does have the budget, and it is usually final.",
+      "wants": [
+        "DFM judgement — will this supplier tell me my draft is insufficient before cutting steel",
+        "File format literacy: STEP, IGES, X_T, STL, native",
+        "Realistic talk about tolerance rather than a headline micron figure",
+        "Evidence the supplier can work from an incomplete input — a sample, a photo, a worn part",
+        "Correct use of every technical term on the page"
+      ],
+      "fears": "Handing their geometry to a shop that will build it exactly as drawn including the mistake.",
+      "killers": ["One technical error anywhere on the site", "Decorative jargon", "A tolerance claim with no context", "A capability list with no reasoning behind it"],
+      "servedBy": "The deepest layer — reverse engineering, DFM, cavitation reasoning, runner strategy, cost drivers explained mechanically. This is the persona for whom the 'more detail' expandable content exists. They will read all of it if it is right, and none of it if the first paragraph is wrong."
+    },
+    {
+      "persona": "Owner / CEO / general manager",
+      "region": "Dominant in Armenia, Turkey, the Gulf, Pakistan, Iran, Central Asia and most SMEs everywhere in this market",
+      "realJob": "Decide whether this is a person they can do business with. They will make the whole decision themselves, often on a phone, often in under five minutes, and often outside working hours.",
+      "wants": [
+        "One clear sentence about what the company does",
+        "A route to a human right now",
+        "One accountable party rather than a chain of vendors",
+        "A sense that the counterparty is durable and serious",
+        "To be able to send a photograph and get an answer"
+      ],
+      "fears": "Wasting time; being handled by a system; discovering later that nobody was actually responsible.",
+      "killers": ["No direct channel", "Corporate anonymity", "A long form as the only route", "A page that takes three screens to say what it does"],
+      "servedBy": "The hero and the persistent contact control. The existing hero — 'From an idea, a photograph, a sample or a drawing — to mass production' — is close to ideal for this persona: it names the input they actually have rather than the input a supplier would prefer. This is also the persona for whom WhatsApp is exactly right in Turkey, the Gulf and South Asia, and exactly wrong in Russia, China and Thailand."
+    }
+  ],
+  "personasOnOnePage": {
+    "principle": "Do not build four sections for four personas. Build ONE spine with four depths, and let each reader stop where their job ends. Bloat comes from repeating the argument at four levels of abstraction; depth comes from continuing the same argument into greater specificity.",
+    "mechanism": [
+      "Depth 1 — the hero. One sentence naming the input the buyer already has. Serves the owner/CEO completely; everyone else scrolls past it in two seconds.",
+      "Depth 2 — the route. Five stages, one accountable partner. Serves the production manager and orients everyone else. Already built.",
+      "Depth 3 — expandable engineering detail inside each stage. Serves the engineer. Invisible to those who do not open it, so it costs the other three personas nothing. The 'more detail / less detail' toggle already exists in common.json — this is what it is for.",
+      "Depth 4 — a quiet commercial band near the foot: quote structure, payment staging, tooling ownership, response window, delivery, one ungated download. Serves procurement. Deliberately unglamorous and deliberately last, because the CEO does not need it and the procurement manager will scroll to find it."
+    ],
+    "sharedElements": "One persistent contact control with two channels of equal weight. One language switcher. One factual footer with address, and a working week. Nothing else appears twice.",
+    "antiBloatRule": "Every new block must answer a question a named persona would actually ask, in words that persona would use. If it answers no question, it is decoration; if it answers a question already answered, it is repetition. Both should be cut. A shorter page with four real depths outperforms a longer page with four restatements."
+  },
+
+  "ipAndNda": {
+    "whatSeriousBuyersActuallyExpect": [
+      "That an NDA is offered BEFORE they are asked for files, not after they ask for one. Volunteering it is the signal; the document itself is close to worthless across this particular border.",
+      "That they are not required to disclose everything to get a first answer. The most reassuring thing a supplier can offer is a smaller first disclosure, not a bigger promise.",
+      "A NON-USE undertaking, not merely non-disclosure. Harris Sliwoski's core finding: a conventional NDA covers disclosure of trade secrets and leaves competitive USE of non-secret information wide open. Buyers who have been burned know this distinction; buyers who have not still respond to the plainer sentence.",
+      "Clarity on who owns the CAD — including native editable files, and including improvements the supplier proposes. Harris Sliwoski: 'all upgrades — regardless of who proposed or implemented them — belong to the original owner unless expressly agreed otherwise.'",
+      "That subcontractors are bound. Undisclosed mould-shop subcontracting is named as a red-flag behaviour, and it is how designs leak in practice — not through the supplier, through the supplier's supplier.",
+      "That the supplier will not file design or patent applications on the buyer's part. Named explicitly as a hostage tactic.",
+      "That the agreement names the correct registered legal entity, in the correct language, sealed correctly. This is the difference between a document and a gesture.",
+      "That the physical tool is marked with their identifier and segregated from other customers' tooling."
+    ],
+    "credibleWording": [
+      "'You do not need to send a full CAD package to get a first answer. A photograph and one dimension is enough to say whether it is worth going further.'",
+      "'An NDA can be signed before any detailed technical disclosure.' — the exact confirmed claim; use it verbatim.",
+      "'Your drawings, models and samples are used to quote your part and build your tool. They are not used to make the same part for anyone else, and they are not shown to another customer.' — non-use, stated plainly, no legal vocabulary.",
+      "'Improvements we suggest to your part belong to your part.'",
+      "'Native and neutral CAD (STEP, IGES) for your tool is yours, and you can have it at any time — not only when the relationship ends.' — the timing clause is the tell that the supplier has thought about this properly.",
+      "'No part of your tool is subcontracted without your written approval.'",
+      "'Your tool carries your tool number and is stored separately from other customers' tooling.'",
+      "'This is written into the order, not into this page.' — the single best closing line for this whole section. It moves the promise from marketing to contract, which is exactly where the buyer wants it."
+    ],
+    "redFlagWording": [
+      "'We respect your intellectual property.' Says nothing, costs nothing, means nothing, and is what every site says.",
+      "'100% confidential' / 'your design is completely safe with us.' Absolutes on an unenforceable promise read as the opposite of confidence.",
+      "'Our NDA is legally binding worldwide.' Claims enforceability the supplier cannot deliver, and any buyer with counsel will check.",
+      "A downloadable generic NDA PDF as the whole answer. It signals a template, and Harris Sliwoski's position on templates is unambiguous — 'Templates Are Not Contracts: They're Landmines.'",
+      "'We have never had an IP dispute.' Unverifiable, and it invites the buyer to imagine the first one.",
+      "'All our work is under NDA' as the explanation for having no portfolio. Flagged in claims.ts specifically. It is a recognised tell and buyers discount it automatically.",
+      "Long legal paragraphs on a marketing page. Buyers read length here as an attempt to bury something.",
+      "Any mention of registering IP in the supplier's own name 'for the customer's protection'. Named directly as a hostage tactic."
+    ],
+    "theHonestLimit": "Cross-border enforcement from Iran is, realistically, weak in both directions and a serious buyer's counsel will know it. So the site must not compete on legal remedy — it will lose. It should compete on EXPOSURE REDUCTION: staged disclosure so the buyer risks less, non-use stated in plain language so the promise is at least legible, tool marking and segregation so the physical risk is visible, subcontractor control so the leak path is closed, and CAD release on demand so the buyer is never trapped. Every one of those is a mechanism the buyer can verify by observation rather than by litigation. That is the only version of this argument that survives scrutiny."
+  },
+
+  "rfqFriction": {
+    "evidence": [
+      "Average form length is 5 fields; over 30% of marketers report their highest conversion from 4-field forms; cutting 4 fields to 3 lifts conversion by roughly 50% (HubSpot, Quicksprout via WPForms).",
+      "Multi-step forms convert 86% higher than single-step, yet only 40% of marketers use them (HubSpot via WPForms). For industrial RFQs this is the resolution of the whole problem: the information genuinely IS needed, so stage it rather than cut it.",
+      "81% of people have abandoned at least one web form. Stated reasons: security concerns 29%, form length 27%, adverts or upselling 11%, unclear purpose of data collection 10% (The Manifest via WPForms). Note that security and unclear purpose together (39%) outweigh length (27%) — for a supplier in an unfamiliar country, the trust problem is larger than the length problem.",
+      "Average abandonment occurs at 1 minute 43 seconds (Feathery via WPForms).",
+      "Phone and email fields are among the highest-abandonment field types after passwords (Zuko via WPForms). A required phone field on a first-contact form from a foreign supplier is a significant, and avoidable, cost.",
+      "84% of people prefer to complete forms on laptop or desktop, and desktop converts at 3% against mobile 2% (The Manifest, Statista via WPForms). But industrial buyers in this specific market frequently arrive on mobile, which is an argument for a non-form channel rather than for a mobile form.",
+      "NN/g: registration barriers before credibility is established are a primary reason B2B users leave; substantial information should be available pre-registration.",
+      "6sense: buyers make first contact at 61% of the way through the journey, with 94% having already ranked their shortlist. The form is therefore not persuading anyone — it is a toll gate placed in front of a decision that is already made. Every field is a chance to lose a buyer who had already chosen."
+    ],
+    "theIndustrialParadox": "A useful moulding RFQ genuinely needs 3D geometry, a 2D drawing with GD&T, material grade, quantity tiers, finish, tolerance intent and business terms. RapidDirect's guide is explicit that every missing item becomes a supplier assumption and assumptions are priced conservatively — ambiguous tolerances 'add risk premiums'. So the buyer's interest and the supplier's interest both argue for a LONG form, and the conversion data argues for a short one. Cutting the form does not solve this; it just moves the missing information into the first email.",
+    "resolution": [
+      "Split intake into two artefacts that serve different moments. (1) A two-field opening: what the part is, and how to reach you — plus a file attachment. That is the whole first step. (2) A complete RFQ checklist, published as an ungated page and a downloadable document, for the buyer who is ready.",
+      "Make the checklist a gift rather than a demand. Frame it as what it actually is: 'Every blank in an RFQ becomes an assumption, and assumptions get priced conservatively. Here is the list, so you can price the same part fairly with anyone.' The buyer will use it on competitors too — which is fine, because the supplier who taught them to read the quote is the supplier they trust to read it with.",
+      "Never require a phone number to start. It is a high-abandonment field and, from an unfamiliar country, it is the specific field that triggers the 29% security concern.",
+      "Never gate anything. NN/g is unambiguous that registration barriers before credibility destroy B2B trust, and this site has less credibility to spend than most.",
+      "Accept a file attachment on the very first contact. A buyer with a STEP file open is a buyer at maximum intent, and a form that cannot receive it converts intent into friction. WhatsApp handling documents up to 100MB is a genuine, honest advantage here — say so.",
+      "State explicitly what an incomplete enquiry gets: 'Send what you have. If something is missing we will tell you what it is and why it changes the answer.' This removes the buyer's fear of asking badly, which is the real reason industrial buyers stall at the form.",
+      "Repeat the entry point at the foot of every industry page with a prefill specific to that industry — already the design in WhatsAppButton.astro, which is the right instinct."
+    ]
+  },
+
+  "whatsappByRegion": {
+    "summaryJudgement": "WhatsApp-first is correct for roughly half of this site's language set and a liability for the other half. Treating it as the universal primary CTA — which is the current architecture, with WhatsAppButton.astro as 'the conversion control' on every page — is a genuine strategic error for ru, zh, th and, in a different way, for European buyers. The fix is not to demote WhatsApp; it is to make the channel a function of locale, and to give email equal weight everywhere.",
+    "regions": [
+      {
+        "region": "Turkey (tr)",
+        "verdict": "WhatsApp-first is correct and should be the primary CTA",
+        "evidence": "WhatsApp is near-universal in Turkey and fully normalised for business, including B2B supplier contact. Wikipedia lists Turkey among countries with restriction history, but WhatsApp remains the dominant messenger in practice; the 2021 privacy-policy backlash pushed a minority to BiP and Telegram without displacing it.",
+        "channelOrder": ["WhatsApp", "Email", "Phone"],
+        "note": "Turkish-language fluency matters more than channel choice here. A Turkish buyer reading translated-sounding Turkish will not message on any channel."
+      },
+      {
+        "region": "Gulf — UAE, Saudi, Qatar, Kuwait, Oman (ar)",
+        "verdict": "WhatsApp-first for TEXT, but never offer a WhatsApp call",
+        "evidence": "Wikipedia (Telecommunications in the UAE): 'All or most VoIP services are blocked. Both WhatsApp and Snapchat calling functions were also blocked in the UAE, to comply with VoIP regulations.' The March 2020 partial relaxation still left WhatsApp, FaceTime and Skype blocked. Text messaging is unaffected and is entirely business-normal across the Gulf.",
+        "channelOrder": ["WhatsApp (text)", "Phone (normal telephony)", "Email"],
+        "note": "A 'call us on WhatsApp' CTA fails outright for a UAE buyer and signals that the supplier does not know the region. Any escalation to voice must be a normal telephone number. This is a small detail with a disproportionate credibility cost."
+      },
+      {
+        "region": "South Asia — India, Pakistan, Bangladesh (ur, en)",
+        "verdict": "WhatsApp-first, strongly",
+        "evidence": "Wikipedia: by 2016 WhatsApp had become 'the primary means of Internet communication' across the Indian subcontinent; India is its largest market. WhatsApp Business is the default channel for SME industrial trade.",
+        "channelOrder": ["WhatsApp", "Phone", "Email"],
+        "note": "This is the region where a long RFQ form performs worst and a photo-plus-message intake performs best. The Urdu locale is well judged."
+      },
+      {
+        "region": "South-East Asia — Thailand (th), Vietnam, Indonesia, Malaysia, Singapore",
+        "verdict": "Split. WhatsApp-first is WRONG for Thailand specifically.",
+        "evidence": "WhatsApp is strong in Indonesia, Malaysia and Singapore. Thailand is a LINE market, not a WhatsApp market, and Vietnam is a Zalo market — in both, WhatsApp penetration is marginal and a WhatsApp CTA reads as foreign.",
+        "channelOrder": ["Email", "Phone", "WhatsApp (as an option only)"],
+        "note": "Since this project ships a Thai locale, the th pages should lead with email and a form, not WhatsApp. If a LINE official account is ever available it belongs here; until then, email is the honest primary."
+      },
+      {
+        "region": "China (zh)",
+        "verdict": "WhatsApp is unusable. WeChat or email.",
+        "evidence": "WhatsApp is blocked in mainland China (listed in Wikipedia's bans section); WeChat is the business channel and is also on Russia's banned-for-government-use list, which is irrelevant here but indicates its reach.",
+        "channelOrder": ["WeChat", "Email", "Phone"],
+        "note": "CONTACT.wechat already exists as a pending value in site.ts — that is the correct instinct and it is a blocking item for the zh locale. A Chinese-language page whose only CTA is WhatsApp is a page with no CTA."
+      },
+      {
+        "region": "Russia (ru)",
+        "verdict": "WhatsApp is a genuine liability. Email and phone must lead.",
+        "evidence": "Wikipedia (Internet censorship in Russia): 'By 2026, internet censorship had escalated to the point of widespread mobile Internet outages, VPN restrictions, and the blocking and throttling of Telegram and WhatsApp in favor of the state-controlled Max.' Roskomnadzor was already 'imposing restrictions of the use of WhatsApp' by September 2025. MAX was made the official national messenger on 15 July 2025 and mandatory for pre-installation from 1 September 2025. WhatsApp, Telegram, Viber, Teams, Signal and WeChat are all banned for use in Russian government organisations (2023, 2024).",
+        "channelOrder": ["Email", "Phone", "Telegram (degraded but still used)", "WhatsApp (last)"],
+        "note": "Two separate problems compound here: the channel may not work, and a Russian corporate buyer may be formally prohibited from using it. Email is the only channel that is both reliable and defensible. The ru pages should not lead with a WhatsApp button."
+      },
+      {
+        "region": "Armenia (hy)",
+        "verdict": "WhatsApp works, but is not the only default. Offer three.",
+        "evidence": "Viber has historically been unusually dominant in Armenia and the wider Caucasus, with Telegram and WhatsApp both in common use. ITA: 'Personal contact is key in Armenia'; in-person interaction is standard and 'phone-based support remains uncommon' — meaning the messenger substitutes for a visit rather than for a phone call.",
+        "channelOrder": ["WhatsApp", "Viber", "Telegram", "Email", "Phone"],
+        "note": "Armenia is the most relationship-driven market in the set. The channel matters less than a named human and Armenian-language copy. Note ITA's observation that Armenian is the official language for advertising material, with foreign-language text permitted in smaller script — the hy locale is not optional for this market."
+      },
+      {
+        "region": "Europe (en, plus EU buyers on other locales)",
+        "verdict": "WhatsApp is a liability as the PRIMARY channel, acceptable as an option",
+        "evidence": "WhatsApp penetration is very high across Southern and Eastern Europe and high in Germany and the Netherlands, so the channel exists. But European B2B procurement runs on an auditable paper trail: a procurement manager needs a message they can forward to a buying committee, attach to a requisition, and retain. NN/g's B2B research shows business buyers want substantial information and a documented process, and many European companies formally restrict consumer messengers for supplier communication on records-retention and data-protection grounds.",
+        "channelOrder": ["Email", "Phone", "WhatsApp (offered, never primary)"],
+        "note": "6sense: 94% of buyers have already ranked their shortlist before contact. For a European buyer the first contact is often an internal forward, not a message — and a WhatsApp thread cannot be forwarded into a procurement system."
+      },
+      {
+        "region": "Iran (fa) — and the supplier's own side of every conversation",
+        "verdict": "Do not build a single-channel dependency in either direction",
+        "evidence": "Domestic connectivity in Iran is subject to periodic national throttling and shutdown, and WhatsApp access there has itself been blocked and unblocked over recent years. The risk is not only that the buyer cannot reach the channel — it is that the supplier cannot.",
+        "channelOrder": ["Email (hosted, reachable from anywhere)", "WhatsApp", "Phone", "Telegram"],
+        "note": "This is the strongest operational argument for email as a first-class channel rather than a fallback: a hosted mailbox is the only channel that keeps working when the messenger does not, and an enquiry that arrives while the messenger is down is still an enquiry when it comes back. The 48-hour window is only credible if the channel that carries it is resilient."
+      }
+    ],
+    "theDiscreetSecondaryChannel": {
+      "recommendation": "A plain, human email address — a named person, not info@ — displayed at equal visual weight to WhatsApp on every page, in every locale, with no explanation whatsoever.",
+      "why": [
+        "It is forwardable, archivable and attachable to a requisition — the three things a procurement manager needs and no messenger provides.",
+        "It leaves no personal mobile number in a foreign supplier's phone, which is a real and almost never-articulated concern for European, Russian and Gulf buyers dealing with an unfamiliar country.",
+        "It is channel-neutral: it works identically in Russia, China, Thailand, the Gulf and Europe, where no single messenger does.",
+        "It survives connectivity disruption on either side.",
+        "It is the discreet option by default, without anyone having to say the word discreet."
+      ],
+      "howToPresentIt": "Silently. Two controls, side by side, equal weight, no labels like 'or contact us privately' and no explanation of why an alternative exists. The moment discretion is named it becomes conspicuous and the buyer starts wondering what they are being protected from. A second button is the whole solution.",
+      "secondaryOptions": "Telegram for Armenia, Russia, Iran and Central Asia (already pending in site.ts — worth filling). WeChat for China (pending — blocking for zh). A normal telephone number everywhere, and especially for the Gulf where WhatsApp voice does not work."
+    }
+  },
+
+  "copyDirectives": [
+    {
+      "rule": "Name the country in the first screen",
+      "do": "Put the city and country in the hero area or immediately beneath it, and again in the footer. Plain, unhedged, one line.",
+      "dont": "Do not let a buyer discover the country in a footer address after three minutes, and do not substitute 'global' or 'international' for the fact.",
+      "because": "A hidden origin is assumed to be a concealed origin, and the assumption is always worse than the fact. It also filters unqualified enquiries early, which protects the response window."
+    },
+    {
+      "rule": "Lead with the part, not the company",
+      "do": "Open on what the reader has and what comes back — the existing 'From an idea, a photograph, a sample or a drawing — to mass production' is close to ideal because it names the input the buyer actually possesses.",
+      "dont": "Do not open with founding year, values, mission, or 'we are a leading manufacturer of'.",
+      "because": "Gate 1 is 'does this supplier's world contain my problem'. A company-first opening answers a question nobody asked and burns the only fifteen seconds available."
+    },
+    {
+      "rule": "Never render a number without a unit and a period",
+      "do": "'1,000+ completed projects since 2006.' 'Tooling experience up to 46 cavities.'",
+      "dont": "No '99%', no '500+', no '20 years of excellence', no percentage savings, no satisfaction score.",
+      "because": "Round unanchored numbers are read as decoration and, worse, they occupy the position where evidence would be — implying evidence was sought and not found."
+    },
+    {
+      "rule": "Substitute demonstrated engineering for every credential the site cannot claim",
+      "do": "Where a certification would sit, put a decision and its consequence: why a hot runner starts paying above roughly 20–30,000 units; why wall thickness drives cycle time; why a gate moves off a sealing face.",
+      "dont": "Do not mention certification at all — not to claim it, not to explain its absence, not to argue that it does not matter.",
+      "because": "Certification is a proxy for documented process. The proxy is unavailable here; the process is not. A page that argues against certification sounds exactly like a page written by someone who could not get one."
+    },
+    {
+      "rule": "Ban stock photography without exception",
+      "do": "Ship real photographs of tools, parts and the floor, including mid-process. If none exist yet, ship typography, diagrams and drawings instead.",
+      "dont": "Not one stock CNC spindle, not one anonymous robot arm, not one rendered factory.",
+      "because": "'Uses stock photos' is named as the primary broker red flag in supplier vetting, and generic imagery is named by NN/g as an active trust destroyer. FEATURES.realProjectMedia is currently false — respect it."
+    },
+    {
+      "rule": "Attach a note to every claim",
+      "do": "Keep the existing pattern in common.json where every trust item carries an explanatory note — the note is doing more work than the claim.",
+      "dont": "Do not ship a bare claim strip.",
+      "because": "The note is where judgement becomes visible. 'Tooling to 46 cavities' is a boast; 'high cavitation is a tooling discipline, not a machine specification' is an argument, and it converts a capability into a distinction."
+    },
+    {
+      "rule": "State the response window as a deliverable, not a duration",
+      "do": "Say what arrives: feasibility direction, what is missing, and the next step. Say what does not: a final quotation.",
+      "dont": "Do not write 'fast response', '24/7', or 'we reply quickly'.",
+      "because": "Every site promises speed and no buyer believes any of them. A promise that names its own limits is the only kind that gets tested rather than discounted — and buyers do test it."
+    },
+    {
+      "rule": "Put tooling ownership above warranty, and above almost everything else",
+      "do": "Give it its own block: property from payment, held in custody, marked with the customer's tool number, segregated, released on written request, CAD released on demand, no subcontracting without written approval, improvements belong to the tool's owner.",
+      "dont": "Do not bury it in an FAQ and do not leave it unsaid.",
+      "because": "'Possession gives the factory leverage even when your ownership claim is strong.' It is the fear that keeps buyers with expensive incumbents, almost no competitor addresses it, and it is the one place a supplier without certification can outrank one with it. NOTE: this needs a new confirmed claim in claims.ts before it can ship."
+    },
+    {
+      "rule": "Promise non-use, not confidentiality",
+      "do": "'Your drawings, models and samples are not used to make the same part for anyone else, and are not shown to another customer.'",
+      "dont": "Do not write 'we respect your IP', '100% confidential', or claim enforceability anywhere.",
+      "because": "A conventional NDA covers disclosure and leaves competitive use open; non-use is the promise that addresses the actual fear, and it is legible without legal vocabulary."
+    },
+    {
+      "rule": "Reduce first disclosure instead of promising legal protection",
+      "do": "'You do not need to send a full CAD package to get a first answer. A photograph and one dimension is enough.'",
+      "dont": "Do not lead the IP section with the NDA.",
+      "because": "Cross-border enforcement is genuinely weak and a serious buyer's counsel knows it. Exposure reduction is verifiable by observation; legal remedy is not. Compete where the claim survives checking."
+    },
+    {
+      "rule": "Never use an NDA to explain an absent portfolio",
+      "do": "Publish anonymised but specific engineering narratives — sector, part type, constraint, decision, reason.",
+      "dont": "Never write 'all our work is under NDA'.",
+      "because": "It is a recognised tell, flagged in claims.ts, and buyers discount it automatically because they have heard it from suppliers who had no history."
+    },
+    {
+      "rule": "Give email equal weight to WhatsApp on every page, in every language",
+      "do": "Two controls, side by side, same visual weight. A named human address rather than info@.",
+      "dont": "Do not make WhatsApp the only route, do not make email the small grey link, and do not explain why an alternative exists.",
+      "because": "WhatsApp is blocked or degraded in Russia and China, marginal in Thailand, voice-blocked in the UAE, and unforwardable for European procurement. And some buyers simply will not put a foreign number in their phone — a concern that must be solved silently, because naming it makes it conspicuous."
+    },
+    {
+      "rule": "Localise the channel, not only the words",
+      "do": "ru leads with email and phone. zh leads with WeChat. th leads with email. ar offers a telephone number for voice, never a WhatsApp call. tr and ur lead with WhatsApp. hy offers WhatsApp, Viber and Telegram.",
+      "dont": "Do not ship the same CTA component with the same channel priority across all nine locales.",
+      "because": "A CTA pointing at a blocked channel is not a weak CTA, it is no CTA — and it tells the buyer the supplier has never actually traded in their country."
+    },
+    {
+      "rule": "Publish the cost structure, never the cost",
+      "do": "Explain what drives tooling price (cavitation, steel selection, sliders and lifters, finish class) and what drives part price (cycle time, wall thickness, runner type, material), plus the amortisation arithmetic.",
+      "dont": "No published prices, no 'starting from', no percentage savings — all prohibited.",
+      "because": "Pricing opacity is the single most damaging B2B trust gap, and NN/g's guidance is to give pricing indicators even without figures. An explained cost model is a pricing indicator, and it teaches the buyer to read every competitor's quote — a durable favour that costs nothing."
+    },
+    {
+      "rule": "Say 'second-source readiness', never 'instant switchover'",
+      "do": "'Most second-source work starts small on purpose — a duplicate tool, a qualification run, a share of the volume.'",
+      "dont": "Never claim reserved capacity, guaranteed availability, or immediate production of a part whose tool is in another country.",
+      "because": "Both are prohibited in claims.ts and both are implausible to anyone who has actually run a second-source qualification. Dual-source splits are typically 80/20 or 70/30 to the incumbent — treating the small share as the real job is what reads as competent."
+    },
+    {
+      "rule": "Never criticise the incumbent",
+      "do": "'Tell us what your current supplier does well. It is faster to match a known standard than to discover one.'",
+      "dont": "No comparison tables against unnamed competitors, no 'tired of late deliveries?', no implication that the buyer's current arrangement is naive.",
+      "because": "The buyer chose the incumbent and frequently still works with them. Attacking the incumbent attacks the buyer's judgement, and second-source buyers are seeking to add an option, not to admit an error."
+    },
+    {
+      "rule": "Publish the schedule's shape, not its length",
+      "do": "Five stages, each with a gate, each gate naming what the buyer must supply or decide.",
+      "dont": "No lead-time figures anywhere — NEEDS-VERIFICATION.",
+      "because": "The drivers are more credible than the number, buyers discount published lead times anyway, and explaining what governs duration demonstrates exactly the judgement being shopped for."
+    },
+    {
+      "rule": "Two fields to open; the full RFQ as an ungated gift",
+      "do": "First contact: what the part is, how to reach you, and a file attachment. Separately, publish a complete RFQ checklist, ungated, framed as 'every blank becomes an assumption, and assumptions get priced conservatively — here is the list, so you can price the same part fairly with anyone.'",
+      "dont": "No long form as the entry point, no required phone field, no gate, no registration.",
+      "because": "4-field forms convert best and 4-to-3 lifts conversion ~50%, while multi-step converts 86% higher; and registration barriers before credibility destroy B2B trust. Splitting intake satisfies both the conversion data and the RFQ-completeness problem."
+    },
+    {
+      "rule": "State a limit on every page",
+      "do": "Name one thing the company will not promise, cannot show yet, or does not do — in the same voice as everything else.",
+      "dont": "Do not present an unbounded capability set.",
+      "because": "Every supplier claims capability and almost none states a boundary. A stated boundary is unfakeable evidence that the other statements were filtered too. This is how the claim register's constraints become the site's voice rather than its handicap."
+    },
+    {
+      "rule": "Every sentence must be traceable to a confirmed claim",
+      "do": "Before shipping any line of copy, map it to an id in claims.ts with status 'confirmed'. Run the FORBIDDEN_PHRASES lint on all nine locales, not only English.",
+      "dont": "Do not let a translator introduce a claim the English page does not make — this is the most likely route to an overclaim shipping unnoticed.",
+      "because": "Public research establishes facts about an industry and never about this company. Nine locales means nine chances for that boundary to be crossed by someone working without the register in front of them."
+    }
+  ],
+
+  "homepageImplications": {
+    "coreStrategicPosition": "This site cannot win on credentials, price, scale or references — all four are prohibited or unverified. It can only win on demonstrated engineering judgement and conspicuous operational honesty. Every design and copy decision should be tested against one question: does this make the reader more certain that a competent person is on the other end? That is the entire proposition, and it is a sufficient one — because it is precisely what certification is a proxy for, and because almost no competitor in this segment bothers to demonstrate it.",
+    "sectionBySection": [
+      {
+        "section": "Hero",
+        "job": "Pass Gate 0 and serve the owner/CEO completely",
+        "keep": "The input list — an idea, a photograph, a physical sample, a drawing. It names what the buyer actually has rather than what a supplier would prefer, and it is the most differentiated sentence on the site.",
+        "add": "City and country, one line, unhedged. Working week if space allows.",
+        "remove": "Nothing. It is close to right.",
+        "risk": "If any stock imagery appears here the page dies before the copy is read."
+      },
+      {
+        "section": "Trust strip",
+        "job": "Convert the four confirmed facts into four arguments",
+        "keep": "The note-under-claim pattern. The notes are doing the persuasive work.",
+        "add": "Consider promoting tooling ownership into this strip once a confirmed claim exists — it is a larger buyer concern than warranty or delivery.",
+        "remove": "Resist any pressure to expand this into a stat wall. Four anchored facts outperform eight unanchored ones.",
+        "risk": "The response-window item is the site's most testable promise. If operations cannot keep 48 business hours, this strip becomes the site's biggest liability rather than its anchor."
+      },
+      {
+        "section": "The route (five stages)",
+        "job": "Serve the production manager on the surface and the engineer underneath",
+        "keep": "'One chain, five stages, one accountable partner' and the framing that handovers are where projects fail — that is a genuine insight and it is the honest version of the single-accountability claim.",
+        "add": "Expandable engineering detail inside each stage, using the existing more/less toggle. This is where the certification gap gets closed, one specific decision at a time.",
+        "remove": "Any stage described in adjectives rather than decisions.",
+        "risk": "One technical error here loses the engineer permanently, and the engineer's verdict is delivered in one sentence to the person with the budget."
+      },
+      {
+        "section": "Second source (recommended as a distinct block)",
+        "job": "Give procurement a small, reversible, approvable first step",
+        "add": "Readiness language, the duplicate-tool-instead-of-transfer argument, the qualification-run sequence, and an explicit statement that starting small is correct rather than provisional.",
+        "avoid": "Reserved-capacity claims, switchover promises, incumbent criticism.",
+        "why": "It matches how procurement actually onboards an unfamiliar overseas supplier — Conditional before Approved — and it asks for a decision the buyer can make without resolving every objection on the list first."
+      },
+      {
+        "section": "Commercial band (recommended, new)",
+        "job": "Serve the procurement manager, who will scroll to find it",
+        "add": "How a quote is structured, how payment is staged against verifiable events, how tooling is owned and released, what the warranty framework is and why it is per project, and one ungated downloadable document.",
+        "tone": "Flat, unexcited, near-legal. This persona is repelled by enthusiasm and reassured by dryness.",
+        "why": "It is the only section that gives a procurement manager something to attach to a supplier file, which is often literally the deliverable of an audit-driven second-source search."
+      },
+      {
+        "section": "Contact",
+        "job": "Not lose a buyer who has already decided",
+        "add": "Two equally weighted channels, locale-aware in priority. A named human. A file-attachment route. Two fields maximum. The full RFQ checklist as an ungated download beside it, never as a gate.",
+        "remove": "Any required phone field. Any registration.",
+        "risk": "Every pending value in site.ts — WhatsApp number, email, phone, address, Telegram, WeChat — is a hole in this section. The email address and the physical address are the two blocking items; without them the site cannot pass Gate 0 or Gate 2 regardless of how good the copy is."
+      }
+    ],
+    "whatToBuildNext": [
+      "Fill EMAIL_TBD, PHONE_TBD and the address. These are not launch details, they are trust infrastructure — NN/g names prominently displayed contact information as a primary credibility factor and the site currently has none of it.",
+      "Get a confirmed claim for tooling ownership into claims.ts. It is the highest-leverage differentiator available and it is currently absent from the register entirely.",
+      "Produce one ungated downloadable RFQ checklist. Highest return per hour of any single addition — it substitutes for certification, gives procurement a file artefact, and gets forwarded inside the buying committee.",
+      "Get real photography. FEATURES.realProjectMedia being false is the single largest unaddressed trust gap after the missing contact details.",
+      "Make WhatsAppButton.astro locale-aware in channel priority rather than universal.",
+      "Fill TELEGRAM_TBD (Armenia, Russia, Iran, Central Asia) and WECHAT_TBD (blocking for the zh locale).",
+      "Have every locale reviewed by a native industrial speaker, not a translator. A fluent Turkish or Russian page proves market presence; a clumsy one disproves it and fails Gate 0 in that market."
+    ]
+  }
+}

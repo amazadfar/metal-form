@@ -1,0 +1,143 @@
+---
+/**
+ * The closing block of every page.
+ *
+ * The headline and the pre-filled message are written per vertical — a bottler
+ * is asked for a bottle and a cap, an automotive buyer for a part and a drawing.
+ * A generic "Contact us" would waste the one moment the visitor is ready to act.
+ */
+import WhatsAppButton from './WhatsAppButton.astro';
+import { localePath, type Locale } from '../i18n/locales.ts';
+import { getCommon } from '../content/index.ts';
+import type { Cta } from '../content/types.ts';
+import type { CtaSource } from '../lib/contact.ts';
+import { availableChannels } from '../lib/contact.ts';
+import { FACTS } from '../config/site.ts';
+
+interface Props {
+  locale: Locale;
+  cta: Cta;
+  source: CtaSource;
+  /** Inverts the block. Used where the page ends on a dark note. */
+  inverse?: boolean;
+  /** Index shown in the eyebrow, e.g. '08'. */
+  index?: string;
+  id?: string;
+}
+
+const { locale, cta, source, inverse = false, index, id = 'contact' } = Astro.props;
+const c = getCommon(locale);
+const channels = availableChannels();
+---
+
+<section
+  class:list={['cta', inverse && 'cta--inverse']}
+  id={id}
+  data-reveal
+>
+  <div class="shell cta__inner">
+    <div class="cta__lede">
+      {index && <p class="eyebrow"><span>{index}</span></p>}
+      <h2 class="cta__head t-h2">{cta.headline}</h2>
+      <p class="cta__body t-lead">{cta.body}</p>
+    </div>
+
+    <div class="cta__act">
+      <div class="cta__buttons">
+        <WhatsAppButton
+          locale={locale}
+          prefill={cta.prefill}
+          label={cta.action}
+          source={source}
+          size="lg"
+        />
+        {cta.actionAlt && (
+          <a class="btn btn--ruled btn--lg" href={localePath(locale, 'contact')}>
+            <span>{cta.actionAlt}</span>
+            <svg class="btn__arrow" viewBox="0 0 16 12" aria-hidden="true" fill="none">
+              <path d="M1 6h13M9.5 1.2 14.3 6l-4.8 4.8" stroke="currentColor" stroke-width="1.4" />
+            </svg>
+          </a>
+        )}
+      </div>
+
+      <ul class="cta__assurances">
+        <li>
+          <span class="t-label">{c.trust.response}</span>
+          <span class="t-small">{c.trust.responseNote}</span>
+        </li>
+        <li>
+          <span class="t-label">{c.nda.heading}</span>
+          <span class="t-small">{c.nda.body}</span>
+        </li>
+        <li>
+          <span class="t-label">{c.trust.delivery}</span>
+          <span class="t-small">{c.trust.deliveryNote}</span>
+        </li>
+      </ul>
+
+      {cta.note && <p class="cta__note t-fine">{cta.note}</p>}
+
+      {!channels.whatsapp && (
+        /* Rendered only while the production number is outstanding. */
+        <p class="cta__pending t-fine">{c.contact.pendingNote}</p>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta {
+    padding-block: var(--section-y);
+    border-block-start: var(--rule);
+    background: var(--surface);
+  }
+  .cta--inverse {
+    background: var(--inverse);
+    color: var(--inverse-ink);
+    --ink: var(--inverse-ink);
+    --signal: var(--signal-inverse);
+    --signal-ink: var(--signal-inverse);
+    --accent: var(--accent-inverse);
+    --accent-deep: var(--accent-inverse);
+    --ink-muted: color-mix(in oklab, var(--inverse-ink) 62%, transparent);
+    --line: color-mix(in oklab, var(--inverse-ink) 18%, transparent);
+    /* Flip the solid button with the block. */
+    --btn-bg: var(--surface-raise);
+    --btn-fg: #14161A;
+    --btn-hover: var(--accent-wash);
+    border-block-start-color: transparent;
+  }
+  .cta--inverse .btn--whatsapp:hover { color: #14161A; }
+
+  .cta__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .cta__inner { grid-template-columns: 1fr; } }
+
+  .cta__head { max-inline-size: 16ch; }
+  .cta__body { margin-block-start: var(--sp-5); }
+  .eyebrow + .cta__head { margin-block-start: var(--sp-5); }
+
+  .cta__act { display: grid; gap: var(--sp-7); }
+  .cta__buttons { display: flex; flex-wrap: wrap; gap: var(--sp-4); }
+
+  .cta__assurances {
+    display: grid;
+    gap: var(--sp-4);
+    border-block-start: var(--rule);
+    padding-block-start: var(--sp-5);
+  }
+  .cta__assurances li { display: grid; gap: 0.3rem; }
+  .cta__assurances .t-small { color: var(--ink-muted); max-inline-size: 46ch; }
+
+  .cta__note { max-inline-size: 52ch; }
+  .cta__pending {
+    border-inline-start: 2px solid var(--signal);
+    padding-inline-start: var(--sp-4);
+    color: var(--ink);
+  }
+</style>

@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "title": "Metal Form — From an idea, photo, sample or drawing to mass production",
+    "description": "Engineering, tooling, manufacturing and supply of moulded plastic components. Mould design and manufacture, reverse engineering, DFM, multi-cavity tooling, production and second-source supply. Manufacturing since 2006.",
+    "ogTitle": "Metal Form — Engineering, tooling, manufacturing and supply",
+    "ogDescription": "Send a photograph, a sample, a drawing or a CAD file. We come back on geometry, tooling route, production economics and supply options. Initial response in 48 business hours."
+  },
+  "hero": {
+    "kicker": "Manufacturing since 2006",
+    "headline": [
+      "From an idea, a photograph,",
+      "a sample or a drawing —",
+      "to mass production."
+    ],
+    "lead": "You do not need a finished CAD package to start. Send what you have. We engineer the part, build the tooling, put it into production and keep supplying it.",
+    "inputs": [
+      "An idea",
+      "A photograph",
+      "A physical sample",
+      "A drawing or CAD file"
+    ],
+    "primary": "Send your project",
+    "secondary": "See what we do",
+    "note": "Initial technical response within 48 business hours. NDA first if you prefer.",
+    "facts": [
+      "Est. 2006",
+      "1,000+ projects",
+      "Tooling to 46 cavities",
+      "CATIA · SolidWorks"
+    ]
+  },
+  "process": {
+    "kicker": "The route",
+    "heading": "One chain, five stages, one accountable partner.",
+    "lead": "Most suppliers own one link of this chain and hand you the rest. We take responsibility for the whole route — and for the handovers between the stages, which is where projects usually fail.",
+    "steps": [
+      {
+        "index": "01",
+        "title": "Input",
+        "body": "A rough idea. A photograph of a competitor's part. A worn component with no drawing left anywhere. A sketch, a specification, a STEP file. Whatever exists is enough to open the conversation.",
+        "markers": [
+          "Photo · sample · sketch",
+          "STEP · IGES · X_T · STL",
+          "Or nothing but a problem"
+        ]
+      },
+      {
+        "index": "02",
+        "title": "Engineering",
+        "body": "The part is modelled or re-modelled, measured back from a sample if that is all there is, and reviewed for how it will actually mould. Wall thickness, draft, gate position, undercuts, tolerance — decided before steel is cut, because afterwards they cost ten times more.",
+        "markers": [
+          "CATIA · SolidWorks",
+          "Reverse engineering",
+          "DFM review"
+        ]
+      },
+      {
+        "index": "03",
+        "title": "Tooling",
+        "body": "Cavity count, runner strategy, cooling layout, mechanisms and steel are chosen against your volume and your part — not against a standard catalogue. Then the tool is built, sampled and corrected until the part is right.",
+        "markers": [
+          "Single to 46 cavities",
+          "Hot and cold runner",
+          "Slides · lifters · unscrewing"
+        ]
+      },
+      {
+        "index": "04",
+        "title": "Production",
+        "body": "The tool runs. Cycle, scrap, dimensional consistency and cavity-to-cavity spread are what determine your cost per part, and they are all decided long before the machine is switched on.",
+        "markers": [
+          "Cycle and scrap",
+          "Cavity-to-cavity spread",
+          "Cost per part"
+        ]
+      },
+      {
+        "index": "05",
+        "title": "Supply",
+        "body": "Repeat orders, spare cores and cavities, a second tool held against a supply interruption, or the whole component supplied on a rolling schedule. The relationship does not end at tool handover.",
+        "markers": [
+          "Rolling supply",
+          "Spares and change parts",
+          "Second-source readiness"
+        ]
+      }
+    ],
+    "modular": "Every stage can also be bought on its own. Engineering only. A tool only. A DFM review of a design somebody else made. Production of a tool you already own. Take the whole chain or one link of it."
+  },
+  "pillars": {
+    "kicker": "Why buyers move",
+    "heading": "Three reasons a manufacturer changes supplier.",
+    "lead": "Not one of them is a lower quotation on the same drawing.",
+    "items": [
+      {
+        "index": "01",
+        "title": "Better production economics",
+        "body": "The price of a moulded part is set long before anyone quotes it — by the geometry, the number of cavities, the runner, the cooling and the cycle. We look at all of them, not just at the number at the bottom of your enquiry.",
+        "points": [
+          "Wall thickness and material volume — the resin is usually the largest line in the cost",
+          "Cavity count against real annual volume, not against a catalogue",
+          "Runner strategy and gate position, and what they cost per shot",
+          "Cooling layout and the cycle seconds it buys back",
+          "Part consolidation, where three mouldings and an assembly step become one"
+        ],
+        "outcome": "Where there is nothing to improve we will tell you that too, and quote the part as drawn.",
+        "figure": {
+          "caption": "Cost of one moulded part",
+          "note": "Proportions illustrative. The split is a per-project calculation.",
+          "rows": [
+            {
+              "label": "Resin",
+              "value": "46%"
+            },
+            {
+              "label": "Machine time",
+              "value": "24%"
+            },
+            {
+              "label": "Tool amortisation",
+              "value": "14%"
+            },
+            {
+              "label": "Scrap",
+              "value": "8%"
+            },
+            {
+              "label": "Handling and packing",
+              "value": "8%"
+            }
+          ]
+        }
+      },
+      {
+        "index": "02",
+        "title": "One accountable partner",
+        "body": "Engineering, tooling, production and supply under one responsibility. No triangle between a designer who blames the toolmaker, a toolmaker who blames the moulder, and a moulder who blames the design.",
+        "points": [
+          "One technical contact from first enquiry to running production",
+          "Design decisions taken with the tool and the process already in view",
+          "Tool corrections handled without a commercial argument about whose fault it was",
+          "Spares, change parts and modifications from the people who built the tool"
+        ],
+        "outcome": "The route is coordinated by Metal Form. The responsibility for it is ours.",
+        "figure": {
+          "caption": "Three suppliers",
+          "captionAlt": "One partner",
+          "note": "Metal Form coordinates the route and carries the responsibility for it.",
+          "rows": [
+            {
+              "label": "Design",
+              "value": "DES"
+            },
+            {
+              "label": "Toolmaker",
+              "value": "TOOL"
+            },
+            {
+              "label": "Moulder",
+              "value": "MOULD"
+            },
+            {
+              "label": "Each handover is a gap",
+              "value": ""
+            }
+          ],
+          "chain": [
+            "Engineering",
+            "Tooling",
+            "Production",
+            "Supply"
+          ],
+          "chainNote": "One contract · one contact"
+        }
+      },
+      {
+        "index": "03",
+        "title": "Second-source readiness",
+        "body": "One tool, in one plant, in one country, is a single point of failure for a product line. A second route can be prepared before it is needed rather than improvised afterwards.",
+        "points": [
+          "A duplicate or backup tool, built to the same part specification",
+          "A second production route for a component already running elsewhere",
+          "Additional capacity for a demand peak or a seasonal window",
+          "Re-tooling for a component whose original tool is worn, lost or obsolete"
+        ],
+        "outcome": "Readiness, not a promise of reserved capacity. Capacity is reserved by contract or not at all — and we will say which.",
+        "figure": {
+          "caption": "One route",
+          "captionAlt": "Two routes",
+          "note": "Readiness — not reserved capacity. Capacity is reserved by contract or not at all.",
+          "rows": [
+            {
+              "label": "Plant",
+              "value": ""
+            },
+            {
+              "label": "Tool",
+              "value": ""
+            },
+            {
+              "label": "Line",
+              "value": ""
+            },
+            {
+              "label": "One failure stops the line",
+              "value": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "bento": {
+    "kicker": "Industries",
+    "heading": "Find your part.",
+    "lead": "Each industry buys different geometry, worries about different failures and measures cost in a different unit. Open the one you work in — the page is written for it, not adapted to it.",
+    "fallback": "Your project does not need to fit a category.",
+    "fallbackAction": "Open custom projects"
+  },
+  "proof": {
+    "kicker": "Evidence",
+    "heading": "What we will and will not show you.",
+    "lead": "More than a thousand projects have been completed since 2006, across tooling, engineering and production. Most of them belong to customers who did not agree to have their parts published, and we are not going to publish them anyway.",
+    "disclosure": "Every drawing and animation on this site is a schematic, drawn to explain engineering. None of it is a photograph of our equipment or of finished work. When a customer gives written permission, real project media appears here — labelled as real, and identified only as far as that customer allows."
+  },
+  "about": {
+    "kicker": "Who you would be working with",
+    "heading": "A tooling workshop that grew into an engineering and supply business.",
+    "body": [
+      "Metal Form has been building moulds and manufacturing components since 2006. The foundation is mould making — injection, PET, blow and die-cast tooling, multi-cavity work, hot and cold runner systems, insert tooling and the mechanisms that make difficult geometry possible.",
+      "Around that foundation the business now coordinates engineering, production and supply. To a customer that means one contract, one technical contact and one party accountable for the outcome — whether the work is a single tool or a component supplied every month for years.",
+      "We are not a multinational and we do not pretend to be. What that buys you is a shorter line between the person who reads your drawing and the person who cuts the steel."
+    ],
+    "position": "Engineering, tooling, manufacturing and supply — coordinated by one partner who is answerable for the result."
+  },
+  "cta": {
+    "headline": "Send the part. Or the photograph of it.",
+    "body": "Tell us what it has to do, roughly how many you need, and what you already have — a drawing, a sample, a CAD file or nothing but the problem. We come back on geometry, tooling route, production economics and supply options.",
+    "action": "Send your project",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form. I have a component I would like evaluated.\n\nPart: \nIndustry: \nAnnual volume: \nMaterial (if known): \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: ",
+    "note": "Initial technical response within 48 business hours. We can sign an NDA before you send anything detailed."
+  },
+  "diagram": {
+    "hero": {
+      "sketchNoteA": "≈ 40 mm?",
+      "sketchNoteB": "must seal",
+      "gate": "Gate",
+      "gateVestige": "Gate vestige",
+      "partingLine": "Parting line",
+      "cooling": "Cooling",
+      "ejectors": "Ejectors",
+      "draft": "Draft 1.5°",
+      "wall": "Wall 2.2",
+      "supply": "Continuous supply"
+    },
+    "process": {
+      "s1": "01 · What arrives",
+      "s2": "02 · Geometry decided",
+      "s3": "03 · The tool",
+      "s4": "04 · In production",
+      "s5": "05 · Supply",
+      "photo": "Photo",
+      "sample": "Sample",
+      "measured": "Measured from the part",
+      "drawing": "Drawing · STEP",
+      "wall": "Wall 2.2 — even",
+      "draft": "Draft 1.5°",
+      "gateHere": "Gate here",
+      "partingLine": "Parting line",
+      "slide": "Slide",
+      "cooling": "Cooling",
+      "clamp": "Clamp",
+      "injection": "Injection unit",
+      "resin": "Resin",
+      "cycleNote": "Cycle · scrap · cavity-to-cavity spread",
+      "schedule": "Rolling schedule",
+      "secondTool": "Second tool — held in reserve",
+      "spares": "Spare cores · cavities · change parts"
+    }
+  }
+}

@@ -1,0 +1,1303 @@
+{
+  "_meta": {
+    "researchDate": "2026-08-23",
+    "method": "64 live page captures analysed as raw HTML/CSS (fonts, CSS custom properties, hex palettes, JS libraries, hreflang, dir/logical properties, media formats) plus narrative reads of key pages and empirical Google Fonts CSS-API probes for subset coverage and real woff2 byte sizes.",
+    "usablePageCaptures": 64,
+    "geographies": [
+      "Portugal",
+      "Germany",
+      "Switzerland",
+      "Austria",
+      "Italy",
+      "Japan",
+      "China",
+      "Turkey",
+      "UK",
+      "Sweden",
+      "USA",
+      "Saudi Arabia",
+      "UAE"
+    ],
+    "caveat": "Raw-HTML analysis reveals type systems, palettes, libraries and i18n mechanics with high confidence. Composition and art direction were read narratively and are therefore reported as interpretation, not measurement."
+  },
+  "sources": [
+    {
+      "name": "Sandvik Coromant",
+      "url": "https://www.sandvik.coromant.com/en-gb",
+      "country": "SE",
+      "why": "Bespoke type system incl. a DEDICATED NUMERALS FACE (SandvikCoromantNumerals-Light) alongside SandvikSansHeadline/SandvikSansText. Warm-light palette #f7f5f1 / #ebe6dc / #beaf93 / #242424.",
+      "signal": "strong"
+    },
+    {
+      "name": "Sandvik Coromant knowledge hub",
+      "url": "https://www.sandvik.coromant.com/en-gb/knowledge",
+      "country": "SE",
+      "why": "Process taxonomy by OPERATION: 'General turning','Parting and grooving','Threading','Milling','Drilling','Reaming','Boring','Machine tools and tooling considerations','Materials','Machining formulas and definitions'. 40+ short 'Tips film' videos instead of illustrated diagrams.",
+      "signal": "strong"
+    },
+    {
+      "name": "Biesse",
+      "url": "https://www.biesse.com/ww/en",
+      "country": "IT",
+      "why": "NB International Pro + NB International Pro Mono (Neubau) — the most credible industrial type pairing found. Sticky + clip-path, no scroll-jack. H2 'Master of materials'.",
+      "signal": "strong"
+    },
+    {
+      "name": "Bodycote",
+      "url": "https://www.bodycote.com/",
+      "country": "UK",
+      "why": "Univers (LT 45 Light / 55 Roman / 65 Bold) + Jost. Tokens --background-color:#ffffff --text-color:#333333 --contrast-color:#F7F7F7 --active-color:#Ed1c24. 14 hreflang.",
+      "signal": "strong"
+    },
+    {
+      "name": "VulcanForms",
+      "url": "https://www.vulcanforms.com/",
+      "country": "US",
+      "why": "Homepage H2 chain IS the process: Material Selection > CAD Design > Preproduction Readiness > Part Simulation > Part Production > Test & Qualification. Per-sector token --pt-color: #1B5E84 / #5D5945 / #8C624A / #73838C. 8 <video>.",
+      "signal": "strong"
+    },
+    {
+      "name": "Meusburger",
+      "url": "https://www.meusburger.com/en/",
+      "country": "AT",
+      "why": "23 hreflang locales, /de-de style paths, language-switcher__globe-icon (globe not flags). Catalogue IA by part designation (E 5708, F/P, SB) and steel grade (1.2343 ESR, 1.2083, 1.2738). Four configurators. News = product changelog.",
+      "signal": "strong"
+    },
+    {
+      "name": "TRUMPF",
+      "url": "https://www.trumpf.com/en_INT/",
+      "country": "DE",
+      "why": "38 hreflang locales; /{lang}_{REGION}/ URLs incl. an explicit en_INT 'International English'. Whole brand runs on one accent #0033ba.",
+      "signal": "strong"
+    },
+    {
+      "name": "Bruderer",
+      "url": "https://www.bruderer.com/en/",
+      "country": "CH",
+      "why": "'Made for precision'. Light ground #f2f3f2 with deep green #02361d / #058748. Provenance in the FOOTER (founded 1943, 460 staff, 370 in Frasnacht). 168 webp + 90 srcset — best media discipline observed.",
+      "signal": "strong"
+    },
+    {
+      "name": "FOBOHA",
+      "url": "https://www.foboha.com/en/",
+      "country": "CH",
+      "why": "Navigation IS the mould typology ladder: Single-component > Stack > Multi-component > Stack-turning > Cube moulds.",
+      "signal": "strong"
+    },
+    {
+      "name": "Protolabs Network (Hubs)",
+      "url": "https://www.hubs.com/",
+      "country": "NL/US",
+      "why": "IBM Plex Mono + Circular. Sections 'Our ordering process' and 'The production process explained'. Light palette #0071e3 on #f0f0f0/#191919 with #e6f1fc tint.",
+      "signal": "strong"
+    },
+    {
+      "name": "Protolabs injection moulding service page",
+      "url": "https://www.protolabs.com/services/injection-molding/",
+      "country": "US",
+      "why": "NEGATIVE EXAMPLE for process visualisation: zero diagrams, one hero photo, process reduced to a services taxonomy, tolerance ('+/-0.003 in. plus resin tolerance') buried in an FAQ.",
+      "signal": "negative"
+    },
+    {
+      "name": "Protolabs",
+      "url": "https://www.protolabs.com/",
+      "country": "US",
+      "why": "13 hreflang incl. market-split English en-gb/en-ie/en-mt/en-nl. Light palette #ebf6ff / #0068ad.",
+      "signal": "strong"
+    },
+    {
+      "name": "GF Machining Solutions / United Machining",
+      "url": "https://www.gfms.com/en.html",
+      "country": "CH",
+      "why": "Noto Sans + Noto Sans Condensed, 75 inline SVG. Multi-brand division architecture; 'Meet us in person', 'Upcoming Trade Fairs', 'Find us near you'.",
+      "signal": "strong"
+    },
+    {
+      "name": "DMG MORI",
+      "url": "https://en.dmgmori.com/",
+      "country": "DE/JP",
+      "why": "Roboto + Roboto Condensed self-hosted with latin-ext AND cyrillic-ext subsets — direct evidence the machine-tool sector ships Cyrillic. 27 <video>, 79 SVG.",
+      "signal": "strong"
+    },
+    {
+      "name": "Marposs",
+      "url": "https://www.marposs.com/eng/",
+      "country": "IT",
+      "why": "Google Fonts loaded with subset=cyrillic,cyrillic-ext,latin-ext (Cyrillic evidence). NEGATIVE on URLs: /eng/ /ger/ /ita/ /fre/ 3-letter ISO 639-2 legacy codes.",
+      "signal": "mixed"
+    },
+    {
+      "name": "Makino",
+      "url": "https://www.makino.com/en-us/",
+      "country": "JP/US",
+      "why": "Noto Sans + 'DB Heavent Cond' (a Thai typeface) — evidence of real Thai deployment in industrial. GSAP + IntersectionObserver + sticky + mix-blend-mode.",
+      "signal": "mixed"
+    },
+    {
+      "name": "EOS",
+      "url": "https://www.eos.info/en-us",
+      "country": "DE",
+      "why": "Open Sans + Rotis (Otl Aicher). Inverse-pair tokens --siteheader-background #fff/#191919 and a per-section --random-highlight-theme-background:#00677d. 8 languages.",
+      "signal": "strong"
+    },
+    {
+      "name": "Hexagon",
+      "url": "https://hexagon.com/",
+      "country": "SE",
+      "why": "'From microns to Mars'. Aptos + Material Symbols Sharp, 78 inline SVG, 38 lazy images.",
+      "signal": "mixed"
+    },
+    {
+      "name": "Renishaw",
+      "url": "https://www.renishaw.com/en/",
+      "country": "UK",
+      "why": "16 languages with bare 2-letter hreflang codes.",
+      "signal": "strong"
+    },
+    {
+      "name": "Mikron",
+      "url": "https://www.mikron.com/",
+      "country": "CH",
+      "why": "'Creating value with passion for precision'. NEGATIVE detail: URL /cn but hreflang zh-hans — country code in path vs script subtag in hreflang.",
+      "signal": "mixed"
+    },
+    {
+      "name": "Willemin-Macodel",
+      "url": "https://www.willemin-macodel.com/en/",
+      "country": "CH",
+      "why": "Bright palette #f9fafb/#f3f4f6 ground, #202945 navy, #009ffd accent, #e5f5ff tint, #f5333f alarm. NEGATIVE: Poppins as brand face.",
+      "signal": "mixed"
+    },
+    {
+      "name": "Simoldes",
+      "url": "https://www.simoldes.com/",
+      "country": "PT",
+      "why": "Portugal's largest mould group. FF MetaPlus (Spiekermann) self-hosted — humanist signage grotesk. GSAP + curtains.js (rare WebGL in this sector). PT/EN + x-default.",
+      "signal": "strong"
+    },
+    {
+      "name": "Vangest",
+      "url": "https://www.vangest.com/",
+      "country": "PT",
+      "why": "'Moulding Life's Motion.' / 'End-to-End Capabilities with Global Support.' Deep blue #0033a0 + cyan #00acc9 on white.",
+      "signal": "strong"
+    },
+    {
+      "name": "Iberomoldes",
+      "url": "https://www.iberomoldes.pt/",
+      "country": "PT",
+      "why": "Founding company of the Marinha Grande cluster; accent #a82e00, 57 images, video hero.",
+      "signal": "medium"
+    },
+    {
+      "name": "Intermolde",
+      "url": "https://www.intermolde.pt/",
+      "country": "PT",
+      "why": "Glass-mould specialist. Copy is refreshingly specific: 'high quality moulds and acessories for IS machines', 'four specialized plants in the same area', 'Intermolde 51 Years'. Navy #020e28.",
+      "signal": "medium"
+    },
+    {
+      "name": "Moldoeste",
+      "url": "https://www.moldoeste.pt/",
+      "country": "PT",
+      "why": "112 images (part gallery density). Roboto. Red #b3282d / greys #414042.",
+      "signal": "medium"
+    },
+    {
+      "name": "Planimolde",
+      "url": "https://www.planimolde.pt/",
+      "country": "PT",
+      "why": "NEGATIVE EXEMPLAR: six Google families on one page — Poppins, Roboto, Hind Siliguri, Open Sans, Playfair Display, Dosis. 6 languages. WP page-builder.",
+      "signal": "negative"
+    },
+    {
+      "name": "Erofio",
+      "url": "https://www.erofio.pt/",
+      "country": "PT",
+      "why": "NEGATIVE: Exo 2 (sci-fi techno face) as brand type.",
+      "signal": "negative"
+    },
+    {
+      "name": "Tooling Portugal (cluster)",
+      "url": "https://www.toolingportugal.com/",
+      "country": "PT",
+      "why": "The Engineering & Tooling cluster body. NEGATIVE: Nunito (rounded, friendly) for a precision-engineering cluster.",
+      "signal": "negative"
+    },
+    {
+      "name": "Norm Holding",
+      "url": "https://www.normholding.com/en/",
+      "country": "TR",
+      "why": "Homepage is a SECTOR GRID: Fasteners, Hot Forging, Chemistry, Tooling and Machining, Stamping, Additive Manufacturing, Machinery and Automation, Agriculture and Food. 106 images, 90 lazy.",
+      "signal": "strong"
+    },
+    {
+      "name": "Beycelik Gestamp",
+      "url": "https://www.beycelikgestamp.com.tr/en/",
+      "country": "TR",
+      "why": "'Beycelik Gestamp in Numbers' + 'Facilities' + 'Technologies Details Products'. Swiper + AOS (template motion). EN/TR + x-default.",
+      "signal": "mixed"
+    },
+    {
+      "name": "SACMI",
+      "url": "https://www.sacmi.com/en-US",
+      "country": "IT",
+      "why": "Provenance numerals as headings: '€1526', '6521', '4912', '>70', 'INNOVATION SINCE 1919'. Minimal palette #030303/#efefef/#ef1b24.",
+      "signal": "strong"
+    },
+    {
+      "name": "Comau",
+      "url": "https://www.comau.com/en/",
+      "country": "IT",
+      "why": "'The Power of Automation'. 5 hreflang incl. pt-br and zh-hans. 22 <picture>.",
+      "signal": "medium"
+    },
+    {
+      "name": "Anduril",
+      "url": "https://www.anduril.com/",
+      "country": "US",
+      "why": "Helvetica Now Display + Elios, Lenis smooth-scroll, AVIF. Acid #dff140 with olive #505544 — a deliberate genre signal showing when DARK is legitimate (defence), and why it is not the industrial default.",
+      "signal": "strong"
+    },
+    {
+      "name": "Machina Labs",
+      "url": "https://machinalabs.ai/",
+      "country": "US",
+      "why": "Roboto + Roboto Mono; #ff9900 on white/#13100f. 'INTELLIGENT. AGILE. REAL METAL.'",
+      "signal": "medium"
+    },
+    {
+      "name": "Hadrian",
+      "url": "https://www.hadrian.co/",
+      "country": "US",
+      "why": "'The Future of American Production'. Header carries live clocks for CA/AZ/AL/DC — plant-time as a credibility device.",
+      "signal": "strong"
+    },
+    {
+      "name": "Velo3D",
+      "url": "https://velo3d.com/",
+      "country": "US",
+      "why": "NEGATIVE: Raleway as brand face for a metal-AM company.",
+      "signal": "negative"
+    },
+    {
+      "name": "Carbon",
+      "url": "https://www.carbon3d.com/",
+      "country": "US",
+      "why": "GSAP + Swiper on WordPress; #5f4bff. Section chain 'Our Technology' > 'Your Results' > 'Powered By Carbon'.",
+      "signal": "medium"
+    },
+    {
+      "name": "Formlabs",
+      "url": "https://formlabs.com/",
+      "country": "US",
+      "why": "'Tools That Bring Ideas to Life'. 13 <video>, 25 lazy images. Application ladder: Rapid Prototyping > Concept Exploration > Looks-Like Prototyping > Functional Prototyping > Product Validation.",
+      "signal": "strong"
+    },
+    {
+      "name": "Mitutoyo America",
+      "url": "https://www.mitutoyo.com/",
+      "country": "JP/US",
+      "why": "Sector grid Aerospace/Automotive/Medical/Energy. Open Sans + Oswald.",
+      "signal": "medium"
+    },
+    {
+      "name": "MOLDINO (Mitsubishi)",
+      "url": "https://www.moldino.com/en/",
+      "country": "JP",
+      "why": "EN/JA + x-default; 'MOLDINO's Solution' and 'Case studies' as first-class nav.",
+      "signal": "medium"
+    },
+    {
+      "name": "Sodick",
+      "url": "https://www.sodick.com/",
+      "country": "JP",
+      "why": "'Advancement by design.' Acumin Pro. prefers-reduced-motion present (rare).",
+      "signal": "medium"
+    },
+    {
+      "name": "Amada",
+      "url": "https://www.amada.co.jp/en/",
+      "country": "JP",
+      "why": "'FUTURE TECHNOLOGIES with AMADA'; restrained #212529 + #fc1b1c.",
+      "signal": "medium"
+    },
+    {
+      "name": "YIZUMI",
+      "url": "https://www.yizumi.com/en/",
+      "country": "CN",
+      "why": "Restrained near-neutral palette (#edece4 / #8f8f8f) with a single olive-green #689011 — counterexample to 'Chinese industrial = saturated blue'.",
+      "signal": "medium"
+    },
+    {
+      "name": "Braunform",
+      "url": "https://www.braunform.com/en/",
+      "country": "DE",
+      "why": "Headline set as stacked fragments 'technology in top form with braunform' / 'molding your visions'.",
+      "signal": "medium"
+    },
+    {
+      "name": "ZEISS Metrology",
+      "url": "https://www.zeiss.com/metrology/en.html",
+      "country": "DE",
+      "why": "Metrology reference; clip-path sectioning.",
+      "signal": "medium"
+    },
+    {
+      "name": "SABIC (Arabic)",
+      "url": "https://www.sabic.com/ar",
+      "country": "SA",
+      "why": "RTL NEGATIVE EXEMPLAR: lang=ar on <html> but NO dir attribute; direction handled by 28 [dir=rtl] CSS override selectors. Country selector decoupled from language (/ar/CountrySelector?pageURL=/ar).",
+      "signal": "negative"
+    },
+    {
+      "name": "Ma'aden (Arabic)",
+      "url": "https://www.maaden.com.sa/ar",
+      "country": "SA",
+      "why": "RTL GOOD: <html lang=\"ar\" dir=\"rtl\" class=\"kufam_...variable rtl\"> — dir on root plus a root class swapping the script font (Kufam) via a CSS variable.",
+      "signal": "strong"
+    },
+    {
+      "name": "EMSTEEL (Arabic)",
+      "url": "https://www.emsteel.com/ar",
+      "country": "AE",
+      "why": "RTL BEST-IN-CLASS: <html dir=\"rtl\" lang=\"ar\"> with genuine logical properties — 17 margin-inline-start, 14 padding-inline-start, 8 padding-inline-end, 8 margin-inline-end. Somar Sans (Arabic+Latin superfamily). hreflang ar/en/x-default.",
+      "signal": "strong"
+    },
+    {
+      "name": "alfanar (Arabic)",
+      "url": "https://www.alfanar.com/ar",
+      "country": "SA",
+      "why": "RTL GOOD: <html lang=\"ar\" dir=\"rtl\" class=\"font-almarai\">; 7 dir=rtl with 4 dir=ltr ISLANDS for embedded Latin/numeric runs; exactly 2 scaleX(-1) transforms — directional icons flipped by class, not globally.",
+      "signal": "strong"
+    },
+    {
+      "name": "Google Fonts CSS API probes",
+      "url": "https://fonts.googleapis.com/css2",
+      "country": "—",
+      "why": "Empirical verification of subset coverage, variable axes, unicode-ranges and real woff2 byte sizes for 18 candidate families. All size figures in this report are measured, not estimated.",
+      "signal": "strong"
+    }
+  ],
+  "layoutPatterns": {
+    "principle": "Credible industrial layout is an INDEX, not a funnel. The information architecture reproduces the engineering vocabulary of the trade; the page leaks verifiable specificity everywhere. Startup-SaaS layout is a persuasion funnel with the specifics removed — that difference, not decoration, is what the eye reads as 'real'.",
+    "patterns": [
+      {
+        "name": "Capability-typology navigation instead of 'Solutions'",
+        "examples": [
+          "FOBOHA: Single-component > Stack > Multi-component > Stack-turning > Cube moulds",
+          "Meusburger mega-menu: Mould bases (F/P lengthwise, FH hot runner, FB sliding core), Die sets (SV/P, SP/P, SH/SD/SZ), Plates & bars by grade, Components, Hot runner systems",
+          "Norm Holding sector grid: Fasteners / Hot Forging / Chemistry / Tooling and Machining / Stamping / Additive Manufacturing"
+        ],
+        "doesWell": "A buyer who already knows the vocabulary reaches the page in one hop. It also silently proves the catalogue exists.",
+        "antipattern": "Platform / Solutions / Why Us / Resources — signals you have nothing specific to sell."
+      },
+      {
+        "name": "Designation-first records",
+        "examples": [
+          "Meusburger part numbers as headlines: 'E 5708', 'E 6100', 'E 5307', 'E 5651'",
+          "Steel grades as first-class content: 1.2343 ESR, 1.2083, 1.2738",
+          "Sandvik Coromant ships SandvikCoromantNumerals-Light, a typeface just for figures"
+        ],
+        "doesWell": "The alphanumeric designation is the headline and prose is the caption. Figures are treated as brand assets.",
+        "antipattern": "Prose headline with the spec in 12px grey underneath."
+      },
+      {
+        "name": "Provenance in the footer, not a hero stat bar",
+        "examples": [
+          "Bruderer footer: founded 1943, 460 employees, 370 in Frasnacht, world map of service presence",
+          "SACMI: '€1526', '6521', '4912', '>70', 'INNOVATION SINCE 1919'",
+          "Marposs: '3300 employees in 34 countries', '80 + exhibitions'",
+          "Intermolde: 'four specialized plants in the same area', 'Intermolde 51 Years'"
+        ],
+        "doesWell": "The numbers are auditable and boring — headcount, founding year, plant count, countries. Boring is the point.",
+        "antipattern": "'500+ Projects / 20+ Years / 98% Satisfaction' in a three-up round-number bar."
+      },
+      {
+        "name": "The artefact as hero, on a light ground",
+        "examples": [
+          "Bruderer: full-width stamping-press photograph on a light background",
+          "Sandvik Coromant ground #f7f5f1",
+          "Formlabs: 13 videos of machines and parts"
+        ],
+        "doesWell": "The hero is the machine or the part, photographed as an object. No people in hard hats, no sparks.",
+        "antipattern": "Stock CNC machine throwing orange sparks in a dark workshop."
+      },
+      {
+        "name": "Sector grid as the second screen",
+        "examples": [
+          "Mitutoyo: Aerospace / Automotive / Medical / Energy Solutions",
+          "Marposs: repeated 'solutions for the ___'",
+          "VulcanForms: 'Any Industry. All Standards.'",
+          "Machina: 'INDUSTRIES + APPLICATIONS'"
+        ],
+        "doesWell": "Gives every visitor one self-identifying click, and is the natural home for per-sector colour."
+      },
+      {
+        "name": "Trade-fair / 'meet us' module",
+        "examples": [
+          "GFMS: 'Upcoming Trade Fairs', 'Meet us in person. Experience our six brands live.', 'Find us near you'",
+          "Willemin: 'Let's discuss your projects on our stand'",
+          "Intermolde: 'GlassTec 2026', 'GlassTec 2024'"
+        ],
+        "doesWell": "Proves a physical sales calendar exists. This is the single most reliably ABSENT element on generated sites and one of the cheapest credibility wins available."
+      },
+      {
+        "name": "News as engineering changelog",
+        "examples": [
+          "Meusburger homepage: 'New: Compact slide 1:1 E 6100', 'New: Spacer for die protection E 5307', 'Expansion: Fitting E 2020', 'New: Thrust screw, hardened E 5835'"
+        ],
+        "doesWell": "Product-release granularity rather than thought leadership. Reads like a company that ships parts."
+      },
+      {
+        "name": "Division / multi-brand architecture stated openly",
+        "examples": [
+          "GFMS: 'UNITED MACHINING – Six Precision Machining Brands, One Global Division'",
+          "Mikron divisions",
+          "Vangest group companies",
+          "Norm Holding's eight business lines"
+        ],
+        "doesWell": "Industrial groups foreground legal and brand structure instead of hiding it — a maturity signal."
+      },
+      {
+        "name": "Plant time and place made visible",
+        "examples": [
+          "Hadrian header: live clocks for CA, AZ, AL, DC",
+          "Bruderer: 'Made in Switzerland. Made by BRUDERER' with the Frasnacht headcount"
+        ],
+        "doesWell": "Anchors the company to physical sites. Cheap to build, very hard to fake convincingly."
+      },
+      {
+        "name": "Quiet standards strip",
+        "examples": [
+          "Protolabs certifications/quality-reporting comparison table",
+          "VulcanForms 'All Standards'",
+          "Bodycote accreditation coverage"
+        ],
+        "doesWell": "A restrained row of standards (ISO 9001, IATF 16949, AS9100, ITAR) with no glow, no badge shine."
+      }
+    ],
+    "sectionOrderThatWorks": [
+      "Artefact hero with a plain capability claim",
+      "One-line capability summary in mono (materials, sizes, tolerances, lead time)",
+      "Process chain (named engineering stages)",
+      "Sector grid (per-sector colour token)",
+      "Typology / catalogue entry point",
+      "Part gallery as a specimen table",
+      "Plant + equipment list with real machine names and counts",
+      "Standards and certifications",
+      "Trade fairs / contact a named engineer",
+      "Dense footer with legal entities and addresses"
+    ]
+  },
+  "processVisualisation": {
+    "principle": "Explain what happens to the MATERIAL, not what happens in your sales pipeline. The named stages should be ones a manufacturing engineer would put on a gate review.",
+    "goodExamples": [
+      {
+        "site": "VulcanForms",
+        "what": "The homepage H2 sequence is literally the process chain: 'Realize Any Vision from Concept to Production.' then Material Selection, CAD Design, Preproduction Readiness, Part Simulation, Part Production, Test & Qualification.",
+        "whyItWorks": "Six real, verifiable engineering gates — not Discover/Design/Deliver. Each stage carries its own short video (8 <video> on the page) and its own colour token (--pt-color)."
+      },
+      {
+        "site": "Sandvik Coromant knowledge hub",
+        "what": "Taxonomy by machining operation (General turning, Parting and grooving, Threading, Milling, Drilling, Reaming, Boring) plus 'Machining formulas and definitions', delivered as 40+ short 'Tips film' demonstration videos.",
+        "whyItWorks": "They chose real footage of chips forming over illustration. Rule of thumb this establishes: for a PROCESS in motion, footage beats diagram; for INTERNAL GEOMETRY you cannot see, diagram beats footage."
+      },
+      {
+        "site": "Meusburger",
+        "what": "Process explanation is parametric, not narrative: Plate configurator, Ejector configurator, Hot runner configurator, Label configurator, cutting-data calculator.",
+        "whyItWorks": "The user configures a plate and watches the designation update. Interaction teaches the system faster than prose."
+      },
+      {
+        "site": "FOBOHA",
+        "what": "A typology ladder — 1-component > stack > multi-component > stack-turning > cube — each rung a step up in cavity architecture.",
+        "whyItWorks": "Turns a product list into an explanation of increasing complexity."
+      },
+      {
+        "site": "Protolabs Network (Hubs)",
+        "what": "Separate named sections 'Our ordering process' and 'The production process explained', with IBM Plex Mono carrying the data.",
+        "whyItWorks": "Splits the commercial flow from the physical process instead of conflating them."
+      },
+      {
+        "site": "Formlabs",
+        "what": "An application ladder: Rapid Prototyping > Concept Exploration > Looks-Like Prototyping > Functional Prototyping > Product Validation.",
+        "whyItWorks": "Maps stages to the customer's own development calendar."
+      }
+    ],
+    "badExamples": [
+      {
+        "site": "Protolabs injection-moulding service page",
+        "what": "No diagrams, no cross-sections, no exploded views. One hero photo ('blue injection molded part'). The 'process' is four category links (Plastic Injection Molding / LSR / Insert Molding / Overmolding). Tolerance ('+/-0.003 in. plus resin tolerance') is buried in an FAQ.",
+        "whyItFails": "The process page is a services taxonomy. Nothing explains what happens to the polymer. Even a market leader gets this wrong — which is precisely the opening."
+      },
+      {
+        "site": "Generic WP-built cluster sites (Planimolde, toolingportugal tier)",
+        "what": "Four-step icon row: Discover > Design > Deliver > Support, circle icons, dashed connector, AOS fade-up.",
+        "whyItFails": "Domain-free. The identical row appears on a dentist's site."
+      },
+      {
+        "site": "Common failure across the sector",
+        "what": "Full-bleed autoplay b-roll of a machine with no callouts, labels or numbers.",
+        "whyItFails": "Atmosphere without information. Costs bandwidth, teaches nothing."
+      }
+    ],
+    "buildThis": [
+      {
+        "technique": "Scroll-linked mould cross-section",
+        "how": "One SVG of a two-plate mould with named <g> groups: cavity, core, sprue, runner, gate, ejector pins, cooling channels, parting line. Figure is position:sticky; text steps scroll past beside it; one IntersectionObserver sets an active index that toggles opacity/stroke on the relevant group.",
+        "cost": "low",
+        "impact": "highest — this single element does more for credibility than any amount of copy"
+      },
+      {
+        "technique": "Exploded view of the mould stack",
+        "how": "Same SVG. Each plate group gets --dz. Scroll progress writes ONE custom property --p; each plate uses transform: translate3d(calc(var(--p) * var(--dz)),0,0). No animation library.",
+        "cost": "low-medium (drawing the SVG is the real cost, not the code)",
+        "impact": "high"
+      },
+      {
+        "technique": "Cavity array",
+        "how": "SVG grid of the cavity layout, toggle 1/2/4/8/16/32/64. Switching cavitation recomputes cycle time, shot weight and unit cost in the panel beside it.",
+        "cost": "low",
+        "impact": "very high — the most convincing 'we actually make moulds' element available"
+      },
+      {
+        "technique": "Part gallery as a specimen table",
+        "how": "Photo + material designation + tolerance + cycle time + cavitation + sector, numeric columns in mono with tabular-nums. Not a masonry carousel.",
+        "cost": "low",
+        "impact": "high"
+      },
+      {
+        "technique": "Tolerance / scale bar",
+        "how": "Inline SVG µm-to-mm ruler with real tick maths beside a part, so scale is stated rather than implied.",
+        "cost": "low",
+        "impact": "medium-high"
+      },
+      {
+        "technique": "Process-stage video with callouts",
+        "how": "Short muted loop per stage, preload=none, real poster, plus 2-3 absolutely-positioned SVG labels pointing at what matters.",
+        "cost": "medium (production cost, not code)",
+        "impact": "high"
+      }
+    ]
+  },
+  "typography": {
+    "fieldEvidence": {
+      "credible": [
+        {
+          "site": "Biesse",
+          "fonts": "NB International Pro + NB International Pro Mono (Neubau)",
+          "note": "The strongest pairing found: a neutral technical grotesk with a TRUE mono companion sharing one skeleton."
+        },
+        {
+          "site": "Bodycote",
+          "fonts": "Univers LT (45 Light / 55 Roman / 65 Bold) + Jost",
+          "note": "Univers (Frutiger, 1957) is the canonical engineering and wayfinding grotesk."
+        },
+        {
+          "site": "Sandvik Coromant",
+          "fonts": "SandvikSansHeadline + SandvikSansText + SandvikCoromantNumerals-Light",
+          "note": "A bespoke NUMERALS face. In this sector figures are brand assets."
+        },
+        {
+          "site": "Simoldes (PT)",
+          "fonts": "FF MetaPlus (Spiekermann)",
+          "note": "Humanist signage grotesk — warmth without softness."
+        },
+        {
+          "site": "EOS",
+          "fonts": "Open Sans + Rotis (Otl Aicher)",
+          "note": "Rotis carries German industrial-design lineage."
+        },
+        {
+          "site": "Protolabs Network",
+          "fonts": "IBM Plex Mono + Circular",
+          "note": "Mono reserved for data; geometric sans for UI."
+        },
+        {
+          "site": "DMG MORI",
+          "fonts": "Roboto + Roboto Condensed, latin-ext + cyrillic-ext",
+          "note": "Condensed cut for dense German compound nouns; Cyrillic shipped as standard."
+        },
+        {
+          "site": "Makino",
+          "fonts": "Noto Sans + DB Heavent Cond (Thai)",
+          "note": "Real Thai deployment in an industrial context."
+        },
+        {
+          "site": "Anduril",
+          "fonts": "Helvetica Now Display + Elios",
+          "note": "Neo-grotesque display with a technical companion."
+        },
+        {
+          "site": "Machina Labs",
+          "fonts": "Roboto + Roboto Mono",
+          "note": "The cheap-but-correct version of the sans+mono system."
+        }
+      ],
+      "discrediting": [
+        {
+          "site": "Planimolde (PT)",
+          "fonts": "Poppins + Roboto + Hind Siliguri + Open Sans + Playfair Display + Dosis on ONE page",
+          "note": "Six families is the clearest possible page-builder signature."
+        },
+        {
+          "site": "Erofio (PT)",
+          "fonts": "Exo 2",
+          "note": "Sci-fi techno face; reads as amateur motorsport."
+        },
+        {
+          "site": "Velo3D",
+          "fonts": "Raleway",
+          "note": "The single-story 'w' and fashion-blog lineage undercut a metal-AM claim."
+        },
+        {
+          "site": "Tooling Portugal cluster",
+          "fonts": "Nunito",
+          "note": "Rounded terminals on a precision-engineering cluster body."
+        },
+        {
+          "site": "Willemin-Macodel",
+          "fonts": "Poppins",
+          "note": "Geometric-circle skeleton has no engineering lineage; ubiquitous in templates."
+        }
+      ]
+    },
+    "latinRecommendation": {
+      "primary": "IBM Plex Sans",
+      "googleFontsName": "IBM Plex Sans",
+      "axis": "variable wght 100..700",
+      "mono": "IBM Plex Mono (400, 600)",
+      "condensed": "IBM Plex Sans Condensed (nav, table headers, long DE/TR/PT compounds)",
+      "measuredSizes": {
+        "latin": "44.6 KB (variable, whole 100-700 range)",
+        "cyrillic": "28.8 KB",
+        "greek": "19.0 KB",
+        "monoLatin400+600": "14.4 KB total"
+      },
+      "rationale": "Commissioned by an engineering company and drawn by Bold Monday; it carries genuine technical lineage rather than borrowed startup neutrality. It has a real mono sibling on the same skeleton — so part designations (E 5708, 1.2343 ESR, Ø12 H7) and running prose belong to one system. It ships verified Latin + Cyrillic + Greek in the family itself, and has Arabic / Thai / SC / Devanagari / JP / KR siblings, which is exactly the multi-script problem here. And it is not Inter, which in 2026 matters.",
+      "verifiedCaveats": [
+        "IBM Plex Mono has NO Greek subset (cyrillic + latin only). If Greek must appear in monospace, use JetBrains Mono instead (verified latin + latin-ext + cyrillic + cyrillic-ext + greek + vietnamese).",
+        "IBM Plex Sans Condensed ships only cyrillic-ext — no full cyrillic, no greek. Keep it to Latin-script locales or accept fallback."
+      ],
+      "alternates": [
+        {
+          "family": "Inter",
+          "googleFontsName": "Inter",
+          "coverage": "verified latin, latin-ext, cyrillic, cyrillic-ext, greek, greek-ext, vietnamese; variable",
+          "size": "~25.9 KB latin variable",
+          "note": "Technically excellent and the most efficient option measured — but the most overused face of the era and a direct AI-slop tell when used as the brand face. Acceptable as a UI/system font behind a distinctive display face; not as the voice."
+        },
+        {
+          "family": "Noto Sans",
+          "googleFontsName": "Noto Sans",
+          "coverage": "verified latin, latin-ext, cyrillic, cyrillic-ext, greek, greek-ext, devanagari, vietnamese; variable",
+          "size": "~35.8 KB latin variable",
+          "note": "Maximum harmony with the rest of the multi-script set (same superfamily brief) at the cost of neutrality. The safe choice if script consistency outranks brand character. Used by GF Machining Solutions and Makino."
+        },
+        {
+          "family": "JetBrains Mono",
+          "googleFontsName": "JetBrains Mono",
+          "coverage": "verified latin, latin-ext, cyrillic, cyrillic-ext, greek, vietnamese",
+          "size": "~31.4 KB latin",
+          "note": "The mono to use when Greek coverage is required."
+        }
+      ]
+    },
+    "multiScriptStrategy": {
+      "approach": "One Latin family as the spine; one script-specific family per writing system, selected by :lang() on the root, never by unicode-range. The Latin family stays FIRST in every font stack so that part numbers, grades and tolerances embedded in Arabic, Chinese, Thai or Armenian text keep the identical brand skeleton in all nine locales. Only the active locale's script file is ever downloaded.",
+      "families": [
+        {
+          "script": "Latin",
+          "languages": [
+            "en",
+            "de",
+            "tr",
+            "pt"
+          ],
+          "family": "IBM Plex Sans",
+          "googleFontsName": "IBM Plex Sans",
+          "weights": "variable 100..700 (use 400 / 600; 500 for nav)",
+          "measuredSize": "44.6 KB",
+          "notes": "The spine. Preload this one file only."
+        },
+        {
+          "script": "Cyrillic",
+          "languages": [
+            "ru"
+          ],
+          "family": "IBM Plex Sans (cyrillic subset)",
+          "googleFontsName": "IBM Plex Sans",
+          "weights": "variable 100..700",
+          "measuredSize": "28.8 KB",
+          "notes": "Same family, no visual break between locales. Verified subset."
+        },
+        {
+          "script": "Greek",
+          "languages": [
+            "el"
+          ],
+          "family": "IBM Plex Sans (greek subset)",
+          "googleFontsName": "IBM Plex Sans",
+          "weights": "variable 100..700",
+          "measuredSize": "19.0 KB",
+          "notes": "Verified. Note the Mono has no Greek."
+        },
+        {
+          "script": "Technical / monospace",
+          "languages": [
+            "all"
+          ],
+          "family": "IBM Plex Mono",
+          "googleFontsName": "IBM Plex Mono",
+          "weights": "400, 600 (static)",
+          "measuredSize": "14.4 KB latin, both weights",
+          "notes": "Designations, tolerances, tables, part numbers. Loaded in every locale because designations are never translated."
+        },
+        {
+          "script": "Armenian",
+          "languages": [
+            "hy"
+          ],
+          "family": "Noto Sans Armenian",
+          "googleFontsName": "Noto Sans Armenian",
+          "weights": "variable 100..900 (use 400 / 600)",
+          "measuredSize": "26.2 KB",
+          "notes": "The only credible open Armenian sans with a full variable axis. Runs optically smaller than Plex Sans — correct with size-adjust."
+        },
+        {
+          "script": "Thai",
+          "languages": [
+            "th"
+          ],
+          "family": "Noto Sans Thai",
+          "googleFontsName": "Noto Sans Thai",
+          "weights": "variable 100..900 (use 400 / 600)",
+          "measuredSize": "26.3 KB",
+          "notes": "Loopless modern Thai, pairs cleanly with a Latin grotesk. IBM Plex Sans Thai exists (18.9 KB/weight) but is STATIC only, so two weights cost more than the Noto variable and give less range."
+        },
+        {
+          "script": "Han (Simplified Chinese)",
+          "languages": [
+            "zh-hans"
+          ],
+          "family": "Noto Sans SC",
+          "googleFontsName": "Noto Sans SC",
+          "weights": "variable 100..900 (use 400 / 500 / 700)",
+          "measuredSize": "served as 101 unicode-range chunks of ~3.8-20 KB each; a real page pulls only the chunks it needs, typically 60-150 KB",
+          "notes": "Do not be alarmed by the nominal multi-megabyte family size — Google Fonts shards CJK so the browser fetches only the ranges present on the page. Never self-host the whole file."
+        },
+        {
+          "script": "Arabic + Persian (Naskh)",
+          "languages": [
+            "ar",
+            "fa"
+          ],
+          "family": "IBM Plex Sans Arabic",
+          "googleFontsName": "IBM Plex Sans Arabic",
+          "weights": "400, 600 (static — no variable axis)",
+          "measuredSize": "41.8 KB per weight (~84 KB for two)",
+          "notes": "Chosen for brand coherence: it is drawn to match Plex Latin's stroke and proportion, so ar/fa pages look like the same company. Covers Persian letters (پ چ ژ گ ی) within U+0600-06FF."
+        },
+        {
+          "script": "Urdu (Nastaliq)",
+          "languages": [
+            "ur"
+          ],
+          "family": "Noto Nastaliq Urdu",
+          "googleFontsName": "Noto Nastaliq Urdu",
+          "weights": "variable 400..700",
+          "measuredSize": "233.5 KB — the heaviest file in the system",
+          "notes": "Load ONLY on :lang(ur). Never place it in a global fallback chain. Requires line-height ~2.0-2.2."
+        }
+      ],
+      "alternates": [
+        {
+          "instead": "IBM Plex Sans Arabic",
+          "use": "Vazirmatn",
+          "googleFontsName": "Vazirmatn",
+          "measuredSize": "45.2 KB, variable 100..900",
+          "when": "If Persian is the priority locale rather than Arabic. Persian-first design, and a variable axis for less than the cost of two static Plex Arabic weights."
+        },
+        {
+          "instead": "IBM Plex Sans Arabic",
+          "use": "Noto Sans Arabic",
+          "googleFontsName": "Noto Sans Arabic",
+          "measuredSize": "162.1 KB variable",
+          "when": "Only if you need its extra math/symbols coverage — it is roughly 4x the payload of Plex Arabic for the same job."
+        },
+        {
+          "instead": "—",
+          "use": "Almarai / Kufam",
+          "googleFontsName": "Almarai / Kufam",
+          "measuredSize": "Almarai 19.3 KB/weight; Kufam variable",
+          "when": "Both are in live use on Gulf industrial sites (alfanar uses Almarai, Ma'aden uses Kufam). Good faces, but neither matches a Plex/Univers Latin as closely as Plex Arabic does."
+        }
+      ],
+      "pairingNotes": [
+        "CRITICAL — unicode-range CANNOT separate Nastaliq from Naskh. Verified: IBM Plex Sans Arabic, Noto Sans Arabic, Noto Nastaliq Urdu, Vazirmatn, Almarai, Kufam and Noto Naskh Arabic all declare the IDENTICAL arabic range (U+0600-06FF, U+0750-077F, U+0870-088E, U+FB50-FDFF, U+FE70-FEFC, ...). Urdu, Persian and Arabic occupy the same codepoints. You MUST route by :lang(ur) / :lang(fa) / :lang(ar); if you list Nastaliq in a shared stack the browser will serve Nastaliq to Arabic readers.",
+        "Nastaliq needs vertical room. Its steeply descending baseline clips at line-height 1.2 — budget 2.0-2.2 on :lang(ur), and never apply tight tracking or small-caps-style treatments.",
+        "Kill letter-spacing on all Arabic-script and Thai locales. Arabic is cursive and tracking breaks the joins; Thai stacks vowel and tone marks and has no inter-word spaces. Set letter-spacing: normal under :lang(ar), :lang(fa), :lang(ur), :lang(th). This is the most common multilingual typography bug.",
+        "Correct optical size per script. Noto Sans Armenian and Noto Sans Thai render visually smaller than IBM Plex Sans at the same px. Use an @font-face size-adjust override, or a --script-scale custom property set on :lang(), rather than hand-tuning font-size in components.",
+        "Remap weight for Han. Noto Sans SC at 400 reads heavier than Plex Sans 400 because of stroke density — step SC down for body text and up for large display.",
+        "Never use weights below 400 on Arabic, Thai or Han. Thin strokes collapse on marks and on low-DPI screens.",
+        "Latin family FIRST in every stack. This is the biggest single quality win on a technical multilingual site: 'E 5708', '1.2343 ESR', 'Ø12 H7', '±0.005 mm' must be glyph-identical in all nine locales.",
+        "font-display: swap everywhere; preload ONLY the Latin variable woff2. Every other script loads on its own locale and never blocks another.",
+        "Budget check: a Latin page costs 44.6 + 14.4 = 59 KB of font. The worst case (Urdu) is 233.5 + 14.4 = 248 KB — acceptable because it is the only script on that page and it is cached for the session."
+      ]
+    }
+  },
+  "colour": {
+    "principle": "The 2025-26 advanced-manufacturing look is a materials laboratory, not a workshop floor: bright, near-neutral grounds; one saturated accent used as STATE rather than decoration; hue variation carried by a single token, not by separate palettes.",
+    "measuredPalettes": [
+      {
+        "site": "Sandvik Coromant",
+        "hexes": [
+          "#f7f5f1",
+          "#ebe6dc",
+          "#beaf93",
+          "#242424"
+        ],
+        "read": "Warm off-white, sand, tan, near-black. Reads as materials science. The clearest proof that premium industrial has gone WARM and LIGHT."
+      },
+      {
+        "site": "Bruderer",
+        "hexes": [
+          "#f2f3f2",
+          "#02361d",
+          "#058748",
+          "#181b1a"
+        ],
+        "read": "Cool light-grey ground with deep forest green and a green accent. Swiss, calm, no drama."
+      },
+      {
+        "site": "Willemin-Macodel",
+        "hexes": [
+          "#f9fafb",
+          "#f3f4f6",
+          "#202945",
+          "#009ffd",
+          "#e5f5ff",
+          "#f5333f"
+        ],
+        "read": "Textbook light system: two greys, a navy, one bright accent, one tint of that accent, one reserved alarm red."
+      },
+      {
+        "site": "Bodycote",
+        "hexes": [
+          "#ffffff",
+          "#333333",
+          "#F7F7F7",
+          "#Ed1c24"
+        ],
+        "read": "Declared as tokens: --background-color, --text-color, --contrast-color, --active-color. Four tokens run the whole site."
+      },
+      {
+        "site": "Protolabs Network",
+        "hexes": [
+          "#0071e3",
+          "#e6f1fc",
+          "#191919",
+          "#f0f0f0"
+        ],
+        "read": "One blue, one 8% tint of it, near-black, light grey. Nothing else."
+      },
+      {
+        "site": "TRUMPF",
+        "hexes": [
+          "#0033ba"
+        ],
+        "read": "An entire global brand on a single accent."
+      },
+      {
+        "site": "Vangest (PT)",
+        "hexes": [
+          "#0033a0",
+          "#00acc9"
+        ],
+        "read": "Deep blue plus cyan on white."
+      },
+      {
+        "site": "EOS",
+        "hexes": [
+          "#ffffff",
+          "#191919",
+          "#f1f1f1",
+          "#00677d"
+        ],
+        "read": "An inverse PAIR of header tokens (light/dark) plus a per-section teal highlight token."
+      },
+      {
+        "site": "YIZUMI",
+        "hexes": [
+          "#edece4",
+          "#8f8f8f",
+          "#689011"
+        ],
+        "read": "Warm neutral with a single olive green — counterexample to 'Chinese industrial means saturated blue'."
+      },
+      {
+        "site": "Anduril",
+        "hexes": [
+          "#dff140",
+          "#505544",
+          "#010101"
+        ],
+        "read": "The ONE dark exemplar. Acid yellow-green on olive/black — a deliberate defence-sector genre signal, not the industrial default."
+      }
+    ],
+    "rules": [
+      "The ground is never pure #fff. Use an off-white with a slight cast: warm #f7f5f1 / #f5f4f1, or cool #f2f3f2 / #f9fafb. Pure white reads unfinished.",
+      "Text is never #000. Near-blacks measured in the field sit at #191919, #202945, #242424, #333333.",
+      "ONE saturated accent. It marks state — active, measured, in-tolerance, selected — not decoration. TRUMPF runs a global brand on #0033ba alone.",
+      "Reserve exactly one red for alarm / out-of-tolerance (#Ed1c24 Bodycote, #f5333f Willemin). Never use it for a CTA.",
+      "Borrow hues from MATERIAL, not from 'tech': tool-steel grey, anodised blue, oxide black, brass, sand, copper. Never purple-to-cyan.",
+      "Avoid the dark grease-and-sparks hero entirely unless you are in defence. Exactly one of the sites studied goes dark, and it does so as a genre statement."
+    ],
+    "perSectorVariation": {
+      "pattern": "Change ONE custom property per sector. Layout, typography and neutrals stay byte-identical; only --sector changes, and rule lines, section numerals, chart series, hover states and tints all inherit from it.",
+      "evidence": [
+        "VulcanForms declares --pt-color per section: #1B5E84 (slate blue), #5D5945 (olive), #8C624A (clay), #73838C (blue-grey). All four sit at similar lightness and low chroma, so no sector out-shouts another.",
+        "EOS sets --random-highlight-theme-background / --...-foreground per highlight block (#00677d teal on white).",
+        "Bodycote runs the entire site from four declared tokens."
+      ],
+      "implementation": "section[data-sector=\"medical\"] { --sector: #1B5E84; } then derive every shade with color-mix: background: color-mix(in oklch, var(--sector) 12%, var(--ground)); border-color: color-mix(in oklch, var(--sector) 30%, var(--ground)). One declaration per sector instead of a hand-picked 4x5 hex matrix, and OKLCH keeps perceived lightness constant across hues.",
+      "discipline": "Constrain sector hues to one lightness band and one chroma ceiling. The moment one sector is more saturated than the others it reads as the 'featured' one, which is a commercial statement you did not mean to make."
+    }
+  },
+  "motion": {
+    "fieldReality": "Across ~55 industrial sites the actual stack is mundane: Swiper carousels (Beycelik, Carbon, Comau, DMG MORI, EOS, Meusburger, Vangest, YIZUMI, Machina), GSAP (Carbon, Makino, Simoldes, Bodycote), AOS (Beycelik), Lenis (Anduril only), plus native position:sticky (Biesse, EOS, Makino), clip-path and mix-blend-mode. Almost NO WebGL on homepages — Simoldes with curtains.js is the lone exception. And prefers-reduced-motion appears on just 2 of ~55 sites, which makes honouring it a cheap differentiator.",
+    "earnsItsPlace": [
+      {
+        "effect": "Sticky figure + scrolling step text",
+        "why": "The one scroll technique that genuinely teaches. Pure CSS position:sticky; the only JS is one IntersectionObserver setting an active index.",
+        "cost": "~20 lines JS"
+      },
+      {
+        "effect": "Single scroll-progress custom property driving an SVG",
+        "why": "Exploded views, cavity fills, a mould opening. One rAF-throttled scroll handler writes --p to one element; CSS does the rest.",
+        "cost": "~15 lines JS"
+      },
+      {
+        "effect": "Reveal on enter, once",
+        "why": "Opacity + 8-16px translate, 250-350ms, stagger <=60ms, and never replayed. Anything longer or larger reads as a template.",
+        "cost": "trivial"
+      },
+      {
+        "effect": "Hover that reveals data",
+        "why": "A part card exposing tolerance/material/cycle time on hover is motion doing actual work.",
+        "cost": "trivial"
+      },
+      {
+        "effect": "Counting to a real figure",
+        "why": "Only if the number is genuine and the count is under 800ms. Run once, never on re-scroll.",
+        "cost": "low"
+      },
+      {
+        "effect": "Video on intent",
+        "why": "Still by default; play on IntersectionObserver or click, preload=none, real poster, muted playsinline.",
+        "cost": "low"
+      }
+    ],
+    "performanceBudgetMobile": {
+      "context": "mid-tier Android, 4G, the realistic condition for a buyer checking you from a trade-fair hall",
+      "lcp": "<= 2.5 s",
+      "inp": "<= 200 ms",
+      "cls": "<= 0.1",
+      "javascript": "<= 100 KB gzipped for the homepage; no framework needed for any of the techniques recommended here",
+      "fonts": "<= 100 KB for the active locale — the recommended Latin stack is 59 KB (Plex Sans variable 44.6 + Plex Mono 400/600 14.4)",
+      "images": "AVIF with WebP fallback, srcset at 3 widths, loading=lazy below the fold, fetchpriority=high on the hero only. Bruderer is the model: 168 webp with 90 srcset.",
+      "video": "at most ONE autoplaying loop, <= 2 MB, muted playsinline with a poster; swap to a still image under (max-width: 768px)",
+      "animation": "transform and opacity ONLY. clip-path transitions are fine on small elements and expensive full-bleed. Never animate width/height/top/left.",
+      "smoothScroll": "Do not hijack scrolling. Lenis is ~10 KB and defensible, but it breaks native scrollbar feel and find-in-page; Anduril accepts that trade in defence marketing, an industrial B2B site generally should not.",
+      "reducedMotion": "One @media (prefers-reduced-motion: reduce) block zeroing every duration and disabling autoplay. Two of fifty-five sites do this — it is free differentiation and an accessibility obligation."
+    },
+    "readsAsCheap": [
+      "Parallax on background photography",
+      "AOS-style fade-up on every element including body paragraphs",
+      "Counters that re-run every time you scroll past",
+      "Full-page preloader with a percentage or an animated logo",
+      "Letter-by-letter or word-by-word headline splitting",
+      "Tilt-on-hover cards",
+      "Particle fields, constellation canvases, animated circuit traces",
+      "Auto-advancing carousels (especially hero carousels — a hero carousel means nobody could decide)",
+      "Fast marquee logo strips",
+      "Glow, neon borders, pulsing halos",
+      "Custom cursor followers",
+      "Magnetic buttons",
+      "Scroll-jacked full-page section snapping",
+      "Text that animates in on EVERY scroll direction change"
+    ]
+  },
+  "aiSlopBlacklist": {
+    "note": "Ordered roughly by how instantly each one gives the game away in 2026. Items marked [observed] were measured on real sites in this study.",
+    "typography": [
+      "Inter, Poppins, Montserrat, Raleway, Nunito, Exo 2 or Space Grotesk as the BRAND face [observed: Planimolde ships Poppins+Roboto+Hind Siliguri+Open Sans+Playfair Display+Dosis on one page; Erofio uses Exo 2; Velo3D uses Raleway; toolingportugal uses Nunito; Willemin uses Poppins]",
+      "More than two families on a page (three if one is a mono)",
+      "Gradient text via background-clip: text",
+      "Headlines in ALL CAPS with wide positive letter-spacing on a geometric sans",
+      "A serif 'accent' font used only for a pull quote"
+    ],
+    "colour": [
+      "Purple/indigo-to-cyan diagonal gradients; #6366f1, #8b5cf6, #0ea5e9 anywhere near an industrial brand",
+      "Gradient mesh or 'aurora' blobs behind the hero",
+      "Dark hero + neon-blue circuit/HUD overlay + the words 'Industry 4.0'",
+      "Orange sparks on near-black as the default industrial signifier",
+      "More than one accent colour competing for attention"
+    ],
+    "layoutAndComponents": [
+      "Glassmorphism: backdrop-filter blur + 1px white-10% border + large radius floating over a gradient",
+      "Uniform border-radius 12-16px on everything including images and section containers",
+      "Three-column icon-and-two-lines feature grid with default thin-stroke rounded outline icons (Lucide/Heroicons), especially 24px inside a circle",
+      "The four-step 'Discover > Design > Deliver > Support' row with numbered circles and a dashed connector",
+      "Centred headline + centred subhead + two buttons (one filled, one ghost) + a five-logo 'trusted by' strip",
+      "Stat bar of three round numbers with '+' and no source: '500+ Projects / 20+ Years / 98% Satisfaction'",
+      "Testimonial cards with five gold stars and circular avatars — for a B2B tooling supplier",
+      "'Book a free consultation' repeated four times on one page",
+      "Every section exactly 100vh with identical padding and identical vertical rhythm",
+      "Perfect symmetry everywhere and no baseline grid",
+      "A world map with pulsing dots",
+      "Bento grids for content that is not data",
+      "Flag icons in the language switcher"
+    ],
+    "imagery": [
+      "Stock CNC machine throwing orange sparks in a dark workshop",
+      "Hard-hat handshake; engineers pointing at a tablet in a spotless factory",
+      "Synthetic factory renders with impossible lighting, unreadable HMI screens, or machines with no visible controls, coolant lines or chip evacuation",
+      "Isometric 3D illustrations of abstract 'processes'",
+      "Photographs where every part is the same anonymous grey blob",
+      "Generic 'robot arm against gradient' imagery unrelated to the actual capability"
+    ],
+    "copy": [
+      "Em-dash-heavy triadic marketing prose: 'precision, performance, and partnership'",
+      "'Let's build something amazing together' / 'Ready to transform your manufacturing?'",
+      "'Cutting-edge', 'seamless', 'innovative solutions', 'we don't just make parts — we craft possibilities'",
+      "'It's not just X, it's Y' constructions",
+      "Sector lists with no evidence of ever having supplied that sector",
+      "Capability claims with no numbers attached"
+    ],
+    "theDeepestTell": "No part numbers, no material designations, no tolerances, no standards, no machine list, no plant addresses, no trade-fair dates, no named people. Real industrial sites leak verifiable specificity on every screen — Meusburger puts 'E 5708' in a headline, Bruderer states 370 staff in Frasnacht, Intermolde names 'IS machines' and 'four specialized plants in the same area'. Generated sites are fluent and referentially empty. If a page could be re-skinned for a logistics company by swapping six nouns, it is slop."
+  },
+  "rtl": {
+    "measuredEvidence": [
+      {
+        "site": "EMSTEEL (AE)",
+        "finding": "BEST IN CLASS: <html dir=\"rtl\" lang=\"ar\"> plus genuine logical properties — 17 margin-inline-start, 14 padding-inline-start, 8 padding-inline-end, 8 margin-inline-end. Somar Sans (Arabic+Latin superfamily). hreflang ar/en/x-default."
+      },
+      {
+        "site": "Ma'aden (SA)",
+        "finding": "<html lang=\"ar\" dir=\"rtl\" class=\"kufam_...variable rtl\"> — dir on the root plus a root class swapping the script font (Kufam) through a CSS variable, and a duplicate 'rtl' class as a styling hook."
+      },
+      {
+        "site": "alfanar (SA)",
+        "finding": "<html lang=\"ar\" dir=\"rtl\" class=\"font-almarai\">. Seven dir=rtl regions with FOUR dir=ltr ISLANDS for embedded Latin/numeric runs, and exactly two scaleX(-1) transforms — directional icons flipped by class, not globally."
+      },
+      {
+        "site": "SABIC (SA)",
+        "finding": "ANTI-PATTERN: lang=\"ar\" on <html> but NO dir attribute; direction is retrofitted through 28 [dir=\"rtl\"] CSS override selectors. Every rule exists twice and the two copies drift."
+      },
+      {
+        "site": "All four Arabic sites",
+        "finding": "NUMERALS: zero Arabic-Indic digits (U+0660-0669 / U+06F0-06F9) in the served HTML. Gulf industrial and corporate sites use Western/ASCII digits throughout."
+      }
+    ],
+    "directionMechanics": [
+      "Set dir=\"rtl\" and lang=\"ar|fa|ur\" on <html>. One source of truth. Never build a [dir=rtl] override stylesheet — that is the SABIC pattern and it doubles your CSS surface.",
+      "Author EVERYTHING in logical properties from line one: margin-inline-start/end, padding-inline, inset-inline-start/end, border-inline-start, text-align: start/end, float: inline-start. Then RTL costs one attribute. Retrofitting this later is the single most expensive i18n mistake — decide it before the first component.",
+      "Use physical properties ONLY where the thing must not flip (see the do-not-mirror list).",
+      "Grid and flex reorder automatically under dir=rtl. Do not 'fix' them with row-reverse; that double-flips.",
+      "Watch JS that reads geometry: getBoundingClientRect().left is direction-blind, and element.scrollLeft is negative in RTL in some engines. Prefer scrollIntoView and logical scroll APIs."
+    ],
+    "numerals": {
+      "arabic": "Keep Western digits (0-9) for ar. This is verified industry practice across SABIC, Ma'aden, EMSTEEL and alfanar — not a shortcut.",
+      "persian": "Persian readers do expect ۰-۹ in prose, dates and body copy — but NOT in part numbers. Scope any numeral conversion to prose only.",
+      "urdu": "Follow the same rule as Persian; Urdu commonly uses Eastern Arabic-Indic in prose.",
+      "hardRule": "NEVER convert digits inside technical designations. 'E 5708', '1.2343 ESR', 'Ø12 H7', '±0.005 mm', 't=1.2' are identifiers, not quantities. Give them a .designation class that pins font-family to the mono, direction to ltr, and font-feature-settings to lining tabular figures, in every locale.",
+      "tables": "Never localise digits inside a spec table. Mixed numeral systems in one column make values incomparable."
+    },
+    "doNotMirror": [
+      "Technical drawings, cross-sections and exploded views — a mould half is not mirror-symmetric and flipping it is a factual error",
+      "Cavity layouts and part geometry",
+      "CAD screenshots and machine photographs",
+      "Charts with a time axis (time still runs left-to-right in engineering convention)",
+      "Logos and wordmarks",
+      "The play triangle on a video control",
+      "Any diagram whose geometry carries physical meaning",
+      "Implementation: wrap each in a container with direction: ltr and explicit physical positioning, then mirror only the LABEL COLUMN around it."
+    ],
+    "doMirror": [
+      "Page layout, columns, nav order, sidebar side",
+      "Breadcrumb chevrons and pagination arrows",
+      "Next/previous controls and carousel direction",
+      "Progress bars and step indicators",
+      "List indent direction, quote marks, reply/undo/redo icons",
+      "Icon rule of thumb: an icon mirrors if it depicts DIRECTION OF READING OR TRAVEL; it does not mirror if it depicts an OBJECT — wrench, gear, caliper, clock, magnifier all stay as drawn."
+    ],
+    "iconImplementation": "Give directional icons a class and flip only those: [dir=\"rtl\"] .icon--directional { transform: scaleX(-1); }. This is precisely what alfanar does — two flips on the entire page, not a blanket SVG transform.",
+    "bidiIsolation": "Wrap embedded Latin and numeric runs in <bdi> or <span dir=\"ltr\"> with unicode-bidi: isolate, or the bidi algorithm will reorder 'Ø12 H7 ±0.005' into nonsense next to Arabic text. alfanar's four dir=ltr islands are exactly this.",
+    "typographyUnderRtl": [
+      "Swap the script font on the root, matching the Ma'aden/alfanar pattern: :root[lang=\"ar\"] { --font-body: \"IBM Plex Sans Arabic\", ... } and :root[lang=\"ur\"] { --font-body: \"Noto Nastaliq Urdu\", ...; line-height: 2.1; }",
+      "letter-spacing: normal under :lang(ar), :lang(fa), :lang(ur) — Arabic script is cursive and tracking breaks the joins",
+      "Increase line-height: ~1.7 for Naskh, 2.0-2.2 for Nastaliq",
+      "Arabic has no capitals — any design that relies on ALL-CAPS for hierarchy loses that level entirely in ar/fa/ur. Plan a weight-and-size hierarchy that survives the loss.",
+      "Arabic text runs 20-30% longer than English in some registers and shorter in others; never fix heights to English string lengths."
+    ]
+  },
+  "multilingualUx": {
+    "measuredEvidence": [
+      {
+        "site": "TRUMPF",
+        "finding": "38 hreflang locales; /{lang}_{REGION}/ URLs (/en_INT/, /de_DE/, /de_AT/, /de_CH/, /en_US/) including an explicit en_INT 'International English'."
+      },
+      {
+        "site": "Meusburger",
+        "finding": "23 languages; /de-de, /bg-bg, /cs-cz, /pt-pt paths; markup class language-switcher__globe-icon — a GLOBE, not flags."
+      },
+      {
+        "site": "Renishaw",
+        "finding": "16 languages with bare two-letter hreflang codes."
+      },
+      {
+        "site": "Bodycote",
+        "finding": "14 languages including zh-hans."
+      },
+      {
+        "site": "Protolabs",
+        "finding": "13 hreflang with English split by MARKET: en-gb, en-ie, en-mt, en-nl."
+      },
+      {
+        "site": "EOS",
+        "finding": "8 languages, bare /de, /zh, /es paths, English at root."
+      },
+      {
+        "site": "Mikron",
+        "finding": "ANTI-PATTERN: URL /cn but hreflang zh-hans — a country code in the path against the correct script subtag in the tag."
+      },
+      {
+        "site": "Marposs",
+        "finding": "ANTI-PATTERN: /eng/, /ger/, /ita/, /fre/ — three-letter ISO 639-2 legacy codes."
+      },
+      {
+        "site": "SABIC",
+        "finding": "Country selection decoupled from language: /ar/CountrySelector?pageURL=/ar."
+      }
+    ],
+    "urlStructure": {
+      "recommended": "Path prefix, always present, lowercase two-letter ISO 639-1: /en/, /de/, /tr/, /pt/, /ru/, /hy/, /th/, /zh-hans/, /fa/",
+      "rules": [
+        "Never omit the prefix for the default language — a bare / and a /en/ that serve the same content are a duplicate-content problem and make the switcher asymmetric.",
+        "Add a region subtag ONLY when content genuinely differs (pt-br vs pt-pt, en-gb vs en-us). Protolabs splits English by market because prices and certifications differ; do not imitate that without the underlying difference.",
+        "Prefer zh-hans over cn or zh — it is script-accurate and future-proofs a later zh-hant.",
+        "Use two-letter ISO 639-1, never the three-letter 639-2 codes Marposs still ships.",
+        "Never put language in a query string, and never rely on a cookie alone — both are uncrawlable."
+      ]
+    },
+    "hreflang": [
+      "Every page emits a COMPLETE reciprocal set: all nine <link rel=\"alternate\" hreflang=\"xx\" href=\"…\"> plus x-default, including a self-referencing tag.",
+      "Use absolute URLs.",
+      "x-default points at the language-selection page, or at English if there is no selector page.",
+      "Mirror the same set in sitemap.xml using xhtml:link alternates.",
+      "Keep <html lang> (and dir) in sync with the URL, and localise og:locale plus og:locale:alternate.",
+      "Every alternate must actually exist and return 200 — partial translations that 404 poison the whole cluster."
+    ],
+    "selectorPresentation": {
+      "pattern": "A globe icon in the header opening a full-width panel — the Meusburger model — not a cramped <select>.",
+      "rules": [
+        "List every language ENDONYMICALLY and in its own script: English, Deutsch, Türkçe, Português, Русский, Հայերեն, ไทย, 简体中文, فارسی.",
+        "Set lang on EACH list item so it renders in the correct script font. Without this the Armenian, Thai, Chinese and Persian entries fall back and look broken — a small detail that reads as real care.",
+        "Two or three columns, ordered alphabetically by endonym, current language marked with a rule or a weight change rather than a checkmark.",
+        "NO FLAGS. Flags denote countries, not languages: German is DE/AT/CH, Arabic spans twenty-plus states, Persian maps to no single flag. Every serious site studied uses text or a globe; flags are also a fast templated tell.",
+        "Keep the switcher in the same header position at every breakpoint, and at the TOP of the mobile menu, never buried in the footer.",
+        "Switching language must land on the TRANSLATED EQUIVALENT of the current page, not the homepage. This is the most common failure on multilingual industrial sites and the most infuriating."
+      ],
+      "detection": "Never auto-redirect on IP or Accept-Language. Detect, then offer a dismissible bar ('View this page in Deutsch'), and persist the choice in a cookie or localStorage while keeping the URL canonical. Auto-redirect breaks hreflang crawling and traps engineers browsing from a trade fair abroad."
+    },
+    "navigationAtNineLanguages": [
+      "Design the header for roughly 1.6x the English string length. Test against real strings: Oberflächenbehandlung, Yüzey İşlemleri, Ferramentas de Injeção, Поверхностная обработка.",
+      "Use a condensed cut (IBM Plex Sans Condensed) for the nav, or allow a two-line nav — do not shrink the font per locale.",
+      "Never bake text into images; every nav label must be translatable text.",
+      "NEVER translate part designations, material grades or standards: ISO 9001, IATF 16949, 1.2343 ESR, H7, Ø12. Keep them in the mono face, dir=ltr, identical in all nine locales.",
+      "Translate the units policy too: decide mm vs inch per locale and state it, rather than silently switching.",
+      "Plan for partial translation. If a case study exists only in EN and DE, show it in those locales and omit it elsewhere rather than shipping an untranslated stub — and do not emit hreflang for the missing versions."
+    ]
+  },
+  "buildableTechniques": [
+    {
+      "technique": "Logical-property-only stylesheet",
+      "how": "margin-inline-*, padding-inline-*, inset-inline-*, border-inline-*, text-align: start/end everywhere from the first component.",
+      "cost": "trivial if done from line one; very expensive to retrofit",
+      "payoff": "RTL costs one attribute on <html>. The single most important early decision on this project."
+    },
+    {
+      "technique": "Sticky cross-section explainer",
+      "how": "position: sticky figure + named SVG <g> groups + one IntersectionObserver toggling an active step class. CSS transitions opacity/stroke.",
+      "cost": "low (~20 lines JS)",
+      "payoff": "Highest credibility-per-byte element available in this sector."
+    },
+    {
+      "technique": "SVG exploded view on one custom property",
+      "how": "Scroll progress writes --p (0..1) to a single element; each plate group uses transform: translate3d(calc(var(--p) * var(--dz)),0,0).",
+      "cost": "low-medium — drawing the SVG is the real cost, not the code",
+      "payoff": "Reads as genuine engineering; impossible to mistake for a template."
+    },
+    {
+      "technique": "Cavity-array configurator",
+      "how": "SVG grid with <use>; toggle 1/2/4/8/16/32/64 cavities; recompute cycle time, shot weight and unit cost in the adjacent panel.",
+      "cost": "low",
+      "payoff": "Very high — the most convincing 'we actually make moulds' element, and the Meusburger lesson that parametric beats narrative."
+    },
+    {
+      "technique": "Per-sector theming via one token + color-mix",
+      "how": "section[data-sector] { --sector: #1B5E84 } and derive every tint with color-mix(in oklch, var(--sector) 12%, var(--ground)).",
+      "cost": "trivial",
+      "payoff": "Nine sectors, one palette, guaranteed consistent lightness. The VulcanForms/EOS pattern."
+    },
+    {
+      "technique": "Spec tables in mono with tabular figures",
+      "how": "font-family: var(--font-mono); font-variant-numeric: tabular-nums lining; numeric columns aligned with text-align: end.",
+      "cost": "trivial",
+      "payoff": "Instantly reads as engineering. Columns align across locales because designations never translate."
+    },
+    {
+      "technique": "Technical rule-lines and registration marks in pure CSS",
+      "how": "border-inline-start plus ::before/::after corner ticks; no images.",
+      "cost": "trivial",
+      "payoff": "Drawing-office texture at zero bytes, and it mirrors correctly for free."
+    },
+    {
+      "technique": "Blueprint grid ground",
+      "how": "repeating-linear-gradient at 8px and 64px intervals, 2-4% alpha.",
+      "cost": "trivial",
+      "payoff": "Sharper than a PNG at any DPI, tiles infinitely. Requires restraint — above ~5% alpha it becomes a cliché."
+    },
+    {
+      "technique": "µm/mm scale bar",
+      "how": "Inline SVG with real tick maths beside the part photograph.",
+      "cost": "low",
+      "payoff": "States scale instead of implying it; a detail generated sites never include."
+    },
+    {
+      "technique": "Part gallery as a specimen table",
+      "how": "content-visibility: auto + loading=lazy + AVIF/WebP srcset at three widths; metadata columns in mono.",
+      "cost": "low",
+      "payoff": "Density without weight. Bruderer's 168 webp / 90 srcset is the benchmark."
+    },
+    {
+      "technique": "Reduced-motion gate",
+      "how": "One @media (prefers-reduced-motion: reduce) block zeroing all durations and disabling autoplay.",
+      "cost": "trivial",
+      "payoff": "Two of fifty-five sites do this. Free differentiation plus an accessibility obligation."
+    },
+    {
+      "technique": "Locale-scoped font loading",
+      "how": "@font-face per script behind :lang(); preload only the Latin variable woff2; never place Nastaliq in a shared fallback chain.",
+      "cost": "low",
+      "payoff": "59 KB on Latin pages, and Urdu's 233 KB never touches an Arabic reader."
+    },
+    {
+      "technique": "Canvas — only where SVG genuinely fails",
+      "how": "Reach for canvas above roughly 2000 live nodes (e.g. a real-time cooling-channel heat gradient). Otherwise SVG.",
+      "cost": "medium-high",
+      "payoff": "Usually skippable. Listed so it can be consciously rejected rather than reached for by reflex."
+    }
+  ]
+}

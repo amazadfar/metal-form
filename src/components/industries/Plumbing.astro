@@ -1,0 +1,1723 @@
+---
+/**
+ * PLUMBING & CONSTRUCTION — the catalogue chapter.
+ *
+ * Structural identity: a parts catalogue. A persistent drawing-sheet rail runs
+ * the whole page carrying the section index; every band inside it is a grid, a
+ * ledger row or a table row. There is not a card on the page, because a fitting
+ * manufacturer does not think in cards — they think in a matrix of part numbers
+ * against diameters, and that matrix is the product.
+ *
+ * The argument: one geometry becomes ninety part numbers, and the tooling
+ * decision is which of them get their own mould base and which share a frame.
+ * Everything after that — mechanism, thread, resin, agreement, arithmetic —
+ * is the engineering that decides whether the answer holds.
+ *
+ * Colour logic, enforced in every drawing: accent is polymer, signal is metal.
+ * Motion logic: indexing, not animating. Things arrive in discrete steps.
+ */
+import type { Locale } from '../../i18n/locales.ts';
+import type { Industry } from '../../config/industries.ts';
+import type { IndustryContent, CommonContent } from '../../content/types.ts';
+
+interface Props {
+  locale: Locale;
+  industry: Industry;
+  content: IndustryContent;
+  common: CommonContent;
+}
+const { content, common } = Astro.props;
+const b = content.blocks as any;
+
+/* ── Orthographic fitting silhouettes ──────────────────────────────────────
+   One 120 × 100 frame, one line weight, one nominal bore, so the twelve read
+   at true relative scale against each other. `o` is the polymer outline,
+   `d` the internal detail, `m` the metal insert. */
+const G: Record<string, { o: string; d?: string; m?: string }> = {
+  el90: {
+    o: 'M34 92 V26 H94 V54 H62 V92 Z',
+    d: 'M34 78 H62 M80 26 V54',
+  },
+  el45: {
+    o: 'M34 90 V48 L68 16 L86 34 L62 58 V90 Z',
+    d: 'M34 78 H62',
+  },
+  teeEq: {
+    o: 'M18 32 H102 V60 H74 V92 H46 V60 H18 Z',
+    d: 'M32 32 V60 M88 32 V60 M46 80 H74',
+  },
+  teeRd: {
+    o: 'M18 32 H102 V60 H70 V86 H50 V60 H18 Z',
+    d: 'M32 32 V60 M88 32 V60 M50 76 H70',
+  },
+  socket: {
+    o: 'M22 34 H98 V66 H22 Z',
+    d: 'M60 34 V66 M38 34 V66 M82 34 V66',
+  },
+  socketRd: {
+    o: 'M22 32 H60 V40 H98 V60 H60 V68 H22 Z',
+    d: 'M40 32 V68 M80 40 V60',
+  },
+  cap: {
+    o: 'M28 34 H72 a16 16 0 0 1 0 32 H28 Z',
+    d: 'M44 34 V66',
+  },
+  adM: {
+    o: 'M22 34 H58 V66 H22 Z',
+    d: 'M38 34 V66',
+    m: 'M58 38 H96 V62 H58 Z M60 38 l3 -4 l3 4 l3 -4 l3 4 l3 -4 l3 4 l3 -4 l3 4 l3 -4 l3 4 l3 -4 l3 4 M60 62 l3 4 l3 -4 l3 4 l3 -4 l3 4 l3 -4 l3 4 l3 -4 l3 4 l3 -4 l3 4 l3 -4',
+  },
+  adF: {
+    o: 'M22 34 H62 V66 H22 Z M62 28 H80 L92 34 V66 L80 72 H62 Z',
+    d: 'M38 34 V66',
+    m: 'M66 40 h20 M66 47 h20 M66 53 h20 M66 60 h20',
+  },
+  union: {
+    o: 'M18 38 H46 V62 H18 Z M74 38 H102 V62 H74 Z M46 28 H74 V72 H46 Z',
+    d: 'M57 44 h6 v12 h-6 z M46 50 H74',
+  },
+  wall: {
+    o: 'M40 92 V34 H84 V58 H64 V92 Z M84 24 H100 V68 H84 Z',
+    d: 'M40 80 H64 M92 32 m-3.5 0 a3.5 3.5 0 1 0 7 0 a3.5 3.5 0 1 0 -7 0 M92 60 m-3.5 0 a3.5 3.5 0 1 0 7 0 a3.5 3.5 0 1 0 -7 0',
+  },
+  valve: {
+    o: 'M20 40 H100 V70 H20 Z M50 40 V26 H70 V40 M44 18 H76 V26 H44 Z',
+    d: 'M60 55 m-14 0 a14 14 0 1 0 28 0 a14 14 0 1 0 -28 0 M34 40 V70 M86 40 V70',
+  },
+};
+
+const plate = (b.plate?.cells ?? []) as any[];
+
+/* ── Range matrix arithmetic ───────────────────────────────────────────────
+   Counted from the matrix itself so the copy and the drawing cannot drift. */
+const MX = (b.range?.matrix ?? []) as number[][];
+const FLAT = MX.flat();
+const dedicated = FLAT.filter((v) => v === 1).length;
+const frameCells = FLAT.filter((v) => v === 2).length;
+const positions = dedicated + frameCells;
+const frames = (b.range?.frames ?? []).length;
+const A = b.range?.arith ?? {};
+const STRAT: Record<string, Array<{ k: string; v: string }>> = {
+  split: [
+    { k: A.positions, v: String(positions) },
+    { k: A.bases, v: String(positions) },
+    { k: A.inserts, v: '0' },
+  ],
+  family: [
+    { k: A.positions, v: String(positions) },
+    { k: A.dedicated, v: String(dedicated) },
+    { k: A.frames, v: String(frames) },
+    { k: A.bases, v: String(dedicated + frames) },
+    { k: A.inserts, v: String(frameCells) },
+  ],
+};
+const views = (b.range?.views ?? []) as any[];
+const diameters = (b.range?.diameters ?? []) as string[];
+
+/* ── Drawing helpers ───────────────────────────────────────────────────────
+   Geometry only. Nothing here produces human-readable text. */
+function zig(x0: number, y0: number, x1: number, y1: number, n: number, amp: number) {
+  const dx = (x1 - x0) / n;
+  const dy = (y1 - y0) / n;
+  let d = `M${x0} ${y0}`;
+  for (let i = 0; i < n; i++) {
+    const mx = (x0 + dx * (i + 0.5)).toFixed(1);
+    const my = (y0 + dy * (i + 0.5) + amp).toFixed(1);
+    const ex = (x0 + dx * (i + 1)).toFixed(1);
+    const ey = (y0 + dy * (i + 1)).toFixed(1);
+    d += ` L${mx} ${my} L${ex} ${ey}`;
+  }
+  return d;
+}
+
+const SLOTS = Array.from({ length: 12 }, (_, i) => {
+  const a = (i / 12) * Math.PI * 2;
+  return {
+    x1: (140 + Math.cos(a) * 34).toFixed(1),
+    y1: (150 + Math.sin(a) * 34).toFixed(1),
+    x2: (140 + Math.cos(a) * 84).toFixed(1),
+    y2: (150 + Math.sin(a) * 84).toFixed(1),
+  };
+});
+
+const PINION = Array.from({ length: 16 }, (_, i) => {
+  const a = (i / 16) * Math.PI * 2;
+  return {
+    x1: (132 + Math.cos(a) * 44).toFixed(1),
+    y1: (150 + Math.sin(a) * 44).toFixed(1),
+    x2: (132 + Math.cos(a) * 52).toFixed(1),
+    y2: (150 + Math.sin(a) * 52).toFixed(1),
+  };
+});
+
+/* Cavity-to-cavity bore spread. Synthetic and labelled as a schematic: a real
+   distribution belongs to a real tool, not to a web page. */
+const BORES = [80, 82.5, 83, 84, 84.5, 85, 86, 81, 83.5, 85.5, 87, 82, 84];
+
+const TAPER = zig(36, 108, 252, 134, 18, 12);
+const PARALLEL = zig(36, 112, 236, 112, 17, 12);
+const CORE_TOP = zig(210, 126, 340, 126, 10, -10);
+const CORE_BOT = zig(210, 174, 340, 174, 10, 10);
+const RACK_TEETH = zig(56, 202, 188, 202, 8, -9);
+
+const threadFigs = (b.thread?.figures ?? []) as any[];
+const mechs = (b.mechanism?.options ?? []) as any[];
+const collapsible = mechs[0] ?? {};
+const unscrewing = mechs[1] ?? {};
+---
+
+<article class="plm">
+
+  {/* ═══ HERO — the range plate ═══════════════════════════════════════════ */}
+  <header class="plm-hero">
+    <div class="shell--wide">
+      <div class="plm-plate" data-reveal style="--reveal-y:0px">
+        <div class="plm-plate__copy">
+          <p class="eyebrow">{content.hero.kicker}</p>
+          <h1 class="plm-hero__head">
+            {content.hero.headline.map((line: any) => <span>{line}</span>)}
+          </h1>
+          <p class="plm-hero__lead">{content.hero.lead}</p>
+          {content.hero.markers && (
+            <ul class="plm-hero__markers">
+              {content.hero.markers.map((m: any) => <li class="t-mono">{m}</li>)}
+            </ul>
+          )}
+        </div>
+
+        {plate.map((c: any, i: number) => (
+          <figure class="plm-cell" style={`--i:${i}`}>
+            <svg viewBox="0 0 120 100" data-nomirror aria-hidden="true">
+              <path d={G[c.id]?.o ?? ''} class="plm-g plm-g--o" />
+              {G[c.id]?.d && <path d={G[c.id].d} class="plm-g plm-g--d" />}
+              {G[c.id]?.m && <path d={G[c.id].m} class="plm-g plm-g--m" />}
+            </svg>
+            <figcaption class="plm-cell__cap">
+              <span class="plm-cell__name">{c.name}</span>
+              <span class="plm-cell__meta">
+                <span class="t-mono">{c.code}</span>
+                <span class="t-mono">{c.range}</span>
+              </span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <div class="plm-plate__foot">
+        <p class="t-label">{b.plate.label}</p>
+        <p class="plm-plate__note">{b.plate.note}</p>
+        <ul class="plm-key">
+          <li><span class="plm-key__sw plm-key__sw--poly"></span>{b.plate.keyPolymer}</li>
+          <li><span class="plm-key__sw plm-key__sw--metal"></span>{b.plate.keyMetal}</li>
+        </ul>
+        <p class="figure-note">{common.schematic}</p>
+      </div>
+    </div>
+  </header>
+
+  {/* ═══ 01 · THE RANGE ═══════════════════════════════════════════════════ */}
+  <section class="plm-band" id="plm-range">
+    <div class="shell--wide plm-band__inner">
+      <div class="plm-rail"><p class="plm-rail__i t-mono">{b.range.index}</p></div>
+      <div class="plm-band__body">
+        <div class="plm-head">
+          <p class="eyebrow">{b.range.kicker}</p>
+          <h2 class="plm-h2">{b.range.heading}</h2>
+          <p class="t-lead">{b.range.body}</p>
+          <p class="plm-head__sub t-small">{b.range.body2}</p>
+        </div>
+
+        <div class="plm-strat" data-tabs>
+          <div class="plm-strat__tabs" role="tablist" aria-label={b.range.tabsLabel}>
+            {views.map((v: any) => (
+              <button
+                class="plm-strat__tab"
+                type="button"
+                role="tab"
+                data-tab={v.id}
+                aria-selected="false"
+                id={`plm-tab-${v.id}`}
+                aria-controls={`plm-panel-${v.id}`}
+              >{v.name}</button>
+            ))}
+          </div>
+
+          {views.map((v: any) => (
+            <div
+              class="plm-strat__panel"
+              data-panel={v.id}
+              role="tabpanel"
+              id={`plm-panel-${v.id}`}
+              aria-labelledby={`plm-tab-${v.id}`}
+              hidden
+            >
+              <p class="plm-strat__hl">{v.headline}</p>
+              <dl class="plm-strat__fig">
+                {(STRAT[v.id] ?? []).map((row: any) => (
+                  <div>
+                    <dt class="t-label">{row.k}</dt>
+                    <dd class="t-mono">{row.v}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p class="plm-strat__note">{v.note}</p>
+            </div>
+          ))}
+
+          <p class="t-label plm-mx__cap">{b.range.matrixLabel}</p>
+          <div class="plm-mx__scroll">
+            <table class="plm-mx">
+              <thead>
+                <tr>
+                  <th scope="col" class="plm-mx__corner">{b.range.typeColumn}</th>
+                  {diameters.map((d: string, ci: number) => (
+                    <th scope="col" class="t-mono" style={`--c:${ci}`}>{d}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {MX.map((row: number[], ri: number) => (
+                  <tr>
+                    <th scope="row">{plate[ri]?.name}</th>
+                    {row.map((s: number, ci: number) => (
+                      <td data-s={s} style={`--c:${ci}`}>
+                        {s > 0 && <span class="plm-mx__m" aria-hidden="true"></span>}
+                        <span class="vh">
+                          {s === 1 ? b.range.legend.dedicated : s === 2 ? b.range.legend.frame : b.range.legend.absent}
+                        </span>
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <ul class="plm-mx__key">
+            <li><span class="plm-mx__m plm-mx__m--ded"></span>{b.range.legend.dedicated}</li>
+            <li><span class="plm-mx__m plm-mx__m--fr"></span>{b.range.legend.frame}</li>
+          </ul>
+
+          <div class="plm-frames">
+            <p class="t-label">{b.range.framesLabel}</p>
+            <ol class="plm-frames__list">
+              {(b.range.frames ?? []).map((f: any) => (
+                <li><span class="plm-frames__n">{f.name}</span><span class="t-mono">{f.span}</span></li>
+              ))}
+            </ol>
+          </div>
+        </div>
+
+        <div class="plm-notes">
+          {(b.range.notes ?? []).map((n: any, i: number) => (
+            <div class="plm-notes__item" data-reveal style={`--reveal-delay:${i * 90}ms`}>
+              <h3 class="plm-h5">{n.heading}</h3>
+              <p>{n.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <p class="plm-close">{b.range.close}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 02 · MECHANISM ═══════════════════════════════════════════════════ */}
+  <section class="plm-band plm-band--sunk" id="plm-mechanism">
+    <div class="shell--wide plm-band__inner">
+      <div class="plm-rail"><p class="plm-rail__i t-mono">{b.mechanism.index}</p></div>
+      <div class="plm-band__body">
+        <div class="plm-head">
+          <p class="eyebrow">{b.mechanism.kicker}</p>
+          <h2 class="plm-h2">{b.mechanism.heading}</h2>
+          <p class="t-lead">{b.mechanism.body}</p>
+        </div>
+
+        <div class="plm-mech">
+          {/* ── Collapsible core ──────────────────────────────────────── */}
+          <figure class="plm-mech__col" data-reveal>
+            <h3 class="plm-h4">{collapsible.name}</h3>
+            <p class="plm-mech__sum">{collapsible.summary}</p>
+            <svg viewBox="0 0 490 300" data-nomirror role="img" aria-label={collapsible.figureLabel} class="plm-dwg">
+              <defs>
+                <pattern id="plm-cc-h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.4" />
+                </pattern>
+                <marker id="plm-cc-a" markerWidth="9" markerHeight="8" refX="8.5" refY="4" orient="auto">
+                  <path d="M0 0 L9 4 L0 8 Z" fill="var(--accent)" />
+                </marker>
+              </defs>
+
+              {/* Plan section — looking along the core axis. */}
+              <circle cx="140" cy="150" r="84" class="plm-l" />
+              <circle cx="140" cy="150" r="68" class="plm-phantom" />
+              <circle cx="140" cy="150" r="32" style="fill:url(#plm-cc-h)" class="plm-l" />
+              {SLOTS.map((s: any) => (
+                <line x1={s.x1} y1={s.y1} x2={s.x2} y2={s.y2} class="plm-l plm-l--thin" />
+              ))}
+              <line x1="244" y1="150" x2="232" y2="150" class="plm-arw" marker-end="url(#plm-cc-a)" />
+              <line x1="36" y1="150" x2="48" y2="150" class="plm-arw" marker-end="url(#plm-cc-a)" />
+              <line x1="140" y1="46" x2="140" y2="58" class="plm-arw" marker-end="url(#plm-cc-a)" />
+              <line x1="140" y1="254" x2="140" y2="242" class="plm-arw" marker-end="url(#plm-cc-a)" />
+              <line x1="56" y1="150" x2="224" y2="150" class="plm-cl" />
+              <line x1="140" y1="66" x2="140" y2="234" class="plm-cl" />
+
+              {/* Side section — pin, sleeve, flanges and the head space. */}
+              <line x1="390" y1="26" x2="390" y2="286" class="plm-cl" />
+              <rect x="380" y="46" width="20" height="160" style="fill:url(#plm-cc-h)" class="plm-l" />
+              <rect x="356" y="206" width="68" height="20" style="fill:url(#plm-cc-h)" class="plm-l" />
+              <rect x="350" y="66" width="30" height="110" style="fill:url(#plm-cc-h)" class="plm-l" />
+              <rect x="400" y="66" width="30" height="110" style="fill:url(#plm-cc-h)" class="plm-l" />
+              <rect x="332" y="176" width="48" height="16" style="fill:url(#plm-cc-h)" class="plm-l" />
+              <rect x="400" y="176" width="48" height="16" style="fill:url(#plm-cc-h)" class="plm-l" />
+              <line x1="358" y1="72" x2="358" y2="170" class="plm-phantom" />
+              <line x1="368" y1="72" x2="368" y2="170" class="plm-phantom" />
+              <line x1="412" y1="72" x2="412" y2="170" class="plm-phantom" />
+              <line x1="422" y1="72" x2="422" y2="170" class="plm-phantom" />
+              <line x1="332" y1="192" x2="310" y2="192" class="plm-l plm-l--thin" />
+              <line x1="332" y1="206" x2="310" y2="206" class="plm-l plm-l--thin" />
+              <line x1="316" y1="186" x2="316" y2="192" class="plm-arw" marker-end="url(#plm-cc-a)" />
+              <line x1="316" y1="212" x2="316" y2="206" class="plm-arw" marker-end="url(#plm-cc-a)" />
+              <line x1="390" y1="240" x2="390" y2="278" class="plm-arw" marker-end="url(#plm-cc-a)" />
+
+              {/* Item balloons. Legend sits in HTML beside the drawing. */}
+              <g class="plm-bal">
+                <line x1="199" y1="91" x2="240" y2="54" /><circle cx="199" cy="91" r="2.4" class="plm-bal__dot" />
+                <circle cx="250" cy="46" r="10" /><text x="250" y="50">1</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="128" y1="138" x2="52" y2="58" /><circle cx="128" cy="138" r="2.4" class="plm-bal__dot" />
+                <circle cx="42" cy="50" r="10" /><text x="42" y="54">2</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="69" y1="176" x2="26" y2="232" /><circle cx="69" cy="176" r="2.4" class="plm-bal__dot" />
+                <circle cx="18" cy="242" r="10" /><text x="18" y="246">3</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="316" y1="199" x2="330" y2="262" /><circle cx="316" cy="199" r="2.4" class="plm-bal__dot" />
+                <circle cx="340" cy="270" r="10" /><text x="340" y="274">4</text>
+              </g>
+            </svg>
+            <ol class="plm-leg">
+              {(collapsible.legend ?? []).map((l: any) => (
+                <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
+              ))}
+            </ol>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+
+          {/* ── Unscrewing core ───────────────────────────────────────── */}
+          <figure class="plm-mech__col" data-reveal style="--reveal-delay:120ms">
+            <h3 class="plm-h4">{unscrewing.name}</h3>
+            <p class="plm-mech__sum">{unscrewing.summary}</p>
+            <svg viewBox="0 0 490 300" data-nomirror role="img" aria-label={unscrewing.figureLabel} class="plm-dwg">
+              <defs>
+                <pattern id="plm-us-h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.4" />
+                </pattern>
+                <pattern id="plm-us-h2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent)" stroke-width="0.8" opacity="0.28" />
+                </pattern>
+                <marker id="plm-us-a" markerWidth="9" markerHeight="8" refX="8.5" refY="4" orient="auto">
+                  <path d="M0 0 L9 4 L0 8 Z" fill="var(--accent)" />
+                </marker>
+              </defs>
+
+              <line x1="30" y1="150" x2="360" y2="150" class="plm-cl" />
+
+              {/* Moulded part, held against rotation. */}
+              <rect x="216" y="86" width="140" height="30" style="fill:url(#plm-us-h2)" class="plm-l plm-l--thin" />
+              <rect x="216" y="184" width="140" height="30" style="fill:url(#plm-us-h2)" class="plm-l plm-l--thin" />
+
+              {/* Core shaft and thread form. */}
+              <rect x="92" y="126" width="248" height="48" style="fill:url(#plm-us-h)" class="plm-l" />
+              <path d={CORE_TOP} class="plm-l" />
+              <path d={CORE_BOT} class="plm-l" />
+
+              {/* Pinion. */}
+              <circle cx="132" cy="150" r="44" class="plm-l" />
+              {PINION.map((t: any) => (
+                <line x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} class="plm-l plm-l--thin" />
+              ))}
+
+              {/* Rack. */}
+              <rect x="40" y="202" width="156" height="26" style="fill:url(#plm-us-h)" class="plm-l" />
+              <path d={RACK_TEETH} class="plm-l" />
+
+              <path d="M72 118 Q132 62 192 118" class="plm-arw" fill="none" marker-end="url(#plm-us-a)" />
+              <line x1="376" y1="150" x2="452" y2="150" class="plm-arw" marker-end="url(#plm-us-a)" />
+
+              <g class="plm-bal">
+                <line x1="132" y1="112" x2="78" y2="52" /><circle cx="132" cy="112" r="2.4" class="plm-bal__dot" />
+                <circle cx="68" cy="44" r="10" /><text x="68" y="48">1</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="110" y1="216" x2="60" y2="270" /><circle cx="110" cy="216" r="2.4" class="plm-bal__dot" />
+                <circle cx="50" cy="278" r="10" /><text x="50" y="282">2</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="280" y1="120" x2="300" y2="58" /><circle cx="280" cy="120" r="2.4" class="plm-bal__dot" />
+                <circle cx="310" cy="50" r="10" /><text x="310" y="54">3</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="300" y1="200" x2="396" y2="258" /><circle cx="300" cy="200" r="2.4" class="plm-bal__dot" />
+                <circle cx="406" cy="266" r="10" /><text x="406" y="270">4</text>
+              </g>
+            </svg>
+            <ol class="plm-leg">
+              {(unscrewing.legend ?? []).map((l: any) => (
+                <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
+              ))}
+            </ol>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+        </div>
+
+        {/* The two mechanisms read against each other on the same rows. */}
+        <p class="t-label plm-cmp__cap">{b.mechanism.compare.label}</p>
+        <div class="plm-cmp__scroll">
+          <table class="plm-cmp">
+            <thead>
+              <tr>
+                <th scope="col">{b.mechanism.compare.featureColumn}</th>
+                <th scope="col">{collapsible.name}</th>
+                <th scope="col">{unscrewing.name}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {(b.mechanism.compare.rows ?? []).map((r: any) => (
+                <tr>
+                  <th scope="row">{r.k}</th>
+                  <td>{r.a}</td>
+                  <td>{r.b}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="plm-src t-fine">{b.mechanism.compare.source}</p>
+
+        <div class="plm-third">
+          <h3 class="plm-h5">{b.mechanism.third.heading}</h3>
+          <p>{b.mechanism.third.body}</p>
+        </div>
+
+        <p class="plm-close">{b.mechanism.close}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 03 · THREAD AND SEAL ═════════════════════════════════════════════ */}
+  <section class="plm-band" id="plm-thread">
+    <div class="shell--wide plm-band__inner">
+      <div class="plm-rail"><p class="plm-rail__i t-mono">{b.thread.index}</p></div>
+      <div class="plm-band__body">
+        <div class="plm-head">
+          <p class="eyebrow">{b.thread.kicker}</p>
+          <h2 class="plm-h2">{b.thread.heading}</h2>
+          <p class="t-lead">{b.thread.body}</p>
+        </div>
+
+        <div class="plm-thr">
+          {/* Tapered thread */}
+          <figure class="plm-thr__fig" data-reveal>
+            <h3 class="plm-h5">{threadFigs[0]?.name}</h3>
+            <svg viewBox="0 0 300 230" data-nomirror role="img" aria-label={threadFigs[0]?.figureLabel} class="plm-dwg">
+              <defs>
+                <pattern id="plm-tp-h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.4" />
+                </pattern>
+              </defs>
+              <path d="M36 46 H252 V134 L36 108 Z" style="fill:url(#plm-tp-h)" class="plm-l" />
+              <line x1="36" y1="108" x2="252" y2="108" class="plm-phantom" />
+              <path d={TAPER} class="plm-l" />
+              <line x1="20" y1="196" x2="285" y2="196" class="plm-cl" />
+              <g class="plm-bal">
+                <line x1="150" y1="121" x2="206" y2="26" /><circle cx="150" cy="121" r="2.4" class="plm-bal__dot" />
+                <circle cx="216" cy="18" r="10" /><text x="216" y="22">1</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="96" y1="126" x2="56" y2="26" /><circle cx="96" cy="126" r="2.4" class="plm-bal__dot" />
+                <circle cx="46" cy="18" r="10" /><text x="46" y="22">2</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="246" y1="132" x2="272" y2="166" /><circle cx="246" cy="132" r="2.4" class="plm-bal__dot" />
+                <circle cx="276" cy="176" r="10" /><text x="276" y="180">3</text>
+              </g>
+            </svg>
+            <p class="plm-thr__note">{threadFigs[0]?.note}</p>
+            <ol class="plm-leg">
+              {(threadFigs[0]?.legend ?? []).map((l: any) => (
+                <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
+              ))}
+            </ol>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+
+          {/* Parallel thread */}
+          <figure class="plm-thr__fig" data-reveal style="--reveal-delay:100ms">
+            <h3 class="plm-h5">{threadFigs[1]?.name}</h3>
+            <svg viewBox="0 0 300 230" data-nomirror role="img" aria-label={threadFigs[1]?.figureLabel} class="plm-dwg">
+              <defs>
+                <pattern id="plm-pl-h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.4" />
+                </pattern>
+              </defs>
+              <path d="M36 46 H256 V176 H236 V112 H36 Z" style="fill:url(#plm-pl-h)" class="plm-l" />
+              <path d={PARALLEL} class="plm-l" />
+              <rect x="196" y="158" width="40" height="18" class="plm-seal" />
+              <line x1="272" y1="52" x2="272" y2="46" class="plm-arw" />
+              <line x1="272" y1="106" x2="272" y2="112" class="plm-arw" />
+              <line x1="272" y1="46" x2="272" y2="112" class="plm-l plm-l--thin" />
+              <line x1="256" y1="46" x2="280" y2="46" class="plm-l plm-l--thin" />
+              <line x1="256" y1="112" x2="280" y2="112" class="plm-l plm-l--thin" />
+              <line x1="20" y1="196" x2="285" y2="196" class="plm-cl" />
+              <g class="plm-bal">
+                <line x1="140" y1="112" x2="190" y2="26" /><circle cx="140" cy="112" r="2.4" class="plm-bal__dot" />
+                <circle cx="200" cy="18" r="10" /><text x="200" y="22">1</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="216" y1="168" x2="150" y2="212" /><circle cx="216" cy="168" r="2.4" class="plm-bal__dot" />
+                <circle cx="140" cy="218" r="10" /><text x="140" y="222">2</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="100" y1="78" x2="56" y2="26" /><circle cx="100" cy="78" r="2.4" class="plm-bal__dot" />
+                <circle cx="46" cy="18" r="10" /><text x="46" y="22">3</text>
+              </g>
+            </svg>
+            <p class="plm-thr__note">{threadFigs[1]?.note}</p>
+            <ol class="plm-leg">
+              {(threadFigs[1]?.legend ?? []).map((l: any) => (
+                <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
+              ))}
+            </ol>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+
+          {/* O-ring gland */}
+          <figure class="plm-thr__fig" data-reveal style="--reveal-delay:200ms">
+            <h3 class="plm-h5">{threadFigs[2]?.name}</h3>
+            <svg viewBox="0 0 300 230" data-nomirror role="img" aria-label={threadFigs[2]?.figureLabel} class="plm-dwg">
+              <defs>
+                <pattern id="plm-gl-h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.4" />
+                </pattern>
+                <pattern id="plm-gl-h2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent)" stroke-width="0.8" opacity="0.28" />
+                </pattern>
+                <marker id="plm-gl-a" markerWidth="9" markerHeight="8" refX="8.5" refY="4" orient="auto">
+                  <path d="M0 0 L9 4 L0 8 Z" fill="var(--accent)" />
+                </marker>
+              </defs>
+              <path d="M30 36 H270 V106 H168 V74 H108 V106 H30 Z" style="fill:url(#plm-gl-h)" class="plm-l" />
+              <circle cx="138" cy="98" r="24" class="plm-seal" />
+              <rect x="30" y="114" width="240" height="36" style="fill:url(#plm-gl-h2)" class="plm-l plm-l--thin" />
+              {/* Groove width */}
+              <line x1="108" y1="70" x2="108" y2="50" class="plm-l plm-l--thin" />
+              <line x1="168" y1="70" x2="168" y2="50" class="plm-l plm-l--thin" />
+              <line x1="102" y1="56" x2="108" y2="56" class="plm-arw" marker-end="url(#plm-gl-a)" />
+              <line x1="174" y1="56" x2="168" y2="56" class="plm-arw" marker-end="url(#plm-gl-a)" />
+              <line x1="108" y1="56" x2="168" y2="56" class="plm-l plm-l--thin" />
+              {/* Groove depth */}
+              <line x1="168" y1="74" x2="200" y2="74" class="plm-l plm-l--thin" />
+              <line x1="168" y1="106" x2="200" y2="106" class="plm-l plm-l--thin" />
+              <line x1="192" y1="68" x2="192" y2="74" class="plm-arw" marker-end="url(#plm-gl-a)" />
+              <line x1="192" y1="112" x2="192" y2="106" class="plm-arw" marker-end="url(#plm-gl-a)" />
+              <line x1="20" y1="196" x2="285" y2="196" class="plm-cl" />
+              <g class="plm-bal">
+                <line x1="150" y1="56" x2="206" y2="24" /><circle cx="150" cy="56" r="2.4" class="plm-bal__dot" />
+                <circle cx="216" cy="16" r="10" /><text x="216" y="20">1</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="192" y1="90" x2="248" y2="56" /><circle cx="192" cy="90" r="2.4" class="plm-bal__dot" />
+                <circle cx="258" cy="48" r="10" /><text x="258" y="52">2</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="108" y1="76" x2="56" y2="30" /><circle cx="108" cy="76" r="2.4" class="plm-bal__dot" />
+                <circle cx="46" cy="22" r="10" /><text x="46" y="26">3</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="138" y1="110" x2="72" y2="168" /><circle cx="138" cy="110" r="2.4" class="plm-bal__dot" />
+                <circle cx="62" cy="176" r="10" /><text x="62" y="180">4</text>
+              </g>
+            </svg>
+            <p class="plm-thr__note">{threadFigs[2]?.note}</p>
+            <ol class="plm-leg">
+              {(threadFigs[2]?.legend ?? []).map((l: any) => (
+                <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
+              ))}
+            </ol>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+        </div>
+
+        <p class="t-label plm-cmp__cap">{b.thread.ledgerLabel}</p>
+        <div class="plm-cmp__scroll">
+          <table class="plm-cmp plm-cmp--two">
+            <thead>
+              <tr>
+                {(b.thread.ledgerColumns ?? []).map((c: string) => <th scope="col">{c}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {(b.thread.ledger ?? []).map((r: any) => (
+                <tr><th scope="row">{r.k}</th><td>{r.v}</td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="plm-third">
+          <h3 class="plm-h5">{b.thread.insert.heading}</h3>
+          <p>{b.thread.insert.body}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 04 · MATERIAL LEDGER ═════════════════════════════════════════════ */}
+  <section class="plm-band plm-band--sunk" id="plm-material">
+    <div class="shell--wide plm-band__inner">
+      <div class="plm-rail"><p class="plm-rail__i t-mono">{b.material.index}</p></div>
+      <div class="plm-band__body">
+        <div class="plm-head">
+          <p class="eyebrow">{b.material.kicker}</p>
+          <h2 class="plm-h2">{b.material.heading}</h2>
+          <p class="t-lead">{b.material.body}</p>
+        </div>
+
+        <div class="plm-cmp__scroll plm-mat__scroll">
+          <table class="plm-mat">
+            <thead>
+              <tr>
+                {(b.material.columns ?? []).map((c: string) => <th scope="col">{c}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {(b.material.rows ?? []).map((r: any) => (
+                <tr>
+                  <th scope="row" class="t-mono">{r.name}</th>
+                  <td>{r.window}</td>
+                  <td>{r.shrink}</td>
+                  <td>{r.runner}</td>
+                  <td>{r.steel}</td>
+                  <td>{r.vent}</td>
+                  <td class="plm-mat__risk">{r.risk}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <p class="plm-close">{b.material.note}</p>
+        <p class="plm-src t-fine">{b.material.source}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 05 · DIMENSIONAL AGREEMENT ═══════════════════════════════════════ */}
+  <section class="plm-band" id="plm-agreement">
+    <div class="shell--wide plm-band__inner">
+      <div class="plm-rail"><p class="plm-rail__i t-mono">{b.agreement.index}</p></div>
+      <div class="plm-band__body">
+        <div class="plm-head">
+          <p class="eyebrow">{b.agreement.kicker}</p>
+          <h2 class="plm-h2">{b.agreement.heading}</h2>
+          <p class="t-lead">{b.agreement.body}</p>
+        </div>
+
+        <div class="plm-agr">
+          <figure class="plm-agr__fig" data-reveal>
+            <p class="t-label">{b.agreement.figA.label}</p>
+            <svg viewBox="0 0 260 260" data-nomirror role="img" aria-label={b.agreement.figA.label} class="plm-dwg">
+              {BORES.map((r: any, i: number) => (
+                <circle cx="130" cy="130" r={r} class="plm-spread" style={`--i:${i}`} />
+              ))}
+              <ellipse cx="130" cy="130" rx="92" ry="74" class="plm-oval" />
+              <circle cx="130" cy="130" r="84" class="plm-l" />
+              <line x1="130" y1="24" x2="130" y2="236" class="plm-cl" />
+              <line x1="24" y1="130" x2="236" y2="130" class="plm-cl" />
+              <g class="plm-bal">
+                <line x1="189" y1="71" x2="222" y2="38" /><circle cx="189" cy="71" r="2.4" class="plm-bal__dot" />
+                <circle cx="232" cy="30" r="10" /><text x="232" y="34">1</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="68" y1="192" x2="32" y2="224" /><circle cx="68" cy="192" r="2.4" class="plm-bal__dot" />
+                <circle cx="22" cy="232" r="10" /><text x="22" y="236">2</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="222" y1="130" x2="240" y2="170" /><circle cx="222" cy="130" r="2.4" class="plm-bal__dot" />
+                <circle cx="244" cy="180" r="10" /><text x="244" y="184">3</text>
+              </g>
+            </svg>
+            <p class="plm-thr__note">{b.agreement.figA.note}</p>
+            <ol class="plm-leg">
+              {(b.agreement.figA.legend ?? []).map((l: any) => (
+                <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
+              ))}
+            </ol>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+
+          <figure class="plm-agr__fig" data-reveal style="--reveal-delay:120ms">
+            <p class="t-label">{b.agreement.figB.label}</p>
+            <svg viewBox="0 0 420 250" data-nomirror role="img" aria-label={b.agreement.figB.label} class="plm-dwg">
+              <defs>
+                <pattern id="plm-en-h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.4" />
+                </pattern>
+                <pattern id="plm-en-h2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent)" stroke-width="0.8" opacity="0.28" />
+                </pattern>
+                <marker id="plm-en-a" markerWidth="9" markerHeight="8" refX="8.5" refY="4" orient="auto">
+                  <path d="M0 0 L9 4 L0 8 Z" fill="var(--accent)" />
+                </marker>
+              </defs>
+              <path d="M180 34 H382 V96 H344 V78 H180 Z" style="fill:url(#plm-en-h)" class="plm-l" />
+              <path d="M40 78 H344 V102 H40 Z" style="fill:url(#plm-en-h2)" class="plm-l plm-l--thin" />
+              <rect x="182" y="72" width="160" height="8" class="plm-fuse" />
+              <line x1="20" y1="118" x2="400" y2="118" class="plm-cl" />
+              <line x1="180" y1="108" x2="180" y2="190" class="plm-phantom" />
+              <line x1="344" y1="108" x2="344" y2="190" class="plm-phantom" />
+              <line x1="174" y1="200" x2="180" y2="200" class="plm-arw" marker-end="url(#plm-en-a)" />
+              <line x1="350" y1="200" x2="344" y2="200" class="plm-arw" marker-end="url(#plm-en-a)" />
+              <line x1="180" y1="200" x2="344" y2="200" class="plm-l plm-l--thin" />
+              <g class="plm-bal">
+                <line x1="262" y1="200" x2="296" y2="232" /><circle cx="262" cy="200" r="2.4" class="plm-bal__dot" />
+                <circle cx="306" cy="238" r="10" /><text x="306" y="242">1</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="200" y1="78" x2="110" y2="152" /><circle cx="200" cy="78" r="2.4" class="plm-bal__dot" />
+                <circle cx="100" cy="160" r="10" /><text x="100" y="164">2</text>
+              </g>
+              <g class="plm-bal">
+                <line x1="320" y1="78" x2="392" y2="44" /><circle cx="320" cy="78" r="2.4" class="plm-bal__dot" />
+                <circle cx="402" cy="36" r="10" /><text x="402" y="40">3</text>
+              </g>
+            </svg>
+            <p class="plm-thr__note">{b.agreement.figB.note}</p>
+            <ol class="plm-leg">
+              {(b.agreement.figB.legend ?? []).map((l: any) => (
+                <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
+              ))}
+            </ol>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+        </div>
+
+        <div class="plm-tol">
+          <p class="t-label">{b.agreement.toleranceLabel}</p>
+          <dl class="spec plm-tol__list">
+            {(b.agreement.tolerance ?? []).map((t: any) => (
+              <div class="spec__row">
+                <dt class="spec__k">{t.k}</dt>
+                <dd class="spec__v">{t.v}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="plm-src t-fine">{b.agreement.source}</p>
+        </div>
+
+        <div class="plm-split">
+          <section>
+            <h3 class="plm-h5">{b.agreement.canHeading}</h3>
+            <ul class="plm-list plm-list--can">
+              {(b.agreement.can ?? []).map((i: string) => <li>{i}</li>)}
+            </ul>
+          </section>
+          <section>
+            <h3 class="plm-h5">{b.agreement.cannotHeading}</h3>
+            <ul class="plm-list plm-list--cannot">
+              {(b.agreement.cannot ?? []).map((i: string) => <li>{i}</li>)}
+            </ul>
+          </section>
+        </div>
+
+        <p class="plm-close">{b.agreement.close}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 06 · COST PER THOUSAND ═══════════════════════════════════════════ */}
+  <section class="plm-band plm-band--sunk" id="plm-economics">
+    <div class="shell--wide plm-band__inner">
+      <div class="plm-rail"><p class="plm-rail__i t-mono">{b.economics.index}</p></div>
+      <div class="plm-band__body">
+        <div class="plm-head">
+          <p class="eyebrow">{b.economics.kicker}</p>
+          <h2 class="plm-h2">{b.economics.heading}</h2>
+          <p class="t-lead">{b.economics.body}</p>
+        </div>
+
+        <ol class="plm-three">
+          {(b.economics.numbers ?? []).map((n: any, i: number) => (
+            <li data-reveal style={`--reveal-delay:${i * 90}ms`}>
+              <span class="plm-three__n t-mono">{n.n}</span>
+              <h3 class="plm-h5">{n.name}</h3>
+              <p>{n.note}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div class="plm-calc">
+          <p class="t-label plm-calc__cap">{b.economics.workedLabel}</p>
+          <div class="plm-calc__grid">
+            <section class="plm-calc__col">
+              <h3 class="t-label">{b.economics.inputsHeading}</h3>
+              <dl>
+                {(b.economics.inputs ?? []).map((r: any) => (
+                  <div><dt>{r.k}</dt><dd class="t-mono">{r.v}</dd></div>
+                ))}
+              </dl>
+            </section>
+            <section class="plm-calc__col plm-calc__col--out">
+              <h3 class="t-label">{b.economics.outputsHeading}</h3>
+              <dl>
+                {(b.economics.outputs ?? []).map((r: any) => (
+                  <div><dt>{r.k}</dt><dd class="t-mono">{r.v}</dd></div>
+                ))}
+              </dl>
+            </section>
+            <section class="plm-calc__col plm-calc__col--delta">
+              <h3 class="t-label">{b.economics.deltasHeading}</h3>
+              <dl>
+                {(b.economics.deltas ?? []).map((r: any) => (
+                  <div><dt>{r.k}</dt><dd class="t-mono">{r.v}</dd></div>
+                ))}
+              </dl>
+            </section>
+          </div>
+          <p class="plm-src t-fine">{b.economics.disclaimer}</p>
+        </div>
+
+        <div class="plm-lost">
+          <h3 class="plm-h5">{b.economics.lostHeading}</h3>
+          <dl class="plm-lost__list">
+            {(b.economics.lost ?? []).map((l: any) => (
+              <div><dt>{l.k}</dt><dd>{l.v}</dd></div>
+            ))}
+          </dl>
+        </div>
+
+        <p class="plm-close">{b.economics.close}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 07 · BOUNDARY — the one inversion on the page ════════════════════ */}
+  <section class="plm-band plm-band--inv" id="plm-boundary">
+    <div class="shell--wide plm-band__inner">
+      <div class="plm-rail"><p class="plm-rail__i t-mono">{b.boundary.index}</p></div>
+      <div class="plm-band__body">
+        <div class="plm-head">
+          <p class="eyebrow">{b.boundary.kicker}</p>
+          <h2 class="plm-h2">{b.boundary.heading}</h2>
+          <p class="t-lead">{b.boundary.body}</p>
+        </div>
+
+        <div class="plm-split plm-split--bound">
+          <section>
+            <h3 class="plm-h5">{b.boundary.supplyHeading}</h3>
+            <ul class="plm-list plm-list--can">
+              {(b.boundary.supply ?? []).map((i: string) => <li>{i}</li>)}
+            </ul>
+          </section>
+          <section>
+            <h3 class="plm-h5">{b.boundary.customerHeading}</h3>
+            <ul class="plm-list plm-list--cannot">
+              {(b.boundary.customer ?? []).map((i: string) => <li>{i}</li>)}
+            </ul>
+          </section>
+        </div>
+
+        <p class="plm-statement">{b.boundary.statement}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 08 · CONTINUITY AND START ════════════════════════════════════════ */}
+  <section class="plm-band" id="plm-start">
+    <div class="shell--wide plm-band__inner">
+      <div class="plm-rail"><p class="plm-rail__i t-mono">{b.start.index}</p></div>
+      <div class="plm-band__body">
+        <div class="plm-head">
+          <p class="eyebrow">{b.start.kicker}</p>
+          <h2 class="plm-h2">{b.start.heading}</h2>
+          <p class="t-lead">{b.start.body}</p>
+        </div>
+
+        {/* The audit. Staggered off the grid — the one place the page asks
+            rather than explains. */}
+        <div class="plm-audit">
+          <h3 class="t-label plm-audit__h">{b.start.auditHeading}</h3>
+          <ol class="plm-audit__list">
+            {(b.start.audit ?? []).map((a: any, i: number) => (
+              <li id={`plm-q${i + 1}`} data-reveal style={`--reveal-delay:${i * 70}ms`}>
+                <span class="plm-audit__n t-mono">{String(i + 1).padStart(2, '0')}</span>
+                <p class="plm-audit__q">{a.q}</p>
+                <p class="plm-audit__c">{a.c}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="plm-third">
+          <h3 class="plm-h5">{b.start.positionHeading}</h3>
+          <ul class="plm-list plm-list--can">
+            {(b.start.position ?? []).map((i: string) => <li>{i}</li>)}
+          </ul>
+        </div>
+
+        <div class="plm-ledger">
+          <section class="plm-ledger__col">
+            <h3 class="plm-h4">{b.start.sendHeading}</h3>
+            <ul>{(b.start.send ?? []).map((i: string) => <li>{i}</li>)}</ul>
+          </section>
+          <section class="plm-ledger__col plm-ledger__col--out">
+            <h3 class="plm-h4">{b.start.getHeading}</h3>
+            <ul>{(b.start.get ?? []).map((i: string) => <li>{i}</li>)}</ul>
+          </section>
+        </div>
+
+        <div class="plm-facts">
+          <p class="t-label">{b.start.factsLabel}</p>
+          <ul class="plm-facts__list">
+            {(b.start.facts ?? []).map((f: any) => <li class="t-mono">{f}</li>)}
+          </ul>
+          <p class="plm-facts__note">{b.start.note}</p>
+        </div>
+
+        {/* Layer three: the depth, folded away until it is wanted. */}
+        <div class="plm-panels">
+          <h3 class="t-label plm-panels__h">{b.panels.heading}</h3>
+          {(b.panels.items ?? []).map((panel: any, i: number) => (
+            <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+              <h4>
+                <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
+                  <span>{panel.title}</span>
+                  <span class="disc__sign" aria-hidden="true"></span>
+                </button>
+              </h4>
+              <div class="disc__panel">
+                <div class="disc__inner">
+                  <div>
+                    <ul class="plm-panel__list">
+                      {(panel.bullets ?? []).map((bl: any) => <li>{bl}</li>)}
+                    </ul>
+                    {panel.source && <p class="plm-src t-fine">{panel.source}</p>}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<style>
+  /* ═══ PLUMBING CHAPTER SCOPE ════════════════════════════════════════════
+     A parts catalogue. Structural neutrals, deep teal-blue for polymer,
+     restrained brass for metal, hairlines carrying every division.
+     Two colours, one grid, no cards, no shadows. */
+  .plm {
+    --plm-rail: clamp(3rem, 5.5vw, 5.5rem);
+    --plm-gap: clamp(1.25rem, 3vw, 2.5rem);
+  }
+
+  .plm-h2 {
+    font-size: clamp(1.72rem, 3.1vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-block-start: var(--sp-4);
+    max-inline-size: 24ch;
+  }
+  .plm-h4 { font-size: var(--step-1); letter-spacing: var(--track-head); font-weight: 500; }
+  .plm-h5 { font-size: var(--step-0); letter-spacing: var(--track-head); font-weight: 500; }
+
+  /* ── Shared drawing conventions ──────────────────────────────────────── */
+  .plm-dwg { inline-size: 100%; block-size: auto; color: var(--accent-deep); }
+  .plm-l { fill: none; stroke: var(--accent-deep); stroke-width: 1.5; stroke-linejoin: round; }
+  .plm-l--thin { stroke-width: 0.85; }
+  .plm-phantom { fill: none; stroke: var(--accent); stroke-width: 0.9; stroke-dasharray: 5 4; opacity: 0.7; }
+  .plm-cl { stroke: var(--ink-muted); stroke-width: 0.7; stroke-dasharray: 10 3 1.5 3; opacity: 0.65; }
+  .plm-arw { stroke: var(--accent); stroke-width: 1.3; fill: none; }
+  .plm-seal { fill: color-mix(in oklab, var(--ink) 22%, transparent); stroke: var(--ink); stroke-width: 1.1; }
+  .plm-fuse { fill: color-mix(in oklab, var(--signal) 34%, transparent); stroke: var(--signal); stroke-width: 0.8; }
+  .plm-spread { fill: none; stroke: var(--accent); stroke-width: 0.8; opacity: 0.28; }
+  .plm-oval { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-dasharray: 7 4; }
+
+  .plm-bal line { stroke: var(--ink-muted); stroke-width: 0.8; }
+  .plm-bal circle { fill: var(--surface); stroke: var(--ink); stroke-width: 1.1; }
+  .plm-bal .plm-bal__dot { fill: var(--ink); stroke: none; }
+  .plm-bal text {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    fill: var(--ink);
+    text-anchor: middle;
+  }
+
+  /* ── Hero: the range plate ───────────────────────────────────────────── */
+  .plm-hero { padding-block: clamp(2rem, 5vw, 4rem) clamp(2rem, 5vw, 3.5rem); }
+  .plm-plate {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+  }
+  .plm-plate__copy {
+    grid-column: 1 / 4;
+    grid-row: 1 / 3;
+    background: var(--surface);
+    padding: clamp(1.25rem, 2.6vw, 2.25rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media (max-width: 1080px) {
+    .plm-plate { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .plm-plate__copy { grid-column: 1 / -1; grid-row: auto; }
+  }
+  @media (max-width: 640px) {
+    .plm-plate { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .plm-hero__head {
+    margin-block-start: clamp(0.85rem, 2vw, 1.35rem);
+    font-size: clamp(1.85rem, 3.4vw, 3rem);
+    line-height: 1.06;
+    letter-spacing: -0.026em;
+    font-weight: 500;
+  }
+  .plm-hero__head span { display: block; }
+  .plm-hero__head span:last-child { color: var(--accent-deep); }
+  .plm-hero__lead {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step-0);
+    line-height: 1.55;
+    color: var(--ink-muted);
+    max-inline-size: 52ch;
+  }
+  .plm-hero__markers {
+    margin-block-start: var(--sp-6);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .plm-hero__markers li {
+    font-size: var(--step--2);
+    letter-spacing: 0.07em;
+    padding-block: 0.38em;
+    padding-inline: 0.7em;
+    border: 1px solid color-mix(in oklab, var(--accent) 32%, transparent);
+    color: var(--accent-deep);
+  }
+
+  .plm-cell {
+    background: var(--surface);
+    padding-block: var(--sp-4) var(--sp-3);
+    padding-inline: var(--sp-4);
+    min-block-size: 8.5rem;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: var(--sp-3);
+    align-content: stretch;
+  }
+  .plm-cell svg { inline-size: 100%; block-size: auto; max-block-size: 5.5rem; align-self: center; }
+  .plm-g { fill: none; stroke-linejoin: round; }
+  .plm-g--o { stroke: var(--accent-deep); stroke-width: 1.5; }
+  .plm-g--d { stroke: var(--accent); stroke-width: 0.9; opacity: 0.65; }
+  .plm-g--m { stroke: var(--signal); stroke-width: 1.3; }
+  .plm-cell__cap { display: grid; gap: 0.15rem; }
+  .plm-cell__name { font-size: var(--step--1); line-height: 1.3; font-weight: var(--weight-medium); }
+  .plm-cell__meta {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    font-size: var(--step--2);
+    color: var(--ink-muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* Indexed arrival: cells land one at a time in reading order, hard, no fade. */
+  :global(html.js) .plm-plate[data-reveal] { opacity: 1; transform: none; transition: none; }
+  :global(html.js) .plm-plate[data-reveal] .plm-cell { opacity: 0; }
+  :global(html.js) .plm-plate[data-reveal='in'] .plm-cell {
+    animation: plm-index 1ms steps(1, end) both;
+    animation-delay: calc(var(--i) * 70ms);
+  }
+  @keyframes plm-index { from { opacity: 0; } to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) {
+    :global(html.js) .plm-plate[data-reveal] .plm-cell { opacity: 1; animation: none; }
+  }
+
+  .plm-plate__foot {
+    margin-block-start: var(--sp-5);
+    display: grid;
+    gap: var(--sp-3);
+  }
+  .plm-plate__note {
+    font-size: var(--step--1);
+    line-height: 1.55;
+    color: var(--ink-muted);
+    max-inline-size: 66ch;
+  }
+  .plm-key { display: flex; flex-wrap: wrap; gap: var(--sp-6); font-size: var(--step--2); color: var(--ink-muted); }
+  .plm-key li { display: flex; align-items: center; gap: 0.5rem; }
+  .plm-key__sw { inline-size: 1.4rem; block-size: 2px; flex: none; }
+  .plm-key__sw--poly { background: var(--accent-deep); }
+  .plm-key__sw--metal { background: var(--signal); }
+
+  /* ── The page's drawing-sheet rail ───────────────────────────────────── */
+  .plm-band { border-block-start: var(--rule); }
+  .plm-band--sunk { background: var(--surface-sunk); }
+  .plm-band__inner { display: grid; grid-template-columns: var(--plm-rail) minmax(0, 1fr); }
+  .plm-rail { border-inline-end: var(--rule); padding-block: var(--section-y-tight) var(--sp-8); }
+  .plm-rail__i {
+    position: sticky;
+    inset-block-start: clamp(4.5rem, 10vh, 6.5rem);
+    display: block;
+    font-size: var(--step-2);
+    line-height: 1;
+    color: var(--accent-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .plm-band__body {
+    padding-block: var(--section-y-tight) var(--section-y);
+    padding-inline-start: clamp(1.25rem, 3vw, 3rem);
+    min-inline-size: 0;
+  }
+  @media (max-width: 900px) {
+    .plm-band__inner { grid-template-columns: minmax(0, 1fr); }
+    .plm-rail { border-inline-end: 0; border-block-end: var(--rule); padding-block: var(--sp-6) var(--sp-3); }
+    .plm-rail__i { position: static; }
+    .plm-band__body { padding-inline-start: 0; padding-block-start: var(--sp-6); }
+  }
+
+  .plm-head { max-inline-size: 74ch; }
+  .plm-head .t-lead { margin-block-start: var(--sp-5); }
+  .plm-head__sub { margin-block-start: var(--sp-4); color: var(--ink-muted); max-inline-size: 64ch; }
+
+  .plm-close {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    max-inline-size: 66ch;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--accent);
+  }
+  .plm-src { margin-block-start: var(--sp-4); max-inline-size: 68ch; }
+
+  /* ── 01 Strategy toggle and range matrix ─────────────────────────────── */
+  .plm-strat { margin-block-start: clamp(2rem, 4vw, 3rem); }
+  .plm-strat__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+  }
+  .plm-strat__tab {
+    flex: 1 1 12rem;
+    padding-block: 0.8rem;
+    padding-inline: 0.9rem;
+    background: var(--surface);
+    font-size: var(--step--1);
+    font-weight: var(--weight-medium);
+    color: var(--ink-muted);
+    text-align: start;
+    transition: background-color var(--dur-1) steps(1, end), color var(--dur-1) steps(1, end);
+  }
+  .plm-strat__tab:hover { color: var(--accent-deep); }
+  .plm-strat__tab[aria-selected='true'] { background: var(--accent); color: var(--surface); }
+
+  .plm-strat__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    padding: clamp(1.25rem, 2.6vw, 2rem);
+    border: var(--rule);
+    border-block-start: 0;
+    align-items: start;
+  }
+  .plm-strat__panel[hidden] { display: none; }
+  @media (max-width: 820px) { .plm-strat__panel { grid-template-columns: 1fr; } }
+  .plm-strat__hl {
+    grid-column: 1 / -1;
+    font-size: var(--step-1);
+    line-height: 1.35;
+    letter-spacing: var(--track-head);
+    max-inline-size: 44ch;
+  }
+  .plm-strat__fig { border-block-start: var(--rule-strong); }
+  .plm-strat__fig > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--sp-4);
+    padding-block: var(--sp-3);
+    border-block-end: var(--rule);
+  }
+  .plm-strat__fig dd { font-size: var(--step-2); color: var(--accent-deep); font-variant-numeric: tabular-nums; }
+  .plm-strat__note { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  .plm-mx__cap { display: block; margin-block: var(--sp-7) var(--sp-4); }
+  .plm-mx__scroll { overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
+  .plm-mx { inline-size: 100%; min-inline-size: 40rem; border-collapse: collapse; }
+  .plm-mx th, .plm-mx td { text-align: start; }
+  .plm-mx thead th {
+    padding-block-end: var(--sp-3);
+    border-block-end: var(--rule-strong);
+    font-size: var(--step--2);
+    font-weight: var(--weight-regular);
+    color: var(--ink-muted);
+    letter-spacing: 0.06em;
+  }
+  .plm-mx thead th:not(.plm-mx__corner) { inline-size: 3.1rem; }
+  .plm-mx__corner { min-inline-size: 12rem; }
+  .plm-mx tbody th {
+    padding-block: var(--sp-3);
+    padding-inline-end: var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    font-weight: var(--weight-regular);
+  }
+  .plm-mx tbody td { padding: var(--sp-3) 0; border-block-end: var(--rule); }
+  .plm-mx__m {
+    display: block;
+    inline-size: 0.62rem;
+    block-size: 0.62rem;
+    background: var(--accent);
+    border: 1.4px solid var(--accent);
+    transition: background-color 1ms steps(1, end), border-color 1ms steps(1, end);
+    transition-delay: calc(var(--c, 0) * 30ms);
+  }
+  /* The family reading: dedicated stays solid, the tail opens up. */
+  .plm-strat[data-active='family'] .plm-mx td[data-s='2'] .plm-mx__m { background: transparent; }
+  .plm-mx__key { margin-block-start: var(--sp-5); display: flex; flex-wrap: wrap; gap: var(--sp-6); font-size: var(--step--2); color: var(--ink-muted); }
+  .plm-mx__key li { display: flex; align-items: center; gap: 0.55rem; }
+  .plm-mx__m--fr { background: transparent; }
+  /* In the one-tool-per-part-number reading every position is a tool, so the
+     key follows the matrix rather than contradicting it. */
+  .plm-strat:not([data-active='family']) .plm-mx__key .plm-mx__m--fr { background: var(--accent); }
+
+  .plm-frames { margin-block-start: var(--sp-6); }
+  .plm-frames__list {
+    margin-block-start: var(--sp-3);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+  }
+  .plm-frames__list li {
+    background: var(--surface);
+    padding: var(--sp-4);
+    display: grid;
+    gap: 0.2rem;
+    font-size: var(--step--2);
+    color: var(--ink-muted);
+  }
+  .plm-band--sunk .plm-frames__list li,
+  .plm-band--sunk .plm-strat__tab { background: var(--surface-sunk); }
+  .plm-frames__n { font-size: var(--step--1); color: var(--ink); font-weight: var(--weight-medium); }
+
+  .plm-notes {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 0;
+    border-block-start: var(--rule-strong);
+  }
+  .plm-notes__item {
+    padding-block: var(--sp-5) var(--sp-6);
+    padding-inline-end: var(--sp-5);
+    border-inline-end: var(--rule);
+    display: grid;
+    gap: 0.5rem;
+    align-content: start;
+  }
+  .plm-notes__item:last-child { border-inline-end: 0; }
+  .plm-notes__item p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+  @media (max-width: 780px) {
+    .plm-notes__item { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: 0; }
+  }
+
+  /* ── 02 Mechanism board ──────────────────────────────────────────────── */
+  .plm-mech {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+    gap: var(--plm-gap);
+  }
+  .plm-mech__col {
+    border: var(--rule);
+    padding: clamp(1.1rem, 2.2vw, 1.75rem);
+    display: grid;
+    gap: var(--sp-4);
+    align-content: start;
+  }
+  .plm-mech__sum { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); max-inline-size: 48ch; }
+
+  .plm-leg { display: grid; gap: var(--sp-3); border-block-start: var(--rule); padding-block-start: var(--sp-4); }
+  .plm-leg li {
+    display: grid;
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+    gap: var(--sp-3);
+    font-size: var(--step--2);
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+  .plm-leg__n {
+    inline-size: 1.35rem;
+    block-size: 1.35rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    font-size: var(--step--2);
+    line-height: 1;
+  }
+
+  .plm-cmp__cap { display: block; margin-block: clamp(2rem, 4vw, 3rem) var(--sp-4); }
+  .plm-cmp__scroll { overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
+  .plm-cmp { inline-size: 100%; min-inline-size: 44rem; border-collapse: collapse; font-size: var(--step--1); }
+  .plm-cmp--two { min-inline-size: 34rem; }
+  .plm-cmp th, .plm-cmp td { text-align: start; vertical-align: top; }
+  .plm-cmp thead th {
+    padding-block-end: var(--sp-3);
+    padding-inline-end: var(--sp-5);
+    border-block-end: var(--rule-strong);
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: var(--weight-regular);
+  }
+  .plm-cmp tbody th {
+    padding-block: var(--sp-4);
+    padding-inline-end: var(--sp-5);
+    border-block-end: var(--rule);
+    font-weight: var(--weight-medium);
+    inline-size: 12rem;
+  }
+  .plm-cmp tbody td {
+    padding-block: var(--sp-4);
+    padding-inline-end: var(--sp-5);
+    border-block-end: var(--rule);
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+  .plm-cmp tbody td:last-child { padding-inline-end: 0; }
+
+  .plm-third {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    padding-block-start: var(--sp-6);
+    border-block-start: var(--rule);
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .plm-third p { font-size: var(--step--1); line-height: 1.65; color: var(--ink-muted); max-inline-size: 72ch; }
+
+  /* ── 03 Thread and seal ──────────────────────────────────────────────── */
+  .plm-thr {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+  }
+  .plm-thr__fig {
+    background: var(--surface);
+    padding: clamp(1.1rem, 2.2vw, 1.6rem);
+    display: grid;
+    gap: var(--sp-4);
+    align-content: start;
+  }
+  .plm-band--sunk .plm-thr__fig { background: var(--surface-sunk); }
+  .plm-thr__note { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  /* ── 05 Agreement ────────────────────────────────────────────────────── */
+  .plm-agr {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: var(--plm-gap);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .plm-agr { grid-template-columns: 1fr; } }
+  .plm-agr__fig {
+    border: var(--rule);
+    padding: clamp(1.1rem, 2.2vw, 1.6rem);
+    display: grid;
+    gap: var(--sp-4);
+    align-content: start;
+  }
+
+  .plm-tol { margin-block-start: clamp(2rem, 4vw, 3rem); }
+  .plm-tol__list { margin-block-start: var(--sp-4); }
+
+  .plm-split {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+  }
+  @media (max-width: 820px) { .plm-split { grid-template-columns: 1fr; } }
+  .plm-list { margin-block-start: var(--sp-4); border-block-start: var(--rule-strong); }
+  .plm-list li {
+    padding-block: var(--sp-3);
+    padding-inline-start: var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.55;
+    position: relative;
+  }
+  .plm-list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.05em;
+    inline-size: 0.7rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .plm-list--cannot li { color: var(--ink-muted); }
+  .plm-list--cannot li::before { background: var(--signal); }
+
+  /* ── 06 Arithmetic ───────────────────────────────────────────────────── */
+  .plm-three {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0;
+    border-block-start: var(--rule-strong);
+  }
+  .plm-three li {
+    padding-block: var(--sp-5) var(--sp-6);
+    padding-inline-end: var(--sp-5);
+    border-inline-end: var(--rule);
+    display: grid;
+    gap: 0.4rem;
+    align-content: start;
+  }
+  .plm-three li:last-child { border-inline-end: 0; }
+  @media (max-width: 780px) {
+    .plm-three li { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: 0; }
+  }
+  .plm-three__n { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
+  .plm-three li p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  .plm-calc { margin-block-start: clamp(2rem, 4vw, 3rem); }
+  .plm-calc__cap { display: block; margin-block-end: var(--sp-4); }
+  .plm-calc__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+  }
+  .plm-calc__col { background: var(--surface); padding: clamp(1.1rem, 2.2vw, 1.6rem); }
+  .plm-band--sunk .plm-calc__col { background: var(--surface-sunk); }
+  .plm-calc__col dl { margin-block-start: var(--sp-4); border-block-start: var(--rule); }
+  .plm-calc__col dl > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--sp-4);
+    align-items: baseline;
+    padding-block: var(--sp-3);
+    border-block-end: var(--rule);
+  }
+  .plm-calc__col dt { font-size: var(--step--2); color: var(--ink-muted); line-height: 1.4; }
+  .plm-calc__col dd { font-size: var(--step-0); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .plm-calc__col--out dd { color: var(--accent-deep); }
+  .plm-calc__col--delta dd { color: var(--signal-ink); white-space: normal; text-align: end; }
+
+  .plm-lost { margin-block-start: clamp(2rem, 4vw, 3rem); }
+  .plm-lost__list { margin-block-start: var(--sp-4); border-block-start: var(--rule-strong); }
+  .plm-lost__list > div {
+    display: grid;
+    grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr);
+    gap: var(--sp-5);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+  }
+  @media (max-width: 720px) { .plm-lost__list > div { grid-template-columns: 1fr; gap: var(--sp-2); } }
+  .plm-lost__list dt { font-size: var(--step-0); font-weight: var(--weight-medium); }
+  .plm-lost__list dd { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  /* ── 07 Boundary — the page's single inversion ───────────────────────── */
+  .plm-band--inv {
+    background: var(--inverse);
+    color: var(--inverse-ink);
+    --ink: var(--inverse-ink);
+    --signal: var(--signal-inverse);
+    --signal-ink: var(--signal-inverse);
+    --accent: var(--accent-inverse);
+    --accent-deep: var(--accent-inverse);
+    --ink-muted: color-mix(in oklab, var(--inverse-ink) 66%, transparent);
+    --line: color-mix(in oklab, var(--inverse-ink) 20%, transparent);
+    --surface: var(--inverse);
+    --accent: color-mix(in oklab, var(--accent-wash) 88%, var(--inverse));
+  }
+  .plm-band--inv .plm-rail__i { color: var(--signal-ink); }
+  .plm-band--inv .plm-list li::before { background: var(--accent); }
+  .plm-band--inv .plm-list--cannot li::before { background: var(--signal); }
+  .plm-split--bound { margin-block-start: clamp(2rem, 4vw, 3.5rem); }
+  .plm-statement {
+    margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+    font-size: var(--step-1);
+    line-height: 1.55;
+    max-inline-size: 68ch;
+    padding-inline-start: var(--sp-6);
+    border-inline-start: 3px solid var(--signal);
+  }
+
+  /* ── 08 Audit, ledger, facts, panels ─────────────────────────────────── */
+  .plm-audit { margin-block-start: clamp(2rem, 4vw, 3rem); }
+  .plm-audit__h { display: block; margin-block-end: var(--sp-5); }
+  .plm-audit__list { display: grid; gap: 0; border-block-start: var(--rule-strong); }
+  .plm-audit__list li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: var(--sp-5);
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+    align-items: start;
+  }
+  /* The one place the page steps off its own grid. */
+  .plm-audit__list li:nth-child(even) { padding-inline-start: clamp(0rem, 4vw, 3.5rem); }
+  @media (max-width: 820px) {
+    .plm-audit__list li { grid-template-columns: 2.4rem minmax(0, 1fr); gap: var(--sp-4); }
+    .plm-audit__list li:nth-child(even) { padding-inline-start: 0; }
+    .plm-audit__c { grid-column: 2; }
+  }
+  .plm-audit__n { color: var(--accent-deep); font-size: var(--step--2); letter-spacing: 0.14em; padding-block-start: 0.35em; }
+  .plm-audit__q { font-size: var(--step-1); line-height: 1.35; letter-spacing: var(--track-head); }
+  .plm-audit__c { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  .plm-ledger {
+    margin-block-start: clamp(2.25rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+  }
+  @media (max-width: 820px) { .plm-ledger { grid-template-columns: 1fr; } }
+  .plm-ledger__col ul { margin-block-start: var(--sp-4); border-block-start: var(--rule-strong); }
+  .plm-ledger__col li {
+    padding-block: var(--sp-4);
+    padding-inline-start: var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.55;
+    position: relative;
+  }
+  .plm-ledger__col li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.35rem;
+    inline-size: 0.7rem;
+    block-size: 1px;
+    background: var(--ink-muted);
+  }
+  .plm-ledger__col--out li::before { background: var(--accent); }
+
+  .plm-facts { margin-block-start: clamp(2rem, 4vw, 3rem); padding-block-start: var(--sp-6); border-block-start: var(--rule); }
+  .plm-facts__list { margin-block-start: var(--sp-4); display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .plm-facts__list li {
+    font-size: var(--step--2);
+    letter-spacing: 0.06em;
+    padding-block: 0.4em;
+    padding-inline: 0.75em;
+    border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+    color: var(--accent-deep);
+  }
+  .plm-facts__note { margin-block-start: var(--sp-4); font-size: var(--step--1); color: var(--ink-muted); max-inline-size: 60ch; }
+
+  .plm-panels { margin-block-start: clamp(2.5rem, 5vw, 4rem); }
+  .plm-panels__h { display: block; margin-block-end: var(--sp-4); }
+  .plm-panel__list { display: grid; gap: var(--sp-3); max-inline-size: 84ch; }
+  .plm-panel__list li {
+    font-size: var(--step--1);
+    line-height: 1.62;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  /* Scripts without a Latin small-caps tradition must not be tracked out or
+     forced into the mono face — it damages legibility and breaks Arabic joins. */
+  :global(html[lang='zh']) .plm-hero__markers li,
+  :global(html[lang='th']) .plm-hero__markers li,
+  :global(html[lang='ar']) .plm-hero__markers li,
+  :global(html[lang='fa']) .plm-hero__markers li,
+  :global(html[lang='ur']) .plm-hero__markers li,
+  :global(html[lang='zh']) .plm-facts__list li,
+  :global(html[lang='th']) .plm-facts__list li,
+  :global(html[lang='ar']) .plm-facts__list li,
+  :global(html[lang='fa']) .plm-facts__list li,
+  :global(html[lang='ur']) .plm-facts__list li,
+  :global(html[lang='zh']) .plm-cmp thead th,
+  :global(html[lang='th']) .plm-cmp thead th,
+  :global(html[lang='ar']) .plm-cmp thead th,
+  :global(html[lang='fa']) .plm-cmp thead th,
+  :global(html[lang='ur']) .plm-cmp thead th,
+  :global(html[lang='zh']) .plm-mat thead th,
+  :global(html[lang='th']) .plm-mat thead th,
+  :global(html[lang='ar']) .plm-mat thead th,
+  :global(html[lang='fa']) .plm-mat thead th,
+  :global(html[lang='ur']) .plm-mat thead th {
+    font-family: var(--font-body);
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: var(--step--1);
+  }
+
+  .plm-panel__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.78em;
+    inline-size: 0.6rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+
+  /* ── Material ledger ─────────────────────────────────────────────────── */
+  .plm-mat__scroll { margin-block-start: clamp(2rem, 4vw, 3rem); }
+  .plm-mat { inline-size: 100%; min-inline-size: 66rem; border-collapse: collapse; font-size: var(--step--2); }
+  .plm-mat th, .plm-mat td { text-align: start; vertical-align: top; }
+  .plm-mat thead th {
+    padding-block-end: var(--sp-3);
+    padding-inline-end: var(--sp-4);
+    border-block-end: var(--rule-strong);
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: var(--weight-regular);
+  }
+  .plm-mat tbody th {
+    padding-block: var(--sp-4);
+    padding-inline-end: var(--sp-4);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    font-weight: var(--weight-medium);
+    color: var(--accent-deep);
+    white-space: nowrap;
+    inline-size: 9rem;
+  }
+  .plm-mat tbody td {
+    padding-block: var(--sp-4);
+    padding-inline-end: var(--sp-4);
+    border-block-end: var(--rule);
+    line-height: 1.6;
+    color: var(--ink-muted);
+  }
+  .plm-mat tbody td.plm-mat__risk { color: var(--ink); }
+</style>

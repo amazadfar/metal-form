@@ -1,0 +1,6 @@
+/* Order matters: tokens, then reset and primitives, then components.
+   @font-face rules are NOT imported here — they are linked per locale from the
+   document head, so a page only pays for the script it actually sets. */
+@import './tokens.css';
+@import './base.css';
+@import './components.css';

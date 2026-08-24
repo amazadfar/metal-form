@@ -1,0 +1,1502 @@
+---
+/**
+ * TOYS & CONSUMER GOODS — the productisation chapter.
+ *
+ * Written for a brand owner or an OEM buyer deciding where to put six figures
+ * of tooling capex. Not a toy page: no primary colour, no playful shape, no
+ * retail register. Warm paper, hairline drawings, mono numbers.
+ *
+ * The whole page is built on ONE VERTICAL AXIS and returns to it deliberately:
+ * the hero holds an exploded part stack on that axis; the intake diagram
+ * converges four routes onto it; consolidation collapses three parts along it;
+ * the amortisation rail descends it; the programme is counted down it in shots.
+ *
+ * The argument: the unit cost is fixed the week the tool is specified, then
+ * paid on every shot for years. So the useful conversation happens before steel.
+ */
+import type { Locale } from '../../i18n/locales.ts';
+import type { Industry } from '../../config/industries.ts';
+import type { IndustryContent, CommonContent } from '../../content/types.ts';
+
+interface Props {
+  locale: Locale;
+  industry: Industry;
+  content: IndustryContent;
+  common: CommonContent;
+}
+const { content, common } = Astro.props;
+const b = content.blocks as any;
+
+/* ── Exploded stack geometry ───────────────────────────────────────────────
+   Six components of one illustrative consumer product, each a section profile
+   held apart on a single vertical axis at x = 170. Leader anchors are the
+   right-hand extreme of each part; the balloon column sits at x = 306. */
+const STACK = [
+  { y: 44,  ax: 270, ay: 53,  h: 18 },
+  { y: 110, ax: 198, ay: 117, h: 13 },
+  { y: 150, ax: 186, ay: 157, h: 14 },
+  { y: 196, ax: 256, ay: 208, h: 29 },
+  { y: 272, ax: 270, ay: 289, h: 34 },
+  { y: 352, ax: 234, ay: 357, h: 9 },
+];
+
+/* Amortisation rail. Bar ends fall as annual volume rises; the shape is the
+   argument and there is no currency anywhere near it. */
+const RUNG_END = [580, 420, 250, 158, 118];
+
+/* VDI reference row: profile amplitude and the draft the grade owes, both
+   exaggerated so the coupling is visible at this size. */
+const GRADE_AMP = [2, 3, 4.5, 6.5, 10, 14];
+const GRADE_DRAFT = [1, 1.5, 2, 3, 4.5, 6];
+
+/** Deterministic EDM-texture profile — same drawing on every build. */
+function profile(amp: number, seed: number): string {
+  const pts: string[] = [];
+  for (let i = 0; i <= 28; i++) {
+    const x = 10 + i * 5;
+    const n = Math.sin((i + seed) * 2.399) * 0.62 + Math.sin((i + seed) * 5.117) * 0.38;
+    pts.push(`${x} ${(48 - n * amp).toFixed(1)}`);
+  }
+  return `M${pts.join(' L')} L150 96 L10 96 Z`;
+}
+---
+
+<article class="tys">
+
+  {/* ═══ HERO — the exploded stack ══════════════════════════════════════ */}
+  <header class="tys-hero">
+    <div class="tys-hero__bleed" aria-hidden="true">
+      <svg viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid slice" data-nomirror>
+        <defs>
+          <linearGradient id="tys-paper" x1="0" y1="0" x2="0.4" y2="1">
+            <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.07" />
+            <stop offset="70%" stop-color="var(--accent)" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <rect width="1400" height="700" fill="url(#tys-paper)" />
+      </svg>
+    </div>
+
+    <div class="shell--wide tys-hero__inner">
+      <div class="tys-hero__copy">
+        <p class="eyebrow">{content.hero.kicker}</p>
+        <h1 class="tys-hero__head">
+          {content.hero.headline.map((line: string, i: number) => (
+            <span style={`--l:${i}`}>{line}</span>
+          ))}
+        </h1>
+        <p class="tys-hero__lead">{content.hero.lead}</p>
+        {content.hero.markers && (
+          <ul class="tys-hero__markers">
+            {content.hero.markers.map((m: string) => <li class="t-mono">{m}</li>)}
+          </ul>
+        )}
+        <p class="tys-hero__thesis">{b.stack.thesis}</p>
+      </div>
+
+      <figure class="tys-hero__fig tys-fig" data-reveal>
+        <p class="t-label tys-hero__figlabel">{b.stack.figureLabel}</p>
+        <svg viewBox="0 0 460 600" data-nomirror role="img" aria-label={common.schematic}>
+          <defs>
+            <pattern id="tys-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.75" opacity="0.34" />
+            </pattern>
+          </defs>
+
+          {/* The axis the whole chapter is built on. */}
+          <line x1="170" y1="12" x2="170" y2="566" class="tys-cl" />
+
+          {/* 1 · upper shell */}
+          <g class="tys-part" style="--i:0">
+            <g transform={`translate(170 ${STACK[0].y})`}>
+              <path d="M-100 18 V8 Q-100 0 -92 0 H92 Q100 0 100 8 V18 H92 V10 Q92 8 84 8 H-84 Q-92 8 -92 10 V18 Z" class="tys-ln tys-hf" />
+            </g>
+          </g>
+          {/* 2 · lens */}
+          <g class="tys-part" style="--i:1">
+            <g transform={`translate(170 ${STACK[1].y})`}>
+              <path d="M-28 12 V6 Q0 -4 28 6 V12 Z" class="tys-ln tys-glass" />
+            </g>
+          </g>
+          {/* 3 · button */}
+          <g class="tys-part" style="--i:2">
+            <g transform={`translate(170 ${STACK[2].y})`}>
+              <path d="M-16 14 V6 H-9 V0 H9 V6 H16 V14 Z" class="tys-ln tys-hf" />
+            </g>
+          </g>
+          {/* 4 · chassis, cored bosses and ribs */}
+          <g class="tys-part" style="--i:3">
+            <g transform={`translate(170 ${STACK[3].y})`}>
+              <path d="M-86 0 H86 V7 H-86 Z" class="tys-ln tys-hf" />
+              <path d="M-46 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
+              <path d="M-34 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
+              <path d="M28 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
+              <path d="M40 7 h6 v22 h-6 z" class="tys-ln tys-hf" />
+              <path d="M-10 7 h5 v14 h-5 z" class="tys-ln tys-hf" />
+              <path d="M5 7 h5 v14 h-5 z" class="tys-ln tys-hf" />
+            </g>
+          </g>
+          {/* 5 · lower shell */}
+          <g class="tys-part" style="--i:4">
+            <g transform={`translate(170 ${STACK[4].y})`}>
+              <path d="M-100 0 V26 Q-100 34 -92 34 H92 Q100 34 100 26 V0 H92 V24 Q92 26 84 26 H-84 Q-92 26 -92 24 V0 Z" class="tys-ln tys-hf" />
+            </g>
+          </g>
+          {/* 6 · hinged lid, land drawn between the two strips */}
+          <g class="tys-part" style="--i:5">
+            <g transform={`translate(170 ${STACK[5].y})`}>
+              <path d="M-64 0 H-4 V9 H-64 Z" class="tys-ln tys-hf" />
+              <path d="M-4 3.5 H4 V5.5 H-4 Z" class="tys-ln tys-sig" />
+              <path d="M4 0 H64 V9 H4 Z" class="tys-ln tys-hf" />
+            </g>
+          </g>
+
+          {/* Leaders and item balloons — drawing convention, not decoration. */}
+          {b.stack.parts.map((part: any, i: number) => (
+            <g class="tys-lead" style={`--i:${i}`}>
+              <circle cx={STACK[i].ax} cy={STACK[i].ay} r="1.9" class="tys-dot" />
+              <line x1={STACK[i].ax} y1={STACK[i].ay} x2="295" y2={STACK[i].ay} class="tys-leader" />
+              <circle cx="306" cy={STACK[i].ay} r="9.5" class="tys-balloon" />
+              <text x="306" y={STACK[i].ay + 3.4} text-anchor="middle" class="tys-num">{part.no}</text>
+              <text x="322" y={STACK[i].ay + 3.4} class="tys-spec">{part.spec}</text>
+            </g>
+          ))}
+        </svg>
+        <ul class="tys-hero__meta">
+          {b.stack.meta.map((m: string) => <li class="t-mono">{m}</li>)}
+        </ul>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+    </div>
+
+    {/* Parts list — the drawing's own legend, set as a datasheet. */}
+    <div class="shell--wide tys-parts">
+      <p class="t-label tys-parts__cap">{b.stack.partsLabel}</p>
+      <ol class="tys-parts__list">
+        {b.stack.parts.map((part: any) => (
+          <li class="tys-parts__row">
+            <span class="tys-parts__no t-mono">{part.no}</span>
+            <span class="tys-parts__name">{part.name}</span>
+            <span class="tys-parts__spec t-mono">{part.spec}</span>
+            <span class="tys-parts__note">{part.note}</span>
+          </li>
+        ))}
+      </ol>
+      <p class="tys-parts__caption t-fine">{b.stack.caption}</p>
+
+      <div class="tys-proof">
+        <span class="t-label">{b.stack.proofLabel}</span>
+        <ul>
+          {b.stack.proof.map((p: string) => <li class="t-mono">{p}</li>)}
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  {/* ═══ 01 · INTAKE ════════════════════════════════════════════════════ */}
+  <section class="tys-intake" id="intake">
+    <div class="shell--wide">
+      <div class="tys-head">
+        <p class="eyebrow">{b.intake.index} · {b.intake.kicker}</p>
+        <h2 class="tys-h2">{b.intake.heading}</h2>
+        <p class="t-lead">{b.intake.body}</p>
+      </div>
+
+      <figure class="tys-fig tys-intake__fig" data-reveal>
+        <p class="t-label">{b.intake.lanesLabel}</p>
+        <svg viewBox="0 0 900 320" data-nomirror role="img" aria-label={common.schematic}>
+          <defs>
+            <marker id="tys-arw" viewBox="0 0 9 9" refX="8" refY="4.5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L9 4.5 L0 9 Z" fill="currentColor" />
+            </marker>
+          </defs>
+
+          {[46, 118, 190, 262].map((y: any, i: number) => (
+            <g class="tys-lane" style={`--i:${i}`}>
+              <circle cx="30" cy={y} r="11" class="tys-balloon" />
+              <text x="30" y={y + 3.8} text-anchor="middle" class="tys-num">{b.intake.lanes[i].no}</text>
+              <path
+                d={i === 0 ? 'M52 46 H330 C440 46 470 160 560 160'
+                  : i === 1 ? 'M52 118 H360 C450 118 490 160 560 160'
+                  : i === 2 ? 'M52 190 H360 C450 190 490 160 560 160'
+                  : 'M52 262 H330 C440 262 470 160 560 160'}
+                class="tys-track"
+              />
+            </g>
+          ))}
+
+          <path d="M560 160 H672" class="tys-track tys-track--heavy" marker-end="url(#tys-arw)" />
+          <rect x="678" y="148" width="24" height="24" class="tys-node" />
+          <text x="690" y="132" text-anchor="middle" class="tys-caplabel">{b.intake.nodeLabel}</text>
+          <line x1="690" y1="176" x2="690" y2="312" class="tys-cl" />
+        </svg>
+        <figcaption class="figure-note">{b.intake.figureNote}</figcaption>
+      </figure>
+
+      <ol class="tys-lanes">
+        {b.intake.lanes.map((lane: any, i: number) => (
+          <li class="tys-lanes__item" style={`--reveal-delay:${i * 90}ms`} data-reveal>
+            <span class="tys-lanes__no t-mono">{lane.no}</span>
+            <h3 class="tys-h5">{lane.name}</h3>
+            <p class="tys-lanes__action">{lane.action}</p>
+            <p class="tys-lanes__need t-small">{lane.need}</p>
+          </li>
+        ))}
+      </ol>
+
+      <p class="tys-close">{b.intake.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 02 · CONSOLIDATION ═════════════════════════════════════════════ */}
+  <section class="tys-cons" id="consolidation">
+    <div class="shell--wide">
+      <div class="tys-head">
+        <p class="eyebrow">{b.consolidate.index} · {b.consolidate.kicker}</p>
+        <h2 class="tys-h2">{b.consolidate.heading}</h2>
+        <p class="t-lead">{b.consolidate.body}</p>
+        <p class="tys-head__sub t-small">{b.consolidate.body2}</p>
+      </div>
+
+      <figure class="tys-fig tys-cons__fig" data-reveal>
+        <svg viewBox="0 0 780 300" data-nomirror role="img" aria-label={common.schematic}>
+          <defs>
+            <pattern id="tys-hatch-b" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.75" opacity="0.34" />
+            </pattern>
+            <marker id="tys-arw-b" viewBox="0 0 9 9" refX="8" refY="4.5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L9 4.5 L0 9 Z" fill="currentColor" />
+            </marker>
+          </defs>
+
+          {/* As drawn — three mouldings and a pin on the axis */}
+          <line x1="170" y1="30" x2="170" y2="240" class="tys-cl" />
+          <g class="tys-was">
+            <path d="M100 60 H240 V70 H100 Z" class="tys-ln tys-hfb" />
+            <path d="M136 108 H204 V116 H136 Z" class="tys-ln tys-sig" />
+            <path d="M100 156 V212 H240 V156 H230 V202 H110 V156 Z" class="tys-ln tys-hfb" />
+            <path d="M272 62 V150" class="tys-assy" marker-end="url(#tys-arw-b)" />
+          </g>
+          <text x="170" y="264" text-anchor="middle" class="tys-caplabel">{b.consolidate.beforeLabel}</text>
+
+          {/* Transition */}
+          <path d="M330 138 H436" class="tys-track tys-track--heavy" marker-end="url(#tys-arw-b)" />
+          <text x="383" y="124" text-anchor="middle" class="tys-caplabel">{b.consolidate.transitionLabel}</text>
+
+          {/* As tooled — one moulding with a living hinge */}
+          <line x1="596" y1="30" x2="596" y2="240" class="tys-cl" />
+          <g class="tys-now">
+            <path d="M532 76 H652 V86 H532 Z" class="tys-ln tys-hfb" />
+            <path d="M652 81 Q674 84 674 98 Q674 112 656 115" class="tys-ln tys-hinge" />
+            <path d="M532 114 V172 H656 V114 H646 V162 H542 V114 Z" class="tys-ln tys-hfb" />
+          </g>
+          <text x="596" y="264" text-anchor="middle" class="tys-caplabel">{b.consolidate.afterLabel}</text>
+        </svg>
+        <figcaption class="figure-note">{b.consolidate.figureNote}</figcaption>
+      </figure>
+
+      {/* The count collapsing is the argument. */}
+      <div class="tys-count">
+        <div class="tys-count__col">
+          <h3 class="t-label">{b.consolidate.before.heading}</h3>
+          <dl>
+            {b.consolidate.before.rows.map((r: any) => (
+              <div><dt class="t-mono">{r.value}</dt><dd>{r.label}</dd></div>
+            ))}
+          </dl>
+        </div>
+        <div class="tys-count__col tys-count__col--after">
+          <h3 class="t-label">{b.consolidate.after.heading}</h3>
+          <dl>
+            {b.consolidate.after.rows.map((r: any) => (
+              <div><dt class="t-mono">{r.value}</dt><dd>{r.label}</dd></div>
+            ))}
+          </dl>
+        </div>
+        <div class="tys-count__col tys-count__col--wide">
+          <h3 class="t-label">{b.consolidate.consequenceHeading}</h3>
+          <ul class="tys-ticks">
+            {b.consolidate.consequences.map((c: string) => <li>{c}</li>)}
+          </ul>
+        </div>
+      </div>
+
+      <div class="tys-caution">
+        <h3 class="tys-h5">{b.consolidate.cautionHeading}</h3>
+        <p>{b.consolidate.caution}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 03 · AMORTISATION RAIL ═════════════════════════════════════════ */}
+  <section class="tys-vol" id="volume" data-stepper data-step="0">
+    <div class="shell--wide">
+      <div class="tys-head">
+        <p class="eyebrow">{b.volume.index} · {b.volume.kicker}</p>
+        <h2 class="tys-h2">{b.volume.heading}</h2>
+        <p class="t-lead">{b.volume.body}</p>
+      </div>
+
+      <div class="tys-vol__grid">
+        <figure class="tys-fig tys-vol__fig">
+          <p class="t-label">{b.volume.railLabel}</p>
+          <svg viewBox="0 0 640 470" data-nomirror role="img" aria-label={common.schematic}>
+            <defs>
+              <pattern id="tys-hatch-c" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="8" stroke="currentColor" stroke-width="0.8" opacity="0.28" />
+              </pattern>
+            </defs>
+
+            {/* One continuous stepped rail. Not a chart widget. */}
+            <path
+              d="M100 40 H580 V120 H420 V200 H250 V280 H158 V360 H118 V440 H100 Z"
+              class="tys-rail"
+            />
+
+            {[0, 1, 2, 3, 4].map((i: number) => (
+              <rect
+                x="100" y={40 + i * 80} width={RUNG_END[i] - 100} height="80"
+                class="tys-band" data-r={i}
+              />
+            ))}
+
+            {/* Volume axis */}
+            <line x1="100" y1="30" x2="100" y2="450" class="tys-axis" />
+            {[0, 1, 2, 3, 4].map((i: number) => (
+              <g>
+                <line x1="94" y1={80 + i * 80} x2="106" y2={80 + i * 80} class="tys-axis" />
+                <text x="90" y={84 + i * 80} text-anchor="end" class="tys-spec">{b.volume.rungs[i].volume}</text>
+              </g>
+            ))}
+
+            {/* The flip. A dash-dot line and a square node, nothing more. */}
+            <line x1="24" y1="200" x2="616" y2="200" class="tys-flip" />
+            <rect x="243" y="193" width="14" height="14" class="tys-node tys-node--flip" />
+            <text x="612" y="192" text-anchor="end" class="tys-caplabel">{b.volume.flipLabel}</text>
+          </svg>
+          <p class="t-fine tys-vol__axis">{b.volume.axisLabel}</p>
+          <figcaption class="figure-note">{b.volume.figureNote}</figcaption>
+        </figure>
+
+        <ol class="tys-rungs">
+          {b.volume.rungs.map((rung: any, i: number) => (
+            <li class="tys-rung" data-station-step={i} data-r={i}>
+              <span class="tys-rung__v t-mono">{rung.volume}</span>
+              <h3 class="tys-h5">{rung.title}</h3>
+              <p>{rung.note}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="tys-vol__foot">
+        <div class="tys-flipblock">
+          <h3 class="tys-h5">{b.volume.flipHeading}</h3>
+          <p>{b.volume.flip}</p>
+        </div>
+        <div class="tys-model">
+          <h3 class="t-label">{b.volume.modelHeading}</h3>
+          <p>{b.volume.model}</p>
+        </div>
+      </div>
+
+      <p class="tys-close">{b.volume.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 04 · THE MISTAKES LEDGER ═══════════════════════════════════════ */}
+  <section class="tys-led" id="ledger">
+    <div class="shell--wide">
+      <div class="tys-head">
+        <p class="eyebrow">{b.ledger.index} · {b.ledger.kicker}</p>
+        <h2 class="tys-h2">{b.ledger.heading}</h2>
+        <p class="t-lead">{b.ledger.body}</p>
+      </div>
+
+      <div class="tys-led__cols">
+        <span class="t-label">{b.ledger.drawnLabel}</span>
+        <span class="t-label tys-led__cols--b">{b.ledger.fixedLabel}</span>
+      </div>
+
+      <ol class="tys-led__list">
+        {b.ledger.items.map((item: any, i: number) => (
+          <li class="tys-led__row" data-reveal>
+            <div class="tys-led__id">
+              <span class="t-mono">{item.no}</span>
+              <h3 class="tys-h5">{item.title}</h3>
+            </div>
+
+            <figure class="tys-fig tys-led__fig">
+              <svg viewBox="0 0 210 100" data-nomirror role="img" aria-label={b.ledger.figureNote}>
+                <defs>
+                  <pattern id={`tys-hatch-l${i}`} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.34" />
+                  </pattern>
+                  <marker id={`tys-arw-l${i}`} viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M0 0 L8 4 L0 8 Z" fill="currentColor" />
+                  </marker>
+                  <pattern id={`tys-streak-l${i}`} width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(70)">
+                    <line x1="0" y1="0" x2="0" y2="9" stroke="currentColor" stroke-width="2.4" opacity="0.3" />
+                  </pattern>
+                </defs>
+                <line x1="105" y1="8" x2="105" y2="92" class="tys-cl" />
+
+                {i === 0 && (
+                  <g>
+                    <path d="M18 24 V82 H32 V24 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
+                    <path d="M32 50 H56 V62 H44 V70 H32 Z" class="tys-ln tys-sig" />
+                    <path d="M64 84 V32" class="tys-dim" marker-end={`url(#tys-arw-l${i})`} />
+                    <path d="M56 40 H74" class="tys-block" />
+                    <path d="M122 24 V82 H136 V24 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
+                    <path d="M136 50 H160 V62 H148 V70 H136 Z" class="tys-ln tys-acc" />
+                    <path d="M164 44 H188 V76 H164 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
+                    <path d="M192 60 H204" class="tys-dim" marker-end={`url(#tys-arw-l${i})`} />
+                  </g>
+                )}
+
+                {i === 1 && (
+                  <g>
+                    <path d="M14 40 H92 V52 H14 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
+                    <path d="M46 52 H70 V86 H46 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
+                    <path d="M44 40 Q58 47 72 40" class="tys-sinkline" />
+                    <path d="M118 40 H196 V52 H118 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
+                    <path d="M152 52 H160 V86 H152 Z" class="tys-ln tys-acc" />
+                    <path d="M147 52 Q152 52 152 57" class="tys-ln" />
+                    <path d="M165 52 Q160 52 160 57" class="tys-ln" />
+                    <text x="156" y="96" text-anchor="middle" class="tys-micro">40–60%</text>
+                  </g>
+                )}
+
+                {i === 2 && (
+                  <g>
+                    <path d="M30 18 V84 H46 V18 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
+                    <path d="M26 24 V78" class="tys-sinkline" />
+                    <path d="M22 30 H16 M22 48 H16 M22 66 H16" class="tys-sinkline" />
+                    <line x1="134" y1="12" x2="134" y2="92" class="tys-cl" />
+                    <path d="M134 18 L128 84 L146 84 L152 18 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
+                    <text x="168" y="42" class="tys-micro">2°</text>
+                  </g>
+                )}
+
+                {i === 3 && (
+                  <g>
+                    <path d="M20 34 H88 V70 H20 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
+                    <path d="M20 80 H88" class="tys-dim" marker-start={`url(#tys-arw-l${i})`} marker-end={`url(#tys-arw-l${i})`} />
+                    <path d="M96 34 V70" class="tys-dim" marker-start={`url(#tys-arw-l${i})`} marker-end={`url(#tys-arw-l${i})`} />
+                    <path d="M20 26 H52" class="tys-dim" marker-start={`url(#tys-arw-l${i})`} marker-end={`url(#tys-arw-l${i})`} />
+                    <path d="M56 26 H88" class="tys-dim" marker-start={`url(#tys-arw-l${i})`} marker-end={`url(#tys-arw-l${i})`} />
+                    <text x="54" y="94" text-anchor="middle" class="tys-micro">±0.02</text>
+                    <path d="M124 34 H192 V70 H124 Z" class="tys-ln" style={`fill:url(#tys-hatch-l${i})`} />
+                    <path d="M124 80 H192" class="tys-dim tys-dim--on" marker-start={`url(#tys-arw-l${i})`} marker-end={`url(#tys-arw-l${i})`} />
+                    <text x="158" y="94" text-anchor="middle" class="tys-micro">±0.30</text>
+                  </g>
+                )}
+
+                {i === 4 && (
+                  <g>
+                    <path d="M20 26 H86 V74 H20 Z" class="tys-ln" style={`fill:url(#tys-streak-l${i})`} />
+                    <path d="M124 26 H172 V74 H124 Z" class="tys-ln tys-chip" />
+                    <path d="M182 38 H198 V62 H182 Z" class="tys-ln tys-chipref" />
+                    <path d="M174 50 H180" class="tys-dim tys-dim--on" marker-start={`url(#tys-arw-l${i})`} marker-end={`url(#tys-arw-l${i})`} />
+                    <text x="177" y="88" text-anchor="middle" class="tys-micro">{b.ledger.deltaLabel}</text>
+                  </g>
+                )}
+              </svg>
+            </figure>
+
+            <div class="tys-led__copy">
+              <p class="tys-led__drawn">{item.drawn}</p>
+              <p class="tys-led__fixed">{item.fixed}</p>
+              <p class="tys-led__cost t-small">{item.cost}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <p class="tys-close">{b.ledger.close}</p>
+      <p class="figure-note tys-led__note">{b.ledger.figureNote}</p>
+    </div>
+  </section>
+
+  {/* ═══ 05 · DETAIL AT MAGNIFICATION ═══════════════════════════════════ */}
+  <section class="tys-det" id="detail">
+    <div class="shell--wide">
+      <div class="tys-head">
+        <p class="eyebrow">{b.detail.index} · {b.detail.kicker}</p>
+        <h2 class="tys-h2">{b.detail.heading}</h2>
+        <p class="t-lead">{b.detail.body}</p>
+      </div>
+
+      <div class="tys-det__tabs" data-tabs>
+        <div class="tys-tabs" role="tablist" aria-label={b.detail.tabsLabel}>
+          {b.detail.items.map((it: any) => (
+            <button
+              class="tys-tab" type="button" role="tab" data-tab={it.id}
+              aria-selected="false" id={`tys-tab-${it.id}`} aria-controls={`tys-panel-${it.id}`}
+            >{it.name}</button>
+          ))}
+        </div>
+
+        {b.detail.items.map((it: any, k: number) => (
+          <div
+            class="tys-det__panel" data-panel={it.id} role="tabpanel"
+            id={`tys-panel-${it.id}`} aria-labelledby={`tys-tab-${it.id}`} hidden
+          >
+            <figure class="tys-fig tys-det__fig">
+              <svg viewBox="0 0 560 360" data-nomirror role="img" aria-label={b.detail.figureNote}>
+                <defs>
+                  <pattern id={`tys-hatch-d${k}`} width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <line x1="0" y1="0" x2="0" y2="8" stroke="currentColor" stroke-width="0.8" opacity="0.3" />
+                  </pattern>
+                  <marker id={`tys-arw-d${k}`} viewBox="0 0 9 9" refX="8" refY="4.5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M0 0 L9 4.5 L0 9 Z" fill="currentColor" />
+                  </marker>
+                </defs>
+
+                {k === 0 && (
+                  <g>
+                    {/* Catch — a lip protruding from the mating wall */}
+                    <path d="M70 80 H140 V150 H166 V178 H140 V300 H70 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
+                    {/* Base the arm grows out of */}
+                    <path d="M430 80 H510 V300 H430 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
+                    {/* The arm and its hook */}
+                    <path d="M430 180 H166 V202 H430 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
+                    <path d="M166 180 V150 L196 180 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
+                    {/* Root fillets */}
+                    <path d="M430 168 Q414 172 412 180" class="tys-ln" />
+                    <path d="M430 214 Q414 210 412 202" class="tys-ln" />
+                    {/* Deflected state */}
+                    <path d="M430 194 L172 232 L176 254 L430 216 Z" class="tys-ghost" />
+                    <path d="M158 182 V232" class="tys-dim" marker-start={`url(#tys-arw-d${k})`} marker-end={`url(#tys-arw-d${k})`} />
+                    {/* Weld line, deliberately placed */}
+                    <line x1="392" y1="172" x2="392" y2="210" class="tys-weld" />
+
+                    <g class="tys-call">
+                      <circle cx="330" cy="191" r="2.2" class="tys-dot" />
+                      <line x1="330" y1="191" x2="330" y2="312" class="tys-leader" />
+                      <circle cx="330" cy="325" r="11.5" class="tys-balloon" />
+                      <text x="330" y="329" text-anchor="middle" class="tys-num">{it.callouts[0].no}</text>
+                    </g>
+                    <g class="tys-call">
+                      <circle cx="176" cy="166" r="2.2" class="tys-dot" />
+                      <line x1="176" y1="166" x2="176" y2="60" class="tys-leader" />
+                      <circle cx="176" cy="46" r="11.5" class="tys-balloon" />
+                      <text x="176" y="50" text-anchor="middle" class="tys-num">{it.callouts[1].no}</text>
+                    </g>
+                    <g class="tys-call">
+                      <circle cx="418" cy="176" r="2.2" class="tys-dot" />
+                      <line x1="418" y1="176" x2="418" y2="60" class="tys-leader" />
+                      <circle cx="418" cy="46" r="11.5" class="tys-balloon" />
+                      <text x="418" y="50" text-anchor="middle" class="tys-num">{it.callouts[2].no}</text>
+                    </g>
+                    <g class="tys-call">
+                      <circle cx="392" cy="210" r="2.2" class="tys-dot" />
+                      <line x1="392" y1="210" x2="392" y2="312" class="tys-leader" />
+                      <circle cx="392" cy="325" r="11.5" class="tys-balloon" />
+                      <text x="392" y="329" text-anchor="middle" class="tys-num">{it.callouts[3].no}</text>
+                    </g>
+                  </g>
+                )}
+
+                {k === 1 && (
+                  <g>
+                    {/* One part: body, hinge land, lid — a single outline */}
+                    <path
+                      d="M70 120 H206 Q214 120 216 134 H244 Q246 120 254 120 H460 V160 H254 Q246 160 244 146 H216 Q214 160 206 160 H70 Z"
+                      class="tys-ln" style={`fill:url(#tys-hatch-d${k})`}
+                    />
+                    {/* Flow runs through the hinge, not across it */}
+                    <path d="M96 140 H392" class="tys-flow" marker-end={`url(#tys-arw-d${k})`} />
+                    {/* Rotation of the lid about the land */}
+                    <path d="M314 109 A90 90 0 0 0 145 109" class="tys-ghost" marker-end={`url(#tys-arw-d${k})`} />
+
+                    <g class="tys-call">
+                      <circle cx="230" cy="148" r="2.2" class="tys-dot" />
+                      <line x1="230" y1="148" x2="230" y2="286" class="tys-leader" />
+                      <circle cx="230" cy="300" r="11.5" class="tys-balloon" />
+                      <text x="230" y="304" text-anchor="middle" class="tys-num">{it.callouts[0].no}</text>
+                    </g>
+                    <g class="tys-call">
+                      <circle cx="392" cy="140" r="2.2" class="tys-dot" />
+                      <line x1="392" y1="140" x2="392" y2="286" class="tys-leader" />
+                      <circle cx="392" cy="300" r="11.5" class="tys-balloon" />
+                      <text x="392" y="304" text-anchor="middle" class="tys-num">{it.callouts[1].no}</text>
+                    </g>
+                    <g class="tys-call">
+                      <circle cx="110" cy="140" r="2.2" class="tys-dot" />
+                      <line x1="110" y1="140" x2="110" y2="286" class="tys-leader" />
+                      <circle cx="110" cy="300" r="11.5" class="tys-balloon" />
+                      <text x="110" y="304" text-anchor="middle" class="tys-num">{it.callouts[2].no}</text>
+                    </g>
+                    <g class="tys-call">
+                      <circle cx="230" cy="50" r="2.2" class="tys-dot" />
+                      <line x1="230" y1="50" x2="128" y2="50" class="tys-leader" />
+                      <circle cx="114" cy="50" r="11.5" class="tys-balloon" />
+                      <text x="114" y="54" text-anchor="middle" class="tys-num">{it.callouts[3].no}</text>
+                    </g>
+                  </g>
+                )}
+              </svg>
+              <figcaption class="figure-note">{b.detail.figureNote}</figcaption>
+            </figure>
+
+            <div class="tys-det__copy">
+              <p class="tys-det__summary">{it.summary}</p>
+              <p class="t-label tys-det__legend">{b.detail.legendLabel}</p>
+              <dl class="tys-callouts">
+                {it.callouts.map((c: any) => (
+                  <div>
+                    <dt><span class="tys-callouts__no t-mono">{c.no}</span>{c.name}</dt>
+                    <dd>{c.note}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p class="tys-det__scope">{it.scope}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="tys-det__note t-fine">{b.detail.note}</p>
+    </div>
+  </section>
+
+  {/* ═══ 06 · SURFACE ═══════════════════════════════════════════════════ */}
+  <section class="tys-surf" id="surface">
+    <div class="shell--wide">
+      <div class="tys-head">
+        <p class="eyebrow">{b.surface.index} · {b.surface.kicker}</p>
+        <h2 class="tys-h2">{b.surface.heading}</h2>
+        <p class="t-lead">{b.surface.body}</p>
+        <p class="tys-head__sub t-small">{b.surface.body2}</p>
+      </div>
+
+      <div class="tys-grades" data-reveal>
+        <div class="tys-grades__cap">
+          <p class="t-label">{b.surface.rowLabel}</p>
+          <ul class="tys-grades__key t-fine">
+            <li>{b.surface.colGrade}</li>
+            <li>{b.surface.colRa}</li>
+            <li>{b.surface.colDraft}</li>
+          </ul>
+        </div>
+
+        <ol class="tys-grades__row">
+          {b.surface.grades.map((g: any, i: number) => (
+            <li class="tys-grade" data-anchor={g.anchor ? 'true' : 'false'}>
+              <figure class="tys-fig tys-grade__fig">
+                <svg viewBox="0 0 160 140" data-nomirror role="img" aria-label={b.surface.figureNote}>
+                  <defs>
+                    <pattern id={`tys-hatch-s${i}`} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                      <line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.3" />
+                    </pattern>
+                  </defs>
+                  <path d={profile(GRADE_AMP[i], i * 3.7)} class="tys-ln" style={`fill:url(#tys-hatch-s${i})`} />
+                  <line x1="52" y1="98" x2="52" y2="138" class="tys-cl" />
+                  <path
+                    d={`M52 104 H76 L${76 + GRADE_DRAFT[i]} 132 H${52 - GRADE_DRAFT[i]} Z`}
+                    class="tys-ln" style={`fill:url(#tys-hatch-s${i})`}
+                  />
+                </svg>
+              </figure>
+              <p class="tys-grade__g t-mono">{g.grade}</p>
+              <p class="tys-grade__ra t-mono">{g.ra}</p>
+              <p class="tys-grade__d t-mono">{g.draft}</p>
+            </li>
+          ))}
+        </ol>
+
+        <p class="tys-grades__note t-fine">{b.surface.anchorNote}</p>
+      </div>
+
+      <div class="tys-colour">
+        <div class="tys-colour__copy">
+          <h3 class="tys-h4">{b.surface.colourHeading}</h3>
+          <p class="t-lead">{b.surface.colourBody}</p>
+
+          <p class="t-label tys-colour__driftcap">{b.surface.driftLabel}</p>
+          <ul class="tys-drift" aria-hidden="true">
+            {[0, 1, 2, 3, 4, 5].map((i: number) => (
+              <li style={`background: color-mix(in oklab, var(--accent) ${100 - i * 4}%, var(--signal))`}></li>
+            ))}
+          </ul>
+          <p class="tys-colour__note t-small">{b.surface.driftNote}</p>
+        </div>
+
+        <div class="tys-routes">
+          <p class="t-label">{b.surface.routesLabel}</p>
+          <dl>
+            {b.surface.routes.map((r: any) => (
+              <div>
+                <dt>
+                  <span class="tys-routes__name">{r.name}</span>
+                  <span class="tys-routes__vol t-mono">{r.volume}</span>
+                </dt>
+                <dd>{r.note}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="tys-routes__boundary">{b.surface.colourBoundary}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 07 · BOUNDARY — the page's strongest instrument ════════════════ */}
+  <section class="tys-bnd" id="boundary">
+    <div class="shell--wide">
+      <div class="tys-head">
+        <p class="eyebrow">{b.boundary.index} · {b.boundary.kicker}</p>
+        <h2 class="tys-h2 tys-bnd__h">{b.boundary.heading}</h2>
+        <p class="t-lead">{b.boundary.body}</p>
+      </div>
+
+      <div class="tys-std">
+        <h3 class="t-label">{b.boundary.standardsHeading}</h3>
+        <dl class="tys-std__list">
+          {b.boundary.standards.map((s: any) => (
+            <div><dt class="t-mono">{s.name}</dt><dd>{s.note}</dd></div>
+          ))}
+        </dl>
+        <p class="tys-std__note">{b.boundary.standardsNote}</p>
+      </div>
+
+      <div class="tys-split">
+        <section class="tys-split__col">
+          <h3 class="tys-h5">{b.boundary.supplyHeading}</h3>
+          <ul>{b.boundary.supply.map((s: string) => <li>{s}</li>)}</ul>
+        </section>
+        <section class="tys-split__col tys-split__col--keep">
+          <h3 class="tys-h5">{b.boundary.keepHeading}</h3>
+          <ul>{b.boundary.keep.map((s: string) => <li>{s}</li>)}</ul>
+        </section>
+      </div>
+
+      <p class="tys-bnd__line">{b.boundary.line}</p>
+    </div>
+  </section>
+
+  {/* ═══ 08 · AFTER SIGN-OFF ════════════════════════════════════════════ */}
+  <section class="tys-after" id="after">
+    <div class="shell--wide">
+      <div class="tys-head">
+        <p class="eyebrow">{b.after.index} · {b.after.kicker}</p>
+        <h2 class="tys-h2">{b.after.heading}</h2>
+        <p class="t-lead">{b.after.body}</p>
+      </div>
+
+      <p class="t-label tys-after__axis">{b.after.axisLabel}</p>
+      <ol class="tys-after__list">
+        {b.after.events.map((e: any, i: number) => (
+          <li class="tys-event" data-reveal style={`--reveal-delay:${Math.min(i, 5) * 70}ms`}>
+            <span class="tys-event__mark t-mono">{e.mark}</span>
+            <div class="tys-event__body">
+              <h3 class="tys-h5">{e.title}</h3>
+              <p>{e.note}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+
+      <p class="tys-close">{b.after.close}</p>
+
+      <div class="tys-panels">
+        <h3 class="t-label tys-panels__h">{b.panels.heading}</h3>
+        {b.panels.items.map((panel: any, i: number) => (
+          <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+            <h4>
+              <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
+                <span>{panel.title}</span>
+                <span class="disc__sign" aria-hidden="true"></span>
+              </button>
+            </h4>
+            <div class="disc__panel">
+              <div class="disc__inner">
+                <div>
+                  <ul class="tys-panel__list">
+                    {panel.bullets.map((bullet: string) => <li>{bullet}</li>)}
+                  </ul>
+                  {panel.source && <p class="tys-panel__src t-fine">{panel.source}</p>}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</article>
+
+<style>
+  /* ═══ TOYS & CONSUMER GOODS ══════════════════════════════════════════════
+     Warm paper, graphite ink, one controlled tangerine accent used only
+     structurally. Chroma is permitted in exactly one place: the colour-drift
+     strip, where colour is the engineering subject rather than decoration. */
+
+  .tys-h2 {
+    font-size: clamp(1.95rem, 4.1vw, 3.35rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+    margin-block-start: var(--sp-5);
+    max-inline-size: 19ch;
+  }
+  .tys-h4 { font-size: var(--step-2); letter-spacing: var(--track-head); line-height: 1.2; max-inline-size: 24ch; }
+  .tys-h5 { font-size: var(--step-1); letter-spacing: var(--track-head); line-height: 1.25; }
+
+  .tys-head { max-inline-size: 74ch; }
+  .tys-head .t-lead { margin-block-start: var(--sp-5); }
+  .tys-head__sub { margin-block-start: var(--sp-4); color: var(--ink-muted); max-inline-size: 66ch; }
+
+  .tys-close {
+    margin-block-start: clamp(2rem, 4.5vw, 3.25rem);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-inline-size: 66ch;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--accent);
+  }
+
+  /* ── Shared drawing conventions ───────────────────────────────────────── */
+  .tys-fig svg { inline-size: 100%; block-size: auto; color: var(--accent-deep); display: block; }
+  .tys-ln { fill: none; stroke: var(--accent-deep); stroke-width: 1.4; stroke-linejoin: round; }
+  .tys-hf { fill: url(#tys-hatch); }
+  .tys-hfb { fill: url(#tys-hatch-b); }
+  .tys-glass { fill: color-mix(in oklab, var(--signal) 14%, transparent); }
+  .tys-sig { stroke: var(--signal); fill: color-mix(in oklab, var(--signal) 18%, transparent); }
+  .tys-acc { stroke: var(--accent); fill: color-mix(in oklab, var(--accent) 14%, transparent); }
+  .tys-hinge { stroke: var(--signal); stroke-width: 2.2; fill: none; }
+  .tys-cl { stroke: var(--ink-muted); stroke-width: 0.8; stroke-dasharray: 10 3 2 3; opacity: 0.5; }
+  .tys-axis { stroke: var(--ink-muted); stroke-width: 1; }
+  .tys-leader { stroke: var(--accent); stroke-width: 0.9; }
+  .tys-dot { fill: var(--accent); }
+  .tys-balloon { fill: var(--surface); stroke: var(--accent); stroke-width: 1.1; }
+  .tys-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    fill: var(--accent-deep);
+    font-variant-numeric: tabular-nums;
+  }
+  .tys-spec {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.05em;
+    fill: var(--ink-muted);
+  }
+  .tys-micro { font-family: var(--font-mono); font-size: 8px; fill: var(--ink-muted); }
+  .tys-caplabel {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    fill: var(--ink-muted);
+  }
+  .tys-track { fill: none; stroke: var(--accent-deep); stroke-width: 1.2; opacity: 0.55; }
+  .tys-track--heavy { stroke-width: 2.4; opacity: 1; stroke: var(--accent); }
+  .tys-node { fill: var(--accent); stroke: none; }
+  .tys-node--flip { fill: var(--signal); }
+  .tys-dim { fill: none; stroke: var(--ink-muted); stroke-width: 0.9; }
+  .tys-dim--on { stroke: var(--accent); }
+  .tys-block { stroke: var(--signal); stroke-width: 2; }
+  .tys-sinkline { fill: none; stroke: var(--signal); stroke-width: 1.2; }
+  .tys-assy { fill: none; stroke: var(--ink-muted); stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .tys-ghost { fill: none; stroke: var(--signal); stroke-width: 1.2; stroke-dasharray: 6 4; }
+  .tys-weld { stroke: var(--signal); stroke-width: 1.4; stroke-dasharray: 4 3; }
+  .tys-flow { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 9 5; }
+  .tys-chip { fill: color-mix(in oklab, var(--accent) 70%, var(--surface)); stroke: var(--accent-deep); }
+  .tys-chipref { fill: var(--accent); stroke: var(--accent-deep); }
+  .tys-rail { fill: url(#tys-hatch-c); stroke: var(--accent-deep); stroke-width: 1.4; }
+  .tys-flip { stroke: var(--signal); stroke-width: 1; stroke-dasharray: 12 3 2 3; }
+
+  /* ── Hero ─────────────────────────────────────────────────────────────── */
+  .tys-hero {
+    position: relative;
+    padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2.5rem, 6vw, 4.5rem);
+    overflow: clip;
+  }
+  .tys-hero__bleed { position: absolute; inset: 0; pointer-events: none; }
+  .tys-hero__bleed svg { inline-size: 100%; block-size: 100%; }
+
+  .tys-hero__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+  @media (max-width: 940px) { .tys-hero__inner { grid-template-columns: 1fr; } }
+
+  .tys-hero__head {
+    margin-block-start: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(2.35rem, 5.8vw, 4.7rem);
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    font-weight: 500;
+  }
+  .tys-hero__head span { display: block; }
+  .tys-hero__head span:last-child { color: var(--accent-deep); }
+
+  .tys-hero__lead {
+    margin-block-start: clamp(1.25rem, 2.5vw, 1.8rem);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-inline-size: 46ch;
+  }
+  .tys-hero__markers { margin-block-start: var(--sp-6); display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .tys-hero__markers li {
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    padding: 0.4em 0.75em;
+    border: 1px solid color-mix(in oklab, var(--accent) 34%, transparent);
+    color: var(--accent-deep);
+    background: color-mix(in oklab, var(--surface-raise) 72%, transparent);
+  }
+  .tys-hero__thesis {
+    margin-block-start: var(--sp-7);
+    padding-block-start: var(--sp-5);
+    border-block-start: var(--rule-strong);
+    font-size: var(--step-0);
+    line-height: 1.62;
+    max-inline-size: 50ch;
+  }
+
+  .tys-hero__figlabel { display: block; margin-block-end: var(--sp-4); }
+  .tys-hero__fig svg { overflow: visible; }
+  .tys-hero__meta {
+    margin-block-start: var(--sp-5);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2) var(--sp-5);
+    padding-block-start: var(--sp-3);
+    border-block-start: var(--rule);
+    font-size: var(--step--2);
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+  }
+  .tys-hero__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  /* Assembly motion: each part travels a short distance along the axis and
+     seats with a hard stop. Nothing floats, nothing drifts. */
+  @keyframes tys-seat {
+    from { opacity: 0; transform: translateY(-18px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes tys-leadin { from { opacity: 0; } to { opacity: 1; } }
+  :global(html.js) .tys-hero__fig[data-reveal='in'] .tys-part {
+    animation: tys-seat 420ms var(--ease-mech) both;
+    animation-delay: calc(var(--i) * 70ms);
+  }
+  :global(html.js) .tys-hero__fig[data-reveal='in'] .tys-lead {
+    animation: tys-leadin 300ms var(--ease-out) both;
+    animation-delay: calc(360ms + var(--i) * 70ms);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tys-part, .tys-lead { animation: none !important; opacity: 1 !important; transform: none !important; }
+  }
+
+  /* ── Parts list ───────────────────────────────────────────────────────── */
+  .tys-parts { position: relative; margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
+  .tys-parts__cap { display: block; margin-block-end: var(--sp-4); }
+  .tys-parts__list { border-block-start: var(--rule-strong); }
+  .tys-parts__row {
+    display: grid;
+    grid-template-columns: 2.2rem 11rem 11rem minmax(0, 1fr);
+    gap: var(--sp-5);
+    align-items: baseline;
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+  }
+  @media (max-width: 900px) {
+    .tys-parts__row { grid-template-columns: 2.2rem minmax(0, 1fr); gap: var(--sp-3) var(--sp-4); }
+    .tys-parts__spec { grid-column: 2; }
+    .tys-parts__note { grid-column: 2; }
+  }
+  .tys-parts__no { color: var(--accent-deep); font-size: var(--step--1); }
+  .tys-parts__name { font-size: var(--step-0); font-weight: var(--weight-medium); }
+  .tys-parts__spec { font-size: var(--step--2); letter-spacing: 0.06em; color: var(--ink-muted); }
+  .tys-parts__note { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
+  .tys-parts__caption { margin-block-start: var(--sp-4); max-inline-size: 70ch; }
+
+  .tys-proof {
+    margin-block-start: clamp(1.75rem, 4vw, 3rem);
+    padding-block: var(--sp-4);
+    border-block: var(--rule);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--sp-5);
+    align-items: baseline;
+  }
+  @media (max-width: 760px) { .tys-proof { grid-template-columns: 1fr; gap: var(--sp-3); } }
+  .tys-proof ul { display: flex; flex-wrap: wrap; gap: var(--sp-2) var(--sp-6); }
+  .tys-proof li { font-size: var(--step--2); letter-spacing: 0.05em; color: var(--ink-muted); }
+
+  /* ── 01 Intake ────────────────────────────────────────────────────────── */
+  .tys-intake { padding-block: var(--section-y); border-block-start: var(--rule); }
+  .tys-intake__fig { margin-block-start: clamp(2rem, 5vw, 3.25rem); }
+  .tys-intake__fig .t-label { display: block; margin-block-end: var(--sp-4); }
+  .tys-intake__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  .tys-lane { opacity: 1; }
+  :global(html.js) .tys-intake__fig .tys-track {
+    stroke-dasharray: 720;
+    stroke-dashoffset: 720;
+  }
+  :global(html.js) .tys-intake__fig[data-reveal='in'] .tys-track {
+    transition: stroke-dashoffset var(--dur-6) var(--ease-out);
+    transition-delay: calc(var(--i, 4) * 110ms);
+    stroke-dashoffset: 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tys-intake__fig .tys-track { stroke-dashoffset: 0 !important; }
+  }
+
+  .tys-lanes {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    border-block-start: var(--rule-strong);
+  }
+  @media (max-width: 980px) { .tys-lanes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .tys-lanes { grid-template-columns: 1fr; } }
+  .tys-lanes__item {
+    padding: var(--sp-5) var(--sp-5) var(--sp-6) 0;
+    border-inline-end: var(--rule);
+    display: grid;
+    gap: var(--sp-2);
+    align-content: start;
+  }
+  .tys-lanes__item:last-child { border-inline-end: 0; }
+  @media (max-width: 600px) { .tys-lanes__item { border-inline-end: 0; border-block-end: var(--rule); } }
+  .tys-lanes__no { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
+  .tys-lanes__action { font-size: var(--step--1); line-height: 1.55; }
+  .tys-lanes__need { color: var(--ink-muted); }
+
+  /* ── 02 Consolidation ─────────────────────────────────────────────────── */
+  .tys-cons { padding-block: var(--section-y); background: var(--surface-sunk); border-block: var(--rule); }
+  .tys-cons__fig { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
+  .tys-cons__fig .figure-note { margin-block-start: var(--sp-4); }
+  :global(html.js) .tys-cons__fig[data-reveal='in'] .tys-now {
+    animation: tys-seat 460ms var(--ease-mech) both;
+    animation-delay: 300ms;
+  }
+  @media (prefers-reduced-motion: reduce) { .tys-now { animation: none !important; opacity: 1 !important; } }
+
+  .tys-count {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 0.7fr) minmax(0, 1.6fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding-block-start: var(--sp-6);
+    border-block-start: var(--rule-strong);
+  }
+  @media (max-width: 900px) { .tys-count { grid-template-columns: 1fr 1fr; } .tys-count__col--wide { grid-column: 1 / -1; } }
+  @media (max-width: 520px) { .tys-count { grid-template-columns: 1fr; } }
+  .tys-count__col h3 { display: block; margin-block-end: var(--sp-4); }
+  .tys-count__col dl { display: grid; }
+  .tys-count__col dl > div {
+    display: grid;
+    grid-template-columns: 3.2rem minmax(0, 1fr);
+    gap: var(--sp-3);
+    align-items: baseline;
+    padding-block: var(--sp-3);
+    border-block-end: var(--rule);
+  }
+  .tys-count__col dt { font-size: var(--step-3); line-height: 1; color: var(--ink-muted); }
+  .tys-count__col dd { font-size: var(--step--2); line-height: 1.45; color: var(--ink-muted); }
+  .tys-count__col--after dt { color: var(--accent-deep); }
+  .tys-count__col--after dd { color: var(--ink); }
+
+  .tys-ticks { display: grid; gap: var(--sp-3); }
+  .tys-ticks li {
+    font-size: var(--step--1);
+    line-height: 1.55;
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .tys-ticks li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.7em;
+    inline-size: 0.7rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+
+  .tys-caution {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--signal);
+    max-inline-size: 70ch;
+  }
+  .tys-caution p { margin-block-start: var(--sp-3); font-size: var(--step--1); line-height: 1.62; color: var(--ink-muted); }
+
+  /* ── 03 Amortisation ──────────────────────────────────────────────────── */
+  .tys-vol { padding-block: var(--section-y); }
+  .tys-vol__grid {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 940px) { .tys-vol__grid { grid-template-columns: 1fr; } }
+  .tys-vol__fig {
+    position: sticky;
+    inset-block-start: clamp(5rem, 11vh, 7rem);
+  }
+  @media (max-width: 940px) { .tys-vol__fig { position: static; } }
+  .tys-vol__fig .t-label { display: block; margin-block-end: var(--sp-4); }
+  .tys-vol__axis { margin-block-start: var(--sp-3); }
+  .tys-vol__fig .figure-note { margin-block-start: var(--sp-2); }
+
+  .tys-band { fill: var(--accent); opacity: 0; transition: opacity var(--dur-3) var(--ease-out); }
+  .tys-vol[data-step='0'] .tys-band[data-r='0'],
+  .tys-vol[data-step='1'] .tys-band[data-r='1'],
+  .tys-vol[data-step='2'] .tys-band[data-r='2'],
+  .tys-vol[data-step='3'] .tys-band[data-r='3'],
+  .tys-vol[data-step='4'] .tys-band[data-r='4'] { opacity: 0.14; }
+
+  .tys-rungs { border-block-start: var(--rule-strong); }
+  .tys-rung {
+    display: grid;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+    gap: var(--sp-2) var(--sp-5);
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+    opacity: 0.55;
+    transition: opacity var(--dur-3) var(--ease-out);
+  }
+  @media (max-width: 620px) { .tys-rung { grid-template-columns: 1fr; } }
+  .tys-vol[data-step='0'] .tys-rung[data-r='0'],
+  .tys-vol[data-step='1'] .tys-rung[data-r='1'],
+  .tys-vol[data-step='2'] .tys-rung[data-r='2'],
+  .tys-vol[data-step='3'] .tys-rung[data-r='3'],
+  .tys-vol[data-step='4'] .tys-rung[data-r='4'] { opacity: 1; }
+  @media (max-width: 940px) { .tys-rung { opacity: 1; } }
+  .tys-rung__v { grid-row: span 2; font-size: var(--step-0); color: var(--accent-deep); }
+  @media (max-width: 620px) { .tys-rung__v { grid-row: auto; } }
+  .tys-rung p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  .tys-vol__foot {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .tys-vol__foot { grid-template-columns: 1fr; } }
+  .tys-flipblock {
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--signal);
+  }
+  .tys-flipblock p { margin-block-start: var(--sp-3); font-size: var(--step--1); line-height: 1.62; }
+  .tys-model { padding: var(--sp-6); background: var(--surface-raise); border: var(--rule); }
+  .tys-model p { margin-block-start: var(--sp-4); font-size: var(--step--2); line-height: 1.68; color: var(--ink-muted); }
+
+  /* ── 04 Ledger ────────────────────────────────────────────────────────── */
+  .tys-led { padding-block: var(--section-y); background: var(--surface-sunk); border-block: var(--rule); }
+  .tys-led__cols {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 15rem) minmax(0, 1fr);
+    gap: var(--sp-6);
+  }
+  .tys-led__cols span:first-child { grid-column: 2; }
+  .tys-led__cols--b { grid-column: 3; }
+  @media (max-width: 940px) { .tys-led__cols { display: none; } }
+
+  .tys-led__list { margin-block-start: var(--sp-3); border-block-start: var(--rule-strong); }
+  .tys-led__row {
+    display: grid;
+    grid-template-columns: 12rem minmax(0, 15rem) minmax(0, 1fr);
+    gap: var(--sp-6);
+    align-items: start;
+    padding-block: var(--sp-7);
+    border-block-end: var(--rule);
+  }
+  @media (max-width: 940px) {
+    .tys-led__row { grid-template-columns: 1fr; gap: var(--sp-5); }
+  }
+  .tys-led__id { display: grid; gap: var(--sp-2); align-content: start; }
+  .tys-led__id span { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
+  .tys-led__fig { background: var(--surface-raise); border: var(--rule); padding: var(--sp-3); }
+  .tys-led__copy { display: grid; gap: var(--sp-3); }
+  .tys-led__drawn {
+    font-size: var(--step-0);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid color-mix(in oklab, var(--signal) 60%, transparent);
+  }
+  .tys-led__fixed {
+    font-size: var(--step-0);
+    line-height: 1.5;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--accent);
+  }
+  .tys-led__cost { color: var(--ink-muted); line-height: 1.62; max-inline-size: 70ch; }
+  .tys-led__note { margin-block-start: var(--sp-5); }
+
+  /* ── 05 Detail ────────────────────────────────────────────────────────── */
+  .tys-det { padding-block: var(--section-y); }
+  .tys-det__tabs { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
+  .tys-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+  }
+  .tys-tab {
+    flex: 1 1 12rem;
+    padding: 0.9rem 1rem;
+    background: var(--surface);
+    font-size: var(--step--1);
+    font-weight: var(--weight-medium);
+    color: var(--ink-muted);
+    text-align: start;
+    transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out);
+  }
+  .tys-tab:hover { background: var(--accent-wash); color: var(--accent-deep); }
+  .tys-tab[aria-selected='true'] { background: var(--accent); color: var(--surface-raise); }
+
+  .tys-det__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding: clamp(1.25rem, 3vw, 2.25rem);
+    border: var(--rule);
+    border-block-start: 0;
+    background: var(--surface-raise);
+    align-items: start;
+  }
+  .tys-det__panel[hidden] { display: none; }
+  @media (max-width: 900px) { .tys-det__panel { grid-template-columns: 1fr; } }
+  .tys-det__fig svg { overflow: visible; }
+  .tys-det__fig .figure-note { margin-block-start: var(--sp-4); }
+  .tys-det__summary { font-size: var(--step-0); line-height: 1.6; }
+  .tys-det__legend { display: block; margin-block-start: var(--sp-6); margin-block-end: var(--sp-3); }
+  .tys-callouts { border-block-start: var(--rule); }
+  .tys-callouts > div { padding-block: var(--sp-4); border-block-end: var(--rule); display: grid; gap: 0.3rem; }
+  .tys-callouts dt {
+    display: flex;
+    align-items: baseline;
+    gap: var(--sp-3);
+    font-size: var(--step--1);
+    font-weight: var(--weight-medium);
+  }
+  .tys-callouts__no {
+    font-size: var(--step--2);
+    color: var(--accent-deep);
+    border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
+    padding: 0.1em 0.45em;
+    flex: none;
+  }
+  .tys-callouts dd { font-size: var(--step--2); line-height: 1.6; color: var(--ink-muted); }
+  .tys-det__scope {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step--1);
+    line-height: 1.6;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--accent);
+  }
+  .tys-det__note { margin-block-start: var(--sp-6); max-inline-size: 70ch; }
+
+  /* ── 06 Surface ───────────────────────────────────────────────────────── */
+  .tys-surf { padding-block: var(--section-y); background: var(--surface-sunk); border-block: var(--rule); }
+  .tys-grades { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
+  .tys-grades__cap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    padding-block-end: var(--sp-4);
+    border-block-end: var(--rule-strong);
+  }
+  .tys-grades__key { display: flex; gap: var(--sp-5); }
+  .tys-grades__row {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0;
+  }
+  @media (max-width: 900px) { .tys-grades__row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .tys-grades__row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .tys-grade {
+    padding: var(--sp-5) var(--sp-4) var(--sp-5) 0;
+    border-inline-end: var(--rule);
+    border-block-end: var(--rule);
+    display: grid;
+    gap: 0.35rem;
+    align-content: start;
+  }
+  .tys-grade:last-child { border-inline-end: 0; }
+  .tys-grade__fig { margin-block-end: var(--sp-3); }
+  .tys-grade__g { font-size: var(--step-0); color: var(--ink); }
+  .tys-grade[data-anchor='true'] .tys-grade__g { color: var(--accent-deep); }
+  .tys-grade__ra, .tys-grade__d { font-size: var(--step--2); color: var(--ink-muted); letter-spacing: 0.04em; }
+  .tys-grade[data-anchor='true'] .tys-grade__d { color: var(--accent-deep); }
+  .tys-grades__note { margin-block-start: var(--sp-5); max-inline-size: 78ch; line-height: 1.65; }
+
+  .tys-colour {
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    padding-block-start: var(--sp-7);
+    border-block-start: var(--rule-strong);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .tys-colour { grid-template-columns: 1fr; } }
+  .tys-colour__copy .t-lead { margin-block-start: var(--sp-4); }
+  .tys-colour__driftcap { display: block; margin-block-start: var(--sp-6); margin-block-end: var(--sp-3); }
+  .tys-drift { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; }
+  .tys-drift li { aspect-ratio: 3 / 2; }
+  .tys-colour__note { margin-block-start: var(--sp-4); color: var(--ink-muted); line-height: 1.62; }
+
+  .tys-routes > .t-label { display: block; margin-block-end: var(--sp-4); }
+  .tys-routes dl { border-block-start: var(--rule-strong); }
+  .tys-routes > dl > div { padding-block: var(--sp-4); border-block-end: var(--rule); display: grid; gap: 0.35rem; }
+  .tys-routes dt { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-3); }
+  .tys-routes__name { font-size: var(--step-0); font-weight: var(--weight-medium); }
+  .tys-routes__vol { font-size: var(--step--2); letter-spacing: 0.08em; color: var(--accent-deep); }
+  .tys-routes dd { font-size: var(--step--1); line-height: 1.58; color: var(--ink-muted); }
+  .tys-routes__boundary {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step--1);
+    line-height: 1.62;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--signal);
+  }
+
+  /* ── 07 Boundary — inverted, and the loudest block on the page ────────── */
+  .tys-bnd {
+    padding-block: var(--section-y-loose);
+    background: var(--inverse);
+    color: var(--inverse-ink);
+    --ink: var(--inverse-ink);
+    --signal: var(--signal-inverse);
+    --signal-ink: var(--signal-inverse);
+    --accent: var(--accent-inverse);
+    --accent-deep: var(--accent-inverse);
+    --ink-muted: color-mix(in oklab, var(--inverse-ink) 62%, transparent);
+    --line: color-mix(in oklab, var(--inverse-ink) 18%, transparent);
+    --surface-raise: color-mix(in oklab, var(--inverse-ink) 6%, transparent);
+  }
+  .tys-bnd__h { max-inline-size: 22ch; }
+
+  .tys-std { margin-block-start: clamp(2.5rem, 5vw, 4rem); }
+  .tys-std > h3 { display: block; margin-block-end: var(--sp-4); }
+  .tys-std__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--hair) solid var(--line);
+  }
+  .tys-std__list > div { background: var(--inverse); padding: var(--sp-5); display: grid; gap: var(--sp-2); }
+  .tys-std__list dt { font-size: var(--step--1); letter-spacing: 0.06em; color: var(--signal-ink); }
+  .tys-std__list dd { font-size: var(--step--2); line-height: 1.6; color: var(--ink-muted); }
+  .tys-std__note {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step--1);
+    line-height: 1.6;
+    max-inline-size: 72ch;
+    color: var(--inverse-ink);
+  }
+
+  .tys-split {
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  @media (max-width: 860px) { .tys-split { grid-template-columns: 1fr; } }
+  .tys-split__col ul { margin-block-start: var(--sp-5); border-block-start: var(--rule-strong); }
+  .tys-split__col li {
+    padding-block: var(--sp-4);
+    padding-inline-start: var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.55;
+    position: relative;
+  }
+  .tys-split__col li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.3rem;
+    inline-size: 0.7rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .tys-split__col--keep li::before { background: var(--signal); }
+
+  .tys-bnd__line {
+    margin-block-start: clamp(2.5rem, 6vw, 4rem);
+    padding-block-start: var(--sp-6);
+    border-block-start: 2px solid var(--signal);
+    font-size: var(--step-2);
+    line-height: 1.38;
+    letter-spacing: var(--track-head);
+    max-inline-size: 44ch;
+  }
+
+  /* ── 08 After sign-off ────────────────────────────────────────────────── */
+  .tys-after { padding-block: var(--section-y); }
+  .tys-after__axis { display: block; margin-block-start: clamp(2rem, 5vw, 3.5rem); margin-block-end: var(--sp-4); }
+  .tys-after__list { border-block-start: var(--rule-strong); }
+  .tys-event {
+    display: grid;
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: var(--sp-5);
+    align-items: start;
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+    position: relative;
+  }
+  @media (max-width: 680px) { .tys-event { grid-template-columns: 1fr; gap: var(--sp-2); } }
+  .tys-event__mark {
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    color: var(--accent-deep);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .tys-event__mark::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.35em;
+    inline-size: 0.5rem;
+    block-size: 0.5rem;
+    background: var(--accent);
+  }
+  .tys-event__body { display: grid; gap: var(--sp-2); }
+  .tys-event__body p { font-size: var(--step--1); line-height: 1.62; color: var(--ink-muted); max-inline-size: 74ch; }
+  .tys-event:last-child .tys-event__mark { color: var(--signal-ink); }
+  .tys-event:last-child .tys-event__mark::before { background: var(--signal); }
+
+  /* ── Panels ───────────────────────────────────────────────────────────── */
+  .tys-panels { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
+  .tys-panels__h { display: block; margin-block-end: var(--sp-4); }
+  .tys-panel__list { display: grid; gap: var(--sp-3); max-inline-size: 82ch; }
+  .tys-panel__list li {
+    font-size: var(--step--1);
+    line-height: 1.62;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .tys-panel__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.75em;
+    inline-size: 0.6rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .tys-panel__src { margin-block-start: var(--sp-4); max-inline-size: 64ch; }
+</style>

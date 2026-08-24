@@ -1,0 +1,21 @@
+---
+/** Medical — the shell lives in src/layouts/IndustryChapter.astro. */
+import IndustryChapter from '../../../layouts/IndustryChapter.astro';
+import Chapter from '../../../components/industries/Medical.astro';
+import { LOCALE_ORDER, type Locale } from '../../../i18n/locales.ts';
+import { INDUSTRIES } from '../../../config/industries.ts';
+import { getIndustry, getCommon } from '../../../content/index.ts';
+
+export function getStaticPaths() {
+  return LOCALE_ORDER.map((lang) => ({ params: { lang } }));
+}
+
+const locale = Astro.params.lang as Locale;
+const industry = INDUSTRIES.medical;
+const content = getIndustry(locale, 'medical');
+const common = getCommon(locale);
+---
+
+<IndustryChapter locale={locale} industryKey="medical">
+  <Chapter locale={locale} industry={industry} content={content} common={common} />
+</IndustryChapter>

@@ -1,0 +1,769 @@
+{
+  "meta": {
+    "title": "Özel plastik projeler: tersine mühendislik, DFM ve kalıp | Metal Form",
+    "description": "Teknik resim yok, dosya yok, tedarikçi yok. Bir fotoğraf, bir numune ya da bir sorun gönderin. Size imal edilebilir bir model, bir kalıp rotası ve bir tedarik planı verelim. 48 iş saati içinde dönüş."
+  },
+  "name": "Özel Projeler",
+  "tile": "Projenizin bir kategoriye sığması gerekmiyor. Bir fotoğraf, kırık bir parça, bir rakip ürünü, bir eskiz ya da henüz çözemediğiniz bir sorun — hepsi bir başlangıç noktasıdır.",
+  "tileParts": "Her şey · Her girdi · Her aşama",
+  "hero": {
+    "kicker": "Özel Projeler",
+    "headline": [
+      "Başlamak için",
+      "teknik resme gerek yok."
+    ],
+    "lead": "Bir fotoğraf. Kırılan bir parça. Yerelde ürettirmek istediğiniz bir ürün. Bir eskiz. Etrafında hiçbir şey olmayan bir STEP dosyası. Başkasının binasında duran bir kalıp. Artık tutmayan bir maliyet. Elinizde ne varsa gönderin. Bize ne anlattığını, hâlâ neyi sormamız gerektiğini ve kalıp rotasının neye benzediğini söyleyelim.",
+    "markers": [
+      "Numuneden ya da fotoğraftan tersine mühendislik",
+      "Enjeksiyon · PET · şişirme · basınçlı döküm kalıpları",
+      "48 iş saati içinde ilk dönüş"
+    ]
+  },
+  "blocks": {
+    "sheet": {
+      "callsHeading": "Bu paftada açık olanlar",
+      "calls": [
+        {
+          "n": "01",
+          "q": "Bu yüzey ne iş yapıyor?"
+        },
+        {
+          "n": "02",
+          "q": "Sıkı geçme mi, kayar geçme mi?"
+        },
+        {
+          "n": "03",
+          "q": "Hangi hammadde ve hangi kalite?"
+        },
+        {
+          "n": "04",
+          "q": "Yılda kaç adet?"
+        }
+      ],
+      "blockHeading": "Antet",
+      "block": [
+        {
+          "k": "Proje",
+          "v": "Henüz adlandırılmadı"
+        },
+        {
+          "k": "Pafta",
+          "v": "1 / 1"
+        },
+        {
+          "k": "Ölçek",
+          "v": "Ölçeksiz"
+        },
+        {
+          "k": "Revizyon",
+          "v": "A"
+        },
+        {
+          "k": "Durum",
+          "v": "Tamamlanmadı"
+        }
+      ],
+      "note": "Her özel proje bitmemiş bir teknik resim olarak gelir. Onu bitirmek işin kendisidir."
+    },
+    "arrivals": {
+      "index": "01",
+      "kicker": "Gelenler",
+      "heading": "Projelerin çoğu bir dosyada değil, birinin elinde gelir.",
+      "body": "Gerçekte gelen şey budur. Bir makine dairesinde çekilmiş bir telefon fotoğrafı. Kırılan parça. Üzerinde hâlâ kumpas duran bir numune. Dörde katlanmış bir teknik resim. Etrafında hiç teknik resim olmayan bir dosya. Hiçbiri bir şartname değildir. Her biri bir başlangıç noktasıdır ve her biri bize başka bir şey anlatır.",
+      "items": [
+        {
+          "label": "Bir telefon fotoğrafı",
+          "note": "Kabaca malzeme ailesi. Oran, muhtemel çekme yönü, çoğu zaman yolluk girişi ve ayırma yüzeyi. Karede bir şey bize ölçek verene kadar hiçbir ölçü yok."
+        },
+        {
+          "label": "Kırılan parça",
+          "note": "Arıza bir veridir. Nereden kırıldığı, kırık yüzeyin nasıl göründüğü ve çevresinde ne olduğu; bir tasarım sorununu bir malzeme sorunundan, onu da bir hizmet sorunundan ayırır."
+        },
+        {
+          "label": "Bir numune ve bir kumpas",
+          "note": "Ölçülmüş detaylar ve hizmet ettikleri kısıtlar. Kalıptan çıkan geometri — ki bu, parçanın tasarlandığı geometri değildir; eski bir parçada ise kalıptan çıktığı geometri bile değildir."
+        },
+        {
+          "label": "Dörde katlanmış bir teknik resim",
+          "note": "Referanslar, toleranslar ve bir revizyon numarası. Bu sayfadaki en hızlı girdi ve en nadir olanı."
+        },
+        {
+          "label": "Teknik resmi olmayan bir dosya",
+          "note": "Geometri tam olarak, son radyusuna kadar. Niyet ise hiç yok. Hangi ölçülerin parçanın çalışıp çalışmadığına karar verdiğini yine birinin söylemesi gerekir."
+        }
+      ],
+      "close": "Bunların en zayıfını gönderin, yine bir mühendislik cevabı alırsınız. En güçlüsünü gönderin, bir kalıp rotası alırsınız. Bu listede yazmaya başlamak için fazla az olan hiçbir şey yok."
+    },
+    "triage": {
+      "index": "02",
+      "kicker": "Ön değerlendirme",
+      "heading": "Gerçekte elinizde ne varsa onu seçin.",
+      "body": "On başlangıç noktası. Her birinin buradan gerçek bir rotası var: girdinin bize ne anlattığı, sizden ne isteyeceğimiz, size ne döneceği ve ilk adımın gerçekte ne olduğu. Listenin yanındaki çizim, siz aşağı indikçe değişmez. Değişen şey, o çizim hakkında bildiklerimizdir.",
+      "railLabel": "Başlangıç noktaları",
+      "tellsHeading": "Bu bize ne anlatır",
+      "askHeading": "Sizden ne isteyeceğiz",
+      "backHeading": "Size ne döner",
+      "firstHeading": "İlk adım",
+      "items": [
+        {
+          "id": "photo",
+          "no": "01",
+          "label": "Yalnızca bir fotoğraf",
+          "mark": "Kontur",
+          "tells": [
+            "Yüzeyden, parlaklıktan ve çekildiği ortamdan kabaca malzeme ailesi.",
+            "Oran ve muhtemel çekme yönü. Çoğu zaman yolluk girişi konumu ve ayırma yüzeyi de.",
+            "Parçanın, çıktığı makinede ya da montajda nasıl durduğu."
+          ],
+          "ask": [
+            "Karede bilinen tek bir ölçü ya da parçanın yanına konmuş bir cetvel.",
+            "Parçanın ne iş yaptığı ve arıza verdiğinde hatta ne olduğu.",
+            "Kabaca yılda kaç adet gerektiği; bir aralık olarak bile olsa."
+          ],
+          "back": [
+            "Sade bir dille yazılmış bir yapılabilirlik görüşü.",
+            "Tam olarak neyin, nereden ölçüleceğinin listesi.",
+            "Fiziksel bir numunenin yola çıkmasının gerekip gerekmediği."
+          ],
+          "first": "İçinde cetvel olan bir fotoğraf, yazılı bir cevap almaya yeter. Bir kalıba fiyat vermeye yetmez ve tahmini fiyatlandırmaktansa bunu söylemeyi tercih ederiz."
+        },
+        {
+          "id": "broken",
+          "no": "02",
+          "label": "Kırılan bir parça",
+          "mark": "Kırık",
+          "tells": [
+            "Yükün nereye gittiği ve cidarın onu nerede taşıyamadığı.",
+            "Kırığın bir birleşme izini, bir göbeği, keskin bir iç köşeyi ya da yolluk girişini izleyip izlemediği.",
+            "Aşınma, renk değişimi ve gevrekleşme; arızayı tarihlendirir ve çoğu zaman nedenini de adıyla söyler."
+          ],
+          "ask": [
+            "Arıza vermeye başlamadan önce neyin değiştiği: tedarikçi, hammadde, çalışma çevrimi, sıcaklık, temizlik maddesi.",
+            "Ne kadar dayandığı ve ne kadar dayanması gerektiği.",
+            "Kırılan parçanın elinizdeki tek parça olup olmadığı."
+          ],
+          "back": [
+            "Parçayı birebir üretmek mi yoksa düzeltmek mi gerektiğine dair bir görüş.",
+            "Arızayı gideren tasarım değişiklikleri; yalnızca kozmetik olanlardan ayrı tutulmuş hâlde.",
+            "Hangi versiyonu üretmeye karar verirseniz onun için bir kalıp rotası."
+          ],
+          "first": "Kırılanı gönderin ve varsa kırılmamış bir tane de. Aynı parçanın iki hâli, tek bir numunenin cevaplayamadığı soruları cevaplar."
+        },
+        {
+          "id": "benchmark",
+          "no": "03",
+          "label": "Bir rakip ürünü",
+          "mark": "Zarf",
+          "tells": [
+            "İşlevsel zarf, montaj sınırı ve başkasının çoktan alıp bedelini ödediği kalıplama kararları.",
+            "İşlevin kaç ayrı parçaya bölündüğü; kutudaki en işe yarar bilgi genellikle budur.",
+            "Maliyetin nereye harcandığı: göz sayısı, geçmeler, yüzey kalitesi, insert işçiliği."
+          ],
+          "ask": [
+            "Bu sizin tasarımınız mı, yürürlükte bir patent ya da tescilli tasarım hakkı kapsamında mı ve çoğaltma hakkına sahip misiniz.",
+            "Neyi korumak, neyi farklı yapmak istediğiniz.",
+            "Hangi pazara ve hangi adetle gideceği."
+          ],
+          "back": [
+            "Neyi birebir üretip neyi üretmeyeceğimize dair yazılı bir beyan.",
+            "Parçaları, montaj sınırını ve kalıbı kapsayan bir kapsam önerisi.",
+            "Yeniden tasarımın kopyalamaktan ucuz olduğu yerler ve nedeni."
+          ],
+          "first": "Hak sorusu her türlü mühendislikten önce gelir. Kısa bir konuşmadır ve şimdi yapılması, çelik işlendikten sonrasına göre çok daha iyidir."
+        },
+        {
+          "id": "sketch",
+          "no": "04",
+          "label": "Elle çizilmiş bir eskiz",
+          "mark": "Niyet",
+          "tells": [
+            "Niyet, oran ve ihtiyacınız olduğunu zaten bildiğiniz detaylar.",
+            "Ölçüsel hiçbir şey. Eskiz bir geometri değil, bir şartnamedir ve onu geometri sanmak, projelerin erkenden bozulma biçimidir."
+          ],
+          "ask": [
+            "İşlev: ne yaptığı ve ne yapmaması gerektiği.",
+            "Ortam: çalışma sıcaklığı, kimyasal ya da UV maruziyeti, yükün karakteri, beklenen ömür.",
+            "Boyut zarfı, yıllık adet ve bitmiş parçanın içinde kalması gereken maliyet."
+          ],
+          "back": [
+            "Bir kalıp teklifi değil, bir modelleme kapsamı.",
+            "Kalıp maliyetini sürükleyecek detaylar; siz onlara bağlanmadan önce adıyla belirtilmiş hâlde.",
+            "Revizyon numarası olan ilk katı model; sonraki her kararın asıldığı şey odur."
+          ],
+          "first": "Kalıp satın almadan önce bir model satın almayı bekleyin. Bir eskiz üzerinden önce kalıba fiyat vermek, sizin paranızla tahmin yürütmektir."
+        },
+        {
+          "id": "cad",
+          "no": "05",
+          "label": "Bir CAD dosyası",
+          "mark": "Katı",
+          "tells": [
+            "Geometri tam olarak, son radyusuna kadar.",
+            "Niyet hakkında hiçbir şey: hangi ölçülerin önemli olduğu, hangi yüzeylerin göründüğü, parçanın neyin içine monte olduğu.",
+            "Elinizdekinin düzenleyebileceğiniz bir katı mı, yoksa düzenleyemeyeceğiniz bir mesh mi olduğu."
+          ],
+          "ask": [
+            "Hangi ölçüler kalite için kritik, hangileri referans.",
+            "Hangi yüzeyler kozmetik ve hangi yüzey standardına göre.",
+            "Hammadde kalitesi ve kabul edilebilir muadilleri, ilk sipariş miktarı ve yıllık kullanım."
+          ],
+          "back": [
+            "Bir üretilebilirlik incelemesi: cidar, çıkma açısı, geçmeler, yolluk girişi konumu, birleşme izinin yeri, itme ve hammaddeye karşı tolerans yapılabilirliği.",
+            "Onaylamanız ya da düzeltmeniz için kısa bir kritik ölçü listesi.",
+            "O liste üzerinde mutabık kalındığında bir kalıp önerisi."
+          ],
+          "first": "Elinizdeki bir mesh ise yine de gönderin. Üçgenlerden oluşan bir kabuğu düzenlenebilir bir katıya çevirmek bir dosya dönüşümü değil, mühendisliktir ve mühendislik olarak fiyatlanır."
+        },
+        {
+          "id": "obsolete",
+          "no": "06",
+          "label": "Üretimden kalkmış bir parça, teknik resmi yok",
+          "mark": "Referans",
+          "tells": [
+            "Kalıptan çıkan geometri, ayırma yüzeyi, yolluk girişi izi, itici izi ve onu üreten kalıbın çekme yönü.",
+            "Mevcut durumu. Plastik ısı ve yük altında hareket eder; dolayısıyla eski bir parça tasarımı kadar geçmişini de kaydeder.",
+            "Bazen de aslında kimsenin yazıya dökmediği bir sorunun geçici çözümü olduğunu."
+          ],
+          "ask": [
+            "Neyle eşleştiği ve o geçmenin sıkı mı kayar mı olduğu.",
+            "Hâlâ bilen varsa, hangi ölçülerin hiç kontrol edilmiş olduğu.",
+            "Yılda kaç adet ve ekipmanın ne kadar süre hizmette kalacağı."
+          ],
+          "back": [
+            "Aşınmış bir yüzeyin kopyası değil; referanslarını bizim koyduğumuz ve kaydettiğimiz, yeniden kurulmuş bir katı model.",
+            "Yapmak zorunda kaldığımız varsayımlar; sessizce bir fiyatın içine emilmek yerine yazıya dökülmüş hâlde.",
+            "Belirsiz her ölçünün çelik fazlası bırakılarak işlendiği bir kalıp rotası."
+          ],
+          "first": "Bu sayfadaki en yaygın geliş biçimi budur. Numuneyi ve varsa eşleştiği parçayı gönderin. Tersine mühendislikle üretilen bir parçadaki tolerans sorunlarının yarısı, kimsenin göndermediği bir parçaya aittir."
+        },
+        {
+          "id": "production",
+          "no": "07",
+          "label": "Bir üretim sorunu",
+          "mark": "Çöküntü",
+          "tells": [
+            "Kusurun bir koşu sırasında gelip gittiği mi, yoksa her koşuda ortaya çıktığı mı.",
+            "Parçanın neresine düştüğü; bu genellikle kimse kalıbı açmadan mekanizmayı adıyla söyler.",
+            "Parçanın tasarlandığı cidar kalınlığının, gerçekte sahip olduğu cidar kalınlığı olup olmadığı."
+          ],
+          "ask": [
+            "Aralıklı mı, sürekli mi. Bu tek cevap; proses kaymasını ve malzeme sapmasını, parça tasarımından ve kalıp yapımından ayırır.",
+            "Bir noktadan değil, birkaç noktadan ölçülmüş cidar kalınlığı.",
+            "Kalıbın son bakımından bu yana ne yaptığı ve bir kalıp geçmiş kartının bulunup bulunmadığı."
+          ],
+          "back": [
+            "Bir kök neden rotası: proses formu, tasarım değişikliği ya da çelik — tahmin edilerek değil, adıyla belirtilerek.",
+            "Tasarım tarafındaki kalemler sıralanmış hâlde; başta cidar düzgünlüğü, çünkü çöküntünün, boşlukların, çarpılmanın ve dolum sorunlarının en yaygın kaynağı odur.",
+            "Her kalemin kalıpta ve çevrimde neye mal olduğunu gösteren bir değişiklik listesi."
+          ],
+          "first": "Tarif değil, parça gönderin. Aynı koşudan iyi parçalar ve kötü parçalar; yapabiliyorsanız iki farklı koşudan."
+        },
+        {
+          "id": "cost",
+          "no": "08",
+          "label": "Bir maliyet sorunu",
+          "mark": "Cidar",
+          "tells": [
+            "Çelik işlenmeden önce alınmış dört kararın bedelinin hâlâ her atımda ödendiğini: göz sayısı, cidar kalınlığı, kaç geçmenin hayatta kaldığı ve hangi yolluk.",
+            "Programın gerçekte ulaştığı adede göre kalıbın bir darboğaz mı yoksa atıl bir varlık mı olduğunu."
+          ],
+          "ask": [
+            "Göz sayısı, çevrim süresi ve tahmin edilen değil, gerçekten çalıştığınız yıllık kullanım.",
+            "Cidar kalınlığı ve parça boyunca nerelerde değiştiği.",
+            "Hangi ölçülerin gerçekten kritik olduğu ve hangilerinin yalnızca daraltmak daha güvenli göründüğü için daraltıldığı."
+          ],
+          "back": [
+            "İnceleme tersinden yürütülür: cidar, soğutma, çevrim, göz sayısı ve ardından kritik ölçü listesi.",
+            "Cevabın parçada bir değişiklik mi, kalıpta bir değişiklik mi, yoksa farklı bir kalıp mı olduğu.",
+            "İşin yapılmaya değip değmediğine dair bir tutum."
+          ],
+          "first": "Tasarruf yüzdesi yazmayız. Aritmetik sizindir — sizin hammadde fiyatınız, sizin makine maliyetiniz, sizin adediniz. Size söyleyebileceğimiz şey, dört kaldıraçtan hangisinin hâlâ oynatılabilir olduğudur."
+        },
+        {
+          "id": "supplier",
+          "no": "09",
+          "label": "Bir tedarikçi sorunu",
+          "mark": "Ayrım",
+          "tells": [
+            "İhtiyacınız olan varlığın yalnızca çelik olmadığını. Onunla birlikte gelen model, kalıp şartnamesi ve proses bilgisidir.",
+            "Bir kalıba karşı mı, bir tedarikçiye karşı mı, bir sınıra karşı mı, yoksa üçüne birden karşı mı sigorta yaptırdığınızı."
+          ],
+          "ask": [
+            "Kalıbın nerede olduğu, yazılı olarak kime ait olduğu ve en son ne ürettiği.",
+            "Hangi dokümantasyonun mevcut olduğu: revizyon geçmişiyle en güncel 2B ve 3B, çelik sertifikaları, sıcak yolluk şartnamesi ve kontrol ünitesi ayarları, bakım ve onarım kayıtları, son onaylı proses parametreleri, mutabık kalınan referans numuneler.",
+            "Aynı kalıbın mı taşınması, yoksa ikinci bir kalıbın mı yapılması gerektiği."
+          ],
+          "back": [
+            "Kimse hiçbir şeyi taşımaya söz vermeden önce bir durum tespiti kapsamı: aşınma, kapama bütünlüğü, havalandırma derinliği, soğutmanın durumu, belgelenmemiş kaynak tamirleri.",
+            "Eksik olanı, hâlâ istenebilecekken adıyla ortaya koyan bir dokümantasyon denetimi.",
+            "Kendi verinizden kurulmuş bir ikinci kaynak önerisi; göz sayısı ana kalıba göre değil, kapsadığı riske göre boyutlandırılmış hâlde."
+          ],
+          "first": "Transferler mesafeden değil, eksik evraktan ve muayene edilmemiş çelikten çuvallar. Sandıktan değil, belgelerden başlayın."
+        },
+        {
+          "id": "idea",
+          "no": "10",
+          "label": "Yalnızca bir fikir",
+          "mark": "Açık",
+          "tells": [
+            "Henüz hiçbir şey. Bu meşru bir konumdur ve projelerin azımsanmayacak bir bölümü gerçekten burada başlar."
+          ],
+          "ask": [
+            "Şeyin ne yapması gerektiği, kimin için ve hangi ortamda.",
+            "İlk siparişte kaç adet ve yılda kaç adet.",
+            "Fikrin üretmeye değer olması için parçanın teslim edilmiş hâlde kaça mal olması gerektiği."
+          ],
+          "back": [
+            "O adette kalıbın doğru rota olup olmadığına dair dürüst bir cevap.",
+            "Aşamalı bir kapsam: önce model, sonra bir inceleme, sonra bir kalıp kararı — her biri durulabilecek kadar küçük.",
+            "Adedin bir kalıbı haklı çıkarmadığı yerde size kalıp satmak yerine bunu söyleriz."
+          ],
+          "first": "Herhangi bir projedeki en ucuz saat, bunun hiç kalıplanmış bir parça olması gerekip gerekmediğine karar vermeye harcanan ilk saattir."
+        }
+      ],
+      "close": "Hangi konumda olursanız olun, buradan giden rotanın biçimi aynıdır: girdiyi okuyun, varsayımları yüksek sesle adlandırın, onları sorularla kapatın, sonra çeliğe girin."
+    },
+    "reverse": {
+      "index": "03",
+      "kicker": "Hiçten başlamak",
+      "heading": "Kalıptan çıkan ölçü nominal değildir. Eski bir numune ise kalıptan çıkan ölçü bile değildir.",
+      "body": "Hiç teknik resim var olmamışsa model kopyalanmaz, yeniden kurulur. Numune size mevcut geometriyi verir. Parçanın tasarlandığı ölçüyü vermez ve gözün hangi çekme payıyla işlendiğini de vermez. Herhangi bir talaş kaldırılmadan önce ikisinin de geri konması gerekir.",
+      "stepsLabel": "Sıra",
+      "steps": [
+        {
+          "index": "01",
+          "label": "Parçayı okuyun",
+          "note": "Ayırma yüzeyi, yolluk girişi izi, birleşme izleri, itici izi, çekme yönü. Kalıplanmış bir parça, onu üreten kalıbın kaydıdır ve bu kayıt, hiçbir ölçü alınmadan önce kalıp rotasını daraltır."
+        },
+        {
+          "index": "02",
+          "label": "Referansları yerleştirin",
+          "note": "Numune hiçbir referansla gelmez. Bunların nereye konacağına karar vermek projedeki ilk mühendislik kararıdır ve sonraki her ölçü onlardan alınır."
+        },
+        {
+          "index": "03",
+          "label": "İşleve göre ölçün",
+          "note": "Ölçülen detaylar ve hizmet ettikleri kısıtlar: ne konumlandırıyor, ne sızdırmazlık yapıyor, ne tutuyor, neyin kayması gerekiyor. Geometri ölçülebilir. Tasarım niyeti ise parçanın ne yaptığından yeniden kurulmak zorundadır."
+        },
+        {
+          "index": "04",
+          "label": "Özellik olarak yeniden kurun",
+          "note": "CATIA ya da SolidWorks'te gerçek ölçülerle katı çıkarmalar, döndürmeler, radyuslar, göbekler ve delikler. Yumuşatılmış bir yüzey, sonradan kimsenin değiştirebileceği bir model değildir; oysa model kurmanın bütün amacı değiştirebilmektir."
+        },
+        {
+          "index": "05",
+          "label": "Çekme payını uygulayın",
+          "note": "Göz, parça ölçüsünün hammadde ailesinin değil belirli kalitenin çekmesiyle ölçeklenmiş hâline göre işlenir. Ölçülen bir değeri doğrudan çeliğe taşırsanız göz, çekme oranı kadar küçük çıkar."
+        },
+        {
+          "index": "06",
+          "label": "Çelik fazlası bırakarak işleyin",
+          "note": "Varsayım taşıyan her ölçü, gözde metal bırakılarak işlenir. Detay ilk atımlarda küçük çıkar, ölçülür ve gereken ölçüye açılır. Çelik alınabilir. Kaynak yapmadan geri konamaz ve kaynaklı bir insert hiçbir zaman tam olarak tasarlanan insert değildir."
+        }
+      ],
+      "labels": {
+        "arrived": "Geldiği hâliyle",
+        "datum": "Referans",
+        "measured": "Ölçülmüş",
+        "feature": "Özellik",
+        "part": "Parça",
+        "cavity": "Göz",
+        "steelLeft": "Bırakılan çelik",
+        "detail": "Detay"
+      },
+      "shrinkHeading": "Hammadde ailesine göre yayımlanmış kalıp çekmesi",
+      "shrinkCols": [
+        "Hammadde ailesi",
+        "Tipik kalıp çekmesi"
+      ],
+      "shrinkRows": [
+        {
+          "r": "ABS",
+          "v": "%0,4 – 0,8"
+        },
+        {
+          "r": "PC",
+          "v": "%0,5 – 0,7"
+        },
+        {
+          "r": "PA6, dolgusuz",
+          "v": "%0,8 – 1,5"
+        },
+        {
+          "r": "PP",
+          "v": "%1,0 – 2,5"
+        },
+        {
+          "r": "POM",
+          "v": "%1,8 – 2,5"
+        }
+      ],
+      "shrinkNote": "Bu tablodaki değerler yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir. Her durumda kalitenin kendi veri sayfası geçerlidir. %30 cam elyaf dolgulu bir kalite çok daha az çeker ve akış yönünde ile akışa dik yönde eşit çekmez; elyaf yönlenmesinin sonradan çarpılma olarak ortaya çıkmasının nedeni de budur.",
+      "close": "Hammaddenin belirtilemediği yerde, belirtebildiğiniz gerekliliklere göre bir kalite seçer, bunu kalıp şartnamesi sayfasına bir varsayım olarak kaydeder ve o varsayımın etkilediği ölçüleri çelik fazlası bırakarak işleriz. Bir numunenin bağımsız laboratuvarda tanımlanması piyasada mevcuttur. Bunu sipariş etmek bizim değil, sizin kararınızdır.",
+      "scanHeading": "Bu bölümdeki tek dürüst sınır",
+      "scanNote": "Ölçümden özellik yeniden kurmanın bir sınırı vardır ve serbest form yüzeyler o sınırın ötesindedir. Bir kanat profili, bir çark, biçimlendirilmiş bir dış yüzey: o geometrinin birebir üretilmesi gerekiyorsa, taranmış yüzey verisini gönderin, biz sizin mesh'inizden çalışalım. Tarama ve mesh verisini girdi olarak kabul ederiz. Kendimiz tarama yapmayız."
+    },
+    "questions": {
+      "index": "04",
+      "kicker": "Giriş",
+      "heading": "Her boşluk bir varsayıma dönüşür. Varsayımlar da risk olarak fiyatlanır.",
+      "body": "Bunlar, belirsiz bir girdiyi imal edilebilir bir projeye çeviren sorulardır. Bir form değildirler ve buradaki hiçbir şey hiçbir şeyi engellemez. Cevaplayabildiğinizi cevaplayın, cevaplayamadığınızı da söyleyin: belirtilmiş bir bilinmezlik bizim için tahmin edilmiş bir cevaptan daha değerlidir; çünkü belirtilmiş bir bilinmezliğin etrafında çelik işleyebiliriz.",
+      "cols": {
+        "q": "Soru",
+        "why": "Neden soruluyor",
+        "assume": "Cevaplanmazsa varsaydığımız"
+      },
+      "groups": [
+        {
+          "group": "İşlev",
+          "items": [
+            {
+              "q": "Parça ne iş yapıyor ve ne yapmaması gerekiyor?",
+              "why": "Hangi ölçülerin önemli olduğuna işlev karar verir. Teknik resim ne derse desin, parçadaki diğer her şey referanstır.",
+              "assume": "Numunedeki her ölçünün bilinçli olduğunu; hiç kontrol edilmemiş olanlar dâhil."
+            },
+            {
+              "q": "Neye bağlı ve nasıl yükleniyor?",
+              "why": "Yükün karakteri — sabit, çevrimsel, darbeli, aşındırıcı — geometriyi seçmeden önce hammaddeyi ve nervür stratejisini seçer.",
+              "assume": "Zararsız bir statik yük ve yalnızca rijitliğe göre seçilmiş bir hammadde."
+            }
+          ]
+        },
+        {
+          "group": "Ortam",
+          "items": [
+            {
+              "q": "Çalışma sıcaklığı aralığı ve üst sınırında ne kadar süre kalıyor?",
+              "why": "Sürekli sıcaklık hammadde ailesini belirler. Kısa bir tepe ile kalıcı bir maruziyet, farklı cevapları olan farklı problemlerdir.",
+              "assume": "İç mekân ortam sıcaklığı. Mevcut en ucuz varsayımdır ve yanlış çıkması en kolay olanıdır."
+            },
+            {
+              "q": "Kimyasal, UV ya da nem maruziyeti var mı?",
+              "why": "Maruziyet kaliteyi daraltır ve bazen bütün bir aileyi devre dışı bırakır; bunu gözden sonra değil, önce bilmek daha iyidir.",
+              "assume": "Hiçbiri ve kalitede stabilizatör paketi yok."
+            }
+          ]
+        },
+        {
+          "group": "Arayüz",
+          "items": [
+            {
+              "q": "Neye monte oluyor ve geçme sıkı mı, kayar mı?",
+              "why": "Tersine mühendislikle üretilen bir parçadaki tolerans sorunlarının yarısı, kimsenin göndermediği bir eşleşen parçaya aittir.",
+              "assume": "Geçmeyi bu parçanın kontrol ettiğini; oysa belki her zaman diğer parça kontrol etmiştir."
+            },
+            {
+              "q": "O geçmeyi gerçekte hangi ölçüler kontrol ediyor?",
+              "why": "Kısa bir kritik ölçü listesi, bütün bir teknik resme yayılmış dar bir genel toleranstan hem daha ucuz hem daha dürüsttür.",
+              "assume": "Her yere uygulanmış bir genel tolerans: talaşlı imalatta ödenir, tezgâhta alıştırmada yeniden ödenir ve proses kontrolünde sonsuza kadar ödenir."
+            }
+          ]
+        },
+        {
+          "group": "Görünüş",
+          "items": [
+            {
+              "q": "Kullanımda hangi yüzeyler görünüyor?",
+              "why": "Kozmetik bir yüzey; yolluk girişi konumunu, birleşme izinin yerini, itici düzenini ve kabul kriterlerini aynı anda kısıtlar.",
+              "assume": "Her yüzeyin bir yolluk girişi izi, bir itici izi ya da bir birleşme izi taşıyabileceğini."
+            },
+            {
+              "q": "Doku ve renk, hangi standarda göre?",
+              "why": "Yayımlanmış bir referansa göre adlandırılmış bir doku bir şartnamedir. Sözle tarif edilmiş bir doku ise ilk atımlarda çıkmayı bekleyen bir tartışmadır.",
+              "assume": "Standart bir kalıp parlatması, doku yok ve sizin verdiğiniz bir masterbatch'e göre eşleştirilmiş renk."
+            }
+          ]
+        },
+        {
+          "group": "Adet",
+          "items": [
+            {
+              "q": "İlk sipariş miktarı ve yıllık kullanım?",
+              "why": "Göz sayısı, çelik niyeti ve yolluk tipi; yıllık kullanıma karşı yapılan bir aritmetiktir. En sık boş bırakılan sayı budur.",
+              "assume": "Düşük adet ve düşük göz sayısı; bu da program büyüdüğü anda çıktınızı tavana vurdurur."
+            },
+            {
+              "q": "O sayı ne kadar kesin?",
+              "why": "Hiçbir zaman tahmin olmamış bir tahmin, bu sayfadaki en pahalı girdidir. Az göz çıktıyı sınırlar. Çok göz sermayeyi yakar ve kalıbı yarı yüklü çalıştırır.",
+              "assume": "Sayının kesin olduğunu ve kalıp da öyleymiş gibi boyutlandırılır."
+            }
+          ]
+        },
+        {
+          "group": "Ticari",
+          "items": [
+            {
+              "q": "Parçalar ne zaman gerekli ve nereye teslim ediliyor?",
+              "why": "Kalıp, numune ve tedarik ayrı teslim süreleridir; dünya geneline sevkiyat da değeri küçük, sonucu küçük olmayan bir parçaya navlun ve gümrük süresi ekler.",
+              "assume": "Sabit bir tarih yok; bu da takvimin sizin hattınız yerine en yavaş karar tarafından belirlenmesi demektir."
+            },
+            {
+              "q": "Sonunda kalıbın ve modelin sahibi kim ve kalıp nerede saklanıyor?",
+              "why": "Varlık; çelik kadar model ve kalıp şartnamesidir de. İkisini birden elinde tutan bir müşteri, kimseyle pazarlık etmeden ikinci bir kalıp yaptırabilir.",
+              "assume": "Hiçbir şey. Bunu her zaman sorarız ve cevap bir konuşmaya değil, teklife girer."
+            }
+          ]
+        },
+        {
+          "group": "Haklar",
+          "items": [
+            {
+              "q": "Bu sizin tasarımınız mı ve çoğaltma hakkına sahip misiniz?",
+              "why": "Hukuken edinilmiş bir ürünü incelemek bir şeydir. Yürürlükteki bir patentin, tescilli bir tasarım hakkının ya da bir sözleşme maddesinin kapsadığı bir tasarımı çoğaltmak tamamen başka bir şeydir.",
+              "assume": "Hiçbir şey. Teklif vermeden önce sorarız ve cevap net değilse proje sonradan değil, burada durur."
+            }
+          ]
+        }
+      ],
+      "close": "Bir talepteki boşluk teklifi ucuzlatmaz. Ya şişirir, ya bir soru listesine çevirir, ya da yavaşlatır. Biz size soruları göndermeyi tercih ederiz."
+    },
+    "route": {
+      "index": "05",
+      "kicker": "Rota",
+      "heading": "On başlangıç noktası. Kapılı tek bir rota.",
+      "body": "Ne gelirse gelsin, proje aynı sırayı izler. Bu kapılardan ikisi sizin: imzaladığınız model ve çelik işlenmeden önceki an. İkincisinden sonra revizyonlar ucuz olmaktan çıkar — en ucuz değişiklik ekranda, bir sonraki en ucuzu gözde bırakılan metal ve en pahalısı kaynatılıp yeniden işlenen bir inserttir.",
+      "leavesLabel": "Kapıdan çıkan",
+      "holdLabel": "Sizin imzanız",
+      "gates": [
+        {
+          "code": "G0",
+          "name": "Giriş",
+          "body": "Ne gönderdiğiniz, bunun ne olduğu ve içinde ne eksik olduğu.",
+          "leaves": "Kapsamın ve açık soruların yazılı bir beyanı."
+        },
+        {
+          "code": "G1",
+          "name": "Yapılabilirlik",
+          "body": "Yapılabilir mi, bu şekilde yapılmalı mı ve adet gerçek mi.",
+          "leaves": "Yanında her varsayımı listelenmiş bir görüş."
+        },
+        {
+          "code": "G2",
+          "name": "Model",
+          "body": "Referansları olan, revizyon kontrollü bir katı model; numuneden yeniden kurulmuş ya da CAD olarak alınmış.",
+          "leaves": "Model ve karşısına imza atılacak bir teknik resim yoksa bir kritik ölçü listesi.",
+          "hold": true
+        },
+        {
+          "code": "G3",
+          "name": "Üretilebilirlik tasarımı",
+          "body": "Cidar kalınlığı ve düzgünlüğü, çıkma açısı, geçmeler, yolluk girişi ve birleşme izi konumu, itme, hammaddeye karşı tolerans yapılabilirliği.",
+          "leaves": "Her değişikliğin neye mal olduğu yazılı, kapatılmış bir değişiklik listesi."
+        },
+        {
+          "code": "G4",
+          "name": "Kalıp şartnamesi",
+          "body": "Göz sayısı, kalıp seti standardı, maça ve göz çeliği niyeti, yolluk ve giriş konsepti, soğutma düzeni, doku standardı, çelik fazlası kaydı.",
+          "leaves": "İmzaladığınız bir şartname sayfası. Çelik işleme onayı budur ve projedeki son ucuz andır.",
+          "hold": true
+        },
+        {
+          "code": "G5",
+          "name": "İmalat",
+          "body": "Kalıp imal edilir: CNC frezeleme, tornalama ve manuel talaşlı imalat, sıcak ya da soğuk yolluk, geometrinin gerektirdiği yerlerde sürgüler, lifterlar, diş sökücü ve katlanabilir maçalar.",
+          "leaves": "Bir kalıp ve bir kırılmadan sonra değil, tasarım aşamasında tanımlanmış bir yedek listesi."
+        },
+        {
+          "code": "G6",
+          "name": "İlk atımlar",
+          "body": "Deneme numuneleri, ölçüsel sonuçlar, kozmetik değerlendirme ve en baştan planlanmış olan çelik fazlası düzeltmeleri.",
+          "leaves": "Ölçümler. Kısmen çıkarımla kurulmuş bir projede ilk atımlar bir hüküm değil, bir ölçüm çalışmasıdır."
+        },
+        {
+          "code": "G7",
+          "name": "Kabul ve tedarik",
+          "body": "Mutabık kalınan referans numuneler, açılan kalıp geçmiş kartı, yedekler ve değişim parçaları, bakım periyodu ve üretimi biz yapıyorsak tedarik düzeni.",
+          "leaves": "Parçalar; programın ihtiyacı buysa sürekli tedarik hâlinde."
+        }
+      ],
+      "close": "Kalıp garanti şartları her proje ve o projenin kalıp şartnamesi bazında tanımlanır. 48 iş saati içinde ilk teknik dönüş ve isterseniz ayrıntılı paylaşımdan önce NDA."
+    },
+    "routes": {
+      "index": "06",
+      "kicker": "Rotalar",
+      "heading": "Plastik olmak zorunda değil.",
+      "body": "Enjeksiyon parçası bir cevaptır. Bazı projelerin gerçekte sahip olduğu adette, toleransta ya da sıcaklıkta ise yanlış cevaptır. Mevcut rotalar, her birinin neyi değiştirdiği ve aralarında dürüstçe seçim yapabilmek için sizden neye ihtiyacımız olduğu aşağıda.",
+      "tabsLabel": "İmalat rotası",
+      "whenLabel": "Bunun doğru cevap olduğu durum",
+      "changesLabel": "Neyi değiştirir",
+      "needLabel": "Sizden ihtiyacımız olan",
+      "items": [
+        {
+          "id": "injection",
+          "name": "Enjeksiyon kalıbı",
+          "mark": "Göz",
+          "when": "Bir kalıbı haklı çıkaran adet ve kalıptan çıkabilecek bir geometri.",
+          "changes": "Tekrar eden maliyetin büyük bölümünü göz sayısı, yolluk tipi ve incelemeden sağ çıkan geçme sayısı belirler. Özel bir projede ilk varsayılan cevap soğuk yolluktur: yapması daha ucuz, bakımı daha basit, renk değişiminde affedici ve hammadde varsayımı hâlâ sınanırken teşhis edilmesi daha kolay. Sıcak yolluk ise çevrim süresi ya da malzeme maliyeti baskın olduğunda sermayesini hak eder.",
+          "need": "Yıllık kullanım, hammadde kalitesi ya da birini seçmek için gerekli şartlar ve hangi yüzeylerin kozmetik olduğu."
+        },
+        {
+          "id": "pet",
+          "name": "PET kalıbı",
+          "mark": "Preform",
+          "when": "Preformlar ve PET ambalaj geometrisi.",
+          "changes": "Boyun profili; kabın, kapağın ve hattın üzerinde anlaşmak zorunda olduğu arayüz hâline gelir ve preformun kendi başına bir parça gibi değil, kap için tasarlanması gerekir.",
+          "need": "Kap, kapak, boyun standardı ve bir yıllık adet."
+        },
+        {
+          "id": "blow",
+          "name": "Şişirme kalıbı",
+          "mark": "Parison",
+          "when": "Şişirilmiş bir cidarın, kalıplanmış bir cidardan daha doğru yapı olduğu içi boş parçalar.",
+          "changes": "Cidar dağılımını bir göz değil, parison ve kalıp belirler; dolayısıyla tasarım konuşması kalıbın akış yukarısına taşınır.",
+          "need": "Kap, içine ne gireceği ve dolumda ve elleçlemede neye dayanması gerektiği."
+        },
+        {
+          "id": "diecast",
+          "name": "Basınçlı döküm kalıbı",
+          "mark": "Döküm kalıbı",
+          "when": "Rijitlik, sıcaklık, iletkenlik ya da aşınma için metal gerektiğinde ve kesit dökülebiliyorsa.",
+          "changes": "Farklı çekme, farklı çıkma açısı, farklı kalıp ömrü ve farklı bir kusur ailesi. Kalıpçılık disiplini aynı disiplindir ve yolluk girişi, havalandırma ve soğutma tartışmaları karakter değiştirmez.",
+          "need": "Yük durumu, çalışma sıcaklığı ve yüzeyin sonradan işlenip işlenmediği."
+        },
+        {
+          "id": "machined",
+          "name": "CNC ve manuel talaşlı imalat",
+          "mark": "Kesici",
+          "when": "Düşük adet, bir aparat ya da fikstür, tek seferlik bir yenileme ya da herhangi bir kalıp yapılabileceğinden çok önce gereken bir yedek.",
+          "changes": "Kalıp yok, çekme yok, göz sayısı aritmetiği yok ve bir çelik işleme onayında dondurulan hiçbir şey yok. Parça başı maliyet düşmek yerine sabit kalır; bu da bir noktaya kadar tam olarak doğru, o noktadan sonra yanlıştır.",
+          "need": "Parça, adet ve tarih."
+        }
+      ],
+      "close": "Bir proje bunlardan ikisine birden yayıldığında, tek mühendislik muhatabı olan tek bir proje olarak kalır. İkinci kaynak ve ikiz kalıplar, yedekler ve değişim parçaları; başkasına devredilmek yerine aynı konuşmanın içinde durur."
+    },
+    "boundary": {
+      "index": "07",
+      "kicker": "Sınır",
+      "heading": "Neyi biz sağlıyoruz, ne sizde kalıyor.",
+      "body": "Bu, sayfadaki en güçlü şeydir; o yüzden küçük puntoda değildir. Bir özel projenin iki tarafı vardır ve aradaki çizginin, ilk atımlarda keşfedilmek yerine siz hiçbir şey göndermeden önce görünür olması gerekir.",
+      "line": "Kalıp yapar ve parça üretiriz. Bitmiş ürününüzü test etmez, belgelendirmez ve onaylamayız; bazı alıcıların ihtiyaç duyduğu sektör onaylarına da sahip değiliz. Projenizde belirleyici olan buysa, hiçbir şey göndermeden önce buna karar verin — bu konuşma şimdi, sonrakinden daha kısadır.",
+      "supplyHeading": "Metal Form'un sağladıkları",
+      "supply": [
+        "Gönderdiğiniz her şeyin mühendislik okuması: fiziksel bir numune, bir fotoğraf, bir mesh, bir STEP dosyası ya da sorunun yazılı tarifi.",
+        "CATIA ya da SolidWorks'te kurulmuş, referanslarını bizim koyup kaydettiğimiz, revizyon kontrollü ve başka bir yere taşıyabileceğiniz bir katı model.",
+        "Üretilebilirlik incelemesi ve yerini hak ettiği yerde üretilebilirlik için yeniden tasarım: cidar düzgünlüğü, nervür stratejisi, geçmelerin tasarımdan çıkarılması, iki parçanın tek parçada birleştirilmesi.",
+        "Bir menü değil, bir karar olarak ortaya konmuş kalıp rotası: göz sayısı, yolluk konsepti, düz çekmeye karşı sürgüler, lifterlar, diş sökücü ve katlanabilir maçalar ve her birinin gerekçesi.",
+        "Enjeksiyon, PET, şişirme ve basınçlı döküm genelinde kalıp tasarımı ve imalatı. Çok gözlü, sıcak ve soğuk yolluklu, insertli kalıplar. Adet gerçekten haklı çıkardığı yerde 46 göze kadar kalıp deneyimi.",
+        "Hem kalıp hem parça için CNC frezeleme, tornalama ve manuel talaşlı imalat.",
+        "Parça üretimi ve sürekli tedarik; böylece proje bir kalıp tesliminde durmaz.",
+        "Kendi verinizden kurulmuş ikinci kaynak ve ikiz kalıplar ile yedekler ve değişim parçaları.",
+        "Dünya geneline sevkiyat, ayrıntılı paylaşımdan önce NDA ve proje bazında kararlaştırılan şartlarla kalıp garantisi.",
+        "Geometriyi okumuş birinden, 48 iş saati içinde ilk teknik dönüş."
+      ],
+      "stayHeading": "Sizde kalanlar",
+      "stay": [
+        "Haklara ilişkin karar. Soruyu biz sorarız; cevabı siz verir ve siz taşırsınız.",
+        "Taranmış yüzey verisi. Serbest form bir yüzeyin bir taramadan üretilmesi gerektiğinde mesh'i gönderin — biz onun üzerinden çalışırız, tarama yapmayız.",
+        "Bir hammadde kalitesi hakkında kesinlik gerektiğinde bağımsız malzeme tanımlaması. Piyasada mevcuttur ve sipariş etmek size aittir.",
+        "Bitmiş ürünün pazarınızın tabi olduğu rejimde test edilmesi, belgelendirilmesi ve onaylanması.",
+        "Gerçek yıllık kullanım ve bize verdiğiniz sayının her iki yöndeki sonuçları.",
+        "Parçanın uyması gereken eşleşen parçalar ve montaj; en sık gönderilmeyen şeyler de bunlardır.",
+        "Parçaları satın almak yerine kendiniz kalıplıyorsanız kendi üretim prosesiniz."
+      ],
+      "refuseHeading": "Bir projeyi gerçekten uygunsuz kılanlar",
+      "refuse": [
+        "Çoğaltma hakkına sahip olmadığınız bir tasarım. Bu pazarlığa açık değildir ve sonradan değil, girişte sorulur.",
+        "Belirleyici unsurun belgelendirilmiş bir kalite sistemi, kontrollü ortamda ya da valide edilmiş bir proses veya belgelenmiş yeterlilik çalışmaları olduğu bir proje. Bu rejimleri yürütmüyoruz ve yürüttüğümüzü ima etmeyeceğiz.",
+        "Onu üreten tedarikçi tarafından test edilmesi, belgelendirilmesi ya da onaylanması gereken bitmiş bir ürün.",
+        "Taranmış verisi olmayan ve elde edilmesinin de yolu bulunmayan serbest form bir yüzey. Ölçüm ve özellik yeniden kurmanın bir sınırı vardır ve bir kanat profili o sınırın ötesindedir.",
+        "Bir kalıbı haklı çıkarmayan bir adet. İşlenmiş bir parçanın ya da satın alınacak standart bir elemanın doğru cevap olduğu yerde alacağınız cevap budur.",
+        "Kimse geometriyi görmeden garanti bir tarih isteyen bir proje. 48 iş saati içinde ilk teknik dönüşe söz veririz; tutamayacağımız hiçbir şeye söz vermeyiz."
+      ]
+    },
+    "package": {
+      "index": "08",
+      "kicker": "Gönderme",
+      "heading": "Elinizde ne varsa gönderin.",
+      "body": "Üç kademe. Bize yazmak için üçüncüsüne ihtiyacınız yok. Birincisi gerçek bir cevap almaya yeter ve hangi kademede olduğunuzu bilmek, bir sonrakindeymiş gibi davranmaktan daha değerlidir.",
+      "tiers": [
+        {
+          "code": "T1",
+          "name": "Bir konuşma başlatmaya yeterli",
+          "note": "Yazılı bir mühendislik görüşü ve neyin ölçüleceğine dair bir liste alırsınız.",
+          "items": [
+            "Karede bir cetvel, bir kumpas ya da bilinen herhangi bir ölçü bulunan bir fotoğraf.",
+            "Parçanın ne yaptığı ve nerede kullanıldığı.",
+            "Kabaca yılda kaç adet; bir aralık olarak bile olsa."
+          ]
+        },
+        {
+          "code": "T2",
+          "name": "Kalıba fiyat vermeye yeterli",
+          "note": "Yanında varsayımları yazılı bir kalıp rotası alırsınız.",
+          "items": [
+            "Fiziksel numune ya da bir 3B dosya.",
+            "Biliyorsanız hammadde ve parçanın neyle eşleştiği.",
+            "Kullanımda hangi yüzeylerin göründüğü.",
+            "İlk sipariş miktarı, yıllık kullanım ve parçaların ne zaman gerektiği."
+          ]
+        },
+        {
+          "code": "T3",
+          "name": "Çelik işlemeye yeterli",
+          "note": "İmzalayacağınız bir kalıp şartnamesi sayfası ve bir çelik işleme onayı alırsınız.",
+          "items": [
+            "Revizyon kontrollü bir model ve bir kritik ölçü listesi ya da referansları olan bir 2B teknik resim.",
+            "Hammadde kalitesi ve kabul edilebilir muadilleri.",
+            "Yayımlanmış bir referansa göre adlandırılmış doku ve renk standardı.",
+            "Hedeflenen kalıp ömrü, mülkiyet ve saklama.",
+            "Ambalaj ve teslim noktası."
+          ]
+        }
+      ],
+      "close": "Birinci kademe yeterlidir. Elinizdeki, gece on birde bir makine dairesinde telefonla çekilmiş bir fotoğrafsa, onu gönderin.",
+      "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    },
+    "panels": {
+      "heading": "Daha ayrıntılı",
+      "items": [
+        {
+          "title": "Kalıplanmış bir numune, onu üreten kalıp hakkında neleri kaydeder",
+          "bullets": [
+            "Ayırma yüzeyi: iki yarımın nerede buluştuğu, dolayısıyla kalıbın nasıl ayrıldığı.",
+            "Yolluk girişi izi: giriş tipi ve konumu, dolayısıyla gözün nasıl dolduğu.",
+            "Birleşme izleri: iki akış cephesinin nerede buluşup kaynadığı; akış yolunu haritalar ve zayıf kesitleri işaretler.",
+            "İtici izi: hangi yüzeyin gizli olduğu ve kalıbın parçaya nereden bastığı.",
+            "Çekme yönü: parçanın hangi yöne çıktığı, dolayısıyla orijinal kalıbın nasıl çektiği.",
+            "Doku ve parlaklık: yüzey standardı; sözle tarif edilmek yerine yayımlanmış bir referansa göre adlandırılması en iyisidir.",
+            "Çöküntü ve yerel bozulma: cidarın nerede fazla kalın olduğu ya da bir nervürün arkasındaki cidara göre nerede fazla ağır kaldığı."
+          ],
+          "source": "Bir parçayı bu şekilde okumak sektörde standart uygulamadır. Burada bir Metal Form ölçüm hizmeti olarak değil, sektör yöntemi olarak anlatılmaktadır."
+        },
+        {
+          "title": "Bir numunenin size söylemeyecekleri",
+          "bullets": [
+            "Hammadde kalitesi. Aile çoğu zaman daraltılabilir; kalite ise parçadan okunamaz ve çekmeyi ve tolerans kabiliyetini belirleyen şey kalitedir.",
+            "Göz işlenirken uygulanmış olan çekme payı.",
+            "Parçanın çekmeden önce tasarlandığı nominal ölçü.",
+            "Hangi ölçülerin tolerans taşıdığı, hangilerinin yalnızca referans olduğu.",
+            "Bunun güncel revizyon mu, geçersiz kılınmış bir revizyon mu, yoksa birinin sahada yaptığı bir tamir mi olduğu.",
+            "Parçanın üretildiğinden bu yana hareket edip etmediği. Plastik ısı ve zaman altında çarpılır; eski bir numune teknik resmini değil, geçmişini kaydeder.",
+            "Neyle eşleştiği ve geçmenin hiç bu parça tarafından kontrol edilip edilmediği."
+          ],
+          "source": "Soru soran bir girişin, varsayan bir girişten neden daha ucuz olduğunun nedeni budur."
+        },
+        {
+          "title": "Çelik işleme onayında dondurulanlar",
+          "bullets": [
+            "Göz sayısı; bir umuda göre değil, belirtilmiş bir yıllık kullanıma göre kararlaştırılmış hâlde.",
+            "Kalıp seti standardı ve kalıbın çalışacağı presle uyumu.",
+            "Maça ve göz çeliği niyeti; beklenen atım ömrüne ve hammaddenin dolgulu ve aşındırıcı olup olmadığına göre eşleştirilmiş hâlde.",
+            "Yolluk ve giriş konsepti; giriş konumunun kozmetik yüzeylere ve birleşme izinin düşeceği yere göre konumu dâhil.",
+            "Soğutma düzeni ve gözler arası dengesi; çevrim süresini, dolayısıyla kalıbın ömrü boyunca üreteceği her parçanın tekrar eden maliyetini belirler.",
+            "Havalandırma derinliği ve konumu: bir kalıptaki en ucuz düzeltme ve el değiştirmiş bir kalıpta en sık eksik olan kalem.",
+            "Yayımlanmış bir referansa göre adlandırılmış doku standardı, kritik ölçü listesi, hammadde varsayımı ve çelik fazlası kaydı.",
+            "Bu noktadan sonra ucuz revizyonlar geride kalmıştır."
+          ]
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Parçayı gönderin.",
+    "body": "Bir fotoğraf, bir numune, bir dosya ya da sorunu anlatan bir paragraf. Bir fiyat listesi değil, bir mühendislik cevabı alırsınız: neyi belirleyebildiğimiz, hâlâ neyi sormamız gerektiği ve kalıp rotasının neye benzediği. 48 iş saati içinde ilk dönüş. İsterseniz siz hiçbir şey göndermeden önce NDA.",
+    "action": "Projenizi gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Metal Form — özel proje.\n\nElimde: fotoğraf / numune parça / kırık parça / eskiz / STEP dosyası / teknik resim paketi / mevcut kalıp / bir üretim, maliyet veya tedarik sorunu\nParçanın ne yaptığı: \nNerede kullanıldığı: \nBiliniyorsa yaklaşık yıllık adet: \nSizden ihtiyacım olan: ",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+  }
+}

@@ -1,0 +1,543 @@
+{
+  "key": "automotive",
+  "displayName": "Automotive & Heavy Vehicles",
+  "researchedAt": "2026-08",
+  "sources": [
+    {
+      "title": "GOTEC Plastics — Commercial Vehicles",
+      "url": "https://gotec-plastics.com/en/industries/commercial-vehicles/",
+      "whatItEstablished": "Read in full. The single best component taxonomy found for commercial vehicles: plastic parts grouped by vehicle system — chassis and suspension (bump stops, air spring pistons, stabiliser bearings), engine compartment (fan wheels, tension rollers, cooler expansion tanks, intake manifolds, air filter housings with bushings, accelerator pedals, filter caps, clips), drivetrain (gear shifter handles, transmission caps and bearings), braking and wheels (hub caps, wheel bolt caps, brake cylinder and calliper caps), cab and electrical (cabin bearings, housings, door and crank handles, headlight housings, battery caps, cable ducts, fog light brackets). Confirms glass-fibre-reinforced plastics used for metal substitution and weight saving, and heat-stabilised grades for the engine compartment. Also useful as positioning intelligence: this competitor leads with IATF 16949 certification and module assembly — a lane Metal Form must not enter."
+    },
+    {
+      "title": "Recent Advances and Future Trends in Extending the Service Life of Injection Moulding Tools: A Comprehensive Review (Journal of Materials and Engineering Manufacturing)",
+      "url": "https://www.sciltp.com/journals/jmem/articles/2601002827",
+      "whatItEstablished": "Read in full. Peer-reviewed grounding for the tool-wear story: fibre-reinforced polymers impose mechanical, thermal and tribological loads that accelerate tool wear and surface degradation. Four primary mould failure mechanisms named — thermal fatigue, corrosion, erosive wear, gate wear. Surface engineering routes: plasma and gas nitriding, PVD (CrN, CrAlN, TiAlN), CVD ceramic and diamond coatings, and composite nitrided-layer plus PVD structures. Conformal cooling channels cited for thermal management and cycle reduction. Important negative finding: the review gives no quantified tool-life multipliers, so the page must not quote any."
+    },
+    {
+      "title": "VEM Tooling — Glass-Filled Nylon Injection Molding",
+      "url": "https://www.vem-tooling.com/glass-filled-nylon/",
+      "whatItEstablished": "Read in full. Grade vocabulary a buyer will recognise: PA66 GF30, PA66 GF50, PA6 GF25. Nylon is hygroscopic and must be dried before processing or dimensional and structural defects follow. Glass fibre increases abrasion during moulding and shortens mould life. Surface finish is rougher than unfilled nylon because fibres read at the surface — relevant to any visible part. Named automotive applications: engine covers, air intake manifolds, speedometer gears, fuel rails, wiper parts, wire housings, connectors."
+    },
+    {
+      "title": "Fictiv — The Ultimate Guide to Injection Molding Tolerances",
+      "url": "https://www.fictiv.com/articles/injection-molding-tolerances-an-in-depth-look",
+      "whatItEstablished": "Read in full. Numbers a technically literate buyer will check: SPI commercial vs fine tolerance grades; 1–20 mm features ±0.075–0.125 mm commercial vs ±0.030–0.075 mm fine; 21–100 mm features ±0.120–0.170 mm vs ±0.070–0.110 mm. Shrinkage by material — ABS 0.7–1.6%, PP 1–3%, HDPE 1.5–4%, unfilled nylon 6/6 0.7–3%, 30% glass-filled nylon 6/6 around 0.5%. Fibre-reinforced polymers shrink less along flow than across it — expect asymmetric shrinkage. Dimensions taken across a parting line cannot hold the same precision as dimensions inside one steel block. Moulds themselves are typically machined to about ±0.127 mm, tightened toward ±0.05 mm where the part demands it."
+    },
+    {
+      "title": "ZetarMold — Injection Mold Preventive Maintenance Schedule",
+      "url": "https://zetarmold.com/injection-mold-preventive-maintenance/",
+      "whatItEstablished": "Read in full. Shot count, not the calendar, drives structural mould maintenance: P20 tools serviced around 50,000 / 100,000 / 250,000 shot gates, hardened H13 at longer 100,000–250,000 intervals. Highest-wear items: ejector pins, vent lands (carbon and resin build-up), cooling-channel O-rings, slide and lifter bearing surfaces. Practical thresholds quoted: recut vents when carbon reduces depth by more than 30% of spec; replace ejector pins at around 0.05 mm diameter loss; weld and re-polish cavity pitting deeper than about 0.1 mm; investigate cooling circuits losing more than 25% flow; a rising inlet/outlet delta-T at constant flow indicates scale."
+    },
+    {
+      "title": "ZetarMold — Undercuts in Injection Molding: Side Actions, Lifters and Collapsible Cores",
+      "url": "https://zetarmold.com/side-actions-lifters-and-collapsible-cores/",
+      "whatItEstablished": "Read in full. The most technically specific source found on mechanism design. Cam pin angles 10°–25°, with the heel block angle 2°–5° greater than the pin to stop the slide backing up under injection pressure. Slide steels H13, P20 or S7 at roughly 48–52 HRC, wear plates in aluminium bronze or graphitic steel, running clearances of about 0.012–0.025 mm to avoid parting-line flash. Slides cool easily; lifters are hard to cool because the geometry is thin and moving, so they extend cycle and are prone to galling. Collapsible cores are expensive and maintenance-sensitive. Bump-offs need 30°–45° lead-out angles and flexible materials. Shut-offs and pass-throughs form undercut-looking features with no moving steel. Hand-loaded inserts are viable at low volume. Standardising on 15° or 20° pin angles allows off-the-shelf components."
+    },
+    {
+      "title": "RJG — How to Troubleshoot 9 Common Defects in Injection Molded Parts",
+      "url": "https://rjginc.com/how-to-troubleshoot-9-common-defects-in-injection-molded-parts/",
+      "whatItEstablished": "Read in full. Defect-to-root-cause mapping from a process-control house rather than a marketing blog: sink marks from thick sections and inadequate pack; warp from uneven cooling and differential shrinkage, fixed at the cooling-circuit design level; flash along the parting line from over-fill, clamp or mould wear; short shots; weld lines where flow fronts meet and fail to knit; air traps and burn marks both tied to venting; voids from material pulling away from itself. The recurring lesson for a tooling page: several of the worst defects are cooling, venting and gating decisions taken during tool design, not moulding-shop settings."
+    },
+    {
+      "title": "Tarvin Precision — Reverse Engineered Parts: Replacement and Legacy Components",
+      "url": "https://tarvinprecision.co.uk/reverse-engineered-parts-practical-guide-to-replacement-components-and-legacy-hardware/",
+      "whatItEstablished": "Read in full. The correct engineering discipline for obsolete-part work, and the strongest technical differentiator available for this page. A worn sample must not be copied verbatim — 'copying it perfectly can reproduce the wear, not the design.' Original intent is recovered by measuring multiple areas, comparing opposing faces and back-calculating from mating parts. Unknown material is inferred from application, density, hardness, corrosion pattern and machining behaviour, with lab testing where it matters. Deliverable is a manufacturing pack: 3D CAD, dimensioned 2D drawings with tolerances and notes, and a first-article record. Drivers: OEM discontinuation, missing historical data, supplier vulnerability, field modifications that make old drawings wrong. Explicit IP caution: check ownership, licence terms and OEM restrictions before reproducing a part for resale."
+    },
+    {
+      "title": "Moglix Business — Tooling Procurement in Automotive: Why It's Different",
+      "url": "https://business.moglix.com/blogs/tooling-procurement-in-automotive-why-its-different-from-other-industries",
+      "whatItEstablished": "Read in full. The pivot fact for this entire page: passenger-car makers retool every two to three years for model changes, whereas construction equipment and heavy machinery sectors may run the same tooling for a decade. Also establishes the four standing pain points in tooling procurement — capital cost, months-long lead times for custom dies and moulds, international supply-chain exposure, and uneven digital maturity across suppliers — and that the industry's stated compliance frame is IATF 16949 and ISO 26262 (an industry fact, not a Metal Form claim)."
+    },
+    {
+      "title": "FirstMold — The Ultimate Guide to Low Volume Injection Molding",
+      "url": "https://firstmold.com/guides/low-volume-injection-molding/",
+      "whatItEstablished": "Read in full. Volume framing for aftermarket and off-highway work: low volume runs from hundreds to a few thousand parts, small-run programmes roughly 100–10,000 units. Aluminium tooling gives short lead times (weeks) but limited life; hardened steel tooling carries 8–16 week lead times and is the route once volumes and programme life justify it. Per-unit cost is higher at low volume but total exposure is lower because the tooling investment is smaller — the argument that makes a modest steel tool the right answer for a slow-moving heavy-vehicle service part."
+    }
+  ],
+  "buyer": {
+    "whoBuys": "Two distinct buyers behind one page. First, engineering and sourcing inside vehicle builders and their tier suppliers — truck, bus, trailer, agricultural and construction equipment makers, plus the assembly houses that feed them. They buy tooling as a capital item with a programme attached, and they care about what the tool will still be producing in year eight. Second, the aftermarket and service-parts side — parts brands, distributors and workshops chains who need a component that is no longer available from the original source, or is available only at a price and lead time they refuse to accept. Both arrive with a physical part in their hand more often than with a validated CAD model.",
+    "jobTitles": [
+      "Purchasing / sourcing manager (tooling and plastic components)",
+      "Tooling buyer / capital equipment procurement",
+      "Design engineer, body and trim",
+      "Product engineer, powertrain accessories and under-bonnet",
+      "Manufacturing engineer / production engineer",
+      "Supplier quality engineer",
+      "Programme manager or project engineer for a vehicle variant",
+      "Technical director / engineering manager at a tier supplier",
+      "Aftermarket product manager or category manager",
+      "Service parts / obsolescence engineer",
+      "Plant manager at a moulding shop buying tools rather than parts"
+    ],
+    "whatTheyActuallyBuy": [
+      "A tool that holds dimension for the life of the vehicle programme, not a tool that samples well once",
+      "Certainty of date — the mould delivered on the week it was promised, because assembly line readiness is scheduled around it",
+      "Design responsibility: someone who takes the part geometry and returns a mouldable version of it before steel is cut",
+      "Multi-cavity capacity for the small, high-count parts — clips, retainers, caps, bushes — where cavitation, not machine rate, sets the unit cost",
+      "Mechanism engineering: slides, lifters, split cavities, unscrewing units and inserts that survive hundreds of thousands of cycles without galling",
+      "A second source for a part they currently buy from one supplier, sometimes without telling that supplier",
+      "Re-tooling of an obsolete or end-of-life component where the original tool is gone, scrapped or unreachable",
+      "Continuous component supply — the tool plus the parts, invoiced per thousand, shipped on a schedule",
+      "Spare cavity inserts and wear parts stocked against the day a core cracks",
+      "A route from metal to plastic, or plastic back to metal, evaluated honestly on cost and function rather than sold",
+      "Confidentiality — the part is often someone else's design or someone else's programme",
+      "Tool ownership documented in writing, so the tool can move if the relationship ends"
+    ],
+    "decisionDrivers": [
+      "Total landed cost per part over the programme, not the mould quotation alone",
+      "Lead time to first samples and to approved production parts",
+      "Confidence that dimensions repeat — the fit has to hold at part 200,000 as it did at part 200",
+      "Engineering depth in the first conversation: does the supplier interrogate the geometry or just price it",
+      "Tool life against the material — filled polymer plus soft steel is a known way to lose a programme",
+      "Willingness to take on awkward mechanism work rather than pushing the buyer to redesign around the tool",
+      "Ownership, warranty and transferability of the tool in writing",
+      "Response speed at enquiry stage, read as a proxy for behaviour under a production problem",
+      "Import, customs and delivery competence for cross-border tooling and parts",
+      "Confidentiality behaviour when the part clearly belongs to a third party"
+    ],
+    "whatKeepsThemAwake": [
+      "A single supplier holding one tool that stops an entire assembly line",
+      "A part that assembles fine at ambient and rattles or binds after a hot cycle in the engine bay",
+      "Warpage discovered at line-side, after thousands of parts are already in the container",
+      "A tool that arrives late and pushes a vehicle launch date",
+      "Slow, invisible dimensional drift as an abrasive filled material erodes the gate and the shut-off faces",
+      "A field failure on a clip or bracket that becomes a warranty campaign across a fleet",
+      "The original supplier disappearing, going up in price, or refusing to release the tool",
+      "An obsolete part with no drawing, no model and only a broken sample left in a drawer",
+      "Buying a cheap tool that needs welding and re-cutting twice before it runs",
+      "Tolerance stack-up in a multi-part assembly where every part is inside spec and the assembly still will not close"
+    ]
+  },
+  "economics": {
+    "unitEconomics": "Heavy-vehicle plastics sit in an unusual economic band. Volumes are far below passenger-car levels — hundreds to tens of thousands a year per part rather than millions — but programme life is much longer. Passenger-car makers retool every two to three years for model changes; construction and heavy machinery sectors can run the same tooling for a decade. That inverts the usual logic: cavitation is often modest, but the tool has to be built as if it will never be replaced, because it probably will not be. Cost per part is tooling amortisation plus material plus cycle plus scrap. At low and medium volume, amortisation and scrap dominate; material dominates on large parts; cycle only becomes decisive when cavitation is high. On small high-count parts — clips, caps, bushes, retainers — the cavity count is the entire commercial argument, because it divides both the machine hour and the setup across every part in the shot.",
+    "costDrivers": [
+      "Cavity count, and whether the part geometry actually permits it — a part needing a slide per cavity does not scale like a part that does not",
+      "Every moving mechanism: each slide, lifter, split cavity or unscrewing unit adds machining, fitting, wear plates, locks and a maintenance obligation",
+      "Tool steel selection and hardness — soft steel is cheaper on the quotation and expensive across the programme when the material is filled",
+      "Runner strategy: cold runner scrap versus hot runner capital, drop count and manifold complexity",
+      "Cooling circuit design, which sets cycle time and warpage simultaneously and cannot be retrofitted cheaply",
+      "Wall section and material volume — the largest single line on a big part such as a duct, shroud or tank shell",
+      "Filled polymer price relative to unfilled, and whether the glass loading is actually needed for the load case",
+      "Surface finish and texture requirement, which on a visible cab part can drive steel choice and polishing hours",
+      "Insert moulding: metal inserts mean loading time, fixturing and an operator in the cycle",
+      "Secondary operations — pad printing, welding, assembly, deburring, threaded insert fitting",
+      "Scrap rate, especially on hygroscopic materials processed without proper drying",
+      "Freight and customs for both the tool and the recurring parts"
+    ],
+    "volumeProfile": "Wide and lumpy. A cab trim panel on a specialist vehicle may run a few hundred a year for fifteen years. A clip or cable duct used across a whole vehicle family may run hundreds of thousands. An aftermarket service part may run in unpredictable batches driven by parc size and failure rate rather than by build schedule. The practical consequence is that a single cavitation and steel answer does not fit the vertical; the honest answer is a per-part calculation, and saying so out loud is a credibility move rather than an evasion.",
+    "whereMoneyIsLost": [
+      "Choosing steel for the quotation rather than for the material — filled polymers erode gates and shut-off faces, and dimensional drift arrives before anyone is looking for it",
+      "Undersized or badly placed cooling, which pays a cycle-time penalty on every shot for a decade",
+      "Warpage discovered after production release, when the fix is welding, re-cutting and a shipment already at the customer",
+      "Vent lands allowed to carbon up until burn marks and short shots appear, then blamed on the moulding parameters",
+      "Building high cavitation for a forecast volume that never arrives, so the amortisation never lands",
+      "Building single cavity for a part that quietly grew into a family fitment, so the machine hour is spent on one part at a time",
+      "Not drying hygroscopic filled nylon properly, producing parts that look correct and are dimensionally and structurally weak",
+      "Sourcing a critical part single-source, then paying the emergency price when that source fails",
+      "Tool ownership left undocumented, so the tool cannot be moved when it needs to be",
+      "Re-tooling from a worn sample without separating design intent from wear, and reproducing the wear in new steel",
+      "Ignoring tolerance stack-up until assembly, when every part is in spec and the assembly still will not close",
+      "Deferring preventive maintenance until an unplanned stoppage, which costs multiples of the scheduled service it replaced"
+    ]
+  },
+  "risk": {
+    "failureModes": [
+      "Snap-fit and clip retention loss through creep and stress relaxation, especially after heat cycling under the bonnet",
+      "Weld-line failure where two flow fronts meet behind a hole, boss or insert and the joint sits in the load path",
+      "Stress cracking at a sharp internal corner where a clip arm meets its wall, the single most common snap-fit failure",
+      "Embrittlement and surface degradation on outdoor machinery parts without adequate UV and heat stabilisation",
+      "Thermal distortion of an under-bonnet part that assembled correctly cold and no longer fits after a duty cycle",
+      "Fatigue at boss and rib roots on vibrating structures — an agricultural or construction machine is a far harsher vibration environment than a car",
+      "Chemical attack from diesel, urea solution, hydraulic oil, coolant, brake cleaner and road salt on the wrong polymer",
+      "Loss of clamp load around metal inserts through relaxation of the surrounding polymer",
+      "Gate-area weakness on a filled part where fibre orientation runs across rather than along the load",
+      "Galling and seizure of slides and lifters inside the tool, producing flash and then a stopped press"
+    ],
+    "qualityDefects": [
+      "Warpage — twist, bow or a cover that rocks on a flat surface — from uneven cooling and anisotropic shrinkage",
+      "Sink marks over thick sections, ribs and bosses where packing did not compensate for volumetric shrinkage",
+      "Flash along the parting line from over-fill, insufficient clamp, or a worn shut-off — on a sealing face it leaks, around a snap fit it blocks assembly",
+      "Short shots from insufficient fill, restricted gates or, frequently, trapped air with nowhere to vent",
+      "Weld and knit lines, cosmetic on a hidden face and structural when they fall in a loaded section",
+      "Burn marks and air traps, both symptoms of venting rather than of the moulder's parameters",
+      "Voids inside thick sections where material pulled away from itself as it cooled",
+      "Splay and reduced strength on nylon that was not dried before processing",
+      "Surface roughness and visible fibre read-out on glass-filled grades, which cannot be polished away at the part",
+      "Dimensional drift over a production life as gates, shut-offs and slide faces wear",
+      "Drag marks and stress whitening from ejection on parts with insufficient draft",
+      "Colour and gloss mismatch between adjacent cab parts moulded on different tools"
+    ],
+    "downtimeCauses": [
+      "A cracked or chipped cavity or core with no spare insert on the shelf",
+      "Slide or lifter galling, seizure or a broken cam pin",
+      "Ejector pin wear and binding causing part sticking and manual intervention every shot",
+      "Vent lands carboned up until the tool will no longer fill cleanly",
+      "Cooling circuits scaled or restricted, showing first as a rising inlet-to-outlet temperature difference at constant flow",
+      "Hot runner drop failure — a blocked tip or a failed heater — taking a cavity or the whole tool out",
+      "Corrosion after a tool went into storage without rust prevention",
+      "Water leaks from perished O-rings after long temperature cycling",
+      "The tool travelling for repair with no second tool and no buffer stock behind it"
+    ],
+    "supplyRisks": [
+      "Single-source tooling on a part that stops the line, with no second tool and no transfer plan",
+      "The tool physically resident at a supplier whose commercial health, capacity or politics you do not control",
+      "Undocumented tool ownership, which turns a commercial dispute into a production stoppage",
+      "Long replacement lead times — a hardened steel production tool is a months-long build, not a purchase order",
+      "Discontinuation of the exact material grade, forcing a re-qualification the tool was never designed for",
+      "Currency, tariff and customs exposure on cross-border tooling and recurring component supply",
+      "Obsolescence of a service part while a large vehicle parc is still on the road needing it",
+      "Concentration risk where several assemblies quietly depend on one small tier supplier",
+      "Loss of engineering data — no model, no drawing, only a sample part and institutional memory",
+      "IP and contractual constraints on reproducing a part that someone else designed"
+    ]
+  },
+  "components": [
+    {
+      "name": "Clips, retainers and fasteners",
+      "note": "High count, low value, unforgiving. Retention force must survive heat cycling, vibration and creep. These are cavitation problems before they are moulding problems — the cavity count sets the unit cost and the tool has to hold identical geometry across every impression."
+    },
+    {
+      "name": "Cable ducts, harness channels and routing guides",
+      "note": "Long, thin, ribbed sections that warp readily. Cooling layout and gate position decide whether the duct sits flat on the chassis rail or fights it during assembly."
+    },
+    {
+      "name": "Brackets, mounting feet and support arms",
+      "note": "Typically glass-filled polyamide replacing a pressed or cast metal part. Load path must be checked against fibre orientation and weld-line position, not just against the wall thickness."
+    },
+    {
+      "name": "Air filter housings, intake ducts and connecting elbows",
+      "note": "Large, hollow, frequently with metal or moulded-in bushings. Sealing faces and clamp surfaces carry the tolerance. Route may be injection, blow moulding or a welded two-part assembly, and choosing between them is a tooling decision made early."
+    },
+    {
+      "name": "Fan shrouds, fan wheels and cooling-module surrounds",
+      "note": "Large-area parts where flatness and freedom from twist matter more than surface finish. Heat-stabilised grades; running clearance to the fan is set by how well the part holds shape hot."
+    },
+    {
+      "name": "Cooler expansion tanks and fluid reservoirs",
+      "note": "Washer, coolant, hydraulic and urea-solution reservoirs. Pressure or level integrity, chemical compatibility, and often a threaded neck that demands an unscrewing mechanism or split cavities in the tool."
+    },
+    {
+      "name": "Caps and closures — filler caps, filter caps, battery caps, wheel bolt caps, brake and calliper caps",
+      "note": "Thread form, sealing face and torque behaviour. Threads drive the mechanism choice: unscrewing unit, collapsible core, split cavities or a bump-off, each with a different cost and maintenance profile."
+    },
+    {
+      "name": "Lamp housings, bezels and lens retainers",
+      "note": "Headlight, fog and marker lamp bodies. Dimensional stability against heat, sealing groove geometry, and a fit that must stay watertight after years of vibration and thermal cycling."
+    },
+    {
+      "name": "Connector housings, terminal blocks and electrical enclosures",
+      "note": "Small features, thin walls, tight positional tolerance on pin cavities. Filled grades are common and the tool is a precision job at small scale — the wear that matters is measured in hundredths."
+    },
+    {
+      "name": "HVAC ducting, vents and registers",
+      "note": "Cab air handling. Long hollow sections, kinematic vane and louvre mechanisms, and an audible quality standard — rattle and effort are perceived quality in a cab a driver occupies all day."
+    },
+    {
+      "name": "Interior trim, panels, handles and crank handles",
+      "note": "Visible surfaces in the cab. Texture, gloss and colour consistency across parts moulded on different tools, plus concealed clip geometry that has to release and re-latch through service life."
+    },
+    {
+      "name": "Pedal bodies and mechanism housings",
+      "note": "Accelerator pedals and similar assemblies. Structural polymer carrying a functional mechanism, often with metal inserts, pivots and return springs — a technical mechanism as much as a moulding."
+    },
+    {
+      "name": "Mirror arms, brackets and shells",
+      "note": "Large cantilevered structures under constant vibration and wind load, plus weather and UV exposure. Stiffness comes from geometry as much as from the filler."
+    },
+    {
+      "name": "Gear-shift knobs, transmission caps and bearing carriers",
+      "note": "Handled or loaded parts with metal inserts, threads or bushings. Insert moulding and dimensional repeatability at the interface with metal are the whole job."
+    },
+    {
+      "name": "Hub caps, wheel covers and mudguard components",
+      "note": "Large-area exterior parts, UV and impact exposed, thin-wall and often low volume across many vehicle variants — a natural case for family or interchangeable-insert tooling."
+    }
+  ],
+  "tooling": {
+    "whyToolingMatters": "In heavy vehicles the tool is the programme. A passenger-car maker replaces tooling every two to three years with the model cycle; construction, agricultural and commercial vehicle builders can run the same tool for a decade or more. Every decision taken at tool design stage — steel grade, cooling layout, gate position, venting, mechanism design — is therefore paid for or earned back several hundred thousand times. Filled polymers make this sharper still. Glass fibre is abrasive; it erodes gates, shut-off faces and slide surfaces, and dimensional drift arrives quietly. Cooling and venting decisions cannot be retrofitted cheaply. A mould that samples well and was built from the wrong steel with the wrong cooling is a decade-long liability that looked like a saving on the day it was quoted.",
+    "toolingTopics": [
+      "Tool steel selection against the material: pre-hardened grades such as P20 for unfilled or low-volume work, hardened grades such as H13 where the polymer is filled or the programme is long",
+      "Surface engineering to extend life on abrasive materials — plasma and gas nitriding, PVD coatings such as CrN, CrAlN and TiAlN, and composite nitrided plus coated layers",
+      "The four mould failure mechanisms to design against: erosive wear, thermal fatigue, corrosion, and gate wear",
+      "Gate type, position and size, which set weld-line location, fibre orientation and therefore where the part is strong",
+      "Cooling circuit layout as the primary control on both cycle time and warpage",
+      "Venting: vent land depth and position determine whether the tool fills cleanly or produces burns, air traps and short shots",
+      "Slides and side actions for external undercuts — cam pin angles typically 10°–25°, heel block 2°–5° steeper than the pin, running clearance in the region of 0.012–0.025 mm to avoid parting-line flash",
+      "Lifters for internal snap features and internal barbs, accepting that thin moving geometry is hard to cool and prone to galling",
+      "Unscrewing mechanisms, collapsible cores and split cavities for threads and full-circumference undercuts — powerful, expensive and maintenance-hungry",
+      "Shut-offs and pass-throughs, which form undercut-looking geometry with no moving steel and are almost always the cheaper answer when the part allows them",
+      "Bump-off stripping for shallow undercuts in flexible materials with 30°–45° lead-out angles",
+      "Hand-loaded inserts as a legitimate low-volume answer instead of an automatic mechanism",
+      "Insert moulding: fixturing, insert location repeatability, and cycle time paid for by an operator in the loop",
+      "Interchangeable inserts and family tooling for vehicle-variant parts that differ in one feature",
+      "Standardising cam angles at 15° or 20° so off-the-shelf components can be used and replaced",
+      "Spare cavity and core inserts specified with the tool, not after the first crack",
+      "Preventive maintenance planned on shot count rather than the calendar, with defined thresholds for vent recutting, ejector pin replacement and cooling-circuit flow",
+      "Wear plates in aluminium bronze or graphitic steel on slide bearing surfaces, and slide steels hardened in the region of 48–52 HRC",
+      "Documented tool ownership and transferability, so the tool can move when it needs to"
+    ],
+    "cavityStrategy": "Cavitation in this vertical is set by two different logics and they must not be confused. Small high-count parts — clips, caps, retainers, bushings, connector bodies — justify high cavitation, because dividing setup and machine hour across many impressions is the only route to a defensible unit cost. Here the engineering problem is balance: every impression must fill at the same time and to the same pressure, or one cavity produces sink and another flash. Large structural parts — shrouds, ducts, panels, reservoirs — usually sit at one, two or four cavities, and the argument moves to cycle and cooling instead. For vehicle variants that differ in a single feature, interchangeable inserts in one base often beat separate tools. Family tooling is tempting for assembly sets but only works when part volumes and wall sections are genuinely comparable; otherwise it produces a tool that fills one cavity properly and compromises the rest.",
+    "runnerStrategy": "Cold runner is the honest default at heavy-vehicle volumes: lower capital, simpler maintenance, no heaters to fail, and regrind exposure that is manageable when the resin permits it. Hot runner earns its place on high cavitation, on parts where gate vestige or gate position matters, where filled material and long runners would otherwise create pressure loss and weld lines in the wrong place, and where eliminating runner scrap across a decade of production changes the material budget. Valve gating is the answer where flow-front control matters — sequencing fill on a long part to move a weld line out of a loaded area, or gating a large panel from several points without a visible vestige. On a decade-long programme the correct comparison is total cost per part with maintenance and downtime included, not the difference between the two mould quotations.",
+    "coolingNotes": "Cooling is where warpage is either designed out or designed in. Uneven cooling plus anisotropic shrinkage produces bow, twist and covers that rock on a flat surface, and on filled polymers the anisotropy is intrinsic — fibre-reinforced material shrinks less along flow than across it. That means the cooling layout has to be considered together with the gate position and the fibre orientation it creates, not separately. Circuits should reach the thick sections, the core side (which is usually the poorer-cooled half), and the moving components where they can be reached at all — lifters in particular are notoriously hard to cool because the geometry is thin and it moves. Conformal cooling is a real route where geometry defeats straight-drilled circuits. Over a production life, circuits scale: a rising temperature difference between inlet and outlet at constant flow is the warning sign, and a loss of more than about a quarter of the flow rate is a repair, not a note in a log.",
+    "materialNotes": "The working set for this vertical is polyamide (PA6, PA66) in glass-filled grades — GF25, GF30, GF50 are the ones a buyer will name — plus polypropylene and filled polypropylene for large low-cost parts, PBT and PA for electrical housings, ABS and PC/ABS for cab interiors, POM for low-friction mechanism parts, HDPE for tanks and blow-moulded vessels, and heat-stabilised grades wherever the part lives near the engine. Three things follow for tooling. Polyamide is hygroscopic and must be dried before processing, or the parts come out dimensionally and structurally weak while looking correct. Glass loading cuts shrinkage sharply — unfilled nylon 6/6 shrinks in the region of 0.7–3% while a 30% glass-filled grade is closer to 0.5% — but it shrinks unevenly with respect to flow direction, and that anisotropy is the source of most warpage arguments. And glass is abrasive: it wears the tool, shortens tool life, and leaves a rougher surface with fibre read-out that cannot be corrected at the part. Steel selection and gate design have to be answered against the material, at design stage."
+  },
+  "vocabulary": [
+    { "term": "Off-highway", "meaning": "Agricultural, construction and material-handling machinery, as distinct from on-road trucks and buses. Lower volumes, longer programme life, harsher duty and vibration environment.", "useIn": "copy" },
+    { "term": "Under-bonnet / under-hood", "meaning": "The engine compartment environment: sustained elevated temperature, fluid and chemical exposure, vibration. Drives heat-stabilised and filled grades.", "useIn": "copy" },
+    { "term": "PA66 GF30", "meaning": "Polyamide 66 reinforced with 30% glass fibre. The default structural moulding material for brackets, housings and under-bonnet parts.", "useIn": "technical-panel" },
+    { "term": "Anisotropic shrinkage", "meaning": "Fibre-reinforced material shrinks less along the flow direction than across it. The primary structural cause of warpage on filled parts.", "useIn": "diagram" },
+    { "term": "Warpage", "meaning": "Bow, twist or distortion after ejection and cooling. Recognised on the line as a cover that rocks, a housing that will not close evenly, or a clip that no longer lines up.", "useIn": "copy" },
+    { "term": "Weld line / knit line", "meaning": "Where two melt fronts meet after flowing round a hole, boss or insert. Cosmetic on a hidden face; a strength reduction when it falls in the load path.", "useIn": "diagram" },
+    { "term": "Sink mark", "meaning": "A surface depression over a thick section, rib or boss where the material shrank away as it cooled and packing did not compensate.", "useIn": "technical-panel" },
+    { "term": "Flash", "meaning": "Thin excess material at the parting line or a shut-off. On a sealing face it leaks; around a snap fit it blocks assembly.", "useIn": "technical-panel" },
+    { "term": "Short shot", "meaning": "An incompletely filled cavity. Often a venting problem rather than an injection pressure problem.", "useIn": "technical-panel" },
+    { "term": "Vent land", "meaning": "The shallow relieved land at the parting line that lets trapped air escape. Carbons up in service; recut when depth falls significantly below specification.", "useIn": "technical-panel" },
+    { "term": "Slide / side action", "meaning": "Cam-driven moving steel that forms an external undercut and withdraws before ejection. Cam pin angles typically 10°–25°, with the heel block a few degrees steeper.", "useIn": "diagram" },
+    { "term": "Lifter", "meaning": "An angled core that translates ejection movement into sideways release, used for internal snap features and barbs where a slide cannot reach.", "useIn": "diagram" },
+    { "term": "Unscrewing mechanism", "meaning": "A driven rotating core that threads itself out of a moulded internal thread. Necessary for threaded caps and necks; adds cost, cycle and maintenance.", "useIn": "diagram" },
+    { "term": "Collapsible core", "meaning": "A segmented core that contracts inward to release a full-circumference internal undercut or thread. Powerful, expensive, maintenance-sensitive.", "useIn": "technical-panel" },
+    { "term": "Shut-off / pass-through", "meaning": "Cavity and core steel meeting directly to form an opening. Produces undercut-looking geometry with no moving mechanism — usually the cheapest correct answer.", "useIn": "diagram" },
+    { "term": "Bump-off", "meaning": "A shallow undercut stripped off during ejection using material flexibility, with lead-out angles around 30°–45°. Zero mechanism cost, limited application.", "useIn": "technical-panel" },
+    { "term": "Insert moulding", "meaning": "Placing a metal insert — bush, thread, pin, terminal — into the tool before injection so the polymer forms around it.", "useIn": "copy" },
+    { "term": "Cavitation", "meaning": "The number of impressions in a tool. On small high-count parts it is the dominant lever on unit cost.", "useIn": "copy" },
+    { "term": "Tolerance stack-up", "meaning": "The cumulative effect of every part's tolerance across an assembly. Every component can be in specification while the assembly still refuses to close.", "useIn": "diagram" },
+    { "term": "Parting-line dimension", "meaning": "A dimension taken across the two mould halves rather than within one steel block. Cannot be held as tightly, and should not be specified as if it can.", "useIn": "technical-panel" },
+    { "term": "Draft angle", "meaning": "The taper on vertical faces that lets the part release from the steel. Insufficient draft shows as drag marks, stress whitening and ejection damage.", "useIn": "technical-panel" },
+    { "term": "Shot count", "meaning": "Accumulated mould cycles. The correct trigger for structural mould maintenance — the calendar is not.", "useIn": "diagram" },
+    { "term": "Second source", "meaning": "A duplicate tool and supply route for a component that would otherwise depend on one supplier and one tool.", "useIn": "copy" },
+    { "term": "Tool transfer", "meaning": "Moving an existing tool to another moulder, which requires documented ownership, a condition assessment and usually refurbishment before it runs again.", "useIn": "copy" }
+  ],
+  "metalFormAngle": {
+    "credibleOffers": [
+      "Send a sample part, a drawing or a photograph with one known dimension. We evaluate the geometry, the tooling route, the production economics and the supply options, and reply within 48 business hours.",
+      "Part and mould design in CATIA and SolidWorks — the CAD environments the automotive engineering chain already works in, so data arrives and leaves in a usable form.",
+      "DFM review before steel: wall sections, ribs and bosses, draft, gate position, weld-line location, undercuts and the mechanisms they will require, and what each one costs in tool price and cycle.",
+      "Redesign of a metal part for a moulded route, or an honest verdict that it should stay metal — with die-cast tooling as an alternative we can also build.",
+      "Reverse engineering and CAD reconstruction from a physical sample where no model or drawing survives, separating design intent from accumulated wear.",
+      "Mould design and manufacture for injection, blow, PET and die-cast routes, including multi-cavity tooling — verified experience up to 46 cavities.",
+      "Mechanism tooling: slides, lifters, split cavities, unscrewing units, insert moulds and hot or cold runner systems.",
+      "Second-source tooling — a duplicate tool for a part currently dependent on a single supplier, built to your data, under NDA.",
+      "Re-tooling of obsolete and end-of-life components so a part still needed by a vehicle parc can be produced again.",
+      "Production and ongoing component supply after the tool is proven, so the tooling and the parts come from one relationship.",
+      "Spare cavity and core inserts specified and made with the tool, not ordered after the first crack.",
+      "Mould warranty, with terms agreed per project.",
+      "NDA and confidentiality as standard — much of this work belongs to somebody else's programme.",
+      "International delivery of tooling and of recurring component supply."
+    ],
+    "dfmAngles": [
+      "Wall section discipline: uniform walls, cored-out thick sections, ribs proportioned to the wall — the cheapest available fix for sink marks, voids and warpage",
+      "Gate position argued from the load case, not from convenience: on a filled part the gate decides fibre orientation and therefore where the part is strong and where the weld line lands",
+      "Moving weld lines out of loaded sections by re-gating or by adding a flow leader, before anyone proposes thickening the part",
+      "Reviewing every undercut for whether a shut-off or a bump-off will do the job that a slide was drawn in to do — mechanism count is one of the largest controllable lines in a tool price",
+      "Draft added early rather than argued about after the first ejection marks",
+      "Reading the tolerance drawing critically: which dimensions cross the parting line, which are formed by moving steel, and which are being specified tighter than the process can honestly hold",
+      "Checking the tolerance stack-up across the assembly rather than part by part, so the fit is designed rather than discovered",
+      "Filler content questioned rather than assumed — glass loading that is not needed for the load case costs material price, tool life and surface quality",
+      "Designing snap features for a relaxed engaged state and generous fillets at the beam root, because creep and sharp corners are the two standard failure routes",
+      "Cooling layout treated as part geometry, not as a later tooling detail",
+      "Cavitation and steel chosen against the real programme life — for a ten-year heavy-vehicle part, not against an optimistic first-year forecast"
+    ],
+    "secondSourceAngle": "A single tool at a single supplier is the standing risk in this sector, and everyone in it knows it. A duplicate tool removes it. We build second-source tooling from your data, under NDA, without contacting your existing supplier — a tool you own, ready to run, with parts available from us if you want them or held in reserve if you do not. The same discipline covers the harder case: an existing tool that has to move. Ownership documented, condition assessed, refurbishment scoped, then production restarted. And the hardest case of all, where there is no tool left — an obsolete or end-of-life part with no model and no drawing. We reconstruct the geometry from the sample and the mating parts, separating what the designer intended from what years of service wore away, then build new tooling for it. Confidentiality is not a policy paragraph here. It is the condition of the work.",
+    "costOptimisationAngle": "The heavy-vehicle question is never the mould price on its own. A passenger-car programme retools every two to three years; a construction or agricultural machine can run the same tool for a decade. That changes which savings are real. Cavitation on small high-count parts, steel and surface treatment chosen against a filled abrasive material, a cooling layout that pays back on every cycle, mechanism count reduced by geometry rather than by argument, and spare inserts held before they are needed — these compound across a decade. A cheaper tool in softer steel, undersized cooling, and a mechanism that could have been a shut-off do the same, in the other direction. We will show the calculation both ways for your part, including the case where the answer is a modest single-cavity steel tool because the volume genuinely does not justify more.",
+    "whatWeMustNotClaim": [
+      "No IATF 16949, ISO 9001, ISO 26262 or any other certification, registration, approval or audit status — these are industry facts, never Metal Form facts",
+      "No claim to be an approved, listed or nominated supplier to any vehicle maker or tier supplier",
+      "No PPAP, PSW, APQP, FMEA or production part approval submission capability as a formal certified process; do not imply automotive quality-system deliverables",
+      "No Moldflow or named flow-simulation software, and no simulation-derived predictions of fill, warpage or shrinkage",
+      "No 3D scanning — reverse engineering must be described as measurement and CAD reconstruction from the sample and its mating parts",
+      "No CMM, no metrology department, no QC department, no inspection laboratory, no first-article inspection service",
+      "No cleanroom, sterile, validated or regulated manufacturing language",
+      "No two-shot, overmoulding, or grinding capability claims",
+      "No named customers, brands, vehicle models, logos, projects or case-study identities — heavy-vehicle history may be described only in the abstract",
+      "No machine counts, factory area, headcount, press tonnages or capacity figures",
+      "No guaranteed tolerances, cycle times, tool-life shot counts or production volumes stated as Metal Form commitments; industry figures must be labelled as industry figures",
+      "No percentage cost savings, lead-time guarantees or delivery-date promises made on the page",
+      "No claim of on-site material testing, chemical analysis, environmental or vibration testing",
+      "No awards, rankings, memberships or accreditations",
+      "No implication that we hold or can supply third-party part data, drawings or IP — the page must state that ownership and IP are the customer's to confirm"
+    ]
+  },
+  "page": {
+    "heroHeadline": "The tool outlives the vehicle.",
+    "heroSub": "Trucks, buses, agricultural and construction machines run the same moulded components for a decade. We design and build the tooling for that service life — filled polymers, slides and lifters, dimension that repeats shot after shot — and supply the parts afterwards.",
+    "heroVisualConcept": "A full-bleed engineering drawing sheet, not a photograph and not a hero image. Thin graphite border, tick rulers along the top and left edge, and a real title block anchored bottom-right carrying SHEET / SCALE / MATERIAL / REV and the fields SINCE 2006, 1000+ PROJECTS, UP TO 46 CAVITIES, CATIA · SOLIDWORKS. Occupying the sheet is a single large orthographic line drawing — a heavy-vehicle bracket-and-housing assembly in third-angle projection, drawn in stroke only, with visible construction lines, centre lines, hidden-detail dashes and 45° section hatching on the cut face. On load, the construction lines draw first, then the outline, then four leader lines snap out to balloon callouts (01 GLASS-FILLED PA · 02 SLIDE-FORMED FEATURE · 03 PARTING LINE · 04 GATE). Nothing floats, nothing fades in from nowhere: strokes are drawn along their own length using stroke-dashoffset, and the balloons arrive along their leader lines. On mobile the drawing crops to a single detail view rather than shrinking. Palette is graphite on paper with one machine-amber accent reserved exclusively for the balloons and dimension text.",
+    "narrativeSpine": "This industry buys tooling as a decade-long commitment, so the page is built as one engineering drawing sheet read from title block to revision block. It opens by naming the thing that makes this vertical different — the tool stays, the vehicle programme does not. It then moves outward to the parts (what actually gets moulded on a heavy vehicle), inward to the material (what filled polymers do to the part and to the steel), further inward to the tool itself (the mechanisms and the cooling that decide everything), then back out to dimension and fit (why parts in tolerance still fail to assemble), then along time (what happens to a tool over ten years of shots), and finally to the three doors a customer actually walks in through: a new part, a part you already have and want a second source for, and a part nobody makes any more. It closes as a revision block: send the part, get an answer in 48 business hours.",
+    "sections": [
+      {
+        "id": "sheet-header",
+        "title": "The tool outlives the vehicle",
+        "purpose": "Establish immediately that this is a heavy-vehicle and off-highway page, not a generic automotive page, and that the supplier thinks in decades rather than model years. Carry the verified proof points without turning them into a badge row.",
+        "layout": "Full-viewport drawing sheet. Border rule inset 32px, tick rulers on top and left edges, headline set in the upper-left quadrant against generous whitespace, orthographic line assembly occupying the right two-thirds, title block fixed bottom-right with the verified facts as drawing-sheet fields rather than statistics tiles.",
+        "contentOutline": "Headline. Two-sentence sub. Title-block fields: SINCE 2006 / 1000+ PROJECTS / UP TO 46 CAVITIES / CATIA · SOLIDWORKS / NDA AS STANDARD / RESPONSE 48 BUSINESS HOURS. One line of orientation copy under the headline: 'Trucks, buses, trailers, agricultural and construction machinery. Tooling, parts, and the engineering in between.' Primary action inline in the title block, styled as a drawing field, not a pill button.",
+        "interaction": "Stroke-drawn line art on load, sequenced construction lines then outline then balloons. Cursor movement within the sheet nudges the drawing by a few pixels on a parallax rail — axis-locked, never rotational. Reduced-motion renders the completed drawing immediately."
+      },
+      {
+        "id": "part-map",
+        "title": "What actually gets moulded on a heavy vehicle",
+        "purpose": "Prove domain knowledge fast. A buyer scanning this section should recognise their own part in the first ten seconds and conclude that the supplier has seen these components before.",
+        "layout": "Sticky split. Left half holds a pinned orthographic side elevation of a generic heavy vehicle — cab, chassis rail, engine bay, wheel arch — drawn in pure line at low stroke weight, with balloon numbers at component locations. Right half scrolls an annotated component register: number, component family, one line of engineering note, and the material family in monospace. As each register row enters the reading zone, its balloon on the elevation illuminates and a leader line draws to it.",
+        "contentOutline": "Fifteen component families grouped under four zones: ENGINE COMPARTMENT (air filter housings and ducting, fan shrouds and fan wheels, expansion tanks and reservoirs, caps and closures), CHASSIS AND EXTERIOR (brackets and mounting feet, cable ducts and harness channels, mirror arms and shells, hub caps and mudguard components, lamp housings and bezels), CAB (HVAC ducting and registers, interior trim and handles, pedal bodies and mechanism housings, gear-shift and transmission components), ELECTRICAL (connector housings and terminal blocks, clips and retainers). Each row carries one honest engineering note — what makes that part hard — not a feature claim.",
+        "interaction": "Scroll-linked balloon illumination with leader lines drawn via stroke-dashoffset. Zone headers act as filters on desktop: selecting a zone dims the other balloons to 20% opacity and collapses the register. Keyboard navigable. No hover-only content."
+      },
+      {
+        "id": "material-rail",
+        "title": "Filled polymers, and what they cost the tool",
+        "purpose": "The technical credibility section. Show that the supplier understands glass loading as a tooling problem, not just a material selection — and use it to justify steel and surface-treatment decisions later on the page.",
+        "layout": "Full-width horizontal data rail that scroll-snaps, deliberately breaking the vertical rhythm of the page. Each panel in the rail is a material family rendered as a hatched section swatch — different 45° hatch density and direction per material, in the engineering-drawing convention — above a compact spec strip: typical shrinkage band, what it is used for on a heavy vehicle, and the tooling consequence.",
+        "contentOutline": "Panels for: PA6 / PA66 unfilled; PA66 GF30; PA66 GF50; PP and filled PP; PBT and PA for electrical; ABS and PC/ABS for cab interiors; POM; HDPE for tanks and blow-moulded vessels. Each panel states the tooling consequence in one sentence — for example, on glass-filled grades: 'Abrasive. Erodes gates and shut-off faces. Steel grade and surface treatment are decided here, not later.' A closing panel carries the three facts that matter most: polyamide is hygroscopic and must be dried; glass loading cuts shrinkage sharply but unevenly with respect to flow; fibre read-out at the surface cannot be polished away at the part.",
+        "interaction": "Horizontal scroll-snap with a position indicator drawn as a dimension line with an arrow moving along it. Drag, wheel and arrow keys all work. The hatch pattern in each swatch animates its phase very slightly on entry — a two-second, once-only movement, then still."
+      },
+      {
+        "id": "tool-section",
+        "title": "Inside the tool",
+        "purpose": "The centrepiece. Take a buyer through the anatomy of a mould in engineering-drawing language so that slides, lifters, cooling and runner choices become concrete cost and risk decisions rather than jargon.",
+        "layout": "Pinned canvas with stepped captions. A large sectioned mould assembly is drawn in the centre — fixed half, moving half, cavity, core, a slide with its cam pin and heel block, a lifter, ejector plate and pins, cooling circuits, and a hot runner drop — all in line with hatched steel sections. Captions step through on the right in a narrow column while the drawing exposes one subsystem at a time by dimming the others and adding its dimensions and annotations.",
+        "contentOutline": "Six steps. 01 THE SPLIT — parting line, shut-off faces, why a dimension across the parting line cannot be held as tightly as one inside a single block. 02 THE MECHANISMS — slides for external undercuts (cam pin 10°–25°, heel a few degrees steeper), lifters for internal features and why they are hard to cool, unscrewing units and collapsible cores for threads, and the cheaper answers first: shut-offs, pass-throughs, bump-offs, hand-loaded inserts at low volume. 03 THE FEED — cold runner as the honest default at these volumes, hot runner where cavitation, gate position or a decade of runner scrap justify it, valve gating to move a weld line out of a loaded section. 04 THE COOLING — the primary control on both cycle and warpage; reaching the core side and the thick sections; conformal routes where straight drilling cannot go. 05 THE VENTING — vent lands as the actual cause of burns, air traps and many short shots. 06 THE STEEL — pre-hardened versus hardened grades against the material, nitriding and PVD on abrasive filled polymers, and the four failure mechanisms designed against: erosive wear, thermal fatigue, corrosion, gate wear.",
+        "interaction": "Scroll-driven, mechanically. The mould halves separate along a single horizontal axis as the section is entered, then subsystems are isolated step by step — dimming rather than hiding, so the whole assembly stays legible. The slide travels along its cam angle; the lifter travels along its own. Movement is linear and axis-locked with no easing overshoot. A step index on the left doubles as manual navigation. Reduced-motion collapses to six static annotated states."
+      },
+      {
+        "id": "fit-and-dimension",
+        "title": "Everything in tolerance, and it still will not close",
+        "purpose": "Address the failure a heavy-vehicle engineer actually loses sleep over — assembly fit — and demonstrate that the supplier reads a tolerance drawing critically rather than accepting it and quoting it.",
+        "layout": "Two-band split, joined by a single measurement ruler that runs horizontally across both bands and doubles as the section's visual spine. Upper band: an interactive tolerance stack-up strip — four abutting moulded parts drawn edge-on, each with its own tolerance band, and a cumulative envelope that grows across the assembly. Lower band: an anisotropic shrinkage diagram — one part outline shown with flow direction arrows and two different shrinkage vectors, along flow and across it, producing the characteristic bow.",
+        "contentOutline": "Copy explaining that every part can be inside specification while the assembly refuses to close, and that this is arithmetic rather than bad luck. The dimension classes that behave differently: dimensions inside one steel block; dimensions across the parting line; dimensions formed by moving steel. Why a filled part warps — less shrinkage along flow than across it — and what that means for gate position. What warpage looks like on the line: a cover that rocks, a housing that does not close evenly, a clip that no longer lines up. Closing line: the tolerance drawing is reviewed before the tool is quoted, and any dimension being specified tighter than the process can honestly hold is raised then rather than discovered later.",
+        "interaction": "The stack-up strip is directly manipulable: a slider adjusts the per-part tolerance band and the cumulative envelope updates live, crossing a marked assembly limit when the bands are loose enough. Numbers are shown in tabular monospace and update on drag. The shrinkage diagram has a single toggle between isotropic and anisotropic, which visibly bows the part outline."
+      },
+      {
+        "id": "programme-life",
+        "title": "Ten years of shots",
+        "purpose": "Convert the abstract idea of tool life into a concrete, ordered sequence of events, and use it to introduce preventive maintenance, spare inserts and the second-source decision as things planned at the start rather than reacted to at the end.",
+        "layout": "A long horizontal timeline rail, scrolled horizontally within a pinned viewport, drawn as a dimension line with tick marks and shot-count callouts rather than as dates. Events sit above and below the line — tooling events above, risk events below — in the convention of a drawing's dimension chain.",
+        "contentOutline": "Rail markers: DESIGN AND DFM REVIEW → STEEL CUT → T0 / FIRST SAMPLES → GEOMETRY CORRECTIONS → PRODUCTION RELEASE → first scheduled service intervals driven by shot count rather than the calendar → wear items that come due (ejector pins, vent lands, slide and lifter bearing surfaces, cooling-circuit O-rings) → cavity insert replacement from spares held in advance → mid-life refurbishment → the fork at the end, where the programme either continues, transfers, or the part goes obsolete and is re-tooled. Below the line, the risk register: single-source exposure, dimensional drift on abrasive filled material, scaled cooling circuits showing as a rising temperature difference, and an unplanned stoppage that costs several times the maintenance it replaced. Every industry figure quoted on the rail is labelled as an industry figure.",
+        "interaction": "Horizontal scroll bound to vertical wheel input inside the pinned viewport, with drag and keyboard support. Markers expand in place to a short annotated note; the dimension line redraws its extension lines around the expanded marker rather than the note floating over it."
+      },
+      {
+        "id": "three-routes",
+        "title": "Three ways this starts",
+        "purpose": "Convert intent into an enquiry by matching the visitor to the situation they are actually in. This replaces a generic services grid and is the section that captures the second-source and obsolete-part buyers, who arrive with a very different question from the new-part buyer.",
+        "layout": "A routing diagram, not cards. Three inputs enter from the left as separate lines, pass through labelled switch points, and converge on a single output on the right. Drawn as a schematic with junction dots and directional arrows; each route is a horizontal band with its own annotation column, and the routes are visually distinguished by line style — solid, dashed, and dash-dot, in the drawing convention — rather than by colour blocks.",
+        "contentOutline": "ROUTE A — A NEW PART. You have a design, or an idea and a function. We review geometry, materials, mould route and production economics, then design and build the tool. Inputs accepted: CAD, drawings, or a description and a sketch. ROUTE B — A PART YOU ALREADY BUY. One supplier, one tool, and a line that stops if either fails. We build a second-source tool to your data under NDA, or assess and refurbish an existing tool being transferred. Inputs accepted: CAD, drawings, or a production sample. ROUTE C — A PART NOBODY MAKES ANY MORE. No tool, no model, sometimes no drawing. We reconstruct the geometry from the sample and its mating parts, separating design intent from years of wear, and build new tooling for it. Inputs accepted: a sample part, even a worn or broken one. A short shared note under all three: confirm ownership and IP before reproduction — we work under NDA and expect the same clarity in return. The converged output line is labelled: TOOL · SAMPLES · PRODUCTION · ONGOING SUPPLY.",
+        "interaction": "Selecting a route brightens its line through the diagram to full weight and drops the others to a hairline, while the annotation column swaps. The selection also pre-sets the enquiry type carried into the closing section, so the visitor does not restate it."
+      },
+      {
+        "id": "revision-block",
+        "title": "Send the part",
+        "purpose": "Close. Make the next step concrete, low-friction and specific to what this buyer actually has in hand, which is frequently a physical component rather than a data package.",
+        "layout": "Composed as a drawing revision block: a ruled table occupying the lower right of a final sheet, with REV / DESCRIPTION / BY / DATE column headers reinterpreted as the enquiry fields. Left of it, generous whitespace and the closing copy at large size. The sheet border and tick rulers from the hero return here, closing the frame.",
+        "contentOutline": "Headline and sub. What to send, as a short list in monospace: a sample part, a drawing, a STEP or CATPart file, or a photograph with one known dimension. What comes back: an assessment of the geometry, the tooling route, the production economics and the supply options, within 48 business hours. Under it, three lines of reassurance stated plainly and without ornament: NDA as standard. Mould warranty, terms per project. International delivery. Contact actions rendered as revision-table rows rather than buttons.",
+        "interaction": "Route selection from the previous section pre-fills the enquiry type field. WhatsApp and email actions carry a prefilled message. The revision table rows highlight on focus with a drawn underline rather than a fill."
+      }
+    ],
+    "technicalPanels": [
+      {
+        "title": "Undercuts: what each answer costs",
+        "bullets": [
+          "Shut-offs and pass-throughs — cavity and core steel meeting directly. No moving parts, no added maintenance. Try this first.",
+          "Bump-off stripping — shallow undercuts released by material flexibility, lead-out angles around 30°–45°. Zero mechanism cost, limited to flexible materials and shallow features.",
+          "Slides / side actions — external undercuts. Cam pin angles typically 10°–25°, heel block 2°–5° steeper to stop the slide backing up under injection pressure. Running clearance in the region of 0.012–0.025 mm or the parting line flashes. Cool easily.",
+          "Lifters — internal snap features, barbs and internal detail a slide cannot reach. Thin moving geometry is hard to cool, so cycle time suffers, and bearing surfaces gall if lubrication is neglected.",
+          "Unscrewing mechanisms — driven rotating cores for internal threads on caps and necks. Adds cost, cycle and a maintenance obligation.",
+          "Collapsible cores — full-circumference internal undercuts and threads. Capable, expensive, sensitive to wear and contamination.",
+          "Hand-loaded inserts — a legitimate answer at low volume, trading cycle time for tool cost. Sensible on slow-moving heavy-vehicle service parts.",
+          "Standardising cam angles at 15° or 20° allows off-the-shelf components and simpler replacement over a decade of running."
+        ]
+      },
+      {
+        "title": "Filled polymers: what changes when glass goes in",
+        "bullets": [
+          "Grades a buyer will name: PA6 GF25, PA66 GF30, PA66 GF50. Glass loading is chosen for the load case, not by default.",
+          "Shrinkage falls sharply — industry figures put unfilled nylon 6/6 around 0.7–3% and 30% glass-filled nylon 6/6 near 0.5%.",
+          "Shrinkage becomes directional: fibre-reinforced material shrinks less along the flow direction than across it. This anisotropy is the structural cause of most warpage.",
+          "Gate position therefore sets fibre orientation, and fibre orientation sets where the part is strong and where the weld line falls.",
+          "Polyamide is hygroscopic. Undried material produces parts that look correct and are dimensionally and structurally weak.",
+          "Glass is abrasive. It erodes gates, shut-off faces and slide surfaces, and shortens tool life — which is a steel and surface-treatment decision taken at design stage.",
+          "Surface finish is rougher, with fibre read-out visible. On a cab-facing part this cannot be corrected after moulding.",
+          "Heat-stabilised grades are the norm for engine-compartment parts; UV-stabilised grades for exterior off-highway parts."
+        ]
+      },
+      {
+        "title": "Dimension: what a moulded part can and cannot hold",
+        "bullets": [
+          "Industry tolerance grades separate commercial from fine. Published SPI guidance puts 1–20 mm features at roughly ±0.075–0.125 mm commercial against ±0.030–0.075 mm fine, and 21–100 mm features at roughly ±0.120–0.170 mm against ±0.070–0.110 mm.",
+          "A dimension taken across the parting line cannot be held as tightly as a dimension formed inside one block of steel. Specify accordingly.",
+          "Dimensions formed by moving steel — slides, lifters, split cavities — carry the mechanism's own repeatability on top of the cavity's.",
+          "Larger parts shrink more in absolute terms and are therefore harder to control than small ones at the same percentage tolerance.",
+          "Uniform wall section is the cheapest dimensional control available; differential cooling across unequal walls is where warpage begins.",
+          "Moulds are typically machined to around ±0.127 mm, tightened toward ±0.05 mm where the part genuinely demands it — tighter costs real money.",
+          "Tolerance stack-up is arithmetic. Every part can be in specification while the assembly refuses to close.",
+          "Figures on this page are industry reference values. What your part can hold is answered against your part, your material and your tool."
+        ]
+      },
+      {
+        "title": "Tool steel and tool life against abrasive material",
+        "bullets": [
+          "Pre-hardened grades such as P20 suit unfilled materials and shorter programmes; hardened grades such as H13 are the route for filled polymers and long-life tooling.",
+          "Slide components and wear-critical inserts are typically hardened in the region of 48–52 HRC, with wear plates in aluminium bronze or graphitic steel.",
+          "Surface engineering extends life on abrasive materials: plasma and gas nitriding, PVD coatings such as CrN, CrAlN and TiAlN, and composite nitrided-plus-coated layers.",
+          "The four mechanisms to design against are erosive wear, thermal fatigue, corrosion and gate wear.",
+          "Structural maintenance is triggered by shot count, not by the calendar. Industry practice services P20 tools around 50,000 / 100,000 / 250,000 shot gates and hardened tools at longer intervals.",
+          "Highest-wear items in service: ejector pins, vent lands, slide and lifter bearing surfaces, cooling-circuit O-rings.",
+          "Practical service thresholds quoted in industry maintenance guidance: recut vents once carbon has reduced land depth well below specification; replace ejector pins at around 0.05 mm diameter loss; weld and re-polish cavity pitting deeper than around 0.1 mm; investigate cooling circuits that have lost more than about a quarter of their flow.",
+          "Spare cavity and core inserts are specified with the tool. Ordering them after the first crack is the expensive version of the same decision."
+        ]
+      },
+      {
+        "title": "Second source, tool transfer and obsolete parts",
+        "bullets": [
+          "Second-source tooling: a duplicate tool built to your data, under NDA, without contact with your existing supplier. You own it. It runs when you need it to.",
+          "Tool transfer: ownership documented first, then condition assessed — cavity and core surfaces, ejection system, slides and lifters, cooling circuits, corrosion — then refurbishment scoped before anything is promised about output.",
+          "Obsolete and end-of-life parts: geometry reconstructed from the sample and its mating parts. A worn sample copied exactly reproduces the wear, not the design.",
+          "Where original material is unknown, the family is inferred from application, density, hardness, surface condition and service environment, and selected against the real load case rather than matched by appearance.",
+          "Deliverable is a manufacturing package: 3D CAD, dimensioned 2D drawings with tolerances and notes, and the tooling built from them.",
+          "Low volume is normal in this vertical and is not an obstacle. Tooling is scaled to the real programme, including modest single-cavity steel tools where that is the correct answer.",
+          "Ownership and IP are confirmed before reproduction. We work under NDA and expect the same clarity in return."
+        ]
+      }
+    ],
+    "ctaHeadline": "Send the part.",
+    "ctaSub": "A sample, a drawing, a STEP file, or a photograph with one known dimension. We evaluate the geometry, the tooling route, the production economics and the supply options, and reply within 48 business hours. NDA as standard.",
+    "whatsappPrefill": "Heavy vehicle component enquiry. Part: ___ . Vehicle type (truck / bus / agricultural / construction): ___ . Material if known: ___ . Annual volume: ___ . Existing tool: yes / no / obsolete. I have: CAD / drawing / sample part / photo.",
+    "metaTitle": "Automotive & Heavy Vehicle Tooling — Metal Form",
+    "metaDescription": "Injection mould design and manufacture for trucks, buses, agricultural and construction machinery. Filled polymers, slides, lifters and insert moulds. Second-source tooling and re-tooling of obsolete parts. Engineering response in 48 business hours."
+  },
+  "artDirection": {
+    "moodInOneLine": "A precision engineering drawing sheet on bright paper — graphite line, structural geometry, one machine-amber annotation colour, and absolutely no industrial grime.",
+    "palette": {
+      "surface": "#F5F6F7",
+      "surfaceAlt": "#E6E9EC",
+      "ink": "#161A1D",
+      "inkMuted": "#5C6670",
+      "accent": "#C2731A",
+      "accent2": "#3E5C6B",
+      "rationale": "Near-achromatic by design. The surface is drawing paper with a faint cool cast rather than pure white, so hairline strokes stay visible without going grey; surfaceAlt is the plate tint used for hatched steel sections and pinned canvases. Ink is graphite, not black — the weight of a hard pencil on paper. Machine amber is the only saturated colour on the entire page and is rationed hard: balloons, dimension figures, active states, one live data value. Because it appears rarely, it functions as annotation ink rather than as branding. Cold steel blue is the secondary construction-line and section-hatch colour, sitting quietly behind the graphite and never competing with the amber. Together this reads as engineering documentation rather than as marketing, which is exactly the register a heavy-vehicle engineer trusts — and it deliberately avoids the dark-and-red industrial cliche the brand rejects."
+    },
+    "typographyNote": "Two voices only. Headlines in a tight technical grotesque set large, tracking slightly negative, sentence case, never uppercase at display size — the statements are meant to read as engineering assertions rather than slogans. All labels, dimensions, part numbers, material grades, tolerance figures and register data in a monospace with tabular figures, set uppercase at small sizes with wide letter-spacing, exactly as drawing annotation is lettered. Body copy sits in the grotesque at a comfortable measure of around 62 characters, generously leaded. The rule that keeps the page coherent: anything that would appear on a drawing is monospace; anything that would be spoken is grotesque. No third weight of decoration, no italics, no letterpress effects.",
+    "compositionNote": "Everything is framed. A thin sheet border inset from the viewport edge persists across the page, with tick rulers on the top and left edges that read as a measuring scale rather than as decoration. Content sits on a visible 12-column engineering grid with wide outer margins and deliberate empty space — a drawing sheet is mostly paper, and this page should be too. Sections are numbered like drawing views. Alignment is strict and orthogonal: no rotated elements, no diagonal section dividers, no rounded cards. Where a container is needed it is a ruled rectangle with hairline borders, never a shadowed card. Section rhythm alternates deliberately between full-viewport pinned canvases and dense annotated registers, so the page breathes and then concentrates, breathes and then concentrates.",
+    "motionLanguage": "Mechanical. Everything moves along an axis, and nothing moves along a curve it does not have a mechanism for. Three primitives only: strokes drawn along their own length via stroke-dashoffset (used for every line, leader and dimension); linear axis-locked translation with a firm ease-out and no overshoot (used for mould halves separating, slides travelling along their cam angle, lifters along theirs); and opacity dimming to isolate a subsystem, never full hide, so the assembly stays legible while one part of it is discussed. Durations sit in the 240–420 ms range for interface response and 900–1600 ms for drawing sequences. No parallax on text, no floating, no bounce, no fade-up-from-nowhere. Reduced-motion collapses every sequence to its completed state with no loss of information — the drawings are readable static.",
+    "signatureMotif": "The balloon-and-leader callout. Every annotation on this page — component names, material grades, tool subsystems, timeline markers, section numbers — arrives as a numbered circle at the end of a drawn leader line with a short horizontal landing, exactly as a part is ballooned on an assembly drawing. It is the page's entire navigation and annotation language, it is the only place the amber accent appears, and it is what makes this chapter recognisable from a thumbnail. Its companion is 45° section hatching, used to indicate cut steel and filled material, with hatch density and direction varying by material family so the hatch itself carries information.",
+    "diagramConcept": "The sectioned mould assembly in the tool-section — a scroll-driven exploded cross-section drawn entirely in stroke and hatch, showing fixed and moving halves, cavity and core, a slide with its cam pin and heel block, a lifter, ejector plate and pins, cooling circuits and a hot runner drop. It opens along a single horizontal axis as the section is entered, then isolates one subsystem at a time by dimming rather than hiding. Supporting it: the tolerance stack-up strip, which is directly manipulable and shows a cumulative envelope crossing an assembly limit as per-part bands are loosened, and the shot-count timeline drawn as a dimension chain with tick marks instead of dates.",
+    "howThisDiffersFromOtherIndustries": "This is the only chapter in the book that behaves like a technical document rather than a designed page. Where other verticals will use photography-substitute abstraction, colour fields, organic form or data visualisation, this one commits fully to the conventions of an engineering drawing sheet: a persistent border and tick rulers, a title block instead of a stats row, a revision block instead of a CTA panel, balloon callouts instead of icons, hatched sections instead of fills, and a dimension chain instead of a timeline. It is the most achromatic chapter — graphite on paper with a single rationed amber — and the most orthogonal, with no curve anywhere except the balloon circles themselves. Its motion is the most mechanical: strokes drawing and steel translating along axes, never anything floating. A reader moving from another industry page to this one should feel they have turned from an essay to a drawing set."
+  },
+  "openQuestions": [
+    "Does Metal Form hold, or want to state, any position on tool ownership and transfer terms? The second-source and tool-transfer angles are commercially strong but need a one-line policy from the company before they can be published.",
+    "What is the realistic lower bound on volume Metal Form will take for ongoing component supply? The aftermarket and off-highway routes both depend on low-volume work being genuinely welcome rather than politely tolerated.",
+    "Can spare cavity and core inserts be offered as a standard line item with new tooling? It is a strong, credible differentiator in this vertical and costs nothing to state, but it must be true.",
+    "Which mould routes should the page name explicitly for this vertical — injection certainly, but should blow moulding (tanks, ducts, reservoirs) and die-cast tooling (brackets, housings) be surfaced here, or kept on their own pages with only a cross-reference?",
+    "How should heavy-vehicle history be described without naming anything? Suggested safe formulation for the client to approve: 'Heavy-vehicle component tooling has been part of the work since the early years.' Needs sign-off that even this is acceptable.",
+    "Is Metal Form willing to state a position on IP and ownership verification for reverse-engineered parts? Publishing it is a trust signal in the aftermarket segment, but it is also a commitment.",
+    "What material handling is actually available in production — specifically, is resin drying for hygroscopic polyamides in place? The page currently discusses drying as an industry fact rather than a capability claim, which is safe, but a verified yes would strengthen the production-supply section.",
+    "Should the tolerance stack-up interactive carry any Metal Form numbers at all, or remain purely illustrative with industry reference values? Recommended: purely illustrative, clearly labelled."
+  ],
+  "recommendations": [
+    "Lead with tool longevity, not with automotive. The verified, defensible and genuinely differentiating position is that heavy-vehicle and off-highway tooling runs for a decade while passenger-car tooling turns over with the model cycle. That single fact justifies every engineering argument on the page and steers the visitor away from expecting IATF-certified tier-one credentials the company does not have.",
+    "Make the second-source and obsolete-part routes first-class, not footnotes. They are where an uncertified but capable engineering and tooling partner is most credible, where the buyer's pain is sharpest, and where certification matters least. The three-routes section should carry as much design investment as the hero.",
+    "Label every industry figure as an industry figure. The page quotes real numbers — tolerance grades, shrinkage bands, cam angles, shot-count intervals, service thresholds — and they are what make it survive scrutiny. Each must be visibly attributed to industry practice rather than presented as a Metal Form specification. Recommend a persistent small-type note in the drawing border: 'Reference values from published industry practice. Your part is assessed against your part.'",
+    "Say what is not simulated. Competitors lead with Moldflow output. Metal Form must not. Turn that into a strength by being explicit about method: geometry, wall sections, gate position, weld-line location and mechanism strategy reviewed by engineers in CATIA and SolidWorks, with corrections made at sampling. This is honest, it is what most tools are actually built on, and it avoids a claim that would collapse under one question.",
+    "Use the 46-cavity fact where it means something. On a heavy-vehicle page it belongs next to clips, caps and retainers, where cavitation is the entire commercial argument — not floating in a hero statistics row where it reads as a boast.",
+    "Resist the badge row. No certification logos exist and none should be implied. The title block carries the verified facts — since 2006, 1000+ projects, up to 46 cavities, CATIA and SolidWorks, NDA, 48 business hours, warranty terms per project, international delivery — in drawing-field form, which reads as documentation rather than as decoration and sidesteps the missing-certification problem entirely.",
+    "Keep the amber rationed. The whole visual identity of this chapter depends on the accent appearing perhaps a dozen times on the entire page. The moment it is used for buttons, headings and borders as well, the page becomes an ordinary industrial site.",
+    "Build the tool-section diagram first. It is the section that earns the page its credibility, it is the hardest to do well, and everything else can be composed around it. If time is short, cut the material rail before cutting this.",
+    "Write for a reader holding a part. Every route, every CTA and the WhatsApp prefill should assume the visitor has a physical component on their desk and no data package. In this vertical that assumption is usually correct.",
+    "Include the IP note visibly rather than burying it. In the obsolete-part and second-source routes, a plain line about confirming ownership before reproduction reads as professional seriousness to exactly the buyer this page is trying to win, and it protects the company."
+  ]
+}

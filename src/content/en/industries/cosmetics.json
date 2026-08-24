@@ -1,0 +1,480 @@
+{
+  "meta": {
+    "title": "Cosmetics & Personal Care Tooling - Closures, Jars, Dispenser Components | Metal Form",
+    "description": "Mould design and manufacture for cosmetic closures, jars, pump and mechanism components. Multi-cavity tooling to 46 cavities, hot and cold runner, threaded cores, cosmetic surface finish. Engineering, DFM, reverse engineering and ongoing supply. Persian engineering since 2006."
+  },
+  "name": "Cosmetics & Personal Care",
+  "tile": "Closures, jars, pumps and dispensers where the show surface is the product. Polish grade, parting-line placement and gate location decided before the steel is cut.",
+  "tileParts": "Closures · Jars · Dispensers",
+  "hero": {
+    "kicker": "Cosmetics & Personal Care",
+    "headline": [
+      "The mould",
+      "is the finish."
+    ],
+    "lead": "Closures, jars, dispenser and mechanism components. Polish grade, parting line, gate position and draft are cut into steel once and copied onto every unit after that. Send the part or the model. We assess the geometry, the tooling route and the production economics.",
+    "markers": [
+      "Multi-cavity to 46 cavities",
+      "Unscrewing and collapsible cores",
+      "Hot and cold runner"
+    ]
+  },
+  "blocks": {
+    "surface": {
+      "index": "01",
+      "kicker": "The show surface",
+      "heading": "Moulding does not add a finish. It copies one.",
+      "body": "Polish grade, texture, parting line, gate position and draft are cut into steel once. Every unit after that carries them. This is why a cosmetic tool is bought differently from a functional one, and why the decisions that matter most are the cheapest ones on the programme.",
+      "heroLabels": {
+        "parting": "Parting line",
+        "gate": "Gate",
+        "land": "Sealing land",
+        "highlight": "Highlight"
+      },
+      "railAttribution": "Grades, roughness values, neck codes and cost ratios on this page are published industry practice. They are not Metal Form measurements.",
+      "railNda": "An NDA can be signed before detailed technical disclosure. Before a launch, the geometry is the commercial secret.",
+      "figureLabel": "Section through a continuous-thread closure",
+      "callouts": [
+        {
+          "mark": "01",
+          "term": "Parting line",
+          "note": "A witness line where the two halves of the mould meet, reproduced on every part. On a show face its position is a design decision, not a manufacturing detail."
+        },
+        {
+          "mark": "02",
+          "term": "Gate and vestige",
+          "note": "The mark where the part left the feed. It can be flattened, reduced and moved. It cannot be removed, so it is placed."
+        },
+        {
+          "mark": "03",
+          "term": "Polish grade",
+          "note": "Specified per face, not per part. A mirror where the consumer looks, matte or textured where nobody does."
+        },
+        {
+          "mark": "04",
+          "term": "Sealing land",
+          "note": "The flat annular face that actually seals. Hidden, unforgiving, and unrelated to how the pack looks."
+        },
+        {
+          "mark": "05",
+          "term": "Draft",
+          "note": "Set by the texture depth that was specified, not by convention. Too little draft and the part drags and scuffs on ejection."
+        }
+      ],
+      "close": "None of these five are adjustable once the steel is cut."
+    },
+    "gloss": {
+      "index": "02",
+      "kicker": "Surface specification",
+      "heading": "Gloss is hand labour. You buy it one face at a time.",
+      "body": "SPI grades are a polish scale reached with diamond compound and a polisher's hands. VDI 3400 is a separate roughness scale burned in by EDM. They are not interchangeable and they correlate only approximately. The difference between them is where most cosmetic tooling money is either spent well or wasted.",
+      "note": "On the VDI scale every six units roughly doubles roughness. Texture depth then sets the minimum draft, and the part that was drawn without enough of it comes off the core scuffed.",
+      "tabsLabel": "Surface grade",
+      "ladderLabel": "The same wall, eight grades",
+      "specLabels": {
+        "ra": "Roughness",
+        "method": "How it is reached",
+        "cost": "What it costs the tool",
+        "steel": "What it asks of the steel",
+        "draft": "What it does to draft"
+      },
+      "rungs": [
+        {
+          "id": "a1",
+          "name": "SPI A-1",
+          "scale": "SPI",
+          "ra": "Ra 0.012 – 0.025 µm",
+          "method": "6000-grit diamond buff, worked by hand",
+          "cost": "The most bench time on this ladder, and bench time is a person rather than a machine. It buys lead time as well as cost.",
+          "steel": "A clean, inclusion-free block, through-hardened. A mirror shows every defect in the steel and every fingerprint of the polishing.",
+          "draft": "Governed by geometry and ejection, not by the finish."
+        },
+        {
+          "id": "a2",
+          "name": "SPI A-2",
+          "scale": "SPI",
+          "ra": "Ra 0.025 – 0.05 µm",
+          "method": "3000-grit diamond",
+          "cost": "Materially less bench time than A-1 for a difference most packs do not carry. The common premium cosmetic show surface.",
+          "steel": "Still wants a fine-grained hardened steel. Weld repairs on a polished face are visible.",
+          "draft": "Governed by geometry and ejection, not by the finish."
+        },
+        {
+          "id": "a3",
+          "name": "SPI A-3",
+          "scale": "SPI",
+          "ra": "Ra 0.05 – 0.10 µm",
+          "method": "1200-grit diamond",
+          "cost": "Gloss without the mirror. The sensible grade for a face the consumer sees at arm's length rather than in a hand.",
+          "steel": "Standard hardened tool steel is adequate.",
+          "draft": "Governed by geometry and ejection, not by the finish."
+        },
+        {
+          "id": "b1",
+          "name": "SPI B-1",
+          "scale": "SPI",
+          "ra": "Ra 0.05 – 0.10 µm",
+          "method": "600-grit paper",
+          "cost": "Paper rather than diamond. A semi-gloss that reads as finished but does not hold a reflection.",
+          "steel": "No special demand.",
+          "draft": "Governed by geometry and ejection, not by the finish."
+        },
+        {
+          "id": "c1",
+          "name": "SPI C-1",
+          "scale": "SPI",
+          "ra": "Ra 0.35 – 0.40 µm",
+          "method": "600 stone",
+          "cost": "A satin working surface. Correct for the inside of a closure, a liner or a face that will be over-decorated.",
+          "steel": "No special demand.",
+          "draft": "Governed by geometry and ejection, not by the finish."
+        },
+        {
+          "id": "v24",
+          "name": "VDI 24",
+          "scale": "VDI 3400",
+          "ra": "Ra ≈ 1.60 µm",
+          "method": "EDM texture",
+          "cost": "Cut electrically rather than polished by hand, so cost tracks the texturing operation rather than the polisher.",
+          "steel": "Texture depth is burned into the surface, so a repair to a textured face means re-texturing it.",
+          "draft": "About 1.5 – 2.0 degrees minimum."
+        },
+        {
+          "id": "v36",
+          "name": "VDI 36",
+          "scale": "VDI 3400",
+          "ra": "Ra ≈ 6.30 µm",
+          "method": "EDM texture",
+          "cost": "A deep, obviously tactile grain. Hides sink and flow marks that a gloss face would publish.",
+          "steel": "Deep texture removes material. It has to be allowed for in the cavity dimension, not discovered afterwards.",
+          "draft": "At least 4.0 degrees."
+        },
+        {
+          "id": "v42",
+          "name": "VDI 42",
+          "scale": "VDI 3400",
+          "ra": "Ra ≈ 12.5 µm",
+          "method": "EDM texture",
+          "cost": "Coarse. Almost never a cosmetic show surface, frequently the right answer on a grip or a base.",
+          "steel": "Same constraint as VDI 36, further along.",
+          "draft": "More again than VDI 36 asks for, or the part scuffs on the way out."
+        }
+      ],
+      "close": "Specify the grade per face rather than per part. A mirror on the one face the consumer studies and a texture everywhere else means the tool costs what the pack actually needs, not what the drawing note happened to say.",
+      "downstream": "A polished or textured moulded face is also the substrate a decorator has to work on. Hot stamping wants clean bold geometry, metallisation wants a defect-free surface, screen printing wants a stable datum. Those processes are run downstream by specialist decorators. We design the part to suit the one you choose."
+    },
+    "gate": {
+      "index": "03",
+      "kicker": "Placement",
+      "heading": "The gate is placed. It is never removed.",
+      "body": "Every moulded part carries a mark where it left the feed and a witness line where the mould halves met. Both are permanent. The only decision available is where they sit, and that decision belongs with whoever owns the artwork, taken before steel rather than at sampling.",
+      "gateLabel": "Gate",
+      "flowLabel": "Fill",
+      "cases": [
+        {
+          "mark": "A",
+          "name": "Direct gate, on the crown",
+          "short": "On the show face",
+          "consequence": "The shortest flow path and the simplest tool. It also puts a vestige standing proud exactly where the eye lands and where the decorator has to print. Correct only when the crown is hidden under an overcap."
+        },
+        {
+          "mark": "B",
+          "name": "Sub-gate, inside the skirt",
+          "short": "Off the show face",
+          "consequence": "The part degates itself on ejection and the vestige sits inside the skirt where nothing sees it. It costs a short cold runner and a little cycle time, and it is the default answer on most cosmetic closures."
+        },
+        {
+          "mark": "C",
+          "name": "Valve gate, top face",
+          "short": "Flat and controlled",
+          "consequence": "A pin closes the gate mechanically, giving a flat repeatable vestige and independent control of every drop in the layout. It buys a hot half, a controller and a maintenance package with it."
+        }
+      ],
+      "partingHeading": "The same closure, three parting lines",
+      "partingBody": "Where the mould splits is a second permanent mark, and it is the one the travelling highlight finds first. A parting line placed on an edge the geometry already has costs nothing to hide.",
+      "partingCases": [
+        {
+          "mark": "A",
+          "name": "On the crown radius",
+          "note": "The shortest tooling route. It also drops the split precisely where the specular band breaks, so the eye is led straight to it."
+        },
+        {
+          "mark": "B",
+          "name": "At the shoulder step",
+          "note": "The line disappears into an edge the design already carries. On most closures and overcaps this is the right answer."
+        },
+        {
+          "mark": "C",
+          "name": "Below the knurl",
+          "note": "Invisible on the pack, but it drives the split deep into the skirt and asks more of the steel fit and the clamp than the other two."
+        }
+      ],
+      "close": "Agreed before steel, this is a conversation. Discovered at sampling, it is a new cavity insert and a launch date that has already been announced."
+    },
+    "atlas": {
+      "index": "04",
+      "kicker": "What this sector orders",
+      "heading": "Not one part family. Eight separate tooling briefs.",
+      "body": "A screw cap, a double-wall jar and a mascara wiper have almost nothing in common except the person buying them. The show surface decides everything on three of these and is irrelevant on the rest.",
+      "rowLabel": "Profile",
+      "rows": [
+        {
+          "name": "Continuous-thread screw cap",
+          "spec": "18-410 · 20-410 · 24-410 · 28-410",
+          "note": "The workhorse. The thread retains the closure and the land does the sealing. How the internal thread leaves the steel — unscrewing gear train, stripping ring or collapsible core — sets cycle time, build cost and the spares list in one decision."
+        },
+        {
+          "name": "Flip-top and hinged closure",
+          "spec": "PP living hinge",
+          "note": "Flow has to cross the hinge correctly and the hinge is flexed while still warm to orient the polymer. Gate position decides whether it survives years of use or whitens and cracks in month four."
+        },
+        {
+          "name": "Disc-top and press-top cap",
+          "spec": "Two or three mouldings",
+          "note": "A sprung disc pivoting inside a dome, held in a narrow tolerance band across an assembly. Stress whitening at the undercut is the failure that shows up long after approval."
+        },
+        {
+          "name": "Thick-wall and double-wall jar",
+          "spec": "One heavy moulding, or two assembled",
+          "note": "Thick wall chases a glass-like flush surface and pays for it in resin and cooling time. Double wall buys the same look with less material and lets a small fill occupy a larger pack. On both, sink control is the entire job."
+        },
+        {
+          "name": "Pump and dispenser components",
+          "spec": "Actuator · stem · housing · spring seat",
+          "note": "Function is dimensional, not visual. Cavity-to-cavity variation does not appear as a cosmetic defect here — it appears as dose variation, which is worse, because nobody sees it at inspection."
+        },
+        {
+          "name": "Airless chassis and piston follower",
+          "spec": "Interference fit against the bore",
+          "note": "The follower rides up the inside wall as the pack empties. Bore ovality and follower diameter have to be controlled as one dimension rather than two, or the pack stops dosing before it is empty."
+        },
+        {
+          "name": "Mascara wiper and moulded applicator",
+          "spec": "Micro-injection",
+          "note": "The wiper meters product on withdrawal; the moulded applicator carries arches, hooks and petal forms a fraction of a millimetre across. Nothing in this format is about gloss. It is about small features holding their shape."
+        },
+        {
+          "name": "Compact and palette body",
+          "spec": "Large flat show surface",
+          "note": "The hardest cosmetic surface in the sector. Sink over a boss, a flow line off the gate and any variation in gloss all read across a flat lid, and none of them can be corrected after moulding."
+        }
+      ],
+      "close": "Send the part. The tooling route is decided by the geometry in front of us, not by the category it is sold in."
+    },
+    "seal": {
+      "index": "05",
+      "kicker": "The interface",
+      "heading": "The thread retains the closure. The land does the sealing.",
+      "body": "A cosmetic component almost never ships alone. It meets a neck somebody else moulded, a pump somebody else assembled and a filling line somebody else set up. That interface is a published code, and the code is where packs fail.",
+      "figLabels": {
+        "cap": "Cap",
+        "neck": "Neck",
+        "land": "Land",
+        "thread": "Thread",
+        "detail": "Detail A"
+      },
+      "codeHeading": "Reading a neck finish",
+      "codeBody": "GPI and GCMI coding reads as NN-TTT. The first number is the outside diameter of the neck in millimetres. The three digits after it define the thread style: pitch, thread depth, number of turns and where the thread starts.",
+      "codes": [
+        "18-400",
+        "18-410",
+        "20-410",
+        "24-410",
+        "28-410"
+      ],
+      "codesNote": "These cover most personal-care formats. 24-410 is the most common plastic cosmetic finish.",
+      "trapHeading": "24-400 will thread onto 24-410. It will not seal.",
+      "trapBody": "Same diameter, different thread style. The cap stops short, cross-threads or spins free, and every dimension on both parts is correct. It happens whenever cap and bottle come from two suppliers and nobody read the second three digits.",
+      "torqueHeading": "Torque is a window, not an opinion",
+      "torqueBody": "Application and removal torque are specified as a range and verified through a production run under ASTM D2063. Under-torque leaks in transit. Over-torque damages the pack and generates complaints. Whether a liner, a wad or a moulded sealing bead does the work is a design decision taken before the tool exists, not a correction applied to it afterwards.",
+      "failuresHeading": "Five ways a correct-looking part fails",
+      "failures": [
+        {
+          "term": "A short sealing land",
+          "note": "Passes visual inspection. Leaks on a pallet, in a truck, in an aircraft hold."
+        },
+        {
+          "term": "A weld line behind a core",
+          "note": "Two flow fronts rejoined and the seam is weaker than the wall around it. That is where a cap splits under application torque."
+        },
+        {
+          "term": "An oval cap",
+          "note": "The core cooled unevenly, or the parts were stacked warm. It gauges round at the press and not the next morning."
+        },
+        {
+          "term": "A follower that will not track",
+          "note": "Bore ovality and follower diameter drifted apart across the cavities. The airless pack stops dosing before it is empty."
+        },
+        {
+          "term": "Crazing at four weeks",
+          "note": "Clear SAN or acrylic against fragrance oil, alcohol or an aggressive active. Every dimension was in tolerance."
+        }
+      ],
+      "close": "Torque measurement, leak testing and transit qualification belong to the filler and the test house. We design the geometry that has to pass them, and we will say plainly which of these a tooling change can fix and which it cannot."
+    },
+    "cavities": {
+      "index": "06",
+      "kicker": "Economics",
+      "heading": "A sixteen-cavity tool costs about five times a single. It does not run sixteen times faster.",
+      "body": "Cosmetic components are priced in fractions of a cent and sold in millions, so the mould is a capital decision taken against a volume forecast rather than a project expense. Two published facts govern that decision, and they pull against each other.",
+      "facts": [
+        {
+          "mark": "01",
+          "term": "Tooling cost scales sub-linearly",
+          "note": "Published industry practice puts a 16-cavity tool at roughly five times the cost of a single-cavity tool, not sixteen times. That is the argument for going wide."
+        },
+        {
+          "mark": "02",
+          "term": "Output does not scale linearly either",
+          "note": "Cooling is roughly 80 per cent of the cycle, and a larger tool cycles slower per shot. Sixteen cavities buy something closer to three to three and a half times the output of four, not four times."
+        },
+        {
+          "mark": "03",
+          "term": "Break-even is arithmetic, not opinion",
+          "note": "Incremental tooling cost divided by the saving per part gives the volume at which the larger tool pays for itself. Below that volume it does not, however good the forecast looked."
+        }
+      ],
+      "chart": {
+        "xLabel": "Cavities",
+        "yA": "Tooling investment",
+        "yB": "Cost per part",
+        "cross": "Break-even",
+        "mark": "46",
+        "note": "Curve shapes drawn from published industry practice. Nothing on this plot is a Metal Form quotation, and the break-even on your programme is a function of your volume, your resin and your part."
+      },
+      "riskHeading": "And the counterweight",
+      "riskBody": "High cavitation concentrates risk. One frozen hot tip or one damaged cavity insert takes the whole tool off the press, and published industry practice reports that roughly four in five high-cavitation moulds never run at their rated capacity because fill balance was never achieved. Two medium tools sometimes beat one large one: a failure then costs capacity rather than production.",
+      "oursHeading": "Where our cavity count sits",
+      "oursBody": "Metal Form has built tooling up to 46 cavities. That is the band a cosmetic closure programme actually occupies — high enough to move part cost, small enough that a tool can still be balanced, maintained and reasoned about rather than merely operated.",
+      "bridgeBody": "For a format that has not proved itself yet, the honest route is a low-cavitation bridge tool sized for a market test, and a production tool sized afterwards against the volume that actually arrived. Cavitation bought against a forecast that did not turn up is the most expensive mistake in this sector."
+    },
+    "boundary": {
+      "index": "07",
+      "kicker": "Scope",
+      "heading": "We cut the steel. The pack is finished by other people.",
+      "body": "This sector runs on a chain of specialists, and a supplier who blurs the handovers costs you the schedule rather than saving it. Here is the line, stated before a quotation rather than after one.",
+      "supplyHeading": "What Metal Form supplies",
+      "supply": [
+        "Mould design and manufacture for closures, jars, dispenser components and mechanism parts",
+        "Multi-cavity tooling, hot and cold runner, valve-gated and sub-gated layouts",
+        "Unscrewing cores, collapsible cores, slides and lifters for internal threads and undercuts",
+        "Insert tooling where a component carries a metal or pre-moulded insert",
+        "PET, blow and die-cast tooling where the pack format calls for it",
+        "Reverse engineering from a physical sample or a photograph, where drawings were never handed over",
+        "Product engineering in CATIA and SolidWorks: redesign, part-count reduction, DFM review before steel is cut",
+        "CNC milling, turning and manual machining",
+        "Component production and rolling supply against a forecast",
+        "Second-source and duplicate tooling, spares and change parts specified with the tool",
+        "International delivery, NDA, and tooling warranty on terms agreed per project"
+      ],
+      "customerHeading": "What stays with you and your specialists",
+      "customer": [
+        {
+          "term": "Decoration",
+          "note": "Hot stamping, vacuum metallisation, electroplating, spray and soft-touch coating, in-mould labelling and screen printing are downstream processes run by specialist decorators. We design a moulded part that is compatible with the one you choose. We perform none of them."
+        },
+        {
+          "term": "Colour",
+          "note": "Masterbatch matching, let-down ratio, spectrophotometry and delta E measurement sit with your compounder and your moulder. We hold no colour laboratory."
+        },
+        {
+          "term": "Testing",
+          "note": "Torque and removal-force measurement to ASTM D2063, leak and vacuum testing, drop and transit qualification and AQL lot inspection are yours or your test house's."
+        },
+        {
+          "term": "Formulation compatibility",
+          "note": "Whether your active crazes a clear SAN or acrylic shell is answered by your chemist. We will tell you which material families the industry treats as at risk, and design around the answer you give us."
+        },
+        {
+          "term": "Regulatory",
+          "note": "Cosmetic product compliance, recycled-content declarations and recyclability claims belong to the brand, not to the toolmaker."
+        },
+        {
+          "term": "Filling and assembly",
+          "note": "Filling, capping, secondary packaging and the line equipment that does them."
+        }
+      ],
+      "close": "Naming this at the start is not a disclaimer. It is how the handovers get scheduled, and it is most of the difference between a launch date that holds and one that quietly moves."
+    },
+    "continuity": {
+      "index": "08",
+      "kicker": "Continuity",
+      "heading": "One tool. One site. One country.",
+      "body": [
+        "Most cosmetic components run on a single tool, in a single plant, in a single country. That is efficient, and it works right up until a hot tip blocks, a cavity is damaged, a supplier relationship ends or a border closes.",
+        "Then a range stops selling.",
+        "A duplicate tool, built to the same geometry and held somewhere else, converts a production stoppage into a schedule change. Where drawings were never handed over, the part itself is enough to work from.",
+        "The geometry stays under NDA. Build the backup first and decide later — it does not require ending anything, and it does not require telling anybody."
+      ],
+      "figLabels": {
+        "toolA": "Tool 1",
+        "toolB": "Tool 2",
+        "path": "Same geometry"
+      },
+      "facts": [
+        "Manufacturing since 2006",
+        "1,000+ completed projects"
+      ],
+      "readiness": "This is readiness, not reserved capacity. Capacity is reserved by contract or it is not reserved at all, and we will say which applies to your programme.",
+      "sendHeading": "What is enough to start",
+      "send": [
+        "A physical sample of the part",
+        "A CAD model, a drawing, or a photograph with one dimension we can scale from",
+        "The neck finish code, or the component the part has to mate with",
+        "Annual volume per SKU, and how many colour variants the tool has to serve",
+        "Whether this is a new tool, a second source, or a redesign of something already running"
+      ],
+      "note": "Initial technical response within 48 business hours. An NDA can be signed before detailed technical disclosure."
+    },
+    "panels": {
+      "heading": "Deeper detail",
+      "items": [
+        {
+          "title": "Surface specification, face by face",
+          "bullets": [
+            "SPI A-1: 6000-grit diamond polish, roughly Ra 0.012 – 0.025 µm. The mirror grade, and the most expensive because it is hand labour.",
+            "SPI A-2: 3000-grit diamond, roughly Ra 0.025 – 0.05 µm. The common premium cosmetic show surface.",
+            "SPI A-3: 1200-grit diamond, roughly Ra 0.05 – 0.10 µm. Gloss without the mirror.",
+            "B grades are reached with paper, C grades with stone, D grades by dry blast. Acrylic takes an A-grade polish best of the common cosmetic materials.",
+            "VDI 3400 is a separate EDM roughness scale, twelve reference grades from VDI 12 (Ra 0.40 µm) to VDI 45 (Ra 18.00 µm), where every six units roughly doubles roughness.",
+            "Texture sets the minimum draft: about 1.5 – 2.0 degrees at VDI 24, 4.0 degrees or more at VDI 36. Below that the part drags and scuffs on ejection.",
+            "Specify the grade per face rather than per part, and the tool costs what the pack needs rather than what a blanket drawing note asked for."
+          ],
+          "source": "Figures in this panel are published industry practice, not Metal Form measurements."
+        },
+        {
+          "title": "Threaded and undercut cores",
+          "bullets": [
+            "Unscrewing: a gear train or rack rotates the core out of the thread. Well proven, and it adds cycle time and a wear package.",
+            "Stripping ring: forces a shallow, rounded thread over the core. The fastest route, and only available to thread forms designed to strip.",
+            "Collapsible core: contracts inward for rapid release, at higher build cost and higher wear.",
+            "Slides, lifters and cams handle side undercuts, snap features and external detail.",
+            "Every mechanism is also a spares list. Cores, cavities, rings and gears should be specified and supplied with the tool rather than ordered after the first failure.",
+            "Cooling has to be routed through the mechanism rather than around it, or the cycle gained by faster demoulding is given back to a hot core."
+          ]
+        },
+        {
+          "title": "Materials that behave differently",
+          "bullets": [
+            "PP: closures, living hinges and jar liners. The hinge has to be flowed across correctly and flexed while still warm to orient the polymer.",
+            "PET: clear jars and bottles, including preform-based routes. Hygroscopic, so it must be dried or it splays.",
+            "SAN and PMMA: clear thick-wall shells and overcaps. Both need drying, and both can craze or stress-crack in contact with fragrance oils, alcohol and some actives.",
+            "ABS: the usual substrate where a part will be metallised or plated downstream by a decorator.",
+            "Acetal: stick and pump mechanisms, for low friction and dimensional stability — and a material that keeps shrinking for days after ejection.",
+            "TPE: gaskets and wipers, supplied as separate mouldings for assembly.",
+            "PCR grades: now a regulatory requirement in several markets, and less stable lot to lot in both colour and flow. The process window has to be rebuilt for them, not inherited."
+          ],
+          "source": "Material behaviour described here is published industry practice. Compatibility with your formulation is answered by your chemist, not by us."
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Send the part.",
+    "body": "A physical sample, a CAD model or a drawing is enough to start. We come back on geometry, tooling route, cavitation and production economics.",
+    "action": "Send your part",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form — cosmetics and personal care enquiry.\n\nComponent: cap / jar / pump or airless part / mechanism part / other\nNeck finish or key dimensions: \nMaterial: \nSurface: gloss show face / textured / both\nAnnual volume per SKU: \nNew tool / second source / redesign: \n\nI can send a sample or a CAD model.",
+    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+  }
+}

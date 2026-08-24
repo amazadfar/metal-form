@@ -1,0 +1,37 @@
+# Build output
+dist/
+.astro/
+*.tsbuildinfo
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+*.log
+npm-debug.log*
+
+# Notes
+#
+# public/fonts/ IS committed on purpose. fonts.googleapis.com is unreachable
+# from Iran and mainland China, so a developer in either place could not run
+# `npm run fonts` to regenerate them — and those are two of this project's
+# actual audiences. Roughly 13 MB, most of it Noto Sans SC.
+#
+# research/ IS committed on purpose. It is the provenance for every factual
+# claim on the site: which source established which figure, and what each
+# chapter was deliberately not allowed to say.
+dist/
+.vercel/

@@ -1,0 +1,100 @@
+---
+/**
+ * Industry index.
+ *
+ * The bento again, at full page scale, with room to breathe. Exists mostly for
+ * the sales case: a shareable URL that is "all thirteen" rather than a homepage
+ * a buyer has to scroll through.
+ */
+import Base from '../../../layouts/Base.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import IndustryBento from '../../../components/IndustryBento.astro';
+import CtaBlock from '../../../components/CtaBlock.astro';
+import { LOCALE_ORDER, localePath, type Locale } from '../../../i18n/locales.ts';
+import { getIndustriesIndex, getCommon } from '../../../content/index.ts';
+import { absoluteUrl, breadcrumbSchema } from '../../../lib/seo.ts';
+import { BRAND } from '../../../config/site.ts';
+
+export function getStaticPaths() {
+  return LOCALE_ORDER.map((lang) => ({ params: { lang } }));
+}
+
+const locale = Astro.params.lang as Locale;
+const p = getIndustriesIndex(locale);
+const c = getCommon(locale);
+
+const schemas = [
+  breadcrumbSchema([
+    { name: BRAND.name, url: absoluteUrl(locale) },
+    { name: c.nav.industries, url: absoluteUrl(locale, 'industries') },
+  ]),
+];
+---
+
+<Base locale={locale} meta={p.meta} route="industries" schemas={schemas}>
+  <a class="skip-link" href="#main">{c.a11y.skipToContent}</a>
+  <SiteHeader locale={locale} current="industries" />
+
+  <main id="main">
+    <header class="ix-hero">
+      <div class="shell--wide">
+        <p class="eyebrow">{p.hero.kicker}</p>
+        <h1 class="ix-hero__head">
+          {p.hero.headline.map((line) => <span>{line}</span>)}
+        </h1>
+        <p class="t-lead ix-hero__lead">{p.hero.lead}</p>
+      </div>
+    </header>
+
+    <section class="ix-grid">
+      <div class="shell--wide">
+        <IndustryBento locale={locale} />
+        <p class="ix-note t-small">{p.note}</p>
+      </div>
+    </section>
+
+    <CtaBlock locale={locale} cta={p.cta} source="capabilities" index="—" />
+  </main>
+
+  <SiteFooter locale={locale} />
+</Base>
+
+<style>
+  .ix-hero {
+    padding-block: clamp(3rem, 7vw, 6rem) clamp(2.5rem, 5vw, 4rem);
+    position: relative;
+  }
+  .ix-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: var(--grid-unit) var(--grid-unit);
+    -webkit-mask-image: linear-gradient(to bottom, #000, transparent 80%);
+    mask-image: linear-gradient(to bottom, #000, transparent 80%);
+    pointer-events: none;
+  }
+  .ix-hero > * { position: relative; }
+
+  .ix-hero__head {
+    margin-block-start: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(2.1rem, 5vw, 4rem);
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+    max-inline-size: 22ch;
+  }
+  .ix-hero__head span { display: block; }
+  .ix-hero__head span:last-child { color: var(--accent-deep); }
+  .ix-hero__lead { margin-block-start: clamp(1.25rem, 2.5vw, 1.75rem); max-inline-size: 58ch; }
+
+  .ix-grid { padding-block-end: var(--section-y); }
+  .ix-note {
+    margin-block-start: var(--sp-6);
+    color: var(--ink-muted);
+    max-inline-size: 66ch;
+  }
+</style>

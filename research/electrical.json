@@ -1,0 +1,582 @@
+{
+  "key": "electrical",
+  "displayName": "Electrical & Electronics",
+  "researchedAt": "2026-08",
+  "sources": [
+    {
+      "title": "Tooling: How to Select the Right Tool Steel for Mold Cavities — Plastics Technology",
+      "url": "https://www.ptonline.com/articles/tooling-how-to-select-the-right-tool-steel-for-mold-cavities",
+      "whatItEstablished": "Named grades and working hardness: P-20 typically 28-30 HRC (high-hard variant 38-40 HRC) for non-abrasive resins; H-13 cavities 44-48 HRC and deliberately not above ~50 HRC to limit stress-crack risk, and it is the default for abrasive glass-filled work; S-7 hardenable to ~56 HRC for tight-tolerance high-volume parts with lifters/slides 54-56 HRC against cavities at 50-52 HRC; stainless around 50-52 HRC max for corrosive resins. Also established the galling risk of running a 10-point hardness spread at low hardness, and that surface coatings carry repair risk on visible faces."
+    },
+    {
+      "title": "Thin-Wall Injection Molding — Xometry Resources",
+      "url": "https://www.xometry.com/resources/injection-molding/thin-wall-injection-molding/",
+      "whatItEstablished": "Working definition of thin wall as below roughly 1 mm and/or a flow-length-to-thickness ratio above about 150:1; the requirement for very fast fill and very high injection pressure (figures up to ~35,000 psi quoted); mould consequences — pressure-capable steel, fine venting, cooling layout that prevents warp; the characteristic defect set (short shot, flow marks, burn, warp, dimensional variation); electronics housings and electrical enclosures as the archetypal application."
+    },
+    {
+      "title": "Thermoplastic Materials for the Electrical & Electronic Sector — LATI",
+      "url": "https://lati.com/en/services/electrical-electronic/",
+      "whatItEstablished": "The compounder's-eye view of the vertical: PA6/PA66, PBT, PPS and PPA families mapped to connectors, electrical panels, fuse holders, switches, inverters and meters. Confirmed the property vocabulary buyers use — CTI (tracking resistance), GWIT/GWFI/GWEPT glow-wire ratings, UL94 self-extinguishing behaviour certified down to 0.4 mm wall, dielectric performance on thin sections, halogen-free versus halogenated FR systems, UL746C F1/F2 outdoor ratings. Also confirmed 'extreme dimensional stability on complex miniaturised geometry' as the stated connector requirement."
+    },
+    {
+      "title": "Glow Wire Ignition Temperature (GWIT) and Comparative Tracking Index (CTI) of glass-fibre filled engineering polymers — ScienceDirect / Polymer Degradation and Stability",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0141391011003259",
+      "whatItEstablished": "That GWIT and CTI are measured, formulation-dependent properties of the compound — they vary with polymer family, glass loading and flame-retardant system — and are therefore a resin-selection subject, not a moulder attribute. Anchors the position that ratings travel with the grade and the finished-product approval, not with the tool shop."
+    },
+    {
+      "title": "Exolit flame retardants for thermoplastics — Clariant technical brochure (UL Prospector)",
+      "url": "https://www.ulprospector.com/knowledge/media/2021/08/Clariant-Brochure-Exolit-Thermoplastics-201909-EN.pdf",
+      "whatItEstablished": "Halogen-free phosphinate FR systems in PA and PBT reaching CTI values up to 600 V while holding UL94 performance and mechanical properties; confirms that the high-CTI / high-glow-wire grades an electrical OEM specifies are distinct compounds with their own flow, shrink and abrasion behaviour — i.e. the FR grade choice changes the tool, not just the datasheet."
+    },
+    {
+      "title": "Weld Line Defect Analysis and Troubleshooting — Fluent Co., Ltd.",
+      "url": "https://fluent.co.th/weld-line-defect-analysis/",
+      "whatItEstablished": "Mechanism and levers: weld lines form wherever flow splits and rejoins — around every core pin, hole and insert — and reduce impact strength, tensile strength and elongation at break. Levers are melt temperature, mould temperature, injection profile, gate count and position, runner sizing and, critically, venting at the meeting point, because trapped air compresses and burns exactly where the flows converge. Confirms weld lines around cores cannot be eliminated, only relocated and strengthened."
+    },
+    {
+      "title": "Optimizing the Tensile Strength of Weld Lines in Glass Fiber Composite Injection Molding — PMC / Polymers",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11277594/",
+      "whatItEstablished": "That short-glass reinforcement makes the weld line disproportionately weak, because fibres align parallel to the meeting front and do not bridge it — so the weld region approaches unfilled-matrix strength. Packing pressure and mould temperature are the dominant process levers on weld-line tensile strength. This is the technical basis for treating weld-line placement in glass-filled connector bodies as a structural decision."
+    },
+    {
+      "title": "Minimizing Wear in Processing Equipment — RTP Company molding guidelines",
+      "url": "https://www.rtpcompany.com/technical-info/molding-guidelines/long-fiber-compounds/minimizing-wear-in-processing-equipment/",
+      "whatItEstablished": "Glass content is the dominant wear variable; glass fibre sits at Mohs 5-7 and abrades steel as fibres orient parallel to the cavity wall during fill. Gives the physical reason gates, sub-gates and high-shear zones erode first and why gate inserts should be hardened and replaceable rather than machined into the cavity block."
+    },
+    {
+      "title": "Leadframe overmoulding and insert moulding — Stroud Plastics technical pages",
+      "url": "https://stroudplastics.co.uk/lead-frame-overmoulding/",
+      "whatItEstablished": "Reel-to-reel / bandolier handling of continuous stamped strip through the mould as the real production form of terminal overmoulding; dam-bars in the leadframe as the standard anti-flash device between leads, punched out after moulding; the failure set specific to insert work — loose inserts, flash on contact faces, sink over the insert, scrap from mis-loaded parts, and dimensional variation on incoming stampings disrupting automated loading."
+    },
+    {
+      "title": "The OEM's Playbook for Successful Tooling Transfers — Pioneer Plastics",
+      "url": "https://www.pioneerplastics.com/blog/the-oems-playbook-for-successful-tooling-transfers/",
+      "whatItEstablished": "The anatomy of a tool transfer or second-source qualification: triggers (supply-chain risk, quality drift, reshoring), the data pack that must move (current CAD, 2D prints with tolerances, material spec, maintenance log, established process parameters, acceptance criteria), pre- and post-transit condition inspection with photographic baseline, initial validation runs at the receiving press, buffer stock built before the tool moves, and NDA/IP terms written into the RFQ. Confirms the second-source conversation is a documentation conversation before it is a machining one."
+    },
+    {
+      "title": "Clearance and creepage distances — Weidmüller / IEC 60664-1 reference material",
+      "url": "https://www.weidmueller.com/int/products/connectivity/pcb_terminals_and_connectors/creepage_and_clearance_distances.jsp",
+      "whatItEstablished": "Clearance is the shortest air path, creepage the shortest path across the insulating surface; required creepage scales sharply with pollution degree (an order of magnitude between clean and industrial environments at the same working voltage), and moulded ribs, grooves and barriers lengthen the surface path without changing clearance. This is why an electrical part's ribs and slots are often functional insulation geometry, not stiffening — and must not be 'simplified' during DFM without asking."
+    },
+    {
+      "title": "Injection Moulding Electronics — ENGEL (positioning intelligence only)",
+      "url": "https://www.engelglobal.com/en/industries/injection-moulding-electronics",
+      "whatItEstablished": "How the strongest European players frame this vertical: connectors and consumer electronics as the two named segments; vertical insert moulding, multi-cavity thin-wall tooling and tight-tolerance reproducibility as the highlighted competences; language centred on 'reproducibility', 'process know-how' and 'complete solution from one source' rather than on machinery specs. Useful contrast — their credibility rests on machine and automation ownership, which is not the axis Metal Form should compete on."
+    },
+    {
+      "title": "Learn by Example: How to Design Light Pipes — Fictiv",
+      "url": "https://www.fictiv.com/articles/learn-by-example-how-to-design-light-pipes",
+      "whatItEstablished": "Light-guide design rules that a moulder must honour: entry geometry as close to the LED as possible, light does not survive a hard bend so long arcs need multiple entries, glossy surfaces to hold total internal reflection versus deliberately textured surfaces where light must exit, and physical shrouds to stop crosstalk between adjacent indicators. Establishes that on a light pipe the mould finish is the optical spec — polish and texture zones are functional, not cosmetic."
+    }
+  ],
+  "buyer": {
+    "whoBuys": "Manufacturers of electrical accessories, wiring devices, switchgear, industrial controls and connectors; appliance and lighting OEMs; panel and enclosure builders; and the contract manufacturers who buy the plastics separately from the electronics. The part is almost never the product — it is the insulating, locating and retaining half of an assembly whose value sits in the metal and the circuit. That shapes everything: the buyer cares less about what the part looks like than about whether it will still fit, still hold the contact, and still be available in year seven.",
+    "jobTitles": [
+      "Purchasing / Sourcing Manager (indirect and BOM plastics)",
+      "Tooling Buyer / Capital Equipment Buyer",
+      "Mechanical Design Engineer / Product Engineer",
+      "Manufacturing or Process Engineer (assembly line owner)",
+      "NPI / New Product Introduction Project Manager",
+      "Quality Manager / Supplier Quality Engineer",
+      "Supply Chain or Category Manager (dual-sourcing mandate)",
+      "Technical Director or owner-engineer in a mid-size electrical OEM"
+    ],
+    "whatTheyActuallyBuy": [
+      "A tool that holds mating geometry — pitch, latch, terminal pocket — for the life of the product, not just at T1",
+      "A piece price that does not move, backed by a cavitation decision that matches real annual demand",
+      "An engineer who reads the drawing and asks about the functional zones before cutting steel",
+      "A second source: a duplicate or replacement tool that removes a single point of failure from the BOM",
+      "Reverse engineering when the original toolmaker is gone and only a sample and a legacy part number survive",
+      "Insert-mould capability for stamped metal terminals, contacts and threaded bushes",
+      "Redesign work: consolidating two moulded parts into one, or taking cost out of an old part whose tool is finished",
+      "Ongoing component supply — the boring, reliable monthly quantity, in the same box, to the same spec",
+      "Confidentiality that is real, because the part often exposes the customer's product architecture"
+    ],
+    "decisionDrivers": [
+      "Dimensional repeatability on mating features, and evidence the supplier understands which features are the mating features",
+      "Tool life under glass-filled and flame-retardant grades — gate strategy, steel hardness, replaceable wear items",
+      "Speed and specificity of the first technical response; vague quotes lose here",
+      "Clear ownership of the tool, the CAD and the process data, in writing",
+      "Willingness to challenge the design where it will not mould, and to say so before quoting",
+      "Warranty terms on the tool and a stated route for maintenance and spare inserts",
+      "Delivery, customs and documentation competence for international shipment",
+      "NDA and demonstrated discretion — the part often reveals the customer's next product"
+    ],
+    "whatKeepsThemAwake": [
+      "A field failure at a connection point, where the plastic is blamed and the recall is electrical",
+      "Pitch drifting as a gate erodes, so parts that passed in month one start failing assembly in month fourteen",
+      "One moulder holding the only tool for a part that stops the whole line",
+      "A resin grade being discontinued and forcing re-qualification of a part that had worked for a decade",
+      "A tool arriving that samples beautifully and then will not run unattended at rate",
+      "Assembly-line stoppage over a component worth a few cents, with a finished-goods value a thousand times higher",
+      "Discovering after steel is cut that the ribs they were asked to delete were creepage barriers"
+    ]
+  },
+  "economics": {
+    "unitEconomics": "Piece cost on electrical mouldings is dominated by cycle time divided by cavity count, plus shot weight. Individual parts are frequently worth cents, so machine seconds and grams of resin decide the number — and the tool, not the part, is the capital decision. The consequence is that cavitation is the single most expensive judgement in the project: too few cavities and the part is uncompetitive for its whole life; too many and the customer has paid for capacity that never runs, in a tool that is harder to balance, slower to correct and more expensive to maintain.",
+    "costDrivers": [
+      "Cavity count, and how honestly it was matched to real annual demand rather than the forecast in the business case",
+      "Cycle time, which on these parts is set by the thickest section and by how much cooling can be fitted into the thin steel between terminal pockets",
+      "Runner strategy — on a sub-gram connector part a cold runner can outweigh the parts it feeds, so runner scrap becomes a first-order cost, not a rounding error",
+      "Resin grade: glass-filled, halogen-free FR and high-CTI compounds are materially more expensive than commodity grades and often restrict or forbid regrind",
+      "Insert handling: manual loading of stamped terminals adds labour per shot; strip or reel-fed automation shifts that cost into the tool and the cell",
+      "Tool maintenance and consumable wear items — gate inserts, core pins, shut-off faces — on abrasive filled resins",
+      "Secondary operations that a better tool would have removed: degating, deflashing terminal pockets, sorting",
+      "Drying and material handling discipline for hygroscopic grades (PA, PBT, PC), where the cost of skipping it appears as scrap"
+    ],
+    "volumeProfile": "Extremely wide. Industrial and switchgear device families run in the tens of thousands to low millions per year across a body/lid/actuator set. Connector housings, terminal carriers, clips and insulating barriers run in the tens of millions and are the natural home of high cavitation, hot runners and unattended running. Product lifecycles are long — commonly five to fifteen years for an electrical accessory or industrial device — with a long, low-volume spares tail after the main run ends. That tail is where original toolmakers disappear and second-source and reverse-engineering work is created.",
+    "whereMoneyIsLost": [
+      "Runner scrap on small parts, unnoticed because it is measured per shot rather than per year",
+      "Over-cavitation bought on an optimistic forecast, then amortised across a volume that never arrived",
+      "Soft or non-replaceable gates on glass-filled resin: gate opens up, fill balance drifts, dimensions drift, scrap climbs, and the fix requires the tool to come out of production",
+      "Shrink misjudged on a glass-filled grade, so the first steel is wrong in the direction that cannot be corrected — steel added rather than removed",
+      "Sorting and deflashing labour around terminal pockets and insert shut-offs, quietly permanent once accepted",
+      "Scrap and re-drying losses on hygroscopic FR grades handled as if they were commodity resin",
+      "Downtime from an insert loading fault that damages the tool, which costs more than every part it made that month",
+      "Late design changes to functional geometry — latch, pitch, creepage ribs — after steel has been cut"
+    ]
+  },
+  "risk": {
+    "failureModes": [
+      "Terminal back-out: the contact loses retention in its pocket under vibration or repeated mating, usually because the retaining geometry moulded short, moulded soft, or drifted dimensionally",
+      "Latch fracture on insertion or service disconnection, very often at a weld line that was allowed to land in the latch root",
+      "Cracking under insertion load in glass-filled bodies where fibre orientation runs across the loaded direction",
+      "Surface tracking across a contaminated or carbonised insulating surface, where the creepage path was shortened by a deleted rib or by flash bridging a barrier",
+      "Creep and deformation under sustained load at elevated service temperature, loosening a joint that was tight at assembly",
+      "Loss of grip at the metal-to-polymer interface after thermal cycling, because the insert had no knurl, groove or undercut for the polymer to key into",
+      "Dimensional change after moulding in hygroscopic grades — the part conditions in service and stops fitting",
+      "Optical failure in light guides: the indicator dims or bleeds into its neighbour after a polish zone was textured or a shroud was removed"
+    ],
+    "qualityDefects": [
+      "Weld line sitting in a functional area — latch root, terminal pocket wall, screw boss — where it becomes a structural defect rather than a cosmetic one",
+      "Short shot in the thinnest sections, characteristically at the last-to-fill corner of a long thin-wall flow path",
+      "Flash at core-pin shut-offs and on the faces of metal inserts, which in a terminal pocket is not cosmetic — it blocks the contact",
+      "Sink over ribs and bosses where the rib was cut too thick relative to nominal wall",
+      "Warpage and bow from anisotropic shrink in glass-filled grades, showing up as pitch error across a multi-way connector rather than as visible distortion",
+      "Burn marks and carbonisation at trapped-air corners, typically exactly where the flows meet and venting was omitted",
+      "Silver streaking and splay from undried hygroscopic resin, with the mechanical loss that goes with it",
+      "Gate vestige standing proud on a mating or sealing face and interfering with assembly",
+      "Cavity-to-cavity variation in a high-cavitation tool: parts within one shot that are not interchangeable",
+      "Progressive dimensional drift as gates erode under filled resin — the defect that passes every early inspection"
+    ],
+    "downtimeCauses": [
+      "Insert loading faults: a stamped terminal mis-seated, a strip mis-indexed, and the tool closes on metal",
+      "A part failing to eject cleanly and being crushed at the next close, damaging cavity detail",
+      "Hot runner tip leak or freeze-off, which on a high-cavity tool takes the whole tool down for one drop",
+      "Gate insert wear reaching the point where fill balance can no longer be processed around",
+      "Incoming stamping dimensional variation stopping an automated loading cell",
+      "Resin lot variation on filled FR grades changing fill behaviour mid-run",
+      "Core pin deflection or breakage in deep, slender cores between terminal pockets"
+    ],
+    "supplyRisks": [
+      "Single-source tooling: one tool, one moulder, one country, no duplicate and no spare inserts",
+      "Original toolmaker closing or exiting the business, taking the process knowledge and often the CAD with it",
+      "Long or unstable lead times on halogen-free FR and high-CTI grades, which are speciality compounds, not commodities",
+      "Grade discontinuation or reformulation forcing re-qualification of a part that had been stable for years",
+      "Freight, customs and documentation delays on a low-value, line-critical component",
+      "Tool ownership and IP ambiguity discovered only when the customer tries to move the tool",
+      "No condition record for an ageing tool, so nobody knows how many shots of life remain before a rebuild"
+    ]
+  },
+  "components": [
+    {
+      "name": "Connector housings and bodies",
+      "note": "The archetype: thin walls, deep slender cores forming terminal pockets, latch and polarising features that must not carry a weld line, and pitch that must hold across every way and every cavity."
+    },
+    {
+      "name": "Terminal carriers, headers and contact retainers",
+      "note": "Small, high-volume, frequently insert-moulded around stamped contacts. Retention geometry is the whole function; flash on a contact face is a reject, not a cosmetic note."
+    },
+    {
+      "name": "Terminal block bodies and covers",
+      "note": "Barriers and slots that are insulation geometry, not stiffening. Screw bosses take real torque, so boss design and weld-line position around the boss both matter."
+    },
+    {
+      "name": "Switch bodies, rockers, actuators and pivots",
+      "note": "Mechanism parts. Pivot clearance, actuation feel and snap geometry are all dimensional; texture and gloss are visible to the end user, so ejection witness placement is constrained."
+    },
+    {
+      "name": "Socket and plug shells, domestic and industrial",
+      "note": "Thick-and-thin geometry in one part, sealing faces, and creepage distances that fix internal rib layout. Often the customer's certified product, so geometry changes are expensive for them, not just for us."
+    },
+    {
+      "name": "Cable glands, gland nuts and cable-entry components",
+      "note": "Threaded features moulded rather than cut, sealing faces that cannot carry a parting line, and multi-start or fine threads that drive unscrewing or collapsible-core decisions in the tool."
+    },
+    {
+      "name": "Junction boxes, DIN-rail enclosures and lids",
+      "note": "Larger, flatter parts where warp and lid-to-body fit dominate. The DIN clip feature and the sealing lip are the two geometries that decide whether the enclosure is accepted."
+    },
+    {
+      "name": "Device and breaker housings",
+      "note": "Multi-part families — left half, right half, cover, actuator — that must assemble to a common datum. Family tooling is tempting here and is often the wrong answer."
+    },
+    {
+      "name": "Coil formers and bobbins for relays, transformers and solenoids",
+      "note": "Thin flanges, tight winding-surface tolerance, and dimensional stability under the thermal load of the winding. Often moulded around metal pins."
+    },
+    {
+      "name": "Light guides, light pipes and indicator lenses",
+      "note": "Optical parts where the mould finish is the specification: polished where light must stay in, textured where it must leave. Thick sections mean long packing and sink risk."
+    },
+    {
+      "name": "Busbar supports, phase barriers and insulating spacers",
+      "note": "Pure insulation geometry, dimensionally simple but with unforgiving creepage and clearance requirements and high thermal exposure."
+    },
+    {
+      "name": "Cable clips, strain reliefs and retaining clips",
+      "note": "Cheap, enormous volume, entirely about cavitation and cycle. Also the parts most often re-sourced, because nobody protects the tool for a part that costs a cent."
+    },
+    {
+      "name": "Control panels, fascias, buttons and keypad frames",
+      "note": "Cosmetic surface plus mechanical function. Gate and ejector layout are constrained by the visible face; texture and dead-front effects are moulded, not printed."
+    },
+    {
+      "name": "Battery and cell holders, spacers and pack internals",
+      "note": "Repetitive precise pockets, thin ribs between cells, and thermal exposure. Tolerance stack across many pockets is the recurring failure point."
+    }
+  ],
+  "tooling": {
+    "whyToolingMatters": "In electrical parts the tool is the specification. Nothing downstream can recover a pitch that was cut wrong, a weld line that lands in a latch root, or a gate that erodes under glass fibre. These are small parts with functional micro-geometry and long product lives — the tool has to be right at T1 and still right several million shots later. That is a different problem from making a part that looks correct once.",
+    "toolingTopics": [
+      "Filling a thin-wall body: gate position and count set against flow length, and vent depth as a designed feature rather than an afterthought",
+      "Weld-line management around every core pin, hole and insert — relocating them out of latch roots, terminal pocket walls and loaded sections",
+      "Core pin support and deflection in deep, slender cores between adjacent terminal pockets; pins that wander produce parts that pass inspection and fail assembly",
+      "Slides, lifters and collapsible cores for latch windows, side apertures and moulded threads on glands",
+      "Hot runner tip and gate selection for filled and FR resins, where tip wear and colour/grade change behaviour differ from unfilled work",
+      "Replaceable hardened gate inserts, treated as consumables with a defined change interval rather than as cavity surface",
+      "Cavity-to-cavity fill balance in high cavitation, and layouts that stay balanced as the tool ages",
+      "Cooling in the thin steel between pockets — the real cycle-time and shrink-uniformity constraint on connector tooling",
+      "Shrink prediction for anisotropic glass-filled grades, and cutting first steel steel-safe where a dimension is uncertain",
+      "Ejection layout that keeps witness marks off sealing faces, optical faces and visible fascia",
+      "Shut-off on metal inserts: contact between steel and stamped part, with insert tolerance absorbed by the tool, not by the operator",
+      "Texture, polish zoning and dead-front finishes specified as functional surfaces on optical and cosmetic parts",
+      "Spare cavity and core inserts, and a documented maintenance and condition record for the life of the tool"
+    ],
+    "cavityStrategy": "Match cavitation to demand that actually exists. One or two cavities for pilot and pre-production, so the design can be proved before high-cavity steel is committed. Four to sixteen for industrial device families and enclosures. Sixteen upward — and much higher on small terminals, clips and connector bodies — where annual demand genuinely justifies it. Metal Form has built tooling up to 46 cavities. Family tooling, where a body, lid and actuator share one tool, looks efficient and often is not: it couples the demand of parts that do not sell at the same rate, and it makes fill balance and correction harder. Use it when the parts are dimensionally related and consumed one-for-one; avoid it when they are not.",
+    "runnerStrategy": "On sub-gram electrical parts a cold runner can weigh more than the parts it feeds, which makes the runner decision an annual-cost decision, not a tooling preference. Hot runner where volume and grade justify it, with tip selection made for the specific filled or FR compound. Valve gating where gate vestige on a mating or sealing face is unacceptable, or where sequencing is needed to push a weld line out of a functional zone. Sub-gate or tunnel gating on small parts for automatic degating and reduced handling. Naturally balanced layouts for symmetric high-cavity tools, so the balance survives ageing rather than depending on process compensation.",
+    "coolingNotes": "Cooling is the hardest part of a connector tool because there is almost no steel to cool through: the cores that form terminal pockets are slender, unsupported and heat-loaded on every face. Baffles, bubblers and high-conductivity insert materials in cores do more for cycle and consistency than adding circuits to the plate. Cooling here is not only a cycle-time question — uneven core temperature produces uneven shrink, and uneven shrink in a multi-way body reads as pitch error. Mould temperature is also a direct lever on weld-line strength and on crystallinity in PBT and PA, so the cooling design and the process window are the same conversation.",
+    "materialNotes": "PA66 and PA6, usually glass-filled, for mechanical strength, latch retention and heat: strong and tough, but hygroscopic, so drying is not optional and parts move dimensionally as they condition. PBT, commonly GF15 to GF30, for dimensional stability and low moisture uptake in connectors: it freezes sharply, so thin sections need a hot enough tool and a fast enough fill. PC and PC/ABS for enclosures, covers and fascias where impact and surface matter. PMMA and PC for light guides, where optical clarity and mould polish are the specification. PPS, PPA and LCP appear on high-temperature and reflow-exposed parts. Flame-retardant and high-CTI grades — halogen-free phosphinate systems reach CTI values up to 600 V — behave differently from their base polymers: different flow, different shrink, often more aggressive on steel, and frequently with regrind restrictions. Glass fibre sits at Mohs 5-7 and abrades steel as it orients along the cavity wall, which is why gates erode first and why gate inserts should be hardened and replaceable."
+  },
+  "vocabulary": [
+    {
+      "term": "Flow length to wall thickness ratio (L/T)",
+      "meaning": "The distance melt must travel from gate to the last point of fill, divided by the wall it travels through. Above roughly 100:1 a part is a thin-wall problem; thin-wall electrical work commonly runs beyond 150:1. It is the number that decides gate count, fill speed and whether the part fills at all.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Nominal wall",
+      "meaning": "The base wall thickness the part is designed around. Ribs, bosses and local features are dimensioned as a proportion of it; deviating from it is what produces sink, voids and warp.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Weld line (knit line)",
+      "meaning": "The seam where two melt fronts meet and only partially re-entangle. Forms around every core pin, hole and insert. In glass-filled material the fibres align along the front instead of bridging it, so the seam approaches unfilled strength.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Short shot",
+      "meaning": "The cavity does not fill. On thin-wall electrical parts it appears first at the last-to-fill corner of the longest flow path, and it is a fill-pressure and venting problem before it is a machine problem.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Flash",
+      "meaning": "Material escaping past a shut-off. In a terminal pocket or on the face of a metal insert it is not cosmetic — it blocks the contact and creates a sorting operation that never goes away.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Core pin",
+      "meaning": "The slender steel that forms a terminal pocket or hole. Deep pins deflect under fill pressure, and a deflected pin makes parts that measure acceptable and assemble badly.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Shut-off",
+      "meaning": "Where steel meets steel — or steel meets a metal insert — to seal the cavity. Insert shut-offs must absorb the tolerance of the incoming stamping without flashing and without crushing it.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Insert moulding",
+      "meaning": "Moulding polymer around a metal part already loaded in the cavity: stamped terminals, contacts, pins, threaded bushes. The insert's own tolerance, its location features and its retention geometry become tooling problems.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Lead frame / strip / bandolier",
+      "meaning": "Continuous stamped metal fed through the tool so terminals stay connected during moulding and are separated afterwards. The production form of high-volume terminal overmoulding.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Dam bar",
+      "meaning": "A sacrificial bridge designed into the lead frame to stop melt leaking between leads, punched out after moulding. The standard anti-flash device in overmoulded terminal work.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Cavitation",
+      "meaning": "How many cavities the tool has. The dominant cost decision in this vertical, because piece cost is cycle time divided by cavities.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Hot runner / valve gate",
+      "meaning": "A heated melt distribution system that leaves no runner, and a mechanically shut gate that controls vestige and timing. Valve gating is also the tool for sequencing fill to move a weld line.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Gate vestige",
+      "meaning": "The small witness left where the gate detached. On a mating, sealing or optical face it is a functional defect, which is what drives gate-type selection on connector bodies.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Shrink anisotropy",
+      "meaning": "Glass-filled material shrinking less along fibre orientation than across it. In a multi-way connector this shows up not as visible distortion but as pitch error.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Pitch",
+      "meaning": "The centre-to-centre spacing of contacts or ways. The dimension that decides whether the part mates, and the one that quietly drifts as a tool wears.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Terminal retention",
+      "meaning": "The force holding a contact in its pocket, verified by the OEM under the IEC 60512 test family. Set by moulded retaining geometry, so it is a tooling outcome as much as a design outcome.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Creepage and clearance",
+      "meaning": "Creepage is the shortest path across an insulating surface between conductive parts; clearance is the shortest path through air. Ribs, grooves and barriers lengthen creepage without changing clearance — which is why those ribs are functional and must not be deleted in DFM without asking.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "CTI (Comparative Tracking Index)",
+      "meaning": "A measured property of the compound describing its resistance to surface tracking, quoted in volts. Halogen-free flame-retardant systems in PA and PBT reach values up to 600 V. It belongs to the resin grade, not to the moulder.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Glow wire (GWIT / GWFI)",
+      "meaning": "Glow-wire ignition and flammability ratings of the compound, tested at a stated wall thickness. Another grade property the customer specifies and we mould to.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Steel-safe",
+      "meaning": "Cutting the first steel so that a dimension can still be corrected by removing metal. On uncertain shrink in filled grades it is the difference between an adjustment and a new insert.",
+      "useIn": "copy"
+    },
+    {
+      "term": "T1 sample",
+      "meaning": "The first shots off a new tool. The point where geometry, shrink and fill assumptions are tested against reality — and where corrections are cheap.",
+      "useIn": "copy"
+    }
+  ],
+  "metalFormAngle": {
+    "credibleOffers": [
+      "DFM review of an existing part or drawing before any steel is quoted: wall, gate, weld-line placement, draft, ejection, shrink allowance",
+      "Mould design and manufacture for connector bodies, terminal carriers, switch parts, terminal blocks, glands and enclosures",
+      "Multi-cavity tooling, with build experience up to 46 cavities",
+      "Hot runner and cold runner tooling, specified for the grade and the part, not by default",
+      "Insert moulds for stamped metal terminals, contacts, pins and threaded bushes",
+      "Technical mechanism parts — latches, actuators, pivots — where the moulding and the mechanism are the same problem",
+      "Reverse engineering from a physical sample where the original drawings or toolmaker are gone",
+      "Redesign for manufacture: part consolidation, wall rationalisation, cavitation and cycle improvement on legacy parts",
+      "Second-source and backup tooling built from your data or from a qualified sample",
+      "Production and ongoing component supply on a scheduled basis",
+      "International delivery, with mould warranty on project-specific terms and NDA as standard",
+      "Initial project response within 48 business hours"
+    ],
+    "dfmAngles": [
+      "Establish the nominal wall and the true flow length before anything else; L/T decides gate count and whether the part is mouldable as drawn",
+      "Ask which faces are functional — mating, sealing, optical, insulating — then place gates, weld lines and ejectors away from them",
+      "Identify every core pin and accept that each one creates a weld line; the design decision is where that line lands, not whether it exists",
+      "Check core slenderness and support in deep terminal pockets before committing to the cavity layout",
+      "Rib and boss proportion against nominal wall to keep sink off visible and sealing faces",
+      "Confirm whether ribs and slots are stiffening or creepage geometry — never simplify them without the customer's answer",
+      "Apply shrink per specific grade, including anisotropy in glass-filled compounds, and cut first steel steel-safe where a dimension is uncertain",
+      "Confirm insert dimensional tolerance and locating features with the stamper before designing insert shut-offs",
+      "Zone polish and texture on light guides as an optical specification, and record it as such on the tool drawing"
+    ],
+    "secondSourceAngle": "Second sourcing here is mostly a documentation problem before it is a machining problem. A duplicate tool built from your existing data, or a new tool built to your part print and qualified against parts you already accept, removes a single point of failure from a component that can stop a line. Metal Form can build the backup tool, hold the data under NDA, and supply components from it on a schedule — so the second source is proven before you need it, not discovered during a shortage. Where a legacy tool exists but the drawings do not, we can reverse engineer from a sample and build to the part you already ship.",
+    "costOptimisationAngle": "Three levers, in order of size. First, cavitation matched to demand that exists rather than demand that was forecast — this is where most of the money is won or lost, and it is decided before steel is cut. Second, runner strategy: on a sub-gram part the runner can weigh more than the parts, so hot versus cold is an annual resin bill, not a preference. Third, cycle: the thickest section and the cooling that can be fitted into slender cores set the floor, and both are tooling decisions. Beyond that, part consolidation — turning two mouldings and an assembly step into one part — is often larger than any process saving. We will state what each lever is worth for your part; we will not publish generic percentages.",
+    "whatWeMustNotClaim": [
+      "No UL listing, UL file, UL94 testing or UL Yellow Card of our own — flame and tracking ratings belong to the resin grade and to the customer's finished-product approval",
+      "No CTI, glow-wire, dielectric or tracking testing performed by us",
+      "No IEC 60664, IEC 60512, IEC 60335 or any electrical safety compliance testing, certification or declaration",
+      "No electrical safety approval, certification body relationship, or claim that our parts are 'certified' or 'compliant'",
+      "No ISO 9001, ISO 13485, IATF, GMP or FDA claims",
+      "No cleanroom, sterile or validated manufacturing",
+      "No Moldflow or named simulation software; no 3D scanning; no CMM department; no QC department",
+      "No two-shot moulding, no grinding department",
+      "No exact tolerance figures, machine counts, factory area, headcount, production volumes or savings percentages",
+      "No named clients, client logos, awards or certifications",
+      "No claim about a competitor's or industry supplier's capability being ours"
+    ]
+  },
+  "page": {
+    "heroHeadline": "The plastic that has to hold the contact.",
+    "heroSub": "Connector bodies, terminal blocks, switch parts, glands, enclosures. Thin walls, deep pockets, metal inserts, and a pitch that still has to be right after a few million shots. Send the part or the drawing. We come back on geometry, tooling route, cavitation and supply.",
+    "heroVisualConcept": "No photograph, no hero image. A single hairline SVG cross-section of a multi-way connector body, drawn at large scale on the right two-thirds of the grid, in the manner of a technical elevation rather than a render. On load it draws itself once — one continuous stroke, left to right, like a continuity test — then the copper terminals appear in their pockets, one per pitch position, in sequence at a fixed interval. Above the section runs a pitch comb: fine vertical ticks at even spacing, each tick aligned to one terminal. Nothing floats, nothing glows, nothing rotates. Below the whole hero, a single-line datasheet strip in monospace, flush to the baseline rule: SINCE 2006 / 1,000+ PROJECTS / TOOLING TO 46 CAVITIES / CATIA + SOLIDWORKS / NDA STANDARD. Reduced-motion: the section renders complete, terminals already placed.",
+    "narrativeSpine": "An electrical part is a tolerance problem in an insulating disguise. The page starts where the buyer's anxiety starts — the mating feature — and then works inward through the two physical facts that decide whether a thin electrical part is any good: where the melt can reach, and where the flows meet. It adds the metal, then the money, then the steel that has to survive glass fibre, then the supply question the buyer has not asked out loud. It closes by stating plainly which approvals we do not hold, because in this sector honesty about certification is a stronger credibility signal than any claim we could make.",
+    "sections": [
+      {
+        "id": "index",
+        "title": "What this industry actually asks a toolmaker for",
+        "purpose": "Establish recognition fast. A buyer should find their own part in the first ten seconds and see that we know what makes it difficult, not just what it is called.",
+        "layout": "Datasheet index, not cards. Full-width hairline-ruled rows on a 12-column grid: a two-digit monospace index in the left rail, component name at 40% width in the display grotesk, and the tooling consequence at 60% in muted ink. A pitch-comb divider — the signature tick array — separates each group of five rows. The section has no illustration at all; its density is the design.",
+        "contentOutline": "Fourteen rows drawn from the component list: connector housings; terminal carriers and headers; terminal block bodies and covers; switch bodies and actuators; socket and plug shells; cable glands and gland nuts; junction boxes and DIN-rail enclosures; device and breaker housings; coil formers and bobbins; light guides and indicator lenses; busbar supports and phase barriers; clips and strain reliefs; panels, fascias and buttons; battery holders and pack internals. Each with one sentence naming the feature that decides the tool.",
+        "interaction": "Row hover or focus draws a 1px copper underline in from the left and reveals a third micro-line beneath the row: the single geometry that has to be right. Fully keyboard navigable, no modal, no expansion that shifts the page."
+      },
+      {
+        "id": "wall",
+        "title": "Wall thickness sets everything downstream",
+        "purpose": "Teach the one number that governs this vertical — flow length over wall — and demonstrate that we design tools around it rather than discovering it at T1.",
+        "layout": "Diagram-dominant, text as marginalia. The SVG section occupies the right 62% of the grid at full section height; the copy runs as a narrow column pinned to the left rail, set smaller than body text elsewhere on the page, deliberately subordinate. Under the diagram, a four-cell monospace strip: WALL / FLOW LENGTH / L:T / VERDICT.",
+        "contentOutline": "Thin wall begins below roughly 1 mm, or above an L/T of about 100:1; thin-wall electrical work commonly runs past 150:1. Past that point the part needs very high fill speed and pressure, vents cut as designed features rather than as a fix, steel stiff enough not to deflect under fill, and cooling placed where there is barely any steel. Note that thinner is not automatically cheaper: it shortens cooling but narrows the process window and raises the cost of getting the tool wrong.",
+        "interaction": "Two monospace inputs — nominal wall (0.6-2.5 mm) and flow length. The L:T figure recomputes live and the fill animation on the section either completes or stalls, with the stall point marked by a short copper tick and a plain-language line. Reduced-motion serves three static states (fills easily / marginal / will not fill as drawn)."
+      },
+      {
+        "id": "weldline",
+        "title": "Where the two flows meet",
+        "purpose": "The single most credible page moment for a connector engineer. Show that we treat weld-line placement as a structural decision, and that we know it cannot be eliminated around a core pin — only moved.",
+        "layout": "Split comparison on one shared baseline: two identical part outlines side by side, drawn as hairline plan views, gates marked as small filled copper squares, weld lines as dashed hairlines, and the functional zone — latch root, terminal pocket wall — shown as a tinted band that either intersects the weld line or does not. A single caption line spans both halves.",
+        "contentOutline": "Every core pin splits the flow, and it rejoins behind the pin as a weld line. In glass-filled grades the fibres orient along the meeting front rather than bridging it, so the seam approaches unfilled-matrix strength. That makes weld-line placement structural. The levers are gate position and count, sequencing on a valve-gated tool, melt and mould temperature, packing pressure, and venting at the meeting point — because trapped air compresses and burns exactly where the fronts converge.",
+        "interaction": "One toggle: MOVE THE GATE. The weld line animates along the geometry to its new location and the caption rewrites to state what has been gained and what has been given up. No score, no gamification."
+      },
+      {
+        "id": "insert",
+        "title": "Metal in the mould",
+        "purpose": "Own insert moulding as a named capability and demonstrate that we understand its real failure set, which is dimensional and operational rather than conceptual.",
+        "layout": "Four-frame horizontal sequence along one continuous baseline: LOAD / CLOSE / SHOT / EJECT. Each frame is a hairline elevation of the same tool at the same scale, with the copper terminals persisting across all four frames so the eye tracks the metal, not the steel. On desktop the section pins and the sequence advances with scroll; on mobile the frames stack vertically with the baseline becoming a left spine.",
+        "contentOutline": "Stamped terminals, contacts, pins and threaded bushes moulded into the part. What has to be solved: locating the insert repeatably, absorbing the stamping's own tolerance at the shut-off without flash and without crushing it, giving the polymer knurl, groove or undercut to key into so the joint survives thermal cycling, and keeping flash off contact faces where it blocks the terminal. At volume the metal arrives as continuous strip and the dam bar is designed into the frame to stop leakage between leads, then punched out afterwards. Loading is where the downtime lives: a mis-seated insert closes the tool onto metal.",
+        "interaction": "Scroll-linked frame advance with a hard snap between frames, no easing overshoot, and a monospace frame counter (01/04). Reduced-motion renders all four frames statically side by side."
+      },
+      {
+        "id": "cavitation",
+        "title": "How many cavities the part actually deserves",
+        "purpose": "Take the commercial conversation seriously and early. Demonstrate numeracy without publishing a price, a saving or a claim.",
+        "layout": "Working panel split 40/60. Left: three monospace inputs on hairline underlines — annual volume, estimated cycle seconds, available production hours per year. Right: an outcome ladder of cavity options, each row showing required press hours and the tooling consequence in plain language. Every figure is monospace and right-aligned; no currency appears anywhere in the section.",
+        "contentOutline": "Piece cost on these parts is cycle time divided by cavity count, plus grams. Too few cavities and the part is uncompetitive for its entire life; too many and you paid for capacity that never runs, in a tool that is harder to balance, slower to correct and more expensive to maintain. Runner strategy belongs in the same decision: on a sub-gram part a cold runner can weigh more than the parts it feeds. State plainly that this panel is arithmetic, not a quotation, and that the real number depends on the geometry.",
+        "interaction": "Live arithmetic only, computed in the browser, with a visible label reading ARITHMETIC, NOT A QUOTATION. The most plausible cavity row is marked with a single copper tick rather than a highlighted card."
+      },
+      {
+        "id": "steel",
+        "title": "The tool has to outlive the resin",
+        "purpose": "Prove tooling literacy at the level a manufacturing engineer will test, and pre-empt the real long-term failure — dimensional drift from wear, not catastrophic breakage.",
+        "layout": "Matrix. Resin families as rows (unfilled PA/PC/ABS; glass-filled PA and PBT; halogen-free FR and high-CTI grades; optical PMMA and PC), wear consequences as columns (gate erosion / cavity surface / shut-off faces / cores and pins). Hairline cells with no fills, monospace hardness values, and a small copper dot placed only where a replaceable insert is the correct answer. Deliberately dry.",
+        "contentOutline": "Glass fibre sits at Mohs 5-7 and abrades steel as it orients along the cavity wall during fill, which is why gates and high-shear zones go first. Industry practice: P-20 around 28-30 HRC for non-abrasive work, H-13 cavities at 44-48 HRC as the standard answer for filled resins, S-7 taken higher for tight-tolerance long-run parts, stainless where the resin is corrosive. Gates should be hardened and replaceable, treated as a consumable with a change interval. Note the practical point most buyers have lived through: worn gates do not fail loudly, they change the fill balance, and the part drifts.",
+        "interaction": "Static by default. Hovering a row dims the other rows to a lighter ink and draws a copper rule along the active row. No tooltips, no popovers."
+      },
+      {
+        "id": "secondsource",
+        "title": "A second source, before you need one",
+        "purpose": "Convert the anxiety identified in the buyer research into a concrete offer, and show that we understand transfer as a documentation exercise.",
+        "layout": "Orthogonal timeline rail: a single horizontal spine across the full grid width with 90-degree doglegs dropping to labelled stages beneath it, stage numbers set in the left rail in monospace. Nothing curved, no connecting arcs, no icons. The rail is the only element in the section apart from type.",
+        "contentOutline": "Stages: send the part or a sample under NDA; data pack assembled — current CAD, 2D with tolerances, material grade, known process parameters, acceptance criteria; DFM review and tooling route; tool build; T1 sampling against parts you already accept; qualification; scheduled supply. Explain the two routes plainly: a duplicate tool built from your data, or a new tool built to your part print where the original data is gone. Note that we can reverse engineer from a sample where the drawings and the original toolmaker no longer exist, and that build the backup before the shortage is the whole point — a second source discovered during a shortage is not a second source.",
+        "interaction": "Stages reveal on scroll by drawing the spine left to right and dropping each dogleg in turn, one axis of movement at a time. No parallax."
+      },
+      {
+        "id": "boundaries",
+        "title": "What we do, and what we do not certify",
+        "purpose": "The trust move. In a sector where safety approval is the buyer's core anxiety, stating the boundary explicitly is more persuasive than any capability claim, and it protects the company legally.",
+        "layout": "Two plain columns separated by a single vertical hairline. Left column: WE DO. Right column: WE DO NOT. Both set as unadorned text blocks in body size, no icons, no colour coding, no green ticks or red crosses. The most restrained section on the page, placed immediately before the CTA so the last thing read before contact is honest.",
+        "contentOutline": "We do: design and build the tool, mould to the grade you specify, hold the geometry, supply components on schedule, deliver internationally, work under NDA, and warrant the mould on project-specific terms. We do not: test or certify flame, tracking or dielectric performance; hold UL files; issue compliance declarations; or approve your product. Flame and tracking ratings — UL94, CTI, glow wire — belong to the resin grade and to your finished-product approval. We mould what you specify and we tell you when a geometry change would affect a creepage path, so you can take it to your own approvals process.",
+        "interaction": "None. Static type. The absence of interaction is the point."
+      }
+    ],
+    "technicalPanels": [
+      {
+        "title": "Thin wall, in numbers",
+        "bullets": [
+          "Thin wall begins below roughly 1 mm, or above a flow-length-to-thickness ratio of about 100:1",
+          "Thin-wall electrical parts commonly run past 150:1; the ratio, not the thickness alone, is the constraint",
+          "High fill rate and high injection pressure are required, with figures up to around 35,000 psi quoted for thin-wall work",
+          "Venting is a designed feature at that speed, not a correction applied after the first short shot",
+          "Cavity and core steel must be stiff enough not to deflect under fill, which limits how slender cores can be",
+          "Thinner is not automatically cheaper: cooling time falls but the process window narrows"
+        ]
+      },
+      {
+        "title": "Materials we mould for electrical work",
+        "bullets": [
+          "PA66 and PA6, usually glass-filled: strength, heat and latch retention; hygroscopic, so drying and post-mould conditioning both matter",
+          "PBT, commonly GF15 to GF30: dimensional stability and low moisture uptake; freezes sharply, so thin sections need a hot enough tool",
+          "PC and PC/ABS: enclosures, covers and fascias where impact and surface finish carry the requirement",
+          "PMMA and PC: light guides and indicator lenses, where mould polish and texture zoning are the optical specification",
+          "PPS, PPA and LCP appear on high-temperature and reflow-exposed parts",
+          "Flame-retardant and high-CTI grades are distinct compounds: different flow, different shrink, often more abrasive, frequently with regrind limits",
+          "Halogen-free phosphinate FR systems in PA and PBT reach CTI values up to 600 V — a property of the grade, not of the moulder"
+        ]
+      },
+      {
+        "title": "Tolerance and the mating feature",
+        "bullets": [
+          "Pitch across a multi-way body is the dimension that decides whether the part mates",
+          "Glass-filled grades shrink less along fibre orientation than across it, so warp presents as pitch error before it presents as visible distortion",
+          "Cavity-to-cavity variation in a high-cavitation tool matters more than absolute accuracy in any one cavity",
+          "Terminal retention is set by moulded retaining geometry and verified by the customer under the IEC 60512 test family",
+          "Gate vestige on a mating, sealing or optical face is a functional defect, which is what drives gate type selection",
+          "We publish no tolerance figures here; the achievable band is a function of the geometry, the grade and the tool, and we state it per project"
+        ]
+      },
+      {
+        "title": "Steel, wear and gate life",
+        "bullets": [
+          "Glass fibre sits at Mohs 5-7 and abrades steel as it orients along the cavity wall during fill",
+          "Industry practice: P-20 around 28-30 HRC for non-abrasive resins; H-13 cavities at 44-48 HRC as the standard for filled grades",
+          "S-7 is taken higher for tight-tolerance, long-running parts; stainless is used where the resin is corrosive",
+          "Gates and high-shear zones erode first — hardened, replaceable gate inserts should be treated as consumables with a change interval",
+          "Worn gates do not fail loudly: fill balance shifts, dimensions drift, and the parts pass early inspection",
+          "Spare cavity and core inserts, plus a documented condition record, are part of the tool, not an afterthought"
+        ]
+      },
+      {
+        "title": "Insert moulding checkpoints",
+        "bullets": [
+          "Confirm the incoming stamping's tolerance and locating features with the stamper before designing the shut-off",
+          "The shut-off must absorb insert variation without flashing onto contact faces and without crushing the metal",
+          "Give the polymer something to key into — knurl, groove, undercut — so the joint survives thermal cycling",
+          "At volume, terminals arrive as continuous strip; dam bars are designed into the frame to stop leakage between leads and punched out afterwards",
+          "Loading is where the downtime lives: a mis-seated insert closes the tool onto metal",
+          "Sink over an insert and flash in a terminal pocket are the two defects that create permanent sorting operations"
+        ]
+      }
+    ],
+    "ctaHeadline": "Send the part. We will tell you what the tool has to do.",
+    "ctaSub": "A STEP file, a 2D drawing, or a sample in a bag. We come back on geometry, tooling route, cavitation and supply options. Initial project response within 48 business hours. NDA on request, before you send anything.",
+    "whatsappPrefill": "Hello Metal Form - electrical and electronics enquiry. Part: [connector body / terminal block / switch part / enclosure / gland / other]. Material: [PA66 GF / PBT GF / PC / PC-ABS / other]. Metal inserts: [yes / no]. Estimated annual volume: [ ]. I have: [STEP / 2D drawing / sample only]. Please advise on tooling route and cavitation.",
+    "metaTitle": "Electrical & Electronics Tooling and Moulding — Metal Form",
+    "metaDescription": "Mould design and manufacture for connector bodies, terminal blocks, switch parts, glands and enclosures. Thin-wall tooling, insert moulds for metal terminals, multi-cavity production and ongoing component supply. Persian engineering since 2006."
+  },
+  "artDirection": {
+    "moodInOneLine": "A cold-light instrument page: fine hairlines on cool paper, monospace numbers, orthogonal geometry, and copper used only where there is metal.",
+    "palette": {
+      "surface": "#F4F6F8",
+      "surfaceAlt": "#E7EBEF",
+      "ink": "#0D141C",
+      "inkMuted": "#5C6875",
+      "accent": "#2F3FE0",
+      "accent2": "#B4703A",
+      "rationale": "A cool near-white paper with a faint blue cast reads as instrument and datasheet rather than as brochure white — it is the brightest and coolest surface in the thirteen-chapter set. Ink is near-black with a blue bias so hairlines stay crisp at 1px without going grey. The primary accent is a saturated insulation indigo, used exclusively for structure: active states, rules, the drawn stroke of a diagram. The second accent is copper, and it carries a strict rule that runs through the whole chapter — copper appears only where the subject is metal. A terminal, an insert, a contact, a gate mark. Nothing decorative is ever copper. That single constraint does more identity work than any pattern would, and it teaches the reader the diagram language without a legend. No red anywhere, no spark orange, no dark industrial ground."
+    },
+    "typographyNote": "Two voices, strictly divided. Headings and body in a tight technical grotesk with low contrast and short ascenders (Archivo or Inter Tight; system fallback -apple-system, Segoe UI, sans-serif) — headings set tight at around -0.02em tracking, never above about 3.2rem, always left-aligned to the rail. Every number, unit, material code, hardness value, cavity count and tolerance is set in a monospace with tabular figures (IBM Plex Mono or JetBrains Mono; fallback ui-monospace, SFMono-Regular, monospace). The monospace is the instrument voice and it is never used for prose. Section labels and column headers are 11px monospace uppercase at 0.14em tracking in inkMuted. Body copy sits at a comfortable 17-18px with generous measure control — max 68 characters — because the sentences are short and the page is dense enough already.",
+    "compositionNote": "A strict 12-column grid with a persistent left rail carrying a running two-digit section index in monospace, so the page reads as a numbered document. Everything is left-aligned to hard rules; nothing is centred except the single caption under the weld-line comparison. Section breaks are full-bleed 1px hairlines in a light ink, never whitespace alone — the ruled line is the punctuation of this chapter. Generous outer margins and a lot of quiet vertical space around each diagram, but content blocks themselves are dense: this chapter earns its spaciousness by contrast, not by emptiness. No rounded cards anywhere. The only radii on the page are the ones drawn inside technical sections as actual part geometry. Everything aligns to a 4px baseline.",
+    "motionLanguage": "Latch motion. Elements move along one axis at a time and change direction only at 90 degrees, arriving with zero overshoot — 160 to 220ms on cubic-bezier(0.2, 0, 0, 1). Nothing eases in from a scale, nothing fades up from below, nothing bounces. Two named behaviours recur: the continuity draw, where a hairline path animates its stroke-dashoffset left to right on section entry as though a circuit were being tested, and the sequence step, where numbers advance in monospace with a hard cut rather than a tween. Diagram states change by snapping. Scroll-linked motion appears exactly once, in the insert-moulding sequence. Every animated element has a complete static state under prefers-reduced-motion, and those static states are designed first, not derived.",
+    "signatureMotif": "The pitch comb — a fine array of vertical ticks at a fixed spacing, one tick per contact position. It is the connector's own geometry turned into the chapter's rule and divider: it separates row groups in the component index, forms the scale bar under every diagram, marks the baseline of the hero, and appears as a 24px band above the CTA. Built with a repeating-linear-gradient in CSS and as evenly spaced lines in SVG, so it costs nothing. Where a tick corresponds to a real terminal in a diagram, it is drawn in copper; everywhere else it is ink at low opacity. Nothing else on the page repeats.",
+    "diagramConcept": "One connected diagram family, all in the same hairline elevation language, all at the same stroke weight, all sharing the copper-means-metal rule: (1) the hero cross-section that draws itself and then receives its terminals; (2) the flow-length ladder, where a live L/T figure drives a fill animation that either completes or stalls at a marked point; (3) the weld-line comparison, two identical outlines where a gate toggle moves the dashed seam in or out of a tinted functional zone; (4) the four-frame insert sequence with copper terminals persisting across frames; (5) the wear matrix, which is a table drawn to the same hairline standard so it reads as part of the same drawing set. None of them are charts. All of them are sections, elevations and plans — the drawings an engineer already reads.",
+    "howThisDiffersFromOtherIndustries": "This is the finest-grain and coolest chapter of the thirteen: the smallest stroke weight, the lightest surface, the most monospace, the most orthogonal geometry, and the highest information density per screen. Where an automotive or heavy-industrial chapter can work at large scale with weight and mass, and a packaging or consumer chapter can use volume, curve and colour, this one works at the scale of a millimetre and refuses curves entirely except as drawn part geometry. It is also the only chapter with a strict two-material colour rule (indigo for structure, copper only for metal), the only one where numbers are typographically segregated into a separate voice, and the only one that ends on a section about what the company does not do. Circuitry-adjacent by rhythm and pitch, never by depicting a PCB."
+  },
+  "openQuestions": [
+    "Does Metal Form have practical experience with strip- or reel-fed insert moulding, or only with discrete manually loaded inserts? The page currently describes strip and dam bars as industry practice rather than as our capability — if we have done it, the insert section can be strengthened considerably.",
+    "What is the largest number of ways or the finest pitch we have actually tooled on a connector-type part? A single concrete, non-tolerance figure here would be the strongest credibility signal on the page.",
+    "Do we hold spare cavity and core inserts for tools we have built, and is there a standard maintenance or condition-record practice we can describe? The steel section and the second-source section both want this answer.",
+    "Have we built optical or light-guide tooling with zoned polish and texture? If not, that component row should be softened from a claim to an interest.",
+    "Is there an existing house position on regrind and on customer-supplied material for FR and high-CTI grades? It comes up in every serious electrical enquiry.",
+    "Can we state a typical tooling lead-time band for this class of part without breaching the no-exact-figures rule? A range, clearly framed as indicative, would help the cavitation section.",
+    "Confirm the exact wording of the mould warranty so the boundaries section can reference it accurately rather than saying only 'project-specific terms'."
+  ],
+  "recommendations": [
+    "Build the weld-line comparison first. It is the section a connector engineer will judge the whole site by, and it is the cheapest to build well — two SVG outlines, one toggle, one caption that rewrites.",
+    "Enforce the copper rule mechanically, not by discipline: define a single CSS custom property for metal and forbid accent2 anywhere else in the stylesheet. The identity of this chapter depends entirely on that constraint holding.",
+    "Keep every interactive panel arithmetic-only and label it as such on screen. The cavitation panel must never resemble a price estimator; its value is proving numeracy, not producing a number.",
+    "Design the reduced-motion states before the animated ones. Half of this page's motion is a drawn line, and a drawn line that never draws must still be a finished diagram.",
+    "Resist adding an icon set. The component index is stronger as ruled type, and the moment emoji or line icons appear the page stops reading as a document and starts reading as a template.",
+    "Place the boundaries section immediately before the CTA and do not soften it in copy review. In this sector, an explicit 'we do not certify' is a conversion asset — it is the sentence that tells a quality manager we have dealt with real approvals before.",
+    "Route every claim in the copy through the verified-facts list before build: since 2006, 1,000+ projects, up to 46 cavities, CATIA and SolidWorks, mould warranty on project terms, international delivery, NDA, 48 business hours. Nothing else about the company should appear as a fact anywhere on the page.",
+    "Cap the page at roughly 2,200 words of prose. The density here should come from the diagrams and the ruled index, not from paragraphs — an over-written page in this register loses the instrument quality immediately."
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "meta": {
+    "title": "Metal Form — Fikirden, fotoğraftan, numuneden ya da teknik resimden seri üretime",
+    "description": "Plastik enjeksiyon parçalarının mühendisliği, kalıbı, üretimi ve tedariki. Kalıp tasarımı ve imalatı, tersine mühendislik, DFM, çok gözlü kalıp, üretim ve ikinci kaynak tedariki. 2006'dan beri üretim.",
+    "ogTitle": "Metal Form — Mühendislik, kalıp, üretim ve tedarik",
+    "ogDescription": "Bir fotoğraf, bir numune, bir teknik resim ya da bir CAD dosyası gönderin. Size geometri, kalıp rotası, üretim maliyeti ve tedarik seçenekleri üzerinden dönüş yaparız. 48 iş saati içinde ilk dönüş."
+  },
+  "hero": {
+    "kicker": "2006'dan beri üretim",
+    "headline": [
+      "Fikirden, fotoğraftan,",
+      "numuneden ya da resimden —",
+      "seri üretime."
+    ],
+    "lead": "Başlamak için tamamlanmış bir CAD paketine ihtiyacınız yok. Elinizde ne varsa gönderin. Parçanın mühendisliğini yapar, kalıbını üretir, seri üretime alır ve tedarikini sürdürürüz.",
+    "inputs": [
+      "Bir fikir",
+      "Bir fotoğraf",
+      "Fiziksel bir numune",
+      "Teknik resim veya CAD dosyası"
+    ],
+    "primary": "Projenizi gönderin",
+    "secondary": "Ne yaptığımıza bakın",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz önce NDA.",
+    "facts": [
+      "Kuruluş 2006",
+      "1.000+ proje",
+      "46 göze kadar kalıp",
+      "CATIA · SolidWorks"
+    ]
+  },
+  "process": {
+    "kicker": "Rota",
+    "heading": "Tek zincir, beş aşama, tek sorumlu.",
+    "lead": "Tedarikçilerin çoğu bu zincirin tek halkasına sahiptir; gerisini size devreder. Biz rotanın tamamının sorumluluğunu alıyoruz — ve aşamalar arasındaki devir noktalarının. Projeler genellikle tam orada tökezler.",
+    "steps": [
+      {
+        "index": "01",
+        "title": "Girdi",
+        "body": "Kabaca bir fikir. Rakip bir parçanın fotoğrafı. Teknik resmi hiçbir yerde kalmamış, aşınmış bir parça. Bir eskiz, bir şartname, bir STEP dosyası. Ne varsa konuşmayı başlatmaya yeter.",
+        "markers": [
+          "Fotoğraf · numune · eskiz",
+          "STEP · IGES · X_T · STL",
+          "Ya da yalnızca bir sorun"
+        ]
+      },
+      {
+        "index": "02",
+        "title": "Mühendislik",
+        "body": "Parça modellenir ya da yeniden modellenir; elde yalnızca numune varsa ölçülerek geri çıkarılır ve gerçekte nasıl kalıplanacağı üzerinden değerlendirilir. Et kalınlığı, çıkma açısı, yolluk girişi konumu, ters açılar, tolerans — çelik işlenmeden önce karara bağlanır, çünkü sonrasında bedeli on katına çıkar.",
+        "markers": [
+          "CATIA · SolidWorks",
+          "Tersine mühendislik",
+          "DFM incelemesi"
+        ]
+      },
+      {
+        "index": "03",
+        "title": "Kalıp",
+        "body": "Göz sayısı, yolluk stratejisi, soğutma düzeni, mekanizmalar ve çelik; standart bir kataloğa göre değil, sizin adedinize ve sizin parçanıza göre seçilir. Ardından kalıp imal edilir, denenir ve parça doğru çıkana kadar düzeltilir.",
+        "markers": [
+          "Tek gözden 46 göze",
+          "Sıcak ve soğuk yolluk",
+          "Sürgü · lifter · diş sökme"
+        ]
+      },
+      {
+        "index": "04",
+        "title": "Üretim",
+        "body": "Kalıp çalışır. Parça başı maliyetinizi belirleyen şey çevrim süresi, fire, ölçüsel tutarlılık ve gözler arası saçılımdır; hepsi de makine çalıştırılmadan çok önce kararlaştırılmıştır.",
+        "markers": [
+          "Çevrim ve fire",
+          "Gözler arası saçılım",
+          "Parça başı maliyet"
+        ]
+      },
+      {
+        "index": "05",
+        "title": "Tedarik",
+        "body": "Tekrar siparişler, yedek maça ve gözler, tedarik kesintisine karşı hazırda tutulan ikinci bir kalıp ya da sürekli programa bağlanmış parça tedariki. İlişki kalıbın tesliminde bitmez.",
+        "markers": [
+          "Sürekli tedarik",
+          "Yedek ve değişim parçaları",
+          "İkinci kaynak hazırlığı"
+        ]
+      }
+    ],
+    "modular": "Her aşama tek başına da satın alınabilir. Yalnızca mühendislik. Yalnızca kalıp. Başkasının yaptığı bir tasarımın DFM incelemesi. Hâlihazırda sahip olduğunuz bir kalıptan üretim. Zincirin tamamını alın ya da tek bir halkasını."
+  },
+  "pillars": {
+    "kicker": "Alıcılar neden değişir",
+    "heading": "Bir üreticinin tedarikçi değiştirmesinin üç nedeni.",
+    "lead": "Hiçbiri, aynı teknik resme verilen daha düşük bir fiyat teklifi değil.",
+    "items": [
+      {
+        "index": "01",
+        "title": "Daha rekabetçi birim maliyet",
+        "body": "Bir enjeksiyon parçasının fiyatı, kimse teklif vermeden çok önce belirlenir: geometri, göz sayısı, yolluk, soğutma ve çevrim süresi tarafından. Biz hepsine bakarız; yalnızca talebinizin altındaki rakama değil.",
+        "points": [
+          "Et kalınlığı ve malzeme hacmi — maliyetin en büyük kalemi genellikle hammaddedir",
+          "Göz sayısı; bir kataloğa göre değil, gerçek yıllık adede göre",
+          "Yolluk stratejisi ve yolluk girişi konumu; her atımda ne kadara mal oldukları",
+          "Soğutma düzeni ve çevrimden geri kazandırdığı saniyeler",
+          "Parça birleştirme: üç ayrı enjeksiyon parçası ve bir montaj adımının teke inmesi"
+        ],
+        "outcome": "İyileştirilecek bir şey yoksa bunu da söyler, parçayı çizildiği hâliyle fiyatlandırırız.",
+        "figure": {
+          "caption": "Bir enjeksiyon parçasının maliyeti",
+          "note": "Oranlar temsilîdir. Dağılım her proje için ayrı hesaplanır.",
+          "rows": [
+            {
+              "label": "Hammadde",
+              "value": "46%"
+            },
+            {
+              "label": "Makine zamanı",
+              "value": "24%"
+            },
+            {
+              "label": "Kalıp amortismanı",
+              "value": "14%"
+            },
+            {
+              "label": "Fire",
+              "value": "8%"
+            },
+            {
+              "label": "Elleçleme ve ambalaj",
+              "value": "8%"
+            }
+          ]
+        }
+      },
+      {
+        "index": "02",
+        "title": "Tek muhatap, tek sorumlu",
+        "body": "Mühendislik, kalıp, üretim ve tedarik tek bir sorumluluk altında. Kalıpçıyı suçlayan bir tasarımcı, enjeksiyoncuyu suçlayan bir kalıpçı ve tasarımı suçlayan bir enjeksiyoncu üçgeni yok.",
+        "points": [
+          "İlk talepten seri üretime kadar tek bir teknik muhatap",
+          "Tasarım kararları, kalıp ve proses göz önündeyken alınır",
+          "Kalıp düzeltmeleri, kimin hatası olduğuna dair ticari bir tartışma olmadan yapılır",
+          "Yedekler, değişim parçaları ve revizyonlar kalıbı yapan ekipten gelir"
+        ],
+        "outcome": "Rotayı Metal Form koordine eder. Sorumluluğu da bize aittir.",
+        "figure": {
+          "caption": "Üç tedarikçi",
+          "captionAlt": "Tek iş ortağı",
+          "note": "Rotayı Metal Form koordine eder ve sorumluluğunu taşır.",
+          "rows": [
+            {
+              "label": "Tasarım",
+              "value": "TAS"
+            },
+            {
+              "label": "Kalıpçı",
+              "value": "KALIP"
+            },
+            {
+              "label": "Enjeksiyoncu",
+              "value": "ENJ"
+            },
+            {
+              "label": "Her devir bir boşluktur",
+              "value": ""
+            }
+          ],
+          "chain": [
+            "Mühendislik",
+            "Kalıp",
+            "Üretim",
+            "Tedarik"
+          ],
+          "chainNote": "Tek sözleşme · tek muhatap"
+        }
+      },
+      {
+        "index": "03",
+        "title": "İkinci kaynak hazırlığı",
+        "body": "Tek bir ülkede, tek bir tesiste duran tek bir kalıp, bir ürün hattı için tek noktadan arıza demektir. İkinci bir rota, ihtiyaç doğduktan sonra doğaçlanmak yerine önceden hazırlanabilir.",
+        "points": [
+          "Aynı parça şartnamesine göre yapılmış ikiz ya da yedek kalıp",
+          "Hâlihazırda başka yerde üretilen bir parça için ikinci bir üretim rotası",
+          "Talep zirvesi ya da sezonluk bir pencere için ek kapasite",
+          "Orijinal kalıbı aşınmış, kaybolmuş ya da kullanım dışı kalmış bir parça için yeni kalıp"
+        ],
+        "outcome": "Bu bir hazırlıktır, rezerve kapasite vaadi değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmez — hangisi olduğunu açıkça söyleriz.",
+        "figure": {
+          "caption": "Tek rota",
+          "captionAlt": "İki rota",
+          "note": "Hazırlık — rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmez.",
+          "rows": [
+            {
+              "label": "Tesis",
+              "value": ""
+            },
+            {
+              "label": "Kalıp",
+              "value": ""
+            },
+            {
+              "label": "Hat",
+              "value": ""
+            },
+            {
+              "label": "Tek bir arıza hattı durdurur",
+              "value": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "bento": {
+    "kicker": "Sektörler",
+    "heading": "Parçanızı bulun.",
+    "lead": "Her sektör farklı bir geometri satın alır, farklı arızalardan endişe eder ve maliyeti farklı bir birimle ölçer. Çalıştığınız sektörü açın — o sayfa ona uyarlanmadı, doğrudan onun için yazıldı.",
+    "fallback": "Projenizin bir kategoriye sığması gerekmiyor.",
+    "fallbackAction": "Özel projeleri açın"
+  },
+  "proof": {
+    "kicker": "Kanıt",
+    "heading": "Size neyi gösteririz, neyi göstermeyiz.",
+    "lead": "2006'dan bu yana kalıp, mühendislik ve üretim alanlarında binden fazla proje tamamlandı. Çoğu, parçalarının yayımlanmasına onay vermemiş müşterilere ait; zaten yayımlamayacağız da.",
+    "disclosure": "Bu sitedeki her çizim ve animasyon, mühendisliği anlatmak için hazırlanmış birer şemadır. Hiçbiri ekipmanımızın ya da tamamlanmış işlerin fotoğrafı değildir. Bir müşteri yazılı izin verdiğinde gerçek proje görselleri burada yer alır — gerçek olduğu belirtilerek ve yalnızca o müşterinin izin verdiği ölçüde tanımlanarak."
+  },
+  "about": {
+    "kicker": "Kiminle çalışacaksınız",
+    "heading": "Mühendislik ve tedarik işine dönüşmüş bir kalıphane.",
+    "body": [
+      "Metal Form 2006'dan bu yana kalıp yapıyor ve parça üretiyor. Temeli kalıpçılıktır: enjeksiyon, PET, şişirme ve basınçlı döküm kalıpları, çok gözlü işler, sıcak ve soğuk yolluk sistemleri, insert kalıpları ve zor geometriyi mümkün kılan mekanizmalar.",
+      "Bu temelin çevresinde firma bugün mühendislik, üretim ve tedariki de koordine ediyor. Müşteri açısından bu; tek sözleşme, tek teknik muhatap ve sonuçtan sorumlu tek taraf demektir — iş ister tek bir kalıp olsun, ister yıllarca her ay tedarik edilen bir parça.",
+      "Çok uluslu bir şirket değiliz, öyleymiş gibi de davranmıyoruz. Bunun size kazandırdığı şey, teknik resminizi okuyan kişi ile çeliği işleyen kişi arasındaki hattın kısa olmasıdır."
+    ],
+    "position": "Mühendislik, kalıp, üretim ve tedarik — sonuçtan hesap veren tek bir iş ortağı tarafından koordine edilir."
+  },
+  "cta": {
+    "headline": "Parçayı gönderin. Ya da fotoğrafını.",
+    "body": "Ne iş yapması gerektiğini, kabaca kaç adet gerektiğini ve elinizde ne olduğunu yazın — bir teknik resim, bir numune, bir CAD dosyası ya da yalnızca sorunun kendisi. Size geometri, kalıp rotası, üretim maliyeti ve tedarik seçenekleri üzerinden dönüş yaparız.",
+    "action": "Projenizi gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form. Değerlendirilmesini istediğim bir parça var.\n\nParça: \nSektör: \nYıllık adet: \nMalzeme (biliniyorsa): \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: ",
+    "note": "48 iş saati içinde ilk teknik dönüş. Ayrıntılı bir şey göndermeden önce NDA imzalayabiliriz."
+  },
+  "diagram": {
+    "hero": {
+      "sketchNoteA": "≈ 40 mm?",
+      "sketchNoteB": "sızdırmamalı",
+      "gate": "Giriş",
+      "gateVestige": "Giriş izi",
+      "partingLine": "Ayırma yüzeyi",
+      "cooling": "Soğutma",
+      "ejectors": "İticiler",
+      "draft": "Çıkma 1,5°",
+      "wall": "Et 2,2",
+      "supply": "Sürekli tedarik"
+    },
+    "process": {
+      "s1": "01 · Gelen",
+      "s2": "02 · Geometri kararı",
+      "s3": "03 · Kalıp",
+      "s4": "04 · Üretimde",
+      "s5": "05 · Tedarik",
+      "photo": "Fotoğraf",
+      "sample": "Numune",
+      "measured": "Parçadan ölçüldü",
+      "drawing": "Teknik resim · STEP",
+      "wall": "Et 2,2 — düzgün",
+      "draft": "Çıkma 1,5°",
+      "gateHere": "Giriş burada",
+      "partingLine": "Ayırma yüzeyi",
+      "slide": "Sürgü",
+      "cooling": "Soğutma",
+      "clamp": "Mengene",
+      "injection": "Enjeksiyon ünitesi",
+      "resin": "Hammadde",
+      "cycleNote": "Çevrim · fire · gözler arası saçılım",
+      "schedule": "Sürekli program",
+      "secondTool": "İkinci kalıp — yedekte",
+      "spares": "Yedek maça · göz · değişim parçası"
+    }
+  }
+}

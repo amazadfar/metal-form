@@ -1,0 +1,222 @@
+---
+/**
+ * Site header.
+ *
+ * Deliberately not a corporate navbar. It is a thin instrument rail: the mark,
+ * four words, a language code. Everything else lives in an overlay that opens
+ * on the industry list — because the single most common navigation in a live
+ * sales meeting is "let me show you the beverage page instead", and that must
+ * take one click from anywhere.
+ *
+ * The bar is transparent over a hero and gains its rule and surface on scroll,
+ * so the opening composition is never boxed in by chrome.
+ */
+import Wordmark from './Wordmark.astro';
+import NavOverlay from './NavOverlay.astro';
+import { localePath, type Locale } from '../i18n/locales.ts';
+import { getCommon } from '../content/index.ts';
+import { INDUSTRY_LIST } from '../config/industries.ts';
+
+interface Props {
+  locale: Locale;
+  /** Highlights the current section in the overlay. */
+  current?: string;
+  /** Header sits over a dark hero and starts in its light-on-dark state. */
+  overDark?: boolean;
+}
+
+const { locale, current, overDark = false } = Astro.props;
+const c = getCommon(locale);
+const home = localePath(locale);
+
+const links = [
+  { key: 'industries', label: c.nav.industries, href: localePath(locale, 'industries') },
+  { key: 'capabilities', label: c.nav.capabilities, href: localePath(locale, 'capabilities') },
+  { key: 'about', label: c.nav.about, href: localePath(locale, 'about') },
+  { key: 'contact', label: c.nav.contact, href: localePath(locale, 'contact') },
+];
+---
+
+<header class:list={['hdr', overDark && 'hdr--over-dark']} data-header>
+  <div class="hdr__inner">
+    <Wordmark href={home} size="sm" />
+
+    <nav class="hdr__nav" aria-label={c.a11y.mainNavigation}>
+      {links.map((l) => (
+        <a
+          class="hdr__link"
+          href={l.href}
+          aria-current={current === l.key ? 'page' : undefined}
+        >
+          {l.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hdr__tools">
+      <button
+        class="hdr__menu"
+        type="button"
+        data-nav-open
+        aria-expanded="false"
+        aria-controls="nav-overlay"
+      >
+        <span class="hdr__menu-label">{c.nav.menu}</span>
+        <span class="hdr__menu-bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+
+      <a class="hdr__lang" href="/" aria-label={c.a11y.languageSelector}>
+        <span class="t-mono">{locale.toUpperCase()}</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true" class="hdr__globe">
+          <circle cx="8" cy="8" r="6.2" fill="none" stroke="currentColor" stroke-width="1.1" />
+          <ellipse cx="8" cy="8" rx="2.6" ry="6.2" fill="none" stroke="currentColor" stroke-width="1.1" />
+          <line x1="1.9" y1="8" x2="14.1" y2="8" stroke="currentColor" stroke-width="1.1" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<NavOverlay locale={locale} current={current} industries={INDUSTRY_LIST} />
+
+<script>
+  /**
+   * Two behaviours: the bar condenses once the hero has passed, and the overlay
+   * traps focus while open. Both are cheap and neither is required for the page
+   * to work.
+   */
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  if (header) {
+    const sentinel = document.createElement('div');
+    sentinel.setAttribute('aria-hidden', 'true');
+    sentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:64px;pointer-events:none;';
+    document.body.prepend(sentinel);
+
+    new IntersectionObserver(
+      ([entry]) => header.classList.toggle('is-condensed', !entry.isIntersecting),
+      { threshold: 0 },
+    ).observe(sentinel);
+  }
+</script>
+
+<style>
+  .hdr {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: var(--z-nav);
+    background: transparent;
+    transition:
+      background-color var(--dur-3) var(--ease-out),
+      border-color var(--dur-3) var(--ease-out),
+      backdrop-filter var(--dur-3) var(--ease-out);
+    border-block-end: 1px solid transparent;
+  }
+  .hdr.is-condensed {
+    background: color-mix(in oklab, var(--surface) 88%, transparent);
+    backdrop-filter: saturate(180%) blur(14px);
+    border-block-end-color: var(--line);
+  }
+  /* Over an inverted hero the chrome starts light and flips back on condense. */
+  .hdr--over-dark:not(.is-condensed) { color: var(--inverse-ink); }
+  .hdr--over-dark:not(.is-condensed) .hdr__link { color: color-mix(in oklab, var(--inverse-ink) 78%, transparent); }
+  .hdr--over-dark:not(.is-condensed) .hdr__link:hover { color: var(--inverse-ink); }
+
+  .hdr__inner {
+    inline-size: min(100% - var(--gutter) * 2, var(--shell-wide));
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-5);
+    block-size: 4.25rem;
+  }
+
+  .hdr__nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2.4vw, 2.25rem);
+  }
+  @media (max-width: 900px) { .hdr__nav { display: none; } }
+
+  .hdr__link {
+    position: relative;
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+    padding-block: 0.35rem;
+    transition: color var(--dur-2) var(--ease-out);
+  }
+  .hdr__link::after {
+    content: '';
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: inline-start;
+    transition: transform var(--dur-3) var(--ease-out);
+  }
+  .hdr__link:hover { color: var(--ink); }
+  .hdr__link:hover::after,
+  .hdr__link[aria-current='page']::after { transform: scaleX(1); }
+  .hdr__link[aria-current='page'] { color: var(--ink); }
+
+  .hdr__tools { display: flex; align-items: center; gap: var(--sp-4); }
+
+  .hdr__menu {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: var(--step--2);
+    font-family: var(--font-mono);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: inherit;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid color-mix(in oklab, currentColor 22%, transparent);
+    border-radius: var(--r-1);
+    transition: border-color var(--dur-2) var(--ease-out), background-color var(--dur-2) var(--ease-out);
+  }
+  .hdr__menu:hover { border-color: color-mix(in oklab, currentColor 45%, transparent); }
+  :global(html[lang='zh']) .hdr__menu,
+  :global(html[lang='th']) .hdr__menu,
+  :global(html[lang='ar']) .hdr__menu,
+  :global(html[lang='fa']) .hdr__menu,
+  :global(html[lang='ur']) .hdr__menu {
+    font-family: var(--font-body);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: var(--step--1);
+  }
+
+  .hdr__menu-bars { display: grid; gap: 3px; inline-size: 14px; }
+  .hdr__menu-bars i {
+    display: block;
+    block-size: 1px;
+    background: currentColor;
+    transition: transform var(--dur-3) var(--ease-mech);
+  }
+  .hdr__menu-bars i:last-child { inline-size: 65%; justify-self: end; }
+  [dir='rtl'] .hdr__menu-bars i:last-child { justify-self: start; }
+  .hdr__menu:hover .hdr__menu-bars i:last-child { inline-size: 100%; }
+
+  .hdr__lang {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: var(--step--2);
+    letter-spacing: 0.13em;
+    color: var(--ink-muted);
+    transition: color var(--dur-2) var(--ease-out);
+  }
+  .hdr--over-dark:not(.is-condensed) .hdr__lang { color: color-mix(in oklab, var(--inverse-ink) 78%, transparent); }
+  .hdr__lang:hover { color: var(--ink); }
+  .hdr--over-dark:not(.is-condensed) .hdr__lang:hover { color: var(--inverse-ink); }
+  .hdr__globe { inline-size: 0.95rem; block-size: 0.95rem; }
+
+  @media (max-width: 520px) {
+    .hdr__menu-label { display: none; }
+    .hdr__menu { padding: 0.5rem; }
+  }
+</style>

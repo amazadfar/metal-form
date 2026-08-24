@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "title": "Industries — thirteen sectors, thirteen different problems | Metal Form",
+    "description": "Medical, beverage and PET, automotive, cosmetics, appliances, chemical, electrical, consumer goods, agriculture, plumbing, furniture, marine and custom projects. Tooling, engineering, production and supply, written for each sector."
+  },
+  "hero": {
+    "kicker": "Industries",
+    "headline": ["Thirteen sectors.", "Thirteen different", "definitions of expensive."],
+    "lead": "A bottler measures cost in grams of resin. An irrigation manufacturer measures it in cavities. A heavy-vehicle buyer measures it in the years a tool has to last. The engineering is shared; almost nothing else is."
+  },
+  "note": "Each page is written for its own sector — its components, its failure modes, its economics and its vocabulary. If none of them is yours, the last one is.",
+  "cta": {
+    "headline": "Not sure which one is yours?",
+    "body": "Most projects do not arrive neatly labelled. Send the part and we will work out which conversation this actually is.",
+    "action": "Send your project",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form.\n\nPart: \nWhat it is used for: \nAnnual volume: \nWhat I have: photo / sample / drawing / CAD / nothing yet",
+    "note": "Initial technical response within 48 business hours."
+  }
+}

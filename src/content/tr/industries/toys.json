@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "title": "Oyuncak ve tüketici ürünleri kalıpçılığı — Metal Form",
+    "description": "Tüketici ürünleri ve oyuncaklar için enjeksiyon kalıbı tasarımı ve imalatı. Enjeksiyona uygun DFM ve yeniden tasarım, aile ve çok gözlü kalıplar, renk ve yüzey şartnamesi, teknik mekanizmalar, sürekli parça tedariki ve ikinci kaynak kalıpları. 2006'dan beri İran mühendisliği. 48 iş saati içinde dönüş."
+  },
+  "name": "Oyuncak ve Tüketici Ürünleri",
+  "tile": "Ürünleştirme: bir fikirden, bir numuneden ya da bir 3B baskıdan, işe yarayan bir birim maliyetle kalıplanmış parçaya. Parça sayısının azaltılması, aile kalıpları ve adedin maliyeti.",
+  "tileParts": "Ürünleştirme · Aile kalıpları · Adet",
+  "hero": {
+    "kicker": "Oyuncak ve Tüketici Ürünleri",
+    "headline": ["Birim maliyet", "çelikte belirlenir."],
+    "lead": "Tüketici ürünleri ve oyuncaklar; bir eskizden, bir numuneden ya da CAD'den kalıplı üretime. Parçayı gönderin. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendiririz.",
+    "markers": [
+      "Eskizden, numuneden ya da CAD'den ürünleştirme",
+      "Aile kalıpları ve birbirinin yerine geçebilen göz insertleri",
+      "46 göze kadar kalıp deneyimi"
+    ]
+  },
+
+  "blocks": {
+    "stack": {
+      "figureLabel": "Patlatılmış montaj, tek eksen",
+      "thesis": "Göz sayısı parça başına düşen saniyeyi belirler. Cidar kalınlığı, çevrime hâkim olan soğutmayı belirler. İkisi de kalıbın tasarlandığı hafta sabitlenir ve ürün satıldığı sürece her atımda yeniden ödenir.",
+      "partsLabel": "Parça listesi",
+      "parts": [
+        {
+          "no": "1",
+          "name": "Üst gövde",
+          "spec": "ABS · 1 GÖZ · VDI 24",
+          "note": "Görünen yüzey. B tarafından beslenir, birleşme izleri geçme kollarından uzağa yönlendirilir, çıkma açısı tasarımcının seçtiği dokuya göre verilir."
+        },
+        {
+          "no": "2",
+          "name": "Lens",
+          "spec": "PC · 4 GÖZ · PARLATMA",
+          "note": "Her akış izi yalnızca parçanın üzerinde değil, içinden de görünür. Yüksek parlatmalı göz, dar kalınlık kontrolü, erken kararlaştırılmış yolluk girişi konumu."
+        },
+        {
+          "no": "3",
+          "name": "Düğme",
+          "spec": "ABS · 8 GÖZ",
+          "note": "Küçük, yüksek gözlü, kozmetik olarak açıkta. Bir delik içinde tıkırdamadan ve sıkışmadan hareket etmesi gerekir; dolayısıyla hem giriş izi hem tolerans yığılması önemlidir."
+        },
+        {
+          "no": "4",
+          "name": "Şasi",
+          "spec": "PP · 1 GÖZ",
+          "note": "Hiç görülmez, her zaman suçlanır. Maçalı göbekler, nervür desteği ve birleşme izinin konumu; ürünün bir düşmeden ya da fazla sıkılmış bir vidadan sağ çıkıp çıkmayacağını belirler."
+        },
+        {
+          "no": "5",
+          "name": "Alt gövde",
+          "spec": "ABS · 1 GÖZ · VDI 24",
+          "note": "Üst gövdeyle birebir aynı oranda tüketilir; bu ikiliyi iki ayrı kalıp yerine bir aile kalıbı adayı yapan da budur."
+        },
+        {
+          "no": "6",
+          "name": "Menteşeli kapak",
+          "spec": "PP · 2 GÖZ",
+          "note": "Film menteşe; kendi gövdesiyle tek parça olarak kalıplanır. Pim yok, ayrı kapak yok, montaj adımı yok."
+        }
+      ],
+      "meta": ["6 enjeksiyon parçası", "3 kalıp", "PP / ABS / PC", "VDI 24"],
+      "caption": "Bu şekil için çizilmiş örnek bir tüketici ürünü. Parça sayısı, malzemeler, göz sayıları ve yüzey sınıfları bir projeden alınmamıştır.",
+      "proofLabel": "Kayıtlarda",
+      "proof": [
+        "2006'dan beri üretim",
+        "1.000'den fazla tamamlanmış proje",
+        "46 göze kadar kalıp deneyimi",
+        "CATIA ve SolidWorks",
+        "48 iş saati içinde ilk teknik dönüş"
+      ]
+    },
+
+    "intake": {
+      "index": "01",
+      "kicker": "Giriş",
+      "heading": "Başlamak için bir fotoğraf yeter.",
+      "body": "Bu konuşmayı yapmak için bitmiş bir CAD'e ihtiyacınız yok. Buraya dört girdi gelir ve dördü de tek bir ilk çıktıda buluşur: geometrinin kalıplanıp kalıplanmadığı, kalıbının neyi gerektirdiği ve sonrasında parçanın kaça mal olduğu üzerine bir okuma.",
+      "nodeLabel": "Geometri okuması",
+      "lanesLabel": "Dört girdi",
+      "lanes": [
+        {
+          "no": "1",
+          "name": "Bir eskiz ya da bir fotoğraf",
+          "action": "CAD'i biz kurarız, sonra okuruz.",
+          "need": "İki üç görünüş ve ölçeklendirebileceğimiz tek bir ölçü."
+        },
+        {
+          "no": "2",
+          "name": "Fiziksel bir numune",
+          "action": "Üretim CAD'ine tersine mühendislik, sonra aynı okuma.",
+          "need": "Parçanın kendisi. Bir rakip parçası da aynı işi görür."
+        },
+        {
+          "no": "3",
+          "name": "3B veri",
+          "action": "Doğrudan geometri incelemesine.",
+          "need": "STEP, IGES ya da CATIA ve SolidWorks'ün kendi dosyaları."
+        },
+        {
+          "no": "4",
+          "name": "Halihazırda sattığınız bir parça",
+          "action": "Nasıl üretildiğini ve ikiz bir kalıbın neyi gerektireceğini çıkarırız.",
+          "need": "Parça, yıllık adet ve sevk edildiği pazarlar."
+        }
+      ],
+      "close": "Geri gelen şey; geometri okuması, kalıp rotası, üretim ekonomisi ve tedarik seçenekleridir. 48 iş saati içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir.",
+      "figureNote": "Birleşme şeması. Her rota aynı ilk çıktıda biter."
+    },
+
+    "consolidate": {
+      "index": "02",
+      "kicker": "Parça sayısı",
+      "heading": "Üç enjeksiyon parçası ve bir pim, tek parçaya iner.",
+      "body": "Parça birleştirme, çelik işlenmeden önce alınan bir kalıp kararıdır. Parçaları birleştirmek bir kalıbı, satın alınan bir bağlantı elemanını ve aksi hâlde ürünün ömrü boyunca her adette ödenecek bir montaj işlemini ortadan kaldırır.",
+      "body2": "Uygulamanın yayımlanmış örnekleri ölçeği konusunda açık sözlü: çok parçalı bir matkap gövdesi; tutamağı, pil yuvası ve motor koruması entegre edilerek tek enjeksiyon parçası hâline getirilmiş; toplam kırk iki parçadan oluşan altı mil askısı tek bir kalıplanmış parçada birleştirilmiş. Bunlar sektörde yayımlanmış sonuçlardır, Metal Form sonuçları değildir.",
+      "beforeLabel": "Çizildiği hâliyle",
+      "afterLabel": "Kalıplandığı hâliyle",
+      "transitionLabel": "birleştir",
+      "before": {
+        "heading": "Çizildiği hâliyle",
+        "rows": [
+          { "value": "3", "label": "Enjeksiyon parçası" },
+          { "value": "1", "label": "Satın alınan pim" },
+          { "value": "3", "label": "Kalıp" },
+          { "value": "1", "label": "Montaj işlemi" }
+        ]
+      },
+      "after": {
+        "heading": "Kalıplandığı hâliyle",
+        "rows": [
+          { "value": "1", "label": "Enjeksiyon parçası" },
+          { "value": "0", "label": "Satın alınan pim" },
+          { "value": "1", "label": "Kalıp" },
+          { "value": "0", "label": "Montaj işlemi" }
+        ]
+      },
+      "consequenceHeading": "Gerçekte ortadan kalkanlar",
+      "consequences": [
+        "Bir kalıp; düzeltme turları, bakım periyodu ve yedek maçalarıyla birlikte",
+        "Satın alınan bir parça; tedarik süresi ve kendi asgari sipariş miktarıyla birlikte",
+        "Bir montaj işlemi; ürün satıldığı sürece her adette ödenen",
+        "Bir tolerans yığılması; artık buluşmak zorunda olmayan iki parça arasında",
+        "Bir arıza biçimi: yerinden çıkmaya çalışan bir pim"
+      ],
+      "cautionHeading": "Bedavalığın bittiği yer",
+      "caution": "Birleştirme kendiliğinden doğru cevap değildir. Tek parça demek; eskiden üç ayrı ödün olan bir geometride tek malzeme, tek renk ve tek cidar disiplini demektir ve ürünün tamamını, bütün olarak düzeltilmesi gereken tek bir kalıpta toplar. Parçalar malzemeyi ve işlevi paylaştığı yerde yapmaya değer. Paylaşmadığı yerde reddetmeye değer ve bunu size söyleriz.",
+      "figureNote": "Birleştirme şeması. Bir menteşe pimi, ayrı bir kapak ve bir gövde; film menteşeli tek bir enjeksiyon parçasına dönüşüyor."
+    },
+
+    "volume": {
+      "index": "03",
+      "kicker": "Amortisman",
+      "heading": "Kalıp, henüz elinizde olmayan bir sayıya bölünmüş tek bir sayıdır.",
+      "body": "Bir enjeksiyon parçasının fiyatı bir özdeşliktir: hammadde, artı göz sayısına bölünmüş pres zamanı, artı elleçleme ve varsa ikincil işlem, artı verim kaybı, artı programa yayılmış kalıp. Adetle birlikte hareket eden tek terim sonuncusudur ve sert hareket eder.",
+      "railLabel": "Yıllık adet yükseldikçe parça başına kalıp maliyeti",
+      "axisLabel": "adet / yıl",
+      "rungs": [
+        {
+          "volume": "2.000",
+          "title": "Lansman ya da doğrulama",
+          "note": "Kalıp, parça fiyatındaki baskın terimdir ve öyle de olmalıdır. Bu adette kalıp parça satın almaz, bilgi satın alır: bir proses penceresi, bir alıcının elindeki ilk numune ve bir pazar cevabı."
+        },
+        {
+          "volume": "10.000",
+          "title": "Ürünü ispatlamak",
+          "note": "Kalıp hâlâ her parçada görünür. Adet geldiğinde de kullanılabilir olacak bir çelikte, düşük gözlü bir kalıp; genellikle bulunabilecek en ucuz kalıptan daha değerlidir."
+        },
+        {
+          "volume": "50.000",
+          "title": "Amortisman tartışma konusu olmaktan çıkar",
+          "note": "Kalıp terimi düzleşir. Fiyata karar veren sayılar olarak çevrim süresi ve göz sayısı devralır; bunlar ise ticari değil, geometri kararlarıdır."
+        },
+        {
+          "volume": "250.000",
+          "title": "Fiyat, parça başına saniyedir",
+          "note": "Yüksek göz sayısının kendi çeliğini geri kazanmaya başladığı ve parçanın en kalın kesitinin, cömert davranılmış olmanın pahalıya patladığı bir yere dönüştüğü nokta."
+        },
+        {
+          "volume": "1.000.000",
+          "title": "Emtia aritmetiği",
+          "note": "Konuşmanın tamamı göz sayısı, nominal cidar ve yolluk / parça ağırlık oranıdır. Metal Form'un kalıp deneyimi 46 göze kadar uzanır; bu kategorinin bu ucunun gerçekte çalıştığı bant da budur."
+        }
+      ],
+      "flipHeading": "Aile kalıbının tersine döndüğü yer",
+      "flipLabel": "aile kalıbı tersine döner",
+      "flip": "Bir aile kalıbı farklı gözleri — bir üst ve bir alt gövdeyi, bir gövde ile bir kapağı — tek blokta toplar ve genellikle fiyat için tercih edilir. Parçalar sabit bir oranda tüketildiği ve benzer cidar kesitlerine ve atım hacimlerine sahip olduğu sürece doğru cevaptır. Ağır bir parçayla hafif bir parçayı aynı kalıba koyun; yolluk birini ütülerken diğerini aç bırakır. Her parçanın kendi göz sayısını istediği adedin ötesinde aile kalıbı bir tasarruf olmaktan çıkar ve bir kısıt hâline gelir: düzeltme gerektiren tek bir göz, bütün parçaları aynı anda presten indirir.",
+      "modelHeading": "Bu grafiğin ne olduğu ve ne olmadığı",
+      "model": "Grafik fiyata göre değil, biçime göre çizilmiştir. Sizin parça başına kalıp maliyetiniz, kalıbınızın gerçekten ürettiğiniz parçaya bölümüdür ve bunu bir web sayfasında kimse sizin için çizemez. Yayımlanmış örnek bir model aynı aritmetiği üç kez yürütüyor — yüz parçaya yayılmış çok düşük adetli bir kalıp, beş bine yayılmış işlenmiş alüminyum bir kalıp, yüz bine yayılmış çelik bir kalıp — ve parça fiyatındaki kalıp terimi bu aralıkta kabaca beş kat düşüyor. Bu, yayımlanmış bir sektör kaynağından alınmış öğretici bir rakamdır. Bir fiyat teklifi değildir ve bizim rakamımız değildir.",
+      "close": "Bu aritmetiği önce bu yıl gerçekten yapacağınız adede, sonra onun on katına göre yürütürüz ve büyük kalıbın kendini programın ömrü içinde geri ödemediği yerde bunu açıkça söyleriz. Bazen doğru cevap şimdi daha küçük bir kalıp, sipariş defteri gerçekleştiğinde bir üretim kalıbıdır.",
+      "figureNote": "Amortisman şeması. Yalnızca göreli biçim — para birimi yok, fiyat teklifi yok."
+    },
+
+    "ledger": {
+      "index": "04",
+      "kicker": "Çelikten önce",
+      "heading": "Beş şey yanlış çizilmiş olarak gelir.",
+      "body": "Bunların hiçbiri tercih meselesi değildir. Malzemenin gözden çıkarken yaptığı şeylerdir. Beşini de kalıp tasarlanmadan önceki hafta düzeltmek ucuzdur, o haftadan sonraki herhangi bir haftada düzeltmek pahalıdır.",
+      "drawnLabel": "Çizildiği hâliyle",
+      "fixedLabel": "Kalıplandığı hâliyle",
+      "items": [
+        {
+          "no": "01",
+          "title": "Geçme",
+          "drawn": "Kalıbın düz çekemeyeceği bir kanca, bir dudak ya da bir yan delik.",
+          "fixed": "Tasarım buna izin veriyorsa geometriden çıkarılır; çıkmıyorsa bir sürgü, bir lifter ya da bir diş sökücü maça olarak dürüstçe fiyatlanır.",
+          "cost": "Tuttuğunuz her geçme; kalıp maliyeti, çevrim süresi ve bakım periyodu olan bir aşınma kalemi demektir. Bazıları buna değer. Çoğu, kimse bedelini bilmeden çizilmiştir."
+        },
+        {
+          "no": "02",
+          "title": "Cidar",
+          "drawn": "Tasarımcının mukavemet istediği yerde kalınlaşan, yüzeyin süpürmek zorunda olduğu yerde incelen bir cidar.",
+          "fixed": "Tek bir nominal cidar; geri kalan her şey ondan ölçülendirilir, nervürler ona oranlanır ve kökleri radyuslanır, göbekler dolu değil maçalı yapılır.",
+          "cost": "Parçanın en kalın kesiti soğutma süresini belirler ve çevrimin büyük bölümü soğutmadır. Yayımlanmış kılavuz, en ince kesiti en kalının kabaca %40–60'ında tutar ve akışı kalından inceye yürütür. Dolu bir göbek size bir çöküntü, bir boşluk ve yiv açan bir vida altında yarılan bir göbek verir."
+        },
+        {
+          "no": "03",
+          "title": "Çıkma açısı",
+          "drawn": "Dik cidarlar; çünkü dik cidarlar ekranda doğru görünür.",
+          "fixed": "Açılma yönüne paralel her yüzeyde, o yüzeyin taşıyacağı yüzey kalitesine göre verilmiş çıkma açısı.",
+          "cost": "Yayımlanmış uygulama, parlatılmış bir cidarda asgari yarım dereceyi, çok daha uysal bir davranış için iki dereceyi verir; dokulu yüzeyler ise belirgin biçimde daha fazlasını ister. Bu olmadan görünen yüzeyde sürtme ve çizik çizgileri ve gözde takılı kalan parçalar elde edersiniz."
+        },
+        {
+          "no": "04",
+          "title": "Tolerans",
+          "drawn": "İşlenmiş metal toleranslarının bir enjeksiyon parçasına kopyalanması; üstelik hiçbir iş yapmayan ölçülere yazılarak.",
+          "fixed": "Konumlandıran, sızdırmazlık yapan, tutan ya da yük taşıyan detaylara tolerans verin. Diğer her yerde standart bantlar ve hatanın parça boyunca birikmemesi için seçilmiş bir referans.",
+          "cost": "ISO 20457 dokuz tolerans sınıfı tanımlar ve kalıba bağlı ölçülerle bağlı olmayanları ayırır; DIN 16742 enjeksiyon parçaları için genel toleransları verir. Yayımlanmış pratik bantlar 0–20 mm nominalde kabaca ±0,02 mm çok darından ±0,35 mm genişine uzanır ve ölçüyle birlikte açılır. Dekoratif bir ölçüde hassasiyet size muayene ve ret satın aldırır, başka hiçbir şey vermez."
+        },
+        {
+          "no": "05",
+          "title": "Renk",
+          "drawn": "Ekrandan ya da basılı bir kartelâdan onaylanmış, sonra ilk numuneler geldiğinde tartışılan bir renk.",
+          "fixed": "Bir Pantone ya da RAL referansı, fiziksel bir renk çipi, yazılı olarak mutabık kalınmış ölçülebilir bir tolerans ve ilk üretim koşusundan önce kararlaştırılmış bir kırma malzeme yüzdesi.",
+          "cost": "Aynı masterbatch ABS'de ve PP'de aynı tonu vermez — hammaddenin kendi rengi, parlaklığı ve pigment emilimi sonucu birlikte kaydırır. Renk rotası adedi izler ve her rotaya bağlı asgari miktarlar genellikle sürpriz olandır."
+        }
+      ],
+      "close": "Çelik işlendikten sonra yapılan tasarım değişikliği, bir tüketici ürünü programındaki en büyük tek takvim ve bütçe olayıdır. Geometri okumasının en başta gelmesinin ve işin tamamındaki en ucuz kalem olmasının nedeni budur.",
+      "figureNote": "Düzeltme şemaları. Geometri okunabilirlik için abartılmıştır.",
+      "deltaLabel": "ΔE"
+    },
+
+    "detail": {
+      "index": "05",
+      "kicker": "Büyütme",
+      "heading": "Ürünün kullanılmaya dayanıp dayanmayacağına iki detay karar verir.",
+      "body": "İkisi de satın alınmaz, kalıplanır. İkisi de bir donanım parçasının ve bir montaj adımının yerine geçer. İkisi de bir biçim sorunu değil, bir birim uzama sorunudur ve ürün ölçeğinde ikisi de arıza verene kadar görünmezdir — burada büyütülerek çizilmelerinin nedeni budur.",
+      "tabsLabel": "Detay",
+      "legendLabel": "Balonlar",
+      "items": [
+        {
+          "id": "snap",
+          "name": "Konsol geçmeli tırnak",
+          "summary": "Montaj sırasında esneyip geri dönen, ucunda kanca olan kalıplanmış bir kol. Kapamanın, tutmanın ve servis erişiminin tamamı; satın alma bedeli olmayan tek bir detayda.",
+          "callouts": [
+            { "no": "1", "name": "Kol", "note": "Uzunluk ve kesit, kullanılabilir esnemeyi belirler. Çok kısaysa montajda malzemenin elastik sınırının ötesine zorlanır; çok uzunsa yük altında gevşer ve gövde tıkırdar." },
+            { "no": "2", "name": "Kanca ve sıkı geçme", "note": "Ürünü monte eden ölçü sıkı geçme payıdır. Aynı zamanda kalıp aşındıkça değişen ilk ölçüdür; bu hesaba katılarak tasarlanmadıkça geç üretilen parçalar, erken üretilenlerden farklı oturur." },
+            { "no": "3", "name": "Kök radyusu", "note": "Bütün detaydaki en yüksek gerilme noktası. Keskin bir kök, kolun kırıldığı yerdir; genellikle yüzüncü parça ile on bininci parça arasında bir yerde." },
+            { "no": "4", "name": "Birleşme izi", "note": "Kol kökünden bilinçli olarak uzaklaştırılır. Kozmetik olarak bir çizgidir; yapısal olarak bir çatlak başlangıç noktasıdır ve bir geçme kolunda doğrudan yük yolunun üzerindedir." }
+          ],
+          "scope": "Kolu ve kalıbı birlikte tasarlar, aşınma kalemlerini adıyla yazar ve yedek maçaları kalıp durduktan sonra değil, çalışmaya başlamadan önce tanımlarız."
+        },
+        {
+          "id": "hinge",
+          "name": "Film menteşe",
+          "summary": "Bütünleşik kalıplanmış, esneyen ince bir kesit; böylece kapak ve gövde kalıptan zaten birleşmiş çıkar. Ders kitabı örneği bir birleştirme: pim yok, ayrı kapak yok, montaj işlemi yok.",
+          "callouts": [
+            { "no": "1", "name": "Menteşe bandı", "note": "İki yanında cömert radyuslar bulunan ince bir bant. Fazla kalınsa katlanmaz; fazla keskinse ilk esnemede yarılır ya da yüzüncüde beyazlar." },
+            { "no": "2", "name": "Akış yönü", "note": "Ergiyik menteşenin üzerinden değil, içinden geçecek şekilde beslenir. Akış yönü bant boyunca moleküler yönlenmeyi, yönlenme de menteşenin binlerce çevrim mi yoksa yüz çevrim mi dayanacağını belirler." },
+            { "no": "3", "name": "Malzeme", "note": "Buradaki çalışma malzemesi polipropilendir. Menteşe, polimerin ince ve esneyen bir kesit boyunca yönlenebilme kabiliyetine dayanır; bu ise her tüketici hammaddesinde bulunan bir özellik değildir." },
+            { "no": "4", "name": "İlk esnetme", "note": "Yayımlanmış uygulama, menteşeyi itmeden hemen sonra parça hâlâ sıcakken esnetir. Esnetilmeden soğumaya bırakılan bir menteşe, ömrünün geri kalanında farklı davranır." }
+          ],
+          "scope": "Menteşe, yolluk girişi konumu ve kalıp tek bir karardır ve birlikte alınır. Bir menteşenin kalıbını yapıp girişin uygun bir yere denk gelmesini ummayız."
+        }
+      ],
+      "note": "Bu bölümde anlatılan geometri, malzemeler ve uygulama yayımlanmış sektör mühendisliğidir, Metal Form ölçümleri değildir.",
+      "figureNote": "Büyütmede detay şeması. Esneme kesikli çizgiyle gösterilmiştir."
+    },
+
+    "surface": {
+      "index": "06",
+      "kicker": "Yüzey",
+      "heading": "Doku ve çıkma açısı tek bir karardır.",
+      "body": "Bir tüketici ürününde yüzey, ürünün kendisidir. Aynı zamanda göz işlendikten sonra değiştirilmesi en zor şeydir: doku, şekilli bir elektrotla erozyon yoluyla çeliğe işlenir ve kalıp yeniden ele alınmadan sonradan eklenemez.",
+      "body2": "Seçtiğiniz sınıf, borçlandığınız çıkma açısını belirler. Önce dokuyu seçin, geometri ona uyum sağlasın. Önce geometriyi seçin, çıkma açısının izin verdiği dokuya razı olun.",
+      "rowLabel": "VDI 3400 referans sınıfları",
+      "colGrade": "Sınıf",
+      "colRa": "Ra, yaklaşık",
+      "colDraft": "Gerektirdiği çıkma açısı",
+      "grades": [
+        { "grade": "VDI 18", "ra": "≈ 0,80 µm", "draft": "1,5°'nin altı", "anchor": false },
+        { "grade": "VDI 21", "ra": "≈ 1,12 µm", "draft": "1,5°'nin altı", "anchor": false },
+        { "grade": "VDI 24", "ra": "≈ 1,60 µm", "draft": "1,5 – 2,0°", "anchor": true },
+        { "grade": "VDI 27", "ra": "≈ 2,24 µm", "draft": "2,0°'nin üstü", "anchor": false },
+        { "grade": "VDI 33", "ra": "≈ 4,50 µm", "draft": "4,0°'ye yaklaşan", "anchor": false },
+        { "grade": "VDI 36", "ra": "≈ 6,30 µm", "draft": "4,0° ve üzeri", "anchor": true }
+      ],
+      "anchorNote": "Bunlardan ikisi yayımlanmış sabit noktalardır: VDI 24'te kabaca 1,5 – 2,0° çıkma açısı ve VDI 36'da en az 4,0°. Geri kalanı bu ikisinin arasında ölçeklenir; dolgulu kaliteler ise yine daha fazlasını ister. Sınıflar, Ra değerleri ve çıkma açıları tanımı gereği yaklaşıktır — bir göz dokulandırılmadan önce standarda ve fiziksel bir numuneye karşı teyit edilirler. Yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir.",
+      "colourHeading": "Renk bir onay değil, bir şartnamedir",
+      "colourBody": "Buradaki arıza tek bir kötü parça değildir. Rafta artık kendisiyle uyuşmayan bir ürün serisidir; çünkü renk bir sayı olarak değil, bir görüş olarak mutabık kalınmıştır.",
+      "driftLabel": "Aynı renk, partiden partiye",
+      "driftNote": "Bir Pantone ya da RAL referansına ve fiziksel bir renk çipine göre belirleyin. Üretimden önce yazılı olarak ölçülebilir bir renk toleransında anlaşın; böylece 'yeterince yakın' bir görüş olmaktan çıksın. Kırma malzeme yüzdesini de aynı anda kararlaştırın — kırma malzeme yalnızca mekanik tutarlılığı değil, rengi de kaydırır.",
+      "routesLabel": "Üç renk rotası ve her birinin size maliyeti",
+      "routes": [
+        {
+          "name": "Önceden compound edilmiş hammadde",
+          "volume": "Yüksek adet",
+          "note": "Renk, granül prese ulaşmadan önce compound'a katılır. Partiden partiye en tutarlı ton ve kilogram başına en pahalısı."
+        },
+        {
+          "name": "Masterbatch",
+          "volume": "Orta adet",
+          "note": "Konsantrenin doğal granüle katılması — yaygın olarak anılan bir örnek 24:1 let-down oranıdır. Kilogram başına daha ucuz; asgari miktarları ise tonla ölçülür ve markaların hiç kullanmadıkları rengi zarar yazmalarının nedeni budur."
+        },
+        {
+          "name": "Hazne karıştırması",
+          "volume": "Yalnızca kısa koşular",
+          "note": "Pigmentin makinede doğal granülle karıştırılması. En ucuzu ve en az kontrollüsü: dağılım, pigmentin yanması ve nem devrededir; çizgilenme ise ilk olarak açık renklerde görünür."
+        }
+      ],
+      "colourBoundary": "Renk rotası, renk tedarikçisi ve malzeme tedariki; siparişte aksi kararlaştırılmadıkça sizde kalan ticari kararlardır. Biz geometriyi, yolluk girişini ve kalıbı sizin belirlediğiniz renk ve yüzeye göre mühendisleriz.",
+      "figureNote": "Yüzey profili şeması. Dikey ölçek abartılmıştır."
+    },
+
+    "boundary": {
+      "index": "07",
+      "kicker": "Kapsam",
+      "heading": "Sizin belirlediğiniz gerekliliğe göre mühendislik yaparız. Ürününüzü belgelendirmeyiz.",
+      "body": "Çocuk ürünleri ve tüketici malları, ülkeden ülkeye değişen pazar gereklilikleriyle yönetilir. Bunları adıyla anmak kategori okuryazarlığıdır. Karşılamak ise marka sahibinin yükümlülüğü ve test kuruluşunun kararıdır; hiçbir kalıphane bunu sizden alamaz.",
+      "standardsHeading": "Burada yalnızca sektör bilgisi olarak anılıyor, fazlası değil",
+      "standards": [
+        { "name": "ASTM F963", "note": "ABD'de oyuncak güvenliğine ilişkin tüketici güvenliği şartnamesi; CPSIA kapsamında zorunludur." },
+        { "name": "EN 71", "note": "Avrupa oyuncak güvenliği standardı; CE işaretlemesi kapsamında uygulanır." },
+        { "name": "ISO 8124", "note": "Yukarıdakilerin hiçbirinin geçerli olmadığı yerlerde kullanılan uluslararası oyuncak güvenliği serisi." },
+        { "name": "Küçük parça silindiri", "note": "36 aydan küçük bir çocuğun boğazını simüle eden ve bir parçanın — ya da kullanım ve zorlama testleriyle kopan bir parçacığın — boğulma tehlikesi sayılıp sayılmayacağını belirleyen aparat." }
+      ],
+      "standardsNote": "Metal Form'un hiçbir oyuncak ya da tüketici ürünü güvenlik onayı yoktur, hiçbir ürün testi yapmaz ve hiçbir türde uygunluk iddiasında bulunmaz.",
+      "supplyHeading": "Metal Form'un sağladıkları",
+      "supply": [
+        "Bir eskiz, bir fotoğraf, fiziksel bir numune ya da bir CAD dosyası üzerinden üretilebilirlik okuması",
+        "Teknik resim bulunmayan durumlarda üretim CAD'ine tersine mühendislik",
+        "Enjeksiyona uygun yeniden tasarım: nominal cidar, nervür ve göbek oranı, yüzeye göre çıkma açısı, geçmelerin kaldırılması, parça birleştirme",
+        "CATIA ve SolidWorks'te kalıp tasarımı ve imalatı — enjeksiyon, PET, şişirme ve basınçlı döküm kalıpları",
+        "Çok gözlü ve aile kalıpları, sıcak ve soğuk yolluk, insertli kalıplar, sürgüler, lifterlar, diş sökücü ve katlanabilir maçalar",
+        "Birbirinin yerine geçebilen göz insertleri; böylece tek kalıp birden çok SKU, marka ya da pazar varyantını taşır",
+        "Teknik mekanizmalar — menteşeler, mandallar, cırcırlar, dişli grupları, sürgüler ve kademe durakları — çalışan bir montaj olarak tasarlanır ve kalıplanır",
+        "CNC frezeleme, tornalama ve manuel talaşlı imalat; yedekler ve değişim parçaları",
+        "Kalıp ispatlandıktan sonra parça üretimi ve sürekli tedarik",
+        "Bugün sattığınız parçalara karşı ispatlanmış ikinci kaynak ve ikiz kalıplar",
+        "Dünya geneline sevkiyat, ayrıntılı paylaşımdan önce NDA ve proje bazında kararlaştırılan şartlarla kalıp garantisi"
+      ],
+      "keepHeading": "Sizde kalanlar",
+      "keep": [
+        "Test, belgelendirme ve uygunluk onayı; kendi test kuruluşunuz üzerinden",
+        "Gerekliliğin kendisi — detay ölçüleri, bağlantı dayanımı, sabitlenmiş bağlantı elemanları, kopan parça olmaması. Siz belirtirsiniz, biz geometriyi ona göre mühendisleriz",
+        "Pazara giriş ve ülkeler arasındaki farklar: tek bir parça şartnamesi, sattığınız her pazara kendiliğinden hizmet etmez",
+        "Dekorasyon. Baskı, etiketleme, kaplama ve son işlemler süreç sonu adımlardır. Kalıbı bunların geleceğini bilerek tasarlarız; kendimiz yapmayız",
+        "Ürün seviyesinde onay, etiketleme ve bunlara eşlik eden beyanlar",
+        "Adet, renk asgari miktarları ve ürün kendini ispatlamadan önce ne kadar çelik alınacağı üzerine ticari karar"
+      ],
+      "line": "Metal Form, sizin belirttiğiniz bir gerekliliğe göre geometri mühendisliği yapar. Bitmiş ürünleri test etmeyiz, belgelendirmeyiz ve uygunluk onayı vermeyiz. Bir tedarikçi size bunları yapacağını söylüyorsa, arkasında kimin akreditasyonunun durduğunu sorun."
+    },
+
+    "after": {
+      "index": "08",
+      "kicker": "Onaydan sonra",
+      "heading": "Bir kalıbın ömrü ayla değil, atımla sayılır.",
+      "body": "İlk numuneler bir teslimat değil, bir kontrol noktasıdır. Onay, ilk iyi parçanın çıktığı an değil, proses penceresinde mutabık kalındığı andır. Ondan sonraki her şey takvime göre değil, kalıba göre ölçülür.",
+      "axisLabel": "Atım",
+      "events": [
+        {
+          "mark": "T0 / T1",
+          "title": "İlk numuneler",
+          "note": "Hem teknik resme hem elinizdeki parçaya karşı ölçüsel ve kozmetik inceleme. Düzeltme turları bir anlaşmazlığın başlangıcı değil, işin parçasıdır."
+        },
+        {
+          "mark": "T2",
+          "title": "Düzeltme ve yeniden numune",
+          "note": "Çelik eklenir, çelik alınır, yolluk girişi ve soğutma ayarlanır. Sonra da gerçekten imzalanan numuneler."
+        },
+        {
+          "mark": "ONAY",
+          "title": "Proses penceresinde mutabakat",
+          "note": "İlk iyi parça değil. Güvenilir biçimde iyi parça üreten ayarlar; üstelik başkası tekrarlayabilsin diye yazıya dökülmüş hâlde."
+        },
+        {
+          "mark": "PİLOT",
+          "title": "Pilot koşu",
+          "note": "Üretimin üreteceği şekilde, üretimin kullanacağı renkte, üretimin çalıştıracağı malzemede üretilmiş ilk parçalar."
+        },
+        {
+          "mark": "RAMPA",
+          "title": "Üretim rampası",
+          "note": "Burada gözler arası tutarlılık, herhangi bir mutlak ölçüden daha önemlidir: iki farklı gözden alınan eşleşen bir çiftin yine de monte olması gerekir."
+        },
+        {
+          "mark": "BAKIM",
+          "title": "İlk bakım periyodu",
+          "note": "Aşınma kalemleri ve yedek maçalar, kalıp durduktan sonra değil çalışmaya başlamadan önce belirlenir. Yayımlanmış çelik atım ömrü bantları — ön sertleştirilmiş bir kalite için kabaca 80.000 ila 150.000 atım, sertleştirilmiş kaliteler için yine daha yükseği — tedarikçi ortalamalarıdır, asla garanti değildir. Gerçek kalıp ömrüne karar veren şey bakım periyodudur."
+        },
+        {
+          "mark": "TEDARİK",
+          "title": "Sürekli tedarik",
+          "note": "Kalıp ispatlandıktan sonra parça, her seferinde bir proje eklenmeden gelir."
+        },
+        {
+          "mark": "İKİNCİ KALIP",
+          "title": "İkinci kaynak",
+          "note": "Tek ülkede, tek tesiste, tek tedarikçide duran tek bir kalıp; tüketici ürünlerinin standart tek nokta arızasıdır. İkinci kalıbı yapar, bugün sattığınız parçalara karşı ispatlar ve NDA altında başka bir ülkede hazır tutarız. Bu bir hazırlıktır, rezerve kapasite değil — kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmez ve hangisi olduğunu açıkça söyleriz."
+        }
+      ],
+      "close": "Kalıp garanti şartları her proje ve kalıp şartnamesi bazında tanımlanır. Kalıbın mülkiyeti, saklanması ve devri; on sekiz ay sonraki bir konuşmaya değil, siparişe aittir."
+    },
+
+    "panels": {
+      "heading": "Daha ayrıntılı",
+      "items": [
+        {
+          "title": "Cidar, nervür ve göbek",
+          "bullets": [
+            "Tek bir nominal cidar tutun ve diğer her detayı ondan ölçülendirin.",
+            "Yayımlanmış kılavuz en ince kesiti en kalının kabaca %40–60'ında tutar ve akışı kalından inceye yürütür.",
+            "Nervürler cidara oranlanır ve kökleri radyuslanır; fazla kalın bir nervür, karşı yüzeyde bir çöküntüdür.",
+            "Göbekler maçalanır ve nervürlerle desteklenir, asla dolu bırakılmaz — dolu bir göbek size bir çöküntü, bir boşluk ve yiv açan bir vida altında yarılan bir göbek verir.",
+            "Her cidar geçişini radyuslayın; keskin iç köşeler gerilmeyi yoğunlaştırır ve akışı bozar.",
+            "Parçanın en kalın kesiti soğutma süresini belirler ve çevrime soğutma hâkimdir.",
+            "Derin maçalarda — bir bardak, bir tutamak, bir pil yuvası — sıcak nokta maçanın kendisidir ve çevre devresi yerine baffle ya da bubbler ister."
+          ],
+          "source": "Bu panodaki rakamlar yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
+        },
+        {
+          "title": "Göz sayısı ve kesişim noktası",
+          "bullets": [
+            "Parça başına saniye, çevrim süresinin göz sayısına bölümüdür ve parça fiyatının büyük bölümü odur.",
+            "Yüksek gözlü bir kalıp, ancak kazandırdığı saniyeler ek çeliği programın ömrü içinde geri kazandırdığında kazanır.",
+            "Çok gözlü kalıplar bir yolluk sistemi ister; doğrudan giriş mümkün değildir, dolayısıyla giriş izi bir kaza değil, bir tasarım kararı hâline gelir.",
+            "Küçük parçalarda tünel ve alt girişler tercih edilir; böylece yolluk itme sırasında ayrılır ve sonsuza kadar ödenecek bir elle yolluk ayırma işlemi olmaz.",
+            "Sıcak yolluk ile soğuk yolluk arasındaki karar; kalıp fiyatına göre değil, yolluk / parça ağırlık oranına ve renk değişim sıklığına göre verilir.",
+            "Aile kalıpları, parçaların sabit bir oranda tüketildiği ve benzer cidar kesitlerine ve atım hacimlerine sahip olduğu yerde işler.",
+            "Birbirinin yerine geçebilen göz insertleri, ikinci bir kalıp olmadan SKU, marka ve pazar varyantlarını karşılar.",
+            "Metal Form'un kalıp deneyimi 46 göze kadar uzanır."
+          ],
+          "source": "Burada verilen göz sayısı bantları ve yolluk ekonomisi yayımlanmış sektör uygulamalarıdır."
+        },
+        {
+          "title": "Bir enjeksiyon parçasında tolerans",
+          "bullets": [
+            "İşlenmiş metal toleransları aktarılmaz: kalıplanmış ölçüleri çekme, kalıp geometrisi ve proses sapması yönetir.",
+            "ISO 20457 dokuz tolerans sınıfı tanımlar ve kalıba bağlı ölçülerle bağlı olmayanları ayırır; DIN 16742 enjeksiyon parçaları için genel toleransları verir; DIN 16901 hâlâ yaygın biçimde anılır.",
+            "Yayımlanmış pratik bantlar 0–20 mm nominalde kabaca ±0,02 mm çok darından ±0,35 mm genişine, 20–50 mm'de kabaca ±0,03 ila ±0,40, 50–120 mm'de kabaca ±0,04 ila ±0,60 arasında uzanır.",
+            "Hata referanstan uzaklaştıkça büyür; referans seçiminin, yanına yazılan tolerans değerinden daha önemli olmasının nedeni budur.",
+            "Dolgulu kaliteler anizotropik çeker: daha rijit bir parça ve düz panellerde daha fazla çarpılma.",
+            "Bir iş yapan ölçülere tolerans verin. Diğer yerlerde standart bantlar."
+          ],
+          "source": "Burada anılan standartlar ve bantlar yayımlanmış sektör uygulamalarıdır, Metal Form'un garanti ettiği toleranslar değildir."
+        }
+      ]
+    }
+  },
+
+  "cta": {
+    "headline": "Parçayı gönderin.",
+    "body": "Bir fotoğraf, elle çizilmiş bir eskiz, fiziksel bir numune, bir STEP dosyası ya da hâlihazırda sattığınız bir parça. 48 iş saati içinde geometri okuması, kalıp rotası ve üretim ekonomisiyle dönüş yaparız. Talep hâlinde NDA.",
+    "action": "Projenizi gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form. Kalıbını yaptırmak istediğim bir tüketici ürünü var. Ürün: [ne olduğu]. Aşama: [eskiz / prototip / CAD / başka yerde üretimde]. Yıllık adet: [yılda adet]. Malzeme: [biliniyorsa]. Geometriyi inceleyip bir kalıp rotası önerebilir misiniz?",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+  }
+}

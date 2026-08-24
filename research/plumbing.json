@@ -1,0 +1,597 @@
+{
+  "key": "plumbing",
+  "displayName": "Plumbing & Construction",
+  "researchedAt": "2026-08",
+  "sources": [
+    {
+      "title": "Best Methods of Molding Undercuts — Plastics Technology",
+      "url": "https://www.ptonline.com/articles/best-methods-of-molding-undercuts",
+      "whatItEstablished": "Hard numbers on undercut tooling. Standard collapsible cores are a steel tube slotted into 12 segments that collapse radially; dovetail variants use 6 larger, individually repairable segments. Collapsible cores cycle 'often as much as 30% faster than unscrewing mechanisms'. Mini-cores go down to 10.8 mm diameter and give up to 80% full threads. Head space between core flange and centre-pin flange must be precisely maintained or the mechanism fails; cores are individually numbered to a matching pin and are not interchangeable. Unscrewing moulds are 'among the most complex of all injection molds' with characteristic failures: broken rollers, damaged racks, water and oil leaks, and part defects of scuffing, ovality, flash and grease contamination."
+    },
+    {
+      "title": "Fusion Pipe Welding: Socket vs Butt vs Electrofusion by Size — Hitze Group",
+      "url": "https://hitzegroup.com/plastic-pipe-fusion-welding-methods/",
+      "whatItEstablished": "The installer-side physics that a fitting mould has to serve. Socket fusion is used PP-R OD 20–63 mm by hand, up to 125 mm with jigs; PE below 63 mm. Heater setpoints: PP-R socket 260 ± 10 °C, PP butt 210 ± 10 °C, PE socket 250–270 °C, PE butt 225 ± 10 °C (ISO). Butt heating time is roughly 10 × wall thickness in seconds. Electrofusion cycle 160 s at 110 mm, 900 s at 250 mm; peeling depth runs 39 mm at 20 mm diameter to 85 mm at 110 mm. Critical for tooling: 'ovality and dimensional consistency' decide socket-fusion joint quality — uneven contact in non-round pipe prevents proper socket seating; mismatched SDR at a butt joint is a specification error, not a site problem. Standards named: DVS 2207-11, DVS 2207-1, ISO 21307:2017, ASTM F2620."
+    },
+    {
+      "title": "PVC Injection Molding Guide: Process, Design, Advantages & Applications — SWCPU",
+      "url": "https://www.swcpu.com/blog/pvc-injection-molding-guide/",
+      "whatItEstablished": "PVC processing window and the tooling consequences. Melt 345–375 °F (≈173–190 °C); above 390 °F (200 °C) PVC thermally degrades and releases HCl, which is both an operator hazard and a corrosion problem — hence stainless or chrome-plated moulds. Design guidance: keep wall-thickness transitions within 10–15% of nominal, draft 0.5–1° on vertical walls, corner radii 25–75% of wall, vents 0.03–0.05 mm. Dry PVC 75–90 °C for 1.5–2.5 h. Tensile 40–60 MPa, moisture absorption <0.2%."
+    },
+    {
+      "title": "From global to local: Onshoring and reshoring in the plumbing & mechanical industry — Plumbing & Mechanical",
+      "url": "https://www.pmmag.com/articles/106652-from-global-to-local-onshoring-and-reshoring-in-the-plumbing-and-mechanical-industry",
+      "whatItEstablished": "Procurement psychology in this sector. Pandemic-era lead times went from weeks to months on valves, PEX tubing and fixtures. GF Building Flow Solutions on record: 'We are dual sources on raw materials and purchased components from domestic and international suppliers so we can shift our demand.' Reported 30–50% lead-time reduction for domestically produced SKUs. Distributors now sell on 'product availability, fulfillment reliability and supplier transparency' rather than price alone. Reshoring is capital-heavy: 'significant upfront capital investment in automation, tooling and plant infrastructure.'"
+    },
+    {
+      "title": "Why PEX Fittings Leak and How to Identify the Cause — FlowGuard Gold",
+      "url": "https://www.flowguardgold.com/en-us/blog/why-pex-fittings-leak-and-how-to-identify-the-cause",
+      "whatItEstablished": "Field failure modes for fitting systems. Crimp fittings fail on tool calibration and positioning tolerance as tight as 1/8 in; expansion fittings 1/16 in, with cold-weather ring-contraction delay causing unseating. Push fittings fail through O-ring seal failure, faulty gripper-ring teeth, or accidental triggering of the release collar. Polysulfone / polyphenylsulfone fittings are attacked by acetone (present in PVC/ABS solvent cleaners), by UV, and by spray foam. PEX itself relies on sacrificial antioxidants consumed by chlorine; degradation accelerates above 80 psi and 140 °F, showing as abrasions, cracks and 'popcorning'."
+    },
+    {
+      "title": "Design of a uPVC pipe fitting injection mould with a three-stage collapsible core — Journal of Engineering Design",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/09544820410001734170",
+      "whatItEstablished": "Confirms the academic framing of the core problem: uPVC pipe fittings are difficult to tool 'because of unique shapes and the presence of undercuts', and a 360° internal or groove undercut requires a collapsible core. Establishes that multi-stage collapsible cores exist specifically to serve pipe-fitting geometry."
+    },
+    {
+      "title": "Hot Runner vs. Cold Runner Systems in PVC Molding / hot-vs-cold runner comparisons",
+      "url": "https://pexamart.com/blog/hot-runner-vs-cold-runner-systems-in-pvc-molding/",
+      "whatItEstablished": "Runner selection rule that matters for this vertical: thermally sensitive resins — PVC among them — are usually kept on cold runners because long residence time in a heated manifold raises degradation risk. Optimised cold runners still carry 50–100% more cycle time than hot runners because the runner must cool with the part. Cold runners also suit low-to-mid volume and frequent colour change, which describes the SKU tail of a fitting range."
+    },
+    {
+      "title": "PP-R fitting standards, SDR and dimensional tolerance references (DIN 8077/8078, EN ISO 15874, DVS 2207)",
+      "url": "https://www.sam-uk.com/what-is-ppr-pipe-an-in-depth-guide-to-uses-types-standards",
+      "whatItEstablished": "The dimensional language of the sector. SDR = dn / en. Common series: SDR 11 (PN 10), SDR 17.6 (PN 6), SDR 26 (PN 4). Socket fusion is specified Ø20–110 for pipes to DIN 8077 and EN ISO 15874. Published diameter tolerances quoted in the region of ± 0.04 mm at ≤ 40 mm and ± 0.06 mm at ≤ 50 mm. DIN 8077 = dimensions, DIN 8078 = quality requirements and testing, DVS 2207 = welding regulations."
+    },
+    {
+      "title": "XILI Mold — PPR Pipe & Fitting Mould category (competitor positioning)",
+      "url": "https://www.pipefittingmolding.com/product-category/ppr-pipe-and-fittings-mould/",
+      "whatItEstablished": "Positioning intelligence. A typical strong Chinese fitting-mould supplier leads with 'multi-cavity for 20–32 mm tees and elbows' and 'optimized cooling system' for PP-R's thick walls and high shrinkage. It names no core mechanisms, no steel grades, no cavity counts, no mould life and no cycle data. The engineering/DFM layer is essentially absent — that is the gap a credible engineering-led supplier can occupy."
+    },
+    {
+      "title": "Gestión de Compras — Injection moulds for pipe fittings (competitor positioning)",
+      "url": "https://www.gestiondecompras.com/en/products/molds-dies-and-tooling/injection-molds-for-pipe-fittings/",
+      "whatItEstablished": "Positioning intelligence and the sector's real application list: sanitary and storm sewer, drinking water supply, roof drains, irrigation, drainage, gas supply, ventilation, mining, communications, electrical. Fitting families named: coupler, tee, reducer, elbow 90°/45°, cross, end cap, socket, adapter, bushing, plug. Materials handled: PVC, PP, PE, PB, ABS, POM, PVDF, PPSU. The page competes on certification badges and 'extensive experience', not on mould sophistication."
+    },
+    {
+      "title": "MUD systems, family tooling and interchangeable cavity inserts (Zetar, DME, Foremost Plastic)",
+      "url": "https://zetarmold.com/mud-molds-vs-standard-molds/",
+      "whatItEstablished": "The modular-tooling economics behind SKU proliferation. A Master Unit Die frame stays in the machine while A/B inserts change. For a family of five variants, one frame plus five insert sets is materially cheaper than five standalone tools, because you buy only cores and cavities rather than five complete mould bases. Standardising frame sizes lets a toolroom put machining labour into the inserts instead of re-cutting frames."
+    }
+  ],
+  "buyer": {
+    "whoBuys": "Two distinct buyers, and the page has to speak to both without blurring them. First: the established fittings manufacturer who already extrudes pipe and moulds a range — 200 to 900 live SKUs — and is replacing worn tooling, adding diameters, or adding a second source because one tool now carries a top-selling size. Second: the pipe extruder or building-systems brand moving up the value chain into fittings for the first time, who owns the market and the dimension table but has never commissioned a mould with a collapsible core in it. Behind both sits a third figure who never signs but always decides: the plant manager who will live with the mechanism at 3 a.m.",
+    "jobTitles": [
+      "Technical Director / Head of Engineering (fittings manufacturer)",
+      "Plant Manager / Production Manager (injection moulding hall)",
+      "Tooling Manager / Toolroom Supervisor",
+      "Procurement Manager / Category Buyer — tooling and capital equipment",
+      "R&D or Product Development Manager (piping systems brand)",
+      "Owner / Managing Director of a mid-size regional fittings producer",
+      "Project Engineer, building services / infrastructure contractor (specifying custom parts)"
+    ],
+    "whatTheyActuallyBuy": [
+      "A whole fitting family covered by a coherent tooling plan, not one mould at a time",
+      "High-cavitation tooling for the core commodity sizes — 20, 25, 32 mm elbows, tees and sockets — where cost per thousand is decided",
+      "The undercut mechanism: collapsible cores for internal grooves and 360° features, unscrewing cores for moulded threads, slides for side ports",
+      "Dimensional agreement between fitting and pipe, across every cavity and every tool in the range",
+      "A second, independent tool for the SKU that would stop the plant if its only mould went down",
+      "Insert-carrying tooling for brass overmoulding on threaded adapters",
+      "Redesign of an existing fitting to take grams out at constant geometry and constant fit",
+      "Replacement tooling for a mould whose original maker no longer exists or no longer answers",
+      "CAD reconstruction of a legacy fitting where only steel and samples survive",
+      "Ongoing component supply for the SKU tail that is not worth their own machine time"
+    ],
+    "decisionDrivers": [
+      "Cost per thousand parts landed, not the price of the mould in isolation",
+      "Whether the socket bore will still be in tolerance on cavity 32 at shot 400,000",
+      "Cycle time, because in a thick-walled fitting cooling is most of the cycle and most of the conversion cost",
+      "Mechanism robustness — who fixes the unscrewing gearbox, and how fast, and with what spares",
+      "Changeover time between SKUs on shared tooling",
+      "Grams per part; resin is the largest recurring line and it never stops running",
+      "Whether the supplier will hand over the 3D data, the mould drawings and the spare list",
+      "Tooling lead time against a construction season that will not move",
+      "Confidentiality — a fitting geometry is the whole product, and it is trivially copyable"
+    ],
+    "whatKeepsThemAwake": [
+      "One tool, one top-selling size, no backup, and a distributor with a standing order",
+      "A field leak traced back to a socket dimension that drifted across a cavity family",
+      "The mould maker who built the range in 2011 and no longer replies to email",
+      "Owning steel but not owning the CAD that made it",
+      "An unscrewing mechanism that scuffs threads intermittently and cannot be caught in-process",
+      "A competitor undercutting them by four grams a fitting on the same catalogue number",
+      "Resin price moving faster than the price list they already published to distributors",
+      "A tool ordered in February landing after the construction season it was bought for",
+      "Sending a proprietary fitting geometry to a supplier and seeing it in someone else's catalogue"
+    ]
+  },
+  "economics": {
+    "unitEconomics": "A fitting is a low-value part sold in enormous numbers. The individual elbow is worth cents; the range is worth a factory. That inverts normal tooling logic. The mould is a fixed cost amortised over hundreds of thousands or millions of shots, so almost nothing about the mould price matters next to what the mould does to the recurring three: grams of resin per part, seconds of cycle per shot, and parts per shot. Resin is typically the largest ongoing line in the whole operation. A gram removed from a 25 mm elbow, at commodity volumes, outruns the entire tooling budget within a single production year. Equally, a cavity added to a tool that already runs continuously divides the machine hour across more parts without adding an operator. The buyer's real question is never 'what does this mould cost' — it is 'what does this mould make my catalogue number cost, for the next eight years'.",
+    "costDrivers": [
+      "Part weight in grams — the dominant recurring cost, and the one most often inherited unexamined from a drawing made a decade ago",
+      "Cavitation — the divisor on machine hour, labour and overhead; small commodity diameters justify high cavity counts that larger diameters never will",
+      "Cycle time, which in a thick-walled fitting is overwhelmingly cooling time; PP sections above 3 mm may need 20–30 seconds of cooling alone",
+      "Runner scrap and regrind handling — an optimised cold runner still carries 50–100% more cycle than a hot runner because the runner must cool with the part",
+      "Machine tonnage, driven by projected area of the full cavity layout rather than by any single part",
+      "Mechanism maintenance: unscrewing gearboxes, racks, rollers and seals; collapsible core segments and their numbered pins",
+      "Changeover time across the SKU tail — every hour spent swapping tooling is an hour of unrecovered machine cost",
+      "Brass insert cost and insert-loading labour on threaded adapters",
+      "Mould life against total programme volume — the wrong steel on a PVC tool is a corrosion problem, not a wear problem"
+    ],
+    "volumeProfile": "Sharply bimodal, and both halves need different tooling logic. The head of the range — 20, 25 and 32 mm elbows, tees, sockets and couplers — runs effectively continuously and absorbs high cavitation without hesitation. The tail — large diameters, reducing combinations, specials, threaded variants in both hands — runs in campaigns, sometimes only a few times a year, and cannot carry a dedicated mould base of its own. A typical range has a small number of SKUs generating most of the volume and a long tail generating most of the tooling headaches. The strategic answer is not one strategy but two: dedicated high-cavity tools at the head, modular frames with interchangeable inserts at the tail.",
+    "whereMoneyIsLost": [
+      "Wall thickness carried forward unquestioned from a legacy drawing, paid for in resin on every shot for years",
+      "Five standalone moulds built for five variants of the same fitting, where one frame and five insert sets would have covered it",
+      "Cycle padded by two or three seconds to hide a sink mark that a cooling revision would have removed permanently",
+      "A cold runner left on a material that would have tolerated a hot runner, burning scrap and cycle on every shot",
+      "Cavity-to-cavity dimensional spread wide enough that a share of production is scrapped at final gauging",
+      "Unscrewing mechanism downtime — broken rollers, damaged racks, water and oil leaks — taking a whole tool out of the schedule",
+      "Rejects at the customer's fusion machine caused by ovality or socket depth, which come back as commercial damage, not as scrap",
+      "Tools built for SKUs that never reached the volume that would have paid them back",
+      "Regrind used past the point where thermal history has degraded it, showing up as inconsistent colour and reduced impact strength",
+      "Corroded cavities on PVC tooling where the steel and plating were specified for a benign resin"
+    ]
+  },
+  "risk": {
+    "failureModes": [
+      "Joint leakage at socket fusion caused by ovality or socket-depth inconsistency — uneven contact prevents proper seating, and the joint looks made but is not",
+      "Weld line at the branch of a tee or the heel of an elbow, where two flow fronts meet and never fully knit, opening under pressure or impact",
+      "Environmental stress cracking in polyolefin fittings, particularly where residual moulded-in stress meets sustained load and an aggressive medium",
+      "Long-term creep and stress relaxation in hot-water lines, where the fitting must hold at elevated temperature for decades, not at ambient for a burst test",
+      "Brass insert pull-out or spin-out where the overmoulded polymer never gripped the knurl properly",
+      "Cracking of a female threaded boss under installer over-torque — a design and hoop-stress problem, not an installer problem",
+      "O-ring groove out of tolerance, so the seal is either under-compressed and weeps or over-compressed and takes a set",
+      "Push-fit failures through O-ring damage, faulty gripper-ring teeth, or accidental triggering of the release collar",
+      "Solvent-weld failure in PVC-U where socket interference fit was too loose to develop a proper cemented joint",
+      "Chemical attack on polysulfone-family fittings from acetone-bearing solvent cleaners, UV exposure, or spray foam",
+      "Incomplete thread flanks on moulded threads, giving a fitting that starts and then strips"
+    ],
+    "qualityDefects": [
+      "Short shot — resin failing to fill thin sections fed through thick ones, or long flow paths in high-cavity layouts",
+      "Weld / knit lines, cosmetically minor and structurally serious in a pressure-carrying part",
+      "Sink marks at the thick socket land, which can pull the internal bore out of round even when the outside looks acceptable",
+      "Warpage from uneven cooling, non-uniform wall or overpacking",
+      "Ovality — the single defect that turns a good fitting into a bad joint on site",
+      "Core shift and wall eccentricity, leaving one side of the socket thin",
+      "Flash at the parting line, and at collapsible-core segment lines where twelve pieces of steel meet",
+      "Scuffed or ovalised threads and grease contamination from unscrewing mechanisms",
+      "Gate vestige left proud inside a bore, disturbing flow or preventing full pipe insertion",
+      "Burn marks and trapped gas at the last area to fill, from vents too small, clogged, or absent",
+      "Black specks and discoloration in PVC from thermal degradation and long residence",
+      "Cavity-to-cavity dimensional drift, which is invisible in a single sample and fatal across a shipment"
+    ],
+    "downtimeCauses": [
+      "Unscrewing mechanism failure — broken rollers, damaged racks, water and oil leaks — the characteristic downtime of threaded fitting tools",
+      "Collapsible core problems: loss of head space between core flange and centre pin, damaged segments, or a segment reassembled onto the wrong numbered pin",
+      "Cooling channel scaling and blockage, which in hard-water plants degrades cycle quietly for months before anyone measures it",
+      "Hot runner tip freeze-off or manifold leak on a multi-drop layout",
+      "Vent clogging, appearing first as burns at one cavity and then as short shots",
+      "Tool changeover between SKUs, especially on ranges that never standardised frame sizes",
+      "Corrosion of cavity surfaces on PVC tooling, where degradation products attack unprotected steel",
+      "Insert-loading stoppages on brass overmould tools when insert supply or insert dimension varies"
+    ],
+    "supplyRisks": [
+      "Single-tool exposure on a high-volume SKU with no second mould and no alternative machine",
+      "Original toolmaker dissolved, relocated or unresponsive, leaving no spares and no drawings",
+      "Owning the steel but not the CAD — no ability to rebuild, revise or duplicate the tool anywhere",
+      "Tooling lead times of two to three months, and considerably longer for complex mechanisms, colliding with a fixed construction season",
+      "Resin price volatility on a published distributor price list that cannot be revised at the same speed",
+      "Freight, customs and tariff exposure on both inbound tooling and outbound product",
+      "Concentration of the entire fitting-mould supply base in a small number of regions, so a regional disruption is a global one",
+      "Geometry leakage — a fitting design is the whole product and is trivially copied once it leaves the building"
+    ]
+  },
+  "components": [
+    {
+      "name": "90° and 45° elbows (socket fusion / solvent weld)",
+      "note": "The volume backbone of any range. Short flow path, thick socket lands, and a weld line at the heel where the flow front rejoins. Small diameters justify the highest cavitation on the site."
+    },
+    {
+      "name": "Equal and reducing tees",
+      "note": "Three sockets, one core intersection, and the branch weld line that decides whether the part survives impact. Reducing combinations multiply SKU count faster than any other family member."
+    },
+    {
+      "name": "Couplers, sockets and reducing sockets",
+      "note": "Geometrically the simplest and commercially the most sensitive — pure dimensional parts whose entire function is the fit. Nowhere to hide a shrinkage error."
+    },
+    {
+      "name": "Male and female threaded adapters with brass inserts",
+      "note": "The interface between plastic systems and metal ones. Overmoulded brass insert, knurl grip, and a hoop-stressed boss that installers will over-torque. Insert loading changes the cell economics."
+    },
+    {
+      "name": "Moulded-thread fittings and caps",
+      "note": "Where the unscrewing core or collapsible core earns its cost. Thread flank fill, scuffing and ovality are the recurring quality fight."
+    },
+    {
+      "name": "Three-part unions with O-ring seat",
+      "note": "Body, nut and insert, plus a sealing groove that must be dimensionally right in three separate mouldings that have to agree with each other."
+    },
+    {
+      "name": "Compression fitting bodies, nuts, split rings and cones",
+      "note": "A four-part assembly where tolerance stack decides sealing. The cone seat geometry is the part that actually seals; the nut is only the load path."
+    },
+    {
+      "name": "Push-fit bodies and collet housings",
+      "note": "Houses a grab ring and an EPDM O-ring. Bore finish, groove geometry and the release collar's snap features are the whole product. Field failures cluster on the O-ring seat."
+    },
+    {
+      "name": "PEX crimp and expansion fitting bodies",
+      "note": "Barbed profile plus a shoulder that sets insertion depth. Positioning tolerance on site is measured in sixteenths of an inch, so the moulded shoulder is a safety feature."
+    },
+    {
+      "name": "Electrofusion coupler bodies",
+      "note": "PE100 body with an embedded resistance coil, terminal towers and fusion indicators. Coil placement and bore concentricity determine whether the fusion zone gets even heat."
+    },
+    {
+      "name": "Ball valve bodies, balls, stems and handles",
+      "note": "A multi-part moulded assembly. Body walls are deliberately non-uniform — thin tubular sections for a precise seat, thicker peripheral walls for pressure containment — which makes shrinkage control the entire design problem."
+    },
+    {
+      "name": "Wall-plate and backplate elbows",
+      "note": "Fitting plus mounting geometry in one shot. Combines a thick socket with a thin flange, which is the classic sink and warpage pairing."
+    },
+    {
+      "name": "PVC-U drainage bends, branches and access fittings",
+      "note": "Large diameter, thin wall relative to size, long cooling, and cores that must strip clean from long parallel sockets. Solvent-weld socket interference is the functional dimension."
+    },
+    {
+      "name": "Gully traps, back-inlet gullies and inspection chamber bases",
+      "note": "The heaviest parts in the catalogue. A body with a drain outlet, a water trap, a removable grid and multiple inlet connections. Large tonnage, long cycle, low cavitation, and a completely different economic profile from a 25 mm elbow."
+    },
+    {
+      "name": "Manifolds and distribution blocks",
+      "note": "Many ports on one body. Every port is a core, and the cores together decide the parting line and the mechanism count."
+    },
+    {
+      "name": "Pipe clips, saddle clamps and support brackets",
+      "note": "The non-pressure accessories that nonetheless carry the brand and ship in the same box. Cheap parts that reward very high cavitation and simple ejection."
+    }
+  ],
+  "tooling": {
+    "whyToolingMatters": "In most industries the mould makes the part. In fittings the mould makes the catalogue. A fitting is defined almost entirely by dimensions that have to agree with a pipe someone else extruded, made by someone else's machine, welded by someone else's heater at 260 °C on a site nobody controls. There is no assembly step to absorb error and no finishing operation to correct it — what comes out of the cavity is the shipped product. Add to that the fact that nearly every fitting has an undercut, an internal groove, a thread or a 360° feature that will not simply eject, and the tool stops being a container and becomes a mechanism. The mechanism is where the cost, the cycle, the downtime and the field failures all originate.",
+    "toolingTopics": [
+      "Collapsible cores for internal grooves, O-ring glands and 360° undercuts — the standard twelve-segment slotted tube versus six-segment dovetail designs with larger, individually repairable segments",
+      "Unscrewing cores driven by rack and pinion for moulded threads, and the honest trade: full thread form at the price of the most maintenance-hungry mechanism in the moulding hall",
+      "Choosing between the two — published comparisons put collapsible cores as much as 30% faster in cycle than unscrewing mechanisms, with mini-cores reaching down to around 10.8 mm diameter and covering up to 80% full threads",
+      "Head space discipline on collapsible cores: the gap between core flange and centre-pin flange must be held exactly, cores are matched to numbered pins, and they cannot be swapped between positions",
+      "Slides and side cores for branch ports on tees, crosses and manifolds, and the parting-line consequences",
+      "Stripper plates and bumping-off for shallow snap features where a mechanism would be over-engineering",
+      "Insert-carrying tooling for brass overmould on threaded adapters, including insert location, anti-rotation and shut-off on the thread flanks",
+      "Modular frames with interchangeable cavity and core inserts to serve a fitting family from one mould base",
+      "Steel and surface selection against the resin: corrosion resistance matters more than hardness on PVC tools",
+      "Cavity-to-cavity balance in high-cavitation layouts, so the last cavity fills like the first",
+      "Venting sized for the resin — in the region of 0.03–0.05 mm for PVC — and positioned at the last areas to fill",
+      "Ejection strategy on deep parallel sockets, where draft and surface finish do more work than ejector force"
+    ],
+    "cavityStrategy": "Cavitation should follow the volume curve of the range, not a single house rule. The commodity head — 20, 25, 32 mm elbows, tees, sockets, couplers — is exactly the geometry that rewards very high cavity counts: small projected area, short flow paths, continuous demand. Metal Form has built tooling up to 46 cavities, which is the relevant number here, because these are the parts where cavitation directly divides the machine hour. The tail is the opposite case. Large diameters, reducing combinations and threaded variants in both hands rarely justify a dedicated base; they justify a standardised frame carrying interchangeable inserts, so the toolroom's machining hours go into cores and cavities rather than into re-cutting mould bases. Between the two sits the balance question: a high-cavity tool is only as good as its worst cavity, so filling balance, cooling balance and mechanism synchronisation across the layout are the real engineering, not the cavity number itself.",
+    "runnerStrategy": "The resin decides, not the preference. PVC is thermally sensitive — it processes in a narrow window around 173–190 °C and begins degrading above roughly 200 °C, releasing HCl — so long residence in a heated manifold is a real degradation and corrosion risk, and cold runners remain the conservative default. Polyolefins are more forgiving and, at commodity fitting volumes, hot runners pay back quickly: an optimised cold runner still carries somewhere between 50% and 100% more cycle time than a hot runner, because the runner has to cool alongside the part, and it produces regrind on every shot. On thick-walled sockets, valve gating gives control of pack and gate freeze that a hot tip cannot. The SKU tail argues the other way — low volume and frequent colour change favour cold runners. A range of any size will end up with both, and the useful engineering decision is which SKUs sit on which side of that line.",
+    "coolingNotes": "In a fitting, cooling is the cycle. These are thick, chunky parts with heavy socket lands and, in polypropylene, thick sections above 3 mm can need twenty to thirty seconds of cooling on their own. That has two consequences. First, cooling layout around the socket land — not around the tool — is where cycle time is actually won, and it is the thing most standard fitting moulds under-invest in. Second, cooling uniformity is a dimensional issue, not just a speed issue: polypropylene shrinkage rises as cooling slows, so an unevenly cooled socket shrinks unevenly and goes oval, and ovality is precisely what stops a socket-fusion joint seating. Mould temperature is a live trade-off in PP: running warmer improves surface and reduces warpage by letting crystallisation complete, but costs cycle. That trade should be made deliberately, per part, and written down — not discovered by a process technician six months in.",
+    "materialNotes": "PVC and PVC-U: narrow processing window, degrades above roughly 200 °C releasing HCl, which argues for corrosion-resistant or plated cavity surfaces, generous venting around 0.03–0.05 mm, short residence and cold runners. Design guidance for the resin is wall transitions held within 10–15% of nominal, draft 0.5–1° on vertical walls and corner radii at 25–75% of wall. PP and PP-R: semi-crystalline with shrinkage typically in the 1–2.5% band, strongly dependent on cooling rate and wall thickness — which is why the first article on a fitting tool should be cut steel-safe and corrected against measured parts, not against a handbook number. PE100 for electrofusion and buried systems, where stress-crack resistance is the property that matters and residual moulded-in stress is the enemy. PEX system fittings are commonly polysulfone-family polymers or brass; the polymer versions are attacked by acetone-bearing solvent cleaners, by UV and by spray foam, which is a field fact worth knowing even when the tool is not yours to build. ABS and PVC-U dominate above-ground and underground drainage. Across all of them, one rule holds: the shrinkage number in the datasheet is a starting hypothesis, and the fitting family's dimensional agreement is proven on measured parts."
+  },
+  "vocabulary": [
+    {
+      "term": "SDR (Standard Dimension Ratio)",
+      "meaning": "Nominal outside diameter divided by wall thickness, dn/en. It is the wall-thickness class of a pipe or fitting and the shorthand the whole sector uses. Common series include SDR 11, SDR 17.6 and SDR 26.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "PN rating",
+      "meaning": "Pressure nominal — the pressure class a piping product is declared to. It belongs to the customer's product, its material and its testing, never to a mould.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Socket fusion",
+      "meaning": "Joining method where a heated female die softens both the pipe end and the fitting socket, then the pipe is pushed home. Common PP-R Ø20–63 by hand and up to 125 with jigs. It is the reason socket dimensions are the fitting's most critical feature.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Butt fusion",
+      "meaning": "Pipe-to-pipe joining with squared, plate-heated ends forced together to extrude a bead. No fitting is consumed. Heating time runs roughly ten times the wall thickness in seconds.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Electrofusion",
+      "meaning": "Joining by passing current through a resistance coil embedded in the moulded coupler. The control unit reads the fitting's barcode and drives a defined current — it cannot see whether the pipe was scraped.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Peeling / scraping depth",
+      "meaning": "The length of oxidised pipe skin that must be removed before an electrofusion joint. Roughly 39 mm at 20 mm diameter rising to 85 mm at 110 mm.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Ovality",
+      "meaning": "Out-of-roundness. In this sector it is not a cosmetic defect — a non-round socket does not seat, so the joint is made in appearance only. The single most consequential dimensional failure in fittings.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Collapsible core",
+      "meaning": "A slotted steel tube whose segments retract radially to release a 360° internal undercut, groove or thread. Standard designs use twelve segments; dovetail designs use six larger, individually repairable ones.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Head space",
+      "meaning": "The gap between a collapsible core's flange and its centre-pin flange. If it is not held precisely the core does not collapse correctly. Cores are matched to numbered pins and are not interchangeable.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Unscrewing core",
+      "meaning": "A rotating core, usually rack-and-pinion driven, that threads itself out of a moulded internal thread. Full thread form, at the cost of the most maintenance-intensive mechanism in the hall.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Bumping off / stripping",
+      "meaning": "Ejecting a shallow undercut by forcing the part over it, relying on material elasticity instead of a mechanism. Cheap when it works; a crack propagator when it is pushed too far.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Weld line (knit line)",
+      "meaning": "The seam where two flow fronts meet and do not fully re-fuse. In a pressure-carrying fitting it is a structural feature, and its location is a gating decision made in the tool.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Sink mark",
+      "meaning": "A surface depression where a thick section shrinks against its skin. On a fitting the real damage is often internal — the bore goes out of round while the outside still looks acceptable.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Core shift",
+      "meaning": "Deflection of a long core under fill pressure, leaving one side of a socket wall thinner than the other. Invisible externally, decisive under pressure.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Gate vestige",
+      "meaning": "The residual mark where the gate broke. Inside a fitting bore it disturbs flow or blocks full pipe insertion, so gate position is a functional decision, not a cosmetic one.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Cavitation",
+      "meaning": "The number of parts produced per shot. In commodity fittings it is the primary divisor on machine hour, labour and overhead.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Family mould / modular frame",
+      "meaning": "One standardised mould base carrying interchangeable cavity and core inserts, so several members of a fitting family share a frame. Buys back the tooling budget consumed by the SKU tail.",
+      "useIn": "copy"
+    },
+    {
+      "term": "Steel-safe",
+      "meaning": "Cutting the first cavity with material deliberately left on, so dimensions can be corrected by removing steel after measuring real parts. The only honest way to converge on shrinkage in a semi-crystalline fitting.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Shot weight",
+      "meaning": "Total resin per cycle, part plus runner. The number that connects the tool to the resin invoice.",
+      "useIn": "copy"
+    },
+    {
+      "term": "O-ring gland",
+      "meaning": "The groove that houses and compresses the elastomeric seal in a union, compression or push-fit assembly. Its width, depth and corner condition decide whether the seal is compressed correctly or weeps.",
+      "useIn": "diagram"
+    },
+    {
+      "term": "Solvent-weld socket interference",
+      "meaning": "The deliberate taper and tightness of a PVC-U socket that lets cement develop a genuine cemented joint rather than a gap filled with glue.",
+      "useIn": "technical-panel"
+    },
+    {
+      "term": "Overmoulded brass insert",
+      "meaning": "A knurled brass thread encapsulated during moulding so a plastic fitting can meet a metal one. Grip on the knurl and hoop stress in the surrounding boss are the two failure paths.",
+      "useIn": "copy"
+    }
+  ],
+  "metalFormAngle": {
+    "credibleOffers": [
+      "Tooling strategy for a whole fitting range — deciding which SKUs get dedicated high-cavity tools and which share a modular frame with interchangeable inserts",
+      "High-cavitation mould design and manufacture for commodity diameters, backed by tooling experience up to 46 cavities",
+      "Mechanism engineering: collapsible cores for internal grooves and 360° features, unscrewing cores for moulded threads, slides for branch ports",
+      "Insert moulds for brass-overmoulded threaded adapters",
+      "DFM review of an existing fitting: wall thickness, gate and weld-line position, draft, corner radii, ejection",
+      "Part-weight reduction at constant fit — taking grams out without touching any dimension the customer's catalogue or standard depends on",
+      "Reverse engineering and CAD reconstruction of legacy fittings where the drawings are gone and only samples and worn steel remain",
+      "Replacement and duplicate tooling for ranges whose original mould maker is no longer available",
+      "Second-source tooling: an independent, dimensionally matched mould for a SKU that currently has only one",
+      "Production and ongoing component supply for the SKU tail",
+      "International delivery of tooling and components, with NDA in place from first contact"
+    ],
+    "dfmAngles": [
+      "Wall thickness audit on a legacy fitting — most catalogue geometries have never been re-examined since the drawing was first made, and the resin bill has been paying for it ever since",
+      "Move the weld line rather than accept it: gate position is the lever that decides whether the knit line sits at the heel of an elbow or somewhere it does not matter",
+      "Attack ovality at the cooling layout, not at the process — an unevenly cooled socket shrinks unevenly, and no amount of process tuning makes it round again",
+      "Design the socket land for cooling access from the start, because in a thick fitting cooling is most of the cycle and most of the conversion cost",
+      "Choose the mechanism honestly: a collapsible core is materially faster than an unscrewing mechanism, but not every thread form or shut-off condition allows it",
+      "Vent for the resin, especially on PVC, where trapped gas produces burns and degradation products attack the cavity surface",
+      "Balance the layout before adding cavities — a 32-cavity tool that fills unevenly is a 24-cavity tool with eight rejects",
+      "Standardise frame sizes across the range so the toolroom's machining hours go into inserts, not into re-cutting bases",
+      "Cut the first cavity steel-safe and converge shrinkage against measured parts, particularly in polypropylene where shrinkage moves with cooling rate and wall"
+    ],
+    "secondSourceAngle": "Ask which single mould, if it stopped tomorrow, would stop the plant. In a fitting range there is almost always one — a 25 mm elbow or a 32 mm tee that carries a disproportionate share of revenue on one tool, with no duplicate and often no CAD. That is a supply position, not a tooling position, and the sector already knows it: manufacturers in this industry openly run dual sources on materials and purchased components specifically so they can shift demand when one route closes. Tooling deserves the same treatment. Metal Form builds the second tool — dimensionally matched to the parts your existing mould actually produces, not to a drawing that may no longer describe it. That means measuring your current output and reconstructing the CAD if it does not exist, so the duplicate agrees with the pipe your customers are already welding to. Where the original tool is worn, the second source is also the opportunity to correct what it drifted into. Since 2006, over 1,000 projects, work delivered internationally, NDA from first contact.",
+    "costOptimisationAngle": "There are exactly three recurring numbers on a fitting: grams per part, seconds per shot, parts per shot. Everything else is noise. Send the part and the dimension table and we will tell you what each of those three currently costs you and which of them is movable without touching a dimension your catalogue depends on. Usually it is wall thickness carried forward from an old drawing, cooling that was never designed around the socket land, or five separate mould bases doing the work of one frame and five insert sets. The tooling price is a one-time number; those three are paid on every shot for the life of the range. We quote both, and we tell you which one actually decides your cost per thousand.",
+    "whatWeMustNotClaim": [
+      "No pressure ratings or PN classes — the rating belongs to the customer's product, material and testing, never to our tooling",
+      "No potable-water or drinking-water approvals (WRAS, NSF/ANSI 61, KTW, ACS, or any national equivalent)",
+      "No standards certification or compliance claims (EN ISO 15874, EN 1451, EN 12201, DIN 8077/8078, ASTM, ISO 9001, ISO 13485, IATF)",
+      "Never state or imply that our mould makes a fitting pass a burst, sustained-pressure or thermal-cycling test",
+      "No Moldflow or named simulation software, no flow-analysis reports",
+      "No 3D scanning, no CMM department, no QC department, no metrology lab",
+      "No exact tolerance figures for our own work — the DIN/ISO numbers quoted on the page must be attributed to the industry standards, not offered as our capability",
+      "No cleanroom, sterile, validated or GMP language",
+      "No two-shot moulding, no grinding department",
+      "No machine counts, factory area, headcount, production volumes or savings percentages",
+      "No named clients, client logos, certifications or awards",
+      "No claim to supply the resin's properties or to certify material grades"
+    ]
+  },
+  "page": {
+    "heroHeadline": "A fitting range is a tooling problem before it is a catalogue.",
+    "heroSub": "Elbows, tees, sockets, threaded adapters, valve bodies, push-fit, electrofusion and drainage parts. Send the dimension table, the material and the annual volume. We return the tooling route, the cavitation, the mechanism and the part weight.",
+    "heroVisualConcept": "No hero image. The hero is a large orthographic plate — a strict modular grid, six columns by four rows, each cell holding one fitting drawn as a single-weight SVG line silhouette in true orthographic projection: 90° elbow, 45° elbow, equal tee, reducing tee, socket, reducing socket, end cap, male adapter, female adapter, union, wall-plate elbow, ball valve body, electrofusion coupler, gully body, and so on. Each cell carries a small monospace tag in the corner — a diameter code, an SDR class, a cavity count. The plate draws itself in on load: cells index in one at a time in reading order, each silhouette stroking from a single path start point, roughly 70 ms apart, no fade, no scale, no easing beyond a linear stroke. The headline sits inside the grid rather than over it, occupying two cells at top-left as if it were another catalogue entry. On scroll the plate does not parallax — it condenses, cells contracting toward a denser tile that becomes the sticky range index for the rest of the page. The point being made visually before a word is read: this is a system of parts, not a part.",
+    "narrativeSpine": "One fitting is easy. A range is the job. The page walks a technical buyer from the single part to the system and then to the money, in that order, because that is the order in which their problem actually gets expensive. It opens on the catalogue as an object — the grid of silhouettes that is the customer's real product. It then cuts through one socket to show where the cost, the defects and the field failures physically live in the wall. From there it turns to the mechanism, because almost every fitting has an undercut and the mechanism is what separates a tool that runs from one that does not. Then the material, which dictates the runner, the steel and the venting. Then the arithmetic: grams, seconds, cavities, cost per thousand. Then continuity — the tool that has no duplicate and the CAD that does not exist. It closes on how a programme actually starts. The register throughout is a supplier talking to an engineer who already knows more about fittings than we do, and who is testing whether we know anything about tooling.",
+    "sections": [
+      {
+        "id": "range-matrix",
+        "title": "The range is the product",
+        "purpose": "Establish immediately that we think in families, not parts — and demonstrate that we understand SKU proliferation is this sector's defining commercial problem.",
+        "layout": "A full-width interactive matrix, drawn as a real table and not as cards. Columns are nominal diameters (20, 25, 32, 40, 50, 63, 75, 90, 110). Rows are fitting types (elbow 90, elbow 45, equal tee, reducing tee, socket, reducing socket, end cap, male adapter, female adapter, union, wall-plate elbow, valve body). Every occupied cell holds a tiny orthographic glyph of that fitting at that size. A left-hand rail carries running totals: SKUs in view, dedicated tools required, modular frames required. Structural rules only — hairline row and column dividers, no cell borders, no fills except the accent tint on selection.",
+        "contentOutline": "Short standfirst: a range of this shape is typically 200 to 900 live SKUs, of which a handful carry most of the volume and the rest carry most of the tooling cost. Then two toggles above the matrix — 'one tool per SKU' and 'modular frames' — which recolour the matrix to show which cells collapse into shared frames and restate the tooling count in the rail. Beneath, three short paragraphs: where cavitation belongs (the commodity head), where modular frames belong (the tail), and what dimensional agreement across the whole matrix actually requires.",
+        "interaction": "Hovering a cell raises the glyph to a larger inline drawing in the left rail with its tooling note. Clicking a row selects the whole fitting type and the rail totals recompute. The two toggles animate by re-tinting cells in column order with a hard step, no cross-fade. Entirely keyboard-navigable as a grid. On mobile the matrix becomes a horizontally scrollable strip with the fitting-type column pinned."
+      },
+      {
+        "id": "socket-section",
+        "title": "Section through a socket",
+        "purpose": "Prove technical literacy by showing exactly where money, defects and field failures live inside a single fitting wall — the section a real fittings engineer would draw on a whiteboard.",
+        "layout": "Split viewport. Left two-thirds is a single large pinned SVG: a half-section cutaway of a socket-fusion elbow, wall rendered as a solid filled band with the bore, socket land, weld-line location and gate position all present as real geometry. Right third is a scrolling annotation stack. As each annotation enters, its corresponding zone in the section highlights and a leader line draws from text to geometry.",
+        "contentOutline": "Six annotations, each two or three sentences. (1) Wall thickness — the grams, and the fact that this number is usually inherited from a drawing nobody has revisited. (2) The socket land — the thickest section, the longest cooling, and therefore most of the cycle. (3) Ovality — why an unevenly cooled socket does not seat, and why that becomes a leak on site rather than scrap in the plant. (4) The weld line at the heel — where two flow fronts meet, why it is structural in a pressure part, and that its position is a gating decision. (5) The internal sink — how a thick land pulls the bore out of round while the outside still looks right. (6) Gate vestige in the bore — why gate position is functional here, not cosmetic.",
+        "interaction": "Scroll-scrubbed, not scroll-triggered: the section's highlighted zone tracks scroll position continuously so a user can move back and forth through the part. Leader lines draw with a stroke-dash reveal. A small toggle switches the section between three fitting types (elbow, tee, threaded adapter) and the annotation stack swaps content with a hard cut. Respects reduced-motion by rendering all annotations and leader lines statically."
+      },
+      {
+        "id": "core-mechanisms",
+        "title": "Getting the undercut out",
+        "purpose": "The single most credible technical section on the page. Almost every fitting has an undercut; the mechanism decides cycle, downtime and defects. Showing the trade honestly is what separates an engineering supplier from a mould shop.",
+        "layout": "Three vertical mechanism columns of equal width, each containing an animated schematic in plan section at the top and a specification ledger beneath. Below all three, a single full-width comparison ledger — a real table with tabular figures — that lets the three be read against each other on the same rows.",
+        "contentOutline": "Column one, collapsible core: a slotted steel tube whose segments retract radially; twelve-segment standard versus six-segment dovetail with larger, individually repairable segments; mini-cores reaching down around 10.8 mm diameter and covering up to 80% full threads; head space between core flange and centre-pin flange must be held precisely, and cores are matched to numbered pins. Column two, unscrewing core: rack-and-pinion rotation threading the core out; full thread form; the characteristic failures — broken rollers, damaged racks, water and oil leaks, and part defects of scuffing, ovality, flash and grease contamination. Column three, slides and stripping: side cores for branch ports, stripper plates and bumping-off for shallow features, and where that stops being viable. The comparison ledger rows: thread coverage, cycle penalty (published comparisons put collapsible cores as much as 30% faster than unscrewing), mechanism complexity, spare-part exposure, maintenance interval, typical failure mode. A closing line establishes the position: we specify the mechanism against your geometry and your maintenance capability, and we say which one we would not use.",
+        "interaction": "Each schematic runs a short looping mechanism animation — segments collapsing inward, core rotating out, slide withdrawing — in discrete indexed steps rather than smooth motion, at roughly six frames per cycle, so it reads as machinery and not as decoration. Hovering a row in the comparison ledger highlights the corresponding element in all three schematics simultaneously. Animations pause when off-screen and under reduced-motion."
+      },
+      {
+        "id": "material-ledger",
+        "title": "The material decides the tool",
+        "purpose": "Show that we tool to the resin rather than applying one house recipe — and quietly demonstrate command of processing facts a real moulder will immediately recognise or immediately reject.",
+        "layout": "A horizontal ledger occupying the full width, laid out like a spreadsheet rather than a set of cards: one row per material (PVC / PVC-U, PP and PP-R, PE100, PEX system polymers, ABS), columns for processing window, shrinkage behaviour, runner implication, steel and surface implication, venting, and the characteristic risk. Selecting a row expands a detail panel below the ledger, in place, pushing subsequent rows down rather than opening a modal.",
+        "contentOutline": "PVC row: melt roughly 173–190 °C, degradation above about 200 °C releasing HCl, corrosion-resistant or plated cavity surfaces, venting in the region of 0.03–0.05 mm, cold runner as the conservative default, wall transitions within 10–15% of nominal, draft 0.5–1°, radii 25–75% of wall. PP / PP-R row: semi-crystalline, shrinkage typically 1–2.5% and moving with cooling rate and wall thickness, thick sections above 3 mm needing twenty to thirty seconds of cooling, mould temperature as a live trade between surface and cycle, first cavity cut steel-safe. PE100 row: electrofusion and buried systems, stress-crack resistance as the governing property, residual moulded-in stress as the enemy, coil placement and bore concentricity. PEX systems row: polysulfone-family polymers and brass, attacked in the field by acetone-bearing solvent cleaners, UV and spray foam — presented explicitly as an industry field fact. ABS row: drainage and above-ground. A standing note under the ledger states plainly that datasheet shrinkage is a starting hypothesis and dimensional agreement is proven on measured parts.",
+        "interaction": "Row selection with a hard accent-tinted row state and an in-place expanding detail panel. No accordion bounce — the expansion is a stepped height change over about 120 ms. Columns are individually sortable, which is a small joke aimed squarely at the kind of engineer who will actually sort them. Horizontally scrollable on narrow viewports with the material column pinned."
+      },
+      {
+        "id": "cost-per-thousand",
+        "title": "Three numbers decide your cost per thousand",
+        "purpose": "Convert technical credibility into commercial credibility. Make the buyer's actual arithmetic visible without inventing any numbers about Metal Form.",
+        "layout": "Two panes, hard-divided by a full-height rule. Left pane is an input rail styled as a control panel: part weight in grams, cycle seconds, cavity count, resin price per kilo, annual volume — all as stepped numeric inputs with monospace readouts, no slider thumbs, no gradients. Right pane is an output ledger: resin per thousand, machine time per thousand, shots per year, and a delta line that shows what one gram, one second or one extra cavity is worth over a year.",
+        "contentOutline": "Standfirst establishing the principle: the mould price is paid once, these three numbers are paid on every shot for the life of the range. The calculator is explicitly the user's own arithmetic on their own inputs — the page states that it makes no claim about what Metal Form would achieve on their part. Below the calculator, three short blocks on where the money actually goes missing: wall thickness inherited unexamined from a legacy drawing; cycle padded to hide a sink that a cooling revision would remove permanently; five standalone mould bases doing the work of one frame and five insert sets. Closing line invites them to send the part rather than the spreadsheet.",
+        "interaction": "Live recalculation on input with digits rolling in a stepped odometer motion, never a smooth tween. Changing any input flashes only the affected output row. Defaults are neutral placeholder values clearly marked as such. A 'copy figures' control puts the user's own inputs and outputs on the clipboard as plain text so they can paste them into the enquiry — which is the section's real conversion mechanism."
+      },
+      {
+        "id": "tool-custody",
+        "title": "Which single mould, if it stopped tomorrow, would stop the plant?",
+        "purpose": "The second-source pitch, framed as a risk audit rather than a sales offer. This is the section most likely to generate an enquiry from an established manufacturer.",
+        "layout": "A staggered dossier layout, deliberately breaking the page's grid discipline for one section: an asymmetric two-column arrangement where short question blocks sit left at varying vertical offsets and their consequences sit right, connected by hairline rules. Reads like a checklist someone filled in rather than like marketing.",
+        "contentOutline": "Six audit questions, each with the consequence stated flatly beneath. Do you have a duplicate tool for your highest-volume SKU? Do you hold the 3D data, or only the steel? Is the original mould maker still trading, and do they still answer? Do your current parts still match the drawings, or has the tool drifted? Where are your spare cores and segments, and how long to replace one? What is your tooling lead time against your construction season? Then the Metal Form position in three tight paragraphs: we build the second tool to the parts your existing mould actually produces, measured, not to a drawing that may no longer describe it; where CAD does not exist we reconstruct it; where the original tool has drifted, the duplicate is the chance to correct it. Facts stated once and without embellishment: operating since 2006, over 1,000 projects delivered, tooling built up to 46 cavities, CATIA and SolidWorks, mould warranty with terms set per project, international delivery, NDA from first contact.",
+        "interaction": "Each question block reveals its consequence line on scroll entry with a stepped vertical shift of a few pixels — the only place on the page where anything moves organically, which makes the section feel like a different voice. The audit questions are individually anchor-linkable so a buyer can send a colleague one specific question."
+      },
+      {
+        "id": "programme",
+        "title": "How a fitting programme starts",
+        "purpose": "Remove procedural friction and make the first step concrete, small and low-risk.",
+        "layout": "A single horizontal band of five numbered stages running left to right on a continuous rule, with the rule thickening as the stages progress — a visual weight gradient rather than icons or cards. Below the band, a compact two-column block: 'what to send' and 'what you get back'.",
+        "contentOutline": "Stages: (1) Send the part, the dimension table or the sample. (2) NDA in place before anything technical moves. (3) We return the tooling route — mechanism, cavitation, runner, steel — with the part-weight and cycle assessment. (4) Design, review against your dimension table, first article cut steel-safe. (5) Correction against measured parts, then release. Initial project response within 48 business hours is stated once, plainly, in the 'what you get back' column. 'What to send' lists: 3D data or a physical sample, the dimension table or applicable drawing, material and grade, annual volume by SKU, and the target machine if the tool must run on existing equipment.",
+        "interaction": "Almost none, deliberately. The band's rule draws left to right once on entry over roughly 400 ms and then stays still. After six sections of active interface the stillness signals that the technical argument is finished."
+      }
+    ],
+    "technicalPanels": [
+      {
+        "title": "What we need to quote a fitting mould",
+        "bullets": [
+          "3D data, or a physical sample if the data no longer exists",
+          "The dimension table or drawing the fitting must satisfy — including socket depth, bore and any sealing geometry",
+          "Material and grade, since the resin dictates runner, steel, surface and venting",
+          "Annual volume by SKU, not for the range as a whole — the head and the tail need different tooling logic",
+          "Which SKUs are variants of the same body, so we can assess a modular frame against separate tools",
+          "Target machine, tonnage and platen dimensions if the tool must run on equipment you already own",
+          "Whether brass inserts are involved, and their drawing",
+          "Any existing tool's actual measured output, if this is a replacement or a second source"
+        ]
+      },
+      {
+        "title": "Core mechanism selection",
+        "bullets": [
+          "Collapsible core — for 360° internal grooves, glands and threads. Standard designs use twelve slotted segments; dovetail designs use six larger, individually repairable segments. Published comparisons put them as much as 30% faster in cycle than unscrewing mechanisms.",
+          "Mini collapsible cores reach down to around 10.8 mm diameter and cover up to 80% full threads",
+          "Head space between core flange and centre-pin flange must be held precisely, and each core is matched to a numbered pin — they cannot be swapped between positions",
+          "Unscrewing core — for full thread form where a collapsible core cannot shut off. The most maintenance-intensive mechanism in a moulding hall.",
+          "Documented unscrewing failure modes: broken rollers, damaged racks, water and oil leaks; part defects of scuffing, ovality, flash and grease contamination",
+          "Slides and side cores — for branch ports on tees, crosses and manifolds; they set the parting line before anything else does",
+          "Stripping and bumping-off — viable only on shallow features and forgiving resins; beyond that it is a crack propagator",
+          "We specify against your geometry and your maintenance capability, and we will say which mechanism we would not use"
+        ]
+      },
+      {
+        "title": "Dimensional control: what a tool can and cannot decide",
+        "bullets": [
+          "A mould can hold cavity-to-cavity agreement, wall uniformity and cooling symmetry. Those are tooling decisions.",
+          "Ovality is a cooling and shrinkage problem before it is a process problem — an unevenly cooled socket cannot be tuned back into round",
+          "Semi-crystalline shrinkage moves with cooling rate and wall thickness, so datasheet shrinkage is a hypothesis, not a dimension",
+          "First cavities cut steel-safe, then corrected against measured parts, is the only honest convergence route on a fitting family",
+          "Industry reference tolerances quoted in published PP-R material — in the region of ± 0.04 mm at diameters ≤ 40 mm and ± 0.06 mm at ≤ 50 mm — are the standards' figures, cited here as context, not as a Metal Form capability statement",
+          "Pressure rating, PN class and any potable-water approval belong to your product, your material and your testing. A mould does not confer them and we do not claim them."
+        ]
+      },
+      {
+        "title": "Runner and cooling decisions in a fitting tool",
+        "bullets": [
+          "PVC processes in a narrow window around 173–190 °C and degrades above roughly 200 °C, releasing HCl — a corrosion problem for the tool as well as a safety one",
+          "That argues for cold runners on PVC, short residence, corrosion-resistant or plated cavity surfaces, and venting in the region of 0.03–0.05 mm",
+          "Polyolefins at commodity volumes usually justify hot runners: an optimised cold runner still carries 50–100% more cycle time, because the runner cools with the part, and it makes regrind on every shot",
+          "Valve gating gives pack and gate-freeze control on thick socket lands that a hot tip cannot",
+          "The SKU tail argues the other way — low volume and frequent colour change favour cold runners. Most ranges end up with both.",
+          "Cooling is most of the cycle in a fitting: thick PP sections above 3 mm can need twenty to thirty seconds of cooling on their own",
+          "Cooling layout belongs around the socket land, not around the tool — that is where cycle time is actually won"
+        ]
+      },
+      {
+        "title": "Second source: what we build from",
+        "bullets": [
+          "From your 3D data where it exists — fastest and lowest risk",
+          "From measured production parts where it does not, so the duplicate agrees with the pipe your customers already weld to",
+          "From a physical sample by CAD reconstruction where only steel and parts survive",
+          "Where the original tool has drifted, the second source is the opportunity to correct it rather than replicate the drift",
+          "You receive the 3D data for what we build",
+          "NDA in place before technical exchange begins",
+          "Mould warranty, with terms agreed per project",
+          "International delivery"
+        ]
+      }
+    ],
+    "ctaHeadline": "Send the part. We will tell you what the tooling should be.",
+    "ctaSub": "A fitting, a dimension table, or a sample of something an old mould still makes. We come back with the mechanism, the cavitation, the runner route and the part weight — and with what we would not do. Initial project response within 48 business hours. NDA first if you prefer.",
+    "whatsappPrefill": "Hello Metal Form. We make plastic pipe fittings and I would like to discuss tooling. Material: [PP-R / PVC-U / PE100 / ABS]. Sizes: [__] mm. Fitting types: [elbows / tees / sockets / threaded adapters / valve bodies]. Annual volume: [__]. I can send the dimension table and 3D data under NDA.",
+    "metaTitle": "Pipe Fitting Moulds & Tooling — Plumbing | Metal Form",
+    "metaDescription": "Tooling and engineering for plastic pipe fittings: elbows, tees, sockets, threaded adapters, valve bodies and drainage parts. Collapsible and unscrewing cores, high-cavitation and modular family tooling, second-source moulds. Since 2006."
+  },
+  "artDirection": {
+    "moodInOneLine": "A precision parts catalogue from a very good engineering company — modular, orthographic, systematically indexed, printed on good paper rather than lit for a photograph.",
+    "palette": {
+      "surface": "#F4F3EF",
+      "surfaceAlt": "#E5E3DB",
+      "ink": "#1B211E",
+      "inkMuted": "#6C716C",
+      "accent": "#0E7A52",
+      "accent2": "#B08A3E",
+      "rationale": "Structural neutrals first: a chalk-limestone surface and a dry-cement alt, the colour of the building materials this industry actually sits among, with a graphite ink carrying a faint green cast so it sits with the accent rather than against it. The accent is deliberately PP-R green — the colour of the pipe itself in most of the world's plumbing supply, instantly recognisable to anyone in this trade and, crucially, not the generic water-blue every plumbing site defaults to. It is authentic rather than decorative. The secondary is a restrained brass ochre, reserved exclusively for anything metallic in the story: overmoulded inserts, threads, compression nuts. That gives the page a strict two-signal colour logic — green means polymer, brass means metal — which does real work in the diagrams instead of just adding a second hue. No gradients anywhere. Colour appears as flat fills, hairlines and tints only."
+    },
+    "typographyNote": "A single neo-grotesque with genuine tabular figures for everything structural, because this page is full of dimension codes, SDR classes and cavity counts that must align in columns. Headlines set at moderate size and tight tracking — this is a catalogue voice, not a poster voice, so no display-scale typography anywhere on the page. A true monospace carries every measured value, every dimension tag in the hero grid, every cell in the ledgers and every calculator readout, and it is the only place a second typeface appears. Body copy sits at a comfortable reading measure of about 62 characters and is never centred. Section titles are set as full sentences ending in a full stop or a question mark, which is what gives the page its flat, spoken, engineer-to-engineer register.",
+    "compositionNote": "A strict twelve-column grid with a persistent left dimension rail that runs the entire page height, carrying section indices, running totals and anchor marks in monospace — it functions as the page's own drawing border. Everything is aligned to that grid with visible discipline: hairline rules at 0.5px, generous white space between bands, and no rounded corners anywhere. Content sits in bands of unequal height but identical horizontal logic. The one deliberate break is the tool-custody section, which staggers off the grid to change the voice at the exact point the page stops explaining and starts asking. Cards are essentially absent — where other pages would use a card, this page uses a table row, a ledger line or a grid cell.",
+    "motionLanguage": "Indexing, not animating. Everything on this page moves the way a turret or a mould mechanism moves: discrete stepped positions with no easing curve, typically 60–90 ms per step, arriving hard. The hero grid indexes cell by cell in reading order. Ledger values step. Calculator digits roll odometer-style rather than tweening. Mechanism schematics run at roughly six frames per cycle so they read as machinery rather than as motion graphics. Nothing floats, drifts, parallaxes or fades. The single exception is the scroll-scrubbed cutaway in the socket section, which tracks scroll position continuously so the user can move back and forth through the part — that continuity is functional, not decorative. Full reduced-motion path renders every state statically with all annotations and leader lines visible.",
+    "signatureMotif": "The orthographic SKU plate — a modular grid where every cell holds one fitting drawn as a single-weight SVG line silhouette in true orthographic projection, tagged in the corner with a monospace dimension code. It opens the page at full scale, condenses into a sticky range index, reappears at small scale as section dividers and as the row glyphs in every ledger, and closes the page as a dense tile behind the CTA. The half-section cutaway ring — a fitting wall rendered as a solid filled band with the bore hollow — is its companion: it is how every diagram on the page shows material, and the filled-band-versus-void reading is the page's whole visual grammar.",
+    "diagramConcept": "Two diagram families, both drawn in flat SVG, both doing real explanatory work. First, the range matrix: an interactive diameter × fitting-type grid that recolours to show how one modular frame with interchangeable inserts absorbs a set of SKUs that would otherwise need separate tools — the tooling-strategy argument made visible in one interaction. Second, the mechanism board: three side-by-side plan-section schematics of a collapsible core collapsing radially, an unscrewing core rotating out, and a slide withdrawing, each running in discrete indexed frames, with a shared comparison ledger beneath whose row hover highlights the corresponding element in all three schematics at once. Supporting these, the scroll-scrubbed socket cutaway that locates wall thickness, socket land, weld line, sink and gate vestige in real geometry rather than in a bulleted list.",
+    "howThisDiffersFromOtherIndustries": "This is the most systematic and least dramatic chapter in the book, and that is the point — plumbing is a catalogue industry, so its page is built like a catalogue rather than like a showcase. Where other industry pages will use single hero parts, dark backgrounds, precision-metrology motifs or process timelines, this one uses a grid of many small identical-weight objects and refuses to make any one of them special. It is the only page in the set whose primary interaction is a table. Its palette is the only one built on construction-material neutrals with a polymer-green accent rather than a metal or instrument palette. Its motion is the most mechanical and the least fluid in the whole set — hard indexed steps rather than eased transitions. And it is the only page where the diagrams argue about quantity and family logic rather than about precision or performance. If the medical page whispers and the aerospace page holds still, this page counts."
+  },
+  "openQuestions": [
+    "Does Metal Form have prior fitting-family experience it can reference generically — for example a range covered across multiple diameters — without naming a client? That would materially strengthen the range-matrix section, but nothing on the page may imply it if it is not true.",
+    "Has Metal Form built unscrewing-core tooling, collapsible-core tooling, or both? The core-mechanisms section is the strongest technical asset on the page and must be written to match actual capability. If only one mechanism is in-house, the section should be reframed as selection advice rather than implied dual capability.",
+    "Is insert moulding for brass overmould genuinely in scope? The verified capability list includes insert moulds, but confirmation is needed before the threaded-adapter component and the insert-loading economics are given prominence.",
+    "Does Metal Form hand over 3D data of tooling it builds as standard, or is that negotiated per project? The tool-custody section leans on this and it must be stated accurately.",
+    "What is the largest tonnage or platen size Metal Form can practically tool for? This determines whether large drainage components — gully bodies, inspection chamber bases — belong on the page at all, or whether the page should stay in the 20–110 mm fitting band.",
+    "Is ongoing component supply realistically offered for commodity fittings at plumbing volumes, or is the supply offer better positioned at the SKU tail and specials only? Overstating this would be commercially damaging.",
+    "Should the page carry the industry-standard dimensional figures (DIN/ISO tolerances, SDR classes) at all? They add credibility with technical buyers but must be unambiguously attributed to the standards. Legal review recommended on the attribution wording.",
+    "Which markets are being targeted? Fitting standards and preferred materials differ sharply between regions — PP-R dominance in parts of Europe, the Middle East and Central Asia versus PEX and CPVC in North America — and the component emphasis should follow the target market."
+  ],
+  "recommendations": [
+    "Lead with tooling strategy, not mould manufacture. Every competitor page reviewed for this brief sells 'multi-cavity moulds' and 'optimized cooling' with no engineering layer above it. The unoccupied position in this vertical is the supplier who arrives with a plan for the whole range and says which SKUs should not get their own tool.",
+    "Make the core-mechanisms section the technical centrepiece. It is the most defensible, most verifiable and most differentiating content on the page, and it is the section a real fittings engineer will read first to decide whether to keep reading.",
+    "Put the 46-cavity fact exactly where it does work — in the cavitation discussion for commodity diameters — and nowhere else. In this vertical it is directly relevant evidence rather than a decorative statistic, and it loses that force if it is repeated as a badge.",
+    "State the boundary explicitly and early: pressure ratings, PN classes and potable-water approvals belong to the customer's product, material and testing. Saying so in the technical panel converts a legal constraint into a credibility signal — it reads as a supplier who knows exactly where their responsibility ends.",
+    "Build the cost-per-thousand calculator on the user's own inputs with clearly-marked neutral defaults, and state on the page that it makes no claim about what Metal Form would achieve on their part. It converts well and it invents nothing.",
+    "Frame the second source as a risk audit, in questions. Established fittings manufacturers know they have single-tool exposure and generally have not been asked about it directly. The question is the offer.",
+    "Use the two-signal colour logic strictly — green for polymer, brass ochre for metal — and enforce it in every diagram. It makes the drawings legible without legends and gives the page a system that the other twelve industry pages will not share.",
+    "Resist blue entirely. Water-blue is the default of every plumbing supplier site and would immediately place the page in the category it is trying to escape. PP-R green is more authentic to the trade and reads as advanced-manufacturing rather than as plumbing-merchant.",
+    "Keep the page's primary interaction a table. It is unfashionable and it is exactly right for this audience, and it will differentiate the chapter from every other page in the set more effectively than any decorative choice."
+  ]
+}

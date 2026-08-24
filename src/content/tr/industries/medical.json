@@ -1,0 +1,503 @@
+{
+  "meta": {
+    "title": "Tıbbi ve farmasötik kalıpçılık — çok gözlü kalıplar | Metal Form",
+    "description": "Tıbbi ve farmasötik plastik parçalar için parça mühendisliği, tersine mühendislik, DFM ve çok gözlü enjeksiyon kalıpları. Kalıp dokümantasyonu, yedekler, ikinci kaynak ve ikiz kalıplar. Valide üretim sizde kalır. 48 iş saati içinde dönüş."
+  },
+  "name": "Tıbbi ve Farmasötik",
+  "tile": "1. gözle 32. gözün aynı parçayı vermek zorunda olduğu bileşenler için yüksek gözlü kalıplar. Kalıbı ve arkasındaki mühendisliği biz yaparız — valide üretim sizde kalır.",
+  "tileParts": "Çok gözlü · DFM · İkinci kalıp",
+  "hero": {
+    "kicker": "Tıbbi ve Farmasötik",
+    "headline": [
+      "Her göz aynı parçayı",
+      "üretmek zorunda."
+    ],
+    "lead": "Tıbbi ve farmasötik plastik parçalar için mühendislik, DFM ve çok gözlü kalıp. Kalıbı ve arkasındaki mühendisliği biz yaparız. Valide proses sizde kalır — ve bu sınırın tam olarak nereden geçtiğini net biçimde söyleriz.",
+    "markers": [
+      "46 göze kadar kalıp deneyimi",
+      "Kalıp dokümantasyonunun tamamı teslim edilir",
+      "İkiz ve ikinci kaynak kalıpları"
+    ]
+  },
+  "blocks": {
+    "atlas": {
+      "index": "01",
+      "kicker": "Kapsam",
+      "heading": "Neyin kalıbını yapıyoruz.",
+      "body": "Aşağıdaki parçalar, tıbbi ve farmasötik plastiğin yüksek adetli ucudur: basit geometri, muazzam miktarlar ve kalıbın ömrü boyunca her gözde tekrarlanması gereken bir tolerans. Her biri farklı bir nedenle zordur.",
+      "listLabel": "Parça ailesi",
+      "items": [
+        {
+          "id": "syringe",
+          "name": "Enjektör gövdeleri ve pistonları",
+          "hard": "Bir maça pimi etrafında uzun ve ince cidarlı bir tüp. Bütün mesele, enjeksiyon basıncı altında maçanın sapmasıdır; bu, et kalınlığı farkına, o da sıkışan ya da sızdıran bir pistona dönüşür.",
+          "spec": [
+            "Maça pimi desteği ve soğutması",
+            "İç çapta çekme yönünde parlatma",
+            "Skala detayının çeliğe işlenmesi",
+            "Gözler arası eş merkezlilik"
+          ]
+        },
+        {
+          "id": "luer",
+          "name": "Luer bağlantıları ve konnektörler",
+          "hard": "Başka bir kıtada, başka bir kalıpta, başkası tarafından üretilmiş bir bağlantıyla eşleşmesi gereken konik bir sızdırmazlık yüzeyi. Ürünün kendisi bu koniktir.",
+          "spec": [
+            "Konik açısı ve yüzeyi",
+            "Yolluk girişinin sızdırmazlık yüzeyinden uzakta olması",
+            "Ayırma yüzeyinin konumu",
+            "Gözler arası konik tutarlılığı"
+          ]
+        },
+        {
+          "id": "tips",
+          "name": "Pipet uçları",
+          "hard": "Çok yüksek göz sayısı, çok kısa çevrimler ve çapı işlevin tamamını belirleyen bir ağız. 20 mikron geniş bir uç, yanlış hacim veren bir uçtur.",
+          "spec": [
+            "Yüksek göz sayısı",
+            "Uç ağız toleransı",
+            "İzlenebilirlik için göz numaralandırma",
+            "İnce cidarda kısa soğutma"
+          ]
+        },
+        {
+          "id": "closures",
+          "name": "Flakon ve şişe kapakları",
+          "hard": "Küçücük tek bir parçanın üzerinde diş, sızdırmazlık yüzeyi ve emniyet bandı; üstelik her atımda diş formunu aşındırmadan dişi sökmesi ya da sıyırması gereken bir kalıpta.",
+          "spec": [
+            "Diş sökücü ya da katlanabilir maçalar",
+            "Emniyet bandı geometrisi",
+            "Sızdırmazlık yüzeyi kalitesi",
+            "Diş formunun aşınma ömrü"
+          ]
+        },
+        {
+          "id": "iv",
+          "name": "Serum ve infüzyon seti parçaları",
+          "hard": "Birbirine monte olması gereken küçük parçalardan oluşan bir aile. Tolerans sorunu tek bir parçada değil, dördünün üst üste binen toleranslarındadır.",
+          "spec": [
+            "Aile kalıbı ya da eşleştirilmiş kalıplar",
+            "Montaj tolerans yığılması",
+            "Çok gözlü kalıpta denge",
+            "Farklı hammaddelerde tutarlı çekme"
+          ]
+        },
+        {
+          "id": "diagnostic",
+          "name": "Tanı sarf malzemeleri",
+          "hard": "Bir sıvı yolunun ya da optik pencerenin işlevsel yüzey olduğu kartuşlar, tüpler ve kuyucuklar. Burada çapak, birleşme izi ve çöküntü izi kozmetik kusur değildir.",
+          "spec": [
+            "Optik ya da çekme yönünde parlatılmış yüzeyler",
+            "Birleşme izinin konumu",
+            "Dolumun en uç noktasında havalandırma",
+            "Sızdırmazlık yüzeylerinde düzlemsellik"
+          ]
+        },
+        {
+          "id": "inhaler",
+          "name": "İnhaler ve ilaç uygulama cihazı parçaları",
+          "hard": "Mekanizma ağırlıklı, daha düşük adetli, daha çok parçalı. Kalıpta yüksek göz sayısı yerine sürgüler, lifterlar ve maçalar vardır; parça başına düşen mühendislik içeriği çok daha fazladır.",
+          "spec": [
+            "Sürgüler, lifterlar ve maçalar",
+            "4 ila 16 göz",
+            "Mekanizma tekrarlanabilirliği",
+            "Prototipten seri üretime rota"
+          ]
+        },
+        {
+          "id": "packaging",
+          "name": "Farmasötik ambalaj parçaları",
+          "hard": "Damlalıklar, ölçü kapakları, kaşıklar, tıpalar ve contalar. Uzun ömürlü ürün kodları — tek bir kapak üç ürün kuşağından uzun yaşayabilir; bu yüzden kalıp ömrü ve yedekler, kalıp fiyatından daha çok önem taşır.",
+          "spec": [
+            "Uzun program ömrü",
+            "Yedek ve değişim parçaları",
+            "Aşınmış kalıpların yenilenmesi",
+            "Göz numaralandırma"
+          ]
+        }
+      ]
+    },
+    "arithmetic": {
+      "index": "02",
+      "kicker": "Aritmetik",
+      "heading": "İki kaldıraç, ikisi de kalıpta belirlenir.",
+      "body": "Yüksek adetli tek kullanımlık bir parçanın fiyatı; hammadde, artı göz sayısına bölünmüş makine zamanı, artı fire, artı amortismana yayılmış kalıptır. Gerçekten büyüklük taşıyan tek iki kaldıraç göz sayısı ve çevrim süresidir; ikisi de daha hiç çelik işlenmeden karara bağlanır.",
+      "body2": "Bu sektördeki her alıcı bu aritmetiği kafasından yapar. Bu sayfa da yapıyor.",
+      "calcLabel": "Çıktı",
+      "controls": [
+        {
+          "id": "cavities",
+          "label": "Göz",
+          "unit": ""
+        },
+        {
+          "id": "cycle",
+          "label": "Çevrim",
+          "unit": "s"
+        },
+        {
+          "id": "hours",
+          "label": "Günlük saat",
+          "unit": "h"
+        }
+      ],
+      "outputs": [
+        {
+          "id": "hour",
+          "label": "Saatte parça"
+        },
+        {
+          "id": "day",
+          "label": "Günde parça"
+        },
+        {
+          "id": "year",
+          "label": "300 günde yıllık parça"
+        }
+      ],
+      "note": "Bu bir aritmetiktir, fiyat teklifi değil. Parçanızın o çevrim süresini tutup tutamayacağı hakkında hiçbir şey söylemez; bu, et kalınlığı, soğutma düzeni ve itme ile ilgili bir sorudur — ve asıl konuşmaya değer olan da odur.",
+      "amortHeading": "Ve rakamın diğer yarısı",
+      "amort": "Kalıp da aynı şekilde amorti olur. Yirmi milyon parçaya yayıldığında kalıp, parça başına bir sentin küçük bir kesrini ekler. İki yüz bine yayıldığında fiyata hâkim olur. Dürüst konuşma bu yüzden sizin adet tahmininizden ve gerekli kalıp ömrünüzden başlar; kalıp fiyatına ancak ondan sonra gelir."
+    },
+    "imbalance": {
+      "index": "03",
+      "kicker": "Fizik",
+      "heading": "1. göz ile 32. göz neden aynı parça değildir.",
+      "body": "Dengeli bir yolluk düzeni, dengeli gözler üretmez. Bu çoğu kişiyi şaşırtır ve bu sayfadaki en işe yarar tek bilgidir.",
+      "steps": [
+        {
+          "label": "Yolluk ağacı",
+          "body": "Geometrik olarak simetriktir. Her göz, ana yolluğa aynı uzaklıkta ve aynı kanal kesitiyle bağlıdır. Teknik resimde kusursuzdur."
+        },
+        {
+          "label": "Ergiyik türdeş değildir",
+          "body": "Akış laminerdir. Kanal cidarındaki malzeme kayma gerilmesine uğrar ve sıcaktır; merkezdeki malzeme daha soğuktur. Yayımlanmış ölçümler, tek bir yolluk kesiti boyunca 100 ila 300 °F fark bildirir."
+        },
+        {
+          "label": "Ayrılma karıştırmaz",
+          "body": "Her dallanmada sıcak dış tabaka ile soğuk çekirdek, iki yola eşit olmayan biçimde bölünür. Dengesizlik miras kalır, sonraki dallanmada yeniden miras kalır."
+        },
+        {
+          "label": "Gözler akış grubuna göre ayrışır",
+          "body": "İçteki gözler önce dolar. Ağırlık ve ölçü, göz numarasına göre değil akış yoluna göre kümelenir — bu yüzden göz numarasına göre sıralanmış bir hata haritası size hiçbir şey söylemez, akış grubuna göre sıralanmış olan her şeyi söyler."
+        }
+      ],
+      "evidence": "Kalıplama literatüründe atıf yapılan araştırmalar, çok gözlü kalıplardaki ürün değişkenliğinin yüzde 60 ila 70'ini çelik ölçülerine ya da soğutmaya değil, kayma kaynaklı dengesizliğe bağlıyor. Yayımlanmış bir vakada, ergiyiğin döndürülmesiyle 16 gözlü bir kalıpta gözler arası yüzde 95'lik değişkenlik yüzde 5'in altına indirildi.",
+      "methodHeading": "Bu nasıl kanıtlanır",
+      "method": [
+        "Kısa atımlarla kabaca yüzde 95 ila 98 doluluğa kadar doldurun.",
+        "Her parçayı gözüne göre etiketleyin — bunun için gözlerin daha en baştan çeliğe numaralandırılmış olması gerekir.",
+        "Hassas terazide tartın ve denemeyi tekrarlayın.",
+        "Saçılımı grafiğe dökün. İyi dengelenmiş bir kalıp genellikle yüzde 5'in altında parça ağırlığı değişkenliğinde kalır."
+      ],
+      "diagnosisHeading": "Ve sonuç nasıl okunur",
+      "diagnosis": [
+        {
+          "symptom": "Birkaç göz hafif çıkıyor",
+          "cause": "O gözlerdeki yolluk girişi ölçüsü ya da havalandırma."
+        },
+        {
+          "symptom": "Gözler boyunca kademeli bir gradyan",
+          "cause": "Yolluk tasarımı ve ergiyik dağıtımı."
+        },
+        {
+          "symptom": "Düzensiz saçılım, örüntü yok",
+          "cause": "Kalıp değil; malzeme ya da sıcaklık."
+        }
+      ],
+      "close": "Son satır ticari olarak önemlidir. Bir kalıp tedarikçisinin müşterisine sorunun kalıpta olmadığını söyleme biçimidir — ve on yıllık bir ilişkide bu, her şeye evet diyen bir tedarikçiden daha değerlidir.",
+      "figureMark": "100–300 °F"
+    },
+    "line": {
+      "index": "04",
+      "kicker": "Sınır",
+      "heading": "Sınır nereden geçiyor.",
+      "body": "Bu sayfadaki en önemli bölüm budur. Metal Form bir kalıp ve mühendislik tedarikçisidir. Valide edilmiş, sertifikalı ya da regülasyona tabi bir üretici değildir ve kendisini öyle sunmayacaktır.",
+      "body2": "Bu sektörde tedarikçi kontrolleri tasarım gereği riskle orantılıdır. Bir kalıp ve mühendislik tedarikçisi, regülasyona tabi bir müşteriye meşru biçimde hizmet verebilir — yeter ki herkes, hangi faaliyetin sınırın hangi tarafına düştüğü konusunda net olsun. Bu bölümün amacı da bu netliktir.",
+      "supplyHeading": "Metal Form'un sağladıkları",
+      "supply": [
+        "Kalıp daha ortada yokken parça mühendisliği, tersine mühendislik ve DFM",
+        "Kalıp tasarımı: göz ve maça, mekanizmalar, yolluk ve giriş sistemi, soğutma, havalandırma",
+        "Çok gözlü kalıp imalatı; deneyimimiz 46 göze kadar uzanır",
+        "Parça ölçüsel olarak doğru çıkana kadar kalıp denemesi ve düzeltme",
+        "Kalıp dokümantasyon paketinin tamamı — 3B montaj, plaka resimleri, çelik kaliteleri ve sertlikleriyle malzeme listesi, sıcak yolluk marka ve modeli, soğutma devresi haritası, yedek parça listesi",
+        "Kendi kalifikasyon çalışmanıza taşıyabileceğiniz deneme kayıtları",
+        "Tasarım aşamasında belirlenmiş yedek göz insertleri, maça pimleri ve aşınma parçaları",
+        "Aynı parça şartnamesine göre ikiz, yedek ve ikinci kaynak kalıpları",
+        "Parçanın steril ya da regülasyona tabi kapsamın dışında olduğu durumlarda parça üretimi ve tedariki"
+      ],
+      "staysHeading": "Sizde kalanlar",
+      "stays": [
+        "Her türlü kalite sistemi belgesi — ISO 13485, GMP ya da ülkenizdeki muadili",
+        "Temiz odada üretim ve her türlü kontrollü ortam üretimi",
+        "Sterilizasyon ve validasyonu",
+        "IQ, OQ ve PQ ile bunlardan çıkan valide proses penceresi",
+        "Tasarım geçmişi, tasarım transferi ve cihaz ana kaydı",
+        "Regülasyon başvurusu, pazara giriş onayı ve piyasaya arz sonrası yükümlülükler",
+        "Parti izlenebilirliği, serbest bırakma testleri ve analiz sertifikaları",
+        "Bir parçanın klinik ya da farmasötik kullanıma uygun olduğu kararı"
+      ],
+      "close": "Bir tedarikçi size her iki sütunun tamamını verebileceğini söylüyorsa, hangi belgeye sahip olduğunu ve kimin denetlediğini sorun. Bizde bunların hiçbiri yok; bunu kendi denetiminiz sırasında keşfetmenizdense burada okumanızı tercih ederiz.",
+      "howHeading": "Bu pratikte nasıl yürüyor",
+      "how": "Tıbbi ve farmasötik işlerimizin çoğu son kullanıcıya, belgeye zaten sahip olan ve valide prosesi yürüten bir fason enjeksiyoncu ya da üretici üzerinden ulaşır. Kalıbı biz yapar ve belgeleriz; onlar kalifiye eder ve çalıştırır. Bu iş bölümü olağandır, sektörün büyük bir bölümü gerçekte böyle işler ve bizim kurgumuz da buna göredir."
+    },
+    "anatomy": {
+      "index": "05",
+      "kicker": "Kalıp",
+      "heading": "İçinde gerçekte ne var.",
+      "body": "Yalnızca bir göz sayısı ve bir fiyat içeren teklif, karşılaştırılamayan bir tekliftir. Aşağıdakiler, bir kalıphane müdürünün kontrol ettiği ve bizim siparişe yazdığımız kalemlerdir.",
+      "stack": [
+        {
+          "name": "Bağlama plakası",
+          "note": "Presinizle arayüz. Kolon aralığı, tabla ölçüsü ve itici deliği düzeni, hâlihazırda sahip olduğunuz makineye göre kontrol edilir."
+        },
+        {
+          "name": "Sıcak yolluk manifoldu",
+          "note": "Marka, model, nozul sayısı ve kontrol ünitesi bölge sayısı adıyla yazılır — çünkü teslimden sonra ülkenizdeki servis ve yedek parça bulunabilirliği sizin sorununuz olur."
+        },
+        {
+          "name": "Göz plakası ve insertler",
+          "note": "İnsertler; bir değişimin kalıbı baştan sökmek yerine bir vardiyaya sığması için birbirinin yerine geçebilir ve önden monte edilebilir şekilde tasarlanır."
+        },
+        {
+          "name": "Maça plakası ve maçalar",
+          "note": "Çevrimi belirleyen soğutmanın asıl bulunduğu ve maça sapmasının mühendislikle ortadan kaldırılması gereken yer."
+        },
+        {
+          "name": "Mekanizmalar",
+          "note": "Geometrinin gerektirdiği yerlerde sürgüler, lifterlar, diş sökücü ve katlanabilir maçalar — gerektirmediği yerlerde ise yok."
+        },
+        {
+          "name": "Sıyırıcı ve itici grubu",
+          "note": "İnce cidarlı parçalarda itme, sonradan düşünülecek bir ayrıntı değil, bir yüzey kalitesi kararıdır."
+        },
+        {
+          "name": "Soğutma devreleri",
+          "note": "Haritalanır ve teknik resim olarak teslim edilir; böylece tesis, nereye hangi suyu vermesi gerektiğini bilir."
+        },
+        {
+          "name": "Havalandırma",
+          "note": "Dolumun en uç noktasında. Yetersiz havalandırılan kalıplar yanık yapar, gaz hapseder ve eksik dolar; bu neredeyse her zaman sonradan eklenmek yerine tasarıma konur."
+        }
+      ],
+      "classHeading": "Kalıp sınıfı bir iltifat değil, ticari bir karardır",
+      "classNote": "Aşağıdaki SPI sınıfları, alıcıların taleplerinde kullandığı ortak dildir. Bunlar sektör tanımlarıdır, Metal Form derecelendirmeleri değil — hangi sınıfa göre imal edeceğimiz, program adedinize göre kararlaştırılır ve siparişe yazılır.",
+      "classes": [
+        {
+          "name": "Class 101",
+          "life": "1.000.000 çevrimin üzerinde",
+          "spec": "Kalıp seti en az 280 BHN; gözler ve maçalar en az 48 Rc; kapsamlı soğutma."
+        },
+        {
+          "name": "Class 102",
+          "life": "1.000.000 çevrime kadar",
+          "spec": "Kalıp seti en az 28 Rc; göz ve maça en az 48 Rc."
+        },
+        {
+          "name": "Class 103",
+          "life": "500.000 çevrime kadar",
+          "spec": "Kalıp seti en az 18 Rc; göz ve maça en az 28 Rc."
+        },
+        {
+          "name": "Class 104",
+          "life": "100.000 çevrime kadar",
+          "spec": "Düşük adetli programlar ve geçiş kalıpları."
+        },
+        {
+          "name": "Class 105",
+          "life": "500 çevrimin altında",
+          "spec": "Yalnızca prototip. Bir üretim varlığı değildir."
+        }
+      ],
+      "classClose": "Class 101 gerektiren bir program için Class 103 kalıp almak, bu sektördeki en pahalı tasarruftur. İlk yılını çıkaramayabilecek bir ürün için Class 101 almak ise ikinci en pahalısıdır."
+    },
+    "wear": {
+      "index": "06",
+      "kicker": "Uzun vade",
+      "heading": "İki milyonuncu atımda.",
+      "body": "Kimsenin talebe yazmadığı korku: denemede kusursuz çıkan, sonra kayan bir kalıp. Kalıplar aşınır. Hangi parçaların ne hızla aşındığı ve yedeğin sizin rafınızda mı yoksa on iki haftalık teslim süresinde mi olduğu; arıza sonrasında değil, sipariş öncesinde konuşulacak bir konudur.",
+      "axisLabel": "Atım",
+      "marks": [
+        {
+          "at": "0",
+          "label": "Deneme ve düzeltme",
+          "note": "Göz göz ölçüsel kayıtlar size teslim edilir."
+        },
+        {
+          "at": "250k",
+          "label": "İlk planlı bakım",
+          "note": "Havalandırmalar temizlenir, sızdırmazlık yüzeyleri kontrol edilir, soğutma devreleri yıkanır."
+        },
+        {
+          "at": "500k",
+          "label": "Aşınma parçaları gözden geçirilir",
+          "note": "İlk belirti; yolluk girişi insertleri, sızdırmazlık yüzeyleri ve kapama yüzeylerinde görülür."
+        },
+        {
+          "at": "1M",
+          "label": "Class 102 tasarım ömrüne ulaşıldı",
+          "note": "Class 101 bir kalıp için, beyan edilen ömrünün kabaca yarısı."
+        },
+        {
+          "at": "2M",
+          "label": "Class 101 beyan ömrünün ötesi",
+          "note": "Yenileme, insert değişimi ya da önceden yaptırdığınız ikinci kalıp."
+        }
+      ],
+      "sparesHeading": "Rafınızda ne bulunmalı",
+      "spares": [
+        "Kritik ölçüyü taşıyan gözler için göz insertleri",
+        "Maça pimleri; özellikle uzun ve inceleri",
+        "Yolluk girişi insertleri",
+        "Sürgü ve lifter aşınma parçaları",
+        "Diş sökücü kalıplarda diş formunu veren parçalar",
+        "Keçeler, O-ringler ve soğutma rakorları"
+      ],
+      "sparesNote": "Yedek setini tasarım aşamasında belirler ve kalıpla birlikte fiyatlandırırız; bir arıza sırasında pazarlığa bırakmayız. Birbirinin yerine geçebilen, önden monte edilebilir insertler ise o yedek setini bir haftada değil, bir vardiyada kullanılabilir kılan bir tasarım kararıdır.",
+      "warranty": "Kalıp garanti şartları her proje ve kalıp şartnamesi bazında belirlenir ve siparişe yazılır. Burada bir atım sayısı yayımlamıyoruz; çünkü sizin hammaddenizi, çevriminizi ve bakımınızı yok sayan bir atım sayısı hiçbir anlam taşımaz."
+    },
+    "second": {
+      "index": "07",
+      "kicker": "Ticari gerekçe",
+      "heading": "İkinci kalıp.",
+      "body": "Tek bir ülkede, tek bir tesiste duran tek bir kalıp; insanların bağımlı olduğu bir ürün hattı için tek noktadan arıza demektir. Güçlü Batılı tıbbi kalıp tedarikçileri ikiz kalıp yapmayı nadiren teklif eder — bu, kendi kurulu varlıklarıyla rekabet eder. Biz ederiz.",
+      "risks": [
+        {
+          "n": "01",
+          "scenario": "Bir göz inserti çatlar ve rafta yedeği yoktur.",
+          "consequence": "Üretim, tek bir insertin teslim süresi kadar durur."
+        },
+        {
+          "n": "02",
+          "scenario": "Kalıp; yangın, su baskını ya da işçi uyuşmazlığı yaşayan bir tesistedir.",
+          "consequence": "Varlık da ürün hattı da aynı binadadır."
+        },
+        {
+          "n": "03",
+          "scenario": "Enjeksiyoncunuzun ticari konumu değişir.",
+          "consequence": "Kalıp, onların pazarlık gücünün bulunduğu yerdir."
+        },
+        {
+          "n": "04",
+          "scenario": "Talep, kalıbın ölçeklendirildiği tahminden hızlı büyür.",
+          "consequence": "Göz sayısı çeliğe sabitlenmiştir ve artırılamaz."
+        },
+        {
+          "n": "05",
+          "scenario": "Bir pazar, üretimin ikinci bir coğrafyada yapılmasını şart koşar.",
+          "consequence": "Tek kalıbı taşımak; nakliye ve yeniden kalifikasyon boyunca tedariki durdurmak demektir."
+        },
+        {
+          "n": "06",
+          "scenario": "Orijinal kalıpçı ortadan kalkmıştır ve tasarım verisi ondadır.",
+          "consequence": "Kalıp başkası tarafından onarılamaz, kopyalanamaz ya da düzeltilemez."
+        }
+      ],
+      "offerHeading": "Bu konuda ne yapabiliriz",
+      "offer": [
+        "Aynı parça şartnamesine göre ikiz bir kalıp yapmak; yedekte tutulmak ya da paralel çalıştırılmak üzere.",
+        "Hâlihazırda başka yerde üretilen bir parça için ikinci kaynak kalıbı yapmak; sizin verinizden ya da parçadan tersine mühendislikle.",
+        "Başkasının yaptığı bir kalıp için göz insertleri, maçalar ve aşınma parçaları tedarik etmek.",
+        "Orijinal kalıbı aşınmış, kaybolmuş ya da kullanım dışı kalmış bir parçaya yeni kalıp yapmak.",
+        "Tasarım verisinin tamamını kalıpla birlikte teslim etmek; böylece bize de bağlı kalmazsınız."
+      ],
+      "honesty": "Bu bir hazırlıktır, rezerve kapasite değil; ayrıca ikiz bir kalıp kendi kendini yeniden kalifiye etmez. İkinci kalıbın sizin kalite sisteminizde kendi kalifikasyon yolu vardır ve bunun ne kadar süreceğine sizin sisteminiz karar verir. Bunu sonradan keşfetmenize bırakmak yerine şimdiden söylüyoruz."
+    },
+    "start": {
+      "index": "08",
+      "kicker": "Başlangıç",
+      "heading": "Bir proje nasıl başlar.",
+      "body": "Bir model ya da bir numune yeter. Gerisi sonra gelebilir.",
+      "steps": [
+        {
+          "label": "Gönderin",
+          "note": "3B model, 2B teknik resim, fiziksel numune ya da ölçeklendirebileceğimiz tek bir ölçüsü olan bir fotoğraf."
+        },
+        {
+          "label": "Okuyalım",
+          "note": "Bir mühendis geometriye, tolerans gerçekçiliğine ve kalıp rotasına bakar. 48 iş saati içinde."
+        },
+        {
+          "label": "NDA",
+          "note": "Ayrıntılı teknik paylaşımdan sonra değil, önce. Bizimkini imzalayın ya da kendinizinkini gönderin."
+        },
+        {
+          "label": "Teklif",
+          "note": "Göz sayısı, kalıp sınıfı, mekanizmalar ve makine arayüzü kararlaştırıldıktan sonra. Öncesinde değil."
+        }
+      ],
+      "needHeading": "Teklif için neye ihtiyacımız var",
+      "need": [
+        "3B model ya da 2B teknik resim; ya da ölçebileceğimiz bir numune",
+        "Hammadde kalitesi ve radyasyona karşı stabilize edilmiş ya da özel bir polimer olup olmadığı",
+        "Yıllık adet ve birinci yıldan sonrası için tahmin",
+        "Atım cinsinden gerekli kalıp ömrü ya da hangi program ömrüne göre ölçeklendireceğimiz",
+        "Kritik ölçüler ve bunlardan hangilerinin işlevsel olduğu",
+        "Gereken göz sayısı ya da saatte ihtiyacınız olan çıktı",
+        "Pres: tonaj, tabla ölçüsü, kolon aralığı, itici deliği düzeni",
+        "Tesisiniz tek bir markayı standart yapıyorsa sıcak yolluk tercihiniz",
+        "Göz numaralandırma ve izlenebilirlik gereksinimi",
+        "Teslimatın yapılacağı ülke"
+      ],
+      "getHeading": "Neyi teslim ediyoruz",
+      "get": [
+        "3B kalıp montajı ve plaka resimleri",
+        "Çelik kaliteleri ve sertlikleri belirtilmiş malzeme listesi",
+        "Sıcak yolluk markası, modeli ve kontrol ünitesi yapılandırması",
+        "Soğutma devresi haritası",
+        "Önerilen setin fiyatlandırıldığı yedek parça listesi",
+        "Göz göz deneme ölçüm kayıtları",
+        "Çeliğe işlenmiş göz numaralandırma şeması",
+        "Bu şartnameye göre tanımlanmış kalıp garanti şartları"
+      ]
+    },
+    "panels": {
+      "heading": "Daha ayrıntılı",
+      "items": [
+        {
+          "title": "Göz sayısı: bu rakam gerçekte nasıl seçilir",
+          "bullets": [
+            "Göz sayısı bir hırstan değil, bir maliyet hedefi ve bir adet tahmininden çıkar. Önce DFM dokümanı gelir; maça ve gözü, sürgüleri, yolluk girişinin konumunu, ölçüsünü ve yerini tanımlar. Kalıp şartnamesi onu izler.",
+            "Yayımlanmış bir tıbbi vaka: birinci yıl 12 milyon, ikinci yıl 24 milyon adetlik bir tahmin 64 gözlü bir kalıba yol açtı ve maliyet hedefini tutturmak için 22 saniyelik çevrim gerekti.",
+            "Çıktı, göz sayısının çevrim süresine bölünmesidir. 10 saniyelik çevrimde bir kalıp saatte 360 atım yapar — 32 göz saatte 11.520 parça, 64 göz 23.040, 96 göz 34.560 verir.",
+            "Daha yüksek göz sayısı; kalıp maliyetini, makine tonajını, sıcak yolluk bölge sayısını, soğutma suyu ihtiyacını ve tek bir gözün bozulmasının sonucunu birlikte büyütür.",
+            "Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bunun üzerinde işe yarayan teklif farklıdır: başka yerde yapılmış bir kalıp için yedek ya da alternatif kaynak olarak göz insertleri, maça pimleri ve aşınma parçaları.",
+            "Cihaz alt montajları, otoenjektör ve inhaler parçaları ile tanı kartuşları genellikle mekanizma ağırlıklı bir kalıpta 4 ila 16 gözde durur — tamamen farklı bir sorundur ve buna da aynı ölçüde hazırız."
+          ],
+          "source": "Bu panodaki rakamlar, Metal Form ölçümleri değil; yayımlanmış sektör uygulamaları ve yayımlanmış vaka verileridir."
+        },
+        {
+          "title": "Terimler ve her birinin kimi neye bağladığı",
+          "bullets": [
+            "CTQ — kalite için kritik. Gerçekten önemli olan ölçüler. Bunların adlandırılması kalıbı değiştirir; çünkü yolluk girişinin nereye geleceğini ve hangi gözün en yakın takibi alacağını belirlerler.",
+            "DFM — üretilebilirlik için tasarım. Kalıp şartnamesinden önce gelen doküman. Sizin çeliğinizden önce bizim işimiz.",
+            "FAI — ilk numune muayenesi. Kendi prosedürünüze göre, size ya da enjeksiyoncunuza aittir.",
+            "IQ, OQ, PQ — kurulum, işletim ve performans kalifikasyonu. Enjeksiyoncuya ya da üreticiye aittir. IQ kalıba atıf yapar: tanımlama, revizyon kontrolü, göz sayısı, sensör yapılandırması ve sıcak yolluk kurulumu — dokümantasyon paketinin önemi tam da buradadır.",
+            "Valide proses penceresi ve müdahale sınırları — OQ ve PQ'nun çıktılarıdır. Kalıba değil, prosese aittirler.",
+            "Tasarım transferi — bir tasarımın rutin üretime taşınması. Kalıp bunun bir girdisidir, yerine geçen bir şey değil.",
+            "Kırma malzeme politikası — bir kalıbın sizin yerinize veremeyeceği bir proses ve malzeme kararı."
+          ]
+        },
+        {
+          "title": "Çelikte başlayan izlenebilirlik",
+          "bullets": [
+            "Gözler çelikte tek tek numaralandırılır; böylece reddedilen bir parça, onu üreten göze kadar izlenebilir.",
+            "Parçanız izin verdiği yerlerde tarih ve revizyon insertleri.",
+            "Göz numaralandırma şeması dokümantasyonun parçası olarak teslim edilir, bizde tutulmaz.",
+            "Birbirinin yerine geçebilen, önden monte edilebilir insertler; bir gözün değişmesi numaralandırma şemasını bozmaz.",
+            "Deneme kayıtları tek bir ortalama olarak değil, göz göz tutulur — 32 gözün ortalaması tam da görmeniz gereken şeyi gizler.",
+            "Kalıpta herhangi bir değişiklik yapılmadan önce yazılı değişiklik bildirimi."
+          ]
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Parçayı gönderin.",
+    "body": "Başlamak için bir model ya da bir numune yeter. 48 iş saati içinde geometri, kalıp rotası, göz sayısı ve üretim maliyeti üzerinden dönüş yaparız. Tercih ederseniz önce NDA.",
+    "action": "Parçanızı gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form — tıbbi / farmasötik parça.\n\nParça: \nHammadde: \nYıllık adet: \nGerekli kalıp ömrü (atım): \nGereken göz sayısı: \nKritik ölçüler: \nElimde: 3B model / 2B teknik resim / fiziksel numune / mevcut kalıp\nPres (tonaj, tabla, kolon aralığı): \nTeslim yeri: \nNDA gerekiyor mu: evet / hayır",
+    "note": "48 iş saati içinde ilk teknik dönüş. Biz bir kalıp ve mühendislik tedarikçisiyiz — valide üretim sizde kalır."
+  }
+}

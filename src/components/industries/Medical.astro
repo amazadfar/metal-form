@@ -1,0 +1,1186 @@
+---
+/**
+ * MEDICAL & PHARMACEUTICAL — flagship chapter.
+ *
+ * Written to survive a pharmaceutical manufacturing executive reading it
+ * sceptically. Its credibility does not come from claiming capability; it comes
+ * from section 04, which draws the regulatory line and puts Metal Form firmly on
+ * the tooling and engineering side of it. Knowing exactly where that line falls
+ * is the signal. Blurring it would be the disqualification.
+ *
+ * The technical heart is section 03 — shear-induced imbalance. A geometrically
+ * balanced runner does not produce balanced cavities, defects group by flow path
+ * rather than by cavity number, and that is not something a marketing writer
+ * would know to say.
+ *
+ * Visual language: cavity arrays, precision as repetition, cool clinical
+ * neutrals with a single teal. No hospitals, no cleanrooms, no sterile-suit
+ * imagery — those would be a regulatory claim made with a picture.
+ */
+import type { Locale } from '../../i18n/locales.ts';
+import type { Industry } from '../../config/industries.ts';
+import type { IndustryContent, CommonContent } from '../../content/types.ts';
+import ProjectProof from '../ProjectProof.astro';
+
+interface Props {
+  locale: Locale;
+  industry: Industry;
+  content: IndustryContent;
+  common: CommonContent;
+}
+const { content, common } = Astro.props;
+const b = content.blocks as any;
+
+/** A 32-cavity plate, laid out as a real balanced tree would place it. */
+const CAV = Array.from({ length: 32 }, (_, i) => ({
+  i,
+  col: i % 8,
+  row: Math.floor(i / 8),
+  // Flow group: which branch of the runner tree the cavity hangs off.
+  group: (i % 8 < 2 || i % 8 > 5) ? 'outer' : 'inner',
+}));
+
+/** Part-weight bars, grouped by flow path rather than by cavity number. */
+const WEIGHTS = CAV.map((c) => ({
+  ...c,
+  w: c.group === 'inner' ? 74 + ((c.i * 7) % 9) : 52 + ((c.i * 5) % 11),
+}));
+---
+
+<article class="med">
+
+  {/* ═══ HERO ═══════════════════════════════════════════════════════════ */}
+  <header class="med-hero">
+    <div class="shell--wide med-hero__inner">
+      <div class="med-hero__copy">
+        <p class="eyebrow">{content.hero.kicker}</p>
+        <h1 class="med-hero__head">
+          {content.hero.headline.map((line: any, i: number) => <span style={`--l:${i}`}>{line}</span>)}
+        </h1>
+        <p class="med-hero__lead">{content.hero.lead}</p>
+        {content.hero.markers && (
+          <ul class="med-hero__markers">
+            {content.hero.markers.map((m: any) => <li class="t-mono">{m}</li>)}
+          </ul>
+        )}
+      </div>
+
+      {/* Precision drawn as repetition: a cavity array coming into registration. */}
+      <figure class="med-hero__fig">
+        <svg viewBox="0 0 340 250" data-nomirror role="img" aria-label={common.schematic}>
+          <rect x="14" y="14" width="312" height="222" class="med-plate" />
+          {CAV.map((c: any) => (
+            <g class="med-cav" style={`--i:${c.i}`}>
+              <circle cx={38 + c.col * 38} cy={44 + c.row * 52} r="13" class="med-cav__o" />
+              <circle cx={38 + c.col * 38} cy={44 + c.row * 52} r="5.5" class="med-cav__i" />
+            </g>
+          ))}
+          <line x1="170" y1="6" x2="170" y2="244" class="med-cl" />
+          <line x1="8" y1="125" x2="332" y2="125" class="med-cl" />
+        </svg>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  {/* ═══ 01 · ATLAS ═════════════════════════════════════════════════════ */}
+  <section class="med-atlas" id="atlas">
+    <div class="shell--wide">
+      <div class="med-head">
+        <p class="eyebrow">{b.atlas.index} · {b.atlas.kicker}</p>
+        <h2 class="med-h2">{b.atlas.heading}</h2>
+        <p class="t-lead">{b.atlas.body}</p>
+      </div>
+
+      <div class="med-atlas__grid" data-tabs>
+        <div class="med-atlas__index" role="tablist" aria-label={b.atlas.listLabel} aria-orientation="vertical">
+          {b.atlas.items.map((item: any, i: number) => (
+            <button
+              class="med-atlas__row"
+              type="button"
+              role="tab"
+              data-tab={item.id}
+              id={`med-tab-${item.id}`}
+              aria-controls={`med-panel-${item.id}`}
+              aria-selected="false"
+            >
+              <span class="t-mono">{String(i + 1).padStart(2, '0')}</span>
+              <span>{item.name}</span>
+            </button>
+          ))}
+        </div>
+
+        {b.atlas.items.map((item: any) => (
+          <div
+            class="med-atlas__panel"
+            data-panel={item.id}
+            role="tabpanel"
+            id={`med-panel-${item.id}`}
+            aria-labelledby={`med-tab-${item.id}`}
+            hidden
+          >
+            <h3 class="med-h4">{item.name}</h3>
+            <p class="med-atlas__hard">{item.hard}</p>
+            <ul class="med-atlas__spec">
+              {item.spec.map((s: string) => <li class="t-mono">{s}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 02 · ARITHMETIC ════════════════════════════════════════════════ */}
+  <section class="med-calc" id="arithmetic">
+    <div class="shell--wide">
+      <div class="med-head">
+        <p class="eyebrow">{b.arithmetic.index} · {b.arithmetic.kicker}</p>
+        <h2 class="med-h2">{b.arithmetic.heading}</h2>
+        <p class="t-lead">{b.arithmetic.body}</p>
+        <p class="med-calc__sub">{b.arithmetic.body2}</p>
+      </div>
+
+      <div class="med-calc__band" data-calc>
+        <div class="med-calc__controls">
+          <label class="med-ctrl">
+            <span class="t-label">{b.arithmetic.controls[0].label}</span>
+            <input type="range" min="1" max="46" step="1" value="32" data-calc-cavities />
+            <output class="t-mono" data-calc-out="cavities">32</output>
+          </label>
+          <label class="med-ctrl">
+            <span class="t-label">{b.arithmetic.controls[1].label}</span>
+            <input type="range" min="3" max="40" step="1" value="10" data-calc-cycle />
+            <output class="t-mono" data-calc-out="cycle">10 s</output>
+          </label>
+          <label class="med-ctrl">
+            <span class="t-label">{b.arithmetic.controls[2].label}</span>
+            <input type="range" min="8" max="24" step="1" value="24" data-calc-hours />
+            <output class="t-mono" data-calc-out="hours">24 h</output>
+          </label>
+        </div>
+
+        <div class="med-calc__readout">
+          <p class="t-label">{b.arithmetic.calcLabel}</p>
+          <p class="med-calc__big t-mono" data-calc-year>—</p>
+          <p class="med-calc__unit">{b.arithmetic.outputs[2].label}</p>
+          <dl class="med-calc__sub-out">
+            <div><dt class="t-label">{b.arithmetic.outputs[0].label}</dt><dd class="t-mono" data-calc-hour>—</dd></div>
+            <div><dt class="t-label">{b.arithmetic.outputs[1].label}</dt><dd class="t-mono" data-calc-day>—</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <p class="med-calc__note">{b.arithmetic.note}</p>
+
+      <div class="med-amort">
+        <h3 class="med-h4">{b.arithmetic.amortHeading}</h3>
+        <p>{b.arithmetic.amort}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 03 · IMBALANCE — the technical heart ═══════════════════════════ */}
+  <section class="med-imb" id="imbalance" data-stepper data-step="0">
+    <div class="shell--wide med-head med-imb__head">
+      <p class="eyebrow">{b.imbalance.index} · {b.imbalance.kicker}</p>
+      <h2 class="med-h2 med-imb__h">{b.imbalance.heading}</h2>
+      <p class="t-lead">{b.imbalance.body}</p>
+    </div>
+
+    <div class="shell--wide med-imb__grid">
+      <figure class="med-imb__fig">
+        <svg viewBox="0 0 420 320" data-nomirror role="img" aria-label={common.schematic}>
+          <defs>
+            <linearGradient id="med-laminate" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="var(--signal)" stop-opacity="0.85" />
+              <stop offset="30%" stop-color="var(--accent)" stop-opacity="0.5" />
+              <stop offset="70%" stop-color="var(--accent)" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="var(--signal)" stop-opacity="0.85" />
+            </linearGradient>
+          </defs>
+
+          {/* State A — the runner tree. Always drawn; later states overlay it. */}
+          <g class="med-tree">
+            <circle cx="210" cy="26" r="7" class="med-sprue" />
+            <path d="M210 33 V70 M110 70 H310 M110 70 V110 M310 70 V110
+                     M60 110 H160 M260 110 H360 M60 110 V150 M160 110 V150 M260 110 V150 M360 110 V150"
+              class="med-runner" />
+            {[60, 160, 260, 360].map((x: any) => (
+              <circle cx={x} cy="158" r="9" class="med-gate" />
+            ))}
+          </g>
+
+          {/* State B — the melt is not uniform. */}
+          <g class="med-layer med-layer--laminate">
+            <rect x="203" y="33" width="14" height="37" fill="url(#med-laminate)" />
+            <rect x="110" y="63" width="200" height="14" fill="url(#med-laminate)" />
+            <text x="330" y="46" class="med-micro">{b.imbalance.figureMark}</text>
+            <path d="M326 52 L312 66" class="med-lead" />
+          </g>
+
+          {/* State C — the split does not mix. */}
+          <g class="med-layer med-layer--split">
+            <circle cx="110" cy="70" r="16" class="med-focus" />
+            <circle cx="310" cy="70" r="16" class="med-focus" />
+            <path d="M96 86 L60 110" class="med-lead" />
+            <path d="M324 86 L360 110" class="med-lead" />
+          </g>
+
+          {/* State D — cavities disagree by flow group. */}
+          <g class="med-layer med-layer--bars" transform="translate(0 176)">
+            <line x1="18" y1="118" x2="402" y2="118" class="med-axis" />
+            {WEIGHTS.map((w: any) => (
+              <rect
+                x={20 + w.i * 11.9} y={118 - w.w}
+                width="8" height={w.w}
+                class:list={['med-bar', `med-bar--${w.group}`]}
+                style={`--i:${w.i}`}
+              />
+            ))}
+          </g>
+        </svg>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+
+      <ol class="med-imb__steps">
+        {b.imbalance.steps.map((step: any, i: number) => (
+          <li class="med-imb__step" data-station-step={i}>
+            <span class="t-mono">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{step.label}</h3>
+            <p>{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="shell--wide med-imb__foot">
+      <p class="med-imb__evidence">{b.imbalance.evidence}</p>
+
+      <div class="med-imb__cols">
+        <section>
+          <h3 class="med-h5">{b.imbalance.methodHeading}</h3>
+          <ol class="med-imb__method">
+            {b.imbalance.method.map((m: string, i: number) => (
+              <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{m}</li>
+            ))}
+          </ol>
+        </section>
+
+        <section>
+          <h3 class="med-h5">{b.imbalance.diagnosisHeading}</h3>
+          <dl class="med-diag">
+            {b.imbalance.diagnosis.map((d: any) => (
+              <div><dt>{d.symptom}</dt><dd>{d.cause}</dd></div>
+            ))}
+          </dl>
+        </section>
+      </div>
+
+      <p class="med-imb__close">{b.imbalance.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 04 · THE LINE — the credibility instrument ═════════════════════ */}
+  <section class="med-line" id="line">
+    <div class="shell--wide">
+      <div class="med-head med-line__head">
+        <p class="eyebrow">{b.line.index} · {b.line.kicker}</p>
+        <h2 class="med-h2">{b.line.heading}</h2>
+        <p class="t-lead">{b.line.body}</p>
+        <p class="med-line__sub">{b.line.body2}</p>
+      </div>
+
+      {/* One continuous rule down the middle. Nothing crosses it. */}
+      <div class="med-ledger">
+        <section class="med-ledger__col med-ledger__col--ours">
+          <h3 class="med-h5 med-ledger__h">{b.line.supplyHeading}</h3>
+          <ul>{b.line.supply.map((item: string) => <li>{item}</li>)}</ul>
+        </section>
+        <section class="med-ledger__col med-ledger__col--yours">
+          <h3 class="med-h5 med-ledger__h">{b.line.staysHeading}</h3>
+          <ul>{b.line.stays.map((item: string) => <li>{item}</li>)}</ul>
+        </section>
+      </div>
+
+      <p class="med-line__close">{b.line.close}</p>
+
+      <div class="med-line__how">
+        <h3 class="med-h4">{b.line.howHeading}</h3>
+        <p>{b.line.how}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 05 · ANATOMY ═══════════════════════════════════════════════════ */}
+  <section class="med-anat" id="anatomy">
+    <div class="shell--wide">
+      <div class="med-head">
+        <p class="eyebrow">{b.anatomy.index} · {b.anatomy.kicker}</p>
+        <h2 class="med-h2">{b.anatomy.heading}</h2>
+        <p class="t-lead">{b.anatomy.body}</p>
+      </div>
+
+      <div class="med-anat__grid">
+        {/* The plate stack, separated on the Z axis. */}
+        <figure class="med-anat__fig">
+          <svg viewBox="0 0 240 460" data-nomirror role="img" aria-label={common.schematic}>
+            <defs>
+              <pattern id="med-hatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.8" opacity="0.35" />
+              </pattern>
+            </defs>
+            <line x1="120" y1="6" x2="120" y2="454" class="med-cl" />
+            {b.anatomy.stack.map((_: any, i: number) => (
+              <g class="med-plate-lvl" style={`--i:${i}`}>
+                <path
+                  d={`M40 ${26 + i * 52} L200 ${26 + i * 52} L200 ${26 + i * 52 + 30} L40 ${26 + i * 52 + 30} Z`}
+                  fill="url(#med-hatch)" class="med-plate-lvl__body"
+                />
+                <line x1="200" y1={26 + i * 52 + 15} x2="228" y2={26 + i * 52 + 15} class="med-lead" />
+                <circle cx="232" cy={26 + i * 52 + 15} r="3" class="med-lead-dot" />
+              </g>
+            ))}
+          </svg>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+        </figure>
+
+        <dl class="med-anat__list">
+          {b.anatomy.stack.map((item: any, i: number) => (
+            <div class="med-anat__item" data-lvl={i}>
+              <dt><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{item.name}</dt>
+              <dd>{item.note}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+
+      <div class="med-class">
+        <h3 class="med-h4">{b.anatomy.classHeading}</h3>
+        <p class="med-class__note">{b.anatomy.classNote}</p>
+        <div class="med-class__scroll">
+          <table class="med-class__table">
+            <tbody>
+              {b.anatomy.classes.map((cls: any) => (
+                <tr>
+                  <th scope="row">{cls.name}</th>
+                  <td class="t-mono">{cls.life}</td>
+                  <td>{cls.spec}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="med-class__close">{b.anatomy.classClose}</p>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 06 · WEAR ══════════════════════════════════════════════════════ */}
+  <section class="med-wear" id="wear">
+    <div class="shell--wide">
+      <div class="med-head">
+        <p class="eyebrow">{b.wear.index} · {b.wear.kicker}</p>
+        <h2 class="med-h2">{b.wear.heading}</h2>
+        <p class="t-lead">{b.wear.body}</p>
+      </div>
+
+      <div class="med-axis-wrap">
+        <p class="t-label">{b.wear.axisLabel}</p>
+        <ol class="med-axis-list">
+          {b.wear.marks.map((mark: any, i: number) => (
+            <li data-reveal style={`--reveal-delay:${i * 70}ms`}>
+              <span class="med-axis__at t-mono">{mark.at}</span>
+              <span class="med-axis__dot" aria-hidden="true"></span>
+              <span class="med-axis__label">{mark.label}</span>
+              <span class="med-axis__note">{mark.note}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="med-spares">
+        <div>
+          <h3 class="med-h5">{b.wear.sparesHeading}</h3>
+          <ul class="med-spares__list">
+            {b.wear.spares.map((s: string) => <li>{s}</li>)}
+          </ul>
+        </div>
+        <div class="med-spares__side">
+          <p>{b.wear.sparesNote}</p>
+          <p class="med-warranty">{b.wear.warranty}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 07 · SECOND TOOL ═══════════════════════════════════════════════ */}
+  <section class="med-second" id="second">
+    <div class="shell--wide med-second__inner">
+      <div class="med-second__manifesto">
+        <p class="eyebrow">{b.second.index} · {b.second.kicker}</p>
+        <h2 class="med-h2 med-second__h">{b.second.heading}</h2>
+        <p class="med-second__body">{b.second.body}</p>
+
+        <h3 class="med-h5 med-second__oh">{b.second.offerHeading}</h3>
+        <ul class="med-second__offer">
+          {b.second.offer.map((o: string) => <li>{o}</li>)}
+        </ul>
+        <p class="med-second__honesty">{b.second.honesty}</p>
+      </div>
+
+      <ol class="med-risks">
+        {b.second.risks.map((risk: any) => (
+          <li>
+            <span class="med-risks__n t-mono">{risk.n}</span>
+            <span class="med-risks__s">{risk.scenario}</span>
+            <span class="med-risks__c">{risk.consequence}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  {/* ═══ 08 · START ═════════════════════════════════════════════════════ */}
+  <section class="med-start" id="start">
+    <div class="shell--wide">
+      <div class="med-head">
+        <p class="eyebrow">{b.start.index} · {b.start.kicker}</p>
+        <h2 class="med-h2">{b.start.heading}</h2>
+        <p class="t-lead">{b.start.body}</p>
+      </div>
+
+      <ol class="med-rail">
+        {b.start.steps.map((step: any, i: number) => (
+          <li>
+            <span class="med-rail__n t-mono">{String(i + 1).padStart(2, '0')}</span>
+            <span class="med-rail__t">{step.label}</span>
+            <span class="med-rail__b">{step.note}</span>
+          </li>
+        ))}
+      </ol>
+
+      <div class="med-exchange">
+        <section>
+          <h3 class="med-h4">{b.start.needHeading}</h3>
+          <ul class="med-exchange__list">
+            {b.start.need.map((item: string) => <li>{item}</li>)}
+          </ul>
+        </section>
+        <section class="med-exchange__out">
+          <h3 class="med-h4">{b.start.getHeading}</h3>
+          <ul class="med-exchange__list">
+            {b.start.get.map((item: string) => <li>{item}</li>)}
+          </ul>
+        </section>
+      </div>
+
+      <div class="med-panels">
+        <h3 class="t-label med-panels__h">{b.panels.heading}</h3>
+        {b.panels.items.map((panel: any, i: number) => (
+          <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+            <h4>
+              <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
+                <span>{panel.title}</span>
+                <span class="disc__sign" aria-hidden="true"></span>
+              </button>
+            </h4>
+            <div class="disc__panel">
+              <div class="disc__inner">
+                <div>
+                  <ul class="med-panel__list">
+                    {panel.bullets.map((bullet: string) => <li>{bullet}</li>)}
+                  </ul>
+                  {panel.source && <p class="med-panel__src t-fine">{panel.source}</p>}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  {/* Renders only when real, permitted project media exists. */}
+  <ProjectProof locale={Astro.props.locale} industry="medical" copy={b.proof} />
+</article>
+
+<script>
+  /**
+   * The output calculator in section 02.
+   *
+   * It computes exactly what a buyer computes in their head — cavities divided
+   * by cycle — and nothing more. It quotes no price and implies no capability.
+   * The upper bound on the cavity slider is 46 because that is the verified
+   * limit of our tooling experience; the control cannot be used to imply more.
+   */
+  const band = document.querySelector<HTMLElement>('[data-calc]');
+  if (band) {
+    const cav = band.querySelector<HTMLInputElement>('[data-calc-cavities]')!;
+    const cyc = band.querySelector<HTMLInputElement>('[data-calc-cycle]')!;
+    const hrs = band.querySelector<HTMLInputElement>('[data-calc-hours]')!;
+
+    const outs = {
+      cavities: band.querySelector<HTMLElement>('[data-calc-out="cavities"]')!,
+      cycle: band.querySelector<HTMLElement>('[data-calc-out="cycle"]')!,
+      hours: band.querySelector<HTMLElement>('[data-calc-out="hours"]')!,
+      hour: band.querySelector<HTMLElement>('[data-calc-hour]')!,
+      day: band.querySelector<HTMLElement>('[data-calc-day]')!,
+      year: band.querySelector<HTMLElement>('[data-calc-year]')!,
+    };
+
+    // Latin digits with a thin space group separator, so the figures read the
+    // same way for an engineer in every one of the nine languages.
+    const fmt = (n: number) =>
+      Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+    const update = () => {
+      const c = Number(cav.value);
+      const s = Number(cyc.value);
+      const h = Number(hrs.value);
+      const perHour = (3600 / s) * c;
+
+      outs.cavities.textContent = String(c);
+      outs.cycle.textContent = `${s} s`;
+      outs.hours.textContent = `${h} h`;
+      outs.hour.textContent = fmt(perHour);
+      outs.day.textContent = fmt(perHour * h);
+      outs.year.textContent = fmt(perHour * h * 300);
+    };
+
+    [cav, cyc, hrs].forEach((el: any) => el.addEventListener('input', update));
+    update();
+  }
+</script>
+
+<style>
+  /* ═══ Medical chapter ════════════════════════════════════════════════════
+     Cool, controlled, minimal. Precision is expressed as repetition and
+     registration — never as a hospital, a cleanroom or a person in a gown,
+     because those would be a regulatory claim made with a picture. */
+
+  .med-h2 {
+    font-size: clamp(1.9rem, 4vw, 3.2rem);
+    line-height: 1.06;
+    letter-spacing: -0.028em;
+    font-weight: 500;
+    margin-block-start: var(--sp-5);
+    max-inline-size: 20ch;
+  }
+  .med-h4 { font-size: var(--step-2); letter-spacing: var(--track-head); }
+  .med-h5 { font-size: var(--step-1); letter-spacing: var(--track-head); }
+  .med-head { max-inline-size: 72ch; }
+  .med-head .t-lead { margin-block-start: var(--sp-5); }
+
+  .med-micro {
+    font-family: var(--font-mono);
+    font-size: 8.5px;
+    letter-spacing: 0.06em;
+    fill: var(--ink-muted);
+  }
+  .med-cl { stroke: var(--accent); stroke-width: 0.7; stroke-dasharray: 9 3 1.5 3; opacity: 0.4; }
+  .med-lead { stroke: var(--accent); stroke-width: 0.9; opacity: 0.7; fill: none; }
+  .med-lead-dot { fill: var(--accent); }
+
+  /* ── Hero ─────────────────────────────────────────────────────────────── */
+  .med-hero { padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 5.5rem); position: relative; }
+  .med-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+  @media (max-width: 940px) { .med-hero__inner { grid-template-columns: 1fr; } }
+
+  .med-hero__head {
+    margin-block-start: clamp(1.25rem, 3vw, 2rem);
+    font-size: clamp(2.3rem, 5.2vw, 4.4rem);
+    line-height: 1.02;
+    letter-spacing: -0.033em;
+    font-weight: 500;
+  }
+  .med-hero__head span { display: block; }
+  .med-hero__head span:last-child { color: var(--accent-deep); }
+  .med-hero__lead {
+    margin-block-start: clamp(1.25rem, 2.5vw, 1.85rem);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-inline-size: 50ch;
+  }
+  .med-hero__markers { margin-block-start: var(--sp-6); display: flex; flex-wrap: wrap; gap: 0.45rem; }
+  .med-hero__markers li {
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    padding: 0.4em 0.75em;
+    border: 1px solid color-mix(in oklab, var(--accent) 32%, transparent);
+    color: var(--accent-deep);
+    background: color-mix(in oklab, var(--surface-raise) 70%, transparent);
+  }
+
+  .med-hero__fig svg { inline-size: 100%; block-size: auto; }
+  .med-hero__fig .figure-note { margin-block-start: var(--sp-4); }
+  .med-plate { fill: none; stroke: var(--line); stroke-width: 1.2; }
+  .med-cav__o { fill: none; stroke: var(--accent); stroke-width: 1.3; }
+  .med-cav__i { fill: color-mix(in oklab, var(--accent) 22%, transparent); }
+  @keyframes med-register {
+    from { opacity: 0; transform: scale(0.55); }
+    to { opacity: 1; transform: none; }
+  }
+  .med-cav { transform-box: fill-box; transform-origin: center; }
+  :global(html.js) .med-cav {
+    animation: med-register 620ms var(--ease-out) both;
+    animation-delay: calc(140ms + var(--i) * 26ms);
+  }
+
+  /* ── 01 Atlas ─────────────────────────────────────────────────────────── */
+  .med-atlas { padding-block: var(--section-y); border-block-start: var(--rule); }
+  .med-atlas__grid {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 0;
+    border: var(--rule);
+  }
+  @media (max-width: 860px) { .med-atlas__grid { grid-template-columns: 1fr; } }
+
+  .med-atlas__index { display: grid; align-content: start; border-inline-end: var(--rule); }
+  @media (max-width: 860px) { .med-atlas__index { border-inline-end: 0; border-block-end: var(--rule); } }
+  .med-atlas__row {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    gap: var(--sp-3);
+    align-items: baseline;
+    padding: 0.85rem var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+    transition: background-color var(--dur-2) var(--ease-out), color var(--dur-2) var(--ease-out);
+  }
+  .med-atlas__row:last-child { border-block-end: 0; }
+  .med-atlas__row span:first-child { font-size: var(--step--2); letter-spacing: 0.12em; }
+  .med-atlas__row:hover { background: var(--accent-wash); color: var(--accent-deep); }
+  .med-atlas__row[aria-selected='true'] {
+    background: var(--accent-deep);
+    color: #fff;
+    font-weight: var(--weight-medium);
+  }
+
+  .med-atlas__panel { padding: clamp(1.5rem, 3vw, 2.5rem); background: var(--surface-raise); }
+  .med-atlas__panel[hidden] { display: none; }
+  .med-atlas__hard {
+    margin-block-start: var(--sp-4);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-inline-size: 54ch;
+  }
+  .med-atlas__spec {
+    margin-block-start: var(--sp-6);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 0.4rem 1rem;
+    border-block-start: var(--rule);
+    padding-block-start: var(--sp-4);
+  }
+  .med-atlas__spec li {
+    font-size: var(--step--2);
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-4);
+    position: relative;
+  }
+  .med-atlas__spec li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.62em;
+    inline-size: 0.5rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+
+  /* ── 02 Arithmetic ────────────────────────────────────────────────────── */
+  .med-calc { padding-block: var(--section-y); background: var(--surface-sunk); border-block: var(--rule); }
+  .med-calc__sub { margin-block-start: var(--sp-4); color: var(--ink-muted); }
+
+  .med-calc__band {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    background: var(--surface-raise);
+    border: var(--rule);
+    padding: clamp(1.5rem, 3.5vw, 2.75rem);
+  }
+  @media (max-width: 820px) { .med-calc__band { grid-template-columns: 1fr; } }
+
+  .med-calc__controls { display: grid; gap: var(--sp-6); }
+  .med-ctrl {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.5rem var(--sp-4);
+    align-items: center;
+  }
+  .med-ctrl > .t-label { grid-column: 1 / -1; }
+  .med-ctrl input[type='range'] {
+    inline-size: 100%;
+    accent-color: var(--accent);
+    block-size: 1.5rem;
+  }
+  .med-ctrl output {
+    font-size: var(--step-0);
+    color: var(--accent-deep);
+    min-inline-size: 4ch;
+    text-align: end;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .med-calc__readout { border-inline-start: var(--rule); padding-inline-start: clamp(1.5rem, 3vw, 2.5rem); }
+  @media (max-width: 820px) {
+    .med-calc__readout { border-inline-start: 0; border-block-start: var(--rule); padding-inline-start: 0; padding-block-start: var(--sp-6); }
+  }
+  .med-calc__big {
+    font-size: clamp(2.4rem, 6vw, 4.4rem);
+    line-height: 1;
+    color: var(--accent-deep);
+    font-variant-numeric: tabular-nums lining-nums;
+    margin-block-start: var(--sp-3);
+  }
+  .med-calc__unit { font-size: var(--step--1); color: var(--ink-muted); margin-block-start: 0.35rem; }
+  .med-calc__sub-out {
+    margin-block-start: var(--sp-6);
+    display: grid;
+    gap: var(--sp-3);
+    border-block-start: var(--rule);
+    padding-block-start: var(--sp-4);
+  }
+  .med-calc__sub-out > div { display: flex; justify-content: space-between; gap: var(--sp-4); align-items: baseline; }
+  .med-calc__sub-out dd { font-size: var(--step-0); font-variant-numeric: tabular-nums; }
+
+  .med-calc__note {
+    margin-block-start: var(--sp-6);
+    font-size: var(--step--1);
+    line-height: 1.62;
+    color: var(--ink-muted);
+    max-inline-size: 72ch;
+  }
+  .med-amort { margin-block-start: clamp(2rem, 4vw, 3rem); max-inline-size: 68ch; }
+  .med-amort p { margin-block-start: var(--sp-4); color: var(--ink-muted); }
+
+  /* ── 03 Imbalance ─────────────────────────────────────────────────────── */
+  .med-imb { padding-block: var(--section-y); }
+  .med-imb__h { max-inline-size: 24ch; }
+  .med-imb__grid {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 940px) { .med-imb__grid { grid-template-columns: 1fr; } }
+
+  .med-imb__fig {
+    position: sticky;
+    inset-block-start: clamp(5rem, 11vh, 7rem);
+    background: var(--surface-raise);
+    border: var(--rule);
+    padding: clamp(1rem, 2vw, 1.75rem);
+  }
+  @media (max-width: 940px) { .med-imb__fig { position: static; } }
+  .med-imb__fig svg { inline-size: 100%; block-size: auto; }
+
+  .med-sprue { fill: var(--accent); }
+  .med-runner { fill: none; stroke: var(--ink-muted); stroke-width: 5; stroke-linecap: round; opacity: 0.4; }
+  .med-gate { fill: none; stroke: var(--accent); stroke-width: 1.4; }
+  .med-focus { fill: none; stroke: var(--signal); stroke-width: 1.5; stroke-dasharray: 4 3; }
+  .med-axis { stroke: var(--line); stroke-width: 1; }
+  .med-bar { fill: color-mix(in oklab, var(--accent) 45%, transparent); }
+  .med-bar--inner { fill: var(--signal); }
+
+  /* Layers reveal one at a time as the reader steps through the argument. */
+  .med-layer { opacity: 0; transition: opacity 480ms var(--ease-out); }
+  .med-imb[data-step='1'] .med-layer--laminate,
+  .med-imb[data-step='2'] .med-layer--laminate,
+  .med-imb[data-step='3'] .med-layer--laminate { opacity: 1; }
+  .med-imb[data-step='2'] .med-layer--split,
+  .med-imb[data-step='3'] .med-layer--split { opacity: 1; }
+  .med-imb[data-step='3'] .med-layer--bars { opacity: 1; }
+  .med-imb[data-step='3'] .med-tree { opacity: 0.25; }
+  .med-tree { transition: opacity 480ms var(--ease-out); }
+
+  .med-imb__steps { display: grid; border-block-start: var(--rule-strong); }
+  .med-imb__step {
+    padding-block: var(--sp-6);
+    border-block-end: var(--rule);
+    display: grid;
+    gap: 0.45rem;
+    opacity: 0.45;
+    transition: opacity 380ms var(--ease-out);
+  }
+  .med-imb[data-step='0'] .med-imb__step[data-station-step='0'],
+  .med-imb[data-step='1'] .med-imb__step[data-station-step='1'],
+  .med-imb[data-step='2'] .med-imb__step[data-station-step='2'],
+  .med-imb[data-step='3'] .med-imb__step[data-station-step='3'] { opacity: 1; }
+  @media (max-width: 940px) { .med-imb__step { opacity: 1; } }
+  .med-imb__step span { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
+  .med-imb__step h3 { font-size: var(--step-2); letter-spacing: var(--track-head); }
+  .med-imb__step p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); max-inline-size: 46ch; }
+
+  .med-imb__foot { margin-block-start: clamp(2.5rem, 5vw, 4rem); }
+  .med-imb__evidence {
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-inline-size: 70ch;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--signal);
+  }
+  .med-imb__cols {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  @media (max-width: 820px) { .med-imb__cols { grid-template-columns: 1fr; } }
+  .med-imb__method { margin-block-start: var(--sp-5); border-block-start: var(--rule); }
+  .med-imb__method li {
+    display: grid;
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+    gap: var(--sp-3);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.55;
+    align-items: baseline;
+  }
+  .med-imb__method li span { font-size: var(--step--2); letter-spacing: 0.12em; color: var(--accent-deep); }
+
+  .med-diag { margin-block-start: var(--sp-5); border-block-start: var(--rule); }
+  .med-diag > div { padding-block: var(--sp-4); border-block-end: var(--rule); display: grid; gap: 0.25rem; }
+  .med-diag dt { font-size: var(--step-0); font-weight: var(--weight-medium); }
+  .med-diag dd { font-size: var(--step--1); color: var(--ink-muted); }
+
+  .med-imb__close {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    max-inline-size: 68ch;
+    color: var(--ink-muted);
+  }
+
+  /* ── 04 The line ──────────────────────────────────────────────────────── */
+  .med-line {
+    padding-block: var(--section-y-loose);
+    background: var(--inverse);
+    color: var(--inverse-ink);
+    --ink: var(--inverse-ink);
+    --signal: var(--signal-inverse);
+    --signal-ink: var(--signal-inverse);
+    --accent: var(--accent-inverse);
+    --accent-deep: var(--accent-inverse);
+    --ink-muted: color-mix(in oklab, var(--inverse-ink) 66%, transparent);
+    --line: color-mix(in oklab, var(--inverse-ink) 20%, transparent);
+  }
+  .med-line__head .med-h2 { max-inline-size: 14ch; }
+  .med-line__sub { margin-block-start: var(--sp-4); color: var(--ink-muted); max-inline-size: 68ch; }
+
+  .med-ledger {
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  /* One continuous rule. Nothing crosses it — that is the whole point. */
+  .med-ledger::before {
+    content: '';
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 50%;
+    inline-size: 1px;
+    background: var(--line);
+  }
+  @media (max-width: 820px) {
+    .med-ledger { grid-template-columns: 1fr; gap: var(--sp-8); }
+    .med-ledger::before { display: none; }
+  }
+  .med-ledger__col { padding-inline-end: clamp(1.5rem, 3vw, 3rem); }
+  .med-ledger__col--yours { padding-inline: clamp(1.5rem, 3vw, 3rem) 0; }
+  @media (max-width: 820px) { .med-ledger__col, .med-ledger__col--yours { padding-inline: 0; } }
+  .med-ledger__h { padding-block-end: var(--sp-4); border-block-end: 1px solid var(--line); }
+  .med-ledger__col--ours .med-ledger__h { color: var(--accent-deep); }
+  .med-ledger__col--yours .med-ledger__h { color: var(--signal-ink); }
+  .med-ledger ul { margin-block-start: var(--sp-4); }
+  .med-ledger li {
+    padding-block: var(--sp-4);
+    border-block-end: 1px solid var(--line);
+    font-size: var(--step--1);
+    line-height: 1.55;
+    padding-inline-start: var(--sp-5);
+    position: relative;
+    color: var(--ink-muted);
+  }
+  .med-ledger li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.35rem;
+    inline-size: 0.7rem;
+    block-size: 1px;
+  }
+  .med-ledger__col--ours li::before { background: var(--accent); }
+  .med-ledger__col--yours li::before { background: var(--signal); }
+
+  .med-line__close {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-inline-size: 62ch;
+  }
+  .med-line__how { margin-block-start: clamp(2rem, 4vw, 3rem); max-inline-size: 68ch; }
+  .med-line__how p { margin-block-start: var(--sp-4); color: var(--ink-muted); }
+
+  /* ── 05 Anatomy ───────────────────────────────────────────────────────── */
+  .med-anat { padding-block: var(--section-y); }
+  .med-anat__grid {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 860px) { .med-anat__grid { grid-template-columns: 1fr; } }
+  .med-anat__fig { color: var(--ink-muted); position: sticky; inset-block-start: clamp(5rem, 11vh, 7rem); }
+  @media (max-width: 860px) { .med-anat__fig { position: static; max-inline-size: 16rem; } }
+  .med-anat__fig svg { inline-size: 100%; block-size: auto; }
+  .med-plate-lvl__body { stroke: currentColor; stroke-width: 1.2; }
+
+  .med-anat__list { border-block-start: var(--rule-strong); }
+  .med-anat__item { padding-block: var(--sp-5); border-block-end: var(--rule); display: grid; gap: 0.35rem; }
+  .med-anat__item dt {
+    display: grid;
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+    gap: var(--sp-3);
+    font-size: var(--step-0);
+    font-weight: var(--weight-medium);
+    align-items: baseline;
+  }
+  .med-anat__item dt span { font-size: var(--step--2); letter-spacing: 0.12em; color: var(--accent-deep); }
+  .med-anat__item dd {
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-inline-size: 62ch;
+    padding-inline-start: calc(2.6rem + var(--sp-3));
+  }
+  @media (max-width: 560px) { .med-anat__item dd { padding-inline-start: 0; } }
+
+  .med-class { margin-block-start: clamp(2.5rem, 5vw, 4rem); }
+  .med-class__note { margin-block-start: var(--sp-4); color: var(--ink-muted); max-inline-size: 68ch; font-size: var(--step--1); }
+  .med-class__scroll { margin-block-start: var(--sp-5); overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
+  .med-class__table { inline-size: 100%; min-inline-size: 34rem; border-collapse: collapse; }
+  .med-class__table th, .med-class__table td {
+    text-align: start;
+    vertical-align: baseline;
+    padding: var(--sp-4) var(--sp-5) var(--sp-4) 0;
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+  }
+  .med-class__table th { font-weight: var(--weight-medium); font-size: var(--step-0); inline-size: 8rem; }
+  .med-class__table td:first-of-type { color: var(--accent-deep); inline-size: 12rem; }
+  .med-class__table td:last-child { color: var(--ink-muted); }
+  .med-class__close {
+    margin-block-start: var(--sp-6);
+    font-size: var(--step-0);
+    line-height: 1.55;
+    max-inline-size: 62ch;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--signal);
+  }
+
+  /* ── 06 Wear ──────────────────────────────────────────────────────────── */
+  .med-wear { padding-block: var(--section-y); background: var(--surface-sunk); border-block: var(--rule); }
+  .med-axis-wrap { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
+  .med-axis-list { margin-block-start: var(--sp-4); border-block-start: var(--rule-strong); }
+  .med-axis-list li {
+    display: grid;
+    grid-template-columns: 5rem 1.2rem minmax(0, 0.9fr) minmax(0, 1.4fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+    align-items: baseline;
+  }
+  @media (max-width: 780px) {
+    .med-axis-list li { grid-template-columns: 5rem 1.2rem minmax(0, 1fr); }
+    .med-axis__note { grid-column: 3 / -1; }
+  }
+  .med-axis__at { font-size: var(--step-1); color: var(--accent-deep); font-variant-numeric: tabular-nums; }
+  .med-axis__dot {
+    inline-size: 0.5rem; block-size: 0.5rem;
+    background: var(--accent);
+    justify-self: center;
+    align-self: center;
+  }
+  .med-axis__label { font-size: var(--step-0); font-weight: var(--weight-medium); }
+  .med-axis__note { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
+
+  .med-spares {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 820px) { .med-spares { grid-template-columns: 1fr; } }
+  .med-spares__list { margin-block-start: var(--sp-4); border-block-start: var(--rule); }
+  .med-spares__list li {
+    padding-block: var(--sp-3);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .med-spares__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.05rem;
+    inline-size: 0.6rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .med-spares__side { display: grid; gap: var(--sp-5); color: var(--ink-muted); font-size: var(--step--1); line-height: 1.62; }
+  .med-warranty { padding-inline-start: var(--sp-5); border-inline-start: 2px solid var(--accent); }
+
+  /* ── 07 Second tool ───────────────────────────────────────────────────── */
+  .med-second { padding-block: var(--section-y); }
+  .med-second__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .med-second__inner { grid-template-columns: 1fr; } }
+  .med-second__h { max-inline-size: 12ch; }
+  .med-second__body {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-inline-size: 44ch;
+  }
+  .med-second__oh { margin-block-start: var(--sp-7); }
+  .med-second__offer { margin-block-start: var(--sp-4); border-block-start: var(--rule); }
+  .med-second__offer li {
+    padding-block: var(--sp-3);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.55;
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .med-second__offer li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.05rem;
+    inline-size: 0.6rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .med-second__honesty {
+    margin-block-start: var(--sp-6);
+    font-size: var(--step--1);
+    line-height: 1.62;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--signal);
+  }
+
+  .med-risks { border-block-start: var(--rule-strong); }
+  .med-risks li {
+    display: grid;
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+    gap: 0.3rem var(--sp-4);
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+  }
+  .med-risks__n { grid-row: 1 / 3; font-size: var(--step--2); letter-spacing: 0.14em; color: var(--signal-ink); }
+  .med-risks__s { font-size: var(--step-0); line-height: 1.4; }
+  .med-risks__c { font-size: var(--step--1); line-height: 1.5; color: var(--ink-muted); }
+
+  /* ── 08 Start ─────────────────────────────────────────────────────────── */
+  .med-start { padding-block: var(--section-y); border-block-start: var(--rule); }
+  .med-rail {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 0;
+    border-block-start: var(--rule-strong);
+  }
+  .med-rail li {
+    padding: var(--sp-5) var(--sp-5) var(--sp-6) 0;
+    border-inline-end: var(--rule);
+    display: grid;
+    gap: 0.4rem;
+    align-content: start;
+  }
+  .med-rail li:last-child { border-inline-end: 0; }
+  @media (max-width: 760px) {
+    .med-rail li { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: 0; }
+  }
+  .med-rail__n { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
+  .med-rail__t { font-size: var(--step-1); font-weight: var(--weight-medium); letter-spacing: var(--track-head); }
+  .med-rail__b { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
+
+  .med-exchange {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  @media (max-width: 820px) { .med-exchange { grid-template-columns: 1fr; } }
+  .med-exchange__list { margin-block-start: var(--sp-5); border-block-start: var(--rule); }
+  .med-exchange__list li {
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.55;
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .med-exchange__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.35rem;
+    inline-size: 0.7rem;
+    block-size: 1px;
+    background: var(--ink-muted);
+  }
+  .med-exchange__out .med-exchange__list li::before { background: var(--accent); }
+
+  .med-panels { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
+  .med-panels__h { display: block; margin-block-end: var(--sp-4); }
+  .med-panel__list { display: grid; gap: var(--sp-3); max-inline-size: 80ch; }
+  .med-panel__list li {
+    font-size: var(--step--1);
+    line-height: 1.62;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .med-panel__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.75em;
+    inline-size: 0.6rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .med-panel__src { margin-block-start: var(--sp-4); max-inline-size: 60ch; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .med-cav { animation: none !important; opacity: 1 !important; }
+    .med-layer { opacity: 1 !important; }
+  }
+</style>

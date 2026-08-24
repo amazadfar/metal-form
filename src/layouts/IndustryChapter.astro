@@ -1,0 +1,66 @@
+---
+/**
+ * The shell every industry chapter sits inside.
+ *
+ * Owns the parts that must be identical across all thirteen — metadata,
+ * structured data, the vertical's palette applied to the document, the site
+ * header, the closing call to action, chapter navigation and the footer.
+ * The chapter itself arrives through the slot and owns nothing else.
+ *
+ * Each vertical has its own page file rather than sharing one dynamic route.
+ * That is a performance decision: a single route importing all thirteen
+ * chapters bundles all thirteen stylesheets into one chunk, and every industry
+ * page then downloads roughly 375 KB of CSS to use a thirteenth of it.
+ */
+import Base from './Base.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+import IndustryFooterNav from '../components/IndustryFooterNav.astro';
+
+import { type Locale } from '../i18n/locales.ts';
+import { INDUSTRIES, paletteVars, type IndustryKey } from '../config/industries.ts';
+import { getIndustry, getCommon } from '../content/index.ts';
+import { absoluteUrl, breadcrumbSchema, serviceSchema } from '../lib/seo.ts';
+import { BRAND } from '../config/site.ts';
+
+interface Props {
+  locale: Locale;
+  industryKey: IndustryKey;
+}
+const { locale, industryKey } = Astro.props;
+
+const industry = INDUSTRIES[industryKey];
+const content = getIndustry(locale, industryKey);
+const c = getCommon(locale);
+const route = `industries/${industry.slug}`;
+
+const schemas = [
+  breadcrumbSchema([
+    { name: BRAND.name, url: absoluteUrl(locale) },
+    { name: c.nav.industries, url: absoluteUrl(locale, 'industries') },
+    { name: content.name, url: absoluteUrl(locale, route) },
+  ]),
+  serviceSchema(locale, content.name, content.meta.description, route),
+];
+---
+
+<Base
+  locale={locale}
+  meta={content.meta}
+  route={route}
+  schemas={schemas}
+  paletteStyle={paletteVars(industry.palette)}
+  bodyClass={`chapter chapter--${industryKey}`}
+>
+  <a class="skip-link" href="#main">{c.a11y.skipToContent}</a>
+  <SiteHeader locale={locale} current={industryKey} />
+
+  <main id="main">
+    <slot />
+    <CtaBlock locale={locale} cta={content.cta} source={`industry_${industryKey}`} index="—" />
+    <IndustryFooterNav locale={locale} current={industryKey} />
+  </main>
+
+  <SiteFooter locale={locale} />
+</Base>

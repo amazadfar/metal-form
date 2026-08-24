@@ -1,0 +1,368 @@
+---
+/**
+ * The three reasons a manufacturer changes supplier.
+ *
+ * Three alternating full-width bands rather than three equal cards: each one
+ * gets a diagram at a size where it can actually argue, and the alternation
+ * stops the section reading as a template.
+ *
+ * Each diagram makes one falsifiable point:
+ *   01  where the money in a moulded part actually sits
+ *   02  the three-way blame triangle, and what removes it
+ *   03  one route versus two
+ *
+ * Every label is HTML rather than SVG text. That is not incidental: these
+ * strings run in nine languages, and an SVG `<text>` cannot wrap, so a Russian
+ * or Armenian translation would run straight off the edge of the drawing.
+ */
+import type { HomeContent } from '../../content/types.ts';
+
+interface Props {
+  pillars: HomeContent['pillars'];
+  schematicLabel: string;
+}
+const { pillars, schematicLabel } = Astro.props;
+
+// Illustrative proportions only — the exact split is a per-project calculation
+// and the figure's own note says so.
+const COST = [46, 24, 14, 8, 8];
+const KEYS = ['resin', 'cycle', 'tool', 'scrap', 'other'];
+let acc = 0;
+const bars = COST.map((pct, i) => {
+  const x = acc;
+  acc += pct;
+  return { pct, x, key: KEYS[i] };
+});
+---
+
+<section class="pl" id="advantages">
+  <div class="shell--wide">
+    <p class="eyebrow">{pillars.kicker}</p>
+    <div class="ruled-head pl__head">
+      <h2 class="t-h2 pl__title">{pillars.heading}</h2>
+      <p class="t-lead">{pillars.lead}</p>
+    </div>
+  </div>
+
+  <div class="pl__bands">
+    {pillars.items.map((item, i) => (
+      <article class="pl__band" data-band={i} data-reveal style={`--reveal-delay:${i * 60}ms`}>
+        <div class="shell--wide pl__band-inner">
+          <div class="pl__copy">
+            <p class="pl__n t-mono">{item.index}</p>
+            <h3 class="pl__h">{item.title}</h3>
+            <p class="pl__b">{item.body}</p>
+            <ul class="pl__points">
+              {item.points.map((p) => <li>{p}</li>)}
+            </ul>
+            <p class="pl__outcome">{item.outcome}</p>
+          </div>
+
+          <figure class="pl__fig">
+            <figcaption class="pl__cap">{item.figure.caption}</figcaption>
+
+            {i === 0 && (
+              /* Where the money is. One stacked bar, and a legend that reads as
+                 a parts list rather than as a chart key. */
+              <>
+                <svg viewBox="0 0 420 46" class="pl__bar" data-nomirror role="img" aria-label={item.figure.caption} preserveAspectRatio="none">
+                  {bars.map((b, bi) => (
+                    <rect
+                      x={b.x * 4.2} y="0" width={b.pct * 4.2 - 1.6} height="46"
+                      class={`pl__seg pl__seg--${b.key}`}
+                      style={`--g:${bi}`}
+                    />
+                  ))}
+                </svg>
+                <dl class="pl__legend">
+                  {item.figure.rows.map((row, ri) => (
+                    <div class="pl__legend-row">
+                      <dt>
+                        <span class={`pl__dot pl__seg--${KEYS[ri]}`} aria-hidden="true"></span>
+                        {row.label}
+                      </dt>
+                      <dd class="t-mono">{row.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </>
+            )}
+
+            {i === 1 && (
+              /* The blame triangle, and the single line that replaces it. */
+              <div class="pl__pair">
+                <div class="pl__pair-half">
+                  <svg viewBox="0 0 210 160" data-nomirror role="img" aria-label={item.figure.caption}>
+                    <path d="M104 24 L28 130 L180 130 Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.5" />
+                    <circle cx="104" cy="24" r="21" class="pl__node" />
+                    <circle cx="28" cy="130" r="21" class="pl__node" />
+                    <circle cx="180" cy="130" r="21" class="pl__node" />
+                    <text x="104" y="28" text-anchor="middle" class="pl__mini">{item.figure.rows[0].value}</text>
+                    <text x="28" y="134" text-anchor="middle" class="pl__mini">{item.figure.rows[1].value}</text>
+                    <text x="180" y="134" text-anchor="middle" class="pl__mini">{item.figure.rows[2].value}</text>
+                  </svg>
+                  <p class="pl__warn">{item.figure.rows[3].label}</p>
+                </div>
+
+                <div class="pl__pair-half">
+                  <p class="pl__cap pl__cap--alt">{item.figure.captionAlt}</p>
+                  <ol class="pl__chain">
+                    {(item.figure.chain ?? []).map((link, li) => (
+                      <li style={`--g:${li}`}>{link}</li>
+                    ))}
+                  </ol>
+                  <p class="pl__chain-note t-mono">{item.figure.chainNote}</p>
+                </div>
+              </div>
+            )}
+
+            {i === 2 && (
+              /* One route versus two. The break is the whole argument. */
+              <div class="pl__routes">
+                <div class="pl__route">
+                  <svg viewBox="0 0 420 92" data-nomirror role="img" aria-label={item.figure.caption}>
+                    <rect x="2" y="30" width="86" height="34" class="pl__box" />
+                    <line x1="88" y1="47" x2="166" y2="47" class="pl__flow" />
+                    <rect x="166" y="30" width="86" height="34" class="pl__box" />
+                    <line x1="252" y1="47" x2="330" y2="47" class="pl__flow" />
+                    <rect x="330" y="30" width="88" height="34" class="pl__box" />
+                    <g class="pl__break">
+                      <line x1="209" y1="16" x2="209" y2="78" />
+                      <path d="M201 39 L217 55 M217 39 L201 55" />
+                    </g>
+                  </svg>
+                  <ul class="pl__route-keys t-mono">
+                    <li>{item.figure.rows[0].label}</li>
+                    <li>{item.figure.rows[1].label}</li>
+                    <li>{item.figure.rows[2].label}</li>
+                  </ul>
+                  <p class="pl__warn">{item.figure.rows[3].label}</p>
+                </div>
+
+                <div class="pl__route">
+                  <p class="pl__cap pl__cap--alt">{item.figure.captionAlt}</p>
+                  <svg viewBox="0 0 420 122" data-nomirror role="img" aria-label={item.figure.captionAlt}>
+                    <rect x="2" y="44" width="86" height="34" class="pl__box" />
+                    <path d="M88 61 L127 61 L127 22 L166 22" class="pl__flow" fill="none" />
+                    <path d="M88 61 L127 61 L127 100 L166 100" class="pl__flow pl__flow--alt" fill="none" />
+                    <rect x="166" y="5" width="86" height="34" class="pl__box" />
+                    <rect x="166" y="83" width="86" height="34" class="pl__box pl__box--alt" />
+                    <path d="M252 22 L291 22 L291 61 L330 61" class="pl__flow" fill="none" />
+                    <path d="M252 100 L291 100 L291 61 L330 61" class="pl__flow pl__flow--alt" fill="none" />
+                    <rect x="330" y="44" width="88" height="34" class="pl__box" />
+                  </svg>
+                </div>
+              </div>
+            )}
+
+            <p class="pl__note">{item.figure.note}</p>
+            <span class="figure-note">{schematicLabel}</span>
+          </figure>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<style>
+  .pl { padding-block: var(--section-y) 0; }
+  .pl__head { margin-block-start: var(--sp-5); }
+  .pl__title { max-inline-size: 16ch; }
+
+  .pl__bands { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
+
+  .pl__band { border-block-start: var(--rule); padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+  .pl__band:last-child { border-block-end: var(--rule); }
+  /* Alternating background keeps the rhythm from flattening. */
+  .pl__band[data-band='1'] { background: var(--surface-sunk); }
+
+  .pl__band-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+  /* The middle band mirrors, so the eye crosses the page rather than tracking
+     down one column. */
+  .pl__band[data-band='1'] .pl__band-inner { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); }
+  .pl__band[data-band='1'] .pl__copy { order: 2; }
+  .pl__band[data-band='1'] .pl__fig { order: 1; }
+  @media (max-width: 940px) {
+    .pl__band-inner,
+    .pl__band[data-band='1'] .pl__band-inner { grid-template-columns: 1fr; }
+    .pl__band[data-band='1'] .pl__copy { order: 0; }
+    .pl__band[data-band='1'] .pl__fig { order: 0; }
+  }
+
+  .pl__n { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }
+  .pl__h {
+    margin-block-start: var(--sp-4);
+    font-size: var(--step-4);
+    letter-spacing: var(--track-display);
+    max-inline-size: 14ch;
+  }
+  .pl__b {
+    margin-block-start: var(--sp-5);
+    color: var(--ink-muted);
+    font-size: var(--step-0);
+    max-inline-size: 54ch;
+  }
+  .pl__points {
+    margin-block-start: var(--sp-6);
+    border-block-start: var(--rule);
+  }
+  .pl__points li {
+    padding-block: 0.7rem;
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    padding-inline-start: 1.6rem;
+    position: relative;
+    max-inline-size: 56ch;
+  }
+  .pl__points li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.15rem;
+    inline-size: 0.62rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .pl__outcome {
+    margin-block-start: var(--sp-6);
+    font-size: var(--step-0);
+    line-height: 1.5;
+    max-inline-size: 52ch;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--accent);
+  }
+
+  /* ── Figures ──────────────────────────────────────────────────────────── */
+  .pl__fig { margin: 0; color: var(--ink); min-inline-size: 0; }
+  .pl__fig svg { inline-size: 100%; block-size: auto; display: block; }
+
+  .pl__cap {
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin-block-end: var(--sp-4);
+  }
+  .pl__cap--alt { margin-block-end: var(--sp-4); }
+  :global(html[lang='zh']) .pl__cap,
+  :global(html[lang='th']) .pl__cap,
+  :global(html[lang='ar']) .pl__cap,
+  :global(html[lang='fa']) .pl__cap,
+  :global(html[lang='ur']) .pl__cap {
+    font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: var(--step--1);
+  }
+
+  .pl__note {
+    margin-block-start: var(--sp-5);
+    font-size: var(--step--2);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-inline-size: 52ch;
+  }
+  .pl__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  /* Cost bar. One accent in four tints, so the bar reads as a single quantity
+     being divided rather than as five unrelated categories. */
+  .pl__bar { block-size: 46px; }
+  .pl__seg, .pl__dot { fill: var(--accent); background: var(--accent); }
+  .pl__seg--cycle { fill: color-mix(in oklab, var(--accent) 70%, var(--surface)); background: color-mix(in oklab, var(--accent) 70%, var(--surface)); }
+  .pl__seg--tool  { fill: color-mix(in oklab, var(--accent) 46%, var(--surface)); background: color-mix(in oklab, var(--accent) 46%, var(--surface)); }
+  .pl__seg--scrap { fill: var(--signal); background: var(--signal); }
+  .pl__seg--other { fill: color-mix(in oklab, var(--accent) 22%, var(--surface)); background: color-mix(in oklab, var(--accent) 22%, var(--surface)); }
+
+  @keyframes pl-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  :global(html.js) .pl__band[data-reveal='in'] .pl__seg {
+    transform-origin: left center;
+    animation: pl-grow 900ms var(--ease-out) both;
+    animation-delay: calc(var(--g) * 110ms);
+  }
+
+  .pl__legend { margin-block-start: var(--sp-5); border-block-start: var(--rule); }
+  .pl__legend-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    padding-block: 0.55rem;
+    border-block-end: var(--rule);
+  }
+  .pl__legend dt {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    font-size: var(--step--1);
+  }
+  .pl__legend dd { font-size: var(--step--1); font-variant-numeric: tabular-nums; }
+  .pl__dot { inline-size: 0.6rem; block-size: 0.6rem; flex: none; translate: 0 -0.05em; }
+
+  /* Blame triangle vs. one chain */
+  .pl__pair {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--sp-6);
+    align-items: start;
+  }
+  @media (max-width: 560px) { .pl__pair { grid-template-columns: 1fr; } }
+  .pl__node { fill: none; stroke: currentColor; stroke-width: 1.3; opacity: 0.65; }
+  .pl__mini { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; fill: currentColor; opacity: 0.8; }
+  .pl__warn {
+    margin-block-start: var(--sp-4);
+    font-size: var(--step--2);
+    color: var(--signal-ink);
+    line-height: 1.45;
+  }
+  .pl__chain { display: grid; gap: 0.35rem; }
+  .pl__chain li {
+    padding: 0.55rem 0.75rem;
+    background: var(--accent-wash);
+    border-inline-start: 2px solid var(--accent);
+    font-size: var(--step--1);
+    position: relative;
+  }
+  .pl__chain li + li::before {
+    content: '';
+    position: absolute;
+    inset-block-start: -0.35rem;
+    inset-inline-start: 1.6rem;
+    inline-size: 1.5px;
+    block-size: 0.35rem;
+    background: var(--accent);
+  }
+  .pl__chain-note {
+    margin-block-start: var(--sp-4);
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+  }
+
+  /* One route vs two */
+  .pl__routes { display: grid; gap: var(--sp-7); }
+  .pl__box { fill: none; stroke: currentColor; stroke-width: 1.3; }
+  .pl__box--alt { stroke: var(--accent); stroke-dasharray: 6 4; }
+  .pl__flow { stroke: currentColor; stroke-width: 1.4; opacity: 0.5; }
+  .pl__flow--alt { stroke: var(--accent); opacity: 0.9; stroke-dasharray: 6 4; }
+  .pl__break line { stroke: var(--signal); stroke-width: 1; stroke-dasharray: 4 4; }
+  .pl__break path { stroke: var(--signal); stroke-width: 2; fill: none; }
+  .pl__route-keys {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+    margin-block-start: 0.35rem;
+  }
+  .pl__route-keys li { flex: 1; }
+  .pl__route-keys li:nth-child(2) { text-align: center; }
+  .pl__route-keys li:last-child { text-align: end; }
+
+  @media (max-width: 640px) {
+    .pl__h { font-size: var(--step-3); max-inline-size: none; }
+  }
+</style>

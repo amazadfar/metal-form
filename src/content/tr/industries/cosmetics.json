@@ -1,0 +1,480 @@
+{
+  "meta": {
+    "title": "Kozmetik ve kişisel bakım kalıpları - kapaklar, kavanozlar, dispenser parçaları | Metal Form",
+    "description": "Kozmetik kapaklar, kavanozlar, pompa ve mekanizma parçaları için kalıp tasarımı ve imalatı. 46 göze kadar çok gözlü kalıplar, sıcak ve soğuk yolluk, dişli maçalar, kozmetik yüzey kalitesi. Mühendislik, DFM, tersine mühendislik ve sürekli tedarik. 2006'dan beri İran mühendisliği."
+  },
+  "name": "Kozmetik ve Kişisel Bakım",
+  "tile": "Görünen yüzeyin ürünün kendisi olduğu kapaklar, kavanozlar, pompalar ve dispenserler. Parlatma sınıfı, ayırma yüzeyinin yeri ve yolluk girişi konumu çelik işlenmeden önce kararlaştırılır.",
+  "tileParts": "Kapaklar · Kavanozlar · Dispenserler",
+  "hero": {
+    "kicker": "Kozmetik ve Kişisel Bakım",
+    "headline": [
+      "Yüzey",
+      "kalıptan gelir."
+    ],
+    "lead": "Kapaklar, kavanozlar, dispenser ve mekanizma parçaları. Parlatma sınıfı, ayırma yüzeyi, yolluk girişi konumu ve çıkma açısı çeliğe bir kez işlenir ve ondan sonraki her adede kopyalanır. Parçayı ya da modeli gönderin. Geometriyi, kalıp rotasını ve üretim ekonomisini değerlendiririz.",
+    "markers": [
+      "46 göze kadar çok gözlü kalıp",
+      "Diş sökücü ve katlanabilir maçalar",
+      "Sıcak ve soğuk yolluk"
+    ]
+  },
+  "blocks": {
+    "surface": {
+      "index": "01",
+      "kicker": "Görünen yüzey",
+      "heading": "Kalıplama yüzey kalitesi eklemez. Kopyalar.",
+      "body": "Parlatma sınıfı, doku, ayırma yüzeyi, yolluk girişi konumu ve çıkma açısı çeliğe bir kez işlenir. Ondan sonraki her adet bunları taşır. Bir kozmetik kalıbının işlevsel bir kalıptan farklı satın alınmasının nedeni budur — ve en çok fark yaratan kararların programdaki en ucuz kararlar olmasının da.",
+      "heroLabels": {
+        "parting": "Ayırma yüzeyi",
+        "gate": "Giriş",
+        "land": "Oturma yüzeyi",
+        "highlight": "Işık bandı"
+      },
+      "railAttribution": "Bu sayfadaki sınıflar, pürüzlülük değerleri, boyun kodları ve maliyet oranları yayımlanmış sektör uygulamalarıdır. Metal Form ölçümleri değildir.",
+      "railNda": "Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir. Lansmandan önce geometrinin kendisi ticari sırdır.",
+      "figureLabel": "Sürekli dişli bir kapaktan kesit",
+      "callouts": [
+        {
+          "mark": "01",
+          "term": "Ayırma yüzeyi",
+          "note": "Kalıbın iki yarımının buluştuğu yerde kalan ve her parçada tekrarlanan iz. Görünen bir yüzeyde bu izin konumu bir imalat ayrıntısı değil, bir tasarım kararıdır."
+        },
+        {
+          "mark": "02",
+          "term": "Yolluk girişi ve izi",
+          "note": "Parçanın beslemeden ayrıldığı noktadaki iz. Düzleştirilebilir, küçültülebilir ve yeri değiştirilebilir. Kaldırılamaz; bu yüzden yerleştirilir."
+        },
+        {
+          "mark": "03",
+          "term": "Parlatma sınıfı",
+          "note": "Parça başına değil, yüzey başına belirlenir. Tüketicinin baktığı yerde ayna, kimsenin bakmadığı yerde mat ya da dokulu."
+        },
+        {
+          "mark": "04",
+          "term": "Sızdırmazlık yüzeyi",
+          "note": "Sızdırmazlığı gerçekte sağlayan düz halka yüzey. Görünmez, hata kaldırmaz ve ambalajın nasıl göründüğüyle hiç ilgisi yoktur."
+        },
+        {
+          "mark": "05",
+          "term": "Çıkma açısı",
+          "note": "Teamüle göre değil, belirlenmiş doku derinliğine göre verilir. Çıkma açısı yetersizse parça itmede sürtünür ve çizilir."
+        }
+      ],
+      "close": "Çelik bir kez işlendikten sonra bu beşinin hiçbiri ayarlanamaz."
+    },
+    "gloss": {
+      "index": "02",
+      "kicker": "Yüzey şartnamesi",
+      "heading": "Parlaklık el emeğidir. Yüzey yüzey satın alınır.",
+      "body": "SPI sınıfları, elmas pasta ve bir parlatmacının elleriyle ulaşılan bir parlatma ölçeğidir. VDI 3400 ise erozyonla (EDM) yüzeye işlenen ayrı bir pürüzlülük ölçeğidir. Birbirlerinin yerine geçmezler ve ancak yaklaşık olarak örtüşürler. Kozmetik kalıp bütçesinin ya iyi harcandığı ya da boşa gittiği yer, tam olarak bu ikisinin arasıdır.",
+      "note": "VDI ölçeğinde her altı birim pürüzlülüğü kabaca ikiye katlar. Doku derinliği de asgari çıkma açısını belirler; yeterli açı verilmeden çizilmiş parça, maçadan çizik çıkar.",
+      "tabsLabel": "Yüzey sınıfı",
+      "ladderLabel": "Aynı cidar, sekiz sınıf",
+      "specLabels": {
+        "ra": "Pürüzlülük",
+        "method": "Nasıl elde edilir",
+        "cost": "Kalıba maliyeti",
+        "steel": "Çelikten istediği",
+        "draft": "Çıkma açısına etkisi"
+      },
+      "rungs": [
+        {
+          "id": "a1",
+          "name": "SPI A-1",
+          "scale": "SPI",
+          "ra": "Ra 0,012 – 0,025 µm",
+          "method": "6000 gren elmas pasta, elle çalışılır",
+          "cost": "Bu merdivendeki en uzun tezgâh süresi — ve tezgâh süresi bir makine değil, bir insandır. Maliyetin yanında teslim süresi de satın alınır.",
+          "steel": "Temiz, inklüzyonsuz ve tam sertleştirilmiş bir blok. Ayna, çelikteki her kusuru ve parlatmanın her izini gösterir.",
+          "draft": "Yüzey kalitesi değil, geometri ve itme belirler."
+        },
+        {
+          "id": "a2",
+          "name": "SPI A-2",
+          "scale": "SPI",
+          "ra": "Ra 0,025 – 0,05 µm",
+          "method": "3000 gren elmas",
+          "cost": "A-1'e göre belirgin biçimde daha az tezgâh süresi; üstelik çoğu ambalajın taşımadığı bir fark için. Yaygın premium kozmetik görünen yüzeyi.",
+          "steel": "Yine ince taneli, sertleştirilmiş çelik ister. Parlatılmış bir yüzeydeki kaynak tamiri görünür.",
+          "draft": "Yüzey kalitesi değil, geometri ve itme belirler."
+        },
+        {
+          "id": "a3",
+          "name": "SPI A-3",
+          "scale": "SPI",
+          "ra": "Ra 0,05 – 0,10 µm",
+          "method": "1200 gren elmas",
+          "cost": "Ayna olmadan parlaklık. Tüketicinin elinde değil, kol mesafesinden gördüğü bir yüzey için makul sınıf.",
+          "steel": "Standart sertleştirilmiş kalıp çeliği yeterlidir.",
+          "draft": "Yüzey kalitesi değil, geometri ve itme belirler."
+        },
+        {
+          "id": "b1",
+          "name": "SPI B-1",
+          "scale": "SPI",
+          "ra": "Ra 0,05 – 0,10 µm",
+          "method": "600 gren zımpara",
+          "cost": "Elmas değil zımpara. Bitmiş görünen ama yansıma tutmayan yarı parlak bir yüzey.",
+          "steel": "Özel bir talebi yok.",
+          "draft": "Yüzey kalitesi değil, geometri ve itme belirler."
+        },
+        {
+          "id": "c1",
+          "name": "SPI C-1",
+          "scale": "SPI",
+          "ra": "Ra 0,35 – 0,40 µm",
+          "method": "600 numara taş",
+          "cost": "Saten bir çalışma yüzeyi. Kapak içi, conta yüzeyi ya da üzeri sonradan dekore edilecek yüzeyler için doğru tercih.",
+          "steel": "Özel bir talebi yok.",
+          "draft": "Yüzey kalitesi değil, geometri ve itme belirler."
+        },
+        {
+          "id": "v24",
+          "name": "VDI 24",
+          "scale": "VDI 3400",
+          "ra": "Ra ≈ 1,60 µm",
+          "method": "EDM dokusu",
+          "cost": "Elle parlatılmak yerine elektro erozyonla işlenir; dolayısıyla maliyet parlatmacıyı değil, dokulandırma operasyonunu izler.",
+          "steel": "Doku derinliği yüzeye işlenir; bu yüzden dokulu bir yüzeydeki tamir, yüzeyin yeniden dokulandırılması demektir.",
+          "draft": "En az 1,5 – 2,0 derece."
+        },
+        {
+          "id": "v36",
+          "name": "VDI 36",
+          "scale": "VDI 3400",
+          "ra": "Ra ≈ 6,30 µm",
+          "method": "EDM dokusu",
+          "cost": "Derin ve elle hissedilen bir doku. Parlak bir yüzeyin ilan edeceği çöküntü ve akış izlerini gizler.",
+          "steel": "Derin doku malzeme alır. Bunun göz ölçüsünde önceden hesaba katılması gerekir, sonradan fark edilmesi değil.",
+          "draft": "En az 4,0 derece."
+        },
+        {
+          "id": "v42",
+          "name": "VDI 42",
+          "scale": "VDI 3400",
+          "ra": "Ra ≈ 12,5 µm",
+          "method": "EDM dokusu",
+          "cost": "Kaba. Neredeyse hiçbir zaman görünen kozmetik yüzey değildir; buna karşılık bir kavrama bölgesinde ya da tabanda çoğu zaman doğru cevaptır.",
+          "steel": "VDI 36 ile aynı kısıt, bir adım ötesi.",
+          "draft": "VDI 36'nın istediğinden daha fazlası; aksi hâlde parça çıkarken çizilir."
+        }
+      ],
+      "close": "Sınıfı parça başına değil yüzey başına yazın. Tüketicinin gerçekten incelediği tek yüzeyde ayna, geri kalan her yerde doku demek; kalıbın, teknik resim notunun rastgele yazdığına değil, ambalajın gerçekten ihtiyaç duyduğuna mal olması demektir.",
+      "downstream": "Parlatılmış ya da dokulu bir kalıp yüzeyi, aynı zamanda dekorasyoncunun üzerinde çalışacağı zemindir. Sıcak yaldız temiz ve belirgin geometri ister, metalizasyon kusursuz bir yüzey ister, serigrafi kararlı bir referans yüzey ister. Bu prosesler süreç sonunda uzman dekorasyon firmaları tarafından yürütülür. Biz parçayı, sizin seçtiğiniz yönteme uygun olacak şekilde tasarlarız."
+    },
+    "gate": {
+      "index": "03",
+      "kicker": "Konumlandırma",
+      "heading": "Yolluk girişi yerleştirilir. Asla kaldırılmaz.",
+      "body": "Her enjeksiyon parçası, beslemeden ayrıldığı yerde bir iz ve kalıp yarımlarının buluştuğu yerde bir çizgi taşır. İkisi de kalıcıdır. Elde olan tek karar bunların nerede duracağıdır ve bu karar, ambalaj tasarımının sahibine aittir — numune aşamasında değil, çelikten önce alınır.",
+      "gateLabel": "Giriş",
+      "flowLabel": "Dolum",
+      "cases": [
+        {
+          "mark": "A",
+          "name": "Doğrudan giriş, tepe yüzeyinde",
+          "short": "Görünen yüzeyde",
+          "consequence": "En kısa akış yolu ve en basit kalıp. Buna karşılık, gözün ilk gittiği ve dekorasyoncunun baskı yapacağı yere tam olarak kabarık bir giriş izi bırakır. Ancak tepe yüzeyi bir dış kapağın altında gizliyse doğrudur."
+        },
+        {
+          "mark": "B",
+          "name": "Tünel giriş, eteğin içinde",
+          "short": "Görünen yüzeyin dışında",
+          "consequence": "Parça itme sırasında kendi kendini yolluktan ayırır ve giriş izi eteğin içinde, hiçbir gözün görmediği yerde kalır. Bedeli kısa bir soğuk yolluk ve biraz çevrim süresidir; kozmetik kapakların çoğunda varsayılan cevaptır."
+        },
+        {
+          "mark": "C",
+          "name": "Valfli giriş, üst yüzey",
+          "short": "Düz ve kontrollü",
+          "consequence": "Bir iğne girişi mekanik olarak kapatır; bu da düz ve tekrarlanabilir bir iz ile düzendeki her nozulun bağımsız kontrolünü verir. Yanında bir sıcak yarım, bir kontrol ünitesi ve bir bakım paketi de gelir."
+        }
+      ],
+      "partingHeading": "Aynı kapak, üç farklı ayırma yüzeyi",
+      "partingBody": "Kalıbın nereden ayrıldığı ikinci kalıcı izdir ve gezen ışık bandının ilk bulduğu da odur. Geometride zaten var olan bir kenara yerleştirilen ayırma yüzeyini gizlemenin hiçbir bedeli yoktur.",
+      "partingCases": [
+        {
+          "mark": "A",
+          "name": "Tepe radyusunda",
+          "note": "En kısa kalıp rotası. Buna karşılık ayrımı tam da parlak bandın kırıldığı yere düşürür; göz doğrudan oraya çekilir."
+        },
+        {
+          "mark": "B",
+          "name": "Omuz kademesinde",
+          "note": "Çizgi, tasarımın zaten taşıdığı bir kenarın içinde kaybolur. Kapakların ve dış kapakların çoğunda doğru cevap budur."
+        },
+        {
+          "mark": "C",
+          "name": "Tırtılın altında",
+          "note": "Ambalajda görünmez; ancak ayrımı eteğin derinine taşır ve çelik alıştırmasından da mengene kuvvetinden de diğer ikisine göre daha fazlasını ister."
+        }
+      ],
+      "close": "Çelikten önce mutabık kalınırsa bu bir sohbettir. Numune aşamasında keşfedilirse yeni bir göz inserti ve çoktan duyurulmuş bir lansman tarihidir."
+    },
+    "atlas": {
+      "index": "04",
+      "kicker": "Bu sektörün siparişleri",
+      "heading": "Tek bir parça ailesi değil. Sekiz ayrı kalıp şartnamesi.",
+      "body": "Bir vidalı kapağın, çift cidarlı bir kavanozun ve bir maskara sıyırıcısının, onları satın alan kişi dışında neredeyse hiçbir ortak yanı yoktur. Görünen yüzey bunlardan üçünde her şeyi belirler, kalanlarda ise hiç önemli değildir.",
+      "rowLabel": "Profil",
+      "rows": [
+        {
+          "name": "Sürekli dişli vidalı kapak",
+          "spec": "18-410 · 20-410 · 24-410 · 28-410",
+          "note": "Sektörün beygiri. Kapağı diş tutar, sızdırmazlığı oturma yüzeyi sağlar. İç dişin çelikten nasıl çıktığı — diş sökücü dişli grubu, sıyırma halkası ya da katlanabilir maça — çevrim süresini, imalat maliyetini ve yedek listesini tek bir kararda belirler."
+        },
+        {
+          "name": "Flip-top ve menteşeli kapak",
+          "spec": "PP film menteşe",
+          "note": "Akışın menteşeyi doğru geçmesi ve menteşenin, polimeri yönlendirmek için hâlâ sıcakken bir kez katlanması gerekir. Yolluk girişi konumu, menteşenin yıllarca kullanıma dayanacağını mı yoksa dördüncü ayda beyazlayıp çatlayacağını mı belirler."
+        },
+        {
+          "name": "Disc-top ve bastırmalı kapak",
+          "spec": "İki ya da üç enjeksiyon parçası",
+          "note": "Bir kubbenin içinde dönen yaylı bir disk; üstelik montaj boyunca dar bir tolerans bandında tutulmak zorunda. Geçme bölgesindeki gerilme beyazlaması, onaydan çok sonra ortaya çıkan arızadır."
+        },
+        {
+          "name": "Kalın cidarlı ve çift cidarlı kavanoz",
+          "spec": "Tek ağır parça ya da iki parçalı montaj",
+          "note": "Kalın cidar, cam gibi dolu bir yüzeyin peşindedir ve bunun bedelini hammadde ve soğutma süresiyle öder. Çift cidar aynı görünümü daha az malzemeyle verir ve küçük bir dolumun daha büyük bir ambalajda durmasını sağlar. İkisinde de bütün iş, çöküntü kontrolüdür."
+        },
+        {
+          "name": "Pompa ve dispenser parçaları",
+          "spec": "Aktüatör · mil · gövde · yay yatağı",
+          "note": "İşlev görsel değil, ölçüseldir. Gözler arası saçılım burada kozmetik bir kusur olarak görünmez — doz sapması olarak görünür; bu daha kötüdür, çünkü kimse muayenede fark etmez."
+        },
+        {
+          "name": "Airless gövde ve piston takipçisi",
+          "spec": "Silindire sıkı geçme",
+          "note": "Ambalaj boşaldıkça takipçi iç cidar boyunca yukarı çıkar. Silindir ovalliği ile takipçi çapının iki ayrı ölçü gibi değil, tek bir ölçü gibi kontrol edilmesi gerekir; aksi hâlde ambalaj boşalmadan doz vermeyi keser."
+        },
+        {
+          "name": "Maskara sıyırıcısı ve enjeksiyon aplikatör",
+          "spec": "Mikro enjeksiyon",
+          "note": "Sıyırıcı, fırça çıkarken ürünü dozlar; enjeksiyon aplikatör ise milimetrenin kesirleriyle ölçülen kemerler, kancalar ve yaprak formları taşır. Bu formatta hiçbir şey parlaklıkla ilgili değildir. Mesele, küçük detayların formunu koruyabilmesidir."
+        },
+        {
+          "name": "Kompakt ve palet gövdesi",
+          "spec": "Geniş ve düz görünen yüzey",
+          "note": "Sektördeki en zor kozmetik yüzey. Bir göbeğin üzerindeki çöküntü, girişten çıkan bir akış izi ve parlaklıktaki her sapma düz bir kapakta okunur; hiçbiri de kalıplamadan sonra düzeltilemez."
+        }
+      ],
+      "close": "Parçayı gönderin. Kalıp rotasını, parçanın satıldığı kategori değil, önümüzdeki geometri belirler."
+    },
+    "seal": {
+      "index": "05",
+      "kicker": "Arayüz",
+      "heading": "Kapağı diş tutar. Sızdırmazlığı oturma yüzeyi sağlar.",
+      "body": "Bir kozmetik parça neredeyse hiçbir zaman tek başına sevk edilmez. Başkasının kalıpladığı bir boyunla, başkasının monte ettiği bir pompayla ve başkasının kurduğu bir dolum hattıyla buluşur. Bu arayüz yayımlanmış bir koddur ve ambalajlar tam da o kodda çuvallar.",
+      "figLabels": {
+        "cap": "Kapak",
+        "neck": "Boyun",
+        "land": "Oturma yüzeyi",
+        "thread": "Diş",
+        "detail": "Detay A"
+      },
+      "codeHeading": "Bir boyun profili nasıl okunur",
+      "codeBody": "GPI ve GCMI kodlaması NN-TTT biçiminde okunur. İlk sayı boynun milimetre cinsinden dış çapıdır. Ardından gelen üç hane diş biçimini tanımlar: adım, diş derinliği, tur sayısı ve dişin nereden başladığı.",
+      "codes": [
+        "18-400",
+        "18-410",
+        "20-410",
+        "24-410",
+        "28-410"
+      ],
+      "codesNote": "Bunlar kişisel bakım formatlarının çoğunu kapsar. 24-410, plastik kozmetikte en yaygın boyun profilidir.",
+      "trapHeading": "24-400, 24-410'a vidalanır. Ama sızdırmazlık sağlamaz.",
+      "trapBody": "Aynı çap, farklı diş biçimi. Kapak ya erken durur, ya dişi ezer ya da boşta döner — üstelik iki parçadaki her ölçü doğrudur. Bu, kapak ile şişe iki farklı tedarikçiden geldiğinde ve kimse ikinci üç haneyi okumadığında olur.",
+      "torqueHeading": "Tork bir görüş değil, bir penceredir",
+      "torqueBody": "Kapatma ve açma torku bir aralık olarak belirlenir ve ASTM D2063'e göre bir üretim koşusunda doğrulanır. Düşük tork nakliyede sızdırır. Yüksek tork ambalajı bozar ve şikâyet üretir. İşi bir conta, bir karton pul ya da kalıpta oluşturulmuş bir sızdırmazlık dudağının yapması; kalıp var olmadan önce alınan bir tasarım kararıdır, kalıba sonradan uygulanan bir düzeltme değil.",
+      "failuresHeading": "Doğru görünen bir parçanın beş çuvallama biçimi",
+      "failures": [
+        {
+          "term": "Kısa kalmış bir sızdırmazlık yüzeyi",
+          "note": "Görsel muayeneden geçer. Palette, kamyonda, uçak kargosunda sızdırır."
+        },
+        {
+          "term": "Maçanın arkasındaki bir birleşme izi",
+          "note": "İki akış cephesi yeniden birleşmiştir ve dikiş, çevresindeki cidardan zayıftır. Bir kapağın kapatma torku altında yarıldığı yer orasıdır."
+        },
+        {
+          "term": "Oval çıkan bir kapak",
+          "note": "Maça düzensiz soğumuştur ya da parçalar sıcakken istiflenmiştir. Preste yuvarlak ölçülür, ertesi sabah ölçülmez."
+        },
+        {
+          "term": "Yolunu takip edemeyen bir piston",
+          "note": "Silindir ovalliği ile takipçi çapı gözler arasında birbirinden uzaklaşmıştır. Airless ambalaj, boşalmadan doz vermeyi keser."
+        },
+        {
+          "term": "Dördüncü haftada mikro çatlaklar",
+          "note": "Şeffaf SAN ya da akrilik, parfüm yağına, alkole veya agresif bir etken maddeye karşı. Bütün ölçüler toleranstaydı."
+        }
+      ],
+      "close": "Tork ölçümü, sızdırmazlık testi ve nakliye kalifikasyonu dolumcuya ve test kuruluşuna aittir. Biz bu testlerden geçmesi gereken geometriyi tasarlarız ve bunlardan hangisini bir kalıp değişikliğinin düzeltebileceğini, hangisini düzeltemeyeceğini açıkça söyleriz."
+    },
+    "cavities": {
+      "index": "06",
+      "kicker": "Ekonomi",
+      "heading": "16 gözlü bir kalıp tek gözlünün yaklaşık beş katına mal olur. On altı kat hızlı çalışmaz.",
+      "body": "Kozmetik parçalar sentin kesirleriyle fiyatlanır ve milyonlarla satılır; dolayısıyla kalıp bir proje gideri değil, bir adet tahminine karşı alınan bir yatırım kararıdır. Bu kararı yayımlanmış iki gerçek yönetir ve ikisi birbirini ters yöne çeker.",
+      "facts": [
+        {
+          "mark": "01",
+          "term": "Kalıp maliyeti doğrusalın altında büyür",
+          "note": "Yayımlanmış sektör uygulaması, 16 gözlü bir kalıbı tek gözlü bir kalıbın on altı katı değil, kabaca beş katı olarak veriyor. Göz sayısını artırmanın gerekçesi budur."
+        },
+        {
+          "mark": "02",
+          "term": "Çıktı da doğrusal büyümez",
+          "note": "Çevrimin kabaca yüzde 80'i soğutmadır ve büyük bir kalıp atım başına daha yavaş çevrim yapar. On altı göz, dört gözün çıktısının dört katını değil, üç ila üç buçuk katına yakınını verir."
+        },
+        {
+          "mark": "03",
+          "term": "Başa baş noktası bir görüş değil, bir aritmetiktir",
+          "note": "Ek kalıp maliyetinin parça başına tasarrufa bölünmesi, büyük kalıbın kendini amorti ettiği adedi verir. O adedin altında amorti etmez — tahmin ne kadar iyi görünmüş olursa olsun."
+        }
+      ],
+      "chart": {
+        "xLabel": "Göz",
+        "yA": "Kalıp yatırımı",
+        "yB": "Parça başı maliyet",
+        "cross": "Başa baş",
+        "mark": "46",
+        "note": "Eğri biçimleri yayımlanmış sektör uygulamalarından çizilmiştir. Bu grafikteki hiçbir şey bir Metal Form teklifi değildir; sizin programınızdaki başa baş noktası sizin adedinizin, hammaddenizin ve parçanızın bir fonksiyonudur."
+      },
+      "riskHeading": "Ve karşı ağırlık",
+      "riskBody": "Yüksek göz sayısı riski tek noktada toplar. Donan tek bir sıcak nozul ucu ya da hasar gören tek bir göz inserti kalıbın tamamını presten indirir; yayımlanmış sektör uygulamaları, yüksek gözlü kalıpların kabaca beşte dördünün dolum dengesi hiçbir zaman sağlanamadığı için beyan edilen kapasitede çalışamadığını bildiriyor. Bazen iki orta boy kalıp, tek bir büyük kalıbı yener: o zaman bir arıza üretime değil, kapasiteye mal olur.",
+      "oursHeading": "Bizim göz sayımız nerede duruyor",
+      "oursBody": "Metal Form 46 göze kadar kalıp imal etmiştir. Bir kozmetik kapak programının gerçekte durduğu bant da budur — parça maliyetini değiştirecek kadar yüksek, kalıbın yalnızca çalıştırılmak yerine hâlâ dengelenebileceği, bakımı yapılabileceği ve üzerine akıl yürütülebileceği kadar küçük.",
+      "bridgeBody": "Kendini henüz ispatlamamış bir format için dürüst rota şudur: pazar testine göre ölçeklendirilmiş, düşük gözlü bir geçiş kalıbı; üretim kalıbı ise sonradan, gerçekten gelen adede göre. Gelmeyen bir tahmine göre satın alınmış göz sayısı, bu sektördeki en pahalı hatadır."
+    },
+    "boundary": {
+      "index": "07",
+      "kicker": "Kapsam",
+      "heading": "Çeliği biz işleriz. Ambalajı başkaları tamamlar.",
+      "body": "Bu sektör bir uzmanlar zinciri üzerinde yürür ve devir teslim noktalarını bulanıklaştıran bir tedarikçi size takvim kazandırmaz, kaybettirir. Çizgi burada — bir teklifin ardından değil, öncesinde belirtiliyor.",
+      "supplyHeading": "Metal Form'un sağladıkları",
+      "supply": [
+        "Kapaklar, kavanozlar, dispenser parçaları ve mekanizma parçaları için kalıp tasarımı ve imalatı",
+        "Çok gözlü kalıplar, sıcak ve soğuk yolluk, valfli girişli ve tünel girişli düzenler",
+        "İç dişler ve geçmeler için diş sökücü maçalar, katlanabilir maçalar, sürgüler ve lifterlar",
+        "Parçanın metal ya da önceden kalıplanmış bir insert taşıdığı durumlarda insertli kalıplar",
+        "Ambalaj formatının gerektirdiği yerlerde PET, şişirme ve basınçlı döküm kalıpları",
+        "Teknik resmin hiç teslim edilmediği durumlarda fiziksel numuneden ya da fotoğraftan tersine mühendislik",
+        "CATIA ve SolidWorks'te ürün mühendisliği: yeniden tasarım, parça sayısının azaltılması, çelik işlenmeden önce DFM incelemesi",
+        "CNC frezeleme, tornalama ve manuel talaşlı imalat",
+        "Bir tahmine karşı parça üretimi ve sürekli tedarik",
+        "İkinci kaynak ve ikiz kalıplar; kalıpla birlikte tanımlanan yedekler ve değişim parçaları",
+        "Dünya geneline sevkiyat, NDA ve proje bazında kararlaştırılan şartlarla kalıp garantisi"
+      ],
+      "customerHeading": "Sizde ve uzmanlarınızda kalanlar",
+      "customer": [
+        {
+          "term": "Dekorasyon",
+          "note": "Sıcak yaldız, vakumda metalizasyon, galvano kaplama, sprey ve soft-touch kaplama, kalıp içi etiketleme ve serigrafi; uzman dekorasyon firmalarının yürüttüğü süreç sonu işlemlerdir. Biz, seçtiğiniz yöntemle uyumlu bir enjeksiyon parçası tasarlarız. Bunların hiçbirini yapmayız."
+        },
+        {
+          "term": "Renk",
+          "note": "Masterbatch eşleştirme, let-down oranı, spektrofotometri ve delta E ölçümü sizin compound tedarikçinizde ve enjeksiyoncunuzdadır. Bizim renk laboratuvarımız yoktur."
+        },
+        {
+          "term": "Test",
+          "note": "ASTM D2063'e göre tork ve açma kuvveti ölçümü, sızdırmazlık ve vakum testi, düşürme ve nakliye kalifikasyonu ile AQL parti muayenesi size ya da test kuruluşunuza aittir."
+        },
+        {
+          "term": "Formülasyon uyumu",
+          "note": "Etken maddenizin şeffaf bir SAN ya da akrilik gövdede mikro çatlak yaratıp yaratmayacağını kimyageriniz yanıtlar. Sektörün hangi malzeme ailelerini riskli saydığını size söyleriz ve verdiğiniz cevaba göre tasarımı kurarız."
+        },
+        {
+          "term": "Mevzuat",
+          "note": "Kozmetik ürün uygunluğu, geri dönüştürülmüş içerik beyanları ve geri dönüştürülebilirlik iddiaları kalıpçıya değil, markaya aittir."
+        },
+        {
+          "term": "Dolum ve montaj",
+          "note": "Dolum, kapaklama, ikincil ambalaj ve bunları yapan hat ekipmanı."
+        }
+      ],
+      "close": "Bunu en başta söylemek bir sorumluluk reddi değildir. Devir teslimlerin nasıl planlandığıdır — ve tutan bir lansman tarihi ile sessizce kayan bir lansman tarihi arasındaki farkın büyük bölümüdür."
+    },
+    "continuity": {
+      "index": "08",
+      "kicker": "Süreklilik",
+      "heading": "Tek kalıp. Tek tesis. Tek ülke.",
+      "body": [
+        "Kozmetik parçaların çoğu tek bir kalıpta, tek bir tesiste, tek bir ülkede üretilir. Bu verimlidir ve bir sıcak nozul ucu tıkanana, bir göz hasar görene, bir tedarikçi ilişkisi bitene ya da bir sınır kapanana kadar da işler.",
+        "Sonra bir ürün serisi satılamaz hâle gelir.",
+        "Aynı geometriye göre yapılmış ve başka bir yerde tutulan ikiz bir kalıp, üretim duruşunu bir takvim değişikliğine dönüştürür. Teknik resmin hiç teslim edilmediği durumlarda çalışmak için parçanın kendisi yeterlidir.",
+        "Geometri NDA altında kalır. Önce yedeği yapın, kararı sonra verin — bu, hiçbir şeyi bitirmeyi gerektirmez ve kimseye söylemeyi de gerektirmez."
+      ],
+      "figLabels": {
+        "toolA": "Kalıp 1",
+        "toolB": "Kalıp 2",
+        "path": "Aynı geometri"
+      },
+      "facts": [
+        "2006'dan beri üretim",
+        "1.000'den fazla tamamlanmış proje"
+      ],
+      "readiness": "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir; sizin programınızda hangisinin geçerli olduğunu açıkça söyleriz.",
+      "sendHeading": "Başlamak için ne yeterli",
+      "send": [
+        "Parçanın fiziksel bir numunesi",
+        "Bir CAD modeli, bir teknik resim ya da ölçeklendirebileceğimiz tek bir ölçüsü olan bir fotoğraf",
+        "Boyun profili kodu ya da parçanın eşleşeceği bileşen",
+        "Ürün kodu (SKU) başına yıllık adet ve kalıbın kaç renk varyantına hizmet etmesi gerektiği",
+        "Bunun yeni bir kalıp mı, ikinci kaynak mı, yoksa hâlihazırda çalışan bir ürünün yeniden tasarımı mı olduğu"
+      ],
+      "note": "48 iş saati içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
+    },
+    "panels": {
+      "heading": "Daha ayrıntılı",
+      "items": [
+        {
+          "title": "Yüzey şartnamesi, yüzey yüzey",
+          "bullets": [
+            "SPI A-1: 6000 gren elmas parlatma, kabaca Ra 0,012 – 0,025 µm. Ayna sınıfı ve en pahalısı; çünkü tamamen el emeğidir.",
+            "SPI A-2: 3000 gren elmas, kabaca Ra 0,025 – 0,05 µm. Yaygın premium kozmetik görünen yüzeyi.",
+            "SPI A-3: 1200 gren elmas, kabaca Ra 0,05 – 0,10 µm. Ayna olmadan parlaklık.",
+            "B sınıflarına zımparayla, C sınıflarına taşla, D sınıflarına kuru kumlamayla ulaşılır. Yaygın kozmetik malzemeler içinde A sınıfı parlatmayı en iyi akrilik taşır.",
+            "VDI 3400 ayrı bir EDM pürüzlülük ölçeğidir; VDI 12'den (Ra 0,40 µm) VDI 45'e (Ra 18,00 µm) kadar on iki referans sınıfı vardır ve her altı birim pürüzlülüğü kabaca ikiye katlar.",
+            "Dokuyu asgari çıkma açısı izler: VDI 24'te kabaca 1,5 – 2,0 derece, VDI 36'da 4,0 derece ve üzeri. Bunun altında parça itmede sürtünür ve çizilir.",
+            "Sınıfı parça başına değil yüzey başına yazın; o zaman kalıp, teknik resimdeki toptan bir notun istediğine değil, ambalajın ihtiyaç duyduğuna mal olur."
+          ],
+          "source": "Bu panodaki rakamlar yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
+        },
+        {
+          "title": "Dişli ve geçmeli maçalar",
+          "bullets": [
+            "Diş sökme: bir dişli grubu ya da kremayer, maçayı dişten döndürerek çıkarır. İyi kanıtlanmış bir yöntemdir; karşılığında çevrim süresi ve bir aşınma paketi ekler.",
+            "Sıyırma halkası: sığ ve yuvarlatılmış bir dişi maçanın üzerinden zorlayarak geçirir. En hızlı rota; yalnızca sıyrılmak üzere tasarlanmış diş formlarında mümkündür.",
+            "Katlanabilir maça: hızlı çıkarma için içeri doğru büzülür; imalat maliyeti ve aşınma daha yüksektir.",
+            "Sürgüler, lifterlar ve kamlar yan geçmeleri, geçmeli tırnakları ve dış detayları karşılar.",
+            "Her mekanizma aynı zamanda bir yedek listesidir. Maçalar, gözler, halkalar ve dişliler ilk arızadan sonra sipariş edilmek yerine kalıpla birlikte tanımlanmalı ve teslim edilmelidir.",
+            "Soğutmanın mekanizmanın etrafından değil, içinden geçirilmesi gerekir; aksi hâlde hızlı çıkarmayla kazanılan çevrim, sıcak kalan bir maçaya geri verilir."
+          ]
+        },
+        {
+          "title": "Farklı davranan malzemeler",
+          "bullets": [
+            "PP: kapaklar, film menteşeler ve kavanoz iç contaları. Akışın menteşeyi doğru geçmesi ve menteşenin, polimeri yönlendirmek için hâlâ sıcakken katlanması gerekir.",
+            "PET: şeffaf kavanozlar ve şişeler; preform üzerinden giden rotalar dâhil. Higroskopiktir; kurutulmazsa gümüş iz yapar.",
+            "SAN ve PMMA: şeffaf, kalın cidarlı gövdeler ve dış kapaklar. İkisi de kurutulmalıdır ve ikisi de parfüm yağı, alkol ve bazı etken maddelerle temasta mikro çatlak ya da gerilme çatlaması yapabilir.",
+            "ABS: parçanın süreç sonunda bir dekorasyoncu tarafından metalize ya da kaplama yapılacağı durumlarda alışılmış zemin malzemesi.",
+            "Asetal: düşük sürtünme ve ölçüsel kararlılık için stick ve pompa mekanizmaları — ve itmeden sonra günlerce çekmeye devam eden bir malzeme.",
+            "TPE: contalar ve sıyırıcılar; montaj için ayrı enjeksiyon parçası olarak verilir.",
+            "PCR kaliteler: birkaç pazarda artık mevzuat gereğidir ve hem renk hem akış açısından partiden partiye daha az kararlıdır. Proses penceresinin bunlar için devralınması değil, yeniden kurulması gerekir."
+          ],
+          "source": "Burada anlatılan malzeme davranışları yayımlanmış sektör uygulamalarıdır. Sizin formülasyonunuzla uyumu bizim değil, kimyagerinizin cevaplayacağı bir sorudur."
+        }
+      ]
+    }
+  },
+  "cta": {
+    "headline": "Parçayı gönderin.",
+    "body": "Başlamak için fiziksel bir numune, bir CAD modeli ya da bir teknik resim yeterlidir. Geometri, kalıp rotası, göz sayısı ve üretim ekonomisi üzerinden dönüş yaparız.",
+    "action": "Parçanızı gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form — kozmetik ve kişisel bakım hakkında.\n\nParça: kapak / kavanoz / pompa veya airless parça / mekanizma parçası / diğer\nBoyun profili ya da kritik ölçüler: \nMalzeme: \nYüzey: parlak görünen yüzey / dokulu / her ikisi\nSKU başına yıllık adet: \nYeni kalıp / ikinci kaynak / yeniden tasarım: \n\nNumune ya da CAD modeli gönderebilirim.",
+    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+  }
+}

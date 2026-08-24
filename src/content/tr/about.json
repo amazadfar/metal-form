@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "title": "Metal Form hakkında — 2006'dan beri üretim",
+    "description": "Mühendislik, kalıp, üretim ve tedarik işine dönüşmüş bir kalıphane. 2006'dan bu yana binden fazla tamamlanmış proje. Rotanın tamamı için tek muhatap, tek sorumlu."
+  },
+  "hero": {
+    "kicker": "Hakkımızda",
+    "headline": ["Yirmi yıldır", "başkalarının parçaları için", "çelik işliyoruz."],
+    "lead": "Metal Form 2006'dan bu yana kalıp yapıyor ve parça üretiyor. Bir kalıphane olarak başlayan iş, bugün mühendislik, kalıp, üretim ve tedariki koordine ediyor — tek sözleşme altında, sonuçtan hesap veren tek bir tarafla."
+  },
+  "sections": [
+    {
+      "index": "01",
+      "title": "Aslında ne olduğumuz",
+      "body": [
+        "Her şeyden önce bir kalıp firması. Enjeksiyon kalıpları, PET ve kapak kalıpları, şişirme ve basınçlı döküm işleri, çok gözlü kalıplar, sıcak ve soğuk yolluk sistemleri, insert kalıpları ve zorlu geometriyi mümkün kılan mekanizmalar. 2006'dan bu yana binden fazla proje atölyeden geçti.",
+        "Bu temelin çevresinde firma bugün, kalıbın iki yanında duran iş parçalarını da üstleniyor: bir parçanın ekonomik olarak üretilip üretilemeyeceğini belirleyen mühendislik ile üretilebildiğinde ardından gelen üretim ve tedarik.",
+        "Müşteri açısından bu; tek sözleşme, tek teknik muhatap ve sonuçtan sorumlu tek taraf demektir — iş ister tek bir kalıp olsun, ister yıllarca her ay tedarik edilen bir parça."
+      ]
+    },
+    {
+      "index": "02",
+      "title": "İşin nasıl örgütlendiği",
+      "body": [
+        "Rotayı Metal Form koordine eder. Mühendislik, kalıp imalatı, üretim ve tedarik; tek bir şartnameye karşı tek bir proje olarak yönetilir ve bir şey ters gittiğinde sonucun sorumluluğu taraflar arasında yer değiştirmez.",
+        "Ticari açıdan asıl önemli olan kısım budur. Bu sektördeki olağan başarısızlık kötü bir kalıp değildir; bir tasarımcı, bir kalıpçı ve bir enjeksiyoncu arasındaki üçlü tartışmadır — üçü de kendi aşaması için teknik olarak haklıdır. Bu tartışmayı ortadan kaldırmak, çoğu alıcı için tek başına herhangi bir teknik yetkinlikten daha değerlidir.",
+        "Çok uluslu bir şirket değiliz ve kendimizi öyle sunmuyoruz. Bu ölçeğin size kazandırdığı şey; teknik resminizi okuyan kişi ile çeliği işleyen kişi arasındaki kısa hat ve alışılmadık bir projeyi ciddiye alacak kadar küçük bir firmadır."
+      ]
+    },
+    {
+      "index": "03",
+      "title": "Mühendislik nereden geliyor",
+      "body": [
+        "İran mühendisliğinin köklü bir kalıpçılık geleneği vardır ve atölye bu geleneğin içinde yer alır: bir kuşaklık kalıp yapım deneyimi ve daha büyük bir pazarda her biri ayrı bir uzman tedarikçiye sahip olacak sektörlerde çalışma alışkanlığı.",
+        "Bu genişlik alışılmadıktır ve gerçekten işe yarar. Bir damlatıcı kalıbı, yüksek göz sayısı hakkında ağır vasıta braketinin asla öğretmeyeceği şeyleri öğretir; bir kozmetik kapağı, görünen yüzeyler hakkında bir bağlantı parçasının asla öğretmeyeceği şeyleri. İkisi de bir sonraki projede yeniden karşınıza çıkar.",
+        "Firma İran'da kayıtlıdır. Menşe ülkenin önem taşıdığı yerlerde — sözleşmeler, gümrük, sevkiyat evrakları — bu açıkça belirtilir; lojistik ise önceden vaat edilmek yerine teklifle birlikte karara bağlanır."
+      ]
+    },
+    {
+      "index": "04",
+      "title": "Nereye gidiyoruz",
+      "body": [
+        "Niyet, yalnızca atölyeyi değil, işin mühendislik ve tedarik tarafını da büyütmeye devam etmek: daha fazla mühendislik kapasitesi, daha fazla üretim rotası ve bir parçanın sorumluluğunu konseptten sürekli teslim programına kadar üstlenebilecek daha fazla yetkinlik.",
+        "Bu bir yetkinlik olarak değil, bir niyet olarak yazılmıştır. Bu sitedeki her şey Metal Form'un bugün yapabildiklerini anlatır. Bu değiştiğinde site de değişir."
+      ]
+    }
+  ],
+  "facts": [
+    { "value": "2006", "label": "Üretim başlangıcı", "note": "Atölyenin açıldığı ve proje sayımının başladığı yıl." },
+    { "value": "1.000+", "label": "Tamamlanan proje", "note": "2006'dan bu yana teslim edilen kalıp, mühendislik ve üretim işleri. Bir alt sınır olarak verilmiştir, çünkü öyledir." },
+    { "value": "46", "label": "Göz", "note": "Kalıbını yaptığımız en yüksek göz sayısı. Yüksek göz sayısı bir makine özelliği değil, bir kalıpçılık disiplinidir: denge, soğutma ve tutarlılık." },
+    { "value": "48h", "label": "İlk dönüş", "note": "Bir proje hakkında 48 iş saati içinde ilk teknik görüş: üretilebilirlik yönü, eksik kalan bilgiler ve bir sonraki adım." }
+  ],
+  "accountability": {
+    "heading": "Tek muhatap, tek sorumlu — teklifin tamamı bu.",
+    "body": [
+      "Metal Form; mühendisler, kalıpçılar, tezgâh operatörleri ve üretim ortaklarıyla çalışır ve bu bileşim sabit değildir, projeye göre seçilir. Değişmeyen şey, müşterinin kimi sorumlu tuttuğudur.",
+      "Tasarım kararları kalıp göz önündeyken alınır. Kalıp düzeltmeleri, kimin hatası olduğuna dair ticari bir tartışma olmadan yapılır. Yedekler, orijinallerini işleyen ekipten gelir. Bir parçanın başka bir yerde üretilmesi gerekiyorsa, yine bizim şartnamemize göre üretilir.",
+      "Tek sorumluluk derken kastettiğimiz budur ve bu, zincirdeki her makinenin tek bir binada olduğunu iddia etmekten daha dürüst bir sözdür."
+    ]
+  },
+  "cta": {
+    "headline": "Toplantıyla değil, bir parçayla başlayın.",
+    "body": "Size faydalı olup olmayacağımızı anlamanın en hızlı yolu somut bir şey göndermektir: bir fotoğraf, bir numune, bir teknik resim ya da henüz çözemediğiniz sorunun tarifi.",
+    "action": "Projenizi gönderin",
+    "actionAlt": "Tüm iletişim seçeneklerini görün",
+    "prefill": "Merhaba Metal Form. Sitenizden ulaşıyorum ve şunu görüşmek istiyorum:\n\nParça / proje: \nSektör: \nYıllık adet: \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: ",
+    "note": "48 iş saati içinde ilk teknik dönüş. Ayrıntılı bir şey göndermeden önce NDA imzalayabiliriz."
+  }
+}

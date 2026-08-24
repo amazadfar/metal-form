@@ -1,0 +1,91 @@
+---
+/**
+ * A drawing sheet: inset border, corner ticks and edge rulers.
+ *
+ * Used where a screen should read as a document rather than as a web page —
+ * the language selector and the opening of several industry chapters. The
+ * rulers are decorative but not arbitrary: they are the reason the page feels
+ * measured, and they cost one element and no script.
+ */
+interface Props {
+  /** Ruler tick spacing in px. */
+  tick?: number;
+  class?: string;
+}
+const { tick = 56, class: className = '' } = Astro.props;
+---
+
+<div class:list={['sheet', className]} style={`--tick:${tick}px`}>
+  <div class="sheet__rulers" aria-hidden="true">
+    <span class="sheet__ruler sheet__ruler--top"></span>
+    <span class="sheet__ruler sheet__ruler--start"></span>
+  </div>
+  <div class="sheet__corners" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="sheet__body"><slot /></div>
+</div>
+
+<style>
+  .sheet {
+    --sheet-inset: clamp(0.6rem, 1.6vw, 1.4rem);
+    --sheet-line: color-mix(in oklab, currentColor 16%, transparent);
+    position: relative;
+    min-block-size: 100svh;
+  }
+
+  .sheet__body { position: relative; z-index: 1; }
+
+  /* Rulers run along the top and inline-start edges and mirror with direction. */
+  .sheet__rulers {
+    position: absolute;
+    inset: var(--sheet-inset);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sheet__ruler { position: absolute; opacity: 0.34; }
+
+  .sheet__ruler--top {
+    inset-block-start: 0;
+    inset-inline: 0;
+    block-size: 6px;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--sheet-line) 0 1px,
+      transparent 1px var(--tick)
+    );
+  }
+  .sheet__ruler--start {
+    inset-block: 0;
+    inset-inline-start: 0;
+    inline-size: 6px;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--sheet-line) 0 1px,
+      transparent 1px var(--tick)
+    );
+  }
+
+  /* Corner ticks: an L at each corner rather than a full frame, so the page
+     is bracketed without being boxed in. */
+  .sheet__corners {
+    position: absolute;
+    inset: var(--sheet-inset);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sheet__corners span {
+    position: absolute;
+    inline-size: clamp(14px, 2vw, 22px);
+    block-size: clamp(14px, 2vw, 22px);
+    border: 0 solid var(--sheet-line);
+  }
+  .sheet__corners span:nth-child(1) { inset-block-start: 0; inset-inline-start: 0; border-block-start-width: 1px; border-inline-start-width: 1px; }
+  .sheet__corners span:nth-child(2) { inset-block-start: 0; inset-inline-end: 0; border-block-start-width: 1px; border-inline-end-width: 1px; }
+  .sheet__corners span:nth-child(3) { inset-block-end: 0; inset-inline-start: 0; border-block-end-width: 1px; border-inline-start-width: 1px; }
+  .sheet__corners span:nth-child(4) { inset-block-end: 0; inset-inline-end: 0; border-block-end-width: 1px; border-inline-end-width: 1px; }
+
+  @media (max-width: 560px) {
+    .sheet__rulers { display: none; }
+  }
+</style>

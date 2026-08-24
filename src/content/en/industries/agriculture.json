@@ -1,0 +1,434 @@
+{
+  "meta": {
+    "title": "Irrigation Tooling & Moulded Components | Metal Form",
+    "description": "Mould design, manufacture and component supply for drip irrigation and agriculture: drippers, fittings, connectors, micro-sprinklers, valve and filter parts. Since 2006."
+  },
+  "name": "Agriculture & Irrigation",
+  "tile": "Drippers, emitters and fittings by the hundred million. A labyrinth a few tenths of a millimetre wide, repeated across a very high cavity count, every shot, every season.",
+  "tileParts": "Emitters · Fittings · High cavitation",
+  "hero": {
+    "kicker": "Agriculture & Irrigation",
+    "headline": [
+      "The emitter is a geometry.",
+      "The tool is the product."
+    ],
+    "lead": "Drippers, fittings, connectors, micro-sprinklers, valve and filter components. Send the geometry. We assess the flow path, the tooling route, the cavity strategy and the supply plan.",
+    "markers": [
+      "Emitter, fitting and mechanism tooling",
+      "Cavity and flow-path inserts",
+      "Duplicate and second-source tooling"
+    ]
+  },
+
+  "blocks": {
+    "scale": {
+      "index": "01",
+      "kicker": "Magnification",
+      "heading": "A field is watered through a channel a millimetre wide.",
+      "body": "A block of crop is watered by laterals. A lateral is a pipe carrying one part repeated at a fixed pitch. The part is smaller than a thumbnail. Inside it is a channel about a millimetre across, cut as a row of teeth. Five steps down in scale, and every one of them is a step up in consequence.",
+      "overture": {
+        "magLabel": "Magnified",
+        "trueLabel": "As supplied",
+        "ruleLabel": "millimetre rule",
+        "note": "The channel above is the channel below. A published flat inline dripper of this class measures about 26 × 9.5 × 3 mm and weighs around 0.26 g. That is an industry figure, not a Metal Form specification."
+      },
+      "scaleLabel": "Scale bar",
+      "stepsLabel": "Magnification steps",
+      "marks": {
+        "b": "b",
+        "h": "h",
+        "s": "s",
+        "theta": "θ",
+        "emitter": "26 mm"
+      },
+      "steps": [
+        {
+          "label": "Field block",
+          "scale": "20 m",
+          "note": "Laterals run the length of the rows off a submain. At this scale water is a distribution problem and nothing about it is a moulding question yet."
+        },
+        {
+          "label": "Lateral",
+          "scale": "1 m",
+          "note": "One pipe carrying one part at a fixed pitch. The spacing is a product specification, not a convenience, and it never varies along the run."
+        },
+        {
+          "label": "Emitter",
+          "scale": "10 mm",
+          "note": "A flat inline dripper of the reference class is about 26 × 9.5 × 3 mm. Inlet filter at one end, labyrinth across the middle, outlet at the other."
+        },
+        {
+          "label": "Labyrinth",
+          "scale": "1 mm",
+          "note": "The channel that turns line pressure into a trickle. Published measurements of four commercial cylindrical emitters give flow-path widths of roughly 0.89 to 1.47 mm."
+        },
+        {
+          "label": "One tooth",
+          "scale": "0.1 mm",
+          "note": "Width b, height h, spacing s, angle θ. In the same published set, dentate heights run about 1.13 to 1.43 mm, spacing 2.37 to 3.26 mm, and crest angles from about 37 to 65 degrees."
+        }
+      ],
+      "sourceNote": "Dimensions on this rail are published measurements of commercial emitters. They describe the sector's product, not Metal Form's tolerances.",
+      "close": "Nothing in this sequence is decorative. The last frame is the one that gets repeated a few hundred million times a season, and it is the only frame that exists in steel."
+    },
+
+    "repeat": {
+      "index": "02",
+      "kicker": "Volume",
+      "heading": "An error in the cavity does not average out. It is reproduced.",
+      "body": "An emitter is not made once. It is made continuously, at whatever rate the extrusion line makes pipe. Published tape and dripline lines run in the band of 180 to 250 metres per minute, with emitters fed, oriented and heat-welded to the still-molten tube at matched speed and fixed pitch.",
+      "body2": "So consumption is not an order quantity. It is metres per minute divided by spacing. Whatever the cavity does, the line does — for as long as the line runs, and the line does not stop to check.",
+      "railLabel": "Lateral, emitters at fixed pitch. The rail continues past both edges of this page.",
+      "consequences": [
+        "A flow-path wall a fraction out of position is out of position on every part, in every metre, for the life of the tool.",
+        "A gate vestige that catches in the feeder is not scrapped as a part. It is scrapped as finished tube, by the length, at tube cost.",
+        "A tool that stops does not stop one part. It stops the extrusion line standing behind it."
+      ],
+      "sourceNote": "Line speeds are published extrusion-line specifications, stated here as a fact about the sector.",
+      "close": "That is the whole reason the rest of this chapter is about steel rather than about inspection. The part is too small, too cheap and too numerous to inspect your way out of a bad tool."
+    },
+
+    "labyrinth": {
+      "index": "03",
+      "kicker": "The flow path",
+      "heading": "The tolerance on that channel is the whole engineering problem.",
+      "body": "The labyrinth dissipates line pressure through successive teeth. Each tooth forces a turn, each turn takes energy out, and what leaves the outlet is a trickle instead of a jet. There is no electronics, no adjustment and no assembly. The channel is the mechanism, and the mechanism is a shape.",
+      "body2": "It cannot simply be made narrower. Published work on commercial cylindrical emitters found that narrower, curved-boundary paths accumulated less particulate but more chemical deposit, and that deposits concentrate towards the outlet end of the path rather than spreading evenly along it. Geometry trades one clogging mechanism against another; it does not remove either.",
+      "figureLabel": "Dentate flow path, orthographic",
+      "marks": {
+        "b": "b",
+        "h": "h",
+        "s": "s",
+        "theta": "θ"
+      },
+      "params": [
+        {
+          "symbol": "b",
+          "name": "Flow path width",
+          "value": "0.89 – 1.47 mm",
+          "note": "The passage the water actually travels. It sets the hydraulics and the clogging sensitivity at the same time, which is why it cannot be optimised for one alone."
+        },
+        {
+          "symbol": "h",
+          "name": "Dentate height",
+          "value": "1.13 – 1.43 mm",
+          "note": "How far each tooth intrudes into the channel, and therefore how much energy a single turn takes out of the flow."
+        },
+        {
+          "symbol": "s",
+          "name": "Dentate spacing",
+          "value": "2.37 – 3.26 mm",
+          "note": "The pitch of the teeth along the path, and so the number of turns the water makes between inlet and outlet."
+        },
+        {
+          "symbol": "θ",
+          "name": "Dentate angle",
+          "value": "37 – 65°",
+          "note": "The crest angle. It is also the hardest feature to cut cleanly, to vent without a witness, and to keep over millions of cycles."
+        }
+      ],
+      "paramsSource": "Figures in this column are published measurements of four commercial cylindrical emitters. They are industry data, not Metal Form measurements.",
+      "callHeading": "Three places this drawing goes wrong",
+      "calls": [
+        {
+          "n": "1",
+          "title": "Flash across a tooth crest",
+          "note": "Water short-circuits the turn it was supposed to make and the emitter over-delivers. The part looks correct in the box."
+        },
+        {
+          "n": "2",
+          "title": "Short shot at the last teeth",
+          "note": "The end of the path is where fill pressure is lowest and tooth definition is weakest. An incomplete labyrinth under-delivers and still passes a visual check."
+        },
+        {
+          "n": "3",
+          "title": "The outlet end of the path",
+          "note": "Published work places deposit concentration here rather than evenly along the channel, which makes surface condition and vent position at this end disproportionately important."
+        }
+      ],
+      "tolerance": {
+        "heading": "A channel measured in tenths of a millimetre is held by steel measured in hundredths.",
+        "body": "Both of the failures above are invisible on the part and obvious in the field, arriving as a uniformity complaint months later. Neither is a process setting. Both are decided when the profile is cut, vented and polished, and both come back as the steel wears. That is the argument for insert construction: wear should be serviced as a part number, not survived as a plate."
+      },
+      "diaphragm": {
+        "heading": "Pressure compensation adds a second material and an assembly step",
+        "body": "A compensating emitter carries an elastomeric diaphragm over the flow path. As inlet pressure rises the diaphragm deflects into the channel, reduces its section and holds flow roughly constant across a declared range of regulation. The product standard states the behaviour as an exponent rather than as an adjective.",
+        "keys": [
+          "Channel, moulded in the body",
+          "Diaphragm, relaxed",
+          "Diaphragm, deflected under pressure"
+        ],
+        "boundary": "Compensating emitters appear here as an industry category. Metal Form does not claim the over-moulding or multi-material assembly they require."
+      },
+      "exponent": {
+        "heading": "Compensation, stated as a number",
+        "formula": "q = k · p",
+        "formulaExp": "m",
+        "tabsLabel": "Emitter exponent",
+        "axisNote": "Horizontal axis: inlet pressure. Vertical axis: flow. Both normalised to nominal.",
+        "items": [
+          {
+            "id": "m0",
+            "name": "m = 0",
+            "summary": "Fully compensating. Flow does not vary with inlet pressure inside the declared range of regulation, so the far end of a long lateral delivers what the near end delivers."
+          },
+          {
+            "id": "m05",
+            "name": "m = 0.5",
+            "summary": "Partially compensating. Flow still rises with pressure, but much more slowly than pressure does. Most of the compensation is bought by geometry rather than by a diaphragm."
+          },
+          {
+            "id": "m1",
+            "name": "m = 1",
+            "summary": "Unregulated. Flow varies linearly with pressure. Uniformity across a block then becomes a hydraulic design problem — lateral length, slope and pressure at the head."
+          }
+        ],
+        "note": "Nominal test pressure for an unregulated emitter is 100 kPa, unless the manufacturer designates otherwise. The exponent and the test pressure are both definitions taken from the product standard for emitters, ISO 9261. They describe the product. They are not a certification held by Metal Form."
+      }
+    },
+
+    "cavities": {
+      "index": "04",
+      "kicker": "The arithmetic",
+      "heading": "Output is cavities divided by cycle. Both halves move.",
+      "body": "A part consumed in hundreds of millions a season is not bought by the part. It is bought by the shot. Industry write-ups on cavitation are blunt about what happens when you push the first number: tooling cost rises non-linearly rather than in proportion, cycle time lengthens rather than staying flat, press size and hourly rate climb with the tool, and a large share of high-cavitation tools never run at full cavity count.",
+      "body2": "So the gain is never the ratio on the label. One published comparison puts a four-cavity tool at 35 seconds against 42 to 48 seconds for the sixteen-cavity version of the same part — four times the cavities, closer to three times the output.",
+      "figureLabel": "Balanced feed, schematic. One drop out of service.",
+      "figureNote": "Cavity count is a quotation against a known press and a known line rate. It is not a drawing and it is not a headline.",
+      "worst": {
+        "heading": "The shot is graded by its worst cavity.",
+        "body": "Balance is worth more than count. A plate running with dead cavities pays a full cycle for a partial shot, on every shot, for the rest of the tool's life. On a large hot-runner tool one blocked drop takes the whole tool down at once, and industry write-ups put cold-start equilibration on those tools at hours, against thirty to ninety minutes on low-cavitation tooling.",
+        "points": [
+          "Runner and thermal imbalance across a large plate is the dominant hidden cost, because shear history changes at every split.",
+          "Cooling variation between cavities does not present as a temperature problem. It presents as a weight spread, then as a flow spread, then as a customer complaint.",
+          "On a part of a quarter of a gram, a cold runner can outweigh the parts it feeds. That is why the sector standardises on runnerless feed for emitters and not for much else.",
+          "A design change on a large tool has to be made identically in every cavity, and the feed system may have to be reworked with it."
+        ]
+      },
+      "band": {
+        "heading": "Where our band sits, and where it does not.",
+        "body": "Dripper tooling in this sector is quoted at cavity counts well above what we build. Metal Form's tooling experience runs to 46 cavities. That is an honest ceiling and it is printed here so you do not have to discover it inside a quotation.",
+        "body2": "It is also the band most of the moulded family actually runs in. Fittings, take-offs, compression bodies, nuts and rings, end plugs, valve bodies and handles, filter housings and disc elements, micro-sprinkler bodies and nozzles, non-drain and pressure-relief mechanism parts. Multi-cavity tooling, hot and cold runner, insert tooling, slides, lifters, unscrewing and collapsible cores all apply directly there.",
+        "body3": "If your plant runs higher cavitation than that on the emitter itself, the useful offer is a different one. Cavity and flow-path inserts and a spares set specified with the tool at design time. Change parts for flow-rate and colour variants inside one tool family. Duplicate tooling built to the same drawings. For a tool already in service that somebody else built, ask — the answer depends on the drawings and the steel, and you will get it straight rather than optimistically.",
+        "note": "Tooling warranty on terms agreed per project and per mould specification. No shot-count guarantee, because we will not publish one we have not agreed with you."
+      },
+      "sourceNote": "Cavitation economics, cycle figures and cold-start times in this section are published industry write-ups, not Metal Form measurements."
+    },
+
+    "season": {
+      "index": "05",
+      "kicker": "Season",
+      "heading": "Capacity has to exist before the peak. It cannot be bought during one.",
+      "body": "Irrigation demand is a profile, not a level. The same line that must run flat out for a few months stands quiet for the rest of the year. Tooling ordered against that profile arrives before it. Tooling ordered because of it arrives inside it.",
+      "body2": "Inside the peak, the cost of a stopped tool is not the repair. It is the extrusion line standing behind it, the tube not made, the order not filled, and a window that does not move for anyone.",
+      "figureLabel": "Demand profile against build timing",
+      "profileLabel": "Seasonal demand",
+      "peakLabel": "Peak",
+      "rails": [
+        {
+          "name": "Ordered early",
+          "note": "Steel is cut and delivered while the line is quiet. The tool is proved on real material, the spares are on the shelf, and the peak opens with two sources of the same part."
+        },
+        {
+          "name": "Ordered late",
+          "note": "The build runs into the demand it was meant to serve. Every day of delivery, commissioning and first-shot qualification is taken out of the window rather than out of the quiet months."
+        }
+      ],
+      "axisNote": "Relative, not a calendar. The season falls in a different month in every market this page is read in, so the drawing carries no dates and no lead times.",
+      "second": {
+        "heading": "Second source, stated plainly",
+        "points": [
+          "One tool per product means one failure stops the product.",
+          "A duplicate tool built to the same drawings turns a tool failure into a tool swap.",
+          "Flow-path and cavity inserts designed as replaceable parts stop a damaged cavity condemning a plate.",
+          "Spares are held before a season. Ordering them during one is not a spares policy.",
+          "A second tool is capacity you own, in a market where capacity cannot be rented at the peak.",
+          "It is also your geometry, held in two places, on terms you set."
+        ],
+        "readiness": "This is readiness, not reserved capacity. Capacity is reserved by contract or it is not reserved at all, and we will tell you which one you are being offered."
+      }
+    },
+
+    "material": {
+      "index": "06",
+      "kicker": "Materials",
+      "heading": "Sunlight is a load case. So is the fertiliser in the water.",
+      "body": "The product standard sets the material brief before any moulder does. Materials must resist fertilisers and the chemicals commonly used in agricultural irrigation, and suit water at temperatures to 60 °C. Parts exposed to light must be opaque and protected against UV degradation, and should as far as possible not support algae and bacterial growth.",
+      "body2": "Colour is functional here as well as cosmetic. The standard permits nominal flow rate to be indicated by the colour of a part of the emitter, which turns masterbatch consistency into a specification rather than a finish.",
+      "tableLabel": "Material ledger",
+      "columns": ["Material", "Where it is used", "What governs it", "Exposure and lifetime"],
+      "rows": [
+        {
+          "name": "PP",
+          "use": "Fitting bodies, nuts and clamping rings, filter housings, disc elements, micro-sprinkler bodies and bridges",
+          "governs": "Thread form, sealing-face flatness, wall section, and the force a hand can apply in a wet trench",
+          "exposure": "Above ground for years. Opaque and UV-protected, or it does not last the installation it was sold into."
+        },
+        {
+          "name": "PE",
+          "use": "Laterals and tape, welded-in emitter bodies, barbed take-offs, end plugs and flush units",
+          "governs": "Weld compatibility with the tube wall, stiffness at working temperature, behaviour under sustained strain",
+          "exposure": "Above and below ground. Environmental stress cracking at insert-type fittings is the classic long-term failure."
+        },
+        {
+          "name": "POM",
+          "use": "Valve internals, non-drain and pressure-relief elements, threaded mechanism parts",
+          "governs": "Dimensional stability, friction against a moving seat, creep under sustained load",
+          "exposure": "Usually enclosed. Protected by the housing rather than by the compound."
+        },
+        {
+          "name": "PA",
+          "use": "Threaded and spring features, higher-load mechanism parts",
+          "governs": "Stiffness, thread strength, moisture uptake and the dimensional change that follows it",
+          "exposure": "Enclosed or shaded. Where it is not, the stabiliser package does the work."
+        },
+        {
+          "name": "Elastomer",
+          "use": "Pressure-compensating diaphragms",
+          "governs": "Deflection into the channel and compression set over years of pressure cycling",
+          "exposure": "Sealed inside the emitter. Industry practice, described here, not a Metal Form capability."
+        }
+      ],
+      "uv": {
+        "heading": "UV, in the industry's own terms",
+        "body": "Carbon black remains the standard and most economical UV stabiliser for buried and exposed polyolefin irrigation products. It absorbs ultraviolet and slows free-radical generation, and published guidance puts loadings typically in the region of 2 to 2.5 percent depending on section thickness and exposure — while being explicit that dispersion quality governs the result as much as loading does."
+      },
+      "boundary": "We do not compound, stabilise, colour-match or life-test material, and we do not certify a lifetime. We mould what you specify, and we will tell you where a wall section, a gate position or a weld line is going to fight the stabiliser package you have chosen.",
+      "sourceNote": "Standard requirements and stabiliser loadings quoted here are published industry practice. Metal Form holds no certification against any of them."
+    },
+
+    "boundary": {
+      "index": "07",
+      "kicker": "Scope",
+      "heading": "The defects we can prevent are prevented in steel, before the first shot.",
+      "body": "A tool fixes some of what goes wrong in this sector and none of the rest. Knowing which is which before you order is worth more than a supplier who offers to fix all of it. This is the honest split, and it is the same split we work to on a quotation.",
+      "ours": {
+        "heading": "Ours, and answerable",
+        "items": [
+          "Flash across a tooth crest, and the short-circuited labyrinth that comes with it",
+          "Short shot at the end of the flow path, where tooth definition is weakest",
+          "Weld lines placed deliberately, off flow-path walls and sealing faces, rather than wherever the fronts happen to meet",
+          "Gate position and vestige, argued from feeding, orientation and welding downstream rather than from what fills easiest",
+          "Venting a sub-millimetre channel without leaving a witness on the face the water touches",
+          "Ejection of a part too light to be pushed hard, and the orientation it leaves the tool in",
+          "Balanced feed and symmetrical cooling across the plate, because cooling variation reads out as weight and then as flow",
+          "Wear serviced through replaceable inserts instead of survived to the end of a plate"
+        ]
+      },
+      "yours": {
+        "heading": "Yours, and we will not pretend otherwise",
+        "items": [
+          "Water chemistry. Calcium, magnesium and iron precipitate inside a flow path no matter who cut it.",
+          "Filtration. Common practice for protecting these passages is around 120 mesh, about 130 micron, with 80 to 200 mesh the usable band. That is a system decision at the control head, not a tooling one.",
+          "Biological fouling, which dominates where treated or reclaimed water is used.",
+          "Root intrusion in sub-surface lines. Real, and a five-year sugarcane study put it under 5 percent of total clogging — so it is not the headline it is sometimes sold as.",
+          "Flow rate, CV, emitter exponent and emission uniformity. Your rig and your line prove those. We do not test them and we will not certify them.",
+          "Agronomy, spacing, block hydraulics and field installation.",
+          "Extrusion lines, insertion units, welding stations and the tape itself. We do not build them and we will not quote them."
+        ]
+      },
+      "never": {
+        "heading": "What we will not tell you",
+        "items": [
+          "We will not quote a savings percentage before we have seen the part.",
+          "We will not state a tolerance we have not agreed against your drawing.",
+          "We will not name a cavity count before we know your press, your controller, your line rate and your maintenance discipline.",
+          "We hold no certification against the product standard for emitters, and we will not imply one.",
+          "If your current part is already close to right, that is the answer you will get."
+        ]
+      },
+      "close": "Water chemistry, filtration, biological fouling and root intrusion are not tooling problems, and we will not sell you a mould as though they were. What a mould decides, a mould decides once — in steel, before the first shot."
+    },
+
+    "work": {
+      "index": "08",
+      "kicker": "Working",
+      "heading": "Send the part. We start with the geometry, not with the company.",
+      "body": "The line beside these stations is the labyrinth from the top of this chapter, straightened out. Four stations, in order, and no step that depends on you already having perfect data.",
+      "figureLabel": "The path, straightened",
+      "stations": [
+        {
+          "label": "Geometry",
+          "note": "Send the part, the drawing, a photograph with a dimension we can scale from, or a metre of the tape. Where there is no usable 3D data we reverse engineer from the sample. We look at the flow function, the sealing faces, the wall sections and how the part has to behave downstream in feeding and welding."
+        },
+        {
+          "label": "Route",
+          "note": "A tooling route comes back with a cavity and insert strategy, a feed system recommendation — hot runner, cold runner or a mix, evaluated against this part rather than assumed — and the reasoning behind each choice. Initial technical response within 48 business hours. An NDA can be signed before detailed technical disclosure."
+        },
+        {
+          "label": "Manufacture",
+          "note": "Design in CATIA and SolidWorks. Multi-cavity tooling, insert tooling, slides, lifters, unscrewing and collapsible cores where the part needs them, with CNC milling, turning and manual machining behind them. Tooling warranty on terms agreed for the project and the mould specification."
+        },
+        {
+          "label": "Supply",
+          "note": "Component production and rolling supply, if you would rather buy parts than tools. Spares and change parts specified with the tool rather than after it. A duplicate or second-source tool where one tool behind one product line is a risk you have decided not to carry. International delivery."
+        }
+      ],
+      "factsLabel": "Verified",
+      "facts": [
+        "Manufacturing since 2006",
+        "1,000+ completed projects",
+        "Tooling experience to 46 cavities",
+        "CATIA and SolidWorks",
+        "NDA before detailed disclosure",
+        "International delivery"
+      ],
+      "close": "Emitter geometry is the product in this sector, and it is routinely copied. We treat it that way: confidentiality first, drawings held, and the second tool built to your drawings rather than to ours."
+    },
+
+    "panels": {
+      "heading": "Deeper detail",
+      "items": [
+        {
+          "title": "What the product standard asks of an emitter",
+          "bullets": [
+            "It applies to emitters and emitting pipe discharging not more than 24 l/h per outlet, except during flushing.",
+            "Emitters are classified in-line, on-line or formed in the pipe, and regulated or unregulated.",
+            "Nominal test pressure for an unregulated emitter is 100 kPa, unless the manufacturer designates otherwise.",
+            "The coefficient of manufacturing variation of flow rate across the test sample must not exceed 7 percent, with the sample mean within ±7 percent of declared nominal, tested on 25 emitters or emitting units.",
+            "Behaviour against pressure is stated as an exponent: q = k · pᵐ, where m = 0 is fully compensating and m = 1 varies linearly with pressure.",
+            "Materials must resist fertilisers and the chemicals commonly used in agricultural irrigation, and suit water at temperatures to 60 °C.",
+            "Parts exposed to light must be opaque and protected against UV degradation, and should as far as possible not support algae and bacterial growth.",
+            "Markings on emitting pipe repeat at intervals of no more than 5 m, and nominal flow rate may legitimately be indicated by the colour of a part of the emitter."
+          ],
+          "source": "Source: ISO 9261:2004, the product standard for emitters and emitting pipe. Stated here as a fact about the product. Metal Form holds no certification against it, does not test emitters against it, and does not claim approval under it."
+        },
+        {
+          "title": "The flow path, in millimetres",
+          "bullets": [
+            "Published measurements of four commercial cylindrical emitters give flow-path widths of roughly 0.89 to 1.47 mm.",
+            "Dentate heights in the same study run about 1.13 to 1.43 mm, with spacing of roughly 2.37 to 3.26 mm and crest angles from about 37 to 65 degrees.",
+            "Practitioners quote emitter internal flow paths more broadly at around 0.5 to 2 mm.",
+            "Deposits concentrate towards the outlet end of the path rather than distributing evenly along it.",
+            "Narrower, curved-boundary paths accumulated less particulate but more chemical deposit — the geometry trades one clogging mechanism for another.",
+            "Common practical filtration for protecting these passages is around 120 mesh, about 130 micron, with 80 to 200 mesh the usable band.",
+            "Every line on this list is a dimension a mould has to hold, and keep holding, for millions of cycles."
+          ],
+          "source": "Figures in this panel are published industry measurements and published practitioner guidance, not Metal Form measurements."
+        },
+        {
+          "title": "Where a fraction of a gram goes",
+          "bullets": [
+            "Shot weight is resin mass per cycle, parts and runner together. A published flat inline dripper of this class is about 26 × 9.5 × 3 mm at roughly 0.26 g.",
+            "On a part that light, a cold runner can outweigh the parts it feeds — which is why the sector standardises on runnerless feed for emitters.",
+            "Cavity count multiplies output but not proportionally: cycle lengthens, press size and hourly rate rise, and one repair stops everything at once.",
+            "Industry write-ups put cold-start equilibration on large hot-runner tools at hours, against thirty to ninety minutes on low-cavitation tooling.",
+            "A tool running with dead cavities pays a full cycle for a partial shot, on every shot, for the rest of its life.",
+            "Published tooling-cost guidance puts a sixteen-cavity tool at roughly five times a single-cavity tool rather than sixteen times — the cost curve is not linear in either direction.",
+            "Unit cost in this sector is decided at the design stage and then paid a few hundred million times."
+          ],
+          "source": "Figures in this panel are published industry practice. We do not publish savings percentages, and we will not calculate yours before we have seen the part."
+        }
+      ]
+    }
+  },
+
+  "cta": {
+    "headline": "Send the part. Or the drawing. Or a metre of the tape.",
+    "body": "We come back with a tooling route, a cavity and insert strategy, and the reasoning behind both. Initial technical response within 48 business hours. NDA on request. Tooling warranty on terms agreed per project. International delivery.",
+    "action": "Send your project",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form — irrigation component enquiry.\n\nThe part is a: dripper / fitting / connector / take-off / micro-sprinkler / valve or filter component\nMaterial: \nApproximate annual volume: \nWe currently run this on: [ ] tool(s)\nWhat I need: new tooling / duplicate tool / inserts and spares / component supply\n\nI can send 3D data and a physical sample.",
+    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+  }
+}

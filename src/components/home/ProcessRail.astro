@@ -1,0 +1,476 @@
+---
+/**
+ * PROCESS RAIL — one drawing, five stations.
+ *
+ * Not a row of five icons. It is a single continuous technical drawing 3200
+ * units long, and the viewport travels along it as the reader scrolls: the
+ * desk where the project arrives, the geometry, the tool, the machine, the
+ * pallet. Because it is one drawing, the reader sees a chain rather than a
+ * feature list — which is the entire argument of the section.
+ *
+ * The travel is one `transform` on one group. Stations advance discretely, as
+ * an indexer would, rather than scrubbing — mechanisms move in steps.
+ */
+import type { HomeContent } from '../../content/types.ts';
+
+interface Props {
+  process: HomeContent['process'];
+  /** Localised labels drawn inside the stations. */
+  d: HomeContent['diagram']['process'];
+  schematicLabel: string;
+}
+const { process, d, schematicLabel } = Astro.props;
+
+const PART =
+  'M-52 -100 L52 -100 L52 -80 L34 -80 L34 8 L21 8 L21 40 L13 46 L-13 46 L-21 40 L-21 8 L-34 8 L-34 -80 L-52 -80 Z';
+const W = 640;
+---
+
+<section class="pr" id="process" data-stepper data-step="0">
+  <div class="shell--wide pr__head">
+    <p class="eyebrow">{process.kicker}</p>
+    <div class="ruled-head pr__ruled">
+      <h2 class="t-h2 pr__title">{process.heading}</h2>
+      <p class="t-lead">{process.lead}</p>
+    </div>
+  </div>
+
+  <div class="pr__stage-wrap shell--wide">
+    <div class="pr__viewport">
+      <figure class="pr__fig" aria-label={schematicLabel}>
+        <svg viewBox={`0 0 ${W} 520`} class="pr__svg" role="img" aria-label={schematicLabel} data-nomirror preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <pattern id="pr-hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="0" x2="0" y2="8" stroke="currentColor" stroke-width="0.9" opacity="0.34" />
+            </pattern>
+            <marker id="pr-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 1.5 L9.5 5 L0 8.5 Z" fill="currentColor" />
+            </marker>
+            <filter id="pr-rough" x="-14%" y="-14%" width="128%" height="128%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n" />
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="4" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+          </defs>
+
+          {/* The travelling group. One transform carries the whole journey. */}
+          <g class="pr__travel">
+
+            {/* ── 01 INPUT — the desk ─────────────────────────────────── */}
+            <g class="pr__station" data-station="0">
+              <text x="40" y="52" class="pr__cap">{d.s1}</text>
+
+              {/* A photograph of somebody else's part */}
+              <g transform="translate(148 200) rotate(-6)">
+                <rect x="-78" y="-58" width="156" height="116" fill="var(--surface-raise)" stroke="currentColor" stroke-width="1.4" />
+                <rect x="-78" y="42" width="156" height="16" fill="currentColor" opacity="0.08" />
+                <g filter="url(#pr-rough)" opacity="0.7">
+                  <path d={PART} transform="translate(0 -6) scale(0.42)" fill="none" stroke="currentColor" stroke-width="3" />
+                </g>
+                <text x="-70" y="54" class="pr__micro">{d.photo}</text>
+              </g>
+
+              {/* A physical sample, with a caliper on it */}
+              <g transform="translate(330 250)">
+                <path d={PART} transform="scale(0.85)" fill="color-mix(in oklab, currentColor 12%, transparent)" stroke="currentColor" stroke-width="1.6" />
+                {/* Caliper jaws */}
+                <g class="pr__caliper">
+                  <path d="M-62 -92 L-62 -60 L62 -60 L62 -92" fill="none" stroke="currentColor" stroke-width="2" />
+                  <line x1="-90" y1="-92" x2="90" y2="-92" stroke="currentColor" stroke-width="3" />
+                  <text x="0" y="-104" text-anchor="middle" class="pr__micro">{d.measured}</text>
+                </g>
+                <text x="0" y="80" text-anchor="middle" class="pr__micro">{d.sample}</text>
+              </g>
+
+              {/* A folded drawing */}
+              <g transform="translate(510 210) rotate(4)">
+                <path d="M-58 -70 L58 -70 L58 70 L-58 70 Z" fill="var(--surface-raise)" stroke="currentColor" stroke-width="1.4" />
+                <line x1="0" y1="-70" x2="0" y2="70" stroke="currentColor" stroke-width="0.8" opacity="0.35" stroke-dasharray="4 3" />
+                {[-46, -34, -22, -10].map((y) => (
+                  <line x1="-46" y1={y} x2="-10" y2={y} stroke="currentColor" stroke-width="1" opacity="0.4" />
+                ))}
+                <rect x="6" y="34" width="46" height="30" fill="none" stroke="currentColor" stroke-width="0.9" opacity="0.6" />
+                <text x="0" y="90" text-anchor="middle" class="pr__micro">{d.drawing}</text>
+              </g>
+
+              <g class="pr__link">
+                <line x1="560" y1="400" x2="632" y2="400" marker-end="url(#pr-arrow)" />
+              </g>
+            </g>
+
+            {/* ── 02 ENGINEERING ───────────────────────────────────────── */}
+            <g class="pr__station" data-station="1" transform={`translate(${W} 0)`}>
+              <text x="40" y="52" class="pr__cap">{d.s2}</text>
+
+              <g transform="translate(300 250)">
+                <line x1="0" y1="-150" x2="0" y2="110" stroke="currentColor" stroke-width="0.9" stroke-dasharray="14 4 2 4" opacity="0.55" />
+                <path d={PART} fill="none" stroke="currentColor" stroke-width="1.8" />
+                {/* Bore, hidden detail */}
+                <line x1="-16" y1="-100" x2="-16" y2="46" stroke="currentColor" stroke-width="1" stroke-dasharray="6 4" opacity="0.5" />
+                <line x1="16" y1="-100" x2="16" y2="46" stroke="currentColor" stroke-width="1" stroke-dasharray="6 4" opacity="0.5" />
+
+                <g class="pr__dim">
+                  <line x1="-52" y1="-130" x2="52" y2="-130" marker-start="url(#pr-arrow)" marker-end="url(#pr-arrow)" />
+                  <line x1="-52" y1="-138" x2="-52" y2="-94" class="pr__ext" />
+                  <line x1="52" y1="-138" x2="52" y2="-94" class="pr__ext" />
+                  <text x="0" y="-140" text-anchor="middle" class="pr__figure">Ø 52.0 ±0.10</text>
+                </g>
+
+                <g class="pr__dim">
+                  <line x1="120" y1="-100" x2="120" y2="46" marker-start="url(#pr-arrow)" marker-end="url(#pr-arrow)" />
+                  <line x1="58" y1="-100" x2="128" y2="-100" class="pr__ext" />
+                  <line x1="26" y1="46" x2="128" y2="46" class="pr__ext" />
+                  <text x="134" y="-24" class="pr__figure">72.4</text>
+                </g>
+
+                {/* The DFM annotations — this is the section's real point */}
+                <g class="pr__call">
+                  <line x1="-40" y1="-84" x2="-140" y2="-116" />
+                  <circle cx="-40" cy="-84" r="3.2" />
+                  <text x="-244" y="-120" class="pr__figure">{d.wall}</text>
+                  <line x1="-30" y1="20" x2="-140" y2="60" />
+                  <circle cx="-30" cy="20" r="3.2" />
+                  <text x="-236" y="66" class="pr__figure">{d.draft}</text>
+                  <line x1="0" y1="-100" x2="96" y2="-152" />
+                  <circle cx="0" cy="-100" r="3.2" />
+                  <text x="100" y="-156" class="pr__figure">{d.gateHere}</text>
+                </g>
+              </g>
+
+              <g class="pr__link">
+                <line x1="560" y1="400" x2="632" y2="400" marker-end="url(#pr-arrow)" />
+              </g>
+            </g>
+
+            {/* ── 03 TOOLING ───────────────────────────────────────────── */}
+            <g class="pr__station" data-station="2" transform={`translate(${W * 2} 0)`}>
+              <text x="40" y="52" class="pr__cap">{d.s3}</text>
+
+              <g transform="translate(320 260)">
+                {/* Fixed half */}
+                <g class="pr__half pr__half--a">
+                  <rect x="-210" y="-160" width="420" height="160" fill="url(#pr-hatch)" stroke="currentColor" stroke-width="1.4" />
+                  <circle cx="-150" cy="-100" r="10" class="pr__cool" />
+                  <circle cx="-150" cy="-52" r="10" class="pr__cool" />
+                  <circle cx="150" cy="-100" r="10" class="pr__cool" />
+                  <circle cx="150" cy="-52" r="10" class="pr__cool" />
+                  {/* Sprue */}
+                  <path d="M-7 -160 L7 -160 L4 -104 L-4 -104 Z" fill="currentColor" opacity="0.7" />
+                </g>
+                {/* Moving half */}
+                <g class="pr__half pr__half--b">
+                  <rect x="-210" y="0" width="420" height="160" fill="url(#pr-hatch)" stroke="currentColor" stroke-width="1.4" />
+                  <circle cx="-130" cy="90" r="10" class="pr__cool" />
+                  <circle cx="130" cy="90" r="10" class="pr__cool" />
+                  {/* Ejector pins */}
+                  <line x1="-26" y1="160" x2="-26" y2="52" class="pr__ej" />
+                  <line x1="26" y1="160" x2="26" y2="52" class="pr__ej" />
+                  {/* Slide, drawn withdrawing on its angle */}
+                  <g class="pr__slide">
+                    <path d="M-210 44 L-152 44 L-152 92 L-210 92 Z" fill="var(--surface-raise)" stroke="currentColor" stroke-width="1.4" />
+                    <line x1="-152" y1="44" x2="-120" y2="12" stroke="currentColor" stroke-width="1.1" opacity="0.55" />
+                    <text x="-260" y="118" class="pr__figure">{d.slide}</text>
+                  </g>
+                </g>
+
+                {/* Cavity */}
+                <path d={PART} transform="translate(0 -14) scale(0.92)" fill="var(--surface)" stroke="currentColor" stroke-width="1.7" />
+                {/* Parting line */}
+                <line x1="-244" y1="0" x2="244" y2="0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="18 5 3 5" opacity="0.8" />
+                <text x="-244" y="-10" class="pr__figure">{d.partingLine}</text>
+                <text x="176" y="-116" class="pr__figure">{d.cooling}</text>
+              </g>
+
+              <g class="pr__link">
+                <line x1="560" y1="400" x2="632" y2="400" marker-end="url(#pr-arrow)" />
+              </g>
+            </g>
+
+            {/* ── 04 PRODUCTION — the machine ──────────────────────────── */}
+            <g class="pr__station" data-station="3" transform={`translate(${W * 3} 0)`}>
+              <text x="40" y="52" class="pr__cap">{d.s4}</text>
+
+              <g transform="translate(60 190)">
+                {/* Clamp end + tie bars */}
+                <rect x="0" y="30" width="34" height="150" fill="url(#pr-hatch)" stroke="currentColor" stroke-width="1.4" />
+                <line x1="34" y1="56" x2="300" y2="56" class="pr__tie" />
+                <line x1="34" y1="154" x2="300" y2="154" class="pr__tie" />
+                {/* Moving platen */}
+                <rect x="86" y="30" width="26" height="150" fill="url(#pr-hatch)" stroke="currentColor" stroke-width="1.4" class="pr__platen" />
+                {/* Mould */}
+                <rect x="112" y="52" width="60" height="106" fill="var(--surface-raise)" stroke="currentColor" stroke-width="1.6" class="pr__platen" />
+                <rect x="172" y="52" width="60" height="106" fill="var(--surface-raise)" stroke="currentColor" stroke-width="1.6" />
+                <line x1="172" y1="42" x2="172" y2="168" stroke="currentColor" stroke-width="1" stroke-dasharray="10 4 2 4" opacity="0.7" />
+                {/* Fixed platen */}
+                <rect x="232" y="30" width="26" height="150" fill="url(#pr-hatch)" stroke="currentColor" stroke-width="1.4" />
+                {/* Injection unit */}
+                <rect x="258" y="88" width="180" height="34" fill="var(--surface-raise)" stroke="currentColor" stroke-width="1.4" />
+                <path d="M266 96 q14 4 28 0 q14 -4 28 0 q14 4 28 0 q14 -4 28 0 q14 4 28 0"
+                  fill="none" stroke="currentColor" stroke-width="1.1" opacity="0.6" class="pr__screw" />
+                {/* Hopper */}
+                <path d="M356 88 L338 34 L410 34 L392 88 Z" fill="none" stroke="currentColor" stroke-width="1.4" />
+                {[0, 1, 2, 3, 4, 5].map((i) => (
+                  <circle cx={352 + (i % 3) * 15} cy={48 + Math.floor(i / 3) * 14} r="3.4" fill="currentColor" opacity="0.45" class="pr__pellet" style={`--g:${i}`} />
+                ))}
+                <text x="338" y="24" class="pr__micro">{d.resin}</text>
+                <text x="0" y="206" class="pr__figure">{d.clamp}</text>
+                <text x="262" y="206" class="pr__figure">{d.injection}</text>
+
+                {/* Parts falling out */}
+                <g class="pr__drop">
+                  {[0, 1, 2].map((i) => (
+                    <path d={PART} transform={`translate(142 ${230 + i * 34}) scale(0.2)`} fill="color-mix(in oklab, currentColor 16%, transparent)" stroke="currentColor" stroke-width="5" style={`--g:${i}`} />
+                  ))}
+                </g>
+              </g>
+
+              <g class="pr__cycle">
+                <line x1="60" y1="452" x2="580" y2="452" stroke="currentColor" stroke-width="1" opacity="0.45" />
+                {Array.from({ length: 14 }).map((_, i) => (
+                  <line x1={60 + i * 40} y1="446" x2={60 + i * 40} y2="458" stroke="currentColor" stroke-width="1" opacity="0.45" />
+                ))}
+                <text x="60" y="478" class="pr__figure">{d.cycleNote}</text>
+              </g>
+
+              <g class="pr__link">
+                <line x1="590" y1="300" x2="632" y2="300" marker-end="url(#pr-arrow)" />
+              </g>
+            </g>
+
+            {/* ── 05 SUPPLY ────────────────────────────────────────────── */}
+            <g class="pr__station" data-station="4" transform={`translate(${W * 4} 0)`}>
+              <text x="40" y="52" class="pr__cap">{d.s5}</text>
+
+              {/* Pallets */}
+              <g transform="translate(90 170)">
+                {[0, 1, 2].map((col) =>
+                  [0, 1, 2].map((row) => (
+                    <g transform={`translate(${col * 110} ${row * 66})`}>
+                      <rect x="0" y="0" width="94" height="54" fill="var(--surface-raise)" stroke="currentColor" stroke-width="1.3" />
+                      <line x1="0" y1="16" x2="94" y2="16" stroke="currentColor" stroke-width="0.8" opacity="0.32" />
+                      <path d={PART} transform="translate(47 34) scale(0.13)" fill="color-mix(in oklab, currentColor 14%, transparent)" stroke="currentColor" stroke-width="7" />
+                    </g>
+                  ))
+                )}
+                <rect x="-8" y="212" width="326" height="14" fill="url(#pr-hatch)" stroke="currentColor" stroke-width="1.2" />
+                <text x="-8" y="250" class="pr__figure">{d.schedule}</text>
+              </g>
+
+              {/* The second tool — the differentiator, drawn rather than claimed */}
+              <g transform="translate(430 200)">
+                <rect x="0" y="0" width="150" height="112" fill="url(#pr-hatch)" stroke="currentColor" stroke-width="1.4" />
+                <line x1="0" y1="56" x2="150" y2="56" stroke="currentColor" stroke-width="1.1" stroke-dasharray="12 4 2 4" />
+                <path d={PART} transform="translate(75 56) scale(0.24)" fill="var(--surface)" stroke="currentColor" stroke-width="5" />
+                <g class="pr__second">
+                  <rect x="-6" y="-6" width="162" height="124" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="7 5" />
+                  <text x="0" y="-18" class="pr__figure">{d.secondTool}</text>
+                </g>
+                <text x="0" y="140" class="pr__micro">{d.spares}</text>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <figcaption class="figure-note">{schematicLabel}</figcaption>
+      </figure>
+    </div>
+
+    {/* ── Steps ────────────────────────────────────────────────────────── */}
+    <ol class="pr__steps">
+      {process.steps.map((step, i) => (
+        <li class="pr__step" data-station-step={i}>
+          <div class="pr__step-head">
+            <span class="pr__step-n t-mono">{step.index}</span>
+            <h3 class="pr__step-t">{step.title}</h3>
+          </div>
+          <p class="pr__step-b">{step.body}</p>
+          <ul class="pr__markers">
+            {step.markers.map((m) => <li class="t-mono">{m}</li>)}
+          </ul>
+        </li>
+      ))}
+    </ol>
+  </div>
+
+  <div class="shell--wide pr__modular">
+    <p class="pr__modular-text">{process.modular}</p>
+  </div>
+</section>
+
+<style>
+  .pr {
+    padding-block: var(--section-y);
+    background: var(--surface-sunk);
+    border-block: var(--rule);
+  }
+
+  .pr__head { margin-block-end: clamp(2.5rem, 6vw, 5rem); }
+  .pr__ruled { margin-block-start: var(--sp-5); }
+  .pr__title { max-inline-size: 18ch; }
+
+  .pr__stage-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 1000px) {
+    .pr__stage-wrap { grid-template-columns: 1fr; }
+  }
+
+  /* The figure pins while the steps scroll past it. */
+  .pr__viewport {
+    position: sticky;
+    inset-block-start: clamp(5rem, 12vh, 8rem);
+  }
+  @media (max-width: 1000px) {
+    .pr__viewport { position: static; margin-block-end: var(--sp-8); }
+  }
+
+  .pr__fig {
+    margin: 0;
+    background: var(--surface-raise);
+    border: var(--rule);
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+    color: var(--ink);
+  }
+  .pr__svg {
+    inline-size: 100%;
+    block-size: auto;
+    /* The stations either side of the current one are clipped away. */
+    overflow: hidden;
+  }
+  .pr__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  /* ── Travel ───────────────────────────────────────────────────────────── */
+  .pr__travel {
+    transition: transform 900ms var(--ease-mech);
+    transform: translateX(calc((var(--station, 0) * -640px) * var(--dir)));
+  }
+  .pr__station { transition: opacity 500ms var(--ease-out); }
+  /* Neighbouring stations dim rather than disappear, so the chain stays legible. */
+  .pr__station { opacity: 0.18; }
+  .pr[data-step='0'] .pr__station[data-station='0'],
+  .pr[data-step='1'] .pr__station[data-station='1'],
+  .pr[data-step='2'] .pr__station[data-station='2'],
+  .pr[data-step='3'] .pr__station[data-station='3'],
+  .pr[data-step='4'] .pr__station[data-station='4'] { opacity: 1; }
+
+  .pr__cap {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    fill: var(--accent-deep);
+  }
+  .pr__micro {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    fill: currentColor;
+    opacity: 0.5;
+  }
+  .pr__figure {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    fill: currentColor;
+    opacity: 0.62;
+  }
+  .pr__dim { color: var(--accent-deep); }
+  .pr__dim line { stroke: currentColor; stroke-width: 1; }
+  .pr__dim .pr__ext { opacity: 0.42; }
+  .pr__dim .pr__figure { fill: var(--accent-deep); opacity: 1; }
+  .pr__call line { stroke: var(--accent); stroke-width: 0.9; opacity: 0.7; }
+  .pr__call circle { fill: var(--accent); }
+  .pr__call .pr__figure { fill: var(--accent-deep); opacity: 1; }
+  .pr__link line { stroke: currentColor; stroke-width: 1.2; opacity: 0.4; }
+  .pr__cool { fill: none; stroke: var(--accent); stroke-width: 1.3; }
+  .pr__ej { stroke: currentColor; stroke-width: 2.2; opacity: 0.5; }
+  .pr__tie { stroke: currentColor; stroke-width: 2.6; opacity: 0.35; }
+  .pr__second { color: var(--signal-ink); }
+  .pr__second rect { stroke: var(--signal); }
+  .pr__second .pr__figure { fill: var(--signal); opacity: 1; }
+
+  /* Station-local motion, only while that station is the active one. */
+  @keyframes pr-clamp { 0%, 100% { transform: translateX(0); } 45%, 55% { transform: translateX(56px); } }
+  .pr[data-step='3'] .pr__platen { animation: pr-clamp 4s var(--ease-mech) infinite; }
+
+  @keyframes pr-fall { 0% { opacity: 0; transform: translateY(-18px); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(40px); } }
+  .pr[data-step='3'] .pr__drop path {
+    animation: pr-fall 3s linear infinite;
+    animation-delay: calc(var(--g) * 1s);
+  }
+
+  @keyframes pr-open-a { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+  @keyframes pr-open-b { from { transform: translateY(0); } to { transform: translateY(10px); } }
+  .pr[data-step='2'] .pr__half--a { animation: pr-open-a 1.4s var(--ease-mech) both; }
+  .pr[data-step='2'] .pr__half--b { animation: pr-open-b 1.4s var(--ease-mech) both; }
+
+  /* ── Steps ────────────────────────────────────────────────────────────── */
+  .pr__steps { display: grid; }
+  .pr__step {
+    padding-block: clamp(2.5rem, 8vh, 5rem);
+    border-block-end: var(--rule);
+    opacity: 0.42;
+    transition: opacity 400ms var(--ease-out);
+  }
+  .pr__step:first-child { padding-block-start: 0; }
+  .pr__step:last-child { border-block-end: 0; }
+  .pr[data-step='0'] .pr__step[data-station-step='0'],
+  .pr[data-step='1'] .pr__step[data-station-step='1'],
+  .pr[data-step='2'] .pr__step[data-station-step='2'],
+  .pr[data-step='3'] .pr__step[data-station-step='3'],
+  .pr[data-step='4'] .pr__step[data-station-step='4'] { opacity: 1; }
+  @media (max-width: 1000px) { .pr__step { opacity: 1; } }
+
+  .pr__step-head { display: flex; align-items: baseline; gap: var(--sp-4); }
+  .pr__step-n {
+    font-size: var(--step--2);
+    letter-spacing: 0.14em;
+    color: var(--accent-deep);
+  }
+  .pr__step-t {
+    font-size: var(--step-3);
+    letter-spacing: var(--track-head);
+    font-weight: var(--weight-medium);
+  }
+  .pr__step-b {
+    margin-block-start: var(--sp-4);
+    color: var(--ink-muted);
+    max-inline-size: 52ch;
+  }
+  .pr__markers {
+    margin-block-start: var(--sp-5);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.4rem;
+  }
+  .pr__markers li {
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    padding: 0.32em 0.7em;
+    border: 1px solid var(--line);
+    background: var(--surface-raise);
+  }
+  :global(html[lang='zh']) .pr__markers li,
+  :global(html[lang='th']) .pr__markers li,
+  :global(html[lang='ar']) .pr__markers li,
+  :global(html[lang='fa']) .pr__markers li,
+  :global(html[lang='ur']) .pr__markers li {
+    font-family: var(--font-body);
+    letter-spacing: 0;
+    font-size: var(--step--1);
+  }
+
+  /* ── Modularity note ──────────────────────────────────────────────────── */
+  .pr__modular {
+    margin-block-start: clamp(3rem, 7vw, 5.5rem);
+    padding-block-start: var(--sp-6);
+    border-block-start: var(--rule-strong);
+  }
+  .pr__modular-text {
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-inline-size: 68ch;
+    color: var(--ink);
+  }
+</style>

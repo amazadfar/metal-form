@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Capabilities — engineering, tooling, production and supply | Metal Form",
+    "description": "Part engineering, reverse engineering and DFM. Injection, PET, blow and die-cast tooling to 46 cavities. Hot and cold runner, slides, lifters and unscrewing. Production, component supply and second-source tooling. Every stage available on its own."
+  },
+  "hero": {
+    "kicker": "Capabilities",
+    "headline": ["Four stages.", "Buy the chain,", "or buy one link."],
+    "lead": "Most projects arrive needing all of it. Some arrive needing a single drawing reviewed, or a tool corrected, or a component supplied from a tool somebody else built. Both are normal work."
+  },
+  "intro": "What follows is what we do, stated plainly. Where a capability sits outside what we can take responsibility for, it is named at the bottom of this page rather than left for you to discover during a project.",
+  "groups": [
+    {
+      "index": "01",
+      "title": "Engineering",
+      "body": "Before anything is cut, the part has to be a manufacturable part. That is a separate discipline from designing a product, and it is where most of the cost of a moulded component is actually decided.",
+      "items": [
+        { "name": "Part modelling in CATIA and SolidWorks", "note": "Native or neutral formats. STEP, IGES, X_T and STL all work as an input or an output." },
+        { "name": "Reverse engineering from a physical sample", "note": "A worn part, a competitor's product, a component whose drawings nobody kept. Measured back into a model that can be tooled." },
+        { "name": "Engineering from incomplete input", "note": "A photograph and a dimension. A sketch and a description of what the part has to do. Enough to start is less than most people assume." },
+        { "name": "Design for manufacturability review", "note": "Wall thickness and its consistency, draft, gate position and its consequences, undercuts, radii, ribs and bosses, tolerance realism, parting-line placement." },
+        { "name": "Redesign for production cost", "note": "Material volume, part consolidation, cavity strategy and cycle. Reviewed against your real annual volume rather than against a catalogue." },
+        { "name": "Technical evaluation of an existing design", "note": "Someone else's drawing, reviewed before it becomes someone else's tooling problem." }
+      ]
+    },
+    {
+      "index": "02",
+      "title": "Tooling",
+      "body": "The workshop's foundation, and the discipline the rest of the business grew out of. A tool is not a commodity: cavity count, runner, cooling, steel and mechanism are a set of decisions taken against one specific part and one specific production volume.",
+      "items": [
+        { "name": "Injection mould design and manufacture", "note": "Single-cavity through to high cavitation. Our multi-cavity experience runs to 46 cavities." },
+        { "name": "PET preform and closure tooling", "note": "Neck-finish geometry, preform weight, cavity and core sets, neck rings and change parts." },
+        { "name": "Blow-mould tooling", "note": "Blow moulds and change parts where the commercial case is there." },
+        { "name": "Die-cast tooling", "note": "Where a component is better in metal than in polymer, and the tooling discipline transfers." },
+        { "name": "Hot runner and cold runner systems", "note": "Runner strategy chosen against balance, material, part cost and what happens when a drop fails at year three." },
+        { "name": "Mechanisms", "note": "Slides and side actions, lifters, collapsible and unscrewing cores, insert tooling, and the geometry that needs them." },
+        { "name": "Spares, change parts and tool corrections", "note": "Cores, cavities and inserts from the people who cut the originals." },
+        { "name": "Duplicate and backup tooling", "note": "A second tool built to the same part specification, before it is needed rather than after." }
+      ]
+    },
+    {
+      "index": "03",
+      "title": "Machining",
+      "body": "The metalwork behind the tooling, and available on its own where a customer needs a machined component rather than a moulded one.",
+      "items": [
+        { "name": "CNC milling", "note": "Cavity and core work, plates, inserts and machined components." },
+        { "name": "Turning", "note": "Round work, cores, sleeves and machined parts." },
+        { "name": "Manual machining and fitting", "note": "The bench work a tool needs between machining and a first sample, which no CNC programme replaces." }
+      ]
+    },
+    {
+      "index": "04",
+      "title": "Production and supply",
+      "body": "The tool is the beginning of the commercial relationship, not the end of it. What a customer usually wants in the long run is the component, delivered, on a schedule.",
+      "items": [
+        { "name": "Moulded component production", "note": "From our tooling or from a tool you already own and want run somewhere else." },
+        { "name": "Rolling component supply", "note": "Repeat production against a schedule rather than order by order." },
+        { "name": "Second-source development", "note": "A second production route for a component already running with another supplier." },
+        { "name": "Overflow and additional capacity", "note": "For a demand peak, a seasonal window or a supplier who has become unreliable." },
+        { "name": "International delivery", "note": "Tools and components ship internationally. Route, terms and documentation are agreed with the quotation." }
+      ]
+    }
+  ],
+  "modularity": {
+    "heading": "You do not have to buy all of it.",
+    "body": "The chain is how a project usually runs best, because the handovers between engineering, tooling and production are where projects normally lose time and money. But every stage stands on its own, and quoting one stage does not commit you to the next.",
+    "points": [
+      "Engineering only — a model, a reverse-engineered part, a DFM review. Sold as engineering work.",
+      "A tool only — built to your drawing, shipped to your plant, run by you.",
+      "Production only — from a tool you already own.",
+      "Supply only — the finished component, on a schedule.",
+      "Or the whole route, under one contract and one technical contact."
+    ]
+  },
+  "software": {
+    "heading": "Software and file formats",
+    "body": "Part models, tool design and reverse-engineered geometry are produced in CATIA and SolidWorks. Send native files or neutral ones — STEP, IGES, X_T and STL are all workable, and a 2D PDF drawing with dimensions is workable too. If all you have is a photograph and a caliper reading, say so; that is a starting point we handle regularly."
+  },
+  "boundaries": {
+    "heading": "What we do not claim",
+    "body": "A capability list is only useful if it stops somewhere. These are outside what Metal Form takes responsibility for today, and we would rather you knew now than found out during a project.",
+    "points": [
+      "We hold no quality-system, medical, automotive or food-contact certification. Where your market requires one, that requirement sits with you and with your certified partners.",
+      "We do not operate a cleanroom and do not perform sterile, validated or regulated manufacture.",
+      "We do not test or certify finished products — flammability, electrical safety, pressure rating, chemical resistance, toy safety and packaging approvals belong to the resin supplier, your testing house and your own approvals.",
+      "We do not run flow, cooling or warpage simulation software. Those subjects are engineered from experience and resolved at sampling, and we will say when a question genuinely needs simulation.",
+      "We do not operate 3D scanning or a coordinate measuring department. Reverse engineering here is conventional measurement and modelling.",
+      "We do not quote a price before we understand the geometry, the volume and the tolerance. There is no published price list, because a published price for a moulded part would be a fiction."
+    ]
+  },
+  "cta": {
+    "headline": "Which part of this do you need?",
+    "body": "Tell us where the project actually is. A concept with no drawing, a drawing that needs reviewing, a tool that needs building, a tool that needs correcting, or a component that needs a second source.",
+    "action": "Send your project",
+    "actionAlt": "See all contact options",
+    "prefill": "Hello Metal Form. I am looking at:\n\n[ ] Engineering / CAD / reverse engineering\n[ ] DFM or design review\n[ ] A new tool\n[ ] Correcting or modifying an existing tool\n[ ] Production from an existing tool\n[ ] Ongoing component supply\n[ ] A second source\n\nPart: \nAnnual volume: \nWhat I have: ",
+    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+  }
+}

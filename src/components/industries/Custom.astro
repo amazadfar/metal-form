@@ -1,0 +1,1571 @@
+---
+/**
+ * CUSTOM PROJECTS — the intake desk.
+ *
+ * This is the chapter that catches everyone the other twelve missed, so it is
+ * built as a document rather than as a composition: a drafting sheet, a title
+ * block, hairline construction lines, and one abstract moulded part that is
+ * drawn ONCE and never changes.
+ *
+ * The organising device is the triage selector in section 02. Ten starting
+ * points, ten annotation layers over that one constant part. The part is the
+ * argument: what you send does not change the component — it changes what we
+ * know about it. Everything else on the page (the arrivals atlas, the
+ * reverse-engineering sequence, the questions ledger, the gate track) is
+ * annotation on the same idea.
+ *
+ * Palette discipline: paper, blueprint blue-grey, graphite. The magenta signal
+ * is a redline marker and nothing else — it marks what is unresolved.
+ */
+import type { Locale } from '../../i18n/locales.ts';
+import type { Industry } from '../../config/industries.ts';
+import type { IndustryContent, CommonContent } from '../../content/types.ts';
+
+interface Props {
+  locale: Locale;
+  industry: Industry;
+  content: IndustryContent;
+  common: CommonContent;
+}
+const { content, common } = Astro.props;
+const b = content.blocks as any;
+
+/* ── THE CONSTANT PART ────────────────────────────────────────────────────
+   An abstract moulded cover in half-section: drafted side walls, a cored boss,
+   one rib, and a single snap barb which is the only undercut on the part.
+   Deliberately not identifiable as any product. Drawn in a 400 × 240 field and
+   reused, unchanged, in every diagram on this page. */
+const P_SECTION = 'M78 176 L82 62 H298 L302 176 H288 L285 76 H95 L92 176 Z';
+const P_BOSS = 'M176 76 h12 v62 h-9 z M216 76 h-12 v62 h9 z';
+const P_RIB = 'M120 76 h7 v44 h-5 z';
+const P_BARB = 'M300 114 L316 122 L300 132 Z';
+const P_GATE = 'M184 62 A6 6 0 0 1 196 62';
+const P_EJECT = 'M140 76 v6 M254 76 v6';
+const P_PARTING = 'M40 176 H344';
+const P_CENTRE = 'M190 38 V208';
+const P_WELD = 'M258 62 v14';
+
+const PART = [
+  { d: P_SECTION, c: 'cx-wall' },
+  { d: P_BOSS, c: 'cx-wall' },
+  { d: P_RIB, c: 'cx-wall' },
+  { d: P_BARB, c: 'cx-wall' },
+  { d: P_GATE, c: 'cx-edge' },
+  { d: P_EJECT, c: 'cx-tick' },
+  { d: P_WELD, c: 'cx-dash' },
+];
+
+/* Anchor (feature the balloon points at) and balloon position, per starting
+   point. Where anchor and balloon coincide there is nothing to point at yet —
+   that is position 10, and the balloon is drawn open. */
+const ANN: Record<string, { ax: number; ay: number; bx: number; by: number }> = {
+  photo: { ax: 190, ay: 58, bx: 92, by: 26 },
+  broken: { ax: 309, ay: 123, bx: 366, by: 88 },
+  benchmark: { ax: 302, ay: 176, bx: 360, by: 206 },
+  sketch: { ax: 150, ay: 119, bx: 60, by: 206 },
+  cad: { ax: 196, ay: 107, bx: 340, by: 40 },
+  obsolete: { ax: 78, ay: 176, bx: 34, by: 200 },
+  production: { ax: 124, ay: 92, bx: 44, by: 110 },
+  cost: { ax: 86, ay: 122, bx: 26, by: 66 },
+  supplier: { ax: 244, ay: 176, bx: 288, by: 206 },
+  idea: { ax: 44, ay: 120, bx: 44, by: 120 },
+};
+
+const triage = b.triage.items as any[];
+const routes = b.routes.items as any[];
+---
+
+<article class="cx">
+
+  {/* ═══ HERO · THE DRAFTING SHEET ══════════════════════════════════════ */}
+  <header class="cx-hero">
+    <div class="shell--wide cx-hero__inner">
+
+      <div class="cx-hero__copy">
+        <p class="eyebrow">{content.hero.kicker}</p>
+        <h1 class="cx-hero__head">
+          {content.hero.headline.map((line: any, i: number) => <span style={`--l:${i}`}>{line}</span>)}
+        </h1>
+        <p class="cx-hero__lead">{content.hero.lead}</p>
+        {content.hero.markers && (
+          <ul class="cx-hero__markers">
+            {content.hero.markers.map((m: any) => <li class="t-mono">{m}</li>)}
+          </ul>
+        )}
+      </div>
+
+      <div class="cx-hero__sheet">
+        <figure class="cx-hero__fig">
+          <svg viewBox="0 0 560 400" data-nomirror role="img" aria-label={common.schematic}>
+            <defs>
+              <pattern id="cx-hatch-a" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="7" class="cx-hatch-line" />
+              </pattern>
+            </defs>
+
+            <rect x="8" y="8" width="544" height="384" class="cx-sheet__border" />
+
+            {/* Construction lines. They draw themselves at a constant rate, so a
+                long line takes longer than a short one — which is what makes it
+                read as drawn rather than revealed. */}
+            <line x1="24" y1="135" x2="536" y2="135" class="cx-cons" style="--d:0ms" />
+            <line x1="24" y1="258" x2="536" y2="258" class="cx-cons" style="--d:140ms" />
+            <line x1="254" y1="24" x2="254" y2="376" class="cx-cons" style="--d:280ms" />
+
+            <g transform="translate(60 78) scale(1.02)" fill="url(#cx-hatch-a)">
+              <path d={P_PARTING} class="cx-pl" />
+              <path d={P_CENTRE} class="cx-cl" />
+              <path d={P_SECTION} class="cx-wall" />
+              <path d={P_RIB} class="cx-wall" />
+              <path d={P_GATE} class="cx-edge" />
+              <path d={P_EJECT} class="cx-tick" />
+              {/* Deliberately unresolved: two features left as open outline. */}
+              <path d={P_BOSS} class="cx-unf" />
+              <path d={P_BARB} class="cx-unf" />
+            </g>
+
+            {/* The signature motif: a hairline balloon on a leader line with a
+                dot terminator, drawn in the redline colour because every one of
+                these is still a question. */}
+            <g class="cx-callouts">
+              {[
+                { x: 253, y: 141, bx: 150, by: 56 },
+                { x: 382, y: 202, bx: 476, by: 160 },
+                { x: 148, y: 200, bx: 68, by: 268 },
+                { x: 260, y: 190, bx: 452, by: 306 },
+              ].map((c: any, i: number) => (
+                <g class="cx-call" style={`--d:${520 + i * 110}ms`}>
+                  <line x1={c.x} y1={c.y} x2={c.bx} y2={c.by} class="cx-lead cx-lead--sig" />
+                  <circle cx={c.x} cy={c.y} r="3" class="cx-lead__dot" />
+                  <circle cx={c.bx} cy={c.by} r="13" class="cx-balloon cx-balloon--sig" />
+                  <text x={c.bx} y={c.by + 3.6} text-anchor="middle" class="cx-balloon__n">
+                    {b.sheet.calls[i].n}
+                  </text>
+                </g>
+              ))}
+            </g>
+          </svg>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+        </figure>
+
+        {/* Long strings never go inside the drawing. */}
+        <div class="cx-hero__ann">
+          <p class="t-label cx-hero__annh">{b.sheet.callsHeading}</p>
+          <ul class="cx-calls">
+            {b.sheet.calls.map((c: any) => (
+              <li><span class="cx-calls__n t-mono">{c.n}</span><span>{c.q}</span></li>
+            ))}
+          </ul>
+        </div>
+
+        {/* A real title block, in the lower field of the sheet. */}
+        <p class="vh">{b.sheet.blockHeading}</p>
+        <dl class="cx-tblock">
+          {b.sheet.block.map((row: any) => (
+            <div class="cx-tblock__cell">
+              <dt class="t-label">{row.k}</dt>
+              <dd class="t-mono">{row.v}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="cx-hero__note">{b.sheet.note}</p>
+      </div>
+    </div>
+  </header>
+
+  {/* ═══ 01 · WHAT ARRIVES ══════════════════════════════════════════════ */}
+  <section class="cx-arr" id="arrivals">
+    <div class="shell--wide">
+      <div class="cx-head">
+        <p class="eyebrow">{b.arrivals.index} · {b.arrivals.kicker}</p>
+        <h2 class="cx-h2">{b.arrivals.heading}</h2>
+        <p class="t-lead cx-head__lead">{b.arrivals.body}</p>
+      </div>
+
+      <figure class="cx-atlas" data-reveal>
+        <ol class="cx-atlas__row">
+          {b.arrivals.items.map((item: any, i: number) => (
+            <li class="cx-atlas__cell" style={`--i:${i}`}>
+              <svg viewBox="0 0 140 110" data-nomirror aria-hidden="true">
+                {i === 0 && (
+                  <g>
+                    <rect x="46" y="8" width="48" height="94" class="cx-at-line" />
+                    <rect x="52" y="18" width="36" height="64" class="cx-at-thin" />
+                    <path d="M58 76 l11 -20 l9 13 l6 -8 l5 15 z" class="cx-at-line" />
+                    <circle cx="70" cy="92" r="4.5" class="cx-at-thin" />
+                    <path d="M38 22 L28 12 M102 22 L112 12 M70 8 V2" class="cx-at-sig" />
+                  </g>
+                )}
+                {i === 1 && (
+                  <g>
+                    <path d="M16 78 V34 h42 l6 14 l-6 14 l8 6 l-4 10 z" class="cx-at-line" />
+                    <path d="M124 78 V34 H84 l-6 14 l7 14 l-9 6 l5 10 z" class="cx-at-line" />
+                    <path d="M62 36 l8 8 l-7 8 l9 8 l-8 8 l7 8" class="cx-at-sig" />
+                    <path d="M10 92 H130" class="cx-at-thin" />
+                  </g>
+                )}
+                {i === 2 && (
+                  <g>
+                    <path d="M14 20 H126 V30 H14 Z" class="cx-at-line" />
+                    {Array.from({ length: 9 }).map((_: any, t: any) => (
+                      <line x1={22 + t * 12} y1="30" x2={22 + t * 12} y2="36" class="cx-at-thin" />
+                    ))}
+                    <path d="M42 30 V92 h7 V30" class="cx-at-line" />
+                    <path d="M92 30 V92 h7 V30" class="cx-at-line" />
+                    <rect x="49" y="52" width="43" height="30" class="cx-at-thin" />
+                    <path d="M99 34 h16 v16 h-16" class="cx-at-sig" />
+                  </g>
+                )}
+                {i === 3 && (
+                  <g>
+                    <path d="M18 10 H122 V100 H18 Z" class="cx-at-line" />
+                    <path d="M70 10 V100" class="cx-at-dash" />
+                    <path d="M18 56 H122" class="cx-at-dash" />
+                    <rect x="34" y="26" width="26" height="20" class="cx-at-thin" />
+                    <path d="M47 18 V54" class="cx-at-cl" />
+                    <path d="M86 76 H116 V94 H86 Z" class="cx-at-sig" />
+                    <path d="M86 85 H116 M101 76 V94" class="cx-at-thin" />
+                  </g>
+                )}
+                {i === 4 && (
+                  <g>
+                    <rect x="12" y="12" width="116" height="70" class="cx-at-line" />
+                    <path d="M56 82 h28 v12 h-28 z M44 94 h52" class="cx-at-line" />
+                    <path d="M52 40 l18 -11 l18 11 v22 l-18 11 l-18 -11 z" class="cx-at-thin" />
+                    <path d="M52 40 l18 11 l18 -11 M70 51 v22" class="cx-at-thin" />
+                    <path d="M28 68 V52 M28 68 H44 M28 68 l-8 8" class="cx-at-sig" />
+                  </g>
+                )}
+              </svg>
+              <p class="cx-atlas__label t-mono">{item.label}</p>
+              <p class="cx-atlas__note">{item.note}</p>
+            </li>
+          ))}
+        </ol>
+        <figcaption class="figure-note">{common.schematic}</figcaption>
+      </figure>
+
+      <p class="cx-close">{b.arrivals.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 02 · TRIAGE — the centrepiece ══════════════════════════════════ */}
+  <section class="cx-tri" id="triage">
+    <div class="shell--wide">
+      <div class="cx-head">
+        <p class="eyebrow">{b.triage.index} · {b.triage.kicker}</p>
+        <h2 class="cx-h2">{b.triage.heading}</h2>
+        <p class="t-lead cx-head__lead">{b.triage.body}</p>
+      </div>
+
+      <div class="cx-tri__wrap" data-tabs data-active={triage[0].id}>
+
+        <div class="cx-tri__rail" role="tablist" aria-label={b.triage.railLabel}>
+          {triage.map((item: any, i: number) => (
+            <button
+              type="button"
+              role="tab"
+              class="cx-tri__tab"
+              data-tab={item.id}
+              id={`cxt-tab-${item.id}`}
+              aria-controls={`cxt-panel-${item.id}`}
+              aria-selected={i === 0 ? 'true' : 'false'}
+            >
+              <span class="cx-tri__no t-mono">{item.no}</span>
+              <span class="cx-tri__label">{item.label}</span>
+            </button>
+          ))}
+        </div>
+
+        <div class="cx-tri__stage">
+          {/* One part. Ten annotation layers. The part never moves. */}
+          <figure class="cx-tri__fig">
+            <svg viewBox="0 0 400 240" data-nomirror role="img" aria-label={common.schematic}>
+              <defs>
+                <pattern id="cx-hatch-b" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="7" class="cx-hatch-line" />
+                </pattern>
+              </defs>
+
+              <g fill="url(#cx-hatch-b)">
+                <path d={P_PARTING} class="cx-pl" />
+                <path d={P_CENTRE} class="cx-cl" />
+                {PART.map((p: any) => <path d={p.d} class={p.c} />)}
+              </g>
+
+              {triage.map((item: any) => {
+                const a = ANN[item.id];
+                const open = a.ax === a.bx && a.ay === a.by;
+                const ly = a.by + 26;
+                const lx = Math.min(Math.max(a.bx, 44), 356);
+                return (
+                  <g class="cx-ann" data-ann={item.id}>
+                    {item.id === 'photo' && <path d={P_SECTION} class="cx-hl" />}
+                    {item.id === 'broken' && (
+                      <>
+                        <path d={P_BARB} class="cx-hl" />
+                        <path d="M294 104 l9 7 l-8 7 l10 7 l-9 7 l8 7" class="cx-hl" />
+                      </>
+                    )}
+                    {item.id === 'benchmark' && <rect x="68" y="48" width="258" height="136" class="cx-hl cx-hl--box" />}
+                    {item.id === 'sketch' && <path d={P_SECTION} class="cx-hl cx-hl--sketch" />}
+                    {item.id === 'cad' && <path d={P_BOSS} class="cx-hl" />}
+                    {item.id === 'obsolete' && (
+                      <>
+                        <path d="M78 179 l-7 13 h14 z" class="cx-hl cx-hl--solid" />
+                        <path d="M190 35 l-7 -13 h14 z" class="cx-hl cx-hl--solid" />
+                        <path d="M305 176 l7 13 h-14 z" class="cx-hl cx-hl--solid" />
+                      </>
+                    )}
+                    {item.id === 'production' && (
+                      <>
+                        <path d="M117 62 q6 7 13 0" class="cx-hl" />
+                        <path d="M172 62 q22 9 44 0" class="cx-hl" />
+                      </>
+                    )}
+                    {item.id === 'cost' && (
+                      <>
+                        <path d="M79 122 H92" class="cx-hl" />
+                        <path d="M286 104 H299" class="cx-hl" />
+                        <path d="M95 76 V90" class="cx-hl" />
+                      </>
+                    )}
+                    {item.id === 'supplier' && <path d={P_PARTING} class="cx-hl" />}
+
+                    {!open && (
+                      <>
+                        <line x1={a.ax} y1={a.ay} x2={a.bx} y2={a.by} class="cx-lead cx-lead--sig" />
+                        <circle cx={a.ax} cy={a.ay} r="2.8" class="cx-lead__dot" />
+                      </>
+                    )}
+                    <circle
+                      cx={a.bx} cy={a.by} r="12"
+                      class={open ? 'cx-balloon cx-balloon--sig cx-balloon--open' : 'cx-balloon cx-balloon--sig'}
+                    />
+                    <text x={a.bx} y={a.by + 3.4} text-anchor="middle" class="cx-balloon__n">{item.no}</text>
+                    <text x={lx} y={ly} text-anchor="middle" class="cx-mark">{item.mark}</text>
+                  </g>
+                );
+              })}
+            </svg>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+
+          {triage.map((item: any, i: number) => (
+            <div
+              class="cx-tri__panel"
+              data-panel={item.id}
+              role="tabpanel"
+              id={`cxt-panel-${item.id}`}
+              aria-labelledby={`cxt-tab-${item.id}`}
+              hidden={i !== 0}
+            >
+              <div class="cx-tri__cols">
+                <section class="cx-tri__col">
+                  <h3 class="t-label">{b.triage.tellsHeading}</h3>
+                  <ul>{item.tells.map((t: string) => <li>{t}</li>)}</ul>
+                </section>
+                <section class="cx-tri__col cx-tri__col--ask">
+                  <h3 class="t-label">{b.triage.askHeading}</h3>
+                  <ul>{item.ask.map((t: string) => <li>{t}</li>)}</ul>
+                </section>
+                <section class="cx-tri__col cx-tri__col--back">
+                  <h3 class="t-label">{b.triage.backHeading}</h3>
+                  <ul>{item.back.map((t: string) => <li>{t}</li>)}</ul>
+                </section>
+              </div>
+              <p class="cx-tri__first">
+                <span class="t-label">{b.triage.firstHeading}</span>
+                {item.first}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <p class="cx-close">{b.triage.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 03 · REVERSE ENGINEERING FROM NOTHING ══════════════════════════ */}
+  <section class="cx-rev" id="reverse" data-stepper data-step="0">
+    <div class="shell--wide">
+      <div class="cx-head">
+        <p class="eyebrow">{b.reverse.index} · {b.reverse.kicker}</p>
+        <h2 class="cx-h2">{b.reverse.heading}</h2>
+        <p class="t-lead cx-head__lead">{b.reverse.body}</p>
+      </div>
+
+      <div class="cx-rev__grid">
+        <figure class="cx-rev__fig">
+          <svg viewBox="0 0 400 250" data-nomirror role="img" aria-label={common.schematic}>
+            <defs>
+              <pattern id="cx-hatch-c" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="7" class="cx-hatch-line" />
+              </pattern>
+              <pattern id="cx-hatch-d" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <line x1="0" y1="0" x2="0" y2="6" class="cx-hatch-line cx-hatch-line--sig" />
+              </pattern>
+              <marker id="cx-ar-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 1 L9 5 L0 9 z" class="cx-arhead" />
+              </marker>
+              <clipPath id="cx-detclip"><circle cx="316" cy="66" r="48" /></clipPath>
+            </defs>
+
+            <g class="cx-rev__part" fill="url(#cx-hatch-c)">
+              <path d={P_PARTING} class="cx-pl" />
+              <path d={P_CENTRE} class="cx-cl" />
+              {PART.map((p: any) => <path d={p.d} class={p.c} />)}
+            </g>
+
+            {/* 01 — as arrived */}
+            <g class="cx-lay" data-lay="0">
+              <rect x="68" y="48" width="258" height="136" class="cx-hl cx-hl--box" />
+              <text x="197" y="34" text-anchor="middle" class="cx-mark">{b.reverse.labels.arrived}</text>
+            </g>
+
+            {/* 02 — datums placed */}
+            <g class="cx-lay" data-lay="1">
+              <path d="M120 179 l-6 13 h12 z" class="cx-hl cx-hl--solid" />
+              <line x1="120" y1="192" x2="120" y2="204" class="cx-lead" />
+              <rect x="110" y="204" width="20" height="18" class="cx-frame" />
+              <text x="120" y="217" text-anchor="middle" class="cx-frame__t">A</text>
+
+              <path d="M77 120 l-13 -6 v12 z" class="cx-hl cx-hl--solid" />
+              <line x1="64" y1="120" x2="50" y2="120" class="cx-lead" />
+              <rect x="30" y="111" width="20" height="18" class="cx-frame" />
+              <text x="40" y="124" text-anchor="middle" class="cx-frame__t">B</text>
+
+              <path d="M190 61 l-6 -13 h12 z" class="cx-hl cx-hl--solid" />
+              <line x1="190" y1="48" x2="190" y2="38" class="cx-lead" />
+              <rect x="180" y="20" width="20" height="18" class="cx-frame" />
+              <text x="190" y="33" text-anchor="middle" class="cx-frame__t">C</text>
+            </g>
+
+            {/* 03 — measured against function */}
+            <g class="cx-lay" data-lay="2">
+              <line x1="78" y1="182" x2="78" y2="212" class="cx-wit" />
+              <line x1="302" y1="182" x2="302" y2="212" class="cx-wit" />
+              <line x1="78" y1="206" x2="302" y2="206" class="cx-dim" marker-start="url(#cx-ar-b)" marker-end="url(#cx-ar-b)" />
+
+              <line x1="74" y1="62" x2="46" y2="62" class="cx-wit" />
+              <line x1="74" y1="176" x2="46" y2="176" class="cx-wit" />
+              <line x1="52" y1="62" x2="52" y2="176" class="cx-dim" marker-start="url(#cx-ar-b)" marker-end="url(#cx-ar-b)" />
+
+              <line x1="218" y1="76" x2="244" y2="76" class="cx-wit" />
+              <line x1="218" y1="138" x2="244" y2="138" class="cx-wit" />
+              <line x1="238" y1="76" x2="238" y2="138" class="cx-dim" marker-start="url(#cx-ar-b)" marker-end="url(#cx-ar-b)" />
+              <text x="197" y="232" text-anchor="middle" class="cx-mark">{b.reverse.labels.measured}</text>
+            </g>
+
+            {/* 04 — rebuilt as features */}
+            <g class="cx-lay" data-lay="3">
+              <path d={P_BOSS} class="cx-hl" />
+              <path d={P_RIB} class="cx-hl" />
+              <path d={P_BARB} class="cx-hl" />
+              {[
+                { ax: 196, ay: 104, bx: 306, by: 30, n: '01' },
+                { ax: 124, ay: 96, bx: 42, by: 32, n: '02' },
+                { ax: 309, ay: 123, bx: 370, by: 172, n: '03' },
+              ].map((c: any) => (
+                <g>
+                  <line x1={c.ax} y1={c.ay} x2={c.bx} y2={c.by} class="cx-lead" />
+                  <circle cx={c.ax} cy={c.ay} r="2.8" class="cx-lead__dot" />
+                  <circle cx={c.bx} cy={c.by} r="12" class="cx-balloon" />
+                  <text x={c.bx} y={c.by + 3.4} text-anchor="middle" class="cx-balloon__n">{c.n}</text>
+                </g>
+              ))}
+              <text x="197" y="232" text-anchor="middle" class="cx-mark">{b.reverse.labels.feature}</text>
+            </g>
+
+            {/* 05 — shrink: the cavity is cut larger than the part. Offset is
+                 exaggerated so the relationship is legible at this scale. */}
+            <g class="cx-lay" data-lay="4">
+              <path
+                d={P_SECTION}
+                class="cx-cav"
+                transform="translate(190 119) scale(1.085) translate(-190 -119)"
+              />
+              <line x1="120" y1="218" x2="82" y2="180" class="cx-lead" />
+              <text x="126" y="232" text-anchor="middle" class="cx-mark">{b.reverse.labels.part}</text>
+              <line x1="268" y1="218" x2="308" y2="182" class="cx-lead cx-lead--sig" />
+              <text x="266" y="232" text-anchor="middle" class="cx-mark cx-mark--sig">{b.reverse.labels.cavity}</text>
+            </g>
+
+            {/* 06 — steel-safe, as a drawing detail */}
+            <g class="cx-lay" data-lay="5">
+              <circle cx="309" cy="123" r="20" class="cx-detail__ring" />
+              <line x1="324" y1="110" x2="332" y2="100" class="cx-lead" />
+              <circle cx="316" cy="66" r="48" class="cx-detail__ring" />
+              <g clip-path="url(#cx-detclip)">
+                <g transform="translate(316 66) scale(3.4) translate(-308 -123)" vector-effect="non-scaling-stroke">
+                  <path d="M300 96 L301 152" class="cx-edge" vector-effect="non-scaling-stroke" />
+                  <path d="M300 112 L322 122 L300 134 L300 132 L316 122 L300 114 Z" class="cx-steel" fill="url(#cx-hatch-d)" vector-effect="non-scaling-stroke" />
+                  <path d="M300 112 L322 122 L300 134" class="cx-cav" vector-effect="non-scaling-stroke" />
+                  <path d="M300 114 L316 122 L300 132 Z" class="cx-edge" vector-effect="non-scaling-stroke" />
+                </g>
+              </g>
+              <text x="316" y="130" text-anchor="middle" class="cx-mark cx-mark--sig">{b.reverse.labels.steelLeft}</text>
+              <text x="309" y="158" text-anchor="middle" class="cx-mark">{b.reverse.labels.detail}</text>
+            </g>
+          </svg>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+        </figure>
+
+        <ol class="cx-rev__steps" aria-label={b.reverse.stepsLabel}>
+          {b.reverse.steps.map((s: any, i: number) => (
+            <li class="cx-rev__step" data-station-step={i}>
+              <span class="cx-rev__i t-mono">{s.index}</span>
+              <h3 class="cx-h5">{s.label}</h3>
+              <p>{s.note}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="cx-shrink">
+        <div class="cx-shrink__table">
+          <h3 class="t-label cx-shrink__h">{b.reverse.shrinkHeading}</h3>
+          <div class="cx-scroll">
+            <table class="cx-tbl">
+              <thead>
+                <tr>{b.reverse.shrinkCols.map((c: string) => <th scope="col">{c}</th>)}</tr>
+              </thead>
+              <tbody>
+                {b.reverse.shrinkRows.map((r: any) => (
+                  <tr>
+                    <th scope="row">{r.r}</th>
+                    <td class="t-mono">{r.v}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="cx-fine t-fine">{b.reverse.shrinkNote}</p>
+        </div>
+
+        <div class="cx-shrink__side">
+          <p class="cx-note">{b.reverse.close}</p>
+          <div class="cx-scan">
+            <h3 class="t-label">{b.reverse.scanHeading}</h3>
+            <p>{b.reverse.scanNote}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 04 · THE QUESTIONS LEDGER ══════════════════════════════════════ */}
+  <section class="cx-q" id="questions">
+    <div class="shell--wide">
+      <div class="cx-head">
+        <p class="eyebrow">{b.questions.index} · {b.questions.kicker}</p>
+        <h2 class="cx-h2">{b.questions.heading}</h2>
+        <p class="t-lead cx-head__lead">{b.questions.body}</p>
+      </div>
+
+      <div class="cx-q__ledger">
+        <div class="cx-q__legend">
+          <span class="t-label">{b.questions.cols.q}</span>
+          <span class="t-label">{b.questions.cols.why}</span>
+        </div>
+
+        {b.questions.groups.map((g: any) => (
+          <section class="cx-q__group">
+            <h3 class="cx-q__gname t-mono">{g.group}</h3>
+            <div class="cx-q__rows">
+              {g.items.map((it: any) => (
+                <div class="cx-q__row">
+                  <p class="cx-q__q">{it.q}</p>
+                  <p class="cx-q__why">{it.why}</p>
+                  <p class="cx-q__assume">
+                    <span class="t-label">{b.questions.cols.assume}</span>
+                    {it.assume}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <p class="cx-close cx-close--sig">{b.questions.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 05 · THE GATED ROUTE ═══════════════════════════════════════════ */}
+  <section class="cx-gate" id="route">
+    <div class="shell--wide">
+      <div class="cx-head">
+        <p class="eyebrow">{b.route.index} · {b.route.kicker}</p>
+        <h2 class="cx-h2">{b.route.heading}</h2>
+        <p class="t-lead cx-head__lead">{b.route.body}</p>
+      </div>
+
+      <div class="cx-scroll cx-gate__scroll" data-reveal>
+        <ol class="cx-gate__track">
+          {b.route.gates.map((g: any, i: number) => (
+            <li class="cx-gate__col" data-hold={g.hold ? 'true' : 'false'} style={`--i:${i}`}>
+              <span class="cx-gate__node" aria-hidden="true"></span>
+              <p class="cx-gate__code t-mono">{g.code}</p>
+              <h3 class="cx-h5">{g.name}</h3>
+              <p class="cx-gate__body">{g.body}</p>
+              <p class="cx-gate__leaves">
+                <span class="t-label">{b.route.leavesLabel}</span>
+                {g.leaves}
+              </p>
+              {g.hold && <p class="cx-gate__hold t-mono">{b.route.holdLabel}</p>}
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <p class="cx-close">{b.route.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 06 · IT DOES NOT HAVE TO BE PLASTIC ════════════════════════════ */}
+  <section class="cx-rt" id="routes">
+    <div class="shell--wide">
+      <div class="cx-head">
+        <p class="eyebrow">{b.routes.index} · {b.routes.kicker}</p>
+        <h2 class="cx-h2">{b.routes.heading}</h2>
+        <p class="t-lead cx-head__lead">{b.routes.body}</p>
+      </div>
+
+      <div class="cx-rt__wrap" data-tabs data-active={routes[0].id}>
+        <div class="cx-rt__tabs" role="tablist" aria-label={b.routes.tabsLabel}>
+          {routes.map((r: any, i: number) => (
+            <button
+              type="button"
+              role="tab"
+              class="cx-rt__tab"
+              data-tab={r.id}
+              id={`cxr-tab-${r.id}`}
+              aria-controls={`cxr-panel-${r.id}`}
+              aria-selected={i === 0 ? 'true' : 'false'}
+            >{r.name}</button>
+          ))}
+        </div>
+
+        {routes.map((r: any, i: number) => (
+          <div
+            class="cx-rt__panel"
+            data-panel={r.id}
+            role="tabpanel"
+            id={`cxr-panel-${r.id}`}
+            aria-labelledby={`cxr-tab-${r.id}`}
+            hidden={i !== 0}
+          >
+            <figure class="cx-rt__fig">
+              <svg viewBox="0 0 170 120" data-nomirror role="img" aria-label={common.schematic}>
+                {r.id === 'injection' && (
+                  <g>
+                    <path d="M14 18 H78 V102 H14 Z" class="cx-at-line" />
+                    <path d="M92 18 H156 V102 H92 Z" class="cx-at-line" />
+                    <path d="M56 46 h58 v34 h-58 z" class="cx-at-sig" />
+                    <path d="M85 6 V46 M79 12 h12" class="cx-at-thin" />
+                    <path d="M85 4 V116" class="cx-at-cl" />
+                  </g>
+                )}
+                {r.id === 'pet' && (
+                  <g>
+                    <path d="M62 14 h46 v10 h-9 v8 h9 v10 h-46 v-10 h9 v-8 h-9 z" class="cx-at-line" />
+                    <path d="M70 42 v40 q0 16 15 16 t15 -16 v-40" class="cx-at-line" />
+                    <path d="M56 24 H36 M114 24 H134" class="cx-at-sig" />
+                    <path d="M85 6 V112" class="cx-at-cl" />
+                  </g>
+                )}
+                {r.id === 'blow' && (
+                  <g>
+                    <path d="M22 20 H62 V100 H22 Z" class="cx-at-line" />
+                    <path d="M108 20 H148 V100 H108 Z" class="cx-at-line" />
+                    <path d="M74 14 v52 q0 14 11 14 t11 -14 V14" class="cx-at-sig" />
+                    <path d="M62 46 h10 M108 46 h-10" class="cx-at-thin" />
+                    <path d="M85 4 V114" class="cx-at-cl" />
+                  </g>
+                )}
+                {r.id === 'diecast' && (
+                  <g>
+                    <path d="M20 14 H80 V88 H20 Z" class="cx-at-line" />
+                    <path d="M90 14 H150 V88 H90 Z" class="cx-at-line" />
+                    <path d="M60 38 h50 v28 h-50 z" class="cx-at-thin" />
+                    <path d="M14 96 H98 V112 H14 Z" class="cx-at-line" />
+                    <path d="M18 100 h22 v8 h-22 z M40 104 H86 M78 100 l8 4 l-8 4" class="cx-at-sig" />
+                    <path d="M85 4 V90" class="cx-at-cl" />
+                  </g>
+                )}
+                {r.id === 'machined' && (
+                  <g>
+                    <path d="M26 74 H144 V104 H26 Z" class="cx-at-line" />
+                    <path d="M78 10 h20 v34 h-20 z" class="cx-at-line" />
+                    <path d="M80 44 h16 v22 l-8 8 l-8 -8 z" class="cx-at-sig" />
+                    <path d="M62 74 h54" class="cx-at-thin" />
+                    <path d="M110 60 l12 -8 M118 46 l10 -4" class="cx-at-sig" />
+                    <path d="M88 4 V80" class="cx-at-cl" />
+                  </g>
+                )}
+              </svg>
+              <figcaption class="cx-rt__cap">
+                <span class="t-mono cx-rt__mark">{r.mark}</span>
+                <span class="figure-note">{common.schematic}</span>
+              </figcaption>
+            </figure>
+
+            <dl class="cx-rt__spec">
+              <div><dt class="t-label">{b.routes.whenLabel}</dt><dd>{r.when}</dd></div>
+              <div><dt class="t-label">{b.routes.changesLabel}</dt><dd>{r.changes}</dd></div>
+              <div><dt class="t-label">{b.routes.needLabel}</dt><dd>{r.need}</dd></div>
+            </dl>
+          </div>
+        ))}
+      </div>
+
+      <p class="cx-close">{b.routes.close}</p>
+    </div>
+  </section>
+
+  {/* ═══ 07 · THE BOUNDARY ══════════════════════════════════════════════ */}
+  <section class="cx-bnd" id="boundary">
+    <div class="shell--wide">
+      <div class="cx-head">
+        <p class="eyebrow">{b.boundary.index} · {b.boundary.kicker}</p>
+        <h2 class="cx-h2">{b.boundary.heading}</h2>
+        <p class="t-lead cx-head__lead">{b.boundary.body}</p>
+      </div>
+
+      <p class="cx-bnd__line">{b.boundary.line}</p>
+
+      <div class="cx-bnd__cols">
+        <section class="cx-bnd__col">
+          <h3 class="cx-h4">{b.boundary.supplyHeading}</h3>
+          <ul class="cx-list">{b.boundary.supply.map((s: string) => <li>{s}</li>)}</ul>
+        </section>
+        <section class="cx-bnd__col cx-bnd__col--stay">
+          <h3 class="cx-h4">{b.boundary.stayHeading}</h3>
+          <ul class="cx-list">{b.boundary.stay.map((s: string) => <li>{s}</li>)}</ul>
+        </section>
+      </div>
+
+      <div class="cx-refuse">
+        <h3 class="cx-h4">{b.boundary.refuseHeading}</h3>
+        <ol class="cx-refuse__list">
+          {b.boundary.refuse.map((r: string, i: number) => (
+            <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span><span>{r}</span></li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  {/* ═══ 08 · SEND WHAT YOU HAVE ════════════════════════════════════════ */}
+  <section class="cx-pk" id="package">
+    <div class="shell--wide">
+      <div class="cx-head">
+        <p class="eyebrow">{b.package.index} · {b.package.kicker}</p>
+        <h2 class="cx-h2">{b.package.heading}</h2>
+        <p class="t-lead cx-head__lead">{b.package.body}</p>
+      </div>
+
+      <ol class="cx-tiers">
+        {b.package.tiers.map((t: any, i: number) => (
+          <li class="cx-tier" style={`--i:${i}`} data-reveal>
+            <p class="cx-tier__code t-mono">{t.code}</p>
+            <h3 class="cx-h5">{t.name}</h3>
+            <ul class="cx-tier__items">
+              {t.items.map((it: string) => <li>{it}</li>)}
+            </ul>
+            <p class="cx-tier__note">{t.note}</p>
+          </li>
+        ))}
+      </ol>
+
+      <p class="cx-close">{b.package.close}</p>
+      <p class="cx-fine t-fine">{b.package.note}</p>
+
+      <div class="cx-panels">
+        <h3 class="t-label cx-panels__h">{b.panels.heading}</h3>
+        {b.panels.items.map((panel: any, i: number) => (
+          <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+            <h4>
+              <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
+                <span>{panel.title}</span>
+                <span class="disc__sign" aria-hidden="true"></span>
+              </button>
+            </h4>
+            <div class="disc__panel">
+              <div class="disc__inner">
+                <div>
+                  <ul class="cx-panel__list">
+                    {panel.bullets.map((bullet: string) => <li>{bullet}</li>)}
+                  </ul>
+                  {panel.source && <p class="cx-fine t-fine">{panel.source}</p>}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</article>
+
+<style>
+  /* ═══ CUSTOM PROJECTS — chapter scope ══════════════════════════════════
+     Paper, blueprint blue-grey, graphite. The magenta signal is a redline
+     marker and never a decoration: it marks what is still unresolved. */
+
+  .cx { --cx-pad: clamp(1rem, 2.4vw, 2rem); }
+
+  /* ── Shared type ─────────────────────────────────────────────────────── */
+  .cx-h2 {
+    font-size: clamp(1.55rem, 2.9vw, 2.5rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-block-start: var(--sp-5);
+    max-inline-size: 22ch;
+  }
+  .cx-h4 { font-size: var(--step-1); letter-spacing: var(--track-head); font-weight: var(--weight-medium); }
+  .cx-h5 { font-size: var(--step-0); letter-spacing: var(--track-head); font-weight: var(--weight-medium); }
+
+  .cx-head { max-inline-size: 74ch; }
+  .cx-head__lead { margin-block-start: var(--sp-5); max-inline-size: 66ch; }
+
+  .cx-close {
+    margin-block-start: clamp(2rem, 4vw, 3rem);
+    font-size: var(--step-0);
+    line-height: 1.62;
+    max-inline-size: 66ch;
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--accent);
+  }
+  .cx-close--sig { border-inline-start-color: var(--signal-ink); }
+  .cx-note { font-size: var(--step--1); line-height: 1.65; color: var(--ink-muted); max-inline-size: 56ch; }
+  .cx-fine { margin-block-start: var(--sp-4); max-inline-size: 62ch; line-height: 1.6; }
+
+  /* ── Drawing conventions, shared by every figure on the page ─────────── */
+  .cx-hatch-line { stroke: var(--accent); stroke-width: 0.6; opacity: 0.5; }
+  .cx-hatch-line--sig { stroke: var(--signal); stroke-width: 0.7; opacity: 0.75; }
+
+  .cx-wall { stroke: var(--accent-deep); stroke-width: 1.35; stroke-linejoin: round; }
+  .cx-edge { fill: none; stroke: var(--accent-deep); stroke-width: 1.35; stroke-linejoin: round; }
+  .cx-unf { fill: none; stroke: var(--accent-deep); stroke-width: 1.1; stroke-dasharray: 5 4; opacity: 0.65; }
+  .cx-tick { fill: none; stroke: var(--ink-muted); stroke-width: 1; }
+  .cx-dash { fill: none; stroke: var(--ink-muted); stroke-width: 0.9; stroke-dasharray: 3 3; }
+  .cx-pl { fill: none; stroke: var(--ink-muted); stroke-width: 0.8; stroke-dasharray: 12 3 2 3; opacity: 0.8; }
+  .cx-cl { fill: none; stroke: var(--accent); stroke-width: 0.7; stroke-dasharray: 12 3 2 3; opacity: 0.55; }
+  .cx-cav { fill: none; stroke: var(--signal); stroke-width: 1.2; stroke-dasharray: 6 3; }
+  .cx-steel { stroke: var(--signal); stroke-width: 0.6; }
+
+  .cx-hl { fill: none; stroke: var(--signal); stroke-width: 2; stroke-linejoin: round; }
+  .cx-hl--solid { fill: var(--signal); stroke: none; }
+  .cx-hl--box { stroke-width: 1.1; stroke-dasharray: 7 5; }
+  .cx-hl--sketch { stroke-width: 1.4; stroke-dasharray: 2 5; stroke-linecap: round; }
+
+  .cx-lead { fill: none; stroke: var(--accent); stroke-width: 0.8; }
+  .cx-lead--sig { stroke: var(--signal); }
+  .cx-lead__dot { fill: var(--signal); }
+  .cx-balloon { fill: var(--surface-raise); stroke: var(--accent); stroke-width: 1; }
+  .cx-balloon--sig { stroke: var(--signal); }
+  .cx-balloon--open { stroke-dasharray: 4 3; }
+  .cx-balloon__n {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    fill: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .cx-mark {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    fill: var(--ink-muted);
+  }
+  .cx-mark--sig { fill: var(--signal); }
+
+  .cx-wit { stroke: var(--accent); stroke-width: 0.7; opacity: 0.7; }
+  .cx-dim { stroke: var(--accent); stroke-width: 0.9; }
+  .cx-arhead { fill: var(--accent); }
+  .cx-frame { fill: var(--surface-raise); stroke: var(--accent); stroke-width: 1; }
+  .cx-frame__t { font-family: var(--font-mono); font-size: 11px; fill: var(--accent-deep); }
+  .cx-detail__ring { fill: none; stroke: var(--accent); stroke-width: 0.9; stroke-dasharray: 5 4; }
+
+  /* Atlas line weights */
+  .cx-at-line { fill: none; stroke: var(--accent-deep); stroke-width: 1.3; stroke-linejoin: round; }
+  .cx-at-thin { fill: none; stroke: var(--accent-deep); stroke-width: 0.9; opacity: 0.72; }
+  .cx-at-dash { fill: none; stroke: var(--ink-muted); stroke-width: 0.8; stroke-dasharray: 4 4; }
+  .cx-at-cl { fill: none; stroke: var(--accent); stroke-width: 0.7; stroke-dasharray: 9 3 1.5 3; opacity: 0.6; }
+  .cx-at-sig { fill: none; stroke: var(--signal); stroke-width: 1.4; stroke-linejoin: round; }
+
+  /* ── Hero: a drafting sheet ──────────────────────────────────────────── */
+  .cx-hero {
+    position: relative;
+    padding-block: clamp(2.5rem, 6vw, 5rem) clamp(3rem, 7vw, 5.5rem);
+    overflow: clip;
+  }
+  .cx-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: var(--grid-unit) var(--grid-unit);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 82%);
+    pointer-events: none;
+  }
+  .cx-hero__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 940px) { .cx-hero__inner { grid-template-columns: 1fr; } }
+
+  .cx-hero__head {
+    margin-block-start: clamp(1.1rem, 2.6vw, 1.75rem);
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    line-height: 1.06;
+    letter-spacing: -0.028em;
+    font-weight: 500;
+  }
+  .cx-hero__head span { display: block; }
+  .cx-hero__head span:last-child { color: var(--accent-deep); }
+  .cx-hero__lead {
+    margin-block-start: clamp(1.1rem, 2.2vw, 1.6rem);
+    font-size: var(--step-0);
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-inline-size: 46ch;
+  }
+  .cx-hero__markers { margin-block-start: var(--sp-6); display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .cx-hero__markers li {
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    padding-block: 0.4em;
+    padding-inline: 0.75em;
+    border: 1px solid color-mix(in oklab, var(--accent) 32%, transparent);
+    color: var(--accent-deep);
+    background: color-mix(in oklab, var(--surface-raise) 70%, transparent);
+  }
+
+  .cx-hero__sheet {
+    background: var(--surface-raise);
+    border: var(--rule);
+    padding: var(--cx-pad);
+    display: grid;
+    gap: var(--sp-5);
+  }
+  .cx-hero__fig svg { inline-size: 100%; block-size: auto; }
+  .cx-hero__fig .figure-note { margin-block-start: var(--sp-3); }
+  .cx-sheet__border { fill: none; stroke: var(--line); stroke-width: 1.2; }
+
+  .cx-hero__ann { display: block; }
+  .cx-hero__annh { display: block; margin-block-end: var(--sp-3); color: var(--signal-ink); }
+  .cx-calls { display: grid; gap: var(--sp-2); border-block-start: var(--rule); padding-block-start: var(--sp-3); }
+  .cx-calls li {
+    display: grid;
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: var(--sp-3);
+    align-items: baseline;
+    font-size: var(--step--1);
+    line-height: 1.5;
+    color: var(--ink-muted);
+  }
+  .cx-calls__n {
+    color: var(--signal-ink);
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cx-tblock {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+  }
+  .cx-tblock__cell {
+    background: var(--surface-raise);
+    padding-block: var(--sp-3);
+    padding-inline: var(--sp-4);
+    display: grid;
+    gap: 0.2rem;
+  }
+  .cx-tblock dd { font-size: var(--step--1); color: var(--ink); font-variant-numeric: tabular-nums; }
+  .cx-hero__note { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); max-inline-size: 52ch; }
+
+  /* Drafting motion: lines draw along their length, balloons snap in. */
+  @keyframes cx-draw { from { stroke-dashoffset: 620; } to { stroke-dashoffset: 0; } }
+  @keyframes cx-snap { from { opacity: 0; } to { opacity: 1; } }
+  .cx-cons {
+    stroke: var(--accent);
+    stroke-width: 0.7;
+    opacity: 0.35;
+    stroke-dasharray: 620;
+    stroke-dashoffset: 620;
+    animation: cx-draw 1500ms linear var(--d, 0ms) forwards;
+  }
+  .cx-call { opacity: 0; animation: cx-snap 120ms linear var(--d, 0ms) forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .cx-cons { animation: none; stroke-dashoffset: 0; }
+    .cx-call { animation: none; opacity: 1; }
+  }
+
+  /* ── 01 Arrivals atlas ───────────────────────────────────────────────── */
+  .cx-arr { padding-block: var(--section-y); border-block-start: var(--rule); }
+  .cx-atlas { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
+  .cx-atlas__row {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+  }
+  @media (max-width: 1000px) { .cx-atlas__row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .cx-atlas__row { grid-template-columns: 1fr; } }
+  .cx-atlas__cell {
+    background: var(--surface-raise);
+    padding-block: var(--sp-5) var(--sp-6);
+    padding-inline: var(--sp-4);
+    display: grid;
+    gap: var(--sp-3);
+    align-content: start;
+  }
+  .cx-atlas__cell svg { inline-size: 100%; block-size: auto; max-inline-size: 10rem; }
+  .cx-atlas__label { font-size: var(--step--2); letter-spacing: 0.1em; color: var(--accent-deep); text-transform: uppercase; }
+  :global(html[lang='zh']) .cx-atlas__label,
+  :global(html[lang='th']) .cx-atlas__label,
+  :global(html[lang='ar']) .cx-atlas__label,
+  :global(html[lang='fa']) .cx-atlas__label,
+  :global(html[lang='ur']) .cx-atlas__label {
+    font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: var(--step--1);
+  }
+  .cx-atlas__note { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
+  .cx-atlas .figure-note { margin-block-start: var(--sp-4); }
+
+  /* ── 02 Triage ───────────────────────────────────────────────────────── */
+  .cx-tri { padding-block: var(--section-y); background: var(--surface-sunk); border-block: var(--rule); }
+  .cx-tri__wrap {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 19rem) minmax(0, 1fr);
+    border: var(--rule);
+    background: var(--surface-raise);
+  }
+  @media (max-width: 980px) { .cx-tri__wrap { grid-template-columns: 1fr; } }
+
+  .cx-tri__rail { display: flex; flex-direction: column; border-inline-end: var(--rule); }
+  @media (max-width: 980px) {
+    .cx-tri__rail {
+      flex-direction: row;
+      overflow-x: auto; min-inline-size: 0; max-inline-size: 100%;
+      border-inline-end: 0;
+      border-block-end: var(--rule);
+    }
+    .cx-tri__rail .cx-tri__tab { flex: 0 0 auto; min-inline-size: 13rem; border-block-end: 0; border-inline-end: var(--rule); }
+  }
+  .cx-tri__tab {
+    display: grid;
+    grid-template-columns: 2.2rem minmax(0, 1fr);
+    gap: var(--sp-3);
+    align-items: baseline;
+    text-align: start;
+    padding-block: var(--sp-4);
+    padding-inline: var(--sp-4);
+    border-block-end: var(--rule);
+    border-inline-start: 3px solid transparent;
+    background: transparent;
+    color: var(--ink-muted);
+    transition: background-color var(--dur-2) linear, color var(--dur-2) linear, border-color var(--dur-1) linear;
+  }
+  .cx-tri__tab:last-child { border-block-end: 0; }
+  .cx-tri__tab:hover { background: var(--accent-wash); color: var(--accent-deep); }
+  .cx-tri__tab[aria-selected='true'] {
+    background: var(--accent-wash);
+    color: var(--ink);
+    border-inline-start-color: var(--signal-ink);
+  }
+  .cx-tri__no { font-size: var(--step--2); letter-spacing: 0.1em; color: var(--accent-deep); font-variant-numeric: tabular-nums; }
+  .cx-tri__tab[aria-selected='true'] .cx-tri__no { color: var(--signal-ink); }
+  .cx-tri__label { font-size: var(--step--1); line-height: 1.4; }
+
+  .cx-tri__stage { padding: var(--cx-pad); display: grid; gap: var(--sp-6); align-content: start; }
+  .cx-tri__fig { border: var(--rule); background: var(--surface); padding: var(--sp-4); }
+  .cx-tri__fig svg { inline-size: 100%; block-size: auto; }
+  .cx-tri__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  /* The whole thesis of the page in three declarations: the part is fixed,
+     the annotation layer cross-fades. */
+  .cx-ann { opacity: 0; transition: opacity var(--dur-3) linear; }
+  .cx-tri__wrap[data-active='photo'] .cx-ann[data-ann='photo'],
+  .cx-tri__wrap[data-active='broken'] .cx-ann[data-ann='broken'],
+  .cx-tri__wrap[data-active='benchmark'] .cx-ann[data-ann='benchmark'],
+  .cx-tri__wrap[data-active='sketch'] .cx-ann[data-ann='sketch'],
+  .cx-tri__wrap[data-active='cad'] .cx-ann[data-ann='cad'],
+  .cx-tri__wrap[data-active='obsolete'] .cx-ann[data-ann='obsolete'],
+  .cx-tri__wrap[data-active='production'] .cx-ann[data-ann='production'],
+  .cx-tri__wrap[data-active='cost'] .cx-ann[data-ann='cost'],
+  .cx-tri__wrap[data-active='supplier'] .cx-ann[data-ann='supplier'],
+  .cx-tri__wrap[data-active='idea'] .cx-ann[data-ann='idea'] { opacity: 1; }
+
+  @keyframes cx-fade { from { opacity: 0; } to { opacity: 1; } }
+  .cx-tri__panel { animation: cx-fade 240ms linear both; }
+  .cx-tri__panel[hidden] { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .cx-ann { transition: none; }
+    .cx-tri__panel { animation: none; }
+  }
+
+  .cx-tri__cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-block-start: var(--rule-strong);
+  }
+  @media (max-width: 820px) { .cx-tri__cols { grid-template-columns: 1fr; } }
+  .cx-tri__col { padding-block: var(--sp-5); padding-inline: 0 var(--sp-5); border-inline-end: var(--rule); }
+  .cx-tri__col:last-child { border-inline-end: 0; padding-inline-end: 0; }
+  @media (max-width: 820px) {
+    .cx-tri__col { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: 0; }
+    .cx-tri__col:last-child { border-block-end: 0; }
+  }
+  .cx-tri__col h3 { display: block; margin-block-end: var(--sp-4); }
+  .cx-tri__col--ask h3 { color: var(--signal-ink); }
+  .cx-tri__col ul { display: grid; gap: var(--sp-3); }
+  .cx-tri__col li {
+    font-size: var(--step--1);
+    line-height: 1.58;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .cx-tri__col li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.72em;
+    inline-size: 0.6rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .cx-tri__col--ask li::before { background: var(--signal); }
+  .cx-tri__col--back li { color: var(--ink); }
+
+  .cx-tri__first {
+    padding: var(--sp-5);
+    background: var(--surface-sunk);
+    border-inline-start: 3px solid var(--accent);
+    font-size: var(--step--1);
+    line-height: 1.62;
+    max-inline-size: 76ch;
+  }
+  .cx-tri__first span { display: block; margin-block-end: var(--sp-2); color: var(--accent-deep); }
+
+  /* ── 03 Reverse ──────────────────────────────────────────────────────── */
+  .cx-rev { padding-block: var(--section-y); }
+  .cx-rev__grid {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+  @media (max-width: 940px) { .cx-rev__grid { grid-template-columns: 1fr; } }
+  .cx-rev__fig {
+    border: var(--rule);
+    background: var(--surface-raise);
+    padding: var(--cx-pad);
+    position: sticky;
+    inset-block-start: clamp(5rem, 11vh, 7rem);
+  }
+  @media (max-width: 940px) { .cx-rev__fig { position: static; } }
+  .cx-rev__fig svg { inline-size: 100%; block-size: auto; }
+  .cx-rev__fig .figure-note { margin-block-start: var(--sp-3); }
+
+  .cx-rev__part { transition: opacity var(--dur-3) linear; }
+  .cx-rev[data-step='5'] .cx-rev__part { opacity: 0.18; }
+  .cx-lay { opacity: 0; transition: opacity var(--dur-3) linear; }
+  .cx-rev[data-step='0'] .cx-lay[data-lay='0'],
+  .cx-rev[data-step='1'] .cx-lay[data-lay='1'],
+  .cx-rev[data-step='2'] .cx-lay[data-lay='2'],
+  .cx-rev[data-step='3'] .cx-lay[data-lay='3'],
+  .cx-rev[data-step='4'] .cx-lay[data-lay='4'],
+  .cx-rev[data-step='5'] .cx-lay[data-lay='5'] { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    .cx-lay, .cx-rev__part, .cx-rev__step { transition: none; }
+  }
+
+  .cx-rev__steps { border-block-start: var(--rule-strong); }
+  .cx-rev__step {
+    display: grid;
+    grid-template-columns: 2.6rem minmax(0, 1fr);
+    gap: var(--sp-2) var(--sp-4);
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+    opacity: 0.46;
+    transition: opacity 320ms linear;
+  }
+  .cx-rev[data-step='0'] .cx-rev__step[data-station-step='0'],
+  .cx-rev[data-step='1'] .cx-rev__step[data-station-step='1'],
+  .cx-rev[data-step='2'] .cx-rev__step[data-station-step='2'],
+  .cx-rev[data-step='3'] .cx-rev__step[data-station-step='3'],
+  .cx-rev[data-step='4'] .cx-rev__step[data-station-step='4'],
+  .cx-rev[data-step='5'] .cx-rev__step[data-station-step='5'] { opacity: 1; }
+  @media (max-width: 940px) { .cx-rev__step { opacity: 1; } }
+  .cx-rev__i { grid-row: span 2; font-size: var(--step--2); letter-spacing: 0.1em; color: var(--accent-deep); }
+  .cx-rev__step p { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+
+  .cx-shrink {
+    margin-block-start: clamp(2.5rem, 5vw, 4rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+    padding-block-start: var(--sp-7);
+    border-block-start: var(--rule);
+  }
+  @media (max-width: 860px) { .cx-shrink { grid-template-columns: 1fr; } }
+  .cx-shrink__h { display: block; margin-block-end: var(--sp-4); }
+  .cx-scroll { overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
+  .cx-tbl { inline-size: 100%; min-inline-size: 20rem; border-collapse: collapse; font-size: var(--step--1); }
+  .cx-tbl th, .cx-tbl td {
+    text-align: start;
+    padding-block: var(--sp-3);
+    padding-inline: 0 var(--sp-4);
+    border-block-end: var(--rule);
+  }
+  .cx-tbl thead th {
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: var(--weight-regular);
+    border-block-end: var(--rule-strong);
+  }
+  :global(html[lang='zh']) .cx-tbl thead th,
+  :global(html[lang='th']) .cx-tbl thead th,
+  :global(html[lang='ar']) .cx-tbl thead th,
+  :global(html[lang='fa']) .cx-tbl thead th,
+  :global(html[lang='ur']) .cx-tbl thead th {
+    font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: var(--step--1);
+  }
+  .cx-tbl tbody th { font-weight: var(--weight-medium); }
+  .cx-tbl tbody td { color: var(--accent-deep); font-variant-numeric: tabular-nums; }
+
+  .cx-shrink__side { display: grid; gap: var(--sp-6); }
+  .cx-scan {
+    padding: var(--sp-5);
+    border: var(--rule);
+    border-inline-start: 3px solid var(--signal);
+    background: var(--surface-raise);
+  }
+  .cx-scan h3 { display: block; margin-block-end: var(--sp-3); color: var(--signal-ink); }
+  .cx-scan p { font-size: var(--step--1); line-height: 1.62; }
+
+  /* ── 04 Questions ledger ─────────────────────────────────────────────── */
+  .cx-q { padding-block: var(--section-y); background: var(--surface-sunk); border-block: var(--rule); }
+  .cx-q__ledger { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
+  .cx-q__legend {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--sp-5);
+    padding-block-end: var(--sp-3);
+  }
+  .cx-q__legend span:first-child { grid-column: 2; }
+  @media (max-width: 900px) { .cx-q__legend { display: none; } }
+
+  .cx-q__group {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: var(--sp-5);
+    border-block-start: var(--rule-strong);
+    padding-block-start: var(--sp-5);
+  }
+  @media (max-width: 900px) { .cx-q__group { grid-template-columns: 1fr; gap: var(--sp-4); } }
+  .cx-q__gname {
+    font-size: var(--step--2);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    align-self: start;
+    position: sticky;
+    inset-block-start: clamp(5rem, 11vh, 7rem);
+  }
+  @media (max-width: 900px) { .cx-q__gname { position: static; } }
+  :global(html[lang='zh']) .cx-q__gname,
+  :global(html[lang='th']) .cx-q__gname,
+  :global(html[lang='ar']) .cx-q__gname,
+  :global(html[lang='fa']) .cx-q__gname,
+  :global(html[lang='ur']) .cx-q__gname {
+    font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: var(--step--1);
+  }
+
+  .cx-q__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--sp-3) var(--sp-5);
+    padding-block: var(--sp-5);
+    border-block-end: var(--rule);
+  }
+  @media (max-width: 700px) { .cx-q__row { grid-template-columns: 1fr; } }
+  .cx-q__q { font-size: var(--step-0); line-height: 1.45; font-weight: var(--weight-medium); }
+  .cx-q__why { font-size: var(--step--1); line-height: 1.6; color: var(--ink-muted); }
+  .cx-q__assume {
+    grid-column: 1 / -1;
+    margin-block-start: var(--sp-2);
+    padding-inline-start: var(--sp-5);
+    border-inline-start: 2px solid var(--signal);
+    font-size: var(--step--1);
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .cx-q__assume span { display: block; color: var(--signal-ink); margin-block-end: var(--sp-1); }
+
+  /* ── 05 Gate track ───────────────────────────────────────────────────── */
+  .cx-gate { padding-block: var(--section-y); }
+  .cx-gate__scroll { margin-block-start: clamp(2rem, 5vw, 3.5rem); padding-block-start: var(--sp-5); }
+  .cx-gate__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    min-inline-size: 108rem;
+    border-block-start: var(--rule-strong);
+  }
+  .cx-gate__col {
+    padding-block: var(--sp-6);
+    padding-inline: 0 var(--sp-5);
+    border-inline-end: var(--rule);
+    display: grid;
+    gap: var(--sp-3);
+    align-content: start;
+    position: relative;
+  }
+  .cx-gate__col:last-child { border-inline-end: 0; }
+  .cx-gate__node {
+    position: absolute;
+    inset-block-start: -5px;
+    inset-inline-start: 0;
+    inline-size: 9px;
+    block-size: 9px;
+    background: var(--accent);
+  }
+  .cx-gate__col[data-hold='true'] { background: var(--accent-wash); padding-inline-start: var(--sp-5); }
+  .cx-gate__col[data-hold='true'] .cx-gate__node { background: var(--signal); inline-size: 13px; block-size: 13px; inset-block-start: -7px; }
+  .cx-gate__code { font-size: var(--step--2); letter-spacing: 0.12em; color: var(--accent-deep); }
+  .cx-gate__col[data-hold='true'] .cx-gate__code { color: var(--signal-ink); }
+  .cx-gate__body { font-size: var(--step--1); line-height: 1.55; color: var(--ink-muted); }
+  .cx-gate__leaves { font-size: var(--step--1); line-height: 1.55; }
+  .cx-gate__leaves span { display: block; color: var(--accent-deep); margin-block-end: var(--sp-1); }
+  .cx-gate__hold {
+    font-size: var(--step--2);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--signal-ink);
+    border-block-start: 1px solid var(--signal);
+    padding-block-start: var(--sp-2);
+  }
+  :global(html[lang='zh']) .cx-gate__hold,
+  :global(html[lang='th']) .cx-gate__hold,
+  :global(html[lang='ar']) .cx-gate__hold,
+  :global(html[lang='fa']) .cx-gate__hold,
+  :global(html[lang='ur']) .cx-gate__hold {
+    font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: var(--step--1);
+  }
+  @media (max-width: 820px) {
+    .cx-gate__track { grid-auto-flow: row; grid-auto-columns: auto; min-inline-size: 0; }
+    .cx-gate__col { border-inline-end: 0; border-block-end: var(--rule); padding-inline-start: var(--sp-5); }
+    .cx-gate__node { inset-block-start: var(--sp-6); }
+  }
+
+  /* ── 06 Routes ───────────────────────────────────────────────────────── */
+  .cx-rt { padding-block: var(--section-y); background: var(--surface-sunk); border-block: var(--rule); }
+  .cx-rt__wrap { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
+  .cx-rt__tabs { display: flex; flex-wrap: wrap; gap: 1px; background: var(--line); border: var(--rule); }
+  .cx-rt__tab {
+    flex: 1 1 9rem;
+    padding-block: 0.85rem;
+    padding-inline: 0.9rem;
+    background: var(--surface-raise);
+    font-size: var(--step--1);
+    font-weight: var(--weight-medium);
+    color: var(--ink-muted);
+    transition: background-color var(--dur-2) linear, color var(--dur-2) linear;
+  }
+  .cx-rt__tab:hover { background: var(--accent-wash); color: var(--accent-deep); }
+  .cx-rt__tab[aria-selected='true'] { background: var(--accent-deep); color: #fff; }
+  .cx-rt__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.45fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    padding: var(--cx-pad);
+    border: var(--rule);
+    border-block-start: 0;
+    background: var(--surface-raise);
+    align-items: start;
+    animation: cx-fade 240ms linear both;
+  }
+  .cx-rt__panel[hidden] { display: none; }
+  @media (prefers-reduced-motion: reduce) { .cx-rt__panel { animation: none; } }
+  @media (max-width: 780px) { .cx-rt__panel { grid-template-columns: 1fr; } }
+  .cx-rt__fig svg { inline-size: 100%; block-size: auto; max-inline-size: 16rem; }
+  .cx-rt__cap { display: grid; gap: var(--sp-2); margin-block-start: var(--sp-3); }
+  .cx-rt__mark {
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--signal-ink);
+  }
+  :global(html[lang='zh']) .cx-rt__mark,
+  :global(html[lang='th']) .cx-rt__mark,
+  :global(html[lang='ar']) .cx-rt__mark,
+  :global(html[lang='fa']) .cx-rt__mark,
+  :global(html[lang='ur']) .cx-rt__mark {
+    font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: var(--step--1);
+  }
+  .cx-rt__spec { display: grid; border-block-start: var(--rule); }
+  .cx-rt__spec > div {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: var(--sp-4);
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    align-items: baseline;
+  }
+  @media (max-width: 620px) { .cx-rt__spec > div { grid-template-columns: 1fr; gap: 0.25rem; } }
+  .cx-rt__spec dd { font-size: var(--step--1); line-height: 1.6; }
+
+  /* ── 07 Boundary ─────────────────────────────────────────────────────── */
+  .cx-bnd { padding-block: var(--section-y); }
+  .cx-bnd__line {
+    margin-block-start: clamp(1.75rem, 4vw, 2.75rem);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    max-inline-size: 62ch;
+    padding-inline-start: var(--sp-6);
+    border-inline-start: 3px solid var(--signal);
+  }
+  .cx-bnd__cols {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  @media (max-width: 860px) { .cx-bnd__cols { grid-template-columns: 1fr; } }
+  .cx-list { margin-block-start: var(--sp-5); border-block-start: var(--rule-strong); }
+  .cx-list li {
+    padding-block: var(--sp-4);
+    padding-inline-start: var(--sp-5);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.58;
+    position: relative;
+  }
+  .cx-list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.35rem;
+    inline-size: 0.7rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+  .cx-bnd__col--stay .cx-list li { color: var(--ink-muted); }
+  .cx-bnd__col--stay .cx-list li::before { background: var(--ink-muted); }
+
+  .cx-refuse {
+    margin-block-start: clamp(2.5rem, 5vw, 4rem);
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    border: var(--rule);
+    border-inline-start: 3px solid var(--signal);
+    background: var(--surface-raise);
+  }
+  .cx-refuse__list {
+    margin-block-start: var(--sp-5);
+    border-block-start: var(--rule);
+  }
+  .cx-refuse__list li {
+    padding-block: var(--sp-4);
+    border-block-end: var(--rule);
+    display: grid;
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: var(--sp-3);
+    font-size: var(--step--1);
+    line-height: 1.6;
+    max-inline-size: 92ch;
+  }
+  .cx-refuse__list li:last-child { border-block-end: 0; }
+  .cx-refuse__list li span:first-child {
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    color: var(--signal-ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── 08 Package ──────────────────────────────────────────────────────── */
+  .cx-pk { padding-block: var(--section-y); background: var(--surface-sunk); border-block-start: var(--rule); }
+  .cx-tiers {
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: var(--line);
+    border: var(--rule);
+  }
+  @media (max-width: 860px) { .cx-tiers { grid-template-columns: 1fr; } }
+  .cx-tier {
+    background: var(--surface-raise);
+    padding-block: var(--sp-6);
+    padding-inline: var(--sp-5);
+    display: grid;
+    gap: var(--sp-3);
+    align-content: start;
+  }
+  .cx-tier__code { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
+  .cx-tier__items { margin-block-start: var(--sp-3); border-block-start: var(--rule); }
+  .cx-tier__items li {
+    padding-block: var(--sp-3);
+    padding-inline-start: var(--sp-6);
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    line-height: 1.55;
+    color: var(--ink-muted);
+    position: relative;
+  }
+  /* Hairline squares, drawn rather than styled controls. */
+  .cx-tier__items li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.05rem;
+    inline-size: 0.7rem;
+    block-size: 0.7rem;
+    border: 1px solid var(--accent);
+  }
+  .cx-tier:last-child .cx-tier__items li::before { border-color: var(--signal-ink); }
+  .cx-tier__note { margin-block-start: var(--sp-3); font-size: var(--step--2); line-height: 1.55; color: var(--accent-deep); }
+
+  .cx-panels { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
+  .cx-panels__h { display: block; margin-block-end: var(--sp-4); }
+  .cx-panel__list { display: grid; gap: var(--sp-3); max-inline-size: 82ch; }
+  .cx-panel__list li {
+    font-size: var(--step--1);
+    line-height: 1.62;
+    color: var(--ink-muted);
+    padding-inline-start: var(--sp-5);
+    position: relative;
+  }
+  .cx-panel__list li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 0.75em;
+    inline-size: 0.6rem;
+    block-size: 1px;
+    background: var(--accent);
+  }
+</style>

@@ -1,0 +1,393 @@
+---
+/**
+ * LANGUAGE SELECTOR — the root of the site.
+ *
+ * Shown on every root visit, deliberately, even to a returning visitor: it is
+ * the first thing the company says, and what it says is "we work in nine
+ * languages". A silent redirect would throw that away to save one click.
+ *
+ * Each tile carries its language's own script at display size and a line of real
+ * copy in that language, so the breadth is demonstrated rather than claimed.
+ */
+import Base from '../layouts/Base.astro';
+import Wordmark from '../components/Wordmark.astro';
+import SheetFrame from '../components/SheetFrame.astro';
+import { LOCALES, LOCALE_ORDER } from '../i18n/locales.ts';
+import { SELECTOR, SELECT_LABEL } from '../i18n/selector.ts';
+import { BRAND, FACTS } from '../config/site.ts';
+
+const meta = {
+  title: `${BRAND.name} — Engineering, tooling, manufacturing and supply of moulded components`,
+  description:
+    'From an idea, photograph, sample or drawing to mass production. Mould design and manufacture, part engineering, production and continuous supply. Nine languages. Manufacturing since 2006.',
+};
+
+// The label rule reads left to right in nine scripts; direction is set per span
+// so the Arabic-script entries render correctly inside an LTR line.
+const labels = LOCALE_ORDER.map((code) => ({ code, text: SELECT_LABEL[code], dir: LOCALES[code].dir }));
+
+// The selector runs on its own restrained palette — lighter and cooler than any
+// vertical, because it belongs to none of them.
+const SHEET = [
+  '--surface:#F7F7F5',
+  '--surface-raise:#FFFFFF',
+  '--ink:#16181B',
+  '--ink-muted:#6A6F75',
+  '--line:#D8D9D5',
+  '--accent:#1F4E66',
+  '--accent-deep:#123647',
+].join(';');
+---
+
+<Base locale="en" meta={meta} isSelector paletteStyle={SHEET}>
+  <SheetFrame>
+    <main class="sel" id="main">
+      <header class="sel__head">
+        <Wordmark size="sm" />
+        <p class="sel__est t-mono">
+          <span>EST. {FACTS.sinceYear}</span>
+          <span aria-hidden="true" class="sel__dot"></span>
+          <span>{FACTS.projectsCompleted.toLocaleString('en-US')}+ PROJECTS</span>
+        </p>
+      </header>
+
+      <div class="sel__intro">
+        <h1 class="sel__title">
+          <span class="sel__title-line">Engineering. Tooling.</span>
+          <span class="sel__title-line">Manufacturing. Supply.</span>
+        </h1>
+        <p class="sel__lead">
+          One accountable partner from an idea, a photograph, a sample or a drawing
+          through to tooling, production and continuous supply.
+        </p>
+      </div>
+
+      <div class="sel__rule" aria-hidden="true">
+        <ul class="sel__labels">
+          {labels.map(({ code, text, dir }) => (
+            <li lang={LOCALES[code].tag} dir={dir}>{text}</li>
+          ))}
+        </ul>
+      </div>
+
+      <nav class="sel__grid" aria-label="Select language">
+        {LOCALE_ORDER.map((code, i) => {
+          const l = LOCALES[code];
+          const tile = SELECTOR[code];
+          return (
+            <a
+              class="tile"
+              href={`/${code}/`}
+              lang={l.tag}
+              dir={l.dir}
+              data-code={code}
+              style={`--i:${i}`}
+            >
+              <span class="tile__index t-mono" dir="ltr">{String(i + 1).padStart(2, '0')}</span>
+              <span class="tile__native">{l.native}</span>
+              <span class="tile__promise">{tile.promise}</span>
+              <span class="tile__foot">
+                <span class="tile__english" dir="ltr" lang="en">{l.english}</span>
+                <span class="tile__code t-mono" dir="ltr">{code.toUpperCase()}</span>
+              </span>
+              <span class="tile__enter" aria-hidden="true">{tile.enter}</span>
+              <span class="tile__hint t-mono" dir="ltr" lang="en" hidden>Your browser</span>
+            </a>
+          );
+        })}
+      </nav>
+
+      <footer class="sel__foot">
+        <p class="t-fine">
+          Nine languages. One accountable partner for engineering, tooling,
+          production and supply.
+        </p>
+        <p class="t-fine sel__origin">{BRAND.name} · Persian engineering since {FACTS.sinceYear}</p>
+      </footer>
+    </main>
+  </SheetFrame>
+</Base>
+
+<script>
+  /**
+   * The visitor's browser language is *hinted*, never acted on. The tile is
+   * marked so it is easy to find in a grid of nine unfamiliar scripts; the
+   * choice itself stays with the visitor.
+   */
+  import { matchLocale } from '../i18n/locales.ts';
+
+  const guess = matchLocale(navigator.language) ?? matchLocale(navigator.languages?.[0]);
+  if (guess) {
+    const tile = document.querySelector<HTMLElement>(`.tile[data-code="${guess}"]`);
+    const hint = tile?.querySelector<HTMLElement>('.tile__hint');
+    if (tile && hint) {
+      tile.dataset.suggested = 'true';
+      hint.hidden = false;
+    }
+  }
+</script>
+
+<style>
+  .sel {
+    --sheet: var(--surface);
+    --sel-ink: var(--ink);
+    --sel-muted: var(--ink-muted);
+    --sel-line: var(--line);
+    --sel-accent: var(--accent);
+
+    min-block-size: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto auto;
+    gap: clamp(0.85rem, 2.1vh, 1.75rem);
+    padding: clamp(1.1rem, 2.3vw, 2.4rem);
+    color: var(--sel-ink);
+  }
+
+  /* ── Head ──────────────────────────────────────────────────────────────── */
+  .sel__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-5);
+    flex-wrap: wrap;
+  }
+  .sel__est {
+    display: flex;
+    align-items: center;
+    gap: 0.9ch;
+    font-size: var(--step--2);
+    letter-spacing: 0.16em;
+    color: var(--sel-muted);
+  }
+  .sel__dot {
+    inline-size: 3px; block-size: 3px;
+    background: currentColor;
+    display: inline-block;
+    opacity: 0.6;
+  }
+
+  /* ── Intro ─────────────────────────────────────────────────────────────── */
+  .sel__intro {
+    align-self: center;
+    max-inline-size: 46rem;
+  }
+  .sel__title {
+    font-size: clamp(1.8rem, 4vw, 3.05rem);
+    line-height: 1.03;
+    letter-spacing: -0.028em;
+    font-weight: 500;
+  }
+  .sel__title-line { display: block; }
+  .sel__title-line:last-child { color: var(--sel-muted); }
+  .sel__lead {
+    margin-block-start: clamp(0.75rem, 1.5vw, 1.25rem);
+    font-size: var(--step-0);
+    line-height: 1.55;
+    color: var(--sel-muted);
+    max-inline-size: 40rem;
+  }
+
+  /* ── The nine-script rule ──────────────────────────────────────────────── */
+  .sel__rule {
+    border-block-start: 1px solid var(--sel-line);
+    padding-block-start: var(--sp-3);
+    overflow: hidden;
+  }
+  .sel__labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.6ch;
+    font-family: var(--font-mono);
+    font-size: var(--step--2);
+    letter-spacing: 0.1em;
+    color: var(--sel-muted);
+  }
+  .sel__labels li {
+    display: flex;
+    align-items: center;
+    /* Each label is its own bidi run, so an Arabic-script entry cannot drag the
+       separator around it to the wrong side. */
+    unicode-bidi: isolate;
+  }
+  .sel__labels li + li::before {
+    content: '/';
+    margin-inline-end: 1.6ch;
+    opacity: 0.4;
+  }
+  /* Non-Latin scripts should not be tracked out like a Latin label. */
+  .sel__labels li:not([lang='en']):not([lang='tr']) {
+    font-family: inherit;
+    letter-spacing: 0;
+  }
+  .sel__labels li[lang='hy'] { font-family: var(--font-armenian); }
+  .sel__labels li[lang='th'] { font-family: var(--font-thai); }
+  .sel__labels li[lang='zh-Hans'] { font-family: var(--font-han); }
+  .sel__labels li[lang='ar'] { font-family: var(--font-arabic); }
+  .sel__labels li[lang='fa'] { font-family: var(--font-persian); }
+  .sel__labels li[lang='ur'] { font-family: var(--font-urdu); }
+  .sel__labels li[lang='ru'] { font-family: var(--font-cyrillic); }
+
+  /* ── Grid ──────────────────────────────────────────────────────────────── */
+  .sel__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* A hairline lattice made of gaps, not borders: the sheet shows through. */
+    gap: 1px;
+    background: var(--sel-line);
+    border: 1px solid var(--sel-line);
+  }
+  @media (max-width: 860px) { .sel__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 520px) { .sel__grid { grid-template-columns: 1fr; } }
+
+  .tile {
+    --tile-pad: clamp(0.85rem, 1.7vw, 1.3rem);
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.4rem;
+    padding: var(--tile-pad);
+    background: var(--sheet);
+    min-block-size: clamp(6rem, 11.5vh, 9rem);
+    overflow: hidden;
+    transition:
+      background-color 260ms cubic-bezier(0.16, 1, 0.3, 1),
+      color 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .tile__index {
+    font-size: var(--step--2);
+    letter-spacing: 0.14em;
+    color: var(--sel-muted);
+    justify-self: start;
+    transition: color 260ms;
+  }
+
+  .tile__native {
+    font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+    line-height: 1.12;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    align-self: end;
+  }
+  /* Nastaliq needs vertical room or the descenders collide with the line below. */
+  .tile[data-code='ur'] .tile__native { line-height: 1.75; font-size: clamp(1.15rem, 1.9vw, 1.55rem); }
+  .tile[data-code='th'] .tile__native { line-height: 1.35; }
+  .tile[lang='hy'] .tile__native,
+  .tile[lang='fa'] .tile__native,
+  .tile[lang='ar'] .tile__native { letter-spacing: 0; }
+
+  .tile__promise {
+    font-size: var(--step--1);
+    line-height: 1.45;
+    color: var(--sel-muted);
+    transition: color 260ms, opacity 260ms;
+    /* Two lines maximum: the promise is a signal, not a paragraph. */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .tile[data-code='ur'] .tile__promise { line-height: 2; -webkit-line-clamp: 1; }
+  .tile[data-code='th'] .tile__promise { line-height: 1.7; }
+
+  .tile__foot {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    padding-block-start: 0.5rem;
+    border-block-start: 1px solid var(--sel-line);
+    transition: border-color 260ms;
+  }
+  .tile__english { font-size: var(--step--2); color: var(--sel-muted); transition: color 260ms; }
+  .tile__code {
+    font-size: var(--step--2);
+    letter-spacing: 0.14em;
+    color: var(--sel-muted);
+    transition: color 260ms;
+  }
+
+  /* The action label slides up from under the foot rule on hover. */
+  .tile__enter {
+    position: absolute;
+    inset-block-end: var(--tile-pad);
+    inset-inline-start: var(--tile-pad);
+    inset-inline-end: var(--tile-pad);
+    font-size: var(--step--2);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(0.6em);
+    transition: opacity 220ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* A rule that draws across the top edge as the tile is engaged. */
+  .tile::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: 2px;
+    background: var(--sel-accent);
+    transform: scaleX(0);
+    transform-origin: inline-start;
+    transition: transform 340ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (hover: hover) {
+    .tile:hover { background: var(--sel-ink); color: #fff; }
+    .tile:hover::before { transform: scaleX(1); }
+    .tile:hover .tile__index,
+    .tile:hover .tile__english,
+    .tile:hover .tile__code { color: rgb(255 255 255 / 0.62); }
+    .tile:hover .tile__promise { opacity: 0; }
+    .tile:hover .tile__foot { border-color: rgb(255 255 255 / 0.22); }
+    .tile:hover .tile__enter { opacity: 1; transform: translateY(-1.55em); }
+  }
+
+  .tile:focus-visible {
+    outline: 2px solid var(--sel-accent);
+    outline-offset: -4px;
+    background: var(--sel-ink);
+    color: #fff;
+  }
+  .tile:focus-visible::before { transform: scaleX(1); }
+  .tile:focus-visible .tile__index,
+  .tile:focus-visible .tile__english,
+  .tile:focus-visible .tile__code { color: rgb(255 255 255 / 0.62); }
+
+  /* Browser-language hint. A marker, not a redirect. */
+  .tile__hint {
+    position: absolute;
+    inset-block-start: var(--tile-pad);
+    inset-inline-end: var(--tile-pad);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    color: var(--sel-accent);
+    border: 1px solid currentColor;
+    padding: 0.2em 0.5em;
+    white-space: nowrap;
+  }
+  .tile:hover .tile__hint,
+  .tile:focus-visible .tile__hint { color: #fff; opacity: 0.8; }
+
+  /* ── Foot ──────────────────────────────────────────────────────────────── */
+  .sel__foot {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-5);
+    flex-wrap: wrap;
+    color: var(--sel-muted);
+  }
+  .sel__origin { color: var(--sel-muted); }
+
+  @media (max-width: 640px) {
+    .sel { grid-template-rows: auto auto auto auto auto; }
+    .sel__intro { align-self: start; }
+  }
+</style>
