@@ -1064,7 +1064,8 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
     border-block-start: var(--rule-strong);
   }
   .el-ins__step {
-    padding: var(--sp-5) var(--sp-4) var(--sp-6) 0;
+    padding-block: var(--sp-5) var(--sp-6);
+    padding-inline: var(--col-pad) var(--sp-4);
     border-inline-end: var(--rule);
     display: grid;
     gap: 0.4rem;
@@ -1072,13 +1073,14 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
     opacity: 0.45;
     transition: opacity 300ms var(--ease-mech);
   }
+  .el-ins__step:first-child { padding-inline-start: 0; }
   .el-ins__step:last-child { border-inline-end: 0; }
   .el-ins[data-step='0'] .el-ins__step[data-station-step='0'],
   .el-ins[data-step='1'] .el-ins__step[data-station-step='1'],
   .el-ins[data-step='2'] .el-ins__step[data-station-step='2'],
   .el-ins[data-step='3'] .el-ins__step[data-station-step='3'] { opacity: 1; }
   @media (max-width: 760px) {
-    .el-ins__step { opacity: 1; border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: 0; }
+    .el-ins__step { opacity: 1; border-inline-end: 0; border-block-end: var(--rule); padding-inline: 0; }
   }
   .el-ins__step span { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
   .el-ins__step h3 { font-size: var(--step-1); letter-spacing: var(--track-head); font-weight: var(--weight-medium); }

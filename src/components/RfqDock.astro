@@ -1,0 +1,86 @@
+---
+/**
+ * MOBILE REQUEST DOCK
+ *
+ * A buyer reading an industry chapter on a phone is 9,000 pixels from the
+ * closing call to action for most of the time they are on the page. This is
+ * the answer to that, and it is deliberately restrained: one line of context,
+ * one action, no dismissal cross, no timer, no pop-up.
+ *
+ * It appears only after the hero has passed and hides again once the page's
+ * own call to action is on screen, so the same action is never offered twice
+ * in one view. Phone and small tablet only — on a desktop the header is always
+ * in reach and a docked bar would just be chrome.
+ *
+ * Every string comes from the locale's `common.json`, so it is a real sentence
+ * in all nine languages rather than an English label with a translated button.
+ */
+import WhatsAppButton from './WhatsAppButton.astro';
+import { getCommon } from '../content/index.ts';
+import type { Locale } from '../i18n/locales.ts';
+import type { CtaSource } from '../lib/contact.ts';
+
+interface Props {
+  locale: Locale;
+  /** The message pre-filled into WhatsApp — vertical-specific where possible. */
+  prefill: string;
+  source: CtaSource;
+}
+const { locale, prefill, source } = Astro.props;
+const c = getCommon(locale);
+---
+
+<div class="rfq-dock" data-rfq-dock hidden>
+  <div class="rfq-dock__inner">
+    <div class="rfq-dock__copy">
+      <p class="rfq-dock__t">{c.contact.heading}</p>
+      <p class="rfq-dock__n">{c.trust.response}</p>
+    </div>
+    <WhatsAppButton
+      locale={locale}
+      prefill={prefill}
+      label={c.actions.sendProject}
+      source={source}
+      size="sm"
+    />
+  </div>
+</div>
+
+<script>
+  /**
+   * Shown between the hero and the closing call to action. Two observers, no
+   * scroll listener: one watches the hero leave, the other watches the page's
+   * own CTA arrive, and the bar is only docked while the first has happened
+   * and the second has not.
+   */
+  const dock = document.querySelector<HTMLElement>('[data-rfq-dock]');
+  if (dock) {
+    const hero = document.querySelector('#hero, [data-hero], main > :first-child');
+    const cta = document.querySelector('#contact');
+
+    let pastHero = false;
+    let atCta = false;
+    const sync = () => {
+      dock.hidden = false;
+      dock.dataset.dock = pastHero && !atCta ? 'in' : 'out';
+    };
+
+    if (hero) {
+      new IntersectionObserver(
+        ([e]) => { pastHero = !e.isIntersecting; sync(); },
+        { threshold: 0, rootMargin: '-120px 0px 0px 0px' },
+      ).observe(hero);
+    } else {
+      pastHero = true;
+    }
+
+    if (cta) {
+      new IntersectionObserver(
+        ([e]) => { atCta = e.isIntersecting; sync(); },
+        { threshold: 0 },
+      ).observe(cta);
+    }
+
+    sync();
+  }
+</script>

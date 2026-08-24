@@ -29,15 +29,39 @@ const W = 640;
 <section class="pr" id="process" data-stepper data-step="0">
   <div class="shell--wide pr__head">
     <p class="eyebrow">{process.kicker}</p>
-    <div class="ruled-head pr__ruled">
-      <h2 class="t-h2 pr__title">{process.heading}</h2>
-      <p class="t-lead">{process.lead}</p>
+    <div class="pr__ruled split">
+      <h2 class="t-statement t-statement--wide pr__title" data-split-copy>{process.heading}</h2>
+      <p class="t-lead pr__lead" data-split-figure>{process.lead}</p>
     </div>
+  </div>
+
+  {/* ── The chain, stated as a chain ──────────────────────────────────────
+      Five links on one continuous rail. It is the section's argument in one
+      object: the stages are connected, they run in one direction, and each is
+      a discrete block with its own edges — which is what makes the line under
+      it ("every stage can also be bought on its own") credible rather than a
+      claim bolted onto a diagram of a pipeline.
+
+      It is also the navigation. Each link scrolls to its own step, so a
+      salesperson in a meeting can jump straight to tooling. */}
+  <div class="shell--wide pr__chain-wrap">
+    <ol class="pr__chain" data-nomirror>
+      {process.steps.map((step, i) => (
+        <li class="pr__link-cell" data-chain-link={i} style={`--l:${i}`}>
+          <a class="pr__link-btn" href={`#stage-${i}`} data-chain-jump={i}>
+            <span class="pr__link-node" aria-hidden="true"></span>
+            <span class="pr__link-n t-mono">{step.index}</span>
+            <span class="pr__link-t">{step.title}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+    <p class="pr__modular-note">{process.modular}</p>
   </div>
 
   <div class="pr__stage-wrap shell--wide">
     <div class="pr__viewport">
-      <figure class="pr__fig" aria-label={schematicLabel}>
+      <figure class="pr__fig on-steel mat mat--milled" aria-label={schematicLabel}>
         <svg viewBox={`0 0 ${W} 520`} class="pr__svg" role="img" aria-label={schematicLabel} data-nomirror preserveAspectRatio="xMidYMid meet">
           <defs>
             <pattern id="pr-hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
@@ -276,23 +300,20 @@ const W = 640;
     {/* ── Steps ────────────────────────────────────────────────────────── */}
     <ol class="pr__steps">
       {process.steps.map((step, i) => (
-        <li class="pr__step" data-station-step={i}>
+        <li class="pr__step" id={`stage-${i}`} data-station-step={i}>
           <div class="pr__step-head">
             <span class="pr__step-n t-mono">{step.index}</span>
             <h3 class="pr__step-t">{step.title}</h3>
           </div>
           <p class="pr__step-b">{step.body}</p>
-          <ul class="pr__markers">
-            {step.markers.map((m) => <li class="t-mono">{m}</li>)}
+          <ul class="pr__markers badges">
+            {step.markers.map((m) => <li class="badge">{m}</li>)}
           </ul>
         </li>
       ))}
     </ol>
   </div>
 
-  <div class="shell--wide pr__modular">
-    <p class="pr__modular-text">{process.modular}</p>
-  </div>
 </section>
 
 <style>
@@ -302,9 +323,135 @@ const W = 640;
     border-block: var(--rule);
   }
 
-  .pr__head { margin-block-end: clamp(2.5rem, 6vw, 5rem); }
-  .pr__ruled { margin-block-start: var(--sp-5); }
-  .pr__title { max-inline-size: 18ch; }
+  .pr__head { margin-block-end: clamp(1.75rem, 4vw, 3rem); }
+  .pr__ruled {
+    margin-block-start: var(--sp-5);
+    padding-block-start: var(--sp-6);
+    border-block-start: var(--rule-strong);
+    --split-a: 1.2fr;
+    --split-b: 0.8fr;
+    --split-align: end;
+  }
+  /* The supporting paragraph sits on the last line of the statement rather than
+     at the top of a narrow second column — which is what made this section
+     read as a headline with an orphaned note beside it. */
+  .pr__lead { max-inline-size: 44ch; padding-block-end: 0.35em; }
+
+  /* ── The chain ──────────────────────────────────────────────────────────
+     Five links on one rail. The connector runs behind the nodes so the row
+     reads as one continuous object; the small gap between the cells is what
+     says a link can be taken on its own.
+
+     `data-nomirror` keeps it running left to right in Arabic, Persian and
+     Urdu. That is deliberate and it matches every other technical drawing on
+     the site: a process flow is a diagram, and a diagram reads the same way
+     in Tehran as it does in Yerevan. */
+  .pr__chain-wrap { margin-block-end: clamp(2.5rem, 6vw, 4.5rem); }
+
+  .pr__chain {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2px;
+    position: relative;
+    counter-reset: link;
+  }
+  /* The rail itself. */
+  .pr__chain::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 1.57rem;
+    inset-inline: 10%;
+    block-size: 2px;
+    background: var(--line);
+    z-index: 0;
+  }
+  .pr__link-cell { position: relative; z-index: 1; min-inline-size: 0; }
+
+  /* The cells are transparent so the rail behind them stays continuous — a
+     chain with the links painted over is just five circles. */
+  .pr__link-btn {
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 0.5rem 1rem;
+    text-align: center;
+    background: transparent;
+    transition: background-color var(--dur-3) var(--ease-out);
+  }
+  .pr__link-node {
+    inline-size: 1.35rem;
+    block-size: 1.35rem;
+    border: 2px solid var(--line);
+    background: var(--surface);
+    border-radius: 50%;
+    transition: border-color var(--dur-3) var(--ease-out), background-color var(--dur-3) var(--ease-out), transform var(--dur-3) var(--ease-out);
+  }
+  .pr__link-n {
+    font-size: var(--step--2);
+    letter-spacing: 0.14em;
+    color: var(--ink-muted);
+    transition: color var(--dur-3) var(--ease-out);
+  }
+  .pr__link-t {
+    font-size: var(--step-0);
+    font-weight: var(--weight-medium);
+    line-height: 1.2;
+    letter-spacing: var(--track-head);
+    text-wrap: balance;
+  }
+
+  .pr__link-btn:hover .pr__link-node,
+  .pr__link-btn:focus-visible .pr__link-node { border-color: var(--accent); }
+  .pr__link-btn:hover { background: color-mix(in oklab, var(--ink) 5%, transparent); }
+
+  /* The active link tracks the stepper below it. */
+  .pr[data-step='0'] [data-chain-link='0'] .pr__link-node,
+  .pr[data-step='1'] [data-chain-link='1'] .pr__link-node,
+  .pr[data-step='2'] [data-chain-link='2'] .pr__link-node,
+  .pr[data-step='3'] [data-chain-link='3'] .pr__link-node,
+  .pr[data-step='4'] [data-chain-link='4'] .pr__link-node {
+    border-color: var(--accent);
+    background: var(--accent);
+    transform: scale(1.12);
+  }
+  .pr[data-step='0'] [data-chain-link='0'] .pr__link-n,
+  .pr[data-step='1'] [data-chain-link='1'] .pr__link-n,
+  .pr[data-step='2'] [data-chain-link='2'] .pr__link-n,
+  .pr[data-step='3'] [data-chain-link='3'] .pr__link-n,
+  .pr[data-step='4'] [data-chain-link='4'] .pr__link-n { color: var(--accent-deep); }
+
+  .pr__modular-note {
+    margin-block-start: var(--sp-5);
+    padding-block-start: var(--sp-4);
+    border-block-start: var(--rule);
+    font-size: var(--step-0);
+    line-height: 1.5;
+    color: var(--ink-muted);
+    max-inline-size: 84ch;
+  }
+
+  /* Stacked progression on a phone: the rail runs down the leading edge and
+     the five links become a real vertical sequence. */
+  @media (max-width: 820px) {
+    .pr__chain { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .pr__chain::before {
+      inset-block: 1.4rem 1.4rem;
+      inset-inline: 0.65rem auto;
+      inline-size: 2px;
+      block-size: auto;
+    }
+    .pr__link-btn {
+      grid-template-columns: auto auto minmax(0, 1fr);
+      justify-items: start;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: start;
+      padding: 0.7rem 0.5rem;
+      background: transparent;
+    }
+    .pr__link-btn:hover { background: color-mix(in oklab, var(--ink) 4%, transparent); }
+    .pr__link-node { inline-size: 1.35rem; block-size: 1.35rem; }
+  }
 
   .pr__stage-wrap {
     display: grid;
@@ -325,12 +472,21 @@ const W = 640;
     .pr__viewport { position: static; margin-block-end: var(--sp-8); }
   }
 
+  /* ── The light table ────────────────────────────────────────────────────
+     The drawing used to be grey line on white, which at this scale disappeared
+     into the page. On a dark plate it becomes a blueprint: the same geometry,
+     read the way a toolmaker reads it, and the one element in the section that
+     the eye goes to first.
+
+     `on-steel` does the whole token flip — surface, ink, rules, accent — so
+     the SVG's own `var(--surface-raise)` fills become dark steel rather than
+     paper without a single colour being restated here. */
   .pr__fig {
     margin: 0;
-    background: var(--surface-raise);
-    border: var(--rule);
+    background: var(--steel-900);
+    border: 1px solid color-mix(in oklab, var(--ink) 18%, transparent);
     padding: clamp(0.75rem, 2vw, 1.5rem);
-    color: var(--ink);
+    box-shadow: var(--relief-dark);
   }
   .pr__svg {
     inline-size: 100%;
@@ -462,15 +618,4 @@ const W = 640;
   }
 
   /* ── Modularity note ──────────────────────────────────────────────────── */
-  .pr__modular {
-    margin-block-start: clamp(3rem, 7vw, 5.5rem);
-    padding-block-start: var(--sp-6);
-    border-block-start: var(--rule-strong);
-  }
-  .pr__modular-text {
-    font-size: var(--step-1);
-    line-height: 1.5;
-    max-inline-size: 68ch;
-    color: var(--ink);
-  }
 </style>

@@ -284,15 +284,21 @@ const schemas = [
     border-block-start: var(--rule-strong);
   }
   .ct-step {
-    padding: var(--sp-5) var(--sp-5) var(--sp-7) 0;
+    /* Logical, and padded on both sides of the divider. The four-value
+       `padding` shorthand used here before set its zero on the physical left,
+       so in Arabic, Persian and Urdu the air ended up on the wrong side of
+       the rule as well as being absent from the other. */
+    padding-block: var(--sp-5) var(--sp-7);
+    padding-inline: var(--col-pad) var(--sp-5);
     border-inline-end: var(--rule);
     display: grid;
     gap: var(--sp-3);
     align-content: start;
   }
+  .ct-step:first-child { padding-inline-start: 0; }
   .ct-step:last-child { border-inline-end: 0; }
   @media (max-width: 760px) {
-    .ct-step { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: 0; }
+    .ct-step { border-inline-end: 0; border-block-end: var(--rule); padding-inline: 0; }
   }
   .ct-step__n { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }
   .ct-step__t { font-size: var(--step-1); letter-spacing: var(--track-head); }

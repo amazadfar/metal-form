@@ -44,6 +44,39 @@ export interface IndustryPalette {
   inverseInk: string;
 }
 
+/**
+ * ── Per-vertical art direction ──────────────────────────────────────────────
+ * The thirteen chapters have to read as thirteen chapters of one book. A
+ * different accent colour does not achieve that — it produces one page
+ * thirteen times in thirteen tints, which is exactly what the first version
+ * of this site did.
+ *
+ * So the difference is carried by four things that are chosen here and
+ * implemented once, in `chapters.css`, rather than reinvented per page:
+ *
+ *   ground   what the chapter opens on — steel, the vertical's own light
+ *            surface, or a saturated tint of its accent
+ *   hero     the composition archetype of the opening
+ *   texture  the surface treatment, chosen from the sector's own material:
+ *            a cavity array is dots, a mould plate is hatch, a pitch comb is
+ *            vertical rules, a hull is a swell
+ *   weight   how dense the chapter's section rhythm runs
+ *
+ * No two neighbouring verticals share a ground and a texture, so scrolling
+ * from one chapter to the next never feels like a reskin.
+ */
+export type ChapterGround = 'steel' | 'light' | 'tint';
+export type ChapterHeroKind = 'split' | 'stacked' | 'plate' | 'index';
+export type ChapterTexture = 'dot' | 'hatch' | 'wave' | 'comb' | 'grain' | 'mesh' | 'sheen';
+export type ChapterWeight = 'airy' | 'even' | 'dense';
+
+export interface IndustryArt {
+  ground: ChapterGround;
+  hero: ChapterHeroKind;
+  texture: ChapterTexture;
+  weight: ChapterWeight;
+}
+
 export interface Industry {
   key: IndustryKey;
   /** URL segment. Stable across all nine languages. */
@@ -61,6 +94,8 @@ export interface Industry {
   motion: 'settle' | 'refract' | 'torque' | 'sheen' | 'expand' | 'seal' | 'pulse' | 'assemble' | 'flow' | 'lock' | 'grain' | 'swell' | 'trace';
   /** The one geometric idea the whole page is built on. */
   motif: string;
+  /** How that idea is dressed. See IndustryArt above. */
+  art: IndustryArt;
 }
 
 const P = (p: IndustryPalette) => p;
@@ -71,6 +106,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'medical', slug: 'medical', order: 1, span: 3, rowSpan: 2, flagship: true,
     motion: 'settle',
     motif: 'A repeating cavity array resolving into perfect registration — precision shown as repetition, not as a hospital.',
+    art: { ground: 'light', hero: 'index',   texture: 'dot',   weight: 'airy' },
     palette: P({
       surface: '#F7F9FA', surfaceSunk: '#EDF2F4', surfaceRaise: '#FFFFFF',
       ink: '#101E24', inkMuted: '#5A6B72', line: '#D2DDE1',
@@ -84,6 +120,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'beverage', slug: 'beverage', order: 2, span: 3, rowSpan: 2, flagship: true,
     motion: 'refract',
     motif: 'A preform becoming a bottle — mass conserved, wall stretched, light bending through PET.',
+    art: { ground: 'tint',  hero: 'stacked', texture: 'wave',  weight: 'even' },
     palette: P({
       surface: '#F4F9FC', surfaceSunk: '#E6F2F8', surfaceRaise: '#FFFFFF',
       ink: '#08222F', inkMuted: '#4E6C7B', line: '#CBE1EC',
@@ -97,6 +134,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'automotive', slug: 'automotive', order: 3, span: 2, rowSpan: 1, flagship: false,
     motion: 'torque',
     motif: 'Side actions and slides withdrawing — the mechanism inside the tool, drawn as engineering section.',
+    art: { ground: 'steel', hero: 'plate',   texture: 'hatch', weight: 'dense' },
     palette: P({
       surface: '#F4F5F6', surfaceSunk: '#E7E9EB', surfaceRaise: '#FDFDFD',
       ink: '#16191C', inkMuted: '#5C646C', line: '#D0D5D9',
@@ -109,6 +147,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'cosmetics', slug: 'cosmetics', order: 4, span: 2, rowSpan: 1, flagship: false,
     motion: 'sheen',
     motif: 'A single unbroken show surface — light travelling across a polish grade, and the gate hidden out of sight.',
+    art: { ground: 'light', hero: 'split',   texture: 'sheen', weight: 'airy' },
     palette: P({
       surface: '#FAF7F4', surfaceSunk: '#F2ECE6', surfaceRaise: '#FFFFFF',
       ink: '#241C22', inkMuted: '#6C5E66', line: '#E2D7CE',
@@ -121,6 +160,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'appliances', slug: 'appliances', order: 5, span: 2, rowSpan: 1, flagship: false,
     motion: 'expand',
     motif: 'A large panel held flat — cooling layout as architecture, warpage as the enemy.',
+    art: { ground: 'tint',  hero: 'stacked', texture: 'mesh',  weight: 'even' },
     palette: P({
       surface: '#F6F7F9', surfaceSunk: '#EAEDF1', surfaceRaise: '#FFFFFF',
       ink: '#141920', inkMuted: '#5A646F', line: '#D5DAE1',
@@ -133,6 +173,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'chemical', slug: 'chemical', order: 6, span: 2, rowSpan: 1, flagship: false,
     motion: 'seal',
     motif: 'Thread engaging thread — the millimetre of geometry between contained and leaking.',
+    art: { ground: 'steel', hero: 'split',   texture: 'grain', weight: 'even' },
     palette: P({
       surface: '#F5F7F6', surfaceSunk: '#E8EDEB', surfaceRaise: '#FFFFFF',
       ink: '#101A18', inkMuted: '#54635F', line: '#CFD9D6',
@@ -145,6 +186,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'electrical', slug: 'electrical', order: 7, span: 2, rowSpan: 1, flagship: false,
     motion: 'pulse',
     motif: 'Thin wall and long flow — the moulding problem drawn as a distance the melt has to travel.',
+    art: { ground: 'steel', hero: 'index',   texture: 'comb',  weight: 'dense' },
     palette: P({
       surface: '#F6F6F7', surfaceSunk: '#EAEAEE', surfaceRaise: '#FFFFFF',
       ink: '#131521', inkMuted: '#585C6B', line: '#D3D4DB',
@@ -157,6 +199,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'toys', slug: 'consumer-products', order: 8, span: 2, rowSpan: 1, flagship: false,
     motion: 'assemble',
     motif: 'Part count falling — three mouldings becoming one, and the assembly labour disappearing with them.',
+    art: { ground: 'light', hero: 'stacked', texture: 'mesh',  weight: 'even' },
     palette: P({
       surface: '#FAF8F5', surfaceSunk: '#F1ECE5', surfaceRaise: '#FFFFFF',
       ink: '#1F1A16', inkMuted: '#6B6157', line: '#E1D9CF',
@@ -169,6 +212,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'agriculture', slug: 'agriculture', order: 9, span: 2, rowSpan: 1, flagship: false,
     motion: 'flow',
     motif: 'A labyrinth channel a few tenths of a millimetre wide, magnified until it becomes architecture.',
+    art: { ground: 'tint',  hero: 'plate',   texture: 'wave',  weight: 'even' },
     palette: P({
       surface: '#F6F8F4', surfaceSunk: '#E9EFE5', surfaceRaise: '#FFFFFF',
       ink: '#14200F', inkMuted: '#586453', line: '#D3DDCB',
@@ -181,6 +225,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'plumbing', slug: 'plumbing', order: 10, span: 2, rowSpan: 1, flagship: false,
     motion: 'lock',
     motif: 'A family of fittings on a shared grid — one tooling logic serving forty part numbers.',
+    art: { ground: 'light', hero: 'index',   texture: 'hatch', weight: 'dense' },
     palette: P({
       surface: '#F5F6F7', surfaceSunk: '#E8EBED', surfaceRaise: '#FFFFFF',
       ink: '#121A1E', inkMuted: '#566268', line: '#D1D8DC',
@@ -193,6 +238,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'furniture', slug: 'furniture', order: 11, span: 2, rowSpan: 1, flagship: false,
     motion: 'grain',
     motif: 'A load path through a moulded part — where the plastic has to be strong, and where it does not.',
+    art: { ground: 'tint',  hero: 'split',   texture: 'grain', weight: 'airy' },
     palette: P({
       surface: '#F9F7F2', surfaceSunk: '#F0EBE1', surfaceRaise: '#FFFFFF',
       ink: '#211D16', inkMuted: '#6A6255', line: '#E0D8C9',
@@ -205,6 +251,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'marine', slug: 'marine', order: 12, span: 2, rowSpan: 1, flagship: false,
     motion: 'swell',
     motif: 'A worn part measured back into geometry — reverse engineering where no drawing was ever kept.',
+    art: { ground: 'steel', hero: 'stacked', texture: 'wave',  weight: 'even' },
     palette: P({
       surface: '#F3F6F8', surfaceSunk: '#E3EBF0', surfaceRaise: '#FFFFFF',
       ink: '#0A1B26', inkMuted: '#4C626F', line: '#C8D7E0',
@@ -217,6 +264,7 @@ export const INDUSTRIES: Record<IndustryKey, Industry> = {
     key: 'custom', slug: 'custom-projects', order: 13, span: 4, rowSpan: 1, flagship: false,
     motion: 'trace',
     motif: 'The engineer’s desk: whatever the visitor brought, annotated in red and turned into a next step.',
+    art: { ground: 'light', hero: 'plate',   texture: 'grain', weight: 'even' },
     palette: P({
       surface: '#F8F8F7', surfaceSunk: '#EDEDEB', surfaceRaise: '#FFFFFF',
       ink: '#17181A', inkMuted: '#5E6165', line: '#D6D7D5',

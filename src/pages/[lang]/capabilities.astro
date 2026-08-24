@@ -13,6 +13,7 @@ import Base from '../../layouts/Base.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import CtaBlock from '../../components/CtaBlock.astro';
+import RfqDock from '../../components/RfqDock.astro';
 import TrustRow from '../../components/TrustRow.astro';
 import { LOCALE_ORDER, type Locale } from '../../i18n/locales.ts';
 import { getCapabilities, getCommon } from '../../content/index.ts';
@@ -117,6 +118,7 @@ const schemas = [
   </main>
 
   <SiteFooter locale={locale} />
+  <RfqDock locale={locale} prefill={p.cta.prefill} source="capabilities" />
 </Base>
 
 <style>

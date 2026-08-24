@@ -6,14 +6,25 @@
  * the first thing the company says, and what it says is "we work in nine
  * languages". A silent redirect would throw that away to save one click.
  *
- * Each tile carries its language's own script at display size and a line of real
- * copy in that language, so the breadth is demonstrated rather than claimed.
+ * ── Why it is set on steel ──────────────────────────────────────────────────
+ * This screen is the whole first impression, and a white page of nine white
+ * boxes made a manufacturer's site look like a documentation index. The ground
+ * is now machined steel under workshop light: the material the company works
+ * in, and a far better frame for nine saturated national colour fields.
+ *
+ * ── The grid ────────────────────────────────────────────────────────────────
+ * Nine languages, three by three, at every width down to a small phone. Nine
+ * is a square number and the composition should say so — a reflowing grid that
+ * leaves the ninth tile stranded on its own row reads as an accident. The
+ * cards shed content as they narrow (the promise line goes, then the English
+ * name moves under the endonym) rather than shedding columns.
  */
 import Base from '../layouts/Base.astro';
 import Wordmark from '../components/Wordmark.astro';
 import SheetFrame from '../components/SheetFrame.astro';
+import LanguageFlag from '../components/LanguageFlag.astro';
 import { LOCALES, LOCALE_ORDER } from '../i18n/locales.ts';
-import { SELECTOR, SELECT_LABEL } from '../i18n/selector.ts';
+import { SELECTOR } from '../i18n/selector.ts';
 import { BRAND, FACTS } from '../config/site.ts';
 
 const meta = {
@@ -22,32 +33,30 @@ const meta = {
     'From an idea, photograph, sample or drawing to mass production. Mould design and manufacture, part engineering, production and continuous supply. Nine languages. Manufacturing since 2006.',
 };
 
-// The label rule reads left to right in nine scripts; direction is set per span
-// so the Arabic-script entries render correctly inside an LTR line.
-const labels = LOCALE_ORDER.map((code) => ({ code, text: SELECT_LABEL[code], dir: LOCALES[code].dir }));
-
-// The selector runs on its own restrained palette — lighter and cooler than any
-// vertical, because it belongs to none of them.
+/* The selector belongs to no vertical, so it runs on the neutral steel set
+   rather than on any industry palette. */
 const SHEET = [
-  '--surface:#F7F7F5',
-  '--surface-raise:#FFFFFF',
-  '--ink:#16181B',
-  '--ink-muted:#6A6F75',
-  '--line:#D8D9D5',
-  '--accent:#1F4E66',
-  '--accent-deep:#123647',
+  '--surface:#0F1217',
+  '--surface-raise:#161A21',
+  '--ink:#F2F4F7',
+  '--ink-muted:#A7AFBA',
+  '--line:#2A313C',
+  '--accent:#7FB6CE',
+  '--accent-deep:#A8D2E4',
 ].join(';');
 ---
 
-<Base locale="en" meta={meta} isSelector paletteStyle={SHEET}>
+<Base locale="en" meta={meta} isSelector paletteStyle={SHEET} bodyClass="selector-body">
   <SheetFrame>
-    <main class="sel" id="main">
+    <main class="sel mat mat--milled" id="main">
       <header class="sel__head">
-        <Wordmark size="sm" />
+        <Wordmark size="sm" inverse />
         <p class="sel__est t-mono">
           <span>EST. {FACTS.sinceYear}</span>
           <span aria-hidden="true" class="sel__dot"></span>
           <span>{FACTS.projectsCompleted.toLocaleString('en-US')}+ PROJECTS</span>
+          <span aria-hidden="true" class="sel__dot"></span>
+          <span>9 LANGUAGES</span>
         </p>
       </header>
 
@@ -62,14 +71,6 @@ const SHEET = [
         </p>
       </div>
 
-      <div class="sel__rule" aria-hidden="true">
-        <ul class="sel__labels">
-          {labels.map(({ code, text, dir }) => (
-            <li lang={LOCALES[code].tag} dir={dir}>{text}</li>
-          ))}
-        </ul>
-      </div>
-
       <nav class="sel__grid" aria-label="Select language">
         {LOCALE_ORDER.map((code, i) => {
           const l = LOCALES[code];
@@ -81,17 +82,37 @@ const SHEET = [
               lang={l.tag}
               dir={l.dir}
               data-code={code}
+              aria-label={`${l.native} — ${l.english}`}
               style={`--i:${i}`}
             >
-              <span class="tile__index t-mono" dir="ltr">{String(i + 1).padStart(2, '0')}</span>
-              <span class="tile__native">{l.native}</span>
-              <span class="tile__promise">{tile.promise}</span>
-              <span class="tile__foot">
-                <span class="tile__english" dir="ltr" lang="en">{l.english}</span>
-                <span class="tile__code t-mono" dir="ltr">{code.toUpperCase()}</span>
+              {/* The flag is the card. It fills the plate and is cropped by
+                  it, dimmed with a brightness filter rather than with opacity —
+                  a flag at a third opacity over dark steel is a grey rectangle
+                  with a hint of colour in it, not a flag. Legibility is handled
+                  by a scrim that is opaque exactly where the type sits. */}
+              <span class="tile__field" aria-hidden="true">
+                <LanguageFlag locale={code} variant="field" />
               </span>
-              <span class="tile__enter" aria-hidden="true">{tile.enter}</span>
-              <span class="tile__hint t-mono" dir="ltr" lang="en" hidden>Your browser</span>
+              <span class="tile__edge" aria-hidden="true">
+                <LanguageFlag locale={code} variant="hoist" />
+              </span>
+
+              <span class="tile__top">
+                <span class="tile__index t-mono" dir="ltr">{String(i + 1).padStart(2, '0')}</span>
+                <span class="tile__hint t-mono" dir="ltr" lang="en" hidden>Your browser</span>
+              </span>
+
+              <span class="tile__id">
+                <span class="tile__english" dir="ltr" lang="en">{l.english}</span>
+                <span class="tile__native">{l.native}</span>
+                <span class="tile__promise">{tile.promise}</span>
+                <span class="tile__foot">
+                  <span class="tile__enter">{tile.enter}</span>
+                  <svg class="tile__arrow" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+                    <path d="M1 6h13M9.5 1.2 14.3 6l-4.8 4.8" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </span>
+              </span>
             </a>
           );
         })}
@@ -129,18 +150,13 @@ const SHEET = [
 
 <style>
   .sel {
-    --sheet: var(--surface);
-    --sel-ink: var(--ink);
-    --sel-muted: var(--ink-muted);
-    --sel-line: var(--line);
-    --sel-accent: var(--accent);
-
     min-block-size: 100svh;
     display: grid;
-    grid-template-rows: auto 1fr auto auto auto;
-    gap: clamp(0.85rem, 2.1vh, 1.75rem);
-    padding: clamp(1.1rem, 2.3vw, 2.4rem);
-    color: var(--sel-ink);
+    grid-template-rows: auto auto 1fr auto;
+    gap: clamp(0.75rem, 1.7vh, 1.4rem);
+    padding: clamp(0.9rem, 1.7vw, 1.75rem);
+    color: var(--ink);
+    background: var(--surface);
   }
 
   /* ── Head ──────────────────────────────────────────────────────────────── */
@@ -157,7 +173,7 @@ const SHEET = [
     gap: 0.9ch;
     font-size: var(--step--2);
     letter-spacing: 0.16em;
-    color: var(--sel-muted);
+    color: var(--ink-muted);
   }
   .sel__dot {
     inline-size: 3px; block-size: 3px;
@@ -165,215 +181,267 @@ const SHEET = [
     display: inline-block;
     opacity: 0.6;
   }
+  @media (max-width: 560px) {
+    /* Three facts will not sit on one line on a phone; the third is the one a
+       visitor on this screen already knows. */
+    .sel__est span:nth-last-child(-n+2) { display: none; }
+  }
 
   /* ── Intro ─────────────────────────────────────────────────────────────── */
-  .sel__intro {
-    align-self: center;
-    max-inline-size: 46rem;
-  }
+  .sel__intro { max-inline-size: 52rem; }
   .sel__title {
-    font-size: clamp(1.8rem, 4vw, 3.05rem);
+    font-size: clamp(1.7rem, 3.9vw, 2.95rem);
     line-height: 1.03;
-    letter-spacing: -0.028em;
+    letter-spacing: -0.03em;
     font-weight: 500;
   }
   .sel__title-line { display: block; }
-  .sel__title-line:last-child { color: var(--sel-muted); }
+  .sel__title-line:last-child { color: var(--ink-muted); }
   .sel__lead {
-    margin-block-start: clamp(0.75rem, 1.5vw, 1.25rem);
+    margin-block-start: clamp(0.5rem, 1.1vw, 0.9rem);
     font-size: var(--step-0);
     line-height: 1.55;
-    color: var(--sel-muted);
-    max-inline-size: 40rem;
+    color: var(--ink-muted);
+    max-inline-size: 44rem;
+  }
+  @media (max-width: 640px) {
+    .sel__lead { font-size: var(--step--1); max-inline-size: 34rem; }
   }
 
-  /* ── The nine-script rule ──────────────────────────────────────────────── */
-  .sel__rule {
-    border-block-start: 1px solid var(--sel-line);
-    padding-block-start: var(--sp-3);
-    overflow: hidden;
-  }
-  .sel__labels {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 1.6ch;
-    font-family: var(--font-mono);
-    font-size: var(--step--2);
-    letter-spacing: 0.1em;
-    color: var(--sel-muted);
-  }
-  .sel__labels li {
-    display: flex;
-    align-items: center;
-    /* Each label is its own bidi run, so an Arabic-script entry cannot drag the
-       separator around it to the wrong side. */
-    unicode-bidi: isolate;
-  }
-  .sel__labels li + li::before {
-    content: '/';
-    margin-inline-end: 1.6ch;
-    opacity: 0.4;
-  }
-  /* Non-Latin scripts should not be tracked out like a Latin label. */
-  .sel__labels li:not([lang='en']):not([lang='tr']) {
-    font-family: inherit;
-    letter-spacing: 0;
-  }
-  .sel__labels li[lang='hy'] { font-family: var(--font-armenian); }
-  .sel__labels li[lang='th'] { font-family: var(--font-thai); }
-  .sel__labels li[lang='zh-Hans'] { font-family: var(--font-han); }
-  .sel__labels li[lang='ar'] { font-family: var(--font-arabic); }
-  .sel__labels li[lang='fa'] { font-family: var(--font-persian); }
-  .sel__labels li[lang='ur'] { font-family: var(--font-urdu); }
-  .sel__labels li[lang='ru'] { font-family: var(--font-cyrillic); }
-
-  /* ── Grid ──────────────────────────────────────────────────────────────── */
+  /* ── Grid ──────────────────────────────────────────────────────────────
+     Three by three at every width. The hairline lattice is made of gaps, so
+     the steel ground shows through between the cards. */
+  /* Nine separate plates, not a lattice. The gap is the composition: each
+     card is its own object with its own flag, and the steel ground reads
+     between them rather than as a 1px seam. */
   .sel__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    /* A hairline lattice made of gaps, not borders: the sheet shows through. */
-    gap: 1px;
-    background: var(--sel-line);
-    border: 1px solid var(--sel-line);
+    /* Capped rather than `1fr`: left to stretch, three rows of cards fill
+       whatever height is going and the plates become billboards. A capped row
+       keeps them card-sized and lets the steel ground carry the composition. */
+    /* All three rows the same height, set by the deepest of them. In an
+       auto-height grid a `1fr` track resolves to the largest row's content, so
+       the Arabic-script row does not make its own row deeper than the two
+       above it — and `min-content` as the floor means nothing is ever clipped
+       off the top of a plate. */
+    grid-auto-rows: minmax(min-content, 1fr);
+    gap: clamp(0.85rem, 1.7vw, 1.6rem);
+    align-self: center;
+    min-block-size: 0;
   }
-  @media (max-width: 860px) { .sel__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 520px) { .sel__grid { grid-template-columns: 1fr; } }
 
   .tile {
-    --tile-pad: clamp(0.85rem, 1.7vw, 1.3rem);
+    --tile-pad: clamp(0.65rem, 1.1vw, 1rem);
     position: relative;
     display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 0.4rem;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 0.7rem;
     padding: var(--tile-pad);
-    background: var(--sheet);
-    min-block-size: clamp(6rem, 11.5vh, 9rem);
+    background: var(--surface-raise);
+    min-block-size: 0;
     overflow: hidden;
+    isolation: isolate;
+    color: var(--ink);
+    border: 1px solid color-mix(in oklab, #FFFFFF 10%, transparent);
     transition:
-      background-color 260ms cubic-bezier(0.16, 1, 0.3, 1),
-      color 260ms cubic-bezier(0.16, 1, 0.3, 1);
+      transform 380ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 320ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 380ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  /* ── The flag ───────────────────────────────────────────────────────── */
+  .tile__field {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    filter: saturate(0.92) brightness(0.66) contrast(1.05);
+    transform: scale(1.06);
+    transition: filter 420ms cubic-bezier(0.16, 1, 0.3, 1), transform 620ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  /* Surface-ground finish over the flag, so it reads as printed on the same
+     material as the rest of the screen rather than pasted onto it. */
+  .tile__field::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--tex-grain), var(--tex-mill);
+    background-size: 140px 140px, auto;
+    opacity: 0.45;
+    mix-blend-mode: overlay;
+  }
+
+  .tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, #06080B 58%, transparent) 0%,
+        color-mix(in oklab, #06080B 16%, transparent) 22%,
+        color-mix(in oklab, #06080B 62%, transparent) 46%,
+        color-mix(in oklab, #06080B 90%, transparent) 62%,
+        color-mix(in oklab, #06080B 97%, transparent) 100%
+      );
+    transition: opacity 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* The hoist band. The crisp, undimmed edge of the flag — for several of
+     these it is the part that identifies the country outright. */
+  .tile__edge {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    inline-size: 7px;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: 1px 0 0 0 color-mix(in oklab, #000000 45%, transparent);
+    transition: inline-size 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .tile > *:not(.tile__field):not(.tile__edge) { position: relative; z-index: 3; }
+
+  /* ── Card contents ─────────────────────────────────────────────────────── */
+  .tile__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
+  }
   .tile__index {
     font-size: var(--step--2);
     letter-spacing: 0.14em;
-    color: var(--sel-muted);
-    justify-self: start;
-    transition: color 260ms;
+    color: color-mix(in oklab, #FFFFFF 78%, transparent);
   }
 
+  /* The identity sits at the foot of the plate so the flag has the top two
+     thirds of the card and the type has the part of the scrim that is opaque. */
+  .tile__id {
+    align-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem;
+  }
+
+  .tile__english {
+    font-size: var(--step--2);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: color-mix(in oklab, #FFFFFF 72%, transparent);
+    order: 1;
+  }
   .tile__native {
-    font-size: clamp(1.35rem, 2.2vw, 1.85rem);
-    line-height: 1.12;
+    order: 2;
+    font-size: clamp(1.1rem, 1.9vw, 1.7rem);
+    line-height: 1.1;
     font-weight: 500;
     letter-spacing: -0.015em;
-    align-self: end;
+    color: #FFFFFF;
+    text-shadow: 0 1px 12px rgb(6 8 11 / 0.55);
   }
-  /* Nastaliq needs vertical room or the descenders collide with the line below. */
-  .tile[data-code='ur'] .tile__native { line-height: 1.75; font-size: clamp(1.15rem, 1.9vw, 1.55rem); }
-  .tile[data-code='th'] .tile__native { line-height: 1.35; }
-  .tile[lang='hy'] .tile__native,
-  .tile[lang='fa'] .tile__native,
-  .tile[lang='ar'] .tile__native { letter-spacing: 0; }
-
   .tile__promise {
+    order: 3;
+    margin-block-start: 0.35rem;
     font-size: var(--step--1);
-    line-height: 1.45;
-    color: var(--sel-muted);
-    transition: color 260ms, opacity 260ms;
-    /* Two lines maximum: the promise is a signal, not a paragraph. */
+    line-height: 1.4;
+    color: color-mix(in oklab, #FFFFFF 76%, transparent);
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .tile[data-code='ur'] .tile__promise { line-height: 2; -webkit-line-clamp: 1; }
-  .tile[data-code='th'] .tile__promise { line-height: 1.7; }
-
   .tile__foot {
+    order: 4;
+    margin-block-start: 0.5rem;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
     gap: var(--sp-3);
-    padding-block-start: 0.5rem;
-    border-block-start: 1px solid var(--sel-line);
-    transition: border-color 260ms;
-  }
-  .tile__english { font-size: var(--step--2); color: var(--sel-muted); transition: color 260ms; }
-  .tile__code {
+    padding-block-start: 0.45rem;
+    border-block-start: 1px solid color-mix(in oklab, #FFFFFF 26%, transparent);
     font-size: var(--step--2);
-    letter-spacing: 0.14em;
-    color: var(--sel-muted);
-    transition: color 260ms;
+    color: color-mix(in oklab, #FFFFFF 76%, transparent);
+    transition: color 300ms, border-color 300ms;
   }
 
-  /* The action label slides up from under the foot rule on hover. */
+  /* Nastaliq needs vertical room or the descenders collide with the line below. */
+  .tile[data-code='ur'] .tile__native { line-height: 1.45; font-size: clamp(1.05rem, 1.75vw, 1.55rem); }
+  .tile[data-code='th'] .tile__native { line-height: 1.28; }
+  .tile[lang='hy'] .tile__native,
+  .tile[lang='fa'] .tile__native,
+  .tile[lang='ar'] .tile__native { letter-spacing: 0; }
+  .tile[data-code='ur'] .tile__promise { line-height: 1.9; -webkit-line-clamp: 1; }
+  .tile[data-code='th'] .tile__promise { line-height: 1.65; }
+  /* Arabic-script faces carry a taller line box than the Latin one at the same
+     size. Left alone, the three right-to-left cards make their whole row about
+     25px deeper than the two above it, and a 3 × 3 grid with one deep row
+     stops looking deliberate. */
+  .tile[data-code='ar'] .tile__promise,
+  .tile[data-code='fa'] .tile__promise { line-height: 1.5; -webkit-line-clamp: 1; }
+  .tile[data-code='ar'] .tile__native,
+  .tile[data-code='fa'] .tile__native { line-height: 1.25; }
+
   .tile__enter {
-    position: absolute;
-    inset-block-end: var(--tile-pad);
-    inset-inline-start: var(--tile-pad);
-    inset-inline-end: var(--tile-pad);
-    font-size: var(--step--2);
-    color: #fff;
-    opacity: 0;
-    transform: translateY(0.6em);
-    transition: opacity 220ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
   }
-
-  /* A rule that draws across the top edge as the tile is engaged. */
-  .tile::before {
-    content: '';
-    position: absolute;
-    inset-block-start: 0;
-    inset-inline-start: 0;
-    inline-size: 100%;
-    block-size: 2px;
-    background: var(--sel-accent);
-    transform: scaleX(0);
-    transform-origin: inline-start;
-    transition: transform 340ms cubic-bezier(0.16, 1, 0.3, 1);
+  .tile__arrow {
+    inline-size: 0.85rem;
+    flex: none;
+    transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
   }
+  [dir='rtl'] .tile__arrow { transform: scaleX(-1); }
 
+  /* ── Engaged ───────────────────────────────────────────────────────────── */
   @media (hover: hover) {
-    .tile:hover { background: var(--sel-ink); color: #fff; }
-    .tile:hover::before { transform: scaleX(1); }
-    .tile:hover .tile__index,
-    .tile:hover .tile__english,
-    .tile:hover .tile__code { color: rgb(255 255 255 / 0.62); }
-    .tile:hover .tile__promise { opacity: 0; }
-    .tile:hover .tile__foot { border-color: rgb(255 255 255 / 0.22); }
-    .tile:hover .tile__enter { opacity: 1; transform: translateY(-1.55em); }
+    .tile:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in oklab, #FFFFFF 42%, transparent);
+      box-shadow: 0 10px 30px -12px rgb(0 0 0 / 0.7);
+    }
+    .tile:hover .tile__field { filter: saturate(1.05) brightness(0.92) contrast(1.02); transform: scale(1.11); }
+    .tile:hover::before { opacity: 0.82; }
+    .tile:hover .tile__edge { inline-size: 13px; }
+    .tile:hover .tile__foot { color: #FFFFFF; border-color: color-mix(in oklab, #FFFFFF 60%, transparent); }
+    .tile:hover .tile__arrow { transform: translateX(3px); }
+    [dir='rtl'] .tile:hover .tile__arrow { transform: scaleX(-1) translateX(3px); }
   }
 
-  .tile:focus-visible {
-    outline: 2px solid var(--sel-accent);
-    outline-offset: -4px;
-    background: var(--sel-ink);
-    color: #fff;
-  }
-  .tile:focus-visible::before { transform: scaleX(1); }
-  .tile:focus-visible .tile__index,
-  .tile:focus-visible .tile__english,
-  .tile:focus-visible .tile__code { color: rgb(255 255 255 / 0.62); }
+  .tile:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; }
+  .tile:focus-visible .tile__field { filter: saturate(1.05) brightness(0.92); }
+  .tile:focus-visible .tile__edge { inline-size: 13px; }
 
   /* Browser-language hint. A marker, not a redirect. */
   .tile__hint {
-    position: absolute;
-    inset-block-start: var(--tile-pad);
-    inset-inline-end: var(--tile-pad);
-    font-size: 0.58rem;
-    letter-spacing: 0.16em;
-    color: var(--sel-accent);
-    border: 1px solid currentColor;
-    padding: 0.2em 0.5em;
+    font-size: 0.56rem;
+    letter-spacing: 0.14em;
+    color: #FFFFFF;
+    border: 1px solid color-mix(in oklab, #FFFFFF 62%, transparent);
+    background: color-mix(in oklab, #06080B 55%, transparent);
+    padding: 0.2em 0.45em;
     white-space: nowrap;
+    min-inline-size: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-  .tile:hover .tile__hint,
-  .tile:focus-visible .tile__hint { color: #fff; opacity: 0.8; }
+  /* On a phone the card is about 110px wide and the label does not fit beside
+     the index. It becomes a mark instead — same information, no overflow. */
+  @media (max-width: 620px) {
+    .tile__hint {
+      font-size: 0;
+      letter-spacing: 0;
+      padding: 0;
+      border: 0;
+      inline-size: 0.5rem;
+      block-size: 0.5rem;
+      background: #FFFFFF;
+      flex: none;
+    }
+  }
 
   /* ── Foot ──────────────────────────────────────────────────────────────── */
   .sel__foot {
@@ -382,12 +450,75 @@ const SHEET = [
     justify-content: space-between;
     gap: var(--sp-5);
     flex-wrap: wrap;
-    color: var(--sel-muted);
+    color: var(--ink-muted);
   }
-  .sel__origin { color: var(--sel-muted); }
+  .sel__origin { color: var(--ink-muted); }
 
-  @media (max-width: 640px) {
-    .sel { grid-template-rows: auto auto auto auto auto; }
-    .sel__intro { align-self: start; }
+  /* ── Short ──────────────────────────────────────────────────────────────
+     This screen is a decision, and a decision should not need scrolling. On a
+     laptop that is wide but not tall the composition gives up the second line
+     of each promise and a step of display size rather than pushing the third
+     row of languages below the fold. */
+  @media (min-width: 721px) and (max-height: 900px) {
+    .tile__promise { -webkit-line-clamp: 1; }
+    .sel__title { font-size: clamp(1.6rem, 3.3vw, 2.5rem); }
+    .sel__lead { font-size: var(--step--1); max-inline-size: 40rem; }
+    .sel__grid { gap: clamp(0.7rem, 1.2vw, 1.1rem); }
+  }
+  @media (min-width: 721px) and (max-height: 870px) {
+    .tile__promise { display: none; }
+    .sel { gap: 0.75rem; padding: 0.85rem; }
+    .sel__title { font-size: clamp(1.5rem, 2.9vw, 2.15rem); }
+    .sel__grid { gap: 0.65rem; }
+  }
+
+  /* ── Narrow ────────────────────────────────────────────────────────────
+     The grid keeps its three columns; the cards give up content instead. At
+     this width a two-line promise and a full action label would set at four
+     characters a line, which is worse than not showing them. */
+  @media (max-width: 900px) {
+    .tile__promise { -webkit-line-clamp: 3; font-size: var(--step--2); }
+    .tile__enter { display: none; }
+    .tile__foot { justify-content: flex-end; }
+  }
+  /* Below this width the promise cannot be set at a readable measure inside a
+     110px column, so the card becomes flag · name · action. */
+  @media (max-width: 720px) {
+    .tile__promise { display: none; }
+    .tile__foot { margin-block-start: 0.5rem; }
+    .tile::before {
+      background:
+        linear-gradient(
+          to bottom,
+          color-mix(in oklab, #06080B 52%, transparent) 0%,
+          color-mix(in oklab, #06080B 14%, transparent) 24%,
+          color-mix(in oklab, #06080B 88%, transparent) 52%,
+          #06080B 68%,
+          #06080B 100%
+        );
+    }
+  }
+  @media (max-width: 520px) {
+    .sel { gap: 0.9rem; padding: 0.85rem; }
+    .tile { --tile-pad: 0.55rem; gap: 0.4rem; }
+    .tile__edge { inline-size: 4px; }
+    .sel__grid { gap: 0.6rem; }
+    .tile__index { font-size: 0.6rem; }
+    .tile__english { font-size: 0.56rem; letter-spacing: 0.06em; }
+    .tile__native { font-size: clamp(0.9rem, 4.1vw, 1.15rem); }
+    .tile[data-code='ur'] .tile__native { font-size: clamp(0.82rem, 3.6vw, 1rem); }
+    .sel__foot .sel__origin { display: none; }
+  }
+
+  /* ── Entrance ──────────────────────────────────────────────────────────── */
+  @keyframes sel-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  :global(html.js) .tile {
+    animation: sel-in 620ms var(--ease-out) both;
+    animation-delay: calc(160ms + var(--i) * 45ms);
+  }
+  :global(html.js) .sel__intro { animation: sel-in 700ms var(--ease-out) both; }
+  @media (prefers-reduced-motion: reduce) {
+    :global(html.js) .tile,
+    :global(html.js) .sel__intro { animation: none; }
   }
 </style>

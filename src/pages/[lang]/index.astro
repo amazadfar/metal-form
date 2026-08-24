@@ -6,9 +6,20 @@
  * about forty seconds. Presented live it has to give a salesperson obvious
  * talking points and let them jump to any vertical in one click.
  *
- * The order is deliberate: what we do, how the chain works, why anyone moves
- * supplier, which door is yours, what we will and will not claim, who we are,
- * send us the part.
+ * ── Order ───────────────────────────────────────────────────────────────────
+ * Industries used to sit two thirds of the way down, after the full argument
+ * for changing supplier. That is the wrong way round: a buyer arrives wanting
+ * to know whether this company makes anything like their part, and will not
+ * read three sections of general positioning to find out.
+ *
+ * So the order is now: what we do and what it costs you to find out (hero,
+ * with the verified capability rail as its floor) → which door is yours
+ * (industries, immediately) → how the chain works → the engineering depth
+ * behind it → what we will and will not claim → who we are → send us the part.
+ *
+ * The depth is not removed, only deferred. A visitor who wants the argument
+ * still gets all of it; a visitor who wants their industry gets it in one
+ * screen.
  */
 import Base from '../../layouts/Base.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
@@ -19,6 +30,7 @@ import Pillars from '../../components/home/Pillars.astro';
 import IndustryBento from '../../components/IndustryBento.astro';
 import TrustRow from '../../components/TrustRow.astro';
 import CtaBlock from '../../components/CtaBlock.astro';
+import RfqDock from '../../components/RfqDock.astro';
 import { LOCALE_ORDER, localePath, type Locale } from '../../i18n/locales.ts';
 import { getHome, getCommon } from '../../content/index.ts';
 import { absoluteUrl, breadcrumbSchema } from '../../lib/seo.ts';
@@ -41,26 +53,29 @@ const schemas = [
 
 <Base locale={locale} meta={h.meta} route="" schemas={schemas}>
   <a class="skip-link" href="#main">{c.a11y.skipToContent}</a>
-  <SiteHeader locale={locale} />
+  <SiteHeader locale={locale} overDark />
 
   <main id="main">
-  <Hero locale={locale} hero={h.hero} prefill={h.cta.prefill} stages={stages} d={h.diagram.hero} />
+  <Hero
+    locale={locale}
+    hero={h.hero}
+    prefill={h.cta.prefill}
+    stages={stages}
+    d={h.diagram.hero}
+    schematicLabel={c.schematic}
+  />
 
-  <ProcessRail process={h.process} d={h.diagram.process} schematicLabel={c.schematic} />
-
-  <Pillars pillars={h.pillars} schematicLabel={c.schematic} />
-
-  {/* ── Industries ─────────────────────────────────────────────────────── */}
+  {/* ── Industries — the second thing on the page, not the sixth ───────── */}
   <section class="ind" id="industries">
     <div class="shell--wide">
       <p class="eyebrow">{h.bento.kicker}</p>
-      <div class="ruled-head ind__head">
-        <h2 class="t-h2 ind__title">{h.bento.heading}</h2>
-        <p class="t-lead">{h.bento.lead}</p>
+      <div class="ind__head split">
+        <h2 class="t-statement t-statement--xl ind__title" data-split-copy>{h.bento.heading}</h2>
+        <p class="t-lead ind__lead" data-split-figure>{h.bento.lead}</p>
       </div>
     </div>
 
-    <div class="shell--wide ind__grid" data-reveal>
+    <div class="shell--wide ind__grid">
       <IndustryBento locale={locale} />
     </div>
 
@@ -75,16 +90,22 @@ const schemas = [
     </div>
   </section>
 
+  {/* ── How the chain works ────────────────────────────────────────────── */}
+  <ProcessRail process={h.process} d={h.diagram.process} schematicLabel={c.schematic} />
+
+  {/* ── The engineering depth behind it ────────────────────────────────── */}
+  <Pillars pillars={h.pillars} d={h.diagram.hero} schematicLabel={c.schematic} />
+
   {/* ── Evidence + trust ───────────────────────────────────────────────── */}
   <section class="proof">
-    <div class="shell--wide proof__inner">
-      <div class="proof__copy">
+    <div class="shell--wide proof__inner split">
+      <div class="proof__copy" data-split-copy>
         <p class="eyebrow">{h.proof.kicker}</p>
         <h2 class="t-h3 proof__title">{h.proof.heading}</h2>
         <p class="t-lead proof__lead">{h.proof.lead}</p>
         <p class="proof__disclosure">{h.proof.disclosure}</p>
       </div>
-      <div class="proof__trust">
+      <div class="proof__trust" data-split-figure>
         <TrustRow locale={locale} layout="stack" />
       </div>
     </div>
@@ -108,18 +129,27 @@ const schemas = [
     </div>
   </section>
 
-  <CtaBlock locale={locale} cta={h.cta} source="home_cta" index="06" />
+  <CtaBlock locale={locale} cta={h.cta} source="home_cta" index="06" inverse />
   </main>
 
   <SiteFooter locale={locale} />
+  <RfqDock locale={locale} prefill={h.cta.prefill} source="home_cta" />
 </Base>
 
 <style>
   /* ── Industries ───────────────────────────────────────────────────────── */
-  .ind { padding-block: var(--section-y); }
-  .ind__head { margin-block-start: var(--sp-5); }
-  .ind__title { max-inline-size: 12ch; }
-  .ind__grid { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
+  .ind { padding-block: var(--section-y-tight) var(--section-y); }
+  .ind__head {
+    margin-block-start: var(--sp-5);
+    padding-block-start: var(--sp-6);
+    border-block-start: var(--rule-strong);
+    --split-a: 1.15fr;
+    --split-b: 0.85fr;
+    --split-align: end;
+  }
+  .ind__title { max-inline-size: 11ch; }
+  .ind__lead { padding-block-end: 0.35em; }
+  .ind__grid { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
 
   .ind__fallback {
     margin-block-start: var(--sp-7);
@@ -143,13 +173,7 @@ const schemas = [
     background: var(--surface-sunk);
     border-block: var(--rule);
   }
-  .proof__inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    gap: clamp(2rem, 5vw, 4.5rem);
-    align-items: start;
-  }
-  @media (max-width: 940px) { .proof__inner { grid-template-columns: 1fr; } }
+  .proof__inner { --split-a: 1.1fr; --split-b: 0.9fr; }
 
   .proof__title { margin-block-start: var(--sp-5); max-inline-size: 18ch; }
   .proof__lead { margin-block-start: var(--sp-5); }

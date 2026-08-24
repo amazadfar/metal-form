@@ -642,7 +642,8 @@ const WEIGHTS = CAV.map((c) => ({
   }
   @media (max-width: 860px) { .med-atlas__grid { grid-template-columns: 1fr; } }
 
-  .med-atlas__index { display: grid; align-content: start; border-inline-end: var(--rule); }
+  .med-atlas__index {
+    padding-inline-start: var(--col-pad); display: grid; align-content: start; border-inline-end: var(--rule); }
   @media (max-width: 860px) { .med-atlas__index { border-inline-end: 0; border-block-end: var(--rule); } }
   .med-atlas__row {
     display: grid;
@@ -1117,15 +1118,17 @@ const WEIGHTS = CAV.map((c) => ({
     border-block-start: var(--rule-strong);
   }
   .med-rail li {
-    padding: var(--sp-5) var(--sp-5) var(--sp-6) 0;
+    padding-block: var(--sp-5) var(--sp-6);
+    padding-inline: var(--col-pad) var(--sp-5);
     border-inline-end: var(--rule);
     display: grid;
     gap: 0.4rem;
     align-content: start;
   }
+  .med-rail li:first-child { padding-inline-start: 0; }
   .med-rail li:last-child { border-inline-end: 0; }
   @media (max-width: 760px) {
-    .med-rail li { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: 0; }
+    .med-rail li { border-inline-end: 0; border-block-end: var(--rule); padding-inline: 0; }
   }
   .med-rail__n { font-size: var(--step--2); letter-spacing: 0.14em; color: var(--accent-deep); }
   .med-rail__t { font-size: var(--step-1); font-weight: var(--weight-medium); letter-spacing: var(--track-head); }

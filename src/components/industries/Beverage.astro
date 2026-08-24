@@ -925,7 +925,8 @@ const SPREAD = [
     border-block-start: var(--rule-strong);
   }
   .bev-stretch__step {
-    padding: var(--sp-5) var(--sp-4) var(--sp-6) 0;
+    padding-block: var(--sp-5) var(--sp-6);
+    padding-inline: var(--col-pad) var(--sp-4);
     border-inline-end: var(--rule);
     display: grid;
     gap: 0.4rem;
@@ -933,6 +934,7 @@ const SPREAD = [
     opacity: 0.5;
     transition: opacity 380ms var(--ease-out);
   }
+  .bev-stretch__step:first-child { padding-inline-start: 0; }
   .bev-stretch__step:last-child { border-inline-end: 0; }
   .bev-stretch[data-step='0'] .bev-stretch__step[data-station-step='0'],
   .bev-stretch[data-step='1'] .bev-stretch__step[data-station-step='1'],

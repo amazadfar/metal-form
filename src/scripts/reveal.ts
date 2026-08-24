@@ -144,54 +144,131 @@ function initDisclosures() {
  * Discrete steppers.
  *
  * A container marked `data-stepper` holds a set of `data-station-step` blocks.
- * Whichever block is closest to the reading line sets `data-step` on the
- * container, and everything else — which station the drawing has travelled to,
- * which step is lit, which station-local animation runs — is CSS reacting to
- * that one attribute.
+ * Whichever block the reader is actually on sets `data-step` on the container,
+ * and everything else — which station the drawing has travelled to, which step
+ * is lit, which station-local animation runs — is CSS reacting to that one
+ * attribute.
  *
- * Steps rather than a continuous scrub: a mechanism indexes, it does not drift.
+ * ── Why this is not an IntersectionObserver ─────────────────────────────────
+ * It used to be, with a thin band across the middle of the viewport, and it
+ * flapped. Two reasons, both inherent to the approach:
+ *
+ *   · An observer callback only carries the steps whose intersection *changed*.
+ *     Picking "the most visible" out of that partial batch means the answer
+ *     depends on which entries happened to fire together.
+ *
+ *   · A band has an edge. Sitting on that edge, one or two pixels of scroll
+ *     flips the winner, and flipping it back flips the state back. Scrolling
+ *     gently near a boundary strobed the drawing between two stations.
+ *
+ * What replaces it holds a step until the reader has genuinely moved on:
+ *
+ *   · A tall reading window rather than a line, so adjacent steps overlap
+ *     inside it and there is no single crossing point.
+ *   · Hysteresis: a challenger has to beat the step currently showing by a
+ *     clear margin, not by a pixel. Scrolling back a little does not undo it.
+ *   · A short dwell, so a fast flick through four stages lands on one of them
+ *     instead of strobing through all four.
+ *
+ * The step still changes discretely — a mechanism indexes, it does not drift —
+ * but the threshold it changes at now has depth to it.
  */
 function initSteppers() {
   const containers = Array.from(document.querySelectorAll<HTMLElement>('[data-stepper]'));
   if (!containers.length) return;
 
-  for (const container of containers) {
-    const steps = Array.from(container.querySelectorAll<HTMLElement>('[data-station-step]'));
-    if (!steps.length) continue;
-
-    const setStep = (i: number) => {
-      if (container.dataset.step === String(i)) return;
-      container.dataset.step = String(i);
-      container.style.setProperty('--station', String(i));
-    };
-
-    if (!('IntersectionObserver' in window)) {
-      setStep(steps.length - 1);
-      continue;
-    }
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        // Pick the most-visible step rather than the first to cross the line, so
-        // a fast scroll lands on what the reader is actually looking at.
-        let best: { i: number; ratio: number } | null = null;
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          const i = Number((entry.target as HTMLElement).dataset.stationStep);
-          if (!best || entry.intersectionRatio > best.ratio) best = { i, ratio: entry.intersectionRatio };
-        }
-        if (best) setStep(best.i);
-      },
-      {
-        // The reading line sits a third of the way down the viewport.
-        rootMargin: '-30% 0px -45% 0px',
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-      },
-    );
-
-    steps.forEach((el) => io.observe(el));
-    setStep(0);
+  interface Group {
+    container: HTMLElement;
+    steps: HTMLElement[];
+    current: number;
+    changedAt: number;
   }
+
+  const groups: Group[] = containers
+    .map((container) => ({
+      container,
+      steps: Array.from(container.querySelectorAll<HTMLElement>('[data-station-step]')),
+      current: -1,
+      changedAt: 0,
+    }))
+    .filter((g) => g.steps.length > 0);
+
+  if (!groups.length) return;
+
+  const setStep = (g: Group, i: number, now: number) => {
+    if (g.current === i) return;
+    g.current = i;
+    g.changedAt = now;
+    g.container.dataset.step = String(i);
+    g.container.style.setProperty('--station', String(i));
+  };
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) {
+    // No scroll-linked state at all: the first station is shown and stays.
+    groups.forEach((g) => setStep(g, 0, 0));
+    return;
+  }
+
+  /** A challenger must be this much more present than the incumbent to win. */
+  const HYSTERESIS = 1.35;
+  /** And the incumbent gets at least this long before it can be replaced. */
+  const DWELL_MS = 260;
+  /** The reading window, as a fraction of the viewport. Deliberately tall. */
+  const WINDOW_TOP = 0.16;
+  const WINDOW_BOTTOM = 0.8;
+
+  const overlap = (rect: DOMRect, top: number, bottom: number) =>
+    Math.max(0, Math.min(rect.bottom, bottom) - Math.max(rect.top, top));
+
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const now = performance.now();
+    const vh = window.innerHeight;
+    const top = vh * WINDOW_TOP;
+    const bottom = vh * WINDOW_BOTTOM;
+
+    for (const g of groups) {
+      // A container that is nowhere near the viewport keeps whatever it last
+      // showed, so scrolling past a chapter and back does not reset it.
+      const box = g.container.getBoundingClientRect();
+      if (box.bottom < -vh || box.top > vh * 2) continue;
+
+      let bestIndex = -1;
+      let bestScore = 0;
+      let currentScore = 0;
+
+      for (let i = 0; i < g.steps.length; i++) {
+        const score = overlap(g.steps[i].getBoundingClientRect(), top, bottom);
+        if (i === g.current) currentScore = score;
+        if (score > bestScore) { bestScore = score; bestIndex = i; }
+      }
+
+      if (bestIndex < 0) continue;
+      if (g.current < 0) { setStep(g, bestIndex, now); continue; }
+      if (bestIndex === g.current) continue;
+
+      // The step showing has left the window entirely — hand over at once, or
+      // the drawing would sit on a stage the reader has scrolled past.
+      if (currentScore === 0) { setStep(g, bestIndex, now); continue; }
+
+      if (now - g.changedAt < DWELL_MS) continue;
+      if (bestScore > currentScore * HYSTERESIS) setStep(g, bestIndex, now);
+    }
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+
+  groups.forEach((g) => setStep(g, 0, 0));
+  update();
 }
 
 

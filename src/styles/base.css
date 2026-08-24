@@ -243,3 +243,171 @@ html.js [data-reveal] {
     transform var(--dur-5) var(--ease-out) var(--reveal-delay, 0ms);
 }
 html.js [data-reveal='in'] { opacity: 1; transform: none; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MATERIAL — the second ground
+   ═══════════════════════════════════════════════════════════════════════════
+   Adding a dark band to this site is not a colour change. Every token that
+   describes contrast has to flip with it, or the accent, the signal, the rules
+   and the buttons all end up below the readability floor on a surface they
+   were never measured against. `.on-steel` is the single place that mapping
+   lives, so a chapter can invert a band by adding one class rather than by
+   guessing at seven custom properties.                                       */
+
+.on-steel {
+  background: var(--steel-900);
+  color: var(--inverse-ink);
+  --ink: var(--inverse-ink);
+  --ink-muted: color-mix(in oklab, var(--inverse-ink) 66%, transparent);
+  --surface: var(--steel-900);
+  --surface-sunk: var(--steel-950);
+  --surface-raise: var(--steel-850);
+  --line: color-mix(in oklab, var(--inverse-ink) 17%, transparent);
+  --accent: var(--accent-inverse);
+  --accent-deep: var(--accent-inverse);
+  --accent-wash: color-mix(in oklab, var(--accent-inverse) 16%, transparent);
+  --signal: var(--signal-inverse);
+  --signal-ink: var(--signal-inverse);
+  --hot: var(--hot-bright);
+  --grid-line: color-mix(in oklab, var(--inverse-ink) 7%, transparent);
+  --grid-line-strong: color-mix(in oklab, var(--inverse-ink) 13%, transparent);
+  --edge-light: color-mix(in oklab, #FFFFFF 11%, transparent);
+  --edge-dark: color-mix(in oklab, #000000 42%, transparent);
+  --rule-strong: var(--hair-strong) solid color-mix(in oklab, var(--inverse-ink) 30%, transparent);
+  /* The solid and WhatsApp buttons invert with the band they sit in. */
+  --btn-bg: var(--inverse-ink);
+  --btn-fg: var(--steel-950);
+  --btn-hover: #FFFFFF;
+  --focus: 2px solid var(--inverse-ink);
+}
+.on-steel .btn--whatsapp:hover,
+.on-steel .btn--solid:hover { color: var(--steel-950); }
+.on-steel .btn--primary { background: var(--accent-inverse); color: var(--steel-950); }
+.on-steel .btn--primary:hover { background: #FFFFFF; }
+
+/* Deeper still. For the one band on a page that has to feel like the floor. */
+.on-steel--deep { background: var(--steel-950); --surface: var(--steel-950); --surface-sunk: var(--steel-900); }
+
+/* ── Surface treatments ────────────────────────────────────────────────────
+   These are stacked as ::before layers rather than as background shorthands so
+   a section can carry its own background colour, a chapter can tint it, and
+   the material still reads on top of both.                                   */
+
+.mat { position: relative; isolation: isolate; }
+.mat > * { position: relative; z-index: 1; }
+.mat::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Surface-ground finish plus cast grain. The grain is what stops a large dark
+   field from reading as a flat digital rectangle. */
+.mat--milled::before {
+  background-image: var(--tex-grain), var(--tex-mill);
+  background-size: 140px 140px, auto;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+.mat--milled-light::before {
+  background-image: var(--tex-grain), var(--tex-mill-light);
+  background-size: 140px 140px, auto;
+  opacity: 0.28;
+}
+
+/* The measured grid, as a section treatment rather than a one-off. */
+.mat--grid::before {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-unit) var(--grid-unit);
+}
+.mat--grid-fade::before {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 74%);
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 74%);
+}
+
+/* Section hatch, at the angle a drawing uses for cut material. Scoped tight —
+   this is the fill of a sectioned solid, not a page background. */
+.hatch {
+  background-image: var(--tex-hatch);
+  opacity: 0.24;
+}
+
+/* ── Relief ────────────────────────────────────────────────────────────────
+   A machined plate catches light on its top edge and casts a line at its
+   bottom one. That is the whole effect: two one-pixel insets. It is not a drop
+   shadow and it must never grow into one.                                    */
+.relief { box-shadow: var(--relief); }
+.on-steel .relief { box-shadow: var(--relief-dark); }
+
+/* ── Layout primitives ─────────────────────────────────────────────────────
+   Mobile layout on this site is a different composition, not a narrower one.
+   `.split` is the contract: two columns above the breakpoint, a stack below
+   it, and never an in-between state where a paragraph is nine characters
+   wide. Every two-column band on the site uses it or reimplements it exactly.
+   The breakpoint is deliberately high — a 46ch paragraph beside a figure needs
+   about 1000px before it stops being a column and starts being a gutter.      */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, var(--split-a, 1fr)) minmax(0, var(--split-b, 1fr));
+  gap: var(--split-gap, clamp(2rem, 5vw, 4.5rem));
+  align-items: var(--split-align, start);
+}
+@media (max-width: 1000px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--split-gap-stacked, clamp(2rem, 7vw, 3.25rem));
+  }
+  /* A figure that led the composition follows the copy once stacked: the
+     argument comes first, the drawing that supports it second. */
+  .split > [data-split-figure] { order: 2; }
+  .split > [data-split-copy] { order: 1; }
+}
+
+/* Anything that has to scroll sideways does it inside its own box, never by
+   pushing the page. A scroll container that is also a grid or flex item
+   defaults to min-width:auto and will happily be wider than its track. */
+.scroller {
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-inline: contain;
+}
+
+/* ── Statement type ───────────────────────────────────────────────────────
+   A large line on this site is a composition, not an enlargement. It gets a
+   tighter measure than its size would give it by default, an optical negative
+   indent so the first stem lines up with the rule above it, and a controlled
+   line-height that does not open up as the clamp grows.                      */
+
+.t-statement {
+  font-size: var(--step-6);
+  line-height: 1.0;
+  letter-spacing: var(--track-mega);
+  font-weight: var(--weight-medium);
+  max-inline-size: 15ch;
+  text-wrap: balance;
+}
+/* A long statement is set SMALLER, not merely allowed to wrap further. Four
+   lines of 80px type is a wall; three lines of 60px is a composition. */
+.t-statement--wide { max-inline-size: 26ch; font-size: var(--step-5); }
+/* Reserved for the one line on a page that carries everything. */
+.t-statement--xl { font-size: var(--step-7); max-inline-size: 13ch; }
+:where(html[lang='zh'], html[lang='th'], html[lang='ar'], html[lang='fa'], html[lang='ur']) .t-statement {
+  line-height: 1.18;
+  max-inline-size: 18ch;
+}
+:where(html[lang='ur']) .t-statement { line-height: 1.8; }
+:where(html[lang='zh']) .t-statement { max-inline-size: 11ch; }
+
+/* Two-tone statement: the setup is muted, the payload is not. Used instead of
+   colouring an entire headline, which flattens it. */
+.t-statement > .lead-in { color: var(--ink-muted); display: block; }
+.t-statement > .payload { display: block; }

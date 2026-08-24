@@ -19,28 +19,19 @@ import type { HomeContent } from '../../content/types.ts';
 
 interface Props {
   pillars: HomeContent['pillars'];
+  /** Drawing labels, reused from the hero figure. Already localised. */
+  d: HomeContent['diagram']['hero'];
   schematicLabel: string;
 }
-const { pillars, schematicLabel } = Astro.props;
-
-// Illustrative proportions only — the exact split is a per-project calculation
-// and the figure's own note says so.
-const COST = [46, 24, 14, 8, 8];
-const KEYS = ['resin', 'cycle', 'tool', 'scrap', 'other'];
-let acc = 0;
-const bars = COST.map((pct, i) => {
-  const x = acc;
-  acc += pct;
-  return { pct, x, key: KEYS[i] };
-});
+const { pillars, d, schematicLabel } = Astro.props;
 ---
 
 <section class="pl" id="advantages">
   <div class="shell--wide">
     <p class="eyebrow">{pillars.kicker}</p>
-    <div class="ruled-head pl__head">
-      <h2 class="t-h2 pl__title">{pillars.heading}</h2>
-      <p class="t-lead">{pillars.lead}</p>
+    <div class="pl__head split">
+      <h2 class="t-statement t-statement--wide pl__title" data-split-copy>{pillars.heading}</h2>
+      <p class="t-lead pl__lead" data-split-figure>{pillars.lead}</p>
     </div>
   </div>
 
@@ -59,48 +50,103 @@ const bars = COST.map((pct, i) => {
           </div>
 
           <figure class="pl__fig">
-            <figcaption class="pl__cap">{item.figure.caption}</figcaption>
+            {i !== 0 && <figcaption class="pl__cap">{item.figure.caption}</figcaption>}
 
             {i === 0 && (
-              /* Where the money is. One stacked bar, and a legend that reads as
-                 a parts list rather than as a chart key. */
+              /* The percentage split that used to sit here was illustrative,
+                 and its own caption said so. On a page whose whole argument is
+                 that this company is precise, an invented 46% is worse than no
+                 number: it is the one thing on the page a buyer can catch out.
+
+                 What replaces it explains the same point better. A section
+                 through a boss and its base shows the mass that collects at the
+                 junction — the hot spot that sets the cooling time, and with it
+                 the cycle, the machine hours and most of the cost per part. The
+                 dashed profile is the same feature cored out. Nothing here is
+                 a claim; it is the geometry every moulder recognises.
+
+                 The cost lines remain, as a ledger of what is in the number,
+                 with no proportions attached to them. */
               <>
-                <svg viewBox="0 0 420 46" class="pl__bar" data-nomirror role="img" aria-label={item.figure.caption} preserveAspectRatio="none">
-                  {bars.map((b, bi) => (
-                    <rect
-                      x={b.x * 4.2} y="0" width={b.pct * 4.2 - 1.6} height="46"
-                      class={`pl__seg pl__seg--${b.key}`}
-                      style={`--g:${bi}`}
+                <div class="pl__cost">
+                  <svg viewBox="0 0 420 236" class="pl__sec" data-nomirror role="img" aria-label={item.figure.captionAlt ?? item.figure.caption}>
+                    <defs>
+                      <pattern id="pl-hatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+                        <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.85" opacity="0.4" />
+                      </pattern>
+                    </defs>
+
+                    {/* Base wall and boss, in section. */}
+                    <path
+                      d="M46 208 L374 208 L374 158 L238 158 L238 52 L182 52 L182 158 L46 158 Z"
+                      fill="url(#pl-hatch)" stroke="currentColor" stroke-width="1.5" class="pl__steel-edge"
                     />
-                  ))}
-                </svg>
-                <dl class="pl__legend">
-                  {item.figure.rows.map((row, ri) => (
-                    <div class="pl__legend-row">
-                      <dt>
-                        <span class={`pl__dot pl__seg--${KEYS[ri]}`} aria-hidden="true"></span>
-                        {row.label}
-                      </dt>
-                      <dd class="t-mono">{row.value}</dd>
-                    </div>
-                  ))}
-                </dl>
+
+                    {/* The inscribed circle at the junction: the standard way a
+                        toolmaker shows where mass — and cooling time — collects. */}
+                    <circle cx="210" cy="176" r="31" class="pl__mass" />
+
+                    {/* The same feature, cored. */}
+                    <path d="M196 52 L196 150 Q196 160 206 162 L214 162 Q224 160 224 150 L224 52"
+                      fill="none" class="pl__cored" />
+
+                    {/* Cooling, placed where it can actually reach. */}
+                    <circle cx="128" cy="183" r="9" class="pl__cool" />
+                    <circle cx="300" cy="183" r="9" class="pl__cool" />
+                    <line x1="128" y1="183" x2="300" y2="183" class="pl__cool-line" />
+
+                    {/* Wall callouts, numbered — the strings are HTML below. */}
+                    <g class="pl__mark">
+                      <line x1="182" y1="86" x2="120" y2="70" />
+                      <circle cx="182" cy="86" r="3" />
+                      <circle cx="112" cy="68" r="9" class="pl__mark-n" />
+                      <text x="112" y="72" text-anchor="middle" class="pl__mark-t">1</text>
+                    </g>
+                    <g class="pl__mark">
+                      <line x1="300" y1="183" x2="356" y2="112" />
+                      <circle cx="300" cy="183" r="3" />
+                      <circle cx="362" cy="105" r="9" class="pl__mark-n" />
+                      <text x="362" y="109" text-anchor="middle" class="pl__mark-t">2</text>
+                    </g>
+                  </svg>
+
+                  <p class="pl__cap pl__cap--alt">{item.figure.captionAlt}</p>
+                  <ol class="pl__keys">
+                    <li><span class="pl__key-n" aria-hidden="true">1</span><span>{d.wall}</span></li>
+                    <li><span class="pl__key-n" aria-hidden="true">2</span><span>{d.cooling}</span></li>
+                  </ol>
+                </div>
+
+                <p class="pl__cap pl__cap--ledger">{item.figure.caption}</p>
+                <ul class="pl__ledger">
+                  {item.figure.rows.map((row) => <li>{row.label}</li>)}
+                </ul>
               </>
             )}
 
             {i === 1 && (
-              /* The blame triangle, and the single line that replaces it. */
+              /* The triangle that used to sit here was a decorative shape: it
+                 said "three parties" and nothing else, and it broke into an
+                 unreadable 210px square on a phone.
+
+                 The point it was trying to make is about handovers, so the
+                 figure now shows handovers. Three separate suppliers, each in
+                 its own block, with the break between them drawn — that gap is
+                 where a project loses a month and nobody is responsible. Beside
+                 it, the same route as one continuous chain.
+
+                 It is HTML, not SVG, so it wraps in nine languages and stacks
+                 on a phone without redrawing anything. */
               <div class="pl__pair">
                 <div class="pl__pair-half">
-                  <svg viewBox="0 0 210 160" data-nomirror role="img" aria-label={item.figure.caption}>
-                    <path d="M104 24 L28 130 L180 130 Z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.5" />
-                    <circle cx="104" cy="24" r="21" class="pl__node" />
-                    <circle cx="28" cy="130" r="21" class="pl__node" />
-                    <circle cx="180" cy="130" r="21" class="pl__node" />
-                    <text x="104" y="28" text-anchor="middle" class="pl__mini">{item.figure.rows[0].value}</text>
-                    <text x="28" y="134" text-anchor="middle" class="pl__mini">{item.figure.rows[1].value}</text>
-                    <text x="180" y="134" text-anchor="middle" class="pl__mini">{item.figure.rows[2].value}</text>
-                  </svg>
+                  <ol class="pl__silo">
+                    {item.figure.rows.slice(0, 3).map((row, ri) => (
+                      <li class="pl__silo-item" style={`--g:${ri}`}>
+                        <span class="pl__silo-tag t-mono">{row.value}</span>
+                        <span class="pl__silo-name">{row.label}</span>
+                      </li>
+                    ))}
+                  </ol>
                   <p class="pl__warn">{item.figure.rows[3].label}</p>
                 </div>
 
@@ -165,9 +211,17 @@ const bars = COST.map((pct, i) => {
 </section>
 
 <style>
-  .pl { padding-block: var(--section-y) 0; }
-  .pl__head { margin-block-start: var(--sp-5); }
-  .pl__title { max-inline-size: 16ch; }
+  .pl { padding-block: var(--section-y-tight) 0; }
+  .pl__head {
+    margin-block-start: var(--sp-5);
+    padding-block-start: var(--sp-6);
+    border-block-start: var(--rule-strong);
+    --split-a: 1.15fr;
+    --split-b: 0.85fr;
+    --split-align: end;
+  }
+  .pl__title { max-inline-size: 20ch; }
+  .pl__lead { padding-block-end: 0.35em; }
 
   .pl__bands { margin-block-start: clamp(2.5rem, 6vw, 4.5rem); }
 
@@ -267,41 +321,124 @@ const bars = COST.map((pct, i) => {
   }
   .pl__fig .figure-note { margin-block-start: var(--sp-3); }
 
-  /* Cost bar. One accent in four tints, so the bar reads as a single quantity
-     being divided rather than as five unrelated categories. */
-  .pl__bar { block-size: 46px; }
-  .pl__seg, .pl__dot { fill: var(--accent); background: var(--accent); }
-  .pl__seg--cycle { fill: color-mix(in oklab, var(--accent) 70%, var(--surface)); background: color-mix(in oklab, var(--accent) 70%, var(--surface)); }
-  .pl__seg--tool  { fill: color-mix(in oklab, var(--accent) 46%, var(--surface)); background: color-mix(in oklab, var(--accent) 46%, var(--surface)); }
-  .pl__seg--scrap { fill: var(--signal); background: var(--signal); }
-  .pl__seg--other { fill: color-mix(in oklab, var(--accent) 22%, var(--surface)); background: color-mix(in oklab, var(--accent) 22%, var(--surface)); }
+  /* ── 01 · Where the cost is decided ───────────────────────────────────
+     A section, drawn the way a toolmaker draws one: hatched material, an
+     inscribed circle at the junction where mass collects, the same feature
+     cored out in dashed line, and the cooling that has to reach it. */
+  .pl__cost { margin-block-start: var(--sp-4); }
+  .pl__sec { inline-size: 100%; block-size: auto; color: var(--ink-muted); }
+  .pl__steel-edge { stroke: var(--ink); }
 
-  @keyframes pl-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-  :global(html.js) .pl__band[data-reveal='in'] .pl__seg {
-    transform-origin: left center;
-    animation: pl-grow 900ms var(--ease-out) both;
-    animation-delay: calc(var(--g) * 110ms);
+  /* The hot spot. This is the one place on the homepage the heat colour is
+     used, and it means exactly one thing: the geometry that costs money. */
+  .pl__mass {
+    fill: color-mix(in oklab, var(--hot) 18%, transparent);
+    stroke: var(--hot);
+    stroke-width: 1.4;
+    stroke-dasharray: 5 4;
+  }
+  .pl__cored { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 7 4; }
+  .pl__cool { fill: var(--surface); stroke: var(--accent); stroke-width: 1.6; }
+  .pl__cool-line { stroke: var(--accent); stroke-width: 1; opacity: 0.4; stroke-dasharray: 3 5; }
+
+  .pl__mark line { stroke: var(--ink-muted); stroke-width: 0.9; }
+  .pl__mark circle { fill: var(--ink-muted); }
+  .pl__mark .pl__mark-n { fill: var(--surface); stroke: var(--ink); stroke-width: 1.1; }
+  .pl__mark-t {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    fill: var(--ink);
+    stroke: none;
   }
 
-  .pl__legend { margin-block-start: var(--sp-5); border-block-start: var(--rule); }
-  .pl__legend-row {
+  .pl__keys {
+    margin-block-start: var(--sp-4);
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--sp-4);
-    padding-block: 0.55rem;
-    border-block-end: var(--rule);
-  }
-  .pl__legend dt {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
     font-size: var(--step--1);
+    color: var(--ink-muted);
   }
-  .pl__legend dd { font-size: var(--step--1); font-variant-numeric: tabular-nums; }
-  .pl__dot { inline-size: 0.6rem; block-size: 0.6rem; flex: none; translate: 0 -0.05em; }
+  .pl__keys li { display: flex; align-items: center; gap: 0.5rem; }
+  .pl__key-n {
+    inline-size: 1.1rem;
+    block-size: 1.1rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--ink);
+    flex: none;
+  }
 
-  /* Blame triangle vs. one chain */
+  /* The cost lines. A ledger of what is in the number — with no proportions
+     attached to any of them, because the honest proportion is per project. */
+  .pl__cap--ledger { margin-block-start: var(--sp-7); margin-block-end: var(--sp-3); }
+  .pl__ledger { border-block-start: var(--rule); }
+  .pl__ledger li {
+    padding-block: 0.6rem;
+    padding-inline-start: 1.5rem;
+    border-block-end: var(--rule);
+    font-size: var(--step--1);
+    position: relative;
+  }
+  .pl__ledger li::before {
+    content: '';
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-start: 1.05rem;
+    inline-size: 0.55rem;
+    block-size: 0.55rem;
+    border: 1px solid var(--accent);
+  }
+
+  /* ── 02 · Three suppliers, three handovers ────────────────────────────── */
+  .pl__silo { display: grid; gap: 0; }
+  .pl__silo-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
+    padding: 0.75rem 0.9rem;
+    background: var(--surface-raise);
+    border: var(--rule);
+    box-shadow: var(--relief);
+  }
+  /* The gap between two suppliers, drawn. This is the argument: the break is
+     not between the blocks, it IS the blocks not touching. */
+  .pl__silo-item + .pl__silo-item { margin-block-start: 1.5rem; position: relative; }
+  .pl__silo-item + .pl__silo-item::before {
+    content: '';
+    position: absolute;
+    inset-block-start: -1.5rem;
+    inset-inline-start: 1.6rem;
+    inline-size: 1.5px;
+    block-size: 1.5rem;
+    background: repeating-linear-gradient(to bottom, var(--signal) 0 3px, transparent 3px 7px);
+  }
+  .pl__silo-item + .pl__silo-item::after {
+    content: '';
+    position: absolute;
+    inset-block-start: -0.95rem;
+    inset-inline-start: 1.05rem;
+    inline-size: 0.6rem;
+    block-size: 0.6rem;
+    border-block-start: 1.5px solid var(--signal);
+    border-inline-end: 1.5px solid var(--signal);
+    transform: rotate(45deg) scaleX(var(--dir));
+    opacity: 0.9;
+  }
+  .pl__silo-tag {
+    font-size: var(--step--2);
+    letter-spacing: 0.14em;
+    color: var(--ink-muted);
+    flex: none;
+    min-inline-size: 3.6em;
+  }
+  .pl__silo-name { font-size: var(--step-0); font-weight: var(--weight-medium); }
+
+  /* The three-supplier route beside the one-partner chain. */
   .pl__pair {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -309,8 +446,6 @@ const bars = COST.map((pct, i) => {
     align-items: start;
   }
   @media (max-width: 560px) { .pl__pair { grid-template-columns: 1fr; } }
-  .pl__node { fill: none; stroke: currentColor; stroke-width: 1.3; opacity: 0.65; }
-  .pl__mini { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; fill: currentColor; opacity: 0.8; }
   .pl__warn {
     margin-block-start: var(--sp-4);
     font-size: var(--step--2);

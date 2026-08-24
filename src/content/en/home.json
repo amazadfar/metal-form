@@ -106,29 +106,25 @@
         "outcome": "Where there is nothing to improve we will tell you that too, and quote the part as drawn.",
         "figure": {
           "caption": "Cost of one moulded part",
-          "note": "Proportions illustrative. The split is a per-project calculation.",
+          "note": "Geometry decides most of this list before anyone quotes the part.",
           "rows": [
             {
-              "label": "Resin",
-              "value": "46%"
+              "label": "Resin"
             },
             {
-              "label": "Machine time",
-              "value": "24%"
+              "label": "Machine time"
             },
             {
-              "label": "Tool amortisation",
-              "value": "14%"
+              "label": "Tool amortisation"
             },
             {
-              "label": "Scrap",
-              "value": "8%"
+              "label": "Scrap"
             },
             {
-              "label": "Handling and packing",
-              "value": "8%"
+              "label": "Handling and packing"
             }
-          ]
+          ],
+          "captionAlt": "Where the cost is decided"
         }
       },
       {

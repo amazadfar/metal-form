@@ -1,0 +1,176 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   CHAPTER ART DIRECTION
+   ═══════════════════════════════════════════════════════════════════════════
+   Thirteen verticals, one design system. What makes them different is decided
+   in `src/config/industries.ts` and implemented exactly once, here, so a
+   chapter cannot drift off-brand and a new vertical inherits the whole thing
+   by naming a ground and a texture.
+
+   Nothing in this file fetches a resource. Every treatment is a gradient or a
+   data URI, which keeps it inside the content security policy and means it
+   renders in a meeting room with no connection.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Surface treatments ────────────────────────────────────────────────────
+   Each texture is taken from the sector's own material rather than picked for
+   variety: a cavity plate is an array of holes, a mould half in section is
+   hatched, a hull is a swell, a connector housing is a pitch comb.
+
+   They are applied to a ::before layer at low opacity. The rule is that a
+   texture must be felt before it is seen — if a reader can describe the
+   pattern, it is too strong.                                                */
+
+[data-tex] { position: relative; isolation: isolate; }
+[data-tex] > * { position: relative; z-index: 1; }
+[data-tex]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--tex-opacity, 1);
+}
+
+/* A cavity array, seen from above. Medical. */
+[data-tex='dot']::before {
+  background-image: radial-gradient(circle at center, var(--tex-ink, currentColor) 1.1px, transparent 1.2px);
+  background-size: 15px 15px;
+  opacity: var(--tex-opacity, 0.16);
+}
+
+/* Section hatch — cut steel. Automotive, plumbing. */
+[data-tex='hatch']::before {
+  background-image: repeating-linear-gradient(45deg,
+    var(--tex-ink, currentColor) 0 1px, transparent 1px 9px);
+  opacity: var(--tex-opacity, 0.1);
+}
+
+/* A swell. Beverage, marine, irrigation — anything that moves fluid. */
+[data-tex='wave']::before {
+  background-image:
+    repeating-radial-gradient(ellipse 220% 90% at 50% -40%,
+      transparent 0 22px, var(--tex-ink, currentColor) 22px 23px, transparent 23px 46px);
+  opacity: var(--tex-opacity, 0.11);
+}
+
+/* Pitch comb — contacts on a connector, at a repeated centre distance. */
+[data-tex='comb']::before {
+  background-image: repeating-linear-gradient(90deg,
+    var(--tex-ink, currentColor) 0 1px, transparent 1px 11px);
+  opacity: var(--tex-opacity, 0.1);
+}
+
+/* Cast grain. Chemical, furniture, custom — surfaces that are not polished. */
+[data-tex='grain']::before {
+  background-image: var(--tex-grain);
+  background-size: 140px 140px;
+  opacity: var(--tex-opacity, 0.22);
+}
+
+/* Structural mesh — a large panel and its ribbing. Appliances, consumer. */
+[data-tex='mesh']::before {
+  background-image:
+    linear-gradient(to right, var(--tex-ink, currentColor) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--tex-ink, currentColor) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: var(--tex-opacity, 0.09);
+}
+
+/* A show surface catching light. Cosmetics only — it is the whole argument
+   of that vertical, so nothing else is allowed to use it. */
+[data-tex='sheen']::before {
+  background-image: linear-gradient(104deg,
+    transparent 0%,
+    color-mix(in oklab, var(--tex-ink, currentColor) 26%, transparent) 38%,
+    color-mix(in oklab, var(--tex-ink, currentColor) 4%, transparent) 52%,
+    transparent 74%);
+  opacity: var(--tex-opacity, 0.5);
+}
+
+/* ── Chapter grounds ───────────────────────────────────────────────────────
+   Three openings. A vertical picks one and its whole chapter inherits the
+   register: clinical pages open on their own near-white surface, structural
+   ones open on steel, and the fluid and volume verticals open on a saturated
+   tint of their own accent.                                                 */
+
+.ground--light {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.ground--steel {
+  background: var(--inverse);
+  color: var(--inverse-ink);
+  --ink: var(--inverse-ink);
+  --ink-muted: color-mix(in oklab, var(--inverse-ink) 66%, transparent);
+  --surface: var(--inverse);
+  --surface-sunk: color-mix(in oklab, var(--inverse) 82%, #000000);
+  --surface-raise: color-mix(in oklab, var(--inverse) 86%, #FFFFFF);
+  --line: color-mix(in oklab, var(--inverse-ink) 17%, transparent);
+  --accent: var(--accent-inverse);
+  --accent-deep: var(--accent-inverse);
+  --accent-wash: color-mix(in oklab, var(--accent-inverse) 15%, transparent);
+  --signal: var(--signal-inverse);
+  --signal-ink: var(--signal-inverse);
+  --hot: var(--hot-bright);
+  --grid-line: color-mix(in oklab, var(--inverse-ink) 7%, transparent);
+  --rule-strong: var(--hair-strong) solid color-mix(in oklab, var(--inverse-ink) 30%, transparent);
+  --btn-bg: var(--inverse-ink);
+  --btn-fg: var(--inverse);
+  --btn-hover: #FFFFFF;
+  --focus: 2px solid var(--inverse-ink);
+  --tex-ink: var(--inverse-ink);
+}
+.ground--steel .btn--whatsapp:hover,
+.ground--steel .btn--solid:hover { color: var(--inverse); }
+
+/* A deep, saturated bed of the vertical's own accent. Used where the sector's
+   colour IS the identity — the blue of a bottling hall, the green of an
+   irrigation field. Mixed towards the inverse so it never becomes a brand
+   colour swatch with white text dropped on it. */
+.ground--tint {
+  background: color-mix(in oklab, var(--accent-deep) 52%, var(--inverse));
+  color: var(--inverse-ink);
+  --ink: var(--inverse-ink);
+  --ink-muted: color-mix(in oklab, var(--inverse-ink) 70%, transparent);
+  --surface: color-mix(in oklab, var(--accent-deep) 52%, var(--inverse));
+  --surface-sunk: color-mix(in oklab, var(--accent-deep) 34%, var(--inverse));
+  --surface-raise: color-mix(in oklab, var(--accent-deep) 62%, var(--inverse));
+  --line: color-mix(in oklab, var(--inverse-ink) 20%, transparent);
+  --accent: var(--accent-inverse);
+  --accent-deep: var(--accent-inverse);
+  --accent-wash: color-mix(in oklab, var(--accent-inverse) 16%, transparent);
+  --signal: var(--signal-inverse);
+  --signal-ink: var(--signal-inverse);
+  --hot: var(--hot-bright);
+  --grid-line: color-mix(in oklab, var(--inverse-ink) 8%, transparent);
+  --rule-strong: var(--hair-strong) solid color-mix(in oklab, var(--inverse-ink) 32%, transparent);
+  --btn-bg: var(--inverse-ink);
+  --btn-fg: var(--inverse);
+  --btn-hover: #FFFFFF;
+  --focus: 2px solid var(--inverse-ink);
+  --tex-ink: var(--inverse-ink);
+}
+.ground--tint .btn--whatsapp:hover,
+.ground--tint .btn--solid:hover { color: var(--inverse); }
+
+/* ── Chapter rhythm ────────────────────────────────────────────────────────
+   How much air the chapter runs at. A medical page should breathe; an
+   automotive drawing sheet should be dense. This is one variable rather than
+   thirteen sets of hand-tuned paddings.                                     */
+.chapter { --chapter-y: var(--section-y); }
+.rhythm--airy  { --chapter-y: var(--section-y-loose); }
+.rhythm--even  { --chapter-y: var(--section-y); }
+.rhythm--dense { --chapter-y: var(--section-y-tight); }
+
+/* ── Header clearance ──────────────────────────────────────────────────────
+   On a steel or tint ground the site header overlays the chapter opening, so
+   the first element inside <main> starts below it. On a light ground the
+   header sits in flow as normal and nothing is needed.
+
+   `:where()` keeps this at zero specificity so a chapter's own hero padding
+   still wins if it sets one. */
+body.ground-is-steel :where(main > :first-child),
+body.ground-is-tint :where(main > :first-child) {
+  padding-block-start: calc(4.25rem + clamp(2rem, 5vw, 4rem));
+}

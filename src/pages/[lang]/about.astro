@@ -10,6 +10,7 @@ import Base from '../../layouts/Base.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import CtaBlock from '../../components/CtaBlock.astro';
+import RfqDock from '../../components/RfqDock.astro';
 import { LOCALE_ORDER, type Locale } from '../../i18n/locales.ts';
 import { getAbout, getCommon } from '../../content/index.ts';
 import { absoluteUrl, breadcrumbSchema } from '../../lib/seo.ts';
@@ -90,6 +91,7 @@ const schemas = [
   </main>
 
   <SiteFooter locale={locale} />
+  <RfqDock locale={locale} prefill={p.cta.prefill} source="about" />
 </Base>
 
 <style>
@@ -117,11 +119,13 @@ const schemas = [
   .ab-fact {
     padding: var(--sp-5) var(--sp-5) var(--sp-6) 0;
     border-block-end: var(--rule);
+    padding-inline-start: var(--col-pad);
     border-inline-end: var(--rule);
     display: grid;
     gap: var(--sp-3);
     align-content: start;
   }
+  .ab-fact:first-child { padding-inline-start: 0; }
   .ab-fact:last-child { border-inline-end: 0; }
   @media (max-width: 720px) { .ab-fact { border-inline-end: 0; } }
 

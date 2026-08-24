@@ -1,0 +1,99 @@
+---
+/**
+ * VERIFIED CAPABILITY, PRESENTED AS CAPABILITY
+ *
+ * This information used to be set as an 11px tracked-out monospace strip under
+ * the hero — "EST. 2006 · 1,000+ PROJECTS · TOOLING TO 46 CAVITIES · CATIA ·
+ * SOLIDWORKS". At that size a buyer reads it as build metadata and skips it,
+ * which is a waste: it is some of the only hard, checkable material on the
+ * whole site.
+ *
+ * Each fact is now a module with a rule, a figure where a real figure exists,
+ * a full statement and the qualification that goes with it. Nothing here is
+ * generated or rounded up: the strings come from `common.json` — which is
+ * checked against the claim register in all nine languages — and the numbers
+ * come from `FACTS` in `src/config/site.ts`.
+ *
+ * The qualifications are the point. "Tooling to 46 cavities" is followed by
+ * "high cavitation is a tooling discipline, not a machine specification",
+ * because a buyer who has been oversold before trusts the sentence that limits
+ * the claim more than the claim itself.
+ */
+import { FACTS } from '../config/site.ts';
+import { getCommon } from '../content/index.ts';
+import type { Locale } from '../i18n/locales.ts';
+
+export type CapabilityKey =
+  | 'since' | 'projects' | 'cavities' | 'software' | 'warranty' | 'delivery' | 'response';
+
+interface Props {
+  locale: Locale;
+  /** Which facts, in which order. */
+  keys?: CapabilityKey[];
+  /** Drops the qualifying note — for a dense rail under a hero. */
+  compact?: boolean;
+  /** Narrower minimum column, for a four-up rail rather than a three-up grid. */
+  tight?: boolean;
+  class?: string;
+}
+
+const {
+  locale,
+  keys = ['since', 'projects', 'cavities', 'software'],
+  compact = false,
+  tight = false,
+  class: className = '',
+} = Astro.props;
+
+const c = getCommon(locale);
+
+/** A figure only where a verified one exists. Never derived from prose. */
+const FIGURE: Partial<Record<CapabilityKey, string>> = {
+  since: String(FACTS.sinceYear),
+  projects: `${FACTS.projectsCompleted.toLocaleString('en-US')}+`,
+  cavities: String(FACTS.maxCavitiesDelivered),
+  response: `${FACTS.responseWindowHours}h`,
+};
+
+const items = keys.map((k) => {
+  const label = c.trust[k];
+  const note = c.trust[`${k}Note` as keyof typeof c.trust] as string | undefined;
+  const figure = FIGURE[k];
+  return {
+    k,
+    label,
+    note,
+    /* The statements are written to stand alone, so several already contain
+       their own number. Showing it twice — "1,000+" above "1,000+ completed
+       projects" — reads as padding. Numerals are Latin in all nine locales, so
+       a containment test is language-independent. */
+    figure: figure && !label.includes(figure) ? figure : null,
+  };
+});
+---
+
+<ul class:list={['caps', tight && 'caps--tight', className]}>
+  {items.map((item, i) => (
+    <li
+      class:list={['cap', item.figure && 'cap--fig']}
+      data-reveal
+      style={`--reveal-delay:${i * 60}ms`}
+    >
+      {item.figure && <span class="cap__v t-mono">{item.figure}</span>}
+      <span class:list={[item.figure ? 'cap__n cap__n--strong' : 'cap__v']}>{item.label}</span>
+      {!compact && item.note && <span class="cap__n">{item.note}</span>}
+    </li>
+  ))}
+</ul>
+
+<style>
+  /* The statement under a figure has to stay a statement, not become a caption. */
+  .cap__n--strong {
+    color: var(--ink);
+    font-size: var(--step-0);
+    line-height: 1.28;
+    font-weight: var(--weight-medium);
+    letter-spacing: var(--track-head);
+  }
+  .cap[data-reveal] { --reveal-y: 10px; }
+</style>

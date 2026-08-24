@@ -231,7 +231,8 @@ const pathname = Astro.url.pathname;
   @media (max-width: 820px) { .ov__body { grid-template-columns: 1fr; } }
 
   .ov__col { padding: clamp(1.25rem, 3vw, 2.25rem); }
-  .ov__col--industries { border-inline-end: var(--rule); }
+  .ov__col--industries {
+    padding-inline-start: var(--col-pad); border-inline-end: var(--rule); }
   @media (max-width: 820px) {
     .ov__col--industries { border-inline-end: 0; border-block-end: var(--rule); }
   }

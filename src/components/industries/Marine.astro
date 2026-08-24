@@ -1019,10 +1019,12 @@ const PLOT_DOTS = [
     gap: var(--sp-2);
     padding-block: var(--sp-3) var(--sp-6);
     padding-inline-end: var(--sp-5);
+    padding-inline-start: var(--col-pad);
     border-inline-end: var(--rule);
     font-size: var(--step--1);
     line-height: 1.4;
   }
+  .mar-mvs li:first-child { padding-inline-start: 0; }
   .mar-mvs li:last-child { border-inline-end: 0; }
   .mar-mvs li span { font-size: var(--step--2); letter-spacing: 0.18em; color: var(--accent-deep); }
   @media (max-width: 700px) { .mar-mvs li { border-inline-end: 0; border-block-end: var(--rule); padding-block: var(--sp-3); } }

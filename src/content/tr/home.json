@@ -106,29 +106,25 @@
         "outcome": "İyileştirilecek bir şey yoksa bunu da söyler, parçayı çizildiği hâliyle fiyatlandırırız.",
         "figure": {
           "caption": "Bir enjeksiyon parçasının maliyeti",
-          "note": "Oranlar temsilîdir. Dağılım her proje için ayrı hesaplanır.",
+          "note": "Bu listenin büyük bölümünü, kimse parçayı fiyatlandırmadan önce geometri belirler.",
           "rows": [
             {
-              "label": "Hammadde",
-              "value": "46%"
+              "label": "Hammadde"
             },
             {
-              "label": "Makine zamanı",
-              "value": "24%"
+              "label": "Makine zamanı"
             },
             {
-              "label": "Kalıp amortismanı",
-              "value": "14%"
+              "label": "Kalıp amortismanı"
             },
             {
-              "label": "Fire",
-              "value": "8%"
+              "label": "Fire"
             },
             {
-              "label": "Elleçleme ve ambalaj",
-              "value": "8%"
+              "label": "Elleçleme ve ambalaj"
             }
-          ]
+          ],
+          "captionAlt": "Maliyetin belirlendiği yer"
         }
       },
       {

@@ -101,6 +101,7 @@ const links = [
 
 <style>
   .hdr {
+    --hdr-h: 4.25rem;
     position: sticky;
     inset-block-start: 0;
     z-index: var(--z-nav);
@@ -116,8 +117,17 @@ const links = [
     backdrop-filter: saturate(180%) blur(14px);
     border-block-end-color: var(--line);
   }
-  /* Over an inverted hero the chrome starts light and flips back on condense. */
+  /* Over an inverted hero the bar overlays the composition rather than sitting
+     on a strip of page background above it. Without the negative margin the
+     header would put a 68px band of light surface above a dark hero, and the
+     light-on-dark link colours below would then be light on light. */
+  .hdr--over-dark { margin-block-end: calc(var(--hdr-h) * -1); }
   .hdr--over-dark:not(.is-condensed) { color: var(--inverse-ink); }
+  .hdr--over-dark:not(.is-condensed) .hdr__menu { color: var(--inverse-ink); }
+  /* The mark is a separate component with its own scope, so it needs saying
+     explicitly — otherwise it renders near-black on a near-black hero. */
+  .hdr--over-dark:not(.is-condensed) :global(.wm) { color: var(--inverse-ink); }
+  .hdr--over-dark:not(.is-condensed) :global(a.wm:hover) { color: #FFFFFF; }
   .hdr--over-dark:not(.is-condensed) .hdr__link { color: color-mix(in oklab, var(--inverse-ink) 78%, transparent); }
   .hdr--over-dark:not(.is-condensed) .hdr__link:hover { color: var(--inverse-ink); }
 
@@ -128,7 +138,7 @@ const links = [
     align-items: center;
     justify-content: space-between;
     gap: var(--sp-5);
-    block-size: 4.25rem;
+    block-size: var(--hdr-h);
   }
 
   .hdr__nav {

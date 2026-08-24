@@ -17,6 +17,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import CtaBlock from '../components/CtaBlock.astro';
 import IndustryFooterNav from '../components/IndustryFooterNav.astro';
+import RfqDock from '../components/RfqDock.astro';
 
 import { type Locale } from '../i18n/locales.ts';
 import { INDUSTRIES, paletteVars, type IndustryKey } from '../config/industries.ts';
@@ -51,16 +52,20 @@ const schemas = [
   route={route}
   schemas={schemas}
   paletteStyle={paletteVars(industry.palette)}
-  bodyClass={`chapter chapter--${industryKey}`}
+  bodyClass={`chapter chapter--${industryKey} rhythm--${industry.art.weight} ground-is-${industry.art.ground} hero-is-${industry.art.hero}`}
 >
   <a class="skip-link" href="#main">{c.a11y.skipToContent}</a>
-  <SiteHeader locale={locale} current={industryKey} />
+  {/* A chapter that opens on steel or on a saturated tint needs the header in
+      its light state over the top of it, and the header has to overlay the
+      composition rather than sit on a strip of page above it. */}
+  <SiteHeader locale={locale} current={industryKey} overDark={industry.art.ground !== 'light'} />
 
   <main id="main">
     <slot />
-    <CtaBlock locale={locale} cta={content.cta} source={`industry_${industryKey}`} index="—" />
+    <CtaBlock locale={locale} cta={content.cta} source={`industry_${industryKey}`} index="—" inverse />
     <IndustryFooterNav locale={locale} current={industryKey} />
   </main>
 
   <SiteFooter locale={locale} />
+  <RfqDock locale={locale} prefill={content.cta.prefill} source={`industry_${industryKey}`} />
 </Base>

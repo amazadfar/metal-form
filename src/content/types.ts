@@ -154,7 +154,14 @@ export interface PillarFigure {
   /** Second caption, where a figure compares two situations side by side. */
   captionAlt?: string;
   note: string;
-  rows: Array<{ label: string; value: string }>;
+  /**
+   * `value` is optional because not every row carries a figure — and where a
+   * figure would have to be invented to fill the column, the right answer is
+   * to leave it out. The homepage cost ledger has no values for exactly that
+   * reason: an illustrative percentage on a page that asks to be trusted for
+   * its precision is worse than no number at all.
+   */
+  rows: Array<{ label: string; value?: string }>;
   chain?: string[];
   chainNote?: string;
 }

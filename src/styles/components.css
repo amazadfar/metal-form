@@ -327,3 +327,193 @@
 [data-stepper][data-step='4'] [data-station-step='4'] [class*='__i'] {
   color: var(--accent-deep);
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CAPABILITY MODULES
+   ═══════════════════════════════════════════════════════════════════════════
+   Verified technical capability — CATIA, SolidWorks, DFM, STEP/IGES, cavity
+   counts — used to be set as a tracked-out mono strip at 11px. At that size a
+   buyer reads it as build metadata and skips it. It is some of the most
+   persuasive material on the site, so it is now a module with a name, a value
+   and a rule around it, sized to be read rather than to be tidy.
+
+   Nothing here invents a capability. Every value is passed in from content
+   that has been through the claim register.                                  */
+
+.caps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: var(--rule);
+}
+.caps--tight { grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); }
+@media (max-width: 560px) { .caps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.cap {
+  background: var(--surface-raise);
+  padding: var(--sp-5) var(--sp-5) var(--sp-5);
+  display: grid;
+  align-content: start;
+  gap: 0.4rem;
+  position: relative;
+  min-inline-size: 0;
+}
+.on-steel .cap { background: var(--surface-raise); }
+.cap::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: var(--sp-6);
+  block-size: var(--hair-strong);
+  background: var(--accent);
+}
+.cap__k {
+  font-family: var(--font-mono);
+  font-size: var(--step--2);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+:where(html[lang='zh'], html[lang='th'], html[lang='ar'], html[lang='fa'], html[lang='ur']) .cap__k {
+  font-family: var(--font-body); text-transform: none; letter-spacing: 0; font-size: var(--step--1);
+}
+.cap__v {
+  font-size: var(--step-1);
+  line-height: 1.18;
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--track-head);
+  text-wrap: balance;
+}
+.cap__n { font-size: var(--step--1); line-height: 1.45; color: var(--ink-muted); }
+
+/* The figure variant, where the number is the argument. */
+.cap--fig .cap__v {
+  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+  line-height: 1;
+  letter-spacing: var(--track-display);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* ── Badge: a single verified capability, inline in prose or under a hero ──
+   The old treatment was an 11px tracked-out mono pill. This one has a mark, a
+   readable size and a real border, and it stops looking like a build stamp. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.55em 0.9em 0.55em 0.75em;
+  border: var(--hair) solid color-mix(in oklab, var(--accent) 32%, transparent);
+  background: color-mix(in oklab, var(--accent) 7%, transparent);
+  border-radius: var(--r-1);
+  font-size: var(--step--1);
+  line-height: 1.25;
+  color: var(--ink);
+  box-shadow: var(--relief);
+}
+.on-steel .badge { box-shadow: var(--relief-dark); }
+.badge::before {
+  content: '';
+  inline-size: 3px;
+  block-size: 1.05em;
+  background: var(--accent);
+  flex: none;
+}
+.badges { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIGURE / STAT
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.figs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--sp-6) var(--sp-7);
+}
+.fig-stat { display: grid; gap: 0.35rem; align-content: start; padding-block-start: var(--sp-4); border-block-start: var(--rule-strong); }
+.fig-stat__v {
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: 0.95;
+  letter-spacing: var(--track-display);
+  font-weight: var(--weight-medium);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.fig-stat__l { font-size: var(--step-0); font-weight: var(--weight-medium); line-height: 1.25; }
+.fig-stat__n { font-size: var(--step--1); color: var(--ink-muted); line-height: 1.45; max-inline-size: 30ch; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STICKY REQUEST BAR
+   ═══════════════════════════════════════════════════════════════════════════
+   A buyer on a phone should not have to reach the bottom of a 9,000-pixel page
+   to find the next action. The bar appears once the hero has passed and hides
+   again over the closing call to action, so the same action is never offered
+   twice in one view. Phone and small tablet only — on a desktop the header is
+   always in reach and a docked bar would just be noise.                       */
+
+.rfq-dock {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: var(--z-sticky);
+  display: none;
+  padding: 0.6rem var(--gutter) calc(0.6rem + env(safe-area-inset-bottom));
+  background: color-mix(in oklab, var(--steel-950) 92%, transparent);
+  backdrop-filter: saturate(160%) blur(12px);
+  border-block-start: 1px solid color-mix(in oklab, #FFFFFF 14%, transparent);
+  transform: translateY(105%);
+  transition: transform var(--dur-3) var(--ease-out);
+}
+@media (max-width: 900px) {
+  .rfq-dock { display: block; }
+  html.js .rfq-dock[data-dock='in'] { transform: none; }
+  /* Without this the dock sits on top of the last line of the footer. */
+  body:has(.rfq-dock) { padding-block-end: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .rfq-dock { transition: none; } }
+
+.rfq-dock__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  justify-content: space-between;
+}
+.rfq-dock__copy { display: grid; gap: 0.1rem; min-inline-size: 0; }
+.rfq-dock__t {
+  font-size: var(--step--1);
+  font-weight: var(--weight-medium);
+  color: #FFFFFF;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rfq-dock__n {
+  font-size: var(--step--2);
+  color: color-mix(in oklab, #FFFFFF 68%, transparent);
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rfq-dock .btn {
+  flex: none;
+  background: #FFFFFF;
+  color: var(--steel-950);
+  --btn-py: 0.85em;
+  --btn-px: 1.1em;
+  /* 44px minimum touch target regardless of the type size inside it. */
+  min-block-size: 44px;
+}
+.rfq-dock .btn:hover { background: var(--accent-inverse); color: var(--steel-950); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TOUCH TARGETS
+   ═══════════════════════════════════════════════════════════════════════════
+   Anything tappable clears 44px on a coarse pointer. Applied by pointer type
+   rather than by width so a touchscreen laptop gets it too.                  */
+@media (pointer: coarse) {
+  .btn { min-block-size: 44px; }
+  .hdr__link { padding-block: 0.7rem; }
+  .ftr__inds a, .ftr__list a, .ftr__langs a { display: inline-block; padding-block: 0.35rem; }
+}

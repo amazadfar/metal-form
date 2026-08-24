@@ -50,6 +50,8 @@
   --step-5:  calc(clamp(2.488rem, 2.06rem + 2.14vw, 3.86rem) * var(--type-scale));
   --step-6:  calc(clamp(2.986rem, 2.36rem + 3.13vw, 4.94rem) * var(--type-scale));
   --step-7:  calc(clamp(3.583rem, 2.68rem + 4.51vw, 6.32rem) * var(--type-scale));
+  /* Statement size. Used once or twice per page, never for a paragraph head. */
+  --step-8:  calc(clamp(4.05rem, 2.72rem + 6.65vw, 8.1rem) * var(--type-scale));
 
   --leading-tight:   calc(1.04 * var(--leading-scale));
   --leading-display: calc(1.08 * var(--leading-scale));
@@ -58,6 +60,7 @@
   --leading-loose:   calc(1.78 * var(--leading-scale));
 
   /* Optical tracking. Display sizes tighten; small caps-label sizes open up. */
+  --track-mega: -0.035em;
   --track-display: -0.022em;
   --track-head: -0.014em;
   --track-body: -0.002em;
@@ -130,13 +133,90 @@
   --z-modal: 400;
   --z-toast: 500;
 
+
+  /* ── Material ──────────────────────────────────────────────────────────
+     The site is set on three grounds, not one: a sheet you read on, a deck
+     that recesses, and steel that carries the statements. Everything below
+     exists so a dark band reads as a machined surface under workshop light
+     rather than as a black rectangle.
+
+     All of it is CSS or a data URI. Nothing here fetches a resource, so it
+     survives the content security policy and works offline in a meeting room
+     with bad wifi. */
+
+  /* Steel. A cool near-black with a blue cast — tool steel, not ink. */
+  --steel-950: #0B0D11;
+  --steel-900: #101319;
+  --steel-850: #151922;
+  --steel-800: #1B2029;
+  --steel-700: #262C37;
+  --steel-600: #39414E;
+  --steel-400: #6C7583;
+  --steel-200: #AEB5BF;
+  --steel-100: #D5D9DF;
+
+  /* The light a machined surface catches at its top edge, and the shadow it
+     casts at its bottom one. One pixel each; this is relief, not elevation. */
+  --edge-light: color-mix(in oklab, #FFFFFF 62%, transparent);
+  --edge-dark: color-mix(in oklab, var(--steel-950) 34%, transparent);
+  --relief: inset 0 1px 0 0 var(--edge-light), inset 0 -1px 0 0 var(--edge-dark);
+  --relief-dark:
+    inset 0 1px 0 0 color-mix(in oklab, #FFFFFF 10%, transparent),
+    inset 0 -1px 0 0 color-mix(in oklab, #000000 40%, transparent);
+
+  /* Surface-ground finish. Directional, very low contrast, and it must stay
+     that way — the moment it is visible as stripes it reads as a pattern
+     library rather than as metal. */
+  --tex-mill:
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklab, #FFFFFF 2.6%, transparent) 0 1px,
+      transparent 1px 3px
+    );
+  --tex-mill-light:
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--steel-950) 2.4%, transparent) 0 1px,
+      transparent 1px 3px
+    );
+
+  /* Section hatch, at the 45° an engineering drawing uses for cut material. */
+  --tex-hatch:
+    repeating-linear-gradient(
+      45deg,
+      currentColor 0 1px,
+      transparent 1px 7px
+    );
+
+  /* Cast grain. Breaks the flatness of a large dark field without becoming
+     texture in its own right. */
+  --tex-grain:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23g)' opacity='0.42'/%3E%3C/svg%3E");
+
+  /* Heat. The one colour on the site that means "this is where the money
+     goes" — a scrap rate, a cycle second, a wall that is too thick. Never
+     decorative, never more than one per view. */
+  --hot: #C2500F;
+  --hot-bright: #FF8A3D;
+
+  /* Container widths, restated so a section can pick a measure deliberately
+     instead of every band defaulting to the same width. */
+  --shell-tight: 68rem;
+
+  /* Air either side of a rule that divides two columns. A divider needs it on
+     BOTH sides: a column that only pads its trailing edge leaves the next
+     column's first character sitting on the line. This is the single value
+     every ruled column grid on the site uses, so the gutters stay consistent
+     between a specification table, a fact row and a chapter's callout strip. */
+  --col-pad: clamp(1rem, 1.7vw, 1.6rem);
+
   /* ── Brand-neutral surface, used before a vertical palette is applied ─── */
-  --surface: #FBFBFA;
-  --surface-sunk: #F1F1EF;
+  --surface: #F5F5F3;
+  --surface-sunk: #EAEAE7;
   --surface-raise: #FFFFFF;
   --ink: #14161A;
-  --ink-muted: #5B6167;
-  --line: #DCDDDA;
+  --ink-muted: #565C63;
+  --line: #D6D7D3;
   --accent: #1F4E66;
   --accent-deep: #123647;
   --accent-wash: #E3EDF1;
@@ -150,8 +230,8 @@
   --signal-ink: #8A3D10;
   /* The accent, lightened for an inverted band — same reasoning as the signal. */
   --accent-inverse: #7FB6CE;
-  --inverse: #101215;
-  --inverse-ink: #EDEDEA;
+  --inverse: var(--steel-900);
+  --inverse-ink: #E9EBEE;
 
   /* Direction sign for physical-axis transforms. `translateX` has no logical
      equivalent, so anything that must move with the reading direction — a part
@@ -187,6 +267,7 @@ html[lang='ur']                  { --font-body: var(--font-urdu);     --font-dis
    breaks the joins outright. */
 html[lang='th'], html[lang='zh'], html[lang='ar'], html[lang='fa'], html[lang='ur'] {
   --track-label: 0.02em;
+  --track-mega: 0;
   --track-display: 0;
   --track-head: 0;
   --track-body: 0;

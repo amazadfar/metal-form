@@ -11,6 +11,7 @@ import SiteHeader from '../../../components/SiteHeader.astro';
 import SiteFooter from '../../../components/SiteFooter.astro';
 import IndustryBento from '../../../components/IndustryBento.astro';
 import CtaBlock from '../../../components/CtaBlock.astro';
+import RfqDock from '../../../components/RfqDock.astro';
 import { LOCALE_ORDER, localePath, type Locale } from '../../../i18n/locales.ts';
 import { getIndustriesIndex, getCommon } from '../../../content/index.ts';
 import { absoluteUrl, breadcrumbSchema } from '../../../lib/seo.ts';
@@ -58,6 +59,7 @@ const schemas = [
   </main>
 
   <SiteFooter locale={locale} />
+  <RfqDock locale={locale} prefill={p.cta.prefill} source="capabilities" />
 </Base>
 
 <style>

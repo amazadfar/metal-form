@@ -65,11 +65,19 @@ const items = compact
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 0;
   }
-  .trust--row .trust__item { border-inline-end: var(--rule); padding-inline-end: var(--sp-5); }
+  /* Air on both sides of every divider, and the whole rail pulled back by the
+     same amount so the first column still lines up with the gutter. `:first-
+     child` would not do here: this grid is `auto-fit`, so it wraps, and on a
+     second row the first item is not the first child. */
+  .trust--row { margin-inline: calc(var(--col-pad) * -1); }
+  .trust--row .trust__item {
+    padding-inline: var(--col-pad);
+    border-inline-end: var(--rule);
+  }
   .trust--row .trust__item:last-child { border-inline-end: 0; }
   @media (max-width: 720px) {
-    .trust--row { grid-template-columns: 1fr; }
-    .trust--row .trust__item { border-inline-end: 0; padding-inline-end: 0; }
+    .trust--row { grid-template-columns: 1fr; margin-inline: 0; }
+    .trust--row .trust__item { border-inline-end: 0; padding-inline: 0; }
   }
 
   .trust__item {

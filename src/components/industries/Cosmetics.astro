@@ -1161,13 +1161,14 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
 
   .cos-note {
     padding-block: var(--sp-5) var(--sp-7);
-    padding-inline: 0 var(--sp-5);
+    padding-inline: var(--col-pad) var(--sp-5);
     border-inline-end: var(--rule);
     display: grid;
     gap: 0.4rem;
     align-content: start;
     transition: opacity var(--dur-3) var(--ease-out);
   }
+  .cos-note:first-child { padding-inline-start: 0; }
   .cos-note:last-child { border-inline-end: 0; }
   @media (max-width: 1080px) {
     .cos-note { border-inline-end: 0; border-block-end: var(--rule); padding-inline-end: var(--sp-6); }
@@ -1288,12 +1289,13 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
   @media (max-width: 820px) { .cos-part__list { grid-template-columns: 1fr; } }
   .cos-part__list li {
     padding-block: var(--sp-5) var(--sp-6);
-    padding-inline: 0 var(--sp-6);
+    padding-inline: var(--col-pad) var(--sp-6);
     border-inline-end: var(--rule);
     display: grid;
     gap: 0.4rem;
     align-content: start;
   }
+  .cos-part__list li:first-child { padding-inline-start: 0; }
   .cos-part__list li:last-child { border-inline-end: 0; }
   @media (max-width: 820px) { .cos-part__list li { border-inline-end: 0; border-block-end: var(--rule); } }
   .cos-part__mark { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }
@@ -1386,12 +1388,13 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
   @media (max-width: 900px) { .cos-facts { grid-template-columns: 1fr; } }
   .cos-facts li {
     padding-block: var(--sp-5) var(--sp-6);
-    padding-inline: 0 clamp(1.5rem, 3vw, 3rem);
+    padding-inline: var(--col-pad) clamp(1.5rem, 3vw, 3rem);
     border-inline-end: var(--rule);
     display: grid;
     gap: 0.45rem;
     align-content: start;
   }
+  .cos-facts li:first-child { padding-inline-start: 0; }
   .cos-facts li:last-child { border-inline-end: 0; }
   @media (max-width: 900px) { .cos-facts li { border-inline-end: 0; border-block-end: var(--rule); } }
   .cos-facts__mark { font-size: var(--step--2); letter-spacing: 0.16em; color: var(--accent-deep); }

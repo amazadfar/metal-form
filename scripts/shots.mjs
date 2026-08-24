@@ -30,7 +30,7 @@ const width = Number(flag('w', 1512));
 const height = Number(flag('h', 950));
 const full = has('full');
 const nameOverride = flag('out', null);
-const scrollWait = Number(flag('wait', 900));
+const scrollWait = Number(flag('wait', 1800));
 
 await mkdir(OUT, { recursive: true });
 

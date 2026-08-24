@@ -1,13 +1,27 @@
 ---
 /**
- * INDUSTRY BENTO
+ * INDUSTRY SELECTOR
  *
- * Thirteen doors. Medical and Beverage are the two launch verticals and take
- * double height, so the grid states a priority rather than presenting a
- * uniform menu.
+ * Thirteen doors. This is the most important navigation on the site: a buyer
+ * arrives wanting to know whether this company makes anything like their part,
+ * and this grid is the answer.
  *
- * Each tile carries its vertical's palette and its own technical mark. There is
- * no icon font, no emoji and no stock photography anywhere in it.
+ * ── What changed ────────────────────────────────────────────────────────────
+ * The previous version put every tile on a near-white surface with its mark at
+ * 20% opacity bleeding off a corner. It was tidy and it was interchangeable:
+ * the medical tile and the cosmetics tile differed by one accent colour and a
+ * faint grey drawing, which is exactly the failure a thirteen-vertical site
+ * cannot afford.
+ *
+ * Now each tile is a plate in that sector's own dark tint, carrying:
+ *   · its mark at full presence, drawn in the vertical's accent — a cavity
+ *     plate, a preform beside the bottle it becomes, a cam-driven slide
+ *   · the surface texture of that sector's material, from `industries.ts`
+ *   · a saturated colour band on the leading edge
+ *
+ * Thirteen dark plates in thirteen different tints, each with a different
+ * drawing and a different surface, sitting in a light section. A buyer scanning
+ * it sees thirteen different production environments, which is the point.
  */
 import IndustryMark from './IndustryMark.astro';
 import { INDUSTRY_LIST } from '../config/industries.ts';
@@ -39,9 +53,17 @@ const tiles = INDUSTRY_LIST.map((ind, i) => {
   {tiles.map(({ ind, i, name, tile, parts, href }) => (
     <li
       class:list={['bento__cell', ind.flagship && 'bento__cell--flag']}
-      style={`--span:${ind.span};--rows:${ind.rowSpan};--accent:${ind.palette.accent};--accent-deep:${ind.palette.accentDeep};--wash:${ind.palette.accentWash};--tile-surface:${ind.palette.surface};--tile-ink:${ind.palette.ink};--tile-muted:${ind.palette.inkMuted};--tile-line:${ind.palette.line}`}
+      data-reveal
+      style={`--reveal-delay:${i * 40}ms;--span:${ind.span};--rows:${ind.rowSpan};--accent:${ind.palette.accent};--accent-deep:${ind.palette.accentDeep};--wash:${ind.palette.accentWash};--tile-ground:${ind.palette.inverse};--mark:color-mix(in oklab, ${ind.palette.accent} 34%, #EAF4FA);--tile-ink:${ind.palette.inverseInk};--tile-line:${ind.palette.line};--i:${i}`}
     >
-      <a class="bento-tile" href={href} data-analytics={`nav_industry_${ind.key}`}>
+      <a
+        class="bento-tile"
+        href={href}
+        data-analytics={`nav_industry_${ind.key}`}
+        data-tex={ind.art.texture}
+      >
+        <span class="bento-tile__edge" aria-hidden="true"></span>
+
         <span class="bento-tile__mark" aria-hidden="true">
           <IndustryMark industry={ind.key} />
         </span>
@@ -50,14 +72,16 @@ const tiles = INDUSTRY_LIST.map((ind, i) => {
           {showIndex && <span class="bento-tile__n t-mono">{String(i + 1).padStart(2, '0')}</span>}
           <span class="bento-tile__name">{name}</span>
           <span class="bento-tile__line">{tile}</span>
-          {parts && <span class="bento-tile__parts t-mono">{parts}</span>}
         </span>
 
-        <span class="bento-tile__go" aria-hidden="true">
-          <span class="bento-tile__go-label">{c.actions.viewIndustry}</span>
-          <svg viewBox="0 0 16 12" fill="none" class="bento-tile__arrow">
-            <path d="M1 6h13M9.5 1.2 14.3 6l-4.8 4.8" stroke="currentColor" stroke-width="1.4" />
-          </svg>
+        <span class="bento-tile__foot">
+          {parts && <span class="bento-tile__parts t-mono">{parts}</span>}
+          <span class="bento-tile__go">
+            <span class="bento-tile__go-label">{c.actions.viewIndustry}</span>
+            <svg viewBox="0 0 16 12" fill="none" class="bento-tile__arrow">
+              <path d="M1 6h13M9.5 1.2 14.3 6l-4.8 4.8" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </span>
         </span>
       </a>
     </li>
@@ -68,10 +92,10 @@ const tiles = INDUSTRY_LIST.map((ind, i) => {
   .bento {
     display: grid;
     grid-template-columns: repeat(6, minmax(0, 1fr));
-    grid-auto-rows: minmax(9.5rem, auto);
-    gap: 1px;
+    grid-auto-rows: minmax(10.5rem, auto);
+    gap: 2px;
     background: var(--line);
-    border: var(--rule);
+    border: 1px solid var(--line);
   }
   @media (max-width: 1080px) { .bento { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   @media (max-width: 720px) { .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -91,104 +115,171 @@ const tiles = INDUSTRY_LIST.map((ind, i) => {
     .bento__cell--flag { grid-column: span 2; grid-row: span 2; }
   }
 
-  /* ── Tile ─────────────────────────────────────────────────────────────── */
+  /* ── Tile ─────────────────────────────────────────────────────────────
+     A plate in the vertical's own dark tint. The thirteen `inverse` values in
+     `industries.ts` are genuinely different colours — a clinical blue-green,
+     a bottling-hall blue, an oiled graphite, a warm rose-black — so the grid
+     reads as thirteen environments rather than thirteen tints of one. */
   .bento-tile {
     position: relative;
     inline-size: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: var(--sp-5);
-    padding: clamp(1rem, 1.9vw, 1.7rem);
-    background: var(--tile-surface);
+    gap: var(--sp-6);
+    padding: clamp(1rem, 1.9vw, 1.75rem);
+    background: var(--tile-ground);
     color: var(--tile-ink);
     overflow: hidden;
     isolation: isolate;
-    transition: background-color var(--dur-3) var(--ease-out);
+    --tex-ink: var(--tile-ink);
+    transition: background-color var(--dur-4) var(--ease-out);
+  }
+  /* The texture layer belongs to the tile, so its own content has to clear it —
+     but the edge band and the mark are positioned layers of their own and must
+     not be dragged back into flow by this. */
+  .bento-tile > *:not(.bento-tile__edge):not(.bento-tile__mark) {
+    position: relative;
+    z-index: 2;
   }
 
-  /* The mark sits behind the type, bleeding off the corner. It is decoration
-     that carries information — the two are not in conflict here. */
+  /* The saturated band on the leading edge. This is the one place the
+     vertical's accent runs at full strength. */
+  .bento-tile__edge {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    inline-size: 4px;
+    background: var(--accent);
+    z-index: 3;
+    transition: inline-size var(--dur-3) var(--ease-out);
+  }
+
+  /* ── The mark ─────────────────────────────────────────────────────────
+     Not a watermark. It is a drawing of that sector's engineering and it is
+     drawn to be read: full opacity on the flagships, and never faded so far
+     that a buyer cannot tell a cavity plate from a bottle. */
   .bento-tile__mark {
     position: absolute;
-    inset-block-start: -8%;
-    inset-inline-end: -10%;
-    inline-size: min(62%, 15rem);
-    color: var(--accent-deep);
-    opacity: 0.2;
+    /* `inset-block: 50%` would set both edges and collapse the box to zero
+       height; only the start edge is anchored here. */
+    inset-block-start: 50%;
+    inset-block-end: auto;
+    inset-inline-end: -4%;
+    translate: 0 -50%;
+    inline-size: min(60%, 12.5rem);
+    /* The vertical's accent, lightened for a dark plate. The raw accent is
+       chosen to be readable as TEXT on that vertical's near-white page; on its
+       near-black tile the same value disappears. */
+    color: var(--mark);
+    opacity: 0.92;
     pointer-events: none;
+    z-index: 1;
     transition: opacity var(--dur-4) var(--ease-out), transform var(--dur-4) var(--ease-out);
-    z-index: 0;
   }
   .bento__cell--flag .bento-tile__mark {
+    inline-size: min(62%, 21rem);
     inset-block-start: auto;
-    inset-block-end: -6%;
-    inset-inline-end: -6%;
-    inline-size: min(72%, 24rem);
-    opacity: 0.26;
+    inset-block-end: 5%;
+    inset-inline-end: -2%;
+    translate: none;
+    opacity: 1;
+  }
+  /* A soft fall-off under the mark so type never crosses a drawn line at low
+     contrast — the drawing gets the trailing half of the plate, the type the
+     leading half. */
+  .bento-tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    /* Opaque where the type sits, clear across the middle band where the
+       drawing does. A flat veil over the whole plate would take the drawing
+       back down to the watermark this grid is trying to stop being. */
+    background: linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--tile-ground) 90%, transparent) 0%,
+      color-mix(in oklab, var(--tile-ground) 24%, transparent) 34%,
+      color-mix(in oklab, var(--tile-ground) 16%, transparent) 64%,
+      color-mix(in oklab, var(--tile-ground) 88%, transparent) 100%
+    );
   }
 
   .bento-tile__body {
-    position: relative;
-    z-index: 1;
     display: grid;
-    gap: 0.35rem;
+    gap: 0.3rem;
     align-content: start;
   }
 
   .bento-tile__n {
-    font-size: 0.62rem;
+    font-size: 0.66rem;
     letter-spacing: 0.16em;
-    color: var(--accent-deep);
+    color: color-mix(in oklab, var(--tile-ink) 62%, transparent);
   }
 
   .bento-tile__name {
     font-size: var(--step-1);
     font-weight: var(--weight-medium);
     letter-spacing: var(--track-head);
-    line-height: 1.15;
+    line-height: 1.14;
     text-wrap: balance;
+    color: #FFFFFF;
   }
   .bento__cell--flag .bento-tile__name {
-    font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
     letter-spacing: var(--track-display);
   }
 
   .bento-tile__line {
     font-size: var(--step--1);
-    line-height: 1.42;
-    color: var(--tile-muted);
-    max-inline-size: 34ch;
-    margin-block-start: 0.2rem;
+    line-height: 1.45;
+    color: color-mix(in oklab, var(--tile-ink) 78%, transparent);
+    max-inline-size: 32ch;
+    margin-block-start: 0.35rem;
   }
   .bento__cell--flag .bento-tile__line {
     font-size: var(--step-0);
-    max-inline-size: 38ch;
-    margin-block-start: 0.55rem;
+    max-inline-size: 36ch;
+    margin-block-start: 0.6rem;
   }
-  /* On the small tiles the supporting line is a hover reward, not clutter. */
+  /* On the small tiles the supporting line is a hover reward, not clutter —
+     there is not room for a four-line paragraph and a drawing at 16rem wide. */
   @media (min-width: 721px) {
     .bento__cell:not(.bento__cell--flag) .bento-tile__line {
       max-block-size: 0;
       opacity: 0;
       overflow: hidden;
-      transition: max-block-size var(--dur-4) var(--ease-out), opacity var(--dur-3) var(--ease-out), margin var(--dur-4) var(--ease-out);
       margin-block-start: 0;
+      transition:
+        max-block-size var(--dur-4) var(--ease-out),
+        opacity var(--dur-3) var(--ease-out),
+        margin var(--dur-4) var(--ease-out);
     }
     .bento-tile:hover .bento-tile__line,
     .bento-tile:focus-visible .bento-tile__line {
-      max-block-size: 7rem;
+      max-block-size: 8rem;
       opacity: 1;
-      margin-block-start: 0.35rem;
+      margin-block-start: 0.4rem;
     }
   }
 
+  .bento-tile__foot {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    flex-wrap: wrap;
+    padding-block-start: 0.6rem;
+    border-block-start: 1px solid color-mix(in oklab, var(--tile-ink) 22%, transparent);
+  }
+
   .bento-tile__parts {
-    font-size: 0.62rem;
+    font-size: 0.66rem;
     letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: var(--tile-muted);
-    margin-block-start: 0.35rem;
+    color: color-mix(in oklab, var(--tile-ink) 68%, transparent);
+    min-inline-size: 0;
   }
   :global(html[lang='zh']) .bento-tile__parts,
   :global(html[lang='th']) .bento-tile__parts,
@@ -202,56 +293,46 @@ const tiles = INDUSTRY_LIST.map((ind, i) => {
   }
 
   .bento-tile__go {
-    position: relative;
-    z-index: 1;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: var(--step--2);
-    color: var(--accent-deep);
+    color: #FFFFFF;
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(5px);
     transition: opacity var(--dur-3) var(--ease-out), transform var(--dur-3) var(--ease-out);
+    margin-inline-start: auto;
   }
   .bento-tile__arrow { inline-size: 0.9rem; flex: none; }
   [dir='rtl'] .bento-tile__arrow { transform: scaleX(-1); }
 
-  /* A rule that draws along the bottom edge as the tile is engaged. */
-  .bento-tile::after {
-    content: '';
-    position: absolute;
-    inset-block-end: 0;
-    inset-inline-start: 0;
-    inline-size: 100%;
-    block-size: 2px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: inline-start;
-    transition: transform var(--dur-4) var(--ease-out);
-    z-index: 2;
-  }
-
   .bento-tile:hover,
   .bento-tile:focus-visible {
-    background: var(--wash);
+    background: color-mix(in oklab, var(--tile-ground) 84%, #FFFFFF);
   }
+  .bento-tile:hover .bento-tile__edge,
+  .bento-tile:focus-visible .bento-tile__edge { inline-size: 9px; }
   .bento-tile:hover .bento-tile__mark,
   .bento-tile:focus-visible .bento-tile__mark {
-    opacity: 0.55;
-    transform: translate(-4%, -2%) scale(1.03);
+    opacity: 1;
+    transform: translate(calc(-3% * var(--dir)), 0) scale(1.05);
   }
   .bento-tile:hover .bento-tile__go,
   .bento-tile:focus-visible .bento-tile__go { opacity: 1; transform: none; }
-  .bento-tile:hover::after,
-  .bento-tile:focus-visible::after { transform: scaleX(1); }
 
-  .bento-tile:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: -3px; }
+  .bento-tile:focus-visible { outline: 2px solid #FFFFFF; outline-offset: -4px; }
 
   @media (max-width: 720px) {
+    .bento-tile { gap: var(--sp-5); padding: 0.95rem; }
     .bento-tile__go-label { display: none; }
     .bento-tile__go { opacity: 1; transform: none; }
-    /* Not enough width for the mark and the copy to share space. */
-    .bento-tile__mark { opacity: 0.1; }
-    .bento__cell--flag .bento-tile__mark { opacity: 0.13; }
+    .bento-tile__mark { inline-size: min(56%, 8.5rem); opacity: 0.7; }
+    .bento__cell--flag .bento-tile__mark { inline-size: min(62%, 13rem); opacity: 0.8; }
+    .bento-tile__parts { font-size: 0.6rem; }
   }
+
+  /* Entrance: the grid assembles rather than fading in as one block. Handled
+     by the project's reveal observer so it behaves the same as everything else
+     on the page and resolves correctly under reduced motion. */
+  .bento__cell[data-reveal] { --reveal-y: 12px; }
 </style>
