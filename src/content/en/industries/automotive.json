@@ -4,14 +4,16 @@
     "description": "Injection mould design and manufacture for trucks, buses, agricultural and construction machinery. Filled polymers, slides, lifters and insert moulds. Second-source tooling and re-tooling of obsolete parts. Engineering response in 48 business hours."
   },
   "name": "Automotive & Heavy Vehicles",
-  "tile": "Filled polymers, slides and lifters, and dimension that repeats for a decade. Tooling for trucks, buses, agricultural and construction machines — including parts whose original tool is long gone.",
+  "tile": "Tooling built for a decade of service — filled polymers, slides, dimension that repeats.",
   "tileParts": "Functional parts · Slides · Re-tooling",
   "hero": {
     "kicker": "Automotive & Heavy Vehicles",
-    "headline": ["The tool outlives", "the vehicle."],
+    "headline": [
+      "The tool outlives",
+      "the vehicle."
+    ],
     "lead": "Trucks, buses, agricultural and construction machines run the same moulded components for a decade. We design and build the tooling for that service life — filled polymers, slides and lifters, dimension that repeats shot after shot — and supply the parts afterwards."
   },
-
   "blocks": {
     "sheet": {
       "index": "00",
@@ -19,14 +21,38 @@
       "pivot": "A passenger-car maker retools every two to three years with the model cycle. Construction, agricultural and commercial vehicle builders can run the same tool for ten. That single difference decides every argument on this page.",
       "titleBlockLabel": "Title block",
       "fields": [
-        { "k": "Since", "v": "2006" },
-        { "k": "Completed projects", "v": "1,000+" },
-        { "k": "Cavitation experience", "v": "Up to 46" },
-        { "k": "Design environment", "v": "CATIA · SolidWorks" },
-        { "k": "Confidentiality", "v": "NDA as standard" },
-        { "k": "First response", "v": "48 business hours" },
-        { "k": "Warranty", "v": "Terms per project" },
-        { "k": "Delivery", "v": "International" }
+        {
+          "k": "Since",
+          "v": "2006"
+        },
+        {
+          "k": "Completed projects",
+          "v": "1,000+"
+        },
+        {
+          "k": "Cavitation experience",
+          "v": "Up to 46"
+        },
+        {
+          "k": "Design environment",
+          "v": "CATIA · SolidWorks"
+        },
+        {
+          "k": "Confidentiality",
+          "v": "NDA as standard"
+        },
+        {
+          "k": "First response",
+          "v": "48 business hours"
+        },
+        {
+          "k": "Warranty",
+          "v": "Terms per project"
+        },
+        {
+          "k": "Delivery",
+          "v": "International"
+        }
       ],
       "figureLabel": "Mounting bracket — front elevation and section",
       "sectionMark": "A–A",
@@ -34,14 +60,29 @@
       "dimBore": "Ø24",
       "legendLabel": "Parts list",
       "balloons": [
-        { "n": "01", "label": "PA66 GF30", "note": "Glass-filled polyamide. Stiff in the part, abrasive to the steel that forms it." },
-        { "n": "02", "label": "Parting line", "note": "Where the two halves of steel meet. A dimension taken across it cannot be held as tightly as one inside a single block." },
-        { "n": "03", "label": "Slide-formed pocket", "note": "An external undercut. Moving steel, a cam pin, a heel block and a maintenance obligation for the life of the tool." },
-        { "n": "04", "label": "Gate", "note": "Sets fibre orientation, and fibre orientation sets where the part is strong and where the weld line lands." }
+        {
+          "n": "01",
+          "label": "PA66 GF30",
+          "note": "Glass-filled polyamide. Stiff in the part, abrasive to the steel that forms it."
+        },
+        {
+          "n": "02",
+          "label": "Parting line",
+          "note": "Where the two halves of steel meet. A dimension taken across it cannot be held as tightly as one inside a single block."
+        },
+        {
+          "n": "03",
+          "label": "Slide-formed pocket",
+          "note": "An external undercut. Moving steel, a cam pin, a heel block and a maintenance obligation for the life of the tool."
+        },
+        {
+          "n": "04",
+          "label": "Gate",
+          "note": "Sets fibre orientation, and fibre orientation sets where the part is strong and where the weld line lands."
+        }
       ],
       "borderNote": "Reference values on this page are published industry practice, not Metal Form measurements. Your part is assessed against your part."
     },
-
     "parts": {
       "index": "01",
       "kicker": "Component register",
@@ -166,7 +207,6 @@
       ],
       "close": "Fifteen families, one recurring question. Which of these is currently single-sourced on one tool, and what happens to the assembly line on the day that tool stops."
     },
-
     "materials": {
       "index": "02",
       "kicker": "Material",
@@ -251,7 +291,6 @@
       ],
       "sourceNote": "Shrinkage bands quoted on this rail are published industry figures, not Metal Form measurements."
     },
-
     "tool": {
       "index": "03",
       "kicker": "Inside the tool",
@@ -265,43 +304,66 @@
           "n": "01",
           "label": "The split",
           "body": "Cavity and core meet at the parting line, and everything the part shows there was decided by how that split was drawn. Flash on a sealing face leaks. Flash around a snap fit blocks assembly. A dimension taken across the parting line cannot be held as tightly as one formed inside a single block of steel, and it should not be specified as if it can.",
-          "spec": ["Shut-off faces", "Parting-line dimensions", "Mismatch and flash"]
+          "spec": [
+            "Shut-off faces",
+            "Parting-line dimensions",
+            "Mismatch and flash"
+          ]
         },
         {
           "n": "02",
           "label": "The mechanisms",
           "body": "Every moving component in a tool is machining, fitting, wear plates, locks and a maintenance obligation for a decade. So the cheap answers are examined first — a shut-off, a pass-through, a bump-off, a hand-loaded insert at low volume. Then slides, then lifters, then unscrewing units and collapsible cores. Mechanism count is one of the largest controllable lines in a tool price.",
-          "spec": ["Cam pin 10° – 25°", "Heel block 2° – 5° steeper", "Clearance 0.012 – 0.025 mm"]
+          "spec": [
+            "Cam pin 10° – 25°",
+            "Heel block 2° – 5° steeper",
+            "Clearance 0.012 – 0.025 mm"
+          ]
         },
         {
           "n": "03",
           "label": "The feed",
           "body": "Cold runner is the honest default at heavy-vehicle volumes: lower capital, simpler maintenance, no heaters to fail. Hot runner earns its place on high cavitation, where gate position or vestige matters, where a filled material and a long runner would put pressure loss and a weld line in the wrong place, and where a decade of runner scrap changes the material budget. Valve gating is how a weld line is moved out of a loaded section.",
-          "spec": ["Cold runner", "Hot runner drop", "Valve gate sequencing"]
+          "spec": [
+            "Cold runner",
+            "Hot runner drop",
+            "Valve gate sequencing"
+          ]
         },
         {
           "n": "04",
           "label": "The cooling",
           "body": "The primary control on cycle time and on warpage at the same time, and the one thing that cannot be retrofitted cheaply. Circuits have to reach the thick sections and the core side, which is usually the poorer-cooled half. Lifters are thin, moving and close to impossible to cool, which is why they extend cycle and gall. Conformal routes exist where straight drilling cannot go.",
-          "spec": ["Core-side circuits", "Conformal routes", "Inlet-to-outlet delta"]
+          "spec": [
+            "Core-side circuits",
+            "Conformal routes",
+            "Inlet-to-outlet delta"
+          ]
         },
         {
           "n": "05",
           "label": "The venting",
           "body": "Burn marks, air traps and a large share of short shots are venting, not injection pressure, and they get blamed on the moulding parameters for months. Vent lands carbon up in service and are recut on a schedule. Where the air has nowhere to go, the last millimetre of the cavity never fills cleanly no matter what the machine is asked to do.",
-          "spec": ["Vent land depth", "Parting-line vents", "Ejector-pin venting"]
+          "spec": [
+            "Vent land depth",
+            "Parting-line vents",
+            "Ejector-pin venting"
+          ]
         },
         {
           "n": "06",
           "label": "The steel",
           "body": "Pre-hardened grades suit unfilled material and short programmes. Filled polymer over ten years is a hardened-steel and surface-engineering question — nitriding, and coatings such as CrN, CrAlN or TiAlN where the wear justifies them. Four mechanisms are designed against: erosive wear, thermal fatigue, corrosion and gate wear. Soft steel is cheaper on the quotation and expensive on the programme.",
-          "spec": ["P20 · H13", "Nitriding · PVD", "Spare inserts specified"]
+          "spec": [
+            "P20 · H13",
+            "Nitriding · PVD",
+            "Spare inserts specified"
+          ]
         }
       ],
       "close": "None of these six show up in a mould quotation. All six show up in the fifth year, and by then the decision has been paid for several hundred thousand times.",
       "sourceNote": "Angles, clearances and hardness figures shown here are published industry practice, not Metal Form specifications."
     },
-
     "fit": {
       "index": "04",
       "kicker": "Dimension",
@@ -331,7 +393,11 @@
           "note": "Costs steel, cycle and attention. Specify it on the dimensions that actually control the fit, not across the whole drawing."
         }
       ],
-      "gradeHeadings": { "small": "Features 1 – 20 mm", "large": "Features 21 – 100 mm", "env": "Across four parts" },
+      "gradeHeadings": {
+        "small": "Features 1 – 20 mm",
+        "large": "Features 21 – 100 mm",
+        "env": "Across four parts"
+      },
       "classesHeading": "Three dimensions, three behaviours",
       "classes": [
         {
@@ -351,10 +417,26 @@
       "warpBody": "Fibre-reinforced material shrinks less along the flow direction than across it. That anisotropy is intrinsic to the material, not a processing fault, and it is the structural cause of most warpage arguments. Gate position sets flow direction, flow direction sets fibre orientation, and fibre orientation decides which way the part will bend.",
       "warpFigureLabel": "Anisotropic shrinkage — nominal outline against as-moulded",
       "warpBalloons": [
-        { "n": "01", "label": "Gate", "note": "Everything downstream of this point is decided here." },
-        { "n": "02", "label": "Along flow", "note": "Shrinkage is lower in this direction on a filled grade." },
-        { "n": "03", "label": "Across flow", "note": "Shrinkage is higher here. The difference is what bends the part." },
-        { "n": "04", "label": "As moulded", "note": "The nominal outline is dashed. The bow is the difference between the two shrinkage rates, drawn." }
+        {
+          "n": "01",
+          "label": "Gate",
+          "note": "Everything downstream of this point is decided here."
+        },
+        {
+          "n": "02",
+          "label": "Along flow",
+          "note": "Shrinkage is lower in this direction on a filled grade."
+        },
+        {
+          "n": "03",
+          "label": "Across flow",
+          "note": "Shrinkage is higher here. The difference is what bends the part."
+        },
+        {
+          "n": "04",
+          "label": "As moulded",
+          "note": "The nominal outline is dashed. The bow is the difference between the two shrinkage rates, drawn."
+        }
       ],
       "signsHeading": "What it looks like on the line",
       "signs": [
@@ -366,7 +448,6 @@
       "close": "The tolerance drawing is read before the tool is quoted. Any dimension being specified tighter than the process can honestly hold is raised then, not discovered at the first assembly trial. So is the stack-up across the assembly, which is usually nobody's drawing and therefore nobody's problem until it is everybody's.",
       "sourceNote": "Tolerance grades quoted here are published industry reference values, not Metal Form commitments. What your part can hold is answered against your part, your material and your tool."
     },
-
     "life": {
       "index": "05",
       "kicker": "Programme life",
@@ -376,25 +457,94 @@
       "aboveLabel": "Tooling events",
       "belowLabel": "Risk register",
       "markers": [
-        { "at": "—", "label": "Design and DFM review", "note": "Wall sections, ribs and bosses, draft, gate position, weld-line location, undercuts and the mechanisms each one demands.", "side": "above" },
-        { "at": "—", "label": "Steel cut", "note": "Grade and surface treatment chosen against the material and the real programme life, not against the quotation.", "side": "above" },
-        { "at": "T0", "label": "First samples", "note": "The tool proves the geometry. Corrections are made here, in steel, rather than argued about later in the process.", "side": "above" },
-        { "at": "—", "label": "Single-source exposure", "note": "One tool, one supplier, one line. This is the standing risk in the sector and it is cheapest to remove before production starts.", "side": "below" },
-        { "at": "—", "label": "Geometry corrections", "note": "Dimensional adjustment, gate and vent refinement, ejection cleaned up, mechanism fit checked under load.", "side": "above" },
-        { "at": "0", "label": "Production release", "note": "Ownership documented in writing. Spare cavity and core inserts already specified with the tool rather than ordered after the first crack.", "side": "above" },
-        { "at": "50 000", "label": "First scheduled service", "note": "Published practice for pre-hardened tools. Vent lands, ejector pins, slide and lifter bearing surfaces, cooling-circuit seals.", "side": "above" },
-        { "at": "—", "label": "Dimensional drift", "note": "Abrasive filled material erodes the gate and the shut-off faces. Drift arrives long before anyone is looking for it.", "side": "below" },
-        { "at": "100 000", "label": "Second service gate", "note": "Vents recut where carbon has taken the land depth well below specification. Pitting welded and re-polished before it prints on the part.", "side": "above" },
-        { "at": "—", "label": "Cooling circuits scaling", "note": "A rising inlet-to-outlet temperature difference at constant flow is the warning. Industry guidance treats a loss of roughly a quarter of the flow as a repair, not a log entry.", "side": "below" },
-        { "at": "250 000", "label": "Insert replacement", "note": "From spares held in advance. Ordering them after the first crack is the expensive version of exactly the same decision.", "side": "above" },
-        { "at": "—", "label": "Unplanned stoppage", "note": "The event that costs several times the scheduled maintenance it replaced, and takes the assembly line with it.", "side": "below" },
-        { "at": "—", "label": "Mid-life refurbishment", "note": "Cavity and core surfaces, ejection system, mechanisms, circuits. The tool returns to a known condition instead of drifting to an unknown one.", "side": "above" },
-        { "at": "…", "label": "Continue · transfer · re-tool", "note": "The programme runs on, the tool moves to another moulder, or the part goes obsolete and is tooled again from the sample.", "side": "above" }
+        {
+          "at": "—",
+          "label": "Design and DFM review",
+          "note": "Wall sections, ribs and bosses, draft, gate position, weld-line location, undercuts and the mechanisms each one demands.",
+          "side": "above"
+        },
+        {
+          "at": "—",
+          "label": "Steel cut",
+          "note": "Grade and surface treatment chosen against the material and the real programme life, not against the quotation.",
+          "side": "above"
+        },
+        {
+          "at": "T0",
+          "label": "First samples",
+          "note": "The tool proves the geometry. Corrections are made here, in steel, rather than argued about later in the process.",
+          "side": "above"
+        },
+        {
+          "at": "—",
+          "label": "Single-source exposure",
+          "note": "One tool, one supplier, one line. This is the standing risk in the sector and it is cheapest to remove before production starts.",
+          "side": "below"
+        },
+        {
+          "at": "—",
+          "label": "Geometry corrections",
+          "note": "Dimensional adjustment, gate and vent refinement, ejection cleaned up, mechanism fit checked under load.",
+          "side": "above"
+        },
+        {
+          "at": "0",
+          "label": "Production release",
+          "note": "Ownership documented in writing. Spare cavity and core inserts already specified with the tool rather than ordered after the first crack.",
+          "side": "above"
+        },
+        {
+          "at": "50 000",
+          "label": "First scheduled service",
+          "note": "Published practice for pre-hardened tools. Vent lands, ejector pins, slide and lifter bearing surfaces, cooling-circuit seals.",
+          "side": "above"
+        },
+        {
+          "at": "—",
+          "label": "Dimensional drift",
+          "note": "Abrasive filled material erodes the gate and the shut-off faces. Drift arrives long before anyone is looking for it.",
+          "side": "below"
+        },
+        {
+          "at": "100 000",
+          "label": "Second service gate",
+          "note": "Vents recut where carbon has taken the land depth well below specification. Pitting welded and re-polished before it prints on the part.",
+          "side": "above"
+        },
+        {
+          "at": "—",
+          "label": "Cooling circuits scaling",
+          "note": "A rising inlet-to-outlet temperature difference at constant flow is the warning. Industry guidance treats a loss of roughly a quarter of the flow as a repair, not a log entry.",
+          "side": "below"
+        },
+        {
+          "at": "250 000",
+          "label": "Insert replacement",
+          "note": "From spares held in advance. Ordering them after the first crack is the expensive version of exactly the same decision.",
+          "side": "above"
+        },
+        {
+          "at": "—",
+          "label": "Unplanned stoppage",
+          "note": "The event that costs several times the scheduled maintenance it replaced, and takes the assembly line with it.",
+          "side": "below"
+        },
+        {
+          "at": "—",
+          "label": "Mid-life refurbishment",
+          "note": "Cavity and core surfaces, ejection system, mechanisms, circuits. The tool returns to a known condition instead of drifting to an unknown one.",
+          "side": "above"
+        },
+        {
+          "at": "…",
+          "label": "Continue · transfer · re-tool",
+          "note": "The programme runs on, the tool moves to another moulder, or the part goes obsolete and is tooled again from the sample.",
+          "side": "above"
+        }
       ],
       "close": "A passenger-car tool is replaced with the model. A heavy-vehicle tool is maintained until the vehicle parc stops needing the part. Those are two different purchases, and only one of them is a capital item with a ten-year service plan attached.",
       "sourceNote": "Shot-count intervals and service thresholds shown on this chain are published industry maintenance practice, not Metal Form commitments."
     },
-
     "routes": {
       "index": "06",
       "kicker": "Three doors",
@@ -411,7 +561,11 @@
           "name": "A new part",
           "situation": "You have a design, or a function and a sketch.",
           "body": "We review the geometry, the material, the mould route and the production economics, then design and build the tool. Where a metal part is being converted to a moulding, we will also give the honest verdict that it should stay metal — with die-cast tooling as an alternative we can build instead.",
-          "inputs": ["CAD — STEP, CATPart, SLDPRT", "Dimensioned drawings with tolerances", "A description and a sketch"]
+          "inputs": [
+            "CAD — STEP, CATPart, SLDPRT",
+            "Dimensioned drawings with tolerances",
+            "A description and a sketch"
+          ]
         },
         {
           "id": "second",
@@ -419,7 +573,11 @@
           "name": "A part you already buy",
           "situation": "One supplier, one tool, and a line that stops if either fails.",
           "body": "We build a second-source tool to your data, under NDA, without contacting your existing supplier. A tool you own, ready to run, with parts from us if you want them and held in reserve if you do not. The same discipline covers a tool that has to move: ownership documented, condition assessed, refurbishment scoped, then production restarted.",
-          "inputs": ["CAD or drawings", "A production sample", "An existing tool with documented ownership"]
+          "inputs": [
+            "CAD or drawings",
+            "A production sample",
+            "An existing tool with documented ownership"
+          ]
         },
         {
           "id": "obsolete",
@@ -427,7 +585,11 @@
           "name": "A part nobody makes any more",
           "situation": "No tool, no model, sometimes no drawing at all.",
           "body": "We reconstruct the geometry from the sample and its mating parts, separating design intent from years of service wear, then build new tooling for it. A worn sample copied exactly reproduces the wear, not the design. Where the original material is unknown, the family is inferred from the application and the service environment and selected against the real load case.",
-          "inputs": ["A sample part, worn or broken", "A photograph with one known dimension", "The mating parts, if they survive"]
+          "inputs": [
+            "A sample part, worn or broken",
+            "A photograph with one known dimension",
+            "The mating parts, if they survive"
+          ]
         }
       ],
       "readinessNote": "Second-source tooling is readiness, not reserved capacity. Capacity is reserved by contract or it is not reserved at all, and we will say which.",
@@ -458,14 +620,18 @@
       ],
       "boundaryClose": "That second list is short on purpose and it is not an apology. A supplier who claims all of it is either a different kind of company or is not telling you the truth, and in this sector you find out which in the ninth month, at line-side, with a container already in transit."
     },
-
     "close": {
       "index": "07",
       "kicker": "Revision block",
       "heading": "Send the part.",
       "body": "A sample, a drawing, a STEP file, or a photograph with one known dimension. In this sector the visitor usually has a physical component on the desk and no data package, and that is enough to start.",
       "tableLabel": "Enquiry record",
-      "columns": { "rev": "Rev", "description": "Description", "by": "By", "date": "Date" },
+      "columns": {
+        "rev": "Rev",
+        "description": "Description",
+        "by": "By",
+        "date": "Date"
+      },
       "rows": [
         {
           "rev": "A",
@@ -499,7 +665,6 @@
         "International delivery of tooling and of recurring component supply"
       ]
     },
-
     "panels": {
       "heading": "Deeper detail",
       "items": [
@@ -547,7 +712,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Send the part.",
     "body": "A sample, a drawing, a STEP file, or a photograph with one known dimension. We evaluate the geometry, the tooling route, the production economics and the supply options, and reply within 48 business hours. NDA as standard.",

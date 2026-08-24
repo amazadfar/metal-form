@@ -4,7 +4,7 @@
     "description": "Teknik resim yok, dosya yok, tedarikçi yok. Bir fotoğraf, bir numune ya da bir sorun gönderin. Size imal edilebilir bir model, bir kalıp rotası ve bir tedarik planı verelim. 48 iş saati içinde dönüş."
   },
   "name": "Özel Projeler",
-  "tile": "Projenizin bir kategoriye sığması gerekmiyor. Bir fotoğraf, kırık bir parça, bir rakip ürünü, bir eskiz ya da henüz çözemediğiniz bir sorun — hepsi bir başlangıç noktasıdır.",
+  "tile": "Bir fotoğraf, kırık bir parça, bir eskiz — ya da henüz çözemediğiniz bir sorun.",
   "tileParts": "Her şey · Her girdi · Her aşama",
   "hero": {
     "kicker": "Özel Projeler",

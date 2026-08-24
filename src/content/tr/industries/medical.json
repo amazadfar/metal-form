@@ -4,7 +4,7 @@
     "description": "Tıbbi ve farmasötik plastik parçalar için parça mühendisliği, tersine mühendislik, DFM ve çok gözlü enjeksiyon kalıpları. Kalıp dokümantasyonu, yedekler, ikinci kaynak ve ikiz kalıplar. Valide üretim sizde kalır. 48 iş saati içinde dönüş."
   },
   "name": "Tıbbi ve Farmasötik",
-  "tile": "1. gözle 32. gözün aynı parçayı vermek zorunda olduğu bileşenler için yüksek gözlü kalıplar. Kalıbı ve arkasındaki mühendisliği biz yaparız — valide üretim sizde kalır.",
+  "tile": "1. gözle 32. gözün aynı parçayı vermek zorunda olduğu çok gözlü kalıplar.",
   "tileParts": "Çok gözlü · DFM · İkinci kalıp",
   "hero": {
     "kicker": "Tıbbi ve Farmasötik",

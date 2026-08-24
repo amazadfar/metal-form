@@ -4,7 +4,7 @@
     "description": "Denizcilik donanımı, kaportalar, bağlantı elemanları, yakıt sistemi parçaları ve şamandıralar için enjeksiyon, şişirme ve basınçlı döküm kalıpları. Aşınmış ya da üretimden kalkmış bir parçadan tersine mühendislik. Düşük adet kalıp stratejisi, ikinci kaynak kalıpları, dünya geneline sevkiyat. 2006'dan beri İran mühendisliği."
   },
   "name": "Denizcilik ve Açık Deniz",
-  "tile": "Tam bir üretim kalıbını haklı çıkarmanın zor olduğu, zorlu geometrili, daha büyük ve düşük–orta adetli parçalar — ve teknik resimlerini kimsenin saklamadığı bileşenler.",
+  "tile": "Zorlu geometri, düşük adet ve teknik resmini kimsenin saklamadığı bileşenler.",
   "tileParts": "Bağlantı elemanları · Kaportalar · Tersine mühendislik",
   "hero": {
     "kicker": "Denizcilik ve Açık Deniz",
@@ -20,7 +20,6 @@
       "Dünya geneline sevkiyat"
     ]
   },
-
   "blocks": {
     "opening": {
       "figure": {
@@ -31,19 +30,39 @@
       },
       "legendHeading": "İki kontur, tek parça",
       "legend": [
-        { "key": "worn", "label": "Numune, geldiği hâliyle" },
-        { "key": "nominal", "label": "Geri kazanılmış nominal" },
-        { "key": "point", "label": "İkisinin uzlaştırıldığı yer" }
+        {
+          "key": "worn",
+          "label": "Numune, geldiği hâliyle"
+        },
+        {
+          "key": "nominal",
+          "label": "Geri kazanılmış nominal"
+        },
+        {
+          "key": "point",
+          "label": "İkisinin uzlaştırıldığı yer"
+        }
       ],
       "movementsLabel": "Dizi",
       "movements": [
-        { "num": "I", "label": "Parça gelir" },
-        { "num": "II", "label": "Ölçülür" },
-        { "num": "III", "label": "Modellenir" },
-        { "num": "IV", "label": "Kalıbı yapılır" }
+        {
+          "num": "I",
+          "label": "Parça gelir"
+        },
+        {
+          "num": "II",
+          "label": "Ölçülür"
+        },
+        {
+          "num": "III",
+          "label": "Modellenir"
+        },
+        {
+          "num": "IV",
+          "label": "Kalıbı yapılır"
+        }
       ]
     },
-
     "arrival": {
       "index": "01",
       "movement": "Bölüm I · Parça gelir",
@@ -52,11 +71,26 @@
       "body": "Bu sektörde kalıp evraktan, tekne de ikisinden uzun yaşar. Bir model birkaç sezon üretilir; tekneler ise yirmi otuz yıl suda kalır. Parça yeniden gerektiğinde tedarikçi el değiştirmiş, kalıp hurdaya ayrılmış ya da kimsenin açmayacağı bir köşede duruyordur; teknik resim de — hiç yapıldıysa — onu anlayan mühendisle birlikte gitmiştir. Geriye kalan, hâlâ bir tekneye cıvatalanmış duran parçanın kendisidir.",
       "chainHeading": "Zincir, tersinden okunuyor",
       "chain": [
-        { "label": "Tasarım", "note": "Niyetin kendisi. Kimsenin sakladığı bir biçimde nadiren yazıya dökülür." },
-        { "label": "Teknik resim", "note": "Kâğıt üzerinde; kâğıt da onu çizen kişinin peşinden gider." },
-        { "label": "Kalıp", "note": "Hurdaya ayrılmış, satılmış ya da vermeyecek bir tedarikçinin elinde." },
-        { "label": "Tedarikçi", "note": "Kapanmış, satın alınmış ya da bu kadar küçük bir parça için artık dönüş yapmıyor." },
-        { "label": "Parça", "note": "Hâlâ teknenin üzerinde. Aşınmış, çatlamış ya da birinin yedek parça kutusunda." }
+        {
+          "label": "Tasarım",
+          "note": "Niyetin kendisi. Kimsenin sakladığı bir biçimde nadiren yazıya dökülür."
+        },
+        {
+          "label": "Teknik resim",
+          "note": "Kâğıt üzerinde; kâğıt da onu çizen kişinin peşinden gider."
+        },
+        {
+          "label": "Kalıp",
+          "note": "Hurdaya ayrılmış, satılmış ya da vermeyecek bir tedarikçinin elinde."
+        },
+        {
+          "label": "Tedarikçi",
+          "note": "Kapanmış, satın alınmış ya da bu kadar küçük bir parça için artık dönüş yapmıyor."
+        },
+        {
+          "label": "Parça",
+          "note": "Hâlâ teknenin üzerinde. Aşınmış, çatlamış ya da birinin yedek parça kutusunda."
+        }
       ],
       "chainReturn": "Geri kazanım",
       "chainNote": "Beş halkanın dördü genellikle yoktur. Beşincisi, ayakta kalması gereken tek halkadır.",
@@ -66,9 +100,18 @@
       },
       "survivesHeading": "Üzerinden çalışılabilecek şeyler",
       "survives": [
-        { "name": "Parça", "note": "Başlamak için bir tane yeter. İki üç tanesi çok daha iyidir; çünkü birkaç aşınmış numunenin üzerinde anlaştığı şey, herhangi birinin tek başına gösterdiğinden tasarıma daha yakındır." },
-        { "name": "Eşleştiği parça", "note": "Delik, yuva, conta kanalı, cıvata deliği düzeni. Arayüzler bir nominale göre işlenmiştir ve genellikle üzerlerinde hareket eden parçadan daha az aşınmıştır." },
-        { "name": "Onunla yaşamış kişi", "note": "Nasıl arıza verdiği, ne kadar dayandığı, su hattına göre nerede durduğu ve neyi tutması istendiği. Bunların hiçbiri teknik resimde yoktur ve hepsi cevabı değiştirir." }
+        {
+          "name": "Parça",
+          "note": "Başlamak için bir tane yeter. İki üç tanesi çok daha iyidir; çünkü birkaç aşınmış numunenin üzerinde anlaştığı şey, herhangi birinin tek başına gösterdiğinden tasarıma daha yakındır."
+        },
+        {
+          "name": "Eşleştiği parça",
+          "note": "Delik, yuva, conta kanalı, cıvata deliği düzeni. Arayüzler bir nominale göre işlenmiştir ve genellikle üzerlerinde hareket eden parçadan daha az aşınmıştır."
+        },
+        {
+          "name": "Onunla yaşamış kişi",
+          "note": "Nasıl arıza verdiği, ne kadar dayandığı, su hattına göre nerede durduğu ve neyi tutması istendiği. Bunların hiçbiri teknik resimde yoktur ve hepsi cevabı değiştirir."
+        }
       ],
       "ipHeading": "Hiçbir ölçü alınmadan önce sorulanlar",
       "ip": [
@@ -78,7 +121,6 @@
         "Hukuken paylaşabildiğiniz şey üzerinden çalışırız. Bu sorular işten sonra değil, işten önce gelir."
       ]
     },
-
     "measurement": {
       "index": "02",
       "movement": "Bölüm II · Ölçülür",
@@ -100,7 +142,11 @@
         "Aşınma imzalarını ayırın. Aşındırıcı aşınma, fretting aşınması, sünme ve plastik deformasyonun her biri farklı bir iz bırakır ve her biri farklı biçimde çıkarılır."
       ],
       "tableCaption": "Aşınmış bir numuneyi okumak",
-      "columns": ["Numunenin gösterdiği", "Ne olduğu", "Nominal için anlamı"],
+      "columns": [
+        "Numunenin gösterdiği",
+        "Ne olduğu",
+        "Nominal için anlamı"
+      ],
       "rows": [
         {
           "shows": "Parlak, cilalanmış bir yatak yüzeyi",
@@ -136,7 +182,6 @@
       "caveatHeading": "Modelle birlikte geri gelenler",
       "caveat": "Hangi ölçüleri güvenle belirleyebildiğimiz, hangilerini eşleştiği parçadan ya da simetriden çıkardığımız ve hangilerinin eldeki verilerle belirlenemeyeceği. Kritik arayüzler çelik işlenmeden önce sizinle mutabık kalınır. Ölçüm fizikseldir — el aletleriyle metroloji, birkaç numune ve eşleştiği parça. Bu tarifte bir tarayıcı yoktur ve bu sektörün ihtiyacı da o değildir; ihtiyacı, hangi rakamların çıkarım olduğunu söyleyecek birisidir."
     },
-
     "sequence": {
       "index": "03",
       "movement": "Bölüm I – IV",
@@ -173,7 +218,6 @@
       ],
       "close": "Bir hâlin tamamlanamadığı yerde — hayatta kalan hiçbir şeyin belirleyemeyeceği bir ölçü, kimsenin teyit edemeyeceği bir arayüz — dizi orada durur ve bunu söyleriz; bir varsayımı çeliğe kadar taşımayız."
     },
-
     "environment": {
       "index": "04",
       "movement": "Bölüm III · Modellenir",
@@ -187,7 +231,12 @@
         "waterline": "Su hattı"
       },
       "zoneNote": "Çizginin üstünde baskın yük ultraviyole ve ısıl çevrimdir. Serpinti bölgesinde aralıklı ıslanma ve tuz sisidir. Altında ise sürekli ıslanma, hidrostatik yük ve deniz kirlenmesidir. Aynı görünen parça, hangi bantta yaşadığına göre üç ayrı mühendislik problemidir.",
-      "columns": ["Yük", "Mekanizma", "Parçaya etkisi", "Polimerden istediği"],
+      "columns": [
+        "Yük",
+        "Mekanizma",
+        "Parçaya etkisi",
+        "Polimerden istediği"
+      ],
       "rows": [
         {
           "load": "Ultraviyole",
@@ -217,7 +266,6 @@
       "evidenceHeading": "Kanıt nereden geliyor",
       "evidence": "Bir alıcının soracağı test yöntemleri yayımlanmış standartlardır: hızlandırılmış yaşlandırma için ASTM G154 ve ISO 4892-3, tuz sisi için ASTM B117 ve ISO 9227, su emme için ASTM D570, darbe ve eğilme performansı için ASTM D256 ve ASTM D790. Bu değerler hammadde üreticisinin veri sayfasına ya da iddiayı ortaya atan tarafın görevlendirdiği bağımsız bir laboratuvara aittir. Metal Form yaşlandırma, tuz sisi ya da malzeme kalifikasyon testi yapmaz. Bu bölümdeki hiçbir şey bir Metal Form ölçümü değildir ve bu sayfadaki hiçbir şey öyle okunmamalıdır."
     },
-
     "geometry": {
       "index": "05",
       "movement": "Bölüm III · Modellenir",
@@ -243,7 +291,6 @@
       "contextHeading": "Sektörün çok büyük parçalarda gittiği yer",
       "context": "Konsollar, koltuk tabanları ve büyük paneller üzerine yayımlanmış sektör uygulaması; mengene tonajını ve çöküntüyü kontrol altında tutmak için yapısal köpüğe ya da gaz destekli kalıplamaya uzanır — yapısal köpük, dolu parçaya göre kabaca yüzde yirmi daha hafif ve birkaç kat daha rijit olarak tanımlanır; bedeli ise normalde boyanan mat ve girdaplı bir yüzeydir. Gaz destekli kalıplama ise kısmi dolumdan sonra kalın kanalları boşaltarak kozmetik yüzeylerdeki çöküntüyü bastırır. İkisi de burada, seçenekleriniz hakkında bağlam olarak anılıyor. Hiçbiri bir Metal Form prosesi değildir. Parçanızın yeri orasıysa, etrafından dolanarak teklif vermek yerine bunu size söyleriz."
     },
-
     "economics": {
       "index": "06",
       "movement": "Bölüm IV · Kalıbı yapılır",
@@ -253,11 +300,26 @@
       "body2": "Bu da işe yarar soruyu, tekliflerin çoğunun kaçındığı soru yapar. Bu çeliği kaç adede amorti ediyorum ve model tahminin yarısı kadar satarsa parça başı maliyetime ne olur. Denizcilikte, daha ucuz ve daha basit bir kalıptaki daha yüksek bir parça fiyatı çoğu zaman doğru ticari cevaptır; bunu yüksek sesle söyleyemeyen bir tedarikçi de sizin programınızı değil, kendi makine doluluğunu optimize ediyordur.",
       "arithHeading": "Dört satırda aritmetik",
       "arith": [
-        { "k": "Tekne başına adet", "v": "4" },
-        { "k": "Yılda tekne", "v": "200" },
-        { "k": "Yıllık adet", "v": "800" },
-        { "k": "Model ömrü", "v": "15 yıl" },
-        { "k": "Ömür boyu adet", "v": "12.000" }
+        {
+          "k": "Tekne başına adet",
+          "v": "4"
+        },
+        {
+          "k": "Yılda tekne",
+          "v": "200"
+        },
+        {
+          "k": "Yıllık adet",
+          "v": "800"
+        },
+        {
+          "k": "Model ömrü",
+          "v": "15 yıl"
+        },
+        {
+          "k": "Ömür boyu adet",
+          "v": "12.000"
+        }
       ],
       "arithNote": "Yayımlanmış tekne inşa ölçeklerinden kurulmuş bir örnek — küçük tersaneler, yılda birkaç düzineden birkaç yüze tekne, yüzlerce üretici ve binlerce model. Bir Metal Form rakamı değildir ve sizin programınız değildir. Aynı dört satıra kendi rakamlarınızı koyun; sonuç nadiren değişir.",
       "tabsLabel": "Yıllık adet bandı",
@@ -309,7 +371,6 @@
         "Çelikten önce yapılacak bir değişikliğin neredeyse bedelsiz önleyeceği şeyi sahada sonradan düzeltmek."
       ]
     },
-
     "continuity": {
       "index": "07",
       "movement": "Diziden sonra · Süreklilik",
@@ -318,12 +379,30 @@
       "body": "Denizcilik ürün hatlarının çoğu tam olarak tek bir tedarikçide, tam olarak tek bir kalıp üzerinde durur ve üretim takviminde hiç boşluk yoktur. Bu, bir üretim hattındaki tek nokta arızasıdır ve olmadığı güne kadar görünmez kalır.",
       "ledgerHeading": "Bir ikinci kaynağın gerçekte kapsadıkları",
       "ledger": [
-        { "name": "İkiz kalıp", "note": "Mevcut parçanızdan, teknik resminizden ya da numunenizden, NDA altında yapılır. Bir hattı durdurabilecek bir parça için ikinci bir kalıp." },
-        { "name": "Kalıp sizin kalır", "note": "Mülkiyet ve fiziki zilyetlik yenileme sırasında değil, en başta yazılı olarak kararlaştırılır. Bir kalıbın kopyasını teklif etmeden önce mevcut kalıbın sahibini sorarız." },
-        { "name": "Bekletilir, çalıştırılmaz", "note": "İkiz bir kalıp hazır bekleyebilir. Bu bir hazırlıktır, rezerve kapasite değil — kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir ve size hangisinin teklif edildiğini söyleriz." },
-        { "name": "Siparişe göre tedarik", "note": "Sezonluk üretim takvimine göre zamanlanmış parça üretimi ve sürekli tedarik; dünya geneline sevkiyatla birlikte." },
-        { "name": "Yedekler ve değişim parçaları", "note": "Aşınma kalemleri tasarım aşamasında tanımlanır ve kalıpla birlikte fiyatlandırılır; biri kırıldığı gün keşfedilmez." },
-        { "name": "Sesi kesilen tedarikçi", "note": "Aynı rota; artık dönüş yapmayan, yenilemede fiyat yükselten ya da başka hiçbir yerden alamayacağınız bir parçanın tek kalıbını elinde tutan bir tedarikçiyi de kapsar." }
+        {
+          "name": "İkiz kalıp",
+          "note": "Mevcut parçanızdan, teknik resminizden ya da numunenizden, NDA altında yapılır. Bir hattı durdurabilecek bir parça için ikinci bir kalıp."
+        },
+        {
+          "name": "Kalıp sizin kalır",
+          "note": "Mülkiyet ve fiziki zilyetlik yenileme sırasında değil, en başta yazılı olarak kararlaştırılır. Bir kalıbın kopyasını teklif etmeden önce mevcut kalıbın sahibini sorarız."
+        },
+        {
+          "name": "Bekletilir, çalıştırılmaz",
+          "note": "İkiz bir kalıp hazır bekleyebilir. Bu bir hazırlıktır, rezerve kapasite değil — kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir ve size hangisinin teklif edildiğini söyleriz."
+        },
+        {
+          "name": "Siparişe göre tedarik",
+          "note": "Sezonluk üretim takvimine göre zamanlanmış parça üretimi ve sürekli tedarik; dünya geneline sevkiyatla birlikte."
+        },
+        {
+          "name": "Yedekler ve değişim parçaları",
+          "note": "Aşınma kalemleri tasarım aşamasında tanımlanır ve kalıpla birlikte fiyatlandırılır; biri kırıldığı gün keşfedilmez."
+        },
+        {
+          "name": "Sesi kesilen tedarikçi",
+          "note": "Aynı rota; artık dönüş yapmayan, yenilemede fiyat yükselten ya da başka hiçbir yerden alamayacağınız bir parçanın tek kalıbını elinde tutan bir tedarikçiyi de kapsar."
+        }
       ],
       "figureLabels": {
         "running": "Üretimde",
@@ -331,7 +410,6 @@
         "package": "Veri paketi"
       },
       "figureNote": "Bir kalıp, ancak veri paketi onunla birlikte taşındığında taşınabilirdir: model, kalıp resimleri, çelik ve kalite şartnamesi, yolluk girişi ve soğutma düzeni ile yedek parça listesi.",
-
       "boundaryHeading": "Neyi biz sağlıyoruz, ne sizde kalıyor",
       "boundaryLead": "Bu, iki kez okunmaya değer bölümdür. Bu sayfadaki hiç kimsenin belgelendirme yetkisine sahip olmadığı standartlarla yönetilen bir sektörde, itibarı kapsam çizgisi oluşturur — bu yüzden küçük punto bırakılmak yerine tam olarak yazılmıştır.",
       "boundaryLine": "Kalıbı biz tasarlar ve imal ederiz, parçayı da üretebiliriz. Belgelendirme, yaşlandırma kanıtı ve geometriyi kopyalama hakkı sizde kalır — ve bu üçünden hangisinin eksik olduğunu çelik işlenmeden önce size söyleriz.",
@@ -355,7 +433,6 @@
       ],
       "boundaryNote": "Ayrımın somutlaşması için o dünyadan bir ayrıntı. Benzinli bir sistemde metal bir dolum ağzı gövdesi teknenin bonding sistemine bağlanır; metal kapaklı ve zincirli plastik bir dolum ağzı gövdesi ise tekne sudan çıktığında oluşan elektrostatik boşalma riski nedeniyle bilinçli olarak bağlanmaz. İkisinin de kalıbını yapabiliriz. Karar da belge de üreticiye aittir."
     },
-
     "panels": {
       "heading": "Daha ayrıntılı",
       "items": [
@@ -399,7 +476,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Parçayı gönderin.",
     "body": "Bir fotoğraf, aşınmış bir numune ya da bir teknik resim. Geometri sorunları, parçanın gerçekte gördüğü maruziyete uygun malzeme kısa listesi, gerçek yıllık adedinize uyan kalıp rotası ve o parçayı tedarikte tutmak için ne gerektiğiyle dönüş yaparız. 48 iş saati içinde ilk proje dönüşü. Geometri paylaşılmadan önce NDA.",

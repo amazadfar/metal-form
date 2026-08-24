@@ -149,7 +149,15 @@ const schemas = [
   }
   .ind__title { max-inline-size: 11ch; }
   .ind__lead { padding-block-end: 0.35em; }
-  .ind__grid { margin-block-start: clamp(2rem, 5vw, 3.5rem); }
+  .ind__grid { margin-block-start: clamp(1.5rem, 4vw, 3.5rem); }
+  /* On a phone the section heading was taking a screen of its own before the
+     first industry appeared. */
+  @media (max-width: 720px) {
+    .ind { padding-block: var(--sp-8) var(--sp-9); }
+    .ind__head { margin-block-start: var(--sp-4); padding-block-start: var(--sp-5); }
+    .ind__title { font-size: var(--step-5); }
+    .ind__lead { font-size: var(--step-0); }
+  }
 
   .ind__fallback {
     margin-block-start: var(--sp-7);

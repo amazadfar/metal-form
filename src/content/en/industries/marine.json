@@ -4,7 +4,7 @@
     "description": "Injection, blow and die-cast tooling for marine hardware, hatches, fittings, fuel-system components and floats. Reverse engineering from a worn or obsolete part. Low-volume tooling strategy, second-source tooling, international delivery. Persian engineering since 2006."
   },
   "name": "Marine & Offshore",
-  "tile": "Awkward geometry, larger parts and low-to-medium volumes where a full production tool is hard to justify — plus components whose drawings nobody kept.",
+  "tile": "Awkward geometry, low volumes, and components whose drawings nobody kept.",
   "tileParts": "Fittings · Hatches · Reverse engineering",
   "hero": {
     "kicker": "Marine & Offshore",
@@ -20,7 +20,6 @@
       "International delivery"
     ]
   },
-
   "blocks": {
     "opening": {
       "figure": {
@@ -31,19 +30,39 @@
       },
       "legendHeading": "Two outlines, one part",
       "legend": [
-        { "key": "worn", "label": "The sample, as found" },
-        { "key": "nominal", "label": "The recovered nominal" },
-        { "key": "point", "label": "Where the two are reconciled" }
+        {
+          "key": "worn",
+          "label": "The sample, as found"
+        },
+        {
+          "key": "nominal",
+          "label": "The recovered nominal"
+        },
+        {
+          "key": "point",
+          "label": "Where the two are reconciled"
+        }
       ],
       "movementsLabel": "The sequence",
       "movements": [
-        { "num": "I", "label": "The part arrives" },
-        { "num": "II", "label": "It is measured" },
-        { "num": "III", "label": "It is modelled" },
-        { "num": "IV", "label": "It is tooled" }
+        {
+          "num": "I",
+          "label": "The part arrives"
+        },
+        {
+          "num": "II",
+          "label": "It is measured"
+        },
+        {
+          "num": "III",
+          "label": "It is modelled"
+        },
+        {
+          "num": "IV",
+          "label": "It is tooled"
+        }
       ]
     },
-
     "arrival": {
       "index": "01",
       "movement": "Movement I · The part arrives",
@@ -52,11 +71,26 @@
       "body": "In this sector the tool outlives the paperwork and the hull outlives both. A model runs for a few seasons; the boats stay in the water for twenty or thirty years. By the time the part is needed again the supplier has changed hands, the tool has been scrapped or sits in a corner nobody will open, and the drawing — if one was ever made — left with the engineer who understood it. What survives is the component itself, still bolted to a boat.",
       "chainHeading": "The chain, read backwards",
       "chain": [
-        { "label": "Design", "note": "The intent. Rarely written down in a form anyone kept." },
-        { "label": "Drawing", "note": "On paper, and paper follows the person who drew it." },
-        { "label": "Tool", "note": "Scrapped, sold, or held by a supplier who will not release it." },
-        { "label": "Supplier", "note": "Closed, bought, or no longer answering on a part this small." },
-        { "label": "Part", "note": "Still on the boat. Worn, cracked, or in somebody's box of spares." }
+        {
+          "label": "Design",
+          "note": "The intent. Rarely written down in a form anyone kept."
+        },
+        {
+          "label": "Drawing",
+          "note": "On paper, and paper follows the person who drew it."
+        },
+        {
+          "label": "Tool",
+          "note": "Scrapped, sold, or held by a supplier who will not release it."
+        },
+        {
+          "label": "Supplier",
+          "note": "Closed, bought, or no longer answering on a part this small."
+        },
+        {
+          "label": "Part",
+          "note": "Still on the boat. Worn, cracked, or in somebody's box of spares."
+        }
       ],
       "chainReturn": "Recovery",
       "chainNote": "Four of the five links are usually gone. The fifth is the only one that has to survive.",
@@ -66,9 +100,18 @@
       },
       "survivesHeading": "What is still available to work from",
       "survives": [
-        { "name": "The part", "note": "One is enough to start. Two or three are far better, because what several worn samples agree on is closer to the design than what any one of them shows." },
-        { "name": "The mating component", "note": "The hole, the bore, the gasket groove, the fastener pattern. Interfaces were cut to a nominal and have usually worn less than the part that moved against them." },
-        { "name": "The person who lived with it", "note": "How it failed, how long it lasted, where it sat relative to the waterline and what it was asked to hold. None of that is on a drawing and all of it changes the answer." }
+        {
+          "name": "The part",
+          "note": "One is enough to start. Two or three are far better, because what several worn samples agree on is closer to the design than what any one of them shows."
+        },
+        {
+          "name": "The mating component",
+          "note": "The hole, the bore, the gasket groove, the fastener pattern. Interfaces were cut to a nominal and have usually worn less than the part that moved against them."
+        },
+        {
+          "name": "The person who lived with it",
+          "note": "How it failed, how long it lasted, where it sat relative to the waterline and what it was asked to hold. None of that is on a drawing and all of it changes the answer."
+        }
       ],
       "ipHeading": "Asked before anything is measured",
       "ip": [
@@ -78,7 +121,6 @@
         "We work from what you can lawfully share. These questions come before the work, not after it."
       ]
     },
-
     "measurement": {
       "index": "02",
       "movement": "Movement II · It is measured",
@@ -100,7 +142,11 @@
         "Separate the wear signatures. Abrasion, fretting, creep and plastic deformation each leave a different mark and each is subtracted differently."
       ],
       "tableCaption": "Reading a worn sample",
-      "columns": ["What the sample shows", "What it is", "What it means for the nominal"],
+      "columns": [
+        "What the sample shows",
+        "What it is",
+        "What it means for the nominal"
+      ],
       "rows": [
         {
           "shows": "A bright, polished bearing face",
@@ -136,7 +182,6 @@
       "caveatHeading": "What comes back with the model",
       "caveat": "Which dimensions we can establish with confidence, which we are inferring from the mating part or from symmetry, and which cannot be determined from what exists. Critical interfaces are agreed with you before steel is cut. The measurement is physical — hand metrology, several samples and the component it mates with. There is no scanner in that description and this sector does not need one; it needs somebody willing to say which numbers are inferred."
     },
-
     "sequence": {
       "index": "03",
       "movement": "Movements I – IV",
@@ -173,7 +218,6 @@
       ],
       "close": "Where a state cannot be completed — a dimension nothing surviving can establish, an interface nobody can confirm — the sequence stops there and we say so, rather than carrying an assumption forward into steel."
     },
-
     "environment": {
       "index": "04",
       "movement": "Movement III · It is modelled",
@@ -187,7 +231,12 @@
         "waterline": "Waterline"
       },
       "zoneNote": "Above the line the dominant load is ultraviolet and thermal cycling. In the splash zone it is intermittent wetting and salt fog. Below it, constant wetting, hydrostatic load and fouling. The same-looking part is three different engineering problems depending on which band it lives in.",
-      "columns": ["Load", "Mechanism", "What it does to the part", "What it demands of the polymer"],
+      "columns": [
+        "Load",
+        "Mechanism",
+        "What it does to the part",
+        "What it demands of the polymer"
+      ],
       "rows": [
         {
           "load": "Ultraviolet",
@@ -217,7 +266,6 @@
       "evidenceHeading": "Where the evidence comes from",
       "evidence": "The test methods a buyer will ask about are published standards: ASTM G154 and ISO 4892-3 for accelerated weathering, ASTM B117 and ISO 9227 for salt fog, ASTM D570 for water absorption, ASTM D256 and ASTM D790 for impact and flexural performance. Those figures belong to the resin producer's datasheet or to an independent laboratory engaged by whoever is making the claim. Metal Form does not run weathering, salt-fog or material qualification testing. Nothing in this section is a Metal Form measurement, and nothing on this page should be read as one."
     },
-
     "geometry": {
       "index": "05",
       "movement": "Movement III · It is modelled",
@@ -243,7 +291,6 @@
       "contextHeading": "Where the industry goes on very large parts",
       "context": "Published industry practice on consoles, seat bases and large panels reaches for structural foam or gas-assist moulding to hold clamp tonnage and sink under control — structural foam is described as roughly twenty per cent lighter than solid with several times the rigidity, at the cost of a matte swirled surface that is normally painted; gas assist hollows thick channels after partial fill to suppress sink on cosmetic faces. Both are named here as context about your options. Neither is a Metal Form process. If that is where your part belongs, we would tell you so rather than quote around it."
     },
-
     "economics": {
       "index": "06",
       "movement": "Movement IV · It is tooled",
@@ -253,11 +300,26 @@
       "body2": "Which makes the useful question the one most quotations avoid. Over how many pieces am I amortising this steel, and what happens to my cost per part if the model sells half of what the forecast says. A higher piece price on a cheaper, simpler tool is very often the correct commercial answer in marine, and a supplier who cannot say that out loud is optimising for their own machine utilisation rather than your programme.",
       "arithHeading": "The arithmetic, in four lines",
       "arith": [
-        { "k": "Fitted per hull", "v": "4" },
-        { "k": "Hulls per year", "v": "200" },
-        { "k": "Annual quantity", "v": "800" },
-        { "k": "Model life", "v": "15 years" },
-        { "k": "Lifetime quantity", "v": "12,000" }
+        {
+          "k": "Fitted per hull",
+          "v": "4"
+        },
+        {
+          "k": "Hulls per year",
+          "v": "200"
+        },
+        {
+          "k": "Annual quantity",
+          "v": "800"
+        },
+        {
+          "k": "Model life",
+          "v": "15 years"
+        },
+        {
+          "k": "Lifetime quantity",
+          "v": "12,000"
+        }
       ],
       "arithNote": "An illustration built from published boat-building scale — small yards, a few dozen to a few hundred hulls a year, hundreds of builders and thousands of models. It is not a Metal Form figure and it is not your programme. Put your own numbers into the same four lines; the conclusion rarely changes.",
       "tabsLabel": "Annual volume band",
@@ -309,7 +371,6 @@
         "Retro-fixing in the field what a change before steel would have cost almost nothing to prevent."
       ]
     },
-
     "continuity": {
       "index": "07",
       "movement": "After the sequence · Continuity",
@@ -318,12 +379,30 @@
       "body": "Most marine lines sit on exactly one tool at exactly one supplier, and the build calendar has no slack in it. That is a single point of failure on a production line, and it stays invisible until the day it is not.",
       "ledgerHeading": "What a second source actually covers",
       "ledger": [
-        { "name": "Duplicate tooling", "note": "Built from your existing part, drawing or sample, under NDA. A second tool for a component that can stop a line." },
-        { "name": "The tool stays yours", "note": "Ownership and physical possession agreed in writing at the start rather than at renewal. We ask who owns the existing tool before we quote a copy of it." },
-        { "name": "Held, not running", "note": "A duplicate tool can sit ready. That is readiness, not reserved capacity — capacity is reserved by contract or it is not reserved at all, and we will tell you which one you are being offered." },
-        { "name": "Supply against call-off", "note": "Component production and rolling supply timed against a seasonal build, with international delivery." },
-        { "name": "Spares and change parts", "note": "Wear items specified at design time and quoted with the tool, rather than discovered on the day one breaks." },
-        { "name": "The supplier who went quiet", "note": "The same route covers a supplier who has stopped answering, raised price at renewal, or is holding the only tool for a part you cannot buy anywhere else." }
+        {
+          "name": "Duplicate tooling",
+          "note": "Built from your existing part, drawing or sample, under NDA. A second tool for a component that can stop a line."
+        },
+        {
+          "name": "The tool stays yours",
+          "note": "Ownership and physical possession agreed in writing at the start rather than at renewal. We ask who owns the existing tool before we quote a copy of it."
+        },
+        {
+          "name": "Held, not running",
+          "note": "A duplicate tool can sit ready. That is readiness, not reserved capacity — capacity is reserved by contract or it is not reserved at all, and we will tell you which one you are being offered."
+        },
+        {
+          "name": "Supply against call-off",
+          "note": "Component production and rolling supply timed against a seasonal build, with international delivery."
+        },
+        {
+          "name": "Spares and change parts",
+          "note": "Wear items specified at design time and quoted with the tool, rather than discovered on the day one breaks."
+        },
+        {
+          "name": "The supplier who went quiet",
+          "note": "The same route covers a supplier who has stopped answering, raised price at renewal, or is holding the only tool for a part you cannot buy anywhere else."
+        }
       ],
       "figureLabels": {
         "running": "In production",
@@ -331,7 +410,6 @@
         "package": "Data package"
       },
       "figureNote": "A tool is moveable only when the data package moves with it: model, tool drawings, steel and grade specification, gate and cooling layout, and the spare-part list.",
-
       "boundaryHeading": "What we supply, and what stays with you",
       "boundaryLead": "This is the section worth reading twice. In a sector governed by standards that nobody on this page is entitled to certify against, the scope line is the credibility — so it is written out in full rather than left as small print.",
       "boundaryLine": "We design and build the tooling, and we can make the part. Certification, weathering evidence and the right to copy the geometry stay with you — and we will tell you which of the three is missing before steel is cut.",
@@ -355,7 +433,6 @@
       ],
       "boundaryNote": "One detail from that world, so the distinction is concrete. On a gasoline system a metallic fill body is bonded into the vessel bonding system, and a plastic fill body with a metallic cap and chain deliberately is not, because of the electrostatic discharge risk when the boat is out of the water. We can build the tool for either. The decision, and the certificate, belong to the builder."
     },
-
     "panels": {
       "heading": "Deeper detail",
       "items": [
@@ -399,7 +476,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Send the part.",
     "body": "A photograph, a worn sample, or a drawing. We come back with the geometry problems, the material shortlist for the exposure it actually sees, the tooling route that suits your real annual volume, and what it takes to hold that part in supply. Initial project response within 48 business hours. NDA before geometry is shared.",

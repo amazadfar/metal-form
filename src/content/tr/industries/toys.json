@@ -4,11 +4,14 @@
     "description": "Tüketici ürünleri ve oyuncaklar için enjeksiyon kalıbı tasarımı ve imalatı. Enjeksiyona uygun DFM ve yeniden tasarım, aile ve çok gözlü kalıplar, renk ve yüzey şartnamesi, teknik mekanizmalar, sürekli parça tedariki ve ikinci kaynak kalıpları. 2006'dan beri İran mühendisliği. 48 iş saati içinde dönüş."
   },
   "name": "Oyuncak ve Tüketici Ürünleri",
-  "tile": "Ürünleştirme: bir fikirden, bir numuneden ya da bir 3B baskıdan, işe yarayan bir birim maliyetle kalıplanmış parçaya. Parça sayısının azaltılması, aile kalıpları ve adedin maliyeti.",
+  "tile": "Bir numuneden ya da 3B baskıdan, işe yarayan bir birim maliyetle kalıplanmış parçaya.",
   "tileParts": "Ürünleştirme · Aile kalıpları · Adet",
   "hero": {
     "kicker": "Oyuncak ve Tüketici Ürünleri",
-    "headline": ["Birim maliyet", "çelikte belirlenir."],
+    "headline": [
+      "Birim maliyet",
+      "çelikte belirlenir."
+    ],
     "lead": "Tüketici ürünleri ve oyuncaklar; bir eskizden, bir numuneden ya da CAD'den kalıplı üretime. Parçayı gönderin. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendiririz.",
     "markers": [
       "Eskizden, numuneden ya da CAD'den ürünleştirme",
@@ -16,7 +19,6 @@
       "46 göze kadar kalıp deneyimi"
     ]
   },
-
   "blocks": {
     "stack": {
       "figureLabel": "Patlatılmış montaj, tek eksen",
@@ -60,7 +62,12 @@
           "note": "Film menteşe; kendi gövdesiyle tek parça olarak kalıplanır. Pim yok, ayrı kapak yok, montaj adımı yok."
         }
       ],
-      "meta": ["6 enjeksiyon parçası", "3 kalıp", "PP / ABS / PC", "VDI 24"],
+      "meta": [
+        "6 enjeksiyon parçası",
+        "3 kalıp",
+        "PP / ABS / PC",
+        "VDI 24"
+      ],
       "caption": "Bu şekil için çizilmiş örnek bir tüketici ürünü. Parça sayısı, malzemeler, göz sayıları ve yüzey sınıfları bir projeden alınmamıştır.",
       "proofLabel": "Kayıtlarda",
       "proof": [
@@ -71,7 +78,6 @@
         "48 iş saati içinde ilk teknik dönüş"
       ]
     },
-
     "intake": {
       "index": "01",
       "kicker": "Giriş",
@@ -108,7 +114,6 @@
       "close": "Geri gelen şey; geometri okuması, kalıp rotası, üretim ekonomisi ve tedarik seçenekleridir. 48 iş saati içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir.",
       "figureNote": "Birleşme şeması. Her rota aynı ilk çıktıda biter."
     },
-
     "consolidate": {
       "index": "02",
       "kicker": "Parça sayısı",
@@ -121,19 +126,43 @@
       "before": {
         "heading": "Çizildiği hâliyle",
         "rows": [
-          { "value": "3", "label": "Enjeksiyon parçası" },
-          { "value": "1", "label": "Satın alınan pim" },
-          { "value": "3", "label": "Kalıp" },
-          { "value": "1", "label": "Montaj işlemi" }
+          {
+            "value": "3",
+            "label": "Enjeksiyon parçası"
+          },
+          {
+            "value": "1",
+            "label": "Satın alınan pim"
+          },
+          {
+            "value": "3",
+            "label": "Kalıp"
+          },
+          {
+            "value": "1",
+            "label": "Montaj işlemi"
+          }
         ]
       },
       "after": {
         "heading": "Kalıplandığı hâliyle",
         "rows": [
-          { "value": "1", "label": "Enjeksiyon parçası" },
-          { "value": "0", "label": "Satın alınan pim" },
-          { "value": "1", "label": "Kalıp" },
-          { "value": "0", "label": "Montaj işlemi" }
+          {
+            "value": "1",
+            "label": "Enjeksiyon parçası"
+          },
+          {
+            "value": "0",
+            "label": "Satın alınan pim"
+          },
+          {
+            "value": "1",
+            "label": "Kalıp"
+          },
+          {
+            "value": "0",
+            "label": "Montaj işlemi"
+          }
         ]
       },
       "consequenceHeading": "Gerçekte ortadan kalkanlar",
@@ -148,7 +177,6 @@
       "caution": "Birleştirme kendiliğinden doğru cevap değildir. Tek parça demek; eskiden üç ayrı ödün olan bir geometride tek malzeme, tek renk ve tek cidar disiplini demektir ve ürünün tamamını, bütün olarak düzeltilmesi gereken tek bir kalıpta toplar. Parçalar malzemeyi ve işlevi paylaştığı yerde yapmaya değer. Paylaşmadığı yerde reddetmeye değer ve bunu size söyleriz.",
       "figureNote": "Birleştirme şeması. Bir menteşe pimi, ayrı bir kapak ve bir gövde; film menteşeli tek bir enjeksiyon parçasına dönüşüyor."
     },
-
     "volume": {
       "index": "03",
       "kicker": "Amortisman",
@@ -191,7 +219,6 @@
       "close": "Bu aritmetiği önce bu yıl gerçekten yapacağınız adede, sonra onun on katına göre yürütürüz ve büyük kalıbın kendini programın ömrü içinde geri ödemediği yerde bunu açıkça söyleriz. Bazen doğru cevap şimdi daha küçük bir kalıp, sipariş defteri gerçekleştiğinde bir üretim kalıbıdır.",
       "figureNote": "Amortisman şeması. Yalnızca göreli biçim — para birimi yok, fiyat teklifi yok."
     },
-
     "ledger": {
       "index": "04",
       "kicker": "Çelikten önce",
@@ -240,7 +267,6 @@
       "figureNote": "Düzeltme şemaları. Geometri okunabilirlik için abartılmıştır.",
       "deltaLabel": "ΔE"
     },
-
     "detail": {
       "index": "05",
       "kicker": "Büyütme",
@@ -254,10 +280,26 @@
           "name": "Konsol geçmeli tırnak",
           "summary": "Montaj sırasında esneyip geri dönen, ucunda kanca olan kalıplanmış bir kol. Kapamanın, tutmanın ve servis erişiminin tamamı; satın alma bedeli olmayan tek bir detayda.",
           "callouts": [
-            { "no": "1", "name": "Kol", "note": "Uzunluk ve kesit, kullanılabilir esnemeyi belirler. Çok kısaysa montajda malzemenin elastik sınırının ötesine zorlanır; çok uzunsa yük altında gevşer ve gövde tıkırdar." },
-            { "no": "2", "name": "Kanca ve sıkı geçme", "note": "Ürünü monte eden ölçü sıkı geçme payıdır. Aynı zamanda kalıp aşındıkça değişen ilk ölçüdür; bu hesaba katılarak tasarlanmadıkça geç üretilen parçalar, erken üretilenlerden farklı oturur." },
-            { "no": "3", "name": "Kök radyusu", "note": "Bütün detaydaki en yüksek gerilme noktası. Keskin bir kök, kolun kırıldığı yerdir; genellikle yüzüncü parça ile on bininci parça arasında bir yerde." },
-            { "no": "4", "name": "Birleşme izi", "note": "Kol kökünden bilinçli olarak uzaklaştırılır. Kozmetik olarak bir çizgidir; yapısal olarak bir çatlak başlangıç noktasıdır ve bir geçme kolunda doğrudan yük yolunun üzerindedir." }
+            {
+              "no": "1",
+              "name": "Kol",
+              "note": "Uzunluk ve kesit, kullanılabilir esnemeyi belirler. Çok kısaysa montajda malzemenin elastik sınırının ötesine zorlanır; çok uzunsa yük altında gevşer ve gövde tıkırdar."
+            },
+            {
+              "no": "2",
+              "name": "Kanca ve sıkı geçme",
+              "note": "Ürünü monte eden ölçü sıkı geçme payıdır. Aynı zamanda kalıp aşındıkça değişen ilk ölçüdür; bu hesaba katılarak tasarlanmadıkça geç üretilen parçalar, erken üretilenlerden farklı oturur."
+            },
+            {
+              "no": "3",
+              "name": "Kök radyusu",
+              "note": "Bütün detaydaki en yüksek gerilme noktası. Keskin bir kök, kolun kırıldığı yerdir; genellikle yüzüncü parça ile on bininci parça arasında bir yerde."
+            },
+            {
+              "no": "4",
+              "name": "Birleşme izi",
+              "note": "Kol kökünden bilinçli olarak uzaklaştırılır. Kozmetik olarak bir çizgidir; yapısal olarak bir çatlak başlangıç noktasıdır ve bir geçme kolunda doğrudan yük yolunun üzerindedir."
+            }
           ],
           "scope": "Kolu ve kalıbı birlikte tasarlar, aşınma kalemlerini adıyla yazar ve yedek maçaları kalıp durduktan sonra değil, çalışmaya başlamadan önce tanımlarız."
         },
@@ -266,10 +308,26 @@
           "name": "Film menteşe",
           "summary": "Bütünleşik kalıplanmış, esneyen ince bir kesit; böylece kapak ve gövde kalıptan zaten birleşmiş çıkar. Ders kitabı örneği bir birleştirme: pim yok, ayrı kapak yok, montaj işlemi yok.",
           "callouts": [
-            { "no": "1", "name": "Menteşe bandı", "note": "İki yanında cömert radyuslar bulunan ince bir bant. Fazla kalınsa katlanmaz; fazla keskinse ilk esnemede yarılır ya da yüzüncüde beyazlar." },
-            { "no": "2", "name": "Akış yönü", "note": "Ergiyik menteşenin üzerinden değil, içinden geçecek şekilde beslenir. Akış yönü bant boyunca moleküler yönlenmeyi, yönlenme de menteşenin binlerce çevrim mi yoksa yüz çevrim mi dayanacağını belirler." },
-            { "no": "3", "name": "Malzeme", "note": "Buradaki çalışma malzemesi polipropilendir. Menteşe, polimerin ince ve esneyen bir kesit boyunca yönlenebilme kabiliyetine dayanır; bu ise her tüketici hammaddesinde bulunan bir özellik değildir." },
-            { "no": "4", "name": "İlk esnetme", "note": "Yayımlanmış uygulama, menteşeyi itmeden hemen sonra parça hâlâ sıcakken esnetir. Esnetilmeden soğumaya bırakılan bir menteşe, ömrünün geri kalanında farklı davranır." }
+            {
+              "no": "1",
+              "name": "Menteşe bandı",
+              "note": "İki yanında cömert radyuslar bulunan ince bir bant. Fazla kalınsa katlanmaz; fazla keskinse ilk esnemede yarılır ya da yüzüncüde beyazlar."
+            },
+            {
+              "no": "2",
+              "name": "Akış yönü",
+              "note": "Ergiyik menteşenin üzerinden değil, içinden geçecek şekilde beslenir. Akış yönü bant boyunca moleküler yönlenmeyi, yönlenme de menteşenin binlerce çevrim mi yoksa yüz çevrim mi dayanacağını belirler."
+            },
+            {
+              "no": "3",
+              "name": "Malzeme",
+              "note": "Buradaki çalışma malzemesi polipropilendir. Menteşe, polimerin ince ve esneyen bir kesit boyunca yönlenebilme kabiliyetine dayanır; bu ise her tüketici hammaddesinde bulunan bir özellik değildir."
+            },
+            {
+              "no": "4",
+              "name": "İlk esnetme",
+              "note": "Yayımlanmış uygulama, menteşeyi itmeden hemen sonra parça hâlâ sıcakken esnetir. Esnetilmeden soğumaya bırakılan bir menteşe, ömrünün geri kalanında farklı davranır."
+            }
           ],
           "scope": "Menteşe, yolluk girişi konumu ve kalıp tek bir karardır ve birlikte alınır. Bir menteşenin kalıbını yapıp girişin uygun bir yere denk gelmesini ummayız."
         }
@@ -277,7 +335,6 @@
       "note": "Bu bölümde anlatılan geometri, malzemeler ve uygulama yayımlanmış sektör mühendisliğidir, Metal Form ölçümleri değildir.",
       "figureNote": "Büyütmede detay şeması. Esneme kesikli çizgiyle gösterilmiştir."
     },
-
     "surface": {
       "index": "06",
       "kicker": "Yüzey",
@@ -289,12 +346,42 @@
       "colRa": "Ra, yaklaşık",
       "colDraft": "Gerektirdiği çıkma açısı",
       "grades": [
-        { "grade": "VDI 18", "ra": "≈ 0,80 µm", "draft": "1,5°'nin altı", "anchor": false },
-        { "grade": "VDI 21", "ra": "≈ 1,12 µm", "draft": "1,5°'nin altı", "anchor": false },
-        { "grade": "VDI 24", "ra": "≈ 1,60 µm", "draft": "1,5 – 2,0°", "anchor": true },
-        { "grade": "VDI 27", "ra": "≈ 2,24 µm", "draft": "2,0°'nin üstü", "anchor": false },
-        { "grade": "VDI 33", "ra": "≈ 4,50 µm", "draft": "4,0°'ye yaklaşan", "anchor": false },
-        { "grade": "VDI 36", "ra": "≈ 6,30 µm", "draft": "4,0° ve üzeri", "anchor": true }
+        {
+          "grade": "VDI 18",
+          "ra": "≈ 0,80 µm",
+          "draft": "1,5°'nin altı",
+          "anchor": false
+        },
+        {
+          "grade": "VDI 21",
+          "ra": "≈ 1,12 µm",
+          "draft": "1,5°'nin altı",
+          "anchor": false
+        },
+        {
+          "grade": "VDI 24",
+          "ra": "≈ 1,60 µm",
+          "draft": "1,5 – 2,0°",
+          "anchor": true
+        },
+        {
+          "grade": "VDI 27",
+          "ra": "≈ 2,24 µm",
+          "draft": "2,0°'nin üstü",
+          "anchor": false
+        },
+        {
+          "grade": "VDI 33",
+          "ra": "≈ 4,50 µm",
+          "draft": "4,0°'ye yaklaşan",
+          "anchor": false
+        },
+        {
+          "grade": "VDI 36",
+          "ra": "≈ 6,30 µm",
+          "draft": "4,0° ve üzeri",
+          "anchor": true
+        }
       ],
       "anchorNote": "Bunlardan ikisi yayımlanmış sabit noktalardır: VDI 24'te kabaca 1,5 – 2,0° çıkma açısı ve VDI 36'da en az 4,0°. Geri kalanı bu ikisinin arasında ölçeklenir; dolgulu kaliteler ise yine daha fazlasını ister. Sınıflar, Ra değerleri ve çıkma açıları tanımı gereği yaklaşıktır — bir göz dokulandırılmadan önce standarda ve fiziksel bir numuneye karşı teyit edilirler. Yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir.",
       "colourHeading": "Renk bir onay değil, bir şartnamedir",
@@ -322,7 +409,6 @@
       "colourBoundary": "Renk rotası, renk tedarikçisi ve malzeme tedariki; siparişte aksi kararlaştırılmadıkça sizde kalan ticari kararlardır. Biz geometriyi, yolluk girişini ve kalıbı sizin belirlediğiniz renk ve yüzeye göre mühendisleriz.",
       "figureNote": "Yüzey profili şeması. Dikey ölçek abartılmıştır."
     },
-
     "boundary": {
       "index": "07",
       "kicker": "Kapsam",
@@ -330,10 +416,22 @@
       "body": "Çocuk ürünleri ve tüketici malları, ülkeden ülkeye değişen pazar gereklilikleriyle yönetilir. Bunları adıyla anmak kategori okuryazarlığıdır. Karşılamak ise marka sahibinin yükümlülüğü ve test kuruluşunun kararıdır; hiçbir kalıphane bunu sizden alamaz.",
       "standardsHeading": "Burada yalnızca sektör bilgisi olarak anılıyor, fazlası değil",
       "standards": [
-        { "name": "ASTM F963", "note": "ABD'de oyuncak güvenliğine ilişkin tüketici güvenliği şartnamesi; CPSIA kapsamında zorunludur." },
-        { "name": "EN 71", "note": "Avrupa oyuncak güvenliği standardı; CE işaretlemesi kapsamında uygulanır." },
-        { "name": "ISO 8124", "note": "Yukarıdakilerin hiçbirinin geçerli olmadığı yerlerde kullanılan uluslararası oyuncak güvenliği serisi." },
-        { "name": "Küçük parça silindiri", "note": "36 aydan küçük bir çocuğun boğazını simüle eden ve bir parçanın — ya da kullanım ve zorlama testleriyle kopan bir parçacığın — boğulma tehlikesi sayılıp sayılmayacağını belirleyen aparat." }
+        {
+          "name": "ASTM F963",
+          "note": "ABD'de oyuncak güvenliğine ilişkin tüketici güvenliği şartnamesi; CPSIA kapsamında zorunludur."
+        },
+        {
+          "name": "EN 71",
+          "note": "Avrupa oyuncak güvenliği standardı; CE işaretlemesi kapsamında uygulanır."
+        },
+        {
+          "name": "ISO 8124",
+          "note": "Yukarıdakilerin hiçbirinin geçerli olmadığı yerlerde kullanılan uluslararası oyuncak güvenliği serisi."
+        },
+        {
+          "name": "Küçük parça silindiri",
+          "note": "36 aydan küçük bir çocuğun boğazını simüle eden ve bir parçanın — ya da kullanım ve zorlama testleriyle kopan bir parçacığın — boğulma tehlikesi sayılıp sayılmayacağını belirleyen aparat."
+        }
       ],
       "standardsNote": "Metal Form'un hiçbir oyuncak ya da tüketici ürünü güvenlik onayı yoktur, hiçbir ürün testi yapmaz ve hiçbir türde uygunluk iddiasında bulunmaz.",
       "supplyHeading": "Metal Form'un sağladıkları",
@@ -361,7 +459,6 @@
       ],
       "line": "Metal Form, sizin belirttiğiniz bir gerekliliğe göre geometri mühendisliği yapar. Bitmiş ürünleri test etmeyiz, belgelendirmeyiz ve uygunluk onayı vermeyiz. Bir tedarikçi size bunları yapacağını söylüyorsa, arkasında kimin akreditasyonunun durduğunu sorun."
     },
-
     "after": {
       "index": "08",
       "kicker": "Onaydan sonra",
@@ -412,7 +509,6 @@
       ],
       "close": "Kalıp garanti şartları her proje ve kalıp şartnamesi bazında tanımlanır. Kalıbın mülkiyeti, saklanması ve devri; on sekiz ay sonraki bir konuşmaya değil, siparişe aittir."
     },
-
     "panels": {
       "heading": "Daha ayrıntılı",
       "items": [
@@ -458,7 +554,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Parçayı gönderin.",
     "body": "Bir fotoğraf, elle çizilmiş bir eskiz, fiziksel bir numune, bir STEP dosyası ya da hâlihazırda sattığınız bir parça. 48 iş saati içinde geometri okuması, kalıp rotası ve üretim ekonomisiyle dönüş yaparız. Talep hâlinde NDA.",

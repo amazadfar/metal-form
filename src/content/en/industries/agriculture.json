@@ -4,7 +4,7 @@
     "description": "Mould design, manufacture and component supply for drip irrigation and agriculture: drippers, fittings, connectors, micro-sprinklers, valve and filter parts. Since 2006."
   },
   "name": "Agriculture & Irrigation",
-  "tile": "Drippers, emitters and fittings by the hundred million. A labyrinth a few tenths of a millimetre wide, repeated across a very high cavity count, every shot, every season.",
+  "tile": "Emitters and fittings at very high cavitation — a labyrinth a few tenths of a millimetre wide.",
   "tileParts": "Emitters · Fittings · High cavitation",
   "hero": {
     "kicker": "Agriculture & Irrigation",
@@ -19,7 +19,6 @@
       "Duplicate and second-source tooling"
     ]
   },
-
   "blocks": {
     "scale": {
       "index": "01",
@@ -71,7 +70,6 @@
       "sourceNote": "Dimensions on this rail are published measurements of commercial emitters. They describe the sector's product, not Metal Form's tolerances.",
       "close": "Nothing in this sequence is decorative. The last frame is the one that gets repeated a few hundred million times a season, and it is the only frame that exists in steel."
     },
-
     "repeat": {
       "index": "02",
       "kicker": "Volume",
@@ -87,7 +85,6 @@
       "sourceNote": "Line speeds are published extrusion-line specifications, stated here as a fact about the sector.",
       "close": "That is the whole reason the rest of this chapter is about steel rather than about inspection. The part is too small, too cheap and too numerous to inspect your way out of a bad tool."
     },
-
     "labyrinth": {
       "index": "03",
       "kicker": "The flow path",
@@ -186,7 +183,6 @@
         "note": "Nominal test pressure for an unregulated emitter is 100 kPa, unless the manufacturer designates otherwise. The exponent and the test pressure are both definitions taken from the product standard for emitters, ISO 9261. They describe the product. They are not a certification held by Metal Form."
       }
     },
-
     "cavities": {
       "index": "04",
       "kicker": "The arithmetic",
@@ -214,7 +210,6 @@
       },
       "sourceNote": "Cavitation economics, cycle figures and cold-start times in this section are published industry write-ups, not Metal Form measurements."
     },
-
     "season": {
       "index": "05",
       "kicker": "Season",
@@ -248,7 +243,6 @@
         "readiness": "This is readiness, not reserved capacity. Capacity is reserved by contract or it is not reserved at all, and we will tell you which one you are being offered."
       }
     },
-
     "material": {
       "index": "06",
       "kicker": "Materials",
@@ -256,7 +250,12 @@
       "body": "The product standard sets the material brief before any moulder does. Materials must resist fertilisers and the chemicals commonly used in agricultural irrigation, and suit water at temperatures to 60 °C. Parts exposed to light must be opaque and protected against UV degradation, and should as far as possible not support algae and bacterial growth.",
       "body2": "Colour is functional here as well as cosmetic. The standard permits nominal flow rate to be indicated by the colour of a part of the emitter, which turns masterbatch consistency into a specification rather than a finish.",
       "tableLabel": "Material ledger",
-      "columns": ["Material", "Where it is used", "What governs it", "Exposure and lifetime"],
+      "columns": [
+        "Material",
+        "Where it is used",
+        "What governs it",
+        "Exposure and lifetime"
+      ],
       "rows": [
         {
           "name": "PP",
@@ -296,7 +295,6 @@
       "boundary": "We do not compound, stabilise, colour-match or life-test material, and we do not certify a lifetime. We mould what you specify, and we will tell you where a wall section, a gate position or a weld line is going to fight the stabiliser package you have chosen.",
       "sourceNote": "Standard requirements and stabiliser loadings quoted here are published industry practice. Metal Form holds no certification against any of them."
     },
-
     "boundary": {
       "index": "07",
       "kicker": "Scope",
@@ -339,7 +337,6 @@
       },
       "close": "Water chemistry, filtration, biological fouling and root intrusion are not tooling problems, and we will not sell you a mould as though they were. What a mould decides, a mould decides once — in steel, before the first shot."
     },
-
     "work": {
       "index": "08",
       "kicker": "Working",
@@ -375,7 +372,6 @@
       ],
       "close": "Emitter geometry is the product in this sector, and it is routinely copied. We treat it that way: confidentiality first, drawings held, and the second tool built to your drawings rather than to ours."
     },
-
     "panels": {
       "heading": "Deeper detail",
       "items": [
@@ -422,7 +418,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Send the part. Or the drawing. Or a metre of the tape.",
     "body": "We come back with a tooling route, a cavity and insert strategy, and the reasoning behind both. Initial technical response within 48 business hours. NDA on request. Tooling warranty on terms agreed per project. International delivery.",

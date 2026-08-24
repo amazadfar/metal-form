@@ -4,7 +4,7 @@
     "description": "Tooling and engineering for plastic pipe fittings: elbows, tees, sockets, threaded adapters, valve bodies and drainage parts. Collapsible and unscrewing cores, high-cavitation and modular family tooling, second-source moulds. Since 2006."
   },
   "name": "Plumbing & Construction",
-  "tile": "Fitting families where one tooling logic has to serve forty part numbers. Threads, sealing geometry, unscrewing and collapsible cores, and dimensional consistency across the range.",
+  "tile": "Fitting families where one tooling logic has to serve forty part numbers.",
   "tileParts": "Fittings · Threads · Families",
   "hero": {
     "kicker": "Plumbing & Construction",
@@ -19,7 +19,6 @@
       "Modular frames for the SKU tail"
     ]
   },
-
   "blocks": {
     "plate": {
       "label": "Range plate · one grid, one scale",
@@ -27,21 +26,80 @@
       "keyPolymer": "Polymer",
       "keyMetal": "Metal insert",
       "cells": [
-        { "id": "el90", "name": "Elbow 90°", "code": "EL-90", "range": "20–110" },
-        { "id": "el45", "name": "Elbow 45°", "code": "EL-45", "range": "20–110" },
-        { "id": "teeEq", "name": "Equal tee", "code": "TE-EQ", "range": "20–110" },
-        { "id": "teeRd", "name": "Reducing tee", "code": "TE-RD", "range": "25–110" },
-        { "id": "socket", "name": "Socket", "code": "SO-EQ", "range": "20–110" },
-        { "id": "socketRd", "name": "Reducing socket", "code": "SO-RD", "range": "25–90" },
-        { "id": "cap", "name": "End cap", "code": "CP", "range": "20–110" },
-        { "id": "adM", "name": "Male adapter", "code": "AD-M", "range": "20–75" },
-        { "id": "adF", "name": "Female adapter", "code": "AD-F", "range": "20–75" },
-        { "id": "union", "name": "Union", "code": "UN", "range": "25–63" },
-        { "id": "wall", "name": "Wall-plate elbow", "code": "WP", "range": "20–32" },
-        { "id": "valve", "name": "Valve body", "code": "VB", "range": "25–63" }
+        {
+          "id": "el90",
+          "name": "Elbow 90°",
+          "code": "EL-90",
+          "range": "20–110"
+        },
+        {
+          "id": "el45",
+          "name": "Elbow 45°",
+          "code": "EL-45",
+          "range": "20–110"
+        },
+        {
+          "id": "teeEq",
+          "name": "Equal tee",
+          "code": "TE-EQ",
+          "range": "20–110"
+        },
+        {
+          "id": "teeRd",
+          "name": "Reducing tee",
+          "code": "TE-RD",
+          "range": "25–110"
+        },
+        {
+          "id": "socket",
+          "name": "Socket",
+          "code": "SO-EQ",
+          "range": "20–110"
+        },
+        {
+          "id": "socketRd",
+          "name": "Reducing socket",
+          "code": "SO-RD",
+          "range": "25–90"
+        },
+        {
+          "id": "cap",
+          "name": "End cap",
+          "code": "CP",
+          "range": "20–110"
+        },
+        {
+          "id": "adM",
+          "name": "Male adapter",
+          "code": "AD-M",
+          "range": "20–75"
+        },
+        {
+          "id": "adF",
+          "name": "Female adapter",
+          "code": "AD-F",
+          "range": "20–75"
+        },
+        {
+          "id": "union",
+          "name": "Union",
+          "code": "UN",
+          "range": "25–63"
+        },
+        {
+          "id": "wall",
+          "name": "Wall-plate elbow",
+          "code": "WP",
+          "range": "20–32"
+        },
+        {
+          "id": "valve",
+          "name": "Valve body",
+          "code": "VB",
+          "range": "25–63"
+        }
       ]
     },
-
     "range": {
       "index": "01",
       "kicker": "The range is the product",
@@ -72,20 +130,150 @@
       },
       "matrixLabel": "Fitting type × nominal diameter, mm",
       "typeColumn": "Fitting type",
-      "diameters": ["20", "25", "32", "40", "50", "63", "75", "90", "110"],
+      "diameters": [
+        "20",
+        "25",
+        "32",
+        "40",
+        "50",
+        "63",
+        "75",
+        "90",
+        "110"
+      ],
       "matrix": [
-        [1, 1, 1, 2, 2, 2, 2, 2, 2],
-        [1, 1, 1, 2, 2, 2, 2, 2, 2],
-        [1, 1, 1, 2, 2, 2, 2, 2, 2],
-        [0, 2, 2, 2, 2, 2, 2, 2, 2],
-        [1, 1, 1, 2, 2, 2, 2, 2, 2],
-        [0, 2, 2, 2, 2, 2, 2, 2, 0],
-        [2, 2, 2, 2, 2, 2, 2, 2, 2],
-        [2, 2, 2, 2, 2, 2, 2, 0, 0],
-        [2, 2, 2, 2, 2, 2, 2, 0, 0],
-        [0, 2, 2, 2, 2, 2, 0, 0, 0],
-        [2, 2, 2, 0, 0, 0, 0, 0, 0],
-        [0, 2, 2, 2, 2, 2, 0, 0, 0]
+        [
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0
+        ]
       ],
       "legend": {
         "dedicated": "Dedicated tool",
@@ -93,10 +281,22 @@
         "absent": "Not in the range"
       },
       "frames": [
-        { "name": "Frame A", "span": "20–32" },
-        { "name": "Frame B", "span": "40–63" },
-        { "name": "Frame C", "span": "75–90" },
-        { "name": "Frame D", "span": "110" }
+        {
+          "name": "Frame A",
+          "span": "20–32"
+        },
+        {
+          "name": "Frame B",
+          "span": "40–63"
+        },
+        {
+          "name": "Frame C",
+          "span": "75–90"
+        },
+        {
+          "name": "Frame D",
+          "span": "110"
+        }
       ],
       "framesLabel": "Frame sizes, by part envelope",
       "notes": [
@@ -115,7 +315,6 @@
       ],
       "close": "Balance the layout before adding cavities. A 32-cavity tool that fills unevenly is a 24-cavity tool with eight rejects, and it will be paid for as if it were 32."
     },
-
     "mechanism": {
       "index": "02",
       "kicker": "Getting the undercut out",
@@ -128,10 +327,22 @@
           "summary": "A slotted steel tube whose segments retract radially, releasing a 360° internal feature without rotating anything.",
           "figureLabel": "Collapsible core · plan section and side section",
           "legend": [
-            { "n": "1", "text": "Slotted segments. The standard design uses twelve; dovetail designs use six larger segments that can be repaired individually." },
-            { "n": "2", "text": "Centre pin. It withdraws first; the segments then collapse inward onto it." },
-            { "n": "3", "text": "Collapse travel. This is what releases the groove, the gland or the partial thread." },
-            { "n": "4", "text": "Head space between the core flange and the centre-pin flange. Held exactly, or the mechanism does not collapse correctly." }
+            {
+              "n": "1",
+              "text": "Slotted segments. The standard design uses twelve; dovetail designs use six larger segments that can be repaired individually."
+            },
+            {
+              "n": "2",
+              "text": "Centre pin. It withdraws first; the segments then collapse inward onto it."
+            },
+            {
+              "n": "3",
+              "text": "Collapse travel. This is what releases the groove, the gland or the partial thread."
+            },
+            {
+              "n": "4",
+              "text": "Head space between the core flange and the centre-pin flange. Held exactly, or the mechanism does not collapse correctly."
+            }
           ]
         },
         {
@@ -140,10 +351,22 @@
           "summary": "A rotating core, usually rack-and-pinion driven, that threads itself out of the moulded thread it formed.",
           "figureLabel": "Unscrewing core · side section",
           "legend": [
-            { "n": "1", "text": "Pinion on the core shaft." },
-            { "n": "2", "text": "Rack. Its stroke sets the rotation, and every cavity in the layout has to stay synchronised with it." },
-            { "n": "3", "text": "Thread form on the core. Full form, which is the reason this mechanism exists." },
-            { "n": "4", "text": "Moulded part. It has to be held against rotation while the core turns out of it." }
+            {
+              "n": "1",
+              "text": "Pinion on the core shaft."
+            },
+            {
+              "n": "2",
+              "text": "Rack. Its stroke sets the rotation, and every cavity in the layout has to stay synchronised with it."
+            },
+            {
+              "n": "3",
+              "text": "Thread form on the core. Full form, which is the reason this mechanism exists."
+            },
+            {
+              "n": "4",
+              "text": "Moulded part. It has to be held against rotation while the core turns out of it."
+            }
           ]
         }
       ],
@@ -190,7 +413,6 @@
       },
       "close": "We specify the mechanism against your geometry and against the maintenance your own hall can carry. Where we would not use a mechanism on your part, we say so at the quotation rather than after it."
     },
-
     "thread": {
       "index": "03",
       "kicker": "Thread and seal",
@@ -203,9 +425,18 @@
           "figureLabel": "Tapered internal thread · half section",
           "note": "The bore converges. Engagement tightens on the flanks, and the seal is made by the thread itself.",
           "legend": [
-            { "n": "1", "text": "Taper on the pitch line." },
-            { "n": "2", "text": "Flank interference. This is the sealing surface." },
-            { "n": "3", "text": "Shut-off in the tool lands on the flanks, which is what makes this form demanding to cut and demanding to maintain." }
+            {
+              "n": "1",
+              "text": "Taper on the pitch line."
+            },
+            {
+              "n": "2",
+              "text": "Flank interference. This is the sealing surface."
+            },
+            {
+              "n": "3",
+              "text": "Shut-off in the tool lands on the flanks, which is what makes this form demanding to cut and demanding to maintain."
+            }
           ]
         },
         {
@@ -214,9 +445,18 @@
           "figureLabel": "Parallel internal thread · half section",
           "note": "The bore stays parallel. The thread carries load and nothing else. A washer, a face or an O-ring does the sealing.",
           "legend": [
-            { "n": "1", "text": "Parallel crest line." },
-            { "n": "2", "text": "Face or washer seat. The seal is here, not on the thread." },
-            { "n": "3", "text": "The boss that carries hoop stress when an installer over-torques it. Cracking here is a design outcome, not an installer error." }
+            {
+              "n": "1",
+              "text": "Parallel crest line."
+            },
+            {
+              "n": "2",
+              "text": "Face or washer seat. The seal is here, not on the thread."
+            },
+            {
+              "n": "3",
+              "text": "The boss that carries hoop stress when an installer over-torques it. Cracking here is a design outcome, not an installer error."
+            }
           ]
         },
         {
@@ -225,30 +465,65 @@
           "figureLabel": "O-ring gland in a bore · section",
           "note": "A 360° groove in a bore. Nothing strips over it cleanly at working depth, so the gland is what puts a collapsible core into the tool.",
           "legend": [
-            { "n": "1", "text": "Groove width." },
-            { "n": "2", "text": "Groove depth. It sets compression: under-compressed weeps, over-compressed takes a set." },
-            { "n": "3", "text": "Corner condition. Sharp corners cut the seal; soft corners let it extrude." },
-            { "n": "4", "text": "The elastomer, compressed between gland and mating bore." }
+            {
+              "n": "1",
+              "text": "Groove width."
+            },
+            {
+              "n": "2",
+              "text": "Groove depth. It sets compression: under-compressed weeps, over-compressed takes a set."
+            },
+            {
+              "n": "3",
+              "text": "Corner condition. Sharp corners cut the seal; soft corners let it extrude."
+            },
+            {
+              "n": "4",
+              "text": "The elastomer, compressed between gland and mating bore."
+            }
           ]
         }
       ],
       "ledgerLabel": "The feature, and the steel that forms it",
-      "ledgerColumns": ["Feature on the fitting", "What has to be in the tool"],
+      "ledgerColumns": [
+        "Feature on the fitting",
+        "What has to be in the tool"
+      ],
       "ledger": [
-        { "k": "Tapered internal thread", "v": "Unscrewing core with the taper cut into it. Shut-off lands on the thread flanks." },
-        { "k": "Parallel internal thread", "v": "Unscrewing core, or a collapsible core where the form allows the segments to shut off cleanly." },
-        { "k": "External thread", "v": "Split cavity on the parting line, or an unscrewing sleeve where the split line cannot be tolerated." },
-        { "k": "O-ring gland in a bore", "v": "Collapsible core. The groove is a 360° undercut and it does not strip." },
-        { "k": "Push-fit collet housing", "v": "Collapsible core for the gland, slides for the release-collar features, and a bore finish that the grab ring can live with." },
-        { "k": "Overmoulded brass thread", "v": "Insert-carrying tool. Insert location, anti-rotation against the knurl, and shut-off on the insert's own flanks." },
-        { "k": "Branch port on a tee or manifold", "v": "Slide or side core. It fixes the parting line for the whole tool." }
+        {
+          "k": "Tapered internal thread",
+          "v": "Unscrewing core with the taper cut into it. Shut-off lands on the thread flanks."
+        },
+        {
+          "k": "Parallel internal thread",
+          "v": "Unscrewing core, or a collapsible core where the form allows the segments to shut off cleanly."
+        },
+        {
+          "k": "External thread",
+          "v": "Split cavity on the parting line, or an unscrewing sleeve where the split line cannot be tolerated."
+        },
+        {
+          "k": "O-ring gland in a bore",
+          "v": "Collapsible core. The groove is a 360° undercut and it does not strip."
+        },
+        {
+          "k": "Push-fit collet housing",
+          "v": "Collapsible core for the gland, slides for the release-collar features, and a bore finish that the grab ring can live with."
+        },
+        {
+          "k": "Overmoulded brass thread",
+          "v": "Insert-carrying tool. Insert location, anti-rotation against the knurl, and shut-off on the insert's own flanks."
+        },
+        {
+          "k": "Branch port on a tee or manifold",
+          "v": "Slide or side core. It fixes the parting line for the whole tool."
+        }
       ],
       "insert": {
         "heading": "Where the polymer meets the metal",
         "body": "A threaded adapter is the interface between a plastic system and a metal one, and it fails in two documented ways. The insert pulls or spins out because the polymer never gripped the knurl. Or the boss around it splits, because an installer applied more torque than the hoop stress in that wall could carry. Both are decided at design: knurl engagement, insert location, wall around the insert, and whether the tool shuts off on the insert cleanly enough to keep flash off the thread. Insert loading also changes the economics of the cell, because a person or a robot now has to place metal in the tool on every shot."
       }
     },
-
     "material": {
       "index": "04",
       "kicker": "The material decides the tool",
@@ -313,7 +588,6 @@
       "note": "One rule holds across all five. Datasheet shrinkage is a starting hypothesis, not a dimension. The first cavity is cut steel-safe and corrected against real parts, because a fitting family has to agree with itself and a handbook number will not deliver that.",
       "source": "Processing figures in this ledger are published industry practice, not Metal Form measurements."
     },
-
     "agreement": {
       "index": "05",
       "kicker": "Dimensional agreement",
@@ -323,27 +597,60 @@
         "label": "Socket bore, every cavity overlaid",
         "note": "One tool, many cavities, one nominal bore. The spread is what a mould can hold or fail to hold. The out-of-round profile is the one that will not seat.",
         "legend": [
-          { "n": "1", "text": "Nominal bore." },
-          { "n": "2", "text": "Cavity-to-cavity spread. Invisible in one sample, decisive across a shipment." },
-          { "n": "3", "text": "Out of round. This one is dimensionally inside its diameter band and still will not make a joint." }
+          {
+            "n": "1",
+            "text": "Nominal bore."
+          },
+          {
+            "n": "2",
+            "text": "Cavity-to-cavity spread. Invisible in one sample, decisive across a shipment."
+          },
+          {
+            "n": "3",
+            "text": "Out of round. This one is dimensionally inside its diameter band and still will not make a joint."
+          }
         ]
       },
       "figB": {
         "label": "Socket and pipe end · engagement section",
         "note": "The functional dimensions are the ones nobody photographs: depth of engagement, the interference along it, and whether the bore is round for the whole of it.",
         "legend": [
-          { "n": "1", "text": "Depth of engagement." },
-          { "n": "2", "text": "Interference along the engagement — deliberate, and the reason a solvent-weld socket makes a cemented joint rather than a glued gap." },
-          { "n": "3", "text": "The fusion or cement zone. It only exists where the two surfaces actually touch." }
+          {
+            "n": "1",
+            "text": "Depth of engagement."
+          },
+          {
+            "n": "2",
+            "text": "Interference along the engagement — deliberate, and the reason a solvent-weld socket makes a cemented joint rather than a glued gap."
+          },
+          {
+            "n": "3",
+            "text": "The fusion or cement zone. It only exists where the two surfaces actually touch."
+          }
         ]
       },
       "toleranceLabel": "Published reference figures",
       "tolerance": [
-        { "k": "SDR", "v": "dn / en — nominal outside diameter divided by wall thickness. The sector's shorthand for wall class." },
-        { "k": "Common series", "v": "SDR 11, SDR 17.6, SDR 26." },
-        { "k": "Diameter tolerance, ≤ 40 mm", "v": "In the region of ± 0.04 mm." },
-        { "k": "Diameter tolerance, ≤ 50 mm", "v": "In the region of ± 0.06 mm." },
-        { "k": "Socket fusion range", "v": "PP-R Ø20–63 by hand, up to Ø125 with jigs. Heater setpoint published at 260 ± 10 °C." }
+        {
+          "k": "SDR",
+          "v": "dn / en — nominal outside diameter divided by wall thickness. The sector's shorthand for wall class."
+        },
+        {
+          "k": "Common series",
+          "v": "SDR 11, SDR 17.6, SDR 26."
+        },
+        {
+          "k": "Diameter tolerance, ≤ 40 mm",
+          "v": "In the region of ± 0.04 mm."
+        },
+        {
+          "k": "Diameter tolerance, ≤ 50 mm",
+          "v": "In the region of ± 0.06 mm."
+        },
+        {
+          "k": "Socket fusion range",
+          "v": "PP-R Ø20–63 by hand, up to Ø125 with jigs. Heater setpoint published at 260 ± 10 °C."
+        }
       ],
       "source": "These figures are quoted from published material on PP-R piping and its standards — DIN 8077, DIN 8078, EN ISO 15874 and DVS 2207. They are cited here as the standards' figures. They are not a Metal Form capability statement and not a tolerance we are offering.",
       "canHeading": "What a mould can decide",
@@ -364,7 +671,6 @@
       ],
       "close": "Attack ovality at the cooling layout, not at the process. An unevenly cooled socket shrinks unevenly, and no amount of tuning makes it round again."
     },
-
     "economics": {
       "index": "06",
       "kicker": "Cost per thousand",
@@ -390,22 +696,52 @@
       "workedLabel": "The shape of the arithmetic",
       "inputsHeading": "Inputs",
       "inputs": [
-        { "k": "Annual volume, parts", "v": "8 000 000" },
-        { "k": "Cavities", "v": "16" },
-        { "k": "Part weight, g", "v": "12.0" },
-        { "k": "Cycle, s", "v": "24" }
+        {
+          "k": "Annual volume, parts",
+          "v": "8 000 000"
+        },
+        {
+          "k": "Cavities",
+          "v": "16"
+        },
+        {
+          "k": "Part weight, g",
+          "v": "12.0"
+        },
+        {
+          "k": "Cycle, s",
+          "v": "24"
+        }
       ],
       "outputsHeading": "Falls out as",
       "outputs": [
-        { "k": "Shots per year", "v": "500 000" },
-        { "k": "Resin in parts, tonnes per year", "v": "96" },
-        { "k": "Machine hours per year", "v": "3 333" }
+        {
+          "k": "Shots per year",
+          "v": "500 000"
+        },
+        {
+          "k": "Resin in parts, tonnes per year",
+          "v": "96"
+        },
+        {
+          "k": "Machine hours per year",
+          "v": "3 333"
+        }
       ],
       "deltasHeading": "And one step on each input is worth",
       "deltas": [
-        { "k": "One gram off the part", "v": "8 tonnes of resin a year" },
-        { "k": "Two seconds off the cycle", "v": "278 machine hours a year" },
-        { "k": "16 cavities to 24", "v": "1 111 machine hours a year" }
+        {
+          "k": "One gram off the part",
+          "v": "8 tonnes of resin a year"
+        },
+        {
+          "k": "Two seconds off the cycle",
+          "v": "278 machine hours a year"
+        },
+        {
+          "k": "16 cavities to 24",
+          "v": "1 111 machine hours a year"
+        }
       ],
       "disclaimer": "The figures above are arbitrary and chosen to be legible. They are the shape of the arithmetic, not a quotation, not a benchmark, and not a result being claimed on your part. Your numbers are your own and they are the only ones that matter.",
       "lostHeading": "Where the money actually goes missing",
@@ -425,7 +761,6 @@
       ],
       "close": "Send the part and the dimension table. We will tell you what those three numbers currently are on your geometry, and which of them moves without touching a dimension your catalogue depends on."
     },
-
     "boundary": {
       "index": "07",
       "kicker": "Scope",
@@ -454,7 +789,6 @@
       ],
       "statement": "We build the tool and we can produce the part. Approval of the finished fitting for a pressure class or a potable-water application belongs to you, your material and your certification body. We hold no product certification, we do not test fittings, and we will not claim a standard on your behalf. Every published figure quoted on this page belongs to the source or the standard it came from, and is cited as context rather than as capability."
     },
-
     "start": {
       "index": "08",
       "kicker": "Continuity",
@@ -527,7 +861,6 @@
       ],
       "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
     },
-
     "panels": {
       "heading": "Deeper detail",
       "items": [
@@ -575,7 +908,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Send the part. We will tell you what the tooling should be.",
     "body": "A fitting, a dimension table, or a sample of something an old mould still makes. We come back with the mechanism, the cavitation, the runner route and the part weight — and with what we would not do. Initial project response within 48 business hours. NDA first if you prefer.",

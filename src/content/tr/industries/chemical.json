@@ -4,7 +4,7 @@
     "description": "Deterjan, ev kimyasalları ve zirai kimyasallar için kapak, çocuk kilitli ve emniyet bantlı sistemler ile dozajlama parçalarının kalıp tasarımı ve imalatı. Parçayı gönderin — 48 iş saati içinde dönüş."
   },
   "name": "Kimya ve Deterjan",
-  "tile": "Yüksek adette kapaklar, dişler ve sızdırmazlık geometrisi. Açılma emniyeti, çocuk kilidi ve kapalı ile sızdıran arasındaki bir milimetrelik diş.",
+  "tile": "Yüksek adette kapak ve diş — kapalı ile sızdıran arasındaki bir milimetrelik geometri.",
   "tileParts": "Kapaklar · Kapama sistemleri · Bidonlar",
   "hero": {
     "kicker": "Kimya ve Deterjan",
@@ -19,7 +19,6 @@
       "Elinizdeki parçadan ikinci kaynak"
     ]
   },
-
   "blocks": {
     "engagement": {
       "index": "01",
@@ -63,10 +62,22 @@
       ],
       "lettersHeading": "Dört boyun ölçüsü",
       "letters": [
-        { "k": "T", "v": "Diş çapı" },
-        { "k": "E", "v": "Boyun dış çapı" },
-        { "k": "S", "v": "Diş başlangıcı" },
-        { "k": "H", "v": "Boyun yüksekliği" }
+        {
+          "k": "T",
+          "v": "Diş çapı"
+        },
+        {
+          "k": "E",
+          "v": "Boyun dış çapı"
+        },
+        {
+          "k": "S",
+          "v": "Diş başlangıcı"
+        },
+        {
+          "k": "H",
+          "v": "Boyun yüksekliği"
+        }
       ],
       "profilesHeading": "Yayımlandığı hâliyle diş profili",
       "profiles": [
@@ -89,7 +100,6 @@
       "profilesNote": "Profil derinlikleri, ambalaj kaynaklarından alıntılanan yayımlanmış GPI/SPI uygulamasıdır; Metal Form ölçümleri değildir. 28-410 gibi bir gösterimde kısa çizgiden önceki sayı milimetre cinsinden boyun çapıdır; sonraki sayı bir ölçü değil, bir profildir.",
       "close": "Daha yüksek profiller daha güçlü bir mekanik kilit ve daha geniş tork toleransı verir; pompaların ve tetikli spreylerin 410 ve üzerinde oturmasının nedeni budur. Hâlihazırda sahip olduğunuz gösterimi bize gönderin. Kapak değişir; şişe kalıbının değişmesi gerekmez."
     },
-
     "seal": {
       "index": "02",
       "kicker": "Sızdırmazlık rotaları",
@@ -135,7 +145,6 @@
       "routesNote": "Yukarıdaki conta sınıflandırması, indüksiyon yapıları ve havalandırmalı conta uygulamaları yayımlanmış sektör uygulamalarıdır. Metal Form conta üretmez; dolum, kapaklama ve indüksiyonla kapama yapmaz.",
       "close": "Agresif içerikler için yayımlanmış rota, folyo ile ısıyla yapışan katman arasına konan koruyucu bir bariyer katmanıdır. Bu bir conta şartnamesidir ve kapağa; oturma yüzeyinde, tutucu bilezikte ve bazen etekte bir değişiklik olarak yansır. Onu da parçayla birlikte gönderin."
     },
-
     "tamper": {
       "index": "03",
       "kicker": "Açılma emniyeti",
@@ -189,7 +198,6 @@
       "routesNote": "Bıçakla kesme, enjeksiyon hattında yürütülen kalıp sonrası bir işlemdir. Metal Form kalıp ve enjeksiyon parçası tedarik eder; kesme ekipmanı tedarik etmez.",
       "close": "Köprü geometrisi sonradan ayarlanmaz, çizilir. Kapaklama makinesinin tork penceresi ve boyun bileziği önünüzdeyken, göz işlenmeden karara bağlayın."
     },
-
     "cr": {
       "index": "04",
       "kicker": "Çocuk kilidi",
@@ -240,7 +248,6 @@
       "boundaryClaim": "Metal Form çocuk kilidi testi yapmaz, onaylamaz ve belgelendirmez. Bu test, sizin ambalajınız üzerinde akredite test kuruluşlarınca yapılır ve yükümlülük ürünü piyasaya arz eden tarafa aittir. Biz, testin üzerinde yürütüldüğü geometriyi işleriz.",
       "close": "Yayımlanmış test kapsamı ısıl deformasyonu, kalıplama kusurlarını ve tekrarlı kullanımda bozulmayı açıkça kapsar. Mekanizmanın ilk açılışından değil, ambalajın bütün ömründen sağ çıkması gerekir — bu da diş aşınmasını, çıkma açısını ve itme izini bir üretim sorusu değil, bir tasarım sorusu yapar."
     },
-
     "route": {
       "index": "05",
       "kicker": "Çelikten çıkarmak",
@@ -296,7 +303,6 @@
       "rulesNote": "Yukarıdaki diş oluşturma rotaları, çıkma açısı davranışı ve çekme telafisi yayımlanmış sektör uygulamalarıdır.",
       "close": "Metal Form; diş sökücü maçalı, katlanabilir maçalı, sürgülü ve lifterlı, sıcak ve soğuk yolluklu, tek ve çok gözlü enjeksiyon kalıpları ile çok parçalı kapaklar ve sprey iç parçaları için insertli kalıplar imal eder. Kapakların sıkıştırma kalıplama ile üretimi bir sektör rotasıdır. Bizim rotamız değildir ve teklif vermek yerine bunu açıkça söyleriz."
     },
-
     "cavity": {
       "index": "06",
       "kicker": "Aritmetik",
@@ -349,7 +355,6 @@
       "cavityBody2": "Bir program gerçekten bunun üzerine ihtiyaç duyuyorsa bunu size söyleriz; dürüst cevap farklı bir tedarikçi ya da farklı bir stratejidir. Yanlış kalıbı yapmaktansa talebi kaybetmeyi tercih ederiz.",
       "close": "Kalıp sıcaklığını düşürerek kazanılan çevrim ise tasarruf değil, borçtur. İçeride kilitli kalan gerilme, çevresel gerilme çatlamasının yarısıdır. Diğer yarısı sizin yüzey aktif maddenizdir. Parça hattan geçer ve aylar sonra, yazın, sahada çuvallar — üstelik gösterilecek hiçbir proses değişikliği yoktur."
     },
-
     "material": {
       "index": "07",
       "kicker": "Malzeme",
@@ -366,26 +371,58 @@
       "colA": "Kapak ve mekanizma",
       "colB": "Kap ve cidar",
       "closureRows": [
-        { "name": "PP homopolimer", "note": "Rijitlik ve diş mukavemeti. Kapaklarda varsayılan." },
-        { "name": "PP random kopolimer", "note": "Berraklık ve menteşe ömrü; bir film menteşenin on binlerce çevrimden sağ çıkması gerektiği yerlerde." },
-        { "name": "HDPE", "note": "Daha yumuşak iç çeper sızdırmazlıkları ve deforme olan çocuk kilitli etekler." },
-        { "name": "LDPE", "note": "Conta yüzeyleri." },
-        { "name": "ABS", "note": "Hem rijitlik hem yüzey kalitesi istenen tetik gövdeleri, kolları ve kapakları." },
-        { "name": "POM", "note": "Sprey pistonları ve valf yatakları — dar çap geçmeleri ve aşınma yükü." },
-        { "name": "PE", "note": "Emiş boruları, bilye yatakları ve küçük iç parçalar; genellikle geri kalanla birlikte aile kalıbında." }
+        {
+          "name": "PP homopolimer",
+          "note": "Rijitlik ve diş mukavemeti. Kapaklarda varsayılan."
+        },
+        {
+          "name": "PP random kopolimer",
+          "note": "Berraklık ve menteşe ömrü; bir film menteşenin on binlerce çevrimden sağ çıkması gerektiği yerlerde."
+        },
+        {
+          "name": "HDPE",
+          "note": "Daha yumuşak iç çeper sızdırmazlıkları ve deforme olan çocuk kilitli etekler."
+        },
+        {
+          "name": "LDPE",
+          "note": "Conta yüzeyleri."
+        },
+        {
+          "name": "ABS",
+          "note": "Hem rijitlik hem yüzey kalitesi istenen tetik gövdeleri, kolları ve kapakları."
+        },
+        {
+          "name": "POM",
+          "note": "Sprey pistonları ve valf yatakları — dar çap geçmeleri ve aşınma yükü."
+        },
+        {
+          "name": "PE",
+          "note": "Emiş boruları, bilye yatakları ve küçük iç parçalar; genellikle geri kalanla birlikte aile kalıbında."
+        }
       ],
       "containerRows": [
-        { "name": "HDPE", "note": "Ev ve endüstriyel bidonlarda varsayılan." },
-        { "name": "Ko-ekstrüde HDPE / EVOH", "note": "Aksi hâlde geçerek ambalajın içeri çökmesine yol açacak solvent içerikler için bariyer cidar." },
-        { "name": "Florlanmış HDPE", "note": "Yüzey işlemli bariyer; zirai kimyasal ambalajlarında yaygın." },
-        { "name": "PET", "note": "Şartnameyi bariyerin değil, berraklığın ya da geri dönüştürülmüş içeriğin belirlediği yerlerde." }
+        {
+          "name": "HDPE",
+          "note": "Ev ve endüstriyel bidonlarda varsayılan."
+        },
+        {
+          "name": "Ko-ekstrüde HDPE / EVOH",
+          "note": "Aksi hâlde geçerek ambalajın içeri çökmesine yol açacak solvent içerikler için bariyer cidar."
+        },
+        {
+          "name": "Florlanmış HDPE",
+          "note": "Yüzey işlemli bariyer; zirai kimyasal ambalajlarında yaygın."
+        },
+        {
+          "name": "PET",
+          "note": "Şartnameyi bariyerin değil, berraklığın ya da geri dönüştürülmüş içeriğin belirlediği yerlerde."
+        }
       ],
       "escHeading": "Çevresel gerilme çatlaması",
       "escBody": "Yüzey aktif madde teması artı gerilme, polietilenin klasik arıza biçimidir ve ikisinin aynı anda bulunması gerekir — hiçbiri tek başına yeterli değildir. Yayımlanmış yöntemler; laboratuvarlar arası tekrarlanabilirliği açıkça zayıf olan, yüzey aktif madde içinde çentikli bükülmüş şerit testi ASTM D1693 ile hizmet koşullarını daha iyi temsil eden ASTM D2561 gibi sabit gerilme yöntemleridir. Daha düşük yoğunluk daha düşük kristalinlik ve daha iyi çatlak direnci demektir; yayımlanmış uygulama bunu ders kitabı bilgisi değil, gerçek bir üretim kaldıracı sayar.",
       "escNote": "Yukarıdaki yöntemler, tekrarlanabilirlik ve yoğunluk davranışı yayımlanmış sektör uygulamalarıdır. Metal Form, kalıbını yaptığı hiçbir parçanın gerilme çatlaması performansı hakkında iddiada bulunmaz.",
       "close": "Ne deneyeceğimizi ve nedenini size söyleriz. Bunun kanıtlanmış olduğunu söylemeyiz."
     },
-
     "boundary": {
       "index": "08",
       "kicker": "Kapsam",
@@ -447,7 +484,6 @@
         "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz önce NDA — genellikle öyle olur."
       ]
     },
-
     "panels": {
       "heading": "Daha ayrıntılı",
       "items": [
@@ -496,7 +532,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Kapağı gönderin. Size bir rota gönderelim.",
     "body": "Parçanın kendisi, bir teknik resim ya da postayla bir numune. Karşılığında kalıp rotasını, diş stratejisini, göz sayısı seçeneklerini ve bir üretim pozisyonu alırsınız. 48 iş saati içinde ilk dönüş. Talep hâlinde her zaman NDA. 2006'dan beri, 1.000'den fazla proje, dünya geneline sevkiyat.",

@@ -4,7 +4,7 @@
     "description": "Mould design and manufacture for caps, closures, child-resistant and tamper-evident systems, and dispensing components for detergents, household chemicals and agrochemicals. Send the part — response within 48 business hours."
   },
   "name": "Chemical & Detergent",
-  "tile": "Closures, threads and sealing geometry at high volume. Tamper evidence, child-resistance and the millimetre of thread that separates contained from leaking.",
+  "tile": "Closures and threads at volume — the millimetre of geometry between contained and leaking.",
   "tileParts": "Caps · Closures · Containers",
   "hero": {
     "kicker": "Chemical & Detergent",
@@ -19,7 +19,6 @@
       "Second source from the part in hand"
     ]
   },
-
   "blocks": {
     "engagement": {
       "index": "01",
@@ -63,10 +62,22 @@
       ],
       "lettersHeading": "The four finish dimensions",
       "letters": [
-        { "k": "T", "v": "Thread diameter" },
-        { "k": "E", "v": "Neck outside diameter" },
-        { "k": "S", "v": "Thread start" },
-        { "k": "H", "v": "Finish height" }
+        {
+          "k": "T",
+          "v": "Thread diameter"
+        },
+        {
+          "k": "E",
+          "v": "Neck outside diameter"
+        },
+        {
+          "k": "S",
+          "v": "Thread start"
+        },
+        {
+          "k": "H",
+          "v": "Finish height"
+        }
       ],
       "profilesHeading": "Thread profile, as published",
       "profiles": [
@@ -89,7 +100,6 @@
       "profilesNote": "Profile depths are published GPI/SPI practice quoted from packaging references, not Metal Form measurements. The number before the hyphen in a designation such as 28-410 is the finish diameter in millimetres; the number after it is a profile, not a size.",
       "close": "Taller profiles give a stronger mechanical lock and more torque tolerance, which is why pumps and trigger sprayers sit on 410 and above. Send us the designation you already own. The closure changes; the bottle mould does not have to."
     },
-
     "seal": {
       "index": "02",
       "kicker": "Seal routes",
@@ -135,7 +145,6 @@
       "routesNote": "Liner taxonomy, induction constructions and vented-liner applications above are published industry practice. Metal Form does not manufacture liners, and does not fill, cap or induction-seal.",
       "close": "For aggressive contents the published route is a protective barrier layer between the foil and the heat-seal layer. That is a liner specification, and it lands on the closure as a change to the land, the retention bead and sometimes the skirt. Send it with the part."
     },
-
     "tamper": {
       "index": "03",
       "kicker": "Tamper evidence",
@@ -189,7 +198,6 @@
       "routesNote": "Slitting is a post-mould operation run on the moulding line. Metal Form supplies tooling and moulded components; it does not supply slitting equipment.",
       "close": "Bridge geometry is drawn, not adjusted afterwards. Decide it with the capper torque window and the finish bead in front of you, before the cavity is cut."
     },
-
     "cr": {
       "index": "04",
       "kicker": "Child resistance",
@@ -240,7 +248,6 @@
       "boundaryClaim": "Metal Form does not test, approve or certify child resistance. That testing is done by accredited test houses on your pack, and the obligation sits with the party placing the product on the market. We cut the geometry the test is run on.",
       "close": "Published test scope explicitly covers heat distortion, moulding defects and degradation over repeated use. The mechanism has to survive the pack's whole life, not its first opening — which makes tooth wear, draft and ejection witness a design question rather than a production one."
     },
-
     "route": {
       "index": "05",
       "kicker": "Getting it out of the steel",
@@ -296,7 +303,6 @@
       "rulesNote": "Thread-forming routes, draft behaviour and shrinkage compensation above are published industry practice.",
       "close": "Metal Form builds injection tooling with unscrewing cores, collapsible cores, slides and lifters, hot and cold runner, single and multi-cavity, plus insert tooling for multi-piece closures and sprayer internals. Compression moulding of closures is an industry route. It is not ours, and we will say so rather than quote it."
     },
-
     "cavity": {
       "index": "06",
       "kicker": "The arithmetic",
@@ -349,7 +355,6 @@
       "cavityBody2": "If a programme genuinely needs more than that, we will tell you, and the honest answer is a different supplier or a different strategy. We would rather lose the enquiry than build the wrong tool.",
       "close": "And cycle bought by dropping mould temperature is borrowed, not saved. Frozen-in stress is one half of environmental stress cracking. Your surfactant is the other half. The part passes the line and fails in the field, months later, in summer, with no process change to point at."
     },
-
     "material": {
       "index": "07",
       "kicker": "Material",
@@ -366,26 +371,58 @@
       "colA": "Closure and mechanism",
       "colB": "Container and wall",
       "closureRows": [
-        { "name": "PP homopolymer", "note": "Stiffness and thread strength. The closure default." },
-        { "name": "PP random copolymer", "note": "Clarity and hinge life, where a live hinge has to survive tens of thousands of cycles." },
-        { "name": "HDPE", "note": "Softer bore seals and deformable child-resistant skirts." },
-        { "name": "LDPE", "note": "Liner facings." },
-        { "name": "ABS", "note": "Trigger housings, levers and shrouds, where stiffness and finish are both wanted." },
-        { "name": "POM", "note": "Sprayer pistons and valve seats — tight diametral fits and wear duty." },
-        { "name": "PE", "note": "Dip tubes, ball seats and small internals, usually family-tooled with the rest." }
+        {
+          "name": "PP homopolymer",
+          "note": "Stiffness and thread strength. The closure default."
+        },
+        {
+          "name": "PP random copolymer",
+          "note": "Clarity and hinge life, where a live hinge has to survive tens of thousands of cycles."
+        },
+        {
+          "name": "HDPE",
+          "note": "Softer bore seals and deformable child-resistant skirts."
+        },
+        {
+          "name": "LDPE",
+          "note": "Liner facings."
+        },
+        {
+          "name": "ABS",
+          "note": "Trigger housings, levers and shrouds, where stiffness and finish are both wanted."
+        },
+        {
+          "name": "POM",
+          "note": "Sprayer pistons and valve seats — tight diametral fits and wear duty."
+        },
+        {
+          "name": "PE",
+          "note": "Dip tubes, ball seats and small internals, usually family-tooled with the rest."
+        }
       ],
       "containerRows": [
-        { "name": "HDPE", "note": "The household and industrial container default." },
-        { "name": "Co-extruded HDPE / EVOH", "note": "Barrier wall for solvent-bearing contents that would otherwise permeate and panel the pack." },
-        { "name": "Fluorinated HDPE", "note": "Surface-treated barrier, common on agrochemical packs." },
-        { "name": "PET", "note": "Where clarity or recycled content drives the brief rather than barrier." }
+        {
+          "name": "HDPE",
+          "note": "The household and industrial container default."
+        },
+        {
+          "name": "Co-extruded HDPE / EVOH",
+          "note": "Barrier wall for solvent-bearing contents that would otherwise permeate and panel the pack."
+        },
+        {
+          "name": "Fluorinated HDPE",
+          "note": "Surface-treated barrier, common on agrochemical packs."
+        },
+        {
+          "name": "PET",
+          "note": "Where clarity or recycled content drives the brief rather than barrier."
+        }
       ],
       "escHeading": "Environmental stress cracking",
       "escBody": "Surfactant contact plus stress is the classic polyethylene failure, and it needs both at once — neither alone does it. Published methods are ASTM D1693, a notched bent-strip test in surfactant whose inter-laboratory precision is openly poor, and constant-stress methods such as ASTM D2561 which represent service conditions better. Lower density means lower crystallinity and better crack resistance, and published practice treats that as a real production lever rather than a textbook one.",
       "escNote": "Methods, precision and density behaviour above are published industry practice. Metal Form makes no claim about the stress-crack performance of any part it tools.",
       "close": "We will tell you what we would try, and why. We will not tell you it is proven."
     },
-
     "boundary": {
       "index": "08",
       "kicker": "Scope",
@@ -447,7 +484,6 @@
         "An initial technical response within 48 business hours. An NDA first if you prefer — it usually is."
       ]
     },
-
     "panels": {
       "heading": "Deeper detail",
       "items": [
@@ -496,7 +532,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Send the closure. We will send back a route.",
     "body": "The part, a drawing, or a sample in the post. You get the tooling route, the thread strategy, cavitation options and a production position. Initial response within 48 business hours. NDA on request, always. Since 2006, 1,000+ projects, international delivery.",

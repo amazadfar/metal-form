@@ -4,15 +4,21 @@
     "description": "Mould design and manufacture for connector bodies, terminal blocks, switch parts, glands and enclosures. Thin-wall tooling, insert moulds for metal terminals, multi-cavity production and ongoing component supply. Persian engineering since 2006."
   },
   "name": "Electrical & Electronics",
-  "tile": "Housings, connector bodies and thin-wall parts where flow length, weld lines and mating tolerances decide whether the assembly goes together.",
+  "tile": "Thin-wall housings and connectors, where flow length decides whether the part fills.",
   "tileParts": "Housings · Connectors · Thin wall",
   "hero": {
     "kicker": "Electrical & Electronics",
-    "headline": ["The plastic that has", "to hold the contact."],
+    "headline": [
+      "The plastic that has",
+      "to hold the contact."
+    ],
     "lead": "Connector bodies, terminal blocks, switch parts, glands, enclosures. Thin walls, deep pockets, metal inserts, and a pitch that still has to be right after a few million shots. Send the part or the drawing. We come back on geometry, tooling route, cavitation and supply.",
-    "markers": ["Thin-wall and insert tooling", "Multi-cavity to 46 cavities", "Second source and rolling supply"]
+    "markers": [
+      "Thin-wall and insert tooling",
+      "Multi-cavity to 46 cavities",
+      "Second source and rolling supply"
+    ]
   },
-
   "blocks": {
     "masthead": {
       "caption": "Connector body in section. One tick per contact position; copper marks metal, nothing else on this page does.",
@@ -30,7 +36,6 @@
         "NDA standard"
       ]
     },
-
     "parts": {
       "index": "01",
       "kicker": "Recognition",
@@ -39,24 +44,65 @@
       "colName": "Component",
       "colFeature": "The feature that decides the tool",
       "rows": [
-        { "name": "Connector housings and bodies", "feature": "Deep slender cores form the terminal pockets. Pitch has to hold across every way and every cavity." },
-        { "name": "Terminal carriers, headers and contact retainers", "feature": "Retention geometry is the whole function. Flash on a contact face is a reject, not a cosmetic note." },
-        { "name": "Terminal block bodies and covers", "feature": "Barriers and slots are insulation geometry, not stiffening. Screw bosses take real torque." },
-        { "name": "Switch bodies, rockers, actuators and pivots", "feature": "Pivot clearance and snap geometry are dimensional. Ejection witness has nowhere cosmetic to hide." },
-        { "name": "Socket and plug shells", "feature": "Thick and thin in one part. Internal rib layout is fixed by creepage, not by stiffness." },
-        { "name": "Cable glands, gland nuts and cable entries", "feature": "Threads are moulded, not cut. That is an unscrewing or collapsible-core decision in the tool." },
-        { "name": "Junction boxes, DIN-rail enclosures and lids", "feature": "Warp decides lid-to-body fit. The rail clip and the sealing lip are the two features that get measured." },
-        { "name": "Device and breaker housings", "feature": "Left half, right half, cover, actuator — all to one datum. Family tooling is tempting here and often wrong." },
-        { "name": "Coil formers and bobbins", "feature": "Thin flanges, a tight winding surface, and dimensional stability under the heat of the winding." },
-        { "name": "Light guides and indicator lenses", "feature": "The mould finish is the optical specification: polished where light stays in, textured where it leaves." },
-        { "name": "Busbar supports, phase barriers and spacers", "feature": "Simple geometry, unforgiving creepage and clearance, sustained thermal exposure." },
-        { "name": "Cable clips, strain reliefs and retaining clips", "feature": "Worth a cent. Entirely a cavitation and cycle question, and the first part anyone re-sources." },
-        { "name": "Panels, fascias, buttons and keypad frames", "feature": "The visible face constrains gate and ejector layout before anything else does." },
-        { "name": "Battery holders, spacers and pack internals", "feature": "Repeating pockets and thin ribs. The tolerance stacks across the array, not within one pocket." }
+        {
+          "name": "Connector housings and bodies",
+          "feature": "Deep slender cores form the terminal pockets. Pitch has to hold across every way and every cavity."
+        },
+        {
+          "name": "Terminal carriers, headers and contact retainers",
+          "feature": "Retention geometry is the whole function. Flash on a contact face is a reject, not a cosmetic note."
+        },
+        {
+          "name": "Terminal block bodies and covers",
+          "feature": "Barriers and slots are insulation geometry, not stiffening. Screw bosses take real torque."
+        },
+        {
+          "name": "Switch bodies, rockers, actuators and pivots",
+          "feature": "Pivot clearance and snap geometry are dimensional. Ejection witness has nowhere cosmetic to hide."
+        },
+        {
+          "name": "Socket and plug shells",
+          "feature": "Thick and thin in one part. Internal rib layout is fixed by creepage, not by stiffness."
+        },
+        {
+          "name": "Cable glands, gland nuts and cable entries",
+          "feature": "Threads are moulded, not cut. That is an unscrewing or collapsible-core decision in the tool."
+        },
+        {
+          "name": "Junction boxes, DIN-rail enclosures and lids",
+          "feature": "Warp decides lid-to-body fit. The rail clip and the sealing lip are the two features that get measured."
+        },
+        {
+          "name": "Device and breaker housings",
+          "feature": "Left half, right half, cover, actuator — all to one datum. Family tooling is tempting here and often wrong."
+        },
+        {
+          "name": "Coil formers and bobbins",
+          "feature": "Thin flanges, a tight winding surface, and dimensional stability under the heat of the winding."
+        },
+        {
+          "name": "Light guides and indicator lenses",
+          "feature": "The mould finish is the optical specification: polished where light stays in, textured where it leaves."
+        },
+        {
+          "name": "Busbar supports, phase barriers and spacers",
+          "feature": "Simple geometry, unforgiving creepage and clearance, sustained thermal exposure."
+        },
+        {
+          "name": "Cable clips, strain reliefs and retaining clips",
+          "feature": "Worth a cent. Entirely a cavitation and cycle question, and the first part anyone re-sources."
+        },
+        {
+          "name": "Panels, fascias, buttons and keypad frames",
+          "feature": "The visible face constrains gate and ejector layout before anything else does."
+        },
+        {
+          "name": "Battery holders, spacers and pack internals",
+          "feature": "Repeating pockets and thin ribs. The tolerance stacks across the array, not within one pocket."
+        }
       ],
       "close": "If a rib on your drawing looks like stiffening, ask before you delete it. On an electrical part it is often a creepage barrier, and its length is part of the reason the product passed approval."
     },
-
     "wall": {
       "index": "02",
       "kicker": "The first number",
@@ -67,10 +113,22 @@
       "colRatio": "L : t",
       "colVerdict": "What the tool has to do about it",
       "ladder": [
-        { "ratio": "40:1", "verdict": "Fills on any machine. Gate position is a convenience, not a constraint." },
-        { "ratio": "100:1", "verdict": "Thin wall begins. Vent depth becomes a dimension on the drawing rather than a fix after the first short shot." },
-        { "ratio": "150:1", "verdict": "Common on electrical housings. Fill rate and injection pressure carry the part; cavity and core steel must be stiff enough not to deflect under it." },
-        { "ratio": "220:1", "verdict": "A second gate, or a thicker nominal wall. One of the two has to move, and it is cheaper to decide that before steel." }
+        {
+          "ratio": "40:1",
+          "verdict": "Fills on any machine. Gate position is a convenience, not a constraint."
+        },
+        {
+          "ratio": "100:1",
+          "verdict": "Thin wall begins. Vent depth becomes a dimension on the drawing rather than a fix after the first short shot."
+        },
+        {
+          "ratio": "150:1",
+          "verdict": "Common on electrical housings. Fill rate and injection pressure carry the part; cavity and core steel must be stiff enough not to deflect under it."
+        },
+        {
+          "ratio": "220:1",
+          "verdict": "A second gate, or a thicker nominal wall. One of the two has to move, and it is cheaper to decide that before steel."
+        }
       ],
       "marks": {
         "gate": "Gate",
@@ -81,7 +139,6 @@
       "note": "The 1 mm threshold, the 100:1 and 150:1 bands and the injection pressures behind them are published industry practice, not Metal Form measurements.",
       "close": "We establish the nominal wall and the true flow length before anything else, because every later decision — gate count, runner type, cavitation, steel — is downstream of that one ratio."
     },
-
     "weld": {
       "index": "03",
       "kicker": "The structural decision",
@@ -116,7 +173,6 @@
       "close": "The last one is the one nobody remembers. Trapped air compresses and burns at exactly the coordinate where the flows meet, so a weld line and a burn mark are the same event seen twice. A vent cut at design time costs nothing; a vent cut into a running tool costs a week.",
       "caption": "Same housing, same core pins, same part print. Only the gate has moved."
     },
-
     "insert": {
       "index": "04",
       "kicker": "Metal in the mould",
@@ -130,40 +186,115 @@
         "eject": "Eject"
       },
       "stages": [
-        { "label": "Load", "note": "The stamping is placed and located. Its own tolerance arrives with it, and the tool absorbs that variation — not the operator, and not a sorting bench downstream." },
-        { "label": "Close", "note": "Steel meets metal at the shut-off. Too tight crushes the terminal. Too loose flashes onto the contact face, where flash does not read as cosmetic — it blocks the contact." },
-        { "label": "Shot", "note": "Melt keys into knurl, groove or undercut. Without one of the three the joint survives moulding and loses grip after thermal cycling, which is a field failure, not a line reject." },
-        { "label": "Eject", "note": "The part leaves with the metal in it. Sink over the insert and flash in the pocket are the two defects that create a sorting operation nobody ever removes again." }
+        {
+          "label": "Load",
+          "note": "The stamping is placed and located. Its own tolerance arrives with it, and the tool absorbs that variation — not the operator, and not a sorting bench downstream."
+        },
+        {
+          "label": "Close",
+          "note": "Steel meets metal at the shut-off. Too tight crushes the terminal. Too loose flashes onto the contact face, where flash does not read as cosmetic — it blocks the contact."
+        },
+        {
+          "label": "Shot",
+          "note": "Melt keys into knurl, groove or undercut. Without one of the three the joint survives moulding and loses grip after thermal cycling, which is a field failure, not a line reject."
+        },
+        {
+          "label": "Eject",
+          "note": "The part leaves with the metal in it. Sink over the insert and flash in the pocket are the two defects that create a sorting operation nobody ever removes again."
+        }
       ],
       "close": "At volume the terminals arrive as continuous strip and a dam bar is designed into the frame to stop melt leaking between leads, then punched out afterwards. Loading is where the downtime lives: a mis-seated insert closes the tool onto metal, and that costs more than every part the tool made that month.",
       "boundaryNote": "Strip, bandolier and dam-bar practice described here is how the industry runs high-volume terminal overmoulding. Tell us which form your metal arrives in and we will design the shut-off around it.",
       "caption": "One tool, four states, the same terminal throughout."
     },
-
     "resin": {
       "index": "05",
       "kicker": "The grade changes the tool",
       "heading": "A datasheet property arrives as a steel decision.",
       "body": "The compound your approvals file was written around is not the base polymer. Flame-retardant and high-CTI grades flow differently, shrink differently and are usually harder on steel. Shrinkage decides the first cut. Abrasion decides how long that cut stays correct.",
-      "columns": ["Grade", "Shrink, published band", "Where it appears", "What it does to the tool"],
+      "columns": [
+        "Grade",
+        "Shrink, published band",
+        "Where it appears",
+        "What it does to the tool"
+      ],
       "rows": [
-        { "grade": "PA66", "shrink": "1.0 – 2.0 %", "use": "Switch parts, clips, mechanism components", "consequence": "Hygroscopic. The part conditions in service and moves. Drying is a process requirement before it is a tooling one." },
-        { "grade": "PA66 GF30", "shrink": "0.3 – 0.9 %, by direction", "use": "Connector bodies, latches, load-bearing housings", "consequence": "Anisotropic shrink reads as pitch error across a multi-way body long before it reads as visible distortion. Cut steel-safe wherever a dimension is uncertain." },
-        { "grade": "PA6 GF", "shrink": "0.4 – 1.0 %, by direction", "use": "Terminal blocks, carriers, general bodies", "consequence": "Takes up more moisture than PA66. Post-mould conditioning is part of the dimension, so the measurement plan has to say when the part was measured." },
-        { "grade": "PBT GF15–GF30", "shrink": "0.3 – 0.8 %, by direction", "use": "Connectors, coil formers, contact retainers", "consequence": "Freezes sharply. Thin sections need a hot enough tool and a fast enough fill, which makes cooling design and process window one conversation, not two." },
-        { "grade": "PBT", "shrink": "1.5 – 2.2 %", "use": "Insulating spacers, non-structural bodies", "consequence": "Low moisture uptake and stable dimensions, but far higher shrink than the filled grades. Do not carry a filled-grade allowance across." },
-        { "grade": "PC", "shrink": "0.5 – 0.7 %", "use": "Covers, enclosures, fascias, lenses", "consequence": "High melt viscosity, so thin walls need pressure. Notch-sensitive: a sharp internal corner left in the steel becomes a crack in the field." },
-        { "grade": "PC/ABS", "shrink": "0.4 – 0.7 %", "use": "Enclosures and fascias carrying impact and surface", "consequence": "Flows better than PC. The visible face sets gate and ejector layout before any other consideration does." },
-        { "grade": "ABS", "shrink": "0.4 – 0.7 %", "use": "Bezels, internal bodies, non-load parts", "consequence": "Easy to fill and easy to texture. Rarely the grade an approvals file is written around, so check before substituting it." },
-        { "grade": "LCP", "shrink": "0.1 – 0.6 %, strongly by direction", "use": "Fine-pitch and reflow-exposed connectors", "consequence": "Very low viscosity: it flashes through gaps that hold every other resin. Shut-off tolerance is effectively the whole build." },
-        { "grade": "PPS / PPA GF", "shrink": "0.2 – 0.9 %, by direction", "use": "High-temperature and reflow-exposed parts", "consequence": "Abrasive and hot. Hardened, replaceable gate inserts — not a gate machined straight into the cavity block." },
-        { "grade": "PMMA", "shrink": "0.2 – 0.8 %", "use": "Light guides and indicator lenses", "consequence": "Polish and texture zones are the optical specification and belong on the tool drawing, recorded as functional surfaces." },
-        { "grade": "Halogen-free FR / high-CTI", "shrink": "Grade-specific", "use": "Anything carrying a flame or tracking requirement", "consequence": "A distinct compound with its own flow and shrink, frequently more aggressive on steel, often with regrind limits. Published halogen-free phosphinate systems in PA and PBT reach CTI values up to 600 V." }
+        {
+          "grade": "PA66",
+          "shrink": "1.0 – 2.0 %",
+          "use": "Switch parts, clips, mechanism components",
+          "consequence": "Hygroscopic. The part conditions in service and moves. Drying is a process requirement before it is a tooling one."
+        },
+        {
+          "grade": "PA66 GF30",
+          "shrink": "0.3 – 0.9 %, by direction",
+          "use": "Connector bodies, latches, load-bearing housings",
+          "consequence": "Anisotropic shrink reads as pitch error across a multi-way body long before it reads as visible distortion. Cut steel-safe wherever a dimension is uncertain."
+        },
+        {
+          "grade": "PA6 GF",
+          "shrink": "0.4 – 1.0 %, by direction",
+          "use": "Terminal blocks, carriers, general bodies",
+          "consequence": "Takes up more moisture than PA66. Post-mould conditioning is part of the dimension, so the measurement plan has to say when the part was measured."
+        },
+        {
+          "grade": "PBT GF15–GF30",
+          "shrink": "0.3 – 0.8 %, by direction",
+          "use": "Connectors, coil formers, contact retainers",
+          "consequence": "Freezes sharply. Thin sections need a hot enough tool and a fast enough fill, which makes cooling design and process window one conversation, not two."
+        },
+        {
+          "grade": "PBT",
+          "shrink": "1.5 – 2.2 %",
+          "use": "Insulating spacers, non-structural bodies",
+          "consequence": "Low moisture uptake and stable dimensions, but far higher shrink than the filled grades. Do not carry a filled-grade allowance across."
+        },
+        {
+          "grade": "PC",
+          "shrink": "0.5 – 0.7 %",
+          "use": "Covers, enclosures, fascias, lenses",
+          "consequence": "High melt viscosity, so thin walls need pressure. Notch-sensitive: a sharp internal corner left in the steel becomes a crack in the field."
+        },
+        {
+          "grade": "PC/ABS",
+          "shrink": "0.4 – 0.7 %",
+          "use": "Enclosures and fascias carrying impact and surface",
+          "consequence": "Flows better than PC. The visible face sets gate and ejector layout before any other consideration does."
+        },
+        {
+          "grade": "ABS",
+          "shrink": "0.4 – 0.7 %",
+          "use": "Bezels, internal bodies, non-load parts",
+          "consequence": "Easy to fill and easy to texture. Rarely the grade an approvals file is written around, so check before substituting it."
+        },
+        {
+          "grade": "LCP",
+          "shrink": "0.1 – 0.6 %, strongly by direction",
+          "use": "Fine-pitch and reflow-exposed connectors",
+          "consequence": "Very low viscosity: it flashes through gaps that hold every other resin. Shut-off tolerance is effectively the whole build."
+        },
+        {
+          "grade": "PPS / PPA GF",
+          "shrink": "0.2 – 0.9 %, by direction",
+          "use": "High-temperature and reflow-exposed parts",
+          "consequence": "Abrasive and hot. Hardened, replaceable gate inserts — not a gate machined straight into the cavity block."
+        },
+        {
+          "grade": "PMMA",
+          "shrink": "0.2 – 0.8 %",
+          "use": "Light guides and indicator lenses",
+          "consequence": "Polish and texture zones are the optical specification and belong on the tool drawing, recorded as functional surfaces."
+        },
+        {
+          "grade": "Halogen-free FR / high-CTI",
+          "shrink": "Grade-specific",
+          "use": "Anything carrying a flame or tracking requirement",
+          "consequence": "A distinct compound with its own flow and shrink, frequently more aggressive on steel, often with regrind limits. Published halogen-free phosphinate systems in PA and PBT reach CTI values up to 600 V."
+        }
       ],
       "note": "Shrinkage bands and the 600 V CTI figure are published industry practice, not Metal Form measurements. The grade's own datasheet, applied per direction, is what gets cut into steel.",
       "close": "Tell us the exact grade, not the polymer family. Two PBT compounds with the same glass loading and different flame-retardant systems will not shrink the same way, and the difference is the difference between an adjustment and a new insert."
     },
-
     "pitch": {
       "index": "06",
       "kicker": "The dimension that decides everything",
@@ -178,25 +309,60 @@
         "c": "C"
       },
       "callouts": [
-        { "mark": "A", "name": "Retention shoulder", "note": "The moulded step the contact barb sits under. Terminal retention is verified by the customer under the IEC 60512 test family, and this feature is what it measures." },
-        { "mark": "B", "name": "Contact barb", "note": "Stamped, sprung, and working against a surface that has to stay where the tool put it. If the shoulder moulds short or soft, the terminal backs out under vibration." },
-        { "mark": "C", "name": "Core pin", "note": "Deep, slender, heat-loaded on every face and deflecting under fill pressure. A pin that wanders makes parts that measure acceptable and assemble badly." }
+        {
+          "mark": "A",
+          "name": "Retention shoulder",
+          "note": "The moulded step the contact barb sits under. Terminal retention is verified by the customer under the IEC 60512 test family, and this feature is what it measures."
+        },
+        {
+          "mark": "B",
+          "name": "Contact barb",
+          "note": "Stamped, sprung, and working against a surface that has to stay where the tool put it. If the shoulder moulds short or soft, the terminal backs out under vibration."
+        },
+        {
+          "mark": "C",
+          "name": "Core pin",
+          "note": "Deep, slender, heat-loaded on every face and deflecting under fill pressure. A pin that wanders makes parts that measure acceptable and assemble badly."
+        }
       ],
       "steelHeading": "What holds the dimension is hardness. What goes first is the gate.",
       "steelBody": "Glass fibre sits at Mohs 5 to 7 and abrades steel as the fibres orient along the cavity wall during fill. Gates and high-shear zones erode first, which is why they should be consumables with a change interval rather than cavity surface.",
-      "steelColumns": ["Steel", "Working hardness", "Where it is used"],
+      "steelColumns": [
+        "Steel",
+        "Working hardness",
+        "Where it is used"
+      ],
       "steelRows": [
-        { "grade": "P-20", "hardness": "28 – 30 HRC", "use": "Non-abrasive, unfilled resins." },
-        { "grade": "P-20, high-hard", "hardness": "38 – 40 HRC", "use": "Unfilled work with a longer expected run." },
-        { "grade": "H-13", "hardness": "44 – 48 HRC", "use": "The default cavity answer for abrasive glass-filled grades, deliberately not taken much above 50 HRC." },
-        { "grade": "S-7", "hardness": "to about 56 HRC", "use": "Tight-tolerance, long-running parts. Slides and lifters at 54 – 56 HRC against cavities at 50 – 52 HRC." },
-        { "grade": "Stainless", "hardness": "50 – 52 HRC", "use": "Corrosive resins." }
+        {
+          "grade": "P-20",
+          "hardness": "28 – 30 HRC",
+          "use": "Non-abrasive, unfilled resins."
+        },
+        {
+          "grade": "P-20, high-hard",
+          "hardness": "38 – 40 HRC",
+          "use": "Unfilled work with a longer expected run."
+        },
+        {
+          "grade": "H-13",
+          "hardness": "44 – 48 HRC",
+          "use": "The default cavity answer for abrasive glass-filled grades, deliberately not taken much above 50 HRC."
+        },
+        {
+          "grade": "S-7",
+          "hardness": "to about 56 HRC",
+          "use": "Tight-tolerance, long-running parts. Slides and lifters at 54 – 56 HRC against cavities at 50 – 52 HRC."
+        },
+        {
+          "grade": "Stainless",
+          "hardness": "50 – 52 HRC",
+          "use": "Corrosive resins."
+        }
       ],
       "steelNote": "Steel grades and hardness bands are published industry practice, not Metal Form measurements. A ten-point hardness spread run at low hardness invites galling on the sliding faces.",
       "close": "Spare cavity and core inserts and a written condition record are part of the tool, not an afterthought bought later. On a part that stops a line, the interval between a gate wearing and a customer noticing is the whole risk.",
       "caption": "Two adjacent ways at high magnification, with the shoulder detail enlarged beside them."
     },
-
     "source": {
       "index": "07",
       "kicker": "Supply",
@@ -204,18 +370,38 @@
       "body": "One tool, one moulder, one country, no duplicate and no spare inserts — on a component worth a few cents that stops a line worth a thousand times more. Building the backup before the shortage is the entire point, and the work is a documentation exercise before it is a machining one.",
       "railLabel": "Stages",
       "stages": [
-        { "title": "NDA, then the part", "note": "A sample, a STEP file, a 2D drawing, or a photograph with one dimension we can scale from. An NDA can be signed before detailed disclosure if you prefer." },
-        { "title": "Data pack", "note": "Current CAD, 2D with tolerances, material grade, known process parameters, acceptance criteria. What exists — and, more usefully, what does not." },
-        { "title": "DFM review", "note": "Wall, flow length, gate and weld-line placement, draft, ejection, shrink allowance per grade. Before any steel is quoted." },
-        { "title": "Tooling route", "note": "A duplicate built from your data, or a new tool built to your part print. Where the drawings and the original toolmaker are both gone, reverse engineering from a sample." },
-        { "title": "Build", "note": "Mould design and manufacture in CATIA and SolidWorks. Multi-cavity, hot or cold runner, insert tooling, slides, lifters, unscrewing and collapsible cores as the part requires." },
-        { "title": "T1 and qualification", "note": "First shots measured against parts you already accept, not against an idealised print. Corrections are cheap here and expensive everywhere after here." },
-        { "title": "Scheduled supply", "note": "Component production and rolling supply, in the same box to the same spec, with international delivery and spares and change parts held against the tool." }
+        {
+          "title": "NDA, then the part",
+          "note": "A sample, a STEP file, a 2D drawing, or a photograph with one dimension we can scale from. An NDA can be signed before detailed disclosure if you prefer."
+        },
+        {
+          "title": "Data pack",
+          "note": "Current CAD, 2D with tolerances, material grade, known process parameters, acceptance criteria. What exists — and, more usefully, what does not."
+        },
+        {
+          "title": "DFM review",
+          "note": "Wall, flow length, gate and weld-line placement, draft, ejection, shrink allowance per grade. Before any steel is quoted."
+        },
+        {
+          "title": "Tooling route",
+          "note": "A duplicate built from your data, or a new tool built to your part print. Where the drawings and the original toolmaker are both gone, reverse engineering from a sample."
+        },
+        {
+          "title": "Build",
+          "note": "Mould design and manufacture in CATIA and SolidWorks. Multi-cavity, hot or cold runner, insert tooling, slides, lifters, unscrewing and collapsible cores as the part requires."
+        },
+        {
+          "title": "T1 and qualification",
+          "note": "First shots measured against parts you already accept, not against an idealised print. Corrections are cheap here and expensive everywhere after here."
+        },
+        {
+          "title": "Scheduled supply",
+          "note": "Component production and rolling supply, in the same box to the same spec, with international delivery and spares and change parts held against the tool."
+        }
       ],
       "close": "This is readiness, not reserved capacity. Capacity is reserved by contract or it is not reserved at all, and we will tell you which one you are being offered.",
       "warranty": "Tooling warranty terms are defined per project and against the agreed mould specification. Initial technical response within 48 business hours."
     },
-
     "boundary": {
       "index": "08",
       "kicker": "Scope",
@@ -245,7 +431,6 @@
       ],
       "close": "That list is not fine print. It is the shape of the working relationship: you own the electrical performance and the approval, we own the geometry, the steel and the supply. Where the two meet — a rib that is a creepage barrier, a weld line under an insertion load, a gate vestige on a mating face — we raise it before we quote, not after."
     },
-
     "panels": {
       "heading": "Deeper detail",
       "items": [
@@ -291,7 +476,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Send the part. We will tell you what the tool has to do.",
     "body": "A STEP file, a 2D drawing, or a sample in a bag. We come back on geometry, tooling route, cavitation and supply options. Initial project response within 48 business hours. NDA on request, before you send anything.",

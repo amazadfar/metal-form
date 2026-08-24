@@ -4,7 +4,7 @@
     "description": "Kozmetik kapaklar, kavanozlar, pompa ve mekanizma parçaları için kalıp tasarımı ve imalatı. 46 göze kadar çok gözlü kalıplar, sıcak ve soğuk yolluk, dişli maçalar, kozmetik yüzey kalitesi. Mühendislik, DFM, tersine mühendislik ve sürekli tedarik. 2006'dan beri İran mühendisliği."
   },
   "name": "Kozmetik ve Kişisel Bakım",
-  "tile": "Görünen yüzeyin ürünün kendisi olduğu kapaklar, kavanozlar, pompalar ve dispenserler. Parlatma sınıfı, ayırma yüzeyinin yeri ve yolluk girişi konumu çelik işlenmeden önce kararlaştırılır.",
+  "tile": "Görünen yüzey kalıpçılığı. Parlatma sınıfı, ayırma yüzeyi ve yolluk girişi çelik işlenmeden kararlaşır.",
   "tileParts": "Kapaklar · Kavanozlar · Dispenserler",
   "hero": {
     "kicker": "Kozmetik ve Kişisel Bakım",

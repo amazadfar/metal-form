@@ -4,7 +4,7 @@
     "description": "Injection tooling and moulded components for furniture: castors, chair bases, glides, mechanisms, connectors, runner parts and shells. Engineering, DFM, mould manufacture and ongoing supply. Response within 48 business hours."
   },
   "name": "Furniture & Decor",
-  "tile": "Castors, mechanisms, glides and fittings that carry load and get sat on. Rib design, glass-filled materials and part consolidation that takes assembly labour out.",
+  "tile": "Castors, mechanisms and fittings that carry load, and the ribs that let them.",
   "tileParts": "Castors · Mechanisms · Fittings",
   "hero": {
     "kicker": "Furniture & Decor",

@@ -4,14 +4,16 @@
     "description": "Kamyon, otobüs, tarım ve iş makineleri için enjeksiyon kalıbı tasarımı ve imalatı. Dolgulu polimerler, sürgüler, lifterlar ve insertli kalıplar. İkinci kaynak kalıpları ve üretimden kalkmış parçalara yeni kalıp. 48 iş saati içinde mühendislik dönüşü."
   },
   "name": "Otomotiv ve Ağır Vasıta",
-  "tile": "Dolgulu polimerler, sürgüler ve lifterlar, bir on yıl boyunca tekrarlaması gereken ölçü. Kamyon, otobüs, tarım ve iş makineleri için kalıp — orijinal kalıbı çoktan kaybolmuş parçalar dâhil.",
+  "tile": "On yıllık servis ömrü için kalıp — dolgulu polimerler, sürgüler, tekrarlayan ölçü.",
   "tileParts": "İşlevsel parçalar · Sürgüler · Yeniden kalıplama",
   "hero": {
     "kicker": "Otomotiv ve Ağır Vasıta",
-    "headline": ["Kalıp, araçtan", "uzun yaşar."],
+    "headline": [
+      "Kalıp, araçtan",
+      "uzun yaşar."
+    ],
     "lead": "Kamyon, otobüs, tarım ve iş makineleri aynı enjeksiyon parçalarını on yıl boyunca kullanır. Kalıbı bu hizmet ömrüne göre tasarlar ve imal ederiz — dolgulu polimerler, sürgüler ve lifterlar, atımdan atıma tekrarlayan ölçü — ve sonrasında parçayı da tedarik ederiz."
   },
-
   "blocks": {
     "sheet": {
       "index": "00",
@@ -19,14 +21,38 @@
       "pivot": "Bir binek otomobil üreticisi model çevrimiyle birlikte iki üç yılda bir kalıbını yeniler. İş makinesi, tarım makinesi ve ticari araç üreticisi ise aynı kalıbı on yıl çalıştırabilir. Bu sayfadaki her tartışmayı belirleyen tek fark budur.",
       "titleBlockLabel": "Antet",
       "fields": [
-        { "k": "Faaliyet başlangıcı", "v": "2006" },
-        { "k": "Tamamlanan proje", "v": "1.000+" },
-        { "k": "Göz sayısı deneyimi", "v": "46'ya kadar" },
-        { "k": "Tasarım ortamı", "v": "CATIA · SolidWorks" },
-        { "k": "Gizlilik", "v": "Standart olarak NDA" },
-        { "k": "İlk dönüş", "v": "48 iş saati" },
-        { "k": "Garanti", "v": "Proje bazında şartlar" },
-        { "k": "Sevkiyat", "v": "Dünya geneli" }
+        {
+          "k": "Faaliyet başlangıcı",
+          "v": "2006"
+        },
+        {
+          "k": "Tamamlanan proje",
+          "v": "1.000+"
+        },
+        {
+          "k": "Göz sayısı deneyimi",
+          "v": "46'ya kadar"
+        },
+        {
+          "k": "Tasarım ortamı",
+          "v": "CATIA · SolidWorks"
+        },
+        {
+          "k": "Gizlilik",
+          "v": "Standart olarak NDA"
+        },
+        {
+          "k": "İlk dönüş",
+          "v": "48 iş saati"
+        },
+        {
+          "k": "Garanti",
+          "v": "Proje bazında şartlar"
+        },
+        {
+          "k": "Sevkiyat",
+          "v": "Dünya geneli"
+        }
       ],
       "figureLabel": "Bağlantı braketi — önden görünüş ve kesit",
       "sectionMark": "A–A",
@@ -34,14 +60,29 @@
       "dimBore": "Ø24",
       "legendLabel": "Parça listesi",
       "balloons": [
-        { "n": "01", "label": "PA66 GF30", "note": "Cam elyaf dolgulu poliamit. Parçada rijit, onu şekillendiren çelikte aşındırıcı." },
-        { "n": "02", "label": "Ayırma yüzeyi", "note": "İki çelik yarımın buluştuğu yer. Bu yüzeyi kesen bir ölçü, tek bir çelik bloğun içinde oluşan bir ölçü kadar dar tutulamaz." },
-        { "n": "03", "label": "Sürgüyle oluşan yuva", "note": "Dış geçme (undercut). Hareketli çelik, bir açılı pim, bir topuk bloğu ve kalıbın ömrü boyunca sürecek bir bakım yükümlülüğü." },
-        { "n": "04", "label": "Yolluk girişi", "note": "Elyaf yönlenmesini belirler; elyaf yönlenmesi de parçanın nerede güçlü olduğunu ve birleşme izinin nereye düşeceğini belirler." }
+        {
+          "n": "01",
+          "label": "PA66 GF30",
+          "note": "Cam elyaf dolgulu poliamit. Parçada rijit, onu şekillendiren çelikte aşındırıcı."
+        },
+        {
+          "n": "02",
+          "label": "Ayırma yüzeyi",
+          "note": "İki çelik yarımın buluştuğu yer. Bu yüzeyi kesen bir ölçü, tek bir çelik bloğun içinde oluşan bir ölçü kadar dar tutulamaz."
+        },
+        {
+          "n": "03",
+          "label": "Sürgüyle oluşan yuva",
+          "note": "Dış geçme (undercut). Hareketli çelik, bir açılı pim, bir topuk bloğu ve kalıbın ömrü boyunca sürecek bir bakım yükümlülüğü."
+        },
+        {
+          "n": "04",
+          "label": "Yolluk girişi",
+          "note": "Elyaf yönlenmesini belirler; elyaf yönlenmesi de parçanın nerede güçlü olduğunu ve birleşme izinin nereye düşeceğini belirler."
+        }
       ],
       "borderNote": "Bu sayfadaki referans değerler yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir. Sizin parçanız kendi verisiyle değerlendirilir."
     },
-
     "parts": {
       "index": "01",
       "kicker": "Parça kütüğü",
@@ -166,7 +207,6 @@
       ],
       "close": "On beş aile, tek bir tekrar eden soru. Bunlardan hangisi şu anda tek bir kalıptan, tek kaynaktan geliyor ve o kalıbın durduğu gün montaj hattına ne oluyor."
     },
-
     "materials": {
       "index": "02",
       "kicker": "Malzeme",
@@ -251,7 +291,6 @@
       ],
       "sourceNote": "Bu listede verilen çekme bantları yayımlanmış sektör değerleridir, Metal Form ölçümleri değildir."
     },
-
     "tool": {
       "index": "03",
       "kicker": "Kalıbın içi",
@@ -265,43 +304,66 @@
           "n": "01",
           "label": "Ayrım",
           "body": "Göz ile maça ayırma yüzeyinde buluşur ve parçanın orada gösterdiği her şey, o ayrımın nasıl çizildiğiyle kararlaştırılmıştır. Sızdırmazlık yüzeyindeki çapak sızdırır. Bir geçmeli tırnağın çevresindeki çapak montajı engeller. Ayırma yüzeyini kesen bir ölçü, tek bir çelik bloğun içinde oluşan bir ölçü kadar dar tutulamaz — ve tutulabilirmiş gibi de şartnameye yazılmamalıdır.",
-          "spec": ["Kapama yüzeyleri", "Ayırma yüzeyi ölçüleri", "Kaçıklık ve çapak"]
+          "spec": [
+            "Kapama yüzeyleri",
+            "Ayırma yüzeyi ölçüleri",
+            "Kaçıklık ve çapak"
+          ]
         },
         {
           "n": "02",
           "label": "Mekanizmalar",
           "body": "Bir kalıptaki her hareketli eleman; işleme, alıştırma, aşınma plakaları, kilitler ve on yıllık bir bakım yükümlülüğü demektir. Bu yüzden önce ucuz cevaplar denenir — bir kapama, karşılıklı geçme, zorlamalı sıyırma, düşük adette elle yerleştirilen bir insert. Sonra sürgüler, sonra lifterlar, sonra diş sökücü üniteler ve katlanabilir maçalar. Mekanizma sayısı, bir kalıp fiyatında kontrol edilebilen en büyük kalemlerden biridir.",
-          "spec": ["Açılı pim 10° – 25°", "Topuk bloğu 2° – 5° daha dik", "Boşluk 0,012 – 0,025 mm"]
+          "spec": [
+            "Açılı pim 10° – 25°",
+            "Topuk bloğu 2° – 5° daha dik",
+            "Boşluk 0,012 – 0,025 mm"
+          ]
         },
         {
           "n": "03",
           "label": "Besleme",
           "body": "Ağır vasıta adetlerinde dürüst varsayılan soğuk yolluktur: daha düşük yatırım, daha basit bakım, arızalanacak rezistans yok. Sıcak yolluk ise şu durumlarda yerini hak eder: yüksek göz sayısı; yolluk girişi konumunun ya da izinin önem taşıması; dolgulu bir malzeme ile uzun bir yolluğun basınç kaybını ve birleşme izini yanlış yere koyacak olması; ve on yıllık yolluk firesinin malzeme bütçesini değiştirmesi. Valfli giriş, bir birleşme izinin yüklü kesitten uzaklaştırılma yöntemidir.",
-          "spec": ["Soğuk yolluk", "Sıcak yolluk nozulu", "Valfli giriş sıralaması"]
+          "spec": [
+            "Soğuk yolluk",
+            "Sıcak yolluk nozulu",
+            "Valfli giriş sıralaması"
+          ]
         },
         {
           "n": "04",
           "label": "Soğutma",
           "body": "Aynı anda hem çevrim süresinin hem de çarpılmanın birincil kontrolüdür ve ucuza sonradan eklenemeyen tek şeydir. Devrelerin kalın kesitlere ve genellikle daha kötü soğuyan yarım olan maça tarafına ulaşması gerekir. Lifterlar incedir, hareketlidir ve soğutulmaları neredeyse imkânsızdır; çevrimi uzatmalarının ve sıvanmalarının nedeni budur. Düz delik açmanın ulaşamadığı yerlerde konformal kanallar vardır.",
-          "spec": ["Maça tarafı devreleri", "Konformal kanallar", "Giriş–çıkış sıcaklık farkı"]
+          "spec": [
+            "Maça tarafı devreleri",
+            "Konformal kanallar",
+            "Giriş–çıkış sıcaklık farkı"
+          ]
         },
         {
           "n": "05",
           "label": "Havalandırma",
           "body": "Yanık izleri, hava sıkışmaları ve eksik dolumların büyük bölümü enjeksiyon basıncının değil havalandırmanın işidir; buna rağmen aylarca kalıplama parametrelerinin üzerine yıkılır. Havalandırma bantları üretimde karbonlanır ve belirli aralıklarla yeniden işlenir. Havanın gidecek yeri yoksa, makineden ne istenirse istensin, gözün son milimetresi hiçbir zaman temiz dolmaz.",
-          "spec": ["Havalandırma bandı derinliği", "Ayırma yüzeyi havalandırmaları", "İtici pimden havalandırma"]
+          "spec": [
+            "Havalandırma bandı derinliği",
+            "Ayırma yüzeyi havalandırmaları",
+            "İtici pimden havalandırma"
+          ]
         },
         {
           "n": "06",
           "label": "Çelik",
           "body": "Ön sertleştirilmiş kaliteler dolgusuz malzemeye ve kısa programlara uyar. On yıl boyunca dolgulu polimer ise sertleştirilmiş çelik ve yüzey mühendisliği sorusudur — nitrasyon ve aşınmanın gerektirdiği yerlerde CrN, CrAlN ya da TiAlN gibi kaplamalar. Tasarımda dört mekanizmaya karşı önlem alınır: aşındırıcı aşınma, termal yorulma, korozyon ve yolluk girişi aşınması. Yumuşak çelik teklifte ucuz, programda pahalıdır.",
-          "spec": ["P20 · H13", "Nitrasyon · PVD", "Yedek insertler tanımlı"]
+          "spec": [
+            "P20 · H13",
+            "Nitrasyon · PVD",
+            "Yedek insertler tanımlı"
+          ]
         }
       ],
       "close": "Bu altı kararın hiçbiri kalıp teklifinde görünmez. Altısı da beşinci yılda görünür ve o zamana kadar kararın bedeli birkaç yüz bin kez ödenmiştir.",
       "sourceNote": "Burada gösterilen açılar, boşluklar ve sertlik değerleri yayımlanmış sektör uygulamalarıdır, Metal Form şartnameleri değildir."
     },
-
     "fit": {
       "index": "04",
       "kicker": "Ölçü",
@@ -331,7 +393,11 @@
           "note": "Çelik, çevrim ve emek ister. Bunu resmin tamamına değil, geçmeyi gerçekten kontrol eden ölçülere yazın."
         }
       ],
-      "gradeHeadings": { "small": "1 – 20 mm detaylar", "large": "21 – 100 mm detaylar", "env": "Dört parça boyunca" },
+      "gradeHeadings": {
+        "small": "1 – 20 mm detaylar",
+        "large": "21 – 100 mm detaylar",
+        "env": "Dört parça boyunca"
+      },
       "classesHeading": "Üç ölçü, üç farklı davranış",
       "classes": [
         {
@@ -351,10 +417,26 @@
       "warpBody": "Elyaf takviyeli malzeme, akış yönünde akışa dik yöne göre daha az çeker. Bu anizotropi bir proses hatası değil, malzemenin doğasında olan bir özelliktir ve çarpılma tartışmalarının çoğunun yapısal nedenidir. Yolluk girişi konumu akış yönünü, akış yönü elyaf yönlenmesini, elyaf yönlenmesi de parçanın hangi yöne büküleceğini belirler.",
       "warpFigureLabel": "Anizotropik çekme — nominal kontur ile kalıptan çıkan hâlin karşılaştırması",
       "warpBalloons": [
-        { "n": "01", "label": "Giriş", "note": "Bu noktanın akış aşağısındaki her şey burada kararlaştırılır." },
-        { "n": "02", "label": "Akış yönünde", "note": "Dolgulu bir kalitede çekme bu yönde daha düşüktür." },
-        { "n": "03", "label": "Akışa dik", "note": "Çekme burada daha yüksektir. Parçayı büken de bu farktır." },
-        { "n": "04", "label": "Kalıptan çıkan hâl", "note": "Nominal kontur kesikli çizgidir. Bel verme, iki çekme oranı arasındaki farkın çizilmiş hâlidir." }
+        {
+          "n": "01",
+          "label": "Giriş",
+          "note": "Bu noktanın akış aşağısındaki her şey burada kararlaştırılır."
+        },
+        {
+          "n": "02",
+          "label": "Akış yönünde",
+          "note": "Dolgulu bir kalitede çekme bu yönde daha düşüktür."
+        },
+        {
+          "n": "03",
+          "label": "Akışa dik",
+          "note": "Çekme burada daha yüksektir. Parçayı büken de bu farktır."
+        },
+        {
+          "n": "04",
+          "label": "Kalıptan çıkan hâl",
+          "note": "Nominal kontur kesikli çizgidir. Bel verme, iki çekme oranı arasındaki farkın çizilmiş hâlidir."
+        }
       ],
       "signsHeading": "Hatta nasıl göründüğü",
       "signs": [
@@ -366,7 +448,6 @@
       "close": "Tolerans resmi, kalıp teklif edilmeden önce okunur. Prosesin dürüstçe tutabileceğinden daha dar yazılmış her ölçü ilk montaj denemesinde keşfedilmez, o aşamada masaya konur. Montaj boyunca tolerans yığılması da öyle — genellikle kimsenin resmi olmadığı için herkesin sorunu hâline gelene kadar kimsenin sorunu değildir.",
       "sourceNote": "Burada verilen tolerans sınıfları yayımlanmış sektör referans değerleridir, Metal Form taahhütleri değildir. Sizin parçanızın neyi tutabileceği; sizin parçanız, sizin malzemeniz ve sizin kalıbınız üzerinden yanıtlanır."
     },
-
     "life": {
       "index": "05",
       "kicker": "Program ömrü",
@@ -376,25 +457,94 @@
       "aboveLabel": "Kalıp olayları",
       "belowLabel": "Risk kaydı",
       "markers": [
-        { "at": "—", "label": "Tasarım ve DFM incelemesi", "note": "Cidar kesitleri, nervür ve göbekler, çıkma açısı, yolluk girişi konumu, birleşme izinin yeri, geçmeler ve her birinin gerektirdiği mekanizmalar.", "side": "above" },
-        { "at": "—", "label": "Çelik işlemeye giriyor", "note": "Kalite ve yüzey işlemi, teklife göre değil; malzemeye ve gerçek program ömrüne göre seçilir.", "side": "above" },
-        { "at": "T0", "label": "İlk numuneler", "note": "Kalıp geometriyi ispatlar. Düzeltmeler burada, çelikte yapılır; sonradan proses üzerinden tartışılmaz.", "side": "above" },
-        { "at": "—", "label": "Tek kaynak riski", "note": "Tek kalıp, tek tedarikçi, tek hat. Bu sektörün sabit riskidir ve ortadan kaldırmanın en ucuz olduğu an, üretim başlamadan öncesidir.", "side": "below" },
-        { "at": "—", "label": "Geometri düzeltmeleri", "note": "Ölçüsel ayar, yolluk girişi ve havalandırma iyileştirmesi, itmenin temizlenmesi, mekanizma alıştırmasının yük altında kontrolü.", "side": "above" },
-        { "at": "0", "label": "Üretime alma", "note": "Mülkiyet yazılı olarak kayda geçer. Yedek göz ve maça insertleri, ilk çatlaktan sonra sipariş edilmek yerine kalıpla birlikte tanımlanmıştır.", "side": "above" },
-        { "at": "50.000", "label": "İlk planlı bakım", "note": "Ön sertleştirilmiş kalıplar için yayımlanmış uygulama. Havalandırma bantları, itici pimler, sürgü ve lifter yatak yüzeyleri, soğutma devresi keçeleri.", "side": "above" },
-        { "at": "—", "label": "Ölçüsel kayma", "note": "Aşındırıcı dolgulu malzeme yolluk girişini ve kapama yüzeylerini yer. Kayma, kimse aramaya başlamadan çok önce gelir.", "side": "below" },
-        { "at": "100.000", "label": "İkinci bakım eşiği", "note": "Karbonun bant derinliğini şartnamenin epeyce altına indirdiği yerlerde havalandırmalar yeniden işlenir. Çukurcuklar parçaya basmadan önce kaynatılıp yeniden parlatılır.", "side": "above" },
-        { "at": "—", "label": "Soğutma devrelerinde kireçlenme", "note": "Sabit debide giriş–çıkış sıcaklık farkının yükselmesi uyarıdır. Sektör kılavuzları debinin kabaca dörtte birinin kaybını bir kayıt satırı değil, bir onarım işi sayar.", "side": "below" },
-        { "at": "250.000", "label": "İnsert değişimi", "note": "Önceden hazırda tutulan yedeklerden. Bunları ilk çatlaktan sonra sipariş etmek, tam olarak aynı kararın pahalı hâlidir.", "side": "above" },
-        { "at": "—", "label": "Plansız duruş", "note": "Yerine geçtiği planlı bakımın birkaç katına mal olan ve montaj hattını da beraberinde durduran olay.", "side": "below" },
-        { "at": "—", "label": "Ömür ortası yenileme", "note": "Göz ve maça yüzeyleri, itme sistemi, mekanizmalar, devreler. Kalıp bilinmeyen bir duruma sürüklenmek yerine bilinen bir duruma geri döner.", "side": "above" },
-        { "at": "…", "label": "Devam · transfer · yeni kalıp", "note": "Program sürer, kalıp başka bir enjeksiyoncuya taşınır ya da parça üretimden kalkar ve numunesinden yeniden kalıbı yapılır.", "side": "above" }
+        {
+          "at": "—",
+          "label": "Tasarım ve DFM incelemesi",
+          "note": "Cidar kesitleri, nervür ve göbekler, çıkma açısı, yolluk girişi konumu, birleşme izinin yeri, geçmeler ve her birinin gerektirdiği mekanizmalar.",
+          "side": "above"
+        },
+        {
+          "at": "—",
+          "label": "Çelik işlemeye giriyor",
+          "note": "Kalite ve yüzey işlemi, teklife göre değil; malzemeye ve gerçek program ömrüne göre seçilir.",
+          "side": "above"
+        },
+        {
+          "at": "T0",
+          "label": "İlk numuneler",
+          "note": "Kalıp geometriyi ispatlar. Düzeltmeler burada, çelikte yapılır; sonradan proses üzerinden tartışılmaz.",
+          "side": "above"
+        },
+        {
+          "at": "—",
+          "label": "Tek kaynak riski",
+          "note": "Tek kalıp, tek tedarikçi, tek hat. Bu sektörün sabit riskidir ve ortadan kaldırmanın en ucuz olduğu an, üretim başlamadan öncesidir.",
+          "side": "below"
+        },
+        {
+          "at": "—",
+          "label": "Geometri düzeltmeleri",
+          "note": "Ölçüsel ayar, yolluk girişi ve havalandırma iyileştirmesi, itmenin temizlenmesi, mekanizma alıştırmasının yük altında kontrolü.",
+          "side": "above"
+        },
+        {
+          "at": "0",
+          "label": "Üretime alma",
+          "note": "Mülkiyet yazılı olarak kayda geçer. Yedek göz ve maça insertleri, ilk çatlaktan sonra sipariş edilmek yerine kalıpla birlikte tanımlanmıştır.",
+          "side": "above"
+        },
+        {
+          "at": "50.000",
+          "label": "İlk planlı bakım",
+          "note": "Ön sertleştirilmiş kalıplar için yayımlanmış uygulama. Havalandırma bantları, itici pimler, sürgü ve lifter yatak yüzeyleri, soğutma devresi keçeleri.",
+          "side": "above"
+        },
+        {
+          "at": "—",
+          "label": "Ölçüsel kayma",
+          "note": "Aşındırıcı dolgulu malzeme yolluk girişini ve kapama yüzeylerini yer. Kayma, kimse aramaya başlamadan çok önce gelir.",
+          "side": "below"
+        },
+        {
+          "at": "100.000",
+          "label": "İkinci bakım eşiği",
+          "note": "Karbonun bant derinliğini şartnamenin epeyce altına indirdiği yerlerde havalandırmalar yeniden işlenir. Çukurcuklar parçaya basmadan önce kaynatılıp yeniden parlatılır.",
+          "side": "above"
+        },
+        {
+          "at": "—",
+          "label": "Soğutma devrelerinde kireçlenme",
+          "note": "Sabit debide giriş–çıkış sıcaklık farkının yükselmesi uyarıdır. Sektör kılavuzları debinin kabaca dörtte birinin kaybını bir kayıt satırı değil, bir onarım işi sayar.",
+          "side": "below"
+        },
+        {
+          "at": "250.000",
+          "label": "İnsert değişimi",
+          "note": "Önceden hazırda tutulan yedeklerden. Bunları ilk çatlaktan sonra sipariş etmek, tam olarak aynı kararın pahalı hâlidir.",
+          "side": "above"
+        },
+        {
+          "at": "—",
+          "label": "Plansız duruş",
+          "note": "Yerine geçtiği planlı bakımın birkaç katına mal olan ve montaj hattını da beraberinde durduran olay.",
+          "side": "below"
+        },
+        {
+          "at": "—",
+          "label": "Ömür ortası yenileme",
+          "note": "Göz ve maça yüzeyleri, itme sistemi, mekanizmalar, devreler. Kalıp bilinmeyen bir duruma sürüklenmek yerine bilinen bir duruma geri döner.",
+          "side": "above"
+        },
+        {
+          "at": "…",
+          "label": "Devam · transfer · yeni kalıp",
+          "note": "Program sürer, kalıp başka bir enjeksiyoncuya taşınır ya da parça üretimden kalkar ve numunesinden yeniden kalıbı yapılır.",
+          "side": "above"
+        }
       ],
       "close": "Bir binek otomobil kalıbı modelle birlikte değiştirilir. Bir ağır vasıta kalıbı ise araç parkı o parçaya ihtiyaç duymayı bırakana kadar bakımla ayakta tutulur. Bunlar iki farklı satın almadır ve yalnızca birinin arkasında on yıllık bir bakım planı olan bir yatırım kalemi vardır.",
       "sourceNote": "Bu zincirde gösterilen atım aralıkları ve bakım eşikleri yayımlanmış sektör bakım uygulamalarıdır, Metal Form taahhütleri değildir."
     },
-
     "routes": {
       "index": "06",
       "kicker": "Üç kapı",
@@ -411,7 +561,11 @@
           "name": "Yeni bir parça",
           "situation": "Elinizde bir tasarım ya da bir işlev ile bir eskiz var.",
           "body": "Geometriyi, malzemeyi, kalıp rotasını ve üretim ekonomisini inceler, ardından kalıbı tasarlar ve imal ederiz. Bir metal parçanın enjeksiyona dönüştürüldüğü durumlarda, parçanın metal kalması gerektiği yönündeki dürüst görüşü de veririz — alternatif olarak basınçlı döküm kalıbını da biz yapabiliriz.",
-          "inputs": ["CAD — STEP, CATPart, SLDPRT", "Toleranslı, ölçülendirilmiş teknik resimler", "Bir tarif ve bir eskiz"]
+          "inputs": [
+            "CAD — STEP, CATPart, SLDPRT",
+            "Toleranslı, ölçülendirilmiş teknik resimler",
+            "Bir tarif ve bir eskiz"
+          ]
         },
         {
           "id": "second",
@@ -419,7 +573,11 @@
           "name": "Halihazırda satın aldığınız bir parça",
           "situation": "Tek tedarikçi, tek kalıp ve ikisinden biri düşerse duran bir hat.",
           "body": "Sizin verinizle, NDA altında ve mevcut tedarikçinizle hiçbir temas kurmadan bir ikinci kaynak kalıbı yaparız. Sahibi siz olursunuz, çalışmaya hazır durur; isterseniz parçayı da biz veririz, istemezseniz kalıp yedekte bekler. Aynı disiplin taşınması gereken bir kalıp için de geçerlidir: mülkiyet belgelenir, durum tespiti yapılır, yenileme kapsamı çıkarılır, sonra üretim yeniden başlatılır.",
-          "inputs": ["CAD ya da teknik resim", "Bir üretim numunesi", "Mülkiyeti belgelenmiş mevcut bir kalıp"]
+          "inputs": [
+            "CAD ya da teknik resim",
+            "Bir üretim numunesi",
+            "Mülkiyeti belgelenmiş mevcut bir kalıp"
+          ]
         },
         {
           "id": "obsolete",
@@ -427,7 +585,11 @@
           "name": "Artık kimsenin üretmediği bir parça",
           "situation": "Kalıp yok, model yok, çoğu zaman teknik resim de yok.",
           "body": "Geometriyi numuneden ve eşleştiği parçalardan yeniden kurar, tasarım niyetini yılların hizmet aşınmasından ayırır, ardından yeni kalıbını yaparız. Aşınmış bir numunenin birebir kopyalanması tasarımı değil, aşınmayı çoğaltır. Orijinal malzemenin bilinmediği yerlerde malzeme ailesi uygulamadan ve çalışma ortamından çıkarılır ve gerçek yük durumuna göre seçilir.",
-          "inputs": ["Aşınmış ya da kırık bir numune parça", "Tek bir ölçüsü bilinen bir fotoğraf", "Varsa eşleştiği parçalar"]
+          "inputs": [
+            "Aşınmış ya da kırık bir numune parça",
+            "Tek bir ölçüsü bilinen bir fotoğraf",
+            "Varsa eşleştiği parçalar"
+          ]
         }
       ],
       "readinessNote": "İkinci kaynak kalıbı bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir; hangisi olduğunu size açıkça söyleriz.",
@@ -458,14 +620,18 @@
       ],
       "boundaryClose": "O ikinci liste bilerek kısadır ve bir özür değildir. Hepsini birden yapabildiğini söyleyen bir tedarikçi ya bambaşka türden bir şirkettir ya da size doğruyu söylemiyordur — ve bu sektörde hangisi olduğunu dokuzuncu ayda, hat başında, konteyner çoktan yola çıkmışken öğrenirsiniz."
     },
-
     "close": {
       "index": "07",
       "kicker": "Revizyon bloğu",
       "heading": "Parçayı gönderin.",
       "body": "Bir numune, bir teknik resim, bir STEP dosyası ya da tek bir ölçüsü bilinen bir fotoğraf. Bu sektörde ziyaretçinin masasında genellikle fiziksel bir parça vardır ve hiçbir veri paketi yoktur; başlamak için bu yeterlidir.",
       "tableLabel": "Talep kaydı",
-      "columns": { "rev": "Rev", "description": "Açıklama", "by": "Yapan", "date": "Tarih" },
+      "columns": {
+        "rev": "Rev",
+        "description": "Açıklama",
+        "by": "Yapan",
+        "date": "Tarih"
+      },
       "rows": [
         {
           "rev": "A",
@@ -499,7 +665,6 @@
         "Kalıbın ve sürekli parça tedarikinin dünya geneline sevkiyatı"
       ]
     },
-
     "panels": {
       "heading": "Daha ayrıntılı",
       "items": [
@@ -547,7 +712,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Parçayı gönderin.",
     "body": "Bir numune, bir teknik resim, bir STEP dosyası ya da tek bir ölçüsü bilinen bir fotoğraf. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendirir, 48 iş saati içinde dönüş yaparız. Standart olarak NDA.",

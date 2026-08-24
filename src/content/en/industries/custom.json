@@ -4,7 +4,7 @@
     "description": "No drawing, no file, no supplier. Send a photograph, a sample or a problem. We return a manufacturable model, a tooling route and a supply plan. Response in 48 business hours."
   },
   "name": "Custom Projects",
-  "tile": "Your project does not need to fit a category. A photograph, a broken part, a competitor product, a sketch or a problem you have not solved yet — all of them are a starting point.",
+  "tile": "A photograph, a broken part, a sketch — or a problem you have not solved yet.",
   "tileParts": "Anything · Any input · Any stage",
   "hero": {
     "kicker": "Custom Projects",

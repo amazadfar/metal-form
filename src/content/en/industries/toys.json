@@ -4,11 +4,14 @@
     "description": "Injection mould design and manufacture for consumer products and toys. DFM and redesign for moulding, family and multi-cavity tooling, colour and finish specification, technical mechanisms, ongoing component supply and second-source tooling. Persian engineering since 2006. Response within 48 business hours."
   },
   "name": "Toys & Consumer Goods",
-  "tile": "Productisation: from an idea, a sample or a 3D print to a tooled part at a unit cost that works. Part consolidation, family tools and the cost of volume.",
+  "tile": "From a sample or a 3D print to a tooled part at a unit cost that works.",
   "tileParts": "Productisation · Family tools · Volume",
   "hero": {
     "kicker": "Toys & Consumer Goods",
-    "headline": ["The unit cost is decided", "in the steel."],
+    "headline": [
+      "The unit cost is decided",
+      "in the steel."
+    ],
     "lead": "Consumer products and toys, from a sketch, a sample or CAD to tooled production. Send the part. We evaluate the geometry, the tooling route, the production economics and the supply options.",
     "markers": [
       "Productisation from a sketch, a sample or CAD",
@@ -16,7 +19,6 @@
       "Tooling experience up to 46 cavities"
     ]
   },
-
   "blocks": {
     "stack": {
       "figureLabel": "Exploded assembly, one axis",
@@ -60,7 +62,12 @@
           "note": "Living hinge, moulded as one piece with its own body. No pin, no separate lid, no assembly step."
         }
       ],
-      "meta": ["6 moulded parts", "3 tools", "PP / ABS / PC", "VDI 24"],
+      "meta": [
+        "6 moulded parts",
+        "3 tools",
+        "PP / ABS / PC",
+        "VDI 24"
+      ],
       "caption": "Illustrative consumer product, drawn for this figure. The part count, materials, cavity counts and finish grades are not taken from a project.",
       "proofLabel": "On record",
       "proof": [
@@ -71,7 +78,6 @@
         "Initial technical response within 48 business hours"
       ]
     },
-
     "intake": {
       "index": "01",
       "kicker": "Intake",
@@ -108,7 +114,6 @@
       "close": "What comes back is the geometry read, the tooling route, the production economics and the supply options. Initial technical response within 48 business hours. An NDA can be signed before detailed technical disclosure.",
       "figureNote": "Convergence schematic. Every route ends at the same first deliverable."
     },
-
     "consolidate": {
       "index": "02",
       "kicker": "Part count",
@@ -121,19 +126,43 @@
       "before": {
         "heading": "As drawn",
         "rows": [
-          { "value": "3", "label": "Moulded parts" },
-          { "value": "1", "label": "Purchased pin" },
-          { "value": "3", "label": "Tools" },
-          { "value": "1", "label": "Assembly operation" }
+          {
+            "value": "3",
+            "label": "Moulded parts"
+          },
+          {
+            "value": "1",
+            "label": "Purchased pin"
+          },
+          {
+            "value": "3",
+            "label": "Tools"
+          },
+          {
+            "value": "1",
+            "label": "Assembly operation"
+          }
         ]
       },
       "after": {
         "heading": "As tooled",
         "rows": [
-          { "value": "1", "label": "Moulded part" },
-          { "value": "0", "label": "Purchased pin" },
-          { "value": "1", "label": "Tool" },
-          { "value": "0", "label": "Assembly operations" }
+          {
+            "value": "1",
+            "label": "Moulded part"
+          },
+          {
+            "value": "0",
+            "label": "Purchased pin"
+          },
+          {
+            "value": "1",
+            "label": "Tool"
+          },
+          {
+            "value": "0",
+            "label": "Assembly operations"
+          }
         ]
       },
       "consequenceHeading": "What actually disappears",
@@ -148,7 +177,6 @@
       "caution": "Consolidation is not automatically the right answer. One part means one material, one colour and one wall discipline across geometry that used to be three separate compromises, and it concentrates the whole product into a single tool that has to be corrected as a whole. It is worth doing where the parts share a material and a function. It is worth refusing where they do not, and we will say so.",
       "figureNote": "Consolidation schematic. A hinge pin, a separate lid and a body become one moulding with a living hinge."
     },
-
     "volume": {
       "index": "03",
       "kicker": "Amortisation",
@@ -191,7 +219,6 @@
       "close": "We run this arithmetic against the volume you will really do this year, then against ten times that, and we say plainly when the bigger tool does not pay back inside the programme's life. Sometimes the right answer is a smaller tool now and a production tool when the order book is real.",
       "figureNote": "Amortisation schematic. Relative shape only — no currency, no quotation."
     },
-
     "ledger": {
       "index": "04",
       "kicker": "Before steel",
@@ -240,7 +267,6 @@
       "figureNote": "Correction schematics. Geometry exaggerated for legibility.",
       "deltaLabel": "ΔE"
     },
-
     "detail": {
       "index": "05",
       "kicker": "Magnification",
@@ -254,10 +280,26 @@
           "name": "Cantilever snap-fit",
           "summary": "A moulded arm with a hook that deflects during assembly and returns. It is the closure, the retention and the service access, all in one feature that costs nothing to buy.",
           "callouts": [
-            { "no": "1", "name": "Arm", "note": "Length and section set the deflection available. Too short and it is strained past the material's elastic limit at assembly; too long and it relaxes under load and the housing rattles." },
-            { "no": "2", "name": "Hook and interference", "note": "The interference is the dimension that assembles the product. It is also the first dimension to change as the tool wears, so late parts fit differently from early ones unless it is designed with that in mind." },
-            { "no": "3", "name": "Root radius", "note": "The highest-stress point on the whole feature. A sharp root is where the arm breaks, usually somewhere between the hundredth part and the ten-thousandth." },
-            { "no": "4", "name": "Weld line", "note": "Steered away from the arm root deliberately. Cosmetically it is a line; structurally it is a crack initiation site, and on a snap arm it is directly in the load path." }
+            {
+              "no": "1",
+              "name": "Arm",
+              "note": "Length and section set the deflection available. Too short and it is strained past the material's elastic limit at assembly; too long and it relaxes under load and the housing rattles."
+            },
+            {
+              "no": "2",
+              "name": "Hook and interference",
+              "note": "The interference is the dimension that assembles the product. It is also the first dimension to change as the tool wears, so late parts fit differently from early ones unless it is designed with that in mind."
+            },
+            {
+              "no": "3",
+              "name": "Root radius",
+              "note": "The highest-stress point on the whole feature. A sharp root is where the arm breaks, usually somewhere between the hundredth part and the ten-thousandth."
+            },
+            {
+              "no": "4",
+              "name": "Weld line",
+              "note": "Steered away from the arm root deliberately. Cosmetically it is a line; structurally it is a crack initiation site, and on a snap arm it is directly in the load path."
+            }
           ],
           "scope": "We design the arm and the tool together, name the wear items, and specify the spare cores before the tool runs rather than after it stops."
         },
@@ -266,10 +308,26 @@
           "name": "Living hinge",
           "summary": "A thin flexed section moulded integrally, so a lid and a body leave the tool already joined. A textbook consolidation: no pin, no separate lid, no assembly operation.",
           "callouts": [
-            { "no": "1", "name": "Hinge land", "note": "A thin land with generous radii either side. Too thick and it will not fold; too sharp and it splits on the first flex or whitens on the hundredth." },
-            { "no": "2", "name": "Flow direction", "note": "Gated so the melt runs through the hinge rather than across it. Flow direction decides molecular orientation across the land, and orientation decides whether the hinge lasts thousands of cycles or a hundred." },
-            { "no": "3", "name": "Material", "note": "Polypropylene is the working choice here. The hinge depends on the polymer's ability to orient across a thin flexed section, which is not a property every consumer resin has." },
-            { "no": "4", "name": "First flex", "note": "Published practice flexes the hinge while the part is still warm, immediately after ejection. A hinge that is left to cool unflexed behaves differently for the rest of its life." }
+            {
+              "no": "1",
+              "name": "Hinge land",
+              "note": "A thin land with generous radii either side. Too thick and it will not fold; too sharp and it splits on the first flex or whitens on the hundredth."
+            },
+            {
+              "no": "2",
+              "name": "Flow direction",
+              "note": "Gated so the melt runs through the hinge rather than across it. Flow direction decides molecular orientation across the land, and orientation decides whether the hinge lasts thousands of cycles or a hundred."
+            },
+            {
+              "no": "3",
+              "name": "Material",
+              "note": "Polypropylene is the working choice here. The hinge depends on the polymer's ability to orient across a thin flexed section, which is not a property every consumer resin has."
+            },
+            {
+              "no": "4",
+              "name": "First flex",
+              "note": "Published practice flexes the hinge while the part is still warm, immediately after ejection. A hinge that is left to cool unflexed behaves differently for the rest of its life."
+            }
           ],
           "scope": "The hinge, the gate position and the tool are one decision, made together. We do not tool a hinge and hope the gate lands somewhere convenient."
         }
@@ -277,7 +335,6 @@
       "note": "Geometry, materials and practice described in this section are published industry engineering, not Metal Form measurements.",
       "figureNote": "Feature schematic at magnification. Deflection shown dashed."
     },
-
     "surface": {
       "index": "06",
       "kicker": "Surface",
@@ -289,12 +346,42 @@
       "colRa": "Ra, approximate",
       "colDraft": "Draft owed",
       "grades": [
-        { "grade": "VDI 18", "ra": "≈ 0.80 µm", "draft": "under 1.5°", "anchor": false },
-        { "grade": "VDI 21", "ra": "≈ 1.12 µm", "draft": "under 1.5°", "anchor": false },
-        { "grade": "VDI 24", "ra": "≈ 1.60 µm", "draft": "1.5 – 2.0°", "anchor": true },
-        { "grade": "VDI 27", "ra": "≈ 2.24 µm", "draft": "over 2.0°", "anchor": false },
-        { "grade": "VDI 33", "ra": "≈ 4.50 µm", "draft": "approaching 4.0°", "anchor": false },
-        { "grade": "VDI 36", "ra": "≈ 6.30 µm", "draft": "4.0° and up", "anchor": true }
+        {
+          "grade": "VDI 18",
+          "ra": "≈ 0.80 µm",
+          "draft": "under 1.5°",
+          "anchor": false
+        },
+        {
+          "grade": "VDI 21",
+          "ra": "≈ 1.12 µm",
+          "draft": "under 1.5°",
+          "anchor": false
+        },
+        {
+          "grade": "VDI 24",
+          "ra": "≈ 1.60 µm",
+          "draft": "1.5 – 2.0°",
+          "anchor": true
+        },
+        {
+          "grade": "VDI 27",
+          "ra": "≈ 2.24 µm",
+          "draft": "over 2.0°",
+          "anchor": false
+        },
+        {
+          "grade": "VDI 33",
+          "ra": "≈ 4.50 µm",
+          "draft": "approaching 4.0°",
+          "anchor": false
+        },
+        {
+          "grade": "VDI 36",
+          "ra": "≈ 6.30 µm",
+          "draft": "4.0° and up",
+          "anchor": true
+        }
       ],
       "anchorNote": "Two of these are published anchors: roughly 1.5 – 2.0° of draft at VDI 24, and at least 4.0° at VDI 36. The rest scale between them, and filled grades want more again. Grades, Ra values and draft angles are approximate by definition — they get confirmed against the standard and against a physical sample before a cavity is textured. They are published industry practice, not Metal Form measurements.",
       "colourHeading": "Colour is a specification, not an approval",
@@ -322,7 +409,6 @@
       "colourBoundary": "Colour route, colour house and material supply are commercial decisions that sit with you unless we agree otherwise in the order. We engineer the geometry, the gate and the tool around the colour and finish you specify.",
       "figureNote": "Surface profile schematic. Vertical scale exaggerated."
     },
-
     "boundary": {
       "index": "07",
       "kicker": "Scope",
@@ -330,10 +416,22 @@
       "body": "Children's products and consumer goods are governed by market requirements that differ by territory. Naming them is category literacy. Meeting them is the brand owner's obligation and their testing house's judgement, and no mould shop can take that off you.",
       "standardsHeading": "Named here as industry facts, and nothing more",
       "standards": [
-        { "name": "ASTM F963", "note": "The consumer safety specification for toy safety in the United States, mandatory under CPSIA." },
-        { "name": "EN 71", "note": "The European toy safety standard, applied under CE marking." },
-        { "name": "ISO 8124", "note": "The international toy safety series, used where neither of the above governs." },
-        { "name": "Small-parts cylinder", "note": "The fixture that simulates the throat of a child under 36 months and decides whether a component — or a piece liberated by use-and-abuse testing — counts as a choking hazard." }
+        {
+          "name": "ASTM F963",
+          "note": "The consumer safety specification for toy safety in the United States, mandatory under CPSIA."
+        },
+        {
+          "name": "EN 71",
+          "note": "The European toy safety standard, applied under CE marking."
+        },
+        {
+          "name": "ISO 8124",
+          "note": "The international toy safety series, used where neither of the above governs."
+        },
+        {
+          "name": "Small-parts cylinder",
+          "note": "The fixture that simulates the throat of a child under 36 months and decides whether a component — or a piece liberated by use-and-abuse testing — counts as a choking hazard."
+        }
       ],
       "standardsNote": "Metal Form holds no toy or consumer product safety approval, performs no product testing, and makes no compliance claim of any kind.",
       "supplyHeading": "What Metal Form supplies",
@@ -361,7 +459,6 @@
       ],
       "line": "Metal Form engineers geometry to a requirement you state. We do not test finished products, we do not certify them, and we do not sign off compliance. If a supplier tells you they will, ask whose accreditation stands behind it."
     },
-
     "after": {
       "index": "08",
       "kicker": "After sign-off",
@@ -412,7 +509,6 @@
       ],
       "close": "Tooling warranty terms are defined per project and per mould specification. Tool ownership, storage and transfer belong in the order, not in a conversation eighteen months later."
     },
-
     "panels": {
       "heading": "Deeper detail",
       "items": [
@@ -458,7 +554,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Send the part.",
     "body": "A photo, a hand sketch, a physical sample, a STEP file or a part you already sell. We come back inside 48 business hours with the geometry read, the tooling route and the production economics. NDA on request.",

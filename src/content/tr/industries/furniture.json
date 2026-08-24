@@ -4,7 +4,7 @@
     "description": "Mobilya için enjeksiyon kalıpları ve parça üretimi: tekerlekler, sandalye ayakları, pabuçlar, mekanizmalar, bağlantı elemanları, çekmece rayı parçaları ve kabuklar. Mühendislik, DFM, kalıp imalatı ve sürekli tedarik. 48 iş saati içinde dönüş."
   },
   "name": "Mobilya ve Dekorasyon",
-  "tile": "Yük taşıyan ve üzerine oturulan tekerlekler, mekanizmalar, pabuçlar ve bağlantı elemanları. Nervür tasarımı, cam elyaf dolgulu malzemeler ve montaj işçiliğini ortadan kaldıran parça birleştirme.",
+  "tile": "Yük taşıyan tekerlekler, mekanizmalar ve bağlantı elemanları — ve bunu mümkün kılan nervürler.",
   "tileParts": "Tekerlekler · Mekanizmalar · Bağlantı elemanları",
   "hero": {
     "kicker": "Mobilya ve Dekorasyon",

@@ -4,15 +4,21 @@
     "description": "Konnektör gövdeleri, klemensler, anahtar parçaları, kablo rakorları ve muhafazalar için kalıp tasarımı ve imalatı. İnce cidarlı kalıplar, metal terminaller için insertli kalıplar, çok gözlü üretim ve sürekli parça tedariki. 2006'dan beri İran mühendisliği."
   },
   "name": "Elektrik ve Elektronik",
-  "tile": "Akış uzunluğunun, birleşme izlerinin ve eşleşme toleranslarının montajın oturup oturmayacağını belirlediği gövdeler, konnektör gövdeleri ve ince cidarlı parçalar.",
+  "tile": "İnce cidarlı gövdeler ve konnektörler; parçanın dolup dolmayacağına akış uzunluğu karar verir.",
   "tileParts": "Gövdeler · Konnektörler · İnce cidar",
   "hero": {
     "kicker": "Elektrik ve Elektronik",
-    "headline": ["Kontağı tutmak", "zorunda olan plastik."],
+    "headline": [
+      "Kontağı tutmak",
+      "zorunda olan plastik."
+    ],
     "lead": "Konnektör gövdeleri, klemensler, anahtar parçaları, kablo rakorları, muhafazalar. İnce cidarlar, derin yuvalar, metal insertler ve birkaç milyon atımdan sonra da doğru kalması gereken bir adım. Parçayı ya da teknik resmi gönderin. Geometri, kalıp rotası, göz sayısı ve tedarik üzerinden dönüş yaparız.",
-    "markers": ["İnce cidarlı ve insertli kalıplar", "46 göze kadar çok gözlü", "İkinci kaynak ve sürekli tedarik"]
+    "markers": [
+      "İnce cidarlı ve insertli kalıplar",
+      "46 göze kadar çok gözlü",
+      "İkinci kaynak ve sürekli tedarik"
+    ]
   },
-
   "blocks": {
     "masthead": {
       "caption": "Kesitte konnektör gövdesi. Her kontak konumu için bir çizgi; bakır rengi metali işaretler, bu sayfada başka hiçbir şey işaretlemez.",
@@ -30,7 +36,6 @@
         "Standart olarak NDA"
       ]
     },
-
     "parts": {
       "index": "01",
       "kicker": "Tanıma",
@@ -39,24 +44,65 @@
       "colName": "Parça",
       "colFeature": "Kalıba karar veren detay",
       "rows": [
-        { "name": "Konnektör gövdeleri", "feature": "Terminal yuvalarını derin ve ince maçalar oluşturur. Adımın her kutupta ve her gözde tutması gerekir." },
-        { "name": "Terminal taşıyıcıları, başlıklar ve kontak tutucuları", "feature": "İşlevin tamamı tutma geometrisidir. Bir kontak yüzeyindeki çapak kozmetik bir not değil, bir rettir." },
-        { "name": "Klemens gövdeleri ve kapakları", "feature": "Bariyerler ve yuvalar rijitlik değil, yalıtım geometrisidir. Vida göbekleri gerçek tork taşır." },
-        { "name": "Anahtar gövdeleri, devirmeli kapaklar, aktüatörler ve mafsallar", "feature": "Mafsal boşluğu ve geçme geometrisi ölçüseldir. İtme izinin saklanacağı kozmetik bir yer yoktur." },
-        { "name": "Priz ve fiş gövdeleri", "feature": "Tek parçada kalın ve ince. İç nervür düzenini rijitlik değil, yüzeysel kaçak yolu belirler." },
-        { "name": "Kablo rakorları, rakor somunları ve kablo girişleri", "feature": "Dişler işlenmez, kalıplanır. Bu, kalıpta bir diş sökücü ya da katlanabilir maça kararıdır." },
-        { "name": "Buatlar, DIN ray kutuları ve kapakları", "feature": "Kapak / gövde geçmesini çarpılma belirler. Ölçülen iki detay ray klipsi ile sızdırmazlık dudağıdır." },
-        { "name": "Cihaz ve devre kesici gövdeleri", "feature": "Sol yarım, sağ yarım, kapak, aktüatör — hepsi tek bir referansa göre. Aile kalıbı burada cezbedicidir ve çoğu zaman yanlıştır." },
-        { "name": "Bobin karkasları", "feature": "İnce flanşlar, dar toleranslı bir sarım yüzeyi ve sarım ısısı altında ölçüsel kararlılık." },
-        { "name": "Işık kılavuzları ve gösterge lensleri", "feature": "Optik şartname kalıbın yüzey kalitesidir: ışığın içeride kaldığı yerde parlatılmış, çıktığı yerde dokulu." },
-        { "name": "Bara destekleri, faz bariyerleri ve ara parçaları", "feature": "Basit geometri, hata kaldırmayan yüzeysel kaçak yolu ve hava aralığı, sürekli ısıl maruziyet." },
-        { "name": "Kablo klipsleri, çekme emniyetleri ve tutucu klipsler", "feature": "Değeri bir sent. Tamamen bir göz sayısı ve çevrim sorusu; herkesin ilk yeniden tedarik ettiği parça." },
-        { "name": "Paneller, ön yüzeyler, düğmeler ve tuş takımı çerçeveleri", "feature": "Görünen yüzey; yolluk girişi ve itici düzenini her şeyden önce kısıtlar." },
-        { "name": "Pil yuvaları, ara parçaları ve paket iç parçaları", "feature": "Tekrarlayan yuvalar ve ince nervürler. Tolerans tek bir yuvanın içinde değil, dizinin tamamında yığılır." }
+        {
+          "name": "Konnektör gövdeleri",
+          "feature": "Terminal yuvalarını derin ve ince maçalar oluşturur. Adımın her kutupta ve her gözde tutması gerekir."
+        },
+        {
+          "name": "Terminal taşıyıcıları, başlıklar ve kontak tutucuları",
+          "feature": "İşlevin tamamı tutma geometrisidir. Bir kontak yüzeyindeki çapak kozmetik bir not değil, bir rettir."
+        },
+        {
+          "name": "Klemens gövdeleri ve kapakları",
+          "feature": "Bariyerler ve yuvalar rijitlik değil, yalıtım geometrisidir. Vida göbekleri gerçek tork taşır."
+        },
+        {
+          "name": "Anahtar gövdeleri, devirmeli kapaklar, aktüatörler ve mafsallar",
+          "feature": "Mafsal boşluğu ve geçme geometrisi ölçüseldir. İtme izinin saklanacağı kozmetik bir yer yoktur."
+        },
+        {
+          "name": "Priz ve fiş gövdeleri",
+          "feature": "Tek parçada kalın ve ince. İç nervür düzenini rijitlik değil, yüzeysel kaçak yolu belirler."
+        },
+        {
+          "name": "Kablo rakorları, rakor somunları ve kablo girişleri",
+          "feature": "Dişler işlenmez, kalıplanır. Bu, kalıpta bir diş sökücü ya da katlanabilir maça kararıdır."
+        },
+        {
+          "name": "Buatlar, DIN ray kutuları ve kapakları",
+          "feature": "Kapak / gövde geçmesini çarpılma belirler. Ölçülen iki detay ray klipsi ile sızdırmazlık dudağıdır."
+        },
+        {
+          "name": "Cihaz ve devre kesici gövdeleri",
+          "feature": "Sol yarım, sağ yarım, kapak, aktüatör — hepsi tek bir referansa göre. Aile kalıbı burada cezbedicidir ve çoğu zaman yanlıştır."
+        },
+        {
+          "name": "Bobin karkasları",
+          "feature": "İnce flanşlar, dar toleranslı bir sarım yüzeyi ve sarım ısısı altında ölçüsel kararlılık."
+        },
+        {
+          "name": "Işık kılavuzları ve gösterge lensleri",
+          "feature": "Optik şartname kalıbın yüzey kalitesidir: ışığın içeride kaldığı yerde parlatılmış, çıktığı yerde dokulu."
+        },
+        {
+          "name": "Bara destekleri, faz bariyerleri ve ara parçaları",
+          "feature": "Basit geometri, hata kaldırmayan yüzeysel kaçak yolu ve hava aralığı, sürekli ısıl maruziyet."
+        },
+        {
+          "name": "Kablo klipsleri, çekme emniyetleri ve tutucu klipsler",
+          "feature": "Değeri bir sent. Tamamen bir göz sayısı ve çevrim sorusu; herkesin ilk yeniden tedarik ettiği parça."
+        },
+        {
+          "name": "Paneller, ön yüzeyler, düğmeler ve tuş takımı çerçeveleri",
+          "feature": "Görünen yüzey; yolluk girişi ve itici düzenini her şeyden önce kısıtlar."
+        },
+        {
+          "name": "Pil yuvaları, ara parçaları ve paket iç parçaları",
+          "feature": "Tekrarlayan yuvalar ve ince nervürler. Tolerans tek bir yuvanın içinde değil, dizinin tamamında yığılır."
+        }
       ],
       "close": "Teknik resminizdeki bir nervür rijitlik nervürü gibi görünüyorsa, silmeden önce sorun. Bir elektrik parçasında bu çoğu zaman bir yüzeysel kaçak bariyeridir ve ürünün onaydan geçmiş olmasının nedenlerinden biri de o nervürün uzunluğudur."
     },
-
     "wall": {
       "index": "02",
       "kicker": "İlk sayı",
@@ -67,10 +113,22 @@
       "colRatio": "L : t",
       "colVerdict": "Kalıbın bu konuda ne yapması gerektiği",
       "ladder": [
-        { "ratio": "40:1", "verdict": "Her makinede dolar. Yolluk girişi konumu bir kısıt değil, bir kolaylıktır." },
-        { "ratio": "100:1", "verdict": "İnce cidar başlar. Havalandırma derinliği, ilk eksik dolumdan sonraki bir düzeltme değil, teknik resimdeki bir ölçü hâline gelir." },
-        { "ratio": "150:1", "verdict": "Elektrik gövdelerinde yaygın. Parçayı dolum hızı ve enjeksiyon basıncı taşır; göz ve maça çeliğinin de bunun altında sehim yapmayacak kadar rijit olması gerekir." },
-        { "ratio": "220:1", "verdict": "Ya ikinci bir giriş ya da daha kalın bir nominal cidar. İkisinden biri hareket etmek zorundadır ve buna çelikten önce karar vermek daha ucuzdur." }
+        {
+          "ratio": "40:1",
+          "verdict": "Her makinede dolar. Yolluk girişi konumu bir kısıt değil, bir kolaylıktır."
+        },
+        {
+          "ratio": "100:1",
+          "verdict": "İnce cidar başlar. Havalandırma derinliği, ilk eksik dolumdan sonraki bir düzeltme değil, teknik resimdeki bir ölçü hâline gelir."
+        },
+        {
+          "ratio": "150:1",
+          "verdict": "Elektrik gövdelerinde yaygın. Parçayı dolum hızı ve enjeksiyon basıncı taşır; göz ve maça çeliğinin de bunun altında sehim yapmayacak kadar rijit olması gerekir."
+        },
+        {
+          "ratio": "220:1",
+          "verdict": "Ya ikinci bir giriş ya da daha kalın bir nominal cidar. İkisinden biri hareket etmek zorundadır ve buna çelikten önce karar vermek daha ucuzdur."
+        }
       ],
       "marks": {
         "gate": "Giriş",
@@ -81,7 +139,6 @@
       "note": "1 mm eşiği, 100:1 ile 150:1 bantları ve arkalarındaki enjeksiyon basınçları yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir.",
       "close": "Nominal cidarı ve gerçek akış uzunluğunu her şeyden önce belirleriz; çünkü sonraki her karar — giriş sayısı, yolluk tipi, göz sayısı, çelik — o tek oranın akış aşağısındadır."
     },
-
     "weld": {
       "index": "03",
       "kicker": "Yapısal karar",
@@ -116,7 +173,6 @@
       "close": "Sonuncusu kimsenin hatırlamadığıdır. Hapsolan hava tam olarak akışların buluştuğu koordinatta sıkışır ve yanar; yani bir birleşme izi ile bir yanık izi, iki kez görülen aynı olaydır. Tasarım aşamasında açılan bir havalandırmanın bedeli yoktur; çalışan bir kalıba açılan havalandırmanın bedeli bir haftadır.",
       "caption": "Aynı gövde, aynı maça pimleri, aynı parça resmi. Yalnızca giriş yer değiştirdi."
     },
-
     "insert": {
       "index": "04",
       "kicker": "Kalıptaki metal",
@@ -130,40 +186,115 @@
         "eject": "İtme"
       },
       "stages": [
-        { "label": "Yerleştirme", "note": "Pres parçası yerine konur ve konumlandırılır. Kendi toleransı da onunla birlikte gelir ve bu sapmayı kalıp emer — operatör değil, süreç sonundaki bir ayıklama tezgâhı hiç değil." },
-        { "label": "Kapanma", "note": "Kapama yüzeyinde çelik metalle buluşur. Fazla sıkı terminali ezer. Fazla gevşek kontak yüzeyine çapak taşır; oradaki çapak kozmetik olarak okunmaz — kontağı keser." },
-        { "label": "Atım", "note": "Ergiyik tırtıla, kanala ya da geçmeye kenetlenir. Bu üçünden biri yoksa bağlantı kalıplamadan sağ çıkar ve ısıl çevrimden sonra tutuşunu kaybeder; bu bir hat reddi değil, bir saha arızasıdır." },
-        { "label": "İtme", "note": "Parça, içindeki metalle birlikte çıkar. İnsertin üzerindeki çöküntü ile yuvadaki çapak; bir kez kurulduktan sonra bir daha hiç kaldırılmayan ayıklama işini yaratan iki kusurdur." }
+        {
+          "label": "Yerleştirme",
+          "note": "Pres parçası yerine konur ve konumlandırılır. Kendi toleransı da onunla birlikte gelir ve bu sapmayı kalıp emer — operatör değil, süreç sonundaki bir ayıklama tezgâhı hiç değil."
+        },
+        {
+          "label": "Kapanma",
+          "note": "Kapama yüzeyinde çelik metalle buluşur. Fazla sıkı terminali ezer. Fazla gevşek kontak yüzeyine çapak taşır; oradaki çapak kozmetik olarak okunmaz — kontağı keser."
+        },
+        {
+          "label": "Atım",
+          "note": "Ergiyik tırtıla, kanala ya da geçmeye kenetlenir. Bu üçünden biri yoksa bağlantı kalıplamadan sağ çıkar ve ısıl çevrimden sonra tutuşunu kaybeder; bu bir hat reddi değil, bir saha arızasıdır."
+        },
+        {
+          "label": "İtme",
+          "note": "Parça, içindeki metalle birlikte çıkar. İnsertin üzerindeki çöküntü ile yuvadaki çapak; bir kez kurulduktan sonra bir daha hiç kaldırılmayan ayıklama işini yaratan iki kusurdur."
+        }
       ],
       "close": "Yüksek adette terminaller sürekli şerit hâlinde gelir ve ergiyiğin bacaklar arasından sızmasını önlemek için karkasa bir baraj çubuğu tasarlanır, sonra da zımbayla kesilir. Duruş süresi yerleştirmede saklıdır: yerine tam oturmamış bir insert, kalıbı metalin üzerine kapatır ve bunun bedeli, kalıbın o ay ürettiği bütün parçalardan yüksektir.",
       "boundaryNote": "Burada anlatılan şerit, bandolier ve baraj çubuğu uygulaması, sektörün yüksek adetli terminal üzeri kalıplamayı yürütme biçimidir. Metalinizin hangi formda geldiğini söyleyin, kapamayı ona göre tasarlayalım.",
       "caption": "Tek kalıp, dört durum, baştan sona aynı terminal."
     },
-
     "resin": {
       "index": "05",
       "kicker": "Kalite kalıbı değiştirir",
       "heading": "Teknik veri sayfasındaki bir özellik, size bir çelik kararı olarak gelir.",
       "body": "Onay dosyanızın etrafında yazıldığı compound, ana polimer değildir. Alev geciktirici ve yüksek CTI'lı kaliteler farklı akar, farklı çeker ve genellikle çeliğe daha serttir. İlk işlemeye çekme karar verir. O işlemenin ne kadar süre doğru kalacağına ise aşındırma karar verir.",
-      "columns": ["Kalite", "Çekme, yayımlanmış bant", "Nerede görülür", "Kalıba etkisi"],
+      "columns": [
+        "Kalite",
+        "Çekme, yayımlanmış bant",
+        "Nerede görülür",
+        "Kalıba etkisi"
+      ],
       "rows": [
-        { "grade": "PA66", "shrink": "%1,0 – 2,0", "use": "Anahtar parçaları, klipsler, mekanizma parçaları", "consequence": "Higroskopiktir. Parça kullanımda nem alır ve hareket eder. Kurutma, bir kalıp gerekliliğinden önce bir proses gerekliliğidir." },
-        { "grade": "PA66 GF30", "shrink": "%0,3 – 0,9, yöne göre", "use": "Konnektör gövdeleri, tırnaklar, yük taşıyan gövdeler", "consequence": "Anizotropik çekme, çok kutuplu bir gövdede görünür bozulma olarak okunmadan çok önce adım hatası olarak okunur. Bir ölçünün belirsiz olduğu her yerde çelik fazlası bırakılarak işlenir." },
-        { "grade": "PA6 GF", "shrink": "%0,4 – 1,0, yöne göre", "use": "Klemensler, taşıyıcılar, genel gövdeler", "consequence": "PA66'dan daha çok nem alır. Kalıp sonrası şartlandırma ölçünün bir parçasıdır; dolayısıyla ölçüm planının parçanın ne zaman ölçüldüğünü de söylemesi gerekir." },
-        { "grade": "PBT GF15–GF30", "shrink": "%0,3 – 0,8, yöne göre", "use": "Konnektörler, bobin karkasları, kontak tutucuları", "consequence": "Keskin donar. İnce kesitler yeterince sıcak bir kalıp ve yeterince hızlı bir dolum ister; bu da soğutma tasarımı ile proses penceresini iki ayrı konu değil, tek bir konu yapar." },
-        { "grade": "PBT", "shrink": "%1,5 – 2,2", "use": "Yalıtım ara parçaları, yapısal olmayan gövdeler", "consequence": "Nem alımı düşük ve ölçüleri kararlı; ancak çekmesi dolgulu kalitelerden çok daha yüksek. Dolgulu kalitenin payını buraya taşımayın." },
-        { "grade": "PC", "shrink": "%0,5 – 0,7", "use": "Kapaklar, muhafazalar, ön yüzeyler, lensler", "consequence": "Ergiyik viskozitesi yüksektir; ince cidarlar basınç ister. Çentiğe duyarlıdır: çelikte bırakılmış keskin bir iç köşe, sahada bir çatlağa dönüşür." },
-        { "grade": "PC/ABS", "shrink": "%0,4 – 0,7", "use": "Darbe ve yüzey taşıyan muhafazalar ve ön yüzeyler", "consequence": "PC'den daha iyi akar. Görünen yüzey; yolluk girişi ve itici düzenini başka her düşünceden önce belirler." },
-        { "grade": "ABS", "shrink": "%0,4 – 0,7", "use": "Çerçeveler, iç gövdeler, yük taşımayan parçalar", "consequence": "Doldurması ve dokulandırması kolay. Bir onay dosyasının etrafında yazıldığı kalite nadiren budur; yerine koymadan önce kontrol edin." },
-        { "grade": "LCP", "shrink": "%0,1 – 0,6, güçlü biçimde yöne bağlı", "use": "İnce adımlı ve reflow lehimlemeye maruz konnektörler", "consequence": "Viskozitesi çok düşüktür: başka her hammaddenin tuttuğu aralıklardan çapak yapar. Kapama toleransı fiilen imalatın tamamıdır." },
-        { "grade": "PPS / PPA GF", "shrink": "%0,2 – 0,9, yöne göre", "use": "Yüksek sıcaklığa ve reflow lehimlemeye maruz parçalar", "consequence": "Aşındırıcı ve sıcak. Doğrudan göz bloğuna işlenmiş bir giriş değil; sertleştirilmiş, değiştirilebilir giriş insertleri." },
-        { "grade": "PMMA", "shrink": "%0,2 – 0,8", "use": "Işık kılavuzları ve gösterge lensleri", "consequence": "Parlatma ve doku bölgeleri optik şartnamenin kendisidir; kalıp resmine, işlevsel yüzey olarak kaydedilerek girer." },
-        { "grade": "Halojensiz FR / yüksek CTI", "shrink": "Kaliteye özgü", "use": "Alev ya da yüzeysel kaçak gerekliliği taşıyan her parça", "consequence": "Kendi akışı ve çekmesi olan ayrı bir compound; çeliğe çoğu zaman daha agresif ve sık sık kırma malzeme sınırlı. PA ve PBT içindeki yayımlanmış halojensiz fosfinat sistemleri 600 V'a kadar CTI değerlerine ulaşıyor." }
+        {
+          "grade": "PA66",
+          "shrink": "%1,0 – 2,0",
+          "use": "Anahtar parçaları, klipsler, mekanizma parçaları",
+          "consequence": "Higroskopiktir. Parça kullanımda nem alır ve hareket eder. Kurutma, bir kalıp gerekliliğinden önce bir proses gerekliliğidir."
+        },
+        {
+          "grade": "PA66 GF30",
+          "shrink": "%0,3 – 0,9, yöne göre",
+          "use": "Konnektör gövdeleri, tırnaklar, yük taşıyan gövdeler",
+          "consequence": "Anizotropik çekme, çok kutuplu bir gövdede görünür bozulma olarak okunmadan çok önce adım hatası olarak okunur. Bir ölçünün belirsiz olduğu her yerde çelik fazlası bırakılarak işlenir."
+        },
+        {
+          "grade": "PA6 GF",
+          "shrink": "%0,4 – 1,0, yöne göre",
+          "use": "Klemensler, taşıyıcılar, genel gövdeler",
+          "consequence": "PA66'dan daha çok nem alır. Kalıp sonrası şartlandırma ölçünün bir parçasıdır; dolayısıyla ölçüm planının parçanın ne zaman ölçüldüğünü de söylemesi gerekir."
+        },
+        {
+          "grade": "PBT GF15–GF30",
+          "shrink": "%0,3 – 0,8, yöne göre",
+          "use": "Konnektörler, bobin karkasları, kontak tutucuları",
+          "consequence": "Keskin donar. İnce kesitler yeterince sıcak bir kalıp ve yeterince hızlı bir dolum ister; bu da soğutma tasarımı ile proses penceresini iki ayrı konu değil, tek bir konu yapar."
+        },
+        {
+          "grade": "PBT",
+          "shrink": "%1,5 – 2,2",
+          "use": "Yalıtım ara parçaları, yapısal olmayan gövdeler",
+          "consequence": "Nem alımı düşük ve ölçüleri kararlı; ancak çekmesi dolgulu kalitelerden çok daha yüksek. Dolgulu kalitenin payını buraya taşımayın."
+        },
+        {
+          "grade": "PC",
+          "shrink": "%0,5 – 0,7",
+          "use": "Kapaklar, muhafazalar, ön yüzeyler, lensler",
+          "consequence": "Ergiyik viskozitesi yüksektir; ince cidarlar basınç ister. Çentiğe duyarlıdır: çelikte bırakılmış keskin bir iç köşe, sahada bir çatlağa dönüşür."
+        },
+        {
+          "grade": "PC/ABS",
+          "shrink": "%0,4 – 0,7",
+          "use": "Darbe ve yüzey taşıyan muhafazalar ve ön yüzeyler",
+          "consequence": "PC'den daha iyi akar. Görünen yüzey; yolluk girişi ve itici düzenini başka her düşünceden önce belirler."
+        },
+        {
+          "grade": "ABS",
+          "shrink": "%0,4 – 0,7",
+          "use": "Çerçeveler, iç gövdeler, yük taşımayan parçalar",
+          "consequence": "Doldurması ve dokulandırması kolay. Bir onay dosyasının etrafında yazıldığı kalite nadiren budur; yerine koymadan önce kontrol edin."
+        },
+        {
+          "grade": "LCP",
+          "shrink": "%0,1 – 0,6, güçlü biçimde yöne bağlı",
+          "use": "İnce adımlı ve reflow lehimlemeye maruz konnektörler",
+          "consequence": "Viskozitesi çok düşüktür: başka her hammaddenin tuttuğu aralıklardan çapak yapar. Kapama toleransı fiilen imalatın tamamıdır."
+        },
+        {
+          "grade": "PPS / PPA GF",
+          "shrink": "%0,2 – 0,9, yöne göre",
+          "use": "Yüksek sıcaklığa ve reflow lehimlemeye maruz parçalar",
+          "consequence": "Aşındırıcı ve sıcak. Doğrudan göz bloğuna işlenmiş bir giriş değil; sertleştirilmiş, değiştirilebilir giriş insertleri."
+        },
+        {
+          "grade": "PMMA",
+          "shrink": "%0,2 – 0,8",
+          "use": "Işık kılavuzları ve gösterge lensleri",
+          "consequence": "Parlatma ve doku bölgeleri optik şartnamenin kendisidir; kalıp resmine, işlevsel yüzey olarak kaydedilerek girer."
+        },
+        {
+          "grade": "Halojensiz FR / yüksek CTI",
+          "shrink": "Kaliteye özgü",
+          "use": "Alev ya da yüzeysel kaçak gerekliliği taşıyan her parça",
+          "consequence": "Kendi akışı ve çekmesi olan ayrı bir compound; çeliğe çoğu zaman daha agresif ve sık sık kırma malzeme sınırlı. PA ve PBT içindeki yayımlanmış halojensiz fosfinat sistemleri 600 V'a kadar CTI değerlerine ulaşıyor."
+        }
       ],
       "note": "Çekme bantları ve 600 V CTI değeri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir. Çeliğe işlenen şey, kalitenin kendi veri sayfasının yöne göre uygulanmış hâlidir.",
       "close": "Bize polimer ailesini değil, tam kalite adını söyleyin. Aynı cam elyaf oranına ve farklı alev geciktirici sistemine sahip iki PBT compoundu aynı şekilde çekmez ve bu fark, bir ayarla yeni bir insert arasındaki farktır."
     },
-
     "pitch": {
       "index": "06",
       "kicker": "Her şeyi belirleyen ölçü",
@@ -178,25 +309,60 @@
         "c": "C"
       },
       "callouts": [
-        { "mark": "A", "name": "Tutma omzu", "note": "Kontak tırnağının altına oturduğu kalıplanmış kademe. Terminal tutuşu müşteri tarafından IEC 60512 test ailesine göre doğrulanır ve ölçtüğü şey bu detaydır." },
-        { "mark": "B", "name": "Kontak tırnağı", "note": "Preslenmiş, yaylı ve kalıbın koyduğu yerde kalması gereken bir yüzeye karşı çalışıyor. Omuz eksik ya da yumuşak kalıplanırsa terminal titreşim altında geri kaçar." },
-        { "mark": "C", "name": "Maça pimi", "note": "Derin, ince, her yüzeyinden ısı yüklü ve dolum basıncı altında sehim yapıyor. Kaçan bir pim, ölçüsü kabul edilebilir görünen ama kötü monte olan parçalar üretir." }
+        {
+          "mark": "A",
+          "name": "Tutma omzu",
+          "note": "Kontak tırnağının altına oturduğu kalıplanmış kademe. Terminal tutuşu müşteri tarafından IEC 60512 test ailesine göre doğrulanır ve ölçtüğü şey bu detaydır."
+        },
+        {
+          "mark": "B",
+          "name": "Kontak tırnağı",
+          "note": "Preslenmiş, yaylı ve kalıbın koyduğu yerde kalması gereken bir yüzeye karşı çalışıyor. Omuz eksik ya da yumuşak kalıplanırsa terminal titreşim altında geri kaçar."
+        },
+        {
+          "mark": "C",
+          "name": "Maça pimi",
+          "note": "Derin, ince, her yüzeyinden ısı yüklü ve dolum basıncı altında sehim yapıyor. Kaçan bir pim, ölçüsü kabul edilebilir görünen ama kötü monte olan parçalar üretir."
+        }
       ],
       "steelHeading": "Ölçüyü tutan şey sertliktir. Önce giden şey yolluk girişidir.",
       "steelBody": "Cam elyaf Mohs 5 ile 7 arasındadır ve dolum sırasında elyaflar göz cidarı boyunca yönlenirken çeliği aşındırır. Önce yolluk girişleri ve yüksek kayma bölgeleri erir; bu yüzden bunların göz yüzeyi değil, değişim aralığı belli sarf malzemeleri olması gerekir.",
-      "steelColumns": ["Çelik", "Çalışma sertliği", "Kullanım yeri"],
+      "steelColumns": [
+        "Çelik",
+        "Çalışma sertliği",
+        "Kullanım yeri"
+      ],
       "steelRows": [
-        { "grade": "P-20", "hardness": "28 – 30 HRC", "use": "Aşındırıcı olmayan, dolgusuz hammaddeler." },
-        { "grade": "P-20, yüksek sert", "hardness": "38 – 40 HRC", "use": "Daha uzun koşu beklenen dolgusuz işler." },
-        { "grade": "H-13", "hardness": "44 – 48 HRC", "use": "Aşındırıcı cam elyaflı kalitelerde varsayılan göz cevabı; bilinçli olarak 50 HRC'nin çok üzerine çıkarılmaz." },
-        { "grade": "S-7", "hardness": "yaklaşık 56 HRC'ye kadar", "use": "Dar toleranslı, uzun süre çalışan parçalar. 50 – 52 HRC gözlere karşı 54 – 56 HRC sürgüler ve lifterlar." },
-        { "grade": "Paslanmaz", "hardness": "50 – 52 HRC", "use": "Korozif hammaddeler." }
+        {
+          "grade": "P-20",
+          "hardness": "28 – 30 HRC",
+          "use": "Aşındırıcı olmayan, dolgusuz hammaddeler."
+        },
+        {
+          "grade": "P-20, yüksek sert",
+          "hardness": "38 – 40 HRC",
+          "use": "Daha uzun koşu beklenen dolgusuz işler."
+        },
+        {
+          "grade": "H-13",
+          "hardness": "44 – 48 HRC",
+          "use": "Aşındırıcı cam elyaflı kalitelerde varsayılan göz cevabı; bilinçli olarak 50 HRC'nin çok üzerine çıkarılmaz."
+        },
+        {
+          "grade": "S-7",
+          "hardness": "yaklaşık 56 HRC'ye kadar",
+          "use": "Dar toleranslı, uzun süre çalışan parçalar. 50 – 52 HRC gözlere karşı 54 – 56 HRC sürgüler ve lifterlar."
+        },
+        {
+          "grade": "Paslanmaz",
+          "hardness": "50 – 52 HRC",
+          "use": "Korozif hammaddeler."
+        }
       ],
       "steelNote": "Çelik kaliteleri ve sertlik bantları yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir. On puanlık bir sertlik farkının düşük sertlikte çalıştırılması, kayan yüzeylerde sıvanmayı davet eder.",
       "close": "Yedek göz ve maça insertleri ile yazılı bir durum kaydı kalıbın parçasıdır, sonradan satın alınacak bir ayrıntı değil. Bir hattı durduran parçada, bir yolluk girişinin aşınmasıyla müşterinin bunu fark etmesi arasındaki süre riskin tamamıdır.",
       "caption": "Yüksek büyütmede iki komşu kutup ve yanlarında büyütülmüş omuz detayı."
     },
-
     "source": {
       "index": "07",
       "kicker": "Tedarik",
@@ -204,18 +370,38 @@
       "body": "Tek kalıp, tek enjeksiyoncu, tek ülke, ikiz yok, yedek insert yok — üstelik birkaç sent değerindeki, bin katı değerinde bir hattı durduran bir parçada. Bütün mesele yedeği sıkıntıdan önce kurmaktır ve bu iş, bir talaşlı imalat çalışmasından önce bir dokümantasyon çalışmasıdır.",
       "railLabel": "Aşamalar",
       "stages": [
-        { "title": "Önce NDA, sonra parça", "note": "Bir numune, bir STEP dosyası, toleranslı bir 2B teknik resim ya da ölçeklendirebileceğimiz tek bir ölçüsü olan bir fotoğraf. Tercih ederseniz ayrıntılı paylaşımdan önce NDA imzalanabilir." },
-        { "title": "Veri paketi", "note": "Güncel CAD, toleranslı 2B, malzeme kalitesi, bilinen proses parametreleri, kabul kriterleri. Elde ne varsa — ve daha da işe yararı, ne yoksa." },
-        { "title": "DFM incelemesi", "note": "Cidar, akış uzunluğu, yolluk girişi ve birleşme izi konumu, çıkma açısı, itme, kaliteye göre çekme payı. Herhangi bir çelik teklif edilmeden önce." },
-        { "title": "Kalıp rotası", "note": "Sizin verinizden yapılmış bir ikiz ya da sizin parça resminize göre yapılmış yeni bir kalıp. Hem teknik resimlerin hem de orijinal kalıpçının kaybolduğu yerde, numuneden tersine mühendislik." },
-        { "title": "İmalat", "note": "CATIA ve SolidWorks'te kalıp tasarımı ve imalatı. Parçanın gerektirdiği ölçüde çok gözlü, sıcak ya da soğuk yolluklu, insertli, sürgülü, lifterlı, diş sökücü ve katlanabilir maçalı." },
-        { "title": "T1 ve kalifikasyon", "note": "İlk atımlar, idealleştirilmiş bir resme göre değil, hâlihazırda kabul ettiğiniz parçalara göre ölçülür. Düzeltmeler burada ucuz, buradan sonraki her yerde pahalıdır." },
-        { "title": "Planlı tedarik", "note": "Aynı kutuda, aynı şartnameyle parça üretimi ve sürekli tedarik; dünya geneline sevkiyat ve kalıba karşılık tutulan yedekler ile değişim parçalarıyla birlikte." }
+        {
+          "title": "Önce NDA, sonra parça",
+          "note": "Bir numune, bir STEP dosyası, toleranslı bir 2B teknik resim ya da ölçeklendirebileceğimiz tek bir ölçüsü olan bir fotoğraf. Tercih ederseniz ayrıntılı paylaşımdan önce NDA imzalanabilir."
+        },
+        {
+          "title": "Veri paketi",
+          "note": "Güncel CAD, toleranslı 2B, malzeme kalitesi, bilinen proses parametreleri, kabul kriterleri. Elde ne varsa — ve daha da işe yararı, ne yoksa."
+        },
+        {
+          "title": "DFM incelemesi",
+          "note": "Cidar, akış uzunluğu, yolluk girişi ve birleşme izi konumu, çıkma açısı, itme, kaliteye göre çekme payı. Herhangi bir çelik teklif edilmeden önce."
+        },
+        {
+          "title": "Kalıp rotası",
+          "note": "Sizin verinizden yapılmış bir ikiz ya da sizin parça resminize göre yapılmış yeni bir kalıp. Hem teknik resimlerin hem de orijinal kalıpçının kaybolduğu yerde, numuneden tersine mühendislik."
+        },
+        {
+          "title": "İmalat",
+          "note": "CATIA ve SolidWorks'te kalıp tasarımı ve imalatı. Parçanın gerektirdiği ölçüde çok gözlü, sıcak ya da soğuk yolluklu, insertli, sürgülü, lifterlı, diş sökücü ve katlanabilir maçalı."
+        },
+        {
+          "title": "T1 ve kalifikasyon",
+          "note": "İlk atımlar, idealleştirilmiş bir resme göre değil, hâlihazırda kabul ettiğiniz parçalara göre ölçülür. Düzeltmeler burada ucuz, buradan sonraki her yerde pahalıdır."
+        },
+        {
+          "title": "Planlı tedarik",
+          "note": "Aynı kutuda, aynı şartnameyle parça üretimi ve sürekli tedarik; dünya geneline sevkiyat ve kalıba karşılık tutulan yedekler ile değişim parçalarıyla birlikte."
+        }
       ],
       "close": "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir; size hangisinin teklif edildiğini açıkça söyleriz.",
       "warranty": "Kalıp garanti şartları her proje ve mutabık kalınan kalıp şartnamesi bazında tanımlanır. 48 iş saati içinde ilk teknik dönüş."
     },
-
     "boundary": {
       "index": "08",
       "kicker": "Kapsam",
@@ -245,7 +431,6 @@
       ],
       "close": "O liste küçük punto bir çekince değildir. Çalışma ilişkisinin biçimidir: elektriksel performans ve onay sizin, geometri, çelik ve tedarik bizim. İkisinin buluştuğu yerde — yüzeysel kaçak bariyeri olan bir nervür, takma yükü altındaki bir birleşme izi, eşleşme yüzeyindeki bir yolluk girişi izi — konuyu teklif verdikten sonra değil, vermeden önce açarız."
     },
-
     "panels": {
       "heading": "Daha ayrıntılı",
       "items": [
@@ -291,7 +476,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Parçayı gönderin. Kalıbın ne yapması gerektiğini söyleyelim.",
     "body": "Bir STEP dosyası, bir 2B teknik resim ya da poşette bir numune. Geometri, kalıp rotası, göz sayısı ve tedarik seçenekleri üzerinden dönüş yaparız. 48 iş saati içinde ilk proje dönüşü. Talep hâlinde, siz hiçbir şey göndermeden önce NDA.",

@@ -4,7 +4,7 @@
     "description": "Damla sulama ve tarım için kalıp tasarımı, imalatı ve parça tedariki: damlatıcılar, bağlantı parçaları, konnektörler, mikro yağmurlayıcılar, vana ve filtre parçaları. 2006'dan beri."
   },
   "name": "Tarım ve Sulama",
-  "tile": "Yüz milyonlarla üretilen damlatıcılar ve bağlantı parçaları. Birkaç onda bir milimetre genişliğinde bir labirent; çok yüksek göz sayısında, her atımda, her sezon tekrarlanıyor.",
+  "tile": "Çok yüksek göz sayısında damlatıcı ve bağlantı parçaları — birkaç onda bir milimetrelik labirent.",
   "tileParts": "Damlatıcılar · Bağlantı parçaları · Yüksek göz sayısı",
   "hero": {
     "kicker": "Tarım ve Sulama",
@@ -19,7 +19,6 @@
       "İkiz ve ikinci kaynak kalıpları"
     ]
   },
-
   "blocks": {
     "scale": {
       "index": "01",
@@ -71,7 +70,6 @@
       "sourceNote": "Bu listedeki ölçüler ticari damlatıcıların yayımlanmış ölçümleridir. Sektörün ürününü tarif ederler, Metal Form'un toleranslarını değil.",
       "close": "Bu dizide hiçbir şey süs değildir. Son kare, bir sezonda birkaç yüz milyon kez tekrarlanan karedir ve çelikte var olan tek karedir."
     },
-
     "repeat": {
       "index": "02",
       "kicker": "Adet",
@@ -87,7 +85,6 @@
       "sourceNote": "Hat hızları yayımlanmış ekstrüzyon hattı şartnameleridir; burada sektöre ilişkin bir olgu olarak belirtilmiştir.",
       "close": "Bu bölümün geri kalanının muayene değil çelik üzerine olmasının bütün nedeni budur. Parça; kötü bir kalıptan muayeneyle kurtulmak için fazla küçük, fazla ucuz ve fazla çoktur."
     },
-
     "labyrinth": {
       "index": "03",
       "kicker": "Akış yolu",
@@ -186,7 +183,6 @@
         "note": "Ayarsız bir damlatıcı için nominal test basıncı, üretici aksini belirtmedikçe 100 kPa'dır. Üstel de test basıncı da damlatıcılara ilişkin ürün standardı ISO 9261'den alınmış tanımlardır. Ürünü tarif ederler. Metal Form'un sahip olduğu bir belge değildirler."
       }
     },
-
     "cavities": {
       "index": "04",
       "kicker": "Aritmetik",
@@ -214,7 +210,6 @@
       },
       "sourceNote": "Bu bölümdeki göz sayısı ekonomisi, çevrim değerleri ve soğuk başlangıç süreleri yayımlanmış sektör yazılarıdır, Metal Form ölçümleri değildir."
     },
-
     "season": {
       "index": "05",
       "kicker": "Sezon",
@@ -248,7 +243,6 @@
         "readiness": "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir; size hangisinin teklif edildiğini açıkça söyleriz."
       }
     },
-
     "material": {
       "index": "06",
       "kicker": "Malzemeler",
@@ -256,7 +250,12 @@
       "body": "Malzeme şartnamesini herhangi bir enjeksiyoncudan önce ürün standardı belirler. Malzemelerin gübrelere ve tarımsal sulamada yaygın kullanılan kimyasallara dayanması ve 60 °C'ye kadar sıcaklıktaki suya uygun olması gerekir. Işığa maruz kalan parçalar opak ve UV bozunmasına karşı korunmuş olmalı, mümkün olduğunca yosun ve bakteri üremesini desteklememelidir.",
       "body2": "Burada renk kozmetik olduğu kadar işlevseldir de. Standart, nominal debinin damlatıcının bir parçasının rengiyle gösterilmesine izin verir; bu da masterbatch tutarlılığını bir yüzey işi olmaktan çıkarıp bir şartname hâline getirir.",
       "tableLabel": "Malzeme tablosu",
-      "columns": ["Malzeme", "Kullanım yeri", "Belirleyen", "Maruziyet ve ömür"],
+      "columns": [
+        "Malzeme",
+        "Kullanım yeri",
+        "Belirleyen",
+        "Maruziyet ve ömür"
+      ],
       "rows": [
         {
           "name": "PP",
@@ -296,7 +295,6 @@
       "boundary": "Malzeme compound etmiyor, stabilize etmiyor, renk eşleştirmiyor ve ömür testi yapmıyoruz; bir ömür de belgelendirmiyoruz. Belirlediğiniz malzemeyi kalıplarız ve bir cidar kesitinin, bir yolluk girişi konumunun ya da bir birleşme izinin seçtiğiniz stabilizatör paketiyle nerede çatışacağını size söyleriz.",
       "sourceNote": "Burada anılan standart gereklilikleri ve stabilizatör oranları yayımlanmış sektör uygulamalarıdır. Metal Form bunların hiçbirine karşı belgeye sahip değildir."
     },
-
     "boundary": {
       "index": "07",
       "kicker": "Kapsam",
@@ -339,7 +337,6 @@
       },
       "close": "Su kimyası, filtrasyon, biyolojik kirlenme ve kök girişi birer kalıp sorunu değildir; öyleymiş gibi size kalıp satmayız. Bir kalıbın karar verdiği şeye bir kalıp bir kez karar verir — çelikte, ilk atımdan önce."
     },
-
     "work": {
       "index": "08",
       "kicker": "Çalışma biçimi",
@@ -375,7 +372,6 @@
       ],
       "close": "Bu sektörde ürün, damlatıcı geometrisinin kendisidir ve rutin olarak kopyalanır. Biz de öyle ele alırız: önce gizlilik, teknik resimler saklanır ve ikinci kalıp bizim değil, sizin teknik resimlerinize göre yapılır."
     },
-
     "panels": {
       "heading": "Daha ayrıntılı",
       "items": [
@@ -422,7 +418,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Parçayı gönderin. Ya da teknik resmi. Ya da bir metre bandı.",
     "body": "Bir kalıp rotası, bir göz ve insert stratejisi ve ikisinin de gerekçesiyle dönüş yaparız. 48 iş saati içinde ilk teknik dönüş. Talep hâlinde NDA. Proje bazında kararlaştırılan şartlarla kalıp garantisi. Dünya geneline sevkiyat.",

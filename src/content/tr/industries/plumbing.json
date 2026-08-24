@@ -4,7 +4,7 @@
     "description": "Plastik boru ek parçaları için kalıp ve mühendislik: dirsekler, teler, manşonlar, dişli adaptörler, vana gövdeleri ve atık su parçaları. Katlanabilir ve diş sökücü maçalar, yüksek gözlü ve modüler aile kalıpları, ikinci kaynak kalıpları. 2006'dan beri."
   },
   "name": "Tesisat ve İnşaat",
-  "tile": "Tek bir kalıp mantığının kırk ürün koduna hizmet etmek zorunda olduğu ek parça aileleri. Dişler, sızdırmazlık geometrisi, diş sökücü ve katlanabilir maçalar ve ürün ailesi boyunca ölçüsel tutarlılık.",
+  "tile": "Tek bir kalıp mantığının kırk ürün koduna hizmet etmesi gereken ek parça aileleri.",
   "tileParts": "Ek parçalar · Dişler · Aileler",
   "hero": {
     "kicker": "Tesisat ve İnşaat",
@@ -19,7 +19,6 @@
       "Ürün kodu kuyruğu için modüler şaseler"
     ]
   },
-
   "blocks": {
     "plate": {
       "label": "Ürün ailesi paftası · tek ızgara, tek ölçek",
@@ -27,21 +26,80 @@
       "keyPolymer": "Polimer",
       "keyMetal": "Metal insert",
       "cells": [
-        { "id": "el90", "name": "Dirsek 90°", "code": "EL-90", "range": "20–110" },
-        { "id": "el45", "name": "Dirsek 45°", "code": "EL-45", "range": "20–110" },
-        { "id": "teeEq", "name": "Eş çaplı te", "code": "TE-EQ", "range": "20–110" },
-        { "id": "teeRd", "name": "Redüksiyonlu te", "code": "TE-RD", "range": "25–110" },
-        { "id": "socket", "name": "Manşon", "code": "SO-EQ", "range": "20–110" },
-        { "id": "socketRd", "name": "Redüksiyonlu manşon", "code": "SO-RD", "range": "25–90" },
-        { "id": "cap", "name": "Kör tapa", "code": "CP", "range": "20–110" },
-        { "id": "adM", "name": "Erkek dişli adaptör", "code": "AD-M", "range": "20–75" },
-        { "id": "adF", "name": "Dişi dişli adaptör", "code": "AD-F", "range": "20–75" },
-        { "id": "union", "name": "Rakor", "code": "UN", "range": "25–63" },
-        { "id": "wall", "name": "Duvar dirseği", "code": "WP", "range": "20–32" },
-        { "id": "valve", "name": "Vana gövdesi", "code": "VB", "range": "25–63" }
+        {
+          "id": "el90",
+          "name": "Dirsek 90°",
+          "code": "EL-90",
+          "range": "20–110"
+        },
+        {
+          "id": "el45",
+          "name": "Dirsek 45°",
+          "code": "EL-45",
+          "range": "20–110"
+        },
+        {
+          "id": "teeEq",
+          "name": "Eş çaplı te",
+          "code": "TE-EQ",
+          "range": "20–110"
+        },
+        {
+          "id": "teeRd",
+          "name": "Redüksiyonlu te",
+          "code": "TE-RD",
+          "range": "25–110"
+        },
+        {
+          "id": "socket",
+          "name": "Manşon",
+          "code": "SO-EQ",
+          "range": "20–110"
+        },
+        {
+          "id": "socketRd",
+          "name": "Redüksiyonlu manşon",
+          "code": "SO-RD",
+          "range": "25–90"
+        },
+        {
+          "id": "cap",
+          "name": "Kör tapa",
+          "code": "CP",
+          "range": "20–110"
+        },
+        {
+          "id": "adM",
+          "name": "Erkek dişli adaptör",
+          "code": "AD-M",
+          "range": "20–75"
+        },
+        {
+          "id": "adF",
+          "name": "Dişi dişli adaptör",
+          "code": "AD-F",
+          "range": "20–75"
+        },
+        {
+          "id": "union",
+          "name": "Rakor",
+          "code": "UN",
+          "range": "25–63"
+        },
+        {
+          "id": "wall",
+          "name": "Duvar dirseği",
+          "code": "WP",
+          "range": "20–32"
+        },
+        {
+          "id": "valve",
+          "name": "Vana gövdesi",
+          "code": "VB",
+          "range": "25–63"
+        }
       ]
     },
-
     "range": {
       "index": "01",
       "kicker": "Ürün ailesinin kendisi üründür",
@@ -72,20 +130,150 @@
       },
       "matrixLabel": "Ek parça tipi × nominal çap, mm",
       "typeColumn": "Ek parça tipi",
-      "diameters": ["20", "25", "32", "40", "50", "63", "75", "90", "110"],
+      "diameters": [
+        "20",
+        "25",
+        "32",
+        "40",
+        "50",
+        "63",
+        "75",
+        "90",
+        "110"
+      ],
       "matrix": [
-        [1, 1, 1, 2, 2, 2, 2, 2, 2],
-        [1, 1, 1, 2, 2, 2, 2, 2, 2],
-        [1, 1, 1, 2, 2, 2, 2, 2, 2],
-        [0, 2, 2, 2, 2, 2, 2, 2, 2],
-        [1, 1, 1, 2, 2, 2, 2, 2, 2],
-        [0, 2, 2, 2, 2, 2, 2, 2, 0],
-        [2, 2, 2, 2, 2, 2, 2, 2, 2],
-        [2, 2, 2, 2, 2, 2, 2, 0, 0],
-        [2, 2, 2, 2, 2, 2, 2, 0, 0],
-        [0, 2, 2, 2, 2, 2, 0, 0, 0],
-        [2, 2, 2, 0, 0, 0, 0, 0, 0],
-        [0, 2, 2, 2, 2, 2, 0, 0, 0]
+        [
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          2,
+          2,
+          2,
+          0,
+          0,
+          0
+        ]
       ],
       "legend": {
         "dedicated": "Adanmış kalıp",
@@ -93,10 +281,22 @@
         "absent": "Ailede yok"
       },
       "frames": [
-        { "name": "Şase A", "span": "20–32" },
-        { "name": "Şase B", "span": "40–63" },
-        { "name": "Şase C", "span": "75–90" },
-        { "name": "Şase D", "span": "110" }
+        {
+          "name": "Şase A",
+          "span": "20–32"
+        },
+        {
+          "name": "Şase B",
+          "span": "40–63"
+        },
+        {
+          "name": "Şase C",
+          "span": "75–90"
+        },
+        {
+          "name": "Şase D",
+          "span": "110"
+        }
       ],
       "framesLabel": "Parça hacmine göre şase ölçüleri",
       "notes": [
@@ -115,7 +315,6 @@
       ],
       "close": "Göz eklemeden önce düzeni dengeleyin. Eşit dolmayan 32 gözlü bir kalıp, sekiz reddi olan 24 gözlü bir kalıptır ve bedeli 32 gözlüymüş gibi ödenir."
     },
-
     "mechanism": {
       "index": "02",
       "kicker": "Geçmeyi dışarı çıkarmak",
@@ -128,10 +327,22 @@
           "summary": "Segmentleri radyal olarak içeri çekilen ve hiçbir şeyi döndürmeden 360°'lik bir iç detayı serbest bırakan, yarıklı çelik bir kovan.",
           "figureLabel": "Katlanabilir maça · plan kesiti ve yan kesit",
           "legend": [
-            { "n": "1", "text": "Yarıklı segmentler. Standart tasarım on iki tane kullanır; kırlangıç kuyruklu tasarımlar tek tek onarılabilen altı büyük segment kullanır." },
-            { "n": "2", "text": "Merkez pim. Önce o geri çekilir; segmentler sonra onun üzerine içeri katlanır." },
-            { "n": "3", "text": "Katlanma stroku. Kanalı, conta yuvasını ya da kısmi dişi serbest bırakan budur." },
-            { "n": "4", "text": "Maça flanşı ile merkez pim flanşı arasındaki kafa boşluğu. Tam tutulur; aksi hâlde mekanizma doğru katlanmaz." }
+            {
+              "n": "1",
+              "text": "Yarıklı segmentler. Standart tasarım on iki tane kullanır; kırlangıç kuyruklu tasarımlar tek tek onarılabilen altı büyük segment kullanır."
+            },
+            {
+              "n": "2",
+              "text": "Merkez pim. Önce o geri çekilir; segmentler sonra onun üzerine içeri katlanır."
+            },
+            {
+              "n": "3",
+              "text": "Katlanma stroku. Kanalı, conta yuvasını ya da kısmi dişi serbest bırakan budur."
+            },
+            {
+              "n": "4",
+              "text": "Maça flanşı ile merkez pim flanşı arasındaki kafa boşluğu. Tam tutulur; aksi hâlde mekanizma doğru katlanmaz."
+            }
           ]
         },
         {
@@ -140,10 +351,22 @@
           "summary": "Genellikle kremayer-pinyon tahrikli, oluşturduğu kalıplanmış dişten kendini söken döner bir maça.",
           "figureLabel": "Diş sökücü maça · yan kesit",
           "legend": [
-            { "n": "1", "text": "Maça milindeki pinyon." },
-            { "n": "2", "text": "Kremayer. Stroku dönmeyi belirler ve düzendeki her gözün onunla senkron kalması gerekir." },
-            { "n": "3", "text": "Maçadaki diş formu. Tam form; bu mekanizmanın var olma nedeni de budur." },
-            { "n": "4", "text": "Kalıplanmış parça. Maça içinden dönerek çıkarken parçanın dönmeye karşı tutulması gerekir." }
+            {
+              "n": "1",
+              "text": "Maça milindeki pinyon."
+            },
+            {
+              "n": "2",
+              "text": "Kremayer. Stroku dönmeyi belirler ve düzendeki her gözün onunla senkron kalması gerekir."
+            },
+            {
+              "n": "3",
+              "text": "Maçadaki diş formu. Tam form; bu mekanizmanın var olma nedeni de budur."
+            },
+            {
+              "n": "4",
+              "text": "Kalıplanmış parça. Maça içinden dönerek çıkarken parçanın dönmeye karşı tutulması gerekir."
+            }
           ]
         }
       ],
@@ -190,7 +413,6 @@
       },
       "close": "Mekanizmayı sizin geometrinize ve kendi salonunuzun kaldırabileceği bakıma göre belirleriz. Sizin parçanızda kullanmayacağımız bir mekanizma varsa bunu tekliften sonra değil, teklifte söyleriz."
     },
-
     "thread": {
       "index": "03",
       "kicker": "Diş ve sızdırmazlık",
@@ -203,9 +425,18 @@
           "figureLabel": "Konik iç diş · yarım kesit",
           "note": "Delik daralır. Kavrama yanaklarda sıkışır ve sızdırmazlığı dişin kendisi yapar.",
           "legend": [
-            { "n": "1", "text": "Bölüm çizgisindeki koniklik." },
-            { "n": "2", "text": "Yanak sıkı geçmesi. Sızdırmazlık yüzeyi burasıdır." },
-            { "n": "3", "text": "Kalıptaki kapama yanaklara oturur; bu formu hem işlemesi hem bakımı zor kılan da budur." }
+            {
+              "n": "1",
+              "text": "Bölüm çizgisindeki koniklik."
+            },
+            {
+              "n": "2",
+              "text": "Yanak sıkı geçmesi. Sızdırmazlık yüzeyi burasıdır."
+            },
+            {
+              "n": "3",
+              "text": "Kalıptaki kapama yanaklara oturur; bu formu hem işlemesi hem bakımı zor kılan da budur."
+            }
           ]
         },
         {
@@ -214,9 +445,18 @@
           "figureLabel": "Silindirik iç diş · yarım kesit",
           "note": "Delik paralel kalır. Diş yalnızca yük taşır, başka bir şey yapmaz. Sızdırmazlığı bir pul, bir yüzey ya da bir O-ring sağlar.",
           "legend": [
-            { "n": "1", "text": "Paralel diş tepesi çizgisi." },
-            { "n": "2", "text": "Yüzey ya da pul yatağı. Sızdırmazlık dişte değil, burada." },
-            { "n": "3", "text": "Bir montajcı fazla tork uyguladığında çevresel gerilmeyi taşıyan göbek. Buradaki çatlama bir montajcı hatası değil, bir tasarım sonucudur." }
+            {
+              "n": "1",
+              "text": "Paralel diş tepesi çizgisi."
+            },
+            {
+              "n": "2",
+              "text": "Yüzey ya da pul yatağı. Sızdırmazlık dişte değil, burada."
+            },
+            {
+              "n": "3",
+              "text": "Bir montajcı fazla tork uyguladığında çevresel gerilmeyi taşıyan göbek. Buradaki çatlama bir montajcı hatası değil, bir tasarım sonucudur."
+            }
           ]
         },
         {
@@ -225,30 +465,65 @@
           "figureLabel": "Delik içinde O-ring kanalı · kesit",
           "note": "Bir delik içinde 360°'lik bir kanal. Çalışma derinliğinde hiçbir şey bunun üzerinden temiz sıyrılmaz; kalıba katlanabilir maçayı sokan da bu kanaldır.",
           "legend": [
-            { "n": "1", "text": "Kanal genişliği." },
-            { "n": "2", "text": "Kanal derinliği. Sıkışmayı o belirler: az sıkışan terler, çok sıkışan kalıcı deformasyona uğrar." },
-            { "n": "3", "text": "Köşe durumu. Keskin köşeler contayı keser; fazla yumuşak köşeler contanın taşmasına izin verir." },
-            { "n": "4", "text": "Kanal ile karşı delik arasında sıkışan elastomer." }
+            {
+              "n": "1",
+              "text": "Kanal genişliği."
+            },
+            {
+              "n": "2",
+              "text": "Kanal derinliği. Sıkışmayı o belirler: az sıkışan terler, çok sıkışan kalıcı deformasyona uğrar."
+            },
+            {
+              "n": "3",
+              "text": "Köşe durumu. Keskin köşeler contayı keser; fazla yumuşak köşeler contanın taşmasına izin verir."
+            },
+            {
+              "n": "4",
+              "text": "Kanal ile karşı delik arasında sıkışan elastomer."
+            }
           ]
         }
       ],
       "ledgerLabel": "Detay ve onu oluşturan çelik",
-      "ledgerColumns": ["Ek parçadaki detay", "Kalıpta olması gereken"],
+      "ledgerColumns": [
+        "Ek parçadaki detay",
+        "Kalıpta olması gereken"
+      ],
       "ledger": [
-        { "k": "Konik iç diş", "v": "Konikliği üzerine işlenmiş diş sökücü maça. Kapama diş yanaklarına oturur." },
-        { "k": "Silindirik iç diş", "v": "Diş sökücü maça; ya da formun segmentlerin temiz kapamasına izin verdiği yerde katlanabilir maça." },
-        { "k": "Dış diş", "v": "Ayırma yüzeyinde bölünmüş göz; ya da ayrım çizgisine tahammül edilemediği yerde diş sökücü kovan." },
-        { "k": "Delik içinde O-ring kanalı", "v": "Katlanabilir maça. Kanal 360°'lik bir geçmedir ve sıyrılmaz." },
-        { "k": "Geçmeli bağlantı kovan gövdesi", "v": "Conta yuvası için katlanabilir maça, serbest bırakma bileziği detayları için sürgüler ve tutucu halkanın kabul edeceği bir delik yüzeyi." },
-        { "k": "Üzeri kalıplanmış pirinç diş", "v": "İnsert taşıyan kalıp. İnsertin konumlandırılması, tırtıla karşı dönme emniyeti ve insertin kendi yanaklarında kapama." },
-        { "k": "Te ya da kolektörde yan ağız", "v": "Sürgü ya da yan maça. Kalıbın tamamı için ayırma yüzeyini o sabitler." }
+        {
+          "k": "Konik iç diş",
+          "v": "Konikliği üzerine işlenmiş diş sökücü maça. Kapama diş yanaklarına oturur."
+        },
+        {
+          "k": "Silindirik iç diş",
+          "v": "Diş sökücü maça; ya da formun segmentlerin temiz kapamasına izin verdiği yerde katlanabilir maça."
+        },
+        {
+          "k": "Dış diş",
+          "v": "Ayırma yüzeyinde bölünmüş göz; ya da ayrım çizgisine tahammül edilemediği yerde diş sökücü kovan."
+        },
+        {
+          "k": "Delik içinde O-ring kanalı",
+          "v": "Katlanabilir maça. Kanal 360°'lik bir geçmedir ve sıyrılmaz."
+        },
+        {
+          "k": "Geçmeli bağlantı kovan gövdesi",
+          "v": "Conta yuvası için katlanabilir maça, serbest bırakma bileziği detayları için sürgüler ve tutucu halkanın kabul edeceği bir delik yüzeyi."
+        },
+        {
+          "k": "Üzeri kalıplanmış pirinç diş",
+          "v": "İnsert taşıyan kalıp. İnsertin konumlandırılması, tırtıla karşı dönme emniyeti ve insertin kendi yanaklarında kapama."
+        },
+        {
+          "k": "Te ya da kolektörde yan ağız",
+          "v": "Sürgü ya da yan maça. Kalıbın tamamı için ayırma yüzeyini o sabitler."
+        }
       ],
       "insert": {
         "heading": "Polimerin metalle buluştuğu yer",
         "body": "Dişli bir adaptör, plastik bir sistemle metal bir sistem arasındaki arayüzdür ve belgelenmiş iki biçimde çuvallar. Polimer tırtıla hiç kavramadığı için insert çeker ya da boşta döner. Ya da bir montajcı, o cidardaki çevresel gerilmenin taşıyabileceğinden fazla tork uyguladığı için çevresindeki göbek yarılır. İkisi de tasarımda kararlaştırılır: tırtıl kavraması, insertin konumu, insertin çevresindeki cidar ve kalıbın insert üzerinde, dişe çapak taşımayacak kadar temiz kapayıp kapamadığı. İnsert yerleştirme aynı zamanda hücrenin ekonomisini de değiştirir; çünkü artık her atımda kalıba metal koyacak bir insan ya da bir robot gerekir."
       }
     },
-
     "material": {
       "index": "04",
       "kicker": "Kalıba malzeme karar verir",
@@ -313,7 +588,6 @@
       "note": "Beşinde de geçerli tek bir kural var. Veri sayfasındaki çekme bir ölçü değil, bir başlangıç varsayımıdır. İlk göz çelik fazlası bırakılarak işlenir ve gerçek parçalara karşı düzeltilir; çünkü bir ek parça ailesinin kendisiyle anlaşması gerekir ve bir el kitabı değeri bunu vermez.",
       "source": "Bu tablodaki proses değerleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
     },
-
     "agreement": {
       "index": "05",
       "kicker": "Ölçüsel mutabakat",
@@ -323,27 +597,60 @@
         "label": "Manşon deliği, bütün gözler üst üste",
         "note": "Tek kalıp, çok göz, tek nominal delik. Saçılım, bir kalıbın tutabildiği ya da tutamadığı şeydir. Yuvarlaklıktan çıkmış profil, oturmayacak olandır.",
         "legend": [
-          { "n": "1", "text": "Nominal delik." },
-          { "n": "2", "text": "Gözler arası saçılım. Tek numunede görünmez, bir sevkiyat boyunca belirleyicidir." },
-          { "n": "3", "text": "Yuvarlaklıktan çıkmış. Bu parça çap bandının içindedir ve yine de bir bağlantı yapmaz." }
+          {
+            "n": "1",
+            "text": "Nominal delik."
+          },
+          {
+            "n": "2",
+            "text": "Gözler arası saçılım. Tek numunede görünmez, bir sevkiyat boyunca belirleyicidir."
+          },
+          {
+            "n": "3",
+            "text": "Yuvarlaklıktan çıkmış. Bu parça çap bandının içindedir ve yine de bir bağlantı yapmaz."
+          }
         ]
       },
       "figB": {
         "label": "Manşon ve boru ucu · kavrama kesiti",
         "note": "İşlevsel ölçüler kimsenin fotoğrafını çekmediği ölçülerdir: geçme derinliği, o derinlik boyunca sıkı geçme payı ve deliğin bu boyun tamamında yuvarlak olup olmadığı.",
         "legend": [
-          { "n": "1", "text": "Geçme derinliği." },
-          { "n": "2", "text": "Geçme boyunca sıkı geçme payı — bilinçlidir ve solventle yapıştırılan bir manşonun yapıştırılmış bir boşluk değil, çimentolanmış bir bağlantı yapmasının nedenidir." },
-          { "n": "3", "text": "Kaynak ya da yapıştırma bölgesi. Yalnızca iki yüzeyin gerçekten temas ettiği yerde vardır." }
+          {
+            "n": "1",
+            "text": "Geçme derinliği."
+          },
+          {
+            "n": "2",
+            "text": "Geçme boyunca sıkı geçme payı — bilinçlidir ve solventle yapıştırılan bir manşonun yapıştırılmış bir boşluk değil, çimentolanmış bir bağlantı yapmasının nedenidir."
+          },
+          {
+            "n": "3",
+            "text": "Kaynak ya da yapıştırma bölgesi. Yalnızca iki yüzeyin gerçekten temas ettiği yerde vardır."
+          }
         ]
       },
       "toleranceLabel": "Yayımlanmış referans değerler",
       "tolerance": [
-        { "k": "SDR", "v": "dn / en — nominal dış çapın cidar kalınlığına bölümü. Sektörün cidar sınıfı için kısaltması." },
-        { "k": "Yaygın seriler", "v": "SDR 11, SDR 17.6, SDR 26." },
-        { "k": "Çap toleransı, ≤ 40 mm", "v": "Kabaca ± 0,04 mm bandında." },
-        { "k": "Çap toleransı, ≤ 50 mm", "v": "Kabaca ± 0,06 mm bandında." },
-        { "k": "Soket kaynağı aralığı", "v": "PP-R Ø20–63 elle, aparatla Ø125'e kadar. Isıtıcı ayar noktası 260 ± 10 °C olarak yayımlanmıştır." }
+        {
+          "k": "SDR",
+          "v": "dn / en — nominal dış çapın cidar kalınlığına bölümü. Sektörün cidar sınıfı için kısaltması."
+        },
+        {
+          "k": "Yaygın seriler",
+          "v": "SDR 11, SDR 17.6, SDR 26."
+        },
+        {
+          "k": "Çap toleransı, ≤ 40 mm",
+          "v": "Kabaca ± 0,04 mm bandında."
+        },
+        {
+          "k": "Çap toleransı, ≤ 50 mm",
+          "v": "Kabaca ± 0,06 mm bandında."
+        },
+        {
+          "k": "Soket kaynağı aralığı",
+          "v": "PP-R Ø20–63 elle, aparatla Ø125'e kadar. Isıtıcı ayar noktası 260 ± 10 °C olarak yayımlanmıştır."
+        }
       ],
       "source": "Bu değerler PP-R boru sistemleri ve standartları üzerine yayımlanmış malzemeden alıntılanmıştır — DIN 8077, DIN 8078, EN ISO 15874 ve DVS 2207. Burada standartların değerleri olarak anılmaktadır. Bir Metal Form yetkinlik beyanı değildir ve teklif ettiğimiz bir tolerans değildir.",
       "canHeading": "Bir kalıbın karar verebildikleri",
@@ -364,7 +671,6 @@
       ],
       "close": "Ovalliğe prosesten değil, soğutma düzeninden yüklenin. Düzensiz soğutulmuş bir manşon düzensiz çeker ve hiçbir ayar onu yeniden yuvarlak yapmaz."
     },
-
     "economics": {
       "index": "06",
       "kicker": "Bin adet başına maliyet",
@@ -390,22 +696,52 @@
       "workedLabel": "Aritmetiğin biçimi",
       "inputsHeading": "Girdiler",
       "inputs": [
-        { "k": "Yıllık adet, parça", "v": "8.000.000" },
-        { "k": "Göz", "v": "16" },
-        { "k": "Parça ağırlığı, g", "v": "12,0" },
-        { "k": "Çevrim, s", "v": "24" }
+        {
+          "k": "Yıllık adet, parça",
+          "v": "8.000.000"
+        },
+        {
+          "k": "Göz",
+          "v": "16"
+        },
+        {
+          "k": "Parça ağırlığı, g",
+          "v": "12,0"
+        },
+        {
+          "k": "Çevrim, s",
+          "v": "24"
+        }
       ],
       "outputsHeading": "Şu şekilde çıkar",
       "outputs": [
-        { "k": "Yıllık atım", "v": "500.000" },
-        { "k": "Parçalardaki hammadde, yılda ton", "v": "96" },
-        { "k": "Yıllık makine saati", "v": "3.333" }
+        {
+          "k": "Yıllık atım",
+          "v": "500.000"
+        },
+        {
+          "k": "Parçalardaki hammadde, yılda ton",
+          "v": "96"
+        },
+        {
+          "k": "Yıllık makine saati",
+          "v": "3.333"
+        }
       ],
       "deltasHeading": "Ve her girdide tek bir adımın değeri",
       "deltas": [
-        { "k": "Parçadan bir gram", "v": "Yılda 8 ton hammadde" },
-        { "k": "Çevrimden iki saniye", "v": "Yılda 278 makine saati" },
-        { "k": "16 gözden 24 göze", "v": "Yılda 1.111 makine saati" }
+        {
+          "k": "Parçadan bir gram",
+          "v": "Yılda 8 ton hammadde"
+        },
+        {
+          "k": "Çevrimden iki saniye",
+          "v": "Yılda 278 makine saati"
+        },
+        {
+          "k": "16 gözden 24 göze",
+          "v": "Yılda 1.111 makine saati"
+        }
       ],
       "disclaimer": "Yukarıdaki rakamlar okunabilir olsun diye seçilmiş, keyfî rakamlardır. Aritmetiğin biçimidir; bir fiyat teklifi değildir, bir kıyaslama değildir ve sizin parçanızda iddia edilen bir sonuç değildir. Sizin rakamlarınız sizindir ve önemli olan yalnızca onlardır.",
       "lostHeading": "Paranın gerçekte kaybolduğu yer",
@@ -425,7 +761,6 @@
       ],
       "close": "Parçayı ve ölçü tablosunu gönderin. Sizin geometrinizde bu üç sayının şu anda ne olduğunu ve hangisinin, katalogunuzun bağlı olduğu bir ölçüye dokunmadan hareket ettiğini söyleriz."
     },
-
     "boundary": {
       "index": "07",
       "kicker": "Kapsam",
@@ -454,7 +789,6 @@
       ],
       "statement": "Kalıbı biz yaparız ve parçayı üretebiliriz. Bitmiş ek parçanın bir basınç sınıfı ya da içme suyu uygulaması için onaylanması size, malzemenize ve belgelendirme kuruluşunuza aittir. Hiçbir ürün belgemiz yoktur, ek parça testi yapmayız ve sizin adınıza bir standart iddia etmeyiz. Bu sayfada anılan her yayımlanmış değer, geldiği kaynağa ya da standarda aittir ve bir yetkinlik olarak değil, bağlam olarak alıntılanmıştır."
     },
-
     "start": {
       "index": "08",
       "kicker": "Süreklilik",
@@ -527,7 +861,6 @@
       ],
       "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
     },
-
     "panels": {
       "heading": "Daha ayrıntılı",
       "items": [
@@ -575,7 +908,6 @@
       ]
     }
   },
-
   "cta": {
     "headline": "Parçayı gönderin. Kalıbın ne olması gerektiğini söyleyelim.",
     "body": "Bir ek parça, bir ölçü tablosu ya da eski bir kalıbın hâlâ ürettiği bir şeyin numunesi. Mekanizma, göz sayısı, yolluk rotası ve parça ağırlığıyla — ve neyi yapmayacağımızla — dönüş yaparız. 48 iş saati içinde ilk proje dönüşü. Tercih ederseniz önce NDA.",
