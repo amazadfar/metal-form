@@ -35,3 +35,5 @@ npm-debug.log*
 # chapter was deliberately not allowed to say.
 dist/
 .vercel/
+.vercel
+.env*

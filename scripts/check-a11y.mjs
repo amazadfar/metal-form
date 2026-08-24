@@ -35,18 +35,21 @@ const ROUTES = [
 
 const browser = await chromium.launch();
 // axe requires a real context rather than the default page-level one.
-const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+// Reduced motion rather than an injected stylesheet: the site's own
+// prefers-reduced-motion rules already collapse transitions to 1ms and force
+// every reveal target visible, so axe measures resolved colours instead of
+// mid-fade ones. Injecting a <style> tag would be blocked by the site's CSP —
+// correctly, which is the point of having one.
+const context = await browser.newContext({
+  viewport: { width: 1280, height: 900 },
+  reducedMotion: 'reduce',
+});
 let failures = 0;
 
 for (const [route, label] of ROUTES) {
   const page = await context.newPage();
   await page.goto(BASE + route, { waitUntil: 'networkidle' });
-  // Reveal everything so content hidden by animation is audited too, and kill
-  // transitions first — otherwise axe measures colours mid-fade and reports
-  // contrast failures that only exist for 800 ms.
-  await page.addStyleTag({
-    content: '*,*::before,*::after{transition:none!important;animation:none!important}',
-  });
+  // Belt and braces: force any remaining reveal target open before auditing.
   await page.evaluate(() => {
     document.querySelectorAll('[data-reveal]').forEach((el) => el.setAttribute('data-reveal', 'in'));
   });
