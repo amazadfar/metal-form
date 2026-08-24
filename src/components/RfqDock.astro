@@ -53,9 +53,26 @@ const c = getCommon(locale);
    * own CTA arrive, and the bar is only docked while the first has happened
    * and the second has not.
    */
+/**
+ * The element a docked control should wait for. On the homepage the opening is
+ * `main`'s first child; on an industry chapter the whole page is wrapped in an
+ * `<article>` and the opening is the `<header>` inside it. Taking the first
+ * child in both cases meant watching an element that never leaves the viewport,
+ * so nothing ever docked.
+ */
+function findHero(main: HTMLElement): Element | null {
+  return (
+    main.querySelector(':scope > header') ??
+    main.querySelector('header') ??
+    main.querySelector(':scope > section') ??
+    main.firstElementChild
+  );
+}
+
   const dock = document.querySelector<HTMLElement>('[data-rfq-dock]');
-  if (dock) {
-    const hero = document.querySelector('#hero, [data-hero], main > :first-child');
+  const main = document.querySelector('main');
+  if (dock && main) {
+    const hero = document.querySelector('#hero') ?? findHero(main as HTMLElement);
     const cta = document.querySelector('#contact');
 
     let pastHero = false;

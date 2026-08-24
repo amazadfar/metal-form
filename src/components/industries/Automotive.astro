@@ -1388,7 +1388,7 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: minmax(16rem, 21rem);
-    overflow-x: auto; min-inline-size: 0; max-inline-size: 100%;
+    overflow-x: auto; contain: paint; min-inline-size: 0; max-inline-size: 100%;
     scroll-snap-type: x mandatory;
     scroll-padding-inline-start: var(--gutter);
     padding-inline: var(--gutter);
@@ -1640,7 +1640,7 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
 
   .av-chain {
     margin-block-start: var(--sp-6);
-    overflow-x: auto; min-inline-size: 0; max-inline-size: 100%;
+    overflow-x: auto; contain: paint; min-inline-size: 0; max-inline-size: 100%;
     padding-inline: var(--gutter);
     padding-block: var(--sp-4);
     border-block: var(--hair-strong) solid var(--av-frame);
@@ -1841,7 +1841,7 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
   /* ── 07 Revision block ────────────────────────────────────────────────── */
   .av-rev { padding-block: clamp(4rem, 9vw, 8rem); overflow: clip; }
   .av-rev__inner { position: relative; }
-  .av-rev__scroll { margin-block-start: clamp(2rem, 5vw, 3.5rem); overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
+  .av-rev__scroll { margin-block-start: clamp(2rem, 5vw, 3.5rem); overflow-x: auto; contain: paint; min-inline-size: 0; max-inline-size: 100%; }
   .av-rev__table {
     inline-size: 100%;
     min-inline-size: 44rem;

@@ -18,6 +18,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import CtaBlock from '../components/CtaBlock.astro';
 import IndustryFooterNav from '../components/IndustryFooterNav.astro';
 import RfqDock from '../components/RfqDock.astro';
+import ChapterIndex from '../components/ChapterIndex.astro';
 
 import { type Locale } from '../i18n/locales.ts';
 import { INDUSTRIES, paletteVars, type IndustryKey } from '../config/industries.ts';
@@ -59,6 +60,8 @@ const schemas = [
       its light state over the top of it, and the header has to overlay the
       composition rather than sit on a strip of page above it. */}
   <SiteHeader locale={locale} current={industryKey} overDark={industry.art.ground !== 'light'} />
+
+  <ChapterIndex label={content.name} />
 
   <main id="main">
     <slot />

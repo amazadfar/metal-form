@@ -1,0 +1,13 @@
+import { chromium } from 'playwright';
+import { mkdir } from 'node:fs/promises';
+import { join } from 'node:path';
+const [route, w, h, name] = process.argv.slice(2);
+const OUT = process.env.SHOT_DIR; await mkdir(OUT,{recursive:true});
+const b=await chromium.launch({args:['--force-color-profile=srgb']});
+const p=await(await b.newContext({viewport:{width:+w,height:+h},colorScheme:'light'})).newPage();
+await p.goto('http://localhost:4321'+route,{waitUntil:'networkidle'});
+await p.evaluate(()=>document.fonts.ready);
+await p.click('[data-nav-open]');
+await p.waitForTimeout(800);
+await p.screenshot({path:join(OUT,name+'.png')});
+await b.close();

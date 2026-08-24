@@ -1,0 +1,20 @@
+import { chromium } from 'playwright';
+const b=await chromium.launch();
+const p=await(await b.newContext({viewport:{width:390,height:800},colorScheme:'light'})).newPage();
+await p.goto('http://localhost:4321/fa/industries/plumbing/',{waitUntil:'networkidle'});
+await p.evaluate(()=>document.fonts.ready);
+await p.waitForTimeout(400);
+console.log(await p.evaluate(()=>{
+  const de=document.documentElement;
+  const el=document.querySelector('.plm-mx__scroll');
+  const cs=getComputedStyle(el);
+  const out=[`base=${de.scrollWidth} overflowX=${cs.overflowX} overflowY=${cs.overflowY} contain=${cs.contain} display=${cs.display}`];
+  el.style.overflowY='hidden'; out.push('after overflow-y:hidden → '+de.scrollWidth); el.style.overflowY='';
+  el.style.contain='paint'; out.push('after contain:paint → '+de.scrollWidth); el.style.contain='';
+  const t=el.querySelector('table'); const mw=getComputedStyle(t).minWidth;
+  t.style.minWidth='0'; out.push(`after table min-width:0 (was ${mw}) → `+de.scrollWidth); t.style.minWidth='';
+  el.style.width='100%'; out.push('after width:100% → '+de.scrollWidth); el.style.width='';
+  el.style.display='flow-root'; out.push('after display:flow-root → '+de.scrollWidth); el.style.display='';
+  return out.join('\n');
+}));
+await b.close();

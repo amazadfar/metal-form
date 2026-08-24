@@ -1,0 +1,15 @@
+import { chromium } from 'playwright';
+import { mkdir } from 'node:fs/promises';
+import { join } from 'node:path';
+const [route, y, w, h, name] = process.argv.slice(2);
+const OUT = process.env.SHOT_DIR;
+await mkdir(OUT, { recursive: true });
+const b = await chromium.launch({ args: ['--force-color-profile=srgb'] });
+const p = await (await b.newContext({ viewport: { width: +w, height: +h }, colorScheme: 'light' })).newPage();
+await p.goto('http://localhost:4321' + route, { waitUntil: 'networkidle' });
+await p.evaluate(() => document.fonts.ready);
+await p.evaluate((yy) => window.scrollTo(0, yy), +y);
+await p.waitForTimeout(900);
+console.log('scrollX=' + await p.evaluate(() => window.scrollX));
+await p.screenshot({ path: join(OUT, name + '.png') });
+await b.close();

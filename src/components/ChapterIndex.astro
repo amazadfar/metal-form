@@ -1,0 +1,291 @@
+---
+/**
+ * CHAPTER INDEX
+ *
+ * An industry chapter runs to twenty or thirty screens on a phone. That depth
+ * is the point — it is the second level of the site, and a buyer who opens it
+ * wants the engineering — but there is a difference between a deep page and an
+ * unnavigable one, and thirty screens of scrolling to reach the section about
+ * tooling is the second thing.
+ *
+ * So the chapter gets a contents rail: the sections it actually contains, as a
+ * row of jump targets that sticks under the header once the opening has passed
+ * and marks whichever section the reader is in.
+ *
+ * ── Built at runtime, deliberately ──────────────────────────────────────────
+ * Each of the thirteen chapters owns its own sections; the layout cannot know
+ * them at build time without every chapter declaring them twice and the two
+ * lists drifting apart the first time somebody renames a heading. The rail
+ * reads the document instead — `<section id>` plus its own heading — so it is
+ * correct by construction and stays correct.
+ *
+ * That makes it progressive enhancement, which is the right trade here: it is
+ * navigation over content that is already on the page and already reachable by
+ * scrolling. Without the script the rail simply is not there, and nothing is
+ * lost. It carries no strings of its own for the same reason — every label is
+ * a heading the chapter already renders in the reader's language.
+ */
+interface Props {
+  /** Accessible name for the rail. The chapter's own name, localised. */
+  label: string;
+}
+const { label } = Astro.props;
+---
+
+<nav class="cidx" data-chapter-index aria-label={label} hidden>
+  <div class="cidx__inner shell--wide">
+    {/* The scroller is a wrapper, not the list itself: the runtime pass that
+        makes scroll regions keyboard-reachable puts `role="region"` on the
+        scrolling element, and doing that to an `<ol>` replaces its list role
+        and orphans every `<li>` inside it. */}
+    <div class="cidx__scroll scroller">
+      <ol class="cidx__list" data-chapter-index-list></ol>
+    </div>
+  </div>
+</nav>
+
+<script>
+  /**
+   * Populate from the document, then track the reading position with the same
+   * hysteresis the steppers use — a contents rail that flickers between two
+   * entries as you scroll past a boundary is worse than no rail at all.
+   */
+/**
+ * The element a docked control should wait for. On the homepage the opening is
+ * `main`'s first child; on an industry chapter the whole page is wrapped in an
+ * `<article>` and the opening is the `<header>` inside it. Taking the first
+ * child in both cases meant watching an element that never leaves the viewport,
+ * so nothing ever docked.
+ */
+function findHero(main: HTMLElement): Element | null {
+  return (
+    main.querySelector(':scope > header') ??
+    main.querySelector('header') ??
+    main.querySelector(':scope > section') ??
+    main.firstElementChild
+  );
+}
+
+  const rail = document.querySelector<HTMLElement>('[data-chapter-index]');
+  const list = document.querySelector<HTMLOListElement>('[data-chapter-index-list]');
+  const main = document.querySelector('main');
+
+  if (rail && list && main) {
+    /**
+     * The label is the section's eyebrow, not its headline. A chapter's `h2` is
+     * a full sentence — "A tapered thread seals on its flanks. A parallel
+     * thread needs a gland." — and nine of those turn a 44px rail into a
+     * paragraph. The eyebrow is what the chapter already uses to name the
+     * section in two or three words, in the reader's own language.
+     */
+    const labelOf = (section: HTMLElement): string | null => {
+      const eyebrow = section.querySelector('.eyebrow, .t-label');
+      const raw = eyebrow?.textContent?.trim();
+      if (raw) {
+        // Eyebrows often read "03 · Thread and seal". The rail numbers itself.
+        const stripped = raw.replace(/^\s*[0-9]{1,2}\s*[·•∙\-–—/]\s*/, '').trim();
+        if (stripped.length > 1 && stripped.length <= 40) return stripped;
+      }
+      const heading = section.querySelector('h2')?.textContent?.trim();
+      if (!heading) return null;
+      // Last resort: the first clause of the headline.
+      const clause = heading.split(/[.,;:—]/)[0].trim();
+      return clause.length > 1 ? clause : heading;
+    };
+
+    const sections = Array.from(main.querySelectorAll<HTMLElement>('section[id]'))
+      .map((section) => {
+        const text = labelOf(section);
+        return text ? { section, text } : null;
+      })
+      .filter((s): s is { section: HTMLElement; text: string } => s !== null);
+
+    // Below about four entries a rail is chrome, not navigation.
+    if (sections.length >= 4) {
+      const links: HTMLAnchorElement[] = sections.map(({ section, text }, i) => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.className = 'cidx__link';
+        a.href = `#${section.id}`;
+        a.dataset.idx = String(i);
+
+        const n = document.createElement('span');
+        n.className = 'cidx__n t-mono';
+        n.textContent = String(i + 1).padStart(2, '0');
+
+        const t = document.createElement('span');
+        t.className = 'cidx__t';
+        t.textContent = text;
+
+        a.append(n, t);
+        li.append(a);
+        list.append(li);
+        return a;
+      });
+
+      rail.hidden = false;
+
+      const hero = findHero(main as HTMLElement);
+      const cta = document.querySelector('#contact');
+      let pastHero = !hero;
+      let atCta = false;
+      const syncDock = () => { rail.dataset.rail = pastHero && !atCta ? 'in' : 'out'; };
+
+      if (hero) {
+        new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; syncDock(); },
+          { threshold: 0, rootMargin: '-140px 0px 0px 0px' }).observe(hero);
+      }
+      if (cta) {
+        new IntersectionObserver(([e]) => { atCta = e.isIntersecting; syncDock(); },
+          { threshold: 0 }).observe(cta);
+      }
+      syncDock();
+
+      /* Same shape as the steppers: a tall reading window, a clear margin
+         before the active entry changes, and a dwell so a fast scroll lands
+         somewhere rather than strobing through everything. */
+      let current = -1;
+      let changedAt = 0;
+      let ticking = false;
+
+      const setCurrent = (i: number, now: number) => {
+        if (current === i) return;
+        current = i;
+        changedAt = now;
+        links.forEach((a, k) => {
+          const on = k === i;
+          a.dataset.on = String(on);
+          if (on) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+        // Keep the active entry in view without dragging the page with it.
+        const a = links[i];
+        if (a && list.scrollWidth > list.clientWidth) {
+          const target = a.offsetLeft - list.clientWidth / 2 + a.offsetWidth / 2;
+          list.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+        }
+      };
+
+      const update = () => {
+        ticking = false;
+        const now = performance.now();
+        const vh = window.innerHeight;
+        const top = vh * 0.16;
+        const bottom = vh * 0.8;
+
+        let bestIndex = -1;
+        let bestScore = 0;
+        let currentScore = 0;
+
+        sections.forEach(({ section }, i) => {
+          const r = section.getBoundingClientRect();
+          const score = Math.max(0, Math.min(r.bottom, bottom) - Math.max(r.top, top));
+          if (i === current) currentScore = score;
+          if (score > bestScore) { bestScore = score; bestIndex = i; }
+        });
+
+        if (bestIndex < 0) return;
+        if (current < 0) { setCurrent(bestIndex, now); return; }
+        if (bestIndex === current) return;
+        if (currentScore === 0) { setCurrent(bestIndex, now); return; }
+        if (now - changedAt < 260) return;
+        if (bestScore > currentScore * 1.35) setCurrent(bestIndex, now);
+      };
+
+      const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
+    }
+  }
+</script>
+
+<style>
+  /* Fixed rather than sticky. A sticky rail sits in the flow, and on the
+     chapters that open on steel or on a tint the site header is pulled up over
+     the composition with a negative margin — a 44px element between them would
+     take that overlay apart. Fixed also means the rail costs no layout at all
+     until the script decides there is a chapter worth indexing. */
+  .cidx {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-start: 4.25rem;
+    z-index: calc(var(--z-nav) - 1);
+    background: color-mix(in oklab, var(--surface) 92%, transparent);
+    backdrop-filter: saturate(180%) blur(14px);
+    border-block-end: var(--rule);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      transform var(--dur-3) var(--ease-out),
+      opacity var(--dur-2) var(--ease-out);
+  }
+  .cidx[data-rail='in'] { transform: none; opacity: 1; pointer-events: auto; }
+  @media (prefers-reduced-motion: reduce) { .cidx { transition: none; } }
+
+  /* Everything below is created by the script, so it never receives the
+     `data-astro-cid-…` attribute Astro adds to elements in the template — and a
+     scoped rule would not match it. `:global` is correct here rather than a
+     workaround; the class names are unique to this component. */
+  .cidx__scroll { inline-size: 100%; }
+  .cidx :global(.cidx__list) {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    list-style: none;
+    /* One line, always. A rail that wraps is a menu. */
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+  .cidx :global(.cidx__list) > li { flex: none; }
+
+  .cidx :global(.cidx__link) {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.7rem 0.95rem;
+    white-space: nowrap;
+    font-size: var(--step--1);
+    color: var(--ink-muted);
+    position: relative;
+    transition: color var(--dur-2) var(--ease-out);
+  }
+  .cidx :global(.cidx__link)::after {
+    content: '';
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0.95rem;
+    block-size: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: var(--underline-origin, left);
+    transition: transform var(--dur-3) var(--ease-out);
+  }
+  :global([dir='rtl']) .cidx :global(.cidx__link)::after { --underline-origin: right; }
+  .cidx :global(.cidx__link):hover { color: var(--ink); }
+  .cidx :global(.cidx__link[data-on='true']) { color: var(--ink); }
+  .cidx :global(.cidx__link[data-on='true'])::after { transform: scaleX(1); }
+
+  .cidx :global(.cidx__n) {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    color: var(--accent-deep);
+  }
+  .cidx :global(.cidx__t) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-inline-size: 22ch;
+  }
+
+  /* On a phone the rail is the only practical way into a thirty-screen page,
+     so it gets a real touch target and scrolls inside its own box. */
+  @media (max-width: 720px) {
+    .cidx :global(.cidx__link) { padding: 0.85rem 0.8rem; min-block-size: 44px; align-items: center; }
+    .cidx :global(.cidx__t) { max-inline-size: 16ch; }
+  }
+</style>

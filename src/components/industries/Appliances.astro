@@ -1143,7 +1143,7 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
     margin-inline: auto;
     margin-block-end: var(--sp-5);
   }
-  .app-flow__scroll { overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; padding-inline: var(--gutter); }
+  .app-flow__scroll { overflow-x: auto; contain: paint; min-inline-size: 0; max-inline-size: 100%; padding-inline: var(--gutter); }
   .app-flow__fig svg { inline-size: 100%; min-inline-size: 44rem; block-size: auto; }
   .app-flow__fig .figure-note {
     inline-size: min(100% - var(--gutter) * 2, var(--shell-wide));

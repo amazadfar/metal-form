@@ -334,9 +334,19 @@ function initScrollRegions() {
       return el.scrollWidth > el.clientWidth + 4;
     });
 
+  /**
+   * `role="region"` REPLACES whatever role the element already had. On a
+   * generic container that is exactly what is wanted; on an `<ol>`, a `<ul>`
+   * or a `<table>` it destroys the semantics a screen reader needs — an
+   * ordered list whose role has been overwritten leaves every `<li>` in it
+   * orphaned. Those elements still get the tab stop and the accessible name;
+   * they keep their own role.
+   */
+  const GENERIC = new Set(['DIV', 'SECTION', 'FIGURE', 'ASIDE', 'ARTICLE', 'P', 'SPAN']);
+
   for (const el of candidates) {
     el.tabIndex = 0;
-    el.setAttribute('role', 'region');
+    if (GENERIC.has(el.tagName)) el.setAttribute('role', 'region');
     if (!el.getAttribute('aria-label') && !el.getAttribute('aria-labelledby')) {
       const heading = el.closest('section')?.querySelector('h2, h3');
       const caption = el.querySelector('caption, .t-label');

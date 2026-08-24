@@ -1249,7 +1249,7 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
 
   .cos-ladder { margin-block-start: clamp(1.5rem, 3vw, 2.5rem); }
   .cos-ladder__cap { display: block; margin-block-end: var(--sp-4); }
-  .cos-ladder__scroll { overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; padding-block-end: var(--sp-2); }
+  .cos-ladder__scroll { overflow-x: auto; contain: paint; min-inline-size: 0; max-inline-size: 100%; padding-block-end: var(--sp-2); }
   .cos-ladder__row {
     display: grid;
     grid-auto-flow: column;
@@ -1273,7 +1273,20 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
   .cos-rung__scale { font-size: var(--step--2); color: var(--ink-muted); white-space: nowrap; }
   .cos-rung:hover { background: var(--accent-wash); }
   .cos-rung[aria-selected='true'] { background: var(--accent-wash); }
-  .cos-rung[aria-selected='true'] .cos-rung__name { color: var(--accent-deep); }
+  /* The mark carries the selection, not the text colour. `--accent-deep` is
+     remapped to the lightened inverse on a dark band, and light accent text on
+     a lightened accent wash comes out at 3.85:1. The accent marks; the ink
+     sets type. */
+  .cos-rung[aria-selected='true'] .cos-rung__name { color: var(--ink); }
+  .cos-rung[aria-selected='true'] { position: relative; }
+  .cos-rung[aria-selected='true']::after {
+    content: '';
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline: 0;
+    block-size: 2px;
+    background: var(--accent);
+  }
   .cos-rung[aria-selected='true'] .cos-line { stroke-width: 2; }
   .cos-ladder__note {
     margin-block-start: var(--sp-5);

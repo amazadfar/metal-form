@@ -96,15 +96,33 @@ for (const width of WIDTHS) {
         return out.slice(0, 6);
       }, SLACK);
 
-      // Does the document actually scroll, or is it only clipped?
-      const scrolls = await page.evaluate(() => {
-        window.scrollTo(600, 0);
-        const x = window.scrollX;
-        window.scrollTo(0, 0);
-        return x > 0;
+      /**
+       * The document's own width, which is a different question from whether
+       * any element sticks out.
+       *
+       * A wide table inside a scroll container can still expand the html box
+       * past the viewport. `body { overflow-x: clip }` then hides the symptom —
+       * the page will not scroll, `window.scrollX` stays 0, and in a
+       * left-to-right locale nothing looks wrong at all. In a right-to-left
+       * locale the layout origin is the RIGHT edge of that wider box, so every
+       * line starts 200px off-screen and the page looks broken. That is the
+       * defect this catches, and nothing else on the site would have.
+       */
+      const doc = await page.evaluate(() => {
+        const de = document.documentElement;
+        return { scrollW: de.scrollWidth, clientW: de.clientWidth };
       });
+      if (doc.scrollW > doc.clientW + SLACK) {
+        findings.push({
+          route,
+          width,
+          where: 'the document itself',
+          past: doc.scrollW - doc.clientW,
+          scrolls: true,
+        });
+      }
 
-      hits.forEach((h) => findings.push({ route, width, ...h, scrolls }));
+      hits.forEach((h) => findings.push({ route, width, ...h, scrolls: false }));
     } catch (err) {
       findings.push({ route, width, where: 'page', past: 0, scrolls: false, err: String(err).slice(0, 80) });
     }
@@ -115,7 +133,7 @@ for (const width of WIDTHS) {
 
 await browser.close();
 
-console.log(`\n  ${routes.length} routes × ${WIDTHS.join('px, ')}px checked for horizontal overflow.`);
+console.log(`\n  ${routes.length} routes × ${WIDTHS.join('px, ')}px checked — element overflow and document width.`);
 if (findings.length) {
   console.log(`\n  OVERFLOW (${findings.length})`);
   const byRoute = new Map();
@@ -125,7 +143,7 @@ if (findings.length) {
     byRoute.get(k).push(f);
   }
   for (const [k, list] of byRoute) {
-    console.log(`\n    ${k}${list[0].scrolls ? '  — THE PAGE SCROLLS SIDEWAYS' : ''}`);
+    console.log(`\n    ${k}${list.some((f) => f.scrolls) ? '  — THE DOCUMENT IS WIDER THAN THE VIEWPORT' : ''}`);
     list.forEach((f) => console.log(`      ${f.where.padEnd(40)} ${f.past}px past the edge${f.err ? '  ' + f.err : ''}`));
   }
   console.log('');

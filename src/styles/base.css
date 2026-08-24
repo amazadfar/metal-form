@@ -376,6 +376,14 @@ html.js [data-reveal='in'] { opacity: 1; transform: none; }
   overflow-y: hidden;
   min-inline-size: 0;
   max-inline-size: 100%;
+  /* `overflow-x: auto` alone is not enough. A wide table inside one still
+     expands the DOCUMENT's scroll area — the page does not scroll, because the
+     body clips, but the html box becomes wider than the viewport. In a
+     left-to-right page that is invisible. In a right-to-left one the layout
+     origin is the right edge of that wider box, so the whole page renders
+     shifted and the first 200px of every line is off-screen.
+     `contain: paint` stops the descendant overflow propagating outward. */
+  contain: paint;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-inline: contain;

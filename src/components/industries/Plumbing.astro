@@ -1341,7 +1341,7 @@ const unscrewing = mechs[1] ?? {};
   }
 
   .plm-mx__cap { display: block; margin-block: var(--sp-7) var(--sp-4); }
-  .plm-mx__scroll { overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
+  .plm-mx__scroll { overflow-x: auto; contain: paint; min-inline-size: 0; max-inline-size: 100%; }
   .plm-mx { inline-size: 100%; min-inline-size: 40rem; border-collapse: collapse; }
   .plm-mx th, .plm-mx td { text-align: start; }
   .plm-mx thead th {
@@ -1467,7 +1467,7 @@ const unscrewing = mechs[1] ?? {};
   }
 
   .plm-cmp__cap { display: block; margin-block: clamp(2rem, 4vw, 3rem) var(--sp-4); }
-  .plm-cmp__scroll { overflow-x: auto; min-inline-size: 0; max-inline-size: 100%; }
+  .plm-cmp__scroll { overflow-x: auto; contain: paint; min-inline-size: 0; max-inline-size: 100%; }
   .plm-cmp { inline-size: 100%; min-inline-size: 44rem; border-collapse: collapse; font-size: var(--step--1); }
   .plm-cmp--two { min-inline-size: 34rem; }
   .plm-cmp th, .plm-cmp td { text-align: start; vertical-align: top; }
