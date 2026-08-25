@@ -111,7 +111,7 @@
           "need": "The part, the annual volume and the markets it ships to."
         }
       ],
-      "close": "What comes back is the geometry read, the tooling route, the production economics and the supply options. Initial technical response within 2 business days. An NDA can be signed before detailed technical disclosure.",
+      "close": "What comes back is the geometry read, the tooling route, the production economics and the supply options, within 2 business days.",
       "figureNote": "Convergence schematic. Every route ends at the same first deliverable."
     },
     "consolidate": {
@@ -174,7 +174,7 @@
         "One failure mode: a pin that works its way out"
       ],
       "cautionHeading": "Where it stops being free",
-      "caution": "Consolidation is not automatically the right answer. One part means one material, one colour and one wall discipline across geometry that used to be three separate compromises, and it concentrates the whole product into a single tool that has to be corrected as a whole. It is worth doing where the parts share a material and a function. It is worth refusing where they do not, and we will say so.",
+      "caution": "Consolidation is not automatically the right answer. One part means one material, one colour and one wall discipline across geometry that used to be three separate compromises, and it concentrates the whole product into a single tool that has to be corrected as a whole. It is worth doing where the parts share a material and a function, and worth refusing where they do not.",
       "figureNote": "Consolidation schematic. A hinge pin, a separate lid and a body become one moulding with a living hinge."
     },
     "volume": {
@@ -215,7 +215,7 @@
       "flipLabel": "family tool flips",
       "flip": "A family tool puts different cavities — an upper and a lower shell, a body and a lid — in one block, and it is usually chosen for price. It is the right answer while the parts are consumed in a fixed ratio and have comparable wall sections and shot volumes. Put a heavy part and a light part in the same tool and the runner packs one while it starves the other. Past the volume where each part wants its own cavitation, the family tool stops being a saving and becomes a constraint: one cavity needing correction takes every part off the press at once.",
       "modelHeading": "What this rail is and is not",
-      "model": "The rail is drawn to shape, not to price. Your tooling cost per part is your tool divided by the parts you actually make, and nobody can draw that for you on a web page. One published illustrative model runs the same arithmetic three ways — a very low-volume tool over a hundred parts, a machined aluminium tool over five thousand, a steel tool over a hundred thousand — and the tooling term in the piece price falls roughly fivefold across that span. That is a teaching figure from a published industry source. It is not a quotation, and it is not our number.",
+      "model": "The rail is drawn to shape, not to price. Your tooling cost per part is your tool divided by the parts you actually make, and nobody can draw that for you on a web page. One published illustrative model runs the same arithmetic three ways — a very low-volume tool over a hundred parts, a machined aluminium tool over five thousand, a steel tool over a hundred thousand — and the tooling term in the piece price falls roughly fivefold across that span. A teaching figure from a published industry source, not a quotation and not our number.",
       "close": "We run this arithmetic against the volume you will really do this year, then against ten times that, and we say plainly when the bigger tool does not pay back inside the programme's life. Sometimes the right answer is a smaller tool now and a production tool when the order book is real.",
       "figureNote": "Amortisation schematic. Relative shape only — no currency, no quotation."
     },
@@ -383,7 +383,7 @@
           "anchor": true
         }
       ],
-      "anchorNote": "Two of these are published anchors: roughly 1.5 – 2.0° of draft at VDI 24, and at least 4.0° at VDI 36. The rest scale between them, and filled grades want more again. Grades, Ra values and draft angles are approximate by definition — they get confirmed against the standard and against a physical sample before a cavity is textured. They are published industry practice, not Metal Form measurements.",
+      "anchorNote": "Two of these are published anchors: roughly 1.5 – 2.0° of draft at VDI 24, and at least 4.0° at VDI 36. The rest scale between them, and filled grades want more again. All of it is published industry practice rather than Metal Form measurement, and it gets confirmed against the standard and a physical sample before a cavity is textured.",
       "colourHeading": "Colour is a specification, not an approval",
       "colourBody": "The failure here is not one bad part. It is a range that no longer matches itself on a shelf, because the colour was agreed as an opinion rather than as a number.",
       "driftLabel": "The same colour, lot to lot",
@@ -504,7 +504,7 @@
         {
           "mark": "SECOND TOOL",
           "title": "Second source",
-          "note": "One tool, at one supplier, on one site, in one country is the standard consumer-goods single point of failure. We build the second tool, prove it against the parts you sell today, and hold it ready in a different country under NDA. This is readiness, not reserved capacity — capacity is reserved by contract or not at all, and we will say which."
+          "note": "One tool, at one supplier, on one site, in one country is the standard consumer-goods single point of failure. We build the second tool, prove it against the parts you sell today, and hold it ready in a different country under NDA. This is readiness, not reserved capacity — reserving capacity is a separate contract."
         }
       ],
       "close": "Tooling warranty terms are defined per project and per mould specification. Tool ownership, storage and transfer belong in the order, not in a conversation eighteen months later."
@@ -520,7 +520,6 @@
             "Ribs proportioned to the wall and radiused at the root; an over-thick rib is a sink on the opposite face.",
             "Bosses cored and supported by ribs, never solid — a solid boss gives you a sink, a void and a boss that splits under a self-tapping screw.",
             "Radius every wall transition; sharp internal corners concentrate stress and disturb flow.",
-            "The thickest section on the part sets the cooling time, and cooling dominates the cycle.",
             "On deep cores — a cup, a grip, a battery well — the core is the hot spot and needs baffles or bubblers rather than a perimeter circuit."
           ],
           "source": "Figures in this panel are published industry practice, not Metal Form measurements."
@@ -534,8 +533,7 @@
             "Small parts favour sub or tunnel gates, so the runner separates at ejection and there is no manual degating operation to pay for forever.",
             "Hot runner against cold runner is decided on runner-to-part weight ratio and colour-change frequency, not on tooling price.",
             "Family tools work where parts are consumed in a fixed ratio and have comparable wall sections and shot volumes.",
-            "Interchangeable cavity inserts handle SKU, branding and market variants without a second tool.",
-            "Metal Form has tooling experience up to 46 cavities."
+            "Interchangeable cavity inserts handle SKU, branding and market variants without a second tool."
           ],
           "source": "Cavitation bands and runner economics quoted here are published industry practice."
         },
@@ -556,10 +554,9 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A photo, a hand sketch, a physical sample, a STEP file or a part you already sell. We come back inside 2 business days with the geometry read, the tooling route and the production economics. NDA on request.",
+    "body": "A photo, a hand sketch, a physical sample, a STEP file or a part you already sell. We come back with the geometry read, the tooling route and the production economics.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form. I have a consumer product I want to tool. Product: [what it is]. Stage: [sketch / prototype / CAD / already in production elsewhere]. Annual volume: [units per year]. Material: [if known]. Can you review the geometry and propose a tooling route?",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form. I have a consumer product I want to tool. Product: [what it is]. Stage: [sketch / prototype / CAD / already in production elsewhere]. Annual volume: [units per year]. Material: [if known]. Can you review the geometry and propose a tooling route?"
   }
 }

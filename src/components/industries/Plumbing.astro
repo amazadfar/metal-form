@@ -1025,14 +1025,14 @@ const unscrewing = mechs[1] ?? {};
           <ul class="badges plm-facts__list">
             {(b.start.facts ?? []).map((f: any) => <li class="badge">{f}</li>)}
           </ul>
-          <p class="plm-facts__note">{b.start.note}</p>
+          {b.start.note ? <p class="plm-facts__note">{b.start.note}</p> : null}
         </div>
 
         {/* Layer three: the depth, folded away until it is wanted. */}
         <div class="plm-panels">
           <h3 class="t-label plm-panels__h">{b.panels.heading}</h3>
           {(b.panels.items ?? []).map((panel: any, i: number) => (
-            <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+            <div class="disc" data-open="false">
               <h4>
                 <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
                   <span>{panel.title}</span>
@@ -1586,6 +1586,8 @@ const unscrewing = mechs[1] ?? {};
     font-size: var(--step--1);
     line-height: 1.55;
     position: relative;
+    /* On the `li`, so the `ch` resolves against the type it is measuring. */
+    max-inline-size: 78ch;
   }
   .plm-list li::before {
     content: '';

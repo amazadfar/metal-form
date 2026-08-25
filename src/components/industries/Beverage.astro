@@ -599,7 +599,7 @@ const SPREAD = [
       <div class="bev-panels">
         <h3 class="t-label bev-panels__h">{b.panels?.heading ?? b.blocksPanelsHeading}</h3>
         {(b.panels?.items ?? []).map((panel: any, i: number) => (
-          <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+          <div class="disc" data-open="false">
             <h4>
               <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
                 <span>{panel.title}</span>

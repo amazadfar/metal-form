@@ -1110,7 +1110,7 @@ const GUT: Record<string, string[]> = {
         <div class="chm-panels">
           <h3 class="t-label chm-cap">{b.panels.heading}</h3>
           {b.panels.items.map((panel: any, i: number) => (
-            <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+            <div class="disc" data-open="false">
               <h4>
                 <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
                   <span>{panel.title}</span>
@@ -1704,6 +1704,7 @@ const GUT: Record<string, string[]> = {
   }
   .chm-not__list { display: grid; gap: var(--sp-3); }
   .chm-not__list li {
+    max-inline-size: 80ch;
     font-size: var(--step--1);
     line-height: 1.6;
     color: var(--ink-muted);

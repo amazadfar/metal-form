@@ -45,6 +45,10 @@ const FORBIDDEN = [
   { re: /\bstarting (from|at)\s*[$€£]/i, why: 'prohibited: published pricing' },
   // Brand integrity.
   { re: /\bMetal\s*Foam\b/i, why: 'wrong company name — it is Metal Form', always: true },
+  /* Any other word after "Metal" is a slip of the same kind. The exceptions are
+     the sentences where "metal" is the material rather than the first half of
+     the company name, so the rule only fires on a capitalised M. */
+  { re: /\bMetal (?!Form\b|Grotesk\b)[A-Z]\w+/, why: 'company name mistyped — it is Metal Form', always: true },
   // Marketing filler this project bans outright.
   { re: /\bworld[-\s]class\b/i, why: 'banned filler', always: true },
   { re: /\bcutting[-\s]edge\b/i, why: 'banned filler', always: true },

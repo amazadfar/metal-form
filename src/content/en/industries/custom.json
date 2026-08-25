@@ -69,36 +69,31 @@
       "index": "01",
       "kicker": "What arrives",
       "heading": "Most projects arrive in someone's hand, not in a file.",
-      "body": "This is what actually turns up. A phone photograph taken in a machine room. The part that broke. A sample with a caliper still on it. A drawing folded into four. A file with no drawing around it. None of them is a specification. Every one of them is a starting point, and every one of them tells us something different.",
+      "body": "This is what actually turns up. A phone photograph taken in a machine room. The part that broke. A sample with a caliper still on it. A drawing folded into four. A file with no drawing around it. None of them is a specification. Every one of them is a starting point.",
       "items": [
         {
-          "label": "A phone photograph",
-          "note": "Material family, roughly. Proportion, probable pull direction, often the gate and the parting line. No dimension at all until something in the frame gives us a scale."
+          "label": "A phone photograph"
         },
         {
-          "label": "The part that broke",
-          "note": "The failure is data. Where it broke, how the surface looks and what was around it separate a design problem from a material problem from a service problem."
+          "label": "The part that broke"
         },
         {
-          "label": "A sample and a caliper",
-          "note": "Measured features and the constraints they serve. As-moulded geometry, which is not the geometry the part was designed to and, on an old part, not even the geometry it left the tool with."
+          "label": "A sample and a caliper"
         },
         {
-          "label": "A drawing folded in four",
-          "note": "Datums, tolerances and a revision number. The fastest input on this page, and the rarest one."
+          "label": "A drawing folded in four"
         },
         {
-          "label": "A file with no drawing",
-          "note": "Geometry exactly, to the last radius. Intent not at all. Somebody still has to say which dimensions decide whether the part works."
+          "label": "A file with no drawing"
         }
       ],
-      "close": "Send the weakest of these and you still get an engineering answer. Send the strongest and you get a tooling route. Nothing on this list is too little to write with."
+      "close": "Send the weakest of these and you still get an engineering answer. Send the strongest and you get a tooling route."
     },
     "triage": {
       "index": "02",
       "kicker": "Triage",
       "heading": "Pick what you actually have.",
-      "body": "Ten starting points. Each one has a real route from here: what the input tells us, what we will ask you for, what comes back, and what the first step actually is. The drawing beside the list does not change as you move down it. What we know about the drawing is what changes.",
+      "body": "Ten starting points, each with a real route from here. The drawing beside the list never changes as you move down it. What changes is how much we know about it.",
       "railLabel": "Starting points",
       "tellsHeading": "What this tells us",
       "askHeading": "What we will ask you for",
@@ -112,8 +107,7 @@
           "mark": "Outline",
           "tells": [
             "Material family, roughly, from surface, sheen and the context it was photographed in.",
-            "Proportion and probable pull direction. Often the gate position and the parting line as well.",
-            "How the part sits in the machine or the assembly it came out of."
+            "Proportion and probable pull direction. Often the gate position and the parting line as well."
           ],
           "ask": [
             "One known dimension in the frame, or a ruler laid alongside the part.",
@@ -125,7 +119,7 @@
             "A list of exactly what to measure, and where to measure it.",
             "Whether a physical sample needs to travel at all."
           ],
-          "first": "A photograph with a ruler in it is enough to get a written answer. It is not enough to quote a tool, and we would rather say so than price the guess."
+          "first": "A photograph with a ruler in it is enough for a written answer. Quoting a tool needs measurements."
         },
         {
           "id": "broken",
@@ -144,8 +138,7 @@
           ],
           "back": [
             "A view on whether to reproduce the part or to fix it.",
-            "The design changes that address the failure, kept separate from the ones that are only cosmetic.",
-            "A tooling route for whichever version you decide to make."
+            "The design changes that address the failure, kept separate from the ones that are only cosmetic."
           ],
           "first": "Send the broken one and, if you have it, an unbroken one. Two states of the same part answer questions that one sample cannot."
         },
@@ -160,13 +153,11 @@
             "Where the cost was spent: cavitation, undercuts, finish, insert work."
           ],
           "ask": [
-            "Is this your design, is it covered by a live patent or a registered design right, and do you have the right to have it reproduced.",
             "What you want to keep, and what you want to be different.",
             "Which market it is going into, and at what volume."
           ],
           "back": [
             "A written statement of what we will and will not reproduce.",
-            "A scope proposal covering the parts, the assembly boundary and the tooling.",
             "Where a redesign is cheaper than a copy, and the reason."
           ],
           "first": "The rights question comes before any engineering. It is a short conversation and it is far better held now than after steel has been cut."
@@ -180,17 +171,12 @@
             "Intent, proportion and the features you already know you need.",
             "Nothing dimensional. A sketch is a brief, not a geometry, and treating it as one is how projects go wrong early."
           ],
-          "ask": [
-            "Function: what it does, and what it must not do.",
-            "Environment: service temperature, chemical or UV exposure, load character, expected life.",
-            "Size envelope, quantity per year, and the cost the finished part has to live inside."
-          ],
           "back": [
             "A modelling scope, not a mould quotation.",
             "The features that will drive tool cost, named before you commit to them.",
             "A first solid model with a revision number, which is the thing every later decision hangs off."
           ],
-          "first": "Expect to buy a model before you buy a tool. On a sketch, quoting tooling first is guessing with your money."
+          "first": "Expect to buy a model before you buy a tool."
         },
         {
           "id": "cad",
@@ -203,14 +189,11 @@
             "Whether what you hold is a solid you can edit or a mesh you cannot."
           ],
           "ask": [
-            "Which dimensions are critical to quality, and which are reference.",
-            "Which faces are cosmetic, and against which finish standard.",
             "Resin grade and acceptable equivalents, first order quantity and annual usage."
           ],
           "back": [
             "A design-for-manufacture review: wall, draft, undercuts, gate position, weld-line location, ejection, tolerance feasibility against the resin.",
-            "A short critical-dimension list for you to confirm or correct.",
-            "A tooling proposal once that list is agreed."
+            "A short critical-dimension list for you to confirm or correct."
           ],
           "first": "If what you have is a mesh, send it anyway. Turning a shell of triangles into an editable solid is engineering, not a file conversion, and it is quoted as engineering."
         },
@@ -242,12 +225,10 @@
           "label": "A production problem",
           "mark": "Sink",
           "tells": [
-            "Whether the defect comes and goes during a run, or appears on every run.",
             "Where on the part it lands, which usually names the mechanism before anyone opens the tool.",
             "Whether the wall thickness the part was designed with is the wall thickness it actually has."
           ],
           "ask": [
-            "Intermittent or constant. That single answer separates process drift and material variation from part design and tool construction.",
             "Wall thickness measured at several points, not at one.",
             "What the tool has done since it was last serviced, and whether a tool history card exists."
           ],
@@ -277,7 +258,7 @@
             "Whether the answer is a change to the part, a change to the tool, or a different tool.",
             "A position on whether the work is worth doing at all."
           ],
-          "first": "We will not print a savings percentage. The arithmetic is yours — your resin price, your machine rate, your volume. What we can tell you is which of the four levers is still moveable."
+          "first": "Which of the four levers is still moveable is a question we can answer. The arithmetic — your resin price, your machine rate, your volume — is yours to run."
         },
         {
           "id": "supplier",
@@ -316,7 +297,7 @@
           "back": [
             "An honest answer about whether tooling is the right route at that volume.",
             "A staged scope: model first, then a review, then a tooling decision — each one small enough to stop at.",
-            "Where the volume does not justify a tool, we say that instead of selling you one."
+            "A straight answer where the volume does not justify a tool at all."
           ],
           "first": "The cheapest hour on any project is the first one, spent deciding whether it should be a moulded part at all."
         }
@@ -398,7 +379,7 @@
           "v": "1.8 – 2.5 %"
         }
       ],
-      "shrinkNote": "Figures in this table are published industry practice, not Metal Form measurements. The grade datasheet governs in every case. A 30 percent glass-filled grade shrinks far less, and shrinks unequally along and across the flow direction, which is why fibre orientation shows up later as warp.",
+      "shrinkNote": "Figures in this table are published industry practice, not Metal Form measurements. The grade datasheet governs in every case. A 30 per cent glass-filled grade shrinks far less, and shrinks unequally along and across the flow direction, which is why fibre orientation shows up later as warp.",
       "close": "Where the resin cannot be stated, we select a grade against the requirements you can state, record it as an assumption on the mould specification sheet, and cut the dimensions that assumption affects steel-safe. Independent laboratory identification of a sample is available on the market. Commissioning it is your call, not ours.",
       "scanHeading": "The one honest limit on this section",
       "scanNote": "Feature reconstruction from measurement has a boundary, and free-form surfaces are past it. A blade profile, an impeller, a styled outer face: if that geometry has to be reproduced faithfully, send captured surface data and we will work from your mesh. We accept scan and mesh data as an input. We do not capture it."
@@ -407,7 +388,7 @@
       "index": "04",
       "kicker": "Intake",
       "heading": "Every blank becomes an assumption. Assumptions get priced as risk.",
-      "body": "These are the questions that turn an unclear input into a manufacturable project. They are not a form and nothing here blocks anything. Answer what you can, and say so where you cannot: a stated unknown is worth more to us than a guessed answer, because we can cut steel around a stated unknown.",
+      "body": "These are the questions that turn an unclear input into a manufacturable project. Nothing here is a form and nothing blocks anything. Answer what you can and say so where you cannot: a stated unknown is worth more than a guessed answer, because we can cut steel around a stated unknown.",
       "cols": {
         "q": "The question",
         "why": "Why it is asked",
@@ -576,7 +557,7 @@
           "leaves": "Parts, on a rolling supply where that is what the programme needs."
         }
       ],
-      "close": "Tooling warranty terms are defined per project and against the mould specification for that project. Initial technical response within 2 business days, and an NDA before detailed disclosure if you want one."
+      "close": "Tooling warranty terms are defined per project and against that project’s mould specification."
     },
     "routes": {
       "index": "06",
@@ -635,8 +616,8 @@
       "index": "07",
       "kicker": "Boundary",
       "heading": "What we supply, and what stays with you.",
-      "body": "This is the strongest thing on the page, so it is not in small print. A custom project has two sides, and the line between them should be visible before you send anything rather than discovered at first shots.",
-      "line": "We build tooling and we make parts. We do not test, certify or approve your finished product, and we do not hold the sector approvals some buyers need. If that is the deciding factor on your project, decide it before you send anything — it is a shorter conversation now than later.",
+      "body": "A custom project has two sides, and the line between them should be visible before you send anything rather than discovered at first shots.",
+      "line": "We build tooling and we make parts. We do not test, certify or approve your finished product, and we do not hold the sector approvals some buyers need. Where that is the deciding factor on a project, it is worth settling before anything is sent.",
       "supplyHeading": "What Metal Form supplies",
       "supply": [
         "An engineering read of whatever you send: a physical sample, a photograph, a mesh, a STEP file or a written description of the problem.",
@@ -674,7 +655,7 @@
       "index": "08",
       "kicker": "Sending",
       "heading": "Send what you have.",
-      "body": "Three tiers. You do not need the third one to write to us. The first is enough to get a real answer, and knowing which tier you are at is worth more than pretending you are at the next one.",
+      "body": "Three tiers. The first is enough to get a real answer — you do not need the third one to write to us.",
       "tiers": [
         {
           "code": "T1",
@@ -710,8 +691,7 @@
           ]
         }
       ],
-      "close": "Tier one is enough. If what you have is a photograph taken on a phone in a machine room at eleven at night, send that.",
-      "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+      "close": "Tier one is enough. If what you have is a photograph taken on a phone in a machine room at eleven at night, send that."
     },
     "panels": {
       "heading": "Deeper detail",
@@ -740,7 +720,7 @@
             "Whether the part has moved since it was made. Plastic warps under heat and time, and an old sample records its history rather than its drawing.",
             "What it mates with, and whether the fit was ever controlled by this part at all."
           ],
-          "source": "This is why an intake that asks questions is cheaper than an intake that assumes."
+          "source": "Reading a sample this way is standard trade practice. What it cannot establish is listed above rather than assumed."
         },
         {
           "title": "Frozen at the steel-cut release",
@@ -751,8 +731,7 @@
             "Runner and gate concept, including gate position relative to the cosmetic faces and to where the weld line will land.",
             "Cooling layout and its balance across cavities, which sets cycle time and therefore the recurring cost of every part the tool will ever make.",
             "Venting depth and location: the cheapest fix on a tool, and the item most often missing on a tool that has changed hands.",
-            "Texture standard named against a published reference, the critical-dimension list, the resin assumption and the steel-safe register.",
-            "After this point, the cheap revisions are behind you."
+            "Texture standard named against a published reference, the critical-dimension list, the resin assumption and the steel-safe register."
           ]
         }
       ]
@@ -760,10 +739,9 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A photograph, a sample, a file, or a paragraph describing the problem. You get an engineering reply rather than a price list: what we can determine, what we still have to ask, and what the tooling route looks like. First response within 2 business days. NDA before you send anything, if you want one.",
+    "body": "A photograph, a sample, a file, or a paragraph describing the problem. You get an engineering reply rather than a price list: what we can determine, what we still have to ask, and what the tooling route looks like.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Metal Form — custom project.\n\nWhat I have: photo / sample part / broken part / sketch / STEP file / drawing pack / existing mould / a production, cost or supply problem\nWhat the part does: \nWhere it is used: \nApproximate annual quantity, if known: \nWhat I need from you: ",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Metal Form — custom project.\n\nWhat I have: photo / sample part / broken part / sketch / STEP file / drawing pack / existing mould / a production, cost or supply problem\nWhat the part does: \nWhere it is used: \nApproximate annual quantity, if known: \nWhat I need from you: "
   }
 }

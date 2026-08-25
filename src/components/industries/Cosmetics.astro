@@ -946,14 +946,14 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
           {b.continuity.send.map((item: string) => <li>{item}</li>)}
         </ul>
       </TechNote>
-      <p class="cos-cont__note">{b.continuity.note}</p>
+      {b.continuity.note ? <p class="cos-cont__note">{b.continuity.note}</p> : null}
     </div>
 
     {/* Layer three: the depth, folded away until it is wanted. */}
     <div class="shell cos-panels">
       <h3 class="t-label cos-panels__cap">{b.panels.heading}</h3>
       {b.panels.items.map((panel: any, i: number) => (
-        <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+        <div class="disc" data-open="false">
           <h4>
             <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
               <span>{panel.title}</span>
@@ -1170,7 +1170,7 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
     text-align: start;
   }
   @media (max-width: 1000px) { .cos-rail { grid-template-columns: minmax(0, 1fr); } }
-  .cos-rail__item { font-size: var(--step--2); line-height: 1.6; color: var(--ink-muted); }
+  .cos-rail__item { max-inline-size: 84ch; font-size: var(--step--2); line-height: 1.6; color: var(--ink-muted); }
   .cos-rail__item--nda { color: var(--accent-deep); }
 
   /* ── 01 The light table ───────────────────────────────────────────────── */

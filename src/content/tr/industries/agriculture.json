@@ -83,7 +83,7 @@
         "Duran bir kalıp tek bir parçayı durdurmaz. Arkasında bekleyen ekstrüzyon hattını durdurur."
       ],
       "sourceNote": "Hat hızları yayımlanmış ekstrüzyon hattı şartnameleridir; burada sektöre ilişkin bir olgu olarak belirtilmiştir.",
-      "close": "Bu bölümün geri kalanının muayene değil çelik üzerine olmasının bütün nedeni budur. Parça; kötü bir kalıptan muayeneyle kurtulmak için fazla küçük, fazla ucuz ve fazla çoktur."
+      "close": "Bu yüzden bölümün geri kalanı muayeneyle değil çelikle ilgili. Parça, kötü bir kalıptan muayeneyle kurtulunamayacak kadar küçük, ucuz ve çok sayıda."
     },
     "labyrinth": {
       "index": "03",
@@ -203,9 +203,9 @@
       },
       "band": {
         "heading": "Bizim bandımız nerede duruyor, nerede durmuyor.",
-        "body": "Bu sektörde damlatıcı kalıpları, bizim imal ettiğimizin epeyce üzerinde göz sayılarıyla teklif edilir. Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bu dürüst bir tavandır ve bir teklifin içinde keşfetmek zorunda kalmayın diye burada yazılıdır.",
+        "body": "Bu sektörde damlatıcı kalıpları bizim yaptığımızın çok üzerinde göz sayılarıyla fiyatlanır. Metal Form’un kalıp deneyimi 46 göze kadardır. Tavan budur ve bir teklifin içinde değil, burada yazılıdır.",
         "body2": "Aynı zamanda kalıplanan ailenin büyük bölümünün gerçekte çalıştığı banttır. Bağlantı parçaları, çıkış parçaları, sıkma gövdeleri, somunlar ve halkalar, hat sonu tıpaları, vana gövdeleri ve kolları, filtre gövdeleri ve disk elemanları, mikro yağmurlayıcı gövdeleri ve nozulları, boşalma önleyici ve basınç tahliye mekanizma parçaları. Çok gözlü kalıplar, sıcak ve soğuk yolluk, insertli kalıplar, sürgüler, lifterlar, diş sökücü ve katlanabilir maçalar burada doğrudan geçerlidir.",
-        "body3": "Tesisiniz damlatıcının kendisinde bundan yüksek göz sayısıyla çalışıyorsa, işe yarayan teklif başkadır. Tasarım aşamasında kalıpla birlikte tanımlanmış göz ve akış yolu insertleri ile bir yedek takımı. Tek bir kalıp ailesi içinde debi ve renk varyantları için değişim parçaları. Aynı teknik resimlere göre yapılmış ikiz kalıplar. Başkasının yaptığı ve halihazırda üretimde olan bir kalıp için sorun — cevap teknik resimlere ve çeliğe bağlıdır ve size iyimser değil, dosdoğru verilir.",
+        "body3": "Damlatıcının kendisinde daha yüksek göz sayısıyla çalışıyorsanız işe yarar teklif başkadır. Göz ve akış yolu insertleri ile tasarım aşamasında belirlenmiş bir yedek seti. Tek bir kalıp ailesi içinde debi ve renk varyantları için değişim parçaları. Kendi çizimlerinize göre yapılmış ikinci kalıp. Hâlihazırda çalışan ve başkasının yaptığı bir kalıp için sorun: cevap çizimlere ve çeliğe bağlı.",
         "note": "Kalıp garantisi, proje ve kalıp şartnamesi bazında kararlaştırılan şartlarla. Atım sayısı garantisi yok; çünkü sizinle mutabık kalmadığımız bir sayıyı yayımlamayız."
       },
       "sourceNote": "Bu bölümdeki göz sayısı ekonomisi, çevrim değerleri ve soğuk başlangıç süreleri yayımlanmış sektör yazılarıdır, Metal Form ölçümleri değildir."
@@ -299,7 +299,7 @@
       "index": "07",
       "kicker": "Kapsam",
       "heading": "Önleyebildiğimiz kusurlar, ilk atımdan önce çelikte önlenir.",
-      "body": "Bir kalıp, bu sektörde ters giden şeylerin bir kısmını düzeltir, geri kalanının hiçbirini düzeltmez. Hangisinin hangisi olduğunu sipariş vermeden önce bilmek, hepsini düzeltmeyi teklif eden bir tedarikçiden daha değerlidir. Dürüst ayrım budur ve teklif verirken de aynı ayrıma göre çalışırız.",
+      "body": "Bir kalıp, bu sektörde ters gidenlerin bir kısmını çözer, geri kalanını çözmez. Hangisinin hangisi olduğu burada yazılı — ve teklifte de aynı ayrımla çalışırız.",
       "ours": {
         "heading": "Bizim ve hesabını veririz",
         "items": [
@@ -314,7 +314,7 @@
         ]
       },
       "yours": {
-        "heading": "Sizin ve aksini iddia etmeyiz",
+        "heading": "Sizin, ve kalıbın dışında",
         "items": [
           "Su kimyası. Kalsiyum, magnezyum ve demir; kanalı kim işlemiş olursa olsun akış yolunun içinde çökelir.",
           "Filtrasyon. Bu geçitleri korumak için yaygın uygulama yaklaşık 120 mesh, kabaca 130 mikrondur; kullanılabilir bant ise 80 ila 200 mesh'tir. Bu, kontrol başında alınan bir sistem kararıdır, bir kalıp kararı değil.",
@@ -335,7 +335,7 @@
           "Mevcut parçanız zaten doğruya yakınsa alacağınız cevap budur."
         ]
       },
-      "close": "Su kimyası, filtrasyon, biyolojik kirlenme ve kök girişi birer kalıp sorunu değildir; öyleymiş gibi size kalıp satmayız. Bir kalıbın karar verdiği şeye bir kalıp bir kez karar verir — çelikte, ilk atımdan önce."
+      "close": "Su kimyası, filtrasyon, biyolojik tıkanma ve kök girişi kalıp sorunu değildir. Kalıbın karar verdiği şeye bir kez karar verilir: çelikte, ilk baskıdan önce."
     },
     "work": {
       "index": "08",
@@ -350,7 +350,7 @@
         },
         {
           "label": "Rota",
-          "note": "Geri gelen şey; bir göz ve insert stratejisi, bir besleme sistemi önerisi — sıcak yolluk, soğuk yolluk ya da karma; varsayılmadan, bu parçaya göre değerlendirilmiş — ve her tercihin gerekçesiyle birlikte bir kalıp rotasıdır. 2 iş günü içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
+          "note": "Bir kalıp güzergâhı döner: göz ve insert stratejisi, besleme sistemi önerisi — sıcak yolluk, soğuk yolluk ya da karma; varsayılmış değil bu parça üzerinde değerlendirilmiş — ve her seçimin gerekçesi. İlk teknik dönüş 2 iş günü içinde."
         },
         {
           "label": "İmalat",
@@ -387,18 +387,16 @@
             "Işığa maruz kalan parçalar opak ve UV bozunmasına karşı korunmuş olmalı, mümkün olduğunca yosun ve bakteri üremesini desteklememelidir.",
             "Damlatıcılı boru üzerindeki işaretler en fazla 5 m aralıkla tekrarlanır ve nominal debi, damlatıcının bir parçasının rengiyle meşru biçimde gösterilebilir."
           ],
-          "source": "Kaynak: ISO 9261:2004, damlatıcılar ve damlatıcılı borular için ürün standardı. Burada ürüne ilişkin bir olgu olarak belirtilmiştir. Metal Form bu standarda karşı belgeye sahip değildir, damlatıcıları bu standarda göre test etmez ve kapsamında onay iddia etmez."
+          "source": "Kaynak: ISO 9261:2004, damlatıcılar ve damlatıcılı boru için ürün standardı. Burada ürünün kendisine dair bir olgu olarak yer alıyor; Metal Form bu standarda göre belge taşımaz ve testini yapmaz."
         },
         {
           "title": "Milimetre cinsinden akış yolu",
           "bullets": [
             "Dört ticari silindirik damlatıcı üzerinde yayımlanmış ölçümler, akış yolu genişliklerini kabaca 0,89 ila 1,47 mm veriyor.",
             "Aynı çalışmada diş yükseklikleri yaklaşık 1,13 ila 1,43 mm, aralık kabaca 2,37 ila 3,26 mm ve tepe açıları kabaca 37 ila 65 derece arasında.",
-            "Saha uzmanları damlatıcı iç akış yollarını daha geniş biçimde kabaca 0,5 ila 2 mm olarak anıyor.",
             "Çökeltiler kanal boyunca eşit dağılmak yerine yolun çıkış ucuna doğru yoğunlaşır.",
             "Daha dar, eğrisel sınırlı yollar daha az partikül ama daha çok kimyasal çökelti biriktirdi — geometri bir tıkanma mekanizmasını diğeriyle takas eder.",
-            "Bu geçitleri korumak için yaygın pratik filtrasyon yaklaşık 120 mesh, kabaca 130 mikrondur; kullanılabilir bant 80 ila 200 mesh'tir.",
-            "Bu listedeki her satır, bir kalıbın tutmak ve milyonlarca çevrim boyunca tutmaya devam etmek zorunda olduğu bir ölçüdür."
+            "Bu geçitleri korumak için yaygın pratik filtrasyon yaklaşık 120 mesh, kabaca 130 mikrondur; kullanılabilir bant 80 ila 200 mesh'tir."
           ],
           "source": "Bu panodaki değerler yayımlanmış sektör ölçümleri ve yayımlanmış saha kılavuzlarıdır, Metal Form ölçümleri değildir."
         },
@@ -410,20 +408,18 @@
             "Göz sayısı çıktıyı çoğaltır ama orantılı olarak değil: çevrim uzar, pres boyu ve saatlik maliyet yükselir ve tek bir onarım her şeyi aynı anda durdurur.",
             "Sektör yazıları büyük sıcak yolluklu kalıplarda soğuk başlangıç dengelenmesini saatlerle, düşük gözlü kalıplarda otuz ila doksan dakikayla veriyor.",
             "Ölü gözlerle çalışan bir kalıp, kısmi bir atım için tam bir çevrim öder — her atımda ve ömrünün geri kalanı boyunca.",
-            "Yayımlanmış kalıp maliyeti kılavuzları on altı gözlü bir kalıbı tek gözlünün on altı katı değil, kabaca beş katı olarak veriyor — maliyet eğrisi hiçbir yönde doğrusal değildir.",
-            "Bu sektörde birim maliyet tasarım aşamasında kararlaştırılır ve sonra birkaç yüz milyon kez ödenir."
+            "Yayımlanmış kalıp maliyeti kılavuzları on altı gözlü bir kalıbı tek gözlünün on altı katı değil, kabaca beş katı olarak veriyor — maliyet eğrisi hiçbir yönde doğrusal değildir."
           ],
-          "source": "Bu panodaki değerler yayımlanmış sektör uygulamalarıdır. Tasarruf yüzdeleri yayımlamıyoruz ve parçanızı görmeden sizinkini hesaplamayız."
+          "source": "Bu paneldeki rakamlar yayımlanmış sektör uygulamasıdır, Metal Form ölçümü değildir."
         }
       ]
     }
   },
   "cta": {
     "headline": "Parçayı gönderin. Ya da teknik resmi. Ya da bir metre bandı.",
-    "body": "Bir kalıp rotası, bir göz ve insert stratejisi ve ikisinin de gerekçesiyle dönüş yaparız. 2 iş günü içinde ilk teknik dönüş. Talep hâlinde NDA. Proje bazında kararlaştırılan şartlarla kalıp garantisi. Dünya geneline sevkiyat.",
+    "body": "Geometriyi gönderin. Bir kalıp güzergâhı, göz ve insert stratejisi ve her ikisinin gerekçesiyle döneriz.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form — sulama parçası hakkında.\n\nParça: damlatıcı / bağlantı parçası / konnektör / çıkış parçası / mikro yağmurlayıcı / vana veya filtre parçası\nMalzeme: \nYaklaşık yıllık adet: \nŞu anda bunu [ ] kalıpta üretiyoruz\nİhtiyacım: yeni kalıp / ikiz kalıp / insert ve yedekler / parça tedariki\n\n3B veri ve fiziksel numune gönderebilirim.",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form — sulama parçası hakkında.\n\nParça: damlatıcı / bağlantı parçası / konnektör / çıkış parçası / mikro yağmurlayıcı / vana veya filtre parçası\nMalzeme: \nYaklaşık yıllık adet: \nŞu anda bunu [ ] kalıpta üretiyoruz\nİhtiyacım: yeni kalıp / ikiz kalıp / insert ve yedekler / parça tedariki\n\n3B veri ve fiziksel numune gönderebilirim."
   }
 }

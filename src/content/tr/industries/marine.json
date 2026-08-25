@@ -96,7 +96,7 @@
       "chainNote": "Beş halkanın dördü genellikle yoktur. Beşincisi, ayakta kalması gereken tek halkadır.",
       "term": {
         "name": "NLA — No Longer Available",
-        "meaning": "Üretimden kalkmış bir parça için sektörün kendi terimi: artık temin edilemiyor. Teknelerin on yıllarca hizmette kaldığı yerde bu bir istisna değildir. Enjeksiyoncuların çoğunun hizmet etmeyi reddettiği, kalıcı ve yapısal bir talep sınıfıdır."
+        "meaning": "Üretimden kalkmış parça için sektörün kendi terimi. Teknelerin on yıllarca suda kaldığı bir alanda bu bir istisna değil; kalıcı, yapısal bir talep sınıfı."
       },
       "survivesHeading": "Üzerinden çalışılabilecek şeyler",
       "survives": [
@@ -180,7 +180,7 @@
         }
       ],
       "caveatHeading": "Modelle birlikte geri gelenler",
-      "caveat": "Hangi ölçüleri güvenle belirleyebildiğimiz, hangilerini eşleştiği parçadan ya da simetriden çıkardığımız ve hangilerinin eldeki verilerle belirlenemeyeceği. Kritik arayüzler çelik işlenmeden önce sizinle mutabık kalınır. Ölçüm fizikseldir — el aletleriyle metroloji, birkaç numune ve eşleştiği parça. Bu tarifte bir tarayıcı yoktur ve bu sektörün ihtiyacı da o değildir; ihtiyacı, hangi rakamların çıkarım olduğunu söyleyecek birisidir."
+      "caveat": "Hangi ölçüleri güvenle belirleyebildiğimiz, hangilerini eşleşen parçadan ya da simetriden çıkardığımız ve hangilerinin elde kalanla belirlenemeyeceği. Kritik arayüzler çelik işlenmeden önce sizinle mutabık kalınır. Ölçüm fizikseldir: elle metroloji, birkaç numune ve eşleştiği parça."
     },
     "sequence": {
       "index": "03",
@@ -264,7 +264,7 @@
         }
       ],
       "evidenceHeading": "Kanıt nereden geliyor",
-      "evidence": "Bir alıcının soracağı test yöntemleri yayımlanmış standartlardır: hızlandırılmış yaşlandırma için ASTM G154 ve ISO 4892-3, tuz sisi için ASTM B117 ve ISO 9227, su emme için ASTM D570, darbe ve eğilme performansı için ASTM D256 ve ASTM D790. Bu değerler hammadde üreticisinin veri sayfasına ya da iddiayı ortaya atan tarafın görevlendirdiği bağımsız bir laboratuvara aittir. Metal Form yaşlandırma, tuz sisi ya da malzeme kalifikasyon testi yapmaz. Bu bölümdeki hiçbir şey bir Metal Form ölçümü değildir ve bu sayfadaki hiçbir şey öyle okunmamalıdır."
+      "evidence": "Bir alıcının soracağı test yöntemleri yayımlanmış standartlardır: hızlandırılmış yaşlandırma için ASTM G154 ve ISO 4892-3, tuz sisi için ASTM B117 ve ISO 9227, su emme için ASTM D570, darbe ve eğilme için ASTM D256 ve ASTM D790. Bu değerler reçine üreticisinin teknik föyüne veya bağımsız bir laboratuvara aittir. Metal Form yaşlandırma, tuz sisi veya malzeme kalifikasyon testi yapmaz ve bu bölümdeki hiçbir şey Metal Form ölçümü değildir."
     },
     "geometry": {
       "index": "05",
@@ -286,10 +286,10 @@
         "Büyük içi boş parçalar hava olarak sevk edilir. Navlunu ağırlık değil, paket hacmi belirler ve parçanın nasıl iç içe geçtiği; ilk konteynerden sonra değil, çelik işlenmeden önce karara bağlanmaya değer.",
         "Büyük kalıp ağırdır. Ağır kalıpların taşınması, saklanması ve çoğaltılması zordur; bu da bir atölye ayrıntısını bir program kararına dönüştürür."
       ],
-      "tradeHeading": "Açıkça teklif etmeyi tercih ettiğimiz takas",
-      "trade": "Düşük adette büyük bir parçada dürüst cevap genellikle daha uzun bir çevrimdir. Daha basit bir soğutma paketi, daha düşük bir göz sayısı ve model değiştiğinde değiştirilebilecek bir kalıp; sekiz yüz adetlik bir yılda size, çevrimden kırpılan herhangi bir saniyeden daha ucuza gelir. Bu takas, bir çevrim süresi rakamının içine gömülmek yerine, görebileceğiniz şekilde teklifte durmalıdır.",
+      "tradeHeading": "Takas, açıkça teklife yazılır",
+      "trade": "Düşük adetli büyük bir parçada dürüst cevap genellikle daha uzun bir çevrimdir. Daha basit bir soğutma paketi, daha düşük göz sayısı ve model değiştiğinde revize edilebilen bir kalıp, sekiz yüz adetlik bir yılda çevrimden kırpılan herhangi bir saniyeden daha ucuza gelir. Bu takasın yeri, gördüğünüz teklifin içidir.",
       "contextHeading": "Sektörün çok büyük parçalarda gittiği yer",
-      "context": "Konsollar, koltuk tabanları ve büyük paneller üzerine yayımlanmış sektör uygulaması; mengene tonajını ve çöküntüyü kontrol altında tutmak için yapısal köpüğe ya da gaz destekli kalıplamaya uzanır — yapısal köpük, dolu parçaya göre kabaca yüzde yirmi daha hafif ve birkaç kat daha rijit olarak tanımlanır; bedeli ise normalde boyanan mat ve girdaplı bir yüzeydir. Gaz destekli kalıplama ise kısmi dolumdan sonra kalın kanalları boşaltarak kozmetik yüzeylerdeki çöküntüyü bastırır. İkisi de burada, seçenekleriniz hakkında bağlam olarak anılıyor. Hiçbiri bir Metal Form prosesi değildir. Parçanızın yeri orasıysa, etrafından dolanarak teklif vermek yerine bunu size söyleriz."
+      "context": "Konsollar, oturma tabanları ve büyük paneller için yayımlanmış sektör uygulaması, kapama kuvvetini ve çöküntüyü kontrol altında tutmak için yapısal köpük ya da gaz destekli kalıplamaya başvurur: yapısal köpük, katıya göre yaklaşık yüzde yirmi hafif ve kat kat rijit olarak tarif edilir; bedeli, normalde boyanan mat ve girdaplı bir yüzeydir. Gaz destekli kalıplama ise kısmi dolumdan sonra kalın kanalları boşaltarak görünen yüzeylerdeki çöküntüyü bastırır. İkisi de burada yalnızca bağlam olarak anılıyor. Hiçbiri Metal Form prosesi değildir."
     },
     "economics": {
       "index": "06",
@@ -297,7 +297,7 @@
       "kicker": "Düşük adet kalıp ekonomisi",
       "heading": "Kalıp, ürettiği bütün parçalardan pahalıya gelecek.",
       "body": "Yılda iki yüz tekne üretilen bir modelde her tekneye dört adet takılan bir parça, yılda sekiz yüz adetlik bir kalemdir. On beş yıllık bir model ömrü boyunca bu toplam on iki bin adet eder — yüksek adetli bir sektör için yapılmış bir kalıbın bir günlük çıktısından az. Burada parça fiyatı küçük paradır. Kararın tamamı kalıp, göz sayısı ve teslim süresidir.",
-      "body2": "Bu da işe yarar soruyu, tekliflerin çoğunun kaçındığı soru yapar. Bu çeliği kaç adede amorti ediyorum ve model tahminin yarısı kadar satarsa parça başı maliyetime ne olur. Denizcilikte, daha ucuz ve daha basit bir kalıptaki daha yüksek bir parça fiyatı çoğu zaman doğru ticari cevaptır; bunu yüksek sesle söyleyemeyen bir tedarikçi de sizin programınızı değil, kendi makine doluluğunu optimize ediyordur.",
+      "body2": "Bu da asıl soruyu basitleştirir. Bu çeliği kaç adede amorti ediyorum ve model, tahminin yarısı kadar satarsa parça maliyetim ne olur? Denizcilikte daha ucuz ve daha basit bir kalıpta daha yüksek parça fiyatı çok sık doğru ticari cevaptır.",
       "arithHeading": "Dört satırda aritmetik",
       "arith": [
         {
@@ -321,12 +321,12 @@
           "v": "12.000"
         }
       ],
-      "arithNote": "Yayımlanmış tekne inşa ölçeklerinden kurulmuş bir örnek — küçük tersaneler, yılda birkaç düzineden birkaç yüze tekne, yüzlerce üretici ve binlerce model. Bir Metal Form rakamı değildir ve sizin programınız değildir. Aynı dört satıra kendi rakamlarınızı koyun; sonuç nadiren değişir.",
+      "arithNote": "Yayımlanmış tekne üretim ölçeklerinden kurulmuş bir örnek: küçük tersaneler, yılda birkaç düzineden birkaç yüze kadar tekne. Bu bir Metal Form rakamı değil, sizin programınız da değil. Aynı dört satıra kendi sayılarınızı koyun; sonuç nadiren değişir.",
       "tabsLabel": "Yıllık adet bandı",
       "axisX": "Yıllık adet",
       "axisY": "Kalıp yatırımı",
       "bandLabel": "Denizcilik",
-      "axisNote": "Dikey eksende rakam yoktur. Kalıp yatırımı belirli bir parçaya, belirli bir çeliğe ve belirli bir göz sayısına karşı teklif edilir ve bunu bir eğri olarak yayımlamanın dürüst bir yolu yoktur. Argüman biçimdir; rakam bir konuşmadır.",
+      "axisNote": "Dikey eksende sayı yok. Kalıp yatırımı belirli bir parçaya, belirli bir çeliğe ve belirli bir göz sayısına göre fiyatlanır. Argüman eğrinin biçimi; rakam ise bir konuşma konusu.",
       "bands": [
         {
           "id": "b1",
@@ -357,18 +357,17 @@
           "tick": ">10k",
           "name": "Yılda 10.000'in üzerinde",
           "route": "Daha yüksek göz sayısı ve argüman tersine döner",
-          "body": "On binlerle satılan güverte kapakları, tahliye tapaları, küçük bağlantı elemanları ve bimini donanımı; göz sayısının kendini geri ödediği denizcilik parçalarıdır ve bu gerekçe de aleyhindeki gerekçe kadar açık ortaya konmalıdır. Metal Form 46 göze kadar kalıp imal etmiştir. Denizcilik bunu nadiren ister ve bu deneyimin buradaki işe yarar tarafı, göz sayısını artırmanın tam olarak nerede kazandırmayı bıraktığını bilmektir.",
+          "body": "On binlerle satılan güverte kapakları, tahliye tapaları, küçük bağlantı elemanları ve tente donanımı, denizcilikte göz sayısının kendini ödediği parçalardır. Metal Form 46 göze kadar kalıp yapmıştır. Denizcilik buna nadiren ihtiyaç duyar ve bu deneyimin buradaki işe yarar tarafı, göz sayısını artırmanın tam olarak nerede ödemeyi bıraktığını bilmektir.",
           "trade": "Gerçek bir sermaye ve bir bakım yükümlülüğü üstlenirsiniz; karşılığında bu sektörde yüksek adetli bir sanayi gibi davranan tek parça fiyatını alırsınız."
         }
       ],
-      "bandsNote": "Bantlar sektörün pratik kurallarıdır; birbirinden bağımsız düşük adetli enjeksiyoncularda örtüşür ve burada bir kararın biçimini anlatmak için anılır. Sizi bağlayacağımız eşikler değildir ve bu sayfanın hiçbir yerinde fiyat yoktur.",
+      "bandsNote": "Bu bantlar sektörün pratik kuralları; bağımsız düşük adetli kalıpçılarda birbirine yakınsıyor ve burada bir eşik olarak değil, bir kararın biçimini anlatmak için veriliyor.",
       "lossHeading": "Paranın gerçekte kaybedildiği yer",
       "loss": [
         "Fazla kalıp. Sekiz yüz adetlik bir kalem için alınmış dört sertleştirilmiş göz sermayesini asla geri döndürmez ve alıcı bunu on yıl boyunca nakit akışında taşır.",
         "Diğer yönde eksik kalıp. Prototip bir kalıbın sekiz yıl üretimde zorlanması ve sonra sezon ortasında, arkasında hiçbir şey yokken arıza vermesi.",
         "Kimsenin istemediği kozmetik şartname. Elle parlatılmış bir yüzey hem kalıpta hem teslim süresinde para eder. Islak bir güvertede kol mesafesinden bakıldığında bir doku genellikle daha iyi görünür ve kalıplama izlerini gizler.",
-        "Saha arızası. Çatlamış bir flanş ya da tasarımda kimsenin yalıtmadığı bir galvanik hücre; garanti talebine, tersane işçiliğine ve itibara mal olur — parçanın ömür boyu cirosunun kat kat üzerinde.",
-        "Çelikten önce yapılacak bir değişikliğin neredeyse bedelsiz önleyeceği şeyi sahada sonradan düzeltmek."
+        "Saha arızası. Çatlamış bir flanş ya da tasarımda kimsenin yalıtmadığı bir galvanik hücre; garanti talebine, tersane işçiliğine ve itibara mal olur — parçanın ömür boyu cirosunun kat kat üzerinde."
       ]
     },
     "continuity": {
@@ -389,7 +388,7 @@
         },
         {
           "name": "Bekletilir, çalıştırılmaz",
-          "note": "İkiz bir kalıp hazır bekleyebilir. Bu bir hazırlıktır, rezerve kapasite değil — kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir ve size hangisinin teklif edildiğini söyleriz."
+          "note": "İkinci bir kalıp hazır bekleyebilir. Bu bir hazırlıktır, ayrılmış kapasite değil — kapasite rezervasyonu ayrı bir sözleşmedir."
         },
         {
           "name": "Siparişe göre tedarik",
@@ -411,8 +410,8 @@
       },
       "figureNote": "Bir kalıp, ancak veri paketi onunla birlikte taşındığında taşınabilirdir: model, kalıp resimleri, çelik ve kalite şartnamesi, yolluk girişi ve soğutma düzeni ile yedek parça listesi.",
       "boundaryHeading": "Neyi biz sağlıyoruz, ne sizde kalıyor",
-      "boundaryLead": "Bu, iki kez okunmaya değer bölümdür. Bu sayfadaki hiç kimsenin belgelendirme yetkisine sahip olmadığı standartlarla yönetilen bir sektörde, itibarı kapsam çizgisi oluşturur — bu yüzden küçük punto bırakılmak yerine tam olarak yazılmıştır.",
-      "boundaryLine": "Kalıbı biz tasarlar ve imal ederiz, parçayı da üretebiliriz. Belgelendirme, yaşlandırma kanıtı ve geometriyi kopyalama hakkı sizde kalır — ve bu üçünden hangisinin eksik olduğunu çelik işlenmeden önce size söyleriz.",
+      "boundaryLead": "Bu sektörü, bu sayfadaki hiç kimsenin belgelendirme yetkisi olmayan standartlar yönetiyor. Bu yüzden kapsam sınırı baştan sona yazıldı.",
+      "boundaryLine": "Kalıbı tasarlar ve yaparız, parçayı da üretebiliriz. Belgelendirme, dış etken dayanım kanıtı ve geometriyi kopyalama hakkı sizde kalır — ve bu üçünden hangisinin eksik olduğunu çelik işlenmeden söyleriz.",
       "oursHeading": "Metal Form sağlar",
       "ours": [
         "Aşınmış, kırık ya da desteklenmeyen bir numuneden, bir fotoğraftan ya da eksik bir teknik resimden, CATIA ya da SolidWorks'te temiz parametrik CAD'e tersine mühendislik.",
@@ -425,7 +424,7 @@
       "yoursHeading": "Sizde kalanlar",
       "yours": [
         "Belgelendirme ve onay. ABYC standartları, 33 CFR 183 Subpart J, EPA geçirgenlik sınırları, yakıt sistemi ISO standartları ve her türlü klas kuruluşu gerekliliği tekne üreticisinin uygunluk yüküdür. Biz sizin belgelendirdiğiniz parçaların kalıbını yaparız. Hiçbir şeyi belgelendirmeyiz.",
-        "Malzeme kalifikasyonu. Yaşlandırma, tuz sisi, su emme ve mekanik kanıtlar hammadde üreticisinin veri sayfasından ya da bağımsız bir laboratuvardan gelir. Bu testleri yapmıyoruz ve yaptığımızı ima etmeyeceğiz.",
+        "Malzeme kalifikasyonu. Yaşlandırma, tuz sisi, su emme ve mekanik veriler reçine üreticisinin teknik föyünden ya da bağımsız bir laboratuvardan gelir. Biz bu testleri yapmayız.",
         "Kalite kararı ve o kalitenin bir programın ortasında üretimden kalkması ya da yeniden formüle edilmesi hâlindeki yeniden kalifikasyon riski.",
         "İşlevsel şartname: parçanın neyi tutması, neyi sızdırmaz kılması, neyi yalıtması ve neye dayanması gerektiği. Elimizden geldiğince öneririz, sorgularız ve sayısallaştırırız; kritik arayüzler çelik işlenmeden önce sizinle mutabık kalınır.",
         "Geometrinin kopyalanmasına ilişkin hak — mülkiyet, sözleşme kısıtları ve patent durumu. Biz sorarız, siz cevaplarsınız ve hukuken paylaşabildiğiniz şey üzerinden çalışırız.",
@@ -457,7 +456,7 @@
             "ASTM B117 ve ISO 9227 — sürekli tuz sisi. Polimerler metaller gibi korozyona uğramaz; ancak test yüzey bozunmasını, aşınmayı ve kaplama kaybını ortaya çıkarır.",
             "ASTM D570 — daldırma yoluyla su emme, sayısallaştırılmış hâlde. Her hidroliz ve ölçüsel kararlılık argümanının arkasındaki rakam.",
             "ASTM D256 darbe ve ASTM D790 eğilme — mekanik temel. Önemli olan değer, maruziyetten önce değil sonra ölçülendir.",
-            "Kanıtın geldiği yer: hammadde üreticisinin veri sayfası ya da iddiayı ortaya atan tarafın görevlendirdiği bağımsız bir test laboratuvarı. Metal Form yaşlandırma, tuz sisi ya da malzeme kalifikasyon testi yapmaz ve bunu yazılı olarak da belirtir."
+            "Kanıt nereden gelir: reçine üreticisinin teknik föyü ya da iddiayı yapan tarafın görevlendirdiği bağımsız bir test laboratuvarı."
           ],
           "source": "Standartlar alıcının kanıt zinciri olarak anılmaktadır. Metal Form akreditasyonları değildir."
         },
@@ -478,10 +477,9 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Bir fotoğraf, aşınmış bir numune ya da bir teknik resim. Geometri sorunları, parçanın gerçekte gördüğü maruziyete uygun malzeme kısa listesi, gerçek yıllık adedinize uyan kalıp rotası ve o parçayı tedarikte tutmak için ne gerektiğiyle dönüş yaparız. 2 iş günü içinde ilk proje dönüşü. Geometri paylaşılmadan önce NDA.",
+    "body": "Bir fotoğraf, aşınmış bir numune ya da bir çizim. Geometri sorunları, parçanın gerçekten gördüğü ortama uygun kısa malzeme listesi, gerçek yıllık adedinize uyan kalıp güzergâhı ve o parçayı tedarikte tutmak için gerekenlerle döneriz.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form. Bir denizcilik parçam var — [güverte donanımı / kaporta / bağlantı elemanı / yakıt sistemi parçası / şamandıra / diğer]. Yaklaşık yıllık adet: ___. Fotoğraf, aşınmış numune ya da teknik resim gönderebilirim. Kalıp rotası konusunda görüş verebilir misiniz?",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form. Bir denizcilik parçam var — [güverte donanımı / kaporta / bağlantı elemanı / yakıt sistemi parçası / şamandıra / diğer]. Yaklaşık yıllık adet: ___. Fotoğraf, aşınmış numune ya da teknik resim gönderebilirim. Kalıp rotası konusunda görüş verebilir misiniz?"
   }
 }

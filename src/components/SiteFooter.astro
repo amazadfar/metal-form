@@ -11,9 +11,10 @@
  *    and the footer's row was the one nobody used. The hreflang alternates in
  *    the document head still expose every translation to a crawler.
  *
- *  · The brand block leads with the one commitment the company makes in public:
- *    a first technical read within a stated window. That is the most useful
- *    thing a buyer who has scrolled this far can be told.
+ *  · The closing offer is gone too. Every page ends on a call to action with
+ *    the same button and the same response-time promise, and the footer
+ *    repeated both of them one screen later. The footer is navigation and
+ *    disclosure; the offer is made once, above it.
  *
  *  · Type sizes go up and the columns get room. A footer set entirely at 13px
  *    reads as small print, and small print is not what the last impression of
@@ -25,9 +26,8 @@
  * sits here, in every language, on every page.
  */
 import Wordmark from './Wordmark.astro';
-import WhatsAppButton from './WhatsAppButton.astro';
 import { localePath, type Locale } from '../i18n/locales.ts';
-import { getCommon, getIndustry, getHome } from '../content/index.ts';
+import { getCommon, getIndustry } from '../content/index.ts';
 import { INDUSTRY_LIST } from '../config/industries.ts';
 import { BRAND, CONTACT, resolved } from '../config/site.ts';
 import { availableChannels, mailtoLink, telLink } from '../lib/contact.ts';
@@ -36,7 +36,6 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 
 const c = getCommon(locale);
-const h = getHome(locale);
 const channels = availableChannels();
 const email = resolved(CONTACT.email);
 const phone = resolved(CONTACT.phone);
@@ -59,15 +58,6 @@ const year = 2026;
     <div class="ftr__lede-copy">
       <Wordmark href={localePath(locale)} size="lg" inverse />
       <p class="ftr__tagline">{c.footer.tagline}</p>
-    </div>
-    <div class="ftr__lede-act">
-      <p class="ftr__promise">{c.trust.response}</p>
-      <WhatsAppButton
-        locale={locale}
-        prefill={h.cta.prefill}
-        label={c.actions.sendProject}
-        source="footer"
-      />
     </div>
   </div>
 
@@ -134,16 +124,10 @@ const year = 2026;
     --btn-hover: #FFFFFF;
     margin-block-start: auto;
   }
-  .ftr .btn--whatsapp:hover { color: var(--steel-950); }
 
   /* ── Lede ─────────────────────────────────────────────────────────────── */
   .ftr__lede {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: clamp(2rem, 5vw, 4rem);
-    flex-wrap: wrap;
-    padding-block: clamp(3rem, 6vw, 5rem) clamp(2.5rem, 5vw, 4rem);
+    padding-block: clamp(2.5rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem);
     border-block-end: 1px solid var(--line);
   }
   .ftr__tagline {
@@ -153,12 +137,6 @@ const year = 2026;
     letter-spacing: var(--track-head);
     max-inline-size: 26ch;
     color: #FFFFFF;
-  }
-  .ftr__lede-act { display: grid; gap: var(--sp-4); justify-items: start; }
-  .ftr__promise {
-    font-size: var(--step-0);
-    color: var(--ink-muted);
-    max-inline-size: 30ch;
   }
 
   /* ── Columns ──────────────────────────────────────────────────────────── */
@@ -205,6 +183,16 @@ const year = 2026;
     transition: color var(--dur-2) var(--ease-out);
   }
   .ftr__inds a:hover, .ftr__list a:hover { color: #FFFFFF; }
+
+  /* On a phone these are a long column of small links. The row spacing goes
+     into the target instead, so the column is the same length and every entry
+     clears 44px. */
+  @media (pointer: coarse) {
+    .ftr__inds a, .ftr__list a { min-block-size: 44px; }
+    .ftr__lede-copy :global(a.wm) { min-block-size: 44px; display: inline-flex; align-items: center; }
+    .ftr__inds { gap: 0 1.75rem; }
+    .ftr__list { gap: 0; }
+  }
 
   /* One dot per vertical, in that vertical's own colour — the same colour it
      carries on its tile and across its whole chapter. */

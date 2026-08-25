@@ -645,7 +645,7 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
       <div class="el-panels">
         <h3 class="t-label el-panels__h">{b.panels.heading}</h3>
         {b.panels.items.map((panel: any, i: number) => (
-          <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+          <div class="disc" data-open="false">
             <h4>
               <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
                 <span>{panel.title}</span>

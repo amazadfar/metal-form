@@ -135,6 +135,13 @@ const next = list[(idx + 1) % list.length];
     transition: color var(--dur-2) var(--ease-out);
   }
   .chnav__list a:hover { color: var(--ink); }
+
+  /* Thirteen links in a column on a phone. The row gap becomes target height
+     so the block is the same length and every entry is tappable. */
+  @media (pointer: coarse) {
+    .chnav__list { gap: 0 1.5rem; }
+    .chnav__list a { min-block-size: 44px; align-items: center; }
+  }
   .chnav__list a[aria-current='page'] { color: var(--ink); font-weight: var(--weight-medium); }
   .chnav__dot {
     inline-size: 0.4rem;

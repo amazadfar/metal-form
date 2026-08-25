@@ -48,7 +48,7 @@
     "delivery": "International delivery",
     "deliveryNote": "Tools and components ship internationally. Terms, route and documentation are agreed with the quotation.",
     "response": "Initial response within 2 business days",
-    "responseNote": "A first technical read — feasibility direction, what is missing, and the next step. Not a final quotation, and we will not pretend otherwise."
+    "responseNote": "A first technical read: feasibility direction, what is still missing, and the next step. The quotation follows once the geometry and the volume are understood."
   },
   "nda": {
     "heading": "Confidentiality and NDA",
@@ -76,7 +76,7 @@
     "companyHeading": "Company",
     "contactHeading": "Contact",
     "rights": "All rights reserved.",
-    "mediaNote": "Drawings, diagrams and animations on this site are schematics produced to explain engineering and manufacturing. They are not photographs of Metal Form equipment, facilities or completed projects. Real project media is published only with the customer's written permission."
+    "mediaNote": "Drawings, diagrams and animations on this site are schematics, drawn to explain engineering — not photographs of Metal Form equipment, facilities or completed work. Real project media appears only with the customer's written permission."
   },
   "a11y": {
     "skipToContent": "Skip to content",

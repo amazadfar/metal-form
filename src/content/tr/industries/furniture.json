@@ -40,7 +40,7 @@
       "index": "01",
       "kicker": "Parçalar",
       "heading": "Mobilya plastiği, tek katalogda iki ayrı iştir.",
-      "body": "Küçük donanım — pabuçlar, tapalar, eksantrikler, dübeller, klipsler, raf destekleri — milyonlarla satılır ve fiyatını göz sayısı ile disiplinli bir yolluk belirler. Büyük parçalar — ayaklar, kabuklar, oturaklar, masa parçaları — atımla satılır ve fiyatını cidar kalınlığı ile çevrim süresi belirler. Mobilya programlarının çoğunda ikisi birden vardır. Kalıp stratejisinin proje bazında değil, parça bazında kararlaştırılmasının nedeni budur.",
+      "body": "Küçük donanım — kızak pabuçları, kapaklar, eksantrikler, dübeller, klipsler, raf destekleri — milyonlarla satılır. Büyük parçalar — ayaklar, kabuklar, oturaklar, masa elemanları — baskı başına satılır. Mobilya programlarının çoğunda ikisi de vardır; kalıp stratejisi bu yüzden proje bazında değil, parça bazında kararlaştırılır.",
       "listLabel": "Parça aileleri",
       "rows": [
         {
@@ -84,7 +84,7 @@
           "note": "Masa kablo kapakları, priz çerçeveleri, kablo omurgaları, kapaklar, klipsler ve tepsiler. Yapısal talep düşük, renk uyumu talebi yüksek; üstelik her masa serisiyle birlikte değişen bir kategori."
         }
       ],
-      "close": "Ayrıca: kolçak taşıyıcıları, sürgüler ve mandallar; menteşe kapakları ve montaj plakaları; boru pabuçları ve ayak içi tapaları; raf destekleri ve pimleri; masa ve gövde bağlantı elemanları; vida kapakları, kenar profilleri ve dekoratif çerçeveler; lamba gövdeleri, saksı gövdeleri ve enjeksiyon paravanlar."
+      "close": "Ayrıca: kolçak taşıyıcıları ve mandallar, menteşe kapakları ve montaj plakaları, boru bileziği ve ayak insertleri, raf destekleri, kasa bağlantıları, kenar profilleri, aydınlatma gövdeleri ve saksı kabukları."
     },
     "loadpath": {
       "index": "02",
@@ -237,7 +237,7 @@
         "BIFMA X5.5",
         "BIFMA X5.9"
       ],
-      "standardsNote": "Statik yük, yorulma çevrimi, darbe ve devrilme. Bunlar sizin yükümlülükleriniz ve sizin akreditasyonlarınızdır, asla bizim değil. Parçayı, dayanması gereken diziye göre tasarlarız; test etmeyiz ve belgelendirmeyiz.",
+      "standardsNote": "Statik yük, yorulma çevrimi, darbe ve devrilme. Bu yükümlülükler ve akreditasyonlar sizindir. Biz parçayı, dayanması gereken diziye göre tasarlarız; test etmez ve belgelendirmeyiz.",
       "glass": {
         "heading": "Cam elyafın cevabı değiştirdiği yer",
         "body": "Cam elyaf rijitliği yükseltir ve sünmeyi düşürür; yük taşıyan bir mobilya parçasının ihtiyacı da tam olarak budur. Aynı zamanda birleşme izini tasarımın kısıtı hâline getirir; çünkü buluşma cephesinde elyaflar akışa doksan derece döner ve hiçbir şeyi takviye etmez.",
@@ -302,7 +302,7 @@
       "caption": "Şematiktir. Sayılar argümanı örneklemek içindir; ölçülmüş bir vaka değildir.",
       "tradeoff": {
         "heading": "Birleştirmenin bedeli",
-        "body": "Geçme detayları bedava değildir. Beraberinde geçme alırlar; geçmeler de sürgü, lifter ve daha karmaşık bir kalıp alır. Parça bir kez monte edilip bir daha hiç açılmayacaksa bu takas yapmaya değer. Parça serviste açılacaksa ya da müşteri sahada açacak ve kırılan bir tırnak bir garanti iadesine dönüşecekse reddetmeye değer. İkisinden hangisi olduğunu düşündüğümüzü size söyleriz."
+        "body": "Geçmeli klipsler bedava değildir. Ters açı getirirler; ters açı da kaydırıcı, lifter ve daha karmaşık bir kalıp getirir. Bu takas, parça bir kez monte edilip bir daha açılmayacaksa değerlidir. Parça serviste açılacaksa ya da müşteri sahada açıp kırdığı bir kancayla garanti iadesi yaratacaksa reddedilmeye değer."
       },
       "close": "Yalnızca parçayı değil, montajı gönderin. Bir mobilya programında birleştirme, genellikle kimsenin bizden teklif istemediği parçalardadır ve tek bir teknik resim görürsek onları göremeyiz."
     },
@@ -375,7 +375,7 @@
         "Tek bir seride iki ana malzeme, tek renk olarak okunmak için iki ayrı masterbatch formülasyonu ister. Aynı nominal renkteki bir polipropilen pabuç ile bir ABS dekor kapağı iki ayrı iştir.",
         "Uzun akışlı polipropilen kabuklar kaplan çizgilerinin ortaya çıktığı yerdir — akış boyunca değişen parlak ve mat bantlar; en kötüsü dolgulu ve pigmentli compoundlarda görülür. Bir akış sorunudur ve boyahanede değil, girişte çözülür."
       ],
-      "boundaryNote": "Burada yapmadıklarımız: renk ölçüm ekipmanı işletmiyoruz ve bir rengi belgelendirmiyoruz. Kalıbı, parçanın serideki her renkte hiçbir geometri sonucu doğmadan kalıplanabileceği şekilde tasarlarız ve sizin ya da masterbatch tedarikçinizin belirlediği plakaya ve let-down oranına göre çalışırız.",
+      "boundaryNote": "Renk ölçümü ve renk belgelendirmesi bizim işimiz değil: ne ekipmanı işletiriz ne de bir tonu onaylarız. Kalıbı, parça serideki her renkte hiçbir geometrik sonuç doğurmadan basılabilecek şekilde tasarlarız ve sizin ya da masterbatch tedarikçinizin belirlediği referans plakaya ve dozaj oranına göre çalışırız.",
       "sourceNote": "Bu sayfadaki çıkma açıları, VDI sınıfları ve pürüzlülük değerleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir. Sizin parçanızın değerleri sizin doku firmanıza ve sizin çeliğinize aittir."
     },
     "tooling": {
@@ -483,9 +483,8 @@
             "Bitmiş ürünün nihai montajı, perakende ambalajı ve fabrikanızdan çıkan her şeyin belgelendirmesi."
           ]
         },
-        "close": "Birinci sütun yaptıklarımızdır. İkincisi ise teklifden sonra değil, teklifte yüksek sesle söylediklerimizdir."
-      },
-      "response": "2 iş günü içinde ilk teknik dönüş."
+        "close": "İlk sütun bizim yaptığımız. İkincisi size, laboratuvarınıza ve test kuruluşunuza ait."
+      }
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -508,8 +507,6 @@
           "title": "Mobilya parçalarında uyguladığımız tasarım kuralları",
           "bullets": [
             "Yolluk girişi konumu; birleşme izlerini yüklü yüzeylerden ve görünen yüzeyden uzak tutacak şekilde seçilir.",
-            "Nervür kalınlığı cidara oranlanır; böylece görünen yüzey çöküntüsüz kalır.",
-            "Göbekler maçalanır, tabanında radyuslanır, cidarı nominal cidara oranlanır, girişi yarılmaya karşı pahlanır.",
             "Çıkma açısı varsayılan bir değere göre değil, belirlenen doku sınıfına göre verilir.",
             "Çekme payı genel bir tablodan değil, belirli dolgulu kaliteye ve akış yönüne göre belirlenir — dolgulu kaliteler anizotropik çeker.",
             "Soğutma nervürlerin ve göbeklerin çevresine serilir; çünkü parçayı biçiminden çıkaran şey en son donan kesittir.",
@@ -526,8 +523,7 @@
             "Renk referansları ve doku sınıfı ya da bu parçanın uyması gereken seri.",
             "Bitmiş ürünün test edileceği her türlü standart.",
             "Bunun yeni bir parça mı, bir yeniden tasarım mı, yoksa hâlihazırda var olan bir kalıp için ikinci kaynak mı olduğu.",
-            "Parçanın bir kez mi monte edildiği yoksa sahada servis mi göreceği — bağlantı stratejisini bu değiştirir.",
-            "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+            "Parçanın bir kez mi monte edildiği yoksa sahada servis mi göreceği — bağlantı stratejisini bu değiştirir."
           ]
         }
       ]
@@ -538,7 +534,6 @@
     "body": "Bir STEP dosyası, bir teknik resim ya da elinizdeki parçanın kendisi. Geometri sorunları, sizde olduğunu düşündüğümüz yük durumu, kalıp rotası ve üretim ekonomisiyle dönüş yaparız.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form — mobilya hakkında.\n\nParça: tekerlek / sandalye ayağı / pabuç / bağlantı elemanı / çekmece parçası / kabuk / dekor parçası\nYeni parça / yeniden tasarım / mevcut bir kalıp için ikinci kaynak\nMalzeme: \nYıllık adet: \nParçanın uyması gereken renk ve doku: \nBitmiş ürünün test edildiği standart: \n\nSTEP dosyası, teknik resim ya da fiziksel parça gönderebilirim.",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form — mobilya hakkında.\n\nParça: tekerlek / sandalye ayağı / pabuç / bağlantı elemanı / çekmece parçası / kabuk / dekor parçası\nYeni parça / yeniden tasarım / mevcut bir kalıp için ikinci kaynak\nMalzeme: \nYıllık adet: \nParçanın uyması gereken renk ve doku: \nBitmiş ürünün test edildiği standart: \n\nSTEP dosyası, teknik resim ya da fiziksel parça gönderebilirim."
   }
 }

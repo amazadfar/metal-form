@@ -40,7 +40,7 @@
       "index": "01",
       "kicker": "The objects",
       "heading": "Furniture plastic is two businesses in one catalogue.",
-      "body": "Small hardware — glides, caps, cams, dowels, clips, shelf supports — is sold by the million, and its price is set by cavitation and a disciplined runner. Large parts — bases, shells, seats, table components — are sold by the shot, and their price is set by wall thickness and cycle time. Most furniture programmes contain both. That is why the tooling strategy is decided part by part, never project by project.",
+      "body": "Small hardware — glides, caps, cams, dowels, clips, shelf supports — is sold by the million. Large parts — bases, shells, seats, table components — are sold by the shot. Most furniture programmes contain both, which is why the tooling strategy is decided part by part, never project by project.",
       "listLabel": "Part families",
       "rows": [
         {
@@ -84,7 +84,7 @@
           "note": "Desk grommets, port bezels, cable spines, flap covers, clips and trays. Low structural demand, high colour-match demand, and a category that changes with every desk range."
         }
       ],
-      "close": "Also: armrest carriers, sliders and latches; hinge cover caps and mounting plates; tube ferrules and leg inserts; shelf supports and pegs; table and frame connectors; screw caps, edge trims and decorative bezels; lamp bodies, planter shells and moulded screens."
+      "close": "Also: armrest carriers and latches, hinge caps and mounting plates, tube ferrules and leg inserts, shelf supports, frame connectors, edge trims, lamp bodies and planter shells."
     },
     "loadpath": {
       "index": "02",
@@ -237,7 +237,7 @@
         "BIFMA X5.5",
         "BIFMA X5.9"
       ],
-      "standardsNote": "Static load, fatigue cycling, impact and tip-over. These are your obligations and your accreditations, never ours. We design the part around the sequence it has to survive; we do not test it and we do not certify it.",
+      "standardsNote": "Static load, fatigue cycling, impact and tip-over. Those obligations and accreditations are yours. We design the part around the sequence it has to survive; we do not test it and we do not certify it.",
       "glass": {
         "heading": "Where glass fill changes the answer",
         "body": "Glass raises stiffness and cuts creep, which is exactly what a load-bearing furniture part needs. It also makes the weld line the design constraint, because at the meeting front the fibres turn ninety degrees to the flow and reinforce nothing.",
@@ -302,7 +302,7 @@
       "caption": "Schematic. The counts illustrate the argument; they are not a measured case.",
       "tradeoff": {
         "heading": "What consolidation costs",
-        "body": "Snap features are not free. They buy undercuts, and undercuts buy slides, lifters and a more complicated tool. The trade is worth making where the part is assembled once and never opened again. It is worth refusing where the part will be serviced, or where a customer will open it in the field and a broken hook becomes a warranty return. We will say which of the two we think you have."
+        "body": "Snap features are not free. They buy undercuts, and undercuts buy slides, lifters and a more complicated tool. The trade is worth making where the part is assembled once and never opened again. It is worth refusing where the part will be serviced, or where a customer will open it in the field and a broken hook becomes a warranty return."
       },
       "close": "Send the assembly, not only the part. On a furniture programme the parts nobody asked us to quote are usually where the consolidation is, and we cannot see them if we only see one drawing."
     },
@@ -375,7 +375,7 @@
         "Two base materials in one range need two masterbatch formulations to read as one colour. A polypropylene glide and an ABS trim cap in the same nominal colour are two different jobs.",
         "Long-flow polypropylene shells are where tiger striping appears — alternating gloss and matt bands across the flow, worst on filled and pigmented compounds. It is a flow problem and it is fought at the gate, not at the paint shop."
       ],
-      "boundaryNote": "What we do not do here: we do not operate colour measurement equipment and we do not certify a colour. We design the tool so the part can be moulded in every colour in the range without a geometry consequence, and we work to the plaque and the let-down percentage you or your masterbatch supplier specify.",
+      "boundaryNote": "Colour measurement and colour certification are not ours: we do not operate the equipment and we do not certify a shade. We design the tool so the part can be moulded in every colour in the range without a geometry consequence, and we work to the plaque and the let-down percentage you or your masterbatch supplier specify.",
       "sourceNote": "Draft angles, VDI grades and roughness values on this page are published industry practice, not Metal Form measurements. The figures for your part belong to your texture house and your steel."
     },
     "tooling": {
@@ -483,9 +483,8 @@
             "Final assembly of the finished product, packing for retail, and certification of anything that leaves your factory."
           ]
         },
-        "close": "The first column is what we do. The second is what we say out loud at the quotation rather than after it."
-      },
-      "response": "Initial technical response within 2 business days."
+        "close": "The first column is what we do. The second belongs to you, your laboratory and your test house."
+      }
     },
     "panels": {
       "heading": "Deeper detail",
@@ -508,8 +507,6 @@
           "title": "Design rules we apply to furniture parts",
           "bullets": [
             "Gate position chosen to keep weld lines off loaded surfaces and off the visible surface.",
-            "Rib thickness proportioned to the wall so the visible face stays free of sink.",
-            "Bosses cored, filleted at the base, wall proportioned to the nominal wall, entry chamfered against splitting.",
             "Draft matched to the specified texture grade rather than to a default.",
             "Shrinkage allowance set for the specific filled grade and for flow direction, not from a generic table — filled grades shrink anisotropically.",
             "Cooling laid out around the ribs and bosses, because the last section to freeze is what pulls the part out of shape.",
@@ -526,8 +523,7 @@
             "Colour references and the texture grade, or the range this part has to match.",
             "Any standard the finished product will be tested to.",
             "Whether this is a new part, a redesign, or a second source for a tool that already exists.",
-            "Whether the part is assembled once or serviced in the field — it changes the fastening strategy.",
-            "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+            "Whether the part is assembled once or serviced in the field — it changes the fastening strategy."
           ]
         }
       ]
@@ -538,7 +534,6 @@
     "body": "A STEP file, a drawing, or the part in your hand. We come back with the geometry issues, the load case we think you have, the tooling route and the production economics.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form — furniture enquiry.\n\nPart: castor / chair base / glide / connector / drawer component / shell / trim\nNew part / redesign / second source for an existing tool\nMaterial: \nAnnual volume: \nColour and texture the part has to match: \nStandard the finished product is tested to: \n\nI can send a STEP file, a drawing or the physical part.",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form — furniture enquiry.\n\nPart: castor / chair base / glide / connector / drawer component / shell / trim\nNew part / redesign / second source for an existing tool\nMaterial: \nAnnual volume: \nColour and texture the part has to match: \nStandard the finished product is tested to: \n\nI can send a STEP file, a drawing or the physical part."
   }
 }

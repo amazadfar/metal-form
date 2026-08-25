@@ -12,7 +12,7 @@
       "The mould",
       "is the finish."
     ],
-    "lead": "Closures, jars, dispenser and mechanism components. Polish grade, parting line, gate position and draft are cut into steel once and copied onto every unit after that. Send the part or the model. We assess the geometry, the tooling route and the production economics.",
+    "lead": "Closures, jars, dispenser and mechanism components. The show surface is not applied after moulding — it is copied off the steel, one unit at a time. Send the part or the model. We assess the geometry, the tooling route and the production economics.",
     "markers": [
       "Multi-cavity to 46 cavities",
       "Unscrewing and collapsible cores",
@@ -310,7 +310,7 @@
           "note": "Clear SAN or acrylic against fragrance oil, alcohol or an aggressive active. Every dimension was in tolerance."
         }
       ],
-      "close": "Torque measurement, leak testing and transit qualification belong to the filler and the test house. We design the geometry that has to pass them, and we will say plainly which of these a tooling change can fix and which it cannot."
+      "close": "Torque measurement, leak testing and transit qualification belong to the filler and the test house. We design the geometry that has to pass them, and we say which of those a tooling change can fix."
     },
     "cavities": {
       "index": "06",
@@ -346,7 +346,7 @@
       "riskBody": "High cavitation concentrates risk. One frozen hot tip or one damaged cavity insert takes the whole tool off the press, and published industry practice reports that roughly four in five high-cavitation moulds never run at their rated capacity because fill balance was never achieved. Two medium tools sometimes beat one large one: a failure then costs capacity rather than production.",
       "oursHeading": "Where our cavity count sits",
       "oursBody": "Metal Form has built tooling up to 46 cavities. That is the band a cosmetic closure programme actually occupies — high enough to move part cost, small enough that a tool can still be balanced, maintained and reasoned about rather than merely operated.",
-      "bridgeBody": "For a format that has not proved itself yet, the honest route is a low-cavitation bridge tool sized for a market test, and a production tool sized afterwards against the volume that actually arrived. Cavitation bought against a forecast that did not turn up is the most expensive mistake in this sector."
+      "bridgeBody": "For a format that has not proved itself yet, the sensible route is a low-cavitation bridge tool sized for a market test, and a production tool sized afterwards against the volume that actually arrived. Cavitation bought against a forecast that did not turn up is the most expensive mistake in this sector."
     },
     "boundary": {
       "index": "07",
@@ -394,7 +394,7 @@
           "note": "Filling, capping, secondary packaging and the line equipment that does them."
         }
       ],
-      "close": "Naming this at the start is not a disclaimer. It is how the handovers get scheduled, and it is most of the difference between a launch date that holds and one that quietly moves."
+      "close": "Naming this at the start is how the handovers get scheduled, and it is most of the difference between a launch date that holds and one that quietly moves."
     },
     "continuity": {
       "index": "08",
@@ -415,7 +415,7 @@
         "Manufacturing since 2006",
         "1,000+ completed projects"
       ],
-      "readiness": "This is readiness, not reserved capacity. Capacity is reserved by contract or it is not reserved at all, and we will say which applies to your programme.",
+      "readiness": "This is readiness, not reserved capacity. Reserving capacity is a separate contract.",
       "sendHeading": "What is enough to start",
       "send": [
         "A physical sample of the part",
@@ -423,8 +423,7 @@
         "The neck finish code, or the component the part has to mate with",
         "Annual volume per SKU, and how many colour variants the tool has to serve",
         "Whether this is a new tool, a second source, or a redesign of something already running"
-      ],
-      "note": "Initial technical response within 2 business days. An NDA can be signed before detailed technical disclosure."
+      ]
     },
     "panels": {
       "heading": "Deeper detail",
@@ -437,8 +436,7 @@
             "SPI A-3: 1200-grit diamond, roughly Ra 0.05 – 0.10 µm. Gloss without the mirror.",
             "B grades are reached with paper, C grades with stone, D grades by dry blast. Acrylic takes an A-grade polish best of the common cosmetic materials.",
             "VDI 3400 is a separate EDM roughness scale, twelve reference grades from VDI 12 (Ra 0.40 µm) to VDI 45 (Ra 18.00 µm), where every six units roughly doubles roughness.",
-            "Texture sets the minimum draft: about 1.5 – 2.0 degrees at VDI 24, 4.0 degrees or more at VDI 36. Below that the part drags and scuffs on ejection.",
-            "Specify the grade per face rather than per part, and the tool costs what the pack needs rather than what a blanket drawing note asked for."
+            "Texture sets the minimum draft: about 1.5 – 2.0 degrees at VDI 24, 4.0 degrees or more at VDI 36. Below that the part drags and scuffs on ejection."
           ],
           "source": "Figures in this panel are published industry practice, not Metal Form measurements."
         },
@@ -471,10 +469,9 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A physical sample, a CAD model or a drawing is enough to start. We come back on geometry, tooling route, cavitation and production economics.",
+    "body": "A sample or a model, and the neck finish if there is one. We come back on the surface specification, the tooling route, the cavitation and the production economics.",
     "action": "Send your part",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form — cosmetics and personal care enquiry.\n\nComponent: cap / jar / pump or airless part / mechanism part / other\nNeck finish or key dimensions: \nMaterial: \nSurface: gloss show face / textured / both\nAnnual volume per SKU: \nNew tool / second source / redesign: \n\nI can send a sample or a CAD model.",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form — cosmetics and personal care enquiry.\n\nComponent: cap / jar / pump or airless part / mechanism part / other\nNeck finish or key dimensions: \nMaterial: \nSurface: gloss show face / textured / both\nAnnual volume per SKU: \nNew tool / second source / redesign: \n\nI can send a sample or a CAD model."
   }
 }

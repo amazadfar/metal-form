@@ -111,7 +111,7 @@
           "need": "Parça, yıllık adet ve sevk edildiği pazarlar."
         }
       ],
-      "close": "Geri gelen şey; geometri okuması, kalıp rotası, üretim ekonomisi ve tedarik seçenekleridir. 2 iş günü içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir.",
+      "close": "Dönen şey, geometri okuması, kalıp güzergâhı, üretim ekonomisi ve tedarik seçenekleridir — 2 iş günü içinde.",
       "figureNote": "Birleşme şeması. Her rota aynı ilk çıktıda biter."
     },
     "consolidate": {
@@ -174,7 +174,7 @@
         "Bir arıza biçimi: yerinden çıkmaya çalışan bir pim"
       ],
       "cautionHeading": "Bedavalığın bittiği yer",
-      "caution": "Birleştirme kendiliğinden doğru cevap değildir. Tek parça demek; eskiden üç ayrı ödün olan bir geometride tek malzeme, tek renk ve tek cidar disiplini demektir ve ürünün tamamını, bütün olarak düzeltilmesi gereken tek bir kalıpta toplar. Parçalar malzemeyi ve işlevi paylaştığı yerde yapmaya değer. Paylaşmadığı yerde reddetmeye değer ve bunu size söyleriz.",
+      "caution": "Birleştirme her zaman doğru cevap değildir. Tek parça, daha önce üç ayrı uzlaşma olan bir geometride tek malzeme, tek renk ve tek et kalınlığı disiplini demektir ve tüm ürünü, bütün olarak düzeltilmesi gereken tek bir kalıpta toplar. Parçalar malzeme ve işlevi paylaşıyorsa değerlidir, paylaşmıyorsa reddedilmeye değer.",
       "figureNote": "Birleştirme şeması. Bir menteşe pimi, ayrı bir kapak ve bir gövde; film menteşeli tek bir enjeksiyon parçasına dönüşüyor."
     },
     "volume": {
@@ -215,7 +215,7 @@
       "flipLabel": "aile kalıbı tersine döner",
       "flip": "Bir aile kalıbı farklı gözleri — bir üst ve bir alt gövdeyi, bir gövde ile bir kapağı — tek blokta toplar ve genellikle fiyat için tercih edilir. Parçalar sabit bir oranda tüketildiği ve benzer cidar kesitlerine ve atım hacimlerine sahip olduğu sürece doğru cevaptır. Ağır bir parçayla hafif bir parçayı aynı kalıba koyun; yolluk birini ütülerken diğerini aç bırakır. Her parçanın kendi göz sayısını istediği adedin ötesinde aile kalıbı bir tasarruf olmaktan çıkar ve bir kısıt hâline gelir: düzeltme gerektiren tek bir göz, bütün parçaları aynı anda presten indirir.",
       "modelHeading": "Bu grafiğin ne olduğu ve ne olmadığı",
-      "model": "Grafik fiyata göre değil, biçime göre çizilmiştir. Sizin parça başına kalıp maliyetiniz, kalıbınızın gerçekten ürettiğiniz parçaya bölümüdür ve bunu bir web sayfasında kimse sizin için çizemez. Yayımlanmış örnek bir model aynı aritmetiği üç kez yürütüyor — yüz parçaya yayılmış çok düşük adetli bir kalıp, beş bine yayılmış işlenmiş alüminyum bir kalıp, yüz bine yayılmış çelik bir kalıp — ve parça fiyatındaki kalıp terimi bu aralıkta kabaca beş kat düşüyor. Bu, yayımlanmış bir sektör kaynağından alınmış öğretici bir rakamdır. Bir fiyat teklifi değildir ve bizim rakamımız değildir.",
+      "model": "Bu çizelge fiyata göre değil biçime göre çizildi. Parça başına kalıp maliyetiniz, kalıbınızın gerçekten ürettiğiniz parça sayısına bölümüdür ve bunu bir web sayfasında kimse sizin için çizemez. Yayımlanmış örnek bir model aynı aritmetiği üç kez işletir — çok düşük adetli bir kalıp yüz parçada, işlenmiş alüminyum bir kalıp beş binde, çelik bir kalıp yüz binde — ve parça fiyatındaki kalıp payı bu aralıkta yaklaşık beş kat düşer. Yayımlanmış bir sektör kaynağından öğretici bir rakam; ne bir teklif ne de bizim rakamımız.",
       "close": "Bu aritmetiği önce bu yıl gerçekten yapacağınız adede, sonra onun on katına göre yürütürüz ve büyük kalıbın kendini programın ömrü içinde geri ödemediği yerde bunu açıkça söyleriz. Bazen doğru cevap şimdi daha küçük bir kalıp, sipariş defteri gerçekleştiğinde bir üretim kalıbıdır.",
       "figureNote": "Amortisman şeması. Yalnızca göreli biçim — para birimi yok, fiyat teklifi yok."
     },
@@ -383,7 +383,7 @@
           "anchor": true
         }
       ],
-      "anchorNote": "Bunlardan ikisi yayımlanmış sabit noktalardır: VDI 24'te kabaca 1,5 – 2,0° çıkma açısı ve VDI 36'da en az 4,0°. Geri kalanı bu ikisinin arasında ölçeklenir; dolgulu kaliteler ise yine daha fazlasını ister. Sınıflar, Ra değerleri ve çıkma açıları tanımı gereği yaklaşıktır — bir göz dokulandırılmadan önce standarda ve fiziksel bir numuneye karşı teyit edilirler. Yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir.",
+      "anchorNote": "Bunlardan ikisi yayımlanmış referans noktalarıdır: VDI 24’te yaklaşık 1.5 – 2.0° çıkma açısı, VDI 36’da en az 4.0°. Geri kalanı ikisi arasında ölçeklenir; dolgulu tipler daha da fazlasını ister. Bunların tümü Metal Form ölçümü değil, yayımlanmış sektör uygulamasıdır ve göz dokulandırılmadan önce standarda ve fiziksel bir numuneye karşı teyit edilir.",
       "colourHeading": "Renk bir onay değil, bir şartnamedir",
       "colourBody": "Buradaki arıza tek bir kötü parça değildir. Rafta artık kendisiyle uyuşmayan bir ürün serisidir; çünkü renk bir sayı olarak değil, bir görüş olarak mutabık kalınmıştır.",
       "driftLabel": "Aynı renk, partiden partiye",
@@ -504,7 +504,7 @@
         {
           "mark": "İKİNCİ KALIP",
           "title": "İkinci kaynak",
-          "note": "Tek ülkede, tek tesiste, tek tedarikçide duran tek bir kalıp; tüketici ürünlerinin standart tek nokta arızasıdır. İkinci kalıbı yapar, bugün sattığınız parçalara karşı ispatlar ve NDA altında başka bir ülkede hazır tutarız. Bu bir hazırlıktır, rezerve kapasite değil — kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmez ve hangisi olduğunu açıkça söyleriz."
+          "note": "Tek kalıp, tek tedarikçide, tek sahada, tek ülkede: tüketim ürünlerindeki standart tek arıza noktası. İkinci kalıbı yapar, bugün sattığınız parçalara karşı doğrular ve NDA kapsamında başka bir ülkede hazır tutarız. Bu bir hazırlıktır, ayrılmış kapasite değil — kapasite rezervasyonu ayrı bir sözleşmedir."
         }
       ],
       "close": "Kalıp garanti şartları her proje ve kalıp şartnamesi bazında tanımlanır. Kalıbın mülkiyeti, saklanması ve devri; on sekiz ay sonraki bir konuşmaya değil, siparişe aittir."
@@ -520,7 +520,6 @@
             "Nervürler cidara oranlanır ve kökleri radyuslanır; fazla kalın bir nervür, karşı yüzeyde bir çöküntüdür.",
             "Göbekler maçalanır ve nervürlerle desteklenir, asla dolu bırakılmaz — dolu bir göbek size bir çöküntü, bir boşluk ve yiv açan bir vida altında yarılan bir göbek verir.",
             "Her cidar geçişini radyuslayın; keskin iç köşeler gerilmeyi yoğunlaştırır ve akışı bozar.",
-            "Parçanın en kalın kesiti soğutma süresini belirler ve çevrime soğutma hâkimdir.",
             "Derin maçalarda — bir bardak, bir tutamak, bir pil yuvası — sıcak nokta maçanın kendisidir ve çevre devresi yerine baffle ya da bubbler ister."
           ],
           "source": "Bu panodaki rakamlar yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
@@ -534,8 +533,7 @@
             "Küçük parçalarda tünel ve alt girişler tercih edilir; böylece yolluk itme sırasında ayrılır ve sonsuza kadar ödenecek bir elle yolluk ayırma işlemi olmaz.",
             "Sıcak yolluk ile soğuk yolluk arasındaki karar; kalıp fiyatına göre değil, yolluk / parça ağırlık oranına ve renk değişim sıklığına göre verilir.",
             "Aile kalıpları, parçaların sabit bir oranda tüketildiği ve benzer cidar kesitlerine ve atım hacimlerine sahip olduğu yerde işler.",
-            "Birbirinin yerine geçebilen göz insertleri, ikinci bir kalıp olmadan SKU, marka ve pazar varyantlarını karşılar.",
-            "Metal Form'un kalıp deneyimi 46 göze kadar uzanır."
+            "Birbirinin yerine geçebilen göz insertleri, ikinci bir kalıp olmadan SKU, marka ve pazar varyantlarını karşılar."
           ],
           "source": "Burada verilen göz sayısı bantları ve yolluk ekonomisi yayımlanmış sektör uygulamalarıdır."
         },
@@ -556,10 +554,9 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Bir fotoğraf, elle çizilmiş bir eskiz, fiziksel bir numune, bir STEP dosyası ya da hâlihazırda sattığınız bir parça. 2 iş günü içinde geometri okuması, kalıp rotası ve üretim ekonomisiyle dönüş yaparız. Talep hâlinde NDA.",
+    "body": "Bir fotoğraf, elle çizilmiş bir eskiz, fiziksel bir numune, bir STEP dosyası ya da hâlihazırda sattığınız bir parça. Geometri okuması, kalıp güzergâhı ve üretim ekonomisiyle döneriz.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form. Kalıbını yaptırmak istediğim bir tüketici ürünü var. Ürün: [ne olduğu]. Aşama: [eskiz / prototip / CAD / başka yerde üretimde]. Yıllık adet: [yılda adet]. Malzeme: [biliniyorsa]. Geometriyi inceleyip bir kalıp rotası önerebilir misiniz?",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form. Kalıbını yaptırmak istediğim bir tüketici ürünü var. Ürün: [ne olduğu]. Aşama: [eskiz / prototip / CAD / başka yerde üretimde]. Yıllık adet: [yılda adet]. Malzeme: [biliniyorsa]. Geometriyi inceleyip bir kalıp rotası önerebilir misiniz?"
   }
 }

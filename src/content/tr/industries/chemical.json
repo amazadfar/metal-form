@@ -25,7 +25,7 @@
       "kicker": "Arayüz",
       "heading": "Diş bir kelepçedir. Sızdırmazlığı oturma yüzeyi yapar.",
       "body": "Bir kapak dişinden sızdırmazlık yapmaz. Boynun tepesindeki düz halka yüzeyde sızdırmazlık yapar; diş yalnızca onu orada tutan şeydir. Sızdıran bir ambalaj üzerine yürütülen her tartışma iki yerden birinde biter: o oturma yüzeyindeki temas ya da dişin tutamadığı sıkma kuvveti.",
-      "body2": "İkisi de geometridir ve ikisi de tek bir parça var olmadan aylar önce çeliğe işlenir. Oturma yüzeyinde bırakılmış bir yolluk girişi izi bir sızıntı yoludur; giriş konumu teknik resimde bedavadır, kalıp yapıldıktan sonra pahalıdır. İşe yarayan konuşmanın fiyat üzerinden değil, teknik resim üzerinden yürümesinin nedeni budur.",
+      "body2": "İkisi de geometridir ve ikisi de ilk parça var olmadan aylar önce çeliğe işlenir. Sızdırmazlık yüzeyinde kalan bir yolluk izi bir kaçak yoludur; yolluk konumu çizimde bedavadır, kalıp yapıldıktan sonra pahalıdır. Bu yüzden işe yarar konuşma çizim üzerinde olur.",
       "figCaption": "Büyütmede diş kavraması",
       "heroLabels": {
         "closure": "Kapak",
@@ -301,7 +301,7 @@
         "Çekme hammaddeye göre değişir; dolayısıyla aynı çelik, PP homopolimerde ve HDPE'de farklı bir diş verir."
       ],
       "rulesNote": "Yukarıdaki diş oluşturma rotaları, çıkma açısı davranışı ve çekme telafisi yayımlanmış sektör uygulamalarıdır.",
-      "close": "Metal Form; diş sökücü maçalı, katlanabilir maçalı, sürgülü ve lifterlı, sıcak ve soğuk yolluklu, tek ve çok gözlü enjeksiyon kalıpları ile çok parçalı kapaklar ve sprey iç parçaları için insertli kalıplar imal eder. Kapakların sıkıştırma kalıplama ile üretimi bir sektör rotasıdır. Bizim rotamız değildir ve teklif vermek yerine bunu açıkça söyleriz."
+      "close": "Metal Form; döner maçalı, katlanır maçalı, kaydırıcılı ve lifterlı, sıcak ve soğuk yolluklu, tek ve çok gözlü enjeksiyon kalıpları ile çok parçalı kapaklar ve sprey iç parçaları için insert kalıpları yapar. Kapakta kompresyon kalıplama sektörel bir güzergâhtır. Bizim güzergâhımız değildir."
     },
     "cavity": {
       "index": "06",
@@ -320,7 +320,7 @@
       "levers": [
         {
           "k": "Gram",
-          "body": "Adette baskın değişken maliyet ağırlıktır ve aritmetik affetmez. Yılda 20 milyon adet üretilen bir kapaktan 0,2 g alın; yıldan dört ton hammadde çıkarmış olursunuz. Bu sizin hammadde fiyatınız ve sizin adediniz — bizim iddia ettiğimiz bir tasarruf değil, kontrol edebileceğiniz bir aritmetiktir."
+          "body": "Yüksek adette ağırlık, baskın değişken maliyettir ve hesabı acımasızdır. Yılda 20 milyon adet basan bir kapaktan 0.2 g alın; yıldan dört ton reçine çıkarmış olursunuz — sizin reçine fiyatınızla, sizin adedinizde; kendiniz kontrol edebileceğiniz bir hesap."
         },
         {
           "k": "Saniye",
@@ -421,13 +421,13 @@
       "escHeading": "Çevresel gerilme çatlaması",
       "escBody": "Yüzey aktif madde teması artı gerilme, polietilenin klasik arıza biçimidir ve ikisinin aynı anda bulunması gerekir — hiçbiri tek başına yeterli değildir. Yayımlanmış yöntemler; laboratuvarlar arası tekrarlanabilirliği açıkça zayıf olan, yüzey aktif madde içinde çentikli bükülmüş şerit testi ASTM D1693 ile hizmet koşullarını daha iyi temsil eden ASTM D2561 gibi sabit gerilme yöntemleridir. Daha düşük yoğunluk daha düşük kristalinlik ve daha iyi çatlak direnci demektir; yayımlanmış uygulama bunu ders kitabı bilgisi değil, gerçek bir üretim kaldıracı sayar.",
       "escNote": "Yukarıdaki yöntemler, tekrarlanabilirlik ve yoğunluk davranışı yayımlanmış sektör uygulamalarıdır. Metal Form, kalıbını yaptığı hiçbir parçanın gerilme çatlaması performansı hakkında iddiada bulunmaz.",
-      "close": "Ne deneyeceğimizi ve nedenini size söyleriz. Bunun kanıtlanmış olduğunu söylemeyiz."
+      "close": "Neyi deneyeceğimizi ve nedenini söyleriz — ve buna dair kanıtın nerede bittiğini de."
     },
     "boundary": {
       "index": "08",
       "kicker": "Kapsam",
       "heading": "Geometriyi biz işleriz. İçerik sizindir.",
-      "body": "Bir kimyasal ambalaj konuşmasının tedarikçilerin genellikle bulanıklaştırdığı bölümü budur. Burada açık açık duruyor; çünkü bu sayfadaki en işe yarar şey o sınırın kendisidir.",
+      "body": "Bir kimyasal ambalajın iki tarafı vardır. Bizimki burada biter, sizinki burada başlar.",
       "figCaption": "Tedarikin bittiği yer",
       "labels": {
         "steel": "Çelik",
@@ -443,7 +443,7 @@
         "Çelik işlenmeden önce sızdırmazlık geometrisi, diş rotası, yolluk girişi konumu, köprü geometrisi ve itme üzerinde DFM.",
         "Mevcut parçayı mevcut boyun profilinde birebir veren ikinci kaynak ve ikiz kalıplar.",
         "Parça üretimi ve sürekli tedarik ile kalıpla birlikte tanımlanan yedekler ve değişim parçaları.",
-        "CNC frezeleme, tornalama ve manuel talaşlı imalat. Dünya geneline sevkiyat. Ayrıntılı paylaşımdan önce NDA. Proje bazında kararlaştırılan şartlarla kalıp garantisi."
+        "CNC frezeleme, tornalama ve el tezgâhı işleri; ayrıca proje bazında mutabık kalınan şartlarla kalıp garantisi."
       ],
       "staysHeading": "Sizde kalanlar",
       "stays": [
@@ -458,10 +458,8 @@
       "notHeading": "Ve neyimiz yok",
       "not": [
         "Kapakların sıkıştırma kalıplaması yok. Enjeksiyon ile sıkıştırma karşılaştırması bu sayfada bir sektör karşılaştırması olarak geçer, asla bizim teklifimiz olarak değil.",
-        "Hiçbir türde belgemiz yok; kontrollü ortamda, valide ya da kalifiye edilmiş üretimimiz de yok.",
-        "Adı geçen bir simülasyon yazılımı yok, 3B tarama yok, CMM ya da kalite kontrol departmanı yok.",
-        "Çok malzemeli kalıplama yok; sıcak yaldız, metalizasyon, kalıp içi etiketleme ya da galvano kaplama gibi dekorasyon prosesleri yok; bitmiş ambalajların testi ya da belgelendirmesi yok.",
-        "46'nın üzerinde göz sayısı iddiası yok ve garanti edilmiş rezerve üretim kapasitesi yok."
+        "Çok malzemeli kalıplama yok; dekorasyon da yok — yaldız baskı, metalizasyon, kalıp içi etiketleme veya kaplama.",
+        "Simülasyon yazılımı, 3D tarama, CMM veya muayene departmanı yok; 46’nın üzerinde göz sayısı da yok."
       ],
       "secondHeading": "Tek kalıp, tek tesis",
       "secondBody": "Kapak programlarının çoğu tek tesiste tek kalıpla yürür ve hat durana kadar bunu kimse yazıya dökmez. Bir yedeğin kalıbı değil, parçayı birebir vermesi gerekir: aynı boyun profili, aynı diş kavraması, aynı sızdırmazlık rotası, aynı tork penceresi, aynı kapaklama makinesinde aynı davranış. Bunun dışındaki her şey, kendi kalifikasyonu olan ikinci bir üründür ve bu, bir tedarik sıkıntısı sırasında fark edilir.",
@@ -479,9 +477,8 @@
       "get": [
         "Çizildiği hâliyle geometri için bir kalıp rotası ve bir diş oluşturma stratejisi.",
         "Tahmininize ve presinize göre göz sayısı seçenekleri ve her birinin size riskte neye mal olduğu.",
-        "Yapacağımız değişiklikler; hoşunuza gitmeyecek olanlar dâhil.",
-        "Bir üretim pozisyonu: yalnızca kalıp, kalıp artı ilk numuneler ya da sürekli parça tedariki.",
-        "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz önce NDA — genellikle öyle olur."
+        "Geometride yapacağımız değişiklikler ve her birinin ne değerde olduğu.",
+        "Bir üretim pozisyonu: yalnızca kalıp, kalıp artı ilk numuneler ya da sürekli parça tedariki."
       ]
     },
     "panels": {
@@ -534,10 +531,9 @@
   },
   "cta": {
     "headline": "Kapağı gönderin. Size bir rota gönderelim.",
-    "body": "Parçanın kendisi, bir teknik resim ya da postayla bir numune. Karşılığında kalıp rotasını, diş stratejisini, göz sayısı seçeneklerini ve bir üretim pozisyonu alırsınız. 2 iş günü içinde ilk dönüş. Talep hâlinde her zaman NDA. 2006'dan beri, 1.000'den fazla proje, dünya geneline sevkiyat.",
+    "body": "Parçanın kendisi, bir çizim ya da postayla bir numune. Kalıp güzergâhını, diş stratejisini, göz sayısı seçeneklerini ve bir üretim pozisyonunu alırsınız.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form — kapak kalıbı hakkında. Ürün tipi: [sıvı deterjan / ev temizlik ürünü / zirai kimyasal / diğer]. Kapak tipi: [sürekli dişli / çocuk kilitli / emniyet bantlı / flip-top / tetikli sprey / dozaj kapağı]. Boyun profili: [örn. 28-410]. Sızdırmazlık: [conta / indüksiyon / iç çeper]. Yıllık adet: [adet/yıl]. Elimde: [mevcut parça / teknik resim / 3B model / hiçbiri]. Lütfen bir NDA gönderin.",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form — kapak kalıbı hakkında. Ürün tipi: [sıvı deterjan / ev temizlik ürünü / zirai kimyasal / diğer]. Kapak tipi: [sürekli dişli / çocuk kilitli / emniyet bantlı / flip-top / tetikli sprey / dozaj kapağı]. Boyun profili: [örn. 28-410]. Sızdırmazlık: [conta / indüksiyon / iç çeper]. Yıllık adet: [adet/yıl]. Elimde: [mevcut parça / teknik resim / 3B model / hiçbiri]. Lütfen bir NDA gönderin."
   }
 }

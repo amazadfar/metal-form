@@ -12,7 +12,7 @@
       "Yüzey",
       "kalıptan gelir."
     ],
-    "lead": "Kapaklar, kavanozlar, dispenser ve mekanizma parçaları. Parlatma sınıfı, ayırma yüzeyi, yolluk girişi konumu ve çıkma açısı çeliğe bir kez işlenir ve ondan sonraki her adede kopyalanır. Parçayı ya da modeli gönderin. Geometriyi, kalıp rotasını ve üretim ekonomisini değerlendiririz.",
+    "lead": "Kapaklar, kavanozlar, dispenser ve mekanizma parçaları. Görünen yüzey kalıplamadan sonra eklenmez — çelikten kopyalanır, her baskıda bir adet. Parçayı ya da modeli gönderin. Geometriyi, kalıp güzergâhını ve üretim ekonomisini değerlendiririz.",
     "markers": [
       "46 göze kadar çok gözlü kalıp",
       "Diş sökücü ve katlanabilir maçalar",
@@ -310,7 +310,7 @@
           "note": "Şeffaf SAN ya da akrilik, parfüm yağına, alkole veya agresif bir etken maddeye karşı. Bütün ölçüler toleranstaydı."
         }
       ],
-      "close": "Tork ölçümü, sızdırmazlık testi ve nakliye kalifikasyonu dolumcuya ve test kuruluşuna aittir. Biz bu testlerden geçmesi gereken geometriyi tasarlarız ve bunlardan hangisini bir kalıp değişikliğinin düzeltebileceğini, hangisini düzeltemeyeceğini açıkça söyleriz."
+      "close": "Tork ölçümü, sızdırmazlık testi ve nakliye kalifikasyonu dolum yapanın ve test kuruluşunun işidir. Biz bunları geçmesi gereken geometriyi tasarlarız ve bunlardan hangisinin kalıp değişikliğiyle çözüleceğini söyleriz."
     },
     "cavities": {
       "index": "06",
@@ -346,7 +346,7 @@
       "riskBody": "Yüksek göz sayısı riski tek noktada toplar. Donan tek bir sıcak nozul ucu ya da hasar gören tek bir göz inserti kalıbın tamamını presten indirir; yayımlanmış sektör uygulamaları, yüksek gözlü kalıpların kabaca beşte dördünün dolum dengesi hiçbir zaman sağlanamadığı için beyan edilen kapasitede çalışamadığını bildiriyor. Bazen iki orta boy kalıp, tek bir büyük kalıbı yener: o zaman bir arıza üretime değil, kapasiteye mal olur.",
       "oursHeading": "Bizim göz sayımız nerede duruyor",
       "oursBody": "Metal Form 46 göze kadar kalıp imal etmiştir. Bir kozmetik kapak programının gerçekte durduğu bant da budur — parça maliyetini değiştirecek kadar yüksek, kalıbın yalnızca çalıştırılmak yerine hâlâ dengelenebileceği, bakımı yapılabileceği ve üzerine akıl yürütülebileceği kadar küçük.",
-      "bridgeBody": "Kendini henüz ispatlamamış bir format için dürüst rota şudur: pazar testine göre ölçeklendirilmiş, düşük gözlü bir geçiş kalıbı; üretim kalıbı ise sonradan, gerçekten gelen adede göre. Gelmeyen bir tahmine göre satın alınmış göz sayısı, bu sektördeki en pahalı hatadır."
+      "bridgeBody": "Kendini henüz kanıtlamamış bir format için mantıklı güzergâh, pazar testine göre ölçülmüş düşük gözlü bir köprü kalıptır; üretim kalıbı ise gerçekten gelen adede göre sonradan boyutlandırılır. Gerçekleşmemiş bir tahmine göre satın alınan göz sayısı, bu sektördeki en pahalı hatadır."
     },
     "boundary": {
       "index": "07",
@@ -394,7 +394,7 @@
           "note": "Dolum, kapaklama, ikincil ambalaj ve bunları yapan hat ekipmanı."
         }
       ],
-      "close": "Bunu en başta söylemek bir sorumluluk reddi değildir. Devir teslimlerin nasıl planlandığıdır — ve tutan bir lansman tarihi ile sessizce kayan bir lansman tarihi arasındaki farkın büyük bölümüdür."
+      "close": "Bu sınırı en başta adıyla koymak, devirlerin takvime oturmasını sağlayan şeydir; tutan bir lansman tarihiyle sessizce kayan bir tarih arasındaki farkın büyük kısmı da budur."
     },
     "continuity": {
       "index": "08",
@@ -415,7 +415,7 @@
         "2006'dan beri üretim",
         "1.000'den fazla tamamlanmış proje"
       ],
-      "readiness": "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir; sizin programınızda hangisinin geçerli olduğunu açıkça söyleriz.",
+      "readiness": "Bu bir hazırlıktır, ayrılmış kapasite değil. Kapasite rezervasyonu ayrı bir sözleşmedir.",
       "sendHeading": "Başlamak için ne yeterli",
       "send": [
         "Parçanın fiziksel bir numunesi",
@@ -423,8 +423,7 @@
         "Boyun profili kodu ya da parçanın eşleşeceği bileşen",
         "Ürün kodu (SKU) başına yıllık adet ve kalıbın kaç renk varyantına hizmet etmesi gerektiği",
         "Bunun yeni bir kalıp mı, ikinci kaynak mı, yoksa hâlihazırda çalışan bir ürünün yeniden tasarımı mı olduğu"
-      ],
-      "note": "2 iş günü içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
+      ]
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -437,8 +436,7 @@
             "SPI A-3: 1200 gren elmas, kabaca Ra 0,05 – 0,10 µm. Ayna olmadan parlaklık.",
             "B sınıflarına zımparayla, C sınıflarına taşla, D sınıflarına kuru kumlamayla ulaşılır. Yaygın kozmetik malzemeler içinde A sınıfı parlatmayı en iyi akrilik taşır.",
             "VDI 3400 ayrı bir EDM pürüzlülük ölçeğidir; VDI 12'den (Ra 0,40 µm) VDI 45'e (Ra 18,00 µm) kadar on iki referans sınıfı vardır ve her altı birim pürüzlülüğü kabaca ikiye katlar.",
-            "Dokuyu asgari çıkma açısı izler: VDI 24'te kabaca 1,5 – 2,0 derece, VDI 36'da 4,0 derece ve üzeri. Bunun altında parça itmede sürtünür ve çizilir.",
-            "Sınıfı parça başına değil yüzey başına yazın; o zaman kalıp, teknik resimdeki toptan bir notun istediğine değil, ambalajın ihtiyaç duyduğuna mal olur."
+            "Dokuyu asgari çıkma açısı izler: VDI 24'te kabaca 1,5 – 2,0 derece, VDI 36'da 4,0 derece ve üzeri. Bunun altında parça itmede sürtünür ve çizilir."
           ],
           "source": "Bu panodaki rakamlar yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
         },
@@ -471,10 +469,9 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Başlamak için fiziksel bir numune, bir CAD modeli ya da bir teknik resim yeterlidir. Geometri, kalıp rotası, göz sayısı ve üretim ekonomisi üzerinden dönüş yaparız.",
+    "body": "Bir numune ya da model — varsa boyun profiliyle birlikte. Yüzey spesifikasyonu, kalıp güzergâhı, göz sayısı ve üretim ekonomisiyle döneriz.",
     "action": "Parçanızı gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form — kozmetik ve kişisel bakım hakkında.\n\nParça: kapak / kavanoz / pompa veya airless parça / mekanizma parçası / diğer\nBoyun profili ya da kritik ölçüler: \nMalzeme: \nYüzey: parlak görünen yüzey / dokulu / her ikisi\nSKU başına yıllık adet: \nYeni kalıp / ikinci kaynak / yeniden tasarım: \n\nNumune ya da CAD modeli gönderebilirim.",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form — kozmetik ve kişisel bakım hakkında.\n\nParça: kapak / kavanoz / pompa veya airless parça / mekanizma parçası / diğer\nBoyun profili ya da kritik ölçüler: \nMalzeme: \nYüzey: parlak görünen yüzey / dokulu / her ikisi\nSKU başına yıllık adet: \nYeni kalıp / ikinci kaynak / yeniden tasarım: \n\nNumune ya da CAD modeli gönderebilirim."
   }
 }

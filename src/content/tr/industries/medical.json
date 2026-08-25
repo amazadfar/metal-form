@@ -12,7 +12,7 @@
       "Her göz aynı parçayı",
       "üretmek zorunda."
     ],
-    "lead": "Tıbbi ve farmasötik plastik parçalar için mühendislik, DFM ve çok gözlü kalıp. Kalıbı ve arkasındaki mühendisliği biz yaparız. Valide proses sizde kalır — ve bu sınırın tam olarak nereden geçtiğini net biçimde söyleriz.",
+    "lead": "Tıbbi ve farmasötik plastik parçalar için mühendislik, DFM ve çok gözlü kalıp. Kalıbı ve arkasındaki mühendisliği biz yaparız; valide proses sizde kalır.",
     "markers": [
       "46 göze kadar kalıp deneyimi",
       "Kalıp dokümantasyonunun tamamı teslim edilir",
@@ -122,7 +122,7 @@
       "kicker": "Aritmetik",
       "heading": "İki kaldıraç, ikisi de kalıpta belirlenir.",
       "body": "Yüksek adetli tek kullanımlık bir parçanın fiyatı; hammadde, artı göz sayısına bölünmüş makine zamanı, artı fire, artı amortismana yayılmış kalıptır. Gerçekten büyüklük taşıyan tek iki kaldıraç göz sayısı ve çevrim süresidir; ikisi de daha hiç çelik işlenmeden karara bağlanır.",
-      "body2": "Bu sektördeki her alıcı bu aritmetiği kafasından yapar. Bu sayfa da yapıyor.",
+      "body2": "Göz sayısını ve çevrimi ayarlayın. Gerisi aritmetik.",
       "calcLabel": "Çıktı",
       "controls": [
         {
@@ -155,15 +155,15 @@
           "label": "300 günde yıllık parça"
         }
       ],
-      "note": "Bu bir aritmetiktir, fiyat teklifi değil. Parçanızın o çevrim süresini tutup tutamayacağı hakkında hiçbir şey söylemez; bu, et kalınlığı, soğutma düzeni ve itme ile ilgili bir sorudur — ve asıl konuşmaya değer olan da odur.",
+      "note": "Bu aritmetik, teklif değil. Parçanızın o çevrimi gerçekten tutup tutamayacağı; et kalınlığı, soğutma yerleşimi ve itme ile ilgili bir sorudur.",
       "amortHeading": "Ve rakamın diğer yarısı",
-      "amort": "Kalıp da aynı şekilde amorti olur. Yirmi milyon parçaya yayıldığında kalıp, parça başına bir sentin küçük bir kesrini ekler. İki yüz bine yayıldığında fiyata hâkim olur. Dürüst konuşma bu yüzden sizin adet tahmininizden ve gerekli kalıp ömrünüzden başlar; kalıp fiyatına ancak ondan sonra gelir."
+      "amort": "Kalıp da aynı şekilde amorti olur. Yirmi milyon parçaya yayıldığında her parçaya bir sentin kesri kadar biner; iki yüz bine yayıldığında fiyatı o belirler. Bu yüzden konuşma sizin adet tahmininizden ve ihtiyaç duyduğunuz kalıp ömründen başlar, kalıp fiyatına ondan sonra gelir."
     },
     "imbalance": {
       "index": "03",
       "kicker": "Fizik",
       "heading": "1. göz ile 32. göz neden aynı parça değildir.",
-      "body": "Dengeli bir yolluk düzeni, dengeli gözler üretmez. Bu çoğu kişiyi şaşırtır ve bu sayfadaki en işe yarar tek bilgidir.",
+      "body": "Dengeli bir yolluk yerleşimi dengeli gözler üretmez. Bu sezgiye aykırıdır ve çok gözlü bir kalıpta ters giden şeylerin çoğunu açıklar.",
       "steps": [
         {
           "label": "Yolluk ağacı",
@@ -205,15 +205,15 @@
           "cause": "Kalıp değil; malzeme ya da sıcaklık."
         }
       ],
-      "close": "Son satır ticari olarak önemlidir. Bir kalıp tedarikçisinin müşterisine sorunun kalıpta olmadığını söyleme biçimidir — ve on yıllık bir ilişkide bu, her şeye evet diyen bir tedarikçiden daha değerlidir.",
+      "close": "Son satır ticari olarak işe yarayan satır: kimse kalıbı açmadan önce bir kalıp sorununu malzeme ya da sıcaklık sorunundan ayırır.",
       "figureMark": "100–300 °F"
     },
     "line": {
       "index": "04",
       "kicker": "Sınır",
       "heading": "Sınır nereden geçiyor.",
-      "body": "Bu sayfadaki en önemli bölüm budur. Metal Form bir kalıp ve mühendislik tedarikçisidir. Valide edilmiş, sertifikalı ya da regülasyona tabi bir üretici değildir ve kendisini öyle sunmayacaktır.",
-      "body2": "Bu sektörde tedarikçi kontrolleri tasarım gereği riskle orantılıdır. Bir kalıp ve mühendislik tedarikçisi, regülasyona tabi bir müşteriye meşru biçimde hizmet verebilir — yeter ki herkes, hangi faaliyetin sınırın hangi tarafına düştüğü konusunda net olsun. Bu bölümün amacı da bu netliktir.",
+      "body": "Metal Form bir kalıp ve mühendislik tedarikçisidir. Belgelendirilmiş, valide ve regüle üretim başka bir kapsamdır ve bizim kapsamımız değildir.",
+      "body2": "Bu sektörde tedarikçi kontrolleri tasarımı gereği riskle orantılıdır; dolayısıyla bir kalıp ve mühendislik tedarikçisi regüle bir müşteriye meşru biçimde hizmet verebilir — yeter ki iki taraf da hangi işin sınırın hangi tarafında olduğunu bilsin.",
       "supplyHeading": "Metal Form'un sağladıkları",
       "supply": [
         "Kalıp daha ortada yokken parça mühendisliği, tersine mühendislik ve DFM",
@@ -237,9 +237,9 @@
         "Parti izlenebilirliği, serbest bırakma testleri ve analiz sertifikaları",
         "Bir parçanın klinik ya da farmasötik kullanıma uygun olduğu kararı"
       ],
-      "close": "Bir tedarikçi size her iki sütunun tamamını verebileceğini söylüyorsa, hangi belgeye sahip olduğunu ve kimin denetlediğini sorun. Bizde bunların hiçbiri yok; bunu kendi denetiminiz sırasında keşfetmenizdense burada okumanızı tercih ederiz.",
+      "close": "Metal Form’un kalite sistemi belgesi yoktur. Bunu öğrenmenin doğru zamanı şimdidir, kendi tedarikçi denetiminizin ortası değil.",
       "howHeading": "Bu pratikte nasıl yürüyor",
-      "how": "Tıbbi ve farmasötik işlerimizin çoğu son kullanıcıya, belgeye zaten sahip olan ve valide prosesi yürüten bir fason enjeksiyoncu ya da üretici üzerinden ulaşır. Kalıbı biz yapar ve belgeleriz; onlar kalifiye eder ve çalıştırır. Bu iş bölümü olağandır, sektörün büyük bir bölümü gerçekte böyle işler ve bizim kurgumuz da buna göredir."
+      "how": "Tıbbi ve farmasötik işimizin çoğu, belgeyi zaten taşıyan ve valide prosesi işleten bir fason kalıpçı veya üretici üzerinden son kullanıcıya ulaşır. Kalıbı biz yapar ve belgeleriz; onlar kalifiye eder ve çalıştırır. Bu ayrım sektörün büyük bir bölümünün işleyiş biçimidir ve bizim kurgumuz da tam olarak buna göredir."
     },
     "anatomy": {
       "index": "05",
@@ -253,7 +253,7 @@
         },
         {
           "name": "Sıcak yolluk manifoldu",
-          "note": "Marka, model, nozul sayısı ve kontrol ünitesi bölge sayısı adıyla yazılır — çünkü teslimden sonra ülkenizdeki servis ve yedek parça bulunabilirliği sizin sorununuz olur."
+          "note": "Marka, model, nozul sayısı ve kontrolör bölgeleri spesifikasyonda adıyla yazılır; böylece ülkenizdeki servis edilebilirlik ve yedek parça bulunabilirliği siparişten önce bilinir."
         },
         {
           "name": "Göz plakası ve insertler",
@@ -309,7 +309,7 @@
           "spec": "Yalnızca prototip. Bir üretim varlığı değildir."
         }
       ],
-      "classClose": "Class 101 gerektiren bir program için Class 103 kalıp almak, bu sektördeki en pahalı tasarruftur. İlk yılını çıkaramayabilecek bir ürün için Class 101 almak ise ikinci en pahalısıdır."
+      "classClose": "Class 101 gerektiren bir program için Class 103 kalıp almak, bu sektördeki en pahalı tasarruftur. İlk yılını çıkaramayabilecek bir ürün için Class 101 almak ikincisidir."
     },
     "wear": {
       "index": "06",
@@ -353,14 +353,14 @@
         "Diş sökücü kalıplarda diş formunu veren parçalar",
         "Keçeler, O-ringler ve soğutma rakorları"
       ],
-      "sparesNote": "Yedek setini tasarım aşamasında belirler ve kalıpla birlikte fiyatlandırırız; bir arıza sırasında pazarlığa bırakmayız. Birbirinin yerine geçebilen, önden monte edilebilir insertler ise o yedek setini bir haftada değil, bir vardiyada kullanılabilir kılan bir tasarım kararıdır.",
-      "warranty": "Kalıp garanti şartları her proje ve kalıp şartnamesi bazında belirlenir ve siparişe yazılır. Burada bir atım sayısı yayımlamıyoruz; çünkü sizin hammaddenizi, çevriminizi ve bakımınızı yok sayan bir atım sayısı hiçbir anlam taşımaz."
+      "sparesNote": "Yedek seti tasarım aşamasında belirlenir ve kalıpla birlikte fiyatlanır; bir duruş sırasında pazarlık konusu yapılmaz. Değiştirilebilir, önden montajlı insertler o seti bir haftada değil bir vardiyada kullanılabilir kılar.",
+      "warranty": "Kalıp garanti şartları her proje için kalıp spesifikasyonuna göre tanımlanır ve siparişe yazılır. Burada baskı sayısı yayımlanmaz: reçinenizi, çevriminizi ve bakımınızı yok sayan bir baskı sayısı hiçbir şey ifade etmez."
     },
     "second": {
       "index": "07",
       "kicker": "Ticari gerekçe",
       "heading": "İkinci kalıp.",
-      "body": "Tek bir ülkede, tek bir tesiste duran tek bir kalıp; insanların bağımlı olduğu bir ürün hattı için tek noktadan arıza demektir. Güçlü Batılı tıbbi kalıp tedarikçileri ikiz kalıp yapmayı nadiren teklif eder — bu, kendi kurulu varlıklarıyla rekabet eder. Biz ederiz.",
+      "body": "Tek kalıp, tek tesis, tek ülke; insanların bağlı olduğu bir ürün hattı için tek arıza noktasıdır. İkinci kalıbı yapmak üstlendiğimiz bir iştir — başkasının yaptığı kalıplar için de.",
       "risks": [
         {
           "n": "01",
@@ -401,42 +401,22 @@
         "Orijinal kalıbı aşınmış, kaybolmuş ya da kullanım dışı kalmış bir parçaya yeni kalıp yapmak.",
         "Tasarım verisinin tamamını kalıpla birlikte teslim etmek; böylece bize de bağlı kalmazsınız."
       ],
-      "honesty": "Bu bir hazırlıktır, rezerve kapasite değil; ayrıca ikiz bir kalıp kendi kendini yeniden kalifiye etmez. İkinci kalıbın sizin kalite sisteminizde kendi kalifikasyon yolu vardır ve bunun ne kadar süreceğine sizin sisteminiz karar verir. Bunu sonradan keşfetmenize bırakmak yerine şimdiden söylüyoruz."
+      "honesty": "Bu bir hazırlıktır, ayrılmış kapasite değil. İkinci kalıbın sizin kalite sisteminiz içinde kendi kalifikasyon yolu vardır ve bunun ne kadar süreceğine o sistem karar verir."
     },
     "start": {
       "index": "08",
-      "kicker": "Başlangıç",
-      "heading": "Bir proje nasıl başlar.",
-      "body": "Bir model ya da bir numune yeter. Gerisi sonra gelebilir.",
-      "steps": [
-        {
-          "label": "Gönderin",
-          "note": "3B model, 2B teknik resim, fiziksel numune ya da ölçeklendirebileceğimiz tek bir ölçüsü olan bir fotoğraf."
-        },
-        {
-          "label": "Okuyalım",
-          "note": "Bir mühendis geometriye, tolerans gerçekçiliğine ve kalıp rotasına bakar. 2 iş günü içinde."
-        },
-        {
-          "label": "NDA",
-          "note": "Ayrıntılı teknik paylaşımdan sonra değil, önce. Bizimkini imzalayın ya da kendinizinkini gönderin."
-        },
-        {
-          "label": "Teklif",
-          "note": "Göz sayısı, kalıp sınıfı, mekanizmalar ve makine arayüzü kararlaştırıldıktan sonra. Öncesinde değil."
-        }
-      ],
+      "kicker": "Gönderim",
+      "heading": "Ne göndereceksiniz, ne alacaksınız.",
+      "body": "Bir kalıbı fiyatlamak için gereken, çoğu alıcının sandığından azdır. Liste bu — ve kalıpla birlikte atölyeden çıkan paket.",
       "needHeading": "Teklif için neye ihtiyacımız var",
       "need": [
         "3B model ya da 2B teknik resim; ya da ölçebileceğimiz bir numune",
         "Hammadde kalitesi ve radyasyona karşı stabilize edilmiş ya da özel bir polimer olup olmadığı",
-        "Yıllık adet ve birinci yıldan sonrası için tahmin",
-        "Atım cinsinden gerekli kalıp ömrü ya da hangi program ömrüne göre ölçeklendireceğimiz",
+        "Yıllık adet, birinci yılın ötesindeki tahmin ve hangi kalıp ömrüne göre boyutlandıracağımız",
         "Kritik ölçüler ve bunlardan hangilerinin işlevsel olduğu",
         "Gereken göz sayısı ya da saatte ihtiyacınız olan çıktı",
         "Pres: tonaj, tabla ölçüsü, kolon aralığı, itici deliği düzeni",
-        "Tesisiniz tek bir markayı standart yapıyorsa sıcak yolluk tercihiniz",
-        "Göz numaralandırma ve izlenebilirlik gereksinimi",
+        "Sıcak yolluk tercihi ve göz işaretleme gereksinimi, tesisinizde bunlardan biri için standart varsa",
         "Teslimatın yapılacağı ülke"
       ],
       "getHeading": "Neyi teslim ediyoruz",
@@ -457,12 +437,11 @@
         {
           "title": "Göz sayısı: bu rakam gerçekte nasıl seçilir",
           "bullets": [
-            "Göz sayısı bir hırstan değil, bir maliyet hedefi ve bir adet tahmininden çıkar. Önce DFM dokümanı gelir; maça ve gözü, sürgüleri, yolluk girişinin konumunu, ölçüsünü ve yerini tanımlar. Kalıp şartnamesi onu izler.",
+            "Göz sayısı bir maliyet hedefinden ve bir adet tahmininden çıkar. Önce DFM dokümanı gelir; maça ve gözü, kaydırıcıları, yolluk girişinin konumunu ve ölçüsünü sabitler. Kalıp spesifikasyonu onu izler.",
             "Yayımlanmış bir tıbbi vaka: birinci yıl 12 milyon, ikinci yıl 24 milyon adetlik bir tahmin 64 gözlü bir kalıba yol açtı ve maliyet hedefini tutturmak için 22 saniyelik çevrim gerekti.",
-            "Çıktı, göz sayısının çevrim süresine bölünmesidir. 10 saniyelik çevrimde bir kalıp saatte 360 atım yapar — 32 göz saatte 11.520 parça, 64 göz 23.040, 96 göz 34.560 verir.",
             "Daha yüksek göz sayısı; kalıp maliyetini, makine tonajını, sıcak yolluk bölge sayısını, soğutma suyu ihtiyacını ve tek bir gözün bozulmasının sonucunu birlikte büyütür.",
             "Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bunun üzerinde işe yarayan teklif farklıdır: başka yerde yapılmış bir kalıp için yedek ya da alternatif kaynak olarak göz insertleri, maça pimleri ve aşınma parçaları.",
-            "Cihaz alt montajları, otoenjektör ve inhaler parçaları ile tanı kartuşları genellikle mekanizma ağırlıklı bir kalıpta 4 ila 16 gözde durur — tamamen farklı bir sorundur ve buna da aynı ölçüde hazırız."
+            "Cihaz alt grupları, otoenjektör ve inhaler parçaları ve tanı kartuşları genellikle mekanizma ağırlıklı bir kalıpta 4 ila 16 göze oturur — farklı bir problem; ona da aynı ölçüde hazırız."
           ],
           "source": "Bu panodaki rakamlar, Metal Form ölçümleri değil; yayımlanmış sektör uygulamaları ve yayımlanmış vaka verileridir."
         },
@@ -472,7 +451,7 @@
             "CTQ — kalite için kritik. Gerçekten önemli olan ölçüler. Bunların adlandırılması kalıbı değiştirir; çünkü yolluk girişinin nereye geleceğini ve hangi gözün en yakın takibi alacağını belirlerler.",
             "DFM — üretilebilirlik için tasarım. Kalıp şartnamesinden önce gelen doküman. Sizin çeliğinizden önce bizim işimiz.",
             "FAI — ilk numune muayenesi. Kendi prosedürünüze göre, size ya da enjeksiyoncunuza aittir.",
-            "IQ, OQ, PQ — kurulum, işletim ve performans kalifikasyonu. Enjeksiyoncuya ya da üreticiye aittir. IQ kalıba atıf yapar: tanımlama, revizyon kontrolü, göz sayısı, sensör yapılandırması ve sıcak yolluk kurulumu — dokümantasyon paketinin önemi tam da buradadır.",
+            "IQ, OQ, PQ — kurulum, işletim ve performans kalifikasyonu. Kalıpçıya ya da üreticiye aittir. IQ kalıba gerçekten atıf yapar: kimlik, revizyon kontrolü, göz sayısı, sensör konfigürasyonu, sıcak yolluk kurulumu — dokümantasyon paketinin önemi tam olarak bundandır.",
             "Valide proses penceresi ve müdahale sınırları — OQ ve PQ'nun çıktılarıdır. Kalıba değil, prosese aittirler.",
             "Tasarım transferi — bir tasarımın rutin üretime taşınması. Kalıp bunun bir girdisidir, yerine geçen bir şey değil.",
             "Kırma malzeme politikası — bir kalıbın sizin yerinize veremeyeceği bir proses ve malzeme kararı."
@@ -485,7 +464,7 @@
             "Parçanız izin verdiği yerlerde tarih ve revizyon insertleri.",
             "Göz numaralandırma şeması dokümantasyonun parçası olarak teslim edilir, bizde tutulmaz.",
             "Birbirinin yerine geçebilen, önden monte edilebilir insertler; bir gözün değişmesi numaralandırma şemasını bozmaz.",
-            "Deneme kayıtları tek bir ortalama olarak değil, göz göz tutulur — 32 gözün ortalaması tam da görmeniz gereken şeyi gizler.",
+            "Numune verileri tek bir ortalama olarak değil, göz göz kaydedilir. 32 gözün ortalaması, görmeniz gereken şeyi tam olarak gizler.",
             "Kalıpta herhangi bir değişiklik yapılmadan önce yazılı değişiklik bildirimi."
           ]
         }
@@ -494,10 +473,10 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Başlamak için bir model ya da bir numune yeter. 2 iş günü içinde geometri, kalıp rotası, göz sayısı ve üretim maliyeti üzerinden dönüş yaparız. Tercih ederseniz önce NDA.",
+    "body": "Bir model ya da bir numune yeter. 2 iş günü içinde geometri, kalıp güzergâhı, göz sayısı ve üretim ekonomisiyle döneriz.",
     "action": "Parçanızı gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form — tıbbi / farmasötik parça.\n\nParça: \nHammadde: \nYıllık adet: \nGerekli kalıp ömrü (atım): \nGereken göz sayısı: \nKritik ölçüler: \nElimde: 3B model / 2B teknik resim / fiziksel numune / mevcut kalıp\nPres (tonaj, tabla, kolon aralığı): \nTeslim yeri: \nNDA gerekiyor mu: evet / hayır",
-    "note": "2 iş günü içinde ilk teknik dönüş. Biz bir kalıp ve mühendislik tedarikçisiyiz — valide üretim sizde kalır."
+    "note": "Bir kalıp ve mühendislik tedarikçisi. Valide üretim sizde kalır."
   }
 }

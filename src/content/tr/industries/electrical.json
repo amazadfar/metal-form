@@ -399,14 +399,14 @@
           "note": "Aynı kutuda, aynı şartnameyle parça üretimi ve sürekli tedarik; dünya geneline sevkiyat ve kalıba karşılık tutulan yedekler ile değişim parçalarıyla birlikte."
         }
       ],
-      "close": "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir; size hangisinin teklif edildiğini açıkça söyleriz.",
-      "warranty": "Kalıp garanti şartları her proje ve mutabık kalınan kalıp şartnamesi bazında tanımlanır. 2 iş günü içinde ilk teknik dönüş."
+      "close": "Bu bir hazırlıktır, ayrılmış kapasite değil. Kapasite rezervasyonu ayrı bir sözleşmedir.",
+      "warranty": "Kalıp garanti şartları her proje için ve mutabık kalınan kalıp spesifikasyonuna göre tanımlanır."
     },
     "boundary": {
       "index": "08",
       "kicker": "Kapsam",
-      "heading": "Elektriksel hiçbir şeyi belgelendirmiyoruz.",
-      "body": "Bu sektörde alıcının asıl kaygısı onaydır ve dürüst cevap bir iddia değil, bir sınırdır. Alev ve yüzeysel kaçak sınıfları hammadde kalitesine ve sizin bitmiş ürün onayınıza aittir. Enjeksiyoncuya ait değildir; aksini ima eden bir tedarikçi de hiçbir onay sürecinden geçmemiştir.",
+      "heading": "Onay gerçekte nerede durur.",
+      "body": "Bu sektörde alıcının asıl kaygısı onaydır ve cevabı bir iddia değil bir sınırdır. Alev ve yüzey kaçak dayanımı değerleri reçine tipine ve bitmiş ürün onayınıza aittir. Kalıplamayı yapana ait değildir.",
       "doHeading": "Metal Form'un sağladıkları",
       "doList": [
         "Kalıp tasarımı ve imalatı: enjeksiyon, PET, şişirme ve basınçlı döküm kalıpları, çok gözlü, sıcak ve soğuk yolluklu, insertli kalıplar.",
@@ -429,7 +429,7 @@
         "Bitmiş ürünün onayı ve bir yüzeysel kaçak yoluna ya da hava aralığına dokunan her geometri değişikliğine ilişkin karar.",
         "Terminal tutuşunun, dielektrik dayanımın ve şartnamenizdeki diğer bütün elektriksel değerlerin doğrulanması."
       ],
-      "close": "O liste küçük punto bir çekince değildir. Çalışma ilişkisinin biçimidir: elektriksel performans ve onay sizin, geometri, çelik ve tedarik bizim. İkisinin buluştuğu yerde — yüzeysel kaçak bariyeri olan bir nervür, takma yükü altındaki bir birleşme izi, eşleşme yüzeyindeki bir yolluk girişi izi — konuyu teklif verdikten sonra değil, vermeden önce açarız."
+      "close": "O liste, çalışma ilişkisinin biçimidir: elektriksel performans ve onay sizin, geometri, çelik ve tedarik bizim. İkisinin kesiştiği yerde — kaçak bariyeri işlevi gören bir kaburga, geçme yükü altındaki bir birleşme izi, eşleşen bir yüzeydeki yolluk izi — fiyat vermeden önce konuyu açarız."
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -437,8 +437,6 @@
         {
           "title": "Rakamlarla ince cidar",
           "bullets": [
-            "İnce cidar, kabaca 1 mm'nin altında ya da yaklaşık 100:1 akış uzunluğu / kalınlık oranının üzerinde başlar.",
-            "İnce cidarlı elektrik parçaları yaygın olarak 150:1'i aşar. Kısıt tek başına kalınlık değil, orandır.",
             "Yüksek dolum hızı ve yüksek enjeksiyon basıncı gerekir; ince cidarlı işler için 35.000 psi civarına kadar değerler anılıyor.",
             "Bu hızda havalandırma, ilk eksik dolumdan sonra uygulanan bir düzeltme değil, tasarlanmış bir detaydır.",
             "Göz ve maça çeliğinin dolum altında sehim yapmayacak kadar rijit olması gerekir; bu da bir maçanın ne kadar ince yapılabileceğini sınırlar.",
@@ -458,7 +456,7 @@
             "İnsertin üzerindeki çöküntü ile terminal yuvasındaki çapak, kalıcı ayıklama işleri yaratan iki kusurdur.",
             "Gelen pres parçasındaki sapma aynı zamanda otomatik yerleştirme hücresini durduran şeydir; yani tolerans konuşması bir kapasite konuşmasıdır."
           ],
-          "source": "Sektör uygulaması olarak anlatılmıştır. Metalinizin hangi formda geldiğini söyleyin, kapama ona göre tasarlanır."
+          "source": "Sektör uygulaması olarak aktarılmıştır, Metal Form ölçümü değildir."
         },
         {
           "title": "Tolerans ve eşleşme detayı",
@@ -478,10 +476,9 @@
   },
   "cta": {
     "headline": "Parçayı gönderin. Kalıbın ne yapması gerektiğini söyleyelim.",
-    "body": "Bir STEP dosyası, bir 2B teknik resim ya da poşette bir numune. Geometri, kalıp rotası, göz sayısı ve tedarik seçenekleri üzerinden dönüş yaparız. 2 iş günü içinde ilk proje dönüşü. Talep hâlinde, siz hiçbir şey göndermeden önce NDA.",
+    "body": "Bir STEP dosyası, bir 2D çizim ya da poşette bir numune. Geometri, kalıp güzergâhı, göz sayısı ve tedarik seçenekleriyle döneriz.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form - elektrik ve elektronik hakkında. Parça: [konnektör gövdesi / klemens / anahtar parçası / muhafaza / kablo rakoru / diğer]. Malzeme: [PA66 GF / PBT GF / PC / PC-ABS / diğer]. Metal insert: [var / yok]. Tahmini yıllık adet: [ ]. Elimde: [STEP / 2B teknik resim / yalnızca numune]. Lütfen kalıp rotası ve göz sayısı konusunda görüş verin.",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form - elektrik ve elektronik hakkında. Parça: [konnektör gövdesi / klemens / anahtar parçası / muhafaza / kablo rakoru / diğer]. Malzeme: [PA66 GF / PBT GF / PC / PC-ABS / diğer]. Metal insert: [var / yok]. Tahmini yıllık adet: [ ]. Elimde: [STEP / 2B teknik resim / yalnızca numune]. Lütfen kalıp rotası ve göz sayısı konusunda görüş verin."
   }
 }

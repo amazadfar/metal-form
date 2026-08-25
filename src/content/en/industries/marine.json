@@ -96,7 +96,7 @@
       "chainNote": "Four of the five links are usually gone. The fifth is the only one that has to survive.",
       "term": {
         "name": "NLA — No Longer Available",
-        "meaning": "The trade's own term for a discontinued part. Where hulls stay in service for decades it is not an exception. It is a permanent, structural class of demand that most moulders decline to serve."
+        "meaning": "The trade’s own term for a discontinued part. Where hulls stay in service for decades it is not an exception but a permanent, structural class of demand."
       },
       "survivesHeading": "What is still available to work from",
       "survives": [
@@ -180,7 +180,7 @@
         }
       ],
       "caveatHeading": "What comes back with the model",
-      "caveat": "Which dimensions we can establish with confidence, which we are inferring from the mating part or from symmetry, and which cannot be determined from what exists. Critical interfaces are agreed with you before steel is cut. The measurement is physical — hand metrology, several samples and the component it mates with. There is no scanner in that description and this sector does not need one; it needs somebody willing to say which numbers are inferred."
+      "caveat": "Which dimensions we can establish with confidence, which we are inferring from the mating part or from symmetry, and which cannot be determined from what exists. Critical interfaces are agreed with you before steel is cut. The measurement is physical: hand metrology, several samples and the component it mates with."
     },
     "sequence": {
       "index": "03",
@@ -264,7 +264,7 @@
         }
       ],
       "evidenceHeading": "Where the evidence comes from",
-      "evidence": "The test methods a buyer will ask about are published standards: ASTM G154 and ISO 4892-3 for accelerated weathering, ASTM B117 and ISO 9227 for salt fog, ASTM D570 for water absorption, ASTM D256 and ASTM D790 for impact and flexural performance. Those figures belong to the resin producer's datasheet or to an independent laboratory engaged by whoever is making the claim. Metal Form does not run weathering, salt-fog or material qualification testing. Nothing in this section is a Metal Form measurement, and nothing on this page should be read as one."
+      "evidence": "The test methods a buyer will ask about are published standards: ASTM G154 and ISO 4892-3 for accelerated weathering, ASTM B117 and ISO 9227 for salt fog, ASTM D570 for water absorption, ASTM D256 and ASTM D790 for impact and flexural performance. Those figures belong to the resin producer’s datasheet or to an independent laboratory. Metal Form runs no weathering, salt-fog or material qualification testing, and nothing in this section is a Metal Form measurement."
     },
     "geometry": {
       "index": "05",
@@ -286,10 +286,10 @@
         "Big hollow parts ship as air. Packing volume, not weight, sets the freight, and how the part nests is worth settling before the tool is cut rather than after the first container.",
         "A large tool is heavy. Heavy tools are harder to move, store and duplicate, which turns a workshop detail into a programme decision."
       ],
-      "tradeHeading": "The trade we would rather quote openly",
-      "trade": "On a large part at low volume the honest answer is usually a longer cycle. A simpler cooling package, a lower cavity count and a tool that can be modified when the model changes will cost you less across an eight-hundred-piece year than any second shaved off the cycle. That trade belongs in the quotation where you can see it, not buried inside a cycle-time figure.",
+      "tradeHeading": "The trade, quoted openly",
+      "trade": "On a large part at low volume the honest answer is usually a longer cycle. A simpler cooling package, a lower cavity count and a tool that can be modified when the model changes cost less across an eight-hundred-piece year than any second shaved off the cycle. That trade belongs in the quotation where you can see it.",
       "contextHeading": "Where the industry goes on very large parts",
-      "context": "Published industry practice on consoles, seat bases and large panels reaches for structural foam or gas-assist moulding to hold clamp tonnage and sink under control — structural foam is described as roughly twenty per cent lighter than solid with several times the rigidity, at the cost of a matte swirled surface that is normally painted; gas assist hollows thick channels after partial fill to suppress sink on cosmetic faces. Both are named here as context about your options. Neither is a Metal Form process. If that is where your part belongs, we would tell you so rather than quote around it."
+      "context": "Published industry practice on consoles, seat bases and large panels reaches for structural foam or gas-assist moulding to hold clamp tonnage and sink under control — structural foam is described as roughly twenty per cent lighter than solid with several times the rigidity, at the cost of a matte swirled surface that is normally painted; gas assist hollows thick channels after partial fill to suppress sink on cosmetic faces. Both are named here as context. Neither is a Metal Form process."
     },
     "economics": {
       "index": "06",
@@ -297,7 +297,7 @@
       "kicker": "Low-volume tooling economics",
       "heading": "The tool will cost more than every part it ever makes.",
       "body": "A component fitted four times to a hull, on a model that builds two hundred hulls a year, is an eight-hundred-piece annual line. Across a fifteen-year model life that is twelve thousand pieces in total — less than a day's output on a tool built for a volume sector. Piece price is small money here. The tool, its cavitation and its lead time are the entire decision.",
-      "body2": "Which makes the useful question the one most quotations avoid. Over how many pieces am I amortising this steel, and what happens to my cost per part if the model sells half of what the forecast says. A higher piece price on a cheaper, simpler tool is very often the correct commercial answer in marine, and a supplier who cannot say that out loud is optimising for their own machine utilisation rather than your programme.",
+      "body2": "Which makes the useful question a simple one. Over how many pieces am I amortising this steel, and what happens to my cost per part if the model sells half of what the forecast says? A higher piece price on a cheaper, simpler tool is very often the correct commercial answer in marine.",
       "arithHeading": "The arithmetic, in four lines",
       "arith": [
         {
@@ -321,12 +321,12 @@
           "v": "12,000"
         }
       ],
-      "arithNote": "An illustration built from published boat-building scale — small yards, a few dozen to a few hundred hulls a year, hundreds of builders and thousands of models. It is not a Metal Form figure and it is not your programme. Put your own numbers into the same four lines; the conclusion rarely changes.",
+      "arithNote": "An illustration built from published boat-building scale: small yards, a few dozen to a few hundred hulls a year. It is not a Metal Form figure and it is not your programme. Put your own numbers into the same four lines; the conclusion rarely changes.",
       "tabsLabel": "Annual volume band",
       "axisX": "Annual volume",
       "axisY": "Tooling capital",
       "bandLabel": "Marine",
-      "axisNote": "The vertical axis carries no numbers. Tooling capital is quoted against a specific part, a specific steel and a specific cavity count, and there is no honest way to publish it as a curve. The shape is the argument; the figure is a conversation.",
+      "axisNote": "The vertical axis carries no numbers. Tooling capital is quoted against a specific part, a specific steel and a specific cavity count. The shape is the argument; the figure is a conversation.",
       "bands": [
         {
           "id": "b1",
@@ -357,18 +357,17 @@
           "tick": ">10k",
           "name": "Above 10,000 a year",
           "route": "Higher cavitation, and the argument reverses",
-          "body": "Deck plates, drain plugs, small fittings and bimini hardware sold in tens of thousands are the marine parts where cavitation earns its keep, and that case should be made just as plainly as the case against it. Metal Form has built tooling to 46 cavities. Marine rarely calls for it, and the useful part of that experience here is knowing precisely where more cavitation stops paying.",
+          "body": "Deck plates, drain plugs, small fittings and bimini hardware sold in tens of thousands are the marine parts where cavitation earns its keep. Metal Form has built tooling to 46 cavities. Marine rarely calls for it, and the useful part of that experience here is knowing precisely where more cavitation stops paying.",
           "trade": "You commit real capital and a maintenance obligation, and you get the only piece price in this sector that behaves like a volume industry."
         }
       ],
-      "bandsNote": "The bands are industry rules of thumb, convergent across independent low-volume moulders and quoted here to describe the shape of a decision. They are not thresholds we will hold you to, and no price appears anywhere on this page.",
+      "bandsNote": "The bands are industry rules of thumb, convergent across independent low-volume moulders, and quoted here to describe the shape of a decision rather than a threshold.",
       "lossHeading": "Where the money is actually lost",
       "loss": [
         "Over-tooling. Four hardened cavities bought for an eight-hundred-piece line never return their capital, and the buyer carries that in cash flow for a decade.",
         "Under-tooling in the other direction. A prototype tool pushed through eight years of production, then failing mid-season with nothing standing behind it.",
         "Cosmetic specification nobody asked for. A hand-polished finish costs money in the tool and in lead time. At arm's length on a wet deck a texture usually looks better and hides moulding witness.",
-        "Field failure. A cracked flange, or a galvanic cell nobody isolated at design, costs the warranty claim, the yard labour and the reputation — many times over the part's lifetime revenue.",
-        "Retro-fixing in the field what a change before steel would have cost almost nothing to prevent."
+        "Field failure. A cracked flange, or a galvanic cell nobody isolated at design, costs the warranty claim, the yard labour and the reputation — many times over the part's lifetime revenue."
       ]
     },
     "continuity": {
@@ -389,7 +388,7 @@
         },
         {
           "name": "Held, not running",
-          "note": "A duplicate tool can sit ready. That is readiness, not reserved capacity — capacity is reserved by contract or it is not reserved at all, and we will tell you which one you are being offered."
+          "note": "A duplicate tool can sit ready. That is readiness, not reserved capacity — reserving capacity is a separate contract."
         },
         {
           "name": "Supply against call-off",
@@ -411,8 +410,8 @@
       },
       "figureNote": "A tool is moveable only when the data package moves with it: model, tool drawings, steel and grade specification, gate and cooling layout, and the spare-part list.",
       "boundaryHeading": "What we supply, and what stays with you",
-      "boundaryLead": "This is the section worth reading twice. In a sector governed by standards that nobody on this page is entitled to certify against, the scope line is the credibility — so it is written out in full rather than left as small print.",
-      "boundaryLine": "We design and build the tooling, and we can make the part. Certification, weathering evidence and the right to copy the geometry stay with you — and we will tell you which of the three is missing before steel is cut.",
+      "boundaryLead": "This sector is governed by standards nobody on this page is entitled to certify against. So the scope line is written out in full.",
+      "boundaryLine": "We design and build the tooling, and we can make the part. Certification, weathering evidence and the right to copy the geometry stay with you, and we say which of the three is missing before steel is cut.",
       "oursHeading": "Metal Form supplies",
       "ours": [
         "Reverse engineering from a worn, broken or unsupported sample, from a photograph, or from an incomplete drawing, into clean parametric CAD in CATIA or SolidWorks.",
@@ -425,7 +424,7 @@
       "yoursHeading": "Stays with you",
       "yours": [
         "Certification and approval. ABYC standards, 33 CFR 183 Subpart J, EPA permeation limits, the ISO fuel-system standards and any class society requirement are the boat builder's compliance burden. We build tooling for parts that you certify. We certify nothing.",
-        "Material qualification. Weathering, salt-fog, water-absorption and mechanical evidence comes from the resin producer's datasheet or from an independent laboratory. We do not run those tests and we will not imply that we do.",
+        "Material qualification. Weathering, salt-fog, water-absorption and mechanical evidence comes from the resin producer’s datasheet or from an independent laboratory. We do not run those tests.",
         "The grade decision, and the requalification risk if that grade is discontinued or reformulated in the middle of a programme.",
         "The functional specification: what the part must hold, seal, isolate and survive. We will propose, question and quantify where we can, and critical interfaces are agreed with you before steel is cut.",
         "The right to have the geometry copied — ownership, contract restrictions and patent status. We ask, you answer, and we work from what you can lawfully share.",
@@ -457,7 +456,7 @@
             "ASTM B117 and ISO 9227 — continuous salt fog. Polymers do not corrode as metals do, but the test reveals surface degradation, erosion and coating loss.",
             "ASTM D570 — water absorption by immersion, quantified. The number behind any hydrolysis and dimensional-stability argument.",
             "ASTM D256 impact and ASTM D790 flexural — the mechanical baseline. The figure that matters is the one measured after exposure, not before it.",
-            "Where the evidence comes from: the resin producer's datasheet, or an independent testing laboratory engaged by whoever is making the claim. Metal Form does not perform weathering, salt-fog or material qualification testing and will say so in writing."
+            "Where the evidence comes from: the resin producer’s datasheet, or an independent testing laboratory engaged by whoever is making the claim."
           ],
           "source": "Standards are cited as the buyer's evidence chain. They are not Metal Form accreditations."
         },
@@ -478,10 +477,9 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A photograph, a worn sample, or a drawing. We come back with the geometry problems, the material shortlist for the exposure it actually sees, the tooling route that suits your real annual volume, and what it takes to hold that part in supply. Initial project response within 2 business days. NDA before geometry is shared.",
+    "body": "A photograph, a worn sample, or a drawing. We come back with the geometry problems, the material shortlist for the exposure the part actually sees, the tooling route that suits your real annual volume, and what it takes to hold the part in supply.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form. I have a marine component — [deck hardware / hatch / fitting / fuel-system part / float / other]. Approximate annual quantity: ___. I can send photographs, a worn sample, or a drawing. Please advise on the tooling route.",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form. I have a marine component — [deck hardware / hatch / fitting / fuel-system part / float / other]. Approximate annual quantity: ___. I can send photographs, a worn sample, or a drawing. Please advise on the tooling route."
   }
 }

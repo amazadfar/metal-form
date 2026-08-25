@@ -69,36 +69,31 @@
       "index": "01",
       "kicker": "Gelenler",
       "heading": "Projelerin çoğu bir dosyada değil, birinin elinde gelir.",
-      "body": "Gerçekte gelen şey budur. Bir makine dairesinde çekilmiş bir telefon fotoğrafı. Kırılan parça. Üzerinde hâlâ kumpas duran bir numune. Dörde katlanmış bir teknik resim. Etrafında hiç teknik resim olmayan bir dosya. Hiçbiri bir şartname değildir. Her biri bir başlangıç noktasıdır ve her biri bize başka bir şey anlatır.",
+      "body": "Gerçekte gelen şey bu. Makine dairesinde telefonla çekilmiş bir fotoğraf. Kırılan parça. Üstünde hâlâ kumpas duran bir numune. Dörde katlanmış bir çizim. Etrafında hiçbir çizim olmayan bir dosya. Hiçbiri bir spesifikasyon değil. Her biri bir başlangıç noktası.",
       "items": [
         {
-          "label": "Bir telefon fotoğrafı",
-          "note": "Kabaca malzeme ailesi. Oran, muhtemel çekme yönü, çoğu zaman yolluk girişi ve ayırma yüzeyi. Karede bir şey bize ölçek verene kadar hiçbir ölçü yok."
+          "label": "Bir telefon fotoğrafı"
         },
         {
-          "label": "Kırılan parça",
-          "note": "Arıza bir veridir. Nereden kırıldığı, kırık yüzeyin nasıl göründüğü ve çevresinde ne olduğu; bir tasarım sorununu bir malzeme sorunundan, onu da bir hizmet sorunundan ayırır."
+          "label": "Kırılan parça"
         },
         {
-          "label": "Bir numune ve bir kumpas",
-          "note": "Ölçülmüş detaylar ve hizmet ettikleri kısıtlar. Kalıptan çıkan geometri — ki bu, parçanın tasarlandığı geometri değildir; eski bir parçada ise kalıptan çıktığı geometri bile değildir."
+          "label": "Bir numune ve bir kumpas"
         },
         {
-          "label": "Dörde katlanmış bir teknik resim",
-          "note": "Referanslar, toleranslar ve bir revizyon numarası. Bu sayfadaki en hızlı girdi ve en nadir olanı."
+          "label": "Dörde katlanmış bir teknik resim"
         },
         {
-          "label": "Teknik resmi olmayan bir dosya",
-          "note": "Geometri tam olarak, son radyusuna kadar. Niyet ise hiç yok. Hangi ölçülerin parçanın çalışıp çalışmadığına karar verdiğini yine birinin söylemesi gerekir."
+          "label": "Teknik resmi olmayan bir dosya"
         }
       ],
-      "close": "Bunların en zayıfını gönderin, yine bir mühendislik cevabı alırsınız. En güçlüsünü gönderin, bir kalıp rotası alırsınız. Bu listede yazmaya başlamak için fazla az olan hiçbir şey yok."
+      "close": "Bunların en zayıfını gönderin, yine de mühendislik cevabı alırsınız. En güçlüsünü gönderin, bir kalıp güzergâhı alırsınız."
     },
     "triage": {
       "index": "02",
       "kicker": "Ön değerlendirme",
       "heading": "Gerçekte elinizde ne varsa onu seçin.",
-      "body": "On başlangıç noktası. Her birinin buradan gerçek bir rotası var: girdinin bize ne anlattığı, sizden ne isteyeceğimiz, size ne döneceği ve ilk adımın gerçekte ne olduğu. Listenin yanındaki çizim, siz aşağı indikçe değişmez. Değişen şey, o çizim hakkında bildiklerimizdir.",
+      "body": "On başlangıç noktası, her birinin buradan gerçek bir güzergâhı var. Listenin yanındaki çizim siz aşağı indikçe değişmiyor. Değişen, onun hakkında ne kadar şey bildiğimiz.",
       "railLabel": "Başlangıç noktaları",
       "tellsHeading": "Bu bize ne anlatır",
       "askHeading": "Sizden ne isteyeceğiz",
@@ -112,8 +107,7 @@
           "mark": "Kontur",
           "tells": [
             "Yüzeyden, parlaklıktan ve çekildiği ortamdan kabaca malzeme ailesi.",
-            "Oran ve muhtemel çekme yönü. Çoğu zaman yolluk girişi konumu ve ayırma yüzeyi de.",
-            "Parçanın, çıktığı makinede ya da montajda nasıl durduğu."
+            "Oran ve muhtemel çekme yönü. Çoğu zaman yolluk girişi konumu ve ayırma yüzeyi de."
           ],
           "ask": [
             "Karede bilinen tek bir ölçü ya da parçanın yanına konmuş bir cetvel.",
@@ -125,7 +119,7 @@
             "Tam olarak neyin, nereden ölçüleceğinin listesi.",
             "Fiziksel bir numunenin yola çıkmasının gerekip gerekmediği."
           ],
-          "first": "İçinde cetvel olan bir fotoğraf, yazılı bir cevap almaya yeter. Bir kalıba fiyat vermeye yetmez ve tahmini fiyatlandırmaktansa bunu söylemeyi tercih ederiz."
+          "first": "Kadrajında cetvel olan bir fotoğraf, yazılı bir cevap için yeter. Kalıp fiyatlamak ölçü ister."
         },
         {
           "id": "broken",
@@ -144,8 +138,7 @@
           ],
           "back": [
             "Parçayı birebir üretmek mi yoksa düzeltmek mi gerektiğine dair bir görüş.",
-            "Arızayı gideren tasarım değişiklikleri; yalnızca kozmetik olanlardan ayrı tutulmuş hâlde.",
-            "Hangi versiyonu üretmeye karar verirseniz onun için bir kalıp rotası."
+            "Arızayı gideren tasarım değişiklikleri; yalnızca kozmetik olanlardan ayrı tutulmuş hâlde."
           ],
           "first": "Kırılanı gönderin ve varsa kırılmamış bir tane de. Aynı parçanın iki hâli, tek bir numunenin cevaplayamadığı soruları cevaplar."
         },
@@ -160,13 +153,11 @@
             "Maliyetin nereye harcandığı: göz sayısı, geçmeler, yüzey kalitesi, insert işçiliği."
           ],
           "ask": [
-            "Bu sizin tasarımınız mı, yürürlükte bir patent ya da tescilli tasarım hakkı kapsamında mı ve çoğaltma hakkına sahip misiniz.",
             "Neyi korumak, neyi farklı yapmak istediğiniz.",
             "Hangi pazara ve hangi adetle gideceği."
           ],
           "back": [
             "Neyi birebir üretip neyi üretmeyeceğimize dair yazılı bir beyan.",
-            "Parçaları, montaj sınırını ve kalıbı kapsayan bir kapsam önerisi.",
             "Yeniden tasarımın kopyalamaktan ucuz olduğu yerler ve nedeni."
           ],
           "first": "Hak sorusu her türlü mühendislikten önce gelir. Kısa bir konuşmadır ve şimdi yapılması, çelik işlendikten sonrasına göre çok daha iyidir."
@@ -180,17 +171,12 @@
             "Niyet, oran ve ihtiyacınız olduğunu zaten bildiğiniz detaylar.",
             "Ölçüsel hiçbir şey. Eskiz bir geometri değil, bir şartnamedir ve onu geometri sanmak, projelerin erkenden bozulma biçimidir."
           ],
-          "ask": [
-            "İşlev: ne yaptığı ve ne yapmaması gerektiği.",
-            "Ortam: çalışma sıcaklığı, kimyasal ya da UV maruziyeti, yükün karakteri, beklenen ömür.",
-            "Boyut zarfı, yıllık adet ve bitmiş parçanın içinde kalması gereken maliyet."
-          ],
           "back": [
             "Bir kalıp teklifi değil, bir modelleme kapsamı.",
             "Kalıp maliyetini sürükleyecek detaylar; siz onlara bağlanmadan önce adıyla belirtilmiş hâlde.",
             "Revizyon numarası olan ilk katı model; sonraki her kararın asıldığı şey odur."
           ],
-          "first": "Kalıp satın almadan önce bir model satın almayı bekleyin. Bir eskiz üzerinden önce kalıba fiyat vermek, sizin paranızla tahmin yürütmektir."
+          "first": "Kalıbı satın almadan önce bir model satın almayı bekleyin."
         },
         {
           "id": "cad",
@@ -203,14 +189,11 @@
             "Elinizdekinin düzenleyebileceğiniz bir katı mı, yoksa düzenleyemeyeceğiniz bir mesh mi olduğu."
           ],
           "ask": [
-            "Hangi ölçüler kalite için kritik, hangileri referans.",
-            "Hangi yüzeyler kozmetik ve hangi yüzey standardına göre.",
             "Hammadde kalitesi ve kabul edilebilir muadilleri, ilk sipariş miktarı ve yıllık kullanım."
           ],
           "back": [
             "Bir üretilebilirlik incelemesi: cidar, çıkma açısı, geçmeler, yolluk girişi konumu, birleşme izinin yeri, itme ve hammaddeye karşı tolerans yapılabilirliği.",
-            "Onaylamanız ya da düzeltmeniz için kısa bir kritik ölçü listesi.",
-            "O liste üzerinde mutabık kalındığında bir kalıp önerisi."
+            "Onaylamanız ya da düzeltmeniz için kısa bir kritik ölçü listesi."
           ],
           "first": "Elinizdeki bir mesh ise yine de gönderin. Üçgenlerden oluşan bir kabuğu düzenlenebilir bir katıya çevirmek bir dosya dönüşümü değil, mühendisliktir ve mühendislik olarak fiyatlanır."
         },
@@ -242,12 +225,10 @@
           "label": "Bir üretim sorunu",
           "mark": "Çöküntü",
           "tells": [
-            "Kusurun bir koşu sırasında gelip gittiği mi, yoksa her koşuda ortaya çıktığı mı.",
             "Parçanın neresine düştüğü; bu genellikle kimse kalıbı açmadan mekanizmayı adıyla söyler.",
             "Parçanın tasarlandığı cidar kalınlığının, gerçekte sahip olduğu cidar kalınlığı olup olmadığı."
           ],
           "ask": [
-            "Aralıklı mı, sürekli mi. Bu tek cevap; proses kaymasını ve malzeme sapmasını, parça tasarımından ve kalıp yapımından ayırır.",
             "Bir noktadan değil, birkaç noktadan ölçülmüş cidar kalınlığı.",
             "Kalıbın son bakımından bu yana ne yaptığı ve bir kalıp geçmiş kartının bulunup bulunmadığı."
           ],
@@ -277,7 +258,7 @@
             "Cevabın parçada bir değişiklik mi, kalıpta bir değişiklik mi, yoksa farklı bir kalıp mı olduğu.",
             "İşin yapılmaya değip değmediğine dair bir tutum."
           ],
-          "first": "Tasarruf yüzdesi yazmayız. Aritmetik sizindir — sizin hammadde fiyatınız, sizin makine maliyetiniz, sizin adediniz. Size söyleyebileceğimiz şey, dört kaldıraçtan hangisinin hâlâ oynatılabilir olduğudur."
+          "first": "Dört koldan hangisinin hâlâ oynatılabilir olduğunu yanıtlayabiliriz. Hesabın kendisi — reçine fiyatınız, makine saat ücretiniz, adediniz — size ait."
         },
         {
           "id": "supplier",
@@ -316,7 +297,7 @@
           "back": [
             "O adette kalıbın doğru rota olup olmadığına dair dürüst bir cevap.",
             "Aşamalı bir kapsam: önce model, sonra bir inceleme, sonra bir kalıp kararı — her biri durulabilecek kadar küçük.",
-            "Adedin bir kalıbı haklı çıkarmadığı yerde size kalıp satmak yerine bunu söyleriz."
+            "Adedin kalıbı hiç haklı çıkarmadığı yerde dosdoğru bir cevap."
           ],
           "first": "Herhangi bir projedeki en ucuz saat, bunun hiç kalıplanmış bir parça olması gerekip gerekmediğine karar vermeye harcanan ilk saattir."
         }
@@ -407,7 +388,7 @@
       "index": "04",
       "kicker": "Giriş",
       "heading": "Her boşluk bir varsayıma dönüşür. Varsayımlar da risk olarak fiyatlanır.",
-      "body": "Bunlar, belirsiz bir girdiyi imal edilebilir bir projeye çeviren sorulardır. Bir form değildirler ve buradaki hiçbir şey hiçbir şeyi engellemez. Cevaplayabildiğinizi cevaplayın, cevaplayamadığınızı da söyleyin: belirtilmiş bir bilinmezlik bizim için tahmin edilmiş bir cevaptan daha değerlidir; çünkü belirtilmiş bir bilinmezliğin etrafında çelik işleyebiliriz.",
+      "body": "Bunlar, belirsiz bir girdiyi üretilebilir bir projeye çeviren sorular. Hiçbiri form değil ve hiçbir şeyi durdurmuyor. Bildiğinizi yanıtlayın, bilmediğinizi de açıkça söyleyin: beyan edilmiş bir bilinmeyen, tahmin edilmiş bir cevaptan değerlidir; çünkü beyan edilmiş bir bilinmeyenin etrafında çeliği paylı bırakabiliriz.",
       "cols": {
         "q": "Soru",
         "why": "Neden soruluyor",
@@ -576,7 +557,7 @@
           "leaves": "Parçalar; programın ihtiyacı buysa sürekli tedarik hâlinde."
         }
       ],
-      "close": "Kalıp garanti şartları her proje ve o projenin kalıp şartnamesi bazında tanımlanır. 2 iş günü içinde ilk teknik dönüş ve isterseniz ayrıntılı paylaşımdan önce NDA."
+      "close": "Kalıp garanti şartları her proje için ve o projenin kalıp spesifikasyonuna göre tanımlanır."
     },
     "routes": {
       "index": "06",
@@ -635,8 +616,8 @@
       "index": "07",
       "kicker": "Sınır",
       "heading": "Neyi biz sağlıyoruz, ne sizde kalıyor.",
-      "body": "Bu, sayfadaki en güçlü şeydir; o yüzden küçük puntoda değildir. Bir özel projenin iki tarafı vardır ve aradaki çizginin, ilk atımlarda keşfedilmek yerine siz hiçbir şey göndermeden önce görünür olması gerekir.",
-      "line": "Kalıp yapar ve parça üretiriz. Bitmiş ürününüzü test etmez, belgelendirmez ve onaylamayız; bazı alıcıların ihtiyaç duyduğu sektör onaylarına da sahip değiliz. Projenizde belirleyici olan buysa, hiçbir şey göndermeden önce buna karar verin — bu konuşma şimdi, sonrakinden daha kısadır.",
+      "body": "Özel bir projenin iki tarafı vardır ve aradaki sınır, siz bir şey göndermeden önce görünür olmalı; ilk baskılarda keşfedilmemeli.",
+      "line": "Kalıp yaparız ve parça üretiriz. Bitmiş ürününüzü test etmez, belgelendirmez ve onaylamayız; bazı alıcıların ihtiyaç duyduğu sektörel onaylara da sahip değiliz. Bir projede belirleyici olan buysa, herhangi bir şey gönderilmeden önce netleştirmeye değer.",
       "supplyHeading": "Metal Form'un sağladıkları",
       "supply": [
         "Gönderdiğiniz her şeyin mühendislik okuması: fiziksel bir numune, bir fotoğraf, bir mesh, bir STEP dosyası ya da sorunun yazılı tarifi.",
@@ -674,7 +655,7 @@
       "index": "08",
       "kicker": "Gönderme",
       "heading": "Elinizde ne varsa gönderin.",
-      "body": "Üç kademe. Bize yazmak için üçüncüsüne ihtiyacınız yok. Birincisi gerçek bir cevap almaya yeter ve hangi kademede olduğunuzu bilmek, bir sonrakindeymiş gibi davranmaktan daha değerlidir.",
+      "body": "Üç kademe. Gerçek bir cevap almak için birincisi yeter — bize yazmak için üçüncüye gelmiş olmanız gerekmez.",
       "tiers": [
         {
           "code": "T1",
@@ -710,8 +691,7 @@
           ]
         }
       ],
-      "close": "Birinci kademe yeterlidir. Elinizdeki, gece on birde bir makine dairesinde telefonla çekilmiş bir fotoğrafsa, onu gönderin.",
-      "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+      "close": "Birinci kademe yeterlidir. Elinizdeki, gece on birde bir makine dairesinde telefonla çekilmiş bir fotoğrafsa, onu gönderin."
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -740,7 +720,7 @@
             "Parçanın üretildiğinden bu yana hareket edip etmediği. Plastik ısı ve zaman altında çarpılır; eski bir numune teknik resmini değil, geçmişini kaydeder.",
             "Neyle eşleştiği ve geçmenin hiç bu parça tarafından kontrol edilip edilmediği."
           ],
-          "source": "Soru soran bir girişin, varsayan bir girişten neden daha ucuz olduğunun nedeni budur."
+          "source": "Bir numuneyi böyle okumak bu işin standart pratiğidir. Numuneden çıkarılamayacak olanlar, varsayılmak yerine yukarıda listelenmiştir."
         },
         {
           "title": "Çelik işleme onayında dondurulanlar",
@@ -751,8 +731,7 @@
             "Yolluk ve giriş konsepti; giriş konumunun kozmetik yüzeylere ve birleşme izinin düşeceği yere göre konumu dâhil.",
             "Soğutma düzeni ve gözler arası dengesi; çevrim süresini, dolayısıyla kalıbın ömrü boyunca üreteceği her parçanın tekrar eden maliyetini belirler.",
             "Havalandırma derinliği ve konumu: bir kalıptaki en ucuz düzeltme ve el değiştirmiş bir kalıpta en sık eksik olan kalem.",
-            "Yayımlanmış bir referansa göre adlandırılmış doku standardı, kritik ölçü listesi, hammadde varsayımı ve çelik fazlası kaydı.",
-            "Bu noktadan sonra ucuz revizyonlar geride kalmıştır."
+            "Yayımlanmış bir referansa göre adlandırılmış doku standardı, kritik ölçü listesi, hammadde varsayımı ve çelik fazlası kaydı."
           ]
         }
       ]
@@ -760,10 +739,9 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Bir fotoğraf, bir numune, bir dosya ya da sorunu anlatan bir paragraf. Bir fiyat listesi değil, bir mühendislik cevabı alırsınız: neyi belirleyebildiğimiz, hâlâ neyi sormamız gerektiği ve kalıp rotasının neye benzediği. 2 iş günü içinde ilk dönüş. İsterseniz siz hiçbir şey göndermeden önce NDA.",
+    "body": "Bir fotoğraf, bir numune, bir dosya ya da problemi anlatan bir paragraf. Fiyat listesi değil, mühendislik cevabı alırsınız: neyi belirleyebildiğimiz, neyi hâlâ sormamız gerektiği ve kalıp güzergâhının nasıl göründüğü.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Metal Form — özel proje.\n\nElimde: fotoğraf / numune parça / kırık parça / eskiz / STEP dosyası / teknik resim paketi / mevcut kalıp / bir üretim, maliyet veya tedarik sorunu\nParçanın ne yaptığı: \nNerede kullanıldığı: \nBiliniyorsa yaklaşık yıllık adet: \nSizden ihtiyacım olan: ",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Metal Form — özel proje.\n\nElimde: fotoğraf / numune parça / kırık parça / eskiz / STEP dosyası / teknik resim paketi / mevcut kalıp / bir üretim, maliyet veya tedarik sorunu\nParçanın ne yaptığı: \nNerede kullanıldığı: \nBiliniyorsa yaklaşık yıllık adet: \nSizden ihtiyacım olan: "
   }
 }

@@ -319,7 +319,7 @@
       "index": "02",
       "kicker": "Geçmeyi dışarı çıkarmak",
       "heading": "Geçme mekanizmayı belirler. Mekanizma çevrimi belirler.",
-      "body": "Neredeyse her ek parçada öylece itilemeyecek bir şey vardır: bir iç kanal, kalıplanmış bir diş, bir conta yuvası, 360°'lik bir detay. O noktada kalıp bir kap olmaktan çıkar ve bir mekanizma hâline gelir. Maliyetin, çevrimin, duruşların ve saha arızalarının büyük bölümünün kaynağı orasıdır. Bir ek parça mühendisinin ilk okuduğu bölüm budur; bu yüzden düz yazılmıştır.",
+      "body": "Neredeyse her fittingde öylece çıkmayacak bir şey vardır: iç kanal, kalıplanmış diş, sızdırmazlık yuvası, 360° bir özellik. O noktada kalıp bir kap olmaktan çıkar, bir mekanizma olur. Maliyet, çevrim, duruş ve sahadaki arızaların büyük kısmı oradan doğar.",
       "options": [
         {
           "id": "collapsible",
@@ -411,7 +411,7 @@
         "heading": "Yan ağızlar, sıyırma ve her birinin durduğu yer",
         "body": "Telerdeki, haçlardaki ve kolektörlerdeki yan ağızlar birer sürgüdür. Ayırma yüzeyini kalıptaki başka her şeyden önce belirlerler; en son değil en önce kararlaştırılmalarının nedeni budur. Sığ bir geçmeli tırnak ya da alçak bir bilezik, malzemenin kendi esnekliği kullanılarak sıyrılabilir — zorlamalı çıkarılabilir — ve detay gerçekten sığ, hammadde gerçekten affediciyse en ucuz cevap budur. Bunun ötesine zorlandığında itme olmaktan çıkar, bir çatlak yayıcıya dönüşür."
       },
-      "close": "Mekanizmayı sizin geometrinize ve kendi salonunuzun kaldırabileceği bakıma göre belirleriz. Sizin parçanızda kullanmayacağımız bir mekanizma varsa bunu tekliften sonra değil, teklifte söyleriz."
+      "close": "Mekanizmayı sizin geometrinize ve kendi salonunuzun taşıyabileceği bakıma göre belirleriz — sizin parçanıza hiç mekanizma koymayacağımız durumlar dâhil."
     },
     "thread": {
       "index": "03",
@@ -652,7 +652,7 @@
           "v": "PP-R Ø20–63 elle, aparatla Ø125'e kadar. Isıtıcı ayar noktası 260 ± 10 °C olarak yayımlanmıştır."
         }
       ],
-      "source": "Bu değerler PP-R boru sistemleri ve standartları üzerine yayımlanmış malzemeden alıntılanmıştır — DIN 8077, DIN 8078, EN ISO 15874 ve DVS 2207. Burada standartların değerleri olarak anılmaktadır. Bir Metal Form yetkinlik beyanı değildir ve teklif ettiğimiz bir tolerans değildir.",
+      "source": "Bu değerler PP-R borular ve standartları üzerine yayımlanmış kaynaklardan alınmıştır — DIN 8077, DIN 8078, EN ISO 15874 ve DVS 2207. Standartların kendi rakamları olarak aktarılmıştır; sunduğumuz bir tolerans olarak değil.",
       "canHeading": "Bir kalıbın karar verebildikleri",
       "can": [
         "Düzen boyunca gözler arası mutabakat",
@@ -743,7 +743,7 @@
           "v": "Yılda 1.111 makine saati"
         }
       ],
-      "disclaimer": "Yukarıdaki rakamlar okunabilir olsun diye seçilmiş, keyfî rakamlardır. Aritmetiğin biçimidir; bir fiyat teklifi değildir, bir kıyaslama değildir ve sizin parçanızda iddia edilen bir sonuç değildir. Sizin rakamlarınız sizindir ve önemli olan yalnızca onlardır.",
+      "disclaimer": "Yukarıdaki sayılar okunaklı olsun diye seçildi. Aritmetiğin biçimini gösterirler; bir teklif ya da parçanız hakkında bir iddia değildirler.",
       "lostHeading": "Paranın gerçekte kaybolduğu yer",
       "lost": [
         {
@@ -765,7 +765,7 @@
       "index": "07",
       "kicker": "Kapsam",
       "heading": "Bir kalıp basınç sınıfı vermez.",
-      "body": "Sayfadaki en net çizgi budur ve kimse sormadan söylenmeye değer. Biz kalıp yaparız ve parça üretebiliriz. Bitmiş ek parçanın neyi taşımaya onaylandığı bizim beyan edeceğimiz bir şey değildir; aksini ima eden bir tedarikçi de size kendisi hakkında işe yarar bir şey söylemiştir.",
+      "body": "Kalıp yaparız ve parça üretebiliriz. Bitmiş fittingin neye onaylı olduğunu beyan etmek bize düşmez.",
       "supplyHeading": "Metal Form'un sağladıkları",
       "supply": [
         "Kalıp tasarımı ve imalatı — enjeksiyon, PET, şişirme ve basınçlı döküm; çok gözlü; sıcak ve soğuk yolluk",
@@ -827,7 +827,7 @@
         "Verinin olmadığı yerde bize gönderdiğiniz üretim parçalarından; böylece ikiz kalıp, müşterilerinizin hâlihazırda kaynattığı boruyla anlaşır.",
         "Yalnızca çelik ve parça hayatta kaldıysa numuneden tersine mühendislikle.",
         "Orijinal kalıp kaydıysa ikiz kalıp, o kaymayı çoğaltmak değil düzeltmek için bir fırsattır.",
-        "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da edilmez ve hangisi olduğunu söyleriz."
+        "Bu bir hazırlıktır, ayrılmış kapasite değil. Kapasite rezervasyonu ayrı bir sözleşmedir."
       ],
       "sendHeading": "Ne göndermeli",
       "send": [
@@ -858,8 +858,7 @@
         "CATIA ve SolidWorks",
         "Kalıp garantisi, proje bazında şartlar",
         "Dünya geneline sevkiyat"
-      ],
-      "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+      ]
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -873,8 +872,7 @@
             "Diş sökücü maça — katlanabilir maçanın kapatamayacağı yerlerde tam diş formu için. Yayımlanmış kaynaklar diş sökücü kalıpları, imal edilen en karmaşık enjeksiyon kalıpları arasında tanımlar.",
             "Belgelenmiş diş sökücü arıza biçimleri: kırık makaralar, hasarlı kremayerler, su ve yağ kaçakları; parçada ise sürtme izi, ovallik, çapak ve gres bulaşması.",
             "Sürgüler ve yan maçalar — telerdeki, haçlardaki ve kolektörlerdeki yan ağızlar için. Ayırma yüzeyini başka her şeyden önce onlar belirler.",
-            "Sıyırma ve zorlamalı çıkarma — yalnızca sığ detaylarda ve affedici hammaddelerde uygulanabilir. Ötesinde bir çatlak yayıcıdır.",
-            "Seçimi sizin geometrinize ve bakım kapasitenize göre yaparız ve kullanmayacağımız mekanizmayı adıyla söyleriz."
+            "Sıyırma ve zorlamalı çıkarma — yalnızca sığ detaylarda ve affedici hammaddelerde uygulanabilir. Ötesinde bir çatlak yayıcıdır."
           ],
           "source": "Bu panodaki mekanizma değerleri ve arıza biçimleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
         },
@@ -901,8 +899,7 @@
             "Artık onu tarif etmiyor olabilecek bir teknik resme göre değil, mevcut kalıbınızın gerçekte ürettiği parçalara göre kurulan ikiz ve ikinci kaynak kalıpları.",
             "Yedekler, değişim parçaları ve insert takımları; başkasının yaptığı şaseler için olanlar dâhil.",
             "Geçme sabit kalırken parça ağırlığının azaltılması — katalogunuzun ya da ölçü tablonuzun bağlı olduğu hiçbir ölçüye dokunmadan alınan gramlar.",
-            "İmal ettiğimiz her şeyin 3B verisini alırsınız. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir.",
-            "Kalıp garantisi; şartlar proje ve kalıp şartnamesi bazında tanımlanır. Dünya geneline sevkiyat."
+            "Yaptığımız işin 3D verisi NDA kapsamında size verilir. Kalıp garanti şartları proje ve kalıp spesifikasyonu bazında tanımlanır."
           ]
         }
       ]
@@ -910,10 +907,9 @@
   },
   "cta": {
     "headline": "Parçayı gönderin. Kalıbın ne olması gerektiğini söyleyelim.",
-    "body": "Bir ek parça, bir ölçü tablosu ya da eski bir kalıbın hâlâ ürettiği bir şeyin numunesi. Mekanizma, göz sayısı, yolluk rotası ve parça ağırlığıyla — ve neyi yapmayacağımızla — dönüş yaparız. 2 iş günü içinde ilk proje dönüşü. Tercih ederseniz önce NDA.",
+    "body": "Bir fitting, bir ölçü tablosu ya da eski bir kalıbın hâlâ bastığı bir numune. Mekanizma, göz sayısı, yolluk güzergâhı ve parça ağırlığıyla döneriz — bir de yapmayacağımız şeylerle.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form. Plastik boru ek parçası üretiyoruz ve kalıp konusunu görüşmek istiyorum.\n\nMalzeme: PP-R / PVC-U / PE100 / PEX sistem / ABS\nÖlçüler: [__] mm\nEk parça tipleri: dirsekler / teler / manşonlar / dişli adaptörler / vana gövdeleri / atık su\nÜrün kodu bazında yıllık adet: \nYenilenecek ya da ikinci kaynağı yapılacak mevcut kalıp: var / yok\n\nÖlçü tablosunu ve 3B veriyi NDA altında gönderebilirim.",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form. Plastik boru ek parçası üretiyoruz ve kalıp konusunu görüşmek istiyorum.\n\nMalzeme: PP-R / PVC-U / PE100 / PEX sistem / ABS\nÖlçüler: [__] mm\nEk parça tipleri: dirsekler / teler / manşonlar / dişli adaptörler / vana gövdeleri / atık su\nÜrün kodu bazında yıllık adet: \nYenilenecek ya da ikinci kaynağı yapılacak mevcut kalıp: var / yok\n\nÖlçü tablosunu ve 3B veriyi NDA altında gönderebilirim."
   }
 }

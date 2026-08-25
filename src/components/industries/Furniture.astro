@@ -954,13 +954,13 @@ const MX_COLOUR = [
           <p class="fur-scope__close">{b.supply.boundary.close}</p>
         </div>
 
-        <p class="fur-sup__response"><span class="badge">{b.supply.response}</span></p>
+        {b.supply.response ? <p class="fur-sup__response"><span class="badge">{b.supply.response}</span></p> : null}
 
         {/* Layer three: depth, folded away until it is wanted. */}
         <div class="fur-panels">
           <h3 class="t-label fur-panels__h">{b.panels.heading}</h3>
           {b.panels.items.map((panel: any, i: number) => (
-            <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+            <div class="disc" data-open="false">
               <h4>
                 <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
                   <span>{panel.title}</span>

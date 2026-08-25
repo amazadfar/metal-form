@@ -338,7 +338,7 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
     <div class="shell--wide app-flow__foot">
       <p class="app-flow__boundary">{b.flow.boundaryNote}</p>
       <p class="app-flow__close">{b.flow.close}</p>
-      <p class="t-fine">{b.flow.sourceNote}</p>
+      <p class="t-fine app-fine">{b.flow.sourceNote}</p>
     </div>
   </section>
 
@@ -427,7 +427,7 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
       </TechNote>
       <div class="app-warp__closebox">
         <p class="app-warp__close">{b.warp.close}</p>
-        <p class="t-fine">{b.warp.sourceNote}</p>
+        <p class="t-fine app-fine">{b.warp.sourceNote}</p>
       </div>
     </div>
   </section>
@@ -812,12 +812,12 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
     </div>
 
     <div class="shell--wide">
-      <p class="app-scope__note">{b.scope.note}</p>
+      {b.scope.note ? <p class="app-scope__note">{b.scope.note}</p> : null}
 
       <div class="app-panels">
         <h3 class="t-label app-panels__h">{b.panels.heading}</h3>
         {b.panels.items.map((panel: any, i: number) => (
-          <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+          <div class="disc" data-open="false">
             <h4>
               <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
                 <span>{panel.title}</span>
@@ -1798,4 +1798,7 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
     .app-serp, .app-src__new, .app-src__newline { stroke-dashoffset: 0 !important; }
     .app-src__second { opacity: 1 !important; }
   }
+
+  /* Source notes under the figures inherit the full shell width. */
+  .app-fine { max-inline-size: 90ch; }
 </style>

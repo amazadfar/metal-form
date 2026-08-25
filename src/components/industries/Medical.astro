@@ -488,15 +488,21 @@ const withUnit = (value: number, i: number): string => {
         <p class="t-lead">{b.start.body}</p>
       </div>
 
-      <ol class="med-rail">
-        {b.start.steps.map((step: any, i: number) => (
-          <li>
-            <span class="med-rail__n t-mono">{String(i + 1).padStart(2, '0')}</span>
-            <span class="med-rail__t">{step.label}</span>
-            <span class="med-rail__b">{step.note}</span>
-          </li>
-        ))}
-      </ol>
+      {/* The generic four-step intake — send, read, NDA, quote — lives on the
+          contact page and in this chapter's own closing note. Repeating it here
+          added a screen and no new idea, so the block now goes straight to the
+          two lists that are specific to a medical tool. */}
+      {b.start.steps?.length ? (
+        <ol class="med-rail">
+          {b.start.steps.map((step: any, i: number) => (
+            <li>
+              <span class="med-rail__n t-mono">{String(i + 1).padStart(2, '0')}</span>
+              <span class="med-rail__t">{step.label}</span>
+              <span class="med-rail__b">{step.note}</span>
+            </li>
+          ))}
+        </ol>
+      ) : null}
 
       <div class="med-exchange">
         <section>

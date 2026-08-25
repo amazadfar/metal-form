@@ -319,7 +319,7 @@
       "index": "02",
       "kicker": "Getting the undercut out",
       "heading": "The undercut decides the mechanism. The mechanism decides the cycle.",
-      "body": "Nearly every fitting has something that will not simply eject: an internal groove, a moulded thread, a sealing gland, a 360° feature. At that point the tool stops being a container and becomes a mechanism. The cost, the cycle, the downtime and a large share of the field failures all originate there. This is the section a fittings engineer reads first, so it is written flat.",
+      "body": "Nearly every fitting has something that will not simply eject: an internal groove, a moulded thread, a sealing gland, a 360° feature. At that point the tool stops being a container and becomes a mechanism. The cost, the cycle, the downtime and a large share of the field failures all originate there.",
       "options": [
         {
           "id": "collapsible",
@@ -411,7 +411,7 @@
         "heading": "Side ports, stripping and where each stops",
         "body": "Branch ports on tees, crosses and manifolds are slides. They set the parting line before anything else in the tool does, which is why they are decided first and not last. A shallow snap or a low bead can be stripped over — bumped off — using the material's own elasticity, and that is the cheapest answer when the feature is genuinely shallow and the resin genuinely forgiving. Pushed beyond that, it stops being ejection and becomes a crack propagator."
       },
-      "close": "We specify the mechanism against your geometry and against the maintenance your own hall can carry. Where we would not use a mechanism on your part, we say so at the quotation rather than after it."
+      "close": "We specify the mechanism against your geometry and against the maintenance your own hall can carry — including where we would not put one on your part at all."
     },
     "thread": {
       "index": "03",
@@ -652,7 +652,7 @@
           "v": "PP-R Ø20–63 by hand, up to Ø125 with jigs. Heater setpoint published at 260 ± 10 °C."
         }
       ],
-      "source": "These figures are quoted from published material on PP-R piping and its standards — DIN 8077, DIN 8078, EN ISO 15874 and DVS 2207. They are cited here as the standards' figures. They are not a Metal Form capability statement and not a tolerance we are offering.",
+      "source": "These figures are quoted from published material on PP-R piping and its standards — DIN 8077, DIN 8078, EN ISO 15874 and DVS 2207. They are cited as the standards’ figures, not as a tolerance we are offering.",
       "canHeading": "What a mould can decide",
       "can": [
         "Cavity-to-cavity agreement across the layout",
@@ -743,7 +743,7 @@
           "v": "1 111 machine hours a year"
         }
       ],
-      "disclaimer": "The figures above are arbitrary and chosen to be legible. They are the shape of the arithmetic, not a quotation, not a benchmark, and not a result being claimed on your part. Your numbers are your own and they are the only ones that matter.",
+      "disclaimer": "The figures above are chosen to be legible. They are the shape of the arithmetic, not a quotation and not a claim about your part.",
       "lostHeading": "Where the money actually goes missing",
       "lost": [
         {
@@ -765,7 +765,7 @@
       "index": "07",
       "kicker": "Scope",
       "heading": "A mould does not confer a pressure rating.",
-      "body": "This is the clearest line on the page and it is worth stating before anyone asks for it. We build tooling and we can produce components. What the finished fitting is approved to carry is not ours to declare, and a supplier who implies otherwise has told you something useful about themselves.",
+      "body": "We build tooling and we can produce components. What the finished fitting is approved to carry is not ours to declare.",
       "supplyHeading": "What Metal Form supplies",
       "supply": [
         "Tooling design and manufacture — injection, PET, blow and die-cast; multi-cavity; hot and cold runner",
@@ -827,7 +827,7 @@
         "From production parts you send us where the data does not exist, so the duplicate agrees with the pipe your customers already weld to.",
         "By reverse engineering a sample where only steel and parts survive.",
         "Where the original tool has drifted, the duplicate is the opportunity to correct it rather than to replicate the drift.",
-        "This is readiness, not reserved capacity. Capacity is reserved by contract or it is not reserved, and we will say which."
+        "This is readiness, not reserved capacity. Reserving capacity is a separate contract."
       ],
       "sendHeading": "What to send",
       "send": [
@@ -858,8 +858,7 @@
         "CATIA and SolidWorks",
         "Tooling warranty, terms per project",
         "International delivery"
-      ],
-      "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+      ]
     },
     "panels": {
       "heading": "Deeper detail",
@@ -873,8 +872,7 @@
             "Unscrewing core — for full thread form where a collapsible core cannot shut off. Published sources describe unscrewing moulds as among the most complex injection moulds built.",
             "Documented unscrewing failure modes: broken rollers, damaged racks, water and oil leaks; on the part, scuffing, ovality, flash and grease contamination.",
             "Slides and side cores — for branch ports on tees, crosses and manifolds. They set the parting line before anything else does.",
-            "Stripping and bumping-off — viable only on shallow features and forgiving resins. Beyond that it is a crack propagator.",
-            "We specify against your geometry and your maintenance capability, and we will name the mechanism we would not use."
+            "Stripping and bumping-off — viable only on shallow features and forgiving resins. Beyond that it is a crack propagator."
           ],
           "source": "Mechanism figures and failure modes in this panel are published industry practice, not Metal Form measurements."
         },
@@ -901,8 +899,7 @@
             "Duplicate and second-source tooling built against the parts your existing mould actually produces, rather than against a drawing that may no longer describe it.",
             "Spares, change parts and insert sets, including for frames built by someone else.",
             "Part-weight reduction at constant fit — grams removed without touching any dimension your catalogue or your dimension table depends on.",
-            "You receive the 3D data for what we build. An NDA can be signed before detailed technical disclosure.",
-            "Tooling warranty, with terms defined per project and mould specification. International delivery."
+            "You receive the 3D data for what we build, under NDA. Tooling warranty terms are defined per project and mould specification."
           ]
         }
       ]
@@ -910,10 +907,9 @@
   },
   "cta": {
     "headline": "Send the part. We will tell you what the tooling should be.",
-    "body": "A fitting, a dimension table, or a sample of something an old mould still makes. We come back with the mechanism, the cavitation, the runner route and the part weight — and with what we would not do. Initial project response within 2 business days. NDA first if you prefer.",
+    "body": "A fitting, a dimension table, or a sample of something an old mould still makes. We come back with the mechanism, the cavitation, the runner route and the part weight — and with what we would not do.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form. We make plastic pipe fittings and I would like to discuss tooling.\n\nMaterial: PP-R / PVC-U / PE100 / PEX system / ABS\nSizes: [__] mm\nFitting types: elbows / tees / sockets / threaded adapters / valve bodies / drainage\nAnnual volume by part number: \nExisting tooling to replace or second-source: yes / no\n\nI can send the dimension table and 3D data under NDA.",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form. We make plastic pipe fittings and I would like to discuss tooling.\n\nMaterial: PP-R / PVC-U / PE100 / PEX system / ABS\nSizes: [__] mm\nFitting types: elbows / tees / sockets / threaded adapters / valve bodies / drainage\nAnnual volume by part number: \nExisting tooling to replace or second-source: yes / no\n\nI can send the dimension table and 3D data under NDA."
   }
 }

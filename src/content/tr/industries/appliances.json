@@ -78,7 +78,7 @@
           "note": "Uzun, ince ve kendini rijitleştirecek neredeyse hiç kesiti yok. Bel verme, kabin kenarından doğrudan okunur. Bizim işimiz."
         }
       ],
-      "close": "Bu listedeki iki satır bizim. Dördü değil ve bunu siparişten sonra değil, talep aşamasında söylüyoruz. Yine de konuşmanın içinde kalırlar; çünkü bizim parçalarımızın oturması gereken boşluğu onlar belirler.",
+      "close": "Bu listedeki iki satır bizim. Dördü değil. Yine de konuşmanın içinde kalırlar; çünkü bizim parçalarımızın oturması gereken boşluğu onlar belirler.",
       "sourceNote": "Buradaki levha kalınlığı ve köpük ısınma değerleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
     },
     "flow": {
@@ -180,7 +180,7 @@
           "note": "Bir yüzü Class A, diğer yüzü yapısal ve müşterinin gözünün ilk gittiği parça."
         }
       ],
-      "close": "Yalnızca parçayı değil, montajı da görmek istememizin nedeni budur. Geçme montaj seviyesinde tasarlanır ve kalıp tarafından teslim edilir — nominal cidar, soğutma dengesi, yolluk girişi konumu, doku derinliğine göre verilmiş çıkma açısı. Bize tek bir enjeksiyon parçası gönderirseniz, soracağımız ilk şey onun neyin içine oturacağı olur.",
+      "close": "Bu yüzden yalnızca parçayı değil, montajı da görmek isteriz. Uyum montaj seviyesinde tasarlanır ve kalıpla teslim edilir: nominal et kalınlığı, soğutma dengesi, yolluk girişi konumu, doku derinliğine uygun çıkma açısı.",
       "failures": [
         {
           "name": "Bel verme",
@@ -281,8 +281,8 @@
         }
       ],
       "unitLabel": "yüzde",
-      "close": "Beyaz eşya adetlerinde kalıp, parça başına neredeyse bir yuvarlama hatasıdır. Amortismana yayılmış kalıp ancak kabaca bin parçanın altında belirleyici olur ve hiçbir beyaz eşya modeli o bantta değildir. Dolayısıyla bir model ömrü boyunca daha ucuz karar, genellikle daha pahalı kalıptır: daha iyi soğutma düzeni, dürüst bir nominal cidar, kolay olduğu için değil doldurduğu için yerleştirilmiş girişler. Gramların ve saniyelerin nerede olduğunu size söyleriz. Parçayı görmeden bunun üzerine bir yüzde koymayız.",
-      "sourceNote": "Bu banttaki oranlar ve aralıklar yayımlanmış sektör değerleridir. Metal Form ölçümleri değildir, bir performans iddiası değildir ve bir fiyat teklifi değildir."
+      "close": "Beyaz eşya adetlerinde kalıp, parça başına neredeyse yuvarlama hatası kadar kalır. Kalıp amortismanı ancak bin adedin altında belirleyici olur ve hiçbir beyaz eşya modeli o aralıkta değildir. Dolayısıyla bir model ömrü boyunca ucuz olan karar, genellikle pahalı olan kalıptır: daha iyi soğutma yerleşimi, dürüst bir nominal et kalınlığı, kolaylık için değil dolum için konumlandırılmış yolluk girişleri. Gramların ve saniyelerin nerede olduğu, sizin parçanız üzerinde yanıtladığımız bir sorudur.",
+      "sourceNote": "Bu banttaki oranlar ve aralıklar yayımlanmış sektör verileridir, Metal Form ölçümü değildir."
     },
     "strategy": {
       "index": "06",
@@ -410,8 +410,7 @@
         "Derin kutularda itmenin, geometri dondurulmadan önce çözülmesi",
         "Bu projeye ve bu kalıp şartnamesine göre tanımlanmış kalıp garanti şartları",
         "Değiştirmeye değer bir şey olmadığını düşündüğümüz yerde, bunu da söyleriz"
-      ],
-      "note": "2 iş günü içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
+      ]
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -421,10 +420,8 @@
           "bullets": [
             "Nominal cidar önceki modelden devralınmak yerine kendi gerekçeleriyle yeniden incelenir.",
             "Nervürler nominal cidarın kabaca yüzde 60'ında ya da altında, kökleri radyuslu.",
-            "Akış uzunluğu / cidar kalınlığı oranı, aday her yolluk girişinden en uzak noktada kontrol edilir.",
             "Yolluk girişi konumları birleşme izleri görünmeyen yüzeylere düşecek şekilde seçilir ve kademeli dolumun gerekli olup olmadığına karar verilir.",
             "Derin maçalara soğutma, parça hâlâ değiştirilebilirken baffle ya da bubbler ile planlanır.",
-            "Maça / göz sıcaklık stratejisi enjeksiyon atölyesine bırakılmaz, tasarım aşamasında kararlaştırılır.",
             "Çıkma açısı, belirlenen doku derinliğiyle birlikte tek bir şartname olarak ele alınır, iki ayrı şartname olarak değil.",
             "Derin kutularda itme çözülür — sıyırıcı plakalar, hava valfleri ve çıkma açısı ile vakumun nasıl etkileştiği.",
             "Plaka kalınlığı ve destek pimleri, açıklık boyunca göz basıncına göre boyutlandırılır.",
@@ -443,7 +440,7 @@
             "Dolgulu kaliteler anizotropik çeker. Aynı parçanın dolgulu ve dolgusuz hâli, fiyatı farklı aynı problem değil, iki ayrı kalıp problemidir.",
             "Kırma malzeme gerçek bir maliyet kaldıracıdır ve gerçek bir tavanı vardır: yayımlanmış uygulama, darbe özellikleri ölçülebilir biçimde düşmeden önceki sınırı ABS için yüzde 20, HIPS için yüzde 25 civarında veriyor."
           ],
-          "source": "Bu panodaki rakamlar yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir. Malzeme testi, belgelendirmesi ya da onayı yapmıyoruz."
+          "source": "Bu paneldeki rakamlar yayımlanmış sektör uygulamasıdır. Metal Form malzeme testi, sertifikasyonu veya onayı yapmaz."
         },
         {
           "title": "Kozmetik kusurlar ve gerçekte nereden başladıkları",
@@ -464,10 +461,9 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Bir model, bir teknik resim ya da yanında bir cetvelle çekilmiş bir fotoğraf. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendirir, 2 iş günü içinde dönüş yaparız. Hiçbir şey paylaşılmadan önce NDA.",
+    "body": "Bir model, bir çizim ya da yanına cetvel konmuş bir fotoğraf. Geometriyi, kalıp güzergâhını, üretim ekonomisini ve tedarik seçeneklerini değerlendiririz.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form. Beyaz eşya üretiyoruz. Konuşmak istediğim bir parça var — adı: [parça], yaklaşık ölçü: [U x G x Y mm], malzeme: [biliniyorsa], yıllık adet: [biliniyorsa]. İhtiyacım: [yeni kalıp / yenileme kalıbı / ikinci kaynak kalıbı / maliyet incelemesi]. NDA ile başlayabilir miyiz?",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form. Beyaz eşya üretiyoruz. Konuşmak istediğim bir parça var — adı: [parça], yaklaşık ölçü: [U x G x Y mm], malzeme: [biliniyorsa], yıllık adet: [biliniyorsa]. İhtiyacım: [yeni kalıp / yenileme kalıbı / ikinci kaynak kalıbı / maliyet incelemesi]. NDA ile başlayabilir miyiz?"
   }
 }

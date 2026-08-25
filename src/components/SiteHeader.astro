@@ -236,4 +236,19 @@ const links = [
     .hdr__menu-label { display: none; }
     .hdr__menu { padding: 0.5rem; }
   }
+
+  /* The header carries the only navigation on a chapter that runs to twenty
+     screens, and all three of its controls were sized by their glyphs — under
+     25px each on a phone. Height comes from padding, so the proportions on a
+     mouse are unchanged. */
+  @media (pointer: coarse) {
+    .hdr__menu,
+    .hdr__lang,
+    .hdr :global(a.wm) {
+      min-block-size: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .hdr__lang { padding-inline: 0.35rem; }
+  }
 </style>

@@ -205,7 +205,7 @@
           ]
         }
       ],
-      "close": "On beş aile, tek bir tekrar eden soru. Bunlardan hangisi şu anda tek bir kalıptan, tek kaynaktan geliyor ve o kalıbın durduğu gün montaj hattına ne oluyor."
+      "close": "On beş aile, tek bir tekrar eden soru: bunlardan hangisi bugün tek kalıpta tek kaynakta duruyor ve o kalıp durduğu gün montaj hattına ne oluyor."
     },
     "materials": {
       "index": "02",
@@ -295,7 +295,7 @@
       "index": "03",
       "kicker": "Kalıbın içi",
       "heading": "Çelik işlenmeden önce alınan, bedeli bir milyon kez ödenen altı karar.",
-      "body": "Bir kalıp teklifi bunların hiçbirini göstermez. Beş yıllık üretim hepsini gösterir. Kesiti soldan sağa okuyun: ayrım, mekanizmalar, besleme, soğutma, havalandırma ve çelik — tartışıldıkları sırayla.",
+      "body": "Kesiti soldan sağa okuyun: ayırma, mekanizmalar, besleme, soğutma, havalandırma ve çelik — tartışıldıkları sırayla.",
       "figureLabel": "Kesitte kalıp montajı — sabit yarım, hareketli yarım, parça ve mekanizmalar",
       "camAngle": "15° – 20°",
       "hardness": "48 – 52 HRC",
@@ -445,7 +445,7 @@
         "Yuvasıyla artık hizalanmayan bir klips",
         "Şasi profiline zorlanarak geçirilmesi gereken bir kanal"
       ],
-      "close": "Tolerans resmi, kalıp teklif edilmeden önce okunur. Prosesin dürüstçe tutabileceğinden daha dar yazılmış her ölçü ilk montaj denemesinde keşfedilmez, o aşamada masaya konur. Montaj boyunca tolerans yığılması da öyle — genellikle kimsenin resmi olmadığı için herkesin sorunu hâline gelene kadar kimsenin sorunu değildir.",
+      "close": "Tolerans çizimi, kalıp fiyatlanmadan önce okunur. Prosesin dürüstçe tutabileceğinden dar verilmiş her ölçü o anda masaya gelir — montaj boyunca biriken tolerans da öyle; ki o genellikle herkesin sorunu olana kadar kimsenin çizimi değildir.",
       "sourceNote": "Burada verilen tolerans sınıfları yayımlanmış sektör referans değerleridir, Metal Form taahhütleri değildir. Sizin parçanızın neyi tutabileceği; sizin parçanız, sizin malzemeniz ve sizin kalıbınız üzerinden yanıtlanır."
     },
     "life": {
@@ -482,12 +482,6 @@
           "side": "below"
         },
         {
-          "at": "—",
-          "label": "Geometri düzeltmeleri",
-          "note": "Ölçüsel ayar, yolluk girişi ve havalandırma iyileştirmesi, itmenin temizlenmesi, mekanizma alıştırmasının yük altında kontrolü.",
-          "side": "above"
-        },
-        {
           "at": "0",
           "label": "Üretime alma",
           "note": "Mülkiyet yazılı olarak kayda geçer. Yedek göz ve maça insertleri, ilk çatlaktan sonra sipariş edilmek yerine kalıpla birlikte tanımlanmıştır.",
@@ -510,12 +504,6 @@
           "label": "İkinci bakım eşiği",
           "note": "Karbonun bant derinliğini şartnamenin epeyce altına indirdiği yerlerde havalandırmalar yeniden işlenir. Çukurcuklar parçaya basmadan önce kaynatılıp yeniden parlatılır.",
           "side": "above"
-        },
-        {
-          "at": "—",
-          "label": "Soğutma devrelerinde kireçlenme",
-          "note": "Sabit debide giriş–çıkış sıcaklık farkının yükselmesi uyarıdır. Sektör kılavuzları debinin kabaca dörtte birinin kaybını bir kayıt satırı değil, bir onarım işi sayar.",
-          "side": "below"
         },
         {
           "at": "250.000",
@@ -560,7 +548,7 @@
           "n": "01",
           "name": "Yeni bir parça",
           "situation": "Elinizde bir tasarım ya da bir işlev ile bir eskiz var.",
-          "body": "Geometriyi, malzemeyi, kalıp rotasını ve üretim ekonomisini inceler, ardından kalıbı tasarlar ve imal ederiz. Bir metal parçanın enjeksiyona dönüştürüldüğü durumlarda, parçanın metal kalması gerektiği yönündeki dürüst görüşü de veririz — alternatif olarak basınçlı döküm kalıbını da biz yapabiliriz.",
+          "body": "Geometriyi, malzemeyi, kalıplama güzergâhını ve üretim ekonomisini inceler, sonra kalıbı tasarlar ve yaparız. Metal bir parça plastiğe çevriliyorsa ve metal kalması daha doğruysa bunu söyleriz — alternatif olarak yapabileceğimiz basınçlı metal döküm kalıbıyla birlikte.",
           "inputs": [
             "CAD — STEP, CATPart, SLDPRT",
             "Toleranslı, ölçülendirilmiş teknik resimler",
@@ -592,10 +580,10 @@
           ]
         }
       ],
-      "readinessNote": "İkinci kaynak kalıbı bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir; hangisi olduğunu size açıkça söyleriz.",
+      "readinessNote": "İkinci kaynak kalıbı hazırlıktır, ayrılmış kapasite değil. Kapasite rezervasyonu ayrı bir sözleşmedir.",
       "ipNote": "Bir parça çoğaltılmadan önce mülkiyet ve lisans durumu teyit edilir. NDA altında çalışırız ve karşılığında aynı netliği bekleriz.",
       "boundaryHeading": "Neyi biz sağlıyoruz, ne sizde kalıyor.",
-      "boundaryLead": "Kalıp yapar ve parça basarız. Parçayı bir araç için onaylamayız. Bu sektörde kalıp ilişkilerinin çoğu tam da bu çizgide bozulur; o yüzden çizgiyi dokuzuncu ayda keşfetmek yerine burada çekiyoruz.",
+      "boundaryLead": "Biz kalıp yapar ve parça basarız. O parçayı bir araç için onaylamak başka bir iştir ve bizim işimiz değildir.",
       "supplyHeading": "Metal Form'un sağladıkları",
       "supply": [
         "CATIA ve SolidWorks'te parça ve kalıp tasarımı; çelik işlenmeden önce DFM incelemesiyle",
@@ -618,13 +606,13 @@
         "Homologasyon, trafiğe uygunluk onayı ve parçanın kendi programınıza alınması.",
         "Tasarımın ve içindeki fikrî mülkiyetin sahipliği ile parçanın hukuken çoğaltılabileceğinin teyidi."
       ],
-      "boundaryClose": "O ikinci liste bilerek kısadır ve bir özür değildir. Hepsini birden yapabildiğini söyleyen bir tedarikçi ya bambaşka türden bir şirkettir ya da size doğruyu söylemiyordur — ve bu sektörde hangisi olduğunu dokuzuncu ayda, hat başında, konteyner çoktan yola çıkmışken öğrenirsiniz."
+      "boundaryClose": "İkinci liste bilerek kısa. Güzergâhın size, sizin onaylarınıza ve test kuruluşunuza ait olan kısmı — ve bunu şimdi adıyla söylemek, dokuzuncu ayda hat kenarında, konteyner çoktan yoldayken keşfetmekten ucuza gelir."
     },
     "close": {
       "index": "07",
       "kicker": "Revizyon bloğu",
       "heading": "Parçayı gönderin.",
-      "body": "Bir numune, bir teknik resim, bir STEP dosyası ya da tek bir ölçüsü bilinen bir fotoğraf. Bu sektörde ziyaretçinin masasında genellikle fiziksel bir parça vardır ve hiçbir veri paketi yoktur; başlamak için bu yeterlidir.",
+      "body": "Bu sektörde ziyaretçinin masasında genellikle fiziksel bir parça vardır, veri paketi yoktur. Başlamak için bu yeter.",
       "tableLabel": "Talep kaydı",
       "columns": {
         "rev": "Rev",
@@ -689,23 +677,20 @@
             "Sürgü elemanları ve aşınma açısından kritik insertler tipik olarak 48 – 52 HRC bandında sertleştirilir; aşınma plakaları alüminyum bronz ya da grafitli çelikten yapılır.",
             "Yüzey mühendisliği aşındırıcı malzemede ömrü uzatır: plazma ve gaz nitrasyonu, CrN, CrAlN ve TiAlN gibi PVD kaplamalar ve nitrasyon artı kaplama bileşik katmanları.",
             "Tasarımda önlem alınacak dört mekanizma: aşındırıcı aşınma, termal yorulma, korozyon ve yolluk girişi aşınması.",
-            "Yapısal bakımı atım sayısı tetikler. Sektör uygulaması ön sertleştirilmiş kalıplara 50.000 / 100.000 / 250.000 atım eşiklerinde, sertleştirilmiş kalıplara daha uzun aralıklarla bakım yapar.",
             "Üretimde en hızlı aşınan kalemler: itici pimler, havalandırma bantları, sürgü ve lifter yatak yüzeyleri, soğutma devresi keçeleri.",
-            "Sektör bakım kılavuzlarında verilen müdahale eşikleri: karbon bant derinliğini şartnamenin epeyce altına indirdiğinde havalandırmaları yeniden işleyin; itici pimleri yaklaşık 0,05 mm çap kaybında değiştirin; gözdeki yaklaşık 0,1 mm'den derin çukurcukları kaynatıp yeniden parlatın; debisinin dörtte birinden fazlasını kaybetmiş devreleri inceleyin.",
-            "Yedek göz ve maça insertleri kalıpla birlikte tanımlanır. Bunları ilk çatlaktan sonra sipariş etmek aynı kararın pahalı hâlidir."
+            "Sektör bakım kılavuzlarında verilen müdahale eşikleri: karbon bant derinliğini şartnamenin epeyce altına indirdiğinde havalandırmaları yeniden işleyin; itici pimleri yaklaşık 0,05 mm çap kaybında değiştirin; gözdeki yaklaşık 0,1 mm'den derin çukurcukları kaynatıp yeniden parlatın; debisinin dörtte birinden fazlasını kaybetmiş devreleri inceleyin."
           ],
           "source": "Bu panodaki rakamlar yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
         },
         {
           "title": "İkinci kaynak, kalıp transferi ve üretimden kalkmış parçalar",
           "bullets": [
-            "İkinci kaynak kalıbı: sizin verinizle, NDA altında ve mevcut tedarikçinizle temas kurmadan yapılan ikiz bir kalıp. Sahibi sizsiniz. İhtiyaç duyduğunuzda çalışır.",
             "Kalıp transferi: önce mülkiyet belgelenir, sonra durum tespiti yapılır — göz ve maça yüzeyleri, itme sistemi, sürgüler ve lifterlar, soğutma devreleri, korozyon — ardından çıktı konusunda hiçbir söz verilmeden yenileme kapsamı çıkarılır.",
             "Üretimden kalkmış ve ömrünü tamamlamış parçalar: geometri numuneden ve eşleştiği parçalardan yeniden kurulur; birden çok bölge ölçülerek, karşılıklı yüzeyler karşılaştırılarak ve parçanın neye oturması gerektiğinden geri hesap yapılarak.",
             "Aşınmış bir numunenin birebir kopyalanması tasarımı değil, aşınmayı çoğaltır. Bu ikisini birbirinden ayırmak, işin bütün disiplinidir.",
             "Orijinal malzemenin bilinmediği yerlerde malzeme ailesi; uygulamadan, çalışma ortamından, yoğunluktan, sertlikten ve yüzey durumundan çıkarılır ve görünüşe göre eşleştirilmek yerine gerçek yük durumuna göre seçilir.",
             "Teslim edilen şey bir imalat paketidir: 3B CAD, toleranslı ve notlu ölçülendirilmiş 2B teknik resimler ve bunlara göre imal edilmiş kalıp.",
-            "Bu dikeyde düşük adet olağandır ve bir engel değildir. Kalıp gerçek programa göre ölçeklendirilir; doğru cevap oysa mütevazı, tek gözlü bir çelik kalıp da buna dâhildir.",
+            "Mülkiyet ve fikrî haklar, çoğaltmadan önce NDA kapsamında teyit edilir.",
             "Çoğaltmadan önce mülkiyet ve fikrî mülkiyet durumu teyit edilir. NDA altında çalışırız ve karşılığında aynı netliği bekleriz."
           ]
         }
@@ -714,10 +699,9 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Bir numune, bir teknik resim, bir STEP dosyası ya da tek bir ölçüsü bilinen bir fotoğraf. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendirir, 2 iş günü içinde dönüş yaparız. Standart olarak NDA.",
+    "body": "Bir numune, bir çizim, bir STEP dosyası ya da tek bir bilinen ölçüsü olan bir fotoğraf. Geometri, kalıp güzergâhı, üretim ekonomisi ve tedarik seçenekleriyle döneriz.",
     "action": "Parçayı gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form — ağır vasıta parçası hakkında.\n\nParça: \nAraç tipi (kamyon / otobüs / treyler / tarım / iş makinesi): \nBiliniyorsa malzeme: \nYıllık adet: \nMevcut kalıp: var / yok / üretimden kalkmış\nElimde: CAD / teknik resim / numune parça / fotoğraf\n\nİhtiyacım: yeni kalıp / ikinci kaynak kalıbı / üretimden kalkmış parçaya yeni kalıp / parça tedariki",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form — ağır vasıta parçası hakkında.\n\nParça: \nAraç tipi (kamyon / otobüs / treyler / tarım / iş makinesi): \nBiliniyorsa malzeme: \nYıllık adet: \nMevcut kalıp: var / yok / üretimden kalkmış\nElimde: CAD / teknik resim / numune parça / fotoğraf\n\nİhtiyacım: yeni kalıp / ikinci kaynak kalıbı / üretimden kalkmış parçaya yeni kalıp / parça tedariki"
   }
 }

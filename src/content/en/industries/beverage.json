@@ -26,7 +26,7 @@
       "kicker": "Where the money is",
       "heading": "Resin is the bottle. The gram is the unit.",
       "body": "About two thirds of what a PET bottle costs is the resin inside it. Everything else — the tool, the machine, the labour, the electricity — is smaller and less variable. So the only number on a bottling line that genuinely compounds is preform weight, and preform weight is decided by the tool.",
-      "body2": "These are the weight bands published for 500 ml preforms by neck standard. They are industry figures, not our figures, and your own preform will sit somewhere on this scale for reasons specific to your product.",
+      "body2": "Published weight bands for 500 ml preforms, by neck standard. Industry figures, not ours — your own preform will sit somewhere on this scale for reasons specific to your product.",
       "scaleLabel": "500 ml preform weight, grams",
       "rows": [
         {
@@ -50,7 +50,7 @@
           "note": "Legacy tall carbonated neck. Installed base only — the caps are not interchangeable with 1881."
         }
       ],
-      "close": "A gram is not a rounding error. On a line running a hundred million bottles a year, a gram is a hundred tonnes of resin. That is the arithmetic this page is about, and it is your arithmetic — your resin price, your volume, your bottle. We are not going to quote you a saving percentage we have not calculated."
+      "close": "A gram is not a rounding error. On a line running a hundred million bottles a year, a gram is a hundred tonnes of resin. The arithmetic is yours to run: your resin price, your volume, your bottle."
     },
     "cavities": {
       "index": "02",
@@ -62,11 +62,11 @@
       "chartFloor": "Specification floor",
       "chartMean": "Mean weight actually run",
       "chartGap": "This gap is resin you buy and do not need",
-      "close": "Halve the spread and the mean moves down toward the design intent without changing the bottle at all. That is what melt balance, cooling balance and cavity-to-cavity manufacturing consistency are actually for. They are a commercial argument, not engineering vanity.",
+      "close": "Halve the spread and the mean moves down toward the design intent without changing the bottle at all. That is what melt balance, cooling balance and cavity-to-cavity manufacturing consistency actually buy.",
       "cavityHeading": "Where our cavity count sits, and where it does not",
       "cavityBody": "Output is cavities divided by cycle. Published guidance puts 16 to 48 cavities as the economic band below roughly 50 million preforms a year, 72 to 96 for programmes in the hundreds of millions, and 128 to 192 only where mega-volume is sustained and the maintenance organisation exists to support it.",
       "cavityBody2": "Metal Form's tooling experience runs to 46 cavities. That is the band regional bottlers, independent converters and second-source programmes actually run — where a tool can still be balanced, maintained and reasoned about rather than merely operated.",
-      "cavityBody3": "If your plant runs higher cavitation than that, the honest offer is a different one and it is often more useful: cold-half components. Cavity inserts, core rods, split neck rings and lock rings, as spares or as an alternative source for a tool somebody else built."
+      "cavityBody3": "If your plant runs higher cavitation than that, the useful offer is a different one: cold-half components. Cavity inserts, core rods, split neck rings and lock rings, as spares or as an alternative source for a tool somebody else built."
     },
     "neck": {
       "index": "03",
@@ -172,7 +172,7 @@
       "index": "05",
       "kicker": "Honesty",
       "heading": "What goes wrong, and where it actually starts.",
-      "body": "A new tool fixes some of these and none of the others. Knowing which is which before you buy is worth more than a supplier who promises to fix all of them.",
+      "body": "A new tool fixes some of these and none of the others. This is which is which — and where each one actually starts.",
       "columns": [
         "Resin & drying",
         "Melt & hot runner",
@@ -316,7 +316,7 @@
           "note": "The other half of the contract the neck finish defines."
         }
       ],
-      "boundary": "Where our scope stops: we build closure tooling. We do not supply slitting and folding equipment, capping machinery or line equipment, and we will tell you that at the quotation rather than after it."
+      "boundary": "Where our scope stops: we build closure tooling. Slitting and folding equipment, capping machinery and line equipment are not ours to supply."
     },
     "freight": {
       "index": "07",
@@ -326,7 +326,7 @@
       "figureA": "One container of blown bottles",
       "figureB": "The same container of preforms",
       "figureNote": "Drawn to true relative proportion. The geometry makes the argument.",
-      "close": "Blown-bottle production stays a capability where it makes commercial sense locally. It is not what we would propose to export to you, and a supplier who proposes it has not thought about your landed cost."
+      "close": "Blown-bottle production stays a capability where it makes commercial sense locally. Across a border, the freight is the argument against it."
     },
     "start": {
       "index": "08",
@@ -342,8 +342,7 @@
         "Annual volume, and the shape of your season",
         "Resin grade and IV, and whether recycled content is in the mix",
         "Injection machine: make, model, tie-bar spacing, platen size, clamp tonnage, shot capacity",
-        "Take-out plate: robot type and number of cooling stations",
-        "Chilled water temperature actually available at the tool",
+        "Take-out plate: robot type and number of cooling stations, and the chilled water temperature actually available at the tool",
         "Any existing tooling to be matched, replaced or second-sourced"
       ],
       "getHeading": "What comes back",
@@ -355,9 +354,8 @@
         "A cooling circuit designed for the water temperature your plant can actually supply",
         "The spare-part set specified at design time and quoted with the tool",
         "Tooling warranty terms, defined against this project and this mould specification",
-        "Where we think there is nothing to improve, we say that too"
-      ],
-      "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+        "A clear answer where the geometry you already have needs no change at all"
+      ]
     },
     "panels": {
       "heading": "Deeper detail",
@@ -376,17 +374,12 @@
           "source": "Figures in this panel are published industry practice, not Metal Form measurements."
         },
         {
-          "title": "What we specify with a preform tool",
+          "title": "The rest of the preform specification",
           "bullets": [
-            "Cavitation reasoned against annual volume and against the machine already installed — our experience runs to 46 cavities.",
-            "Cold half: cavity inserts, core rods, split neck rings, lock rings.",
-            "Hot runner and gate strategy, valve-gated, with melt path balance and vestige height as design outputs.",
             "Core cooling geometry, which governs cycle on thick walls.",
             "Machine interface: tie-bar spacing, platen, tonnage, shot capacity, take-out plate stations.",
             "Venting at the neck and at the parting line, with the split line kept off the sealing surface.",
-            "Steel selection and surface treatment on neck rings and cores, where the wear actually is.",
-            "A spare-part set specified at design time and quoted with the tool.",
-            "Tooling warranty, with terms agreed per project."
+            "Steel selection and surface treatment on neck rings and cores, where the wear actually is."
           ]
         },
         {
@@ -397,7 +390,7 @@
             "Cold-half components can be supplied for a tool built by someone else.",
             "Neck-standard conversion of tooling already in service, quoted together with the blow-mould neck inserts and capper change parts.",
             "A duplicate cold half, built to the same specification and held against an interruption.",
-            "This is readiness, not reserved capacity. Capacity is reserved by contract or not at all, and we will say which."
+            "Readiness, not reserved capacity — reserving capacity is a separate contract."
           ]
         }
       ]
@@ -412,7 +405,6 @@
     "body": "Drawings, a physical sample, or a photograph and a target gram weight — any one of them is enough to start. We come back with the geometry, the tooling route, the cavity count and the production economics.",
     "action": "Send your bottle and cap",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form — PET packaging enquiry.\n\nI need: preform mould / closure mould / blow-mould change parts / neck ring and core spares / preform or cap supply\nNeck standard: PCO 1881 / 29/25 / PCO 1810 / 30/25 / other\nBottle: 500 ml still / 1.5 L carbonated / other\nCurrent preform weight: \nTarget weight: \nAnnual volume: \nInjection machine (make, model, tie-bar spacing, tonnage): \n\nI can send drawings or a sample.",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form — PET packaging enquiry.\n\nI need: preform mould / closure mould / blow-mould change parts / neck ring and core spares / preform or cap supply\nNeck standard: PCO 1881 / 29/25 / PCO 1810 / 30/25 / other\nBottle: 500 ml still / 1.5 L carbonated / other\nCurrent preform weight: \nTarget weight: \nAnnual volume: \nInjection machine (make, model, tie-bar spacing, tonnage): \n\nI can send drawings or a sample."
   }
 }

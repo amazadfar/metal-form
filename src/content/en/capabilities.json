@@ -12,7 +12,7 @@
     ],
     "lead": "Most projects arrive needing all of it. Some arrive needing a single drawing reviewed, or a tool corrected, or a component supplied from a tool somebody else built. Both are normal work."
   },
-  "intro": "What follows is what we do, stated plainly. Where a capability sits outside what we can take responsibility for, it is named at the bottom of this page rather than left for you to discover during a project.",
+  "intro": "What follows is what we do, stated plainly. What sits outside it is named at the bottom of this page.",
   "groups": [
     {
       "index": "01",
@@ -133,7 +133,7 @@
   ],
   "modularity": {
     "heading": "You do not have to buy all of it.",
-    "body": "The chain is how a project usually runs best, because the handovers between engineering, tooling and production are where projects normally lose time and money. But every stage stands on its own, and quoting one stage does not commit you to the next.",
+    "body": "The whole chain usually runs best, because the handovers between engineering, tooling and production are where projects lose time and money. But every stage stands on its own, and quoting one does not commit you to the next.",
     "points": [
       "Engineering only — a model, a reverse-engineered part, a DFM review. Sold as engineering work.",
       "A tool only — built to your drawing, shipped to your plant, run by you.",
@@ -144,11 +144,11 @@
   },
   "software": {
     "heading": "Software and file formats",
-    "body": "Part models, tool design and reverse-engineered geometry are produced in CATIA and SolidWorks. Send native files or neutral ones — STEP, IGES, X_T and STL are all workable, and a 2D PDF drawing with dimensions is workable too. If all you have is a photograph and a caliper reading, say so; that is a starting point we handle regularly."
+    "body": "Part models, tool design and reverse-engineered geometry are produced in CATIA and SolidWorks. Native or neutral formats both work — STEP, IGES, X_T, STL — and a 2D PDF with dimensions works too. A photograph and a caliper reading is a starting point we handle regularly."
   },
   "boundaries": {
     "heading": "What we do not claim",
-    "body": "A capability list is only useful if it stops somewhere. These are outside what Metal Form takes responsibility for today, and we would rather you knew now than found out during a project.",
+    "body": "A capability list is only useful if it stops somewhere. These sit outside what Metal Form takes responsibility for today.",
     "points": [
       "We hold no quality-system, medical, automotive or food-contact certification. Where your market requires one, that requirement sits with you and with your certified partners.",
       "We do not operate a cleanroom and do not perform sterile, validated or regulated manufacture.",
@@ -163,7 +163,6 @@
     "body": "Tell us where the project actually is. A concept with no drawing, a drawing that needs reviewing, a tool that needs building, a tool that needs correcting, or a component that needs a second source.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form. I am looking at:\n\n[ ] Engineering / CAD / reverse engineering\n[ ] DFM or design review\n[ ] A new tool\n[ ] Correcting or modifying an existing tool\n[ ] Production from an existing tool\n[ ] Ongoing component supply\n[ ] A second source\n\nPart: \nAnnual volume: \nWhat I have: ",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form. I am looking at:\n\n[ ] Engineering / CAD / reverse engineering\n[ ] DFM or design review\n[ ] A new tool\n[ ] Correcting or modifying an existing tool\n[ ] Production from an existing tool\n[ ] Ongoing component supply\n[ ] A second source\n\nPart: \nAnnual volume: \nWhat I have: "
   }
 }

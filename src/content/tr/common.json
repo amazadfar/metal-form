@@ -48,7 +48,7 @@
     "delivery": "Dünya geneline sevkiyat",
     "deliveryNote": "Kalıplar ve parçalar yurt dışına sevk edilir. Teslim şartları, güzergâh ve evraklar teklifle birlikte karara bağlanır.",
     "response": "2 iş günü içinde ilk dönüş",
-    "responseNote": "İlk teknik görüş: üretilebilirlik yönü, eksik kalan bilgiler ve bir sonraki adım. Nihai fiyat teklifi değildir; öyleymiş gibi de göstermeyiz."
+    "responseNote": "İlk teknik okuma: yapılabilirlik yönü, hâlâ eksik olanlar ve bir sonraki adım. Fiyat, geometri ve adet netleştikten sonra gelir."
   },
   "nda": {
     "heading": "Gizlilik ve NDA",
@@ -76,7 +76,7 @@
     "companyHeading": "Kurumsal",
     "contactHeading": "İletişim",
     "rights": "Tüm hakları saklıdır.",
-    "mediaNote": "Bu sitedeki çizimler, şemalar ve animasyonlar; mühendislik ve üretimi anlatmak için hazırlanmış şematik görsellerdir. Metal Form'un ekipmanlarının, tesislerinin veya tamamlanmış projelerinin fotoğrafı değildir. Gerçek proje görselleri yalnızca müşterinin yazılı izniyle yayımlanır."
+    "mediaNote": "Bu sitedeki çizimler, şemalar ve animasyonlar mühendisliği anlatmak için hazırlanmış şematik görsellerdir — Metal Form ekipmanının, tesislerinin veya tamamlanmış işlerinin fotoğrafı değildir. Gerçek proje görselleri yalnızca müşterinin yazılı izniyle yayımlanır."
   },
   "a11y": {
     "skipToContent": "İçeriğe geç",

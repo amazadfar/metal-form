@@ -198,7 +198,10 @@ const schemas = [
   .cp-mod { padding-block: var(--section-y); border-block-start: var(--rule); }
   .cp-mod__t { max-inline-size: 20ch; }
   .cp-mod__b { margin-block-start: var(--sp-5); }
-  .cp-mod__list { margin-block-start: var(--sp-7); border-block-start: var(--rule); }
+  .cp-mod__list {
+    margin-block-start: var(--sp-7);
+    border-block-start: var(--rule);
+  }
   .cp-mod__list li {
     display: grid;
     grid-template-columns: 3rem minmax(0, 1fr);
@@ -207,6 +210,8 @@ const schemas = [
     border-block-end: var(--rule);
     font-size: var(--step-0);
     align-items: baseline;
+    /* The rule runs the full shell; the reading line does not. */
+    max-inline-size: 82ch;
   }
   .cp-mod__list li span {
     font-size: var(--step--2);

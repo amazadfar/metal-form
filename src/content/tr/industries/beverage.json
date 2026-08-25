@@ -26,7 +26,7 @@
       "kicker": "Para nerede",
       "heading": "Şişe demek hammadde demek. Birim ise gramdır.",
       "body": "Bir PET şişenin maliyetinin yaklaşık üçte ikisi, içindeki hammaddedir. Geri kalan her şey — kalıp, makine, işçilik, elektrik — hem daha küçük hem daha az değişkendir. Dolayısıyla bir dolum hattında gerçekten bileşik büyüyen tek sayı preform ağırlığıdır ve preform ağırlığını kalıp belirler.",
-      "body2": "Aşağıdakiler, 500 ml preformlar için boyun standardına göre yayımlanmış ağırlık bantlarıdır. Bunlar bizim değil, sektörün rakamlarıdır; sizin preformunuz da ürününüze özgü nedenlerle bu ölçeğin bir yerinde duracaktır.",
+      "body2": "500 ml preformlar için boyun standardına göre yayımlanmış ağırlık bantları. Bunlar sektör rakamları, bizimkiler değil — sizin preformunuz, ürününüze özgü nedenlerle bu ölçeğin bir yerine oturur.",
       "scaleLabel": "500 ml preform ağırlığı, gram",
       "rows": [
         {
@@ -50,7 +50,7 @@
           "note": "Eski tip uzun gazlı içecek boynu. Yalnızca mevcut kurulu hatlarda — kapaklar 1881 ile birbirinin yerine geçmez."
         }
       ],
-      "close": "Bir gram, yuvarlama hatası değildir. Yılda yüz milyon şişe üreten bir hatta bir gram, yüz ton hammaddedir. Bu sayfanın konusu o aritmetiktir ve o sizin aritmetiğinizdir: sizin hammadde fiyatınız, sizin adediniz, sizin şişeniz. Hesaplamadığımız bir tasarruf yüzdesini size söylemeyeceğiz."
+      "close": "Bir gram yuvarlama hatası değildir. Yılda yüz milyon şişe basan bir hatta bir gram, yüz ton reçine demektir. Hesap sizin: sizin reçine fiyatınız, sizin adediniz, sizin şişeniz."
     },
     "cavities": {
       "index": "02",
@@ -62,11 +62,11 @@
       "chartFloor": "Şartname alt sınırı",
       "chartMean": "Fiilen çalışılan ortalama ağırlık",
       "chartGap": "Bu aralık, satın alıp ihtiyaç duymadığınız hammaddedir",
-      "close": "Saçılımı yarıya indirin; şişeyi hiç değiştirmeden ortalama, tasarım niyetine doğru aşağı iner. Ergiyik dengesi, soğutma dengesi ve gözler arası imalat tutarlılığı asıl bunun içindir. Bunlar mühendislik gösterişi değil, ticari bir gerekçedir.",
+      "close": "Saçılımı yarıya indirin; ortalama, şişeye hiç dokunmadan tasarım niyetine doğru iner. Eriyik dengesi, soğutma dengesi ve gözden göze imalat tutarlılığı tam olarak bunu satın alır.",
       "cavityHeading": "Göz sayımız nerede duruyor, nerede durmuyor",
       "cavityBody": "Çıktı, göz sayısının çevrim süresine bölünmesidir. Yayımlanmış kılavuzlar, yılda kabaca 50 milyon preformun altında ekonomik bandı 16 – 48 göz, yüz milyonlarla ölçülen programlarda 72 – 96 göz olarak veriyor; 128 – 192 gözü ise yalnızca çok yüksek adedin sürdürüldüğü ve bunu destekleyecek bakım örgütünün bulunduğu yerlere bırakıyor.",
       "cavityBody2": "Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bu, bölgesel dolum tesislerinin, bağımsız dönüştürücülerin ve ikinci kaynak programlarının fiilen çalıştığı banttır — bir kalıbın yalnızca işletilmekle kalmayıp hâlâ dengelenebildiği, bakımının yapılabildiği ve üzerine akıl yürütülebildiği bant.",
-      "cavityBody3": "Tesisiniz bundan daha yüksek göz sayısıyla çalışıyorsa dürüst teklif farklıdır ve çoğu zaman daha işe yarar: soğuk yarım bileşenleri. Göz insertleri, maça çubukları, bölünmüş boyun halkaları ve kilit halkaları; başkasının yaptığı bir kalıp için yedek ya da alternatif kaynak olarak."
+      "cavityBody3": "Tesisiniz bundan yüksek göz sayısıyla çalışıyorsa işe yarar teklif başkadır: soğuk yarı bileşenleri. Göz insertleri, maça çubukları, ikiye ayrılan boyun halkaları ve kilit halkaları — yedek olarak ya da başkasının yaptığı bir kalıp için alternatif kaynak olarak."
     },
     "neck": {
       "index": "03",
@@ -172,7 +172,7 @@
       "index": "05",
       "kicker": "Dürüstlük",
       "heading": "Ne ters gider ve gerçekte nerede başlar.",
-      "body": "Yeni bir kalıp bunların bir kısmını çözer, diğerlerini hiç çözmez. Satın almadan önce hangisinin hangisi olduğunu bilmek, hepsini çözmeyi vaat eden bir tedarikçiden daha değerlidir.",
+      "body": "Yeni bir kalıp bunların bir kısmını çözer, geri kalanını hiç çözmez. Hangisinin hangisi olduğu ve her birinin gerçekte nerede başladığı burada.",
       "columns": [
         "Hammadde ve kurutma",
         "Ergiyik ve sıcak yolluk",
@@ -316,7 +316,7 @@
           "note": "Boyun profilinin tanımladığı sözleşmenin diğer yarısı."
         }
       ],
-      "boundary": "Kapsamımızın bittiği yer: biz kapak kalıbı yaparız. Kesme ve katlama ekipmanı, kapaklama makinesi ya da hat ekipmanı tedarik etmiyoruz; bunu teklif sonrasında değil, teklif aşamasında söyleriz."
+      "boundary": "Kapsamımızın bittiği yer: kapak kalıbı yaparız. Kesme ve katlama ekipmanı, kapaklama makineleri ve hat ekipmanı bizim tedarik edeceğimiz şeyler değildir."
     },
     "freight": {
       "index": "07",
@@ -326,7 +326,7 @@
       "figureA": "Bir konteyner şişirilmiş şişe",
       "figureB": "Aynı konteyner dolusu preform",
       "figureNote": "Gerçek göreli orana göre çizildi. Argümanı geometri kuruyor.",
-      "close": "Şişirilmiş şişe üretimi, yerelde ticari olarak anlamlı olduğu yerlerde bir yetkinlik olarak kalır. Size ihraç etmeyi önereceğimiz şey değildir; bunu öneren bir tedarikçi sizin varış maliyetinizi hiç düşünmemiştir."
+      "close": "Şişirilmiş şişe üretimi, yerelde ticari olarak anlamlı olduğu yerde bir yetkinlik olarak kalır. Sınırın ötesinde, ona karşı asıl argüman navlunun kendisidir."
     },
     "start": {
       "index": "08",
@@ -342,8 +342,7 @@
         "Yıllık adet ve sezonunuzun biçimi",
         "Hammadde kalitesi ve IV değeri; karışımda geri dönüştürülmüş içerik olup olmadığı",
         "Enjeksiyon makinesi: marka, model, kolon aralığı, tabla ölçüsü, mengene tonajı, atım kapasitesi",
-        "Alma plakası: robot tipi ve soğutma istasyonu sayısı",
-        "Kalıpta fiilen sağlanabilen soğutma suyu sıcaklığı",
+        "Alma plakası: robot tipi ve soğutma istasyonu sayısı, ayrıca kalıpta gerçekten mevcut olan çiller suyu sıcaklığı",
         "Eşleştirilecek, değiştirilecek ya da ikinci kaynağa açılacak mevcut kalıplar"
       ],
       "getHeading": "Size geri gelecek olan",
@@ -355,9 +354,8 @@
         "Tesisinizin fiilen sağlayabildiği su sıcaklığına göre tasarlanmış bir soğutma devresi",
         "Tasarım aşamasında belirlenmiş ve kalıpla birlikte fiyatlandırılmış yedek parça seti",
         "Bu projeye ve bu kalıp şartnamesine göre tanımlanmış kalıp garanti şartları",
-        "İyileştirilecek bir şey olmadığını düşünüyorsak, bunu da söyleriz"
-      ],
-      "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+        "Elinizdeki geometrinin hiçbir değişiklik gerektirmediği durumda net bir cevap"
+      ]
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -376,17 +374,12 @@
           "source": "Bu panodaki rakamlar Metal Form ölçümleri değil, yayımlanmış sektör uygulamalarıdır."
         },
         {
-          "title": "Bir preform kalıbıyla birlikte neyi tanımlıyoruz",
+          "title": "Preform kalıbı spesifikasyonunun geri kalanı",
           "bullets": [
-            "Yıllık adede ve kurulu makineye göre gerekçelendirilmiş göz sayısı — deneyimimiz 46 göze kadar uzanır.",
-            "Soğuk yarım: göz insertleri, maça çubukları, bölünmüş boyun halkaları, kilit halkaları.",
-            "İğneli girişli sıcak yolluk ve giriş stratejisi; ergiyik yolu dengesi ve giriş izi yüksekliği birer tasarım çıktısı olarak.",
             "Kalın cidarlarda çevrimi belirleyen maça soğutma geometrisi.",
             "Makine arayüzü: kolon aralığı, tabla, tonaj, atım kapasitesi, alma plakası istasyonları.",
             "Boyunda ve ayırma yüzeyinde havalandırma; ayrım çizgisi sızdırmazlık yüzeyinden uzak tutularak.",
-            "Aşınmanın asıl olduğu yer olan boyun halkaları ve maçalarda çelik seçimi ve yüzey işlemi.",
-            "Tasarım aşamasında belirlenmiş ve kalıpla birlikte fiyatlandırılmış bir yedek parça seti.",
-            "Şartları her proje bazında kararlaştırılan kalıp garantisi."
+            "Aşınmanın asıl olduğu yer olan boyun halkaları ve maçalarda çelik seçimi ve yüzey işlemi."
           ]
         },
         {
@@ -397,7 +390,7 @@
             "Soğuk yarım bileşenleri, başkasının yaptığı bir kalıp için de tedarik edilebilir.",
             "Hâlihazırda çalışan kalıpların boyun standardı dönüşümü; şişirme kalıbı boyun insertleri ve kapaklama makinesi değişim parçalarıyla birlikte fiyatlandırılır.",
             "Aynı şartnameye göre yapılmış ve bir kesintiye karşı hazırda tutulan ikiz bir soğuk yarım.",
-            "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmez; hangisi olduğunu açıkça söyleriz."
+            "Hazırlık, ayrılmış kapasite değil — kapasite rezervasyonu ayrı bir sözleşmedir."
           ]
         }
       ]
@@ -412,7 +405,6 @@
     "body": "Teknik resimler, fiziksel bir numune ya da bir fotoğrafla birlikte hedef gram ağırlığı — herhangi biri başlamak için yeter. Size geometri, kalıp rotası, göz sayısı ve üretim maliyeti üzerinden dönüş yaparız.",
     "action": "Şişenizi ve kapağınızı gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form — PET ambalaj talebi.\n\nİhtiyacım: preform kalıbı / kapak kalıbı / şişirme kalıbı değişim parçaları / boyun halkası ve maça yedekleri / preform veya kapak tedariki\nBoyun standardı: PCO 1881 / 29/25 / PCO 1810 / 30/25 / diğer\nŞişe: 500 ml sakin su / 1,5 L gazlı / diğer\nMevcut preform ağırlığı: \nHedef ağırlık: \nYıllık adet: \nEnjeksiyon makinesi (marka, model, kolon aralığı, tonaj): \n\nTeknik resim veya numune gönderebilirim.",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form — PET ambalaj talebi.\n\nİhtiyacım: preform kalıbı / kapak kalıbı / şişirme kalıbı değişim parçaları / boyun halkası ve maça yedekleri / preform veya kapak tedariki\nBoyun standardı: PCO 1881 / 29/25 / PCO 1810 / 30/25 / diğer\nŞişe: 500 ml sakin su / 1,5 L gazlı / diğer\nMevcut preform ağırlığı: \nHedef ağırlık: \nYıllık adet: \nEnjeksiyon makinesi (marka, model, kolon aralığı, tonaj): \n\nTeknik resim veya numune gönderebilirim."
   }
 }

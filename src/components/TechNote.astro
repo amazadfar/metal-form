@@ -145,4 +145,8 @@ const text = label ?? c.disclose[kind];
     .tnote::details-content { transition: none; }
     .tnote__sign::before, .tnote__sign::after { transition: none; }
   }
+
+  @media (pointer: coarse) {
+    .tnote__toggle { min-block-size: 44px; }
+  }
 </style>

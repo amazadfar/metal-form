@@ -106,7 +106,7 @@
         "outcome": "Where there is nothing to improve we will tell you that too, and quote the part as drawn.",
         "figure": {
           "caption": "Cost of one moulded part",
-          "note": "Geometry decides most of this list before anyone quotes the part.",
+          "note": "The tool decides four of these five lines before the part is quoted.",
           "rows": [
             {
               "label": "Resin"
@@ -141,7 +141,7 @@
         "figure": {
           "caption": "Three suppliers",
           "captionAlt": "One partner",
-          "note": "Metal Form coordinates the route and carries the responsibility for it.",
+          "note": "A handover is where responsibility gets dropped. On this route there is nobody to hand over to.",
           "rows": [
             {
               "label": "Design",
@@ -179,11 +179,11 @@
           "Additional capacity for a demand peak or a seasonal window",
           "Re-tooling for a component whose original tool is worn, lost or obsolete"
         ],
-        "outcome": "Readiness, not a promise of reserved capacity. Capacity is reserved by contract or not at all — and we will say which.",
+        "outcome": "Readiness, prepared in advance rather than improvised. Reserved capacity is a separate contract, and we say so when that is what you need.",
         "figure": {
           "caption": "One route",
           "captionAlt": "Two routes",
-          "note": "Readiness — not reserved capacity. Capacity is reserved by contract or not at all.",
+          "note": "A second route costs far less to prepare than to improvise.",
           "rows": [
             {
               "label": "Plant",
@@ -209,15 +209,15 @@
   "bento": {
     "kicker": "Industries",
     "heading": "Find your part.",
-    "lead": "Each industry buys different geometry, worries about different failures and measures cost in a different unit. Open the one you work in — the page is written for it, not adapted to it.",
+    "lead": "Each industry buys different geometry, worries about different failures and measures cost in a different unit. Open the one you work in.",
     "fallback": "Your project does not need to fit a category.",
     "fallbackAction": "Open custom projects"
   },
   "proof": {
     "kicker": "Evidence",
     "heading": "What we will and will not show you.",
-    "lead": "More than a thousand projects have been completed since 2006, across tooling, engineering and production. Most of them belong to customers who did not agree to have their parts published, and we are not going to publish them anyway.",
-    "disclosure": "Every drawing and animation on this site is a schematic, drawn to explain engineering. None of it is a photograph of our equipment or of finished work. When a customer gives written permission, real project media appears here — labelled as real, and identified only as far as that customer allows."
+    "lead": "More than a thousand projects have been completed since 2006, across tooling, engineering and production. Almost all of them belong to customers whose parts are not ours to publish.",
+    "disclosure": "Every drawing and animation on this site is a schematic drawn to explain engineering, not a photograph of our equipment or of finished work. Where a customer gives written permission, real project media appears here and is labelled as such."
   },
   "about": {
     "kicker": "Who you would be working with",
@@ -225,7 +225,7 @@
     "body": [
       "Metal Form has been building moulds and manufacturing components since 2006. The foundation is mould making — injection, PET, blow and die-cast tooling, multi-cavity work, hot and cold runner systems, insert tooling and the mechanisms that make difficult geometry possible.",
       "Around that foundation the business now coordinates engineering, production and supply. To a customer that means one contract, one technical contact and one party accountable for the outcome — whether the work is a single tool or a component supplied every month for years.",
-      "We are not a multinational and we do not pretend to be. What that buys you is a shorter line between the person who reads your drawing and the person who cuts the steel."
+      "The line between the person who reads your drawing and the person who cuts the steel is a short one. Decisions are taken by the people who will have to live with them."
     ],
     "position": "Engineering, tooling, manufacturing and supply — coordinated by one partner who is answerable for the result."
   },
@@ -234,8 +234,7 @@
     "body": "Tell us what it has to do, roughly how many you need, and what you already have — a drawing, a sample, a CAD file or nothing but the problem. We come back on geometry, tooling route, production economics and supply options.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form. I have a component I would like evaluated.\n\nPart: \nIndustry: \nAnnual volume: \nMaterial (if known): \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: ",
-    "note": "Initial technical response within 2 business days. We can sign an NDA before you send anything detailed."
+    "prefill": "Hello Metal Form. I have a component I would like evaluated.\n\nPart: \nIndustry: \nAnnual volume: \nMaterial (if known): \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: "
   },
   "diagram": {
     "hero": {

@@ -205,7 +205,7 @@
           ]
         }
       ],
-      "close": "Fifteen families, one recurring question. Which of these is currently single-sourced on one tool, and what happens to the assembly line on the day that tool stops."
+      "close": "Fifteen families, one recurring question: which of these is single-sourced on one tool today, and what happens to the assembly line on the day that tool stops."
     },
     "materials": {
       "index": "02",
@@ -295,7 +295,7 @@
       "index": "03",
       "kicker": "Inside the tool",
       "heading": "Six decisions taken before steel is cut, and paid for a million times.",
-      "body": "A mould quotation shows none of this. Five years of production shows all of it. Read the section left to right: the split, the mechanisms, the feed, the cooling, the venting and the steel — in the order they are argued about.",
+      "body": "Read the section left to right: the split, the mechanisms, the feed, the cooling, the venting and the steel — in the order they get argued about.",
       "figureLabel": "Mould assembly in section — fixed half, moving half, part and mechanisms",
       "camAngle": "15° – 20°",
       "hardness": "48 – 52 HRC",
@@ -445,7 +445,7 @@
         "A clip that no longer lines up with its aperture",
         "A duct that has to be forced onto the chassis rail"
       ],
-      "close": "The tolerance drawing is read before the tool is quoted. Any dimension being specified tighter than the process can honestly hold is raised then, not discovered at the first assembly trial. So is the stack-up across the assembly, which is usually nobody's drawing and therefore nobody's problem until it is everybody's.",
+      "close": "The tolerance drawing is read before the tool is quoted. Any dimension specified tighter than the process can honestly hold is raised then — and so is the stack across the assembly, which is usually nobody’s drawing until it is everybody’s problem.",
       "sourceNote": "Tolerance grades quoted here are published industry reference values, not Metal Form commitments. What your part can hold is answered against your part, your material and your tool."
     },
     "life": {
@@ -482,12 +482,6 @@
           "side": "below"
         },
         {
-          "at": "—",
-          "label": "Geometry corrections",
-          "note": "Dimensional adjustment, gate and vent refinement, ejection cleaned up, mechanism fit checked under load.",
-          "side": "above"
-        },
-        {
           "at": "0",
           "label": "Production release",
           "note": "Ownership documented in writing. Spare cavity and core inserts already specified with the tool rather than ordered after the first crack.",
@@ -510,12 +504,6 @@
           "label": "Second service gate",
           "note": "Vents recut where carbon has taken the land depth well below specification. Pitting welded and re-polished before it prints on the part.",
           "side": "above"
-        },
-        {
-          "at": "—",
-          "label": "Cooling circuits scaling",
-          "note": "A rising inlet-to-outlet temperature difference at constant flow is the warning. Industry guidance treats a loss of roughly a quarter of the flow as a repair, not a log entry.",
-          "side": "below"
         },
         {
           "at": "250 000",
@@ -560,7 +548,7 @@
           "n": "01",
           "name": "A new part",
           "situation": "You have a design, or a function and a sketch.",
-          "body": "We review the geometry, the material, the mould route and the production economics, then design and build the tool. Where a metal part is being converted to a moulding, we will also give the honest verdict that it should stay metal — with die-cast tooling as an alternative we can build instead.",
+          "body": "We review the geometry, the material, the mould route and the production economics, then design and build the tool. Where a metal part is being converted to a moulding, we say so if it should stay metal — with die-cast tooling as an alternative we can build instead.",
           "inputs": [
             "CAD — STEP, CATPart, SLDPRT",
             "Dimensioned drawings with tolerances",
@@ -592,10 +580,10 @@
           ]
         }
       ],
-      "readinessNote": "Second-source tooling is readiness, not reserved capacity. Capacity is reserved by contract or it is not reserved at all, and we will say which.",
+      "readinessNote": "Second-source tooling is readiness, not reserved capacity. Reserving capacity is a separate contract.",
       "ipNote": "Ownership and licence are confirmed before a part is reproduced. We work under NDA and expect the same clarity in return.",
       "boundaryHeading": "What we supply, and what stays with you.",
-      "boundaryLead": "We build tooling and we mould parts. We do not approve them for a vehicle. That line is where most tooling relationships in this sector go wrong, so it is drawn here rather than discovered in month nine.",
+      "boundaryLead": "We build tooling and we mould parts. Approving them for a vehicle is a different job, and it is not ours.",
       "supplyHeading": "Metal Form supplies",
       "supply": [
         "Part and mould design in CATIA and SolidWorks, with a DFM review before steel is cut",
@@ -618,13 +606,13 @@
         "Homologation, road approval and the release of the part into your programme.",
         "Ownership of the design and the intellectual property in it, and confirmation that the part may lawfully be reproduced."
       ],
-      "boundaryClose": "That second list is short on purpose and it is not an apology. A supplier who claims all of it is either a different kind of company or is not telling you the truth, and in this sector you find out which in the ninth month, at line-side, with a container already in transit."
+      "boundaryClose": "The second list is short on purpose. It is the part of the route that belongs to you, your approvals and your testing house — and naming it now costs less than discovering it at line-side in month nine."
     },
     "close": {
       "index": "07",
       "kicker": "Revision block",
       "heading": "Send the part.",
-      "body": "A sample, a drawing, a STEP file, or a photograph with one known dimension. In this sector the visitor usually has a physical component on the desk and no data package, and that is enough to start.",
+      "body": "In this sector the visitor usually has a physical component on the desk and no data package. That is enough to start.",
       "tableLabel": "Enquiry record",
       "columns": {
         "rev": "Rev",
@@ -689,23 +677,20 @@
             "Slide components and wear-critical inserts are typically hardened in the region of 48 – 52 HRC, with wear plates in aluminium bronze or graphitic steel.",
             "Surface engineering extends life on abrasive material: plasma and gas nitriding, PVD coatings such as CrN, CrAlN and TiAlN, and composite nitrided-plus-coated layers.",
             "The four mechanisms to design against are erosive wear, thermal fatigue, corrosion and gate wear.",
-            "Structural maintenance is triggered by shot count. Industry practice services pre-hardened tools around 50,000 / 100,000 / 250,000 shot gates and hardened tools at longer intervals.",
             "Highest-wear items in service: ejector pins, vent lands, slide and lifter bearing surfaces, cooling-circuit seals.",
-            "Service thresholds quoted in industry maintenance guidance: recut vents once carbon has taken the land depth well below specification, replace ejector pins at around 0.05 mm diameter loss, weld and re-polish cavity pitting deeper than around 0.1 mm, investigate circuits that have lost more than about a quarter of their flow.",
-            "Spare cavity and core inserts are specified with the tool. Ordering them after the first crack is the expensive version of the same decision."
+            "Service thresholds quoted in industry maintenance guidance: recut vents once carbon has taken the land depth well below specification, replace ejector pins at around 0.05 mm diameter loss, weld and re-polish cavity pitting deeper than around 0.1 mm, investigate circuits that have lost more than about a quarter of their flow."
           ],
           "source": "Figures in this panel are published industry practice, not Metal Form measurements."
         },
         {
           "title": "Second source, tool transfer and obsolete parts",
           "bullets": [
-            "Second-source tooling: a duplicate tool built to your data, under NDA, without contact with your existing supplier. You own it. It runs when you need it to.",
             "Tool transfer: ownership documented first, then condition assessed — cavity and core surfaces, ejection system, slides and lifters, cooling circuits, corrosion — then refurbishment scoped before anything is promised about output.",
             "Obsolete and end-of-life parts: geometry reconstructed from the sample and its mating parts, by measuring multiple areas, comparing opposing faces and back-calculating from what it has to fit.",
             "A worn sample copied exactly reproduces the wear, not the design. Separating the two is the whole discipline.",
             "Where the original material is unknown, the family is inferred from application, service environment, density, hardness and surface condition, then selected against the real load case rather than matched by appearance.",
             "Deliverable is a manufacturing package: 3D CAD, dimensioned 2D drawings with tolerances and notes, and the tooling built from them.",
-            "Low volume is normal in this vertical and is not an obstacle. Tooling is scaled to the real programme, including a modest single-cavity steel tool where that is the correct answer.",
+            "Ownership and intellectual property are confirmed before reproduction, under NDA.",
             "Ownership and intellectual property are confirmed before reproduction. We work under NDA and expect the same clarity in return."
           ]
         }
@@ -714,10 +699,9 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A sample, a drawing, a STEP file, or a photograph with one known dimension. We evaluate the geometry, the tooling route, the production economics and the supply options, and reply within 2 business days. NDA as standard.",
+    "body": "A sample, a drawing, a STEP file, or a photograph with one known dimension. We come back on the geometry, the tooling route, the production economics and the supply options.",
     "action": "Send the part",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form — heavy vehicle component enquiry.\n\nPart: \nVehicle type (truck / bus / trailer / agricultural / construction): \nMaterial if known: \nAnnual volume: \nExisting tool: yes / no / obsolete\nI have: CAD / drawing / sample part / photograph\n\nI need: new tooling / second-source tooling / re-tooling of an obsolete part / component supply",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form — heavy vehicle component enquiry.\n\nPart: \nVehicle type (truck / bus / trailer / agricultural / construction): \nMaterial if known: \nAnnual volume: \nExisting tool: yes / no / obsolete\nI have: CAD / drawing / sample part / photograph\n\nI need: new tooling / second-source tooling / re-tooling of an obsolete part / component supply"
   }
 }

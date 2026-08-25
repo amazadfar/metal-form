@@ -212,6 +212,19 @@
 .disc[data-open='true'] .disc__panel { grid-template-rows: 1fr; }
 .disc__inner { overflow: hidden; }
 .disc__inner > * { padding-block-end: var(--sp-6); }
+/* Deeper-detail panels inherit the section's full width, which on a desktop
+   puts engineering prose on a 110-character line — the hardest thing on the
+   page to read, in the block written for the reader who wants it most. Every
+   chapter's panel has the same shape, a list and a source note, so one rule
+   settles all thirteen without touching any chapter's own design. Descendants
+   rather than the wrapper, so a panel that holds a table keeps its width. */
+/* Every chapter caps its panel list at roughly 82ch — but on the `ul`, whose
+   font is the body size, while the `li` inside is a step smaller. A `ch` is the
+   advance of the element's own "0", so 82 ul-ch renders as about 113 li-ch:
+   the widest measure on the page, in the block written for the reader who
+   wants it most. Capping the `li` puts the constraint where the type actually
+   is, and no chapter sets a competing value on it. */
+.disc__inner :is(ul, ol) > li { max-inline-size: 72ch; }
 
 /* ── Pills / capability tags ───────────────────────────────────────────────── */
 .tag {
@@ -523,5 +536,8 @@
 @media (pointer: coarse) {
   .btn { min-block-size: 44px; }
   .hdr__link { padding-block: 0.7rem; }
-  .ftr__inds a, .ftr__list a, .ftr__langs a { display: inline-block; padding-block: 0.35rem; }
 }
+
+/* The rest of the coarse-pointer sizing lives in the components themselves.
+   Astro scopes a component's own selectors with a data attribute, so a global
+   rule here would lose to the component's and the target would stay small. */

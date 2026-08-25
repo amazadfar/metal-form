@@ -25,7 +25,7 @@
       "kicker": "The interface",
       "heading": "The thread is a clamp. The land is the seal.",
       "body": "A closure does not seal on its thread. It seals on the flat annular land at the top of the neck, and the thread is only what holds it there. Every argument about a leaking pack ends in one of two places: the contact at that land, or the clamping force the thread failed to keep.",
-      "body2": "Both are geometry, and both are cut in steel months before a single part exists. A gate vestige left in the land is a leak path; gate position is free on a drawing and expensive after tooling. That is why the useful conversation happens over a drawing and not over a price.",
+      "body2": "Both are geometry, and both are cut in steel months before a single part exists. A gate vestige left in the land is a leak path; gate position is free on a drawing and expensive after tooling. So the useful conversation happens over a drawing.",
       "figCaption": "Thread engagement at magnification",
       "heroLabels": {
         "closure": "Closure",
@@ -301,7 +301,7 @@
         "Shrinkage differs by resin, so the same steel gives a different thread in PP homopolymer and in HDPE."
       ],
       "rulesNote": "Thread-forming routes, draft behaviour and shrinkage compensation above are published industry practice.",
-      "close": "Metal Form builds injection tooling with unscrewing cores, collapsible cores, slides and lifters, hot and cold runner, single and multi-cavity, plus insert tooling for multi-piece closures and sprayer internals. Compression moulding of closures is an industry route. It is not ours, and we will say so rather than quote it."
+      "close": "Metal Form builds injection tooling with unscrewing cores, collapsible cores, slides and lifters, hot and cold runner, single and multi-cavity, plus insert tooling for multi-piece closures and sprayer internals. Compression moulding of closures is an industry route. It is not ours."
     },
     "cavity": {
       "index": "06",
@@ -320,7 +320,7 @@
       "levers": [
         {
           "k": "Grams",
-          "body": "Weight is the dominant variable cost at volume and the arithmetic is unforgiving. Take 0.2 g off a cap running 20 million pieces a year and you have taken four tonnes of resin out of the year. That is your resin price and your volume — arithmetic you can check, not a saving we are claiming."
+          "body": "Weight is the dominant variable cost at volume, and the arithmetic is unforgiving. Take 0.2 g off a cap running 20 million pieces a year and you have taken four tonnes of resin out of the year — at your resin price, on your volume, arithmetic you can check for yourself."
         },
         {
           "k": "Seconds",
@@ -421,13 +421,13 @@
       "escHeading": "Environmental stress cracking",
       "escBody": "Surfactant contact plus stress is the classic polyethylene failure, and it needs both at once — neither alone does it. Published methods are ASTM D1693, a notched bent-strip test in surfactant whose inter-laboratory precision is openly poor, and constant-stress methods such as ASTM D2561 which represent service conditions better. Lower density means lower crystallinity and better crack resistance, and published practice treats that as a real production lever rather than a textbook one.",
       "escNote": "Methods, precision and density behaviour above are published industry practice. Metal Form makes no claim about the stress-crack performance of any part it tools.",
-      "close": "We will tell you what we would try, and why. We will not tell you it is proven."
+      "close": "We will tell you what we would try and why, and where the evidence for it stops."
     },
     "boundary": {
       "index": "08",
       "kicker": "Scope",
       "heading": "We cut the geometry. You own the contents.",
-      "body": "This is the part of a chemical packaging conversation that suppliers usually blur. Here it is in plain terms, because the boundary is the most useful thing on this page.",
+      "body": "A chemical pack has two sides. This is where ours stops and yours starts.",
       "figCaption": "Where the supply stops",
       "labels": {
         "steel": "Steel",
@@ -443,7 +443,7 @@
         "DFM on the sealing geometry, thread route, gate position, bridge geometry and ejection — before steel is cut.",
         "Second-source and duplicate tooling that reproduces the incumbent part on the incumbent neck finish.",
         "Component production and rolling supply, plus spares and change parts specified with the tool.",
-        "CNC milling, turning and manual machining. International delivery. NDA before detailed disclosure. Tooling warranty with terms agreed per project."
+        "CNC milling, turning and manual machining, and tooling warranty with terms agreed per project."
       ],
       "staysHeading": "What stays with you",
       "stays": [
@@ -458,10 +458,8 @@
       "notHeading": "And what we do not have",
       "not": [
         "No compression moulding of closures. Injection versus compression appears on this page as an industry comparison, never as our offer.",
-        "No certification of any kind, and no controlled-environment, validated or qualified manufacturing.",
-        "No named simulation software, no 3D scanning, no CMM or QC department.",
-        "No multi-material moulding, no decoration processes such as hot stamping, metallisation, in-mould labelling or electroplating, and no testing or certification of finished packs.",
-        "No claim of a cavity count above 46, and no guaranteed reserved production capacity."
+        "No multi-material moulding, and no decoration — hot stamping, metallisation, in-mould labelling or electroplating.",
+        "No simulation software, 3D scanning, CMM or inspection department, and no cavity count above 46."
       ],
       "secondHeading": "One tool, one site",
       "secondBody": "Most closure programmes run on one tool at one site, and nobody writes that down until the line stops. A backup has to reproduce the part, not the tool: same neck finish, same thread engagement, same seal route, same torque window, same behaviour on the same capper. Anything else is a second product with its own qualification, and it will be discovered during a shortage.",
@@ -479,9 +477,8 @@
       "get": [
         "A tooling route and a thread-forming strategy for the geometry as drawn.",
         "Cavitation options against your forecast and your press, with what each one costs you in risk.",
-        "The changes we would make, including the ones you will not like.",
-        "A production position: tool only, tool plus first articles, or rolling component supply.",
-        "An initial technical response within 2 business days. An NDA first if you prefer — it usually is."
+        "The changes we would make to the geometry, and what each one is worth.",
+        "A production position: tool only, tool plus first articles, or rolling component supply."
       ]
     },
     "panels": {
@@ -534,10 +531,9 @@
   },
   "cta": {
     "headline": "Send the closure. We will send back a route.",
-    "body": "The part, a drawing, or a sample in the post. You get the tooling route, the thread strategy, cavitation options and a production position. Initial response within 2 business days. NDA on request, always. Since 2006, 1,000+ projects, international delivery.",
+    "body": "The part, a drawing, or a sample in the post. You get the tooling route, the thread strategy, cavitation options and a production position.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form — closure tooling enquiry. Product type: [liquid detergent / household cleaner / agrochemical / other]. Closure type: [continuous thread / child-resistant / tamper-evident / flip-top / trigger sprayer / dosing cap]. Neck finish: [e.g. 28-410]. Seal: [liner / induction / bore seal]. Annual volume: [pcs/year]. I have: [existing part / drawing / 3D model / neither]. Please send an NDA.",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form — closure tooling enquiry. Product type: [liquid detergent / household cleaner / agrochemical / other]. Closure type: [continuous thread / child-resistant / tamper-evident / flip-top / trigger sprayer / dosing cap]. Neck finish: [e.g. 28-410]. Seal: [liner / induction / bore seal]. Annual volume: [pcs/year]. I have: [existing part / drawing / 3D model / neither]. Please send an NDA."
   }
 }

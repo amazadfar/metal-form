@@ -106,7 +106,7 @@
         "outcome": "İyileştirilecek bir şey yoksa bunu da söyler, parçayı çizildiği hâliyle fiyatlandırırız.",
         "figure": {
           "caption": "Bir enjeksiyon parçasının maliyeti",
-          "note": "Bu listenin büyük bölümünü, kimse parçayı fiyatlandırmadan önce geometri belirler.",
+          "note": "Bu beş kalemin dördünü, parça fiyatlanmadan önce kalıp belirler.",
           "rows": [
             {
               "label": "Hammadde"
@@ -141,7 +141,7 @@
         "figure": {
           "caption": "Üç tedarikçi",
           "captionAlt": "Tek iş ortağı",
-          "note": "Rotayı Metal Form koordine eder ve sorumluluğunu taşır.",
+          "note": "Sorumluluk, tedarikçiler arasındaki devirde düşer. Bu güzergâhta devredilecek kimse yok.",
           "rows": [
             {
               "label": "Tasarım",
@@ -179,11 +179,11 @@
           "Talep zirvesi ya da sezonluk bir pencere için ek kapasite",
           "Orijinal kalıbı aşınmış, kaybolmuş ya da kullanım dışı kalmış bir parça için yeni kalıp"
         ],
-        "outcome": "Bu bir hazırlıktır, rezerve kapasite vaadi değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmez — hangisi olduğunu açıkça söyleriz.",
+        "outcome": "Önceden hazırlanmış bir hazırlık; o an derlenen bir çözüm değil. Kapasite rezervasyonu ayrı bir sözleşmedir ve ihtiyacınız oysa bunu açıkça söyleriz.",
         "figure": {
           "caption": "Tek rota",
           "captionAlt": "İki rota",
-          "note": "Hazırlık — rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmez.",
+          "note": "İkinci güzergâhı önceden hazırlamak, kriz günü doğaçlamaktan çok daha ucuzdur.",
           "rows": [
             {
               "label": "Tesis",
@@ -209,15 +209,15 @@
   "bento": {
     "kicker": "Sektörler",
     "heading": "Parçanızı bulun.",
-    "lead": "Her sektör farklı bir geometri satın alır, farklı arızalardan endişe eder ve maliyeti farklı bir birimle ölçer. Çalıştığınız sektörü açın — o sayfa ona uyarlanmadı, doğrudan onun için yazıldı.",
+    "lead": "Her sektör farklı bir geometri satın alır, farklı arızalardan korkar ve maliyeti farklı bir birimle ölçer. Çalıştığınız sektörü açın.",
     "fallback": "Projenizin bir kategoriye sığması gerekmiyor.",
     "fallbackAction": "Özel projeleri açın"
   },
   "proof": {
     "kicker": "Kanıt",
     "heading": "Size neyi gösteririz, neyi göstermeyiz.",
-    "lead": "2006'dan bu yana kalıp, mühendislik ve üretim alanlarında binden fazla proje tamamlandı. Çoğu, parçalarının yayımlanmasına onay vermemiş müşterilere ait; zaten yayımlamayacağız da.",
-    "disclosure": "Bu sitedeki her çizim ve animasyon, mühendisliği anlatmak için hazırlanmış birer şemadır. Hiçbiri ekipmanımızın ya da tamamlanmış işlerin fotoğrafı değildir. Bir müşteri yazılı izin verdiğinde gerçek proje görselleri burada yer alır — gerçek olduğu belirtilerek ve yalnızca o müşterinin izin verdiği ölçüde tanımlanarak."
+    "lead": "2006’dan bu yana kalıp, mühendislik ve üretimde binden fazla proje tamamlandı. Neredeyse tamamı, parçalarını yayımlama hakkı bize ait olmayan müşterilere ait.",
+    "disclosure": "Bu sitedeki her çizim ve animasyon mühendisliği anlatan bir şemadır; ekipmanımızın ya da bitmiş işin fotoğrafı değil. Müşteri yazılı izin verdiğinde gerçek proje görselleri buraya gelir ve gerçek olduğu belirtilerek yayımlanır."
   },
   "about": {
     "kicker": "Kiminle çalışacaksınız",
@@ -225,7 +225,7 @@
     "body": [
       "Metal Form 2006'dan bu yana kalıp yapıyor ve parça üretiyor. Temeli kalıpçılıktır: enjeksiyon, PET, şişirme ve basınçlı döküm kalıpları, çok gözlü işler, sıcak ve soğuk yolluk sistemleri, insert kalıpları ve zor geometriyi mümkün kılan mekanizmalar.",
       "Bu temelin çevresinde firma bugün mühendislik, üretim ve tedariki de koordine ediyor. Müşteri açısından bu; tek sözleşme, tek teknik muhatap ve sonuçtan sorumlu tek taraf demektir — iş ister tek bir kalıp olsun, ister yıllarca her ay tedarik edilen bir parça.",
-      "Çok uluslu bir şirket değiliz, öyleymiş gibi de davranmıyoruz. Bunun size kazandırdığı şey, teknik resminizi okuyan kişi ile çeliği işleyen kişi arasındaki hattın kısa olmasıdır."
+      "Çiziminizi okuyan kişiyle çeliği işleyen kişi arasındaki mesafe kısadır. Kararları, sonucuyla yaşamak zorunda kalacak olanlar verir."
     ],
     "position": "Mühendislik, kalıp, üretim ve tedarik — sonuçtan hesap veren tek bir iş ortağı tarafından koordine edilir."
   },
@@ -234,8 +234,7 @@
     "body": "Ne iş yapması gerektiğini, kabaca kaç adet gerektiğini ve elinizde ne olduğunu yazın — bir teknik resim, bir numune, bir CAD dosyası ya da yalnızca sorunun kendisi. Size geometri, kalıp rotası, üretim maliyeti ve tedarik seçenekleri üzerinden dönüş yaparız.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form. Değerlendirilmesini istediğim bir parça var.\n\nParça: \nSektör: \nYıllık adet: \nMalzeme (biliniyorsa): \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: ",
-    "note": "2 iş günü içinde ilk teknik dönüş. Ayrıntılı bir şey göndermeden önce NDA imzalayabiliriz."
+    "prefill": "Merhaba Metal Form. Değerlendirilmesini istediğim bir parça var.\n\nParça: \nSektör: \nYıllık adet: \nMalzeme (biliniyorsa): \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: "
   },
   "diagram": {
     "hero": {

@@ -399,14 +399,14 @@
           "note": "Component production and rolling supply, in the same box to the same spec, with international delivery and spares and change parts held against the tool."
         }
       ],
-      "close": "This is readiness, not reserved capacity. Capacity is reserved by contract or it is not reserved at all, and we will tell you which one you are being offered.",
-      "warranty": "Tooling warranty terms are defined per project and against the agreed mould specification. Initial technical response within 2 business days."
+      "close": "This is readiness, not reserved capacity. Reserving capacity is a separate contract.",
+      "warranty": "Tooling warranty terms are defined per project and against the agreed mould specification."
     },
     "boundary": {
       "index": "08",
       "kicker": "Scope",
-      "heading": "We do not certify anything electrical.",
-      "body": "In this sector the buyer's real anxiety is approval, and the honest answer is a boundary rather than a claim. Flame and tracking ratings belong to the resin grade and to your finished-product approval. They do not belong to the moulder, and a supplier who implies otherwise has not been through an approvals process.",
+      "heading": "Where approval actually lives.",
+      "body": "In this sector the buyer’s real anxiety is approval, and the answer is a boundary rather than a claim. Flame and tracking ratings belong to the resin grade and to your finished-product approval. They do not belong to the moulder.",
       "doHeading": "What Metal Form supplies",
       "doList": [
         "Mould design and manufacture: injection, PET, blow and die-cast tooling, multi-cavity, hot and cold runner, insert tooling.",
@@ -429,7 +429,7 @@
         "Approval of the finished product, and the decision on any geometry change that touches a creepage or clearance path.",
         "Verification of terminal retention, dielectric withstand and every other electrical figure on your specification."
       ],
-      "close": "That list is not fine print. It is the shape of the working relationship: you own the electrical performance and the approval, we own the geometry, the steel and the supply. Where the two meet — a rib that is a creepage barrier, a weld line under an insertion load, a gate vestige on a mating face — we raise it before we quote, not after."
+      "close": "That list is the shape of the working relationship: you own the electrical performance and the approval, we own the geometry, the steel and the supply. Where the two meet — a rib that is a creepage barrier, a weld line under an insertion load, a gate vestige on a mating face — we raise it before we quote."
     },
     "panels": {
       "heading": "Deeper detail",
@@ -437,8 +437,6 @@
         {
           "title": "Thin wall, in numbers",
           "bullets": [
-            "Thin wall begins below roughly 1 mm, or above a flow-length-to-thickness ratio of about 100:1.",
-            "Thin-wall electrical parts commonly run past 150:1. The ratio, not the thickness alone, is the constraint.",
             "High fill rate and high injection pressure are required, with figures up to around 35,000 psi quoted for thin-wall work.",
             "Venting is a designed feature at that speed, not a correction applied after the first short shot.",
             "Cavity and core steel must be stiff enough not to deflect under fill, which limits how slender a core can be made.",
@@ -458,7 +456,7 @@
             "Sink over an insert and flash in a terminal pocket are the two defects that create permanent sorting operations.",
             "Incoming stamping variation is also what stops an automated loading cell, so the tolerance conversation is a throughput conversation."
           ],
-          "source": "Described as industry practice. Tell us the form your metal arrives in and the shut-off is designed around it."
+          "source": "Described as industry practice, not Metal Form measurement."
         },
         {
           "title": "Tolerance and the mating feature",
@@ -478,10 +476,9 @@
   },
   "cta": {
     "headline": "Send the part. We will tell you what the tool has to do.",
-    "body": "A STEP file, a 2D drawing, or a sample in a bag. We come back on geometry, tooling route, cavitation and supply options. Initial project response within 2 business days. NDA on request, before you send anything.",
+    "body": "A STEP file, a 2D drawing, or a sample in a bag. We come back on geometry, tooling route, cavitation and supply options.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form - electrical and electronics enquiry. Part: [connector body / terminal block / switch part / enclosure / gland / other]. Material: [PA66 GF / PBT GF / PC / PC-ABS / other]. Metal inserts: [yes / no]. Estimated annual volume: [ ]. I have: [STEP / 2D drawing / sample only]. Please advise on tooling route and cavitation.",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form - electrical and electronics enquiry. Part: [connector body / terminal block / switch part / enclosure / gland / other]. Material: [PA66 GF / PBT GF / PC / PC-ABS / other]. Metal inserts: [yes / no]. Estimated annual volume: [ ]. I have: [STEP / 2D drawing / sample only]. Please advise on tooling route and cavitation."
   }
 }

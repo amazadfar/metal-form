@@ -10,11 +10,11 @@
       "Or the photograph",
       "of the part."
     ],
-    "lead": "There is no form to fill in and no qualification questionnaire. Send what you have, tell us what the part has to do, and we come back with a technical read."
+    "lead": "No form, no qualification questionnaire. Send what you have, tell us what the part has to do, and we come back with a technical read."
   },
   "send": {
     "heading": "What is worth sending",
-    "body": "Any one of these is enough to start a conversation. All of them together is better, but nobody ever has all of them.",
+    "body": "Any one of these is enough to start. All of them together is better, but nobody ever has all of them.",
     "items": [
       "A photograph of the part, ideally with a ruler or caliper beside it",
       "The physical sample itself, if you can post it",
@@ -55,7 +55,6 @@
     "headline": "Send it now.",
     "body": "A photograph taken on a phone, right now, is more useful to us than a perfectly specified enquiry in three weeks.",
     "action": "Open WhatsApp",
-    "prefill": "Hello Metal Form.\n\nPart: \nIndustry: \nAnnual volume: \nMaterial (if known): \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: \n\nWhat I am trying to solve: ",
-    "note": "Initial technical response within 2 business days."
+    "prefill": "Hello Metal Form.\n\nPart: \nIndustry: \nAnnual volume: \nMaterial (if known): \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: \n\nWhat I am trying to solve: "
   }
 }

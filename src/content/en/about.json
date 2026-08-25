@@ -19,7 +19,7 @@
       "body": [
         "A tooling business first. Injection moulds, PET and closure tooling, blow and die-cast work, multi-cavity tools, hot and cold runner systems, insert tooling and the mechanisms that make awkward geometry possible. More than a thousand projects have gone through the workshop since 2006.",
         "Around that foundation the company now takes on the parts of a project that sit either side of the tool: the engineering that decides whether a part can be made economically at all, and the production and supply that follow once it can.",
-        "To a customer that means one contract, one technical contact and one party accountable for the outcome — whether the work is a single tool or a component supplied every month for years."
+        "For a customer that means one contract, one technical contact and one party answerable for the outcome — whether the work is a single tool or a component supplied every month for years."
       ]
     },
     {
@@ -28,7 +28,7 @@
       "body": [
         "Metal Form coordinates the route. Engineering, tool manufacture, production and supply are managed as one project against one specification, and the responsibility for the result does not move between parties when something goes wrong.",
         "That is the part that matters commercially. The usual failure in this industry is not a bad tool — it is a three-way argument between a designer, a toolmaker and a moulder, each of whom is technically correct about their own stage. Removing that argument is worth more to most buyers than any single technical capability.",
-        "We are not a multinational and we do not present ourselves as one. What the size buys you is a short line between the person who reads your drawing and the person who cuts the steel, and a company small enough to take an unusual project seriously."
+        "The company is small enough that the person who reads your drawing and the person who cuts the steel are one conversation apart, and small enough to take an unusual project seriously."
       ]
     },
     {
@@ -45,7 +45,7 @@
       "title": "Where we are going",
       "body": [
         "The intention is to keep growing the engineering and supply side of the business rather than only the workshop: more engineering capacity, more production routes, more capability to take responsibility for a component from concept through to a rolling delivery schedule.",
-        "That is stated as an intention, not a capability. Everything on this site describes what Metal Form can do now. When that changes, the site changes."
+        "That is an intention, not a capability. Everything else on this site describes what Metal Form can do today."
       ]
     }
   ],
@@ -58,7 +58,7 @@
     {
       "value": "1,000+",
       "label": "Completed projects",
-      "note": "Tooling, engineering and production work delivered since 2006. Stated as a minimum, because it is one."
+      "note": "Tooling, engineering and production work delivered since 2006, counted as a minimum."
     },
     {
       "value": "46",
@@ -75,8 +75,7 @@
     "heading": "One accountable partner is the whole proposition.",
     "body": [
       "Metal Form works with engineers, toolmakers, machinists and production partners, and the mix is chosen for the project rather than fixed. What does not change is who the customer holds responsible.",
-      "Design decisions are taken with the tool already in view. Tool corrections are handled without a commercial argument about whose fault it was. Spares come from the people who cut the originals. If a component has to be produced somewhere else, it is still our specification that it is produced to.",
-      "That is what we mean by single accountability, and it is a more honest claim than pretending every machine in the chain sits in one building."
+      "Design decisions are taken with the tool already in view. Tool corrections are handled without a commercial argument about whose fault it was. Spares come from the people who cut the originals. If a component has to be produced somewhere else, it is still produced to our specification."
     ]
   },
   "cta": {
@@ -84,7 +83,6 @@
     "body": "The fastest way to find out whether we are useful to you is to send something concrete — a photograph, a sample, a drawing, or a description of the problem you have not solved yet.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form. I found you through your website and I would like to discuss:\n\nPart / project: \nIndustry: \nAnnual volume: \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: ",
-    "note": "Initial technical response within 2 business days. We can sign an NDA before you send anything detailed."
+    "prefill": "Hello Metal Form. I found you through your website and I would like to discuss:\n\nPart / project: \nIndustry: \nAnnual volume: \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: "
   }
 }

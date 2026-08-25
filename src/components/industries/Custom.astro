@@ -245,8 +245,12 @@ const routes = b.routes.items as any[];
                   </g>
                 )}
               </svg>
+              {/* Label only. The per-input note used to sit here and repeated,
+                  almost word for word, the "what this tells us" column of the
+                  triage rail directly below. The drawing is the overture; the
+                  explanation belongs to the section that goes deep. */}
               <p class="cx-atlas__label t-mono">{item.label}</p>
-              <p class="cx-atlas__note">{item.note}</p>
+              {item.note ? <p class="cx-atlas__note">{item.note}</p> : null}
             </li>
           ))}
         </ol>
@@ -383,10 +387,16 @@ const routes = b.routes.items as any[];
                   <h3 class="t-label">{b.triage.tellsHeading}</h3>
                   <ul>{item.tells.map((t: string) => <li>{t}</li>)}</ul>
                 </section>
-                <section class="cx-tri__col cx-tri__col--ask">
-                  <h3 class="t-label">{b.triage.askHeading}</h3>
-                  <ul>{item.ask.map((t: string) => <li>{t}</li>)}</ul>
-                </section>
+                {/* An input whose only questions are the generic intake ones
+                    drops the column entirely — the ledger two sections below
+                    owns those, with the reason and the cost of leaving each
+                    one blank. */}
+                {item.ask?.length ? (
+                  <section class="cx-tri__col cx-tri__col--ask">
+                    <h3 class="t-label">{b.triage.askHeading}</h3>
+                    <ul>{item.ask.map((t: string) => <li>{t}</li>)}</ul>
+                  </section>
+                ) : null}
                 <section class="cx-tri__col cx-tri__col--back">
                   <h3 class="t-label">{b.triage.backHeading}</h3>
                   <ul>{item.back.map((t: string) => <li>{t}</li>)}</ul>
@@ -807,12 +817,12 @@ const routes = b.routes.items as any[];
       </ol>
 
       <p class="cx-close">{b.package.close}</p>
-      <p class="cx-fine t-fine">{b.package.note}</p>
+      {b.package.note ? <p class="cx-fine t-fine">{b.package.note}</p> : null}
 
       <div class="cx-panels">
         <h3 class="t-label cx-panels__h">{b.panels.heading}</h3>
         {b.panels.items.map((panel: any, i: number) => (
-          <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+          <div class="disc" data-open="false">
             <h4>
               <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
                 <span>{panel.title}</span>

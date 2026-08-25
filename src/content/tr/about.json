@@ -19,7 +19,7 @@
       "body": [
         "Her şeyden önce bir kalıp firması. Enjeksiyon kalıpları, PET ve kapak kalıpları, şişirme ve basınçlı döküm işleri, çok gözlü kalıplar, sıcak ve soğuk yolluk sistemleri, insert kalıpları ve zorlu geometriyi mümkün kılan mekanizmalar. 2006'dan bu yana binden fazla proje atölyeden geçti.",
         "Bu temelin çevresinde firma bugün, kalıbın iki yanında duran iş parçalarını da üstleniyor: bir parçanın ekonomik olarak üretilip üretilemeyeceğini belirleyen mühendislik ile üretilebildiğinde ardından gelen üretim ve tedarik.",
-        "Müşteri açısından bu; tek sözleşme, tek teknik muhatap ve sonuçtan sorumlu tek taraf demektir — iş ister tek bir kalıp olsun, ister yıllarca her ay tedarik edilen bir parça."
+        "Müşteri açısından bu, tek sözleşme, tek teknik muhatap ve sonuçtan sorumlu tek taraf demektir — ister tek bir kalıp olsun, ister yıllarca her ay tedarik edilen bir parça."
       ]
     },
     {
@@ -28,7 +28,7 @@
       "body": [
         "Rotayı Metal Form koordine eder. Mühendislik, kalıp imalatı, üretim ve tedarik; tek bir şartnameye karşı tek bir proje olarak yönetilir ve bir şey ters gittiğinde sonucun sorumluluğu taraflar arasında yer değiştirmez.",
         "Ticari açıdan asıl önemli olan kısım budur. Bu sektördeki olağan başarısızlık kötü bir kalıp değildir; bir tasarımcı, bir kalıpçı ve bir enjeksiyoncu arasındaki üçlü tartışmadır — üçü de kendi aşaması için teknik olarak haklıdır. Bu tartışmayı ortadan kaldırmak, çoğu alıcı için tek başına herhangi bir teknik yetkinlikten daha değerlidir.",
-        "Çok uluslu bir şirket değiliz ve kendimizi öyle sunmuyoruz. Bu ölçeğin size kazandırdığı şey; teknik resminizi okuyan kişi ile çeliği işleyen kişi arasındaki kısa hat ve alışılmadık bir projeyi ciddiye alacak kadar küçük bir firmadır."
+        "Şirket, çiziminizi okuyan kişiyle çeliği işleyen kişinin arasında tek bir konuşma olacak kadar küçük — ve alışılmadık bir projeyi ciddiye alacak kadar küçük."
       ]
     },
     {
@@ -45,7 +45,7 @@
       "title": "Nereye gidiyoruz",
       "body": [
         "Niyet, yalnızca atölyeyi değil, işin mühendislik ve tedarik tarafını da büyütmeye devam etmek: daha fazla mühendislik kapasitesi, daha fazla üretim rotası ve bir parçanın sorumluluğunu konseptten sürekli teslim programına kadar üstlenebilecek daha fazla yetkinlik.",
-        "Bu bir yetkinlik olarak değil, bir niyet olarak yazılmıştır. Bu sitedeki her şey Metal Form'un bugün yapabildiklerini anlatır. Bu değiştiğinde site de değişir."
+        "Bu bir niyet, bir yetkinlik beyanı değil. Sitenin geri kalanı Metal Form’un bugün yapabildiklerini anlatır."
       ]
     }
   ],
@@ -58,7 +58,7 @@
     {
       "value": "1.000+",
       "label": "Tamamlanan proje",
-      "note": "2006'dan bu yana teslim edilen kalıp, mühendislik ve üretim işleri. Bir alt sınır olarak verilmiştir, çünkü öyledir."
+      "note": "2006’dan bu yana teslim edilen kalıp, mühendislik ve üretim işleri. Bir tahmin değil, alt sınır olarak verilmiştir."
     },
     {
       "value": "46",
@@ -75,8 +75,7 @@
     "heading": "Tek muhatap, tek sorumlu — teklifin tamamı bu.",
     "body": [
       "Metal Form; mühendisler, kalıpçılar, tezgâh operatörleri ve üretim ortaklarıyla çalışır ve bu bileşim sabit değildir, projeye göre seçilir. Değişmeyen şey, müşterinin kimi sorumlu tuttuğudur.",
-      "Tasarım kararları kalıp göz önündeyken alınır. Kalıp düzeltmeleri, kimin hatası olduğuna dair ticari bir tartışma olmadan yapılır. Yedekler, orijinallerini işleyen ekipten gelir. Bir parçanın başka bir yerde üretilmesi gerekiyorsa, yine bizim şartnamemize göre üretilir.",
-      "Tek sorumluluk derken kastettiğimiz budur ve bu, zincirdeki her makinenin tek bir binada olduğunu iddia etmekten daha dürüst bir sözdür."
+      "Tasarım kararları kalıp göz önündeyken alınır. Kalıp düzeltmeleri, kimin hatası olduğuna dair ticari bir tartışma açılmadan yapılır. Yedek parçalar, orijinalini işleyen ellerden gelir. Bir parça başka bir yerde üretilmek zorunda kalırsa bile, yine bizim spesifikasyonumuza göre üretilir."
     ]
   },
   "cta": {
@@ -84,7 +83,6 @@
     "body": "Size faydalı olup olmayacağımızı anlamanın en hızlı yolu somut bir şey göndermektir: bir fotoğraf, bir numune, bir teknik resim ya da henüz çözemediğiniz sorunun tarifi.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form. Sitenizden ulaşıyorum ve şunu görüşmek istiyorum:\n\nParça / proje: \nSektör: \nYıllık adet: \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: ",
-    "note": "2 iş günü içinde ilk teknik dönüş. Ayrıntılı bir şey göndermeden önce NDA imzalayabiliriz."
+    "prefill": "Merhaba Metal Form. Sitenizden ulaşıyorum ve şunu görüşmek istiyorum:\n\nParça / proje: \nSektör: \nYıllık adet: \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: "
   }
 }

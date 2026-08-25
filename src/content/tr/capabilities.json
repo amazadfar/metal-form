@@ -12,7 +12,7 @@
     ],
     "lead": "Projelerin çoğu hepsine birden ihtiyaç duyarak gelir. Bazıları ise yalnızca tek bir teknik resmin incelenmesini, bir kalıbın düzeltilmesini ya da başkasının yaptığı bir kalıptan parça tedarik edilmesini ister. İkisi de bizim için olağan iştir."
   },
-  "intro": "Aşağıdakiler, yaptığımız işin sade bir dökümüdür. Sorumluluğunu üstlenemeyeceğimiz bir konu varsa, proje sırasında keşfetmenize bırakılmaz; bu sayfanın sonunda açıkça yazılır.",
+  "intro": "Aşağıdakiler yaptığımız işlerdir, süssüz. Bunun dışında kalanlar sayfanın altında adıyla yazılıdır.",
   "groups": [
     {
       "index": "01",
@@ -133,7 +133,7 @@
   ],
   "modularity": {
     "heading": "Hepsini almak zorunda değilsiniz.",
-    "body": "Bir proje genellikle en iyi zincirin bütünüyle yürür; çünkü projeler zamanı ve parayı asıl mühendislik, kalıp ve üretim arasındaki devir noktalarında kaybeder. Yine de her aşama tek başına durur ve bir aşama için teklif almanız sizi bir sonrakine bağlamaz.",
+    "body": "Genellikle zincirin tamamı daha iyi işler; çünkü projeler zamanı ve parayı mühendislik, kalıp ve üretim arasındaki devirlerde kaybeder. Yine de her aşama tek başına da ayakta durur ve birine fiyat almak sizi bir sonrakine bağlamaz.",
     "points": [
       "Yalnızca mühendislik — bir model, tersine mühendislikle çıkarılmış bir parça, bir DFM incelemesi. Mühendislik işi olarak satılır.",
       "Yalnızca kalıp — sizin teknik resminize göre yapılır, tesisinize sevk edilir, sizin tarafınızdan çalıştırılır.",
@@ -144,11 +144,11 @@
   },
   "software": {
     "heading": "Yazılım ve dosya formatları",
-    "body": "Parça modelleri, kalıp tasarımı ve tersine mühendislikle elde edilen geometri CATIA ve SolidWorks'te üretilir. Kendi formatlarında ya da nötr formatta gönderin — STEP, IGES, X_T ve STL üzerinde çalışılabilir; ölçülendirilmiş 2B bir PDF teknik resim de öyle. Elinizde yalnızca bir fotoğraf ve bir kumpas ölçüsü varsa bunu yazın; düzenli olarak bu noktadan başladığımız oluyor."
+    "body": "Parça modelleri, kalıp tasarımı ve tersine mühendislikle çıkarılan geometri CATIA ve SolidWorks’te üretilir. Yerel ya da nötr format fark etmez — STEP, IGES, X_T, STL — ölçülendirilmiş bir 2D PDF de iş görür. Bir fotoğraf ve bir kumpas ölçüsü de bizim için alışıldık bir başlangıç noktasıdır."
   },
   "boundaries": {
     "heading": "Neyi iddia etmiyoruz",
-    "body": "Bir yetkinlik listesi ancak bir yerde bittiğinde işe yarar. Aşağıdakiler, Metal Form'un bugün sorumluluğunu üstlendiği alanların dışındadır; bunu proje sırasında öğrenmenizdense şimdi bilmenizi tercih ederiz.",
+    "body": "Bir yetkinlik listesi ancak bir yerde bittiğinde işe yarar. Şunlar, Metal Form’un bugün sorumluluk aldığı alanın dışında kalır.",
     "points": [
       "Hiçbir kalite sistemi, tıbbi, otomotiv ya da gıdayla temas sertifikamız yoktur. Pazarınız böyle bir belge gerektiriyorsa bu yükümlülük size ve sertifikalı iş ortaklarınıza aittir.",
       "Temiz oda işletmiyoruz; steril, valide edilmiş ya da regülasyona tabi üretim yapmıyoruz.",
@@ -163,7 +163,6 @@
     "body": "Projenin gerçekte hangi noktada olduğunu yazın. Teknik resmi olmayan bir konsept, incelenmesi gereken bir teknik resim, yapılması gereken bir kalıp, düzeltilmesi gereken bir kalıp ya da ikinci kaynak arayan bir parça.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
-    "prefill": "Merhaba Metal Form. İlgilendiğim konu:\n\n[ ] Mühendislik / CAD / tersine mühendislik\n[ ] DFM veya tasarım incelemesi\n[ ] Yeni bir kalıp\n[ ] Mevcut bir kalıbın düzeltilmesi veya revizyonu\n[ ] Mevcut bir kalıptan üretim\n[ ] Sürekli parça tedariki\n[ ] İkinci kaynak\n\nParça: \nYıllık adet: \nElimde olanlar: ",
-    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "prefill": "Merhaba Metal Form. İlgilendiğim konu:\n\n[ ] Mühendislik / CAD / tersine mühendislik\n[ ] DFM veya tasarım incelemesi\n[ ] Yeni bir kalıp\n[ ] Mevcut bir kalıbın düzeltilmesi veya revizyonu\n[ ] Mevcut bir kalıptan üretim\n[ ] Sürekli parça tedariki\n[ ] İkinci kaynak\n\nParça: \nYıllık adet: \nElimde olanlar: "
   }
 }

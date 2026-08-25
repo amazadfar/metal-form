@@ -78,7 +78,7 @@
           "note": "Long, thin, almost no section to stiffen it. Bow reads straight off the cabinet edge. Ours."
         }
       ],
-      "close": "Two rows on that list are ours. Four are not, and we say so at the enquiry rather than after the order. They stay in the conversation anyway, because they set the space our mouldings have to land inside.",
+      "close": "Two rows on that list are ours. Four are not. They stay in the conversation anyway, because they set the space our mouldings have to land inside.",
       "sourceNote": "Sheet thickness and foam exotherm figures here are published industry practice, not Metal Form measurements."
     },
     "flow": {
@@ -180,7 +180,7 @@
           "note": "Class A on one face, structural on the other, and the part the customer's eye lands on."
         }
       ],
-      "close": "This is why we ask to see the assembly and not only the part. Fit is designed at assembly level and delivered by the tool — nominal wall, cooling balance, gate position, draft matched to texture depth. If what you send us is a single moulding, the first thing we will ask for is what it has to fit into.",
+      "close": "This is why we ask to see the assembly and not only the part. Fit is designed at assembly level and delivered by the tool: nominal wall, cooling balance, gate position, draft matched to texture depth.",
       "failures": [
         {
           "name": "Bow",
@@ -281,8 +281,8 @@
         }
       ],
       "unitLabel": "per cent",
-      "close": "At appliance volumes the mould is close to a rounding error per part. Amortised tooling only leads below roughly a thousand parts, and no appliance model is that. So the cheaper decision over a model life is usually the more expensive tool: better cooling layout, an honest nominal wall, gates placed to fill rather than to be convenient. We will tell you where the grams and the seconds are. We will not put a percentage on it before we have seen the part.",
-      "sourceNote": "Proportions and ranges in this band are published industry figures. They are not Metal Form measurements, not a performance claim and not a quotation."
+      "close": "At appliance volumes the mould is close to a rounding error per part. Amortised tooling only leads below roughly a thousand parts, and no appliance model is that. So the cheaper decision over a model life is usually the more expensive tool: better cooling layout, an honest nominal wall, gates placed to fill rather than to be convenient. Where the grams and the seconds are is a question we answer against your part.",
+      "sourceNote": "Proportions and ranges in this band are published industry figures, not Metal Form measurements."
     },
     "strategy": {
       "index": "06",
@@ -410,8 +410,7 @@
         "Ejection resolved for deep-draw boxes before the geometry is frozen",
         "Tooling warranty terms, defined against this project and this mould specification",
         "Where we think there is nothing worth changing, we say that too"
-      ],
-      "note": "Initial technical response within 2 business days. An NDA can be signed before detailed technical disclosure."
+      ]
     },
     "panels": {
       "heading": "Deeper detail",
@@ -421,10 +420,8 @@
           "bullets": [
             "Nominal wall reviewed on its own merits, not inherited from the previous model.",
             "Ribs at or below roughly 60 per cent of nominal wall, with radiused roots.",
-            "Flow length to wall thickness checked at the furthest point from every candidate gate.",
             "Gate positions chosen so weld lines land on hidden faces, and a decision taken on whether cascade fill is justified.",
             "Cooling planned into deep cores with baffles or bubblers while the part is still editable.",
-            "Core-to-cavity temperature strategy decided at design time, not left to the moulding shop.",
             "Draft matched to the specified texture depth as one specification, not two.",
             "Ejection resolved for deep-draw boxes — stripper plates, air poppets, and how draft and vacuum interact.",
             "Plate thickness and support pillars sized for cavity pressure across the span.",
@@ -443,7 +440,7 @@
             "Filled grades shrink anisotropically. A filled and an unfilled version of the same part are different tooling problems, not the same one with a different price.",
             "Regrind is a genuine cost lever with a real ceiling: published practice caps it near 20 per cent for ABS and 25 per cent for HIPS before impact properties fall measurably."
           ],
-          "source": "Figures in this panel are published industry practice, not Metal Form measurements. We do not test, certify or approve materials."
+          "source": "Figures in this panel are published industry practice. Metal Form does not test, certify or approve materials."
         },
         {
           "title": "Cosmetic defects and where they actually start",
@@ -464,10 +461,9 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A model, a drawing, or a photograph with a ruler next to it. We evaluate the geometry, the tooling route, the production economics and the supply options, and come back within 2 business days. NDA before anything is shared.",
+    "body": "A model, a drawing, or a photograph with a ruler next to it. We evaluate the geometry, the tooling route, the production economics and the supply options.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
-    "prefill": "Hello Metal Form. We build home appliances. I have a part to discuss — name: [part], approx size: [L x W x H mm], material: [if known], annual volume: [if known]. I need: [new tool / replacement tool / second-source tool / cost review]. Can we start under NDA?",
-    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
+    "prefill": "Hello Metal Form. We build home appliances. I have a part to discuss — name: [part], approx size: [L x W x H mm], material: [if known], annual volume: [if known]. I need: [new tool / replacement tool / second-source tool / cost review]. Can we start under NDA?"
   }
 }

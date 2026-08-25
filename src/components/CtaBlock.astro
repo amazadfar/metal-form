@@ -12,7 +12,6 @@ import { getCommon } from '../content/index.ts';
 import type { Cta } from '../content/types.ts';
 import type { CtaSource } from '../lib/contact.ts';
 import { availableChannels } from '../lib/contact.ts';
-import { FACTS } from '../config/site.ts';
 
 interface Props {
   locale: Locale;
@@ -139,5 +138,6 @@ const channels = availableChannels();
     border-inline-start: 2px solid var(--signal);
     padding-inline-start: var(--sp-4);
     color: var(--ink);
+    max-inline-size: 52ch;
   }
 </style>
