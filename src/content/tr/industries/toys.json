@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Oyuncak ve tüketici ürünleri kalıpçılığı — Metal Form",
-    "description": "Tüketici ürünleri ve oyuncaklar için enjeksiyon kalıbı tasarımı ve imalatı. Enjeksiyona uygun DFM ve yeniden tasarım, aile ve çok gözlü kalıplar, renk ve yüzey şartnamesi, teknik mekanizmalar, sürekli parça tedariki ve ikinci kaynak kalıpları. 2006'dan beri İran mühendisliği. 48 iş saati içinde dönüş."
+    "description": "Tüketici ürünleri ve oyuncaklar için enjeksiyon kalıbı tasarımı ve imalatı. Enjeksiyona uygun DFM ve yeniden tasarım, aile ve çok gözlü kalıplar, renk ve yüzey şartnamesi, teknik mekanizmalar, sürekli parça tedariki ve ikinci kaynak kalıpları. 2006'dan beri İran mühendisliği. 2 iş günü içinde dönüş."
   },
   "name": "Oyuncak ve Tüketici Ürünleri",
   "tile": "Bir numuneden ya da 3B baskıdan, işe yarayan bir birim maliyetle kalıplanmış parçaya.",
@@ -75,7 +75,7 @@
         "1.000'den fazla tamamlanmış proje",
         "46 göze kadar kalıp deneyimi",
         "CATIA ve SolidWorks",
-        "48 iş saati içinde ilk teknik dönüş"
+        "2 iş günü içinde ilk teknik dönüş"
       ]
     },
     "intake": {
@@ -111,7 +111,7 @@
           "need": "Parça, yıllık adet ve sevk edildiği pazarlar."
         }
       ],
-      "close": "Geri gelen şey; geometri okuması, kalıp rotası, üretim ekonomisi ve tedarik seçenekleridir. 48 iş saati içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir.",
+      "close": "Geri gelen şey; geometri okuması, kalıp rotası, üretim ekonomisi ve tedarik seçenekleridir. 2 iş günü içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir.",
       "figureNote": "Birleşme şeması. Her rota aynı ilk çıktıda biter."
     },
     "consolidate": {
@@ -556,10 +556,10 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Bir fotoğraf, elle çizilmiş bir eskiz, fiziksel bir numune, bir STEP dosyası ya da hâlihazırda sattığınız bir parça. 48 iş saati içinde geometri okuması, kalıp rotası ve üretim ekonomisiyle dönüş yaparız. Talep hâlinde NDA.",
+    "body": "Bir fotoğraf, elle çizilmiş bir eskiz, fiziksel bir numune, bir STEP dosyası ya da hâlihazırda sattığınız bir parça. 2 iş günü içinde geometri okuması, kalıp rotası ve üretim ekonomisiyle dönüş yaparız. Talep hâlinde NDA.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form. Kalıbını yaptırmak istediğim bir tüketici ürünü var. Ürün: [ne olduğu]. Aşama: [eskiz / prototip / CAD / başka yerde üretimde]. Yıllık adet: [yılda adet]. Malzeme: [biliniyorsa]. Geometriyi inceleyip bir kalıp rotası önerebilir misiniz?",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

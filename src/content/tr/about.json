@@ -5,7 +5,11 @@
   },
   "hero": {
     "kicker": "Hakkımızda",
-    "headline": ["Yirmi yıldır", "başkalarının parçaları için", "çelik işliyoruz."],
+    "headline": [
+      "Yirmi yıldır",
+      "başkalarının parçaları için",
+      "çelik işliyoruz."
+    ],
     "lead": "Metal Form 2006'dan bu yana kalıp yapıyor ve parça üretiyor. Bir kalıphane olarak başlayan iş, bugün mühendislik, kalıp, üretim ve tedariki koordine ediyor — tek sözleşme altında, sonuçtan hesap veren tek bir tarafla."
   },
   "sections": [
@@ -46,10 +50,26 @@
     }
   ],
   "facts": [
-    { "value": "2006", "label": "Üretim başlangıcı", "note": "Atölyenin açıldığı ve proje sayımının başladığı yıl." },
-    { "value": "1.000+", "label": "Tamamlanan proje", "note": "2006'dan bu yana teslim edilen kalıp, mühendislik ve üretim işleri. Bir alt sınır olarak verilmiştir, çünkü öyledir." },
-    { "value": "46", "label": "Göz", "note": "Kalıbını yaptığımız en yüksek göz sayısı. Yüksek göz sayısı bir makine özelliği değil, bir kalıpçılık disiplinidir: denge, soğutma ve tutarlılık." },
-    { "value": "48h", "label": "İlk dönüş", "note": "Bir proje hakkında 48 iş saati içinde ilk teknik görüş: üretilebilirlik yönü, eksik kalan bilgiler ve bir sonraki adım." }
+    {
+      "value": "2006",
+      "label": "Üretim başlangıcı",
+      "note": "Atölyenin açıldığı ve proje sayımının başladığı yıl."
+    },
+    {
+      "value": "1.000+",
+      "label": "Tamamlanan proje",
+      "note": "2006'dan bu yana teslim edilen kalıp, mühendislik ve üretim işleri. Bir alt sınır olarak verilmiştir, çünkü öyledir."
+    },
+    {
+      "value": "46",
+      "label": "Göz",
+      "note": "Kalıbını yaptığımız en yüksek göz sayısı. Yüksek göz sayısı bir makine özelliği değil, bir kalıpçılık disiplinidir: denge, soğutma ve tutarlılık."
+    },
+    {
+      "value": "2 gün",
+      "label": "İlk dönüş",
+      "note": "Bir proje hakkında 2 iş günü içinde ilk teknik görüş: üretilebilirlik yönü, eksik kalan bilgiler ve bir sonraki adım."
+    }
   ],
   "accountability": {
     "heading": "Tek muhatap, tek sorumlu — teklifin tamamı bu.",
@@ -65,6 +85,6 @@
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form. Sitenizden ulaşıyorum ve şunu görüşmek istiyorum:\n\nParça / proje: \nSektör: \nYıllık adet: \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: ",
-    "note": "48 iş saati içinde ilk teknik dönüş. Ayrıntılı bir şey göndermeden önce NDA imzalayabiliriz."
+    "note": "2 iş günü içinde ilk teknik dönüş. Ayrıntılı bir şey göndermeden önce NDA imzalayabiliriz."
   }
 }

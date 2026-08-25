@@ -5,7 +5,11 @@
   },
   "hero": {
     "kicker": "Industries",
-    "headline": ["Thirteen sectors.", "Thirteen different", "definitions of expensive."],
+    "headline": [
+      "Thirteen sectors.",
+      "Thirteen different",
+      "definitions of expensive."
+    ],
     "lead": "A bottler measures cost in grams of resin. An irrigation manufacturer measures it in cavities. A heavy-vehicle buyer measures it in the years a tool has to last. The engineering is shared; almost nothing else is."
   },
   "note": "Each page is written for its own sector — its components, its failure modes, its economics and its vocabulary. If none of them is yours, the last one is.",
@@ -15,6 +19,6 @@
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form.\n\nPart: \nWhat it is used for: \nAnnual volume: \nWhat I have: photo / sample / drawing / CAD / nothing yet",
-    "note": "Initial technical response within 48 business hours."
+    "note": "Initial technical response within 2 business days."
   }
 }

@@ -16,6 +16,7 @@
  * one tool one plant → where our scope stops.
  */
 import IndustryMark from '../IndustryMark.astro';
+import TechNote from '../TechNote.astro';
 import type { Locale } from '../../i18n/locales.ts';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
@@ -26,7 +27,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /* ── 01 · exploded elevation ──────────────────────────────────────────────
@@ -232,16 +233,18 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
         <figcaption class="figure-note">{common.schematic}</figcaption>
       </figure>
 
-      <ol class="app-proc__rows">
-        {b.process.rows.map((r: any, i: number) => (
-          <li class="app-prow" data-station-step={i}>
-            <span class="app-prow__i t-mono">{r.index}</span>
-            <span class="app-prow__n">{r.name}</span>
-            <span class="badge app-prow__p">{r.process}</span>
-            <span class="app-prow__note">{r.note}</span>
-          </li>
-        ))}
-      </ol>
+      <TechNote locale={locale} kind="reasoning">
+        <ol class="app-proc__rows">
+          {b.process.rows.map((r: any, i: number) => (
+            <li class="app-prow" data-station-step={i}>
+              <span class="app-prow__i t-mono">{r.index}</span>
+              <span class="app-prow__n">{r.name}</span>
+              <span class="badge app-prow__p">{r.process}</span>
+              <span class="app-prow__note">{r.note}</span>
+            </li>
+          ))}
+        </ol>
+      </TechNote>
     </div>
 
     <div class="shell--wide app-proc__foot">
@@ -326,7 +329,9 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
 
     <div class="shell--wide app-flow__weld">
       <h3 class="app-h3">{b.flow.weldHeading}</h3>
-      <p class="app-flow__weldbody">{b.flow.weldBody}</p>
+      <TechNote locale={locale} kind="detail">
+        <p class="app-flow__weldbody">{b.flow.weldBody}</p>
+      </TechNote>
       <p class="app-flow__warn">{b.flow.weldWarn}</p>
     </div>
 
@@ -414,10 +419,12 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
     </div>
 
     <div class="shell--wide app-warp__foot">
-      <div class="app-warp__cool">
-        <h3 class="app-h4">{b.warp.coolingHeading}</h3>
-        <p>{b.warp.coolingBody}</p>
-      </div>
+      <TechNote locale={locale} kind="detail">
+        <div class="app-warp__cool">
+          <h3 class="app-h4">{b.warp.coolingHeading}</h3>
+          <p>{b.warp.coolingBody}</p>
+        </div>
+      </TechNote>
       <div class="app-warp__closebox">
         <p class="app-warp__close">{b.warp.close}</p>
         <p class="t-fine">{b.warp.sourceNote}</p>
@@ -504,25 +511,29 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
         <figcaption class="figure-note">{common.schematic}</figcaption>
       </figure>
 
-      <dl class="app-fit__items">
-        {b.fit.stackItems.map((it: any) => (
-          <div class="app-fit__item">
-            <dt>{it.name}</dt>
-            <dd>{it.note}</dd>
-          </div>
-        ))}
-      </dl>
+      <TechNote locale={locale} kind="detail">
+        <dl class="app-fit__items">
+          {b.fit.stackItems.map((it: any) => (
+            <div class="app-fit__item">
+              <dt>{it.name}</dt>
+              <dd>{it.note}</dd>
+            </div>
+          ))}
+        </dl>
+      </TechNote>
     </div>
 
     <div class="shell--wide app-fit__foot">
-      <ul class="app-fit__fails">
-        {b.fit.failures.map((f: any) => (
-          <li>
-            <span class="t-label">{f.name}</span>
-            <span>{f.note}</span>
-          </li>
-        ))}
-      </ul>
+      <TechNote locale={locale} kind="detail">
+        <ul class="app-fit__fails">
+          {b.fit.failures.map((f: any) => (
+            <li>
+              <span class="t-label">{f.name}</span>
+              <span>{f.note}</span>
+            </li>
+          ))}
+        </ul>
+      </TechNote>
       <p class="app-fit__close">{b.fit.close}</p>
     </div>
   </section>
@@ -687,14 +698,18 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
     </div>
 
     <div class="shell--wide app-strat__foot">
-      <div class="app-strat__insert">
-        <h3 class="app-h4">{b.strategy.insertHeading}</h3>
-        <p>{b.strategy.insertBody}</p>
-      </div>
-      <div class="app-strat__tail">
-        <h3 class="app-h4">{b.strategy.tailHeading}</h3>
-        <p>{b.strategy.tailBody}</p>
-      </div>
+      <TechNote locale={locale} kind="detail">
+        <div class="app-strat__insert">
+          <h3 class="app-h4">{b.strategy.insertHeading}</h3>
+          <p>{b.strategy.insertBody}</p>
+        </div>
+      </TechNote>
+      <TechNote locale={locale} kind="detail">
+        <div class="app-strat__tail">
+          <h3 class="app-h4">{b.strategy.tailHeading}</h3>
+          <p>{b.strategy.tailBody}</p>
+        </div>
+      </TechNote>
     </div>
 
     <div class="shell--wide">
@@ -757,9 +772,11 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
     </div>
 
     <div class="shell app-src__pkgwrap">
-      <ul class="app-src__pkg">
-        {b.source.package.map((item: string) => <li>{item}</li>)}
-      </ul>
+      <TechNote locale={locale} kind="detail">
+        <ul class="app-src__pkg">
+          {b.source.package.map((item: string) => <li>{item}</li>)}
+        </ul>
+      </TechNote>
       <p class="app-src__ready">{b.source.readiness}</p>
     </div>
   </section>

@@ -1,11 +1,15 @@
 {
   "meta": {
     "title": "Contact Metal Form — send a part, a drawing or a photograph",
-    "description": "Send a photograph, a sample, a drawing or a CAD file. Initial technical response within 48 business hours: feasibility direction, what is missing and the next step. NDA before detailed disclosure."
+    "description": "Send a photograph, a sample, a drawing or a CAD file. Initial technical response within 2 business days: feasibility direction, what is missing and the next step. NDA before detailed disclosure."
   },
   "hero": {
     "kicker": "Contact",
-    "headline": ["Send the part.", "Or the photograph", "of the part."],
+    "headline": [
+      "Send the part.",
+      "Or the photograph",
+      "of the part."
+    ],
     "lead": "There is no form to fill in and no qualification questionnaire. Send what you have, tell us what the part has to do, and we come back with a technical read."
   },
   "send": {
@@ -25,10 +29,26 @@
   "expect": {
     "heading": "What happens next",
     "steps": [
-      { "index": "01", "title": "You send it", "body": "WhatsApp is fastest, because photographs, drawings and short videos of a part all go through it without an email attachment limit." },
-      { "index": "02", "title": "We read it", "body": "An engineer looks at the geometry, not a salesperson at a price list. Within 48 business hours you get a feasibility direction, a list of what is missing, and the next step." },
-      { "index": "03", "title": "NDA, if you want one", "body": "Sign ours or send yours. It is normal, it is quick, and it happens before detailed technical disclosure rather than after." },
-      { "index": "04", "title": "Then a real quotation", "body": "Once the geometry, the volume and the tolerances are understood. Not before — a number quoted before those are known is a number that changes." }
+      {
+        "index": "01",
+        "title": "You send it",
+        "body": "WhatsApp is fastest, because photographs, drawings and short videos of a part all go through it without an email attachment limit."
+      },
+      {
+        "index": "02",
+        "title": "We read it",
+        "body": "An engineer looks at the geometry, not a salesperson at a price list. Within 2 business days you get a feasibility direction, a list of what is missing, and the next step."
+      },
+      {
+        "index": "03",
+        "title": "NDA, if you want one",
+        "body": "Sign ours or send yours. It is normal, it is quick, and it happens before detailed technical disclosure rather than after."
+      },
+      {
+        "index": "04",
+        "title": "Then a real quotation",
+        "body": "Once the geometry, the volume and the tolerances are understood. Not before — a number quoted before those are known is a number that changes."
+      }
     ]
   },
   "cta": {
@@ -36,6 +56,6 @@
     "body": "A photograph taken on a phone, right now, is more useful to us than a perfectly specified enquiry in three weeks.",
     "action": "Open WhatsApp",
     "prefill": "Hello Metal Form.\n\nPart: \nIndustry: \nAnnual volume: \nMaterial (if known): \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: \n\nWhat I am trying to solve: ",
-    "note": "Initial technical response within 48 business hours."
+    "note": "Initial technical response within 2 business days."
   }
 }

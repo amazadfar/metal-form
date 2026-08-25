@@ -21,6 +21,7 @@ import type { Locale } from '../../i18n/locales.ts';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 import ProjectProof from '../ProjectProof.astro';
+import TechNote from '../TechNote.astro';
 
 interface Props {
   locale: Locale;
@@ -28,7 +29,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /**
@@ -279,25 +280,30 @@ const withUnit = (value: number, i: number): string => {
     <div class="shell--wide med-imb__foot">
       <p class="med-imb__evidence">{b.imbalance.evidence}</p>
 
-      <div class="med-imb__cols">
-        <section>
-          <h3 class="med-h5">{b.imbalance.methodHeading}</h3>
-          <ol class="med-imb__method">
-            {b.imbalance.method.map((m: string, i: number) => (
-              <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{m}</li>
-            ))}
-          </ol>
-        </section>
+      {/* The four steps above are the argument. How you prove it on a press,
+          and how each symptom maps to a cause, is what a process engineer
+          wants next — and only a process engineer. */}
+      <TechNote locale={locale} kind="reasoning" class="med-imb__note">
+        <div class="med-imb__cols">
+          <section>
+            <h3 class="med-h5">{b.imbalance.methodHeading}</h3>
+            <ol class="med-imb__method">
+              {b.imbalance.method.map((m: string, i: number) => (
+                <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{m}</li>
+              ))}
+            </ol>
+          </section>
 
-        <section>
-          <h3 class="med-h5">{b.imbalance.diagnosisHeading}</h3>
-          <dl class="med-diag">
-            {b.imbalance.diagnosis.map((d: any) => (
-              <div><dt>{d.symptom}</dt><dd>{d.cause}</dd></div>
-            ))}
-          </dl>
-        </section>
-      </div>
+          <section>
+            <h3 class="med-h5">{b.imbalance.diagnosisHeading}</h3>
+            <dl class="med-diag">
+              {b.imbalance.diagnosis.map((d: any) => (
+                <div><dt>{d.symptom}</dt><dd>{d.cause}</dd></div>
+              ))}
+            </dl>
+          </section>
+        </div>
+      </TechNote>
 
       <p class="med-imb__close">{b.imbalance.close}</p>
     </div>
@@ -321,16 +327,21 @@ const withUnit = (value: number, i: number): string => {
         </section>
         <section class="med-ledger__col med-ledger__col--yours">
           <h3 class="med-h5 med-ledger__h">{b.line.staysHeading}</h3>
+          {/* The sentence that names these as nobody's certifications but the
+              customer's, placed before the list rather than after both
+              columns — which is where it used to sit, and where a reader
+              skimming two columns never reached it. */}
+          <p class="med-ledger__caveat">{b.line.close}</p>
           <ul>{b.line.stays.map((item: string) => <li>{item}</li>)}</ul>
         </section>
       </div>
 
-      <p class="med-line__close">{b.line.close}</p>
-
-      <div class="med-line__how">
-        <h3 class="med-h4">{b.line.howHeading}</h3>
+      {/* The ledger and the sentence under it are the section. How the
+          arrangement works commercially is real, useful and long, and it is
+          the third thing a buyer needs rather than the first. */}
+      <TechNote locale={locale} kind="reasoning" label={b.line.howHeading} class="med-line__how">
         <p>{b.line.how}</p>
-      </div>
+      </TechNote>
     </div>
   </section>
 
@@ -377,8 +388,10 @@ const withUnit = (value: number, i: number): string => {
         </dl>
       </div>
 
-      <div class="med-class">
-        <h3 class="med-h4">{b.anatomy.classHeading}</h3>
+      {/* SPI mould classes are the grammar of a tooling enquiry and a wall of
+          hardness figures to everyone else. The plate stack above is the
+          section's argument; this is its appendix. */}
+      <TechNote locale={locale} label={b.anatomy.classHeading} class="med-class">
         <p class="med-class__note">{b.anatomy.classNote}</p>
         <div class="scroller med-class__scroll">
           <table class="med-class__table">
@@ -394,7 +407,7 @@ const withUnit = (value: number, i: number): string => {
           </table>
         </div>
         <p class="med-class__close">{b.anatomy.classClose}</p>
-      </div>
+      </TechNote>
     </div>
   </section>
 
@@ -421,18 +434,19 @@ const withUnit = (value: number, i: number): string => {
         </ol>
       </div>
 
-      <div class="med-spares">
-        <div>
-          <h3 class="med-h5">{b.wear.sparesHeading}</h3>
+      {/* The timeline makes the point. Which six components belong on a shelf
+          is a purchasing conversation, and it keeps. */}
+      <TechNote locale={locale} label={b.wear.sparesHeading} class="med-spares-note">
+        <div class="med-spares">
           <ul class="med-spares__list">
             {b.wear.spares.map((s: string) => <li>{s}</li>)}
           </ul>
+          <div class="med-spares__side">
+            <p>{b.wear.sparesNote}</p>
+            <p class="med-warranty">{b.wear.warranty}</p>
+          </div>
         </div>
-        <div class="med-spares__side">
-          <p>{b.wear.sparesNote}</p>
-          <p class="med-warranty">{b.wear.warranty}</p>
-        </div>
-      </div>
+      </TechNote>
     </div>
   </section>
 
@@ -451,15 +465,17 @@ const withUnit = (value: number, i: number): string => {
         <p class="med-second__honesty">{b.second.honesty}</p>
       </div>
 
-      <ol class="med-risks">
-        {b.second.risks.map((risk: any) => (
-          <li>
-            <span class="med-risks__n t-mono">{risk.n}</span>
-            <span class="med-risks__s">{risk.scenario}</span>
-            <span class="med-risks__c">{risk.consequence}</span>
-          </li>
-        ))}
-      </ol>
+      <TechNote locale={locale} kind="why" class="med-risks-note">
+        <ol class="med-risks">
+          {b.second.risks.map((risk: any) => (
+            <li>
+              <span class="med-risks__n t-mono">{risk.n}</span>
+              <span class="med-risks__s">{risk.scenario}</span>
+              <span class="med-risks__c">{risk.consequence}</span>
+            </li>
+          ))}
+        </ol>
+      </TechNote>
     </div>
   </section>
 
@@ -499,10 +515,13 @@ const withUnit = (value: number, i: number): string => {
 
       <div class="med-panels">
         <h3 class="t-label med-panels__h">{b.panels.heading}</h3>
-        {b.panels.items.map((panel: any, i: number) => (
-          <div class="disc" data-open={i === 0 ? 'true' : 'false'}>
+        {/* All closed. This is the last block before the call to action, and a
+            panel left open here is 400px of specification standing between a
+            decided buyer and the button. */}
+        {b.panels.items.map((panel: any) => (
+          <div class="disc" data-open="false">
             <h4>
-              <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
+              <button class="disc__btn" type="button" aria-expanded="false">
                 <span>{panel.title}</span>
                 <span class="disc__sign" aria-hidden="true"></span>
               </button>
@@ -1015,7 +1034,32 @@ const withUnit = (value: number, i: number): string => {
   .med-ledger__h { padding-block-end: var(--sp-4); border-block-end: 1px solid var(--line); }
   .med-ledger__col--ours .med-ledger__h { color: var(--accent-deep); }
   .med-ledger__col--yours .med-ledger__h { color: var(--signal-ink); }
+
+  /* The column that is NOT a capability list.
+     A reader skimming two columns of the same weight takes both as things this
+     company does. ISO 13485, GMP and IQ/OQ/PQ are named here only as the
+     customer's obligations, so this column is drawn as the other side of a
+     line rather than as a second offer: a signal-coloured rule down its
+     leading edge, a struck-through marker on every item, and type that does
+     not compete with the column beside it. */
+  .med-ledger__col--yours {
+    border-inline-start: 2px solid var(--signal);
+    padding-inline-start: clamp(1.25rem, 2.6vw, 2.25rem);
+  }
+  .med-ledger__col--yours li::before {
+    background: none;
+    border-block-start: 1.5px solid var(--signal);
+    block-size: 0;
+    inline-size: 0.7rem;
+  }
   .med-ledger ul { margin-block-start: var(--sp-4); }
+  .med-ledger__caveat {
+    margin-block-start: var(--sp-4);
+    font-size: var(--step--1);
+    line-height: 1.55;
+    color: var(--signal-ink);
+    max-inline-size: 44ch;
+  }
   .med-ledger li {
     padding-block: var(--sp-4);
     border-block-end: 1px solid var(--line);

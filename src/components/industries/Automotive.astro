@@ -22,6 +22,7 @@
  * decade. That inverts which savings are real.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -31,7 +32,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /* ── Drawing geometry ─────────────────────────────────────────────────────
@@ -438,11 +439,13 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
         <p class="figure-note">{common.schematic}</p>
         <p class="av-rail__hint t-fine">{common.a11y.scrollForMore}</p>
       </div>
+      <TechNote locale={locale} kind="reasoning" class="av-mat__note">
       <ol class="av-mat__notes">
         {b.materials.notes.map((n: string, i: number) => (
           <li><span class="av-bal av-bal--sm">{String(i + 1).padStart(2, '0')}</span><span>{n}</span></li>
         ))}
       </ol>
+      </TechNote>
       <p class="av-source t-fine">{b.materials.sourceNote}</p>
     </div>
   </section>
@@ -655,7 +658,11 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
         })}
       </div>
 
-      <div class="av-fit__cols">
+{/* The dimension chain above carries the section. Tolerance classes and
+          the warp mechanism are the same point at two more levels of detail —
+          real, and not the first thing a buyer needs. */}
+      <TechNote locale={locale} kind="detail" class="av-fit__note">
+            <div class="av-fit__cols">
         <section class="av-classes">
           <h3 class="av-h4">{b.fit.classesHeading}</h3>
           <ol class="av-classes__list">
@@ -719,6 +726,7 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
           <figcaption class="figure-note">{common.schematic}</figcaption>
         </figure>
       </div>
+      </TechNote>
 
       <p class="av-close">{b.fit.close}</p>
       <p class="av-source t-fine">{b.fit.sourceNote}</p>
@@ -772,101 +780,105 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
   </section>
 
   {/* ═══ 06 · ROUTES AND BOUNDARY ═════════════════════════════════════════ */}
-  <section class="av-sec av-routes-sec" id="routes">
-    <div class="shell--wide">
-      <div class="av-head">
-        <p class="av-kick">
-          <span class="av-bal">{b.routes.index}</span>
-          <span class="av-lead" aria-hidden="true"></span>
-          <span class="t-label">{b.routes.kicker}</span>
-        </p>
-        <h2 class="av-h2">{b.routes.heading}</h2>
-        <p class="t-lead">{b.routes.body}</p>
-      </div>
-
-      <div class="av-routes" data-tabs>
-        <div class="av-routes__tabs" role="tablist" aria-label={b.routes.diagramLabel}>
-          {routeItems.map((r: any) => (
-            <button
-              class="av-routes__tab"
-              type="button"
-              role="tab"
-              data-tab={r.id}
-              aria-selected="false"
-              id={`av-rt-${r.id}`}
-              aria-controls={`av-rp-${r.id}`}
-            >
-              <span class="av-bal av-bal--sm">{r.n}</span>
-              <span>{r.name}</span>
-            </button>
-          ))}
+  <TechNote locale={locale} kind="reasoning">
+    <section class="av-sec av-routes-sec" id="routes">
+      <div class="shell--wide">
+        <div class="av-head">
+          <p class="av-kick">
+            <span class="av-bal">{b.routes.index}</span>
+            <span class="av-lead" aria-hidden="true"></span>
+            <span class="t-label">{b.routes.kicker}</span>
+          </p>
+          <h2 class="av-h2">{b.routes.heading}</h2>
+          <p class="t-lead">{b.routes.body}</p>
         </div>
-
-        <figure class="av-routes__fig">
-          <svg viewBox="0 0 660 260" data-nomirror role="img" aria-label={b.routes.diagramLabel}>
-            <path d="M37 56 H210 M210 56 H300 L410 130 H600" class="av-rt av-rt--a" />
-            <path d="M37 130 H210 M210 130 H600" class="av-rt av-rt--b" />
-            <path d="M37 204 H210 M210 204 H300 L410 130 H600" class="av-rt av-rt--c" />
-            <path d="M600 130 H624" class="av-rt av-rt--out" marker-end="url(#av-arw-e)" />
-            {[56, 130, 204].map((y: any) => <circle cx="210" cy={y} r="4" class="av-node" />)}
-            <circle cx="410" cy="130" r="4" class="av-node" />
-            {routeItems.map((r: any, i: number) => (
-              <g class="av-bln">
-                <circle cx="24" cy={56 + i * 74} r="13" class="av-bln__c" />
-                <text x="24" y={60 + i * 74} text-anchor="middle" class="av-bln__t">{r.n}</text>
-              </g>
+  
+        <div class="av-routes" data-tabs>
+          <div class="av-routes__tabs" role="tablist" aria-label={b.routes.diagramLabel}>
+            {routeItems.map((r: any) => (
+              <button
+                class="av-routes__tab"
+                type="button"
+                role="tab"
+                data-tab={r.id}
+                aria-selected="false"
+                id={`av-rt-${r.id}`}
+                aria-controls={`av-rp-${r.id}`}
+              >
+                <span class="av-bal av-bal--sm">{r.n}</span>
+                <span>{r.name}</span>
+              </button>
             ))}
-          </svg>
-          <figcaption class="figure-note">{common.schematic}</figcaption>
-        </figure>
-
-        {routeItems.map((r: any) => (
-          <div
-            class="av-routes__panel"
-            data-panel={r.id}
-            role="tabpanel"
-            id={`av-rp-${r.id}`}
-            aria-labelledby={`av-rt-${r.id}`}
-            hidden
-          >
-            <p class="av-routes__sit">{r.situation}</p>
-            <p class="av-routes__body">{r.body}</p>
-            <div class="av-routes__in">
-              <p class="t-label">{b.routes.inputsLabel}</p>
-              <ul class="badges">{r.inputs.map((x: string) => <li class="badge">{x}</li>)}</ul>
-            </div>
           </div>
-        ))}
-
-        <p class="av-routes__out">
-          <span class="t-label">{b.routes.outputLabel}</span>
-          <span class="t-mono">{b.routes.output}</span>
-        </p>
-      </div>
-
-      <div class="av-notes">
-        <p>{b.routes.readinessNote}</p>
-        <p>{b.routes.ipNote}</p>
-      </div>
-
-      {/* ── The boundary. The page's strongest credibility instrument. ──── */}
-      <div class="av-bound">
-        <h3 class="av-h3">{b.routes.boundaryHeading}</h3>
-        <p class="av-bound__lead">{b.routes.boundaryLead}</p>
-        <div class="av-bound__cols">
-          <section class="av-bound__col av-bound__col--in">
-            <h4 class="t-label">{b.routes.supplyHeading}</h4>
-            <ul>{b.routes.supply.map((x: string) => <li>{x}</li>)}</ul>
-          </section>
-          <section class="av-bound__col av-bound__col--out">
-            <h4 class="t-label">{b.routes.keepHeading}</h4>
-            <ul>{b.routes.keep.map((x: string) => <li>{x}</li>)}</ul>
-          </section>
+  
+          <figure class="av-routes__fig">
+            <svg viewBox="0 0 660 260" data-nomirror role="img" aria-label={b.routes.diagramLabel}>
+              <path d="M37 56 H210 M210 56 H300 L410 130 H600" class="av-rt av-rt--a" />
+              <path d="M37 130 H210 M210 130 H600" class="av-rt av-rt--b" />
+              <path d="M37 204 H210 M210 204 H300 L410 130 H600" class="av-rt av-rt--c" />
+              <path d="M600 130 H624" class="av-rt av-rt--out" marker-end="url(#av-arw-e)" />
+              {[56, 130, 204].map((y: any) => <circle cx="210" cy={y} r="4" class="av-node" />)}
+              <circle cx="410" cy="130" r="4" class="av-node" />
+              {routeItems.map((r: any, i: number) => (
+                <g class="av-bln">
+                  <circle cx="24" cy={56 + i * 74} r="13" class="av-bln__c" />
+                  <text x="24" y={60 + i * 74} text-anchor="middle" class="av-bln__t">{r.n}</text>
+                </g>
+              ))}
+            </svg>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+  
+          {routeItems.map((r: any) => (
+            <div
+              class="av-routes__panel"
+              data-panel={r.id}
+              role="tabpanel"
+              id={`av-rp-${r.id}`}
+              aria-labelledby={`av-rt-${r.id}`}
+              hidden
+            >
+              <p class="av-routes__sit">{r.situation}</p>
+              <p class="av-routes__body">{r.body}</p>
+              <div class="av-routes__in">
+                <p class="t-label">{b.routes.inputsLabel}</p>
+                <ul class="badges">{r.inputs.map((x: string) => <li class="badge">{x}</li>)}</ul>
+              </div>
+            </div>
+          ))}
+  
+          <p class="av-routes__out">
+            <span class="t-label">{b.routes.outputLabel}</span>
+            <span class="t-mono">{b.routes.output}</span>
+          </p>
         </div>
-        <p class="av-bound__close">{b.routes.boundaryClose}</p>
+  
+        <TechNote locale={locale} kind="detail">
+          <div class="av-notes">
+            <p>{b.routes.readinessNote}</p>
+            <p>{b.routes.ipNote}</p>
+          </div>
+        </TechNote>
+  
+        {/* ── The boundary. The page's strongest credibility instrument. ──── */}
+        <div class="av-bound">
+          <h3 class="av-h3">{b.routes.boundaryHeading}</h3>
+          <p class="av-bound__lead">{b.routes.boundaryLead}</p>
+          <div class="av-bound__cols">
+            <section class="av-bound__col av-bound__col--in">
+              <h4 class="t-label">{b.routes.supplyHeading}</h4>
+              <ul>{b.routes.supply.map((x: string) => <li>{x}</li>)}</ul>
+            </section>
+            <section class="av-bound__col av-bound__col--out">
+              <h4 class="t-label">{b.routes.keepHeading}</h4>
+              <ul>{b.routes.keep.map((x: string) => <li>{x}</li>)}</ul>
+            </section>
+          </div>
+          <p class="av-bound__close">{b.routes.boundaryClose}</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </TechNote>
 
   {/* ═══ 07 · REVISION BLOCK ══════════════════════════════════════════════ */}
   <section class="av-sec av-rev" id="revision">
@@ -884,29 +896,31 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
         <p class="t-lead">{b.close.body}</p>
       </div>
 
-      <div class="av-rev__scroll">
-        <table class="av-rev__table">
-          <caption class="vh">{b.close.tableLabel}</caption>
-          <thead>
-            <tr>
-              <th scope="col">{b.close.columns.rev}</th>
-              <th scope="col">{b.close.columns.description}</th>
-              <th scope="col">{b.close.columns.by}</th>
-              <th scope="col">{b.close.columns.date}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {b.close.rows.map((row: any) => (
+      <TechNote locale={locale} kind="reasoning">
+        <div class="av-rev__scroll">
+          <table class="av-rev__table">
+            <caption class="vh">{b.close.tableLabel}</caption>
+            <thead>
               <tr>
-                <th scope="row" class="t-mono">{row.rev}</th>
-                <td>{row.description}</td>
-                <td class="t-mono">{row.by}</td>
-                <td class="t-mono">{row.date}</td>
+                <th scope="col">{b.close.columns.rev}</th>
+                <th scope="col">{b.close.columns.description}</th>
+                <th scope="col">{b.close.columns.by}</th>
+                <th scope="col">{b.close.columns.date}</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {b.close.rows.map((row: any) => (
+                <tr>
+                  <th scope="row" class="t-mono">{row.rev}</th>
+                  <td>{row.description}</td>
+                  <td class="t-mono">{row.by}</td>
+                  <td class="t-mono">{row.date}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </TechNote>
 
       <div class="av-terms">
         <p class="t-label">{b.close.termsLabel}</p>

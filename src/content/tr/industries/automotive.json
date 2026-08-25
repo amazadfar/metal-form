@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Otomotiv ve ağır vasıta kalıpçılığı — Metal Form",
-    "description": "Kamyon, otobüs, tarım ve iş makineleri için enjeksiyon kalıbı tasarımı ve imalatı. Dolgulu polimerler, sürgüler, lifterlar ve insertli kalıplar. İkinci kaynak kalıpları ve üretimden kalkmış parçalara yeni kalıp. 48 iş saati içinde mühendislik dönüşü."
+    "description": "Kamyon, otobüs, tarım ve iş makineleri için enjeksiyon kalıbı tasarımı ve imalatı. Dolgulu polimerler, sürgüler, lifterlar ve insertli kalıplar. İkinci kaynak kalıpları ve üretimden kalkmış parçalara yeni kalıp. 2 iş günü içinde mühendislik dönüşü."
   },
   "name": "Otomotiv ve Ağır Vasıta",
   "tile": "On yıllık servis ömrü için kalıp — dolgulu polimerler, sürgüler, tekrarlayan ölçü.",
@@ -43,7 +43,7 @@
         },
         {
           "k": "İlk dönüş",
-          "v": "48 iş saati"
+          "v": "2 iş günü"
         },
         {
           "k": "Garanti",
@@ -643,7 +643,7 @@
           "rev": "B",
           "description": "Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini okur ve dönüş yaparız",
           "by": "Metal Form",
-          "date": "48 iş saati"
+          "date": "2 iş günü"
         },
         {
           "rev": "C",
@@ -714,10 +714,10 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Bir numune, bir teknik resim, bir STEP dosyası ya da tek bir ölçüsü bilinen bir fotoğraf. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendirir, 48 iş saati içinde dönüş yaparız. Standart olarak NDA.",
+    "body": "Bir numune, bir teknik resim, bir STEP dosyası ya da tek bir ölçüsü bilinen bir fotoğraf. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendirir, 2 iş günü içinde dönüş yaparız. Standart olarak NDA.",
     "action": "Parçayı gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form — ağır vasıta parçası hakkında.\n\nParça: \nAraç tipi (kamyon / otobüs / treyler / tarım / iş makinesi): \nBiliniyorsa malzeme: \nYıllık adet: \nMevcut kalıp: var / yok / üretimden kalkmış\nElimde: CAD / teknik resim / numune parça / fotoğraf\n\nİhtiyacım: yeni kalıp / ikinci kaynak kalıbı / üretimden kalkmış parçaya yeni kalıp / parça tedariki",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

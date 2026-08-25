@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Custom Plastic Projects: Reverse Engineering, DFM and Tooling | Metal Form",
-    "description": "No drawing, no file, no supplier. Send a photograph, a sample or a problem. We return a manufacturable model, a tooling route and a supply plan. Response in 48 business hours."
+    "description": "No drawing, no file, no supplier. Send a photograph, a sample or a problem. We return a manufacturable model, a tooling route and a supply plan. Response in 2 business days."
   },
   "name": "Custom Projects",
   "tile": "A photograph, a broken part, a sketch — or a problem you have not solved yet.",
@@ -16,7 +16,7 @@
     "markers": [
       "Reverse engineering from a sample or a photograph",
       "Injection · PET · blow · die-cast tooling",
-      "First response within 48 business hours"
+      "First response within 2 business days"
     ]
   },
   "blocks": {
@@ -576,7 +576,7 @@
           "leaves": "Parts, on a rolling supply where that is what the programme needs."
         }
       ],
-      "close": "Tooling warranty terms are defined per project and against the mould specification for that project. Initial technical response within 48 business hours, and an NDA before detailed disclosure if you want one."
+      "close": "Tooling warranty terms are defined per project and against the mould specification for that project. Initial technical response within 2 business days, and an NDA before detailed disclosure if you want one."
     },
     "routes": {
       "index": "06",
@@ -648,7 +648,7 @@
         "Component production and rolling supply, so a project does not stop at a tool handover.",
         "Second-source and duplicate tooling built from your own data, plus spares and change parts.",
         "International delivery, an NDA before detailed disclosure, and tooling warranty with terms agreed per project.",
-        "An initial technical response within 48 business hours, from someone who has read the geometry."
+        "An initial technical response within 2 business days, from someone who has read the geometry."
       ],
       "stayHeading": "What stays with you",
       "stay": [
@@ -667,7 +667,7 @@
         "A finished product that has to be tested, certified or approved by the supplier who makes it.",
         "A free-form surface with no captured data and no way of obtaining any. Measurement and feature reconstruction have a limit, and a blade profile sits past it.",
         "A volume that does not justify a tool. Where a machined part or a bought standard component is the right answer, that is the answer you will get.",
-        "A project that needs a guaranteed date before anyone has seen the geometry. We commit to a first technical response within 48 business hours, and to nothing we cannot hold."
+        "A project that needs a guaranteed date before anyone has seen the geometry. We commit to a first technical response within 2 business days, and to nothing we cannot hold."
       ]
     },
     "package": {
@@ -711,7 +711,7 @@
         }
       ],
       "close": "Tier one is enough. If what you have is a photograph taken on a phone in a machine room at eleven at night, send that.",
-      "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+      "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
     },
     "panels": {
       "heading": "Deeper detail",
@@ -760,10 +760,10 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A photograph, a sample, a file, or a paragraph describing the problem. You get an engineering reply rather than a price list: what we can determine, what we still have to ask, and what the tooling route looks like. First response within 48 business hours. NDA before you send anything, if you want one.",
+    "body": "A photograph, a sample, a file, or a paragraph describing the problem. You get an engineering reply rather than a price list: what we can determine, what we still have to ask, and what the tooling route looks like. First response within 2 business days. NDA before you send anything, if you want one.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Metal Form — custom project.\n\nWhat I have: photo / sample part / broken part / sketch / STEP file / drawing pack / existing mould / a production, cost or supply problem\nWhat the part does: \nWhere it is used: \nApproximate annual quantity, if known: \nWhat I need from you: ",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

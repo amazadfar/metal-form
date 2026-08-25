@@ -17,6 +17,7 @@
  * accent, one champagne highlight — all from the vertical's palette tokens.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -26,7 +27,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /* ── Drawing constants ──────────────────────────────────────────────────────
@@ -257,15 +258,17 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
         <figcaption class="figure-note">{common.schematic}</figcaption>
       </figure>
 
-      <ol class="cos-lt__notes">
-        {b.surface.callouts.map((c: any, i: number) => (
-          <li class="cos-note" data-k={c.mark} tabindex="0" style={`--reveal-delay:${i * 70}ms`} data-reveal>
-            <span class="t-mono cos-note__mark">{c.mark}</span>
-            <h3 class="cos-note__term">{c.term}</h3>
-            <p class="cos-note__body">{c.note}</p>
-          </li>
-        ))}
-      </ol>
+      <TechNote locale={locale} kind="reasoning">
+        <ol class="cos-lt__notes">
+          {b.surface.callouts.map((c: any, i: number) => (
+            <li class="cos-note" data-k={c.mark} tabindex="0" style={`--reveal-delay:${i * 70}ms`} data-reveal>
+              <span class="t-mono cos-note__mark">{c.mark}</span>
+              <h3 class="cos-note__term">{c.term}</h3>
+              <p class="cos-note__body">{c.note}</p>
+            </li>
+          ))}
+        </ol>
+      </TechNote>
 
       <p class="cos-lt__close">{b.surface.close}</p>
     </div>
@@ -350,45 +353,47 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
       ))}
 
       {/* The ladder itself: the same wall, eight grades, in order. */}
-      <div class="cos-ladder">
-        <p class="t-label cos-ladder__cap">{b.gloss.ladderLabel}</p>
-        <div class="cos-ladder__scroll">
-          <div class="cos-ladder__row" role="tablist" aria-label={b.gloss.tabsLabel}>
-            {b.gloss.rungs.map((r: any, i: number) => (
-              <button
-                class="cos-rung"
-                type="button"
-                role="tab"
-                data-tab={r.id}
-                id={`cos-tab-${r.id}`}
-                aria-controls={`cos-panel-${r.id}`}
-                aria-selected={i === 0 ? 'true' : 'false'}
-              >
-                <svg viewBox="0 0 60 130" data-nomirror aria-hidden="true">
-                  <defs>
-                    <linearGradient id={`cos-gl-${r.id}`} x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
-                      <stop offset={clamp01(GLOSS[i].c - GLOSS[i].half).toFixed(3)} stop-color="var(--signal)" stop-opacity="0" />
-                      <stop offset={GLOSS[i].c.toFixed(3)} stop-color="var(--cos-spec)" stop-opacity={GLOSS[i].peak.toFixed(2)} />
-                      <stop offset={clamp01(GLOSS[i].c + GLOSS[i].half).toFixed(3)} stop-color="var(--signal)" stop-opacity="0" />
-                      <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
-                    </linearGradient>
-                    <clipPath id={`cos-glc-${r.id}`}>
-                      <path d="M10 8 C3 44 3 94 10 122 L50 122 C57 94 57 44 50 8 Z" />
-                    </clipPath>
-                  </defs>
-                  <path d="M10 8 C3 44 3 94 10 122 L50 122 C57 94 57 44 50 8 Z" class="cos-face cos-face--deep" />
-                  <rect x="0" y="0" width="60" height="130" fill={`url(#cos-gl-${r.id})`} clip-path={`url(#cos-glc-${r.id})`} />
-                  <path d="M10 8 C3 44 3 94 10 122 L50 122 C57 94 57 44 50 8 Z" class="cos-line cos-line--thin" />
-                </svg>
-                <span class="cos-rung__name">{r.name}</span>
-                <span class="cos-rung__scale t-mono">{r.scale}</span>
-              </button>
-            ))}
+      <TechNote locale={locale} kind="detail">
+        <div class="cos-ladder">
+          <p class="t-label cos-ladder__cap">{b.gloss.ladderLabel}</p>
+          <div class="cos-ladder__scroll">
+            <div class="cos-ladder__row" role="tablist" aria-label={b.gloss.tabsLabel}>
+              {b.gloss.rungs.map((r: any, i: number) => (
+                <button
+                  class="cos-rung"
+                  type="button"
+                  role="tab"
+                  data-tab={r.id}
+                  id={`cos-tab-${r.id}`}
+                  aria-controls={`cos-panel-${r.id}`}
+                  aria-selected={i === 0 ? 'true' : 'false'}
+                >
+                  <svg viewBox="0 0 60 130" data-nomirror aria-hidden="true">
+                    <defs>
+                      <linearGradient id={`cos-gl-${r.id}`} x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
+                        <stop offset={clamp01(GLOSS[i].c - GLOSS[i].half).toFixed(3)} stop-color="var(--signal)" stop-opacity="0" />
+                        <stop offset={GLOSS[i].c.toFixed(3)} stop-color="var(--cos-spec)" stop-opacity={GLOSS[i].peak.toFixed(2)} />
+                        <stop offset={clamp01(GLOSS[i].c + GLOSS[i].half).toFixed(3)} stop-color="var(--signal)" stop-opacity="0" />
+                        <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
+                      </linearGradient>
+                      <clipPath id={`cos-glc-${r.id}`}>
+                        <path d="M10 8 C3 44 3 94 10 122 L50 122 C57 94 57 44 50 8 Z" />
+                      </clipPath>
+                    </defs>
+                    <path d="M10 8 C3 44 3 94 10 122 L50 122 C57 94 57 44 50 8 Z" class="cos-face cos-face--deep" />
+                    <rect x="0" y="0" width="60" height="130" fill={`url(#cos-gl-${r.id})`} clip-path={`url(#cos-glc-${r.id})`} />
+                    <path d="M10 8 C3 44 3 94 10 122 L50 122 C57 94 57 44 50 8 Z" class="cos-line cos-line--thin" />
+                  </svg>
+                  <span class="cos-rung__name">{r.name}</span>
+                  <span class="cos-rung__scale t-mono">{r.scale}</span>
+                </button>
+              ))}
+            </div>
           </div>
+          <p class="cos-ladder__note t-small">{b.gloss.note}</p>
         </div>
-        <p class="cos-ladder__note t-small">{b.gloss.note}</p>
-      </div>
+      </TechNote>
     </div>
 
     <div class="shell cos-gloss__tail">
@@ -407,78 +412,80 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
 
     <div class="shell--wide cos-gate__trip">
       {b.gate.cases.map((g: any, i: number) => (
-        <figure class="cos-gate__case" data-reveal style={`--reveal-delay:${i * 110}ms`}>
-          <svg viewBox="0 0 320 236" data-nomirror role="img" aria-label={common.schematic}>
-            <defs>
-              <linearGradient id={`cos-gs-${i}`} x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
-                <stop offset="0.34" stop-color="var(--signal)" stop-opacity="0.34" />
-                <stop offset="0.5" stop-color="var(--cos-spec)" stop-opacity="0.96" />
-                <stop offset="0.66" stop-color="var(--signal)" stop-opacity="0.34" />
-                <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
-              </linearGradient>
-              <clipPath id={`cos-gc-${i}`}><path d={CAP_CROWN} /></clipPath>
-              <marker id={`cos-flow-${i}`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)" />
-              </marker>
-            </defs>
-
-            <path d={CAP_CROWN} class="cos-face" />
-
-            {/* The highlight, at rest, stepping where this gate sits. */}
-            <g clip-path={`url(#cos-gc-${i})`}>
-              <rect x="60" y="52" width={i === 1 ? 200 : 100} height="26" fill={`url(#cos-gs-${i})`} />
-              {i !== 1 && (
-                <rect x="160" y={i === 0 ? 62 : 55} width="100" height="26" fill={`url(#cos-gs-${i})`} />
+        <TechNote locale={locale} kind="detail">
+          <figure class="cos-gate__case" data-reveal style={`--reveal-delay:${i * 110}ms`}>
+            <svg viewBox="0 0 320 236" data-nomirror role="img" aria-label={common.schematic}>
+              <defs>
+                <linearGradient id={`cos-gs-${i}`} x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="var(--signal)" stop-opacity="0" />
+                  <stop offset="0.34" stop-color="var(--signal)" stop-opacity="0.34" />
+                  <stop offset="0.5" stop-color="var(--cos-spec)" stop-opacity="0.96" />
+                  <stop offset="0.66" stop-color="var(--signal)" stop-opacity="0.34" />
+                  <stop offset="1" stop-color="var(--signal)" stop-opacity="0" />
+                </linearGradient>
+                <clipPath id={`cos-gc-${i}`}><path d={CAP_CROWN} /></clipPath>
+                <marker id={`cos-flow-${i}`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)" />
+                </marker>
+              </defs>
+  
+              <path d={CAP_CROWN} class="cos-face" />
+  
+              {/* The highlight, at rest, stepping where this gate sits. */}
+              <g clip-path={`url(#cos-gc-${i})`}>
+                <rect x="60" y="52" width={i === 1 ? 200 : 100} height="26" fill={`url(#cos-gs-${i})`} />
+                {i !== 1 && (
+                  <rect x="160" y={i === 0 ? 62 : 55} width="100" height="26" fill={`url(#cos-gs-${i})`} />
+                )}
+              </g>
+  
+              <path d={CAP_OUT} class="cos-line" />
+              <path d={CAP_IN} class="cos-line cos-line--faint" />
+              <path d="M40 200 H280" class="cos-line" />
+              {[126, 152, 178].map((y: any) => (
+                <g>
+                  <path d={`M58 ${y} l12 -5 v10 z`} class="cos-line cos-line--thin" />
+                  <path d={`M262 ${y} l-12 -5 v10 z`} class="cos-line cos-line--thin" />
+                </g>
+              ))}
+  
+              {/* Gate marker + fill vector, in this case's position. */}
+              {i === 0 && (
+                <g>
+                  <path d="M152 58 q8 -10 16 0" class="cos-line cos-line--thin" />
+                  <circle cx="160" cy="58" r="4" class="cos-dot cos-dot--gate" />
+                  <path d="M160 26 V44" class="cos-flow" marker-end={`url(#cos-flow-${i})`} />
+                  <path d="M160 58 H214" class="cos-ldr" />
+                  <text x="220" y="52" class="cos-mono">{b.gate.gateLabel}</text>
+                </g>
               )}
-            </g>
-
-            <path d={CAP_OUT} class="cos-line" />
-            <path d={CAP_IN} class="cos-line cos-line--faint" />
-            <path d="M40 200 H280" class="cos-line" />
-            {[126, 152, 178].map((y: any) => (
-              <g>
-                <path d={`M58 ${y} l12 -5 v10 z`} class="cos-line cos-line--thin" />
-                <path d={`M262 ${y} l-12 -5 v10 z`} class="cos-line cos-line--thin" />
-              </g>
-            ))}
-
-            {/* Gate marker + fill vector, in this case's position. */}
-            {i === 0 && (
-              <g>
-                <path d="M152 58 q8 -10 16 0" class="cos-line cos-line--thin" />
-                <circle cx="160" cy="58" r="4" class="cos-dot cos-dot--gate" />
-                <path d="M160 26 V44" class="cos-flow" marker-end={`url(#cos-flow-${i})`} />
-                <path d="M160 58 H214" class="cos-ldr" />
-                <text x="220" y="52" class="cos-mono">{b.gate.gateLabel}</text>
-              </g>
-            )}
-            {i === 1 && (
-              <g>
-                <circle cx="58" cy="176" r="4" class="cos-dot cos-dot--gate" />
-                <path d="M30 176 H46" class="cos-flow" marker-end={`url(#cos-flow-${i})`} />
-                <path d="M58 176 H108" class="cos-ldr" />
-                <text x="114" y="170" class="cos-mono">{b.gate.gateLabel}</text>
-              </g>
-            )}
-            {i === 2 && (
-              <g>
-                <rect x="150" y="56" width="20" height="4" class="cos-wash" />
-                <circle cx="160" cy="58" r="4" class="cos-dot cos-dot--gate" />
-                <path d="M160 22 V40" class="cos-flow" marker-end={`url(#cos-flow-${i})`} />
-                <path d="M160 58 H214" class="cos-ldr" />
-                <text x="220" y="52" class="cos-mono">{b.gate.gateLabel}</text>
-              </g>
-            )}
-
-            <text x="40" y="228" class="cos-mono cos-mono--mark">{g.mark}</text>
-          </svg>
-          <figcaption class="cos-gate__cap">
-            <p class="cos-gate__name">{g.name}</p>
-            <p class="badges cos-gate__short"><span class="badge">{g.short}</span></p>
-            <p class="cos-gate__note">{g.consequence}</p>
-          </figcaption>
-        </figure>
+              {i === 1 && (
+                <g>
+                  <circle cx="58" cy="176" r="4" class="cos-dot cos-dot--gate" />
+                  <path d="M30 176 H46" class="cos-flow" marker-end={`url(#cos-flow-${i})`} />
+                  <path d="M58 176 H108" class="cos-ldr" />
+                  <text x="114" y="170" class="cos-mono">{b.gate.gateLabel}</text>
+                </g>
+              )}
+              {i === 2 && (
+                <g>
+                  <rect x="150" y="56" width="20" height="4" class="cos-wash" />
+                  <circle cx="160" cy="58" r="4" class="cos-dot cos-dot--gate" />
+                  <path d="M160 22 V40" class="cos-flow" marker-end={`url(#cos-flow-${i})`} />
+                  <path d="M160 58 H214" class="cos-ldr" />
+                  <text x="220" y="52" class="cos-mono">{b.gate.gateLabel}</text>
+                </g>
+              )}
+  
+              <text x="40" y="228" class="cos-mono cos-mono--mark">{g.mark}</text>
+            </svg>
+            <figcaption class="cos-gate__cap">
+              <p class="cos-gate__name">{g.name}</p>
+              <p class="badges cos-gate__short"><span class="badge">{g.short}</span></p>
+              <p class="cos-gate__note">{g.consequence}</p>
+            </figcaption>
+          </figure>
+        </TechNote>
       ))}
     </div>
 
@@ -742,38 +749,42 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
         <figcaption class="figure-note">{common.schematic}</figcaption>
       </figure>
 
-      <div class="cos-seal__copy">
-        <div class="cos-seal__block">
-          <h3 class="cos-h4">{b.seal.codeHeading}</h3>
-          <p class="cos-seal__body">{b.seal.codeBody}</p>
-          <ul class="badges cos-codes">
-            {b.seal.codes.map((code: string) => <li class="badge">{code}</li>)}
-          </ul>
-          <p class="t-fine cos-seal__fine">{b.seal.codesNote}</p>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="cos-seal__copy">
+          <div class="cos-seal__block">
+            <h3 class="cos-h4">{b.seal.codeHeading}</h3>
+            <p class="cos-seal__body">{b.seal.codeBody}</p>
+            <ul class="badges cos-codes">
+              {b.seal.codes.map((code: string) => <li class="badge">{code}</li>)}
+            </ul>
+            <p class="t-fine cos-seal__fine">{b.seal.codesNote}</p>
+          </div>
+  
+          <div class="cos-seal__block cos-seal__block--trap">
+            <h3 class="cos-h4">{b.seal.trapHeading}</h3>
+            <p class="cos-seal__body">{b.seal.trapBody}</p>
+          </div>
+  
+          <div class="cos-seal__block">
+            <h3 class="cos-h4">{b.seal.torqueHeading}</h3>
+            <p class="cos-seal__body">{b.seal.torqueBody}</p>
+          </div>
         </div>
-
-        <div class="cos-seal__block cos-seal__block--trap">
-          <h3 class="cos-h4">{b.seal.trapHeading}</h3>
-          <p class="cos-seal__body">{b.seal.trapBody}</p>
-        </div>
-
-        <div class="cos-seal__block">
-          <h3 class="cos-h4">{b.seal.torqueHeading}</h3>
-          <p class="cos-seal__body">{b.seal.torqueBody}</p>
-        </div>
-      </div>
+      </TechNote>
     </div>
 
     <div class="shell--wide cos-fail">
       <h3 class="t-label cos-fail__cap">{b.seal.failuresHeading}</h3>
-      <ol class="cos-fail__list">
-        {b.seal.failures.map((f: any, i: number) => (
-          <li data-reveal style={`--reveal-delay:${i * 60}ms`}>
-            <span class="cos-fail__term">{f.term}</span>
-            <span class="cos-fail__note">{f.note}</span>
-          </li>
-        ))}
-      </ol>
+      <TechNote locale={locale} kind="why">
+        <ol class="cos-fail__list">
+          {b.seal.failures.map((f: any, i: number) => (
+            <li data-reveal style={`--reveal-delay:${i * 60}ms`}>
+              <span class="cos-fail__term">{f.term}</span>
+              <span class="cos-fail__note">{f.note}</span>
+            </li>
+          ))}
+        </ol>
+      </TechNote>
     </div>
 
     <div class="shell">
@@ -834,10 +845,12 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
     </div>
 
     <div class="shell cos-cav__tail">
-      <div class="cos-cav__risk">
-        <h3 class="cos-h4">{b.cavities.riskHeading}</h3>
-        <p>{b.cavities.riskBody}</p>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="cos-cav__risk">
+          <h3 class="cos-h4">{b.cavities.riskHeading}</h3>
+          <p>{b.cavities.riskBody}</p>
+        </div>
+      </TechNote>
       <div class="cos-cav__ours">
         <h3 class="cos-h4">{b.cavities.oursHeading}</h3>
         <p>{b.cavities.oursBody}</p>
@@ -883,15 +896,17 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
   {/* ═══ 08 · ONE TOOL, ONE COUNTRY ═════════════════════════════════════════ */}
   <section class="cos-sec cos-cont" id="continuity">
     <div class="shell--wide cos-cont__frame">
-      <div class="cos-cont__copy">
-        <p class="eyebrow">{b.continuity.index} · {b.continuity.kicker}</p>
-        <h2 class="cos-h2 cos-h2--start">{b.continuity.heading}</h2>
-        {b.continuity.body.map((para: string) => <p class="cos-cont__p">{para}</p>)}
-        <ul class="badges cos-cont__facts">
-          {b.continuity.facts.map((f: string) => <li class="badge">{f}</li>)}
-        </ul>
-        <p class="cos-cont__readiness">{b.continuity.readiness}</p>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="cos-cont__copy">
+          <p class="eyebrow">{b.continuity.index} · {b.continuity.kicker}</p>
+          <h2 class="cos-h2 cos-h2--start">{b.continuity.heading}</h2>
+          {b.continuity.body.map((para: string) => <p class="cos-cont__p">{para}</p>)}
+          <ul class="badges cos-cont__facts">
+            {b.continuity.facts.map((f: string) => <li class="badge">{f}</li>)}
+          </ul>
+          <p class="cos-cont__readiness">{b.continuity.readiness}</p>
+        </div>
+      </TechNote>
 
       <figure class="cos-cont__fig" data-reveal>
         <svg viewBox="0 0 640 250" data-nomirror role="img" aria-label={common.schematic}>
@@ -926,9 +941,11 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
 
     <div class="shell cos-cont__send">
       <h3 class="cos-h4">{b.continuity.sendHeading}</h3>
-      <ul class="cos-send__list">
-        {b.continuity.send.map((item: string) => <li>{item}</li>)}
-      </ul>
+      <TechNote locale={locale} kind="detail">
+        <ul class="cos-send__list">
+          {b.continuity.send.map((item: string) => <li>{item}</li>)}
+        </ul>
+      </TechNote>
       <p class="cos-cont__note">{b.continuity.note}</p>
     </div>
 

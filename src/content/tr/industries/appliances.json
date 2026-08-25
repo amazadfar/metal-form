@@ -411,7 +411,7 @@
         "Bu projeye ve bu kalıp şartnamesine göre tanımlanmış kalıp garanti şartları",
         "Değiştirmeye değer bir şey olmadığını düşündüğümüz yerde, bunu da söyleriz"
       ],
-      "note": "48 iş saati içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
+      "note": "2 iş günü içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -464,10 +464,10 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Bir model, bir teknik resim ya da yanında bir cetvelle çekilmiş bir fotoğraf. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendirir, 48 iş saati içinde dönüş yaparız. Hiçbir şey paylaşılmadan önce NDA.",
+    "body": "Bir model, bir teknik resim ya da yanında bir cetvelle çekilmiş bir fotoğraf. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendirir, 2 iş günü içinde dönüş yaparız. Hiçbir şey paylaşılmadan önce NDA.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form. Beyaz eşya üretiyoruz. Konuşmak istediğim bir parça var — adı: [parça], yaklaşık ölçü: [U x G x Y mm], malzeme: [biliniyorsa], yıllık adet: [biliniyorsa]. İhtiyacım: [yeni kalıp / yenileme kalıbı / ikinci kaynak kalıbı / maliyet incelemesi]. NDA ile başlayabilir miyiz?",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

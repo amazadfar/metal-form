@@ -859,7 +859,7 @@
         "Kalıp garantisi, proje bazında şartlar",
         "Dünya geneline sevkiyat"
       ],
-      "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+      "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -910,10 +910,10 @@
   },
   "cta": {
     "headline": "Parçayı gönderin. Kalıbın ne olması gerektiğini söyleyelim.",
-    "body": "Bir ek parça, bir ölçü tablosu ya da eski bir kalıbın hâlâ ürettiği bir şeyin numunesi. Mekanizma, göz sayısı, yolluk rotası ve parça ağırlığıyla — ve neyi yapmayacağımızla — dönüş yaparız. 48 iş saati içinde ilk proje dönüşü. Tercih ederseniz önce NDA.",
+    "body": "Bir ek parça, bir ölçü tablosu ya da eski bir kalıbın hâlâ ürettiği bir şeyin numunesi. Mekanizma, göz sayısı, yolluk rotası ve parça ağırlığıyla — ve neyi yapmayacağımızla — dönüş yaparız. 2 iş günü içinde ilk proje dönüşü. Tercih ederseniz önce NDA.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form. Plastik boru ek parçası üretiyoruz ve kalıp konusunu görüşmek istiyorum.\n\nMalzeme: PP-R / PVC-U / PE100 / PEX sistem / ABS\nÖlçüler: [__] mm\nEk parça tipleri: dirsekler / teler / manşonlar / dişli adaptörler / vana gövdeleri / atık su\nÜrün kodu bazında yıllık adet: \nYenilenecek ya da ikinci kaynağı yapılacak mevcut kalıp: var / yok\n\nÖlçü tablosunu ve 3B veriyi NDA altında gönderebilirim.",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

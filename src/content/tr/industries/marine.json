@@ -420,7 +420,7 @@
         "Enjeksiyon, PET, şişirme ve basınçlı döküm kalıpları. Tek ve düşük gözlü kalıplar, aile kalıpları, ortak bir şase üzerinde birbirinin yerine geçebilen göz insertleri, sıcak ve soğuk yolluk sistemleri, kalıpta metal insertli insertli kalıplar.",
         "Tuzda çalışmaya devam etmesi gereken mekanizmalar: sürgüler, lifterlar, diş sökücü ve katlanabilir maçalar.",
         "CNC frezeleme, tornalama ve manuel talaşlı imalat. Yedekler ve değişim parçaları. İkinci kaynak ve ikiz kalıplar.",
-        "Dünya geneline sevkiyatla parça üretimi ve sürekli tedarik. Geometri paylaşılmadan önce NDA. Proje bazında kararlaştırılan şartlarla kalıp garantisi. 48 iş saati içinde ilk teknik dönüş."
+        "Dünya geneline sevkiyatla parça üretimi ve sürekli tedarik. Geometri paylaşılmadan önce NDA. Proje bazında kararlaştırılan şartlarla kalıp garantisi. 2 iş günü içinde ilk teknik dönüş."
       ],
       "yoursHeading": "Sizde kalanlar",
       "yours": [
@@ -478,10 +478,10 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Bir fotoğraf, aşınmış bir numune ya da bir teknik resim. Geometri sorunları, parçanın gerçekte gördüğü maruziyete uygun malzeme kısa listesi, gerçek yıllık adedinize uyan kalıp rotası ve o parçayı tedarikte tutmak için ne gerektiğiyle dönüş yaparız. 48 iş saati içinde ilk proje dönüşü. Geometri paylaşılmadan önce NDA.",
+    "body": "Bir fotoğraf, aşınmış bir numune ya da bir teknik resim. Geometri sorunları, parçanın gerçekte gördüğü maruziyete uygun malzeme kısa listesi, gerçek yıllık adedinize uyan kalıp rotası ve o parçayı tedarikte tutmak için ne gerektiğiyle dönüş yaparız. 2 iş günü içinde ilk proje dönüşü. Geometri paylaşılmadan önce NDA.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form. Bir denizcilik parçam var — [güverte donanımı / kaporta / bağlantı elemanı / yakıt sistemi parçası / şamandıra / diğer]. Yaklaşık yıllık adet: ___. Fotoğraf, aşınmış numune ya da teknik resim gönderebilirim. Kalıp rotası konusunda görüş verebilir misiniz?",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

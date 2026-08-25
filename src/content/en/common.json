@@ -21,6 +21,14 @@
     "next": "Next",
     "previous": "Previous"
   },
+  "disclose": {
+    "detail": "Engineering detail",
+    "reasoning": "See the technical reasoning",
+    "calculation": "View the calculation",
+    "why": "Why this matters",
+    "source": "Source",
+    "close": "Close"
+  },
   "selector": {
     "kicker": "Select language",
     "headline": "Engineering. Tooling. Manufacturing. Supply.",
@@ -39,7 +47,7 @@
     "warrantyNote": "Warranty terms are defined per project and mould specification, and written into the order rather than into a marketing claim.",
     "delivery": "International delivery",
     "deliveryNote": "Tools and components ship internationally. Terms, route and documentation are agreed with the quotation.",
-    "response": "Initial response in 48 business hours",
+    "response": "Initial response within 2 business days",
     "responseNote": "A first technical read — feasibility direction, what is missing, and the next step. Not a final quotation, and we will not pretend otherwise."
   },
   "nda": {

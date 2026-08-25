@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Tıbbi ve farmasötik kalıpçılık — çok gözlü kalıplar | Metal Form",
-    "description": "Tıbbi ve farmasötik plastik parçalar için parça mühendisliği, tersine mühendislik, DFM ve çok gözlü enjeksiyon kalıpları. Kalıp dokümantasyonu, yedekler, ikinci kaynak ve ikiz kalıplar. Valide üretim sizde kalır. 48 iş saati içinde dönüş."
+    "description": "Tıbbi ve farmasötik plastik parçalar için parça mühendisliği, tersine mühendislik, DFM ve çok gözlü enjeksiyon kalıpları. Kalıp dokümantasyonu, yedekler, ikinci kaynak ve ikiz kalıplar. Valide üretim sizde kalır. 2 iş günü içinde dönüş."
   },
   "name": "Tıbbi ve Farmasötik",
   "tile": "1. gözle 32. gözün aynı parçayı vermek zorunda olduğu çok gözlü kalıplar.",
@@ -415,7 +415,7 @@
         },
         {
           "label": "Okuyalım",
-          "note": "Bir mühendis geometriye, tolerans gerçekçiliğine ve kalıp rotasına bakar. 48 iş saati içinde."
+          "note": "Bir mühendis geometriye, tolerans gerçekçiliğine ve kalıp rotasına bakar. 2 iş günü içinde."
         },
         {
           "label": "NDA",
@@ -494,10 +494,10 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Başlamak için bir model ya da bir numune yeter. 48 iş saati içinde geometri, kalıp rotası, göz sayısı ve üretim maliyeti üzerinden dönüş yaparız. Tercih ederseniz önce NDA.",
+    "body": "Başlamak için bir model ya da bir numune yeter. 2 iş günü içinde geometri, kalıp rotası, göz sayısı ve üretim maliyeti üzerinden dönüş yaparız. Tercih ederseniz önce NDA.",
     "action": "Parçanızı gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form — tıbbi / farmasötik parça.\n\nParça: \nHammadde: \nYıllık adet: \nGerekli kalıp ömrü (atım): \nGereken göz sayısı: \nKritik ölçüler: \nElimde: 3B model / 2B teknik resim / fiziksel numune / mevcut kalıp\nPres (tonaj, tabla, kolon aralığı): \nTeslim yeri: \nNDA gerekiyor mu: evet / hayır",
-    "note": "48 iş saati içinde ilk teknik dönüş. Biz bir kalıp ve mühendislik tedarikçisiyiz — valide üretim sizde kalır."
+    "note": "2 iş günü içinde ilk teknik dönüş. Biz bir kalıp ve mühendislik tedarikçisiyiz — valide üretim sizde kalır."
   }
 }

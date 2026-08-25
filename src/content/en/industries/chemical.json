@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Closure & Cap Tooling for Chemical and Detergent Packaging — Metal Form",
-    "description": "Mould design and manufacture for caps, closures, child-resistant and tamper-evident systems, and dispensing components for detergents, household chemicals and agrochemicals. Send the part — response within 48 business hours."
+    "description": "Mould design and manufacture for caps, closures, child-resistant and tamper-evident systems, and dispensing components for detergents, household chemicals and agrochemicals. Send the part — response within 2 business days."
   },
   "name": "Chemical & Detergent",
   "tile": "Closures and threads at volume — the millimetre of geometry between contained and leaking.",
@@ -481,7 +481,7 @@
         "Cavitation options against your forecast and your press, with what each one costs you in risk.",
         "The changes we would make, including the ones you will not like.",
         "A production position: tool only, tool plus first articles, or rolling component supply.",
-        "An initial technical response within 48 business hours. An NDA first if you prefer — it usually is."
+        "An initial technical response within 2 business days. An NDA first if you prefer — it usually is."
       ]
     },
     "panels": {
@@ -534,10 +534,10 @@
   },
   "cta": {
     "headline": "Send the closure. We will send back a route.",
-    "body": "The part, a drawing, or a sample in the post. You get the tooling route, the thread strategy, cavitation options and a production position. Initial response within 48 business hours. NDA on request, always. Since 2006, 1,000+ projects, international delivery.",
+    "body": "The part, a drawing, or a sample in the post. You get the tooling route, the thread strategy, cavitation options and a production position. Initial response within 2 business days. NDA on request, always. Since 2006, 1,000+ projects, international delivery.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — closure tooling enquiry. Product type: [liquid detergent / household cleaner / agrochemical / other]. Closure type: [continuous thread / child-resistant / tamper-evident / flip-top / trigger sprayer / dosing cap]. Neck finish: [e.g. 28-410]. Seal: [liner / induction / bore seal]. Annual volume: [pcs/year]. I have: [existing part / drawing / 3D model / neither]. Please send an NDA.",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

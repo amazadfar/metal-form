@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Automotive & Heavy Vehicle Tooling — Metal Form",
-    "description": "Injection mould design and manufacture for trucks, buses, agricultural and construction machinery. Filled polymers, slides, lifters and insert moulds. Second-source tooling and re-tooling of obsolete parts. Engineering response in 48 business hours."
+    "description": "Injection mould design and manufacture for trucks, buses, agricultural and construction machinery. Filled polymers, slides, lifters and insert moulds. Second-source tooling and re-tooling of obsolete parts. Engineering response in 2 business days."
   },
   "name": "Automotive & Heavy Vehicles",
   "tile": "Tooling built for a decade of service — filled polymers, slides, dimension that repeats.",
@@ -43,7 +43,7 @@
         },
         {
           "k": "First response",
-          "v": "48 business hours"
+          "v": "2 business days"
         },
         {
           "k": "Warranty",
@@ -643,7 +643,7 @@
           "rev": "B",
           "description": "We read the geometry, the tooling route, the production economics and the supply options, and reply",
           "by": "Metal Form",
-          "date": "48 business hours"
+          "date": "2 business days"
         },
         {
           "rev": "C",
@@ -714,10 +714,10 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A sample, a drawing, a STEP file, or a photograph with one known dimension. We evaluate the geometry, the tooling route, the production economics and the supply options, and reply within 48 business hours. NDA as standard.",
+    "body": "A sample, a drawing, a STEP file, or a photograph with one known dimension. We evaluate the geometry, the tooling route, the production economics and the supply options, and reply within 2 business days. NDA as standard.",
     "action": "Send the part",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — heavy vehicle component enquiry.\n\nPart: \nVehicle type (truck / bus / trailer / agricultural / construction): \nMaterial if known: \nAnnual volume: \nExisting tool: yes / no / obsolete\nI have: CAD / drawing / sample part / photograph\n\nI need: new tooling / second-source tooling / re-tooling of an obsolete part / component supply",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

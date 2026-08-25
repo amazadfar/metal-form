@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Toys & Consumer Goods Tooling — Metal Form",
-    "description": "Injection mould design and manufacture for consumer products and toys. DFM and redesign for moulding, family and multi-cavity tooling, colour and finish specification, technical mechanisms, ongoing component supply and second-source tooling. Persian engineering since 2006. Response within 48 business hours."
+    "description": "Injection mould design and manufacture for consumer products and toys. DFM and redesign for moulding, family and multi-cavity tooling, colour and finish specification, technical mechanisms, ongoing component supply and second-source tooling. Persian engineering since 2006. Response within 2 business days."
   },
   "name": "Toys & Consumer Goods",
   "tile": "From a sample or a 3D print to a tooled part at a unit cost that works.",
@@ -75,7 +75,7 @@
         "1,000+ completed projects",
         "Tooling experience up to 46 cavities",
         "CATIA and SolidWorks",
-        "Initial technical response within 48 business hours"
+        "Initial technical response within 2 business days"
       ]
     },
     "intake": {
@@ -111,7 +111,7 @@
           "need": "The part, the annual volume and the markets it ships to."
         }
       ],
-      "close": "What comes back is the geometry read, the tooling route, the production economics and the supply options. Initial technical response within 48 business hours. An NDA can be signed before detailed technical disclosure.",
+      "close": "What comes back is the geometry read, the tooling route, the production economics and the supply options. Initial technical response within 2 business days. An NDA can be signed before detailed technical disclosure.",
       "figureNote": "Convergence schematic. Every route ends at the same first deliverable."
     },
     "consolidate": {
@@ -556,10 +556,10 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A photo, a hand sketch, a physical sample, a STEP file or a part you already sell. We come back inside 48 business hours with the geometry read, the tooling route and the production economics. NDA on request.",
+    "body": "A photo, a hand sketch, a physical sample, a STEP file or a part you already sell. We come back inside 2 business days with the geometry read, the tooling route and the production economics. NDA on request.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form. I have a consumer product I want to tool. Product: [what it is]. Stage: [sketch / prototype / CAD / already in production elsewhere]. Annual volume: [units per year]. Material: [if known]. Can you review the geometry and propose a tooling route?",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

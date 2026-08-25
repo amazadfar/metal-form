@@ -47,12 +47,16 @@ const {
 
 const c = getCommon(locale);
 
-/** A figure only where a verified one exists. Never derived from prose. */
+/**
+ * A figure only where a verified one exists, and never derived from prose.
+ * The response window is deliberately absent: its statement already reads
+ * "within 2 business days", and a "2" set at display size beside it is a
+ * number without a unit.
+ */
 const FIGURE: Partial<Record<CapabilityKey, string>> = {
   since: String(FACTS.sinceYear),
   projects: `${FACTS.projectsCompleted.toLocaleString('en-US')}+`,
   cavities: String(FACTS.maxCavitiesDelivered),
-  response: `${FACTS.responseWindowHours}h`,
 };
 
 const items = keys.map((k) => {

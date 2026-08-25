@@ -5,7 +5,11 @@
   },
   "hero": {
     "kicker": "Sektörler",
-    "headline": ["On üç sektör.", "Pahalı kelimesinin", "on üç farklı tanımı."],
+    "headline": [
+      "On üç sektör.",
+      "Pahalı kelimesinin",
+      "on üç farklı tanımı."
+    ],
     "lead": "Bir içecek dolumcusu maliyeti hammadde gramıyla ölçer. Bir sulama üreticisi göz sayısıyla. Ağır vasıta alıcısı ise kalıbın kaç yıl dayanması gerektiğiyle. Ortak olan şey mühendisliktir; neredeyse başka hiçbir şey değil."
   },
   "note": "Her sayfa kendi sektörü için yazıldı: parçaları, arıza biçimleri, maliyet mantığı ve kendi dili. Hiçbiri sizinki değilse, sonuncusu sizinkidir.",
@@ -15,6 +19,6 @@
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form.\n\nParça: \nNerede kullanılıyor: \nYıllık adet: \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok",
-    "note": "48 iş saati içinde ilk teknik dönüş."
+    "note": "2 iş günü içinde ilk teknik dönüş."
   }
 }

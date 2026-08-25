@@ -859,7 +859,7 @@
         "Tooling warranty, terms per project",
         "International delivery"
       ],
-      "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+      "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
     },
     "panels": {
       "heading": "Deeper detail",
@@ -910,10 +910,10 @@
   },
   "cta": {
     "headline": "Send the part. We will tell you what the tooling should be.",
-    "body": "A fitting, a dimension table, or a sample of something an old mould still makes. We come back with the mechanism, the cavitation, the runner route and the part weight — and with what we would not do. Initial project response within 48 business hours. NDA first if you prefer.",
+    "body": "A fitting, a dimension table, or a sample of something an old mould still makes. We come back with the mechanism, the cavitation, the runner route and the part weight — and with what we would not do. Initial project response within 2 business days. NDA first if you prefer.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form. We make plastic pipe fittings and I would like to discuss tooling.\n\nMaterial: PP-R / PVC-U / PE100 / PEX system / ABS\nSizes: [__] mm\nFitting types: elbows / tees / sockets / threaded adapters / valve bodies / drainage\nAnnual volume by part number: \nExisting tooling to replace or second-source: yes / no\n\nI can send the dimension table and 3D data under NDA.",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

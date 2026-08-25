@@ -357,7 +357,7 @@
         "Tooling warranty terms, defined against this project and this mould specification",
         "Where we think there is nothing to improve, we say that too"
       ],
-      "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+      "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
     },
     "panels": {
       "heading": "Deeper detail",
@@ -413,6 +413,6 @@
     "action": "Send your bottle and cap",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — PET packaging enquiry.\n\nI need: preform mould / closure mould / blow-mould change parts / neck ring and core spares / preform or cap supply\nNeck standard: PCO 1881 / 29/25 / PCO 1810 / 30/25 / other\nBottle: 500 ml still / 1.5 L carbonated / other\nCurrent preform weight: \nTarget weight: \nAnnual volume: \nInjection machine (make, model, tie-bar spacing, tonnage): \n\nI can send drawings or a sample.",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

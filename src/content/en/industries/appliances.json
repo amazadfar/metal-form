@@ -411,7 +411,7 @@
         "Tooling warranty terms, defined against this project and this mould specification",
         "Where we think there is nothing worth changing, we say that too"
       ],
-      "note": "Initial technical response within 48 business hours. An NDA can be signed before detailed technical disclosure."
+      "note": "Initial technical response within 2 business days. An NDA can be signed before detailed technical disclosure."
     },
     "panels": {
       "heading": "Deeper detail",
@@ -464,10 +464,10 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A model, a drawing, or a photograph with a ruler next to it. We evaluate the geometry, the tooling route, the production economics and the supply options, and come back within 48 business hours. NDA before anything is shared.",
+    "body": "A model, a drawing, or a photograph with a ruler next to it. We evaluate the geometry, the tooling route, the production economics and the supply options, and come back within 2 business days. NDA before anything is shared.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form. We build home appliances. I have a part to discuss — name: [part], approx size: [L x W x H mm], material: [if known], annual volume: [if known]. I need: [new tool / replacement tool / second-source tool / cost review]. Can we start under NDA?",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

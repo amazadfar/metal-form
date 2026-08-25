@@ -21,6 +21,14 @@
     "next": "Sonraki",
     "previous": "Önceki"
   },
+  "disclose": {
+    "detail": "Mühendislik ayrıntısı",
+    "reasoning": "Teknik gerekçe",
+    "calculation": "Hesabı gör",
+    "why": "Bu neden önemli",
+    "source": "Kaynak",
+    "close": "Kapat"
+  },
   "selector": {
     "kicker": "Dil seçin",
     "headline": "Mühendislik. Kalıp. Üretim. Tedarik.",
@@ -39,7 +47,7 @@
     "warrantyNote": "Garanti şartları her proje ve kalıp şartnamesi bazında belirlenir; bir pazarlama iddiasına değil, siparişin kendisine yazılır.",
     "delivery": "Dünya geneline sevkiyat",
     "deliveryNote": "Kalıplar ve parçalar yurt dışına sevk edilir. Teslim şartları, güzergâh ve evraklar teklifle birlikte karara bağlanır.",
-    "response": "48 iş saati içinde ilk dönüş",
+    "response": "2 iş günü içinde ilk dönüş",
     "responseNote": "İlk teknik görüş: üretilebilirlik yönü, eksik kalan bilgiler ve bir sonraki adım. Nihai fiyat teklifi değildir; öyleymiş gibi de göstermeyiz."
   },
   "nda": {

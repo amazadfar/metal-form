@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Medical & pharmaceutical tooling — multi-cavity moulds | Metal Form",
-    "description": "Part engineering, reverse engineering, DFM and multi-cavity injection tooling for medical and pharmaceutical plastic components. Tool documentation, spares, second-source and duplicate tooling. Validated manufacture stays with you. Response within 48 business hours."
+    "description": "Part engineering, reverse engineering, DFM and multi-cavity injection tooling for medical and pharmaceutical plastic components. Tool documentation, spares, second-source and duplicate tooling. Validated manufacture stays with you. Response within 2 business days."
   },
   "name": "Medical & Pharmaceutical",
   "tile": "Multi-cavity tooling where cavity 1 and cavity 32 have to be the same part.",
@@ -415,7 +415,7 @@
         },
         {
           "label": "Read",
-          "note": "An engineer looks at the geometry, the tolerance realism and the tooling route. Within 48 business hours."
+          "note": "An engineer looks at the geometry, the tolerance realism and the tooling route. Within 2 business days."
         },
         {
           "label": "NDA",
@@ -494,10 +494,10 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A model or a sample is enough to start. We come back on geometry, tooling route, cavitation and production economics within 48 business hours. NDA first if you prefer.",
+    "body": "A model or a sample is enough to start. We come back on geometry, tooling route, cavitation and production economics within 2 business days. NDA first if you prefer.",
     "action": "Send your component",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — medical / pharmaceutical component.\n\nPart: \nResin: \nAnnual volume: \nRequired tool life (shots): \nCavities required: \nCritical dimensions: \nI have: 3D model / 2D drawing / physical sample / existing tool\nPress (tonnage, platen, tie-bar spacing): \nDelivery to: \nNDA required: yes / no",
-    "note": "Initial technical response within 48 business hours. We are a tooling and engineering supplier — validated manufacture stays with you."
+    "note": "Initial technical response within 2 business days. We are a tooling and engineering supplier — validated manufacture stays with you."
   }
 }

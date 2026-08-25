@@ -106,6 +106,49 @@ contacts, read as an index rather than as a single object.
 
 ---
 
+## 4b · Progressive disclosure
+
+An industry chapter is the second level of the site and is allowed to be deep.
+It is not allowed to make every visitor read that depth to find out whether this
+company can make their part. Two people arrive on the same URL: a production
+engineer who wants the cooling-layout argument, and an owner who wants to know
+whether to send a drawing.
+
+So each section carries **one headline, one short statement, and one artefact** —
+a drawing, a figure, a number — and the reasoning behind it sits in a
+`<TechNote>`:
+
+```astro
+<TechNote locale={locale} kind="reasoning">
+  …the argument, the procedure, the table, the sources…
+</TechNote>
+```
+
+`kind` picks a label from `common.disclose`, so it is a real phrase in all nine
+languages: `detail`, `reasoning`, `calculation`, `why`.
+
+**What never goes behind a disclosure**
+
+* the section's heading and its lead
+* the sentence that says what Metal Form *does* about the problem — a chapter
+  that explains a problem beautifully and hides its answer has it backwards
+* the responsibility boundary: what Metal Form supplies and what stays with the
+  customer, on every chapter that has one
+* source attributions
+* **any block carrying `data-station-step`.** These drive a scroll-linked
+  figure; collapsed, the block never enters the reading window and the drawing
+  never advances. `npm run audit` fails on this.
+
+`node scripts/collapse-block.mjs <Chapter>.astro <class> [kind] [--all]` does the
+wrapping and balances the tags. `npm run check:density` reports, per chapter,
+how many words a reader meets before opening anything.
+
+The target is roughly a third of the words visible by default. It is a
+hierarchy, not a quota — and it is measured on words a reader actually meets,
+not on page height.
+
+---
+
 ## 5 · Rules a chapter must not break
 
 1. **Logical properties only.** `margin-left` does not mirror;
@@ -168,5 +211,6 @@ npm run check:links    # every internal link and fragment
 npm run check:gutters  # every ruled column clears its divider, measured in pixels
 npm run check:steppers # no scroll-linked stepper reverses under slow scroll
 npm run check:a11y     # axe, including contrast, across representative routes
+npm run check:density  # how much a reader meets before opening anything
 npm run smoke          # every page in every language in a real browser
 ```

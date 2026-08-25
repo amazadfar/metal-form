@@ -424,7 +424,7 @@
         "Annual volume per SKU, and how many colour variants the tool has to serve",
         "Whether this is a new tool, a second source, or a redesign of something already running"
       ],
-      "note": "Initial technical response within 48 business hours. An NDA can be signed before detailed technical disclosure."
+      "note": "Initial technical response within 2 business days. An NDA can be signed before detailed technical disclosure."
     },
     "panels": {
       "heading": "Deeper detail",
@@ -475,6 +475,6 @@
     "action": "Send your part",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — cosmetics and personal care enquiry.\n\nComponent: cap / jar / pump or airless part / mechanism part / other\nNeck finish or key dimensions: \nMaterial: \nSurface: gloss show face / textured / both\nAnnual volume per SKU: \nNew tool / second source / redesign: \n\nI can send a sample or a CAD model.",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

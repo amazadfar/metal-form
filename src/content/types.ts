@@ -78,6 +78,20 @@ export interface CommonContent {
     next: string;
     previous: string;
   };
+  /**
+   * Labels for progressive disclosure. Deep engineering material stays on the
+   * page but sits behind one of these rather than in front of every visitor:
+   * a business owner deciding whether this company can make their part should
+   * not have to read the cooling-layout argument to find out.
+   */
+  disclose: {
+    detail: string;
+    reasoning: string;
+    calculation: string;
+    why: string;
+    source: string;
+    close: string;
+  };
   selector: {
     /** Sits above the nine language tiles. */
     kicker: string;

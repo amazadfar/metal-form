@@ -17,6 +17,7 @@
  * Every rendered string comes from the content JSON. Nine languages read this.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -26,7 +27,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /* ── Drawing helpers ─────────────────────────────────────────────────────── */
@@ -454,114 +455,118 @@ const MX_COLOUR = [
         <h2 class="fur-h2">{b.rib.heading}</h2>
         <p class="fur-lead">{b.rib.body}</p>
 
-        <div class="fur-rib__pair">
-          <figure class="fur-rib__one" data-reveal>
-            <div class="fur-plate">
-              <div class="fur-plate__head">
-                <span class="t-label">{b.rib.wrong.title}</span>
-                <span class="t-mono fur-plate__no">{b.rib.wrong.plate}</span>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="fur-rib__pair">
+            <figure class="fur-rib__one" data-reveal>
+              <div class="fur-plate">
+                <div class="fur-plate__head">
+                  <span class="t-label">{b.rib.wrong.title}</span>
+                  <span class="t-mono fur-plate__no">{b.rib.wrong.plate}</span>
+                </div>
+                <svg viewBox="0 0 300 210" data-nomirror role="img" aria-label={common.schematic}>
+                  <defs>
+                    <pattern id="fur-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                      <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.6" opacity="0.42" />
+                    </pattern>
+                    <marker id="fur-dimhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                      <path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--accent)" stroke-width="1.1" />
+                    </marker>
+                  </defs>
+  
+                  <path
+                    d="M20 60 H104 Q130 71 156 60 H280 V76 H240 V150 H228 V88 H212 V150 H200 V76 H136 V150 H120 V76 H20 Z"
+                    fill="url(#fur-hatch)" class="fur-sect"
+                  />
+                  <path
+                    d="M20 60 H104 Q130 71 156 60 H280 V76 H240 V150 H228 V88 H212 V150 H200 V76 H136 V150 H120 V76 H20 Z"
+                    class="fur-l"
+                  />
+  
+                  {/* Wall thickness. */}
+                  <path d="M40 60 V76" class="fur-dim" marker-start="url(#fur-dimhead)" marker-end="url(#fur-dimhead)" />
+                  <text x="34" y="72" text-anchor="end" class="fur-mic fur-mic--dim">{b.rib.wrong.labels.t}</text>
+                  {/* Rib thickness against it. */}
+                  <path d="M120 168 H136" class="fur-dim" marker-start="url(#fur-dimhead)" marker-end="url(#fur-dimhead)" />
+                  <text x="128" y="186" text-anchor="middle" class="fur-mic fur-mic--dim">{b.rib.wrong.labels.ratio}</text>
+  
+                  <path d="M130 66 L162 34" class="fur-lead" />
+                  <circle cx="130" cy="66" r="2.6" class="fur-anchor" />
+                  <text x="168" y="32" class="fur-mic fur-mic--load">{b.rib.wrong.labels.sink}</text>
+  
+                  <path d={crackPath(202, 82, 108)} class="fur-crack fur-crack--static" />
+                  <path d="M204 92 L246 122" class="fur-lead" />
+                  <circle cx="204" cy="92" r="2.6" class="fur-anchor" />
+                  <text x="296" y="126" text-anchor="end" class="fur-mic fur-mic--load">{b.rib.wrong.labels.crack}</text>
+  
+                  <text x="20" y="52" class="fur-mic">{b.rib.wrong.labels.wall}</text>
+                  <text x="128" y="162" text-anchor="middle" class="fur-mic">{b.rib.wrong.labels.rib}</text>
+                  <text x="220" y="166" text-anchor="middle" class="fur-mic">{b.rib.wrong.labels.boss}</text>
+                </svg>
               </div>
-              <svg viewBox="0 0 300 210" data-nomirror role="img" aria-label={common.schematic}>
-                <defs>
-                  <pattern id="fur-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                    <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.6" opacity="0.42" />
-                  </pattern>
-                  <marker id="fur-dimhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--accent)" stroke-width="1.1" />
-                  </marker>
-                </defs>
-
-                <path
-                  d="M20 60 H104 Q130 71 156 60 H280 V76 H240 V150 H228 V88 H212 V150 H200 V76 H136 V150 H120 V76 H20 Z"
-                  fill="url(#fur-hatch)" class="fur-sect"
-                />
-                <path
-                  d="M20 60 H104 Q130 71 156 60 H280 V76 H240 V150 H228 V88 H212 V150 H200 V76 H136 V150 H120 V76 H20 Z"
-                  class="fur-l"
-                />
-
-                {/* Wall thickness. */}
-                <path d="M40 60 V76" class="fur-dim" marker-start="url(#fur-dimhead)" marker-end="url(#fur-dimhead)" />
-                <text x="34" y="72" text-anchor="end" class="fur-mic fur-mic--dim">{b.rib.wrong.labels.t}</text>
-                {/* Rib thickness against it. */}
-                <path d="M120 168 H136" class="fur-dim" marker-start="url(#fur-dimhead)" marker-end="url(#fur-dimhead)" />
-                <text x="128" y="186" text-anchor="middle" class="fur-mic fur-mic--dim">{b.rib.wrong.labels.ratio}</text>
-
-                <path d="M130 66 L162 34" class="fur-lead" />
-                <circle cx="130" cy="66" r="2.6" class="fur-anchor" />
-                <text x="168" y="32" class="fur-mic fur-mic--load">{b.rib.wrong.labels.sink}</text>
-
-                <path d={crackPath(202, 82, 108)} class="fur-crack fur-crack--static" />
-                <path d="M204 92 L246 122" class="fur-lead" />
-                <circle cx="204" cy="92" r="2.6" class="fur-anchor" />
-                <text x="296" y="126" text-anchor="end" class="fur-mic fur-mic--load">{b.rib.wrong.labels.crack}</text>
-
-                <text x="20" y="52" class="fur-mic">{b.rib.wrong.labels.wall}</text>
-                <text x="128" y="162" text-anchor="middle" class="fur-mic">{b.rib.wrong.labels.rib}</text>
-                <text x="220" y="166" text-anchor="middle" class="fur-mic">{b.rib.wrong.labels.boss}</text>
-              </svg>
-            </div>
-            <figcaption class="fur-rib__cap">{b.rib.wrong.note}</figcaption>
-          </figure>
-
-          <figure class="fur-rib__one" data-reveal style="--reveal-delay:120ms">
-            <div class="fur-plate">
-              <div class="fur-plate__head">
-                <span class="t-label">{b.rib.right.title}</span>
-                <span class="t-mono fur-plate__no">{b.rib.right.plate}</span>
+              <figcaption class="fur-rib__cap">{b.rib.wrong.note}</figcaption>
+            </figure>
+  
+            <figure class="fur-rib__one" data-reveal style="--reveal-delay:120ms">
+              <div class="fur-plate">
+                <div class="fur-plate__head">
+                  <span class="t-label">{b.rib.right.title}</span>
+                  <span class="t-mono fur-plate__no">{b.rib.right.plate}</span>
+                </div>
+                <svg viewBox="0 0 300 210" data-nomirror role="img" aria-label={common.schematic}>
+                  <defs>
+                    <pattern id="fur-hatch-b" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                      <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.6" opacity="0.42" />
+                    </pattern>
+                    <marker id="fur-dimhead-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                      <path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--accent)" stroke-width="1.1" />
+                    </marker>
+                  </defs>
+                  <path
+                    d="M20 60 H280 V76 H250 A8 8 0 0 0 242 84 L240 146 H230 L232 88 Q222 82 212 88 L210 146 H202 L204 84 A8 8 0 0 0 196 76 H141 A6 6 0 0 0 135 82 L134 140 H126 L125 82 A6 6 0 0 0 119 76 H20 Z"
+                    fill="url(#fur-hatch-b)" class="fur-sect"
+                  />
+                  <path
+                    d="M20 60 H280 V76 H250 A8 8 0 0 0 242 84 L240 146 H230 L232 88 Q222 82 212 88 L210 146 H202 L204 84 A8 8 0 0 0 196 76 H141 A6 6 0 0 0 135 82 L134 140 H126 L125 82 A6 6 0 0 0 119 76 H20 Z"
+                    class="fur-l"
+                  />
+  
+                  <path d="M40 60 V76" class="fur-dim" marker-start="url(#fur-dimhead-b)" marker-end="url(#fur-dimhead-b)" />
+                  <text x="34" y="72" text-anchor="end" class="fur-mic fur-mic--dim">{b.rib.right.labels.t}</text>
+                  <path d="M125 168 H135" class="fur-dim" marker-start="url(#fur-dimhead-b)" marker-end="url(#fur-dimhead-b)" />
+                  <text x="130" y="186" text-anchor="middle" class="fur-mic fur-mic--dim">{b.rib.right.labels.ratio}</text>
+  
+                  <path d="M139 80 L168 40" class="fur-lead" />
+                  <circle cx="139" cy="80" r="2.6" class="fur-anchor" />
+                  <text x="172" y="38" class="fur-mic fur-mic--dim">{b.rib.right.labels.fillet}</text>
+  
+                  <path d="M221 100 L262 122" class="fur-lead" />
+                  <circle cx="221" cy="100" r="2.6" class="fur-anchor" />
+                  <text x="296" y="126" text-anchor="end" class="fur-mic fur-mic--dim">{b.rib.right.labels.core}</text>
+  
+                  <text x="20" y="52" class="fur-mic">{b.rib.right.labels.wall}</text>
+                  <text x="130" y="162" text-anchor="middle" class="fur-mic">{b.rib.right.labels.rib}</text>
+                </svg>
               </div>
-              <svg viewBox="0 0 300 210" data-nomirror role="img" aria-label={common.schematic}>
-                <defs>
-                  <pattern id="fur-hatch-b" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                    <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.6" opacity="0.42" />
-                  </pattern>
-                  <marker id="fur-dimhead-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--accent)" stroke-width="1.1" />
-                  </marker>
-                </defs>
-                <path
-                  d="M20 60 H280 V76 H250 A8 8 0 0 0 242 84 L240 146 H230 L232 88 Q222 82 212 88 L210 146 H202 L204 84 A8 8 0 0 0 196 76 H141 A6 6 0 0 0 135 82 L134 140 H126 L125 82 A6 6 0 0 0 119 76 H20 Z"
-                  fill="url(#fur-hatch-b)" class="fur-sect"
-                />
-                <path
-                  d="M20 60 H280 V76 H250 A8 8 0 0 0 242 84 L240 146 H230 L232 88 Q222 82 212 88 L210 146 H202 L204 84 A8 8 0 0 0 196 76 H141 A6 6 0 0 0 135 82 L134 140 H126 L125 82 A6 6 0 0 0 119 76 H20 Z"
-                  class="fur-l"
-                />
-
-                <path d="M40 60 V76" class="fur-dim" marker-start="url(#fur-dimhead-b)" marker-end="url(#fur-dimhead-b)" />
-                <text x="34" y="72" text-anchor="end" class="fur-mic fur-mic--dim">{b.rib.right.labels.t}</text>
-                <path d="M125 168 H135" class="fur-dim" marker-start="url(#fur-dimhead-b)" marker-end="url(#fur-dimhead-b)" />
-                <text x="130" y="186" text-anchor="middle" class="fur-mic fur-mic--dim">{b.rib.right.labels.ratio}</text>
-
-                <path d="M139 80 L168 40" class="fur-lead" />
-                <circle cx="139" cy="80" r="2.6" class="fur-anchor" />
-                <text x="172" y="38" class="fur-mic fur-mic--dim">{b.rib.right.labels.fillet}</text>
-
-                <path d="M221 100 L262 122" class="fur-lead" />
-                <circle cx="221" cy="100" r="2.6" class="fur-anchor" />
-                <text x="296" y="126" text-anchor="end" class="fur-mic fur-mic--dim">{b.rib.right.labels.core}</text>
-
-                <text x="20" y="52" class="fur-mic">{b.rib.right.labels.wall}</text>
-                <text x="130" y="162" text-anchor="middle" class="fur-mic">{b.rib.right.labels.rib}</text>
-              </svg>
-            </div>
-            <figcaption class="fur-rib__cap">{b.rib.right.note}</figcaption>
-          </figure>
-        </div>
+              <figcaption class="fur-rib__cap">{b.rib.right.note}</figcaption>
+            </figure>
+          </div>
+        </TechNote>
         <p class="figure-note fur-rib__schematic">{common.schematic}</p>
 
-        <div class="fur-rules">
-          <h3 class="t-label fur-rules__h">{b.rib.rulesHeading}</h3>
-          <dl class="spec fur-rules__list">
-            {b.rib.rules.map((r: any) => (
-              <div class="spec__row">
-                <dt class="spec__k">{r.k}</dt>
-                <dd class="spec__v">{r.v}</dd>
-              </div>
-            ))}
-          </dl>
-          <p class="fur-fine">{b.rib.rulesNote}</p>
-        </div>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="fur-rules">
+            <h3 class="t-label fur-rules__h">{b.rib.rulesHeading}</h3>
+            <dl class="spec fur-rules__list">
+              {b.rib.rules.map((r: any) => (
+                <div class="spec__row">
+                  <dt class="spec__k">{r.k}</dt>
+                  <dd class="spec__v">{r.v}</dd>
+                </div>
+              ))}
+            </dl>
+            <p class="fur-fine">{b.rib.rulesNote}</p>
+          </div>
+        </TechNote>
 
         <p class="fur-close">{b.rib.close}</p>
       </div>
@@ -577,83 +582,89 @@ const MX_COLOUR = [
         <h2 class="fur-h2">{b.fatigue.heading}</h2>
         <p class="fur-lead">{b.fatigue.body}</p>
 
-        <div class="fur-fat__grid">
-          <figure class="fur-fat__fig" data-reveal>
-            <div class="fur-plate fur-plate--dark">
-              <div class="fur-plate__head">
-                <span class="t-label">{b.fatigue.cyclesCaption}</span>
-                <span class="t-mono fur-plate__no">{b.fatigue.plate}</span>
+        <TechNote locale={locale} kind="detail">
+          <div class="fur-fat__grid">
+            <figure class="fur-fat__fig" data-reveal>
+              <div class="fur-plate fur-plate--dark">
+                <div class="fur-plate__head">
+                  <span class="t-label">{b.fatigue.cyclesCaption}</span>
+                  <span class="t-mono fur-plate__no">{b.fatigue.plate}</span>
+                </div>
+                <svg viewBox="0 0 440 250" data-nomirror role="img" aria-label={common.schematic}>
+                  <defs>
+                    <pattern id="fur-hatch-dark" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                      <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.6" opacity="0.4" />
+                    </pattern>
+                    <marker id="fur-fat-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                      <path d="M0 1 L9 5 L0 9 z" fill="var(--signal)" />
+                    </marker>
+                  </defs>
+  
+                  <path d="M28 40 H72 V210 H28 Z" fill="url(#fur-hatch-dark)" class="fur-sect" />
+                  <path d="M28 40 H72 V210 H28 Z" class="fur-l" />
+  
+                  <path d="M72 84 L318 106 L334 134 L72 128 Z" class="fur-fill" />
+                  <path d="M72 84 L318 106 L334 134 L72 128 Z" class="fur-l" />
+                  <path d={circ(318, 118, 10)} class="fur-l fur-l--fine" />
+                  <path d="M60 106 H360" class="fur-cl" />
+  
+                  {/* The flexed position — where the cycle actually happens. */}
+                  <path d="M72 128 Q212 154 340 168" class="fur-flex" />
+  
+                  <path d="M318 34 V78" class="fur-load" marker-end="url(#fur-fat-head)" />
+                  <path d="M356 44 q18 16 0 32" class="fur-load fur-load--fine" marker-start="url(#fur-fat-head)" marker-end="url(#fur-fat-head)" />
+  
+                  <text x="300" y="30" text-anchor="end" class="fur-mic fur-mic--load">{b.fatigue.labels.load}</text>
+                  <text x="436" y="64" text-anchor="end" class="fur-mic fur-mic--load">{b.fatigue.labels.cycles}</text>
+                  <text x="50" y="228" text-anchor="middle" class="fur-mic">{b.fatigue.labels.column}</text>
+                  <text x="436" y="196" text-anchor="end" class="fur-mic fur-mic--load">{b.fatigue.labels.flex}</text>
+                </svg>
               </div>
-              <svg viewBox="0 0 440 250" data-nomirror role="img" aria-label={common.schematic}>
-                <defs>
-                  <pattern id="fur-hatch-dark" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                    <line x1="0" y1="0" x2="0" y2="7" stroke="currentColor" stroke-width="0.6" opacity="0.4" />
-                  </pattern>
-                  <marker id="fur-fat-head" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                    <path d="M0 1 L9 5 L0 9 z" fill="var(--signal)" />
-                  </marker>
-                </defs>
+              <figcaption class="figure-note">{common.schematic}</figcaption>
+            </figure>
+  
+            <ol class="fur-cycles">
+              {b.fatigue.cycles.map((c: any, i: number) => (
+                <li data-reveal style={`--reveal-delay:${i * 90}ms`}>
+                  <span class="fur-cycles__n t-mono">{c.n}</span>
+                  <span class="fur-cycles__label">{c.label}</span>
+                  <span class="fur-cycles__note">{c.note}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </TechNote>
 
-                <path d="M28 40 H72 V210 H28 Z" fill="url(#fur-hatch-dark)" class="fur-sect" />
-                <path d="M28 40 H72 V210 H28 Z" class="fur-l" />
+        <TechNote locale={locale} kind="detail">
+          <div class="fur-std">
+            <h3 class="t-label">{b.fatigue.standardsHeading}</h3>
+            <ul class="fur-std__list badges">
+              {b.fatigue.standards.map((s: string) => <li class="badge">{s}</li>)}
+            </ul>
+            <p class="fur-std__note">{b.fatigue.standardsNote}</p>
+          </div>
+        </TechNote>
 
-                <path d="M72 84 L318 106 L334 134 L72 128 Z" class="fur-fill" />
-                <path d="M72 84 L318 106 L334 134 L72 128 Z" class="fur-l" />
-                <path d={circ(318, 118, 10)} class="fur-l fur-l--fine" />
-                <path d="M60 106 H360" class="fur-cl" />
-
-                {/* The flexed position — where the cycle actually happens. */}
-                <path d="M72 128 Q212 154 340 168" class="fur-flex" />
-
-                <path d="M318 34 V78" class="fur-load" marker-end="url(#fur-fat-head)" />
-                <path d="M356 44 q18 16 0 32" class="fur-load fur-load--fine" marker-start="url(#fur-fat-head)" marker-end="url(#fur-fat-head)" />
-
-                <text x="300" y="30" text-anchor="end" class="fur-mic fur-mic--load">{b.fatigue.labels.load}</text>
-                <text x="436" y="64" text-anchor="end" class="fur-mic fur-mic--load">{b.fatigue.labels.cycles}</text>
-                <text x="50" y="228" text-anchor="middle" class="fur-mic">{b.fatigue.labels.column}</text>
-                <text x="436" y="196" text-anchor="end" class="fur-mic fur-mic--load">{b.fatigue.labels.flex}</text>
-              </svg>
-            </div>
-            <figcaption class="figure-note">{common.schematic}</figcaption>
-          </figure>
-
-          <ol class="fur-cycles">
-            {b.fatigue.cycles.map((c: any, i: number) => (
-              <li data-reveal style={`--reveal-delay:${i * 90}ms`}>
-                <span class="fur-cycles__n t-mono">{c.n}</span>
-                <span class="fur-cycles__label">{c.label}</span>
-                <span class="fur-cycles__note">{c.note}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-
-        <div class="fur-std">
-          <h3 class="t-label">{b.fatigue.standardsHeading}</h3>
-          <ul class="fur-std__list badges">
-            {b.fatigue.standards.map((s: string) => <li class="badge">{s}</li>)}
-          </ul>
-          <p class="fur-std__note">{b.fatigue.standardsNote}</p>
-        </div>
-
-        <div class="fur-glass">
-          <h3 class="fur-h5">{b.fatigue.glass.heading}</h3>
-          <p class="fur-glass__body">{b.fatigue.glass.body}</p>
-          <figure class="fur-bars">
-            <p class="t-label">{b.fatigue.glass.barsCaption}</p>
-            {b.fatigue.glass.bars.map((bar: any, i: number) => (
-              <div class="fur-bar" data-reveal style={`--reveal-delay:${i * 110}ms`}>
-                <span class="fur-bar__label">{bar.label}</span>
-                <span class="fur-bar__track" aria-hidden="true">
-                  <span class="fur-bar__loss" style={`--w:${bar.pct}%`}></span>
-                </span>
-                <span class="fur-bar__value t-mono">{bar.value}</span>
-              </div>
-            ))}
-            <figcaption class="figure-note">{common.schematic}</figcaption>
-          </figure>
-          <p class="fur-glass__note">{b.fatigue.glass.note}</p>
-        </div>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="fur-glass">
+            <h3 class="fur-h5">{b.fatigue.glass.heading}</h3>
+            <p class="fur-glass__body">{b.fatigue.glass.body}</p>
+            <figure class="fur-bars">
+              <p class="t-label">{b.fatigue.glass.barsCaption}</p>
+              {b.fatigue.glass.bars.map((bar: any, i: number) => (
+                <div class="fur-bar" data-reveal style={`--reveal-delay:${i * 110}ms`}>
+                  <span class="fur-bar__label">{bar.label}</span>
+                  <span class="fur-bar__track" aria-hidden="true">
+                    <span class="fur-bar__loss" style={`--w:${bar.pct}%`}></span>
+                  </span>
+                  <span class="fur-bar__value t-mono">{bar.value}</span>
+                </div>
+              ))}
+              <figcaption class="figure-note">{common.schematic}</figcaption>
+            </figure>
+            <p class="fur-glass__note">{b.fatigue.glass.note}</p>
+          </div>
+        </TechNote>
 
         <p class="fur-close fur-close--dark">{b.fatigue.close}</p>
       </div>
@@ -745,57 +756,61 @@ const MX_COLOUR = [
         <h2 class="fur-h2">{b.finish.heading}</h2>
         <p class="fur-lead">{b.finish.body}</p>
 
-        <div class="fur-fin__grid">
-          <figure class="fur-fin__matrix" data-reveal>
-            <p class="t-label">{b.finish.matrix.caption}</p>
-            <div class="fur-mx__scroll scroller">
-              <div class="fur-mx">
-                <span class="fur-mx__corner" aria-hidden="true"></span>
-                {b.finish.matrix.columns.map((col: any) => (
-                  <span class="fur-mx__col">
-                    <span class="t-mono fur-mx__code">{col.code}</span>
-                    <span class="fur-mx__cnote">{col.note}</span>
-                  </span>
-                ))}
-                {b.finish.matrix.rows.map((row: string, r: number) => (
-                  <>
-                    <span class="fur-mx__row">{row}</span>
-                    {b.finish.matrix.columns.map((col: any, c: number) => (
-                      <span
-                        class="fur-mx__cell"
-                        style={`--c:${MX_COLOUR[r]}; --gs:${MX_GRAIN[c]}px; --go:${MX_OPACITY[c]}`}
-                      ></span>
-                    ))}
-                  </>
-                ))}
-                <span class="fur-mx__row fur-mx__row--draft">{b.finish.matrix.draftLabel}</span>
-                {b.finish.matrix.draft.map((d: string) => (
-                  <span class="fur-mx__draft t-mono">{d}</span>
-                ))}
-              </div>
-            </div>
-            <figcaption class="figure-note">{common.schematic}</figcaption>
-            <p class="fur-fine">{b.finish.matrix.note}</p>
-          </figure>
-
-          <div class="fur-fin__col">
-            <h3 class="t-label">{b.finish.specHeading}</h3>
-            <dl class="spec fur-fin__spec">
-              {b.finish.spec.map((s: any) => (
-                <div class="spec__row">
-                  <dt class="spec__k">{s.k}</dt>
-                  <dd class="spec__v">{s.v}</dd>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="fur-fin__grid">
+            <figure class="fur-fin__matrix" data-reveal>
+              <p class="t-label">{b.finish.matrix.caption}</p>
+              <div class="fur-mx__scroll scroller">
+                <div class="fur-mx">
+                  <span class="fur-mx__corner" aria-hidden="true"></span>
+                  {b.finish.matrix.columns.map((col: any) => (
+                    <span class="fur-mx__col">
+                      <span class="t-mono fur-mx__code">{col.code}</span>
+                      <span class="fur-mx__cnote">{col.note}</span>
+                    </span>
+                  ))}
+                  {b.finish.matrix.rows.map((row: string, r: number) => (
+                    <>
+                      <span class="fur-mx__row">{row}</span>
+                      {b.finish.matrix.columns.map((col: any, c: number) => (
+                        <span
+                          class="fur-mx__cell"
+                          style={`--c:${MX_COLOUR[r]}; --gs:${MX_GRAIN[c]}px; --go:${MX_OPACITY[c]}`}
+                        ></span>
+                      ))}
+                    </>
+                  ))}
+                  <span class="fur-mx__row fur-mx__row--draft">{b.finish.matrix.draftLabel}</span>
+                  {b.finish.matrix.draft.map((d: string) => (
+                    <span class="fur-mx__draft t-mono">{d}</span>
+                  ))}
                 </div>
-              ))}
-            </dl>
+              </div>
+              <figcaption class="figure-note">{common.schematic}</figcaption>
+              <p class="fur-fine">{b.finish.matrix.note}</p>
+            </figure>
+  
+            <div class="fur-fin__col">
+              <h3 class="t-label">{b.finish.specHeading}</h3>
+              <dl class="spec fur-fin__spec">
+                {b.finish.spec.map((s: any) => (
+                  <div class="spec__row">
+                    <dt class="spec__k">{s.k}</dt>
+                    <dd class="spec__v">{s.v}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
-        </div>
+        </TechNote>
 
-        <ul class="fur-points">
-          {b.finish.points.map((p: string, i: number) => (
-            <li data-reveal style={`--reveal-delay:${i * 70}ms`}>{p}</li>
-          ))}
-        </ul>
+        <TechNote locale={locale} kind="reasoning">
+          <ul class="fur-points">
+            {b.finish.points.map((p: string, i: number) => (
+              <li data-reveal style={`--reveal-delay:${i * 70}ms`}>{p}</li>
+            ))}
+          </ul>
+        </TechNote>
 
         <p class="fur-boundary-note">{b.finish.boundaryNote}</p>
       </div>
@@ -853,35 +868,41 @@ const MX_COLOUR = [
 
         <p class="fur-ruler__note t-small">{b.tooling.ruler.markerNote}</p>
 
-        <ol class="fur-bands">
-          {b.tooling.bands.map((band: any, i: number) => (
-            <li data-reveal style={`--reveal-delay:${i * 80}ms`}>
-              <span class="fur-bands__range t-mono">{band.range}</span>
-              <span class="fur-bands__cls">{band.cls}</span>
-              <span class="fur-bands__note">{band.note}</span>
-            </li>
-          ))}
-        </ol>
+        <TechNote locale={locale} kind="detail">
+          <ol class="fur-bands">
+            {b.tooling.bands.map((band: any, i: number) => (
+              <li data-reveal style={`--reveal-delay:${i * 80}ms`}>
+                <span class="fur-bands__range t-mono">{band.range}</span>
+                <span class="fur-bands__cls">{band.cls}</span>
+                <span class="fur-bands__note">{band.note}</span>
+              </li>
+            ))}
+          </ol>
+        </TechNote>
 
-        <div class="fur-runner">
-          <h3 class="fur-h5">{b.tooling.runner.heading}</h3>
-          <div class="fur-runner__cols">
-            <div>
-              <p class="t-label">{b.tooling.runner.hot.name}</p>
-              <p>{b.tooling.runner.hot.note}</p>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="fur-runner">
+            <h3 class="fur-h5">{b.tooling.runner.heading}</h3>
+            <div class="fur-runner__cols">
+              <div>
+                <p class="t-label">{b.tooling.runner.hot.name}</p>
+                <p>{b.tooling.runner.hot.note}</p>
+              </div>
+              <div>
+                <p class="t-label">{b.tooling.runner.cold.name}</p>
+                <p>{b.tooling.runner.cold.note}</p>
+              </div>
             </div>
-            <div>
-              <p class="t-label">{b.tooling.runner.cold.name}</p>
-              <p>{b.tooling.runner.cold.note}</p>
-            </div>
+            <p class="fur-runner__balance">{b.tooling.runner.balance}</p>
           </div>
-          <p class="fur-runner__balance">{b.tooling.runner.balance}</p>
-        </div>
+        </TechNote>
 
-        <div class="fur-family">
-          <h3 class="fur-h5">{b.tooling.family.heading}</h3>
-          <p>{b.tooling.family.body}</p>
-        </div>
+        <TechNote locale={locale} kind="detail">
+          <div class="fur-family">
+            <h3 class="fur-h5">{b.tooling.family.heading}</h3>
+            <p>{b.tooling.family.body}</p>
+          </div>
+        </TechNote>
 
         <p class="fur-close">{b.tooling.ask}</p>
       </div>
@@ -897,18 +918,20 @@ const MX_COLOUR = [
         <h2 class="fur-h2">{b.supply.heading}</h2>
         <p class="fur-lead">{b.supply.body}</p>
 
-        <div class="fur-ledger">
-          <div class="fur-ledger__head">
-            <span class="t-label">{b.supply.ledgerHeads.risk}</span>
-            <span class="t-label">{b.supply.ledgerHeads.route}</span>
-          </div>
-          {b.supply.ledger.map((row: any, i: number) => (
-            <div class="fur-ledger__row">
-              <p class="fur-ledger__risk" data-reveal style={`--reveal-delay:${i * 60}ms`}>{row.risk}</p>
-              <p class="fur-ledger__route" data-reveal style={`--reveal-delay:${i * 60 + 120}ms`}>{row.route}</p>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="fur-ledger">
+            <div class="fur-ledger__head">
+              <span class="t-label">{b.supply.ledgerHeads.risk}</span>
+              <span class="t-label">{b.supply.ledgerHeads.route}</span>
             </div>
-          ))}
-        </div>
+            {b.supply.ledger.map((row: any, i: number) => (
+              <div class="fur-ledger__row">
+                <p class="fur-ledger__risk" data-reveal style={`--reveal-delay:${i * 60}ms`}>{row.risk}</p>
+                <p class="fur-ledger__route" data-reveal style={`--reveal-delay:${i * 60 + 120}ms`}>{row.route}</p>
+              </div>
+            ))}
+          </div>
+        </TechNote>
 
         {/* The scope limit. Not fine print — the strongest thing on the page. */}
         <div class="fur-scope">

@@ -79,7 +79,7 @@ export const CONTACT = {
   linkedin: TBD('LINKEDIN_TBD') as string | PendingValue,
 
   /** Approved commitment from the master brief. */
-  responseWindowHours: 48,
+  responseWindowDays: 2,
 } as const;
 
 /* ── Capability flags ──────────────────────────────────────────────────────── */
@@ -111,7 +111,7 @@ export const FACTS = {
   projectsCompletedIsMinimum: true,
   maxCavitiesDelivered: 46,
   cadSoftware: ['CATIA', 'SolidWorks'] as const,
-  responseWindowHours: 48,
+  responseWindowDays: 2,
 } as const;
 
 /* ── Outstanding production values ─────────────────────────────────────────── */

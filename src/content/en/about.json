@@ -5,7 +5,11 @@
   },
   "hero": {
     "kicker": "About",
-    "headline": ["Twenty years", "of cutting steel", "for other people's parts."],
+    "headline": [
+      "Twenty years",
+      "of cutting steel",
+      "for other people's parts."
+    ],
     "lead": "Metal Form has built moulds and manufactured components since 2006. What began as a tooling workshop now coordinates engineering, tooling, production and supply — as one contract, with one party answerable for the result."
   },
   "sections": [
@@ -46,10 +50,26 @@
     }
   ],
   "facts": [
-    { "value": "2006", "label": "Manufacturing since", "note": "The year the workshop opened and the year the project count starts from." },
-    { "value": "1,000+", "label": "Completed projects", "note": "Tooling, engineering and production work delivered since 2006. Stated as a minimum, because it is one." },
-    { "value": "46", "label": "Cavities", "note": "The highest cavitation we have tooled. High cavitation is a tooling discipline — balance, cooling and consistency — not a machine specification." },
-    { "value": "48h", "label": "Initial response", "note": "A first technical read on a project within 48 business hours: feasibility direction, what is missing, and the next step." }
+    {
+      "value": "2006",
+      "label": "Manufacturing since",
+      "note": "The year the workshop opened and the year the project count starts from."
+    },
+    {
+      "value": "1,000+",
+      "label": "Completed projects",
+      "note": "Tooling, engineering and production work delivered since 2006. Stated as a minimum, because it is one."
+    },
+    {
+      "value": "46",
+      "label": "Cavities",
+      "note": "The highest cavitation we have tooled. High cavitation is a tooling discipline — balance, cooling and consistency — not a machine specification."
+    },
+    {
+      "value": "2 days",
+      "label": "Initial response",
+      "note": "A first technical read on a project within 2 business days: feasibility direction, what is missing, and the next step."
+    }
   ],
   "accountability": {
     "heading": "One accountable partner is the whole proposition.",
@@ -65,6 +85,6 @@
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form. I found you through your website and I would like to discuss:\n\nPart / project: \nIndustry: \nAnnual volume: \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: ",
-    "note": "Initial technical response within 48 business hours. We can sign an NDA before you send anything detailed."
+    "note": "Initial technical response within 2 business days. We can sign an NDA before you send anything detailed."
   }
 }

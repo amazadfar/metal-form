@@ -463,7 +463,9 @@
   inset-block-end: 0;
   z-index: var(--z-sticky);
   display: none;
-  padding: 0.6rem var(--gutter) calc(0.6rem + env(safe-area-inset-bottom));
+  /* Roughly a quarter shorter than it was. It has to stay reachable without
+     taking a slice of a phone screen that the page needs more. */
+  padding: 0.4rem var(--gutter) calc(0.4rem + env(safe-area-inset-bottom));
   background: color-mix(in oklab, var(--steel-950) 92%, transparent);
   backdrop-filter: saturate(160%) blur(12px);
   border-block-start: 1px solid color-mix(in oklab, #FFFFFF 14%, transparent);
@@ -484,9 +486,9 @@
   gap: var(--sp-4);
   justify-content: space-between;
 }
-.rfq-dock__copy { display: grid; gap: 0.1rem; min-inline-size: 0; }
+.rfq-dock__copy { display: grid; gap: 0.05rem; min-inline-size: 0; }
 .rfq-dock__t {
-  font-size: var(--step--1);
+  font-size: var(--step--2);
   font-weight: var(--weight-medium);
   color: #FFFFFF;
   line-height: 1.2;
@@ -495,7 +497,7 @@
   white-space: nowrap;
 }
 .rfq-dock__n {
-  font-size: var(--step--2);
+  font-size: 0.66rem;
   color: color-mix(in oklab, #FFFFFF 68%, transparent);
   line-height: 1.3;
   overflow: hidden;
@@ -506,9 +508,9 @@
   flex: none;
   background: #FFFFFF;
   color: var(--steel-950);
-  --btn-py: 0.85em;
-  --btn-px: 1.1em;
-  /* 44px minimum touch target regardless of the type size inside it. */
+  --btn-py: 0.7em;
+  --btn-px: 1rem;
+  /* Still 44px: the bar gets shorter, the target does not. */
   min-block-size: 44px;
 }
 .rfq-dock .btn:hover { background: var(--accent-inverse); color: var(--steel-950); }

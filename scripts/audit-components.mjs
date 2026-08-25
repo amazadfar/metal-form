@@ -41,7 +41,23 @@ async function walk(dir, out = []) {
 }
 
 const files = (await walk(SRC)).sort();
-const problems = { i18n: [], rtl: [], ids: [], mirror: [] };
+const problems = { i18n: [], rtl: [], ids: [], mirror: [], trapped: [] };
+
+/* ── 5 — a scroll-linked stepper inside a disclosure ───────────────────────
+   A `data-station-step` block drives a figure as the reader scrolls past it.
+   Collapsed inside a <TechNote>, it never enters the reading window, so the
+   drawing beside it never advances and the section silently loses its
+   mechanism. Nothing else would catch this. */
+function trappedSteppers(src) {
+  const out = [];
+  let depth = 0;
+  for (const m of src.matchAll(/<TechNote\b|<\/TechNote>|data-station-step/g)) {
+    if (m[0] === '<TechNote') depth++;
+    else if (m[0] === '</TechNote>') depth--;
+    else if (depth > 0) out.push(m.index);
+  }
+  return out;
+}
 
 /** Splits an .astro file into frontmatter, template and style. */
 function split(src) {
@@ -172,6 +188,8 @@ show('Hard-coded English in templates (blocks localisation)', problems.i18n);
 show('Physical CSS properties (breaks right-to-left)', problems.rtl);
 show('Duplicate element ids', problems.ids);
 show('SVGs without data-nomirror', problems.mirror);
+show('Scroll-linked steppers trapped in a disclosure', problems.trapped);
 
-const total = problems.i18n.length + problems.rtl.length + problems.ids.length + problems.mirror.length;
+const total = problems.i18n.length + problems.rtl.length + problems.ids.length
+  + problems.mirror.length + problems.trapped.length;
 console.log(total ? `\n  ${total} item(s) to review.\n` : '\n  ✓ Clean.\n');

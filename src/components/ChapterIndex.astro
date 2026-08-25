@@ -144,6 +144,7 @@ function findHero(main: HTMLElement): Element | null {
       /* Same shape as the steppers: a tall reading window, a clear margin
          before the active entry changes, and a dwell so a fast scroll lands
          somewhere rather than strobing through everything. */
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       let current = -1;
       let changedAt = 0;
       let ticking = false;
@@ -160,9 +161,16 @@ function findHero(main: HTMLElement): Element | null {
         });
         // Keep the active entry in view without dragging the page with it.
         const a = links[i];
-        if (a && list.scrollWidth > list.clientWidth) {
-          const target = a.offsetLeft - list.clientWidth / 2 + a.offsetWidth / 2;
-          list.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+        const scroller = list.parentElement;
+        if (a && scroller && scroller.scrollWidth > scroller.clientWidth + 4) {
+          // Centre the active entry, but leave the previous one partly in view
+          // so the row still reads as a row rather than as a single label.
+          const target = a.offsetLeft - scroller.clientWidth * 0.38 + a.offsetWidth / 2;
+          const max = scroller.scrollWidth - scroller.clientWidth;
+          scroller.scrollTo({
+            left: Math.min(Math.max(0, target), max),
+            behavior: reducedMotion ? 'auto' : 'smooth',
+          });
         }
       };
 
@@ -232,7 +240,25 @@ function findHero(main: HTMLElement): Element | null {
      `data-astro-cid-…` attribute Astro adds to elements in the template — and a
      scoped rule would not match it. `:global` is correct here rather than a
      workaround; the class names are unique to this component. */
-  .cidx__scroll { inline-size: 100%; }
+  /* A row that runs off the edge with no sign that it does is a row most
+     people never scroll. Three things fix that, and none of them is a
+     scrollbar: the next entry is always partly visible, the edges fade so the
+     row reads as continuing rather than ending, and each entry snaps. */
+  .cidx__scroll {
+    inline-size: 100%;
+    scroll-snap-type: inline proximity;
+    scroll-padding-inline: 1rem;
+    /* The fade is a mask, so it works over any ground the chapter is on. */
+    -webkit-mask-image: linear-gradient(
+      to right, transparent 0, #000 1.5rem, #000 calc(100% - 2.25rem), transparent 100%);
+    mask-image: linear-gradient(
+      to right, transparent 0, #000 1.5rem, #000 calc(100% - 2.25rem), transparent 100%);
+  }
+  /* No fade when there is nothing to scroll to. */
+  @media (min-width: 1100px) {
+    .cidx__scroll { -webkit-mask-image: none; mask-image: none; }
+  }
+  .cidx :global(.cidx__list) > li { scroll-snap-align: start; }
   .cidx :global(.cidx__list) {
     display: flex;
     align-items: stretch;
@@ -243,6 +269,8 @@ function findHero(main: HTMLElement): Element | null {
     white-space: nowrap;
   }
   .cidx :global(.cidx__list) > li { flex: none; }
+  /* Trailing room so the last entry can still centre itself. */
+  .cidx :global(.cidx__list)::after { content: ''; flex: none; inline-size: 35%; }
 
   .cidx :global(.cidx__link) {
     display: flex;

@@ -420,7 +420,7 @@
         "Injection, PET, blow and die-cast tooling. Single and low-cavity tools, family tools, interchangeable cavity inserts on a shared bolster, hot and cold runner systems, insert tooling with moulded-in metal inserts.",
         "Mechanisms that have to keep working in salt: slides, lifters, unscrewing and collapsible cores.",
         "CNC milling, turning and manual machining. Spares and change parts. Second-source and duplicate tooling.",
-        "Component production and rolling supply, with international delivery. NDA before geometry is shared. Tooling warranty on terms agreed per project. Initial technical response within 48 business hours."
+        "Component production and rolling supply, with international delivery. NDA before geometry is shared. Tooling warranty on terms agreed per project. Initial technical response within 2 business days."
       ],
       "yoursHeading": "Stays with you",
       "yours": [
@@ -478,10 +478,10 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A photograph, a worn sample, or a drawing. We come back with the geometry problems, the material shortlist for the exposure it actually sees, the tooling route that suits your real annual volume, and what it takes to hold that part in supply. Initial project response within 48 business hours. NDA before geometry is shared.",
+    "body": "A photograph, a worn sample, or a drawing. We come back with the geometry problems, the material shortlist for the exposure it actually sees, the tooling route that suits your real annual volume, and what it takes to hold that part in supply. Initial project response within 2 business days. NDA before geometry is shared.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form. I have a marine component — [deck hardware / hatch / fitting / fuel-system part / float / other]. Approximate annual quantity: ___. I can send photographs, a worn sample, or a drawing. Please advise on the tooling route.",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

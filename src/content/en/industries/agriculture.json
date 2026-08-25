@@ -350,7 +350,7 @@
         },
         {
           "label": "Route",
-          "note": "A tooling route comes back with a cavity and insert strategy, a feed system recommendation — hot runner, cold runner or a mix, evaluated against this part rather than assumed — and the reasoning behind each choice. Initial technical response within 48 business hours. An NDA can be signed before detailed technical disclosure."
+          "note": "A tooling route comes back with a cavity and insert strategy, a feed system recommendation — hot runner, cold runner or a mix, evaluated against this part rather than assumed — and the reasoning behind each choice. Initial technical response within 2 business days. An NDA can be signed before detailed technical disclosure."
         },
         {
           "label": "Manufacture",
@@ -420,10 +420,10 @@
   },
   "cta": {
     "headline": "Send the part. Or the drawing. Or a metre of the tape.",
-    "body": "We come back with a tooling route, a cavity and insert strategy, and the reasoning behind both. Initial technical response within 48 business hours. NDA on request. Tooling warranty on terms agreed per project. International delivery.",
+    "body": "We come back with a tooling route, a cavity and insert strategy, and the reasoning behind both. Initial technical response within 2 business days. NDA on request. Tooling warranty on terms agreed per project. International delivery.",
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — irrigation component enquiry.\n\nThe part is a: dripper / fitting / connector / take-off / micro-sprinkler / valve or filter component\nMaterial: \nApproximate annual volume: \nWe currently run this on: [ ] tool(s)\nWhat I need: new tooling / duplicate tool / inserts and spares / component supply\n\nI can send 3D data and a physical sample.",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

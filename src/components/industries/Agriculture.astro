@@ -19,6 +19,7 @@
  * the page is coloured at all.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -28,7 +29,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 const r = (v: number) => Math.round(v * 10) / 10;
@@ -436,14 +437,16 @@ const CURVES = [
 
       <p class="agr-rep__cap t-label">{b.repeat.railLabel}</p>
 
-      <ol class="agr-rep__list">
-        {b.repeat.consequences.map((c: string, i: number) => (
-          <li data-reveal style={`--reveal-delay:${i * 90}ms`}>
-            <span class="t-mono">{String(i + 1).padStart(2, '0')}</span>
-            <p>{c}</p>
-          </li>
-        ))}
-      </ol>
+      <TechNote locale={locale} kind="detail">
+        <ol class="agr-rep__list">
+          {b.repeat.consequences.map((c: string, i: number) => (
+            <li data-reveal style={`--reveal-delay:${i * 90}ms`}>
+              <span class="t-mono">{String(i + 1).padStart(2, '0')}</span>
+              <p>{c}</p>
+            </li>
+          ))}
+        </ol>
+      </TechNote>
 
       <p class="agr-src t-fine">{b.repeat.sourceNote}</p>
       <p class="agr-close">{b.repeat.close}</p>
@@ -516,126 +519,132 @@ const CURVES = [
         <figcaption class="figure-note">{common.schematic}</figcaption>
       </figure>
 
-      <div class="agr-lab__cols">
-        <dl class="agr-params">
-          {b.labyrinth.params.map((p: any) => (
-            <div class="agr-param">
-              <dt>
-                <span class="agr-param__sym t-mono">{p.symbol}</span>
-                <span class="agr-param__name">{p.name}</span>
-                <span class="agr-param__val t-mono">{p.value}</span>
-              </dt>
-              <dd>{p.note}</dd>
-            </div>
-          ))}
-        </dl>
-        {/* Outside the list: a `<dl>` may only contain `<dt>`, `<dd>`, `<div>`,
-            `<script>` and `<template>`, so a source note sitting inside one
-            breaks the description-list semantics a screen reader relies on. */}
-        <p class="agr-src t-fine">{b.labyrinth.paramsSource}</p>
-
-        <div class="agr-calls">
-          <h3 class="agr-h4">{b.labyrinth.callHeading}</h3>
-          <ol class="agr-calls__list">
-            {b.labyrinth.calls.map((c: any) => (
-              <li>
-                <span class="agr-calls__n t-mono">{c.n}</span>
-                <div>
-                  <h4>{c.title}</h4>
-                  <p>{c.note}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
-
-      <div class="agr-tol">
-        <h3 class="agr-h3">{b.labyrinth.tolerance.heading}</h3>
-        <p>{b.labyrinth.tolerance.body}</p>
-      </div>
-
-      {/* Pressure compensation — a section, hatched, with the diaphragm annotated */}
-      <div class="agr-dia">
-        <div class="agr-dia__copy">
-          <h3 class="agr-h4">{b.labyrinth.diaphragm.heading}</h3>
-          <p>{b.labyrinth.diaphragm.body}</p>
-          <ul class="agr-dia__key">
-            {b.labyrinth.diaphragm.keys.map((k: string, i: number) => (
-              <li><span class="agr-dia__sw" data-k={i}></span>{k}</li>
-            ))}
-          </ul>
-          <p class="agr-bound">{b.labyrinth.diaphragm.boundary}</p>
-        </div>
-
-        <figure class="agr-dia__fig">
-          <svg viewBox="0 0 400 240" data-nomirror role="img" aria-label={common.schematic}>
-            <path d="M40 150 H110 V178 H290 V150 H360 V210 H40 Z" class="agr-steel agr-steel--fine" />
-            {[140, 200, 260].map((x: any) => (
-              <line x1={x} y1="96" x2={x} y2="122" class="agr-press" marker-end="url(#agr-arrow)" />
-            ))}
-            <rect x="95" y="132" width="210" height="18" class="agr-membrane" />
-            <path d="M95 150 C140 150 150 176 200 176 C250 176 260 150 305 150" class="agr-membrane__def" />
-            <line x1="112" y1="164" x2="286" y2="164" class="agr-flow agr-flow--wide" marker-end="url(#agr-arrow-w)" />
-            <line x1="40" y1="222" x2="360" y2="222" class="agr-rule" />
-          </svg>
-          <figcaption class="figure-note">{common.schematic}</figcaption>
-        </figure>
-      </div>
-
-      {/* The exponent, as geometry rather than as an adjective */}
-      <div class="agr-exp" data-tabs>
-        <h3 class="agr-h4">{b.labyrinth.exponent.heading}</h3>
-        <p class="agr-exp__formula t-mono">{b.labyrinth.exponent.formula}<sup>{b.labyrinth.exponent.formulaExp}</sup></p>
-
-        <div class="agr-exp__tabs" role="tablist" aria-label={b.labyrinth.exponent.tabsLabel}>
-          {b.labyrinth.exponent.items.map((it: any) => (
-            <button
-              class="agr-exp__tab t-mono"
-              type="button"
-              role="tab"
-              data-tab={it.id}
-              aria-selected="false"
-              id={`agr-tab-${it.id}`}
-              aria-controls={`agr-panel-${it.id}`}
-            >{it.name}</button>
-          ))}
-        </div>
-
-        <div class="agr-exp__body">
-          <figure class="agr-exp__fig">
-            <svg viewBox="0 0 380 230" data-nomirror role="img" aria-label={common.schematic}>
-              <line x1="50" y1="190" x2="360" y2="190" class="agr-axis" />
-              <line x1="50" y1="20" x2="50" y2="190" class="agr-axis" />
-              <line x1="50" y1="40" x2="360" y2="40" class="agr-cl" />
-              {CURVES.map((c: any) => (
-                <path d={c.d} class="agr-curve" data-m={c.id} />
-              ))}
-              <line x1="350" y1="194" x2="350" y2="200" class="agr-rule" />
-              <line x1="44" y1="40" x2="50" y2="40" class="agr-rule" />
-            </svg>
-            <figcaption class="figure-note">{common.schematic}</figcaption>
-          </figure>
-
-          <div class="agr-exp__panels">
-            {b.labyrinth.exponent.items.map((it: any) => (
-              <div
-                class="agr-exp__panel"
-                data-panel={it.id}
-                role="tabpanel"
-                id={`agr-panel-${it.id}`}
-                aria-labelledby={`agr-tab-${it.id}`}
-                hidden
-              >
-                <p>{it.summary}</p>
+        <div class="agr-lab__cols">
+          <dl class="agr-params">
+            {b.labyrinth.params.map((p: any) => (
+              <div class="agr-param">
+                <dt>
+                  <span class="agr-param__sym t-mono">{p.symbol}</span>
+                  <span class="agr-param__name">{p.name}</span>
+                  <span class="agr-param__val t-mono">{p.value}</span>
+                </dt>
+                <dd>{p.note}</dd>
               </div>
             ))}
-            <p class="agr-exp__axis t-fine">{b.labyrinth.exponent.axisNote}</p>
-            <p class="agr-src t-fine">{b.labyrinth.exponent.note}</p>
+          </dl>
+          {/* Outside the list: a `<dl>` may only contain `<dt>`, `<dd>`, `<div>`,
+              `<script>` and `<template>`, so a source note sitting inside one
+              breaks the description-list semantics a screen reader relies on. */}
+          <p class="agr-src t-fine">{b.labyrinth.paramsSource}</p>
+  
+          <div class="agr-calls">
+            <h3 class="agr-h4">{b.labyrinth.callHeading}</h3>
+            <ol class="agr-calls__list">
+              {b.labyrinth.calls.map((c: any) => (
+                <li>
+                  <span class="agr-calls__n t-mono">{c.n}</span>
+                  <div>
+                    <h4>{c.title}</h4>
+                    <p>{c.note}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
+  
+        <TechNote locale={locale} kind="detail">
+          <div class="agr-tol">
+            <h3 class="agr-h3">{b.labyrinth.tolerance.heading}</h3>
+            <p>{b.labyrinth.tolerance.body}</p>
+          </div>
+        </TechNote>
+  
+        {/* Pressure compensation — a section, hatched, with the diaphragm annotated */}
+        <TechNote locale={locale} kind="detail">
+          <div class="agr-dia">
+            <div class="agr-dia__copy">
+              <h3 class="agr-h4">{b.labyrinth.diaphragm.heading}</h3>
+              <p>{b.labyrinth.diaphragm.body}</p>
+              <ul class="agr-dia__key">
+                {b.labyrinth.diaphragm.keys.map((k: string, i: number) => (
+                  <li><span class="agr-dia__sw" data-k={i}></span>{k}</li>
+                ))}
+              </ul>
+              <p class="agr-bound">{b.labyrinth.diaphragm.boundary}</p>
+            </div>
+    
+            <figure class="agr-dia__fig">
+              <svg viewBox="0 0 400 240" data-nomirror role="img" aria-label={common.schematic}>
+                <path d="M40 150 H110 V178 H290 V150 H360 V210 H40 Z" class="agr-steel agr-steel--fine" />
+                {[140, 200, 260].map((x: any) => (
+                  <line x1={x} y1="96" x2={x} y2="122" class="agr-press" marker-end="url(#agr-arrow)" />
+                ))}
+                <rect x="95" y="132" width="210" height="18" class="agr-membrane" />
+                <path d="M95 150 C140 150 150 176 200 176 C250 176 260 150 305 150" class="agr-membrane__def" />
+                <line x1="112" y1="164" x2="286" y2="164" class="agr-flow agr-flow--wide" marker-end="url(#agr-arrow-w)" />
+                <line x1="40" y1="222" x2="360" y2="222" class="agr-rule" />
+              </svg>
+              <figcaption class="figure-note">{common.schematic}</figcaption>
+            </figure>
+          </div>
+        </TechNote>
+  
+        {/* The exponent, as geometry rather than as an adjective */}
+        <TechNote locale={locale} kind="reasoning">
+          <div class="agr-exp" data-tabs>
+            <h3 class="agr-h4">{b.labyrinth.exponent.heading}</h3>
+            <p class="agr-exp__formula t-mono">{b.labyrinth.exponent.formula}<sup>{b.labyrinth.exponent.formulaExp}</sup></p>
+    
+            <div class="agr-exp__tabs" role="tablist" aria-label={b.labyrinth.exponent.tabsLabel}>
+              {b.labyrinth.exponent.items.map((it: any) => (
+                <button
+                  class="agr-exp__tab t-mono"
+                  type="button"
+                  role="tab"
+                  data-tab={it.id}
+                  aria-selected="false"
+                  id={`agr-tab-${it.id}`}
+                  aria-controls={`agr-panel-${it.id}`}
+                >{it.name}</button>
+              ))}
+            </div>
+    
+            <div class="agr-exp__body">
+              <figure class="agr-exp__fig">
+                <svg viewBox="0 0 380 230" data-nomirror role="img" aria-label={common.schematic}>
+                  <line x1="50" y1="190" x2="360" y2="190" class="agr-axis" />
+                  <line x1="50" y1="20" x2="50" y2="190" class="agr-axis" />
+                  <line x1="50" y1="40" x2="360" y2="40" class="agr-cl" />
+                  {CURVES.map((c: any) => (
+                    <path d={c.d} class="agr-curve" data-m={c.id} />
+                  ))}
+                  <line x1="350" y1="194" x2="350" y2="200" class="agr-rule" />
+                  <line x1="44" y1="40" x2="50" y2="40" class="agr-rule" />
+                </svg>
+                <figcaption class="figure-note">{common.schematic}</figcaption>
+              </figure>
+    
+              <div class="agr-exp__panels">
+                {b.labyrinth.exponent.items.map((it: any) => (
+                  <div
+                    class="agr-exp__panel"
+                    data-panel={it.id}
+                    role="tabpanel"
+                    id={`agr-panel-${it.id}`}
+                    aria-labelledby={`agr-tab-${it.id}`}
+                    hidden
+                  >
+                    <p>{it.summary}</p>
+                  </div>
+                ))}
+                <p class="agr-exp__axis t-fine">{b.labyrinth.exponent.axisNote}</p>
+                <p class="agr-src t-fine">{b.labyrinth.exponent.note}</p>
+              </div>
+            </div>
+          </div>
+        </TechNote>
       </div>
-    </div>
   </section>
 
   {/* ═══ 04 · CAVITIES AND VOLUME — the one inverted band ══════════════════
@@ -653,43 +662,45 @@ const CURVES = [
         </div>
       </div>
 
-      <div class="agr-cav__grid">
-        <figure class="agr-plate" data-reveal>
-          <p class="t-label">{b.cavities.figureLabel}</p>
-          <svg viewBox="0 0 600 360" data-nomirror role="img" aria-label={common.schematic}>
-            <rect x="14" y="14" width="572" height="332" class="agr-plate__body" />
-            <g class="agr-plate__live">
-              {PLATE.segs.map((s: any) => (
-                <line x1={s[0]} y1={s[1]} x2={s[2]} y2={s[3]} class="agr-plate__run" />
-              ))}
-              <circle cx="300" cy="180" r="7" class="agr-plate__sprue" />
-              {PLATE.tips.map((t: any, i: number) => (
-                <g class="agr-plate__cell" style={`--i:${i}`} data-dead={i === DEAD ? 'true' : 'false'}>
-                  <circle cx={t[0]} cy={t[1]} r="12" class="agr-plate__cav" />
-                  <circle cx={t[0]} cy={t[1]} r="3" class="agr-plate__tip" />
-                  {i === DEAD && (
-                    <path
-                      d={`M${t[0] - 8} ${t[1] - 8} L${t[0] + 8} ${t[1] + 8} M${t[0] + 8} ${t[1] - 8} L${t[0] - 8} ${t[1] + 8}`}
-                      class="agr-plate__x"
-                    />
-                  )}
-                </g>
-              ))}
-            </g>
-            <path d="M14 44 V14 H44 M556 14 H586 V44 M14 316 V346 H44 M556 346 H586 V316" class="agr-tick" />
-          </svg>
-          <p class="agr-plate__note t-fine">{b.cavities.figureNote}</p>
-          <figcaption class="figure-note">{common.schematic}</figcaption>
-        </figure>
-
-        <div class="agr-cav__worst">
-          <h3 class="agr-h3">{b.cavities.worst.heading}</h3>
-          <p class="agr-cav__worstbody">{b.cavities.worst.body}</p>
-          <ul class="agr-cav__points">
-            {b.cavities.worst.points.map((p: string) => <li>{p}</li>)}
-          </ul>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="agr-cav__grid">
+          <figure class="agr-plate" data-reveal>
+            <p class="t-label">{b.cavities.figureLabel}</p>
+            <svg viewBox="0 0 600 360" data-nomirror role="img" aria-label={common.schematic}>
+              <rect x="14" y="14" width="572" height="332" class="agr-plate__body" />
+              <g class="agr-plate__live">
+                {PLATE.segs.map((s: any) => (
+                  <line x1={s[0]} y1={s[1]} x2={s[2]} y2={s[3]} class="agr-plate__run" />
+                ))}
+                <circle cx="300" cy="180" r="7" class="agr-plate__sprue" />
+                {PLATE.tips.map((t: any, i: number) => (
+                  <g class="agr-plate__cell" style={`--i:${i}`} data-dead={i === DEAD ? 'true' : 'false'}>
+                    <circle cx={t[0]} cy={t[1]} r="12" class="agr-plate__cav" />
+                    <circle cx={t[0]} cy={t[1]} r="3" class="agr-plate__tip" />
+                    {i === DEAD && (
+                      <path
+                        d={`M${t[0] - 8} ${t[1] - 8} L${t[0] + 8} ${t[1] + 8} M${t[0] + 8} ${t[1] - 8} L${t[0] - 8} ${t[1] + 8}`}
+                        class="agr-plate__x"
+                      />
+                    )}
+                  </g>
+                ))}
+              </g>
+              <path d="M14 44 V14 H44 M556 14 H586 V44 M14 316 V346 H44 M556 346 H586 V316" class="agr-tick" />
+            </svg>
+            <p class="agr-plate__note t-fine">{b.cavities.figureNote}</p>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+  
+          <div class="agr-cav__worst">
+            <h3 class="agr-h3">{b.cavities.worst.heading}</h3>
+            <p class="agr-cav__worstbody">{b.cavities.worst.body}</p>
+            <ul class="agr-cav__points">
+              {b.cavities.worst.points.map((p: string) => <li>{p}</li>)}
+            </ul>
+          </div>
         </div>
-      </div>
+      </TechNote>
 
       <div class="agr-cav__band">
         <h3 class="agr-h3">{b.cavities.band.heading}</h3>
@@ -718,41 +729,45 @@ const CURVES = [
         </div>
       </div>
 
-      <figure class="agr-sea__fig" data-reveal>
-        <p class="t-label">{b.season.figureLabel}</p>
-        <div class="scroller agr-sea__scroll">
-          <svg viewBox="0 0 760 350" data-nomirror role="img" aria-label={common.schematic}>
-            <rect x="306" y="40" width="202" height="280" class="agr-peak" />
-            <line x1="306" y1="40" x2="306" y2="320" class="agr-peak__edge" />
-            <line x1="508" y1="40" x2="508" y2="320" class="agr-peak__edge" />
-            <line x1="40" y1="210" x2="720" y2="210" class="agr-axis" />
-            {Array.from({ length: 18 }).map((_: any, i: number) => (
-              <line x1={40 + i * 40} y1="210" x2={40 + i * 40} y2="216" class="agr-rule" />
-            ))}
-            <path d={SEASON} class="agr-profile" pathLength="1" />
+      <TechNote locale={locale} kind="detail">
+        <figure class="agr-sea__fig" data-reveal>
+          <p class="t-label">{b.season.figureLabel}</p>
+          <div class="scroller agr-sea__scroll">
+            <svg viewBox="0 0 760 350" data-nomirror role="img" aria-label={common.schematic}>
+              <rect x="306" y="40" width="202" height="280" class="agr-peak" />
+              <line x1="306" y1="40" x2="306" y2="320" class="agr-peak__edge" />
+              <line x1="508" y1="40" x2="508" y2="320" class="agr-peak__edge" />
+              <line x1="40" y1="210" x2="720" y2="210" class="agr-axis" />
+              {Array.from({ length: 18 }).map((_: any, i: number) => (
+                <line x1={40 + i * 40} y1="210" x2={40 + i * 40} y2="216" class="agr-rule" />
+              ))}
+              <path d={SEASON} class="agr-profile" pathLength="1" />
+  
+              <line x1="70" y1="258" x2="286" y2="258" class="agr-rail agr-rail--early" marker-end="url(#agr-arrow-rail)" />
+              <line x1="70" y1="252" x2="70" y2="264" class="agr-rule" />
+              <line x1="232" y1="296" x2="448" y2="296" class="agr-rail agr-rail--late" marker-end="url(#agr-arrow-rail)" />
+              <line x1="232" y1="290" x2="232" y2="302" class="agr-rule" />
+            </svg>
+          </div>
+          <ul class="agr-sea__key">
+            <li><span class="agr-sea__sw agr-sea__sw--profile" aria-hidden="true"></span>{b.season.profileLabel}</li>
+            <li><span class="agr-sea__sw agr-sea__sw--peak" aria-hidden="true"></span>{b.season.peakLabel}</li>
+          </ul>
+          <p class="agr-src t-fine">{b.season.axisNote}</p>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+        </figure>
+      </TechNote>
 
-            <line x1="70" y1="258" x2="286" y2="258" class="agr-rail agr-rail--early" marker-end="url(#agr-arrow-rail)" />
-            <line x1="70" y1="252" x2="70" y2="264" class="agr-rule" />
-            <line x1="232" y1="296" x2="448" y2="296" class="agr-rail agr-rail--late" marker-end="url(#agr-arrow-rail)" />
-            <line x1="232" y1="290" x2="232" y2="302" class="agr-rule" />
-          </svg>
-        </div>
-        <ul class="agr-sea__key">
-          <li><span class="agr-sea__sw agr-sea__sw--profile" aria-hidden="true"></span>{b.season.profileLabel}</li>
-          <li><span class="agr-sea__sw agr-sea__sw--peak" aria-hidden="true"></span>{b.season.peakLabel}</li>
-        </ul>
-        <p class="agr-src t-fine">{b.season.axisNote}</p>
-        <figcaption class="figure-note">{common.schematic}</figcaption>
-      </figure>
-
-      <ol class="agr-sea__rails">
-        {b.season.rails.map((rail: any, i: number) => (
-          <li data-rail={i}>
-            <span class="t-label">{rail.name}</span>
-            <p>{rail.note}</p>
-          </li>
-        ))}
-      </ol>
+      <TechNote locale={locale} kind="detail">
+        <ol class="agr-sea__rails">
+          {b.season.rails.map((rail: any, i: number) => (
+            <li data-rail={i}>
+              <span class="t-label">{rail.name}</span>
+              <p>{rail.note}</p>
+            </li>
+          ))}
+        </ol>
+      </TechNote>
 
       <div class="agr-second">
         <h3 class="agr-h3">{b.season.second.heading}</h3>
@@ -778,28 +793,32 @@ const CURVES = [
       </div>
 
       <p class="t-label agr-mat__cap">{b.material.tableLabel}</p>
-      <div class="scroller agr-mat__scroll">
-        <table class="agr-ledger">
-          <thead>
-            <tr>{b.material.columns.map((c: string) => <th scope="col">{c}</th>)}</tr>
-          </thead>
-          <tbody>
-            {b.material.rows.map((row: any) => (
-              <tr>
-                <th scope="row"><span class="t-mono">{row.name}</span></th>
-                <td>{row.use}</td>
-                <td>{row.governs}</td>
-                <td>{row.exposure}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="scroller agr-mat__scroll">
+          <table class="agr-ledger">
+            <thead>
+              <tr>{b.material.columns.map((c: string) => <th scope="col">{c}</th>)}</tr>
+            </thead>
+            <tbody>
+              {b.material.rows.map((row: any) => (
+                <tr>
+                  <th scope="row"><span class="t-mono">{row.name}</span></th>
+                  <td>{row.use}</td>
+                  <td>{row.governs}</td>
+                  <td>{row.exposure}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </TechNote>
 
-      <div class="agr-uv">
-        <h3 class="agr-h4">{b.material.uv.heading}</h3>
-        <p>{b.material.uv.body}</p>
-      </div>
+      <TechNote locale={locale} kind="detail">
+        <div class="agr-uv">
+          <h3 class="agr-h4">{b.material.uv.heading}</h3>
+          <p>{b.material.uv.body}</p>
+        </div>
+      </TechNote>
 
       <p class="agr-bound agr-bound--wide">{b.material.boundary}</p>
       <p class="agr-src t-fine">{b.material.sourceNote}</p>
@@ -859,17 +878,19 @@ const CURVES = [
         <figcaption class="figure-note">{common.schematic}</figcaption>
       </figure>
 
-      <ol class="agr-stations">
-        {b.work.stations.map((st: any, i: number) => (
-          <li class="agr-station" data-reveal style={`--reveal-delay:${i * 80}ms`}>
-            <span class="agr-station__n t-mono">{String(i + 1).padStart(2, '0')}</span>
-            <div class="agr-station__body">
-              <h3 class="agr-h4">{st.label}</h3>
-              <p>{st.note}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
+      <TechNote locale={locale} kind="reasoning">
+        <ol class="agr-stations">
+          {b.work.stations.map((st: any, i: number) => (
+            <li class="agr-station" data-reveal style={`--reveal-delay:${i * 80}ms`}>
+              <span class="agr-station__n t-mono">{String(i + 1).padStart(2, '0')}</span>
+              <div class="agr-station__body">
+                <h3 class="agr-h4">{st.label}</h3>
+                <p>{st.note}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </TechNote>
 
       {/* Verified capability. It used to be a strip of 11px tracked-out mono
           chips, which reads as build metadata; it is the shared badge now. */}

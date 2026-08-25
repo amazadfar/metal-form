@@ -424,7 +424,7 @@
         "Ürün kodu (SKU) başına yıllık adet ve kalıbın kaç renk varyantına hizmet etmesi gerektiği",
         "Bunun yeni bir kalıp mı, ikinci kaynak mı, yoksa hâlihazırda çalışan bir ürünün yeniden tasarımı mı olduğu"
       ],
-      "note": "48 iş saati içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
+      "note": "2 iş günü içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -475,6 +475,6 @@
     "action": "Parçanızı gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form — kozmetik ve kişisel bakım hakkında.\n\nParça: kapak / kavanoz / pompa veya airless parça / mekanizma parçası / diğer\nBoyun profili ya da kritik ölçüler: \nMalzeme: \nYüzey: parlak görünen yüzey / dokulu / her ikisi\nSKU başına yıllık adet: \nYeni kalıp / ikinci kaynak / yeniden tasarım: \n\nNumune ya da CAD modeli gönderebilirim.",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

@@ -17,6 +17,7 @@
  * Motion logic: indexing, not animating. Things arrive in discrete steps.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -26,7 +27,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /* ── Orthographic fitting silhouettes ──────────────────────────────────────
@@ -325,14 +326,16 @@ const unscrewing = mechs[1] ?? {};
           </div>
         </div>
 
-        <div class="plm-notes">
-          {(b.range.notes ?? []).map((n: any, i: number) => (
-            <div class="plm-notes__item" data-reveal style={`--reveal-delay:${i * 90}ms`}>
-              <h3 class="plm-h5">{n.heading}</h3>
-              <p>{n.body}</p>
-            </div>
-          ))}
-        </div>
+        <TechNote locale={locale} kind="detail">
+          <div class="plm-notes">
+            {(b.range.notes ?? []).map((n: any, i: number) => (
+              <div class="plm-notes__item" data-reveal style={`--reveal-delay:${i * 90}ms`}>
+                <h3 class="plm-h5">{n.heading}</h3>
+                <p>{n.body}</p>
+              </div>
+            ))}
+          </div>
+        </TechNote>
 
         <p class="plm-close">{b.range.close}</p>
       </div>
@@ -350,174 +353,180 @@ const unscrewing = mechs[1] ?? {};
           <p class="t-lead">{b.mechanism.body}</p>
         </div>
 
-        <div class="plm-mech">
-          {/* ── Collapsible core ──────────────────────────────────────── */}
-          <figure class="plm-mech__col" data-reveal>
-            <h3 class="plm-h4">{collapsible.name}</h3>
-            <p class="plm-mech__sum">{collapsible.summary}</p>
-            <svg viewBox="0 0 490 300" data-nomirror role="img" aria-label={collapsible.figureLabel} class="plm-dwg">
-              <defs>
-                <pattern id="plm-cc-h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.4" />
-                </pattern>
-                <marker id="plm-cc-a" markerWidth="9" markerHeight="8" refX="8.5" refY="4" orient="auto">
-                  <path d="M0 0 L9 4 L0 8 Z" fill="var(--accent)" />
-                </marker>
-              </defs>
-
-              {/* Plan section — looking along the core axis. */}
-              <circle cx="140" cy="150" r="84" class="plm-l" />
-              <circle cx="140" cy="150" r="68" class="plm-phantom" />
-              <circle cx="140" cy="150" r="32" style="fill:url(#plm-cc-h)" class="plm-l" />
-              {SLOTS.map((s: any) => (
-                <line x1={s.x1} y1={s.y1} x2={s.x2} y2={s.y2} class="plm-l plm-l--thin" />
-              ))}
-              <line x1="244" y1="150" x2="232" y2="150" class="plm-arw" marker-end="url(#plm-cc-a)" />
-              <line x1="36" y1="150" x2="48" y2="150" class="plm-arw" marker-end="url(#plm-cc-a)" />
-              <line x1="140" y1="46" x2="140" y2="58" class="plm-arw" marker-end="url(#plm-cc-a)" />
-              <line x1="140" y1="254" x2="140" y2="242" class="plm-arw" marker-end="url(#plm-cc-a)" />
-              <line x1="56" y1="150" x2="224" y2="150" class="plm-cl" />
-              <line x1="140" y1="66" x2="140" y2="234" class="plm-cl" />
-
-              {/* Side section — pin, sleeve, flanges and the head space. */}
-              <line x1="390" y1="26" x2="390" y2="286" class="plm-cl" />
-              <rect x="380" y="46" width="20" height="160" style="fill:url(#plm-cc-h)" class="plm-l" />
-              <rect x="356" y="206" width="68" height="20" style="fill:url(#plm-cc-h)" class="plm-l" />
-              <rect x="350" y="66" width="30" height="110" style="fill:url(#plm-cc-h)" class="plm-l" />
-              <rect x="400" y="66" width="30" height="110" style="fill:url(#plm-cc-h)" class="plm-l" />
-              <rect x="332" y="176" width="48" height="16" style="fill:url(#plm-cc-h)" class="plm-l" />
-              <rect x="400" y="176" width="48" height="16" style="fill:url(#plm-cc-h)" class="plm-l" />
-              <line x1="358" y1="72" x2="358" y2="170" class="plm-phantom" />
-              <line x1="368" y1="72" x2="368" y2="170" class="plm-phantom" />
-              <line x1="412" y1="72" x2="412" y2="170" class="plm-phantom" />
-              <line x1="422" y1="72" x2="422" y2="170" class="plm-phantom" />
-              <line x1="332" y1="192" x2="310" y2="192" class="plm-l plm-l--thin" />
-              <line x1="332" y1="206" x2="310" y2="206" class="plm-l plm-l--thin" />
-              <line x1="316" y1="186" x2="316" y2="192" class="plm-arw" marker-end="url(#plm-cc-a)" />
-              <line x1="316" y1="212" x2="316" y2="206" class="plm-arw" marker-end="url(#plm-cc-a)" />
-              <line x1="390" y1="240" x2="390" y2="278" class="plm-arw" marker-end="url(#plm-cc-a)" />
-
-              {/* Item balloons. Legend sits in HTML beside the drawing. */}
-              <g class="plm-bal">
-                <line x1="199" y1="91" x2="240" y2="54" /><circle cx="199" cy="91" r="2.4" class="plm-bal__dot" />
-                <circle cx="250" cy="46" r="10" /><text x="250" y="50">1</text>
-              </g>
-              <g class="plm-bal">
-                <line x1="128" y1="138" x2="52" y2="58" /><circle cx="128" cy="138" r="2.4" class="plm-bal__dot" />
-                <circle cx="42" cy="50" r="10" /><text x="42" y="54">2</text>
-              </g>
-              <g class="plm-bal">
-                <line x1="69" y1="176" x2="26" y2="232" /><circle cx="69" cy="176" r="2.4" class="plm-bal__dot" />
-                <circle cx="18" cy="242" r="10" /><text x="18" y="246">3</text>
-              </g>
-              <g class="plm-bal">
-                <line x1="316" y1="199" x2="330" y2="262" /><circle cx="316" cy="199" r="2.4" class="plm-bal__dot" />
-                <circle cx="340" cy="270" r="10" /><text x="340" y="274">4</text>
-              </g>
-            </svg>
-            <ol class="plm-leg">
-              {(collapsible.legend ?? []).map((l: any) => (
-                <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
-              ))}
-            </ol>
-            <figcaption class="figure-note">{common.schematic}</figcaption>
-          </figure>
-
-          {/* ── Unscrewing core ───────────────────────────────────────── */}
-          <figure class="plm-mech__col" data-reveal style="--reveal-delay:120ms">
-            <h3 class="plm-h4">{unscrewing.name}</h3>
-            <p class="plm-mech__sum">{unscrewing.summary}</p>
-            <svg viewBox="0 0 490 300" data-nomirror role="img" aria-label={unscrewing.figureLabel} class="plm-dwg">
-              <defs>
-                <pattern id="plm-us-h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.4" />
-                </pattern>
-                <pattern id="plm-us-h2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
-                  <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent)" stroke-width="0.8" opacity="0.28" />
-                </pattern>
-                <marker id="plm-us-a" markerWidth="9" markerHeight="8" refX="8.5" refY="4" orient="auto">
-                  <path d="M0 0 L9 4 L0 8 Z" fill="var(--accent)" />
-                </marker>
-              </defs>
-
-              <line x1="30" y1="150" x2="360" y2="150" class="plm-cl" />
-
-              {/* Moulded part, held against rotation. */}
-              <rect x="216" y="86" width="140" height="30" style="fill:url(#plm-us-h2)" class="plm-l plm-l--thin" />
-              <rect x="216" y="184" width="140" height="30" style="fill:url(#plm-us-h2)" class="plm-l plm-l--thin" />
-
-              {/* Core shaft and thread form. */}
-              <rect x="92" y="126" width="248" height="48" style="fill:url(#plm-us-h)" class="plm-l" />
-              <path d={CORE_TOP} class="plm-l" />
-              <path d={CORE_BOT} class="plm-l" />
-
-              {/* Pinion. */}
-              <circle cx="132" cy="150" r="44" class="plm-l" />
-              {PINION.map((t: any) => (
-                <line x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} class="plm-l plm-l--thin" />
-              ))}
-
-              {/* Rack. */}
-              <rect x="40" y="202" width="156" height="26" style="fill:url(#plm-us-h)" class="plm-l" />
-              <path d={RACK_TEETH} class="plm-l" />
-
-              <path d="M72 118 Q132 62 192 118" class="plm-arw" fill="none" marker-end="url(#plm-us-a)" />
-              <line x1="376" y1="150" x2="452" y2="150" class="plm-arw" marker-end="url(#plm-us-a)" />
-
-              <g class="plm-bal">
-                <line x1="132" y1="112" x2="78" y2="52" /><circle cx="132" cy="112" r="2.4" class="plm-bal__dot" />
-                <circle cx="68" cy="44" r="10" /><text x="68" y="48">1</text>
-              </g>
-              <g class="plm-bal">
-                <line x1="110" y1="216" x2="60" y2="270" /><circle cx="110" cy="216" r="2.4" class="plm-bal__dot" />
-                <circle cx="50" cy="278" r="10" /><text x="50" y="282">2</text>
-              </g>
-              <g class="plm-bal">
-                <line x1="280" y1="120" x2="300" y2="58" /><circle cx="280" cy="120" r="2.4" class="plm-bal__dot" />
-                <circle cx="310" cy="50" r="10" /><text x="310" y="54">3</text>
-              </g>
-              <g class="plm-bal">
-                <line x1="300" y1="200" x2="396" y2="258" /><circle cx="300" cy="200" r="2.4" class="plm-bal__dot" />
-                <circle cx="406" cy="266" r="10" /><text x="406" y="270">4</text>
-              </g>
-            </svg>
-            <ol class="plm-leg">
-              {(unscrewing.legend ?? []).map((l: any) => (
-                <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
-              ))}
-            </ol>
-            <figcaption class="figure-note">{common.schematic}</figcaption>
-          </figure>
-        </div>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="plm-mech">
+            {/* ── Collapsible core ──────────────────────────────────────── */}
+            <figure class="plm-mech__col" data-reveal>
+              <h3 class="plm-h4">{collapsible.name}</h3>
+              <p class="plm-mech__sum">{collapsible.summary}</p>
+              <svg viewBox="0 0 490 300" data-nomirror role="img" aria-label={collapsible.figureLabel} class="plm-dwg">
+                <defs>
+                  <pattern id="plm-cc-h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.4" />
+                  </pattern>
+                  <marker id="plm-cc-a" markerWidth="9" markerHeight="8" refX="8.5" refY="4" orient="auto">
+                    <path d="M0 0 L9 4 L0 8 Z" fill="var(--accent)" />
+                  </marker>
+                </defs>
+  
+                {/* Plan section — looking along the core axis. */}
+                <circle cx="140" cy="150" r="84" class="plm-l" />
+                <circle cx="140" cy="150" r="68" class="plm-phantom" />
+                <circle cx="140" cy="150" r="32" style="fill:url(#plm-cc-h)" class="plm-l" />
+                {SLOTS.map((s: any) => (
+                  <line x1={s.x1} y1={s.y1} x2={s.x2} y2={s.y2} class="plm-l plm-l--thin" />
+                ))}
+                <line x1="244" y1="150" x2="232" y2="150" class="plm-arw" marker-end="url(#plm-cc-a)" />
+                <line x1="36" y1="150" x2="48" y2="150" class="plm-arw" marker-end="url(#plm-cc-a)" />
+                <line x1="140" y1="46" x2="140" y2="58" class="plm-arw" marker-end="url(#plm-cc-a)" />
+                <line x1="140" y1="254" x2="140" y2="242" class="plm-arw" marker-end="url(#plm-cc-a)" />
+                <line x1="56" y1="150" x2="224" y2="150" class="plm-cl" />
+                <line x1="140" y1="66" x2="140" y2="234" class="plm-cl" />
+  
+                {/* Side section — pin, sleeve, flanges and the head space. */}
+                <line x1="390" y1="26" x2="390" y2="286" class="plm-cl" />
+                <rect x="380" y="46" width="20" height="160" style="fill:url(#plm-cc-h)" class="plm-l" />
+                <rect x="356" y="206" width="68" height="20" style="fill:url(#plm-cc-h)" class="plm-l" />
+                <rect x="350" y="66" width="30" height="110" style="fill:url(#plm-cc-h)" class="plm-l" />
+                <rect x="400" y="66" width="30" height="110" style="fill:url(#plm-cc-h)" class="plm-l" />
+                <rect x="332" y="176" width="48" height="16" style="fill:url(#plm-cc-h)" class="plm-l" />
+                <rect x="400" y="176" width="48" height="16" style="fill:url(#plm-cc-h)" class="plm-l" />
+                <line x1="358" y1="72" x2="358" y2="170" class="plm-phantom" />
+                <line x1="368" y1="72" x2="368" y2="170" class="plm-phantom" />
+                <line x1="412" y1="72" x2="412" y2="170" class="plm-phantom" />
+                <line x1="422" y1="72" x2="422" y2="170" class="plm-phantom" />
+                <line x1="332" y1="192" x2="310" y2="192" class="plm-l plm-l--thin" />
+                <line x1="332" y1="206" x2="310" y2="206" class="plm-l plm-l--thin" />
+                <line x1="316" y1="186" x2="316" y2="192" class="plm-arw" marker-end="url(#plm-cc-a)" />
+                <line x1="316" y1="212" x2="316" y2="206" class="plm-arw" marker-end="url(#plm-cc-a)" />
+                <line x1="390" y1="240" x2="390" y2="278" class="plm-arw" marker-end="url(#plm-cc-a)" />
+  
+                {/* Item balloons. Legend sits in HTML beside the drawing. */}
+                <g class="plm-bal">
+                  <line x1="199" y1="91" x2="240" y2="54" /><circle cx="199" cy="91" r="2.4" class="plm-bal__dot" />
+                  <circle cx="250" cy="46" r="10" /><text x="250" y="50">1</text>
+                </g>
+                <g class="plm-bal">
+                  <line x1="128" y1="138" x2="52" y2="58" /><circle cx="128" cy="138" r="2.4" class="plm-bal__dot" />
+                  <circle cx="42" cy="50" r="10" /><text x="42" y="54">2</text>
+                </g>
+                <g class="plm-bal">
+                  <line x1="69" y1="176" x2="26" y2="232" /><circle cx="69" cy="176" r="2.4" class="plm-bal__dot" />
+                  <circle cx="18" cy="242" r="10" /><text x="18" y="246">3</text>
+                </g>
+                <g class="plm-bal">
+                  <line x1="316" y1="199" x2="330" y2="262" /><circle cx="316" cy="199" r="2.4" class="plm-bal__dot" />
+                  <circle cx="340" cy="270" r="10" /><text x="340" y="274">4</text>
+                </g>
+              </svg>
+              <ol class="plm-leg">
+                {(collapsible.legend ?? []).map((l: any) => (
+                  <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
+                ))}
+              </ol>
+              <figcaption class="figure-note">{common.schematic}</figcaption>
+            </figure>
+  
+            {/* ── Unscrewing core ───────────────────────────────────────── */}
+            <figure class="plm-mech__col" data-reveal style="--reveal-delay:120ms">
+              <h3 class="plm-h4">{unscrewing.name}</h3>
+              <p class="plm-mech__sum">{unscrewing.summary}</p>
+              <svg viewBox="0 0 490 300" data-nomirror role="img" aria-label={unscrewing.figureLabel} class="plm-dwg">
+                <defs>
+                  <pattern id="plm-us-h" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent-deep)" stroke-width="0.8" opacity="0.4" />
+                  </pattern>
+                  <pattern id="plm-us-h2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+                    <line x1="0" y1="0" x2="0" y2="7" stroke="var(--accent)" stroke-width="0.8" opacity="0.28" />
+                  </pattern>
+                  <marker id="plm-us-a" markerWidth="9" markerHeight="8" refX="8.5" refY="4" orient="auto">
+                    <path d="M0 0 L9 4 L0 8 Z" fill="var(--accent)" />
+                  </marker>
+                </defs>
+  
+                <line x1="30" y1="150" x2="360" y2="150" class="plm-cl" />
+  
+                {/* Moulded part, held against rotation. */}
+                <rect x="216" y="86" width="140" height="30" style="fill:url(#plm-us-h2)" class="plm-l plm-l--thin" />
+                <rect x="216" y="184" width="140" height="30" style="fill:url(#plm-us-h2)" class="plm-l plm-l--thin" />
+  
+                {/* Core shaft and thread form. */}
+                <rect x="92" y="126" width="248" height="48" style="fill:url(#plm-us-h)" class="plm-l" />
+                <path d={CORE_TOP} class="plm-l" />
+                <path d={CORE_BOT} class="plm-l" />
+  
+                {/* Pinion. */}
+                <circle cx="132" cy="150" r="44" class="plm-l" />
+                {PINION.map((t: any) => (
+                  <line x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} class="plm-l plm-l--thin" />
+                ))}
+  
+                {/* Rack. */}
+                <rect x="40" y="202" width="156" height="26" style="fill:url(#plm-us-h)" class="plm-l" />
+                <path d={RACK_TEETH} class="plm-l" />
+  
+                <path d="M72 118 Q132 62 192 118" class="plm-arw" fill="none" marker-end="url(#plm-us-a)" />
+                <line x1="376" y1="150" x2="452" y2="150" class="plm-arw" marker-end="url(#plm-us-a)" />
+  
+                <g class="plm-bal">
+                  <line x1="132" y1="112" x2="78" y2="52" /><circle cx="132" cy="112" r="2.4" class="plm-bal__dot" />
+                  <circle cx="68" cy="44" r="10" /><text x="68" y="48">1</text>
+                </g>
+                <g class="plm-bal">
+                  <line x1="110" y1="216" x2="60" y2="270" /><circle cx="110" cy="216" r="2.4" class="plm-bal__dot" />
+                  <circle cx="50" cy="278" r="10" /><text x="50" y="282">2</text>
+                </g>
+                <g class="plm-bal">
+                  <line x1="280" y1="120" x2="300" y2="58" /><circle cx="280" cy="120" r="2.4" class="plm-bal__dot" />
+                  <circle cx="310" cy="50" r="10" /><text x="310" y="54">3</text>
+                </g>
+                <g class="plm-bal">
+                  <line x1="300" y1="200" x2="396" y2="258" /><circle cx="300" cy="200" r="2.4" class="plm-bal__dot" />
+                  <circle cx="406" cy="266" r="10" /><text x="406" y="270">4</text>
+                </g>
+              </svg>
+              <ol class="plm-leg">
+                {(unscrewing.legend ?? []).map((l: any) => (
+                  <li><span class="plm-leg__n t-mono">{l.n}</span><span>{l.text}</span></li>
+                ))}
+              </ol>
+              <figcaption class="figure-note">{common.schematic}</figcaption>
+            </figure>
+          </div>
+        </TechNote>
 
         {/* The two mechanisms read against each other on the same rows. */}
         <p class="t-label plm-cmp__cap">{b.mechanism.compare.label}</p>
-        <div class="plm-cmp__scroll">
-          <table class="plm-cmp">
-            <thead>
-              <tr>
-                <th scope="col">{b.mechanism.compare.featureColumn}</th>
-                <th scope="col">{collapsible.name}</th>
-                <th scope="col">{unscrewing.name}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {(b.mechanism.compare.rows ?? []).map((r: any) => (
+        <TechNote locale={locale} kind="reasoning">
+          <div class="plm-cmp__scroll">
+            <table class="plm-cmp">
+              <thead>
                 <tr>
-                  <th scope="row">{r.k}</th>
-                  <td>{r.a}</td>
-                  <td>{r.b}</td>
+                  <th scope="col">{b.mechanism.compare.featureColumn}</th>
+                  <th scope="col">{collapsible.name}</th>
+                  <th scope="col">{unscrewing.name}</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {(b.mechanism.compare.rows ?? []).map((r: any) => (
+                  <tr>
+                    <th scope="row">{r.k}</th>
+                    <td>{r.a}</td>
+                    <td>{r.b}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </TechNote>
         <p class="plm-src t-fine">{b.mechanism.compare.source}</p>
 
-        <div class="plm-third">
-          <h3 class="plm-h5">{b.mechanism.third.heading}</h3>
-          <p>{b.mechanism.third.body}</p>
-        </div>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="plm-third">
+            <h3 class="plm-h5">{b.mechanism.third.heading}</h3>
+            <p>{b.mechanism.third.body}</p>
+          </div>
+        </TechNote>
 
         <p class="plm-close">{b.mechanism.close}</p>
       </div>
@@ -669,20 +678,22 @@ const unscrewing = mechs[1] ?? {};
         </div>
 
         <p class="t-label plm-cmp__cap">{b.thread.ledgerLabel}</p>
-        <div class="plm-cmp__scroll">
-          <table class="plm-cmp plm-cmp--two">
-            <thead>
-              <tr>
-                {(b.thread.ledgerColumns ?? []).map((c: string) => <th scope="col">{c}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {(b.thread.ledger ?? []).map((r: any) => (
-                <tr><th scope="row">{r.k}</th><td>{r.v}</td></tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="plm-cmp__scroll">
+            <table class="plm-cmp plm-cmp--two">
+              <thead>
+                <tr>
+                  {(b.thread.ledgerColumns ?? []).map((c: string) => <th scope="col">{c}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {(b.thread.ledger ?? []).map((r: any) => (
+                  <tr><th scope="row">{r.k}</th><td>{r.v}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </TechNote>
 
         <div class="plm-third">
           <h3 class="plm-h5">{b.thread.insert.heading}</h3>
@@ -703,28 +714,30 @@ const unscrewing = mechs[1] ?? {};
           <p class="t-lead">{b.material.body}</p>
         </div>
 
-        <div class="plm-cmp__scroll plm-mat__scroll">
-          <table class="plm-mat">
-            <thead>
-              <tr>
-                {(b.material.columns ?? []).map((c: string) => <th scope="col">{c}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {(b.material.rows ?? []).map((r: any) => (
+        <TechNote locale={locale} kind="reasoning">
+          <div class="plm-cmp__scroll plm-mat__scroll">
+            <table class="plm-mat">
+              <thead>
                 <tr>
-                  <th scope="row" class="t-mono">{r.name}</th>
-                  <td>{r.window}</td>
-                  <td>{r.shrink}</td>
-                  <td>{r.runner}</td>
-                  <td>{r.steel}</td>
-                  <td>{r.vent}</td>
-                  <td class="plm-mat__risk">{r.risk}</td>
+                  {(b.material.columns ?? []).map((c: string) => <th scope="col">{c}</th>)}
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {(b.material.rows ?? []).map((r: any) => (
+                  <tr>
+                    <th scope="row" class="t-mono">{r.name}</th>
+                    <td>{r.window}</td>
+                    <td>{r.shrink}</td>
+                    <td>{r.runner}</td>
+                    <td>{r.steel}</td>
+                    <td>{r.vent}</td>
+                    <td class="plm-mat__risk">{r.risk}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </TechNote>
 
         <p class="plm-close">{b.material.note}</p>
         <p class="plm-src t-fine">{b.material.source}</p>
@@ -822,33 +835,37 @@ const unscrewing = mechs[1] ?? {};
           </figure>
         </div>
 
-        <div class="plm-tol">
-          <p class="t-label">{b.agreement.toleranceLabel}</p>
-          <dl class="spec plm-tol__list">
-            {(b.agreement.tolerance ?? []).map((t: any) => (
-              <div class="spec__row">
-                <dt class="spec__k">{t.k}</dt>
-                <dd class="spec__v">{t.v}</dd>
-              </div>
-            ))}
-          </dl>
-          <p class="plm-src t-fine">{b.agreement.source}</p>
-        </div>
+        <TechNote locale={locale} kind="detail">
+          <div class="plm-tol">
+            <p class="t-label">{b.agreement.toleranceLabel}</p>
+            <dl class="spec plm-tol__list">
+              {(b.agreement.tolerance ?? []).map((t: any) => (
+                <div class="spec__row">
+                  <dt class="spec__k">{t.k}</dt>
+                  <dd class="spec__v">{t.v}</dd>
+                </div>
+              ))}
+            </dl>
+            <p class="plm-src t-fine">{b.agreement.source}</p>
+          </div>
+        </TechNote>
 
-        <div class="plm-split">
-          <section>
-            <h3 class="plm-h5">{b.agreement.canHeading}</h3>
-            <ul class="plm-list plm-list--can">
-              {(b.agreement.can ?? []).map((i: string) => <li>{i}</li>)}
-            </ul>
-          </section>
-          <section>
-            <h3 class="plm-h5">{b.agreement.cannotHeading}</h3>
-            <ul class="plm-list plm-list--cannot">
-              {(b.agreement.cannot ?? []).map((i: string) => <li>{i}</li>)}
-            </ul>
-          </section>
-        </div>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="plm-split">
+            <section>
+              <h3 class="plm-h5">{b.agreement.canHeading}</h3>
+              <ul class="plm-list plm-list--can">
+                {(b.agreement.can ?? []).map((i: string) => <li>{i}</li>)}
+              </ul>
+            </section>
+            <section>
+              <h3 class="plm-h5">{b.agreement.cannotHeading}</h3>
+              <ul class="plm-list plm-list--cannot">
+                {(b.agreement.cannot ?? []).map((i: string) => <li>{i}</li>)}
+              </ul>
+            </section>
+          </div>
+        </TechNote>
 
         <p class="plm-close">{b.agreement.close}</p>
       </div>
@@ -866,15 +883,17 @@ const unscrewing = mechs[1] ?? {};
           <p class="t-lead">{b.economics.body}</p>
         </div>
 
-        <ol class="plm-three">
-          {(b.economics.numbers ?? []).map((n: any, i: number) => (
-            <li data-reveal style={`--reveal-delay:${i * 90}ms`}>
-              <span class="plm-three__n t-mono">{n.n}</span>
-              <h3 class="plm-h5">{n.name}</h3>
-              <p>{n.note}</p>
-            </li>
-          ))}
-        </ol>
+        <TechNote locale={locale} kind="reasoning">
+          <ol class="plm-three">
+            {(b.economics.numbers ?? []).map((n: any, i: number) => (
+              <li data-reveal style={`--reveal-delay:${i * 90}ms`}>
+                <span class="plm-three__n t-mono">{n.n}</span>
+                <h3 class="plm-h5">{n.name}</h3>
+                <p>{n.note}</p>
+              </li>
+            ))}
+          </ol>
+        </TechNote>
 
         <div class="plm-calc">
           <p class="t-label plm-calc__cap">{b.economics.workedLabel}</p>
@@ -907,14 +926,16 @@ const unscrewing = mechs[1] ?? {};
           <p class="plm-src t-fine">{b.economics.disclaimer}</p>
         </div>
 
-        <div class="plm-lost">
-          <h3 class="plm-h5">{b.economics.lostHeading}</h3>
-          <dl class="plm-lost__list">
-            {(b.economics.lost ?? []).map((l: any) => (
-              <div><dt>{l.k}</dt><dd>{l.v}</dd></div>
-            ))}
-          </dl>
-        </div>
+        <TechNote locale={locale} kind="why">
+          <div class="plm-lost">
+            <h3 class="plm-h5">{b.economics.lostHeading}</h3>
+            <dl class="plm-lost__list">
+              {(b.economics.lost ?? []).map((l: any) => (
+                <div><dt>{l.k}</dt><dd>{l.v}</dd></div>
+              ))}
+            </dl>
+          </div>
+        </TechNote>
 
         <p class="plm-close">{b.economics.close}</p>
       </div>
@@ -932,20 +953,21 @@ const unscrewing = mechs[1] ?? {};
           <p class="t-lead">{b.boundary.body}</p>
         </div>
 
-        <div class="plm-split plm-split--bound">
-          <section>
-            <h3 class="plm-h5">{b.boundary.supplyHeading}</h3>
-            <ul class="plm-list plm-list--can">
-              {(b.boundary.supply ?? []).map((i: string) => <li>{i}</li>)}
-            </ul>
-          </section>
-          <section>
-            <h3 class="plm-h5">{b.boundary.customerHeading}</h3>
-            <ul class="plm-list plm-list--cannot">
-              {(b.boundary.customer ?? []).map((i: string) => <li>{i}</li>)}
-            </ul>
-          </section>
-        </div>
+                  <div class="plm-split plm-split--bound">
+            <section>
+              <h3 class="plm-h5">{b.boundary.supplyHeading}</h3>
+              <ul class="plm-list plm-list--can">
+                {(b.boundary.supply ?? []).map((i: string) => <li>{i}</li>)}
+              </ul>
+            </section>
+            <section>
+              <h3 class="plm-h5">{b.boundary.customerHeading}</h3>
+              <ul class="plm-list plm-list--cannot">
+                {(b.boundary.customer ?? []).map((i: string) => <li>{i}</li>)}
+              </ul>
+            </section>
+          </div>
+        
 
         <p class="plm-statement">{b.boundary.statement}</p>
       </div>
@@ -965,18 +987,20 @@ const unscrewing = mechs[1] ?? {};
 
         {/* The audit. Staggered off the grid — the one place the page asks
             rather than explains. */}
-        <div class="plm-audit">
-          <h3 class="t-label plm-audit__h">{b.start.auditHeading}</h3>
-          <ol class="plm-audit__list">
-            {(b.start.audit ?? []).map((a: any, i: number) => (
-              <li id={`plm-q${i + 1}`} data-reveal style={`--reveal-delay:${i * 70}ms`}>
-                <span class="plm-audit__n t-mono">{String(i + 1).padStart(2, '0')}</span>
-                <p class="plm-audit__q">{a.q}</p>
-                <p class="plm-audit__c">{a.c}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <TechNote locale={locale} kind="detail">
+          <div class="plm-audit">
+            <h3 class="t-label plm-audit__h">{b.start.auditHeading}</h3>
+            <ol class="plm-audit__list">
+              {(b.start.audit ?? []).map((a: any, i: number) => (
+                <li id={`plm-q${i + 1}`} data-reveal style={`--reveal-delay:${i * 70}ms`}>
+                  <span class="plm-audit__n t-mono">{String(i + 1).padStart(2, '0')}</span>
+                  <p class="plm-audit__q">{a.q}</p>
+                  <p class="plm-audit__c">{a.c}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </TechNote>
 
         <div class="plm-third">
           <h3 class="plm-h5">{b.start.positionHeading}</h3>

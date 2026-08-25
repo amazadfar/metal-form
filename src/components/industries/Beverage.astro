@@ -14,6 +14,7 @@
  * stretching body, cavity arrays, cyan on near-white. Industrial, not an advert.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 import ProjectProof from '../ProjectProof.astro';
@@ -24,7 +25,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 // Preform and bottle profiles. The finish geometry is identical in both — that
@@ -151,24 +152,26 @@ const SPREAD = [
       </div>
 
       {/* One continuous ruler carrying every weight band. No cards. */}
-      <div class="bev-scale" data-reveal>
-        <p class="t-label bev-scale__cap">{b.grams.scaleLabel}</p>
-        <ol class="bev-scale__rows">
-          {b.grams.rows.map((row: any, i: number) => (
-            <li class="bev-row" style={`--i:${i}`}>
-              <span class="bev-row__w t-mono">{row.weight}</span>
-              <span class="bev-row__bar" aria-hidden="true">
-                <svg viewBox="0 0 40 90" class="bev-row__pf" data-nomirror>
-                  <path d={NECK} transform="translate(20 6) scale(0.62)" class="bev-line" />
-                  <path d={PREFORM_BODY} transform={`translate(20 6) scale(0.62 ${0.5 + i * 0.14})`} class="bev-line bev-fill" />
-                </svg>
-              </span>
-              <span class="bev-row__std">{row.standard}</span>
-              <span class="bev-row__note">{row.note}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
+      <TechNote locale={locale} kind="detail">
+        <div class="bev-scale" data-reveal>
+          <p class="t-label bev-scale__cap">{b.grams.scaleLabel}</p>
+          <ol class="bev-scale__rows">
+            {b.grams.rows.map((row: any, i: number) => (
+              <li class="bev-row" style={`--i:${i}`}>
+                <span class="bev-row__w t-mono">{row.weight}</span>
+                <span class="bev-row__bar" aria-hidden="true">
+                  <svg viewBox="0 0 40 90" class="bev-row__pf" data-nomirror>
+                    <path d={NECK} transform="translate(20 6) scale(0.62)" class="bev-line" />
+                    <path d={PREFORM_BODY} transform={`translate(20 6) scale(0.62 ${0.5 + i * 0.14})`} class="bev-line bev-fill" />
+                  </svg>
+                </span>
+                <span class="bev-row__std">{row.standard}</span>
+                <span class="bev-row__note">{row.note}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </TechNote>
 
       <p class="bev-grams__close">{b.grams.close}</p>
     </div>
@@ -328,15 +331,17 @@ const SPREAD = [
         ))}
       </div>
 
-      <div class="bev-conv">
-        <h3 class="bev-h4">{b.neck.conversionHeading}</h3>
-        <ol class="bev-conv__list">
-          {b.neck.conversion.map((step: string, i: number) => (
-            <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{step}</li>
-          ))}
-        </ol>
-        <p class="bev-conv__note">{b.neck.conversionNote}</p>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="bev-conv">
+          <h3 class="bev-h4">{b.neck.conversionHeading}</h3>
+          <ol class="bev-conv__list">
+            {b.neck.conversion.map((step: string, i: number) => (
+              <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{step}</li>
+            ))}
+          </ol>
+          <p class="bev-conv__note">{b.neck.conversionNote}</p>
+        </div>
+      </TechNote>
     </div>
   </section>
 
@@ -412,34 +417,36 @@ const SPREAD = [
         <p class="t-lead">{b.defects.body}</p>
       </div>
 
-      <div class="scroller bev-matrix__scroll" tabindex="0" role="group" aria-label={b.defects.heading}>
-        <table class="bev-matrix">
-          <thead>
-            <tr>
-              <th scope="col" class="bev-matrix__corner"><span class="vh">{b.defects.heading}</span></th>
-              {b.defects.columns.map((col: string) => (
-                <th scope="col"><span>{col}</span></th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {b.defects.rows.map((row: any) => (
-              <tr data-side={row.side}>
-                <th scope="row">
-                  <span class="bev-matrix__name">{row.defect}</span>
-                  <span class="bev-matrix__note">{row.note}</span>
-                </th>
-                {row.origins.map((on: number, ci: number) => (
-                  <td>
-                    {on === 1 && <span class="bev-matrix__mark" aria-hidden="true"></span>}
-                    <span class="vh">{on === 1 ? b.defects.columns[ci] : ''}</span>
-                  </td>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="scroller bev-matrix__scroll" tabindex="0" role="group" aria-label={b.defects.heading}>
+          <table class="bev-matrix">
+            <thead>
+              <tr>
+                <th scope="col" class="bev-matrix__corner"><span class="vh">{b.defects.heading}</span></th>
+                {b.defects.columns.map((col: string) => (
+                  <th scope="col"><span>{col}</span></th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {b.defects.rows.map((row: any) => (
+                <tr data-side={row.side}>
+                  <th scope="row">
+                    <span class="bev-matrix__name">{row.defect}</span>
+                    <span class="bev-matrix__note">{row.note}</span>
+                  </th>
+                  {row.origins.map((on: number, ci: number) => (
+                    <td>
+                      {on === 1 && <span class="bev-matrix__mark" aria-hidden="true"></span>}
+                      <span class="vh">{on === 1 ? b.defects.columns[ci] : ''}</span>
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </TechNote>
 
       <ul class="bev-def__key">
         <li><span class="bev-def__swatch bev-def__swatch--tool"></span>{b.defects.toolSide}</li>
@@ -457,62 +464,64 @@ const SPREAD = [
         <p class="t-lead">{b.closures.body}</p>
       </div>
 
-      <div class="bev-cap__grid">
-        {/* Two routes on one time axis: the cycle difference is a length. */}
-        <div class="bev-tracks">
-          {b.closures.tracks.map((track: any, i: number) => (
-            <div class="bev-track" data-track={i}>
-              <p class="bev-track__name t-label">{track.name}</p>
-              <div class="bev-track__bar" aria-hidden="true">
-                <span style={`--w:${i === 0 ? 100 : 62}%`}></span>
+      <TechNote locale={locale} kind="detail">
+        <div class="bev-cap__grid">
+          {/* Two routes on one time axis: the cycle difference is a length. */}
+          <div class="bev-tracks">
+            {b.closures.tracks.map((track: any, i: number) => (
+              <div class="bev-track" data-track={i}>
+                <p class="bev-track__name t-label">{track.name}</p>
+                <div class="bev-track__bar" aria-hidden="true">
+                  <span style={`--w:${i === 0 ? 100 : 62}%`}></span>
+                </div>
+                <p class="bev-track__note">{track.note}</p>
               </div>
-              <p class="bev-track__note">{track.note}</p>
-            </div>
-          ))}
-          <p class="bev-tracks__note t-fine">{b.closures.tracksNote}</p>
-        </div>
-
-        {/* The tethered cap, in plan and section. */}
-        <figure class="bev-capfig">
-          <p class="t-label">{b.closures.capHeading}</p>
-          <svg viewBox="0 0 260 190" data-nomirror role="img" aria-label={common.schematic}>
-            {/* Plan */}
-            <g transform="translate(66 78)">
-              <circle r="52" class="bev-line" />
-              <circle r="43" class="bev-line bev-faint" />
-              {Array.from({ length: 30 }).map((_: any, i: number) => {
-                const a = (i / 30) * Math.PI * 2;
-                return (
-                  <line
-                    x1={Math.cos(a) * 43} y1={Math.sin(a) * 43}
-                    x2={Math.cos(a) * 52} y2={Math.sin(a) * 52}
-                    class="bev-knurl"
-                  />
-                );
-              })}
-              {/* Bridge pattern, interrupted where the tether is */}
-              {Array.from({ length: 18 }).map((_: any, i: number) => {
-                const a = (i / 18) * Math.PI * 2 + 0.3;
-                if (TETHER_GAP.includes(i)) return null;
-                return <circle cx={Math.cos(a) * 47} cy={Math.sin(a) * 47} r="2.1" class="bev-bridge" />;
-              })}
-              <path d="M-14 44 q14 14 28 0" class="bev-hinge" fill="none" />
-            </g>
-            {/* Section */}
-            <g transform="translate(190 78)">
-              <path d="M-38 -30 h76 v14 h-6 v46 h-64 v-46 h-6 z" class="bev-line" />
-              <path d="M-32 -16 h64" class="bev-faint" />
-              <path d="M-32 18 h64" class="bev-band" />
-            </g>
-          </svg>
-          <dl class="bev-capfig__parts">
-            {b.closures.capParts.map((part: any) => (
-              <div><dt>{part.name}</dt><dd>{part.note}</dd></div>
             ))}
-          </dl>
-          <figcaption class="figure-note">{common.schematic}</figcaption>
-        </figure>
-      </div>
+            <p class="bev-tracks__note t-fine">{b.closures.tracksNote}</p>
+          </div>
+  
+          {/* The tethered cap, in plan and section. */}
+          <figure class="bev-capfig">
+            <p class="t-label">{b.closures.capHeading}</p>
+            <svg viewBox="0 0 260 190" data-nomirror role="img" aria-label={common.schematic}>
+              {/* Plan */}
+              <g transform="translate(66 78)">
+                <circle r="52" class="bev-line" />
+                <circle r="43" class="bev-line bev-faint" />
+                {Array.from({ length: 30 }).map((_: any, i: number) => {
+                  const a = (i / 30) * Math.PI * 2;
+                  return (
+                    <line
+                      x1={Math.cos(a) * 43} y1={Math.sin(a) * 43}
+                      x2={Math.cos(a) * 52} y2={Math.sin(a) * 52}
+                      class="bev-knurl"
+                    />
+                  );
+                })}
+                {/* Bridge pattern, interrupted where the tether is */}
+                {Array.from({ length: 18 }).map((_: any, i: number) => {
+                  const a = (i / 18) * Math.PI * 2 + 0.3;
+                  if (TETHER_GAP.includes(i)) return null;
+                  return <circle cx={Math.cos(a) * 47} cy={Math.sin(a) * 47} r="2.1" class="bev-bridge" />;
+                })}
+                <path d="M-14 44 q14 14 28 0" class="bev-hinge" fill="none" />
+              </g>
+              {/* Section */}
+              <g transform="translate(190 78)">
+                <path d="M-38 -30 h76 v14 h-6 v46 h-64 v-46 h-6 z" class="bev-line" />
+                <path d="M-32 -16 h64" class="bev-faint" />
+                <path d="M-32 18 h64" class="bev-band" />
+              </g>
+            </svg>
+            <dl class="bev-capfig__parts">
+              {b.closures.capParts.map((part: any) => (
+                <div><dt>{part.name}</dt><dd>{part.note}</dd></div>
+              ))}
+            </dl>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+        </div>
+      </TechNote>
 
       <p class="bev-cap__boundary">{b.closures.boundary}</p>
     </div>
@@ -573,16 +582,18 @@ const SPREAD = [
         <p class="t-lead">{b.start.body}</p>
       </div>
 
-      <div class="bev-ledger">
-        <section class="bev-ledger__col">
-          <h3 class="bev-h4">{b.start.sendHeading}</h3>
-          <ul>{b.start.send.map((item: string) => <li>{item}</li>)}</ul>
-        </section>
-        <section class="bev-ledger__col bev-ledger__col--out">
-          <h3 class="bev-h4">{b.start.getHeading}</h3>
-          <ul>{b.start.get.map((item: string) => <li>{item}</li>)}</ul>
-        </section>
-      </div>
+      <TechNote locale={locale} kind="detail">
+        <div class="bev-ledger">
+          <section class="bev-ledger__col">
+            <h3 class="bev-h4">{b.start.sendHeading}</h3>
+            <ul>{b.start.send.map((item: string) => <li>{item}</li>)}</ul>
+          </section>
+          <section class="bev-ledger__col bev-ledger__col--out">
+            <h3 class="bev-h4">{b.start.getHeading}</h3>
+            <ul>{b.start.get.map((item: string) => <li>{item}</li>)}</ul>
+          </section>
+        </div>
+      </TechNote>
 
       {/* Layer three: the technical depth, folded away until it is wanted. */}
       <div class="bev-panels">

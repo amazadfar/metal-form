@@ -15,6 +15,7 @@
  * paid on every shot for years. So the useful conversation happens before steel.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -24,7 +25,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /* ── Exploded stack geometry ───────────────────────────────────────────────
@@ -286,16 +287,18 @@ function profile(amp: number, seed: number): string {
         <figcaption class="figure-note">{b.intake.figureNote}</figcaption>
       </figure>
 
-      <ol class="tys-lanes">
-        {b.intake.lanes.map((lane: any, i: number) => (
-          <li class="tys-lanes__item" style={`--reveal-delay:${i * 90}ms`} data-reveal>
-            <span class="tys-lanes__no t-mono">{lane.no}</span>
-            <h3 class="tys-h5">{lane.name}</h3>
-            <p class="tys-lanes__action">{lane.action}</p>
-            <p class="tys-lanes__need t-small">{lane.need}</p>
-          </li>
-        ))}
-      </ol>
+      <TechNote locale={locale} kind="detail">
+        <ol class="tys-lanes">
+          {b.intake.lanes.map((lane: any, i: number) => (
+            <li class="tys-lanes__item" style={`--reveal-delay:${i * 90}ms`} data-reveal>
+              <span class="tys-lanes__no t-mono">{lane.no}</span>
+              <h3 class="tys-h5">{lane.name}</h3>
+              <p class="tys-lanes__action">{lane.action}</p>
+              <p class="tys-lanes__need t-small">{lane.need}</p>
+            </li>
+          ))}
+        </ol>
+      </TechNote>
 
       <p class="tys-close">{b.intake.close}</p>
     </div>
@@ -352,34 +355,36 @@ function profile(amp: number, seed: number): string {
 
       {/* The count collapsing is the argument. */}
       <div class="tys-count">
-        <div class="tys-count__col">
-          <h3 class="t-label">{b.consolidate.before.heading}</h3>
-          <dl>
-            {b.consolidate.before.rows.map((r: any) => (
-              <div><dt class="t-mono">{r.value}</dt><dd>{r.label}</dd></div>
-            ))}
-          </dl>
+          <div class="tys-count__col">
+            <h3 class="t-label">{b.consolidate.before.heading}</h3>
+            <dl>
+              {b.consolidate.before.rows.map((r: any) => (
+                <div><dt class="t-mono">{r.value}</dt><dd>{r.label}</dd></div>
+              ))}
+            </dl>
+          </div>
+          <div class="tys-count__col tys-count__col--after">
+            <h3 class="t-label">{b.consolidate.after.heading}</h3>
+            <dl>
+              {b.consolidate.after.rows.map((r: any) => (
+                <div><dt class="t-mono">{r.value}</dt><dd>{r.label}</dd></div>
+              ))}
+            </dl>
+          </div>
+          <div class="tys-count__col tys-count__col--wide">
+            <h3 class="t-label">{b.consolidate.consequenceHeading}</h3>
+            <ul class="tys-ticks">
+              {b.consolidate.consequences.map((c: string) => <li>{c}</li>)}
+            </ul>
+          </div>
         </div>
-        <div class="tys-count__col tys-count__col--after">
-          <h3 class="t-label">{b.consolidate.after.heading}</h3>
-          <dl>
-            {b.consolidate.after.rows.map((r: any) => (
-              <div><dt class="t-mono">{r.value}</dt><dd>{r.label}</dd></div>
-            ))}
-          </dl>
-        </div>
-        <div class="tys-count__col tys-count__col--wide">
-          <h3 class="t-label">{b.consolidate.consequenceHeading}</h3>
-          <ul class="tys-ticks">
-            {b.consolidate.consequences.map((c: string) => <li>{c}</li>)}
-          </ul>
-        </div>
-      </div>
 
-      <div class="tys-caution">
-        <h3 class="tys-h5">{b.consolidate.cautionHeading}</h3>
-        <p>{b.consolidate.caution}</p>
-      </div>
+      <TechNote locale={locale} kind="why">
+        <div class="tys-caution">
+          <h3 class="tys-h5">{b.consolidate.cautionHeading}</h3>
+          <p>{b.consolidate.caution}</p>
+        </div>
+      </TechNote>
     </div>
   </section>
 
@@ -392,68 +397,71 @@ function profile(amp: number, seed: number): string {
         <p class="t-lead">{b.volume.body}</p>
       </div>
 
-      <div class="tys-vol__grid">
-        <figure class="tys-fig tys-vol__fig">
-          <p class="t-label">{b.volume.railLabel}</p>
-          <svg viewBox="0 0 640 470" data-nomirror role="img" aria-label={common.schematic}>
-            <defs>
-              <pattern id="tys-hatch-c" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                <line x1="0" y1="0" x2="0" y2="8" stroke="currentColor" stroke-width="0.8" opacity="0.28" />
-              </pattern>
-            </defs>
-
-            {/* One continuous stepped rail. Not a chart widget. */}
-            <path
-              d="M100 40 H580 V120 H420 V200 H250 V280 H158 V360 H118 V440 H100 Z"
-              class="tys-rail"
-            />
-
-            {[0, 1, 2, 3, 4].map((i: number) => (
-              <rect
-                x="100" y={40 + i * 80} width={RUNG_END[i] - 100} height="80"
-                class="tys-band" data-r={i}
+              <div class="tys-vol__grid">
+          <figure class="tys-fig tys-vol__fig">
+            <p class="t-label">{b.volume.railLabel}</p>
+            <svg viewBox="0 0 640 470" data-nomirror role="img" aria-label={common.schematic}>
+              <defs>
+                <pattern id="tys-hatch-c" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                  <line x1="0" y1="0" x2="0" y2="8" stroke="currentColor" stroke-width="0.8" opacity="0.28" />
+                </pattern>
+              </defs>
+  
+              {/* One continuous stepped rail. Not a chart widget. */}
+              <path
+                d="M100 40 H580 V120 H420 V200 H250 V280 H158 V360 H118 V440 H100 Z"
+                class="tys-rail"
               />
+  
+              {[0, 1, 2, 3, 4].map((i: number) => (
+                <rect
+                  x="100" y={40 + i * 80} width={RUNG_END[i] - 100} height="80"
+                  class="tys-band" data-r={i}
+                />
+              ))}
+  
+              {/* Volume axis */}
+              <line x1="100" y1="30" x2="100" y2="450" class="tys-axis" />
+              {[0, 1, 2, 3, 4].map((i: number) => (
+                <g>
+                  <line x1="94" y1={80 + i * 80} x2="106" y2={80 + i * 80} class="tys-axis" />
+                  <text x="90" y={84 + i * 80} text-anchor="end" class="tys-spec">{b.volume.rungs[i].volume}</text>
+                </g>
+              ))}
+  
+              {/* The flip. A dash-dot line and a square node, nothing more. */}
+              <line x1="24" y1="200" x2="616" y2="200" class="tys-flip" />
+              <rect x="243" y="193" width="14" height="14" class="tys-node tys-node--flip" />
+              <text x="612" y="192" text-anchor="end" class="tys-caplabel">{b.volume.flipLabel}</text>
+            </svg>
+            <p class="t-fine tys-vol__axis">{b.volume.axisLabel}</p>
+            <figcaption class="figure-note">{b.volume.figureNote}</figcaption>
+          </figure>
+  
+          <ol class="tys-rungs">
+            {b.volume.rungs.map((rung: any, i: number) => (
+              <li class="tys-rung" data-station-step={i} data-r={i}>
+                <span class="tys-rung__v t-mono">{rung.volume}</span>
+                <h3 class="tys-h5">{rung.title}</h3>
+                <p>{rung.note}</p>
+              </li>
             ))}
-
-            {/* Volume axis */}
-            <line x1="100" y1="30" x2="100" y2="450" class="tys-axis" />
-            {[0, 1, 2, 3, 4].map((i: number) => (
-              <g>
-                <line x1="94" y1={80 + i * 80} x2="106" y2={80 + i * 80} class="tys-axis" />
-                <text x="90" y={84 + i * 80} text-anchor="end" class="tys-spec">{b.volume.rungs[i].volume}</text>
-              </g>
-            ))}
-
-            {/* The flip. A dash-dot line and a square node, nothing more. */}
-            <line x1="24" y1="200" x2="616" y2="200" class="tys-flip" />
-            <rect x="243" y="193" width="14" height="14" class="tys-node tys-node--flip" />
-            <text x="612" y="192" text-anchor="end" class="tys-caplabel">{b.volume.flipLabel}</text>
-          </svg>
-          <p class="t-fine tys-vol__axis">{b.volume.axisLabel}</p>
-          <figcaption class="figure-note">{b.volume.figureNote}</figcaption>
-        </figure>
-
-        <ol class="tys-rungs">
-          {b.volume.rungs.map((rung: any, i: number) => (
-            <li class="tys-rung" data-station-step={i} data-r={i}>
-              <span class="tys-rung__v t-mono">{rung.volume}</span>
-              <h3 class="tys-h5">{rung.title}</h3>
-              <p>{rung.note}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      <div class="tys-vol__foot">
-        <div class="tys-flipblock">
-          <h3 class="tys-h5">{b.volume.flipHeading}</h3>
-          <p>{b.volume.flip}</p>
+          </ol>
         </div>
-        <div class="tys-model">
-          <h3 class="t-label">{b.volume.modelHeading}</h3>
-          <p>{b.volume.model}</p>
+      
+
+      <TechNote locale={locale} kind="reasoning">
+        <div class="tys-vol__foot">
+          <div class="tys-flipblock">
+            <h3 class="tys-h5">{b.volume.flipHeading}</h3>
+            <p>{b.volume.flip}</p>
+          </div>
+          <div class="tys-model">
+            <h3 class="t-label">{b.volume.modelHeading}</h3>
+            <p>{b.volume.model}</p>
+          </div>
         </div>
-      </div>
+      </TechNote>
 
       <p class="tys-close">{b.volume.close}</p>
     </div>
@@ -578,135 +586,137 @@ function profile(amp: number, seed: number): string {
         <p class="t-lead">{b.detail.body}</p>
       </div>
 
-      <div class="tys-det__tabs" data-tabs>
-        <div class="tys-tabs" role="tablist" aria-label={b.detail.tabsLabel}>
-          {b.detail.items.map((it: any) => (
-            <button
-              class="tys-tab" type="button" role="tab" data-tab={it.id}
-              aria-selected="false" id={`tys-tab-${it.id}`} aria-controls={`tys-panel-${it.id}`}
-            >{it.name}</button>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="tys-det__tabs" data-tabs>
+          <div class="tys-tabs" role="tablist" aria-label={b.detail.tabsLabel}>
+            {b.detail.items.map((it: any) => (
+              <button
+                class="tys-tab" type="button" role="tab" data-tab={it.id}
+                aria-selected="false" id={`tys-tab-${it.id}`} aria-controls={`tys-panel-${it.id}`}
+              >{it.name}</button>
+            ))}
+          </div>
+  
+          {b.detail.items.map((it: any, k: number) => (
+            <div
+              class="tys-det__panel" data-panel={it.id} role="tabpanel"
+              id={`tys-panel-${it.id}`} aria-labelledby={`tys-tab-${it.id}`} hidden
+            >
+              <figure class="tys-fig tys-det__fig">
+                <svg viewBox="0 0 560 360" data-nomirror role="img" aria-label={b.detail.figureNote}>
+                  <defs>
+                    <pattern id={`tys-hatch-d${k}`} width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                      <line x1="0" y1="0" x2="0" y2="8" stroke="currentColor" stroke-width="0.8" opacity="0.3" />
+                    </pattern>
+                    <marker id={`tys-arw-d${k}`} viewBox="0 0 9 9" refX="8" refY="4.5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                      <path d="M0 0 L9 4.5 L0 9 Z" fill="currentColor" />
+                    </marker>
+                  </defs>
+  
+                  {k === 0 && (
+                    <g>
+                      {/* Catch — a lip protruding from the mating wall */}
+                      <path d="M70 80 H140 V150 H166 V178 H140 V300 H70 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
+                      {/* Base the arm grows out of */}
+                      <path d="M430 80 H510 V300 H430 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
+                      {/* The arm and its hook */}
+                      <path d="M430 180 H166 V202 H430 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
+                      <path d="M166 180 V150 L196 180 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
+                      {/* Root fillets */}
+                      <path d="M430 168 Q414 172 412 180" class="tys-ln" />
+                      <path d="M430 214 Q414 210 412 202" class="tys-ln" />
+                      {/* Deflected state */}
+                      <path d="M430 194 L172 232 L176 254 L430 216 Z" class="tys-ghost" />
+                      <path d="M158 182 V232" class="tys-dim" marker-start={`url(#tys-arw-d${k})`} marker-end={`url(#tys-arw-d${k})`} />
+                      {/* Weld line, deliberately placed */}
+                      <line x1="392" y1="172" x2="392" y2="210" class="tys-weld" />
+  
+                      <g class="tys-call">
+                        <circle cx="330" cy="191" r="2.2" class="tys-dot" />
+                        <line x1="330" y1="191" x2="330" y2="312" class="tys-leader" />
+                        <circle cx="330" cy="325" r="11.5" class="tys-balloon" />
+                        <text x="330" y="329" text-anchor="middle" class="tys-num">{it.callouts[0].no}</text>
+                      </g>
+                      <g class="tys-call">
+                        <circle cx="176" cy="166" r="2.2" class="tys-dot" />
+                        <line x1="176" y1="166" x2="176" y2="60" class="tys-leader" />
+                        <circle cx="176" cy="46" r="11.5" class="tys-balloon" />
+                        <text x="176" y="50" text-anchor="middle" class="tys-num">{it.callouts[1].no}</text>
+                      </g>
+                      <g class="tys-call">
+                        <circle cx="418" cy="176" r="2.2" class="tys-dot" />
+                        <line x1="418" y1="176" x2="418" y2="60" class="tys-leader" />
+                        <circle cx="418" cy="46" r="11.5" class="tys-balloon" />
+                        <text x="418" y="50" text-anchor="middle" class="tys-num">{it.callouts[2].no}</text>
+                      </g>
+                      <g class="tys-call">
+                        <circle cx="392" cy="210" r="2.2" class="tys-dot" />
+                        <line x1="392" y1="210" x2="392" y2="312" class="tys-leader" />
+                        <circle cx="392" cy="325" r="11.5" class="tys-balloon" />
+                        <text x="392" y="329" text-anchor="middle" class="tys-num">{it.callouts[3].no}</text>
+                      </g>
+                    </g>
+                  )}
+  
+                  {k === 1 && (
+                    <g>
+                      {/* One part: body, hinge land, lid — a single outline */}
+                      <path
+                        d="M70 120 H206 Q214 120 216 134 H244 Q246 120 254 120 H460 V160 H254 Q246 160 244 146 H216 Q214 160 206 160 H70 Z"
+                        class="tys-ln" style={`fill:url(#tys-hatch-d${k})`}
+                      />
+                      {/* Flow runs through the hinge, not across it */}
+                      <path d="M96 140 H392" class="tys-flow" marker-end={`url(#tys-arw-d${k})`} />
+                      {/* Rotation of the lid about the land */}
+                      <path d="M314 109 A90 90 0 0 0 145 109" class="tys-ghost" marker-end={`url(#tys-arw-d${k})`} />
+  
+                      <g class="tys-call">
+                        <circle cx="230" cy="148" r="2.2" class="tys-dot" />
+                        <line x1="230" y1="148" x2="230" y2="286" class="tys-leader" />
+                        <circle cx="230" cy="300" r="11.5" class="tys-balloon" />
+                        <text x="230" y="304" text-anchor="middle" class="tys-num">{it.callouts[0].no}</text>
+                      </g>
+                      <g class="tys-call">
+                        <circle cx="392" cy="140" r="2.2" class="tys-dot" />
+                        <line x1="392" y1="140" x2="392" y2="286" class="tys-leader" />
+                        <circle cx="392" cy="300" r="11.5" class="tys-balloon" />
+                        <text x="392" y="304" text-anchor="middle" class="tys-num">{it.callouts[1].no}</text>
+                      </g>
+                      <g class="tys-call">
+                        <circle cx="110" cy="140" r="2.2" class="tys-dot" />
+                        <line x1="110" y1="140" x2="110" y2="286" class="tys-leader" />
+                        <circle cx="110" cy="300" r="11.5" class="tys-balloon" />
+                        <text x="110" y="304" text-anchor="middle" class="tys-num">{it.callouts[2].no}</text>
+                      </g>
+                      <g class="tys-call">
+                        <circle cx="230" cy="50" r="2.2" class="tys-dot" />
+                        <line x1="230" y1="50" x2="128" y2="50" class="tys-leader" />
+                        <circle cx="114" cy="50" r="11.5" class="tys-balloon" />
+                        <text x="114" y="54" text-anchor="middle" class="tys-num">{it.callouts[3].no}</text>
+                      </g>
+                    </g>
+                  )}
+                </svg>
+                <figcaption class="figure-note">{b.detail.figureNote}</figcaption>
+              </figure>
+  
+              <div class="tys-det__copy">
+                <p class="tys-det__summary">{it.summary}</p>
+                <p class="t-label tys-det__legend">{b.detail.legendLabel}</p>
+                <dl class="tys-callouts">
+                  {it.callouts.map((c: any) => (
+                    <div>
+                      <dt><span class="tys-callouts__no t-mono">{c.no}</span>{c.name}</dt>
+                      <dd>{c.note}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <p class="tys-det__scope">{it.scope}</p>
+              </div>
+            </div>
           ))}
         </div>
-
-        {b.detail.items.map((it: any, k: number) => (
-          <div
-            class="tys-det__panel" data-panel={it.id} role="tabpanel"
-            id={`tys-panel-${it.id}`} aria-labelledby={`tys-tab-${it.id}`} hidden
-          >
-            <figure class="tys-fig tys-det__fig">
-              <svg viewBox="0 0 560 360" data-nomirror role="img" aria-label={b.detail.figureNote}>
-                <defs>
-                  <pattern id={`tys-hatch-d${k}`} width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                    <line x1="0" y1="0" x2="0" y2="8" stroke="currentColor" stroke-width="0.8" opacity="0.3" />
-                  </pattern>
-                  <marker id={`tys-arw-d${k}`} viewBox="0 0 9 9" refX="8" refY="4.5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-                    <path d="M0 0 L9 4.5 L0 9 Z" fill="currentColor" />
-                  </marker>
-                </defs>
-
-                {k === 0 && (
-                  <g>
-                    {/* Catch — a lip protruding from the mating wall */}
-                    <path d="M70 80 H140 V150 H166 V178 H140 V300 H70 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
-                    {/* Base the arm grows out of */}
-                    <path d="M430 80 H510 V300 H430 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
-                    {/* The arm and its hook */}
-                    <path d="M430 180 H166 V202 H430 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
-                    <path d="M166 180 V150 L196 180 Z" class="tys-ln" style={`fill:url(#tys-hatch-d${k})`} />
-                    {/* Root fillets */}
-                    <path d="M430 168 Q414 172 412 180" class="tys-ln" />
-                    <path d="M430 214 Q414 210 412 202" class="tys-ln" />
-                    {/* Deflected state */}
-                    <path d="M430 194 L172 232 L176 254 L430 216 Z" class="tys-ghost" />
-                    <path d="M158 182 V232" class="tys-dim" marker-start={`url(#tys-arw-d${k})`} marker-end={`url(#tys-arw-d${k})`} />
-                    {/* Weld line, deliberately placed */}
-                    <line x1="392" y1="172" x2="392" y2="210" class="tys-weld" />
-
-                    <g class="tys-call">
-                      <circle cx="330" cy="191" r="2.2" class="tys-dot" />
-                      <line x1="330" y1="191" x2="330" y2="312" class="tys-leader" />
-                      <circle cx="330" cy="325" r="11.5" class="tys-balloon" />
-                      <text x="330" y="329" text-anchor="middle" class="tys-num">{it.callouts[0].no}</text>
-                    </g>
-                    <g class="tys-call">
-                      <circle cx="176" cy="166" r="2.2" class="tys-dot" />
-                      <line x1="176" y1="166" x2="176" y2="60" class="tys-leader" />
-                      <circle cx="176" cy="46" r="11.5" class="tys-balloon" />
-                      <text x="176" y="50" text-anchor="middle" class="tys-num">{it.callouts[1].no}</text>
-                    </g>
-                    <g class="tys-call">
-                      <circle cx="418" cy="176" r="2.2" class="tys-dot" />
-                      <line x1="418" y1="176" x2="418" y2="60" class="tys-leader" />
-                      <circle cx="418" cy="46" r="11.5" class="tys-balloon" />
-                      <text x="418" y="50" text-anchor="middle" class="tys-num">{it.callouts[2].no}</text>
-                    </g>
-                    <g class="tys-call">
-                      <circle cx="392" cy="210" r="2.2" class="tys-dot" />
-                      <line x1="392" y1="210" x2="392" y2="312" class="tys-leader" />
-                      <circle cx="392" cy="325" r="11.5" class="tys-balloon" />
-                      <text x="392" y="329" text-anchor="middle" class="tys-num">{it.callouts[3].no}</text>
-                    </g>
-                  </g>
-                )}
-
-                {k === 1 && (
-                  <g>
-                    {/* One part: body, hinge land, lid — a single outline */}
-                    <path
-                      d="M70 120 H206 Q214 120 216 134 H244 Q246 120 254 120 H460 V160 H254 Q246 160 244 146 H216 Q214 160 206 160 H70 Z"
-                      class="tys-ln" style={`fill:url(#tys-hatch-d${k})`}
-                    />
-                    {/* Flow runs through the hinge, not across it */}
-                    <path d="M96 140 H392" class="tys-flow" marker-end={`url(#tys-arw-d${k})`} />
-                    {/* Rotation of the lid about the land */}
-                    <path d="M314 109 A90 90 0 0 0 145 109" class="tys-ghost" marker-end={`url(#tys-arw-d${k})`} />
-
-                    <g class="tys-call">
-                      <circle cx="230" cy="148" r="2.2" class="tys-dot" />
-                      <line x1="230" y1="148" x2="230" y2="286" class="tys-leader" />
-                      <circle cx="230" cy="300" r="11.5" class="tys-balloon" />
-                      <text x="230" y="304" text-anchor="middle" class="tys-num">{it.callouts[0].no}</text>
-                    </g>
-                    <g class="tys-call">
-                      <circle cx="392" cy="140" r="2.2" class="tys-dot" />
-                      <line x1="392" y1="140" x2="392" y2="286" class="tys-leader" />
-                      <circle cx="392" cy="300" r="11.5" class="tys-balloon" />
-                      <text x="392" y="304" text-anchor="middle" class="tys-num">{it.callouts[1].no}</text>
-                    </g>
-                    <g class="tys-call">
-                      <circle cx="110" cy="140" r="2.2" class="tys-dot" />
-                      <line x1="110" y1="140" x2="110" y2="286" class="tys-leader" />
-                      <circle cx="110" cy="300" r="11.5" class="tys-balloon" />
-                      <text x="110" y="304" text-anchor="middle" class="tys-num">{it.callouts[2].no}</text>
-                    </g>
-                    <g class="tys-call">
-                      <circle cx="230" cy="50" r="2.2" class="tys-dot" />
-                      <line x1="230" y1="50" x2="128" y2="50" class="tys-leader" />
-                      <circle cx="114" cy="50" r="11.5" class="tys-balloon" />
-                      <text x="114" y="54" text-anchor="middle" class="tys-num">{it.callouts[3].no}</text>
-                    </g>
-                  </g>
-                )}
-              </svg>
-              <figcaption class="figure-note">{b.detail.figureNote}</figcaption>
-            </figure>
-
-            <div class="tys-det__copy">
-              <p class="tys-det__summary">{it.summary}</p>
-              <p class="t-label tys-det__legend">{b.detail.legendLabel}</p>
-              <dl class="tys-callouts">
-                {it.callouts.map((c: any) => (
-                  <div>
-                    <dt><span class="tys-callouts__no t-mono">{c.no}</span>{c.name}</dt>
-                    <dd>{c.note}</dd>
-                  </div>
-                ))}
-              </dl>
-              <p class="tys-det__scope">{it.scope}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      </TechNote>
 
       <p class="tys-det__note t-fine">{b.detail.note}</p>
     </div>
@@ -722,74 +732,80 @@ function profile(amp: number, seed: number): string {
         <p class="tys-head__sub t-small">{b.surface.body2}</p>
       </div>
 
-      <div class="tys-grades" data-reveal>
-        <div class="tys-grades__cap">
-          <p class="t-label">{b.surface.rowLabel}</p>
-          <ul class="tys-grades__key t-fine">
-            <li>{b.surface.colGrade}</li>
-            <li>{b.surface.colRa}</li>
-            <li>{b.surface.colDraft}</li>
-          </ul>
-        </div>
-
-        <ol class="tys-grades__row">
-          {b.surface.grades.map((g: any, i: number) => (
-            <li class="tys-grade" data-anchor={g.anchor ? 'true' : 'false'}>
-              <figure class="tys-fig tys-grade__fig">
-                <svg viewBox="0 0 160 140" data-nomirror role="img" aria-label={b.surface.figureNote}>
-                  <defs>
-                    <pattern id={`tys-hatch-s${i}`} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                      <line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.3" />
-                    </pattern>
-                  </defs>
-                  <path d={profile(GRADE_AMP[i], i * 3.7)} class="tys-ln" style={`fill:url(#tys-hatch-s${i})`} />
-                  <line x1="52" y1="98" x2="52" y2="138" class="tys-cl" />
-                  <path
-                    d={`M52 104 H76 L${76 + GRADE_DRAFT[i]} 132 H${52 - GRADE_DRAFT[i]} Z`}
-                    class="tys-ln" style={`fill:url(#tys-hatch-s${i})`}
-                  />
-                </svg>
-              </figure>
-              <p class="tys-grade__g t-mono">{g.grade}</p>
-              <p class="tys-grade__ra t-mono">{g.ra}</p>
-              <p class="tys-grade__d t-mono">{g.draft}</p>
-            </li>
-          ))}
-        </ol>
-
-        <p class="tys-grades__note t-fine">{b.surface.anchorNote}</p>
-      </div>
-
-      <div class="tys-colour">
-        <div class="tys-colour__copy">
-          <h3 class="tys-h4">{b.surface.colourHeading}</h3>
-          <p class="t-lead">{b.surface.colourBody}</p>
-
-          <p class="t-label tys-colour__driftcap">{b.surface.driftLabel}</p>
-          <ul class="tys-drift" aria-hidden="true">
-            {[0, 1, 2, 3, 4, 5].map((i: number) => (
-              <li style={`background: color-mix(in oklab, var(--accent) ${100 - i * 4}%, var(--signal))`}></li>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="tys-grades" data-reveal>
+          <div class="tys-grades__cap">
+            <p class="t-label">{b.surface.rowLabel}</p>
+            <ul class="tys-grades__key t-fine">
+              <li>{b.surface.colGrade}</li>
+              <li>{b.surface.colRa}</li>
+              <li>{b.surface.colDraft}</li>
+            </ul>
+          </div>
+  
+          <ol class="tys-grades__row">
+            {b.surface.grades.map((g: any, i: number) => (
+              <li class="tys-grade" data-anchor={g.anchor ? 'true' : 'false'}>
+                <figure class="tys-fig tys-grade__fig">
+                  <svg viewBox="0 0 160 140" data-nomirror role="img" aria-label={b.surface.figureNote}>
+                    <defs>
+                      <pattern id={`tys-hatch-s${i}`} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                        <line x1="0" y1="0" x2="0" y2="6" stroke="currentColor" stroke-width="0.7" opacity="0.3" />
+                      </pattern>
+                    </defs>
+                    <path d={profile(GRADE_AMP[i], i * 3.7)} class="tys-ln" style={`fill:url(#tys-hatch-s${i})`} />
+                    <line x1="52" y1="98" x2="52" y2="138" class="tys-cl" />
+                    <path
+                      d={`M52 104 H76 L${76 + GRADE_DRAFT[i]} 132 H${52 - GRADE_DRAFT[i]} Z`}
+                      class="tys-ln" style={`fill:url(#tys-hatch-s${i})`}
+                    />
+                  </svg>
+                </figure>
+                <p class="tys-grade__g t-mono">{g.grade}</p>
+                <p class="tys-grade__ra t-mono">{g.ra}</p>
+                <p class="tys-grade__d t-mono">{g.draft}</p>
+              </li>
             ))}
-          </ul>
-          <p class="tys-colour__note t-small">{b.surface.driftNote}</p>
+          </ol>
+  
+          <p class="tys-grades__note t-fine">{b.surface.anchorNote}</p>
         </div>
+      </TechNote>
 
-        <div class="tys-routes">
-          <p class="t-label">{b.surface.routesLabel}</p>
-          <dl>
-            {b.surface.routes.map((r: any) => (
-              <div>
-                <dt>
-                  <span class="tys-routes__name">{r.name}</span>
-                  <span class="tys-routes__vol t-mono">{r.volume}</span>
-                </dt>
-                <dd>{r.note}</dd>
-              </div>
-            ))}
-          </dl>
-          <p class="tys-routes__boundary">{b.surface.colourBoundary}</p>
+      <TechNote locale={locale} kind="detail">
+        <div class="tys-colour">
+          <div class="tys-colour__copy">
+            <h3 class="tys-h4">{b.surface.colourHeading}</h3>
+            <p class="t-lead">{b.surface.colourBody}</p>
+  
+            <p class="t-label tys-colour__driftcap">{b.surface.driftLabel}</p>
+            <ul class="tys-drift" aria-hidden="true">
+              {[0, 1, 2, 3, 4, 5].map((i: number) => (
+                <li style={`background: color-mix(in oklab, var(--accent) ${100 - i * 4}%, var(--signal))`}></li>
+              ))}
+            </ul>
+            <p class="tys-colour__note t-small">{b.surface.driftNote}</p>
+          </div>
+  
+          <TechNote locale={locale} kind="reasoning">
+            <div class="tys-routes">
+              <p class="t-label">{b.surface.routesLabel}</p>
+              <dl>
+                {b.surface.routes.map((r: any) => (
+                  <div>
+                    <dt>
+                      <span class="tys-routes__name">{r.name}</span>
+                      <span class="tys-routes__vol t-mono">{r.volume}</span>
+                    </dt>
+                    <dd>{r.note}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p class="tys-routes__boundary">{b.surface.colourBoundary}</p>
+            </div>
+          </TechNote>
         </div>
-      </div>
+      </TechNote>
     </div>
   </section>
 
@@ -802,15 +818,17 @@ function profile(amp: number, seed: number): string {
         <p class="t-lead">{b.boundary.body}</p>
       </div>
 
-      <div class="tys-std">
-        <h3 class="t-label">{b.boundary.standardsHeading}</h3>
-        <dl class="tys-std__list">
-          {b.boundary.standards.map((s: any) => (
-            <div><dt class="t-mono">{s.name}</dt><dd>{s.note}</dd></div>
-          ))}
-        </dl>
-        <p class="tys-std__note">{b.boundary.standardsNote}</p>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="tys-std">
+          <h3 class="t-label">{b.boundary.standardsHeading}</h3>
+          <dl class="tys-std__list">
+            {b.boundary.standards.map((s: any) => (
+              <div><dt class="t-mono">{s.name}</dt><dd>{s.note}</dd></div>
+            ))}
+          </dl>
+          <p class="tys-std__note">{b.boundary.standardsNote}</p>
+        </div>
+      </TechNote>
 
       <div class="tys-split">
         <section class="tys-split__col">
@@ -823,7 +841,9 @@ function profile(amp: number, seed: number): string {
         </section>
       </div>
 
-      <p class="tys-bnd__line">{b.boundary.line}</p>
+      <TechNote locale={locale} kind="detail">
+        <p class="tys-bnd__line">{b.boundary.line}</p>
+      </TechNote>
     </div>
   </section>
 

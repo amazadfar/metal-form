@@ -21,6 +21,14 @@
     "next": "下一个",
     "previous": "上一个"
   },
+  "disclose": {
+    "detail": "工程细节",
+    "reasoning": "技术依据",
+    "calculation": "查看计算过程",
+    "why": "这一点为什么重要",
+    "source": "来源",
+    "close": "收起"
+  },
   "selector": {
     "kicker": "选择语言",
     "headline": "设计。模具。制造。供货。",
@@ -39,7 +47,7 @@
     "warrantyNote": "质保条款按项目和模具规格逐一约定，写进订单，而不是写进宣传语。",
     "delivery": "全球发货",
     "deliveryNote": "模具和零件都可以发往海外。贸易条款、运输路线和单证随报价一并确认。",
-    "response": "48 个工作小时内初步回复",
+    "response": "2 个工作日内初步回复",
     "responseNote": "第一轮技术判断：可行性方向、还缺哪些资料、下一步怎么走。这不是最终报价，我们也不会把它说成报价。"
   },
   "nda": {

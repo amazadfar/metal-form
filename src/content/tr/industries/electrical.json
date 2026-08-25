@@ -400,7 +400,7 @@
         }
       ],
       "close": "Bu bir hazırlıktır, rezerve kapasite değil. Kapasite ya sözleşmeyle rezerve edilir ya da hiç edilmemiştir; size hangisinin teklif edildiğini açıkça söyleriz.",
-      "warranty": "Kalıp garanti şartları her proje ve mutabık kalınan kalıp şartnamesi bazında tanımlanır. 48 iş saati içinde ilk teknik dönüş."
+      "warranty": "Kalıp garanti şartları her proje ve mutabık kalınan kalıp şartnamesi bazında tanımlanır. 2 iş günü içinde ilk teknik dönüş."
     },
     "boundary": {
       "index": "08",
@@ -478,10 +478,10 @@
   },
   "cta": {
     "headline": "Parçayı gönderin. Kalıbın ne yapması gerektiğini söyleyelim.",
-    "body": "Bir STEP dosyası, bir 2B teknik resim ya da poşette bir numune. Geometri, kalıp rotası, göz sayısı ve tedarik seçenekleri üzerinden dönüş yaparız. 48 iş saati içinde ilk proje dönüşü. Talep hâlinde, siz hiçbir şey göndermeden önce NDA.",
+    "body": "Bir STEP dosyası, bir 2B teknik resim ya da poşette bir numune. Geometri, kalıp rotası, göz sayısı ve tedarik seçenekleri üzerinden dönüş yaparız. 2 iş günü içinde ilk proje dönüşü. Talep hâlinde, siz hiçbir şey göndermeden önce NDA.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form - elektrik ve elektronik hakkında. Parça: [konnektör gövdesi / klemens / anahtar parçası / muhafaza / kablo rakoru / diğer]. Malzeme: [PA66 GF / PBT GF / PC / PC-ABS / diğer]. Metal insert: [var / yok]. Tahmini yıllık adet: [ ]. Elimde: [STEP / 2B teknik resim / yalnızca numune]. Lütfen kalıp rotası ve göz sayısı konusunda görüş verin.",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

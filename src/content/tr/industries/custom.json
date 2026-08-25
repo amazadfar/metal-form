@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Özel plastik projeler: tersine mühendislik, DFM ve kalıp | Metal Form",
-    "description": "Teknik resim yok, dosya yok, tedarikçi yok. Bir fotoğraf, bir numune ya da bir sorun gönderin. Size imal edilebilir bir model, bir kalıp rotası ve bir tedarik planı verelim. 48 iş saati içinde dönüş."
+    "description": "Teknik resim yok, dosya yok, tedarikçi yok. Bir fotoğraf, bir numune ya da bir sorun gönderin. Size imal edilebilir bir model, bir kalıp rotası ve bir tedarik planı verelim. 2 iş günü içinde dönüş."
   },
   "name": "Özel Projeler",
   "tile": "Bir fotoğraf, kırık bir parça, bir eskiz — ya da henüz çözemediğiniz bir sorun.",
@@ -16,7 +16,7 @@
     "markers": [
       "Numuneden ya da fotoğraftan tersine mühendislik",
       "Enjeksiyon · PET · şişirme · basınçlı döküm kalıpları",
-      "48 iş saati içinde ilk dönüş"
+      "2 iş günü içinde ilk dönüş"
     ]
   },
   "blocks": {
@@ -576,7 +576,7 @@
           "leaves": "Parçalar; programın ihtiyacı buysa sürekli tedarik hâlinde."
         }
       ],
-      "close": "Kalıp garanti şartları her proje ve o projenin kalıp şartnamesi bazında tanımlanır. 48 iş saati içinde ilk teknik dönüş ve isterseniz ayrıntılı paylaşımdan önce NDA."
+      "close": "Kalıp garanti şartları her proje ve o projenin kalıp şartnamesi bazında tanımlanır. 2 iş günü içinde ilk teknik dönüş ve isterseniz ayrıntılı paylaşımdan önce NDA."
     },
     "routes": {
       "index": "06",
@@ -648,7 +648,7 @@
         "Parça üretimi ve sürekli tedarik; böylece proje bir kalıp tesliminde durmaz.",
         "Kendi verinizden kurulmuş ikinci kaynak ve ikiz kalıplar ile yedekler ve değişim parçaları.",
         "Dünya geneline sevkiyat, ayrıntılı paylaşımdan önce NDA ve proje bazında kararlaştırılan şartlarla kalıp garantisi.",
-        "Geometriyi okumuş birinden, 48 iş saati içinde ilk teknik dönüş."
+        "Geometriyi okumuş birinden, 2 iş günü içinde ilk teknik dönüş."
       ],
       "stayHeading": "Sizde kalanlar",
       "stay": [
@@ -667,7 +667,7 @@
         "Onu üreten tedarikçi tarafından test edilmesi, belgelendirilmesi ya da onaylanması gereken bitmiş bir ürün.",
         "Taranmış verisi olmayan ve elde edilmesinin de yolu bulunmayan serbest form bir yüzey. Ölçüm ve özellik yeniden kurmanın bir sınırı vardır ve bir kanat profili o sınırın ötesindedir.",
         "Bir kalıbı haklı çıkarmayan bir adet. İşlenmiş bir parçanın ya da satın alınacak standart bir elemanın doğru cevap olduğu yerde alacağınız cevap budur.",
-        "Kimse geometriyi görmeden garanti bir tarih isteyen bir proje. 48 iş saati içinde ilk teknik dönüşe söz veririz; tutamayacağımız hiçbir şeye söz vermeyiz."
+        "Kimse geometriyi görmeden garanti bir tarih isteyen bir proje. 2 iş günü içinde ilk teknik dönüşe söz veririz; tutamayacağımız hiçbir şeye söz vermeyiz."
       ]
     },
     "package": {
@@ -711,7 +711,7 @@
         }
       ],
       "close": "Birinci kademe yeterlidir. Elinizdeki, gece on birde bir makine dairesinde telefonla çekilmiş bir fotoğrafsa, onu gönderin.",
-      "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+      "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -760,10 +760,10 @@
   },
   "cta": {
     "headline": "Parçayı gönderin.",
-    "body": "Bir fotoğraf, bir numune, bir dosya ya da sorunu anlatan bir paragraf. Bir fiyat listesi değil, bir mühendislik cevabı alırsınız: neyi belirleyebildiğimiz, hâlâ neyi sormamız gerektiği ve kalıp rotasının neye benzediği. 48 iş saati içinde ilk dönüş. İsterseniz siz hiçbir şey göndermeden önce NDA.",
+    "body": "Bir fotoğraf, bir numune, bir dosya ya da sorunu anlatan bir paragraf. Bir fiyat listesi değil, bir mühendislik cevabı alırsınız: neyi belirleyebildiğimiz, hâlâ neyi sormamız gerektiği ve kalıp rotasının neye benzediği. 2 iş günü içinde ilk dönüş. İsterseniz siz hiçbir şey göndermeden önce NDA.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Metal Form — özel proje.\n\nElimde: fotoğraf / numune parça / kırık parça / eskiz / STEP dosyası / teknik resim paketi / mevcut kalıp / bir üretim, maliyet veya tedarik sorunu\nParçanın ne yaptığı: \nNerede kullanıldığı: \nBiliniyorsa yaklaşık yıllık adet: \nSizden ihtiyacım olan: ",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

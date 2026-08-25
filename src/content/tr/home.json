@@ -3,7 +3,7 @@
     "title": "Metal Form — Fikirden, fotoğraftan, numuneden ya da teknik resimden seri üretime",
     "description": "Plastik enjeksiyon parçalarının mühendisliği, kalıbı, üretimi ve tedariki. Kalıp tasarımı ve imalatı, tersine mühendislik, DFM, çok gözlü kalıp, üretim ve ikinci kaynak tedariki. 2006'dan beri üretim.",
     "ogTitle": "Metal Form — Mühendislik, kalıp, üretim ve tedarik",
-    "ogDescription": "Bir fotoğraf, bir numune, bir teknik resim ya da bir CAD dosyası gönderin. Size geometri, kalıp rotası, üretim maliyeti ve tedarik seçenekleri üzerinden dönüş yaparız. 48 iş saati içinde ilk dönüş."
+    "ogDescription": "Bir fotoğraf, bir numune, bir teknik resim ya da bir CAD dosyası gönderin. Size geometri, kalıp rotası, üretim maliyeti ve tedarik seçenekleri üzerinden dönüş yaparız. 2 iş günü içinde ilk dönüş."
   },
   "hero": {
     "kicker": "2006'dan beri üretim",
@@ -21,7 +21,7 @@
     ],
     "primary": "Projenizi gönderin",
     "secondary": "Ne yaptığımıza bakın",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz önce NDA.",
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz önce NDA.",
     "facts": [
       "Kuruluş 2006",
       "1.000+ proje",
@@ -235,7 +235,7 @@
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form. Değerlendirilmesini istediğim bir parça var.\n\nParça: \nSektör: \nYıllık adet: \nMalzeme (biliniyorsa): \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: ",
-    "note": "48 iş saati içinde ilk teknik dönüş. Ayrıntılı bir şey göndermeden önce NDA imzalayabiliriz."
+    "note": "2 iş günü içinde ilk teknik dönüş. Ayrıntılı bir şey göndermeden önce NDA imzalayabiliriz."
   },
   "diagram": {
     "hero": {

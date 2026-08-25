@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Furniture Component Tooling and Moulded Parts | Metal Form",
-    "description": "Injection tooling and moulded components for furniture: castors, chair bases, glides, mechanisms, connectors, runner parts and shells. Engineering, DFM, mould manufacture and ongoing supply. Response within 48 business hours."
+    "description": "Injection tooling and moulded components for furniture: castors, chair bases, glides, mechanisms, connectors, runner parts and shells. Engineering, DFM, mould manufacture and ongoing supply. Response within 2 business days."
   },
   "name": "Furniture & Decor",
   "tile": "Castors, mechanisms and fittings that carry load, and the ribs that let them.",
@@ -485,7 +485,7 @@
         },
         "close": "The first column is what we do. The second is what we say out loud at the quotation rather than after it."
       },
-      "response": "Initial technical response within 48 business hours."
+      "response": "Initial technical response within 2 business days."
     },
     "panels": {
       "heading": "Deeper detail",
@@ -527,7 +527,7 @@
             "Any standard the finished product will be tested to.",
             "Whether this is a new part, a redesign, or a second source for a tool that already exists.",
             "Whether the part is assembled once or serviced in the field — it changes the fastening strategy.",
-            "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+            "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
           ]
         }
       ]
@@ -539,6 +539,6 @@
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — furniture enquiry.\n\nPart: castor / chair base / glide / connector / drawer component / shell / trim\nNew part / redesign / second source for an existing tool\nMaterial: \nAnnual volume: \nColour and texture the part has to match: \nStandard the finished product is tested to: \n\nI can send a STEP file, a drawing or the physical part.",
-    "note": "Initial technical response within 48 business hours. NDA before detailed disclosure if you prefer."
+    "note": "Initial technical response within 2 business days. NDA before detailed disclosure if you prefer."
   }
 }

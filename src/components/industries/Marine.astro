@@ -17,6 +17,7 @@
  * by naming its own limits in a full section rather than in small print.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -26,7 +27,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /* ── Hero: a skin fitting in elevation, as it arrives ─────────────────────── */
@@ -281,12 +282,14 @@ const PLOT_DOTS = [
         </div>
       </div>
 
-      <div class="mar-ip">
-        <h3 class="mar-h4">{b.arrival.ipHeading}</h3>
-        <ul class="mar-ticks">
-          {b.arrival.ip.map((item: string) => <li>{item}</li>)}
-        </ul>
-      </div>
+      <TechNote locale={locale} kind="detail">
+        <div class="mar-ip">
+          <h3 class="mar-h4">{b.arrival.ipHeading}</h3>
+          <ul class="mar-ticks">
+            {b.arrival.ip.map((item: string) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </TechNote>
     </div>
   </section>
 
@@ -300,66 +303,72 @@ const PLOT_DOTS = [
         <p class="t-lead mar-head__lead">{b.measurement.body}</p>
       </div>
 
-      <div class="mar-meas__grid">
-        <figure class="mar-fig mar-fig--tall" data-reveal>
-          <p class="t-label mar-fig__cap">{b.measurement.figureCaption}</p>
-          <svg viewBox="0 0 520 350" data-nomirror role="img" aria-label={common.schematic}>
-            <path d={J_WORN} class="mar-worn" />
-            <path d={J_CRACK} class="mar-crack" />
-            <path d={J_NOM} class="mar-nom" />
-            {J_PTS.map((p: any, i: number) => (
-              <circle cx={p.x} cy={p.y} r="3" class="mar-pt mar-drop" style={`--i:${i}`} />
-            ))}
-            {/* radius leader with a dot at the anchor */}
-            <circle cx="176" cy="112" r="2.2" class="mar-anchor" />
-            <line x1="176" y1="112" x2="112" y2="160" class="mar-leader" />
-            <text x="106" y="164" text-anchor="end" class="mar-micro">{b.measurement.figureLabels.radius}</text>
-            {/* datum */}
-            <line x1="200" y1="300" x2="200" y2="326" class="mar-lead" />
-            <line x1="300" y1="300" x2="300" y2="326" class="mar-lead" />
-            <line x1="24" y1="326" x2="496" y2="326" class="mar-datum" />
-          </svg>
-          <ul class="mar-legend__inline">
-            <li><span class="mar-legend__sw mar-legend__sw--worn" aria-hidden="true"></span>{b.measurement.figureLabels.worn}</li>
-            <li><span class="mar-legend__sw mar-legend__sw--nominal" aria-hidden="true"></span>{b.measurement.figureLabels.nominal}</li>
-          </ul>
-          <figcaption class="figure-note">{common.schematic}</figcaption>
-        </figure>
-
-        <div class="mar-methods">
-          <h3 class="mar-h4">{b.measurement.methodsHeading}</h3>
-          <ol>
-            {b.measurement.methods.map((m: string, i: number) => (
-              <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span><p>{m}</p></li>
-            ))}
-          </ol>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="mar-meas__grid">
+          <figure class="mar-fig mar-fig--tall" data-reveal>
+            <p class="t-label mar-fig__cap">{b.measurement.figureCaption}</p>
+            <svg viewBox="0 0 520 350" data-nomirror role="img" aria-label={common.schematic}>
+              <path d={J_WORN} class="mar-worn" />
+              <path d={J_CRACK} class="mar-crack" />
+              <path d={J_NOM} class="mar-nom" />
+              {J_PTS.map((p: any, i: number) => (
+                <circle cx={p.x} cy={p.y} r="3" class="mar-pt mar-drop" style={`--i:${i}`} />
+              ))}
+              {/* radius leader with a dot at the anchor */}
+              <circle cx="176" cy="112" r="2.2" class="mar-anchor" />
+              <line x1="176" y1="112" x2="112" y2="160" class="mar-leader" />
+              <text x="106" y="164" text-anchor="end" class="mar-micro">{b.measurement.figureLabels.radius}</text>
+              {/* datum */}
+              <line x1="200" y1="300" x2="200" y2="326" class="mar-lead" />
+              <line x1="300" y1="300" x2="300" y2="326" class="mar-lead" />
+              <line x1="24" y1="326" x2="496" y2="326" class="mar-datum" />
+            </svg>
+            <ul class="mar-legend__inline">
+              <li><span class="mar-legend__sw mar-legend__sw--worn" aria-hidden="true"></span>{b.measurement.figureLabels.worn}</li>
+              <li><span class="mar-legend__sw mar-legend__sw--nominal" aria-hidden="true"></span>{b.measurement.figureLabels.nominal}</li>
+            </ul>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+  
+          <div class="mar-methods">
+            <h3 class="mar-h4">{b.measurement.methodsHeading}</h3>
+            <ol>
+              {b.measurement.methods.map((m: string, i: number) => (
+                <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span><p>{m}</p></li>
+              ))}
+            </ol>
+          </div>
         </div>
-      </div>
+      </TechNote>
 
       <p class="t-label mar-tbl__cap">{b.measurement.tableCaption}</p>
-      <div class="mar-tbl__scroll">
-        <table class="mar-tbl">
-          <thead>
-            <tr>
-              {b.measurement.columns.map((col: string) => <th scope="col">{col}</th>)}
-            </tr>
-          </thead>
-          <tbody>
-            {b.measurement.rows.map((row: any) => (
+      <TechNote locale={locale} kind="reasoning">
+        <div class="mar-tbl__scroll">
+          <table class="mar-tbl">
+            <thead>
               <tr>
-                <th scope="row">{row.shows}</th>
-                <td class="mar-tbl__is">{row.is}</td>
-                <td>{row.means}</td>
+                {b.measurement.columns.map((col: string) => <th scope="col">{col}</th>)}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {b.measurement.rows.map((row: any) => (
+                <tr>
+                  <th scope="row">{row.shows}</th>
+                  <td class="mar-tbl__is">{row.is}</td>
+                  <td>{row.means}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </TechNote>
 
-      <div class="mar-caveat">
-        <h3 class="mar-h4">{b.measurement.caveatHeading}</h3>
-        <p>{b.measurement.caveat}</p>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="mar-caveat">
+          <h3 class="mar-h4">{b.measurement.caveatHeading}</h3>
+          <p>{b.measurement.caveat}</p>
+        </div>
+      </TechNote>
     </div>
   </section>
 
@@ -498,59 +507,63 @@ const PLOT_DOTS = [
         <p class="t-lead mar-head__lead">{b.environment.body}</p>
       </div>
 
-      <div class="mar-env__grid">
-        <figure class="mar-fig mar-fig--zone" data-reveal>
-          <svg viewBox="0 0 340 400" data-nomirror role="img" aria-label={common.schematic}>
-            <defs>
-              <clipPath id="mar-zone-below">
-                <rect x="0" y="182" width="340" height="218" />
-              </clipPath>
-            </defs>
-            <rect x="0" y="0" width="340" height="150" class="mar-zone mar-zone--a" />
-            <rect x="0" y="150" width="340" height="64" class="mar-zone mar-zone--b" />
-            <rect x="0" y="214" width="340" height="186" class="mar-zone mar-zone--c" />
+      <TechNote locale={locale} kind="reasoning">
+        <div class="mar-env__grid">
+          <figure class="mar-fig mar-fig--zone" data-reveal>
+            <svg viewBox="0 0 340 400" data-nomirror role="img" aria-label={common.schematic}>
+              <defs>
+                <clipPath id="mar-zone-below">
+                  <rect x="0" y="182" width="340" height="218" />
+                </clipPath>
+              </defs>
+              <rect x="0" y="0" width="340" height="150" class="mar-zone mar-zone--a" />
+              <rect x="0" y="150" width="340" height="64" class="mar-zone mar-zone--b" />
+              <rect x="0" y="214" width="340" height="186" class="mar-zone mar-zone--c" />
+  
+              {/* the part, crossing the line */}
+              <g class="mar-zone__part">
+                <path d="M120 118 L250 118 L250 136 L120 136 Z" class="mar-nom" />
+                <path d="M155 136 L155 300 L215 300 L215 136" class="mar-nom" />
+              </g>
+              {/* the same part below the surface: offset, tinted — refraction */}
+              <g class="mar-refract" clip-path="url(#mar-zone-below)" aria-hidden="true">
+                <path d="M120 118 L250 118 L250 136 L120 136 Z" class="mar-nom mar-nom--wet" />
+                <path d="M155 136 L155 300 L215 300 L215 136" class="mar-nom mar-nom--wet" />
+              </g>
+  
+              <line x1="0" y1="182" x2="340" y2="182" class="mar-wl" />
+              <text x="14" y="30" class="mar-micro">{b.environment.zoneLabels.atmosphere}</text>
+              <text x="14" y="170" class="mar-micro">{b.environment.zoneLabels.splash}</text>
+              <text x="14" y="246" class="mar-micro mar-micro--wet">{b.environment.zoneLabels.immersion}</text>
+              <text x="326" y="176" text-anchor="end" class="mar-micro">{b.environment.zoneLabels.waterline}</text>
+            </svg>
+            <p class="mar-fig__note t-fine">{b.environment.zoneNote}</p>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+  
+          <ol class="mar-loads">
+            {b.environment.rows.map((row: any, i: number) => (
+              <li class="mar-load" data-reveal style={`--reveal-delay:${i * 90}ms`}>
+                <h3 class="mar-load__name">
+                  <span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{row.load}
+                </h3>
+                <div class="mar-load__cells">
+                  <div><p class="t-label">{b.environment.columns[1]}</p><p>{row.mechanism}</p></div>
+                  <div><p class="t-label">{b.environment.columns[2]}</p><p>{row.effect}</p></div>
+                  <div class="mar-load__demand"><p class="t-label">{b.environment.columns[3]}</p><p>{row.demand}</p></div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </TechNote>
 
-            {/* the part, crossing the line */}
-            <g class="mar-zone__part">
-              <path d="M120 118 L250 118 L250 136 L120 136 Z" class="mar-nom" />
-              <path d="M155 136 L155 300 L215 300 L215 136" class="mar-nom" />
-            </g>
-            {/* the same part below the surface: offset, tinted — refraction */}
-            <g class="mar-refract" clip-path="url(#mar-zone-below)" aria-hidden="true">
-              <path d="M120 118 L250 118 L250 136 L120 136 Z" class="mar-nom mar-nom--wet" />
-              <path d="M155 136 L155 300 L215 300 L215 136" class="mar-nom mar-nom--wet" />
-            </g>
-
-            <line x1="0" y1="182" x2="340" y2="182" class="mar-wl" />
-            <text x="14" y="30" class="mar-micro">{b.environment.zoneLabels.atmosphere}</text>
-            <text x="14" y="170" class="mar-micro">{b.environment.zoneLabels.splash}</text>
-            <text x="14" y="246" class="mar-micro mar-micro--wet">{b.environment.zoneLabels.immersion}</text>
-            <text x="326" y="176" text-anchor="end" class="mar-micro">{b.environment.zoneLabels.waterline}</text>
-          </svg>
-          <p class="mar-fig__note t-fine">{b.environment.zoneNote}</p>
-          <figcaption class="figure-note">{common.schematic}</figcaption>
-        </figure>
-
-        <ol class="mar-loads">
-          {b.environment.rows.map((row: any, i: number) => (
-            <li class="mar-load" data-reveal style={`--reveal-delay:${i * 90}ms`}>
-              <h3 class="mar-load__name">
-                <span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{row.load}
-              </h3>
-              <div class="mar-load__cells">
-                <div><p class="t-label">{b.environment.columns[1]}</p><p>{row.mechanism}</p></div>
-                <div><p class="t-label">{b.environment.columns[2]}</p><p>{row.effect}</p></div>
-                <div class="mar-load__demand"><p class="t-label">{b.environment.columns[3]}</p><p>{row.demand}</p></div>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      <div class="mar-evidence">
-        <h3 class="mar-h4">{b.environment.evidenceHeading}</h3>
-        <p>{b.environment.evidence}</p>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="mar-evidence">
+          <h3 class="mar-h4">{b.environment.evidenceHeading}</h3>
+          <p>{b.environment.evidence}</p>
+        </div>
+      </TechNote>
     </div>
   </section>
 
@@ -615,16 +628,18 @@ const PLOT_DOTS = [
         {b.geometry.points.map((p: string) => <li>{p}</li>)}
       </ul>
 
-      <div class="mar-geo__cols">
-        <div class="mar-note mar-note--trade">
-          <h3 class="mar-h4">{b.geometry.tradeHeading}</h3>
-          <p>{b.geometry.trade}</p>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="mar-geo__cols">
+          <div class="mar-note mar-note--trade">
+            <h3 class="mar-h4">{b.geometry.tradeHeading}</h3>
+            <p>{b.geometry.trade}</p>
+          </div>
+          <div class="mar-note">
+            <h3 class="mar-h4">{b.geometry.contextHeading}</h3>
+            <p>{b.geometry.context}</p>
+          </div>
         </div>
-        <div class="mar-note">
-          <h3 class="mar-h4">{b.geometry.contextHeading}</h3>
-          <p>{b.geometry.context}</p>
-        </div>
-      </div>
+      </TechNote>
     </div>
   </section>
 
@@ -656,71 +671,77 @@ const PLOT_DOTS = [
         <p class="mar-arith__note t-fine">{b.economics.arithNote}</p>
       </div>
 
-      <div class="mar-vol" data-tabs>
-        <figure class="mar-plot">
-          <svg viewBox="0 0 640 300" data-nomirror role="img" aria-label={common.schematic}>
-            <rect x="64" y="36" width="336" height="210" class="mar-plot__band" />
-            <line x1="400" y1="36" x2="400" y2="246" class="mar-plot__edge" />
-            <line x1="64" y1="36" x2="64" y2="246" class="mar-plot__axis" />
-            <line x1="64" y1="246" x2="604" y2="246" class="mar-plot__axis" />
-            <path d="M64 228 H176 V198 H288 V160 H400 V98 H540 V62 H604" class="mar-plot__line" />
-            {PLOT_DOTS.map((d: any, i: number) => (
-              <circle cx={d.x} cy={d.y} r="6"
-                class:list={['mar-plot__dot', `mar-plot__dot--${b.economics.bands[i].id}`]} />
-            ))}
-            {PLOT_DOTS.map((d: any, i: number) => (
-              <text x={d.x} y="268" text-anchor="middle" class="mar-micro">{b.economics.bands[i].tick}</text>
-            ))}
-            <text x="64" y="24" class="mar-micro">{b.economics.axisY}</text>
-            <text x="604" y="290" text-anchor="end" class="mar-micro">{b.economics.axisX}</text>
-            <text x="76" y="54" class="mar-micro mar-micro--band">{b.economics.bandLabel}</text>
-          </svg>
-          <figcaption class="figure-note">{common.schematic}</figcaption>
-        </figure>
-
-        <div class="mar-vol__panel">
-          <div class="mar-vol__tabs" role="tablist" aria-label={b.economics.tabsLabel}>
+      <TechNote locale={locale} kind="detail">
+        <div class="mar-vol" data-tabs>
+          <figure class="mar-plot">
+            <svg viewBox="0 0 640 300" data-nomirror role="img" aria-label={common.schematic}>
+              <rect x="64" y="36" width="336" height="210" class="mar-plot__band" />
+              <line x1="400" y1="36" x2="400" y2="246" class="mar-plot__edge" />
+              <line x1="64" y1="36" x2="64" y2="246" class="mar-plot__axis" />
+              <line x1="64" y1="246" x2="604" y2="246" class="mar-plot__axis" />
+              <path d="M64 228 H176 V198 H288 V160 H400 V98 H540 V62 H604" class="mar-plot__line" />
+              {PLOT_DOTS.map((d: any, i: number) => (
+                <circle cx={d.x} cy={d.y} r="6"
+                  class:list={['mar-plot__dot', `mar-plot__dot--${b.economics.bands[i].id}`]} />
+              ))}
+              {PLOT_DOTS.map((d: any, i: number) => (
+                <text x={d.x} y="268" text-anchor="middle" class="mar-micro">{b.economics.bands[i].tick}</text>
+              ))}
+              <text x="64" y="24" class="mar-micro">{b.economics.axisY}</text>
+              <text x="604" y="290" text-anchor="end" class="mar-micro">{b.economics.axisX}</text>
+              <text x="76" y="54" class="mar-micro mar-micro--band">{b.economics.bandLabel}</text>
+            </svg>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+  
+          <div class="mar-vol__panel">
+            <div class="mar-vol__tabs" role="tablist" aria-label={b.economics.tabsLabel}>
+              {b.economics.bands.map((band: any) => (
+                <button
+                  class="mar-vol__tab"
+                  type="button"
+                  role="tab"
+                  data-tab={band.id}
+                  aria-selected="false"
+                  id={`mar-tab-${band.id}`}
+                  aria-controls={`mar-panel-${band.id}`}
+                >{band.name}</button>
+              ))}
+            </div>
+  
             {b.economics.bands.map((band: any) => (
-              <button
-                class="mar-vol__tab"
-                type="button"
-                role="tab"
-                data-tab={band.id}
-                aria-selected="false"
-                id={`mar-tab-${band.id}`}
-                aria-controls={`mar-panel-${band.id}`}
-              >{band.name}</button>
+              <div
+                class="mar-vol__body"
+                data-panel={band.id}
+                role="tabpanel"
+                id={`mar-panel-${band.id}`}
+                aria-labelledby={`mar-tab-${band.id}`}
+                hidden
+              >
+                <h3 class="mar-h3">{band.route}</h3>
+                <p>{band.body}</p>
+                <p class="mar-vol__trade">{band.trade}</p>
+              </div>
             ))}
           </div>
-
-          {b.economics.bands.map((band: any) => (
-            <div
-              class="mar-vol__body"
-              data-panel={band.id}
-              role="tabpanel"
-              id={`mar-panel-${band.id}`}
-              aria-labelledby={`mar-tab-${band.id}`}
-              hidden
-            >
-              <h3 class="mar-h3">{band.route}</h3>
-              <p>{band.body}</p>
-              <p class="mar-vol__trade">{band.trade}</p>
-            </div>
-          ))}
         </div>
-      </div>
+      </TechNote>
 
-      <div class="mar-econ__notes">
-        <p class="mar-econ__axisnote">{b.economics.axisNote}</p>
-        <p class="t-fine">{b.economics.bandsNote}</p>
-      </div>
+      <TechNote locale={locale} kind="detail">
+        <div class="mar-econ__notes">
+          <p class="mar-econ__axisnote">{b.economics.axisNote}</p>
+          <p class="t-fine">{b.economics.bandsNote}</p>
+        </div>
+      </TechNote>
 
-      <div class="mar-loss">
-        <h3 class="mar-h4">{b.economics.lossHeading}</h3>
-        <ul class="mar-ticks mar-ticks--two">
-          {b.economics.loss.map((item: string) => <li>{item}</li>)}
-        </ul>
-      </div>
+      <TechNote locale={locale} kind="why">
+        <div class="mar-loss">
+          <h3 class="mar-h4">{b.economics.lossHeading}</h3>
+          <ul class="mar-ticks mar-ticks--two">
+            {b.economics.loss.map((item: string) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </TechNote>
     </div>
   </section>
 
@@ -734,19 +755,21 @@ const PLOT_DOTS = [
         <p class="t-lead mar-head__lead">{b.continuity.body}</p>
       </div>
 
-      <div class="mar-cont__grid">
-        <h3 class="mar-h4 mar-cont__h">{b.continuity.ledgerHeading}</h3>
-        {/* A capability module rather than a ruled list: each line is what the
-            second source covers, with the qualification kept under it. */}
-        <dl class="caps mar-cont__ledger">
-          {b.continuity.ledger.map((row: any, i: number) => (
-            <div class="cap" data-reveal style={`--reveal-delay:${i * 60}ms`}>
-              <dt class="cap__v">{row.name}</dt>
-              <dd class="cap__n">{row.note}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="mar-cont__grid">
+          <h3 class="mar-h4 mar-cont__h">{b.continuity.ledgerHeading}</h3>
+          {/* A capability module rather than a ruled list: each line is what the
+              second source covers, with the qualification kept under it. */}
+          <dl class="caps mar-cont__ledger">
+            {b.continuity.ledger.map((row: any, i: number) => (
+              <div class="cap" data-reveal style={`--reveal-delay:${i * 60}ms`}>
+                <dt class="cap__v">{row.name}</dt>
+                <dd class="cap__n">{row.note}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </TechNote>
 
       <figure class="mar-fig mar-fig--wide" data-reveal>
         <svg viewBox="0 0 720 240" data-nomirror role="img" aria-label={common.schematic}>

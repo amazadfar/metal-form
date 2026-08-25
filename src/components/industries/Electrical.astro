@@ -17,6 +17,7 @@
  * does not hold, because in this sector that is the strongest thing to say.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -26,7 +27,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /* ── Hero: the catalogue — eight ways of one connector, one to a cell ─────
@@ -232,19 +233,21 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
     </div>
 
     <div class="shell--wide">
-      <div class="el-ladder">
-        <p class="el-ladder__cols t-label">
-          <span>{b.wall.colRatio}</span><span>{b.wall.colVerdict}</span>
-        </p>
-        <ol>
-          {b.wall.ladder.map((rung: any) => (
-            <li>
-              <span class="t-mono el-ladder__r">{rung.ratio}</span>
-              <span>{rung.verdict}</span>
-            </li>
-          ))}
-        </ol>
-      </div>
+      <TechNote locale={locale} kind="detail">
+        <div class="el-ladder">
+          <p class="el-ladder__cols t-label">
+            <span>{b.wall.colRatio}</span><span>{b.wall.colVerdict}</span>
+          </p>
+          <ol>
+            {b.wall.ladder.map((rung: any) => (
+              <li>
+                <span class="t-mono el-ladder__r">{rung.ratio}</span>
+                <span>{rung.verdict}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </TechNote>
       <p class="el-close">{b.wall.close}</p>
     </div>
   </section>
@@ -258,73 +261,77 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
         <p class="el-head__body">{b.weld.body}</p>
       </div>
 
-      <div class="el-weld__pair" data-reveal>
-        {/* CASE A — the fronts meet under the latch root. */}
-        <figure class="el-case">
-          <p class="el-case__tag t-label">{b.weld.cases[0].tag}</p>
-          <svg viewBox="0 0 340 240" data-nomirror role="img" aria-label={common.schematic}>
-            <rect x="30" y="30" width="280" height="170" class="el-plan" />
-            <rect x="44" y="44" width="252" height="142" class="el-plan-in" />
-            <rect x="140" y="30" width="60" height="28" class="el-zone" />
-            <circle cx="100" cy="130" r="16" class="el-plan-core" />
-            <circle cx="240" cy="130" r="16" class="el-plan-core" />
+      <TechNote locale={locale} kind="detail">
+        <div class="el-weld__pair" data-reveal>
+          {/* CASE A — the fronts meet under the latch root. */}
+          <figure class="el-case">
+            <p class="el-case__tag t-label">{b.weld.cases[0].tag}</p>
+            <svg viewBox="0 0 340 240" data-nomirror role="img" aria-label={common.schematic}>
+              <rect x="30" y="30" width="280" height="170" class="el-plan" />
+              <rect x="44" y="44" width="252" height="142" class="el-plan-in" />
+              <rect x="140" y="30" width="60" height="28" class="el-zone" />
+              <circle cx="100" cy="130" r="16" class="el-plan-core" />
+              <circle cx="240" cy="130" r="16" class="el-plan-core" />
+  
+              <rect x="38" y="124" width="12" height="12" class="el-gate" />
+              <rect x="290" y="124" width="12" height="12" class="el-gate" />
+  
+              <path d="M170 58 V200" class="el-weldline" />
+              <path d="M170 30 V58" class="el-weldline el-weldline--hot" />
+              <path d="M116 130 H154" class="el-weldline" />
+              <path d="M224 130 H186" class="el-weldline" />
+  
+              <text x="40" y="112" class="el-micro">{b.weld.marks.gate}</text>
+              <text x="206" y="48" class="el-micro">{b.weld.marks.latch}</text>
+              <text x="100" y="168" text-anchor="middle" class="el-micro">{b.weld.marks.core}</text>
+              <text x="176" y="222" class="el-micro">{b.weld.marks.weld}</text>
+            </svg>
+            <h3 class="el-case__h">{b.weld.cases[0].title}</h3>
+            <p class="el-case__note">{b.weld.cases[0].note}</p>
+          </figure>
+  
+          {/* CASE B — one gate at the base; the seams fall in plain wall. */}
+          <figure class="el-case el-case--fix">
+            <p class="el-case__tag t-label">{b.weld.cases[1].tag}</p>
+            <svg viewBox="0 0 340 240" data-nomirror role="img" aria-label={common.schematic}>
+              <rect x="30" y="30" width="280" height="170" class="el-plan" />
+              <rect x="44" y="44" width="252" height="142" class="el-plan-in" />
+              <rect x="140" y="30" width="60" height="28" class="el-zone" />
+              <circle cx="100" cy="130" r="16" class="el-plan-core" />
+              <circle cx="240" cy="130" r="16" class="el-plan-core" />
+  
+              <rect x="164" y="194" width="12" height="12" class="el-gate" />
+  
+              <path d="M92 116 L70 88" class="el-weldline" />
+              <path d="M248 116 L270 88" class="el-weldline" />
+  
+              {/* Last to fill moves to the two top corners. */}
+              <path d="M44 62 V44 H62" class="el-corner" />
+              <path d="M296 62 V44 H278" class="el-corner" />
+  
+              <text x="178" y="216" class="el-micro">{b.weld.marks.gate}</text>
+              <text x="206" y="48" class="el-micro">{b.weld.marks.latch}</text>
+              <text x="100" y="168" text-anchor="middle" class="el-micro">{b.weld.marks.core}</text>
+              <text x="64" y="80" text-anchor="end" class="el-micro">{b.weld.marks.weld}</text>
+            </svg>
+            <h3 class="el-case__h">{b.weld.cases[1].title}</h3>
+            <p class="el-case__note">{b.weld.cases[1].note}</p>
+          </figure>
+  
+          <figcaption class="figure-note el-weld__cap">{b.weld.caption}</figcaption>
+        </div>
+      </TechNote>
 
-            <rect x="38" y="124" width="12" height="12" class="el-gate" />
-            <rect x="290" y="124" width="12" height="12" class="el-gate" />
-
-            <path d="M170 58 V200" class="el-weldline" />
-            <path d="M170 30 V58" class="el-weldline el-weldline--hot" />
-            <path d="M116 130 H154" class="el-weldline" />
-            <path d="M224 130 H186" class="el-weldline" />
-
-            <text x="40" y="112" class="el-micro">{b.weld.marks.gate}</text>
-            <text x="206" y="48" class="el-micro">{b.weld.marks.latch}</text>
-            <text x="100" y="168" text-anchor="middle" class="el-micro">{b.weld.marks.core}</text>
-            <text x="176" y="222" class="el-micro">{b.weld.marks.weld}</text>
-          </svg>
-          <h3 class="el-case__h">{b.weld.cases[0].title}</h3>
-          <p class="el-case__note">{b.weld.cases[0].note}</p>
-        </figure>
-
-        {/* CASE B — one gate at the base; the seams fall in plain wall. */}
-        <figure class="el-case el-case--fix">
-          <p class="el-case__tag t-label">{b.weld.cases[1].tag}</p>
-          <svg viewBox="0 0 340 240" data-nomirror role="img" aria-label={common.schematic}>
-            <rect x="30" y="30" width="280" height="170" class="el-plan" />
-            <rect x="44" y="44" width="252" height="142" class="el-plan-in" />
-            <rect x="140" y="30" width="60" height="28" class="el-zone" />
-            <circle cx="100" cy="130" r="16" class="el-plan-core" />
-            <circle cx="240" cy="130" r="16" class="el-plan-core" />
-
-            <rect x="164" y="194" width="12" height="12" class="el-gate" />
-
-            <path d="M92 116 L70 88" class="el-weldline" />
-            <path d="M248 116 L270 88" class="el-weldline" />
-
-            {/* Last to fill moves to the two top corners. */}
-            <path d="M44 62 V44 H62" class="el-corner" />
-            <path d="M296 62 V44 H278" class="el-corner" />
-
-            <text x="178" y="216" class="el-micro">{b.weld.marks.gate}</text>
-            <text x="206" y="48" class="el-micro">{b.weld.marks.latch}</text>
-            <text x="100" y="168" text-anchor="middle" class="el-micro">{b.weld.marks.core}</text>
-            <text x="64" y="80" text-anchor="end" class="el-micro">{b.weld.marks.weld}</text>
-          </svg>
-          <h3 class="el-case__h">{b.weld.cases[1].title}</h3>
-          <p class="el-case__note">{b.weld.cases[1].note}</p>
-        </figure>
-
-        <figcaption class="figure-note el-weld__cap">{b.weld.caption}</figcaption>
-      </div>
-
-      <div class="el-levers">
-        <h3 class="el-h5">{b.weld.leversHeading}</h3>
-        <ol class="el-levers__list">
-          {b.weld.levers.map((lever: string, i: number) => (
-            <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{lever}</li>
-          ))}
-        </ol>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="el-levers">
+          <h3 class="el-h5">{b.weld.leversHeading}</h3>
+          <ol class="el-levers__list">
+            {b.weld.levers.map((lever: string, i: number) => (
+              <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{lever}</li>
+            ))}
+          </ol>
+        </div>
+      </TechNote>
 
       <p class="el-close">{b.weld.close}</p>
     </div>
@@ -353,71 +360,71 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
           {[0, 1, 2, 3].map((f: any) => (
             <g transform={`translate(${f * 220} 0)`} class="el-frame" data-frame={f}>
               {/* Core — fixed in every frame. */}
-              <path d={INS_CORE} fill="url(#el-hatch-ins)" class="el-steel" />
-
-              {/* Cavity — raised while the tool is open. */}
-              <g transform={f === 0 || f === 3 ? 'translate(0 -46)' : 'translate(0 0)'}>
-                <path d={INS_CAVITY} fill="url(#el-hatch-ins)" class="el-steel" />
-              </g>
-
-              {/* Moulded polymer, from the shot onward. */}
-              {(f === 2 || f === 3) && (
-                <g transform={f === 3 ? 'translate(0 -34)' : 'translate(0 0)'}>
-                  <rect x="70" y="93" width="23" height="52" class="el-poly" />
-                  <rect x="107" y="93" width="23" height="52" class="el-poly" />
+                <path d={INS_CORE} fill="url(#el-hatch-ins)" class="el-steel" />
+  
+                {/* Cavity — raised while the tool is open. */}
+                <g transform={f === 0 || f === 3 ? 'translate(0 -46)' : 'translate(0 0)'}>
+                  <path d={INS_CAVITY} fill="url(#el-hatch-ins)" class="el-steel" />
                 </g>
-              )}
-
-              {/* The terminal persists across all four frames. */}
-              <rect
-                x="93" y="93" width="14" height="82"
-                class="el-metal"
-                transform={f === 3 ? 'translate(0 -34)' : 'translate(0 0)'}
-              />
-
-              {/* Shut-off contact, marked only at close. */}
-              {f === 1 && (
-                <>
-                  <line x1="84" y1="93" x2="93" y2="93" class="el-shut" />
-                  <line x1="107" y1="93" x2="116" y2="93" class="el-shut" />
-                </>
-              )}
-
-              {/* Melt entering. */}
-              {f === 2 && (
-                <>
-                  <line x1="40" y1="119" x2="68" y2="119" class="el-dim" marker-end="url(#el-arw-ins)" />
-                  <text x="36" y="115" text-anchor="end" class="el-micro">{b.insert.marks.melt}</text>
-                </>
-              )}
-
-              {/* Ejection. */}
-              {f === 3 && (
-                <>
-                  <line x1="80" y1="215" x2="80" y2="115" class="el-dim" marker-end="url(#el-arw-ins)" />
-                  <line x1="120" y1="215" x2="120" y2="115" class="el-dim" marker-end="url(#el-arw-ins)" />
-                  <text x="100" y="240" text-anchor="middle" class="el-micro">{b.insert.marks.eject}</text>
-                </>
-              )}
-
-              {f === 0 && (
-                <>
-                  <circle cx="150" cy="70" r="2.6" class="el-dot" />
-                  <path d="M150 70 L166 118" class="el-leader" />
-                  <text x="170" y="122" class="el-micro">{b.insert.marks.cavity}</text>
-                  <path d="M100 218 V230" class="el-leader" />
-                  <text x="100" y="242" text-anchor="middle" class="el-micro">{b.insert.marks.core}</text>
-                </>
-              )}
-
-              <text x="100" y="14" text-anchor="middle" class="el-micro el-micro--strong">
-                {String(f + 1).padStart(2, '0')}
-              </text>
-            </g>
-          ))}
-        </svg>
-        <figcaption class="figure-note">{common.schematic}</figcaption>
-        <p class="el-figcap t-fine">{b.insert.caption}</p>
+  
+                {/* Moulded polymer, from the shot onward. */}
+                {(f === 2 || f === 3) && (
+                  <g transform={f === 3 ? 'translate(0 -34)' : 'translate(0 0)'}>
+                    <rect x="70" y="93" width="23" height="52" class="el-poly" />
+                    <rect x="107" y="93" width="23" height="52" class="el-poly" />
+                  </g>
+                )}
+  
+                {/* The terminal persists across all four frames. */}
+                <rect
+                  x="93" y="93" width="14" height="82"
+                  class="el-metal"
+                  transform={f === 3 ? 'translate(0 -34)' : 'translate(0 0)'}
+                />
+  
+                {/* Shut-off contact, marked only at close. */}
+                {f === 1 && (
+                  <>
+                    <line x1="84" y1="93" x2="93" y2="93" class="el-shut" />
+                    <line x1="107" y1="93" x2="116" y2="93" class="el-shut" />
+                  </>
+                )}
+  
+                {/* Melt entering. */}
+                {f === 2 && (
+                  <>
+                    <line x1="40" y1="119" x2="68" y2="119" class="el-dim" marker-end="url(#el-arw-ins)" />
+                    <text x="36" y="115" text-anchor="end" class="el-micro">{b.insert.marks.melt}</text>
+                  </>
+                )}
+  
+                {/* Ejection. */}
+                {f === 3 && (
+                  <>
+                    <line x1="80" y1="215" x2="80" y2="115" class="el-dim" marker-end="url(#el-arw-ins)" />
+                    <line x1="120" y1="215" x2="120" y2="115" class="el-dim" marker-end="url(#el-arw-ins)" />
+                    <text x="100" y="240" text-anchor="middle" class="el-micro">{b.insert.marks.eject}</text>
+                  </>
+                )}
+  
+                {f === 0 && (
+                  <>
+                    <circle cx="150" cy="70" r="2.6" class="el-dot" />
+                    <path d="M150 70 L166 118" class="el-leader" />
+                    <text x="170" y="122" class="el-micro">{b.insert.marks.cavity}</text>
+                    <path d="M100 218 V230" class="el-leader" />
+                    <text x="100" y="242" text-anchor="middle" class="el-micro">{b.insert.marks.core}</text>
+                  </>
+                )}
+  
+                <text x="100" y="14" text-anchor="middle" class="el-micro el-micro--strong">
+                  {String(f + 1).padStart(2, '0')}
+                </text>
+              </g>
+            ))}
+          </svg>
+          <figcaption class="figure-note">{common.schematic}</figcaption>
+          <p class="el-figcap t-fine">{b.insert.caption}</p>
       </figure>
 
       <ol class="el-ins__steps">
@@ -446,23 +453,25 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
         <p class="el-head__body">{b.resin.body}</p>
       </div>
 
-      <div class="el-table__scroll">
-        <table class="el-table">
-          <thead>
-            <tr>{b.resin.columns.map((col: string) => <th scope="col">{col}</th>)}</tr>
-          </thead>
-          <tbody>
-            {b.resin.rows.map((row: any) => (
-              <tr>
-                <th scope="row" class="t-mono el-table__grade">{row.grade}</th>
-                <td class="t-mono el-table__num">{row.shrink}</td>
-                <td class="el-table__use">{row.use}</td>
-                <td class="el-table__con">{row.consequence}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="el-table__scroll">
+          <table class="el-table">
+            <thead>
+              <tr>{b.resin.columns.map((col: string) => <th scope="col">{col}</th>)}</tr>
+            </thead>
+            <tbody>
+              {b.resin.rows.map((row: any) => (
+                <tr>
+                  <th scope="row" class="t-mono el-table__grade">{row.grade}</th>
+                  <td class="t-mono el-table__num">{row.shrink}</td>
+                  <td class="el-table__use">{row.use}</td>
+                  <td class="el-table__con">{row.consequence}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </TechNote>
 
       <p class="el-caveat">{b.resin.note}</p>
       <p class="el-close">{b.resin.close}</p>
@@ -536,37 +545,43 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
         <p class="el-figcap t-fine">{b.pitch.caption}</p>
       </figure>
 
-      <dl class="el-callouts">
-        {b.pitch.callouts.map((call: any) => (
-          <div>
-            <dt><span class="el-callouts__mark t-mono">{call.mark}</span>{call.name}</dt>
-            <dd>{call.note}</dd>
-          </div>
-        ))}
-      </dl>
+      <TechNote locale={locale} kind="detail">
+        <dl class="el-callouts">
+          {b.pitch.callouts.map((call: any) => (
+            <div>
+              <dt><span class="el-callouts__mark t-mono">{call.mark}</span>{call.name}</dt>
+              <dd>{call.note}</dd>
+            </div>
+          ))}
+        </dl>
+      </TechNote>
       <p class="el-figcap t-fine el-mag__note">{b.pitch.detailNote}</p>
 
-      <div class="el-steel">
-        <h3 class="el-h5">{b.pitch.steelHeading}</h3>
-        <p class="el-steel__body">{b.pitch.steelBody}</p>
-        <div class="el-table__scroll">
-          <table class="el-table el-table--steel">
-            <thead>
-              <tr>{b.pitch.steelColumns.map((col: string) => <th scope="col">{col}</th>)}</tr>
-            </thead>
-            <tbody>
-              {b.pitch.steelRows.map((row: any) => (
-                <tr>
-                  <th scope="row" class="t-mono el-table__grade">{row.grade}</th>
-                  <td class="t-mono el-table__num">{row.hardness}</td>
-                  <td class="el-table__con">{row.use}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="el-steel">
+          <h3 class="el-h5">{b.pitch.steelHeading}</h3>
+          <p class="el-steel__body">{b.pitch.steelBody}</p>
+          <TechNote locale={locale} kind="reasoning">
+            <div class="el-table__scroll">
+              <table class="el-table el-table--steel">
+                <thead>
+                  <tr>{b.pitch.steelColumns.map((col: string) => <th scope="col">{col}</th>)}</tr>
+                </thead>
+                <tbody>
+                  {b.pitch.steelRows.map((row: any) => (
+                    <tr>
+                      <th scope="row" class="t-mono el-table__grade">{row.grade}</th>
+                      <td class="t-mono el-table__num">{row.hardness}</td>
+                      <td class="el-table__con">{row.use}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </TechNote>
+          <p class="el-caveat">{b.pitch.steelNote}</p>
         </div>
-        <p class="el-caveat">{b.pitch.steelNote}</p>
-      </div>
+      </TechNote>
 
       <p class="el-close">{b.pitch.close}</p>
     </div>
@@ -581,20 +596,22 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
         <p class="el-head__body">{b.source.body}</p>
       </div>
 
-      <div class="el-rail" data-reveal>
-        <p class="t-label el-rail__cap">{b.source.railLabel}</p>
-        <div class="el-rail__spine" aria-hidden="true"></div>
-        <ol class="el-rail__stages">
-          {b.source.stages.map((stage: any, i: number) => (
-            <li class="el-stage" style={`--i:${i}`}>
-              <span class="el-stage__drop" aria-hidden="true"></span>
-              <span class="el-stage__n t-mono">{String(i + 1).padStart(2, '0')}</span>
-              <h3>{stage.title}</h3>
-              <p>{stage.note}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="el-rail" data-reveal>
+          <p class="t-label el-rail__cap">{b.source.railLabel}</p>
+          <div class="el-rail__spine" aria-hidden="true"></div>
+          <ol class="el-rail__stages">
+            {b.source.stages.map((stage: any, i: number) => (
+              <li class="el-stage" style={`--i:${i}`}>
+                <span class="el-stage__drop" aria-hidden="true"></span>
+                <span class="el-stage__n t-mono">{String(i + 1).padStart(2, '0')}</span>
+                <h3>{stage.title}</h3>
+                <p>{stage.note}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </TechNote>
 
       <p class="el-close">{b.source.close}</p>
       <p class="el-caveat">{b.source.warranty}</p>

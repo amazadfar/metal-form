@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Kimya ve deterjan ambalajı için kapak kalıpları — Metal Form",
-    "description": "Deterjan, ev kimyasalları ve zirai kimyasallar için kapak, çocuk kilitli ve emniyet bantlı sistemler ile dozajlama parçalarının kalıp tasarımı ve imalatı. Parçayı gönderin — 48 iş saati içinde dönüş."
+    "description": "Deterjan, ev kimyasalları ve zirai kimyasallar için kapak, çocuk kilitli ve emniyet bantlı sistemler ile dozajlama parçalarının kalıp tasarımı ve imalatı. Parçayı gönderin — 2 iş günü içinde dönüş."
   },
   "name": "Kimya ve Deterjan",
   "tile": "Yüksek adette kapak ve diş — kapalı ile sızdıran arasındaki bir milimetrelik geometri.",
@@ -481,7 +481,7 @@
         "Tahmininize ve presinize göre göz sayısı seçenekleri ve her birinin size riskte neye mal olduğu.",
         "Yapacağımız değişiklikler; hoşunuza gitmeyecek olanlar dâhil.",
         "Bir üretim pozisyonu: yalnızca kalıp, kalıp artı ilk numuneler ya da sürekli parça tedariki.",
-        "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz önce NDA — genellikle öyle olur."
+        "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz önce NDA — genellikle öyle olur."
       ]
     },
     "panels": {
@@ -534,10 +534,10 @@
   },
   "cta": {
     "headline": "Kapağı gönderin. Size bir rota gönderelim.",
-    "body": "Parçanın kendisi, bir teknik resim ya da postayla bir numune. Karşılığında kalıp rotasını, diş stratejisini, göz sayısı seçeneklerini ve bir üretim pozisyonu alırsınız. 48 iş saati içinde ilk dönüş. Talep hâlinde her zaman NDA. 2006'dan beri, 1.000'den fazla proje, dünya geneline sevkiyat.",
+    "body": "Parçanın kendisi, bir teknik resim ya da postayla bir numune. Karşılığında kalıp rotasını, diş stratejisini, göz sayısı seçeneklerini ve bir üretim pozisyonu alırsınız. 2 iş günü içinde ilk dönüş. Talep hâlinde her zaman NDA. 2006'dan beri, 1.000'den fazla proje, dünya geneline sevkiyat.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form — kapak kalıbı hakkında. Ürün tipi: [sıvı deterjan / ev temizlik ürünü / zirai kimyasal / diğer]. Kapak tipi: [sürekli dişli / çocuk kilitli / emniyet bantlı / flip-top / tetikli sprey / dozaj kapağı]. Boyun profili: [örn. 28-410]. Sızdırmazlık: [conta / indüksiyon / iç çeper]. Yıllık adet: [adet/yıl]. Elimde: [mevcut parça / teknik resim / 3B model / hiçbiri]. Lütfen bir NDA gönderin.",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

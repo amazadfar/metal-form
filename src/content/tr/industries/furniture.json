@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Mobilya parçası kalıpları ve enjeksiyon parçaları | Metal Form",
-    "description": "Mobilya için enjeksiyon kalıpları ve parça üretimi: tekerlekler, sandalye ayakları, pabuçlar, mekanizmalar, bağlantı elemanları, çekmece rayı parçaları ve kabuklar. Mühendislik, DFM, kalıp imalatı ve sürekli tedarik. 48 iş saati içinde dönüş."
+    "description": "Mobilya için enjeksiyon kalıpları ve parça üretimi: tekerlekler, sandalye ayakları, pabuçlar, mekanizmalar, bağlantı elemanları, çekmece rayı parçaları ve kabuklar. Mühendislik, DFM, kalıp imalatı ve sürekli tedarik. 2 iş günü içinde dönüş."
   },
   "name": "Mobilya ve Dekorasyon",
   "tile": "Yük taşıyan tekerlekler, mekanizmalar ve bağlantı elemanları — ve bunu mümkün kılan nervürler.",
@@ -485,7 +485,7 @@
         },
         "close": "Birinci sütun yaptıklarımızdır. İkincisi ise teklifden sonra değil, teklifte yüksek sesle söylediklerimizdir."
       },
-      "response": "48 iş saati içinde ilk teknik dönüş."
+      "response": "2 iş günü içinde ilk teknik dönüş."
     },
     "panels": {
       "heading": "Daha ayrıntılı",
@@ -527,7 +527,7 @@
             "Bitmiş ürünün test edileceği her türlü standart.",
             "Bunun yeni bir parça mı, bir yeniden tasarım mı, yoksa hâlihazırda var olan bir kalıp için ikinci kaynak mı olduğu.",
             "Parçanın bir kez mi monte edildiği yoksa sahada servis mi göreceği — bağlantı stratejisini bu değiştirir.",
-            "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+            "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
           ]
         }
       ]
@@ -539,6 +539,6 @@
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form — mobilya hakkında.\n\nParça: tekerlek / sandalye ayağı / pabuç / bağlantı elemanı / çekmece parçası / kabuk / dekor parçası\nYeni parça / yeniden tasarım / mevcut bir kalıp için ikinci kaynak\nMalzeme: \nYıllık adet: \nParçanın uyması gereken renk ve doku: \nBitmiş ürünün test edildiği standart: \n\nSTEP dosyası, teknik resim ya da fiziksel parça gönderebilirim.",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

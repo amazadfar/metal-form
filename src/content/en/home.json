@@ -3,7 +3,7 @@
     "title": "Metal Form — From an idea, photo, sample or drawing to mass production",
     "description": "Engineering, tooling, manufacturing and supply of moulded plastic components. Mould design and manufacture, reverse engineering, DFM, multi-cavity tooling, production and second-source supply. Manufacturing since 2006.",
     "ogTitle": "Metal Form — Engineering, tooling, manufacturing and supply",
-    "ogDescription": "Send a photograph, a sample, a drawing or a CAD file. We come back on geometry, tooling route, production economics and supply options. Initial response in 48 business hours."
+    "ogDescription": "Send a photograph, a sample, a drawing or a CAD file. We come back on geometry, tooling route, production economics and supply options. Initial response in 2 business days."
   },
   "hero": {
     "kicker": "Manufacturing since 2006",
@@ -21,7 +21,7 @@
     ],
     "primary": "Send your project",
     "secondary": "See what we do",
-    "note": "Initial technical response within 48 business hours. NDA first if you prefer.",
+    "note": "Initial technical response within 2 business days. NDA first if you prefer.",
     "facts": [
       "Est. 2006",
       "1,000+ projects",
@@ -235,7 +235,7 @@
     "action": "Send your project",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form. I have a component I would like evaluated.\n\nPart: \nIndustry: \nAnnual volume: \nMaterial (if known): \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: ",
-    "note": "Initial technical response within 48 business hours. We can sign an NDA before you send anything detailed."
+    "note": "Initial technical response within 2 business days. We can sign an NDA before you send anything detailed."
   },
   "diagram": {
     "hero": {

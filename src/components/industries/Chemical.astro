@@ -19,6 +19,7 @@
  * leader so it breaks the hatch the way a real drawing does.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -28,7 +29,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /* ── Drawing primitives ─────────────────────────────────────────────────── */
@@ -230,7 +231,9 @@ const GUT: Record<string, string[]> = {
         <p class="eyebrow">{b.engagement.kicker}</p>
         <h2 class="chm-h2">{b.engagement.heading}</h2>
         <p class="t-lead chm-lead-p">{b.engagement.body}</p>
-        <p class="chm-sub">{b.engagement.body2}</p>
+        <TechNote locale={locale} kind="detail">
+          <p class="chm-sub">{b.engagement.body2}</p>
+        </TechNote>
 
         <div class="chm-eng__grid">
           <figure class="chm-fig chm-eng__fig">
@@ -279,36 +282,38 @@ const GUT: Record<string, string[]> = {
           </ol>
         </div>
 
-        <div class="chm-eng__data">
-          <div class="chm-letters">
-            <h3 class="t-label chm-cap">{b.engagement.lettersHeading}</h3>
-            <dl class="chm-letters__list">
-              {b.engagement.letters.map((l: any) => (
-                <div><dt class="t-mono">{l.k}</dt><dd>{l.v}</dd></div>
-              ))}
-            </dl>
+        <TechNote locale={locale} kind="detail">
+          <div class="chm-eng__data">
+            <div class="chm-letters">
+              <h3 class="t-label chm-cap">{b.engagement.lettersHeading}</h3>
+              <dl class="chm-letters__list">
+                {b.engagement.letters.map((l: any) => (
+                  <div><dt class="t-mono">{l.k}</dt><dd>{l.v}</dd></div>
+                ))}
+              </dl>
+            </div>
+  
+            <div class="chm-profiles">
+              <h3 class="t-label chm-cap">{b.engagement.profilesHeading}</h3>
+              <ul class="chm-profiles__list">
+                {b.engagement.profiles.map((p: any, i: number) => (
+                  <li>
+                    <svg class="chm-profiles__fig" viewBox="0 0 44 58" data-nomirror aria-hidden="true">
+                      <path d="M8 4 V54" class="chm-out chm-thin" />
+                      {[0, 1, 2].slice(0, i + 1).map((t: number) => (
+                        <path d={`M8 ${10 + t * 15} H${16 + i * 7} V${20 + t * 15} H8`} class="chm-out chm-thin" />
+                      ))}
+                    </svg>
+                    <span class="chm-profiles__n t-mono">{p.name}</span>
+                    <span class="chm-profiles__d t-mono">{p.depth}</span>
+                    <span class="chm-profiles__t">{p.note}</span>
+                  </li>
+                ))}
+              </ul>
+              <p class="t-fine chm-src">{b.engagement.profilesNote}</p>
+            </div>
           </div>
-
-          <div class="chm-profiles">
-            <h3 class="t-label chm-cap">{b.engagement.profilesHeading}</h3>
-            <ul class="chm-profiles__list">
-              {b.engagement.profiles.map((p: any, i: number) => (
-                <li>
-                  <svg class="chm-profiles__fig" viewBox="0 0 44 58" data-nomirror aria-hidden="true">
-                    <path d="M8 4 V54" class="chm-out chm-thin" />
-                    {[0, 1, 2].slice(0, i + 1).map((t: number) => (
-                      <path d={`M8 ${10 + t * 15} H${16 + i * 7} V${20 + t * 15} H8`} class="chm-out chm-thin" />
-                    ))}
-                  </svg>
-                  <span class="chm-profiles__n t-mono">{p.name}</span>
-                  <span class="chm-profiles__d t-mono">{p.depth}</span>
-                  <span class="chm-profiles__t">{p.note}</span>
-                </li>
-              ))}
-            </ul>
-            <p class="t-fine chm-src">{b.engagement.profilesNote}</p>
-          </div>
-        </div>
+        </TechNote>
 
         <p class="chm-close">{b.engagement.close}</p>
       </div>
@@ -433,7 +438,9 @@ const GUT: Record<string, string[]> = {
         <p class="eyebrow">{b.tamper.kicker}</p>
         <h2 class="chm-h2">{b.tamper.heading}</h2>
         <p class="t-lead chm-lead-p">{b.tamper.body}</p>
-        <p class="chm-sub">{b.tamper.body2}</p>
+        <TechNote locale={locale} kind="detail">
+          <p class="chm-sub">{b.tamper.body2}</p>
+        </TechNote>
 
         <div class="chm-pair" data-reveal>
           <figure class="chm-fig">
@@ -522,24 +529,28 @@ const GUT: Record<string, string[]> = {
         </div>
 
         <h3 class="t-label chm-cap">{b.tamper.ledgerHeading}</h3>
-        <dl class="chm-ledger">
-          {b.tamper.ledger.map((row: any) => (
-            <div class="chm-ledger__row">
-              <dt>{row.part}</dt>
-              <dd>{row.governs}</dd>
-            </div>
-          ))}
-        </dl>
+        <TechNote locale={locale} kind="detail">
+          <dl class="chm-ledger">
+            {b.tamper.ledger.map((row: any) => (
+              <div class="chm-ledger__row">
+                <dt>{row.part}</dt>
+                <dd>{row.governs}</dd>
+              </div>
+            ))}
+          </dl>
+        </TechNote>
 
         <h3 class="t-label chm-cap chm-cap--gap">{b.tamper.routesHeading}</h3>
-        <div class="chm-two">
-          {b.tamper.routes.map((r: any) => (
-            <div class="chm-two__col">
-              <h4 class="chm-h5">{r.name}</h4>
-              <p>{r.note}</p>
-            </div>
-          ))}
-        </div>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="chm-two">
+            {b.tamper.routes.map((r: any) => (
+              <div class="chm-two__col">
+                <h4 class="chm-h5">{r.name}</h4>
+                <p>{r.note}</p>
+              </div>
+            ))}
+          </div>
+        </TechNote>
         <p class="t-fine chm-src">{b.tamper.routesNote}</p>
         <p class="chm-close">{b.tamper.close}</p>
       </div>
@@ -562,7 +573,9 @@ const GUT: Record<string, string[]> = {
         <p class="eyebrow">{b.cr.kicker}</p>
         <h2 class="chm-h2">{b.cr.heading}</h2>
         <p class="t-lead chm-lead-p">{b.cr.body}</p>
-        <p class="chm-sub">{b.cr.body2}</p>
+        <TechNote locale={locale} kind="detail">
+          <p class="chm-sub">{b.cr.body2}</p>
+        </TechNote>
 
         <div class="chm-tabs" data-tabs>
           <div class="chm-tabs__list" role="tablist" aria-label={b.cr.tabsLabel}>
@@ -648,11 +661,13 @@ const GUT: Record<string, string[]> = {
           ))}
         </ul>
 
-        <div class="chm-note">
-          <h3 class="chm-h5">{b.cr.boundaryHeading}</h3>
-          <p>{b.cr.boundaryBody}</p>
-          <p class="chm-note__claim">{b.cr.boundaryClaim}</p>
-        </div>
+        <TechNote locale={locale} kind="why">
+          <div class="chm-note">
+            <h3 class="chm-h5">{b.cr.boundaryHeading}</h3>
+            <p>{b.cr.boundaryBody}</p>
+            <p class="chm-note__claim">{b.cr.boundaryClaim}</p>
+          </div>
+        </TechNote>
         <p class="chm-close">{b.cr.close}</p>
       </div>
     </div>
@@ -758,11 +773,13 @@ const GUT: Record<string, string[]> = {
         </div>
 
         <h3 class="t-label chm-cap chm-cap--gap">{b.route.rulesHeading}</h3>
-        <ol class="chm-rules">
-          {b.route.rules.map((r: string, i: number) => (
-            <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span><p>{r}</p></li>
-          ))}
-        </ol>
+        <TechNote locale={locale} kind="detail">
+          <ol class="chm-rules">
+            {b.route.rules.map((r: string, i: number) => (
+              <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span><p>{r}</p></li>
+            ))}
+          </ol>
+        </TechNote>
         <p class="t-fine chm-src">{b.route.rulesNote}</p>
         <p class="chm-close">{b.route.close}</p>
       </div>
@@ -856,22 +873,26 @@ const GUT: Record<string, string[]> = {
         </ol>
 
         <h3 class="t-label chm-cap chm-cap--gap">{b.cavity.windowsHeading}</h3>
-        <dl class="chm-ledger chm-ledger--win">
-          {b.cavity.windows.map((w: any) => (
-            <div class="chm-ledger__row chm-ledger__row--win">
-              <dt>{w.k}</dt>
-              <dd class="t-mono chm-win__v">{w.v}</dd>
-              <dd>{w.note}</dd>
-            </div>
-          ))}
-        </dl>
+        <TechNote locale={locale} kind="detail">
+          <dl class="chm-ledger chm-ledger--win">
+            {b.cavity.windows.map((w: any) => (
+              <div class="chm-ledger__row chm-ledger__row--win">
+                <dt>{w.k}</dt>
+                <dd class="t-mono chm-win__v">{w.v}</dd>
+                <dd>{w.note}</dd>
+              </div>
+            ))}
+          </dl>
+        </TechNote>
         <p class="t-fine chm-src">{b.cavity.windowsNote}</p>
 
-        <div class="chm-band">
-          <h3 class="chm-h4">{b.cavity.cavityHeading}</h3>
-          <p>{b.cavity.cavityBody}</p>
-          <p class="chm-band__b">{b.cavity.cavityBody2}</p>
-        </div>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="chm-band">
+            <h3 class="chm-h4">{b.cavity.cavityHeading}</h3>
+            <p>{b.cavity.cavityBody}</p>
+            <p class="chm-band__b">{b.cavity.cavityBody2}</p>
+          </div>
+        </TechNote>
         <p class="chm-close">{b.cavity.close}</p>
       </div>
     </div>
@@ -972,11 +993,13 @@ const GUT: Record<string, string[]> = {
           </section>
         </div>
 
-        <div class="chm-esc">
-          <h3 class="chm-h4">{b.material.escHeading}</h3>
-          <p>{b.material.escBody}</p>
-          <p class="t-fine chm-src">{b.material.escNote}</p>
-        </div>
+        <TechNote locale={locale} kind="detail">
+          <div class="chm-esc">
+            <h3 class="chm-h4">{b.material.escHeading}</h3>
+            <p>{b.material.escBody}</p>
+            <p class="t-fine chm-src">{b.material.escNote}</p>
+          </div>
+        </TechNote>
         <p class="chm-close chm-close--loud">{b.material.close}</p>
       </div>
     </div>
@@ -1035,7 +1058,9 @@ const GUT: Record<string, string[]> = {
         </figure>
 
         {/* The single largest body paragraph on the page. Deliberately. */}
-        <p class="chm-compat">{b.boundary.compat}</p>
+        <TechNote locale={locale} kind="detail">
+          <p class="chm-compat">{b.boundary.compat}</p>
+        </TechNote>
 
         <div class="chm-scope">
           <section class="chm-scope__col">
@@ -1059,11 +1084,13 @@ const GUT: Record<string, string[]> = {
           </ul>
         </div>
 
-        <div class="chm-second">
-          <h3 class="chm-h4">{b.boundary.secondHeading}</h3>
-          <p>{b.boundary.secondBody}</p>
-          <p class="chm-second__b">{b.boundary.secondBody2}</p>
-        </div>
+        <TechNote locale={locale} kind="reasoning">
+          <div class="chm-second">
+            <h3 class="chm-h4">{b.boundary.secondHeading}</h3>
+            <p>{b.boundary.secondBody}</p>
+            <p class="chm-second__b">{b.boundary.secondBody2}</p>
+          </div>
+        </TechNote>
 
         <div class="chm-scope chm-scope--send">
           <section class="chm-scope__col">

@@ -1,0 +1,148 @@
+---
+/**
+ * TECHNICAL NOTE — progressive disclosure for engineering depth
+ *
+ * These pages know a great deal and, until now, said all of it at once. A
+ * production engineer wants the cooling-layout argument; a business owner
+ * deciding whether this company can make their part does not, and should not
+ * have to scroll past it to find out. Both of those people arrive on the same
+ * URL.
+ *
+ * So the depth stays on the page and moves behind this. The section above it
+ * carries the commercial point — one headline, one short statement, one figure
+ * or drawing that earns its place — and the reasoning sits one click away for
+ * whoever wants it.
+ *
+ * ── Why <details> and not the .disc component ───────────────────────────────
+ * `.disc` is script-driven and correct, but it is built for a stack of related
+ * panels. This is a single note dropped inline inside a section, and for that
+ * the native element is simply better: it opens with no JavaScript at all, it
+ * is keyboard-operable and announced correctly by every screen reader without
+ * a line of ARIA, and browser find-in-page can open it to reveal a match. The
+ * open/close animation is CSS on `::details-content` where the browser
+ * supports it and an instant toggle where it does not — which is a fine thing
+ * to degrade to.
+ *
+ * The label is never invented here: it comes from `common.disclose`, so it is
+ * a real phrase in all nine languages rather than an English word in a
+ * translated page.
+ */
+import { getCommon } from '../content/index.ts';
+import type { Locale } from '../i18n/locales.ts';
+
+interface Props {
+  locale: Locale;
+  /** Which of the five standard labels this note carries. */
+  kind?: 'detail' | 'reasoning' | 'calculation' | 'why';
+  /** Overrides the label with a chapter-specific one from its own content. */
+  label?: string;
+  /** Opens by default. Use sparingly — the point is that most are closed. */
+  open?: boolean;
+  /** Adds a rule above the note, where it closes a section. */
+  ruled?: boolean;
+  class?: string;
+}
+
+const {
+  locale,
+  kind = 'detail',
+  label,
+  open = false,
+  ruled = false,
+  class: className = '',
+} = Astro.props;
+
+const c = getCommon(locale);
+const text = label ?? c.disclose[kind];
+---
+
+<details class:list={['tnote', ruled && 'tnote--ruled', className]} open={open || undefined}>
+  <summary class="tnote__toggle">
+    <span class="tnote__sign" aria-hidden="true"></span>
+    <span class="tnote__label">{text}</span>
+  </summary>
+  <div class="tnote__body">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .tnote {
+    margin-block-start: var(--sp-6);
+    border-block-start: var(--rule);
+  }
+  .tnote--ruled { border-block-end: var(--rule); }
+
+  /* The control is restrained on purpose. It is an offer, not a call to
+     action — the page must not look like it is withholding something. */
+  .tnote__toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-block: var(--sp-4);
+    cursor: pointer;
+    list-style: none;
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+    transition: color var(--dur-2) var(--ease-out);
+    /* 44px on a coarse pointer, without inflating it on a desktop. */
+    min-block-size: 2.75rem;
+  }
+  .tnote__toggle::-webkit-details-marker { display: none; }
+  .tnote__toggle:hover { color: var(--ink); }
+  .tnote__toggle:focus-visible {
+    outline: var(--focus);
+    outline-offset: var(--focus-offset);
+  }
+
+  /* A plus that becomes a minus. One element, two pseudo-elements, no icon. */
+  .tnote__sign {
+    position: relative;
+    inline-size: 0.85rem;
+    block-size: 0.85rem;
+    flex: none;
+    color: var(--accent-deep);
+  }
+  .tnote__sign::before,
+  .tnote__sign::after {
+    content: '';
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 0;
+    inline-size: 100%;
+    block-size: var(--hair-strong);
+    background: currentColor;
+    transition: transform var(--dur-3) var(--ease-mech);
+  }
+  .tnote__sign::after { transform: rotate(90deg); }
+  .tnote[open] .tnote__sign::after { transform: rotate(0deg); }
+
+  .tnote__label { letter-spacing: var(--track-body); }
+
+  .tnote__body {
+    padding-block-end: var(--sp-6);
+    /* Deep material gets a readable measure whatever the section around it
+       is doing — this is where the long-form argument actually lives. */
+    max-inline-size: var(--measure);
+  }
+  .tnote__body > :global(* + *) { margin-block-start: var(--sp-5); }
+
+  /* Where the browser can animate a disclosure, it should: an instant jump
+     moves the reader's place on the page. Where it cannot, it opens at once,
+     which is a perfectly good thing to degrade to. */
+  @supports (interpolate-size: allow-keywords) {
+    :global(:root) { interpolate-size: allow-keywords; }
+    .tnote::details-content {
+      block-size: 0;
+      overflow: hidden;
+      transition:
+        block-size var(--dur-4) var(--ease-out),
+        content-visibility var(--dur-4) allow-discrete;
+    }
+    .tnote[open]::details-content { block-size: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tnote::details-content { transition: none; }
+    .tnote__sign::before, .tnote__sign::after { transition: none; }
+  }
+</style>

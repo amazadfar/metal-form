@@ -350,7 +350,7 @@
         },
         {
           "label": "Rota",
-          "note": "Geri gelen şey; bir göz ve insert stratejisi, bir besleme sistemi önerisi — sıcak yolluk, soğuk yolluk ya da karma; varsayılmadan, bu parçaya göre değerlendirilmiş — ve her tercihin gerekçesiyle birlikte bir kalıp rotasıdır. 48 iş saati içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
+          "note": "Geri gelen şey; bir göz ve insert stratejisi, bir besleme sistemi önerisi — sıcak yolluk, soğuk yolluk ya da karma; varsayılmadan, bu parçaya göre değerlendirilmiş — ve her tercihin gerekçesiyle birlikte bir kalıp rotasıdır. 2 iş günü içinde ilk teknik dönüş. Ayrıntılı teknik paylaşımdan önce NDA imzalanabilir."
         },
         {
           "label": "İmalat",
@@ -420,10 +420,10 @@
   },
   "cta": {
     "headline": "Parçayı gönderin. Ya da teknik resmi. Ya da bir metre bandı.",
-    "body": "Bir kalıp rotası, bir göz ve insert stratejisi ve ikisinin de gerekçesiyle dönüş yaparız. 48 iş saati içinde ilk teknik dönüş. Talep hâlinde NDA. Proje bazında kararlaştırılan şartlarla kalıp garantisi. Dünya geneline sevkiyat.",
+    "body": "Bir kalıp rotası, bir göz ve insert stratejisi ve ikisinin de gerekçesiyle dönüş yaparız. 2 iş günü içinde ilk teknik dönüş. Talep hâlinde NDA. Proje bazında kararlaştırılan şartlarla kalıp garantisi. Dünya geneline sevkiyat.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form — sulama parçası hakkında.\n\nParça: damlatıcı / bağlantı parçası / konnektör / çıkış parçası / mikro yağmurlayıcı / vana veya filtre parçası\nMalzeme: \nYaklaşık yıllık adet: \nŞu anda bunu [ ] kalıpta üretiyoruz\nİhtiyacım: yeni kalıp / ikiz kalıp / insert ve yedekler / parça tedariki\n\n3B veri ve fiziksel numune gönderebilirim.",
-    "note": "48 iş saati içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
+    "note": "2 iş günü içinde ilk teknik dönüş. Tercih ederseniz ayrıntılı paylaşımdan önce NDA."
   }
 }

@@ -18,6 +18,7 @@
  * is a redline marker and nothing else — it marks what is unresolved.
  */
 import type { Locale } from '../../i18n/locales.ts';
+import TechNote from '../TechNote.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -27,7 +28,7 @@ interface Props {
   content: IndustryContent;
   common: CommonContent;
 }
-const { content, common } = Astro.props;
+const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 
 /* ── THE CONSTANT PART ────────────────────────────────────────────────────
@@ -540,35 +541,37 @@ const routes = b.routes.items as any[];
         </ol>
       </div>
 
-      <div class="cx-shrink">
-        <div class="cx-shrink__table">
-          <h3 class="t-label cx-shrink__h">{b.reverse.shrinkHeading}</h3>
-          <div class="cx-scroll">
-            <table class="cx-tbl">
-              <thead>
-                <tr>{b.reverse.shrinkCols.map((c: string) => <th scope="col">{c}</th>)}</tr>
-              </thead>
-              <tbody>
-                {b.reverse.shrinkRows.map((r: any) => (
-                  <tr>
-                    <th scope="row">{r.r}</th>
-                    <td class="t-mono">{r.v}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+      <TechNote locale={locale} kind="detail">
+        <div class="cx-shrink">
+          <div class="cx-shrink__table">
+            <h3 class="t-label cx-shrink__h">{b.reverse.shrinkHeading}</h3>
+            <div class="cx-scroll">
+              <table class="cx-tbl">
+                <thead>
+                  <tr>{b.reverse.shrinkCols.map((c: string) => <th scope="col">{c}</th>)}</tr>
+                </thead>
+                <tbody>
+                  {b.reverse.shrinkRows.map((r: any) => (
+                    <tr>
+                      <th scope="row">{r.r}</th>
+                      <td class="t-mono">{r.v}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p class="cx-fine t-fine">{b.reverse.shrinkNote}</p>
           </div>
-          <p class="cx-fine t-fine">{b.reverse.shrinkNote}</p>
-        </div>
-
-        <div class="cx-shrink__side">
-          <p class="cx-note">{b.reverse.close}</p>
-          <div class="cx-scan">
-            <h3 class="t-label">{b.reverse.scanHeading}</h3>
-            <p>{b.reverse.scanNote}</p>
+  
+          <div class="cx-shrink__side">
+            <p class="cx-note">{b.reverse.close}</p>
+            <div class="cx-scan">
+              <h3 class="t-label">{b.reverse.scanHeading}</h3>
+              <p>{b.reverse.scanNote}</p>
+            </div>
           </div>
         </div>
-      </div>
+      </TechNote>
     </div>
   </section>
 
@@ -581,30 +584,32 @@ const routes = b.routes.items as any[];
         <p class="t-lead cx-head__lead">{b.questions.body}</p>
       </div>
 
-      <div class="cx-q__ledger">
-        <div class="cx-q__legend">
-          <span class="t-label">{b.questions.cols.q}</span>
-          <span class="t-label">{b.questions.cols.why}</span>
+      <TechNote locale={locale} kind="reasoning">
+        <div class="cx-q__ledger">
+          <div class="cx-q__legend">
+            <span class="t-label">{b.questions.cols.q}</span>
+            <span class="t-label">{b.questions.cols.why}</span>
+          </div>
+  
+          {b.questions.groups.map((g: any) => (
+            <section class="cx-q__group">
+              <h3 class="cx-q__gname t-mono">{g.group}</h3>
+              <div class="cx-q__rows">
+                {g.items.map((it: any) => (
+                  <div class="cx-q__row">
+                    <p class="cx-q__q">{it.q}</p>
+                    <p class="cx-q__why">{it.why}</p>
+                    <p class="cx-q__assume">
+                      <span class="t-label">{b.questions.cols.assume}</span>
+                      {it.assume}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
-
-        {b.questions.groups.map((g: any) => (
-          <section class="cx-q__group">
-            <h3 class="cx-q__gname t-mono">{g.group}</h3>
-            <div class="cx-q__rows">
-              {g.items.map((it: any) => (
-                <div class="cx-q__row">
-                  <p class="cx-q__q">{it.q}</p>
-                  <p class="cx-q__why">{it.why}</p>
-                  <p class="cx-q__assume">
-                    <span class="t-label">{b.questions.cols.assume}</span>
-                    {it.assume}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        ))}
-      </div>
+      </TechNote>
 
       <p class="cx-close cx-close--sig">{b.questions.close}</p>
     </div>
@@ -751,7 +756,9 @@ const routes = b.routes.items as any[];
         <p class="t-lead cx-head__lead">{b.boundary.body}</p>
       </div>
 
-      <p class="cx-bnd__line">{b.boundary.line}</p>
+      <TechNote locale={locale} kind="detail">
+        <p class="cx-bnd__line">{b.boundary.line}</p>
+      </TechNote>
 
       <div class="cx-bnd__cols">
         <section class="cx-bnd__col">
@@ -764,14 +771,16 @@ const routes = b.routes.items as any[];
         </section>
       </div>
 
-      <div class="cx-refuse">
-        <h3 class="cx-h4">{b.boundary.refuseHeading}</h3>
-        <ol class="cx-refuse__list">
-          {b.boundary.refuse.map((r: string, i: number) => (
-            <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span><span>{r}</span></li>
-          ))}
-        </ol>
-      </div>
+      <TechNote locale={locale} kind="why">
+        <div class="cx-refuse">
+          <h3 class="cx-h4">{b.boundary.refuseHeading}</h3>
+          <ol class="cx-refuse__list">
+            {b.boundary.refuse.map((r: string, i: number) => (
+              <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span><span>{r}</span></li>
+            ))}
+          </ol>
+        </div>
+      </TechNote>
     </div>
   </section>
 
