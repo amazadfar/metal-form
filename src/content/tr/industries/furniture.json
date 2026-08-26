@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Mobilya ve Dekorasyon",
     "headline": [
-      "Bir mobilya parçası iki kez yargılanır.",
-      "Rafta ve yüz bin çevrimden sonra."
+      "Teslimatta görünüm.",
+      "Binlerce çevrim sonra dayanım."
     ],
     "lead": "Tekerlekler, sandalye ayakları, pabuçlar, mekanizmalar, bağlantı elemanları, çekmece rayı parçaları, kabuklar ve dekor parçaları. Parçayı gönderin. Geometriyi, yük durumunu, kalıp rotasını, yüzeyi ve üretim ekonomisini değerlendiririz."
   },
@@ -487,7 +487,7 @@
       }
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Yük taşıyan mobilya parçalarının kırıldığı yerler",

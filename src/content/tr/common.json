@@ -15,7 +15,7 @@
     "whatsapp": "Projenizi WhatsApp'tan gönderin",
     "sendProject": "Projenizi gönderin",
     "talkToEngineer": "Bir mühendisle görüşün",
-    "viewIndustry": "Bu sektörü inceleyin",
+    "viewIndustry": "Sektörü inceleyin",
     "more": "Daha fazla ayrıntı",
     "less": "Daha az ayrıntı",
     "next": "Sonraki",
@@ -48,7 +48,7 @@
     "delivery": "Dünya geneline sevkiyat",
     "deliveryNote": "Kalıplar ve parçalar yurt dışına sevk edilir. Teslim şartları, güzergâh ve evraklar teklifle birlikte karara bağlanır.",
     "response": "2 iş günü içinde ilk dönüş",
-    "responseNote": "İlk teknik okuma: yapılabilirlik yönü, hâlâ eksik olanlar ve bir sonraki adım. Fiyat, geometri ve adet netleştikten sonra gelir."
+    "responseNote": "İlk yanıtımızda teknik yapılabilirliği, eksik bilgileri ve önerilen sonraki adımı belirtiriz. Teklifi, geometri ve üretim adedi netleştikten sonra hazırlarız."
   },
   "nda": {
     "heading": "Gizlilik ve NDA",

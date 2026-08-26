@@ -10,7 +10,7 @@
     "kicker": "Özel Projeler",
     "headline": [
       "Başlamak için",
-      "teknik resme gerek yok."
+      "teknik resim şart değil."
     ],
     "lead": "Bir fotoğraf. Kırılan bir parça. Yerelde ürettirmek istediğiniz bir ürün. Bir eskiz. Etrafında hiçbir şey olmayan bir STEP dosyası. Başkasının binasında duran bir kalıp. Artık tutmayan bir maliyet. Elinizde ne varsa gönderin. Bize ne anlattığını, hâlâ neyi sormamız gerektiğini ve kalıp rotasının neye benzediğini söyleyelim.",
     "markers": [
@@ -21,7 +21,7 @@
   },
   "blocks": {
     "sheet": {
-      "callsHeading": "Bu paftada açık olanlar",
+      "callsHeading": "Bu sayfadaki proje soruları",
       "calls": [
         {
           "n": "01",
@@ -148,9 +148,9 @@
           "label": "Bir rakip ürünü",
           "mark": "Zarf",
           "tells": [
-            "İşlevsel zarf, montaj sınırı ve başkasının çoktan alıp bedelini ödediği kalıplama kararları.",
-            "İşlevin kaç ayrı parçaya bölündüğü; kutudaki en işe yarar bilgi genellikle budur.",
-            "Maliyetin nereye harcandığı: göz sayısı, geçmeler, yüzey kalitesi, insert işçiliği."
+            "Ürüne yansımış işlevsel sınırlar, montaj arayüzleri ve kalıplama kararları.",
+            "İşlevin ayrı parçalar arasında nasıl bölündüğü; bu, yeniden tasarım için çoğu zaman en yararlı ipucudur.",
+            "Başlıca maliyet etkenleri: göz sayısı, ters açılar, yüzey kalitesi ve insert işlemleri."
           ],
           "ask": [
             "Neyi korumak, neyi farklı yapmak istediğiniz.",
@@ -258,7 +258,7 @@
             "Cevabın parçada bir değişiklik mi, kalıpta bir değişiklik mi, yoksa farklı bir kalıp mı olduğu.",
             "İşin yapılmaya değip değmediğine dair bir tutum."
           ],
-          "first": "Dört koldan hangisinin hâlâ oynatılabilir olduğunu yanıtlayabiliriz. Hesabın kendisi — reçine fiyatınız, makine saat ücretiniz, adediniz — size ait."
+          "first": "Dört değişkenden hangilerinin hâlâ değiştirilebileceğini belirleriz. Nihai hesapta sizin hammadde fiyatınız, makine saat ücretiniz ve üretim adediniz kullanılır."
         },
         {
           "id": "supplier",
@@ -694,7 +694,7 @@
       "close": "Birinci kademe yeterlidir. Elinizdeki, gece on birde bir makine dairesinde telefonla çekilmiş bir fotoğrafsa, onu gönderin."
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Kalıplanmış bir numune, onu üreten kalıp hakkında neleri kaydeder",

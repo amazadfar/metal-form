@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Kozmetik ve Kişisel Bakım",
     "headline": [
-      "Yüzey",
-      "kalıptan gelir."
+      "Yüzey kalitesi",
+      "kalıp gözünde başlar."
     ],
     "lead": "Kapaklar, kavanozlar, dispenser ve mekanizma parçaları. Görünen yüzey kalıplamadan sonra eklenmez — çelikten kopyalanır, her baskıda bir adet. Parçayı ya da modeli gönderin. Geometriyi, kalıp güzergâhını ve üretim ekonomisini değerlendiririz.",
     "markers": [
@@ -221,7 +221,7 @@
         {
           "name": "Sürekli dişli vidalı kapak",
           "spec": "18-410 · 20-410 · 24-410 · 28-410",
-          "note": "Sektörün beygiri. Kapağı diş tutar, sızdırmazlığı oturma yüzeyi sağlar. İç dişin çelikten nasıl çıktığı — diş sökücü dişli grubu, sıyırma halkası ya da katlanabilir maça — çevrim süresini, imalat maliyetini ve yedek listesini tek bir kararda belirler."
+          "note": "Vidalı kapaklar için standart çözümdür. Vida kapağı tutar, sızdırmazlık yüzeyi ise contayı sağlar. İç vidanın kalıptan nasıl çıkarılacağı — döner maça, sıyırma halkası veya açılır-kapanır maça — çevrim süresini, kalıp maliyetini ve yedek parça listesini belirler."
         },
         {
           "name": "Flip-top ve menteşeli kapak",
@@ -426,7 +426,7 @@
       ]
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Yüzey şartnamesi, yüzey yüzey",

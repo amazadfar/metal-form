@@ -119,9 +119,9 @@
     },
     "arithmetic": {
       "index": "02",
-      "kicker": "The arithmetic",
-      "heading": "Two levers, both decided in the tool.",
-      "body": "The price of a high-volume disposable is resin, plus machine time divided by cavity count, plus scrap, plus amortised tooling. Cavity count and cycle time are the only two levers with real magnitude, and both are settled before any steel is cut.",
+      "kicker": "Production economics",
+      "heading": "Cavity count and cycle time set the output.",
+      "body": "Unit cost for a high-volume disposable combines resin, machine time allocated across the cavities, scrap and tool amortization. Cavity count and cycle time usually have the greatest effect, and both are largely fixed before steel cutting begins.",
       "body2": "Set the cavity count and the cycle. The rest is arithmetic.",
       "calcLabel": "Output",
       "controls": [
@@ -205,7 +205,7 @@
           "cause": "Material or temperature, not the tool."
         }
       ],
-      "close": "That last row is the commercially useful one: it separates a tooling problem from a material or temperature problem before anybody opens the mould.",
+      "close": "Grouping the results by flow path shows whether the variation comes from the tool or from material and temperature before the mould is dismantled.",
       "figureMark": "100–300 °F"
     },
     "line": {
@@ -224,7 +224,7 @@
         "Sampling evidence you can carry into your own qualification work",
         "Spare cavity inserts, core pins and wear parts, specified at design time",
         "Duplicate, backup and second-source tooling to the same part specification",
-        "Component production and supply where the part sits outside a sterile or regulated scope"
+        "Component production and supply only where the part is outside sterile manufacture and other regulated production scope."
       ],
       "staysHeading": "Stays with you",
       "stays": [
@@ -358,8 +358,8 @@
     },
     "second": {
       "index": "07",
-      "kicker": "The commercial argument",
-      "heading": "The second tool.",
+      "kicker": "Supply continuity",
+      "heading": "When a second tool is justified.",
       "body": "One tool, in one plant, in one country, is a single point of failure for a product line people depend on. Building the duplicate is work we take on — including for tooling somebody else built.",
       "risks": [
         {
@@ -374,8 +374,8 @@
         },
         {
           "n": "03",
-          "scenario": "Your moulder's commercial position changes.",
-          "consequence": "The tool is where their leverage is."
+          "scenario": "The commercial relationship with your moulder changes.",
+          "consequence": "If the moulder controls the only tool, your options are limited."
         },
         {
           "n": "04",
@@ -384,7 +384,7 @@
         },
         {
           "n": "05",
-          "scenario": "A market requires production in a second geography.",
+          "scenario": "A new market requires production in another region.",
           "consequence": "Moving one tool means stopping supply while it is in transit and requalified."
         },
         {
@@ -432,7 +432,7 @@
       ]
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "Cavitation: how the number actually gets chosen",

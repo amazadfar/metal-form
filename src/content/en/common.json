@@ -15,7 +15,7 @@
     "whatsapp": "Send your project on WhatsApp",
     "sendProject": "Send your project",
     "talkToEngineer": "Talk to an engineer",
-    "viewIndustry": "Open this industry",
+    "viewIndustry": "Explore this industry",
     "more": "More detail",
     "less": "Less detail",
     "next": "Next",
@@ -48,7 +48,7 @@
     "delivery": "International delivery",
     "deliveryNote": "Tools and components ship internationally. Terms, route and documentation are agreed with the quotation.",
     "response": "Initial response within 2 business days",
-    "responseNote": "A first technical read: feasibility direction, what is still missing, and the next step. The quotation follows once the geometry and the volume are understood."
+    "responseNote": "Our initial response covers technical feasibility, missing inputs and the recommended next step. We prepare a quotation once the geometry and production volume are clear."
   },
   "nda": {
     "heading": "Confidentiality and NDA",

@@ -23,8 +23,8 @@
   "blocks": {
     "grams": {
       "index": "01",
-      "kicker": "Where the money is",
-      "heading": "Resin is the bottle. The gram is the unit.",
+      "kicker": "Production economics",
+      "heading": "At scale, preform weight drives bottle cost.",
       "body": "About two thirds of what a PET bottle costs is the resin inside it. Everything else — the tool, the machine, the labour, the electricity — is smaller and less variable. So the only number on a bottling line that genuinely compounds is preform weight, and preform weight is decided by the tool.",
       "body2": "Published weight bands for 500 ml preforms, by neck standard. Industry figures, not ours — your own preform will sit somewhere on this scale for reasons specific to your product.",
       "scaleLabel": "500 ml preform weight, grams",
@@ -50,19 +50,19 @@
           "note": "Legacy tall carbonated neck. Installed base only — the caps are not interchangeable with 1881."
         }
       ],
-      "close": "A gram is not a rounding error. On a line running a hundred million bottles a year, a gram is a hundred tonnes of resin. The arithmetic is yours to run: your resin price, your volume, your bottle."
+      "close": "At 100 million bottles a year, one extra gram means 100 tonnes of additional resin. Apply your own resin price and annual volume to calculate the impact."
     },
     "cavities": {
       "index": "02",
       "kicker": "The argument",
-      "heading": "The lightest cavity sets the weight of every cavity.",
+      "heading": "The lightest cavity determines the production set-point.",
       "body": "Your plant has to guarantee a minimum wall and a minimum weight — for pressure, for top load, for shelf life. So the process gets trimmed until the lightest cavity in the tool still clears that floor. Every other cavity then runs above it, by whatever the spread happens to be.",
-      "body2": "That difference is bought again on every shot, on every cavity, for the entire life of the tool. Tooling price is a one-off number. Cavity spread is an annuity paid to your resin supplier.",
+      "body2": "Any cavity that runs above that set-point consumes extra resin on every shot for the life of the tool. Tool cost is paid once; cavity-to-cavity variation is paid continuously.",
       "chartCaption": "Cavity weight distribution against the specification floor",
       "chartFloor": "Specification floor",
       "chartMean": "Mean weight actually run",
-      "chartGap": "This gap is resin you buy and do not need",
-      "close": "Halve the spread and the mean moves down toward the design intent without changing the bottle at all. That is what melt balance, cooling balance and cavity-to-cavity manufacturing consistency actually buy.",
+      "chartGap": "Avoidable resin caused by cavity spread",
+      "close": "Reducing cavity-to-cavity spread allows the average weight to move closer to the design target without changing the bottle. That requires balanced melt flow, balanced cooling and consistent cavity manufacture.",
       "cavityHeading": "Where our cavity count sits, and where it does not",
       "cavityBody": "Output is cavities divided by cycle. Published guidance puts 16 to 48 cavities as the economic band below roughly 50 million preforms a year, 72 to 96 for programmes in the hundreds of millions, and 128 to 192 only where mega-volume is sustained and the maintenance organisation exists to support it.",
       "cavityBody2": "Metal Form's tooling experience runs to 46 cavities. That is the band regional bottlers, independent converters and second-source programmes actually run — where a tool can still be balanced, maintained and reasoned about rather than merely operated.",
@@ -71,7 +71,7 @@
     "neck": {
       "index": "03",
       "kicker": "The interface",
-      "heading": "The neck is the contract.",
+      "heading": "The neck finish defines the interface.",
       "body": "The finish is the one piece of geometry the bottle, the cap and the capper all have to agree on. It is why a neck change is never just a preform-tool change — and why conversion projects usually stall on the part that was ordered last.",
       "tabsLabel": "Neck standard",
       "standards": [
@@ -313,7 +313,7 @@
         },
         {
           "name": "Sealing liner geometry",
-          "note": "The other half of the contract the neck finish defines."
+          "note": "The closure geometry that mates with the neck finish."
         }
       ],
       "boundary": "Where our scope stops: we build closure tooling. Slitting and folding equipment, capping machinery and line equipment are not ours to supply."
@@ -358,7 +358,7 @@
       ]
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "The conditions your tool has to survive",

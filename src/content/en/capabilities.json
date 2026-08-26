@@ -7,8 +7,8 @@
     "kicker": "Capabilities",
     "headline": [
       "Four stages.",
-      "Buy the chain,",
-      "or buy one link."
+      "Use the full route,",
+      "or choose one service."
     ],
     "lead": "Most projects arrive needing all of it. Some arrive needing a single drawing reviewed, or a tool corrected, or a component supplied from a tool somebody else built. Both are normal work."
   },
@@ -132,8 +132,8 @@
     }
   ],
   "modularity": {
-    "heading": "You do not have to buy all of it.",
-    "body": "The whole chain usually runs best, because the handovers between engineering, tooling and production are where projects lose time and money. But every stage stands on its own, and quoting one does not commit you to the next.",
+    "heading": "Choose only the services you need.",
+    "body": "Using one partner for the full route reduces delays and disputes at the handovers between engineering, tooling and production. Each stage is also available on its own, and requesting a quotation for one stage does not commit you to the next.",
     "points": [
       "Engineering only — a model, a reverse-engineered part, a DFM review. Sold as engineering work.",
       "A tool only — built to your drawing, shipped to your plant, run by you.",

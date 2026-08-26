@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Beyaz Eşya",
     "headline": [
-      "Parça büyük.",
-      "Tolerans değil."
+      "Büyük parça.",
+      "Sıkı boyutsal kontrol."
     ],
     "lead": "Beyaz eşya enjeksiyon parçaları için kalıp ve mühendislik — kapak rafları, çekmeceler, kanallar, çerçeveler, ön paneller, gövdeler. Bu boyuttaki parçalarda düzlük, çevrim süresi ve maliyetin üçü de çelikte kararlaştırılır. Geometriyi, soğutmayı ve geçmeyi çelik işlenmeden önce çalışırız.",
     "markers": [
@@ -84,7 +84,7 @@
     "flow": {
       "index": "02",
       "kicker": "Cidar ve akış",
-      "heading": "Cidardan aldığınız her gramı, yolluk girişi olarak geri ödersiniz.",
+      "heading": "Cidar kalınlığını azaltmak, giriş ve dolum stratejisini değiştirir.",
       "body": "Akış uzunluğunun cidar kalınlığına oranı, belirli bir malzeme ve proses penceresi için neredeyse sabittir. Cidarı inceltirsiniz, ergiyik daha erken donar; aynı paneli doldurmak için daha çok giriş gerekir. Her giriş bir birleşme izi daha demektir ve o izin bir yere düşmesi gerekir.",
       "figLabel": "Tek panel, üç farklı nominal cidar, sabit akış uzunluğu / cidar oranında",
       "wallLabel": "cidar",
@@ -114,7 +114,7 @@
       "weldBody": "Yayımlanmış çalışmalar birleşme izi mukavemetini malzemenin nominal mukavemetinin yaklaşık yüzde 20'sine kadar düşük veriyor. Bu da yolluk girişi konumunu önce bir yük yolu sorusu, sonra kozmetik bir soru hâline getirir. Uzun bir ön panelde sektörün cevabı kademeli dolumdur: sıcak yolluk girişleri zamanlanmış bir sırayla açılır, böylece birkaç akış cephesi çarpışmak yerine tek bir cephe bütün uzunluğu kat eder. Belgelenmiş bir vakada mengene kuvveti kabaca yüzde 20, göz basıncı 50 bar ve parça ağırlığı yaklaşık yüzde 5 düşürüldü.",
       "weldWarn": "Faydasının yanında yayımlanan dürüst dezavantajı: bir girişin diğerine devrettiği yerde duraklama ve akış izleri yine de görülebilir ve bunların temizlenmesi proses ayarı ister.",
       "boundaryNote": "Kademeli dolum, gaz destekli enjeksiyon ve yapısal köpük birer sektör rotasıdır. Bize değil, enjeksiyon atölyesine ve onun ekipmanına aittir. Biz kalıbı, gerçekte çalıştıracağınız rotanın geometriye uyacağı şekilde tasarlarız.",
-      "close": "Nominal cidar; gramı, çevrim süresini ve giriş sayısını aynı anda hareket ettiren tek kaldıraçtır ve genellikle bunları ters yönlerde hareket ettirir. Çelik işlenmeden önce karara bağlanmasının bütün gerekçesi budur.",
+      "close": "Nominal et kalınlığı parça ağırlığını, çevrim süresini ve giriş sayısını aynı anda etkiler; bu hedefler çoğu zaman birbiriyle çelişir. Bu nedenle et kalınlığı çelik işlenmeden önce kesinleştirilmelidir.",
       "sourceNote": "Birleşme izi mukavemeti, mengene kuvveti ve basınç değerleri yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
     },
     "warp": {
@@ -327,7 +327,7 @@
           ]
         }
       ],
-      "insertHeading": "İkisinin arasında, platformların en az kullandığı kaldıraç duruyor",
+      "insertHeading": "Ürün platformlarında sık gözden kaçan seçenek",
       "insertBody": "Tek bir ortak kalıp setinde birbirinin yerine geçebilen göz ve maça insertleri; böylece tek bir kalıp bir varyant ailesinin tamamını karşılar. Daha az kalıp seti, daha az ürün kodu, bakımı yapılacak tek çelik takımı ve planlanacak tek makine arayüzü. Bir platform genelinde kalıp harcamasını kısmanın en doğrudan yoludur ve en sık talep edilmeden kalan seçenektir.",
       "tailHeading": "Ürün ağacının diğer ucu",
       "tailBody": "Klipsler, sepet teli uçları, raf destekleri, ara parçaları, ara pimleri, kablo kılavuzları. Tek tek önemsiz, toplamda büyük bir yıllık harcama ve bir beyaz eşya ürün ağacında yüksek göz sayısının gerçekten kazandırdığı tek yer. Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bu bilgi, büyük bir gövdeye değil, buraya — küçük parça ucuna — aittir.",
@@ -413,7 +413,7 @@
       ]
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Çelik işlenmeden önce — büyük parça kontrol listesi",
@@ -438,7 +438,7 @@
             "Çamaşır ve bulaşık tarafı — ağırlıklı olarak PP, rijitlik ve ölçüsel kararlılık için sık sık talk dolgulu; aşınma ve mandal hissinin önem taşıdığı yerlerde POM.",
             "Ön paneller ve çerçeveler — yüzey kalitesi ve ısı dayanımı için ABS ve PC/ABS.",
             "Dolgulu kaliteler anizotropik çeker. Aynı parçanın dolgulu ve dolgusuz hâli, fiyatı farklı aynı problem değil, iki ayrı kalıp problemidir.",
-            "Kırma malzeme gerçek bir maliyet kaldıracıdır ve gerçek bir tavanı vardır: yayımlanmış uygulama, darbe özellikleri ölçülebilir biçimde düşmeden önceki sınırı ABS için yüzde 20, HIPS için yüzde 25 civarında veriyor."
+            "Kırma malzeme hammadde maliyetini düşürebilir, ancak belirli bir sınır içinde kullanılmalıdır. Yayımlanmış uygulamalarda darbe özellikleri belirgin biçimde düşmeden önce ABS için yaklaşık %20, HIPS için %25 oranı esas alınır."
           ],
           "source": "Bu paneldeki rakamlar yayımlanmış sektör uygulamasıdır. Metal Form malzeme testi, sertifikasyonu veya onayı yapmaz."
         },

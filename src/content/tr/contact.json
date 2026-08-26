@@ -10,10 +10,10 @@
       "Ya da parçanın",
       "fotoğrafını."
     ],
-    "lead": "Form yok, ön eleme anketi yok. Elinizdekini gönderin, parçanın ne yapması gerektiğini söyleyin; biz teknik bir okumayla dönelim."
+    "lead": "Elinizde ne varsa gönderin ve parçanın ne yapması gerektiğini anlatın. Bir mühendis inceleyerek ilk uygulanabilirlik değerlendirmesini ve sonraki adım için gereken bilgileri paylaşır."
   },
   "send": {
-    "heading": "Göndermeye değer olanlar",
+    "heading": "Neler gönderebilirsiniz?",
     "body": "Bunlardan herhangi biri başlamak için yeter. Hepsi bir arada daha iyidir ama hepsini kimse bulunduramaz.",
     "items": [
       "Parçanın fotoğrafı; mümkünse yanında bir cetvel ya da kumpasla",
@@ -54,7 +54,7 @@
   "cta": {
     "headline": "Şimdi gönderin.",
     "body": "Şu anda telefonla çekilmiş bir fotoğraf, üç hafta sonra gelecek kusursuz tanımlanmış bir talepten bizim için daha değerlidir.",
-    "action": "WhatsApp'ı açın",
+    "action": "WhatsApp’tan yazın",
     "prefill": "Merhaba Metal Form.\n\nParça: \nSektör: \nYıllık adet: \nMalzeme (biliniyorsa): \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: \n\nÇözmek istediğim sorun: "
   }
 }

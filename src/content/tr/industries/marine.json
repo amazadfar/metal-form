@@ -9,9 +9,9 @@
   "hero": {
     "kicker": "Denizcilik ve Açık Deniz",
     "headline": [
-      "Tuz, güneş",
-      "ve normal bir kalıbı",
-      "kaldıramayan adetler."
+      "Düşük adet.",
+      "Uzun hizmet ömrü.",
+      "Deniz koşulları."
     ],
     "lead": "Denizcilik parçaları; az sayıda üretilen, zorlu geometrili ve yirmi yıl boyunca ultraviyoleye, tuza ve suya dayanması beklenen parçalardır. Çoğu buraya teknik resim olarak değil, nesne olarak gelir. Parçayı ölçer, aşınmanın gizlediği geometriyi geri kazanır ve kalıbı tahmine değil, gerçekte ürettiğiniz adede göre boyutlandırırız.",
     "markers": [
@@ -362,7 +362,7 @@
         }
       ],
       "bandsNote": "Bu bantlar sektörün pratik kuralları; bağımsız düşük adetli kalıpçılarda birbirine yakınsıyor ve burada bir eşik olarak değil, bir kararın biçimini anlatmak için veriliyor.",
-      "lossHeading": "Paranın gerçekte kaybedildiği yer",
+      "lossHeading": "Önlenebilir maliyetin başlıca kaynakları",
       "loss": [
         "Fazla kalıp. Sekiz yüz adetlik bir kalem için alınmış dört sertleştirilmiş göz sermayesini asla geri döndürmez ve alıcı bunu on yıl boyunca nakit akışında taşır.",
         "Diğer yönde eksik kalıp. Prototip bir kalıbın sekiz yıl üretimde zorlanması ve sonra sezon ortasında, arkasında hiçbir şey yokken arıza vermesi.",
@@ -433,7 +433,7 @@
       "boundaryNote": "Ayrımın somutlaşması için o dünyadan bir ayrıntı. Benzinli bir sistemde metal bir dolum ağzı gövdesi teknenin bonding sistemine bağlanır; metal kapaklı ve zincirli plastik bir dolum ağzı gövdesi ise tekne sudan çıktığında oluşan elektrostatik boşalma riski nedeniyle bilinçli olarak bağlanmaz. İkisinin de kalıbını yapabiliriz. Karar da belge de üreticiye aittir."
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Denizcilik hizmeti için malzeme kısa listesi",

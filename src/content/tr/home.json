@@ -31,8 +31,8 @@
   },
   "process": {
     "kicker": "Rota",
-    "heading": "Tek zincir, beş aşama, tek sorumlu.",
-    "lead": "Tedarikçilerin çoğu bu zincirin tek halkasına sahiptir; gerisini size devreder. Biz rotanın tamamının sorumluluğunu alıyoruz — ve aşamalar arasındaki devir noktalarının. Projeler genellikle tam orada tökezler.",
+    "heading": "Beş aşama, tek sorumlu muhatap.",
+    "lead": "Birçok tedarikçi yalnızca tek bir aşamayı üstlenir; aşamalar arasındaki koordinasyon size kalır. Biz mühendislik, kalıp imalatı, üretim ve tedariği tek süreç olarak yönetir, proje boyunca sorumluluğu üstleniriz.",
     "steps": [
       {
         "index": "01",
@@ -88,9 +88,9 @@
     "modular": "Her aşama tek başına da satın alınabilir. Yalnızca mühendislik. Yalnızca kalıp. Başkasının yaptığı bir tasarımın DFM incelemesi. Hâlihazırda sahip olduğunuz bir kalıptan üretim. Zincirin tamamını alın ya da tek bir halkasını."
   },
   "pillars": {
-    "kicker": "Alıcılar neden değişir",
-    "heading": "Bir üreticinin tedarikçi değiştirmesinin üç nedeni.",
-    "lead": "Hiçbiri, aynı teknik resme verilen daha düşük bir fiyat teklifi değil.",
+    "kicker": "Tedarikçi seçimi",
+    "heading": "Üreticiler neden tedarikçi değiştirir?",
+    "lead": "Asıl nedenler daha iyi üretim ekonomisi, net sorumluluk ve daha dayanıklı bir tedarik yapısıdır; yalnızca daha düşük kalıp fiyatı değil.",
     "items": [
       {
         "index": "01",
@@ -208,10 +208,10 @@
   },
   "bento": {
     "kicker": "Sektörler",
-    "heading": "Parçanızı bulun.",
-    "lead": "Her sektör farklı bir geometri satın alır, farklı arızalardan korkar ve maliyeti farklı bir birimle ölçer. Çalıştığınız sektörü açın.",
+    "heading": "Sektörünüzü seçin.",
+    "lead": "Her sektörün mühendislik gereksinimleri, üretim riskleri ve maliyet öncelikleri farklıdır. Projenize en yakın sektörü seçin.",
     "fallback": "Projenizin bir kategoriye sığması gerekmiyor.",
-    "fallbackAction": "Özel projeleri açın"
+    "fallbackAction": "Özel projeleri inceleyin"
   },
   "proof": {
     "kicker": "Kanıt",

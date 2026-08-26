@@ -85,7 +85,7 @@
     },
     "parts": {
       "index": "01",
-      "kicker": "Component register",
+      "kicker": "Component families",
       "heading": "What actually gets moulded on a heavy vehicle.",
       "body": "Fifteen families cover most of the plastic on a truck, a bus, a tractor or an excavator. Each one is difficult for a different reason, and the reason is the tooling brief.",
       "figureLabel": "Generic heavy vehicle — side elevation with balloon references",
@@ -333,7 +333,7 @@
         {
           "n": "04",
           "label": "The cooling",
-          "body": "The primary control on cycle time and on warpage at the same time, and the one thing that cannot be retrofitted cheaply. Circuits have to reach the thick sections and the core side, which is usually the poorer-cooled half. Lifters are thin, moving and close to impossible to cool, which is why they extend cycle and gall. Conformal routes exist where straight drilling cannot go.",
+          "body": "Cooling layout has the strongest influence on both cycle time and warpage, and it is costly to change later. Circuits must reach thick sections and the core side, which is usually cooled less effectively. Lifters are thin, moving components and are difficult to cool, so they can extend the cycle and gall. Conformal channels are an option where straight drilling cannot reach.",
           "spec": [
             "Core-side circuits",
             "Conformal routes",
@@ -451,7 +451,7 @@
     "life": {
       "index": "05",
       "kicker": "Programme life",
-      "heading": "Ten years of shots, drawn as a dimension chain.",
+      "heading": "Ten years of production, planned as maintenance and dimensional control.",
       "body": "Structural mould maintenance is triggered by accumulated shots, not by the calendar. Published maintenance practice services pre-hardened tools around 50,000 / 100,000 / 250,000 shot gates and hardened tools at longer intervals. The value of the chain is not the figures on it. It is that every event below the line is scheduled at the start rather than reacted to at the end.",
       "chainLabel": "Accumulated shots",
       "aboveLabel": "Tooling events",
@@ -612,7 +612,7 @@
       "index": "07",
       "kicker": "Revision block",
       "heading": "Send the part.",
-      "body": "In this sector the visitor usually has a physical component on the desk and no data package. That is enough to start.",
+      "body": "In this sector, a physical component often exists without a technical data package. The part itself is enough to begin the engineering review.",
       "tableLabel": "Enquiry record",
       "columns": {
         "rev": "Rev",
@@ -654,7 +654,7 @@
       ]
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "Undercuts: what each answer costs",

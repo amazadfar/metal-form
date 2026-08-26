@@ -84,7 +84,7 @@
     "flow": {
       "index": "02",
       "kicker": "Wall and flow",
-      "heading": "Every gram you take out of the wall, you buy back in gates.",
+      "heading": "Reducing wall thickness changes the gate and filling strategy.",
       "body": "Flow length to wall thickness is close to a constant for a given material and process window. Thin the wall and the melt freezes sooner, so the same panel needs more gates to fill it. Each gate is another weld line, and a weld line has to land somewhere.",
       "figLabel": "One panel, three nominal walls, at constant flow-length-to-wall ratio",
       "wallLabel": "wall",
@@ -114,7 +114,7 @@
       "weldBody": "Published work puts knit-line strength as low as about 20 per cent of the material's nominal strength. That makes gate position a load-path question first and a cosmetic question second. On a long fascia the industry answer is cascade fill: hot runner gates opened in timed sequence so one flow front travels the whole length instead of several colliding. A documented case reduced clamp force by roughly 20 per cent, cavity pressure by 50 bar and part weight by about 5 per cent.",
       "weldWarn": "The honest downside, published alongside the benefit: hesitation and flow marks can still appear where one gate hands over to the next, and they need process tuning to clear.",
       "boundaryNote": "Cascade fill, gas assist and structural foam are industry routes. They belong to the moulding shop and its equipment, not to us. We design the tool so the route you actually run is the one the geometry suits.",
-      "close": "Nominal wall is the only lever that moves grams, cycle time and gate count at once, and it usually moves them in opposite directions. That is the whole argument for settling it before the steel is cut.",
+      "close": "Nominal wall thickness affects shot weight, cycle time and gate count at the same time, often in competing directions. That is why it must be resolved before steel cutting begins.",
       "sourceNote": "Knit-line strength, clamp-force and pressure figures are published industry practice, not Metal Form measurements."
     },
     "warp": {
@@ -327,7 +327,7 @@
           ]
         }
       ],
-      "insertHeading": "Between the two sits the lever most platforms under-use",
+      "insertHeading": "The option many product platforms overlook",
       "insertBody": "Interchangeable cavity and core inserts in one common base, so a single tool covers a variant family. Fewer bases, fewer part numbers, one set of steel to maintain and one machine interface to schedule. It is the most direct way to cut tooling spend across a platform, and it is the option that most often goes unasked for.",
       "tailHeading": "The other end of the bill of materials",
       "tailBody": "Clips, tine caps, shelf supports, spacers, standoffs, cable guides. Individually trivial, collectively a large annual spend, and the one place in an appliance BOM where high cavitation genuinely pays. Metal Form's tooling experience runs to 46 cavities. That fact belongs here, to the small-part tail, and not to a large housing.",
@@ -413,7 +413,7 @@
       ]
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "Before the steel is cut — the large-part checklist",
@@ -438,7 +438,7 @@
             "Laundry and dishwasher — mostly PP, often talc-filled for stiffness and dimensional stability, with POM where wear and latch feel matter.",
             "Fascias and bezels — ABS and PC/ABS for surface quality and heat resistance.",
             "Filled grades shrink anisotropically. A filled and an unfilled version of the same part are different tooling problems, not the same one with a different price.",
-            "Regrind is a genuine cost lever with a real ceiling: published practice caps it near 20 per cent for ABS and 25 per cent for HIPS before impact properties fall measurably."
+            "Regrind can reduce material cost, but only within a defined limit: published practice keeps it near 20% for ABS and 25% for HIPS, before impact properties decline measurably."
           ],
           "source": "Figures in this panel are published industry practice. Metal Form does not test, certify or approve materials."
         },

@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Oyuncak ve Tüketici Ürünleri",
     "headline": [
-      "Birim maliyet",
-      "çelikte belirlenir."
+      "Parça maliyeti",
+      "kalıp tasarımında belirlenir."
     ],
     "lead": "Tüketici ürünleri ve oyuncaklar; bir eskizden, bir numuneden ya da CAD'den kalıplı üretime. Parçayı gönderin. Geometriyi, kalıp rotasını, üretim ekonomisini ve tedarik seçeneklerini değerlendiririz.",
     "markers": [
@@ -510,7 +510,7 @@
       "close": "Kalıp garanti şartları her proje ve kalıp şartnamesi bazında tanımlanır. Kalıbın mülkiyeti, saklanması ve devri; on sekiz ay sonraki bir konuşmaya değil, siparişe aittir."
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Cidar, nervür ve göbek",

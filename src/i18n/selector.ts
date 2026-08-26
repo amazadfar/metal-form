@@ -17,18 +17,20 @@ export interface SelectorTile {
   promise: string;
   /** The action, in this language. Sits under the promise on hover/focus. */
   enter: string;
+  /** Marks the language suggested from the browser preference. */
+  suggested: string;
 }
 
 export const SELECTOR: Record<Locale, SelectorTile> = {
-  en: { promise: 'From an idea to mass production', enter: 'Enter in English' },
-  ru: { promise: 'От идеи до серийного производства', enter: 'Войти на русском' },
-  hy: { promise: 'Գաղափարից մինչև զանգվածային արտադրություն', enter: 'Մուտք հայերենով' },
-  tr: { promise: 'Fikirden seri üretime', enter: 'Türkçe devam et' },
-  th: { promise: 'จากแนวคิดสู่การผลิตจำนวนมาก', enter: 'เข้าสู่เว็บไซต์ภาษาไทย' },
-  zh: { promise: '从构想到批量生产', enter: '进入中文网站' },
-  ur: { promise: 'تصور سے بڑے پیمانے پر پیداوار تک', enter: 'اردو میں داخل ہوں' },
-  ar: { promise: 'من الفكرة إلى الإنتاج الضخم', enter: 'الدخول بالعربية' },
-  fa: { promise: 'از ایده تا تولید انبوه', enter: 'ورود به نسخه فارسی' },
+  en: { promise: 'From an idea to mass production', enter: 'Continue in English', suggested: 'Browser language' },
+  ru: { promise: 'От идеи до серийного производства', enter: 'Продолжить на русском', suggested: 'Язык браузера' },
+  hy: { promise: 'Գաղափարից մինչև զանգվածային արտադրություն', enter: 'Շարունակել հայերեն', suggested: 'Բրաուզերի լեզու' },
+  tr: { promise: 'Fikirden seri üretime', enter: 'Türkçe devam et', suggested: 'Tarayıcı dili' },
+  th: { promise: 'จากแนวคิดสู่การผลิตจำนวนมาก', enter: 'เข้าสู่เว็บไซต์ภาษาไทย', suggested: 'ภาษาของเบราว์เซอร์' },
+  zh: { promise: '从构想到批量生产', enter: '进入中文网站', suggested: '浏览器语言' },
+  ur: { promise: 'تصور سے بڑے پیمانے پر پیداوار تک', enter: 'اردو میں جاری رکھیں', suggested: 'براؤزر کی زبان' },
+  ar: { promise: 'من الفكرة إلى الإنتاج الكمي', enter: 'متابعة بالعربية', suggested: 'لغة المتصفح' },
+  fa: { promise: 'از ایده تا تولید انبوه', enter: 'ادامه به فارسی', suggested: 'زبان مرورگر' },
 };
 
 /**

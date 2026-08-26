@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Otomotiv ve Ağır Vasıta",
     "headline": [
-      "Kalıp, araçtan",
-      "uzun yaşar."
+      "Aracın üretim ve servis ömrüne",
+      "uygun kalıp."
     ],
     "lead": "Kamyon, otobüs, tarım ve iş makineleri aynı enjeksiyon parçalarını on yıl boyunca kullanır. Kalıbı bu hizmet ömrüne göre tasarlar ve imal ederiz — dolgulu polimerler, sürgüler ve lifterlar, atımdan atıma tekrarlayan ölçü — ve sonrasında parçayı da tedarik ederiz."
   },
@@ -85,7 +85,7 @@
     },
     "parts": {
       "index": "01",
-      "kicker": "Parça kütüğü",
+      "kicker": "Parça grupları",
       "heading": "Bir ağır vasıtada gerçekte neyin kalıbı yapılıyor.",
       "body": "On beş parça ailesi; bir kamyon, otobüs, traktör ya da ekskavatördeki plastiğin büyük bölümünü kapsar. Her biri farklı bir nedenle zordur ve o neden, kalıp şartnamesinin kendisidir.",
       "figureLabel": "Genel ağır vasıta — yandan görünüş ve balon referansları",
@@ -333,7 +333,7 @@
         {
           "n": "04",
           "label": "Soğutma",
-          "body": "Aynı anda hem çevrim süresinin hem de çarpılmanın birincil kontrolüdür ve ucuza sonradan eklenemeyen tek şeydir. Devrelerin kalın kesitlere ve genellikle daha kötü soğuyan yarım olan maça tarafına ulaşması gerekir. Lifterlar incedir, hareketlidir ve soğutulmaları neredeyse imkânsızdır; çevrimi uzatmalarının ve sıvanmalarının nedeni budur. Düz delik açmanın ulaşamadığı yerlerde konformal kanallar vardır.",
+          "body": "Soğutma düzeni hem çevrim süresini hem de çarpılmayı en fazla etkileyen unsurdur ve sonradan değiştirilmesi maliyetlidir. Kanalların kalın kesimlere ve genellikle daha zor soğuyan maça tarafına ulaşması gerekir. Lifterlar ince ve hareketli parçalardır; soğutulmaları zor olduğu için çevrimi uzatabilir ve sıvanmaya yol açabilir. Düz delmenin ulaşamadığı bölgelerde konformal kanallar kullanılabilir.",
           "spec": [
             "Maça tarafı devreleri",
             "Konformal kanallar",
@@ -451,7 +451,7 @@
     "life": {
       "index": "05",
       "kicker": "Program ömrü",
-      "heading": "On yıllık atım, bir ölçü zinciri olarak çizildi.",
+      "heading": "On yıllık üretim için bakım ve boyutsal kontrol planı.",
       "body": "Kalıbın yapısal bakımını takvim değil, biriken atım sayısı tetikler. Yayımlanmış bakım uygulamaları ön sertleştirilmiş kalıplara 50.000 / 100.000 / 250.000 atım eşiklerinde, sertleştirilmiş kalıplara ise daha uzun aralıklarla bakım öngörüyor. Zincirin değeri üzerindeki rakamlar değildir. Değeri, çizginin altındaki her olayın sonunda tepki verilerek değil, başında planlanarak ele alınmasıdır.",
       "chainLabel": "Biriken atım",
       "aboveLabel": "Kalıp olayları",
@@ -612,7 +612,7 @@
       "index": "07",
       "kicker": "Revizyon bloğu",
       "heading": "Parçayı gönderin.",
-      "body": "Bu sektörde ziyaretçinin masasında genellikle fiziksel bir parça vardır, veri paketi yoktur. Başlamak için bu yeter.",
+      "body": "Bu sektörde çoğu zaman fiziksel parça vardır, ancak teknik veri paketi yoktur. Mühendislik incelemesine başlamak için parçanın kendisi yeterlidir.",
       "tableLabel": "Talep kaydı",
       "columns": {
         "rev": "Rev",
@@ -654,7 +654,7 @@
       ]
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Geçmeler: her cevabın bedeli ne",

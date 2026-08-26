@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Tarım ve Sulama",
     "headline": [
-      "Damlatıcı bir geometridir.",
-      "Ürün, kalıbın kendisidir."
+      "Debi hassasiyeti",
+      "kalıp gözünde başlar."
     ],
     "lead": "Damlatıcılar, bağlantı parçaları, konnektörler, mikro yağmurlayıcılar, vana ve filtre parçaları. Geometriyi gönderin. Akış yolunu, kalıp rotasını, göz stratejisini ve tedarik planını değerlendiririz.",
     "markers": [
@@ -172,7 +172,7 @@
           {
             "id": "m05",
             "name": "m = 0,5",
-            "summary": "Kısmen basınç ayarlı. Debi basınçla birlikte yine yükselir, ama basınca göre çok daha yavaş. Ayarın büyük bölümü bir diyaframla değil, geometriyle satın alınmıştır."
+            "summary": "Kısmi basınç dengeleme. Debi basınçla birlikte artmaya devam eder, ancak çok daha yavaş. Dengelemenin büyük kısmını labirent geometrisi sağlar; diyafram yoktur."
           },
           {
             "id": "m1",
@@ -185,7 +185,7 @@
     },
     "cavities": {
       "index": "04",
-      "kicker": "Aritmetik",
+      "kicker": "Üretim ekonomisi",
       "heading": "Çıktı, göz sayısının çevrime bölümüdür. İki yarısı da oynar.",
       "body": "Bir sezonda yüz milyonlarla tüketilen bir parça, parçayla satın alınmaz. Atımla satın alınır. Göz sayısı üzerine sektör yazıları, ilk sayıyı zorladığınızda ne olduğu konusunda açık sözlüdür: kalıp maliyeti orantılı değil, doğrusal olmayan biçimde yükselir; çevrim süresi sabit kalmaz, uzar; pres boyu ve saatlik maliyet kalıpla birlikte tırmanır ve yüksek gözlü kalıpların büyük bir bölümü hiçbir zaman tam göz sayısında çalışmaz.",
       "body2": "Yani kazanç asla etiketteki oran kadar değildir. Yayımlanmış bir karşılaştırma, aynı parçanın dört gözlü kalıbını 35 saniyeye karşılık on altı gözlü hâlini 42 ila 48 saniyeye koyuyor — göz sayısı dört kat, çıktı ise üç kata daha yakın.",
@@ -373,7 +373,7 @@
       "close": "Bu sektörde ürün, damlatıcı geometrisinin kendisidir ve rutin olarak kopyalanır. Biz de öyle ele alırız: önce gizlilik, teknik resimler saklanır ve ikinci kalıp bizim değil, sizin teknik resimlerinize göre yapılır."
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Ürün standardının bir damlatıcıdan istedikleri",
