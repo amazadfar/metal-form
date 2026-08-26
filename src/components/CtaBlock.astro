@@ -27,6 +27,7 @@ interface Props {
 const { locale, cta, source, inverse = false, index, id = 'contact' } = Astro.props;
 const c = getCommon(locale);
 const channels = availableChannels();
+const hasDirectChannel = channels.whatsapp || channels.email || channels.phone;
 ---
 
 <section
@@ -50,7 +51,7 @@ const channels = availableChannels();
           source={source}
           size="lg"
         />
-        {cta.actionAlt && (
+        {cta.actionAlt && hasDirectChannel && (
           <a class="btn btn--ruled btn--lg" href={localePath(locale, 'contact')}>
             <span>{cta.actionAlt}</span>
             <svg class="btn__arrow" viewBox="0 0 16 12" aria-hidden="true" fill="none">
@@ -77,8 +78,8 @@ const channels = availableChannels();
 
       {cta.note && <p class="cta__note t-fine">{cta.note}</p>}
 
-      {!channels.whatsapp && (
-        /* Rendered only while the production number is outstanding. */
+      {!hasDirectChannel && (
+        /* Rendered only while every direct production channel is outstanding. */
         <p class="cta__pending t-fine">{c.contact.pendingNote}</p>
       )}
     </div>

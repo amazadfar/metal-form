@@ -29,6 +29,9 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const showUnsupportedSurfaceReference = false;
+const showUnsupportedCavitationRatios = false;
+const publicPanels = b.panels.items.slice(1);
 
 /* ── Drawing constants ──────────────────────────────────────────────────────
    Geometry only. Every readable string comes out of the content JSON. */
@@ -287,7 +290,7 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
       <p class="cos-lead">{b.gloss.body}</p>
     </div>
 
-    <div class="shell--wide cos-gloss__work" data-tabs>
+    {showUnsupportedSurfaceReference && <div class="shell--wide cos-gloss__work" data-tabs>
       {/* The large sample re-renders at the selected grade. */}
       {b.gloss.rungs.map((r: any, i: number) => (
         <div
@@ -394,7 +397,7 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
           <p class="cos-ladder__note t-small">{b.gloss.note}</p>
         </div>
       </TechNote>
-    </div>
+    </div>}
 
     <div class="shell cos-gloss__tail">
       <p class="cos-close">{b.gloss.close}</p>
@@ -793,7 +796,7 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
   </section>
 
   {/* ═══ 06 · THE ARITHMETIC OF CAVITATION ══════════════════════════════════ */}
-  <section class="cos-sec cos-cav" id="cavities">
+  {showUnsupportedCavitationRatios && <section class="cos-sec cos-cav" id="cavities">
     <div class="shell cos-head">
       <p class="eyebrow">{b.cavities.index} · {b.cavities.kicker}</p>
       <h2 class="cos-h2">{b.cavities.heading}</h2>
@@ -857,7 +860,7 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
         <p class="cos-cav__bridge">{b.cavities.bridgeBody}</p>
       </div>
     </div>
-  </section>
+  </section>}
 
   {/* ═══ 07 · THE BOUNDARY ══════════════════════════════════════════════════ */}
   <section class="cos-sec cos-bound" id="boundary">
@@ -952,7 +955,7 @@ const CAP_CROWN = 'M40 200 V110 C40 74 62 58 100 58 H220 C258 58 280 74 280 110 
     {/* Layer three: the depth, folded away until it is wanted. */}
     <div class="shell cos-panels">
       <h3 class="t-label cos-panels__cap">{b.panels.heading}</h3>
-      {b.panels.items.map((panel: any, i: number) => (
+      {publicPanels.map((panel: any, i: number) => (
         <div class="disc" data-open="false">
           <h4>
             <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>

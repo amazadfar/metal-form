@@ -12,13 +12,13 @@
       "گاڑی کی پروڈکشن اور سروس لائف",
       "کے لیے تیار ٹولنگ۔"
     ],
-    "lead": "ٹرک، بس، زرعی اور تعمیراتی مشینیں ایک دہائی تک وہی مولڈڈ پرزے چلاتی ہیں۔ ہم اسی سروس لائف کے لیے ٹولنگ ڈیزائن اور تیار کرتے ہیں — فلڈ پولیمر، سلائیڈ اور لفٹر، اور ایسا ابعاد جو شاٹ در شاٹ دہرتا ہے — اور اس کے بعد پرزے بھی سپلائی کرتے ہیں۔"
+    "lead": "Truck، bus، agricultural اور construction parts کئی سال service میں رہ سکتے ہیں۔ Tooling کو expected programme life، material، mechanisms، wear اور repeatability کے مطابق design کیا جاتا ہے، پھر project کے لیے maintenance اور spare strategy agree کی جاتی ہے۔"
   },
   "blocks": {
     "sheet": {
       "index": "00",
       "orientation": "ٹرک، بس، ٹریلر، زرعی اور تعمیراتی مشینری۔ ٹولنگ، پرزے، اور ان کے درمیان کی انجینئرنگ۔",
-      "pivot": "کار ساز ہر دو سے تین سال میں ماڈل سائیکل کے ساتھ ٹولنگ بدلتا ہے۔ تعمیراتی، زرعی اور کمرشل گاڑیاں بنانے والے وہی ٹول دس سال چلا سکتے ہیں۔ یہی ایک فرق اس صفحے کی ہر بحث کا فیصلہ کرتا ہے۔",
+      "pivot": "Heavy-vehicle اور off-highway components اکثر short model-cycle products سے زیادہ عرصہ service میں رہتے ہیں۔ اس لیے wear، spares، maintenance اور re-tooling پر project کے آغاز ہی میں بات ہونی چاہیے۔",
       "titleBlockLabel": "ٹائٹل بلاک",
       "fields": [
         {

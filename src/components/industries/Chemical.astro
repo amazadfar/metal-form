@@ -20,6 +20,7 @@
  */
 import type { Locale } from '../../i18n/locales.ts';
 import TechNote from '../TechNote.astro';
+import SourceReference from '../SourceReference.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -31,6 +32,11 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const publicEngagementSteps = b.engagement.steps
+  .map((step: any, originalIndex: number) => ({ step, originalIndex }))
+  .filter(({ originalIndex }: any) => originalIndex !== 1);
+const showUnsupportedProfileDepths = false;
+const publicPanels = b.panels.items.slice(1, 2);
 
 /* ── Drawing primitives ─────────────────────────────────────────────────── */
 
@@ -272,9 +278,9 @@ const GUT: Record<string, string[]> = {
           </figure>
 
           <ol class="chm-steps" aria-label={b.engagement.stepsLabel}>
-            {b.engagement.steps.map((s: any, i: number) => (
-              <li class="chm-step" data-station-step={i}>
-                <span class="t-mono chm-step__n">{String(i + 1).padStart(2, '0')}</span>
+            {publicEngagementSteps.map(({ step: s, originalIndex }: any) => (
+              <li class="chm-step" data-station-step={originalIndex}>
+                <span class="t-mono chm-step__n">{String(originalIndex + 1).padStart(2, '0')}</span>
                 <h3 class="chm-h5">{s.label}</h3>
                 <p>{s.note}</p>
               </li>
@@ -293,7 +299,7 @@ const GUT: Record<string, string[]> = {
               </dl>
             </div>
   
-            <div class="chm-profiles">
+            {showUnsupportedProfileDepths && <div class="chm-profiles">
               <h3 class="t-label chm-cap">{b.engagement.profilesHeading}</h3>
               <ul class="chm-profiles__list">
                 {b.engagement.profiles.map((p: any, i: number) => (
@@ -311,7 +317,7 @@ const GUT: Record<string, string[]> = {
                 ))}
               </ul>
               <p class="t-fine chm-src">{b.engagement.profilesNote}</p>
-            </div>
+            </div>}
           </div>
         </TechNote>
 
@@ -669,6 +675,7 @@ const GUT: Record<string, string[]> = {
           </div>
         </TechNote>
         <p class="chm-close">{b.cr.close}</p>
+        <SourceReference locale={locale} ids={['REF-ISO-8317', 'REF-US-16CFR-1700']} />
       </div>
     </div>
   </section>
@@ -1109,7 +1116,7 @@ const GUT: Record<string, string[]> = {
 
         <div class="chm-panels">
           <h3 class="t-label chm-cap">{b.panels.heading}</h3>
-          {b.panels.items.map((panel: any, i: number) => (
+          {publicPanels.map((panel: any, i: number) => (
             <div class="disc" data-open="false">
               <h4>
                 <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>

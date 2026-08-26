@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Denizcilik ve açık deniz kalıpçılığı ve parça tedariki — Metal Form",
-    "description": "Denizcilik donanımı, kaportalar, bağlantı elemanları, yakıt sistemi parçaları ve şamandıralar için enjeksiyon, şişirme ve basınçlı döküm kalıpları. Aşınmış ya da üretimden kalkmış bir parçadan tersine mühendislik. Düşük adet kalıp stratejisi, ikinci kaynak kalıpları, dünya geneline sevkiyat. 2006'dan beri İran mühendisliği."
+    "description": "Denizcilik parçaları için enjeksiyon, şişirme ve die-cast kalıpları; ayrıca aşınmış veya artık üretilmeyen parçadan tersine mühendislik. Daha düşük adetler için kalıp stratejisi, ikinci kaynak kalıbı ve uluslararası teslimat. 2006'dan beri üretim."
   },
   "name": "Denizcilik ve Açık Deniz",
   "tile": "Zorlu geometri, düşük adet ve teknik resmini kimsenin saklamadığı bileşenler.",
@@ -13,7 +13,7 @@
       "Uzun hizmet ömrü.",
       "Deniz koşulları."
     ],
-    "lead": "Denizcilik parçaları; az sayıda üretilen, zorlu geometrili ve yirmi yıl boyunca ultraviyoleye, tuza ve suya dayanması beklenen parçalardır. Çoğu buraya teknik resim olarak değil, nesne olarak gelir. Parçayı ölçer, aşınmanın gizlediği geometriyi geri kazanır ve kalıbı tahmine değil, gerçekte ürettiğiniz adede göre boyutlandırırız.",
+    "lead": "Denizcilik parçaları çoğu zaman zor geometriyi, ağır çevresel koşulları ve nispeten düşük adetleri bir arada taşır. Birçok proje tam teknik resim yerine fiziksel numuneyle gelir. Geometriyi geri çıkarır, hâlâ doğrulanması gereken noktaları ayırır ve kalıp rotasını adet ile çalışma ortamına göre belirleriz.",
     "markers": [
       "2006'dan beri",
       "1.000'den fazla tamamlanmış proje",
@@ -68,7 +68,7 @@
       "movement": "Bölüm I · Parça gelir",
       "kicker": "Üretimden kalkmış parçalar",
       "heading": "Teknik resmi kimse saklamadı.",
-      "body": "Bu sektörde kalıp evraktan, tekne de ikisinden uzun yaşar. Bir model birkaç sezon üretilir; tekneler ise yirmi otuz yıl suda kalır. Parça yeniden gerektiğinde tedarikçi el değiştirmiş, kalıp hurdaya ayrılmış ya da kimsenin açmayacağı bir köşede duruyordur; teknik resim de — hiç yapıldıysa — onu anlayan mühendisle birlikte gitmiştir. Geriye kalan, hâlâ bir tekneye cıvatalanmış duran parçanın kendisidir.",
+      "body": "Deniz ekipmanı, orijinal çizimlere, tedarikçiye veya eski kalıba erişim zorlaştıktan çok sonra bile kullanımda kalabilir. Yedek parça gerektiğinde elde kalan parça ve eşleştiği arayüzler en iyi başlangıç verisi olabilir.",
       "chainHeading": "Zincir, tersinden okunuyor",
       "chain": [
         {
@@ -126,7 +126,7 @@
       "movement": "Bölüm II · Ölçülür",
       "kicker": "Aşınmaya karşı tasarım niyeti",
       "heading": "Parçayı kopyalamak, aşınmayı çoğaltır.",
-      "body": "On beş sezon çalışmış bir parça, tasarımının değil hizmetinin kaydıdır. Yatak yüzeyi parlamış ve ölçüsünün altına inmiştir. Flanş sünmüştür. Sızdırmazlık yüzeyi kalıcı deformasyona uğramıştır. Bunu ölçüp birebir kopyalarsanız, sıfır kilometre aşınmış bir parça imal edersiniz; hayatına bir başkasının bıraktığı yerden başlayan bir parça. Asıl iş nominali geri kazanmaktır ve bu işin zor olan tek yanı da odur.",
+      "body": "Kullanılmış bir parça hem geometrisini hem servis geçmişini taşır. Aşınma, sünme, deformasyon ve kalıcı şekil değişimi yüzeyi ilk nominal ölçüden uzaklaştırabilir; tersine mühendislikte tasarlanan geometri ile kullanımda oluşan değişiklik ayrılmalıdır.",
       "figureLabels": {
         "worn": "Geldiği hâliyle",
         "nominal": "Nominal",
@@ -264,7 +264,7 @@
         }
       ],
       "evidenceHeading": "Kanıt nereden geliyor",
-      "evidence": "Bir alıcının soracağı test yöntemleri yayımlanmış standartlardır: hızlandırılmış yaşlandırma için ASTM G154 ve ISO 4892-3, tuz sisi için ASTM B117 ve ISO 9227, su emme için ASTM D570, darbe ve eğilme için ASTM D256 ve ASTM D790. Bu değerler reçine üreticisinin teknik föyüne veya bağımsız bir laboratuvara aittir. Metal Form yaşlandırma, tuz sisi veya malzeme kalifikasyon testi yapmaz ve bu bölümdeki hiçbir şey Metal Form ölçümü değildir."
+      "evidence": "Hava koşullandırma, tuz sisi, su emme, darbe ve eğilme verileri malzeme tedarikçisinden veya yetkin test laboratuvarından gelmelidir. Bu sayfa bu testleri Metal Form sonucu veya sertifikasyonu olarak sunmaz."
     },
     "geometry": {
       "index": "05",

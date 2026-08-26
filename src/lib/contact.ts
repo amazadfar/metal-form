@@ -35,9 +35,12 @@ export function whatsappLink(prefill: string, source: CtaSource, locale: Locale)
   return { href: `https://wa.me/${number}?text=${text}`, live: true };
 }
 
-export const mailtoLink = (subject: string): string | undefined => {
+export const mailtoLink = (subject: string, body?: string): string | undefined => {
   const email = resolved(CONTACT.email);
-  return email ? `mailto:${email}?subject=${encodeURIComponent(subject)}` : undefined;
+  if (!email) return undefined;
+  const params = new URLSearchParams({ subject });
+  if (body) params.set('body', body);
+  return `mailto:${email}?${params.toString()}`;
 };
 
 export const telLink = (): string | undefined => {
@@ -54,6 +57,32 @@ export function availableChannels() {
     telegram: !isPending(CONTACT.telegram),
     address: !isPending(CONTACT.address.line1),
   };
+}
+
+export type PrimaryContactChannel = 'whatsapp' | 'email' | 'phone' | 'contact-page';
+
+/**
+ * Resolves the first usable conversion path in the approved order. Contact
+ * pages can disable the final route fallback so they never link to themselves.
+ */
+export function primaryContactLink(
+  prefill: string,
+  source: CtaSource,
+  locale: Locale,
+  allowContactFallback = true,
+): { href: string | undefined; channel: PrimaryContactChannel | undefined; external: boolean } {
+  const whatsapp = whatsappLink(prefill, source, locale);
+  if (whatsapp.href) return { href: whatsapp.href, channel: 'whatsapp', external: true };
+
+  const email = mailtoLink(prefill, `${prefill}\n\n— ${source} · ${locale}`);
+  if (email) return { href: email, channel: 'email', external: false };
+
+  const phone = telLink();
+  if (phone) return { href: phone, channel: 'phone', external: false };
+
+  return allowContactFallback
+    ? { href: undefined, channel: 'contact-page', external: false }
+    : { href: undefined, channel: undefined, external: false };
 }
 
 /**

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Oyuncak ve tüketici ürünleri kalıpçılığı — Metal Form",
-    "description": "Tüketici ürünleri ve oyuncaklar için enjeksiyon kalıbı tasarımı ve imalatı. Enjeksiyona uygun DFM ve yeniden tasarım, aile ve çok gözlü kalıplar, renk ve yüzey şartnamesi, teknik mekanizmalar, sürekli parça tedariki ve ikinci kaynak kalıpları. 2006'dan beri İran mühendisliği. 2 iş günü içinde dönüş."
+    "description": "Tüketici ürünleri ve oyuncaklar için enjeksiyon kalıbı tasarımı ve imalatı. DFM ve kalıplamaya uygun yeniden tasarım, family ve çok gözlü kalıplar, renk ve yüzey şartları, teknik mekanizmalar, sürekli parça tedariki ve ikinci kaynak kalıbı. 2006'dan beri üretim. İlk teknik geri dönüş 2 iş günü içinde."
   },
   "name": "Oyuncak ve Tüketici Ürünleri",
   "tile": "Bir numuneden ya da 3B baskıdan, işe yarayan bir birim maliyetle kalıplanmış parçaya.",
@@ -22,7 +22,7 @@
   "blocks": {
     "stack": {
       "figureLabel": "Patlatılmış montaj, tek eksen",
-      "thesis": "Göz sayısı parça başına düşen saniyeyi belirler. Cidar kalınlığı, çevrime hâkim olan soğutmayı belirler. İkisi de kalıbın tasarlandığı hafta sabitlenir ve ürün satıldığı sürece her atımda yeniden ödenir.",
+      "thesis": "Göz sayısı çevrim başına çıktıyı, et kalınlığı ve soğutma ise çevrim süresini etkiler. İkisi de üretim boyunca maliyeti tekrarlanan kalıp kararlarıdır.",
       "partsLabel": "Parça listesi",
       "parts": [
         {
@@ -96,7 +96,7 @@
           "no": "2",
           "name": "Fiziksel bir numune",
           "action": "Üretim CAD'ine tersine mühendislik, sonra aynı okuma.",
-          "need": "Parçanın kendisi. Bir rakip parçası da aynı işi görür."
+          "need": "Parçanın kendisi. Yasal olarak paylaşılabilen bir referans parça da mülkiyet ve IP hakları doğrulandıktan sonra değerlendirilebilir."
         },
         {
           "no": "3",
@@ -119,7 +119,7 @@
       "kicker": "Parça sayısı",
       "heading": "Üç enjeksiyon parçası ve bir pim, tek parçaya iner.",
       "body": "Parça birleştirme, çelik işlenmeden önce alınan bir kalıp kararıdır. Parçaları birleştirmek bir kalıbı, satın alınan bir bağlantı elemanını ve aksi hâlde ürünün ömrü boyunca her adette ödenecek bir montaj işlemini ortadan kaldırır.",
-      "body2": "Uygulamanın yayımlanmış örnekleri ölçeği konusunda açık sözlü: çok parçalı bir matkap gövdesi; tutamağı, pil yuvası ve motor koruması entegre edilerek tek enjeksiyon parçası hâline getirilmiş; toplam kırk iki parçadan oluşan altı mil askısı tek bir kalıplanmış parçada birleştirilmiş. Bunlar sektörde yayımlanmış sonuçlardır, Metal Form sonuçları değildir.",
+      "body2": "Yayımlanmış DFM uygulamaları parça konsolidasyonunun kalıp, bağlantı elemanı ve montaj adımlarını azaltabildiğini gösterir. Ancak bu, birleştirilen geometri aynı malzemeyi, kalıplama yöntemini ve kullanım şartlarını paylaşabiliyorsa fayda sağlar.",
       "beforeLabel": "Çizildiği hâliyle",
       "afterLabel": "Kalıplandığı hâliyle",
       "transitionLabel": "birleştir",
@@ -208,7 +208,7 @@
         {
           "volume": "1.000.000",
           "title": "Emtia aritmetiği",
-          "note": "Konuşmanın tamamı göz sayısı, nominal cidar ve yolluk / parça ağırlık oranıdır. Metal Form'un kalıp deneyimi 46 göze kadar uzanır; bu kategorinin bu ucunun gerçekte çalıştığı bant da budur."
+          "note": "Yüksek adette göz sayısı, et kalınlığı, yolluk sistemi ve çevrim süresi tekrarlayan maliyet unsurlarına dönüşür. Metal Form'un belgelenmiş kalıp deneyimi 46 göze kadardır; parçanız için doğru göz sayısı gerçek adet ve proses üzerinden teklif edilir."
         }
       ],
       "flipHeading": "Aile kalıbının tersine döndüğü yer",

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Toys & Consumer Goods Tooling — Metal Form",
-    "description": "Injection mould design and manufacture for consumer products and toys. DFM and redesign for moulding, family and multi-cavity tooling, colour and finish specification, technical mechanisms, ongoing component supply and second-source tooling. Persian engineering since 2006. Response within 2 business days."
+    "description": "Injection mould design and manufacture for consumer products and toys. DFM and redesign for moulding, family and multi-cavity tooling, colour and finish specification, technical mechanisms, ongoing component supply and second-source tooling. Manufacturing since 2006. Initial response within 2 business days."
   },
   "name": "Toys & Consumer Goods",
   "tile": "From a sample or a 3D print to a tooled part at a unit cost that works.",
@@ -22,7 +22,7 @@
   "blocks": {
     "stack": {
       "figureLabel": "Exploded assembly, one axis",
-      "thesis": "Cavity count sets seconds per part. Wall thickness sets the cooling that dominates the cycle. Both are fixed in the week the tool is designed, and both are paid again on every shot for as long as the product sells.",
+      "thesis": "Cavity count affects output per cycle; wall thickness and cooling influence cycle time. Both are tooling decisions whose cost repeats through production.",
       "partsLabel": "Parts list",
       "parts": [
         {
@@ -96,7 +96,7 @@
           "no": "2",
           "name": "A physical sample",
           "action": "Reverse engineering into production CAD, then the same read.",
-          "need": "The part itself. A competitor's part works the same way."
+          "need": "The part itself. A legally shareable reference part can also be assessed, subject to ownership and IP confirmation."
         },
         {
           "no": "3",
@@ -119,7 +119,7 @@
       "kicker": "Part count",
       "heading": "Three mouldings and a pin become one part.",
       "body": "Part consolidation is a tooling decision taken before steel is cut. Merging components removes a tool, removes a purchased fastener, and removes an assembly operation that would otherwise be paid on every unit for the life of the product.",
-      "body2": "Published examples of the practice are blunt about the scale of it: a multi-piece drill housing rebuilt as a single moulding with an integrated handle, battery receptacle and motor guard; six shaft hangers totalling forty-two parts consolidated into one moulded component. Those are industry-published outcomes, not Metal Form results.",
+      "body2": "Published DFM practice shows that part consolidation can remove tools, fasteners and assembly steps, but it only helps when the merged geometry can share a material, moulding route and service requirement.",
       "beforeLabel": "As drawn",
       "afterLabel": "As tooled",
       "transitionLabel": "consolidate",
@@ -208,7 +208,7 @@
         {
           "volume": "1,000,000",
           "title": "Commodity arithmetic",
-          "note": "Cavity count, nominal wall and runner-to-part weight ratio are the whole conversation. Metal Form has tooling experience up to 46 cavities, which is the band this end of the category actually runs in."
+          "note": "At high volume, cavity count, wall section, runner strategy and cycle time become recurring cost drivers. Metal Form's documented tooling experience runs to 46 cavities; the correct cavity count for your part is quoted from your volume and process."
         }
       ],
       "flipHeading": "Where the family tool flips",

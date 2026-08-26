@@ -1,0 +1,41 @@
+---
+import { REFERENCES, type ReferenceId } from '../content/references.ts';
+import { getCommon } from '../content/index.ts';
+import type { Locale } from '../i18n/locales.ts';
+
+interface Props {
+  locale: Locale;
+  ids: ReferenceId[];
+  class?: string;
+}
+
+const { locale, ids, class: className = '' } = Astro.props;
+const c = getCommon(locale);
+---
+
+<p class:list={['source-reference', className]}>
+  <span>{ids.length === 1 ? c.references.sourceLabel : c.references.referenceLabel}</span>
+  {ids.map((id, index) => (
+    <>
+      {index > 0 && <span aria-hidden="true"> · </span>}
+      <a href={REFERENCES[id].url} target="_blank" rel="noopener noreferrer" dir="ltr">{id}</a>
+    </>
+  ))}
+</p>
+
+<style>
+  .source-reference {
+    margin-block-start: var(--sp-4);
+    color: var(--ink-muted);
+    font-size: var(--step--2);
+    line-height: 1.55;
+  }
+  .source-reference > span:first-child { margin-inline-end: 0.35rem; }
+  .source-reference a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+  .source-reference a:hover { color: var(--ink); }
+</style>

@@ -23,9 +23,11 @@ says out loud.
 4. **Never translate a claim into a stronger one.** "Tooling experience to 46
    cavities" is experience, not a capacity guarantee. "Readiness, not reserved
    capacity" must stay a distinction in every language.
-5. **Boundary sentences keep their exact scope.** Where English says Metal Form
-   does *not* hold a certification, the target sentence must be a denial, not a
-   hedge. `scripts/check-content.mjs` enforces this by key path.
+5. **Boundary sentences preserve responsibility, not English syntax.** Prefer
+   “not claimed on this website” and “must be verified for the project” over an
+   unverified assertion that Metal Form definitely does not possess a capability.
+   The allocation between Metal Form, the customer, the manufacturer, the test
+   owner and the certification owner must remain unchanged in every locale.
 
 ## Core terms
 

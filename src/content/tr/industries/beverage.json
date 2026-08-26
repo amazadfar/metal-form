@@ -25,8 +25,8 @@
       "index": "01",
       "kicker": "Üretim ekonomisi",
       "heading": "Yüksek hacimde şişe maliyetini preform ağırlığı belirler.",
-      "body": "Bir PET şişenin maliyetinin yaklaşık üçte ikisi, içindeki hammaddedir. Geri kalan her şey — kalıp, makine, işçilik, elektrik — hem daha küçük hem daha az değişkendir. Dolayısıyla bir dolum hattında gerçekten bileşik büyüyen tek sayı preform ağırlığıdır ve preform ağırlığını kalıp belirler.",
-      "body2": "500 ml preformlar için boyun standardına göre yayımlanmış ağırlık bantları. Bunlar sektör rakamları, bizimkiler değil — sizin preformunuz, ürününüze özgü nedenlerle bu ölçeğin bir yerine oturur.",
+      "body": "Yüksek adette preform gramajındaki küçük bir değişiklik her şişede tekrar eder. Bu nedenle preform ağırlığı; çevrim süresi, verim ve gerekli şişe performansıyla birlikte önemli bir tekrarlayan maliyet değişkenidir.",
+      "body2": "Bir şişe için gereken ağırlık hacme, boyun profiline, performans gereksinimine, prosese ve malzemeye bağlıdır. Genel bir hedef gramaj yayımlamıyoruz; proje gerçek şişeniz ve hattınız üzerinden değerlendirilir.",
       "scaleLabel": "500 ml preform ağırlığı, gram",
       "rows": [
         {
@@ -64,9 +64,9 @@
       "chartGap": "Gözler arası sapmanın neden olduğu fazla hammadde",
       "close": "Gözler arası sapmayı azaltmak, şişeyi değiştirmeden ortalama ağırlığı tasarım hedefine yaklaştırır. Bunun için dengeli eriyik akışı, dengeli soğutma ve tutarlı göz imalatı gerekir.",
       "cavityHeading": "Göz sayımız nerede duruyor, nerede durmuyor",
-      "cavityBody": "Çıktı, göz sayısının çevrim süresine bölünmesidir. Yayımlanmış kılavuzlar, yılda kabaca 50 milyon preformun altında ekonomik bandı 16 – 48 göz, yüz milyonlarla ölçülen programlarda 72 – 96 göz olarak veriyor; 128 – 192 gözü ise yalnızca çok yüksek adedin sürdürüldüğü ve bunu destekleyecek bakım örgütünün bulunduğu yerlere bırakıyor.",
-      "cavityBody2": "Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bu, bölgesel dolum tesislerinin, bağımsız dönüştürücülerin ve ikinci kaynak programlarının fiilen çalıştığı banttır — bir kalıbın yalnızca işletilmekle kalmayıp hâlâ dengelenebildiği, bakımının yapılabildiği ve üzerine akıl yürütülebildiği bant.",
-      "cavityBody3": "Tesisiniz bundan yüksek göz sayısıyla çalışıyorsa işe yarar teklif başkadır: soğuk yarı bileşenleri. Göz insertleri, maça çubukları, ikiye ayrılan boyun halkaları ve kilit halkaları — yedek olarak ya da başkasının yaptığı bir kalıp için alternatif kaynak olarak."
+      "cavityBody": "Çıktı göz sayısı ve çevrim süresine bağlıdır; ancak ekonomik göz sayısı denge, bakım, pres ve hat gereksinimlerinden de etkilenir. Genel bir üretim bandından değil, gerçek projeden hesaplanır.",
+      "cavityBody2": "Metal Form'un belgelenmiş kalıp deneyimi 46 göze kadardır. Bu bir deneyim beyanıdır; evrensel tavsiye veya üretim kapasitesi garantisi değildir.",
+      "cavityBody3": "Bir proje belgelenmiş 46 göz deneyimimizin üzerinde bir göz sayısı gerektiriyorsa bunu tekliften önce açıkça belirtiriz. O kalıba ilişkin daha sınırlı yedek, insert veya bileşen kapsamı da ayrıca anlaşılmalıdır; bu sayfadan varsayılmaz."
     },
     "neck": {
       "index": "03",
@@ -284,8 +284,8 @@
     "closures": {
       "index": "06",
       "kicker": "Ambalajın diğer yarısı",
-      "heading": "Kapaklar 2024'te değişti.",
-      "body": "Bağlı kapak zorunluluğu, kapak geometrisini dönel simetrikten asimetriğe taşıdı: menteşeler, tırnaklar ve köprü desenleri. Bu; kalıbı, itmeyi ve yuvarlak kapak varsayan tüm hat sonrası ekipmanı değiştirir. AB'ye giden ürünler için isteğe bağlı değildir; diğer herkes için hangi pazarlara hizmet verebilmek istediğinizle ilgili bir karardır.",
+      "heading": "AB içecek kapakları için gereklilikler 2024'te değişti.",
+      "body": "Directive (EU) 2019/904 kapsamında belirli tek kullanımlık plastik içecek ambalajları, plastik kapakları amaçlanan kullanım sırasında kaba bağlı kalmadıkça AB pazarına arz edilemez. Bu gereklilik kapak geometrisini ve kalıbı etkiler. Bu, AB pazarına ait bir şarttır; Metal Form sertifikası değildir.",
       "tracks": [
         {
           "name": "Enjeksiyon",

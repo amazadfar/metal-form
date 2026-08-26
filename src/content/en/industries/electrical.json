@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Electrical & Electronics Tooling and Moulding — Metal Form",
-    "description": "Mould design and manufacture for connector bodies, terminal blocks, switch parts, glands and enclosures. Thin-wall tooling, insert moulds for metal terminals, multi-cavity production and ongoing component supply. Persian engineering since 2006."
+    "description": "Mould design and manufacture for connector bodies, terminal blocks, switch parts, glands and enclosures. Thin-wall tooling, insert moulds for metal terminals, multi-cavity tooling and ongoing component supply. Manufacturing since 2006."
   },
   "name": "Electrical & Electronics",
   "tile": "Thin-wall housings and connectors, where flow length decides whether the part fills.",
@@ -12,7 +12,7 @@
       "The plastic that has",
       "to hold the contact."
     ],
-    "lead": "Connector bodies, terminal blocks, switch parts, glands, enclosures. Thin walls, deep pockets, metal inserts, and a pitch that still has to be right after a few million shots. Send the part or the drawing. We come back on geometry, tooling route, cavitation and supply.",
+    "lead": "Connector bodies, terminal blocks, switch parts, glands and enclosures. Thin walls, deep pockets, metal inserts and pitch that has to remain consistent through repeated production. Send the part or drawing; we come back on geometry, tooling route, cavitation and supply.",
     "markers": [
       "Thin-wall and insert tooling",
       "Multi-cavity to 46 cavities",
@@ -107,7 +107,7 @@
       "index": "02",
       "kicker": "The first number",
       "heading": "Melt travels a fixed distance and then it stops.",
-      "body": "Flow length divided by wall thickness decides gate count, fill speed, and whether the part fills at all. Published practice puts thin wall below roughly 1 mm, or above a ratio of about 100:1. Thin-wall electrical work commonly runs past 150:1.",
+      "body": "Flow length relative to wall thickness strongly affects gate count, fill pressure and process window. As the wall gets thinner for the same flow distance, the tooling and process become less forgiving.",
       "body2": "Thinner is not automatically cheaper. Cooling time falls and the process window narrows with it. Past a certain ratio the part still fills — but only on a good lot, on a warm tool, on a good day.",
       "ladderLabel": "Flow length to wall thickness",
       "colRatio": "L : t",
@@ -170,7 +170,7 @@
         "Packing pressure at the meeting point",
         "Venting where the fronts converge"
       ],
-      "close": "The last one is the one nobody remembers. Trapped air compresses and burns at exactly the coordinate where the flows meet, so a weld line and a burn mark are the same event seen twice. A vent cut at design time costs nothing; a vent cut into a running tool costs a week.",
+      "close": "Venting should be planned where flow fronts converge. Adding it at design stage is simpler than correcting a running tool after burn marks or incomplete fill appear.",
       "caption": "Same housing, same core pins, same part print. Only the gate has moved."
     },
     "insert": {

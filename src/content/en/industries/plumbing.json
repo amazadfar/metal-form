@@ -16,7 +16,7 @@
     "markers": [
       "Collapsible and unscrewing cores",
       "Tooling experience up to 46 cavities",
-      "Modular frames for the SKU tail"
+      "Slides · collapsible cores · unscrewing cores"
     ]
   },
   "blocks": {
@@ -104,7 +104,7 @@
       "index": "01",
       "kicker": "The range is the product",
       "heading": "One geometry, nine diameters, twelve configurations.",
-      "body": "A working fitting range is typically 200 to 900 live part numbers. A handful of them carry most of the volume. The rest carry most of the tooling cost. That imbalance is the sector's defining commercial problem, and it is a tooling problem long before it is a catalogue problem.",
+      "body": "A fitting range can contain many diameters and configurations. A smaller group may carry most of the volume while the long tail runs less often, so dedicated and interchangeable tooling should be compared part by part rather than applied uniformly.",
       "body2": "Below is a range shape drawn as a matrix: twelve fitting types across nine nominal diameters. It is an illustration of how a range proliferates, not a Metal Form project and not a proposal for yours.",
       "tabsLabel": "Tooling strategy",
       "views": [
@@ -313,7 +313,7 @@
           "body": "Whichever route a part takes, every socket in the matrix has to agree with the same pipe. A frame does not relax that requirement. It only changes where the machining hours go."
         }
       ],
-      "close": "Balance the layout before adding cavities. A 32-cavity tool that fills unevenly is a 24-cavity tool with eight rejects, and it will be paid for as if it were 32."
+      "close": "Adding cavities only helps if the layout fills, cools and repeats consistently. Balance the tool before treating cavity count as output."
     },
     "mechanism": {
       "index": "02",
@@ -416,8 +416,8 @@
     "thread": {
       "index": "03",
       "kicker": "Thread and seal",
-      "heading": "A tapered thread seals on its flanks. A parallel thread needs a gland.",
-      "body": "Two threads that look alike on a drawing behave nothing alike in a fitting, and they demand different steel. The taper seals by interference as it engages. The parallel thread does not seal at all on its own — something else has to, and that something is a groove, a face or an elastomer. Getting this wrong produces a fitting that assembles, passes a glance and weeps in a wall.",
+      "heading": "Thread form and sealing method have to be specified together.",
+      "body": "A tapered thread and a parallel thread do not seal the same way. The correct interface may rely on thread interference, a face seal, a gasket, an O-ring or another specified method. The tool must be designed around the actual standard and sealing route.",
       "figures": [
         {
           "id": "taper",

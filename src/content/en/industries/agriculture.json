@@ -74,7 +74,7 @@
       "index": "02",
       "kicker": "Volume",
       "heading": "An error in the cavity does not average out. It is reproduced.",
-      "body": "An emitter is not made once. It is made continuously, at whatever rate the extrusion line makes pipe. Published tape and dripline lines run in the band of 180 to 250 metres per minute, with emitters fed, oriented and heat-welded to the still-molten tube at matched speed and fixed pitch.",
+      "body": "Emitters are consumed continuously by the pipe or tape line, so tooling errors are repeated at line speed and at fixed spacing. The commercial consequence is not one rejected part but interrupted or out-of-spec production downstream.",
       "body2": "So consumption is not an order quantity. It is metres per minute divided by spacing. Whatever the cavity does, the line does — for as long as the line runs, and the line does not stop to check.",
       "railLabel": "Lateral, emitters at fixed pitch. The rail continues past both edges of this page.",
       "consequences": [
@@ -187,7 +187,7 @@
       "index": "04",
       "kicker": "Production economics",
       "heading": "Output is cavities divided by cycle. Both halves move.",
-      "body": "A part consumed in hundreds of millions a season is not bought by the part. It is bought by the shot. Industry write-ups on cavitation are blunt about what happens when you push the first number: tooling cost rises non-linearly rather than in proportion, cycle time lengthens rather than staying flat, press size and hourly rate climb with the tool, and a large share of high-cavitation tools never run at full cavity count.",
+      "body": "Higher cavitation can increase output, but it also changes runner balance, cooling, press requirements, maintenance and the consequence of a single failure. Cavity count is therefore quoted against the actual part, machine and required output.",
       "body2": "So the gain is never the ratio on the label. One published comparison puts a four-cavity tool at 35 seconds against 42 to 48 seconds for the sixteen-cavity version of the same part — four times the cavities, closer to three times the output.",
       "figureLabel": "Balanced feed, schematic. One drop out of service.",
       "figureNote": "Cavity count is a quotation against a known press and a known line rate. It is not a drawing and it is not a headline.",
@@ -290,7 +290,7 @@
       ],
       "uv": {
         "heading": "UV, in the industry's own terms",
-        "body": "Carbon black remains the standard and most economical UV stabiliser for buried and exposed polyolefin irrigation products. It absorbs ultraviolet and slows free-radical generation, and published guidance puts loadings typically in the region of 2 to 2.5 per cent depending on section thickness and exposure — while being explicit that dispersion quality governs the result as much as loading does."
+        "body": "UV performance depends on the specified resin and stabiliser package. Metal Form does not certify material lifetime; material and exposure requirements must come from the customer or the material supplier."
       },
       "boundary": "We do not compound, stabilise, colour-match or life-test material, and we do not certify a lifetime. We mould what you specify, and we will tell you where a wall section, a gate position or a weld line is going to fight the stabiliser package you have chosen.",
       "sourceNote": "Standard requirements and stabiliser loadings quoted here are published industry practice. Metal Form holds no certification against any of them."
@@ -378,14 +378,9 @@
         {
           "title": "What the product standard asks of an emitter",
           "bullets": [
-            "It applies to emitters and emitting pipe discharging not more than 24 l/h per outlet, except during flushing.",
-            "Emitters are classified in-line, on-line or formed in the pipe, and regulated or unregulated.",
-            "Nominal test pressure for an unregulated emitter is 100 kPa, unless the manufacturer designates otherwise.",
-            "The coefficient of manufacturing variation of flow rate across the test sample must not exceed 7 per cent, with the sample mean within ±7 per cent of declared nominal, tested on 25 emitters or emitting units.",
-            "Behaviour against pressure is stated as an exponent: q = k · pᵐ, where m = 0 is fully compensating and m = 1 varies linearly with pressure.",
-            "Materials must resist fertilisers and the chemicals commonly used in agricultural irrigation, and suit water at temperatures to 60 °C.",
-            "Parts exposed to light must be opaque and protected against UV degradation, and should as far as possible not support algae and bacterial growth.",
-            "Markings on emitting pipe repeat at intervals of no more than 5 m, and nominal flow rate may legitimately be indicated by the colour of a part of the emitter."
+            "ISO 9261:2004 covers mechanical and functional requirements and conformity test methods for agricultural irrigation emitters and emitting pipe.",
+            "Its published scope includes regulated and unregulated emitters/emitting units with flow rates not exceeding 24 l/h per outlet, except during flushing.",
+            "Product conformity remains with the product manufacturer/test process; Metal Form's role here is tooling and component engineering."
           ],
           "source": "Source: ISO 9261:2004, the product standard for emitters and emitting pipe. Stated as a fact about the product; Metal Form holds no certification against it and does not test to it."
         },

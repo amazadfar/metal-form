@@ -47,7 +47,7 @@
       {
         "index": "02",
         "title": "Engineering",
-        "body": "The part is modelled or re-modelled, measured back from a sample if that is all there is, and reviewed for how it will actually mould. Wall thickness, draft, gate position, undercuts, tolerance — decided before steel is cut, because afterwards they cost ten times more.",
+        "body": "The part is modelled or re-modelled, measured back from a sample if that is all there is, and reviewed for how it will actually mould. Wall thickness, draft, gate position, undercuts and tolerance are resolved before steel is cut, because changes become slower and more expensive once the tool is in steel.",
         "markers": [
           "CATIA · SolidWorks",
           "Reverse engineering",
@@ -57,7 +57,7 @@
       {
         "index": "03",
         "title": "Tooling",
-        "body": "Cavity count, runner strategy, cooling layout, mechanisms and steel are chosen against your volume and your part — not against a standard catalogue. Then the tool is built, sampled and corrected until the part is right.",
+        "body": "Cavity count, runner strategy, cooling layout, mechanisms and steel are chosen against your volume and your part — not against a standard catalogue. The tool is then built, sampled and corrected through the agreed acceptance process.",
         "markers": [
           "Single to 46 cavities",
           "Hot and cold runner",
@@ -67,7 +67,7 @@
       {
         "index": "04",
         "title": "Production",
-        "body": "The tool runs. Cycle, scrap, dimensional consistency and cavity-to-cavity spread are what determine your cost per part, and they are all decided long before the machine is switched on.",
+        "body": "The tool runs. Cycle time, scrap, dimensional consistency and cavity-to-cavity spread all affect cost per part, and many of the decisions that influence them are made before production starts.",
         "markers": [
           "Cycle and scrap",
           "Cavity-to-cavity spread",
@@ -77,7 +77,7 @@
       {
         "index": "05",
         "title": "Supply",
-        "body": "Repeat orders, spare cores and cavities, a second tool held against a supply interruption, or the whole component supplied on a rolling schedule. The relationship does not end at tool handover.",
+        "body": "Repeat orders, spare cores and cavities, duplicate or second-source tooling, or ongoing component supply. The relationship does not have to end at tool handover.",
         "markers": [
           "Rolling supply",
           "Spares and change parts",
@@ -95,9 +95,9 @@
       {
         "index": "01",
         "title": "Better production economics",
-        "body": "The price of a moulded part is set long before anyone quotes it — by the geometry, the number of cavities, the runner, the cooling and the cycle. We look at all of them, not just at the number at the bottom of your enquiry.",
+        "body": "The economics of a moulded part are strongly influenced before the quotation stage — by geometry, cavity count, runner strategy, cooling and cycle time. We review those variables together rather than treating tooling price as the only number.",
         "points": [
-          "Wall thickness and material volume — the resin is usually the largest line in the cost",
+          "Wall thickness and material volume, often major drivers of recurring part cost",
           "Cavity count against real annual volume, not against a catalogue",
           "Runner strategy and gate position, and what they cost per shot",
           "Cooling layout and the cycle seconds it buys back",
@@ -106,7 +106,7 @@
         "outcome": "Where there is nothing to improve we will tell you that too, and quote the part as drawn.",
         "figure": {
           "caption": "Cost of one moulded part",
-          "note": "The tool decides four of these five lines before the part is quoted.",
+          "note": "Part design and tooling decisions influence several of these cost lines before production starts.",
           "rows": [
             {
               "label": "Resin"
@@ -183,7 +183,7 @@
         "figure": {
           "caption": "One route",
           "captionAlt": "Two routes",
-          "note": "A second route costs far less to prepare than to improvise.",
+          "note": "A second route is easier to prepare before a disruption than during one.",
           "rows": [
             {
               "label": "Plant",
@@ -216,7 +216,7 @@
   "proof": {
     "kicker": "Evidence",
     "heading": "What we will and will not show you.",
-    "lead": "More than a thousand projects have been completed since 2006, across tooling, engineering and production. Almost all of them belong to customers whose parts are not ours to publish.",
+    "lead": "More than 1,000 projects have been completed since 2006 across tooling, engineering and production. Customer parts are not published unless we have permission to show them.",
     "disclosure": "Every drawing and animation on this site is a schematic drawn to explain engineering, not a photograph of our equipment or of finished work. Where a customer gives written permission, real project media appears here and is labelled as such."
   },
   "about": {
@@ -270,7 +270,7 @@
       "resin": "Resin",
       "cycleNote": "Cycle · scrap · cavity-to-cavity spread",
       "schedule": "Rolling schedule",
-      "secondTool": "Second tool — held in reserve",
+      "secondTool": "Second-source tooling",
       "spares": "Spare cores · cavities · change parts"
     }
   }

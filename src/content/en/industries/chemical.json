@@ -244,9 +244,9 @@
         }
       ],
       "boundaryHeading": "What this section is not",
-      "boundaryBody": "ISO 8317 and EN 862 cover reclosable and non-reclosable child-resistant packaging, 16 CFR 1700.20 sits under the US Poison Prevention Packaging Act, ASTM D3475 classifies the packages and BS EN ISO 13127 sets out the mechanical test suite. EN ISO 11683 specifies the tactile warning of danger — a raised feature that must be perceptible before the contents can be reached, and therefore a moulded feature and a tooling feature. Under CLP these obligations attach to packs supplied to the general public, not to professional-use-only packs, and methanol at 3% and dichloromethane at 1% trigger them on concentration alone.",
-      "boundaryClaim": "Metal Form does not test, approve or certify child resistance. That testing is done by accredited test houses on your pack, and the obligation sits with the party placing the product on the market. We cut the geometry the test is run on.",
-      "close": "Published test scope explicitly covers heat distortion, moulding defects and degradation over repeated use. The mechanism has to survive the pack's whole life, not its first opening — which makes tooth wear, draft and ejection witness a design question rather than a production one."
+      "boundaryBody": "Child-resistant packaging is a regulated product requirement, not a tooling certification. Standards and regulations such as ISO 8317 and 16 CFR 1700.20 define testing of the finished package. Which rule applies depends on the product and market; confirm the applicable requirement with your regulatory owner before tooling is released.",
+      "boundaryClaim": "Metal Form does not present child-resistance testing or certification as a capability. We engineer the moulded geometry; the finished package is tested and approved by the responsible manufacturer and qualified test body.",
+      "close": "For reclosable child-resistant packs, ISO 8317 evaluates package performance using specified test methods. Tool geometry therefore has to be treated as part of the system that will be tested, not as proof that the package will pass."
     },
     "route": {
       "index": "05",

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Cosmetics & Personal Care Tooling - Closures, Jars, Dispenser Components | Metal Form",
-    "description": "Mould design and manufacture for cosmetic closures, jars, pump and mechanism components. Multi-cavity tooling to 46 cavities, hot and cold runner, threaded cores, cosmetic surface finish. Engineering, DFM, reverse engineering and ongoing supply. Persian engineering since 2006."
+    "description": "Mould design and manufacture for cosmetic closures, jars, pump and mechanism components. Multi-cavity tooling to 46 cavities, hot and cold runner, threaded cores, cosmetic surface tooling, engineering, DFM, reverse engineering and ongoing supply. Manufacturing since 2006."
   },
   "name": "Cosmetics & Personal Care",
   "tile": "Show-surface tooling. Polish grade, parting line and gate decided before the steel is cut.",
@@ -61,14 +61,14 @@
           "note": "Set by the texture depth that was specified, not by convention. Too little draft and the part drags and scuffs on ejection."
         }
       ],
-      "close": "None of these five are adjustable once the steel is cut."
+      "close": "All five should be agreed before steel is cut; changing them later can require rework or new inserts."
     },
     "gloss": {
       "index": "02",
       "kicker": "Surface specification",
       "heading": "Gloss is hand labour. You buy it one face at a time.",
       "body": "SPI grades are a polish scale reached with diamond compound and a polisher's hands. VDI 3400 is a separate roughness scale burned in by EDM. They are not interchangeable and they correlate only approximately. The difference between them is where most cosmetic tooling money is either spent well or wasted.",
-      "note": "On the VDI scale every six units roughly doubles roughness. Texture depth then sets the minimum draft, and the part that was drawn without enough of it comes off the core scuffed.",
+      "note": "SPI and VDI grades describe different surface-finishing routes. Deeper texture generally needs more draft; the exact finish, roughness and draft are specified per face and per project.",
       "tabsLabel": "Surface grade",
       "ladderLabel": "The same wall, eight grades",
       "specLabels": {

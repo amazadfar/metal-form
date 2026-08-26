@@ -31,6 +31,9 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const showUnsupportedRunnerTemperature = false;
+const showUnsupportedMouldClassTable = false;
+const showUnsupportedLifeTable = false;
 
 /**
  * A 32-cavity plate, laid out as a real balanced tree would place it: eight
@@ -238,8 +241,8 @@ const withUnit = (value: number, i: number): string => {
           <g class="med-layer med-layer--laminate">
             <rect x="203" y="33" width="14" height="37" fill="url(#med-laminate)" />
             <rect x="110" y="63" width="200" height="14" fill="url(#med-laminate)" />
-            <text x="330" y="46" class="med-micro">{b.imbalance.figureMark}</text>
-            <path d="M326 52 L312 66" class="med-lead" />
+            {showUnsupportedRunnerTemperature && <text x="330" y="46" class="med-micro">{b.imbalance.figureMark}</text>}
+            {showUnsupportedRunnerTemperature && <path d="M326 52 L312 66" class="med-lead" />}
           </g>
 
           {/* State C — the split does not mix. */}
@@ -391,7 +394,7 @@ const withUnit = (value: number, i: number): string => {
       {/* SPI mould classes are the grammar of a tooling enquiry and a wall of
           hardness figures to everyone else. The plate stack above is the
           section's argument; this is its appendix. */}
-      <TechNote locale={locale} label={b.anatomy.classHeading} class="med-class">
+      {showUnsupportedMouldClassTable && <TechNote locale={locale} label={b.anatomy.classHeading} class="med-class">
         <p class="med-class__note">{b.anatomy.classNote}</p>
         <div class="scroller med-class__scroll">
           <table class="med-class__table">
@@ -407,12 +410,12 @@ const withUnit = (value: number, i: number): string => {
           </table>
         </div>
         <p class="med-class__close">{b.anatomy.classClose}</p>
-      </TechNote>
+      </TechNote>}
     </div>
   </section>
 
   {/* ═══ 06 · WEAR ══════════════════════════════════════════════════════ */}
-  <section class="med-wear" id="wear">
+  {showUnsupportedLifeTable && <section class="med-wear" id="wear">
     <div class="shell--wide">
       <div class="med-head">
         <p class="eyebrow">{b.wear.index} · {b.wear.kicker}</p>
@@ -448,7 +451,7 @@ const withUnit = (value: number, i: number): string => {
         </div>
       </TechNote>
     </div>
-  </section>
+  </section>}
 
   {/* ═══ 07 · SECOND TOOL ═══════════════════════════════════════════════ */}
   <section class="med-second" id="second">

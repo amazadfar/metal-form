@@ -12,13 +12,13 @@
       "The tool outlives",
       "the vehicle."
     ],
-    "lead": "Trucks, buses, agricultural and construction machines run the same moulded components for a decade. We design and build the tooling for that service life — filled polymers, slides and lifters, dimension that repeats shot after shot — and supply the parts afterwards."
+    "lead": "Truck, bus, agricultural and construction parts can remain in service for years. We design the tooling around the expected programme life, material, mechanisms, wear and repeatability, then agree the maintenance and spare strategy for the project."
   },
   "blocks": {
     "sheet": {
       "index": "00",
       "orientation": "Trucks, buses, trailers, agricultural and construction machinery. Tooling, parts, and the engineering in between.",
-      "pivot": "A passenger-car maker retools every two to three years with the model cycle. Construction, agricultural and commercial vehicle builders can run the same tool for ten. That single difference decides every argument on this page.",
+      "pivot": "Heavy-vehicle and off-highway components often stay in service longer than short model-cycle products. That changes how wear, spares, maintenance and re-tooling should be discussed at the start of the project.",
       "titleBlockLabel": "Title block",
       "fields": [
         {

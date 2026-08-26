@@ -62,6 +62,8 @@ for (const route of routes) {
         title: document.title,
         h1: document.querySelectorAll('h1').length,
         ctaHref: cta ? cta.getAttribute('href') : null,
+        ctaChannel: cta ? cta.getAttribute('data-channel') : null,
+        contactPending: Boolean(document.querySelector('.ct-channel__pending')),
         canonical: document.querySelector('link[rel=canonical]')?.getAttribute('href') ?? null,
         alternates: document.querySelectorAll('link[rel=alternate][hreflang]').length,
         undefinedText: /(^|\s)undefined(\s|$|[.,])/.test(body),
@@ -82,7 +84,10 @@ for (const route of routes) {
     if (route !== '/' && info.alternates !== 10) {
       problems.push(`${route} — ${info.alternates} hreflang alternates, expected 10`);
     }
-    if (route !== '/' && !info.ctaHref) problems.push(`${route} — no primary call to action`);
+    const isContact = route.endsWith('/contact/');
+    if (route !== '/' && !isContact && !info.ctaHref) problems.push(`${route} — no primary call to action`);
+    if (isContact && !info.ctaHref && !info.contactPending) problems.push(`${route} — no direct channel or pending notice`);
+    if (isContact && info.ctaChannel === 'contact-page') problems.push(`${route} — self-referencing contact CTA`);
 
     // Signs of a content key that did not resolve.
     if (info.undefinedText) problems.push(`${route} — the word "undefined" is visible on the page`);

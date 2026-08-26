@@ -171,7 +171,7 @@
         },
         {
           "label": "The melt is not uniform",
-          "body": "Flow is laminar. Material at the channel wall is sheared and hot; material at the core is cooler. Published measurements report differences of 100 to 300 °F across a single runner cross-section."
+          "body": "Flow through a runner is not thermally or rheologically uniform. At each branch, that non-uniform flow can divide unevenly and create a cavity-to-cavity pattern even when the runner looks geometrically balanced."
         },
         {
           "label": "The split does not mix",
@@ -182,10 +182,10 @@
           "body": "Inner cavities fill first. Weight and dimension group by flow path, not by cavity number — which is why a defect map that sorts by cavity number tells you nothing and one that sorts by flow group tells you everything."
         }
       ],
-      "evidence": "Research cited in the moulding literature attributes 60 to 70 per cent of product variation in multi-cavity tools to shear-induced imbalance rather than to steel dimensions or cooling. One published case reduced a 16-cavity tool from 95 per cent cavity-to-cavity variation to under 5 per cent by rotating the melt.",
+      "evidence": "Multi-cavity tools can show flow-induced cavity-to-cavity variation even when the cavities are dimensionally alike. The useful check is to map fill and part data by cavity and flow path, then separate runner-balance effects from steel, cooling and process variation.",
       "methodHeading": "How it is actually proven",
       "method": [
-        "Fill to roughly 95 to 98 per cent with short shots.",
+        "Use controlled short-shot studies to compare how the cavities fill.",
         "Label every part by cavity — which requires the cavities to be marked in the steel in the first place.",
         "Weigh on a precision scale and repeat the run.",
         "Plot the spread. A well-balanced tool typically stays inside 5 per cent part-weight variation."
@@ -220,7 +220,7 @@
         "Mould design: cavity and core, mechanisms, gating, cooling, venting",
         "Multi-cavity tool manufacture, to our experience of up to 46 cavities",
         "Sampling and tool correction until the part is dimensionally right",
-        "The full tool documentation package — 3D assembly, plate drawings, bill of materials with steel grades and hardness, hot runner make and model, cooling circuit map, spare parts list",
+        "Documentation scope is agreed with the tool order.",
         "Sampling evidence you can carry into your own qualification work",
         "Spare cavity inserts, core pins and wear parts, specified at design time",
         "Duplicate, backup and second-source tooling to the same part specification",
@@ -237,9 +237,9 @@
         "Batch traceability, release testing and certificates of analysis",
         "The decision that a component is fit for its clinical or pharmaceutical use"
       ],
-      "close": "Metal Form holds no quality-system certification. The right time to know that is now, not during your own supplier audit.",
+      "close": "No quality-system certification is claimed on this website. Project-specific certification, validation and supplier-approval requirements must be confirmed before order.",
       "howHeading": "How this works in practice",
-      "how": "Most of our medical and pharmaceutical work reaches an end user through a contract moulder or a manufacturer who already holds the certification and runs the validated process. We build and document the tool; they qualify and run it. That division is how a large share of this industry operates, and it is the arrangement we are set up for."
+      "how": "Metal Form's role on this page is tooling and engineering. The manufacturer or validation owner remains responsible for qualifying the process, operating within the validated state and releasing the regulated product."
     },
     "anatomy": {
       "index": "05",
@@ -399,7 +399,7 @@
         "Build a second-source tool for a component already running somewhere else, from your data or reverse-engineered from the part.",
         "Supply cavity inserts, cores and wear parts for a tool somebody else built.",
         "Re-tool a component whose original tool is worn out, lost or obsolete.",
-        "Release the full design data with the tool, so you are never locked to us either."
+        "Documentation scope is agreed with the tool order."
       ],
       "honesty": "This is readiness, not reserved capacity. A second tool has its own qualification path inside your quality system, and your system decides how long that takes."
     },
@@ -421,14 +421,7 @@
       ],
       "getHeading": "What we hand over",
       "get": [
-        "3D tool assembly and plate drawings",
-        "Bill of materials with steel grades and hardness stated",
-        "Hot runner make, model and controller configuration",
-        "Cooling circuit map",
-        "Spare parts list, with the recommended set quoted",
-        "Sampling dimensional evidence, cavity by cavity",
-        "Cavity identification scheme, marked in the steel",
-        "Tooling warranty terms defined against this specification"
+        "Documentation scope is agreed with the tool order."
       ]
     },
     "panels": {

@@ -10,12 +10,12 @@
       "Farklı üretim koşulları",
       "ve maliyet öncelikleri."
     ],
-    "lead": "Her sektörde maliyeti farklı değişkenler belirler: içecekte preform ağırlığı, sulamada göz sayısı, ağır vasıtada kalıp ömrü. Mühendislik temeli ortaktır; öncelikler farklıdır."
+    "lead": "Her sektör kalıp projesinde farklı bir noktayı öne çıkarır: tekrarlanabilirlik, göz sayısı, yüzey kalitesi, hizmet ömrü, mevzuata uyum veya tedarik riski. Mühendislik temeli ortaktır; satın alma öncelikleri değildir."
   },
   "note": "Her sayfa ilgili sektörün parçalarını, tipik hata biçimlerini, maliyet etkenlerini ve terminolojisini kullanır. Projeniz bu kategorilere girmiyorsa Özel Projeler bölümünü seçin.",
   "cta": {
-    "headline": "Hangisi sizinki, emin değil misiniz?",
-    "body": "Projelerin çoğu düzgünce etiketlenmiş hâlde gelmez. Parçayı gönderin, bunun gerçekte hangi konuşma olduğunu birlikte çıkaralım.",
+    "headline": "Projenizin hangi sektöre girdiğinden emin değil misiniz?",
+    "body": "Birçok proje tek bir kategoriye net biçimde girmez. Parçayı gönderin; teknik değerlendirmeye hangi yönden başlamak gerektiğini belirleyelim.",
     "action": "Projenizi gönderin",
     "actionAlt": "Tüm iletişim seçeneklerini görün",
     "prefill": "Merhaba Metal Form.\n\nParça: \nNerede kullanılıyor: \nYıllık adet: \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok"

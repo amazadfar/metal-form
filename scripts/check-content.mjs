@@ -85,7 +85,7 @@ const REVIEW = [
  */
 const DISCLAIMER_CONTEXTS = [
   /\bboundar(y|ies)\b/i,        // blocks.boundary.*, boundaries.points
-  /\bline\.stays\b/i,          // medical: "stays with the manufacturer"
+  /\bline\.(stays|close)\b/i,  // medical: responsibility boundary and its closing sentence
   /\.not\b/,                    // blocks.boundary.not[n]
   /\bdontList\b/i,
   /\brefuse\b/i,
@@ -205,7 +205,7 @@ for (const locale of LOCALES) {
       for (const rule of FORBIDDEN) {
         if (!rule.re.test(value)) continue;
         if (disclaimer && !rule.always) {
-          notes.push(`[${locale}] ${path} → ${key}: ${rule.why} — in a disclaimer context, verify the sentence is a denial`);
+          notes.push(`[${locale}] ${path} → ${key}: ${rule.why} — verify the approved responsibility boundary is preserved`);
         } else {
           errors.push(`[${locale}] ${path} → ${key}: ${rule.why}\n        “${value.slice(0, 120)}”`);
         }

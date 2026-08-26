@@ -92,6 +92,11 @@ export interface CommonContent {
     source: string;
     close: string;
   };
+  /** Labels used by compact links into the externally verified source register. */
+  references: {
+    sourceLabel: string;
+    referenceLabel: string;
+  };
   selector: {
     /** Sits above the nine language tiles. */
     kicker: string;

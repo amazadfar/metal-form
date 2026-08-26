@@ -12,13 +12,13 @@
       "Aracın üretim ve servis ömrüne",
       "uygun kalıp."
     ],
-    "lead": "Kamyon, otobüs, tarım ve iş makineleri aynı enjeksiyon parçalarını on yıl boyunca kullanır. Kalıbı bu hizmet ömrüne göre tasarlar ve imal ederiz — dolgulu polimerler, sürgüler ve lifterlar, atımdan atıma tekrarlayan ölçü — ve sonrasında parçayı da tedarik ederiz."
+    "lead": "Kamyon, otobüs, tarım ve iş makinesi parçaları yıllarca hizmette kalabilir. Kalıp; beklenen program ömrü, malzeme, mekanizmalar, aşınma ve tekrarlanabilirlik dikkate alınarak tasarlanır; bakım ve yedek stratejisi proje için ayrıca kararlaştırılır."
   },
   "blocks": {
     "sheet": {
       "index": "00",
       "orientation": "Kamyon, otobüs, treyler, tarım ve iş makineleri. Kalıp, parça ve ikisinin arasındaki mühendislik.",
-      "pivot": "Bir binek otomobil üreticisi model çevrimiyle birlikte iki üç yılda bir kalıbını yeniler. İş makinesi, tarım makinesi ve ticari araç üreticisi ise aynı kalıbı on yıl çalıştırabilir. Bu sayfadaki her tartışmayı belirleyen tek fark budur.",
+      "pivot": "Ağır vasıta ve off-highway parçaları, kısa model çevrimli ürünlerden çoğu zaman daha uzun süre hizmette kalır. Bu nedenle aşınma, yedekler, bakım ve yeniden kalıplama konusu projenin başında ele alınmalıdır.",
       "titleBlockLabel": "Antet",
       "fields": [
         {

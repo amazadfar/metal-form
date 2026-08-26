@@ -25,8 +25,8 @@
       "index": "01",
       "kicker": "پیداواری لاگت",
       "heading": "زیادہ پروڈکشن والیوم پر بوتل کی لاگت پری فارم کے وزن سے طے ہوتی ہے۔",
-      "body": "PET بوتل کی لاگت کا تقریباً دو تہائی حصہ اس کے اندر موجود ریزن ہے۔ باقی سب کچھ — ٹول، مشین، مزدوری، بجلی — اس سے چھوٹا اور کم بدلنے والا ہے۔ چنانچہ بوتلنگ لائن پر واحد عدد جو واقعی جمع ہوتا چلا جاتا ہے وہ پری فارم کا وزن ہے، اور پری فارم کا وزن ٹول طے کرتا ہے۔",
-      "body2": "500 ml پری فارم کے لیے نیک اسٹینڈرڈ کے حساب سے شائع شدہ وزن کی حدود۔ یہ صنعت کے اعداد ہیں، ہمارے نہیں — آپ کا اپنا پری فارم اپنی مصنوعے کی مخصوص وجوہات کی بنا پر اسی پیمانے پر کہیں بیٹھے گا۔",
+      "body": "High volume پر preform mass میں چھوٹی سی تبدیلی ہر bottle پر repeat ہوتی ہے۔ اس لیے preform weight، cycle time، yield اور required bottle performance کے ساتھ ایک اہم recurring cost variable بن جاتا ہے۔",
+      "body2": "کسی bottle کے لیے required weight اس کے volume، neck finish، performance، process اور material پر منحصر ہے۔ ہم کوئی generic target weight publish نہیں کرتے؛ project کو آپ کی actual bottle اور line کے مطابق evaluate کیا جاتا ہے۔",
       "scaleLabel": "500 ml پری فارم کا وزن، گرام",
       "rows": [
         {
@@ -64,9 +64,9 @@
       "chartGap": "کیویٹیز کے فرق سے ہونے والا اضافی ریزن خرچ",
       "close": "کیویٹیز کے درمیان فرق کم کرنے سے بوتل بدلے بغیر اوسط وزن ڈیزائن ہدف کے قریب آتا ہے۔ اس کے لیے متوازن میلٹ فلو، متوازن کولنگ اور تمام کیویٹیز کی یکساں تیاری ضروری ہے۔",
       "cavityHeading": "ہماری کیویٹی کی تعداد کہاں ہے، اور کہاں نہیں",
-      "cavityBody": "پیداوار کیویٹی تقسیم سائیکل ہے۔ شائع شدہ رہنمائی سالانہ تقریباً 5 کروڑ پری فارم سے نیچے 16 سے 48 کیویٹی کو معاشی بینڈ قرار دیتی ہے، کروڑوں میں چلنے والے پروگراموں کے لیے 72 سے 96، اور 128 سے 192 صرف وہاں جہاں بہت بڑا والیوم مستقل ہو اور اسے سنبھالنے کے لیے مینٹیننس کا نظام موجود ہو۔",
-      "cavityBody2": "Metal Form کا ٹولنگ تجربہ 46 کیویٹی تک ہے۔ علاقائی بوتلر، خودمختار کنورٹر اور سیکنڈ سورس پروگرام عملاً اسی بینڈ میں چلتے ہیں — جہاں ٹول کو محض چلایا نہیں جاتا بلکہ اسے متوازن رکھا، سنبھالا اور سمجھا جا سکتا ہے۔",
-      "cavityBody3": "اگر آپ کا پلانٹ اس سے زیادہ کیویٹی چلاتا ہے تو کارآمد پیشکش مختلف ہے: کولڈ ہاف کے اجزا۔ کیویٹی انسرٹس، کور راڈز، دو حصوں والے نیک رنگز اور لاک رنگز — اسپیئر کے طور پر یا کسی اور کے بنائے ہوئے ٹول کے متبادل سورس کے طور پر۔"
+      "cavityBody": "Output cavity count اور cycle time پر منحصر ہے، لیکن economic cavity count balance، maintenance، press اور line requirements سے بھی جڑا ہے۔ اسے actual project سے quote کیا جاتا ہے، generic volume band سے نہیں۔",
+      "cavityBody2": "Metal Form کی documented tooling experience 46 cavities تک ہے۔ یہ experience statement ہے، universal recommendation یا production-capacity guarantee نہیں۔",
+      "cavityBody3": "اگر کسی project کو documented 46-cavity experience سے زیادہ cavitation چاہیے ہو تو quotation سے پہلے یہ بات واضح کر دی جاتی ہے۔ کسی خاص tool کے لیے spare، insert یا component کا محدود scope بھی الگ سے agree ہونا چاہیے؛ اسے اس page سے assume نہیں کیا جائے گا۔"
     },
     "neck": {
       "index": "03",
@@ -284,8 +284,8 @@
     "closures": {
       "index": "06",
       "kicker": "پیک کا دوسرا نصف",
-      "heading": "کیپ 2024 میں بدل گئے۔",
-      "body": "ٹیدرنگ نے کیپ کی جیومیٹری کو گھماؤ کے لحاظ سے متناسب سے غیر متناسب بنا دیا — ہنج، ٹیب اور برج پیٹرن۔ اس سے ٹول، ایجیکشن اور وہ سب کچھ بدل جاتا ہے جو پہلے گول کیپ فرض کرتا تھا۔ EU جانے والی پروڈکٹ کے لیے یہ اختیاری نہیں؛ باقی سب کے لیے یہ فیصلہ ہے کہ آپ کن مارکیٹوں کو سپلائی کے قابل رہنا چاہتے ہیں۔",
+      "heading": "EU beverage closures کے requirements 2024 میں بدلے۔",
+      "body": "Directive (EU) 2019/904 کے تحت بعض single-use plastic beverage containers EU market میں تبھی رکھے جا سکتے ہیں جب plastic caps اور lids intended use کے دوران container کے ساتھ attached رہیں۔ اس requirement سے closure geometry اور tooling متاثر ہوتے ہیں۔ یہ EU market requirement ہے، Metal Form certification نہیں۔",
       "tracks": [
         {
           "name": "انجیکشن",

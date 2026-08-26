@@ -244,9 +244,9 @@
         }
       ],
       "boundaryHeading": "یہ حصہ کیا نہیں ہے",
-      "boundaryBody": "ISO 8317 اور EN 862 دوبارہ بند ہونے والی اور نہ ہونے والی چائلڈ ریزسٹنٹ پیکیجنگ کا احاطہ کرتے ہیں، 16 CFR 1700.20 امریکی Poison Prevention Packaging Act کے تحت آتا ہے، ASTM D3475 پیکجوں کی درجہ بندی کرتا ہے اور BS EN ISO 13127 میکانکی ٹیسٹ کا سلسلہ طے کرتا ہے۔ EN ISO 11683 خطرے کی چھو کر محسوس ہونے والی وارننگ متعین کرتا ہے — ایک ابھرا ہوا فیچر جو مواد تک پہنچنے سے پہلے محسوس ہونا چاہیے، اور اسی لیے یہ ایک مولڈڈ فیچر اور ٹولنگ کا فیچر ہے۔ CLP کے تحت یہ ذمہ داریاں عام صارفین کو دیے جانے والے پیک پر لاگو ہوتی ہیں، صرف پیشہ ورانہ استعمال کے پیک پر نہیں، اور میتھانول 3% اور ڈائی کلورو میتھین 1% پر محض ارتکاز کی بنیاد پر انہیں لاگو کر دیتے ہیں۔",
-      "boundaryClaim": "Metal Form چائلڈ ریزسٹنس کی ٹیسٹنگ، منظوری یا سرٹیفکیشن نہیں کرتی۔ یہ ٹیسٹنگ منظور شدہ ٹیسٹ ہاؤس آپ کے پیک پر کرتے ہیں، اور ذمہ داری اس فریق کی ہے جو پروڈکٹ مارکیٹ میں لا رہا ہے۔ ہم وہ جیومیٹری کاٹتے ہیں جس پر یہ ٹیسٹ چلتا ہے۔",
-      "close": "شائع شدہ ٹیسٹ کا دائرہ کار واضح طور پر حرارت سے بگاڑ، مولڈنگ کے نقص اور بار بار استعمال سے خرابی کو شامل کرتا ہے۔ میکانزم کو پیک کی پوری عمر سہنی ہے، صرف پہلی بار کھلنا نہیں — اور یہی بات دانتوں کا گھساؤ، ڈرافٹ اور ایجیکشن کے نشان کو پیداوار کے بجائے ڈیزائن کا سوال بنا دیتی ہے۔"
+      "boundaryBody": "Child-resistant packaging ایک regulated product requirement ہے، tooling certification نہیں۔ ISO 8317 اور 16 CFR 1700.20 جیسے standards اور regulations finished package کی testing define کرتے ہیں۔ کون سا rule apply ہوتا ہے یہ product اور market پر منحصر ہے؛ tooling release سے پہلے regulatory owner سے applicable requirement confirm کریں۔",
+      "boundaryClaim": "Metal Form child-resistance testing یا certification کو اپنی capability کے طور پر پیش نہیں کرتا۔ ہم moulded geometry engineer کرتے ہیں؛ finished package کی testing اور approval responsible manufacturer اور qualified test body کرتے ہیں۔",
+      "close": "Reclosable child-resistant packs کے لیے ISO 8317 مخصوص test methods کے ذریعے package performance evaluate کرتا ہے۔ اس لیے tool geometry کو اس system کا حصہ سمجھنا چاہیے جس کی testing ہوگی، نہ کہ اس بات کا ثبوت کہ package لازماً pass کرے گا۔"
     },
     "route": {
       "index": "05",

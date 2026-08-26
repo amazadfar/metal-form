@@ -106,8 +106,8 @@
           "label": "صرف ایک تصویر اور کچھ نہیں",
           "mark": "خاکہ",
           "tells": [
-            "میٹیریل کا خاندان، موٹے طور پر — سطح، چمک اور اس ماحول سے جس میں تصویر لی گئی۔",
-            "تناسب اور غالباً پُل کی سمت۔ اکثر گیٹ کی جگہ اور پارٹنگ لائن بھی۔"
+            "Surface اور context material family کا اندازہ دے سکتے ہیں، لیکن صرف photo سے resin grade verify نہیں ہو سکتا۔",
+            "Proportion اور probable pull direction کا اندازہ لگایا جا سکتا ہے۔ Visible moulding clues ممکنہ gate یا parting-line location دکھا سکتے ہیں، مگر sample یا بہتر data آنے تک یہ provisional رہتے ہیں۔"
           ],
           "ask": [
             "فریم میں کوئی ایک معلوم پیمائش، یا پرزے کے ساتھ رکھا ہوا فٹا۔",

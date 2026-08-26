@@ -17,7 +17,7 @@
     {
       "index": "01",
       "title": "انجینئرنگ",
-      "body": "کچھ بھی کاٹنے سے پہلے پرزے کا قابلِ تیاری ہونا ضروری ہے۔ یہ پروڈکٹ ڈیزائن سے الگ شعبہ ہے، اور مولڈڈ پرزے کی زیادہ تر لاگت دراصل یہیں طے ہوتی ہے۔",
+      "body": "کسی بھی machining سے پہلے part کا manufacturable ہونا ضروری ہے۔ DFM geometry، material، tolerance اور tooling route کو اس وقت review کرتا ہے جب ان فیصلوں کو بدلنا ابھی مہنگا نہیں ہوا ہوتا۔",
       "items": [
         {
           "name": "CATIA اور SolidWorks میں پرزے کی ماڈلنگ",
@@ -147,15 +147,15 @@
     "body": "پرزے کے ماڈل، ٹول ڈیزائن اور ریورس انجینئرنگ سے نکالی گئی جیومیٹری CATIA اور SolidWorks میں بنتی ہے۔ نیٹو یا نیوٹرل، دونوں فارمیٹ چلتے ہیں — STEP، IGES، X_T، STL — اور پیمائش والا 2D PDF بھی چلتا ہے۔ ایک تصویر اور ایک ورنیئر کی ریڈنگ بھی ایسا نقطۂ آغاز ہے جس سے ہمارا واسطہ باقاعدگی سے پڑتا ہے۔"
   },
   "boundaries": {
-    "heading": "ہم کس چیز کا دعویٰ نہیں کرتے",
-    "body": "صلاحیتوں کی فہرست تبھی کارآمد ہے جب وہ کہیں ختم ہو۔ یہ سب اُس دائرے سے باہر ہیں جس کی ذمہ داری Metal Form آج اٹھاتی ہے۔",
+    "heading": "Scope اور responsibility",
+    "body": "اس page پر صرف وہ capabilities درج ہیں جن کی current project evidence سے تائید ہوتی ہے۔ Product approval، certification، validation اور independent testing الگ responsibilities ہیں، جب تک کسی specific project کے لیے انہیں واضح طور پر agree اور verify نہ کیا گیا ہو۔",
     "points": [
-      "ہمارے پاس کوالٹی سسٹم، میڈیکل، آٹوموٹو یا فوڈ کانٹیکٹ کا کوئی سرٹیفکیشن نہیں ہے۔ جہاں آپ کی مارکیٹ اس کا تقاضا کرتی ہے، وہ تقاضا آپ کا اور آپ کے سرٹیفائیڈ پارٹنرز کا معاملہ ہے۔",
-      "ہم کلین روم نہیں چلاتے، اور نہ ہی اسٹرائل، ویلیڈیٹڈ یا ریگولیٹڈ مینوفیکچرنگ کرتے ہیں۔",
-      "ہم تیار مصنوعات کی جانچ یا سرٹیفکیشن نہیں کرتے — آتش گیری، برقی حفاظت، پریشر ریٹنگ، کیمیائی مزاحمت، کھلونوں کی حفاظت اور پیکیجنگ کی منظوریاں ریزن سپلائر، آپ کے ٹیسٹنگ ادارے اور آپ کی اپنی منظوریوں کا معاملہ ہیں۔",
-      "ہم فلو، کولنگ یا وارپیج کا سمولیشن سافٹ ویئر نہیں چلاتے۔ ان معاملات کو تجربے سے انجینئر کیا جاتا ہے اور نمونہ سازی کے مرحلے پر حل کیا جاتا ہے، اور جہاں کسی سوال کے لیے واقعی سمولیشن ضروری ہو، ہم یہ بھی بتا دیں گے۔",
-      "ہم 3D اسکیننگ یا کوآرڈینیٹ میژرنگ کا شعبہ نہیں چلاتے۔ یہاں ریورس انجینئرنگ روایتی پیمائش اور ماڈلنگ ہے۔",
-      "جب تک جیومیٹری، والیوم اور ٹالرنس سمجھ نہ آ جائیں، ہم قیمت نہیں دیتے۔ کوئی شائع شدہ قیمت نامہ نہیں ہے، کیونکہ مولڈڈ پرزے کی شائع شدہ قیمت ایک افسانہ ہی ہوتی۔"
+      "اس website پر Metal Form کے لیے کسی quality-system، medical، automotive یا food-contact certification کا دعویٰ نہیں کیا جاتا۔ اگر project کے لیے کوئی خاص certification یا approved-supplier status ضروری ہے تو supplier approval اور order سے پہلے اس کی تصدیق کریں۔",
+      "Controlled-environment، sterile یا validated manufacturing کو project-specific supplier requirement کے طور پر verify اور agree کرنا ضروری ہے؛ اسے website capability کے طور پر پیش نہیں کیا جاتا۔",
+      "Finished-product testing، regulatory approval اور market release customer اور متعلقہ qualified testing یا approval body کی responsibility رہتی ہے۔",
+      "Flow، cooling یا warpage simulation کو اس website پر Metal Form کی verified capability کے طور پر پیش نہیں کیا جاتا۔ اگر project کو simulation درکار ہو تو order سے پہلے method اور responsible provider طے کریں۔",
+      "3D scanning اور CMM کو اس website پر Metal Form کی verified capabilities کے طور پر پیش نہیں کیا جاتا۔ Measurement اور inspection requirements ہر project کے لیے الگ agree ہونی چاہییں۔",
+      "ہر quotation project-specific ہے اور geometry، volume، material، tolerance اور scope پر منحصر ہے۔ Tooling یا moulded parts کے لیے کوئی public price list نہیں ہے۔"
     ]
   },
   "cta": {

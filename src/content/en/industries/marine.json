@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Marine & Offshore Tooling and Component Supply — Metal Form",
-    "description": "Injection, blow and die-cast tooling for marine hardware, hatches, fittings, fuel-system components and floats. Reverse engineering from a worn or obsolete part. Low-volume tooling strategy, second-source tooling, international delivery. Persian engineering since 2006."
+    "description": "Injection, blow and die-cast tooling for marine components, plus reverse engineering from a worn or obsolete part. Tooling strategy for lower-volume work, second-source tooling and international delivery. Manufacturing since 2006."
   },
   "name": "Marine & Offshore",
   "tile": "Awkward geometry, low volumes, and components whose drawings nobody kept.",
@@ -13,7 +13,7 @@
       "and volumes too small",
       "to justify a normal tool."
     ],
-    "lead": "Marine parts are awkward geometry in small numbers, expected to survive twenty years of ultraviolet, salt and immersion. Most of them arrive here as objects rather than drawings. We measure the part, recover the geometry the wear has hidden, and size the tooling to the volume you actually build.",
+    "lead": "Marine parts often combine awkward geometry, demanding exposure and relatively modest volumes. Many arrive as physical samples rather than complete drawings. We recover the geometry, identify what still needs confirmation, and size the tooling route to the volume and service environment.",
     "markers": [
       "Since 2006",
       "1,000+ completed projects",
@@ -68,7 +68,7 @@
       "movement": "Movement I · The part arrives",
       "kicker": "Obsolete components",
       "heading": "Nobody kept the drawing.",
-      "body": "In this sector the tool outlives the paperwork and the hull outlives both. A model runs for a few seasons; the boats stay in the water for twenty or thirty years. By the time the part is needed again the supplier has changed hands, the tool has been scrapped or sits in a corner nobody will open, and the drawing — if one was ever made — left with the engineer who understood it. What survives is the component itself, still bolted to a boat.",
+      "body": "Marine equipment can remain in service long after original drawings, suppliers or tooling are easy to recover. When a replacement part is needed, the surviving component and its mating interfaces may be the best starting data.",
       "chainHeading": "The chain, read backwards",
       "chain": [
         {
@@ -126,7 +126,7 @@
       "movement": "Movement II · It is measured",
       "kicker": "Design intent against wear",
       "heading": "Copying the part reproduces the wear.",
-      "body": "A component that has run for fifteen seasons is a record of its service, not a record of its design. The bearing face is polished undersize. The flange has crept. The sealing land has taken a permanent set. Measure that and copy it faithfully and you manufacture a brand-new worn part, one that begins its life at the end of somebody else's. Recovering the nominal is the actual work, and it is the only part of this that is difficult.",
+      "body": "A used component records both its geometry and its service history. Wear, creep, distortion and permanent set can move a surface away from the original nominal, so reverse engineering must distinguish what was designed from what happened in service.",
       "figureLabels": {
         "worn": "As found",
         "nominal": "Nominal",
@@ -264,7 +264,7 @@
         }
       ],
       "evidenceHeading": "Where the evidence comes from",
-      "evidence": "The test methods a buyer will ask about are published standards: ASTM G154 and ISO 4892-3 for accelerated weathering, ASTM B117 and ISO 9227 for salt fog, ASTM D570 for water absorption, ASTM D256 and ASTM D790 for impact and flexural performance. Those figures belong to the resin producer’s datasheet or to an independent laboratory. Metal Form runs no weathering, salt-fog or material qualification testing, and nothing in this section is a Metal Form measurement."
+      "evidence": "Weathering, salt-fog, water-absorption, impact and flexural data should come from the material supplier or a qualified test laboratory. This page does not present those tests as Metal Form results or certifications."
     },
     "geometry": {
       "index": "05",

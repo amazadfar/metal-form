@@ -32,7 +32,7 @@
       {
         "index": "01",
         "title": "You send it",
-        "body": "WhatsApp is fastest, because photographs, drawings and short videos of a part all go through it without an email attachment limit."
+        "body": "Use any live contact channel shown on this page. Photographs, drawings and short videos are all useful starting inputs."
       },
       {
         "index": "02",
@@ -53,8 +53,8 @@
   },
   "cta": {
     "headline": "Send it now.",
-    "body": "A photograph taken on a phone, right now, is more useful to us than a perfectly specified enquiry in three weeks.",
-    "action": "Message us on WhatsApp",
+    "body": "A quick photograph or drawing is enough to start. Use whichever live contact channel is shown on this page.",
+    "action": "Send your project",
     "prefill": "Hello Metal Form.\n\nPart: \nIndustry: \nAnnual volume: \nMaterial (if known): \nWhat I have: photo / sample / drawing / CAD / nothing yet\nDelivery to: \n\nWhat I am trying to solve: "
   }
 }

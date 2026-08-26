@@ -110,6 +110,14 @@ const toolSteps = (b.tool?.steps ?? []) as any[];
 const lifeMarkers = (b.life?.markers ?? []) as any[];
 const routeItems = (b.routes?.items ?? []) as any[];
 const grades = (b.fit?.grades ?? []) as any[];
+const showUnsupportedMaterialRanges = false;
+const showUnsupportedToleranceRanges = false;
+const showUnsupportedLifeTable = false;
+const publicPanels = (b.panels?.items ?? []).flatMap((panel: any, index: number) => {
+  if (index === 1) return [];
+  if (index === 2) return [{ ...panel, bullets: panel.bullets.slice(0, 6) }];
+  return [panel];
+});
 
 /* The two letters on the cutting plane are the first half of the section mark
    the content already carries ("A–A" → "A"), so the cut and the view it names
@@ -411,10 +419,10 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
         <h2 class="av-h2">{b.materials.heading}</h2>
         <p class="t-lead">{b.materials.body}</p>
       </div>
-      <p class="t-label av-mat__rail-h">{b.materials.railLabel}</p>
+      {showUnsupportedMaterialRanges && <p class="t-label av-mat__rail-h">{b.materials.railLabel}</p>}
     </div>
 
-    <div class="av-rail" tabindex="0" role="group" aria-label={b.materials.railLabel}>
+    {showUnsupportedMaterialRanges && <div class="av-rail" tabindex="0" role="group" aria-label={b.materials.railLabel}>
       {b.materials.items.map((m: any, i: number) => (
         <article class="av-rail__item" style={`--i:${i}`}>
           <div class="av-swatch">
@@ -432,9 +440,9 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
           </dl>
         </article>
       ))}
-    </div>
+    </div>}
 
-    <div class="shell--wide">
+    {showUnsupportedMaterialRanges && <div class="shell--wide">
       <div class="av-rail__foot">
         <p class="figure-note">{common.schematic}</p>
         <p class="av-rail__hint t-fine">{common.a11y.scrollForMore}</p>
@@ -447,7 +455,7 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
       </ol>
       </TechNote>
       <p class="av-source t-fine">{b.materials.sourceNote}</p>
-    </div>
+    </div>}
   </section>
 
   {/* ═══ 03 · INSIDE THE TOOL ═════════════════════════════════════════════ */}
@@ -593,7 +601,7 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
         <p class="t-lead">{b.fit.body}</p>
       </div>
 
-      <div class="av-stack" data-tabs>
+      {showUnsupportedToleranceRanges && <div class="av-stack" data-tabs>
         <div class="av-stack__tabs" role="tablist" aria-label={b.fit.tabsLabel}>
           {grades.map((g: any) => (
             <button
@@ -656,7 +664,7 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
             </div>
           );
         })}
-      </div>
+      </div>}
 
 {/* The dimension chain above carries the section. Tolerance classes and
           the warp mechanism are the same point at two more levels of detail —
@@ -734,7 +742,7 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
   </section>
 
   {/* ═══ 05 · PROGRAMME LIFE — the dimension chain ════════════════════════ */}
-  <section class="av-sec av-life" id="life">
+  {showUnsupportedLifeTable && <section class="av-sec av-life" id="life">
     <div class="shell--wide">
       <div class="av-head">
         <p class="av-kick">
@@ -777,7 +785,7 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
       <p class="av-close">{b.life.close}</p>
       <p class="av-source t-fine">{b.life.sourceNote}</p>
     </div>
-  </section>
+  </section>}
 
   {/* ═══ 06 · ROUTES AND BOUNDARY ═════════════════════════════════════════ */}
   <TechNote locale={locale} kind="reasoning">
@@ -929,7 +937,7 @@ const sectionLetter = String(b.sheet?.sectionMark ?? '').split(/[-–—/\s]+/).
 
       <div class="av-panels">
         <h3 class="t-label av-panels__h">{b.panels.heading}</h3>
-        {b.panels.items.map((panel: any, i: number) => (
+        {publicPanels.map((panel: any, i: number) => (
           <div class="disc" data-open="false">
             <h4>
               <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>

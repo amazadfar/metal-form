@@ -68,7 +68,7 @@
     "phoneLabel": "电话",
     "addressLabel": "注册地址",
     "responseLabel": "回复时间",
-    "pendingNote": "在线消息功能正在接入。开通之前，这个按钮会打开联系页面，上面列出了目前可用的所有联系方式。"
+    "pendingNote": "直接联系方式仍在配置中。如果联系页没有任何可用渠道，则该版本尚不具备接收询盘的条件。"
   },
   "footer": {
     "tagline": "注塑件的设计、模具、生产与供货，一家负责到底。",
@@ -85,5 +85,9 @@
     "schematicLabel": "示意图",
     "scrollForMore": "向下滚动"
   },
-  "schematic": "示意图"
+  "schematic": "示意图",
+  "references": {
+    "sourceLabel": "来源",
+    "referenceLabel": "参考"
+  }
 }

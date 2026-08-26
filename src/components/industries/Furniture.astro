@@ -29,6 +29,13 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const publicLoadCallouts = b.loadpath.callouts
+  .map((callout: any, originalIndex: number) => ({ callout, originalIndex }))
+  .filter(({ originalIndex }: any) => originalIndex === 1 || originalIndex === 3);
+const showUnsupportedRibRules = false;
+const showUnsupportedCycleCounts = false;
+const showUnsupportedWeldStrengthFigures = false;
+const publicPanels = b.panels.items.slice(1);
 
 /* ── Drawing helpers ─────────────────────────────────────────────────────── */
 const RAD = (deg: number) => (deg * Math.PI) / 180;
@@ -430,8 +437,8 @@ const MX_COLOUR = [
           </figure>
 
           <ol class="fur-lp__steps">
-            {b.loadpath.callouts.map((c: any, i: number) => (
-              <li class="fur-lp__step" data-station-step={i}>
+            {publicLoadCallouts.map(({ callout: c, originalIndex }: any) => (
+              <li class="fur-lp__step" data-station-step={originalIndex}>
                 <span class="fur-lp__n t-mono">{c.n}</span>
                 <h3 class="fur-h5">{c.title}</h3>
                 <p>{c.body}</p>
@@ -455,7 +462,7 @@ const MX_COLOUR = [
         <h2 class="fur-h2">{b.rib.heading}</h2>
         <p class="fur-lead">{b.rib.body}</p>
 
-        <TechNote locale={locale} kind="reasoning">
+        {showUnsupportedRibRules && <TechNote locale={locale} kind="reasoning">
           <div class="fur-rib__pair">
             <figure class="fur-rib__one" data-reveal>
               <div class="fur-plate">
@@ -550,7 +557,7 @@ const MX_COLOUR = [
               <figcaption class="fur-rib__cap">{b.rib.right.note}</figcaption>
             </figure>
           </div>
-        </TechNote>
+        </TechNote>}
         <p class="figure-note fur-rib__schematic">{common.schematic}</p>
 
         <TechNote locale={locale} kind="reasoning">
@@ -582,7 +589,7 @@ const MX_COLOUR = [
         <h2 class="fur-h2">{b.fatigue.heading}</h2>
         <p class="fur-lead">{b.fatigue.body}</p>
 
-        <TechNote locale={locale} kind="detail">
+        {showUnsupportedCycleCounts && <TechNote locale={locale} kind="detail">
           <div class="fur-fat__grid">
             <figure class="fur-fat__fig" data-reveal>
               <div class="fur-plate fur-plate--dark">
@@ -633,7 +640,7 @@ const MX_COLOUR = [
               ))}
             </ol>
           </div>
-        </TechNote>
+        </TechNote>}
 
         <TechNote locale={locale} kind="detail">
           <div class="fur-std">
@@ -645,7 +652,7 @@ const MX_COLOUR = [
           </div>
         </TechNote>
 
-        <TechNote locale={locale} kind="reasoning">
+        {showUnsupportedWeldStrengthFigures && <TechNote locale={locale} kind="reasoning">
           <div class="fur-glass">
             <h3 class="fur-h5">{b.fatigue.glass.heading}</h3>
             <p class="fur-glass__body">{b.fatigue.glass.body}</p>
@@ -664,7 +671,7 @@ const MX_COLOUR = [
             </figure>
             <p class="fur-glass__note">{b.fatigue.glass.note}</p>
           </div>
-        </TechNote>
+        </TechNote>}
 
         <p class="fur-close fur-close--dark">{b.fatigue.close}</p>
       </div>
@@ -959,7 +966,7 @@ const MX_COLOUR = [
         {/* Layer three: depth, folded away until it is wanted. */}
         <div class="fur-panels">
           <h3 class="t-label fur-panels__h">{b.panels.heading}</h3>
-          {b.panels.items.map((panel: any, i: number) => (
+        {publicPanels.map((panel: any, i: number) => (
             <div class="disc" data-open="false">
               <h4>
                 <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Elektrik ve elektronik kalıpçılığı ve enjeksiyonu — Metal Form",
-    "description": "Konnektör gövdeleri, klemensler, anahtar parçaları, kablo rakorları ve muhafazalar için kalıp tasarımı ve imalatı. İnce cidarlı kalıplar, metal terminaller için insertli kalıplar, çok gözlü üretim ve sürekli parça tedariki. 2006'dan beri İran mühendisliği."
+    "description": "Konnektör gövdeleri, terminal blokları, anahtar parçaları, rakorlar ve muhafazalar için kalıp tasarımı ve imalatı. İnce cidarlı kalıplar, metal terminaller için insert kalıplar, çok gözlü kalıplar ve sürekli parça tedariki. 2006'dan beri üretim."
   },
   "name": "Elektrik ve Elektronik",
   "tile": "İnce cidarlı gövdeler ve konnektörler; parçanın dolup dolmayacağına akış uzunluğu karar verir.",
@@ -12,7 +12,7 @@
       "Kontak konumunu",
       "gövde hassasiyeti belirler."
     ],
-    "lead": "Konnektör gövdeleri, klemensler, anahtar parçaları, kablo rakorları, muhafazalar. İnce cidarlar, derin yuvalar, metal insertler ve birkaç milyon atımdan sonra da doğru kalması gereken bir adım. Parçayı ya da teknik resmi gönderin. Geometri, kalıp rotası, göz sayısı ve tedarik üzerinden dönüş yaparız.",
+    "lead": "Konnektör gövdeleri, terminal blokları, anahtar parçaları, rakorlar ve muhafazalar: ince duvarlar, derin cepler, metal insertler ve tekrar üretimde sabit kalması gereken hatve. Parçayı veya teknik resmi gönderin; geometri, kalıp rotası, göz sayısı ve tedarik konusunda teknik geri dönüş yapalım.",
     "markers": [
       "İnce cidarlı ve insertli kalıplar",
       "46 göze kadar çok gözlü",
@@ -107,7 +107,7 @@
       "index": "02",
       "kicker": "İlk sayı",
       "heading": "Ergiyik belirli bir mesafeyi kat eder ve durur.",
-      "body": "Akış uzunluğunun cidar kalınlığına bölümü; giriş sayısını, dolum hızını ve parçanın hiç dolup dolmayacağını belirler. Yayımlanmış uygulama ince cidarı kabaca 1 mm'nin altı ya da yaklaşık 100:1'in üzerindeki oran olarak veriyor. İnce cidarlı elektrik işleri yaygın olarak 150:1'i aşar.",
+      "body": "Akış uzunluğunun et kalınlığına oranı giriş sayısını, dolum basıncını ve proses penceresini güçlü biçimde etkiler. Aynı akış mesafesinde duvar inceldikçe kalıp ve proses değişkenlere daha hassas hâle gelir.",
       "body2": "İnce olan kendiliğinden ucuz değildir. Soğutma süresi düşer, proses penceresi de onunla birlikte daralır. Belirli bir oranın ötesinde parça yine dolar — ama yalnızca iyi bir partide, sıcak bir kalıpta, iyi bir günde.",
       "ladderLabel": "Akış uzunluğu / cidar kalınlığı",
       "colRatio": "L : t",
@@ -170,7 +170,7 @@
         "Buluşma noktasındaki ütüleme basıncı",
         "Cephelerin birleştiği yerde havalandırma"
       ],
-      "close": "Sonuncusu kimsenin hatırlamadığıdır. Hapsolan hava tam olarak akışların buluştuğu koordinatta sıkışır ve yanar; yani bir birleşme izi ile bir yanık izi, iki kez görülen aynı olaydır. Tasarım aşamasında açılan bir havalandırmanın bedeli yoktur; çalışan bir kalıba açılan havalandırmanın bedeli bir haftadır.",
+      "close": "Hava tahliyesi akış cephelerinin birleştiği yerlerde tasarım aşamasında planlanmalıdır. Bunu baştan yapmak, çalışan kalıpta yanık izi veya eksik dolum görüldükten sonra düzeltmekten daha kolaydır.",
       "caption": "Aynı gövde, aynı maça pimleri, aynı parça resmi. Yalnızca giriş yer değiştirdi."
     },
     "insert": {

@@ -64,7 +64,11 @@ const schemas = [
               label={p.cta.action}
               source="contact_page"
               size="lg"
+              allowContactFallback={false}
             />
+            {!channels.whatsapp && !channels.email && !channels.phone && (
+              <p class="ct-channel__pending">{c.contact.pendingNote}</p>
+            )}
             <p class="t-fine ct-hero__note">{p.cta.note}</p>
           </div>
         </div>
@@ -174,7 +178,11 @@ const schemas = [
           label={p.cta.action}
           source="contact_page"
           size="lg"
+          allowContactFallback={false}
         />
+        {!channels.whatsapp && !channels.email && !channels.phone && (
+          <p class="ct-channel__pending">{c.contact.pendingNote}</p>
+        )}
       </div>
     </section>
   </main>

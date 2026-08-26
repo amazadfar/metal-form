@@ -10,7 +10,7 @@
     "kicker": "Furniture & Decor",
     "headline": [
       "A furniture part is judged twice.",
-      "On the shelf, and after a hundred thousand cycles."
+      "On the shelf, and after repeated use."
     ],
     "lead": "Castors, chair bases, glides, mechanisms, connectors, runner parts, shells and trim. Send the part. We evaluate the geometry, the load case, the tooling route, the finish and the production economics."
   },
@@ -190,8 +190,8 @@
     "fatigue": {
       "index": "04",
       "kicker": "Load and fatigue",
-      "heading": "The test is not the first load. It is the hundred-thousandth.",
-      "body": "Furniture is sold into a test-report culture. The cycle counts below are what furniture engineers quote from memory when they specify a component. They belong to the customer's programme, not to ours: the finished product is tested, by the customer's laboratory, against the customer's standard.",
+      "heading": "The test is not the first load. It is repeated use.",
+      "body": "Furniture programmes often specify repeated-load, durability and stability tests. The applicable standard and cycle regime belong to the finished-product programme and should come from the customer or test owner.",
       "plate": "FD-13",
       "labels": {
         "load": "load",
@@ -262,7 +262,7 @@
       "index": "05",
       "kicker": "Part count",
       "heading": "The plastic is not the expensive part. The minute is.",
-      "body": "On furniture, the labour to assemble the finished product is often a larger line than the mouldings in it. Every fastener a moulded snap feature removes comes straight off the assembly minute, on every unit, for the life of the range. That is what buys tooling budget, and it is the argument a furniture buyer responds to fastest.",
+      "body": "Assembly labour can be a meaningful recurring cost. Where geometry allows, integrating a snap or locating feature can remove a fastener or assembly operation, but the trade-off has to be checked against tooling complexity and serviceability.",
       "before": {
         "plate": "FD-14",
         "title": "As specified",

@@ -17,7 +17,7 @@
     {
       "index": "01",
       "title": "Engineering",
-      "body": "Before anything is cut, the part has to be a manufacturable part. That is a separate discipline from designing a product, and it is where most of the cost of a moulded component is actually decided.",
+      "body": "Before anything is cut, the part has to be manufacturable. DFM looks at geometry, material, tolerance and the tooling route before those decisions become expensive to change.",
       "items": [
         {
           "name": "Part modelling in CATIA and SolidWorks",
@@ -147,15 +147,15 @@
     "body": "Part models, tool design and reverse-engineered geometry are produced in CATIA and SolidWorks. Native or neutral formats both work — STEP, IGES, X_T, STL — and a 2D PDF with dimensions works too. A photograph and a caliper reading is a starting point we handle regularly."
   },
   "boundaries": {
-    "heading": "What we do not claim",
-    "body": "A capability list is only useful if it stops somewhere. These sit outside what Metal Form takes responsibility for today.",
+    "heading": "Scope and responsibility",
+    "body": "This page lists only capabilities supported by the current project evidence. Product approval, certification, validation and independent testing remain separate responsibilities unless they are explicitly agreed and verified for a project.",
     "points": [
-      "We hold no quality-system, medical, automotive or food-contact certification. Where your market requires one, that requirement sits with you and with your certified partners.",
-      "We do not operate a cleanroom and do not perform sterile, validated or regulated manufacture.",
-      "We do not test or certify finished products — flammability, electrical safety, pressure rating, chemical resistance, toy safety and packaging approvals belong to the resin supplier, your testing house and your own approvals.",
-      "We do not run flow, cooling or warpage simulation software. Those subjects are engineered from experience and resolved at sampling, and we will say when a question genuinely needs simulation.",
-      "We do not operate 3D scanning or a coordinate measuring department. Reverse engineering here is conventional measurement and modelling.",
-      "We do not quote a price before we understand the geometry, the volume and the tolerance. There is no published price list, because a published price for a moulded part would be a fiction."
+      "No quality-system, medical, automotive or food-contact certification is claimed on this website. If a project requires a specific certification or approved supplier status, confirm it before supplier approval and before order.",
+      "Controlled-environment, sterile or validated manufacturing must be verified and agreed as a project-specific supplier requirement; it is not presented as a website capability.",
+      "Finished-product testing, regulatory approval and market release remain with the customer and the appropriate qualified testing or approval bodies.",
+      "Flow, cooling or warpage simulation is not presented as a verified Metal Form capability on this website. If a project requires simulation, agree the method and responsible provider before order.",
+      "3D scanning and CMM capability are not presented as verified Metal Form capabilities on this website. Measurement and inspection requirements must be agreed for the specific project.",
+      "Quotations are project-specific and depend on geometry, volume, material, tolerance and scope. There is no public price list for tooling or moulded parts."
     ]
   },
   "cta": {

@@ -20,6 +20,7 @@
  */
 import type { Locale } from '../../i18n/locales.ts';
 import TechNote from '../TechNote.astro';
+import SourceReference from '../SourceReference.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 
@@ -31,6 +32,10 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const showUnsupportedLabyrinthMeasurements = false;
+const showUnsupportedCavityComparisons = false;
+const publicBoundaryItems = b.boundary.yours.items.filter((_: string, index: number) => index !== 1 && index !== 3);
+const publicPanels = b.panels.items.slice(0, 1);
 
 const r = (v: number) => Math.round(v * 10) / 10;
 
@@ -520,7 +525,7 @@ const CURVES = [
       </figure>
 
         <div class="agr-lab__cols">
-          <dl class="agr-params">
+          {showUnsupportedLabyrinthMeasurements && <dl class="agr-params">
             {b.labyrinth.params.map((p: any) => (
               <div class="agr-param">
                 <dt>
@@ -531,11 +536,11 @@ const CURVES = [
                 <dd>{p.note}</dd>
               </div>
             ))}
-          </dl>
+          </dl>}
           {/* Outside the list: a `<dl>` may only contain `<dt>`, `<dd>`, `<div>`,
               `<script>` and `<template>`, so a source note sitting inside one
               breaks the description-list semantics a screen reader relies on. */}
-          <p class="agr-src t-fine">{b.labyrinth.paramsSource}</p>
+          {showUnsupportedLabyrinthMeasurements && <p class="agr-src t-fine">{b.labyrinth.paramsSource}</p>}
   
           <div class="agr-calls">
             <h3 class="agr-h4">{b.labyrinth.callHeading}</h3>
@@ -658,7 +663,7 @@ const CURVES = [
           <p class="eyebrow eyebrow--plain">{b.cavities.kicker}</p>
           <h2 class="agr-h2">{b.cavities.heading}</h2>
           <p class="t-lead agr-lead">{b.cavities.body}</p>
-          <p class="agr-cav__b2">{b.cavities.body2}</p>
+          {showUnsupportedCavityComparisons && <p class="agr-cav__b2">{b.cavities.body2}</p>}
         </div>
       </div>
 
@@ -694,7 +699,7 @@ const CURVES = [
   
           <div class="agr-cav__worst">
             <h3 class="agr-h3">{b.cavities.worst.heading}</h3>
-            <p class="agr-cav__worstbody">{b.cavities.worst.body}</p>
+            {showUnsupportedCavityComparisons && <p class="agr-cav__worstbody">{b.cavities.worst.body}</p>}
             <ul class="agr-cav__points">
               {b.cavities.worst.points.map((p: string) => <li>{p}</li>)}
             </ul>
@@ -844,7 +849,7 @@ const CURVES = [
         </section>
         <section class="agr-col agr-col--yours">
           <h3 class="agr-h4">{b.boundary.yours.heading}</h3>
-          <ul>{b.boundary.yours.items.map((i: string) => <li>{i}</li>)}</ul>
+          <ul>{publicBoundaryItems.map((i: string) => <li>{i}</li>)}</ul>
         </section>
         <section class="agr-col agr-col--never">
           <h3 class="agr-h4">{b.boundary.never.heading}</h3>
@@ -904,7 +909,7 @@ const CURVES = [
       {/* Layer three: the sourced detail, folded away until it is wanted. */}
       <div class="agr-panels">
         <h3 class="t-label agr-panels__h">{b.panels.heading}</h3>
-        {b.panels.items.map((panel: any, i: number) => (
+        {publicPanels.map((panel: any, i: number) => (
           <div class="disc" data-open="false">
             <h4>
               <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>
@@ -919,6 +924,7 @@ const CURVES = [
                     {panel.bullets.map((bullet: string) => <li>{bullet}</li>)}
                   </ul>
                   {panel.source && <p class="agr-src t-fine">{panel.source}</p>}
+                  <SourceReference locale={locale} ids={['REF-ISO-9261']} />
                 </div>
               </div>
             </div>

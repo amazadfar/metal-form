@@ -244,9 +244,9 @@
         }
       ],
       "boundaryHeading": "Bu bölümün olmadığı şey",
-      "boundaryBody": "ISO 8317 ve EN 862 yeniden kapatılabilir ve kapatılamaz çocuk kilitli ambalajları kapsar; 16 CFR 1700.20 ABD Zehirlenmeyi Önleyici Ambalaj Yasası altındadır; ASTM D3475 ambalajları sınıflandırır ve BS EN ISO 13127 mekanik test setini ortaya koyar. EN ISO 11683 dokunsal tehlike uyarısını tanımlar — içeriğe ulaşılmadan önce hissedilebilmesi gereken kabartma bir detay ve dolayısıyla hem kalıplanan hem de kalıba işlenen bir detay. CLP kapsamında bu yükümlülükler yalnızca profesyonel kullanıma yönelik ambalajlara değil, genel tüketiciye sunulan ambalajlara bağlanır; metanol %3'te ve diklorometan %1'de yalnızca derişimleriyle bu yükümlülükleri tetikler.",
-      "boundaryClaim": "Metal Form çocuk kilidi testi yapmaz, onaylamaz ve belgelendirmez. Bu test, sizin ambalajınız üzerinde akredite test kuruluşlarınca yapılır ve yükümlülük ürünü piyasaya arz eden tarafa aittir. Biz, testin üzerinde yürütüldüğü geometriyi işleriz.",
-      "close": "Yayımlanmış test kapsamı ısıl deformasyonu, kalıplama kusurlarını ve tekrarlı kullanımda bozulmayı açıkça kapsar. Mekanizmanın ilk açılışından değil, ambalajın bütün ömründen sağ çıkması gerekir — bu da diş aşınmasını, çıkma açısını ve itme izini bir üretim sorusu değil, bir tasarım sorusu yapar."
+      "boundaryBody": "Çocuk emniyetli ambalaj, ürüne ait mevzuat şartıdır; kalıp sertifikası değildir. ISO 8317 ve 16 CFR 1700.20 gibi standart ve düzenlemeler bitmiş ambalajın testini tanımlar. Hangi kuralın geçerli olduğu ürün ve pazara bağlıdır; kalıp serbest bırakılmadan önce ilgili şart mevzuat sorumlusu ile doğrulanmalıdır.",
+      "boundaryClaim": "Metal Form çocuk emniyeti testini veya sertifikasyonunu bir kabiliyet olarak sunmaz. Biz kalıplanmış geometrinin mühendisliğini yaparız; bitmiş ambalajın testi ve onayı sorumlu üretici ile yetkin test kuruluşuna aittir.",
+      "close": "Yeniden kapatılabilir çocuk emniyetli ambalajlarda ISO 8317, ambalaj performansını belirlenmiş test yöntemleriyle değerlendirir. Bu nedenle kalıp geometrisi test edilecek sistemin bir parçasıdır; tek başına ambalajın testi geçeceğini kanıtlamaz."
     },
     "route": {
       "index": "05",

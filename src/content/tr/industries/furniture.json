@@ -10,7 +10,7 @@
     "kicker": "Mobilya ve Dekorasyon",
     "headline": [
       "Teslimatta görünüm.",
-      "Binlerce çevrim sonra dayanım."
+      "Rafta da, tekrar tekrar kullanıldıktan sonra da."
     ],
     "lead": "Tekerlekler, sandalye ayakları, pabuçlar, mekanizmalar, bağlantı elemanları, çekmece rayı parçaları, kabuklar ve dekor parçaları. Parçayı gönderin. Geometriyi, yük durumunu, kalıp rotasını, yüzeyi ve üretim ekonomisini değerlendiririz."
   },
@@ -190,8 +190,8 @@
     "fatigue": {
       "index": "04",
       "kicker": "Yük ve yorulma",
-      "heading": "Sınav ilk yük değildir. Yüz bininci yüktür.",
-      "body": "Mobilya, bir test raporu kültürüne satılır. Aşağıdaki çevrim sayıları, mobilya mühendislerinin bir parça belirlerken ezberden söylediği rakamlardır. Bize değil, müşterinin programına aittirler: bitmiş ürün, müşterinin laboratuvarında ve müşterinin standardına göre test edilir.",
+      "heading": "Asıl test ilk yük değil, tekrar eden kullanımdır.",
+      "body": "Mobilya programlarında tekrarlı yük, dayanıklılık ve stabilite testleri sıkça tanımlanır. Uygulanacak standart ve çevrim rejimi bitmiş ürün programına aittir; müşteri veya test sorumlusu tarafından verilmelidir.",
       "plate": "FD-13",
       "labels": {
         "load": "yük",
@@ -262,7 +262,7 @@
       "index": "05",
       "kicker": "Parça sayısı",
       "heading": "Pahalı olan plastik değildir. Dakikadır.",
-      "body": "Mobilyada bitmiş ürünü monte etme işçiliği, çoğu zaman içindeki enjeksiyon parçalarından daha büyük bir kalemdir. Kalıplanmış bir geçme detayının ortadan kaldırdığı her bağlantı elemanı, ürün ailesinin ömrü boyunca ve her adette doğrudan montaj dakikasından düşer. Kalıp bütçesini alan da budur ve bir mobilya alıcısının en hızlı karşılık verdiği argüman da odur.",
+      "body": "Montaj işçiliği önemli bir tekrarlayan maliyet olabilir. Geometri uygunsa snap veya konumlandırma özelliği bir bağlantı elemanını ya da montaj adımını kaldırabilir; ancak bunun kalıp karmaşıklığı ve servis edilebilirlikle dengelenmesi gerekir.",
       "before": {
         "plate": "FD-14",
         "title": "Şartnamedeki hâliyle",

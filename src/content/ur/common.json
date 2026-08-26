@@ -68,7 +68,7 @@
     "phoneLabel": "ٹیلیفون",
     "addressLabel": "رجسٹرڈ پتہ",
     "responseLabel": "جواب کا وقت",
-    "pendingNote": "براہِ راست پیغام رسانی ابھی منسلک کی جا رہی ہے۔ جب تک یہ فعال نہیں ہوتی، یہ بٹن رابطہ صفحہ کھولتا ہے جہاں اس وقت دستیاب ہر ذریعہ موجود ہے۔"
+    "pendingNote": "Direct contact channels ابھی configure کیے جا رہے ہیں۔ اگر Contact page پر کوئی live channel نظر نہیں آتا تو یہ build enquiries وصول کرنے کے لیے ready نہیں ہے۔"
   },
   "footer": {
     "tagline": "مولڈڈ پرزوں کی انجینئرنگ، ٹولنگ، پروڈکشن اور سپلائی کے لیے ایک ذمہ دار پارٹنر۔",
@@ -85,5 +85,9 @@
     "schematicLabel": "اسکیمیٹک ڈرائنگ",
     "scrollForMore": "اسکرول"
   },
-  "schematic": "اسکیمیٹک"
+  "schematic": "اسکیمیٹک",
+  "references": {
+    "sourceLabel": "ماخذ",
+    "referenceLabel": "حوالہ"
+  }
 }

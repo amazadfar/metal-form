@@ -12,7 +12,7 @@
       "Büyük parça.",
       "Sıkı boyutsal kontrol."
     ],
-    "lead": "Beyaz eşya enjeksiyon parçaları için kalıp ve mühendislik — kapak rafları, çekmeceler, kanallar, çerçeveler, ön paneller, gövdeler. Bu boyuttaki parçalarda düzlük, çevrim süresi ve maliyetin üçü de çelikte kararlaştırılır. Geometriyi, soğutmayı ve geçmeyi çelik işlenmeden önce çalışırız.",
+    "lead": "Beyaz eşya parçaları için kalıp ve mühendislik: kapı rafları, çekmeceler, hava kanalları, çerçeveler, ön paneller ve gövdeler. Bu boyuttaki parçalarda düzlemsellik, soğutma ve montaj uyumu geometri ile kalıp tasarımından güçlü biçimde etkilenir; bu nedenle çelik işlenmeden önce değerlendirilir.",
     "markers": [
       "2006'dan beri üretim",
       "1.000'den fazla tamamlanmış proje",
@@ -31,8 +31,8 @@
     "process": {
       "index": "01",
       "kicker": "Önce sınır",
-      "heading": "Bir beyaz eşya, tek ürün gibi görünen dört ayrı prosestir.",
-      "body": "Yetkinlikten önce dürüst harita. Bir buzdolabı kapağı; preslenmiş bir sac yüzey, köpükle doldurulmuş bir çekirdek, termoformla çekilmiş bir iç gövde, ekstrüzyonla üretilmiş bir conta ve bir dizi enjeksiyon parçasından oluşur. Dört proses, genellikle dört fabrika. Bir mühendis, bir tedarikçinin hangisinin hangisi olduğunu bilip bilmediğini bir dakikada anlar.",
+      "heading": "Bir beyaz eşya ürünü birden fazla üretim prosesini bir araya getirir.",
+      "body": "Örneğin bir buzdolabı kapağında sac, köpük, termoform parçalar, ekstrüzyon profilleri ve enjeksiyon parçaları birlikte bulunabilir. Biz kalıplanmış bileşenlere odaklanır, bunları çevredeki montaja uyacak şekilde tasarlarız.",
       "figHeading": "Buzdolabı kapak montajı, dıştan içe",
       "rows": [
         {
@@ -111,7 +111,7 @@
         }
       ],
       "weldHeading": "Birleşme izi yapısal bir karardır",
-      "weldBody": "Yayımlanmış çalışmalar birleşme izi mukavemetini malzemenin nominal mukavemetinin yaklaşık yüzde 20'sine kadar düşük veriyor. Bu da yolluk girişi konumunu önce bir yük yolu sorusu, sonra kozmetik bir soru hâline getirir. Uzun bir ön panelde sektörün cevabı kademeli dolumdur: sıcak yolluk girişleri zamanlanmış bir sırayla açılır, böylece birkaç akış cephesi çarpışmak yerine tek bir cephe bütün uzunluğu kat eder. Belgelenmiş bir vakada mengene kuvveti kabaca yüzde 20, göz basıncı 50 bar ve parça ağırlığı yaklaşık yüzde 5 düşürüldü.",
+      "weldBody": "Birleşme izleri yerel dayanımı azaltabilir; özellikle yük taşıyan bir özellik üzerinden geçiyorsa. Uzun parçalarda yolluk girişi ve, proses izin veriyorsa, sıralı dolum akış cephelerinin buluşma noktasını kritik veya görünür bölgelerden uzaklaştırabilir.",
       "weldWarn": "Faydasının yanında yayımlanan dürüst dezavantajı: bir girişin diğerine devrettiği yerde duraklama ve akış izleri yine de görülebilir ve bunların temizlenmesi proses ayarı ister.",
       "boundaryNote": "Kademeli dolum, gaz destekli enjeksiyon ve yapısal köpük birer sektör rotasıdır. Bize değil, enjeksiyon atölyesine ve onun ekipmanına aittir. Biz kalıbı, gerçekte çalıştıracağınız rotanın geometriye uyacağı şekilde tasarlarız.",
       "close": "Nominal et kalınlığı parça ağırlığını, çevrim süresini ve giriş sayısını aynı anda etkiler; bu hedefler çoğu zaman birbiriyle çelişir. Bu nedenle et kalınlığı çelik işlenmeden önce kesinleştirilmelidir.",
@@ -145,7 +145,7 @@
       ],
       "coolingHeading": "Derin maçalara soğutma suyunun itilerek götürülmesi gerekir",
       "coolingBody": "Bir çekmecede, bir kapak rafında ya da bir sebzelikte maça, plastikle sarılmış yüksek bir bloktur. Isınır ve düz delinmiş bir kanal ona ulaşamaz. Baffle ve bubbler elemanları suyu maçanın içine iter ve geri çıkarır. Devreler, uzun bir parçanın uzak ucuna soğutma suyunun ılık ulaşmayacağı kadar kısa tutulur — tek taraflı çekmenin sessiz ve çok yaygın bir kaynağıdır.",
-      "close": "Önlemler önce tasarım tarafındadır: düzgün cidar ya da kademeli geçişler, rijitlik için nervürler ve destek nervürleri, bir takviyenin arkasındaki yüzeye çöküntü çekmemesi için nominal cidarın kabaca yüzde 60'ında ya da altında tutulan nervürler, eşit dolduran bir giriş düzeni ve hapsolan havanın kendi soğuk noktasını yaratmaması için havalandırma. Proses ikinci sıradadır. Hiçbir proses penceresi, tek taraftan soğutulmuş bir parçayı kurtarmaz.",
+      "close": "Önlemler tasarımla başlar: tutarlı et kalınlığı, makul geçişler, çökme riski oluşturmayan nervür ve payandalar, dengeli giriş yerleşimi ve parçanın iki tarafına ulaşan soğutma. Proses ayarı, geometri ve soğutma stratejisi belirlendikten sonra gelir.",
       "sourceNote": "Nervür / cidar oranı için yüzde 60 kılavuzu ve soğutmanın çevrim süresindeki yüzde 50–80'lik payı yayımlanmış sektör uygulamalarıdır, Metal Form ölçümleri değildir."
     },
     "fit": {
@@ -204,7 +204,7 @@
       "index": "05",
       "kicker": "Makineden istenen",
       "heading": "Mengene kuvvetini parçanın ağırlığı ilgilendirmez.",
-      "body": "Tonajı izdüşüm alanı belirler — parçanın enjeksiyon yönündeki iki boyutlu gölgesi — ve bu alan bir mengene katsayısı ile bir emniyet payıyla çarpılır. Büyük ve düz bir panel hafif olabilir ve yine de çok büyük bir pres isteyebilir. Yayımlanmış uygulama mengene katsayısını inç kare başına 2 ile 8 ton arasında, yaygın olarak 4 ila 5 civarında veriyor ve büyük beyaz eşya parçalarını 400 ile 1.000+ ton sınıflarına yerleştiriyor.",
+      "body": "Gerekli kapama kuvveti parça ağırlığına değil, izdüşüm alanına ve göz içi basınca bağlıdır. Bu nedenle büyük ve düz bir parça, enjeksiyon gramajı nispeten düşük olsa bile büyük bir makine gerektirebilir. Makine seçimi gerçek parça ve kalıp üzerinden doğrulanır.",
       "areaLabel": "alan",
       "forceLabel": "mengene",
       "scaleLabel": "Pres sınıfı, ton",
@@ -281,7 +281,7 @@
         }
       ],
       "unitLabel": "yüzde",
-      "close": "Beyaz eşya adetlerinde kalıp, parça başına neredeyse yuvarlama hatası kadar kalır. Kalıp amortismanı ancak bin adedin altında belirleyici olur ve hiçbir beyaz eşya modeli o aralıkta değildir. Dolayısıyla bir model ömrü boyunca ucuz olan karar, genellikle pahalı olan kalıptır: daha iyi soğutma yerleşimi, dürüst bir nominal et kalınlığı, kolaylık için değil dolum için konumlandırılmış yolluk girişleri. Gramların ve saniyelerin nerede olduğu, sizin parçanız üzerinde yanıtladığımız bir sorudur.",
+      "close": "Seri üretimde tekrarlayan malzeme maliyeti ve makine süresi, kalıp amortismanından daha önemli olabilir. Et kalınlığı, soğutma, giriş düzeni ve göz sayısını genel bir yüzdeye göre değil, gerçek yıllık adedinize göre değerlendiririz.",
       "sourceNote": "Bu banttaki oranlar ve aralıklar yayımlanmış sektör verileridir, Metal Form ölçümü değildir."
     },
     "strategy": {

@@ -17,7 +17,7 @@
     {
       "index": "01",
       "title": "Mühendislik",
-      "body": "Hiçbir şey işlenmeden önce parçanın üretilebilir bir parça olması gerekir. Bu, bir ürünü tasarlamaktan ayrı bir disiplindir ve bir enjeksiyon parçasının maliyetinin büyük bölümü gerçekte burada belirlenir.",
+      "body": "Herhangi bir imalata geçmeden önce parçanın gerçekten üretilebilir olması gerekir. DFM; geometri, malzeme, tolerans ve kalıp rotasını, bu kararları değiştirmek pahalı hâle gelmeden önce değerlendirir.",
       "items": [
         {
           "name": "CATIA ve SolidWorks'te parça modelleme",
@@ -147,15 +147,15 @@
     "body": "Parça modelleri, kalıp tasarımı ve tersine mühendislikle çıkarılan geometri CATIA ve SolidWorks’te üretilir. Yerel ya da nötr format fark etmez — STEP, IGES, X_T, STL — ölçülendirilmiş bir 2D PDF de iş görür. Bir fotoğraf ve bir kumpas ölçüsü de bizim için alışıldık bir başlangıç noktasıdır."
   },
   "boundaries": {
-    "heading": "Neyi iddia etmiyoruz",
-    "body": "Bir yetkinlik listesi ancak bir yerde bittiğinde işe yarar. Şunlar, Metal Form’un bugün sorumluluk aldığı alanın dışında kalır.",
+    "heading": "Kapsam ve sorumluluk",
+    "body": "Bu sayfada yalnızca mevcut proje kanıtlarıyla desteklenen kabiliyetler listelenir. Ürün onayı, sertifikasyon, validasyon ve bağımsız testler; proje özelinde açıkça anlaşılmadıkça ve doğrulanmadıkça ayrı sorumluluklardır.",
     "points": [
-      "Hiçbir kalite sistemi, tıbbi, otomotiv ya da gıdayla temas sertifikamız yoktur. Pazarınız böyle bir belge gerektiriyorsa bu yükümlülük size ve sertifikalı iş ortaklarınıza aittir.",
-      "Temiz oda işletmiyoruz; steril, valide edilmiş ya da regülasyona tabi üretim yapmıyoruz.",
-      "Bitmiş ürünleri test etmiyor ve belgelendirmiyoruz — yanıcılık, elektriksel güvenlik, basınç sınıfı, kimyasal direnç, oyuncak güvenliği ve ambalaj onayları hammadde tedarikçinize, test kuruluşunuza ve kendi onay süreçlerinize aittir.",
-      "Akış, soğutma veya çarpılma simülasyon yazılımı kullanmıyoruz. Bu konular deneyimle mühendislik edilir ve kalıp denemesinde çözülür; bir sorunun gerçekten simülasyon gerektirdiği durumda bunu söyleriz.",
-      "3B tarama ya da koordinat ölçüm (CMM) bölümümüz yoktur. Buradaki tersine mühendislik, klasik ölçme ve modellemedir.",
-      "Geometriyi, adedi ve toleransı anlamadan fiyat vermiyoruz. Yayımlanmış bir fiyat listemiz yok; çünkü bir enjeksiyon parçası için yayımlanmış fiyat kurgudan ibaret olurdu."
+      "Bu web sitesinde Metal Form için kalite sistemi, medikal, otomotiv veya gıda teması sertifikasyonu iddiası yoktur. Proje belirli bir sertifika veya onaylı tedarikçi statüsü gerektiriyorsa, tedarikçi onayından ve siparişten önce doğrulanmalıdır.",
+      "Kontrollü ortamda, steril veya valide üretim; proje özelinde bir tedarikçi şartı olarak doğrulanmalı ve ayrıca anlaşılmalıdır. Bu web sitesinde genel bir Metal Form kabiliyeti olarak sunulmaz.",
+      "Bitmiş ürün testleri, mevzuat onayı ve pazara arz sorumluluğu müşteride ve ilgili yetkin test/onay kuruluşlarında kalır.",
+      "Akış, soğutma veya çarpılma simülasyonu bu web sitesinde doğrulanmış bir Metal Form kabiliyeti olarak sunulmaz. Projede simülasyon gerekiyorsa yöntem ve sorumlu sağlayıcı siparişten önce belirlenmelidir.",
+      "3D tarama ve CMM bu web sitesinde doğrulanmış Metal Form kabiliyetleri olarak sunulmaz. Ölçüm ve kontrol gereklilikleri proje bazında ayrıca anlaşılmalıdır.",
+      "Her teklif projeye özeldir; geometriye, adede, malzemeye, toleransa ve kapsamına göre hazırlanır. Kalıp veya kalıplanmış parçalar için genel bir fiyat listesi yoktur."
     ]
   },
   "cta": {

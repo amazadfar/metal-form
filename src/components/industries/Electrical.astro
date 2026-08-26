@@ -29,6 +29,8 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const showUnsupportedFlowRatioLadder = false;
+const showUnsupportedShrinkageBands = false;
 
 /* ── Hero: the catalogue — eight ways of one connector, one to a cell ─────
    The opening is an index rather than a single object. Each cell is one
@@ -183,10 +185,10 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
         <h2 class="el-h3">{b.wall.heading}</h2>
         <p class="el-wall__body">{b.wall.body}</p>
         <p class="el-wall__body">{b.wall.body2}</p>
-        <p class="el-wall__note t-fine">{b.wall.note}</p>
+        {showUnsupportedFlowRatioLadder && <p class="el-wall__note t-fine">{b.wall.note}</p>}
       </div>
 
-      <figure class="el-flow" data-reveal>
+      {showUnsupportedFlowRatioLadder && <figure class="el-flow" data-reveal>
         <p class="t-label">{b.wall.ladderLabel}</p>
         <svg viewBox="0 0 700 300" data-nomirror role="img" aria-label={common.schematic}>
           <defs>
@@ -229,11 +231,11 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
         </svg>
         <figcaption class="figure-note">{common.schematic}</figcaption>
         <p class="el-figcap t-fine">{b.wall.caption}</p>
-      </figure>
+      </figure>}
     </div>
 
     <div class="shell--wide">
-      <TechNote locale={locale} kind="detail">
+      {showUnsupportedFlowRatioLadder && <TechNote locale={locale} kind="detail">
         <div class="el-ladder">
           <p class="el-ladder__cols t-label">
             <span>{b.wall.colRatio}</span><span>{b.wall.colVerdict}</span>
@@ -247,7 +249,7 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
             ))}
           </ol>
         </div>
-      </TechNote>
+      </TechNote>}
       <p class="el-close">{b.wall.close}</p>
     </div>
   </section>
@@ -453,7 +455,7 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
         <p class="el-head__body">{b.resin.body}</p>
       </div>
 
-      <TechNote locale={locale} kind="reasoning">
+      {showUnsupportedShrinkageBands && <TechNote locale={locale} kind="reasoning">
         <div class="el-table__scroll">
           <table class="el-table">
             <thead>
@@ -471,9 +473,9 @@ const INS_CAVITY = 'M20 55 V145 H70 V93 H130 V145 H180 V55 Z';
             </tbody>
           </table>
         </div>
-      </TechNote>
+      </TechNote>}
 
-      <p class="el-caveat">{b.resin.note}</p>
+      {showUnsupportedShrinkageBands && <p class="el-caveat">{b.resin.note}</p>}
       <p class="el-close">{b.resin.close}</p>
     </div>
   </section>

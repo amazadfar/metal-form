@@ -68,7 +68,7 @@
     "phoneLabel": "Telefon",
     "addressLabel": "Kayıtlı adres",
     "responseLabel": "Yanıt süresi",
-    "pendingNote": "Doğrudan mesajlaşma hattı henüz bağlanıyor. Devreye girene kadar bu düğme, şu anda açık olan tüm kanalların yer aldığı iletişim sayfasını açar."
+    "pendingNote": "Doğrudan iletişim kanalları hâlâ yapılandırılıyor. İletişim sayfasında aktif bir kanal görünmüyorsa bu sürüm talep almaya hazır değildir."
   },
   "footer": {
     "tagline": "Enjeksiyon parçalarının mühendisliği, kalıbı, üretimi ve tedariki için tek muhatap, tek sorumlu.",
@@ -85,5 +85,9 @@
     "schematicLabel": "Şematik çizim",
     "scrollForMore": "Kaydırın"
   },
-  "schematic": "Şematik"
+  "schematic": "Şematik",
+  "references": {
+    "sourceLabel": "Kaynak",
+    "referenceLabel": "Referans"
+  }
 }

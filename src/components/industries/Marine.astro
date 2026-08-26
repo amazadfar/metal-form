@@ -29,6 +29,8 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const showUnsupportedMaterialPrescriptions = false;
+const publicPanels = b.panels.items.slice(2);
 
 /* ── Hero: a skin fitting in elevation, as it arrives ─────────────────────── */
 const H_NOM_HEAD = 'M186 236 Q360 176 534 236 L534 258 L186 258 Z';
@@ -507,7 +509,7 @@ const PLOT_DOTS = [
         <p class="t-lead mar-head__lead">{b.environment.body}</p>
       </div>
 
-      <TechNote locale={locale} kind="reasoning">
+      {showUnsupportedMaterialPrescriptions && <TechNote locale={locale} kind="reasoning">
         <div class="mar-env__grid">
           <figure class="mar-fig mar-fig--zone" data-reveal>
             <svg viewBox="0 0 340 400" data-nomirror role="img" aria-label={common.schematic}>
@@ -556,7 +558,7 @@ const PLOT_DOTS = [
             ))}
           </ol>
         </div>
-      </TechNote>
+      </TechNote>}
 
       <TechNote locale={locale} kind="reasoning">
         <div class="mar-evidence">
@@ -833,7 +835,7 @@ const PLOT_DOTS = [
       {/* ── Layer three: technical depth, folded away until it is wanted ── */}
       <div class="mar-panels">
         <h3 class="t-label mar-panels__h">{b.panels.heading}</h3>
-        {b.panels.items.map((panel: any, i: number) => (
+        {publicPanels.map((panel: any, i: number) => (
           <div class="disc" data-open="false">
             <h4>
               <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>

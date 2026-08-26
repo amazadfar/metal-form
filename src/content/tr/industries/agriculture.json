@@ -74,7 +74,7 @@
       "index": "02",
       "kicker": "Adet",
       "heading": "Gözdeki bir hata ortalamaya karışmaz. Çoğaltılır.",
-      "body": "Bir damlatıcı bir kez üretilmez. Ekstrüzyon hattı boru ürettiği hızda, sürekli üretilir. Yayımlanmış bant ve damla sulama borusu hatları dakikada 180 ila 250 metre bandında çalışır; damlatıcılar da eşleşmiş hızda ve sabit aralıkla beslenir, yönlendirilir ve hâlâ ergimiş hâldeki boruya ısıyla kaynatılır.",
+      "body": "Damlatıcılar boru veya şerit hattında sürekli tüketilir; dolayısıyla kalıptaki bir hata da hat hızıyla ve sabit aralıklarla tekrar eder. Ticari sonuç tek bir reddedilen parça değil, aşağı akış üretiminin durması veya şartname dışına çıkması olabilir.",
       "body2": "Yani tüketim bir sipariş miktarı değildir. Dakikadaki metrenin aralığa bölümüdür. Göz ne yaparsa hat da onu yapar — hat çalıştığı sürece; ve hat kontrol etmek için durmaz.",
       "railLabel": "Lateral, sabit aralıkta damlatıcılar. Sıra bu sayfanın iki kenarından da devam ediyor.",
       "consequences": [
@@ -187,7 +187,7 @@
       "index": "04",
       "kicker": "Üretim ekonomisi",
       "heading": "Çıktı, göz sayısının çevrime bölümüdür. İki yarısı da oynar.",
-      "body": "Bir sezonda yüz milyonlarla tüketilen bir parça, parçayla satın alınmaz. Atımla satın alınır. Göz sayısı üzerine sektör yazıları, ilk sayıyı zorladığınızda ne olduğu konusunda açık sözlüdür: kalıp maliyeti orantılı değil, doğrusal olmayan biçimde yükselir; çevrim süresi sabit kalmaz, uzar; pres boyu ve saatlik maliyet kalıpla birlikte tırmanır ve yüksek gözlü kalıpların büyük bir bölümü hiçbir zaman tam göz sayısında çalışmaz.",
+      "body": "Daha yüksek göz sayısı üretimi artırabilir; ancak yolluk dengesini, soğutmayı, pres ihtiyacını, bakımı ve tek bir göz arızasının etkisini de değiştirir. Bu nedenle göz sayısı gerçek parça, makine ve gerekli çıktı üzerinden teklif edilir.",
       "body2": "Yani kazanç asla etiketteki oran kadar değildir. Yayımlanmış bir karşılaştırma, aynı parçanın dört gözlü kalıbını 35 saniyeye karşılık on altı gözlü hâlini 42 ila 48 saniyeye koyuyor — göz sayısı dört kat, çıktı ise üç kata daha yakın.",
       "figureLabel": "Dengeli besleme, şematik. Bir nozul devre dışı.",
       "figureNote": "Göz sayısı; bilinen bir prese ve bilinen bir hat hızına karşı verilen bir tekliftir. Bir çizim değildir ve bir manşet hiç değildir.",
@@ -290,7 +290,7 @@
       ],
       "uv": {
         "heading": "UV, sektörün kendi diliyle",
-        "body": "Karbon siyahı; gömülü ve açıkta çalışan poliolefin sulama ürünlerinde standart ve en ekonomik UV stabilizatörü olmayı sürdürüyor. Ultraviyoleyi soğurur ve serbest radikal oluşumunu yavaşlatır; yayımlanmış kılavuzlar katkı oranlarını kesit kalınlığına ve maruziyete göre tipik olarak yüzde 2 ila 2,5 bandında veriyor — ve sonucu katkı oranı kadar dağılım kalitesinin de belirlediğini açıkça söylüyor."
+        "body": "UV performansı seçilen reçine ve stabilizatör paketine bağlıdır. Metal Form malzeme ömrünü sertifikalandırmaz; malzeme ve maruziyet şartları müşteri veya malzeme tedarikçisi tarafından verilmelidir."
       },
       "boundary": "Malzeme compound etmiyor, stabilize etmiyor, renk eşleştirmiyor ve ömür testi yapmıyoruz; bir ömür de belgelendirmiyoruz. Belirlediğiniz malzemeyi kalıplarız ve bir cidar kesitinin, bir yolluk girişi konumunun ya da bir birleşme izinin seçtiğiniz stabilizatör paketiyle nerede çatışacağını size söyleriz.",
       "sourceNote": "Burada anılan standart gereklilikleri ve stabilizatör oranları yayımlanmış sektör uygulamalarıdır. Metal Form bunların hiçbirine karşı belgeye sahip değildir."
@@ -378,14 +378,9 @@
         {
           "title": "Ürün standardının bir damlatıcıdan istedikleri",
           "bullets": [
-            "Yıkama sırasında hariç, çıkış başına 24 l/h'ten fazla su vermeyen damlatıcılar ve damlatıcılı borular için geçerlidir.",
-            "Damlatıcılar hat içi, hat üstü ya da boruda oluşturulmuş olarak ve ayarlı ya da ayarsız olarak sınıflandırılır.",
-            "Ayarsız bir damlatıcı için nominal test basıncı, üretici aksini belirtmedikçe 100 kPa'dır.",
-            "Test numunesi boyunca debinin imalat değişkenlik katsayısı yüzde 7'yi aşmamalı ve numune ortalaması beyan edilen nominalin ±%7'si içinde kalmalıdır; test 25 damlatıcı ya da damlatma birimi üzerinde yapılır.",
-            "Basınca karşı davranış bir üstel olarak ifade edilir: q = k · pᵐ; m = 0 tam basınç ayarlı, m = 1 ise basınçla doğrusal değişendir.",
-            "Malzemelerin gübrelere ve tarımsal sulamada yaygın kullanılan kimyasallara dayanması ve 60 °C'ye kadar sıcaklıktaki suya uygun olması gerekir.",
-            "Işığa maruz kalan parçalar opak ve UV bozunmasına karşı korunmuş olmalı, mümkün olduğunca yosun ve bakteri üremesini desteklememelidir.",
-            "Damlatıcılı boru üzerindeki işaretler en fazla 5 m aralıkla tekrarlanır ve nominal debi, damlatıcının bir parçasının rengiyle meşru biçimde gösterilebilir."
+            "1) ISO 9261:2004, tarımsal sulama damlatıcıları ve damlatıcılı borular için mekanik ve işlevsel gereklilikleri ve uygunluk test yöntemlerini kapsar.",
+            "2) Yayımlanan kapsam, yıkama sırasında hariç olmak üzere çıkış başına debisi 24 l/h'yi aşmayan regüle ve regülesiz damlatıcıları/damlatıcı birimlerini içerir.",
+            "3) Ürün uygunluğu üretici ve ürün test sürecinin sorumluluğundadır; Metal Form'un buradaki rolü kalıp ve parça mühendisliğidir."
           ],
           "source": "Kaynak: ISO 9261:2004, damlatıcılar ve damlatıcılı boru için ürün standardı. Burada ürünün kendisine dair bir olgu olarak yer alıyor; Metal Form bu standarda göre belge taşımaz ve testini yapmaz."
         },

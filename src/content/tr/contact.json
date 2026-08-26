@@ -32,7 +32,7 @@
       {
         "index": "01",
         "title": "Siz gönderirsiniz",
-        "body": "En hızlısı WhatsApp; çünkü fotoğraflar, teknik resimler ve parçanın kısa videoları e-posta ek boyutu sınırına takılmadan iletilir."
+        "body": "Bu sayfada görünen herhangi bir aktif iletişim kanalını kullanın. Fotoğraf, teknik resim ve kısa video ilk değerlendirme için yeterli başlangıç verileridir."
       },
       {
         "index": "02",
@@ -53,8 +53,8 @@
   },
   "cta": {
     "headline": "Şimdi gönderin.",
-    "body": "Şu anda telefonla çekilmiş bir fotoğraf, üç hafta sonra gelecek kusursuz tanımlanmış bir talepten bizim için daha değerlidir.",
-    "action": "WhatsApp’tan yazın",
+    "body": "Başlamak için basit bir fotoğraf veya teknik resim yeterlidir. Bu sayfada gösterilen aktif iletişim kanallarından birini kullanın.",
+    "action": "Projenizi gönderin",
     "prefill": "Merhaba Metal Form.\n\nParça: \nSektör: \nYıllık adet: \nMalzeme (biliniyorsa): \nElimde olanlar: fotoğraf / numune / teknik resim / CAD / henüz yok\nTeslim yeri: \n\nÇözmek istediğim sorun: "
   }
 }

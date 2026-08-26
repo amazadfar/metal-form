@@ -47,7 +47,7 @@
       {
         "index": "02",
         "title": "Mühendislik",
-        "body": "Parça modellenir ya da yeniden modellenir; elde yalnızca numune varsa ölçülerek geri çıkarılır ve gerçekte nasıl kalıplanacağı üzerinden değerlendirilir. Et kalınlığı, çıkma açısı, yolluk girişi konumu, ters açılar, tolerans — çelik işlenmeden önce karara bağlanır, çünkü sonrasında bedeli on katına çıkar.",
+        "body": "Çelik işlenmeden önce parça modellenir veya yeniden modellenir; elde yalnızca numune varsa ölçüler numuneden geri çıkarılır. Ardından parçanın gerçekte nasıl kalıplanacağı değerlendirilir; et kalınlığı, çıkma açısı, yolluk girişi, ters açılar ve toleranslar çelik işlenmeden önce netleştirilir. Kalıp yapıldıktan sonra bu değişiklikler daha yavaş ve daha maliyetli olur.",
         "markers": [
           "CATIA · SolidWorks",
           "Tersine mühendislik",
@@ -57,7 +57,7 @@
       {
         "index": "03",
         "title": "Kalıp",
-        "body": "Göz sayısı, yolluk stratejisi, soğutma düzeni, mekanizmalar ve çelik; standart bir kataloğa göre değil, sizin adedinize ve sizin parçanıza göre seçilir. Ardından kalıp imal edilir, denenir ve parça doğru çıkana kadar düzeltilir.",
+        "body": "Göz sayısı, yolluk sistemi, soğutma düzeni, mekanizmalar ve çelik; standart bir katalogdan değil, gerçek parçanız ve üretim adediniz üzerinden seçilir. Kalıp daha sonra imal edilir, numune alınır ve üzerinde mutabık kalınan kabul sürecine göre düzeltilir.",
         "markers": [
           "Tek gözden 46 göze",
           "Sıcak ve soğuk yolluk",
@@ -67,7 +67,7 @@
       {
         "index": "04",
         "title": "Üretim",
-        "body": "Kalıp çalışır. Parça başı maliyetinizi belirleyen şey çevrim süresi, fire, ölçüsel tutarlılık ve gözler arası saçılımdır; hepsi de makine çalıştırılmadan çok önce kararlaştırılmıştır.",
+        "body": "Kalıp üretime girdiğinde çevrim süresi, hurda, boyutsal tutarlılık ve gözler arası fark parça maliyetini doğrudan etkiler. Bu göstergeleri belirleyen kararların önemli bir bölümü üretim başlamadan önce verilmiştir.",
         "markers": [
           "Çevrim ve fire",
           "Gözler arası saçılım",
@@ -77,7 +77,7 @@
       {
         "index": "05",
         "title": "Tedarik",
-        "body": "Tekrar siparişler, yedek maça ve gözler, tedarik kesintisine karşı hazırda tutulan ikinci bir kalıp ya da sürekli programa bağlanmış parça tedariki. İlişki kalıbın tesliminde bitmez.",
+        "body": "Tekrar siparişler, yedek maçalar ve gözler, ikinci bir kalıp veya ikinci kaynak kalıbı ve düzenli parça tedariki işbirliğinin devamına dâhil olabilir. Kalıbın teslimi ilişkinin sonu olmak zorunda değildir.",
         "markers": [
           "Sürekli tedarik",
           "Yedek ve değişim parçaları",
@@ -95,9 +95,9 @@
       {
         "index": "01",
         "title": "Daha rekabetçi birim maliyet",
-        "body": "Bir enjeksiyon parçasının fiyatı, kimse teklif vermeden çok önce belirlenir: geometri, göz sayısı, yolluk, soğutma ve çevrim süresi tarafından. Biz hepsine bakarız; yalnızca talebinizin altındaki rakama değil.",
+        "body": "Kalıplanmış bir parçanın ekonomisi yalnızca kalıp fiyatıyla belirlenmez. Geometri, göz sayısı, yolluk sistemi, soğutma ve çevrim süresi teklif aşamasından önce bile tekrarlayan maliyetleri etkiler; bu nedenle bunları birlikte değerlendiririz.",
         "points": [
-          "Et kalınlığı ve malzeme hacmi — maliyetin en büyük kalemi genellikle hammaddedir",
+          "Et kalınlığı ve malzeme hacmi; çoğu projede tekrarlayan parça maliyetinin başlıca etkenleri",
           "Göz sayısı; bir kataloğa göre değil, gerçek yıllık adede göre",
           "Yolluk stratejisi ve yolluk girişi konumu; her atımda ne kadara mal oldukları",
           "Soğutma düzeni ve çevrimden geri kazandırdığı saniyeler",
@@ -106,7 +106,7 @@
         "outcome": "İyileştirilecek bir şey yoksa bunu da söyler, parçayı çizildiği hâliyle fiyatlandırırız.",
         "figure": {
           "caption": "Bir enjeksiyon parçasının maliyeti",
-          "note": "Bu beş kalemin dördünü, parça fiyatlanmadan önce kalıp belirler.",
+          "note": "Parça ve kalıp tasarımındaki kararlar, üretim başlamadan önce bu maliyet kalemlerinin bir bölümünü belirler.",
           "rows": [
             {
               "label": "Hammadde"
@@ -183,7 +183,7 @@
         "figure": {
           "caption": "Tek rota",
           "captionAlt": "İki rota",
-          "note": "İkinci güzergâhı önceden hazırlamak, kriz günü doğaçlamaktan çok daha ucuzdur.",
+          "note": "İkinci bir tedarik yolunu kesinti yaşanmadan önce hazırlamak, kesinti sırasında hazırlamaktan daha kolaydır.",
           "rows": [
             {
               "label": "Tesis",
@@ -216,7 +216,7 @@
   "proof": {
     "kicker": "Kanıt",
     "heading": "Size neyi gösteririz, neyi göstermeyiz.",
-    "lead": "2006’dan bu yana kalıp, mühendislik ve üretimde binden fazla proje tamamlandı. Neredeyse tamamı, parçalarını yayımlama hakkı bize ait olmayan müşterilere ait.",
+    "lead": "2006'dan bu yana kalıp, mühendislik ve üretim alanlarında 1,000'den fazla proje tamamlandı. Müşteri parçaları izin alınmadan yayımlanmaz.",
     "disclosure": "Bu sitedeki her çizim ve animasyon mühendisliği anlatan bir şemadır; ekipmanımızın ya da bitmiş işin fotoğrafı değil. Müşteri yazılı izin verdiğinde gerçek proje görselleri buraya gelir ve gerçek olduğu belirtilerek yayımlanır."
   },
   "about": {
@@ -270,7 +270,7 @@
       "resin": "Hammadde",
       "cycleNote": "Çevrim · fire · gözler arası saçılım",
       "schedule": "Sürekli program",
-      "secondTool": "İkinci kalıp — yedekte",
+      "secondTool": "İkinci kaynak kalıbı",
       "spares": "Yedek maça · göz · değişim parçası"
     }
   }

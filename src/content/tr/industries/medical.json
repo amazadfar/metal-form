@@ -171,7 +171,7 @@
         },
         {
           "label": "Ergiyik türdeş değildir",
-          "body": "Akış laminerdir. Kanal cidarındaki malzeme kayma gerilmesine uğrar ve sıcaktır; merkezdeki malzeme daha soğuktur. Yayımlanmış ölçümler, tek bir yolluk kesiti boyunca 100 ila 300 °F fark bildirir."
+          "body": "Yolluk içindeki akış termal ve reolojik olarak tamamen homojen değildir. Her dallanmada bu homojen olmayan akış eşit olmayan biçimde bölünebilir ve geometrik olarak dengeli görünen bir sistemde bile gözler arası düzenli fark oluşturabilir."
         },
         {
           "label": "Ayrılma karıştırmaz",
@@ -182,10 +182,10 @@
           "body": "İçteki gözler önce dolar. Ağırlık ve ölçü, göz numarasına göre değil akış yoluna göre kümelenir — bu yüzden göz numarasına göre sıralanmış bir hata haritası size hiçbir şey söylemez, akış grubuna göre sıralanmış olan her şeyi söyler."
         }
       ],
-      "evidence": "Kalıplama literatüründe atıf yapılan araştırmalar, çok gözlü kalıplardaki ürün değişkenliğinin yüzde 60 ila 70'ini çelik ölçülerine ya da soğutmaya değil, kayma kaynaklı dengesizliğe bağlıyor. Yayımlanmış bir vakada, ergiyiğin döndürülmesiyle 16 gözlü bir kalıpta gözler arası yüzde 95'lik değişkenlik yüzde 5'in altına indirildi.",
+      "evidence": "Çok gözlü kalıplarda, gözler boyutsal olarak aynı olsa bile akış kaynaklı gözler arası fark görülebilir. Yararlı yöntem, dolum ve parça verilerini göz ve akış yolu bazında eşlemek; ardından yolluk dengesi etkisini çelik, soğutma ve proses varyasyonundan ayırmaktır.",
       "methodHeading": "Bu nasıl kanıtlanır",
       "method": [
-        "Kısa atımlarla kabaca yüzde 95 ila 98 doluluğa kadar doldurun.",
+        "Gözlerin nasıl dolduğunu karşılaştırmak için kontrollü short-shot çalışmaları kullanın.",
         "Her parçayı gözüne göre etiketleyin — bunun için gözlerin daha en baştan çeliğe numaralandırılmış olması gerekir.",
         "Hassas terazide tartın ve denemeyi tekrarlayın.",
         "Saçılımı grafiğe dökün. İyi dengelenmiş bir kalıp genellikle yüzde 5'in altında parça ağırlığı değişkenliğinde kalır."
@@ -220,7 +220,7 @@
         "Kalıp tasarımı: göz ve maça, mekanizmalar, yolluk ve giriş sistemi, soğutma, havalandırma",
         "Çok gözlü kalıp imalatı; deneyimimiz 46 göze kadar uzanır",
         "Parça ölçüsel olarak doğru çıkana kadar kalıp denemesi ve düzeltme",
-        "Kalıp dokümantasyon paketinin tamamı — 3B montaj, plaka resimleri, çelik kaliteleri ve sertlikleriyle malzeme listesi, sıcak yolluk marka ve modeli, soğutma devresi haritası, yedek parça listesi",
+        "Dokümantasyon kapsamı kalıp siparişiyle birlikte kararlaştırılır.",
         "Kendi kalifikasyon çalışmanıza taşıyabileceğiniz deneme kayıtları",
         "Tasarım aşamasında belirlenmiş yedek göz insertleri, maça pimleri ve aşınma parçaları",
         "Aynı parça şartnamesine göre ikiz, yedek ve ikinci kaynak kalıpları",
@@ -237,9 +237,9 @@
         "Parti izlenebilirliği, serbest bırakma testleri ve analiz sertifikaları",
         "Bir parçanın klinik ya da farmasötik kullanıma uygun olduğu kararı"
       ],
-      "close": "Metal Form’un kalite sistemi belgesi yoktur. Bunu öğrenmenin doğru zamanı şimdidir, kendi tedarikçi denetiminizin ortası değil.",
+      "close": "Bu web sitesinde Metal Form için herhangi bir kalite sistemi sertifikasyonu iddiası yoktur. Projeye özel sertifikasyon, validasyon ve tedarikçi onayı şartları siparişten önce doğrulanmalıdır.",
       "howHeading": "Bu pratikte nasıl yürüyor",
-      "how": "Tıbbi ve farmasötik işimizin çoğu, belgeyi zaten taşıyan ve valide prosesi işleten bir fason kalıpçı veya üretici üzerinden son kullanıcıya ulaşır. Kalıbı biz yapar ve belgeleriz; onlar kalifiye eder ve çalıştırır. Bu ayrım sektörün büyük bir bölümünün işleyiş biçimidir ve bizim kurgumuz da tam olarak buna göredir."
+      "how": "Bu sayfada Metal Form'un rolü kalıp ve mühendisliktir. Prosesi kalifiye etmek, valide edilmiş durumda işletmek ve regüle ürünü serbest bırakmak üreticinin veya validasyon sahibinin sorumluluğunda kalır."
     },
     "anatomy": {
       "index": "05",
@@ -399,7 +399,7 @@
         "Hâlihazırda başka yerde üretilen bir parça için ikinci kaynak kalıbı yapmak; sizin verinizden ya da parçadan tersine mühendislikle.",
         "Başkasının yaptığı bir kalıp için göz insertleri, maçalar ve aşınma parçaları tedarik etmek.",
         "Orijinal kalıbı aşınmış, kaybolmuş ya da kullanım dışı kalmış bir parçaya yeni kalıp yapmak.",
-        "Tasarım verisinin tamamını kalıpla birlikte teslim etmek; böylece bize de bağlı kalmazsınız."
+        "Dokümantasyon kapsamı kalıp siparişiyle birlikte kararlaştırılır."
       ],
       "honesty": "Bu bir hazırlıktır, ayrılmış kapasite değil. İkinci kalıbın sizin kalite sisteminiz içinde kendi kalifikasyon yolu vardır ve bunun ne kadar süreceğine o sistem karar verir."
     },
@@ -421,14 +421,7 @@
       ],
       "getHeading": "Neyi teslim ediyoruz",
       "get": [
-        "3B kalıp montajı ve plaka resimleri",
-        "Çelik kaliteleri ve sertlikleri belirtilmiş malzeme listesi",
-        "Sıcak yolluk markası, modeli ve kontrol ünitesi yapılandırması",
-        "Soğutma devresi haritası",
-        "Önerilen setin fiyatlandırıldığı yedek parça listesi",
-        "Göz göz deneme ölçüm kayıtları",
-        "Çeliğe işlenmiş göz numaralandırma şeması",
-        "Bu şartnameye göre tanımlanmış kalıp garanti şartları"
+        "Dokümantasyon kapsamı kalıp siparişiyle birlikte kararlaştırılır."
       ]
     },
     "panels": {

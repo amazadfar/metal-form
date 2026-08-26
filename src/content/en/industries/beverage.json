@@ -25,8 +25,8 @@
       "index": "01",
       "kicker": "Production economics",
       "heading": "At scale, preform weight drives bottle cost.",
-      "body": "About two thirds of what a PET bottle costs is the resin inside it. Everything else — the tool, the machine, the labour, the electricity — is smaller and less variable. So the only number on a bottling line that genuinely compounds is preform weight, and preform weight is decided by the tool.",
-      "body2": "Published weight bands for 500 ml preforms, by neck standard. Industry figures, not ours — your own preform will sit somewhere on this scale for reasons specific to your product.",
+      "body": "At high volume, small changes in preform mass repeat on every bottle. That makes preform weight an important recurring cost variable, alongside cycle time, yield and the required bottle performance.",
+      "body2": "The weight needed for a bottle depends on volume, neck finish, performance, process and material. We do not publish a generic target weight; the project is evaluated against your bottle and line.",
       "scaleLabel": "500 ml preform weight, grams",
       "rows": [
         {
@@ -64,9 +64,9 @@
       "chartGap": "Avoidable resin caused by cavity spread",
       "close": "Reducing cavity-to-cavity spread allows the average weight to move closer to the design target without changing the bottle. That requires balanced melt flow, balanced cooling and consistent cavity manufacture.",
       "cavityHeading": "Where our cavity count sits, and where it does not",
-      "cavityBody": "Output is cavities divided by cycle. Published guidance puts 16 to 48 cavities as the economic band below roughly 50 million preforms a year, 72 to 96 for programmes in the hundreds of millions, and 128 to 192 only where mega-volume is sustained and the maintenance organisation exists to support it.",
-      "cavityBody2": "Metal Form's tooling experience runs to 46 cavities. That is the band regional bottlers, independent converters and second-source programmes actually run — where a tool can still be balanced, maintained and reasoned about rather than merely operated.",
-      "cavityBody3": "If your plant runs higher cavitation than that, the useful offer is a different one: cold-half components. Cavity inserts, core rods, split neck rings and lock rings, as spares or as an alternative source for a tool somebody else built."
+      "cavityBody": "Output depends on cavity count and cycle time, but the economic cavity count also depends on balance, maintenance, press and line requirements. We quote it from the actual project rather than from a generic volume band.",
+      "cavityBody2": "Metal Form's documented tooling experience runs to 46 cavities. That is an experience statement, not a universal recommendation or a production-capacity guarantee.",
+      "cavityBody3": "If a project requires cavitation above our documented 46-cavity experience, we say so before quoting. Any narrower spare, insert or component scope must be agreed specifically for that tool rather than implied here."
     },
     "neck": {
       "index": "03",
@@ -284,8 +284,8 @@
     "closures": {
       "index": "06",
       "kicker": "The other half of the pack",
-      "heading": "Caps changed in 2024.",
-      "body": "Tethering moved cap geometry from rotationally symmetric to asymmetric — hinges, tabs and bridge patterns. That changes the tool, the ejection and everything downstream that used to assume a round cap. For EU-bound product it is not optional; for everyone else it is a decision about which markets you want to be able to serve.",
+      "heading": "EU beverage closures changed in 2024.",
+      "body": "Under Directive (EU) 2019/904, certain single-use plastic beverage containers may be placed on the EU market only when plastic caps and lids remain attached during the intended use stage. That requirement changes closure geometry and tooling. It is an EU market requirement, not a Metal Form certification.",
       "tracks": [
         {
           "name": "Injection",

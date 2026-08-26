@@ -6,7 +6,7 @@
   "hero": {
     "kicker": "About",
     "headline": [
-      "Twenty years",
+      "Since 2006",
       "of cutting steel",
       "for other people’s parts."
     ],
@@ -27,17 +27,17 @@
       "title": "How the work is organised",
       "body": [
         "Metal Form coordinates the route. Engineering, tool manufacture, production and supply are managed as one project against one specification, and the responsibility for the result does not move between parties when something goes wrong.",
-        "That is the part that matters commercially. The usual failure in this industry is not a bad tool — it is a three-way argument between a designer, a toolmaker and a moulder, each of whom is technically correct about their own stage. Removing that argument is worth more to most buyers than any single technical capability.",
-        "The company is small enough that the person who reads your drawing and the person who cuts the steel are one conversation apart, and small enough to take an unusual project seriously."
+        "Coordinating the stages under one project reduces handover gaps between design, tooling and production. That is the commercial point: fewer interfaces to manage and clearer responsibility when a change is needed.",
+        "Engineering and tool manufacture are coordinated closely, so questions about geometry, steel and production can be resolved without long handovers."
       ]
     },
     {
       "index": "03",
-      "title": "Where the engineering comes from",
+      "title": "How cross-sector tooling experience helps",
       "body": [
-        "Persian engineering has a long tooling tradition, and the workshop sits inside it — a generation of mould-making experience, working across sectors that in a larger market would each have their own specialist supplier.",
+        "Working across different tooling sectors exposes the same core decisions in different forms: flow, cooling, wear, mechanisms, repeatability and maintenance. That cross-over is useful when a new part does not fit a familiar template.",
         "That breadth is unusual and it is genuinely useful. A dripper tool teaches you things about high cavitation that a heavy-vehicle bracket never will; a cosmetic closure teaches you things about show surfaces that a fitting never will. Both turn up again in the next project.",
-        "The company is registered in Iran. Where country of origin matters — contracts, customs, shipping documentation — it is stated plainly, and the logistics are agreed with the quotation rather than promised in advance."
+        "Country of origin, shipping route and delivery terms are stated in the commercial documents for each project rather than used as a substitute for technical proof."
       ]
     },
     {
@@ -74,8 +74,8 @@
   "accountability": {
     "heading": "One partner remains accountable from start to finish.",
     "body": [
-      "Metal Form works with engineers, toolmakers, machinists and production partners, and the mix is chosen for the project rather than fixed. What does not change is who the customer holds responsible.",
-      "Design decisions are taken with the tool already in view. Tool corrections are handled without a commercial argument about whose fault it was. Spares come from the people who cut the originals. If a component has to be produced somewhere else, it is still produced to our specification."
+      "Metal Form coordinates engineering, tooling, machining, production and supply as one project. The exact manufacturing route is defined for each job; the customer keeps one Metal Form technical contact.",
+      "Design decisions are reviewed with tooling and production in view. Corrections, spares and changes are managed against the same project specification so responsibility does not have to move between suppliers."
     ]
   },
   "cta": {

@@ -15,6 +15,7 @@
  */
 import type { Locale } from '../../i18n/locales.ts';
 import TechNote from '../TechNote.astro';
+import SourceReference from '../SourceReference.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 import ProjectProof from '../ProjectProof.astro';
@@ -27,6 +28,10 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const showUnsupportedWeightBands = false;
+const showUnsupportedNeckGeometry = false;
+const showUnsupportedFreightComparison = false;
+const publicPanels = (b.panels?.items ?? []).slice(1);
 
 // Preform and bottle profiles. The finish geometry is identical in both — that
 // is the point of the figure and it must stay true in the drawing.
@@ -152,7 +157,7 @@ const SPREAD = [
       </div>
 
       {/* One continuous ruler carrying every weight band. No cards. */}
-      <TechNote locale={locale} kind="detail">
+      {showUnsupportedWeightBands && <TechNote locale={locale} kind="detail">
         <div class="bev-scale" data-reveal>
           <p class="t-label bev-scale__cap">{b.grams.scaleLabel}</p>
           <ol class="bev-scale__rows">
@@ -171,7 +176,7 @@ const SPREAD = [
             ))}
           </ol>
         </div>
-      </TechNote>
+      </TechNote>}
 
       <p class="bev-grams__close">{b.grams.close}</p>
     </div>
@@ -279,7 +284,7 @@ const SPREAD = [
           >
             {/* Six finishes on a shared support-ring baseline, so height
                 difference reads instantly rather than being stated. */}
-            <figure class="bev-std__fig">
+            {showUnsupportedNeckGeometry && <figure class="bev-std__fig">
               <svg viewBox="0 0 180 150" data-nomirror role="img" aria-label={common.schematic}>
                 {/* Half section against a centre line, the way a neck finish is
                     actually drawn. Thread turns and finish height vary per
@@ -317,14 +322,14 @@ const SPREAD = [
                 </g>
               </svg>
               <figcaption class="figure-note">{common.schematic}</figcaption>
-            </figure>
+            </figure>}
 
             {/* The verified geometry of the standard, set to be read rather
                 than tucked into an 11px tracked-out strip. */}
             <dl class="caps bev-std__spec">
-              <div class="cap"><dt class="cap__k">{b.neck.specLabels.geometry}</dt><dd class="cap__v">{s.summary}</dd></div>
+              {showUnsupportedNeckGeometry && <div class="cap"><dt class="cap__k">{b.neck.specLabels.geometry}</dt><dd class="cap__v">{s.summary}</dd></div>}
               <div class="cap"><dt class="cap__k">{b.neck.specLabels.use}</dt><dd class="cap__v">{s.use}</dd></div>
-              <div class="cap"><dt class="cap__k">{b.neck.specLabels.weight}</dt><dd class="cap__v t-mono">{s.weight}</dd></div>
+              {showUnsupportedNeckGeometry && <div class="cap"><dt class="cap__k">{b.neck.specLabels.weight}</dt><dd class="cap__v t-mono">{s.weight}</dd></div>}
               <div class="cap bev-std__warn"><dt class="cap__k">{b.neck.specLabels.warning}</dt><dd class="cap__v">{s.warning}</dd></div>
             </dl>
           </div>
@@ -524,11 +529,12 @@ const SPREAD = [
       </TechNote>
 
       <p class="bev-cap__boundary">{b.closures.boundary}</p>
+      <SourceReference locale={locale} ids={['REF-EU-2019-904-A6']} />
     </div>
   </section>
 
   {/* ═══ 07 · FREIGHT ═══════════════════════════════════════════════════ */}
-  <section class="bev-freight" id="freight">
+  {showUnsupportedFreightComparison && <section class="bev-freight" id="freight">
     <div class="shell--wide bev-freight__inner">
       <div class="bev-freight__head">
         <p class="eyebrow">{b.freight.index} · {b.freight.kicker}</p>
@@ -571,7 +577,7 @@ const SPREAD = [
 
       <p class="bev-freight__close">{b.freight.close}</p>
     </div>
-  </section>
+  </section>}
 
   {/* ═══ 08 · START ═════════════════════════════════════════════════════ */}
   <section class="bev-start" id="start">
@@ -598,7 +604,7 @@ const SPREAD = [
       {/* Layer three: the technical depth, folded away until it is wanted. */}
       <div class="bev-panels">
         <h3 class="t-label bev-panels__h">{b.panels?.heading ?? b.blocksPanelsHeading}</h3>
-        {(b.panels?.items ?? []).map((panel: any, i: number) => (
+        {publicPanels.map((panel: any, i: number) => (
           <div class="disc" data-open="false">
             <h4>
               <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>

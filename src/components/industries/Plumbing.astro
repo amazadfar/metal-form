@@ -29,6 +29,11 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const publicMechanismRows = (b.mechanism.compare.rows ?? []).filter((_: any, index: number) => index > 1);
+const showUnsupportedPressureFigures = false;
+const publicPanels = (b.panels.items ?? []).map((panel: any, index: number) =>
+  index === 0 ? { ...panel, bullets: panel.bullets.filter((_: string, bulletIndex: number) => bulletIndex !== 1) } : panel
+);
 
 /* ── Orthographic fitting silhouettes ──────────────────────────────────────
    One 120 × 100 frame, one line weight, one nominal bore, so the twelve read
@@ -508,7 +513,7 @@ const unscrewing = mechs[1] ?? {};
                 </tr>
               </thead>
               <tbody>
-                {(b.mechanism.compare.rows ?? []).map((r: any) => (
+                {publicMechanismRows.map((r: any) => (
                   <tr>
                     <th scope="row">{r.k}</th>
                     <td>{r.a}</td>
@@ -835,7 +840,7 @@ const unscrewing = mechs[1] ?? {};
           </figure>
         </div>
 
-        <TechNote locale={locale} kind="detail">
+        {showUnsupportedPressureFigures && <TechNote locale={locale} kind="detail">
           <div class="plm-tol">
             <p class="t-label">{b.agreement.toleranceLabel}</p>
             <dl class="spec plm-tol__list">
@@ -848,7 +853,7 @@ const unscrewing = mechs[1] ?? {};
             </dl>
             <p class="plm-src t-fine">{b.agreement.source}</p>
           </div>
-        </TechNote>
+        </TechNote>}
 
         <TechNote locale={locale} kind="reasoning">
           <div class="plm-split">
@@ -1031,7 +1036,7 @@ const unscrewing = mechs[1] ?? {};
         {/* Layer three: the depth, folded away until it is wanted. */}
         <div class="plm-panels">
           <h3 class="t-label plm-panels__h">{b.panels.heading}</h3>
-          {(b.panels.items ?? []).map((panel: any, i: number) => (
+          {publicPanels.map((panel: any, i: number) => (
             <div class="disc" data-open="false">
               <h4>
                 <button class="disc__btn" type="button" aria-expanded={i === 0 ? 'true' : 'false'}>

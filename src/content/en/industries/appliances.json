@@ -12,7 +12,7 @@
       "The part is large.",
       "The tolerance is not."
     ],
-    "lead": "Tooling and engineering for appliance mouldings — door bins, drawers, ducts, frames, fascias, housings. On parts this size, flatness, cycle time and cost are all decided in the steel. We work the geometry, the cooling and the fit before it is cut.",
+    "lead": "Tooling and engineering for appliance mouldings — door bins, drawers, ducts, frames, fascias and housings. On parts this size, flatness, cooling and fit are strongly influenced by geometry and tool design, so those decisions are reviewed before steel is cut.",
     "markers": [
       "Manufacturing since 2006",
       "1,000+ completed projects",
@@ -31,8 +31,8 @@
     "process": {
       "index": "01",
       "kicker": "The boundary, first",
-      "heading": "An appliance is four processes pretending to be one product.",
-      "body": "Before capability, the honest map. A refrigerator door is a pressed steel skin, a foamed core, a thermoformed liner, an extruded gasket and a set of injection mouldings. Four processes, usually four factories. An engineer can tell within a minute whether a supplier knows which is which.",
+      "heading": "An appliance combines several manufacturing processes.",
+      "body": "A refrigerator door can combine sheet metal, foam, thermoformed parts, extrusions and injection mouldings. We focus on the moulded components while designing them to fit the surrounding assembly.",
       "figHeading": "Refrigerator door assembly, outer to inner",
       "rows": [
         {
@@ -111,7 +111,7 @@
         }
       ],
       "weldHeading": "A weld line is a structural decision",
-      "weldBody": "Published work puts knit-line strength as low as about 20 per cent of the material's nominal strength. That makes gate position a load-path question first and a cosmetic question second. On a long fascia the industry answer is cascade fill: hot runner gates opened in timed sequence so one flow front travels the whole length instead of several colliding. A documented case reduced clamp force by roughly 20 per cent, cavity pressure by 50 bar and part weight by about 5 per cent.",
+      "weldBody": "Weld lines can reduce local strength, especially when they cross a loaded feature. On long parts, gate position and — where the moulding process supports it — sequenced filling can move the meeting point away from critical or visible areas.",
       "weldWarn": "The honest downside, published alongside the benefit: hesitation and flow marks can still appear where one gate hands over to the next, and they need process tuning to clear.",
       "boundaryNote": "Cascade fill, gas assist and structural foam are industry routes. They belong to the moulding shop and its equipment, not to us. We design the tool so the route you actually run is the one the geometry suits.",
       "close": "Nominal wall thickness affects shot weight, cycle time and gate count at the same time, often in competing directions. That is why it must be resolved before steel cutting begins.",
@@ -145,7 +145,7 @@
       ],
       "coolingHeading": "Deep cores need coolant pushed into them",
       "coolingBody": "On a drawer, a bin or a crisper box the core is a tall block wrapped in plastic. It heats up, and a straight-drilled line will not reach it. Baffles and bubblers force water down into the core and back out. Circuits are kept short enough that coolant does not arrive warm at the far end of a long part — a quiet and very common source of one-sided shrinkage.",
-      "close": "The countermeasures are design-side first: uniform wall or gradual transitions, ribs and gussets for stiffness, ribs held at or below roughly 60 per cent of nominal wall so a stiffener does not pull a sink into the face behind it, a gate layout that fills evenly, and venting so trapped air does not create its own cold spot. Process comes second. No process window recovers a part that was cooled from one side.",
+      "close": "The countermeasures start in design: consistent wall sections, sensible transitions, ribs and gussets sized to avoid sink, balanced gate layout, and cooling that reaches both sides of the part. Process tuning comes after the geometry and cooling strategy.",
       "sourceNote": "The 60 per cent rib-to-wall guidance and the 50–80 per cent cooling share of cycle time are published industry practice, not Metal Form measurements."
     },
     "fit": {
@@ -204,7 +204,7 @@
       "index": "05",
       "kicker": "What the machine is asked for",
       "heading": "Clamp force does not care what the part weighs.",
-      "body": "Tonnage is set by projected area — the two-dimensional shadow of the part along the direction of injection — multiplied by a clamp factor and a safety margin. A large flat panel can be light and still need a very large press. Published practice puts the clamp factor between 2 and 8 tons per square inch, commonly around 4 to 5, and puts large appliance mouldings in the 400 to 1,000-plus ton classes.",
+      "body": "Clamp requirement follows projected area and cavity pressure, not part weight. A large, flat moulding can therefore need a large press even when the shot itself is relatively light. Machine selection is confirmed against the actual part and tool.",
       "areaLabel": "area",
       "forceLabel": "clamp",
       "scaleLabel": "Press class, tons",
@@ -281,7 +281,7 @@
         }
       ],
       "unitLabel": "per cent",
-      "close": "At appliance volumes the mould is close to a rounding error per part. Amortised tooling only leads below roughly a thousand parts, and no appliance model is that. So the cheaper decision over a model life is usually the more expensive tool: better cooling layout, an honest nominal wall, gates placed to fill rather than to be convenient. Where the grams and the seconds are is a question we answer against your part.",
+      "close": "At production volume, recurring material and machine time can matter more than tooling amortisation. We assess wall section, cooling, gate layout and cavitation against your real annual volume instead of publishing a generic percentage split.",
       "sourceNote": "Proportions and ranges in this band are published industry figures, not Metal Form measurements."
     },
     "strategy": {

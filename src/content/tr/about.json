@@ -6,7 +6,7 @@
   "hero": {
     "kicker": "Hakkımızda",
     "headline": [
-      "2006’dan beri",
+      "2006'dan beri",
       "kalıp yapıyor",
       "ve parça üretiyoruz."
     ],
@@ -27,17 +27,17 @@
       "title": "İşin nasıl örgütlendiği",
       "body": [
         "Rotayı Metal Form koordine eder. Mühendislik, kalıp imalatı, üretim ve tedarik; tek bir şartnameye karşı tek bir proje olarak yönetilir ve bir şey ters gittiğinde sonucun sorumluluğu taraflar arasında yer değiştirmez.",
-        "Ticari açıdan asıl önemli olan kısım budur. Bu sektördeki olağan başarısızlık kötü bir kalıp değildir; bir tasarımcı, bir kalıpçı ve bir enjeksiyoncu arasındaki üçlü tartışmadır — üçü de kendi aşaması için teknik olarak haklıdır. Bu tartışmayı ortadan kaldırmak, çoğu alıcı için tek başına herhangi bir teknik yetkinlikten daha değerlidir.",
-        "Şirket, çiziminizi okuyan kişiyle çeliği işleyen kişinin arasında tek bir konuşma olacak kadar küçük — ve alışılmadık bir projeyi ciddiye alacak kadar küçük."
+        "Tasarım, kalıp ve üretimin tek proje altında koordine edilmesi aşamalar arasındaki devir kayıplarını azaltır. Ticari karşılığı, müşterinin daha az arayüz yönetmesi ve değişiklik gerektiğinde sorumluluğun daha net kalmasıdır.",
+        "Mühendislik ile kalıp imalatı yakın koordinasyon içinde yürütülür; böylece geometri, çelik ve üretimle ilgili konular uzun tedarikçi devirleri olmadan çözülebilir."
       ]
     },
     {
       "index": "03",
-      "title": "Mühendislik nereden geliyor",
+      "title": "Farklı sektörlerdeki kalıp deneyiminin katkısı",
       "body": [
-        "İran mühendisliğinin köklü bir kalıpçılık geleneği vardır ve atölye bu geleneğin içinde yer alır: bir kuşaklık kalıp yapım deneyimi ve daha büyük bir pazarda her biri ayrı bir uzman tedarikçiye sahip olacak sektörlerde çalışma alışkanlığı.",
+        "Farklı kalıp sektörlerinde çalışmak aynı temel kararları farklı koşullarda görmeyi sağlar: akış, soğutma, aşınma, mekanizmalar, tekrarlanabilirlik ve bakım. Bu birikim, yeni bir parça alışılmış bir şablona uymadığında özellikle değerlidir.",
         "Bu genişlik alışılmadıktır ve gerçekten işe yarar. Bir damlatıcı kalıbı, yüksek göz sayısı hakkında ağır vasıta braketinin asla öğretmeyeceği şeyleri öğretir; bir kozmetik kapağı, görünen yüzeyler hakkında bir bağlantı parçasının asla öğretmeyeceği şeyleri. İkisi de bir sonraki projede yeniden karşınıza çıkar.",
-        "Firma İran'da kayıtlıdır. Menşe ülkenin önem taşıdığı yerlerde — sözleşmeler, gümrük, sevkiyat evrakları — bu açıkça belirtilir; lojistik ise önceden vaat edilmek yerine teklifle birlikte karara bağlanır."
+        "Menşe ülke, sevkiyat rotası ve teslim şartları her projenin ticari belgelerinde belirtilir; teknik kanıtın yerine kullanılmaz."
       ]
     },
     {
@@ -74,8 +74,8 @@
   "accountability": {
     "heading": "Baştan sona tek muhatap sorumludur.",
     "body": [
-      "Metal Form; mühendisler, kalıpçılar, tezgâh operatörleri ve üretim ortaklarıyla çalışır ve bu bileşim sabit değildir, projeye göre seçilir. Değişmeyen şey, müşterinin kimi sorumlu tuttuğudur.",
-      "Tasarım kararları kalıp göz önündeyken alınır. Kalıp düzeltmeleri, kimin hatası olduğuna dair ticari bir tartışma açılmadan yapılır. Yedek parçalar, orijinalini işleyen ellerden gelir. Bir parça başka bir yerde üretilmek zorunda kalırsa bile, yine bizim spesifikasyonumuza göre üretilir."
+      "Metal Form mühendislik, kalıp, talaşlı imalat, üretim ve tedariki tek proje olarak koordine eder. Gerçek üretim rotası her iş için ayrı tanımlanır; müşteri Metal Form tarafında tek teknik muhatapla çalışır.",
+      "Tasarım kararları kalıp ve üretim birlikte düşünülerek incelenir. Düzeltmeler, yedekler ve değişiklikler aynı proje şartnamesine göre yönetilir; böylece sorumluluğun tedarikçiler arasında taşınması gerekmez."
     ]
   },
   "cta": {

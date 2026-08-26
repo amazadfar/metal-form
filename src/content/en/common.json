@@ -68,7 +68,7 @@
     "phoneLabel": "Telephone",
     "addressLabel": "Registered address",
     "responseLabel": "Response time",
-    "pendingNote": "Direct messaging is being connected. Until it is live, this button opens the contact page with every channel currently available."
+    "pendingNote": "Direct contact channels are still being configured. If no live channel is shown on the contact page, this build is not ready to receive enquiries."
   },
   "footer": {
     "tagline": "One accountable partner for engineering, tooling, production and supply of moulded components.",
@@ -85,5 +85,9 @@
     "schematicLabel": "Schematic drawing",
     "scrollForMore": "Scroll"
   },
-  "schematic": "Schematic"
+  "schematic": "Schematic",
+  "references": {
+    "sourceLabel": "Source",
+    "referenceLabel": "Reference"
+  }
 }

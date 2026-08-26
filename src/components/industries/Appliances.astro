@@ -29,6 +29,9 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const publicProcessNotes = new Set([0, 3, 4, 5]);
+const showUnsupportedPressRanges = false;
+const showUnsupportedCycleBreakdown = false;
 
 /* ── 01 · exploded elevation ──────────────────────────────────────────────
    Six layers of a refrigerator door, separated along one horizontal axis.
@@ -240,7 +243,7 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
               <span class="app-prow__i t-mono">{r.index}</span>
               <span class="app-prow__n">{r.name}</span>
               <span class="badge app-prow__p">{r.process}</span>
-              <span class="app-prow__note">{r.note}</span>
+              {publicProcessNotes.has(i) && <span class="app-prow__note">{r.note}</span>}
             </li>
           ))}
         </ol>
@@ -546,7 +549,7 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
       <p class="t-lead app-mach__lead">{b.machine.body}</p>
     </div>
 
-    <div class="shell--wide app-mach__ton">
+    {showUnsupportedPressRanges && <div class="shell--wide app-mach__ton">
       <figure class="app-mach__tonfig" data-reveal>
         <div class="scroller app-figscroll">
         <svg viewBox="0 0 1200 300" data-nomirror role="img" aria-label={common.schematic}>
@@ -591,14 +594,14 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
           ))}
         </dl>
       </div>
-    </div>
+    </div>}
 
     <div class="shell--wide app-mach__deflect">
       <h3 class="app-h4">{b.machine.deflectHeading}</h3>
       <p>{b.machine.deflectBody}</p>
     </div>
 
-    <div class="shell--wide app-mach__cycle">
+    {showUnsupportedCycleBreakdown && <div class="shell--wide app-mach__cycle">
       <h3 class="app-h3">{b.machine.cycleHeading}</h3>
 
       {b.machine.cycleBars.map((bar: any, bi: number) => (
@@ -625,7 +628,7 @@ const STACK_TOTAL = STACK_W.reduce((a, n) => a + n, 0);
       ))}
 
       <p class="app-mach__src t-fine">{b.machine.sourceNote}</p>
-    </div>
+    </div>}
 
     <div class="shell--wide">
       <p class="app-mach__close">{b.machine.close}</p>

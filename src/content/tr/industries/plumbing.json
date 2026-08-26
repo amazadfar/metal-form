@@ -16,7 +16,7 @@
     "markers": [
       "Katlanabilir ve diş sökücü maçalar",
       "46 göze kadar kalıp deneyimi",
-      "Ürün kodu kuyruğu için modüler şaseler"
+      "Maça kaydırıcılar · katlanabilir maçalar · döner maçalar"
     ]
   },
   "blocks": {
@@ -104,7 +104,7 @@
       "index": "01",
       "kicker": "Ürün ailesinin kendisi üründür",
       "heading": "Tek geometri, dokuz çap, on iki konfigürasyon.",
-      "body": "Çalışan bir ek parça ailesi tipik olarak 200 ila 900 aktif ürün kodudur. Bunların bir avuç dolusu adedin büyük bölümünü taşır. Geri kalanı kalıp maliyetinin büyük bölümünü taşır. Bu dengesizlik sektörün belirleyici ticari problemidir ve bir katalog problemi olmadan çok önce bir kalıp problemidir.",
+      "body": "Bir fitting ailesinde çok sayıda çap ve konfigürasyon olabilir. Küçük bir grup ana hacmi taşırken uzun kuyruktaki ürünler daha seyrek üretilebilir; bu nedenle özel ve değiştirilebilir kalıp çözümleri her parça için ayrı karşılaştırılmalıdır.",
       "body2": "Aşağıda bir ürün ailesinin biçimi matris olarak çizilmiştir: dokuz nominal çapa karşı on iki ek parça tipi. Bir ürün ailesinin nasıl çoğaldığının bir örneğidir; bir Metal Form projesi değildir ve sizinki için bir öneri değildir.",
       "tabsLabel": "Kalıp stratejisi",
       "views": [
@@ -313,7 +313,7 @@
           "body": "Bir parça hangi rotadan giderse gitsin, matristeki her manşonun aynı boruyla anlaşması gerekir. Şase bu gerekliliği gevşetmez. Yalnızca işleme saatlerinin nereye gideceğini değiştirir."
         }
       ],
-      "close": "Göz eklemeden önce düzeni dengeleyin. Eşit dolmayan 32 gözlü bir kalıp, sekiz reddi olan 24 gözlü bir kalıptır ve bedeli 32 gözlüymüş gibi ödenir."
+      "close": "Göz sayısını artırmak ancak kalıp tutarlı biçimde doluyor, soğuyor ve aynı sonucu tekrarlıyorsa fayda sağlar. Göz sayısını çıktı olarak değerlendirmeden önce kalıp dengesini çözün."
     },
     "mechanism": {
       "index": "02",
@@ -416,8 +416,8 @@
     "thread": {
       "index": "03",
       "kicker": "Diş ve sızdırmazlık",
-      "heading": "Konik diş yanaklarından sızdırmazlık yapar. Silindirik diş bir conta yuvası ister.",
-      "body": "Teknik resimde birbirine benzeyen iki diş, bir ek parçada hiç de benzer davranmaz ve farklı çelik ister. Konik diş, kavradıkça sıkı geçmeyle sızdırmazlık sağlar. Silindirik diş tek başına hiç sızdırmazlık yapmaz — bunu başka bir şeyin yapması gerekir ve o şey bir kanal, bir yüzey ya da bir elastomerdir. Bunu yanlış yapmak; monte olan, şöyle bir bakışta geçen ve duvarın içinde terleyen bir ek parça üretir.",
+      "heading": "Diş formu ile sızdırmazlık yöntemi birlikte tanımlanmalıdır.",
+      "body": "Konik ve paralel diş aynı şekilde sızdırmazlık sağlamaz. Doğru arayüz diş sıkışmasına, alın contasına, gasket'e, O-ring'e veya başka bir tanımlı yönteme dayanabilir. Kalıp gerçek standart ve sızdırmazlık yöntemine göre tasarlanmalıdır.",
       "figures": [
         {
           "id": "taper",

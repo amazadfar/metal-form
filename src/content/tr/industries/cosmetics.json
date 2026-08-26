@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Kozmetik ve kişisel bakım kalıpları - kapaklar, kavanozlar, dispenser parçaları | Metal Form",
-    "description": "Kozmetik kapaklar, kavanozlar, pompa ve mekanizma parçaları için kalıp tasarımı ve imalatı. 46 göze kadar çok gözlü kalıplar, sıcak ve soğuk yolluk, dişli maçalar, kozmetik yüzey kalitesi. Mühendislik, DFM, tersine mühendislik ve sürekli tedarik. 2006'dan beri İran mühendisliği."
+    "description": "Kozmetik kapaklar, kavanozlar, pompa ve mekanizma parçaları için kalıp tasarımı ve imalatı. 46 göze kadar çok gözlü kalıplar, sıcak ve soğuk yolluk, dişli maçalar, kozmetik yüzey kalıpları, mühendislik, DFM, tersine mühendislik ve sürekli tedarik. 2006'dan beri üretim."
   },
   "name": "Kozmetik ve Kişisel Bakım",
   "tile": "Görünen yüzey kalıpçılığı. Parlatma sınıfı, ayırma yüzeyi ve yolluk girişi çelik işlenmeden kararlaşır.",
@@ -61,14 +61,14 @@
           "note": "Teamüle göre değil, belirlenmiş doku derinliğine göre verilir. Çıkma açısı yetersizse parça itmede sürtünür ve çizilir."
         }
       ],
-      "close": "Çelik bir kez işlendikten sonra bu beşinin hiçbiri ayarlanamaz."
+      "close": "Beş unsurun tamamı çelik işlenmeden önce kararlaştırılmalıdır; sonradan değiştirmek yeniden işleme veya yeni insert gerektirebilir."
     },
     "gloss": {
       "index": "02",
       "kicker": "Yüzey şartnamesi",
       "heading": "Parlaklık el emeğidir. Yüzey yüzey satın alınır.",
       "body": "SPI sınıfları, elmas pasta ve bir parlatmacının elleriyle ulaşılan bir parlatma ölçeğidir. VDI 3400 ise erozyonla (EDM) yüzeye işlenen ayrı bir pürüzlülük ölçeğidir. Birbirlerinin yerine geçmezler ve ancak yaklaşık olarak örtüşürler. Kozmetik kalıp bütçesinin ya iyi harcandığı ya da boşa gittiği yer, tam olarak bu ikisinin arasıdır.",
-      "note": "VDI ölçeğinde her altı birim pürüzlülüğü kabaca ikiye katlar. Doku derinliği de asgari çıkma açısını belirler; yeterli açı verilmeden çizilmiş parça, maçadan çizik çıkar.",
+      "note": "SPI ve VDI sınıfları farklı yüzey işleme yöntemlerini tanımlar. Daha derin doku genellikle daha fazla çıkma açısı ister; kesin yüzey, pürüzlülük ve açı her yüzey ve proje için ayrı belirtilir.",
       "tabsLabel": "Yüzey sınıfı",
       "ladderLabel": "Aynı cidar, sekiz sınıf",
       "specLabels": {
