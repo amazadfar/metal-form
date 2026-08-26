@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Elektrik ve Elektronik",
     "headline": [
-      "Kontağı tutmak",
-      "zorunda olan plastik."
+      "Kontak konumunu",
+      "gövde hassasiyeti belirler."
     ],
     "lead": "Konnektör gövdeleri, klemensler, anahtar parçaları, kablo rakorları, muhafazalar. İnce cidarlar, derin yuvalar, metal insertler ve birkaç milyon atımdan sonra da doğru kalması gereken bir adım. Parçayı ya da teknik resmi gönderin. Geometri, kalıp rotası, göz sayısı ve tedarik üzerinden dönüş yaparız.",
     "markers": [
@@ -162,7 +162,7 @@
           "note": "Tabanda tek giriş. Cepheler artık tırnağın altında buluşmaz; geriye yalnızca maça pimlerinin arkasındaki iki dikiş kalır ve onlar da hiçbir şeyin yüklenmediği yere düşer. Vazgeçilen şey: tek giriş dolum basıncını yükseltir ve en son dolan bölgeyi üst iki köşeye taşır; dolayısıyla havalandırma da oraya gider."
         }
       ],
-      "leversHeading": "Beş kaldıraç, unutulma sırasıyla",
+      "leversHeading": "Birleşme izinin konumunu ve dayanımını belirleyen beş etken",
       "levers": [
         "Yolluk girişi konumu ve sayısı",
         "Buluşma noktasını bir detayın üzerinden yürütmek için valfli girişli bir kalıpta sıralı dolum",
@@ -432,7 +432,7 @@
       "close": "O liste, çalışma ilişkisinin biçimidir: elektriksel performans ve onay sizin, geometri, çelik ve tedarik bizim. İkisinin kesiştiği yerde — kaçak bariyeri işlevi gören bir kaburga, geçme yükü altındaki bir birleşme izi, eşleşen bir yüzeydeki yolluk izi — fiyat vermeden önce konuyu açarız."
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Rakamlarla ince cidar",

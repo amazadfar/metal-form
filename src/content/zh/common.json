@@ -15,7 +15,7 @@
     "whatsapp": "用 WhatsApp 发送项目资料",
     "sendProject": "发送项目资料",
     "talkToEngineer": "直接与工程师沟通",
-    "viewIndustry": "进入该行业",
+    "viewIndustry": "查看行业方案",
     "more": "展开详情",
     "less": "收起详情",
     "next": "下一个",
@@ -48,7 +48,7 @@
     "delivery": "全球发货",
     "deliveryNote": "模具和零件都可以发往海外。贸易条款、运输路线和单证随报价一并确认。",
     "response": "2 个工作日内初步回复",
-    "responseNote": "第一次技术判读：可行性方向、还缺什么、下一步做什么。报价在几何和批量清楚之后才给。"
+    "responseNote": "初步回复将说明技术可行性、尚缺资料及建议的下一步。待产品几何和生产批量明确后，再编制报价。"
   },
   "nda": {
     "heading": "保密与 NDA",

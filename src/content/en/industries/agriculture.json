@@ -172,7 +172,7 @@
           {
             "id": "m05",
             "name": "m = 0.5",
-            "summary": "Partially compensating. Flow still rises with pressure, but much more slowly than pressure does. Most of the compensation is bought by geometry rather than by a diaphragm."
+            "summary": "Partially compensating. Flow still rises with pressure, but much more slowly. Most of the compensation comes from the labyrinth geometry; there is no diaphragm."
           },
           {
             "id": "m1",
@@ -185,7 +185,7 @@
     },
     "cavities": {
       "index": "04",
-      "kicker": "The arithmetic",
+      "kicker": "Production economics",
       "heading": "Output is cavities divided by cycle. Both halves move.",
       "body": "A part consumed in hundreds of millions a season is not bought by the part. It is bought by the shot. Industry write-ups on cavitation are blunt about what happens when you push the first number: tooling cost rises non-linearly rather than in proportion, cycle time lengthens rather than staying flat, press size and hourly rate climb with the tool, and a large share of high-cavitation tools never run at full cavity count.",
       "body2": "So the gain is never the ratio on the label. One published comparison puts a four-cavity tool at 35 seconds against 42 to 48 seconds for the sixteen-cavity version of the same part — four times the cavities, closer to three times the output.",
@@ -373,7 +373,7 @@
       "close": "Emitter geometry is the product in this sector, and it is routinely copied. We treat it that way: confidentiality first, drawings held, and the second tool built to your drawings rather than to ours."
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "What the product standard asks of an emitter",

@@ -7,8 +7,8 @@
     "kicker": "Yetkinlikler",
     "headline": [
       "Dört aşama.",
-      "Zinciri alın,",
-      "ya da tek halkasını."
+      "Tüm süreci alın",
+      "ya da tek hizmet seçin."
     ],
     "lead": "Projelerin çoğu hepsine birden ihtiyaç duyarak gelir. Bazıları ise yalnızca tek bir teknik resmin incelenmesini, bir kalıbın düzeltilmesini ya da başkasının yaptığı bir kalıptan parça tedarik edilmesini ister. İkisi de bizim için olağan iştir."
   },
@@ -132,8 +132,8 @@
     }
   ],
   "modularity": {
-    "heading": "Hepsini almak zorunda değilsiniz.",
-    "body": "Genellikle zincirin tamamı daha iyi işler; çünkü projeler zamanı ve parayı mühendislik, kalıp ve üretim arasındaki devirlerde kaybeder. Yine de her aşama tek başına da ayakta durur ve birine fiyat almak sizi bir sonrakine bağlamaz.",
+    "heading": "Yalnızca ihtiyacınız olan hizmetleri seçin.",
+    "body": "Tüm süreci tek muhatapla yürütmek, mühendislik, kalıp ve üretim arasındaki gecikme ve anlaşmazlıkları azaltır. Her aşama ayrı olarak da alınabilir; bir aşama için fiyat istemek sizi sonrakine bağlamaz.",
     "points": [
       "Yalnızca mühendislik — bir model, tersine mühendislikle çıkarılmış bir parça, bir DFM incelemesi. Mühendislik işi olarak satılır.",
       "Yalnızca kalıp — sizin teknik resminize göre yapılır, tesisinize sevk edilir, sizin tarafınızdan çalıştırılır.",

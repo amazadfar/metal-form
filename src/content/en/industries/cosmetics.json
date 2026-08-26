@@ -221,7 +221,7 @@
         {
           "name": "Continuous-thread screw cap",
           "spec": "18-410 · 20-410 · 24-410 · 28-410",
-          "note": "The workhorse. The thread retains the closure and the land does the sealing. How the internal thread leaves the steel — unscrewing gear train, stripping ring or collapsible core — sets cycle time, build cost and the spares list in one decision."
+          "note": "A standard solution for threaded closures. The thread provides retention and the land provides the seal. The release method for the internal thread — unscrewing drive, stripper ring or collapsible core — determines cycle time, tool cost and required spares."
         },
         {
           "name": "Flip-top and hinged closure",
@@ -426,7 +426,7 @@
       ]
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "Surface specification, face by face",

@@ -162,7 +162,7 @@
           "note": "One gate at the base. The fronts no longer meet under the latch; the only seams left are the two behind the core pins, and they fall where nothing is loaded. What you give up: a single gate raises fill pressure and moves the last-to-fill into the two top corners, so the venting goes there instead."
         }
       ],
-      "leversHeading": "The five levers, in the order they get forgotten",
+      "leversHeading": "Five variables that control weld-line position and strength",
       "levers": [
         "Gate position and gate count",
         "Sequenced fill on a valve-gated tool, used to walk the meeting point off a feature",
@@ -432,7 +432,7 @@
       "close": "That list is the shape of the working relationship: you own the electrical performance and the approval, we own the geometry, the steel and the supply. Where the two meet — a rib that is a creepage barrier, a weld line under an insertion load, a gate vestige on a mating face — we raise it before we quote."
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "Thin wall, in numbers",

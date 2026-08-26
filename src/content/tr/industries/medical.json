@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Tıbbi ve Farmasötik",
     "headline": [
-      "Her göz aynı parçayı",
-      "üretmek zorunda."
+      "Her göz aynı",
+      "parça ölçülerini vermeli."
     ],
     "lead": "Tıbbi ve farmasötik plastik parçalar için mühendislik, DFM ve çok gözlü kalıp. Kalıbı ve arkasındaki mühendisliği biz yaparız; valide proses sizde kalır.",
     "markers": [
@@ -119,9 +119,9 @@
     },
     "arithmetic": {
       "index": "02",
-      "kicker": "Aritmetik",
-      "heading": "İki kaldıraç, ikisi de kalıpta belirlenir.",
-      "body": "Yüksek adetli tek kullanımlık bir parçanın fiyatı; hammadde, artı göz sayısına bölünmüş makine zamanı, artı fire, artı amortismana yayılmış kalıptır. Gerçekten büyüklük taşıyan tek iki kaldıraç göz sayısı ve çevrim süresidir; ikisi de daha hiç çelik işlenmeden karara bağlanır.",
+      "kicker": "Üretim ekonomisi",
+      "heading": "Çıktıyı göz sayısı ve çevrim süresi belirler.",
+      "body": "Yüksek adetli tek kullanımlık bir parçanın birim maliyeti; hammadde, gözlere dağıtılan makine zamanı, fire ve kalıp amortismanından oluşur. En büyük etkiyi genellikle göz sayısı ile çevrim süresi yaratır ve her ikisi de büyük ölçüde çelik işlenmeden önce belirlenir.",
       "body2": "Göz sayısını ve çevrimi ayarlayın. Gerisi aritmetik.",
       "calcLabel": "Çıktı",
       "controls": [
@@ -205,7 +205,7 @@
           "cause": "Kalıp değil; malzeme ya da sıcaklık."
         }
       ],
-      "close": "Son satır ticari olarak işe yarayan satır: kimse kalıbı açmadan önce bir kalıp sorununu malzeme ya da sıcaklık sorunundan ayırır.",
+      "close": "Sonuçları akış yoluna göre gruplamak, kalıp sökülmeden önce sapmanın kalıptan mı yoksa malzeme ve sıcaklıktan mı kaynaklandığını gösterir.",
       "figureMark": "100–300 °F"
     },
     "line": {
@@ -224,7 +224,7 @@
         "Kendi kalifikasyon çalışmanıza taşıyabileceğiniz deneme kayıtları",
         "Tasarım aşamasında belirlenmiş yedek göz insertleri, maça pimleri ve aşınma parçaları",
         "Aynı parça şartnamesine göre ikiz, yedek ve ikinci kaynak kalıpları",
-        "Parçanın steril ya da regülasyona tabi kapsamın dışında olduğu durumlarda parça üretimi ve tedariki"
+        "Parça üretimi ve tedariği yalnızca parçanın steril veya başka bir regülasyona tabi üretim kapsamı dışında olduğu durumlarda yapılır."
       ],
       "staysHeading": "Sizde kalanlar",
       "stays": [
@@ -358,8 +358,8 @@
     },
     "second": {
       "index": "07",
-      "kicker": "Ticari gerekçe",
-      "heading": "İkinci kalıp.",
+      "kicker": "Tedarik sürekliliği",
+      "heading": "İkinci kalıp ne zaman gerekir?",
       "body": "Tek kalıp, tek tesis, tek ülke; insanların bağlı olduğu bir ürün hattı için tek arıza noktasıdır. İkinci kalıbı yapmak üstlendiğimiz bir iştir — başkasının yaptığı kalıplar için de.",
       "risks": [
         {
@@ -374,8 +374,8 @@
         },
         {
           "n": "03",
-          "scenario": "Enjeksiyoncunuzun ticari konumu değişir.",
-          "consequence": "Kalıp, onların pazarlık gücünün bulunduğu yerdir."
+          "scenario": "Enjeksiyoncunuzla ticari koşullar değişir.",
+          "consequence": "Tek kalıp enjeksiyoncunun kontrolündeyse seçenekleriniz sınırlıdır."
         },
         {
           "n": "04",
@@ -384,7 +384,7 @@
         },
         {
           "n": "05",
-          "scenario": "Bir pazar, üretimin ikinci bir coğrafyada yapılmasını şart koşar.",
+          "scenario": "Yeni bir pazar, başka bir bölgede üretim gerektirir.",
           "consequence": "Tek kalıbı taşımak; nakliye ve yeniden kalifikasyon boyunca tedariki durdurmak demektir."
         },
         {
@@ -432,7 +432,7 @@
       ]
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Göz sayısı: bu rakam gerçekte nasıl seçilir",

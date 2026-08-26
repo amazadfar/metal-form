@@ -86,6 +86,20 @@ says out loud.
 - **fa** — natural professional Iranian Persian. Correct نیم‌فاصله. Avoid
   bureaucratic register, long passives and calqued English noun phrases.
 
+## Transcreation guardrails
+
+- Treat English headlines and commercial metaphors as concepts, never as
+  sentence templates. If the metaphor is not idiomatic in the target language,
+  state the engineering or purchasing consequence directly.
+- Industry navigation uses the native equivalent of “choose”, “review” or
+  “explore”. Never use a literal equivalent of “open an industry”.
+- Words such as *lever*, *contract*, *money* and *arithmetic* are retained only
+  when they refer to an actual mechanism, agreement, currency or calculation.
+  Otherwise use the locale's normal terms for factor, interface, cost driver or
+  production economics.
+- `scripts/polish/native-copy-qa.mjs` blocks the known literal-calque patterns
+  across all eight non-English locales.
+
 ## Right-to-left mechanics (fa, ar, ur)
 
 - Latin runs inside RTL sentences (`PCO 1881`, `CATIA`, `48 Rc`) are isolated by

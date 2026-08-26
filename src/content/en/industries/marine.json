@@ -362,7 +362,7 @@
         }
       ],
       "bandsNote": "The bands are industry rules of thumb, convergent across independent low-volume moulders, and quoted here to describe the shape of a decision rather than a threshold.",
-      "lossHeading": "Where the money is actually lost",
+      "lossHeading": "The main sources of avoidable cost",
       "loss": [
         "Over-tooling. Four hardened cavities bought for an eight-hundred-piece line never return their capital, and the buyer carries that in cash flow for a decade.",
         "Under-tooling in the other direction. A prototype tool pushed through eight years of production, then failing mid-season with nothing standing behind it.",
@@ -433,7 +433,7 @@
       "boundaryNote": "One detail from that world, so the distinction is concrete. On a gasoline system a metallic fill body is bonded into the vessel bonding system, and a plastic fill body with a metallic cap and chain deliberately is not, because of the electrostatic discharge risk when the boat is out of the water. We can build the tool for either. The decision, and the certificate, belong to the builder."
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "Material shortlist for marine duty",

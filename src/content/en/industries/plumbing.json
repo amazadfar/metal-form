@@ -744,7 +744,7 @@
         }
       ],
       "disclaimer": "The figures above are chosen to be legible. They are the shape of the arithmetic, not a quotation and not a claim about your part.",
-      "lostHeading": "Where the money actually goes missing",
+      "lostHeading": "Where avoidable cost enters the process",
       "lost": [
         {
           "k": "Wall thickness carried forward",
@@ -861,7 +861,7 @@
       ]
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "Core mechanism selection",

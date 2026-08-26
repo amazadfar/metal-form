@@ -9,9 +9,9 @@
   "hero": {
     "kicker": "İçecek ve PET Ambalaj",
     "headline": [
-      "Her gram.",
-      "Her saniye.",
-      "Her göz."
+      "Preform ağırlığı.",
+      "Çevrim süresi.",
+      "Tüm gözlerde tutarlılık."
     ],
     "lead": "Preform kalıpları, kapak kalıpları, şişirme kalıbı değişim parçaları ve arkalarındaki mühendislik. Bir şişe ve bir kapak gönderin. Size geometri, göz sayısı, kalıp rotası ve üretim maliyeti üzerinden dönüş yaparız.",
     "markers": [
@@ -23,8 +23,8 @@
   "blocks": {
     "grams": {
       "index": "01",
-      "kicker": "Para nerede",
-      "heading": "Şişe demek hammadde demek. Birim ise gramdır.",
+      "kicker": "Üretim ekonomisi",
+      "heading": "Yüksek hacimde şişe maliyetini preform ağırlığı belirler.",
       "body": "Bir PET şişenin maliyetinin yaklaşık üçte ikisi, içindeki hammaddedir. Geri kalan her şey — kalıp, makine, işçilik, elektrik — hem daha küçük hem daha az değişkendir. Dolayısıyla bir dolum hattında gerçekten bileşik büyüyen tek sayı preform ağırlığıdır ve preform ağırlığını kalıp belirler.",
       "body2": "500 ml preformlar için boyun standardına göre yayımlanmış ağırlık bantları. Bunlar sektör rakamları, bizimkiler değil — sizin preformunuz, ürününüze özgü nedenlerle bu ölçeğin bir yerine oturur.",
       "scaleLabel": "500 ml preform ağırlığı, gram",
@@ -50,19 +50,19 @@
           "note": "Eski tip uzun gazlı içecek boynu. Yalnızca mevcut kurulu hatlarda — kapaklar 1881 ile birbirinin yerine geçmez."
         }
       ],
-      "close": "Bir gram yuvarlama hatası değildir. Yılda yüz milyon şişe basan bir hatta bir gram, yüz ton reçine demektir. Hesap sizin: sizin reçine fiyatınız, sizin adediniz, sizin şişeniz."
+      "close": "Yılda 100 milyon şişede her fazla gram, 100 ton ek hammadde demektir. Etkiyi kendi hammadde fiyatınız ve yıllık adedinizle hesaplayın."
     },
     "cavities": {
       "index": "02",
       "kicker": "Asıl argüman",
-      "heading": "En hafif göz, bütün gözlerin ağırlığını belirler.",
+      "heading": "Proses ayarını en hafif parça veren göz belirler.",
       "body": "Tesisiniz asgari bir et kalınlığını ve asgari bir ağırlığı garanti etmek zorundadır: basınç için, dikey yük için, raf ömrü için. Bu yüzden proses, kalıptaki en hafif göz bile bu alt sınırı geçene kadar kısılır. Diğer bütün gözler de saçılım ne kadarsa o kadar bu sınırın üzerinde çalışır.",
-      "body2": "Bu fark, kalıbın tüm ömrü boyunca her atımda, her gözde yeniden satın alınır. Kalıp fiyatı tek seferlik bir rakamdır. Gözler arası saçılım ise hammadde tedarikçinize ödenen bir yıllık gelirdir.",
+      "body2": "Bu ayarın üzerinde çalışan her göz, kalıbın ömrü boyunca her baskıda fazladan hammadde tüketir. Kalıp maliyeti bir kez ödenir; gözler arası sapma sürekli ödenir.",
       "chartCaption": "Göz ağırlığı dağılımının şartname alt sınırına göre konumu",
       "chartFloor": "Şartname alt sınırı",
       "chartMean": "Fiilen çalışılan ortalama ağırlık",
-      "chartGap": "Bu aralık, satın alıp ihtiyaç duymadığınız hammaddedir",
-      "close": "Saçılımı yarıya indirin; ortalama, şişeye hiç dokunmadan tasarım niyetine doğru iner. Eriyik dengesi, soğutma dengesi ve gözden göze imalat tutarlılığı tam olarak bunu satın alır.",
+      "chartGap": "Gözler arası sapmanın neden olduğu fazla hammadde",
+      "close": "Gözler arası sapmayı azaltmak, şişeyi değiştirmeden ortalama ağırlığı tasarım hedefine yaklaştırır. Bunun için dengeli eriyik akışı, dengeli soğutma ve tutarlı göz imalatı gerekir.",
       "cavityHeading": "Göz sayımız nerede duruyor, nerede durmuyor",
       "cavityBody": "Çıktı, göz sayısının çevrim süresine bölünmesidir. Yayımlanmış kılavuzlar, yılda kabaca 50 milyon preformun altında ekonomik bandı 16 – 48 göz, yüz milyonlarla ölçülen programlarda 72 – 96 göz olarak veriyor; 128 – 192 gözü ise yalnızca çok yüksek adedin sürdürüldüğü ve bunu destekleyecek bakım örgütünün bulunduğu yerlere bırakıyor.",
       "cavityBody2": "Metal Form'un kalıp deneyimi 46 göze kadar uzanır. Bu, bölgesel dolum tesislerinin, bağımsız dönüştürücülerin ve ikinci kaynak programlarının fiilen çalıştığı banttır — bir kalıbın yalnızca işletilmekle kalmayıp hâlâ dengelenebildiği, bakımının yapılabildiği ve üzerine akıl yürütülebildiği bant.",
@@ -71,7 +71,7 @@
     "neck": {
       "index": "03",
       "kicker": "Arayüz",
-      "heading": "Boyun, sözleşmenin kendisidir.",
+      "heading": "Boyun profili; şişe, kapak ve kapaklama makinesi arasındaki uyumu belirler.",
       "body": "Boyun profili; şişenin, kapağın ve kapaklama makinesinin üzerinde anlaşmak zorunda olduğu tek geometri parçasıdır. Bir boyun değişikliğinin asla yalnızca bir preform kalıbı değişikliği olmamasının nedeni budur — dönüşüm projelerinin de genellikle en son sipariş edilen parçada tıkanmasının nedeni.",
       "tabsLabel": "Boyun standardı",
       "standards": [
@@ -313,7 +313,7 @@
         },
         {
           "name": "Sızdırmazlık contası geometrisi",
-          "note": "Boyun profilinin tanımladığı sözleşmenin diğer yarısı."
+          "note": "Boyun profiliyle eşleşen kapak geometrisi."
         }
       ],
       "boundary": "Kapsamımızın bittiği yer: kapak kalıbı yaparız. Kesme ve katlama ekipmanı, kapaklama makineleri ve hat ekipmanı bizim tedarik edeceğimiz şeyler değildir."
@@ -358,7 +358,7 @@
       ]
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Kalıbınızın dayanması gereken koşullar",

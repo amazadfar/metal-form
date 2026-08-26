@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Tesisat ve İnşaat",
     "headline": [
-      "Bir ek parça ailesi, katalog olmadan önce",
-      "bir kalıp problemidir."
+      "Bir fitting serisi için",
+      "bütüncül kalıp stratejisi gerekir."
     ],
     "lead": "Dirsekler, teler, manşonlar, dişli adaptörler, vana gövdeleri, geçmeli, elektrofüzyonlu ve atık su parçaları. Ölçü tablosunu, malzemeyi ve yıllık adedi gönderin. Kalıp rotasını, göz sayısını, mekanizmayı ve parça ağırlığını geri veririz.",
     "markers": [
@@ -744,7 +744,7 @@
         }
       ],
       "disclaimer": "Yukarıdaki sayılar okunaklı olsun diye seçildi. Aritmetiğin biçimini gösterirler; bir teklif ya da parçanız hakkında bir iddia değildirler.",
-      "lostHeading": "Paranın gerçekte kaybolduğu yer",
+      "lostHeading": "Önlenebilir maliyetin sürece girdiği noktalar",
       "lost": [
         {
           "k": "Devralınıp taşınan cidar kalınlığı",
@@ -861,7 +861,7 @@
       ]
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Maça mekanizması seçimi",

@@ -9,8 +9,8 @@
   "hero": {
     "kicker": "Kimya ve Deterjan",
     "headline": [
-      "Kapak bir sızdırmazlıktır,",
-      "bir örtü değil."
+      "Kapağın sızdırmazlığını",
+      "sızdırmazlık geometrisi belirler."
     ],
     "lead": "Deterjan, ev kimyasalları ve zirai kimyasallar için kapaklar, çocuk kilitli ve emniyet bantlı sistemler ile dozajlama parçaları. Parçayı gönderin. Sızdırmazlık geometrisini, diş rotasını, göz sayısını ve üretim ekonomisini değerlendiririz.",
     "markers": [
@@ -305,8 +305,8 @@
     },
     "cavity": {
       "index": "06",
-      "kicker": "Aritmetik",
-      "heading": "Göz sayısı, mühendislik kılığına girmiş bir finansman kararıdır.",
+      "kicker": "Üretim ekonomisi",
+      "heading": "Göz sayısı, mühendislik sınırları olan bir yatırım kararıdır.",
       "body": "Kapak adetlerinde kalıp, parçanın içinde kaybolur. On milyonlarca atıma yayıldığında kalıp, adede sentin bir kesrini ekler — yani kalıp fiyatı neredeyse hiçbir zaman pahalı karar değildir. Pahalı kararlar gram, saniye ve gözdür; üçü de tek bir parça var olmadan işlenmiş bir geometriyle kilitlenir.",
       "figCaption": "Kesitte tek göz — maça, soğutma, giriş, havalandırma",
       "labels": {
@@ -316,7 +316,7 @@
         "gate": "Giriş",
         "vent": "Havalandırma"
       },
-      "leversHeading": "Üç kaldıraç, büyüklük sırasıyla",
+      "leversHeading": "Etki sırasına göre üç maliyet etkeni",
       "levers": [
         {
           "k": "Gram",
@@ -419,7 +419,7 @@
         }
       ],
       "escHeading": "Çevresel gerilme çatlaması",
-      "escBody": "Yüzey aktif madde teması artı gerilme, polietilenin klasik arıza biçimidir ve ikisinin aynı anda bulunması gerekir — hiçbiri tek başına yeterli değildir. Yayımlanmış yöntemler; laboratuvarlar arası tekrarlanabilirliği açıkça zayıf olan, yüzey aktif madde içinde çentikli bükülmüş şerit testi ASTM D1693 ile hizmet koşullarını daha iyi temsil eden ASTM D2561 gibi sabit gerilme yöntemleridir. Daha düşük yoğunluk daha düşük kristalinlik ve daha iyi çatlak direnci demektir; yayımlanmış uygulama bunu ders kitabı bilgisi değil, gerçek bir üretim kaldıracı sayar.",
+      "escBody": "Polietilende çevresel gerilme çatlağı için hem yüzey aktif madde teması hem de mekanik gerilme gerekir; bu koşullardan hiçbiri tek başına aynı hasarı oluşturmaz. ASTM D1693, yüzey aktif madde içinde çentikli ve bükülmüş şerit kullanır; yöntemin laboratuvarlar arası hassasiyeti düşüktür. ASTM D2561 gibi sabit gerilme yöntemleri kullanım koşullarını daha iyi temsil eder. Daha düşük yoğunluklu sınıflar genellikle daha düşük kristaliniteye ve daha iyi çatlak direncine sahiptir; bu nedenle yoğunluk, üretim için pratik bir malzeme seçim kriteridir.",
       "escNote": "Yukarıdaki yöntemler, tekrarlanabilirlik ve yoğunluk davranışı yayımlanmış sektör uygulamalarıdır. Metal Form, kalıbını yaptığı hiçbir parçanın gerilme çatlaması performansı hakkında iddiada bulunmaz.",
       "close": "Neyi deneyeceğimizi ve nedenini söyleriz — ve buna dair kanıtın nerede bittiğini de."
     },
@@ -482,7 +482,7 @@
       ]
     },
     "panels": {
-      "heading": "Daha ayrıntılı",
+      "heading": "Teknik ayrıntılar",
       "items": [
         {
           "title": "Boyun profili: her şeyi belirleyen dört harf",
@@ -521,7 +521,7 @@
             "Kapak kalıplarında havalandırma derinlikleri yaygın olarak kısa bantlarla 0,02 ile 0,05 mm bandında anılır; çapak hedefi olarak ayırma yüzeyi düzlüğü 0,01 mm mertebesinde verilir.",
             "Çevresel gerilme çatlaması için kimyasal olarak aktif bir ortam ile gerilmenin aynı anda bulunması gerekir. Birincisini yüzey aktif maddeler, ikincisini kalıplamadan kalan donmuş gerilme sağlar.",
             "ASTM D1693 yüzey aktif madde içinde çentikli bükülmüş şerit testidir ve laboratuvarlar arası tekrarlanabilirliği açıkça zayıftır. ASTM D2561 gibi sabit gerilme yöntemleri hizmet koşullarını daha iyi temsil eder.",
-            "Daha düşük yoğunluk daha düşük kristalinlik ve daha iyi çatlak direnci demektir — yayımlanmış uygulamada laboratuvar merakı değil, gerçek bir üretim kaldıracı olarak anılır.",
+            "Daha düşük yoğunluklu sınıflar genellikle daha düşük kristaliniteye ve daha iyi çatlak direncine sahiptir; bu nedenle yoğunluk, malzeme seçiminde pratik bir üretim kriteridir.",
             "Sıcaklık hepsini katlar. Yayımlanmış değerler, dorselerin 145 °F'ye ulaştığını ve kapalı ambalajlarda iç basınç oluşturduğunu; oluklu mukavvanın ise yaz neminde basma dayanımının yarısına kadarını kaybettiğini anlatıyor."
           ],
           "source": "Havalandırma, soğutma ve gerilme çatlaması değerleri teknik basından ve yayımlanmış ASTM yöntem tanımlarından alıntılanmıştır. Sektör uygulamasıdır, Metal Form ölçümleri değildir."

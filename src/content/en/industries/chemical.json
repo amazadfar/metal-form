@@ -305,8 +305,8 @@
     },
     "cavity": {
       "index": "06",
-      "kicker": "The arithmetic",
-      "heading": "Cavitation is a financing decision in an engineering costume.",
+      "kicker": "Production economics",
+      "heading": "Cavity count is an investment decision with engineering constraints.",
       "body": "At closure volumes the tool disappears into the part. Amortised across tens of millions of shots, tooling contributes a fraction of a cent a piece — so tooling price is almost never the expensive decision. The expensive decisions are grams, seconds and cavities, and all three are locked in by geometry cut before a single part exists.",
       "figCaption": "One cavity in section — core, cooling, gate, vent",
       "labels": {
@@ -316,7 +316,7 @@
         "gate": "Gate",
         "vent": "Vent"
       },
-      "leversHeading": "Three levers, in order of size",
+      "leversHeading": "Three cost drivers, in order of impact",
       "levers": [
         {
           "k": "Grams",
@@ -419,7 +419,7 @@
         }
       ],
       "escHeading": "Environmental stress cracking",
-      "escBody": "Surfactant contact plus stress is the classic polyethylene failure, and it needs both at once — neither alone does it. Published methods are ASTM D1693, a notched bent-strip test in surfactant whose inter-laboratory precision is openly poor, and constant-stress methods such as ASTM D2561 which represent service conditions better. Lower density means lower crystallinity and better crack resistance, and published practice treats that as a real production lever rather than a textbook one.",
+      "escBody": "Environmental stress cracking in polyethylene requires both surfactant exposure and mechanical stress; neither condition alone produces the same failure. ASTM D1693 uses a notched bent strip in a surfactant and has acknowledged poor inter-laboratory precision. Constant-stress methods such as ASTM D2561 better represent service conditions. Lower-density grades generally have lower crystallinity and better crack resistance, making density a practical material-selection parameter for production.",
       "escNote": "Methods, precision and density behaviour above are published industry practice. Metal Form makes no claim about the stress-crack performance of any part it tools.",
       "close": "We will tell you what we would try and why, and where the evidence for it stops."
     },
@@ -482,7 +482,7 @@
       ]
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "Neck finish: the four letters that decide everything",
@@ -521,7 +521,7 @@
             "Vent depths on closure tools are commonly cited in the 0.02 to 0.05 mm range with short lands; parting-line flatness on the order of 0.01 mm is cited as the flash target.",
             "Environmental stress cracking needs a chemically active environment and stress at the same time. Surfactants supply the first; frozen-in moulding stress supplies the second.",
             "ASTM D1693 is the notched bent-strip test in surfactant, and its inter-laboratory precision is openly poor. Constant-stress methods such as ASTM D2561 represent service conditions better.",
-            "Lower density means lower crystallinity and better crack resistance — cited in published practice as a real production lever rather than a laboratory curiosity.",
+            "Lower-density grades generally have lower crystallinity and better crack resistance, so density is a practical production material-selection parameter.",
             "Heat multiplies all of it. Published figures describe trailers reaching 145 °F and generating internal pressure in sealed packs, with corrugated losing up to half its compressive strength in summer humidity."
           ],
           "source": "Venting, cooling and stress-cracking figures quoted from technical press and published ASTM method descriptions. Industry practice, not Metal Form measurements."

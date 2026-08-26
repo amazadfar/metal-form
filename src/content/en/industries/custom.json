@@ -21,7 +21,7 @@
   },
   "blocks": {
     "sheet": {
-      "callsHeading": "Open on this sheet",
+      "callsHeading": "Project questions on this sheet",
       "calls": [
         {
           "n": "01",
@@ -148,9 +148,9 @@
           "label": "A competitor's product",
           "mark": "Envelope",
           "tells": [
-            "The functional envelope, the assembly boundary and the moulding decisions somebody else already made and paid for.",
-            "How many separate parts the function was split into, which is usually the most useful thing in the box.",
-            "Where the cost was spent: cavitation, undercuts, finish, insert work."
+            "The functional envelope, assembly interfaces and moulding choices already embodied in the product.",
+            "How the function is divided among separate parts, often the most useful clue for redesign.",
+            "The main cost drivers: cavity count, undercuts, surface finish and insert operations."
           ],
           "ask": [
             "What you want to keep, and what you want to be different.",
@@ -258,7 +258,7 @@
             "Whether the answer is a change to the part, a change to the tool, or a different tool.",
             "A position on whether the work is worth doing at all."
           ],
-          "first": "Which of the four levers is still moveable is a question we can answer. The arithmetic — your resin price, your machine rate, your volume — is yours to run."
+          "first": "We can identify which of the four variables can still change. The final calculation uses your resin price, machine rate and production volume."
         },
         {
           "id": "supplier",
@@ -694,7 +694,7 @@
       "close": "Tier one is enough. If what you have is a photograph taken on a phone in a machine room at eleven at night, send that."
     },
     "panels": {
-      "heading": "Deeper detail",
+      "heading": "Technical detail",
       "items": [
         {
           "title": "What a moulded sample records about the tool that made it",

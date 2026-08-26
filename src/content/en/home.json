@@ -31,8 +31,8 @@
   },
   "process": {
     "kicker": "The route",
-    "heading": "One chain, five stages, one accountable partner.",
-    "lead": "Most suppliers own one link of this chain and hand you the rest. We take responsibility for the whole route — and for the handovers between the stages, which is where projects usually fail.",
+    "heading": "Five stages. One accountable partner.",
+    "lead": "Many suppliers cover one stage and leave you to manage the handovers. We coordinate engineering, tooling, production and supply as one route, with one party accountable throughout.",
     "steps": [
       {
         "index": "01",
@@ -88,9 +88,9 @@
     "modular": "Every stage can also be bought on its own. Engineering only. A tool only. A DFM review of a design somebody else made. Production of a tool you already own. Take the whole chain or one link of it."
   },
   "pillars": {
-    "kicker": "Why buyers move",
-    "heading": "Three reasons a manufacturer changes supplier.",
-    "lead": "Not one of them is a lower quotation on the same drawing.",
+    "kicker": "Supplier decisions",
+    "heading": "Why manufacturers change suppliers.",
+    "lead": "The strongest reasons are better production economics, clear accountability and a more resilient supply route, not simply a lower tooling quotation.",
     "items": [
       {
         "index": "01",
@@ -208,10 +208,10 @@
   },
   "bento": {
     "kicker": "Industries",
-    "heading": "Find your part.",
-    "lead": "Each industry buys different geometry, worries about different failures and measures cost in a different unit. Open the one you work in.",
+    "heading": "Choose your industry.",
+    "lead": "Different industries bring different engineering requirements, production risks and cost priorities. Choose the sector closest to your project.",
     "fallback": "Your project does not need to fit a category.",
-    "fallbackAction": "Open custom projects"
+    "fallbackAction": "Review custom projects"
   },
   "proof": {
     "kicker": "Evidence",

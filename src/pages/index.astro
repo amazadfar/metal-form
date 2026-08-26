@@ -63,11 +63,11 @@ const SHEET = [
       <div class="sel__intro">
         <h1 class="sel__title">
           <span class="sel__title-line">Engineering. Tooling.</span>
-          <span class="sel__title-line">Manufacturing. Supply.</span>
+          <span class="sel__title-line">Production. Supply.</span>
         </h1>
         <p class="sel__lead">
-          One accountable partner from an idea, a photograph, a sample or a drawing
-          through to tooling, production and continuous supply.
+          From a concept, photograph, sample or drawing through tooling, production
+          and ongoing supply, one technical partner remains accountable.
         </p>
       </div>
 
@@ -99,7 +99,7 @@ const SHEET = [
 
               <span class="tile__top">
                 <span class="tile__index t-mono" dir="ltr">{String(i + 1).padStart(2, '0')}</span>
-                <span class="tile__hint t-mono" dir="ltr" lang="en" hidden>Your browser</span>
+                <span class="tile__hint t-mono" hidden>{tile.suggested}</span>
               </span>
 
               <span class="tile__id">
@@ -120,7 +120,7 @@ const SHEET = [
 
       <footer class="sel__foot">
         <p class="t-fine">
-          Nine languages. One accountable partner for engineering, tooling,
+          Nine languages. One technical partner for engineering, tooling,
           production and supply.
         </p>
         <p class="t-fine sel__origin">{BRAND.name} · Persian engineering since {FACTS.sinceYear}</p>
