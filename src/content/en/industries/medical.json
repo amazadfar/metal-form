@@ -4,8 +4,8 @@
     "description": "Multi-cavity moulds for medical and pharmaceutical plastic parts, with DFM, agreed technical documentation, spares and backup tooling."
   },
   "name": "Medical & Pharmaceutical",
-  "tile": "Multi-cavity tooling where cavity 1 and cavity 32 have to be the same part.",
-  "tileParts": "Multi-cavity · DFM · Second tools",
+  "tile": "Multi-cavity moulds for medical parts, where every cavity has to make the same part.",
+  "tileParts": "Multi-cavity · DFM · Backup moulds",
   "hero": {
     "kicker": "Medical & Pharmaceutical",
     "headline": [
@@ -23,7 +23,7 @@
     "atlas": {
       "index": "01",
       "kicker": "Scope",
-      "heading": "What parts do we build moulds for?",
+      "heading": "What parts do we make moulds for?",
       "body": "Many medical plastic parts look simple, but a small difference between cavities can affect sealing, assembly or how the part works.",
       "listLabel": "Component family",
       "items": [
@@ -52,7 +52,7 @@
         {
           "id": "tips",
           "name": "Pipette tips",
-          "hard": "With many cavities and a very small functional opening, even a small cavity difference can affect the part.",
+          "hard": "With many cavities and a very small opening, even a small difference between cavities can affect how the tip performs.",
           "spec": [
             "High cavitation",
             "Aperture control",
@@ -226,7 +226,7 @@
         "Duplicate, backup and second-source tooling to the same part specification",
         "Component production and supply only where the part is outside sterile manufacture and other regulated production scope."
       ],
-      "staysHeading": "Manufacturer / validation owner",
+      "staysHeading": "Manufacturer",
       "stays": [
         "Quality system and supplier approval",
         "Cleanroom or controlled-environment production",
@@ -470,6 +470,6 @@
     "action": "Send your component",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — medical / pharmaceutical component.\n\nPart: \nResin: \nAnnual volume: \nRequired tool life (shots): \nCavities required: \nCritical dimensions: \nI have: 3D model / 2D drawing / physical sample / existing tool\nPress (tonnage, platen, tie-bar spacing): \nDelivery to: \nNDA required: yes / no",
-    "note": "A tooling and engineering supplier. Validated manufacture stays with you."
+    "note": "We supply the mould and engineering. Production approval stays with the manufacturer."
   }
 }
