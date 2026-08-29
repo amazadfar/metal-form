@@ -22,6 +22,7 @@ import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 import ProjectProof from '../ProjectProof.astro';
 import TechNote from '../TechNote.astro';
+import WhatsAppButton from '../WhatsAppButton.astro';
 
 interface Props {
   locale: Locale;
@@ -31,8 +32,22 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const SALES_CATALOG_LOCALES = new Set<Locale>(['en', 'fa']);
+const isSalesCatalog = SALES_CATALOG_LOCALES.has(locale);
 const COMPACT_LOCALES = new Set<Locale>(['en', 'fa', 'ru', 'hy']);
 const isCompact = COMPACT_LOCALES.has(locale);
+const splitCatalogCard = (value: string) => {
+  const [title, ...body] = String(value).split('\n');
+  return { title, body: body.join(' ') };
+};
+const medicalCatalogFamilies = [0, 1, 2, 4, 5, 7]
+  .map((index) => {
+    const item = b.atlas.items[index];
+    const copy = item ? splitCatalogCard(item.hard) : null;
+    return item ? { ...item, catalogBody: copy?.title ?? item.hard } : null;
+  })
+  .filter(Boolean);
+const medicalSupplyCards = b.second.offer.slice(0, 4).map(splitCatalogCard);
 const splitCompactItems = (items: string[]): string[] =>
   items.flatMap((item) => String(item).split('\n').filter(Boolean));
 const medicalStartNeed = isCompact ? splitCompactItems(b.start.need.slice(0, 5)) : [];
@@ -75,6 +90,240 @@ const withUnit = (value: number, i: number): string => {
 ---
 
 <article class="med">
+
+  {isSalesCatalog ? (
+  <>
+  {/* The sales-catalog opening names the product, the starting input and the
+      contact action before it offers any engineering explanation. */}
+  <header class="med-cat-hero">
+    <div class="shell--wide med-cat-hero__inner">
+      <div class="med-cat-hero__copy">
+        <p class="eyebrow">{content.hero.kicker}</p>
+        <h1 class="med-cat-hero__head">
+          {content.hero.headline.map((line: string) => <span>{line}</span>)}
+        </h1>
+        <p class="med-cat-hero__lead">{content.hero.lead}</p>
+        <div class="med-cat-hero__action">
+          <WhatsAppButton
+            locale={locale}
+            prefill={content.cta.prefill}
+            label={content.cta.action}
+            source="industry_medical"
+            variant="primary"
+            size="lg"
+          />
+        </div>
+        {content.hero.markers && (
+          <ul class="med-cat-hero__markers">
+            {content.hero.markers.map((marker: string) => <li>{marker}</li>)}
+          </ul>
+        )}
+      </div>
+
+      {/* A restrained mould-plate motif, kept secondary to the sales copy. */}
+      <div class="med-cat-hero__visual" aria-hidden="true">
+        <div class="med-cat-plate med-cat-plate--back">
+          {Array.from({ length: 12 }).map(() => <span></span>)}
+        </div>
+        <div class="med-cat-plate med-cat-plate--front">
+          {Array.from({ length: 12 }).map(() => <span></span>)}
+        </div>
+        <div class="med-cat-sample"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="med-cat-section med-cat-make" id="what-we-make">
+    <div class="shell--wide">
+      <div class="med-cat-head">
+        <p class="eyebrow">{b.atlas.kicker}</p>
+        <h2>{b.atlas.heading}</h2>
+        <p>{b.atlas.body}</p>
+      </div>
+      <div class="med-cat-family-grid">
+        {medicalCatalogFamilies.map((item: any, i: number) => (
+          <article class="med-cat-family" data-family={item.id}>
+            <span class="med-cat-family__index t-mono">{String(i + 1).padStart(2, '0')}</span>
+            <span class="med-cat-family__mark" aria-hidden="true"></span>
+            <h3>{item.name}</h3>
+            <p>{item.catalogBody}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="med-cat-section med-cat-supply ground--steel" id="what-we-supply">
+    <div class="shell--wide">
+      <div class="med-cat-head med-cat-head--inverse">
+        <p class="eyebrow">{b.second.kicker}</p>
+        <h2>{b.second.offerHeading}</h2>
+      </div>
+      <div class="med-cat-supply-grid">
+        {medicalSupplyCards.map((card: any, i: number) => (
+          <article class="med-cat-supply-card">
+            <span class="t-mono">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{card.title}</h3>
+            {card.body && <p>{card.body}</p>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="med-cat-section med-cat-start" id="start">
+    <div class="shell--wide med-cat-start__inner">
+      <div class="med-cat-head">
+        <p class="eyebrow">{b.start.kicker}</p>
+        <h2>{b.start.heading}</h2>
+        <p>{b.start.body}</p>
+      </div>
+      <div class="med-cat-start__side">
+        <h3>{b.start.needHeading}</h3>
+        <ul>
+          {b.start.need.slice(0, 4).map((item: string) => <li>{item}</li>)}
+        </ul>
+        <WhatsAppButton
+          locale={locale}
+          prefill={content.cta.prefill}
+          label={content.cta.action}
+          source="industry_medical"
+          variant="ruled"
+          size="lg"
+        />
+      </div>
+    </div>
+    <div class="shell--wide">
+      <aside class="med-cat-boundary">
+        <p>{b.line.body}</p>
+      </aside>
+    </div>
+  </section>
+
+  {/* Engineering depth remains available, but every item starts closed. */}
+  <section class="med-cat-section med-cat-tech" id="technical-details">
+    <div class="shell--wide">
+      <div class="med-cat-head">
+        <h2>{b.panels.heading}</h2>
+      </div>
+
+      <div class="med-cat-tech__list">
+        <TechNote locale={locale} label={b.atlas.listLabel} ruled>
+          <div class="med-cat-tech-families">
+            {b.atlas.items.map((item: any) => (
+              <section>
+                <h3>{item.name}</h3>
+                <p>{splitCatalogCard(item.hard).body || item.hard}</p>
+                <ul>{item.spec.map((point: string) => <li>{point}</li>)}</ul>
+              </section>
+            ))}
+          </div>
+        </TechNote>
+
+        <TechNote locale={locale} label={b.imbalance.heading} ruled>
+          <p>{b.imbalance.body}</p>
+          <ol class="med-cat-tech-steps">
+            {b.imbalance.steps.map((step: any, i: number) => (
+              <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span><div><h3>{step.label}</h3><p>{step.body}</p></div></li>
+            ))}
+          </ol>
+          <figure class="med-cat-balance">
+            <div class="med-consistency__array" role="img" aria-label={common.schematic}>
+              {WEIGHTS.map((w: any) => (
+                <span class="med-consistency__cell" style={`--w:${w.w}%`}>
+                  <span class="med-consistency__n t-mono">{String(w.i + 1).padStart(2, '0')}</span>
+                  <span class:list={['med-consistency__bar', `med-consistency__bar--${w.group}`]} aria-hidden="true"></span>
+                </span>
+              ))}
+            </div>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+          <div class="med-cat-tech-cols">
+            <section>
+              <h3>{b.imbalance.methodHeading}</h3>
+              <ol>{b.imbalance.method.map((item: string) => <li>{item}</li>)}</ol>
+              <p>{b.imbalance.close}</p>
+            </section>
+            <section>
+              <h3>{b.imbalance.diagnosisHeading}</h3>
+              <dl class="med-diag">
+                {b.imbalance.diagnosis.map((item: any) => <div><dt>{item.symptom}</dt><dd>{item.cause}</dd></div>)}
+              </dl>
+            </section>
+          </div>
+        </TechNote>
+
+        <TechNote locale={locale} label={b.panels.items[0].title} ruled>
+          <ul class="med-panel__list">
+            {b.panels.items[0].bullets.map((bullet: string) => <li>{bullet}</li>)}
+          </ul>
+          <div class="med-calc__band med-cat-calculator" data-calc>
+            <div class="med-calc__controls">
+              <label class="med-ctrl">
+                <span class="t-label">{b.arithmetic.controls[0].label}</span>
+                <input type="range" min="1" max="46" step="1" value="32" data-calc-cavities />
+                <output class="t-mono" data-calc-out="cavities" data-unit={unitOf(0)}>{withUnit(32, 0)}</output>
+              </label>
+              <label class="med-ctrl">
+                <span class="t-label">{b.arithmetic.controls[1].label}</span>
+                <input type="range" min="3" max="40" step="1" value="10" data-calc-cycle />
+                <output class="t-mono" data-calc-out="cycle" data-unit={unitOf(1)}>{withUnit(10, 1)}</output>
+              </label>
+              <label class="med-ctrl">
+                <span class="t-label">{b.arithmetic.controls[2].label}</span>
+                <input type="range" min="8" max="24" step="1" value="24" data-calc-hours />
+                <output class="t-mono" data-calc-out="hours" data-unit={unitOf(2)}>{withUnit(24, 2)}</output>
+              </label>
+            </div>
+            <div class="med-calc__readout">
+              <p class="t-label">{b.arithmetic.calcLabel}</p>
+              <p class="med-calc__big t-mono" data-calc-year>—</p>
+              <p class="med-calc__unit">{b.arithmetic.outputs[2].label}</p>
+              <dl class="med-calc__sub-out">
+                <div><dt class="t-label">{b.arithmetic.outputs[0].label}</dt><dd class="t-mono" data-calc-hour>—</dd></div>
+                <div><dt class="t-label">{b.arithmetic.outputs[1].label}</dt><dd class="t-mono" data-calc-day>—</dd></div>
+              </dl>
+            </div>
+          </div>
+          <p>{b.arithmetic.note}</p>
+          <p>{b.arithmetic.amort}</p>
+          {b.panels.items[0].source && <p class="t-fine">{b.panels.items[0].source}</p>}
+        </TechNote>
+
+        <TechNote locale={locale} label={b.anatomy.heading} ruled>
+          <p>{b.anatomy.body}</p>
+          <dl class="med-anat__list med-anat__list--detail">
+            {b.anatomy.stack.map((item: any, i: number) => (
+              <div class="med-anat__item"><dt><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{item.name}</dt><dd>{item.note}</dd></div>
+            ))}
+          </dl>
+        </TechNote>
+
+        <TechNote locale={locale} label={b.panels.items[2].title} ruled>
+          <ul class="med-panel__list">{b.panels.items[2].bullets.map((bullet: string) => <li>{bullet}</li>)}</ul>
+        </TechNote>
+
+        <TechNote locale={locale} label={b.second.index} ruled>
+          <p>{b.second.body}</p>
+          <ul class="med-panel__list">{b.second.risks.map((risk: any) => <li>{risk.scenario}</li>)}</ul>
+          <p>{b.second.honesty}</p>
+        </TechNote>
+
+        <TechNote locale={locale} label={b.panels.items[1].title} ruled>
+          <p>{b.line.close}</p>
+          <div class="med-cat-tech-cols med-cat-responsibility">
+            <section><h3>{b.line.supplyHeading}</h3><ul>{b.line.supply.map((item: string) => <li>{item}</li>)}</ul></section>
+            <section><h3>{b.line.staysHeading}</h3><ul>{b.line.stays.map((item: string) => <li>{item}</li>)}</ul></section>
+          </div>
+          <p>{b.line.how}</p>
+          <ul class="med-panel__list">{b.panels.items[1].bullets.map((bullet: string) => <li>{bullet}</li>)}</ul>
+        </TechNote>
+      </div>
+    </div>
+  </section>
+  </>
+  ) : (
+  <>
 
   {/* ═══ HERO — INDEX ═══════════════════════════════════════════════════
        The opening figure is a catalogue, not an object: thirty-two cavities
@@ -689,6 +938,8 @@ const withUnit = (value: number, i: number): string => {
       )}
     </div>
   </section>
+  </>
+  )}
   {/* Renders only when real, permitted project media exists. */}
   <ProjectProof locale={Astro.props.locale} industry="medical" copy={b.proof} />
 </article>
@@ -754,6 +1005,234 @@ const withUnit = (value: number, i: number): string => {
      Cool, controlled, minimal. Precision is expressed as repetition and
      registration — never as a hospital, a cleanroom or a person in a gown,
      because those would be a regulatory claim made with a picture. */
+
+  /* ── English / Persian sales catalog ────────────────────────────────── */
+  .med-cat-hero {
+    position: relative;
+    overflow: clip;
+    padding-block: clamp(3.5rem, 8vw, 7rem);
+    background:
+      radial-gradient(circle at 82% 42%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 32%),
+      linear-gradient(145deg, var(--surface) 18%, var(--surface-sunk));
+    border-block-end: var(--rule);
+  }
+  .med-cat-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(15rem, 0.8fr);
+    gap: clamp(2.5rem, 7vw, 7rem);
+    align-items: center;
+  }
+  .med-cat-hero__copy { position: relative; z-index: 1; }
+  .med-cat-hero__head {
+    margin-block-start: var(--sp-5);
+    max-inline-size: 17ch;
+    font-size: clamp(2.6rem, 6vw, 5.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    font-weight: var(--weight-medium);
+  }
+  .med-cat-hero__head span { display: block; }
+  .med-cat-hero__head span:last-child { color: var(--accent-deep); }
+  .med-cat-hero__lead {
+    margin-block-start: var(--sp-6);
+    max-inline-size: 56ch;
+    color: var(--ink-muted);
+    font-size: var(--step-1);
+    line-height: 1.55;
+  }
+  .med-cat-hero__action { margin-block-start: var(--sp-6); }
+  .med-cat-hero__markers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1.25rem;
+    margin-block-start: var(--sp-6);
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+  }
+  .med-cat-hero__markers li { display: flex; align-items: center; gap: 0.5rem; }
+  .med-cat-hero__markers li::before {
+    content: '';
+    inline-size: 0.35rem;
+    block-size: 0.35rem;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+  .med-cat-hero__visual {
+    position: relative;
+    min-block-size: clamp(17rem, 34vw, 25rem);
+    max-inline-size: 30rem;
+    inline-size: 100%;
+    justify-self: end;
+  }
+  .med-cat-plate {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(0.7rem, 1.7vw, 1.15rem);
+    inline-size: 72%;
+    aspect-ratio: 1.18;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid color-mix(in oklab, var(--accent-deep) 35%, var(--line));
+    border-radius: 0.45rem;
+    background: color-mix(in oklab, var(--surface-raise) 88%, transparent);
+    box-shadow: 0 1.8rem 4rem color-mix(in oklab, var(--ink) 12%, transparent);
+  }
+  .med-cat-plate span {
+    aspect-ratio: 1;
+    border: 1px solid color-mix(in oklab, var(--accent) 54%, var(--line));
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 0.34rem color-mix(in oklab, var(--accent-wash) 75%, transparent);
+  }
+  .med-cat-plate--back { inset-block-start: 7%; inset-inline-end: 20%; transform: rotate(-5deg); opacity: 0.52; }
+  .med-cat-plate--front { inset-block-start: 20%; inset-inline-end: 4%; transform: rotate(3deg); }
+  .med-cat-sample {
+    position: absolute;
+    inset-inline-start: 2%;
+    inset-block-end: 7%;
+    display: flex;
+    align-items: end;
+    gap: 0.55rem;
+    padding: 0.8rem 1rem;
+    border: var(--rule);
+    background: var(--surface-raise);
+    box-shadow: var(--relief-dark);
+  }
+  .med-cat-sample span { display: block; inline-size: 0.7rem; border: 1px solid var(--accent-deep); border-radius: 999px 999px 0.2rem 0.2rem; }
+  .med-cat-sample span:nth-child(1) { block-size: 3.4rem; }
+  .med-cat-sample span:nth-child(2) { block-size: 2.5rem; }
+  .med-cat-sample span:nth-child(3) { block-size: 4.1rem; }
+
+  .med-cat-section { padding-block: clamp(4rem, 8vw, 7rem); }
+  .med-cat-head { max-inline-size: 64ch; }
+  .med-cat-head h2 {
+    margin-block-start: var(--sp-4);
+    font-size: clamp(2rem, 4.5vw, 3.8rem);
+    line-height: 1.03;
+    letter-spacing: -0.035em;
+    font-weight: var(--weight-medium);
+  }
+  .med-cat-head > p:last-child:not(.eyebrow) {
+    margin-block-start: var(--sp-5);
+    color: var(--ink-muted);
+    font-size: var(--step-1);
+    line-height: 1.55;
+  }
+  .med-cat-family-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    border-block-start: var(--rule-strong);
+  }
+  .med-cat-family {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem 1rem;
+    min-block-size: 12.5rem;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border-block-end: var(--rule);
+    border-inline-end: var(--rule);
+  }
+  .med-cat-family:nth-child(3n) { border-inline-end: 0; }
+  .med-cat-family__index { color: var(--ink-muted); font-size: var(--step--2); }
+  .med-cat-family__mark {
+    justify-self: end;
+    inline-size: 2.7rem;
+    block-size: 2.7rem;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 0.6rem var(--accent-wash);
+  }
+  .med-cat-family h3 { grid-column: 1 / -1; font-size: var(--step-1); line-height: 1.2; }
+  .med-cat-family p { grid-column: 1 / -1; color: var(--ink-muted); line-height: 1.5; }
+
+  .med-cat-supply { position: relative; }
+  .med-cat-head--inverse { color: var(--inverse-ink); }
+  .med-cat-supply-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    border-block-start: var(--rule-strong);
+  }
+  .med-cat-supply-card {
+    min-block-size: 13rem;
+    padding: clamp(1.4rem, 3vw, 2rem);
+    border-inline-end: var(--rule-strong);
+  }
+  .med-cat-supply-card:last-child { border-inline-end: 0; }
+  .med-cat-supply-card > span { color: var(--ink-muted); font-size: var(--step--2); }
+  .med-cat-supply-card h3 { margin-block-start: var(--sp-5); font-size: var(--step-2); line-height: 1.15; }
+  .med-cat-supply-card p { margin-block-start: var(--sp-4); color: var(--ink-muted); line-height: 1.5; }
+
+  .med-cat-start { border-block-end: var(--rule); }
+  .med-cat-start__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.75fr);
+    gap: clamp(2.5rem, 8vw, 7rem);
+    align-items: start;
+  }
+  .med-cat-start__side {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border-block-start: 2px solid var(--accent-deep);
+    background: var(--surface-sunk);
+  }
+  .med-cat-start__side h3 { font-size: var(--step-1); }
+  .med-cat-start__side ul { display: grid; gap: 0.75rem; margin-block: var(--sp-5) var(--sp-6); }
+  .med-cat-start__side li { position: relative; padding-inline-start: 1.2rem; color: var(--ink-muted); }
+  .med-cat-start__side li::before { content: ''; position: absolute; inset-inline-start: 0; inset-block-start: 0.7em; inline-size: 0.42rem; block-size: 1px; background: var(--accent); }
+  .med-cat-boundary {
+    margin-block-start: clamp(2.5rem, 5vw, 4rem);
+    padding-block-start: var(--sp-5);
+    border-block-start: var(--rule);
+    color: var(--ink-muted);
+    max-inline-size: 76ch;
+  }
+
+  .med-cat-tech { background: var(--surface-sunk); }
+  .med-cat-tech__list { margin-block-start: var(--sp-6); }
+  .med-cat-tech :global(.tnote__body) { max-inline-size: none; }
+  .med-cat-tech-families {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-5);
+  }
+  .med-cat-tech-families section { padding-block-start: var(--sp-4); border-block-start: var(--rule); }
+  .med-cat-tech-families h3 { font-size: var(--step-1); }
+  .med-cat-tech-families p { margin-block-start: var(--sp-3); color: var(--ink-muted); }
+  .med-cat-tech-families ul, .med-cat-tech-cols ol, .med-cat-tech-cols ul { display: grid; gap: 0.45rem; margin-block-start: var(--sp-4); }
+  .med-cat-tech-families li, .med-cat-tech-cols li { position: relative; padding-inline-start: 1rem; }
+  .med-cat-tech-families li::before, .med-cat-tech-cols li::before { content: '—'; position: absolute; inset-inline-start: 0; color: var(--accent); }
+  .med-cat-tech-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-5); }
+  .med-cat-tech-steps li { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-4); padding-block-start: var(--sp-4); border-block-start: var(--rule); }
+  .med-cat-tech-steps h3 { font-size: var(--step-1); }
+  .med-cat-tech-steps p { margin-block-start: var(--sp-3); color: var(--ink-muted); }
+  .med-cat-balance { padding: var(--sp-5); border: var(--rule); background: var(--surface); overflow: hidden; }
+  .med-cat-tech-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 4rem); }
+  .med-cat-tech-cols h3 { font-size: var(--step-1); }
+  .med-cat-responsibility section { padding: var(--sp-5); background: var(--surface); border-block-start: 2px solid var(--accent); }
+  .med-cat-calculator { margin-block-start: var(--sp-5); }
+
+  @media (max-width: 900px) {
+    .med-cat-hero__inner, .med-cat-start__inner { grid-template-columns: minmax(0, 1fr); }
+    .med-cat-hero__visual { justify-self: center; max-inline-size: 24rem; min-block-size: 18rem; }
+    .med-cat-family-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .med-cat-family:nth-child(3n) { border-inline-end: var(--rule); }
+    .med-cat-family:nth-child(2n) { border-inline-end: 0; }
+    .med-cat-supply-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .med-cat-supply-card:nth-child(2) { border-inline-end: 0; }
+    .med-cat-supply-card:nth-child(n + 3) { border-block-start: var(--rule-strong); }
+  }
+  @media (max-width: 620px) {
+    .med-cat-hero { padding-block: clamp(2.5rem, 10vw, 4rem); }
+    .med-cat-hero__head { font-size: clamp(2.35rem, 12vw, 3.65rem); }
+    .med-cat-hero__visual { min-block-size: 14.5rem; }
+    .med-cat-family-grid, .med-cat-supply-grid, .med-cat-tech-families, .med-cat-tech-steps, .med-cat-tech-cols { grid-template-columns: minmax(0, 1fr); }
+    .med-cat-family, .med-cat-family:nth-child(n) { min-block-size: auto; border-inline-end: 0; }
+    .med-cat-supply-card, .med-cat-supply-card:nth-child(n) { min-block-size: auto; border-inline-end: 0; border-block-start: var(--rule-strong); }
+    .med-cat-supply-card:first-child { border-block-start: 0; }
+    .med-cat-calculator { padding: var(--sp-4); }
+  }
 
   .med-h2 {
     font-size: clamp(1.9rem, 4vw, 3.2rem);

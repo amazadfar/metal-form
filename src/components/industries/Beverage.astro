@@ -19,6 +19,7 @@ import SourceReference from '../SourceReference.astro';
 import type { Industry } from '../../config/industries.ts';
 import type { IndustryContent, CommonContent } from '../../content/types.ts';
 import ProjectProof from '../ProjectProof.astro';
+import WhatsAppButton from '../WhatsAppButton.astro';
 
 interface Props {
   locale: Locale;
@@ -28,6 +29,8 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
+const SALES_CATALOG_LOCALES = new Set<Locale>(['en', 'fa']);
+const isSalesCatalog = SALES_CATALOG_LOCALES.has(locale);
 const COMPACT_LOCALES = new Set<Locale>(['en', 'fa', 'ru', 'hy']);
 const isCompact = COMPACT_LOCALES.has(locale);
 const showUnsupportedWeightBands = false;
@@ -40,6 +43,11 @@ const representativeDefects = isCompact
   ? REPRESENTATIVE_DEFECT_INDICES.map((index) => ({ index, row: b.defects.rows[index] }))
   : [];
 const defectSide = (rowIndex: number): string => DEFECT_SIDE_BY_INDEX[rowIndex] ?? 'process';
+const beverageCatalogProducts = String(b.neck.specLabels.geometry)
+  .split(' · ')
+  .map((item) => item.trim())
+  .filter(Boolean);
+const beverageHelpCards = b.start.get.slice(0, 6);
 
 // Preform and bottle profiles. The finish geometry is identical in both — that
 // is the point of the figure and it must stay true in the drawing.
@@ -61,6 +69,252 @@ const SPREAD = [
 ---
 
 <article class="bev">
+
+  {isSalesCatalog ? (
+  <>
+  <header class="bev-cat-hero ground--tint">
+    <div class="shell--wide bev-cat-hero__inner">
+      <div class="bev-cat-hero__copy">
+        <p class="eyebrow">{content.hero.kicker}</p>
+        <h1 class="bev-cat-hero__head">
+          {content.hero.headline.map((line: string) => <span>{line}</span>)}
+        </h1>
+        <p class="bev-cat-hero__lead">{content.hero.lead}</p>
+        <div class="bev-cat-hero__action">
+          <WhatsAppButton
+            locale={locale}
+            prefill={content.cta.prefill}
+            label={content.cta.action}
+            source="industry_beverage"
+            variant="solid"
+            size="lg"
+          />
+        </div>
+        {content.hero.markers && (
+          <ul class="bev-cat-hero__markers">
+            {content.hero.markers.map((marker: string) => <li>{marker}</li>)}
+          </ul>
+        )}
+      </div>
+
+      <figure class="bev-cat-hero__visual" aria-hidden="true">
+        <svg viewBox="0 0 420 300" data-nomirror>
+          <g transform="translate(90 58) scale(2.25)">
+            <path d={NECK} class="bev-line" />
+            <path d={PREFORM_BODY} class="bev-line bev-fill" />
+          </g>
+          <g transform="translate(252 58) scale(2.25)">
+            <path d={NECK} class="bev-line" />
+            <path d={BOTTLE_BODY} class="bev-line" />
+          </g>
+          <g transform="translate(356 99)">
+            <circle r="39" class="bev-line" />
+            <circle r="30" class="bev-faint" />
+            {Array.from({ length: 18 }).map((_: any, i: number) => {
+              const a = (i / 18) * Math.PI * 2;
+              return <line x1={Math.cos(a) * 31} y1={Math.sin(a) * 31} x2={Math.cos(a) * 39} y2={Math.sin(a) * 39} class="bev-tick" />;
+            })}
+          </g>
+          <line x1="38" y1="264" x2="392" y2="264" class="bev-cat-hero__floor" />
+        </svg>
+      </figure>
+    </div>
+  </header>
+
+  <section class="bev-cat-section bev-cat-make" id="what-we-make">
+    <div class="shell--wide">
+      <div class="bev-cat-head">
+        <h2>{b.neck.kicker}</h2>
+      </div>
+      <div class="bev-cat-product-grid">
+        {beverageCatalogProducts.map((item: string, i: number) => (
+          <article class="bev-cat-product">
+            <span class="bev-cat-product__mark" aria-hidden="true"></span>
+            <span class="t-mono">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{item}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bev-cat-section bev-cat-help" id="what-we-help-with">
+    <div class="shell--wide">
+      <div class="bev-cat-head">
+        <h2>{b.defects.kicker}</h2>
+      </div>
+      <div class="bev-cat-help-grid">
+        {beverageHelpCards.map((item: string, i: number) => (
+          <article class="bev-cat-help-card">
+            <span class="t-mono">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{item}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bev-cat-section bev-cat-start" id="start">
+    <div class="shell--wide bev-cat-start__inner">
+      <div class="bev-cat-head">
+        <p class="eyebrow">{b.start.kicker}</p>
+        <h2>{b.start.heading}</h2>
+        <p>{b.start.body}</p>
+      </div>
+      <div class="bev-cat-start__side">
+        <h3>{b.start.sendHeading}</h3>
+        <ul>{b.start.send.slice(0, 4).map((item: string) => <li>{item}</li>)}</ul>
+        <WhatsAppButton
+          locale={locale}
+          prefill={content.cta.prefill}
+          label={content.cta.action}
+          source="industry_beverage"
+          variant="ruled"
+          size="lg"
+        />
+      </div>
+    </div>
+  </section>
+
+  {/* All process education, calculations and engineering comparisons remain
+      available here, closed until a technical reader asks for them. */}
+  <section class="bev-cat-section bev-cat-tech" id="technical-details">
+    <div class="shell--wide">
+      <div class="bev-cat-head"><h2>{b.panels.heading}</h2></div>
+      <div class="bev-cat-tech__list">
+        <TechNote locale={locale} label={b.grams.heading} ruled>
+          <p>{b.grams.body}</p>
+          <p>{b.grams.body2}</p>
+          <p class="bev-cat-equation t-mono">{b.grams.scaleLabel}</p>
+          <p>{b.grams.close}</p>
+        </TechNote>
+
+        <TechNote locale={locale} label={b.cavities.cavityHeading} ruled>
+          <p>{b.cavities.cavityBody}</p>
+          <p>{b.cavities.cavityBody2}</p>
+          <p>{b.cavities.cavityBody3}</p>
+          <p>{b.cavities.body}</p>
+          <div class="bev-cav__figs bev-cat-weight-figs" data-reveal>
+            <figure class="bev-plate">
+              <svg viewBox="0 0 300 200" data-nomirror role="img" aria-label={common.schematic}>
+                <rect x="10" y="10" width="280" height="180" class="bev-plate__body" />
+                {SPREAD.map((_: any, i: number) => {
+                  const col = i % 8;
+                  const row = Math.floor(i / 8);
+                  return <circle cx={34 + col * 33} cy={38 + row * 41} r="10.5" class="bev-plate__cav" style={`--i:${i}`} />;
+                })}
+                <line x1="150" y1="4" x2="150" y2="196" class="bev-plate__cl" />
+              </svg>
+              <figcaption class="t-label">{b.hero.plateCaption}</figcaption>
+            </figure>
+            <figure class="bev-plot">
+              <p class="t-label bev-plot__cap">{b.cavities.chartCaption}</p>
+              <svg viewBox="0 0 340 190" data-nomirror role="img" aria-label={b.cavities.chartCaption}>
+                <rect x="0" y="96" width="340" height="42" class="bev-plot__gap" />
+                <line x1="0" y1="138" x2="340" y2="138" class="bev-plot__floor" />
+                <line x1="0" y1="96" x2="340" y2="96" class="bev-plot__mean" />
+                {SPREAD.map((v: any, i: number) => <circle cx={8 + i * 10.3} cy={175 - v * 1.15} r="3.1" class="bev-plot__dot" style={`--i:${i}`} />)}
+              </svg>
+              <ul class="bev-plot__key">
+                <li><span class="bev-plot__swatch bev-plot__swatch--mean"></span>{b.cavities.chartMean}</li>
+                <li><span class="bev-plot__swatch bev-plot__swatch--floor"></span>{b.cavities.chartFloor}</li>
+                <li><span class="bev-plot__swatch bev-plot__swatch--gap"></span>{b.cavities.chartGap}</li>
+              </ul>
+              <figcaption class="figure-note">{common.schematic}</figcaption>
+            </figure>
+          </div>
+          <p>{b.cavities.close}</p>
+        </TechNote>
+
+        <TechNote locale={locale} label={b.neck.tabsLabel} ruled>
+          <p>{b.neck.body}</p>
+          <div class="bev-std bev-std--detail" data-tabs>
+            <div class="bev-std__tabs" role="tablist" aria-label={b.neck.tabsLabel}>
+              {b.neck.standards.map((s: any) => (
+                <button class="bev-std__tab" type="button" role="tab" data-tab={s.id} aria-selected="false" id={`catalog-tab-${s.id}`} aria-controls={`catalog-panel-${s.id}`}>{s.name}</button>
+              ))}
+            </div>
+            {b.neck.standards.map((s: any) => (
+              <div class="bev-std__panel" data-panel={s.id} role="tabpanel" id={`catalog-panel-${s.id}`} aria-labelledby={`catalog-tab-${s.id}`} hidden>
+                <dl class="caps bev-std__spec">
+                  <div class="cap"><dt class="cap__k">{b.neck.specLabels.use}</dt><dd class="cap__v">{s.use}</dd></div>
+                  <div class="cap bev-std__warn"><dt class="cap__k">{b.neck.specLabels.warning}</dt><dd class="cap__v">{s.warning}</dd></div>
+                </dl>
+              </div>
+            ))}
+          </div>
+          <h3>{b.neck.conversionHeading}</h3>
+          <ol class="bev-conv__list">{b.neck.conversion.map((step: string, i: number) => <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span>{step}</li>)}</ol>
+          <p>{b.neck.conversionNote}</p>
+        </TechNote>
+
+        <TechNote locale={locale} label={b.stretch.heading} ruled>
+          <p>{b.stretch.body}</p>
+          <figure class="bev-detail__stretch">
+            <svg viewBox="0 0 640 240" data-nomirror role="img" aria-label={common.schematic}>
+              <line x1="0" y1="206" x2="640" y2="206" class="bev-stretch__line" />
+              {[0, 1, 2, 3, 4].map((s: any) => (
+                <g transform={`translate(${72 + s * 128} 40)`} class="bev-stage">
+                  <path d={NECK} transform="scale(1.15)" class="bev-line" />
+                  {s === 0 && <path d={PREFORM_BODY} transform="scale(1.15)" class="bev-line bev-fill" />}
+                  {s === 1 && <><path d={PREFORM_BODY} transform="scale(1.15)" class="bev-line bev-fill bev-hot" />{[-30, -18, 18, 30].map((x: any) => <line x1={x} y1="30" x2={x} y2="110" class="bev-ir" />)}</>}
+                  {s === 2 && <><path d="M-13 17 v66 q0 15 13 15 t13 -15 v-66" transform="scale(1.15)" class="bev-line bev-fill" /><line x1="0" y1="20" x2="0" y2="132" class="bev-rod" /><path d="M-6 126 l6 8 l6 -8" class="bev-rod" fill="none" /></>}
+                  {s === 3 && <path d="M-12 17 q-16 22 -16 52 v42 q0 9 9 9 h38 q9 0 9 -9 v-42 q0 -30 -16 -52" transform="scale(1.05)" class="bev-line bev-fill" />}
+                  {s === 4 && <path d={BOTTLE_BODY} transform="scale(1.15)" class="bev-line" />}
+                </g>
+              ))}
+            </svg>
+            <figcaption class="figure-note">{common.schematic}</figcaption>
+          </figure>
+          <ol class="bev-detail__stages">{b.stretch.stages.map((stage: any, i: number) => <li><span class="t-mono">{String(i + 1).padStart(2, '0')}</span><div><h3>{stage.label}</h3><p>{stage.note}</p></div></li>)}</ol>
+          <p>{b.stretch.close}</p>
+        </TechNote>
+
+        <TechNote locale={locale} label={b.defects.index} ruled>
+          <p>{b.defects.body}</p>
+          <div class="scroller bev-matrix__scroll" tabindex="0" role="group" aria-label={b.defects.heading}>
+            <table class="bev-matrix">
+              <thead><tr><th scope="col" class="bev-matrix__corner"><span class="vh">{b.defects.heading}</span></th>{b.defects.columns.map((col: string) => <th scope="col"><span>{col}</span></th>)}</tr></thead>
+              <tbody>{b.defects.rows.map((row: any, rowIndex: number) => (
+                <tr data-side={defectSide(rowIndex)}><th scope="row"><span class="bev-matrix__name">{row.defect}</span><span class="bev-matrix__note">{row.note}</span></th>{row.origins.map((on: number, ci: number) => <td>{on === 1 && <span class="bev-matrix__mark" aria-hidden="true"></span>}<span class="vh">{on === 1 ? b.defects.columns[ci] : ''}</span></td>)}</tr>
+              ))}</tbody>
+            </table>
+          </div>
+        </TechNote>
+
+        <TechNote locale={locale} label={b.closures.index} ruled>
+          <p>{b.closures.body}</p>
+          <div class="bev-cap__grid">
+            <div class="bev-tracks">
+              {b.closures.tracks.map((track: any, i: number) => <div class="bev-track" data-track={i}><p class="bev-track__name t-label">{track.name}</p><div class="bev-track__bar" aria-hidden="true"><span style={`--w:${i === 0 ? 100 : 62}%`}></span></div><p class="bev-track__note">{track.note}</p></div>)}
+              <p class="bev-tracks__note t-fine">{b.closures.tracksNote}</p>
+            </div>
+            <figure class="bev-capfig">
+              <p class="t-label">{b.closures.capHeading}</p>
+              <svg viewBox="0 0 260 190" data-nomirror role="img" aria-label={common.schematic}>
+                <g transform="translate(66 78)"><circle r="52" class="bev-line" /><circle r="43" class="bev-line bev-faint" />{Array.from({ length: 30 }).map((_: any, i: number) => { const a = (i / 30) * Math.PI * 2; return <line x1={Math.cos(a) * 43} y1={Math.sin(a) * 43} x2={Math.cos(a) * 52} y2={Math.sin(a) * 52} class="bev-knurl" />; })}{Array.from({ length: 18 }).map((_: any, i: number) => { const a = (i / 18) * Math.PI * 2 + 0.3; if (TETHER_GAP.includes(i)) return null; return <circle cx={Math.cos(a) * 47} cy={Math.sin(a) * 47} r="2.1" class="bev-bridge" />; })}<path d="M-14 44 q14 14 28 0" class="bev-hinge" fill="none" /></g>
+                <g transform="translate(190 78)"><path d="M-38 -30 h76 v14 h-6 v46 h-64 v-46 h-6 z" class="bev-line" /><path d="M-32 -16 h64" class="bev-faint" /><path d="M-32 18 h64" class="bev-band" /></g>
+              </svg>
+              <dl class="bev-capfig__parts">{b.closures.capParts.map((part: any) => <div><dt>{part.name}</dt><dd>{part.note}</dd></div>)}</dl>
+              <figcaption class="figure-note">{common.schematic}</figcaption>
+            </figure>
+          </div>
+          <p>{b.closures.boundary}</p>
+          <SourceReference locale={locale} ids={['REF-EU-2019-904-A6']} />
+        </TechNote>
+
+        {b.panels.items.map((panel: any) => (
+          <TechNote locale={locale} label={panel.title} ruled>
+            <ul class="bev-panel__list">{panel.bullets.map((bullet: string) => <li>{bullet}</li>)}</ul>
+            {panel.source && <p class="bev-panel__src t-fine">{panel.source}</p>}
+          </TechNote>
+        ))}
+      </div>
+    </div>
+  </section>
+  </>
+  ) : (
+  <>
 
   {/* ═══ HERO — STACKED ═════════════════════════════════════════════════
        The statement runs the full width of the chapter; the figure sits
@@ -906,6 +1160,8 @@ const SPREAD = [
       )}
     </div>
   </section>
+  </>
+  )}
   {/* Renders only when real, permitted project media exists. */}
   <ProjectProof locale={Astro.props.locale} industry="beverage" copy={b.proof} />
 </article>
@@ -916,6 +1172,173 @@ const SPREAD = [
      hairline geometry, transparent fills — the material's own behaviour used
      as the visual language. */
   .bev { --bev-thin: 1.1; }
+
+  /* ── English / Persian sales catalog ────────────────────────────────── */
+  .bev-cat-hero {
+    position: relative;
+    overflow: clip;
+    padding-block: calc(4.25rem + clamp(2.5rem, 6vw, 5rem)) clamp(3.5rem, 7vw, 6rem);
+  }
+  .bev-cat-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 78% 38%, color-mix(in oklab, var(--accent) 23%, transparent), transparent 34%),
+      repeating-linear-gradient(118deg, transparent 0 4.5rem, color-mix(in oklab, var(--inverse-ink) 3%, transparent) 4.5rem 4.55rem);
+  }
+  .bev-cat-hero__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(16rem, 0.82fr);
+    gap: clamp(2.5rem, 7vw, 7rem);
+    align-items: center;
+  }
+  .bev-cat-hero__head {
+    margin-block-start: var(--sp-5);
+    max-inline-size: 16ch;
+    font-size: clamp(2.6rem, 6vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    font-weight: var(--weight-medium);
+  }
+  .bev-cat-hero__head span { display: block; }
+  .bev-cat-hero__head span:last-child { color: var(--accent); }
+  .bev-cat-hero__lead {
+    margin-block-start: var(--sp-6);
+    max-inline-size: 57ch;
+    color: var(--ink-muted);
+    font-size: var(--step-1);
+    line-height: 1.55;
+  }
+  .bev-cat-hero__action { margin-block-start: var(--sp-6); }
+  .bev-cat-hero__markers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1.3rem;
+    margin-block-start: var(--sp-6);
+    color: var(--ink-muted);
+    font-size: var(--step--1);
+  }
+  .bev-cat-hero__markers li { display: flex; align-items: center; gap: 0.5rem; }
+  .bev-cat-hero__markers li::before { content: ''; inline-size: 0.35rem; block-size: 0.35rem; border-radius: 50%; background: var(--accent); flex: none; }
+  .bev-cat-hero__visual {
+    inline-size: 100%;
+    max-inline-size: 31rem;
+    justify-self: end;
+    margin: 0;
+    padding: clamp(0.8rem, 2vw, 1.5rem);
+    border: 1px solid color-mix(in oklab, var(--inverse-ink) 18%, transparent);
+    background: color-mix(in oklab, var(--inverse) 78%, transparent);
+    box-shadow: 0 2rem 5rem color-mix(in oklab, #000 20%, transparent);
+  }
+  .bev-cat-hero__visual svg { display: block; inline-size: 100%; block-size: auto; }
+  .bev-cat-hero__floor { stroke: color-mix(in oklab, var(--inverse-ink) 26%, transparent); stroke-width: 1; }
+
+  .bev-cat-section { padding-block: clamp(4rem, 8vw, 7rem); }
+  .bev-cat-head { max-inline-size: 65ch; }
+  .bev-cat-head h2 {
+    font-size: clamp(2rem, 4.5vw, 3.8rem);
+    line-height: 1.03;
+    letter-spacing: -0.035em;
+    font-weight: var(--weight-medium);
+  }
+  .bev-cat-head .eyebrow + h2 { margin-block-start: var(--sp-4); }
+  .bev-cat-head > p:last-child:not(.eyebrow) { margin-block-start: var(--sp-5); color: var(--ink-muted); font-size: var(--step-1); line-height: 1.55; }
+  .bev-cat-product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    border-block: var(--rule-strong);
+  }
+  .bev-cat-product {
+    display: grid;
+    align-content: start;
+    gap: var(--sp-4);
+    min-block-size: 14rem;
+    padding: clamp(1.4rem, 2.5vw, 2rem);
+    border-inline-end: var(--rule);
+  }
+  .bev-cat-product:last-child { border-inline-end: 0; }
+  .bev-cat-product__mark {
+    inline-size: 3.2rem;
+    block-size: 4.4rem;
+    border: 1px solid var(--accent-deep);
+    border-radius: 0.65rem 0.65rem 1.55rem 1.55rem;
+    background: color-mix(in oklab, var(--accent) 8%, transparent);
+  }
+  .bev-cat-product:nth-child(2) .bev-cat-product__mark { block-size: 2.7rem; border-radius: 1rem 1rem 0.4rem 0.4rem; }
+  .bev-cat-product:nth-child(3) .bev-cat-product__mark { inline-size: 4.5rem; block-size: 1.5rem; border-radius: 0.2rem; }
+  .bev-cat-product:nth-child(4) .bev-cat-product__mark { inline-size: 4rem; block-size: 3.2rem; border-radius: 50% 50% 0.3rem 0.3rem; }
+  .bev-cat-product:nth-child(5) .bev-cat-product__mark { inline-size: 3rem; block-size: 3rem; border-radius: 50%; box-shadow: inset 0 0 0 0.55rem var(--accent-wash); }
+  .bev-cat-product > .t-mono { color: var(--ink-muted); font-size: var(--step--2); }
+  .bev-cat-product h3 { font-size: var(--step-1); line-height: 1.25; }
+
+  .bev-cat-help { background: var(--surface-sunk); border-block: var(--rule); }
+  .bev-cat-help-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-block-start: clamp(2.5rem, 6vw, 4.5rem);
+    border-block-start: var(--rule-strong);
+  }
+  .bev-cat-help-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--sp-4);
+    min-block-size: 9rem;
+    padding: clamp(1.4rem, 3vw, 2rem);
+    border-inline-end: var(--rule);
+    border-block-end: var(--rule);
+  }
+  .bev-cat-help-card:nth-child(3n) { border-inline-end: 0; }
+  .bev-cat-help-card > span { color: var(--accent-deep); font-size: var(--step--2); }
+  .bev-cat-help-card h3 { font-size: var(--step-1); line-height: 1.3; }
+
+  .bev-cat-start { border-block-end: var(--rule); }
+  .bev-cat-start__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.75fr);
+    gap: clamp(2.5rem, 8vw, 7rem);
+    align-items: start;
+  }
+  .bev-cat-start__side {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border-block-start: 2px solid var(--accent-deep);
+    background: var(--surface-sunk);
+  }
+  .bev-cat-start__side h3 { font-size: var(--step-1); }
+  .bev-cat-start__side ul { display: grid; gap: 0.75rem; margin-block: var(--sp-5) var(--sp-6); }
+  .bev-cat-start__side li { position: relative; padding-inline-start: 1.2rem; color: var(--ink-muted); }
+  .bev-cat-start__side li::before { content: ''; position: absolute; inset-inline-start: 0; inset-block-start: 0.7em; inline-size: 0.42rem; block-size: 1px; background: var(--accent); }
+
+  .bev-cat-tech { background: var(--surface-sunk); }
+  .bev-cat-tech__list { margin-block-start: var(--sp-6); }
+  .bev-cat-tech :global(.tnote__body) { max-inline-size: none; }
+  .bev-cat-equation { padding: var(--sp-5); border-inline-start: 2px solid var(--accent); background: var(--surface); font-size: var(--step-2); }
+  .bev-cat-weight-figs { margin-block-start: var(--sp-6); }
+  .bev-cat-tech h3 { font-size: var(--step-1); }
+
+  @media (max-width: 1000px) {
+    .bev-cat-product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .bev-cat-product:nth-child(3) { border-inline-end: 0; }
+    .bev-cat-product:nth-child(n + 4) { border-block-start: var(--rule); }
+  }
+  @media (max-width: 900px) {
+    .bev-cat-hero__inner, .bev-cat-start__inner { grid-template-columns: minmax(0, 1fr); }
+    .bev-cat-hero__visual { justify-self: center; max-inline-size: 27rem; }
+    .bev-cat-help-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .bev-cat-help-card:nth-child(3n) { border-inline-end: var(--rule); }
+    .bev-cat-help-card:nth-child(2n) { border-inline-end: 0; }
+  }
+  @media (max-width: 620px) {
+    .bev-cat-hero { padding-block: calc(4.25rem + 2rem) 3.5rem; }
+    .bev-cat-hero__head { font-size: clamp(2.25rem, 11vw, 3.6rem); }
+    .bev-cat-product-grid, .bev-cat-help-grid { grid-template-columns: minmax(0, 1fr); }
+    .bev-cat-product, .bev-cat-product:nth-child(n), .bev-cat-help-card, .bev-cat-help-card:nth-child(n) { min-block-size: auto; border-inline-end: 0; border-block-start: var(--rule); }
+    .bev-cat-product:first-child, .bev-cat-help-card:first-child { border-block-start: 0; }
+    .bev-cat-hero__visual { padding: 0.4rem; }
+  }
 
   .bev-h2 {
     font-size: clamp(1.9rem, 4vw, 3.2rem);

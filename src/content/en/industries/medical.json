@@ -1,36 +1,36 @@
 {
   "meta": {
     "title": "Medical & pharmaceutical tooling — multi-cavity moulds | Metal Form",
-    "description": "Multi-cavity moulds for medical and pharmaceutical plastic parts, with DFM, agreed technical documentation, spares and backup tooling."
+    "description": "Production moulds, backup tooling, replacement moulds and spare parts for medical and pharmaceutical plastic components."
   },
   "name": "Medical & Pharmaceutical",
-  "tile": "Multi-cavity moulds for medical parts, where every cavity has to make the same part.",
-  "tileParts": "Multi-cavity · DFM · Backup moulds",
+  "tile": "Production, backup and replacement moulds for medical and pharmaceutical plastic parts.",
+  "tileParts": "Production moulds · Backup moulds · Spare parts",
   "hero": {
     "kicker": "Medical & Pharmaceutical",
     "headline": [
-      "Every cavity has to",
-      "make the same part."
+      "Moulds for medical and",
+      "pharmaceutical plastic parts."
     ],
-    "lead": "We build multi-cavity moulds for medical and pharmaceutical plastic parts. The work can start with the part itself and continue through DFM, mould manufacture, trials and agreed technical documentation.",
+    "lead": "From a sample, drawing or 3D model to production tooling, backup moulds and spare parts.",
     "markers": [
-      "Tooling experience to 46 cavities",
-      "Technical documentation agreed with the order",
-      "Second and backup moulds"
+      "Multi-cavity moulds",
+      "Backup & replacement tooling",
+      "Technical documents agreed for the project"
     ]
   },
   "blocks": {
     "atlas": {
       "index": "01",
-      "kicker": "Scope",
-      "heading": "What parts do we make moulds for?",
-      "body": "Many medical plastic parts look simple, but a small difference between cavities can affect sealing, assembly or how the part works.",
-      "listLabel": "Component family",
+      "kicker": "Medical parts",
+      "heading": "What we make",
+      "body": "Production moulds for medical, diagnostic and pharmaceutical plastic parts.",
+      "listLabel": "Component families and tooling considerations",
       "items": [
         {
           "id": "syringe",
-          "name": "Syringe barrels and plungers",
-          "hard": "Long, thin walls make core support, cooling and concentricity important.",
+          "name": "Syringe parts",
+          "hard": "Moulds for barrels, plungers and related syringe components.\nLong, thin walls make core support, cooling and concentricity important.",
           "spec": [
             "Core support and cooling",
             "Bore finish",
@@ -41,7 +41,7 @@
         {
           "id": "luer",
           "name": "Luer fittings and connectors",
-          "hard": "The tapered sealing surface has to mate correctly. Angle, finish and parting-line position must repeat across the cavities.",
+          "hard": "Moulds for sealing connections and small assembly parts.\nThe tapered sealing surface has to mate correctly. Angle, finish and parting-line position must repeat across the cavities.",
           "spec": [
             "Taper geometry and finish",
             "Gate kept off the sealing face",
@@ -52,7 +52,7 @@
         {
           "id": "tips",
           "name": "Pipette tips",
-          "hard": "With many cavities and a very small opening, even a small difference between cavities can affect how the tip performs.",
+          "hard": "Multi-cavity moulds for small tips and controlled openings.\nWith many cavities and a very small opening, even a small difference between cavities can affect how the tip performs.",
           "spec": [
             "High cavitation",
             "Aperture control",
@@ -73,8 +73,8 @@
         },
         {
           "id": "iv",
-          "name": "IV and infusion set components",
-          "hard": "Several small parts have to fit together, so the combined tolerance stack matters as much as any single dimension.",
+          "name": "IV and infusion components",
+          "hard": "Moulds for small parts that must assemble and seal together.\nSeveral small parts have to fit together, so the combined tolerance stack matters as much as any single dimension.",
           "spec": [
             "Assembly tolerance stack",
             "Multi-cavity balance",
@@ -85,7 +85,7 @@
         {
           "id": "diagnostic",
           "name": "Diagnostic consumables",
-          "hard": "Fluid paths, sealing surfaces and optical areas can directly affect how the part performs.",
+          "hard": "Moulds for consumables with fluid, sealing or optical features.\nFluid paths, sealing surfaces and optical areas can directly affect how the part performs.",
           "spec": [
             "Functional surfaces",
             "Weld-line placement",
@@ -106,8 +106,8 @@
         },
         {
           "id": "packaging",
-          "name": "Pharmaceutical packaging components",
-          "hard": "When a product stays in production for years, mould serviceability and spare parts become commercially important.",
+          "name": "Pharmaceutical packaging parts",
+          "hard": "Moulds for closures and other pharmaceutical packaging parts.\nWhen a product stays in production for years, mould serviceability and spare parts become commercially important.",
           "spec": [
             "Long programme life",
             "Spares and wear parts",
@@ -162,7 +162,7 @@
     "imbalance": {
       "index": "03",
       "kicker": "Cavity consistency",
-      "heading": "A symmetrical runner layout is not enough.",
+      "heading": "Multi-cavity consistency",
       "body": "The runner can look perfectly balanced on the drawing and the cavities can still fill differently in production. That is why we compare part weight, critical dimensions and filling behaviour cavity by cavity.",
       "steps": [
         {
@@ -212,7 +212,7 @@
       "index": "04",
       "kicker": "Responsibility",
       "heading": "We build the mould. The manufacturer approves the production process and final product.",
-      "body": "Metal Form is responsible for mould engineering, manufacture, trials, dimensional correction and the technical documentation agreed with the order. The manufacturer is responsible for validating production and approving the final medical or pharmaceutical product.",
+      "body": "Metal Form supplies the mould and tooling engineering. Production validation and final product approval remain with the manufacturer.",
       "body2": "The boundary is agreed before order so tooling evidence supports — but never replaces — the manufacturer's own qualification work.",
       "supplyHeading": "Metal Form",
       "supply": [
@@ -357,7 +357,7 @@
       "warranty": "Tooling warranty terms are defined per project against the mould specification and written into the order. No shot count is published here: a shot count that ignores your resin, your cycle and your maintenance means nothing."
     },
     "second": {
-      "index": "When a second mould makes sense",
+      "index": "Backup moulds and spares",
       "kicker": "Supply continuity",
       "heading": "If you have only one mould, one failure can stop production.",
       "body": "A second mould can protect production, add capacity or reduce dependence on one mould maker or one production site. We can build it from your drawings and data, an existing mould specification or the part itself.",
@@ -395,10 +395,10 @@
       ],
       "offerHeading": "What we can supply",
       "offer": [
-        "A second or backup mould to the same part specification",
-        "A replacement mould for a part already in production",
-        "Replacement cavity inserts, cores and wear parts",
-        "A new mould to replace a worn, lost or obsolete tool",
+        "New production moulds\nBuilt from a drawing, 3D model or physical sample.",
+        "Backup or second moulds\nMade to the same part specification for added capacity or production protection.",
+        "Replacement moulds\nFor parts already in production when the original mould is worn, lost or unavailable.",
+        "Spare inserts and wear parts\nReplacement cavity inserts, cores and other agreed wear parts.",
         "Documentation scope is agreed with the tool order."
       ],
       "honesty": "A second mould still has to go through the manufacturer's own approval and validation process before regulated production."
@@ -406,14 +406,14 @@
     "start": {
       "index": "08",
       "kicker": "Start",
-      "heading": "Send the part.",
-      "body": "You do not need every project detail before contacting us. A 3D model, drawing or physical sample is enough for a first review. Annual volume and critical dimensions help if you already have them.",
-      "needHeading": "What helps us start",
+      "heading": "Start with the part.",
+      "body": "A model, drawing or physical sample is enough for a first review. If you already know the material, annual volume or machine details, send those too.",
+      "needHeading": "Useful if available",
       "need": [
         "3D model, drawing or physical sample",
-        "Material or resin",
-        "Annual volume",
-        "Required mould life\nCritical dimensions or functional areas",
+        "Material, if known",
+        "Annual volume, if known",
+        "Machine details, if selected",
         "Injection-machine details, if already selected",
         "Initial part review",
         "Recommended tooling approach",
@@ -425,7 +425,7 @@
       ]
     },
     "panels": {
-      "heading": "Technical detail",
+      "heading": "Technical details",
       "items": [
         {
           "title": "Cavitation: how the number gets chosen",
@@ -466,10 +466,10 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A model, drawing or sample is enough to start. We will review the part, the tooling approach, cavity count and the information needed for a quotation.",
-    "action": "Send your component",
+    "body": "A model, drawing or physical sample is enough to start. We will review the part and what is needed for a quotation.",
+    "action": "Send your part",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — medical / pharmaceutical component.\n\nPart: \nResin: \nAnnual volume: \nRequired tool life (shots): \nCavities required: \nCritical dimensions: \nI have: 3D model / 2D drawing / physical sample / existing tool\nPress (tonnage, platen, tie-bar spacing): \nDelivery to: \nNDA required: yes / no",
-    "note": "We supply the mould and engineering. Production approval stays with the manufacturer."
+    "note": "Metal Form supplies the mould and tooling engineering. Production validation and final product approval remain with the manufacturer."
   }
 }

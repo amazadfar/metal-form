@@ -9,13 +9,13 @@
   "hero": {
     "kicker": "Beverage & PET Packaging",
     "headline": [
-      "Every gram.",
-      "Every second.",
-      "Every cavity."
+      "PET preform,",
+      "closure and neck-change",
+      "tooling."
     ],
-    "lead": "We build preform and closure moulds, blow-mould parts, parts needed for neck-standard changes and spares. Send a bottle and cap; we review what tooling is needed, the right cavity count and what the choices mean for production cost.",
+    "lead": "Moulds, replacement parts and backup tooling for beverage production. Send a bottle, cap, drawing or sample to start.",
     "markers": [
-      "Preform tooling to 46 cavities",
+      "Preform & closure moulds",
       "Neck-standard changes",
       "Spares and backup tooling"
     ]
@@ -24,7 +24,7 @@
     "grams": {
       "index": "01",
       "kicker": "Production economics",
-      "heading": "One extra gram becomes tonnes of extra resin at scale.",
+      "heading": "Production economics",
       "body": "At 100 million bottles a year, just one extra gram on every preform means 100 tonnes of additional resin.",
       "body2": "The plant still has to meet minimum weight and wall-performance requirements, so the process has to be set high enough that even the lightest cavity stays above the minimum. Heavier cavities then use extra resin on every shot.",
       "scaleLabel": "1 gram × 100 million bottles = 100 tonnes",
@@ -63,14 +63,14 @@
       "chartMean": "Mean weight actually run",
       "chartGap": "Avoidable resin caused by cavity spread",
       "close": "Reducing cavity-to-cavity spread allows the average weight to move closer to the design target without changing the bottle. That requires balanced melt flow, balanced cooling and consistent cavity manufacture.",
-      "cavityHeading": "A 32-cavity mould is not the best choice for every production line.",
+      "cavityHeading": "Cavity count and weight consistency",
       "cavityBody": "Cavity count and cycle time affect output, but the right number also depends on melt balance, cooling, the injection machine, maintenance and the equipment that handles the preforms after moulding.",
       "cavityBody2": "Metal Form's documented tooling experience runs to 46 cavities.",
       "cavityBody3": "If a project needs more than 46 cavities, we define exactly what part of the project is within our scope before quoting. We do not imply experience above our documented range."
     },
     "neck": {
       "index": "03",
-      "kicker": "Neck standard",
+      "kicker": "What we make",
       "heading": "If the bottle neck changes, more than the preform mould changes.",
       "body": "Changing the neck standard can affect the preform mould, blow mould, cap and capper. These parts need to be checked together.",
       "tabsLabel": "Compare neck standards",
@@ -133,7 +133,7 @@
       ],
       "conversionNote": "We can review these items together so compatibility problems are found before the change reaches production.",
       "specLabels": {
-        "geometry": "Preform moulds · Closure moulds · Blow-mould neck parts · Cold-half spares",
+        "geometry": "Preform moulds · Closure moulds · Blow-mould neck parts · Parts for neck-standard changes · Spare parts and backup tooling",
         "use": "Where it is used",
         "weight": "Preform weight",
         "warning": "Watch"
@@ -170,7 +170,7 @@
     },
     "defects": {
       "index": "Full defect matrix",
-      "kicker": "Diagnosis",
+      "kicker": "What we can help with",
       "heading": "Some bottle problems come from the mould. Some do not.",
       "body": "Before recommending a new mould, we separate tooling causes from resin, drying and process causes.",
       "columns": [
@@ -332,13 +332,13 @@
       "index": "08",
       "kicker": "Start",
       "heading": "Send the bottle. Send the cap.",
-      "body": "For a first review, send a sample, drawing or clear photographs, plus your annual volume.",
-      "sendHeading": "What helps us start",
+      "body": "A sample, drawing or clear photos are enough for a first review. If you know the annual volume, current neck standard or machine details, send those too.",
+      "sendHeading": "Useful if available",
       "send": [
-        "Bottle type and size",
-        "Still, carbonated, hot-fill or ambient use",
-        "Current neck standard",
-        "Current preform weight, if known",
+        "Sample, drawing or clear photos",
+        "Annual volume, if known",
+        "Current neck standard, if known",
+        "Machine details, if available",
         "Annual volume",
         "Sample, drawing or photographs",
         "Machine details, if available",
@@ -347,18 +347,18 @@
       ],
       "getHeading": "What comes back",
       "get": [
-        "Initial geometry review",
-        "Recommended tooling approach",
-        "Recommended cavity count",
-        "Scope for the mould, change parts and spares",
-        "Open technical questions that must be answered before quotation",
-        "The spare-part set specified at design time and quoted with the tool",
+        "New tooling for a new bottle or cap",
+        "Replacing an old or worn mould",
+        "Building a second or backup mould",
+        "Changing a neck standard",
+        "Reviewing cavity count and tooling setup",
+        "Reducing unnecessary weight variation where tooling contributes",
         "Tooling warranty terms, defined against this project and this mould specification",
         "A clear answer where the geometry you already have needs no change at all"
       ]
     },
     "panels": {
-      "heading": "Technical detail",
+      "heading": "Technical details",
       "items": [
         {
           "title": "The conditions your tool has to survive",
@@ -402,7 +402,7 @@
   },
   "cta": {
     "headline": "Send the bottle. Send the cap.",
-    "body": "A sample, drawing or clear photographs are enough to start. We will review what tooling is needed, the cavity count and the information required for a quotation.",
+    "body": "A bottle, cap, drawing, sample or clear photos are enough to start. We will review what tooling is needed and the information required for a quotation.",
     "action": "Send your bottle and cap",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — PET packaging enquiry.\n\nI need: preform mould / closure mould / blow-mould change parts / neck ring and core spares / preform or cap supply\nNeck standard: PCO 1881 / 29/25 / PCO 1810 / 30/25 / other\nBottle: 500 ml still / 1.5 L carbonated / other\nCurrent preform weight: \nTarget weight: \nAnnual volume: \nInjection machine (make, model, tie-bar spacing, tonnage): \n\nI can send drawings or a sample."
