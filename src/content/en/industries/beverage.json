@@ -13,7 +13,7 @@
       "Every second.",
       "Every cavity."
     ],
-    "lead": "Preform moulds, closure moulds, blow-mould change parts and the engineering behind them. Send a bottle and a cap. We come back with the geometry, the cavity count, the tooling route and the production economics.",
+    "lead": "Preform and closure tooling, blow-mould change parts, neck conversion and cold-half spares. Send a bottle and cap; we review the geometry, cavitation, tooling route and production economics.",
     "markers": [
       "Preform tooling to 46 cavities",
       "Neck-standard conversion",
@@ -24,10 +24,10 @@
     "grams": {
       "index": "01",
       "kicker": "Production economics",
-      "heading": "At scale, preform weight drives bottle cost.",
-      "body": "At high volume, small changes in preform mass repeat on every bottle. That makes preform weight an important recurring cost variable, alongside cycle time, yield and the required bottle performance.",
-      "body2": "The weight needed for a bottle depends on volume, neck finish, performance, process and material. We do not publish a generic target weight; the project is evaluated against your bottle and line.",
-      "scaleLabel": "500 ml preform weight, grams",
+      "heading": "Every extra gram repeats on every bottle.",
+      "body": "At high volume, small differences in preform mass become large recurring resin costs. At 100 million bottles a year, one extra gram means 100 tonnes of additional resin.",
+      "body2": "The plant still has to protect minimum weight and wall performance, so the lightest cavity sets the production floor. Cavity-to-cavity spread pushes the average above that floor.",
+      "scaleLabel": "1 gram × 100 million bottles = 100 tonnes",
       "rows": [
         {
           "weight": "12.7 – 13.7",
@@ -50,7 +50,7 @@
           "note": "Legacy tall carbonated neck. Installed base only — the caps are not interchangeable with 1881."
         }
       ],
-      "close": "At 100 million bottles a year, one extra gram means 100 tonnes of additional resin. Apply your own resin price and annual volume to calculate the impact."
+      "close": "Tooling is bought once. Unnecessary resin is bought on every shot. Reducing cavity spread lets the average move closer to the design target without changing the bottle."
     },
     "cavities": {
       "index": "02",
@@ -63,17 +63,17 @@
       "chartMean": "Mean weight actually run",
       "chartGap": "Avoidable resin caused by cavity spread",
       "close": "Reducing cavity-to-cavity spread allows the average weight to move closer to the design target without changing the bottle. That requires balanced melt flow, balanced cooling and consistent cavity manufacture.",
-      "cavityHeading": "Where our cavity count sits, and where it does not",
-      "cavityBody": "Output depends on cavity count and cycle time, but the economic cavity count also depends on balance, maintenance, press and line requirements. We quote it from the actual project rather than from a generic volume band.",
-      "cavityBody2": "Metal Form's documented tooling experience runs to 46 cavities. That is an experience statement, not a universal recommendation or a production-capacity guarantee.",
-      "cavityBody3": "If a project requires cavitation above our documented 46-cavity experience, we say so before quoting. Any narrower spare, insert or component scope must be agreed specifically for that tool rather than implied here."
+      "cavityHeading": "Cavitation follows the real line, not a generic volume band.",
+      "cavityBody": "Cavity count and cycle time drive output, but the useful number also depends on melt balance, cooling, maintenance, the injection press and downstream handling.",
+      "cavityBody2": "Metal Form's documented tooling experience runs to 46 cavities.",
+      "cavityBody3": "Above that, we define the narrower scope before quoting rather than imply experience we do not have."
     },
     "neck": {
       "index": "03",
-      "kicker": "The interface",
-      "heading": "The neck finish defines the interface.",
-      "body": "The finish is the one piece of geometry the bottle, the cap and the capper all have to agree on. It is why a neck change is never just a preform-tool change — and why conversion projects usually stall on the part that was ordered last.",
-      "tabsLabel": "Neck standard",
+      "kicker": "Scope & conversion",
+      "heading": "A neck change touches more than the preform mould.",
+      "body": "The neck finish is the shared interface between the preform, bottle, closure and capper. A conversion only works when those interfaces are changed together.",
+      "tabsLabel": "Compare neck standards",
       "standards": [
         {
           "id": "pco1881",
@@ -124,16 +124,16 @@
           "warning": "Hot fill needs a bottle designed for the vacuum, not just a wider neck."
         }
       ],
-      "conversionHeading": "A neck conversion is four things, not one",
+      "conversionHeading": "A conversion usually touches",
       "conversion": [
-        "The preform mould — cavities, cores and split neck rings",
+        "The preform mould",
         "The blow-mould neck insert",
         "The capper change parts",
-        "The cap supply itself"
+        "The closure supply"
       ],
-      "conversionNote": "The neck inserts and change parts are usually the bottleneck, because they are usually ordered last. We quote them together.",
+      "conversionNote": "We can quote the tooling and change parts as one conversion scope.",
       "specLabels": {
-        "geometry": "Geometry",
+        "geometry": "Preform moulds · Closure tooling · Blow-mould change parts · Cold-half spares",
         "use": "Where it is used",
         "weight": "Preform weight",
         "warning": "Watch"
@@ -142,8 +142,8 @@
     "stretch": {
       "index": "04",
       "kicker": "The physics",
-      "heading": "The neck stays. The body stretches.",
-      "body": "The finish comes out of the preform tool at final dimension and is never touched again — it is not blown, not stretched, not re-formed. Everything below the support ring is. That is why the preform has to be designed for the bottle rather than treated as a separate part.",
+      "heading": "From preform to bottle",
+      "body": "The neck leaves the preform tool at final geometry; the body is reheated, stretched and blown. That is why a preform has to be engineered for the bottle and line rather than treated as a separate part.",
       "stages": [
         {
           "label": "Preform",
@@ -169,10 +169,10 @@
       "close": "The gate zone in the base stays amorphous while the sidewall is strengthened by orientation. That amorphous zone is where stress cracking starts in the field — which is why gate geometry is a product-life decision, not a cosmetic one."
     },
     "defects": {
-      "index": "05",
-      "kicker": "Honesty",
-      "heading": "What goes wrong, and where it actually starts.",
-      "body": "A new tool fixes some of these and none of the others. This is which is which — and where each one actually starts.",
+      "index": "Full defect matrix",
+      "kicker": "Diagnosis",
+      "heading": "Some bottle problems start in the tool. Some do not.",
+      "body": "We separate tooling causes from resin, drying and process causes before proposing a new tool.",
       "columns": [
         "Resin & drying",
         "Melt & hot runner",
@@ -180,8 +180,8 @@
         "Cooling",
         "Blowing & handling"
       ],
-      "toolSide": "A tooling problem",
-      "processSide": "A process or material problem",
+      "toolSide": "Tooling",
+      "processSide": "Material / process",
       "rows": [
         {
           "defect": "Acetaldehyde in still water",
@@ -192,8 +192,8 @@
             0,
             0
           ],
-          "side": "process",
-          "note": "Melt residence and dead spots in the manifold are a tooling matter; regrind level and drying are not."
+        "side": "Material / process, with tooling contribution possible",
+        "note": "Drying and material history matter; dead spots in the melt path can also contribute."
         },
         {
           "defect": "Cavity-to-cavity weight spread",
@@ -204,8 +204,8 @@
             1,
             0
           ],
-          "side": "tool",
-          "note": "Melt balance and cooling balance across the tool. This one is squarely ours."
+        "side": "Tooling",
+        "note": "Melt balance, cooling balance and cavity consistency are the first places to look."
         },
         {
           "defect": "Black specks",
@@ -252,8 +252,8 @@
             0,
             0
           ],
-          "side": "tool",
-          "note": "Neck ring split-line placement and wear. A design decision first, a maintenance issue second."
+        "side": "Tooling",
+        "note": "Neck-ring split-line placement, steel condition and wear are the first checks."
         },
         {
           "defect": "Long cycle",
@@ -264,8 +264,8 @@
             1,
             1
           ],
-          "side": "tool",
-          "note": "Core cooling geometry, water temperature at the tool, and how many post-mould cooling stations the take-out plate has."
+        "side": "Tooling + process",
+        "note": "Core cooling, available water and downstream handling all affect the real cycle."
         },
         {
           "defect": "Stress cracking in the field",
@@ -282,10 +282,10 @@
       ]
     },
     "closures": {
-      "index": "06",
-      "kicker": "The other half of the pack",
-      "heading": "EU beverage closures changed in 2024.",
-      "body": "Under Directive (EU) 2019/904, certain single-use plastic beverage containers may be placed on the EU market only when plastic caps and lids remain attached during the intended use stage. That requirement changes closure geometry and tooling. It is an EU market requirement, not a Metal Form certification.",
+      "index": "Closure tooling detail",
+      "kicker": "Closures",
+      "heading": "Tethered-cap requirements changed closure tooling in the EU.",
+      "body": "For applicable EU single-use beverage packaging, caps and lids must remain attached during intended use. That changes closure geometry and tooling; it does not make Metal Form a regulatory certifier.",
       "tracks": [
         {
           "name": "Injection",
@@ -316,7 +316,7 @@
           "note": "The closure geometry that mates with the neck finish."
         }
       ],
-      "boundary": "Where our scope stops: we build closure tooling. Slitting and folding equipment, capping machinery and line equipment are not ours to supply."
+      "boundary": "We build closure tooling and related mould components. Slitting, folding, capping and filling-line equipment are outside our supply scope."
     },
     "freight": {
       "index": "07",
@@ -330,16 +330,16 @@
     },
     "start": {
       "index": "08",
-      "kicker": "Starting",
-      "heading": "What to send.",
-      "body": "You do not need all of this. A bottle, a cap and an annual volume is enough for a first technical read.",
-      "sendHeading": "What you send",
+      "kicker": "Start",
+      "heading": "Send the bottle. Send the cap.",
+      "body": "A sample, drawing or clear photographs plus annual volume is enough for a first technical review.",
+      "sendHeading": "What helps us start",
       "send": [
-        "Bottle: volume, format, still or carbonated, hot fill or ambient",
-        "The neck standard you run, or the one you intend to move to",
-        "Current preform weight, and a target if you have one",
-        "A sample bottle and cap, drawings, or photographs with a dimension we can scale from",
-        "Annual volume, and the shape of your season",
+        "Bottle format and use: still, carbonated, hot fill or ambient",
+        "Current neck standard",
+        "Current preform weight, if known",
+        "Annual volume",
+        "Sample, drawing or photographs; machine details if available",
         "Resin grade and IV, and whether recycled content is in the mix",
         "Injection machine: make, model, tie-bar spacing, platen size, clamp tonnage, shot capacity",
         "Take-out plate: robot type and number of cooling stations, and the chilled water temperature actually available at the tool",
@@ -347,10 +347,10 @@
       ],
       "getHeading": "What comes back",
       "get": [
-        "Whether the geometry you have is the geometry you should have",
-        "A cavitation proposal reasoned against your volume and the machine you already own",
-        "Cold half specified: cavity inserts, core rods, split neck rings, lock rings",
-        "Hot runner and gate strategy, with melt balance and vestige height treated as design outputs",
+        "Initial geometry and tooling route",
+        "Cavitation proposal against volume and the available machine",
+        "Scope for mould, change parts and spares",
+        "Open technical questions that must be resolved before quotation",
         "A cooling circuit designed for the water temperature your plant can actually supply",
         "The spare-part set specified at design time and quoted with the tool",
         "Tooling warranty terms, defined against this project and this mould specification",
@@ -402,7 +402,7 @@
   },
   "cta": {
     "headline": "Send the bottle. Send the cap.",
-    "body": "Drawings, a physical sample, or a photograph and a target gram weight — any one of them is enough to start. We come back with the geometry, the tooling route, the cavity count and the production economics.",
+    "body": "A sample, drawing or clear photographs are enough to start. We will review the geometry, tooling route, cavitation and the information needed to quote.",
     "action": "Send your bottle and cap",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — PET packaging enquiry.\n\nI need: preform mould / closure mould / blow-mould change parts / neck ring and core spares / preform or cap supply\nNeck standard: PCO 1881 / 29/25 / PCO 1810 / 30/25 / other\nBottle: 500 ml still / 1.5 L carbonated / other\nCurrent preform weight: \nTarget weight: \nAnnual volume: \nInjection machine (make, model, tie-bar spacing, tonnage): \n\nI can send drawings or a sample."
