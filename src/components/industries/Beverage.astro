@@ -28,16 +28,18 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
-const isEnglish = locale === 'en';
+const COMPACT_LOCALES = new Set<Locale>(['en', 'fa', 'ru', 'hy']);
+const isCompact = COMPACT_LOCALES.has(locale);
 const showUnsupportedWeightBands = false;
 const showUnsupportedNeckGeometry = false;
 const showUnsupportedFreightComparison = false;
 const publicPanels = (b.panels?.items ?? []).slice(1);
-const representativeDefects = isEnglish
-  ? [b.defects.rows[1], b.defects.rows[5], b.defects.rows[6], b.defects.rows[0]]
+const REPRESENTATIVE_DEFECT_INDICES = [1, 5, 6, 0];
+const DEFECT_SIDE_BY_INDEX = ['process', 'tool', 'process', 'process', 'tool', 'tool', 'tool', 'tool'];
+const representativeDefects = isCompact
+  ? REPRESENTATIVE_DEFECT_INDICES.map((index) => ({ index, row: b.defects.rows[index] }))
   : [];
-const defectSide = (row: any): string =>
-  String(row.side).toLowerCase().startsWith('tool') ? 'tool' : 'process';
+const defectSide = (rowIndex: number): string => DEFECT_SIDE_BY_INDEX[rowIndex] ?? 'process';
 
 // Preform and bottle profiles. The finish geometry is identical in both — that
 // is the point of the figure and it must stay true in the drawing.
@@ -153,7 +155,7 @@ const SPREAD = [
   </header>
 
   {/* ═══ 01 · GRAMS ═════════════════════════════════════════════════════ */}
-  {isEnglish ? (
+  {isCompact ? (
   <section class="bev-cav bev-econ" id="economics" data-tex="wave">
     <div class="shell--wide">
       <div class="bev-cav__head">
@@ -326,13 +328,13 @@ const SPREAD = [
   <section class="bev-neck" id="neck">
     <div class="shell--wide">
       <div class="bev-neck__head">
-        <p class="eyebrow">{isEnglish ? b.neck.kicker : `${b.neck.index} · ${b.neck.kicker}`}</p>
+        <p class="eyebrow">{isCompact ? b.neck.kicker : `${b.neck.index} · ${b.neck.kicker}`}</p>
         <h2 class="bev-h2">{b.neck.heading}</h2>
         <p class="t-lead">{b.neck.body}</p>
-        {isEnglish && <p class="bev-neck__capability">{b.neck.specLabels.geometry}</p>}
+        {isCompact && <p class="bev-neck__capability">{b.neck.specLabels.geometry}</p>}
       </div>
 
-      {!isEnglish && (
+      {!isCompact && (
       <div class="bev-std" data-tabs>
         <div class="bev-std__tabs" role="tablist" aria-label={b.neck.tabsLabel}>
           {b.neck.standards.map((s: any) => (
@@ -412,7 +414,7 @@ const SPREAD = [
       </div>
       )}
 
-      {isEnglish ? (
+      {isCompact ? (
       <div class="bev-conv bev-conv--visible">
         <h3 class="bev-h4">{b.neck.conversionHeading}</h3>
         <ol class="bev-conv__list">
@@ -439,7 +441,7 @@ const SPREAD = [
   </section>
 
   {/* ═══ 04 · STRETCH ═══════════════════════════════════════════════════ */}
-  {!isEnglish && (
+  {!isCompact && (
   <section class="bev-stretch" id="stretch" data-stepper data-step="0">
     <div class="shell--wide bev-stretch__head">
       <p class="eyebrow">{b.stretch.index} · {b.stretch.kicker}</p>
@@ -507,15 +509,15 @@ const SPREAD = [
   <section class="bev-def" id="defects">
     <div class="shell--wide">
       <div class="bev-def__head">
-        <p class="eyebrow">{isEnglish ? b.defects.kicker : `${b.defects.index} · ${b.defects.kicker}`}</p>
+        <p class="eyebrow">{isCompact ? b.defects.kicker : `${b.defects.index} · ${b.defects.kicker}`}</p>
         <h2 class="bev-h2">{b.defects.heading}</h2>
         <p class="t-lead">{b.defects.body}</p>
       </div>
 
-      {isEnglish ? (
+      {isCompact ? (
       <ol class="bev-diagnosis">
-        {representativeDefects.map((row: any, i: number) => (
-          <li data-side={defectSide(row)}>
+        {representativeDefects.map(({ row, index }: any, i: number) => (
+          <li data-side={defectSide(index)}>
             <span class="bev-diagnosis__n t-mono">{String(i + 1).padStart(2, '0')}</span>
             <div>
               <h3>{row.defect}</h3>
@@ -539,8 +541,8 @@ const SPREAD = [
               </tr>
             </thead>
             <tbody>
-              {b.defects.rows.map((row: any) => (
-                <tr data-side={defectSide(row)}>
+              {b.defects.rows.map((row: any, rowIndex: number) => (
+                <tr data-side={defectSide(rowIndex)}>
                   <th scope="row">
                     <span class="bev-matrix__name">{row.defect}</span>
                     <span class="bev-matrix__note">{row.note}</span>
@@ -571,12 +573,12 @@ const SPREAD = [
   <section class="bev-cap" id="closures">
     <div class="shell--wide">
       <div class="bev-cap__head">
-        <p class="eyebrow">{isEnglish ? b.closures.kicker : `${b.closures.index} · ${b.closures.kicker}`}</p>
+        <p class="eyebrow">{isCompact ? b.closures.kicker : `${b.closures.index} · ${b.closures.kicker}`}</p>
         <h2 class="bev-h2">{b.closures.heading}</h2>
         <p class="t-lead">{b.closures.body}</p>
       </div>
 
-      {!isEnglish && <TechNote locale={locale} kind="detail">
+      {!isCompact && <TechNote locale={locale} kind="detail">
         <div class="bev-cap__grid">
           {/* Two routes on one time axis: the cycle difference is a length. */}
           <div class="bev-tracks">
@@ -690,12 +692,12 @@ const SPREAD = [
   <section class="bev-start" id="start">
     <div class="shell--wide">
       <div class="bev-start__head">
-        <p class="eyebrow">{isEnglish ? b.start.kicker : `${b.start.index} · ${b.start.kicker}`}</p>
+        <p class="eyebrow">{isCompact ? b.start.kicker : `${b.start.index} · ${b.start.kicker}`}</p>
         <h2 class="bev-h2">{b.start.heading}</h2>
         <p class="t-lead">{b.start.body}</p>
       </div>
 
-      {isEnglish ? (
+      {isCompact ? (
       <div class="bev-ledger bev-ledger--visible">
         <section class="bev-ledger__col">
           <h3 class="bev-h4">{b.start.sendHeading}</h3>
@@ -722,7 +724,7 @@ const SPREAD = [
       )}
 
       {/* Layer three: the technical depth, folded away until it is wanted. */}
-      {isEnglish ? (
+      {isCompact ? (
       <div class="bev-panels bev-panels--compact">
         <h3 class="t-label bev-panels__h">{b.panels?.heading ?? b.blocksPanelsHeading}</h3>
 
@@ -806,8 +808,8 @@ const SPREAD = [
                 </tr>
               </thead>
               <tbody>
-                {b.defects.rows.map((row: any) => (
-                  <tr data-side={defectSide(row)}>
+                {b.defects.rows.map((row: any, rowIndex: number) => (
+                  <tr data-side={defectSide(rowIndex)}>
                     <th scope="row">
                       <span class="bev-matrix__name">{row.defect}</span>
                       <span class="bev-matrix__note">{row.note}</span>

@@ -31,11 +31,12 @@ interface Props {
 }
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
-const isEnglish = locale === 'en';
+const COMPACT_LOCALES = new Set<Locale>(['en', 'fa', 'ru', 'hy']);
+const isCompact = COMPACT_LOCALES.has(locale);
 const splitCompactItems = (items: string[]): string[] =>
   items.flatMap((item) => String(item).split('\n').filter(Boolean));
-const medicalStartNeed = isEnglish ? splitCompactItems(b.start.need.slice(0, 5)) : [];
-const medicalStartGet = isEnglish
+const medicalStartNeed = isCompact ? splitCompactItems(b.start.need.slice(0, 5)) : [];
+const medicalStartGet = isCompact
   ? splitCompactItems([...b.start.need.slice(5), ...b.start.get])
   : [];
 const showUnsupportedRunnerTemperature = false;
@@ -121,7 +122,7 @@ const withUnit = (value: number, i: number): string => {
   <section class="med-atlas" id="atlas">
     <div class="shell--wide">
       <div class="med-head">
-        <p class="eyebrow">{isEnglish ? b.atlas.kicker : `${b.atlas.index} · ${b.atlas.kicker}`}</p>
+        <p class="eyebrow">{isCompact ? b.atlas.kicker : `${b.atlas.index} · ${b.atlas.kicker}`}</p>
         <h2 class="med-h2">{b.atlas.heading}</h2>
         <p class="t-lead">{b.atlas.body}</p>
       </div>
@@ -156,7 +157,7 @@ const withUnit = (value: number, i: number): string => {
             <h3 class="med-h4">{item.name}</h3>
             <p class="med-atlas__hard">{item.hard}</p>
             <ul class="badges med-atlas__spec">
-              {(isEnglish ? item.spec.slice(0, 3) : item.spec).map((s: string) => <li class="badge">{s}</li>)}
+              {(isCompact ? item.spec.slice(0, 3) : item.spec).map((s: string) => <li class="badge">{s}</li>)}
             </ul>
           </div>
         ))}
@@ -165,7 +166,7 @@ const withUnit = (value: number, i: number): string => {
   </section>
 
   {/* ═══ 02 · ARITHMETIC ════════════════════════════════════════════════ */}
-  {isEnglish ? (
+  {isCompact ? (
   <section class="med-calc med-calc--compact" id="arithmetic">
     <div class="shell--wide">
       <div class="med-head">
@@ -392,17 +393,17 @@ const withUnit = (value: number, i: number): string => {
   <section class="med-line ground--steel" id="line" data-tex="dot">
     <div class="shell--wide">
       <div class="med-head med-line__head">
-        <p class="eyebrow">{isEnglish ? b.line.kicker : `${b.line.index} · ${b.line.kicker}`}</p>
+        <p class="eyebrow">{isCompact ? b.line.kicker : `${b.line.index} · ${b.line.kicker}`}</p>
         <h2 class="med-h2">{b.line.heading}</h2>
         <p class="t-lead">{b.line.body}</p>
-        {!isEnglish && <p class="med-line__sub">{b.line.body2}</p>}
+        {!isCompact && <p class="med-line__sub">{b.line.body2}</p>}
       </div>
 
       {/* One continuous rule down the middle. Nothing crosses it. */}
       <div class="med-ledger">
         <section class="med-ledger__col med-ledger__col--ours">
           <h3 class="med-h5 med-ledger__h">{b.line.supplyHeading}</h3>
-          <ul>{(isEnglish ? b.line.supply.slice(0, 5) : b.line.supply).map((item: string) => <li>{item}</li>)}</ul>
+          <ul>{(isCompact ? b.line.supply.slice(0, 5) : b.line.supply).map((item: string) => <li>{item}</li>)}</ul>
         </section>
         <section class="med-ledger__col med-ledger__col--yours">
           <h3 class="med-h5 med-ledger__h">{b.line.staysHeading}</h3>
@@ -411,7 +412,7 @@ const withUnit = (value: number, i: number): string => {
               columns — which is where it used to sit, and where a reader
               skimming two columns never reached it. */}
           <p class="med-ledger__caveat">{b.line.close}</p>
-          <ul>{(isEnglish ? b.line.stays.slice(0, 5) : b.line.stays).map((item: string) => <li>{item}</li>)}</ul>
+          <ul>{(isCompact ? b.line.stays.slice(0, 5) : b.line.stays).map((item: string) => <li>{item}</li>)}</ul>
         </section>
       </div>
 
@@ -425,7 +426,7 @@ const withUnit = (value: number, i: number): string => {
   </section>
 
   {/* ═══ 05 · ANATOMY ═══════════════════════════════════════════════════ */}
-  {!isEnglish && (
+  {!isCompact && (
   <section class="med-anat" id="anatomy">
     <div class="shell--wide">
       <div class="med-head">
@@ -535,18 +536,18 @@ const withUnit = (value: number, i: number): string => {
   <section class="med-second" id="second">
     <div class="shell--wide med-second__inner">
       <div class="med-second__manifesto">
-        <p class="eyebrow">{isEnglish ? b.second.kicker : `${b.second.index} · ${b.second.kicker}`}</p>
+        <p class="eyebrow">{isCompact ? b.second.kicker : `${b.second.index} · ${b.second.kicker}`}</p>
         <h2 class="med-h2 med-second__h">{b.second.heading}</h2>
         <p class="med-second__body">{b.second.body}</p>
 
         <h3 class="med-h5 med-second__oh">{b.second.offerHeading}</h3>
         <ul class="med-second__offer">
-          {(isEnglish ? b.second.offer.slice(0, 4) : b.second.offer).map((o: string) => <li>{o}</li>)}
+          {(isCompact ? b.second.offer.slice(0, 4) : b.second.offer).map((o: string) => <li>{o}</li>)}
         </ul>
         <p class="med-second__honesty">{b.second.honesty}</p>
       </div>
 
-      {!isEnglish && <TechNote locale={locale} kind="why" class="med-risks-note">
+      {!isCompact && <TechNote locale={locale} kind="why" class="med-risks-note">
         <ol class="med-risks">
           {b.second.risks.map((risk: any) => (
             <li>
@@ -564,7 +565,7 @@ const withUnit = (value: number, i: number): string => {
   <section class="med-start" id="start">
     <div class="shell--wide">
       <div class="med-head">
-        <p class="eyebrow">{isEnglish ? b.start.kicker : `${b.start.index} · ${b.start.kicker}`}</p>
+        <p class="eyebrow">{isCompact ? b.start.kicker : `${b.start.index} · ${b.start.kicker}`}</p>
         <h2 class="med-h2">{b.start.heading}</h2>
         <p class="t-lead">{b.start.body}</p>
       </div>
@@ -589,18 +590,18 @@ const withUnit = (value: number, i: number): string => {
         <section>
           <h3 class="med-h4">{b.start.needHeading}</h3>
           <ul class="med-exchange__list">
-            {(isEnglish ? medicalStartNeed : b.start.need).map((item: string) => <li>{item}</li>)}
+            {(isCompact ? medicalStartNeed : b.start.need).map((item: string) => <li>{item}</li>)}
           </ul>
         </section>
         <section class="med-exchange__out">
           <h3 class="med-h4">{b.start.getHeading}</h3>
           <ul class="med-exchange__list">
-            {(isEnglish ? medicalStartGet : b.start.get).map((item: string) => <li>{item}</li>)}
+            {(isCompact ? medicalStartGet : b.start.get).map((item: string) => <li>{item}</li>)}
           </ul>
         </section>
       </div>
 
-      {isEnglish ? (
+      {isCompact ? (
       <div class="med-panels med-panels--compact">
         <h3 class="t-label med-panels__h">{b.panels.heading}</h3>
 
