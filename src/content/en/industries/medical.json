@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Medical & pharmaceutical tooling — multi-cavity moulds | Metal Form",
-    "description": "Engineering, DFM and multi-cavity tooling for medical and pharmaceutical plastic components, with agreed documentation, spares and second-source options."
+    "description": "Multi-cavity moulds for medical and pharmaceutical plastic parts, with DFM, agreed technical documentation, spares and backup tooling."
   },
   "name": "Medical & Pharmaceutical",
   "tile": "Multi-cavity tooling where cavity 1 and cavity 32 have to be the same part.",
@@ -12,25 +12,25 @@
       "Every cavity has to",
       "make the same part."
     ],
-    "lead": "Engineering, DFM and multi-cavity tooling for medical and pharmaceutical plastic components. We build the tool and document the engineering; process validation and regulated manufacture stay with you.",
+    "lead": "We build multi-cavity moulds for medical and pharmaceutical plastic parts. The work can start with the part itself and continue through DFM, mould manufacture, trials and agreed technical documentation.",
     "markers": [
       "Tooling experience to 46 cavities",
-      "Documentation scope agreed with the order",
-      "Duplicate and second-source tooling"
+      "Technical documentation agreed with the order",
+      "Second and backup moulds"
     ]
   },
   "blocks": {
     "atlas": {
       "index": "01",
       "kicker": "Scope",
-      "heading": "What we tool.",
-      "body": "Medical plastic parts are often simple in shape and unforgiving in repetition. We focus on tooling where sealing, concentricity, thin walls, traceability or assembly fit has to repeat cavity after cavity.",
+      "heading": "What parts do we build moulds for?",
+      "body": "Many medical plastic parts look simple, but a small difference between cavities can affect sealing, assembly or how the part works.",
       "listLabel": "Component family",
       "items": [
         {
           "id": "syringe",
           "name": "Syringe barrels and plungers",
-          "hard": "Long, thin walls make core support, cooling and concentricity critical.",
+          "hard": "Long, thin walls make core support, cooling and concentricity important.",
           "spec": [
             "Core support and cooling",
             "Bore finish",
@@ -41,7 +41,7 @@
         {
           "id": "luer",
           "name": "Luer fittings and connectors",
-          "hard": "The sealing taper is functional geometry; angle, finish and parting-line placement have to stay consistent.",
+          "hard": "The tapered sealing surface has to mate correctly. Angle, finish and parting-line position must repeat across the cavities.",
           "spec": [
             "Taper geometry and finish",
             "Gate kept off the sealing face",
@@ -52,7 +52,7 @@
         {
           "id": "tips",
           "name": "Pipette tips",
-          "hard": "High cavitation and a tiny functional aperture make cavity-to-cavity consistency the problem.",
+          "hard": "With many cavities and a very small functional opening, even a small cavity difference can affect the part.",
           "spec": [
             "High cavitation",
             "Aperture control",
@@ -63,7 +63,7 @@
         {
           "id": "closures",
           "name": "Vial and bottle closures",
-          "hard": "Thread, seal and tamper geometry share one small part and one wear-sensitive tool.",
+          "hard": "Threads, sealing and tamper features all have to repeat on a small part over many cycles.",
           "spec": [
             "Thread-release strategy",
             "Sealing surface",
@@ -74,7 +74,7 @@
         {
           "id": "iv",
           "name": "IV and infusion set components",
-          "hard": "Several small mouldings must assemble as a system; the tolerance stack matters more than any one dimension.",
+          "hard": "Several small parts have to fit together, so the combined tolerance stack matters as much as any single dimension.",
           "spec": [
             "Assembly tolerance stack",
             "Multi-cavity balance",
@@ -85,7 +85,7 @@
         {
           "id": "diagnostic",
           "name": "Diagnostic consumables",
-          "hard": "Fluid paths, sealing faces and optical areas turn flash, weld lines and sink into functional defects.",
+          "hard": "Fluid paths, sealing surfaces and optical areas can directly affect how the part performs.",
           "spec": [
             "Functional surfaces",
             "Weld-line placement",
@@ -95,8 +95,8 @@
         },
         {
           "id": "inhaler",
-          "name": "Inhaler and delivery-device parts",
-          "hard": "Mechanism-heavy parts trade very high cavitation for slides, lifters, cores and tighter assembly requirements.",
+          "name": "Inhaler and drug-delivery parts",
+          "hard": "These parts often need more mechanisms, with slides, lifters and multiple cores inside the mould.",
           "spec": [
             "Slides, lifters and cores",
             "Mechanism repeatability",
@@ -107,7 +107,7 @@
         {
           "id": "packaging",
           "name": "Pharmaceutical packaging components",
-          "hard": "Long-lived closures and dosing parts make serviceability, spares and cavity identification commercially important.",
+          "hard": "When a product stays in production for years, mould serviceability and spare parts become commercially important.",
           "spec": [
             "Long programme life",
             "Spares and wear parts",
@@ -120,9 +120,9 @@
     "arithmetic": {
       "index": "02",
       "kicker": "Production economics",
-      "heading": "High output only matters if the cavities agree.",
-      "body": "Cavity count and cycle time set theoretical output. In a high-cavitation tool, that output is useful only when part weight and critical dimensions repeat across the cavity set.",
-      "body2": "Set cavities and cycle to see the arithmetic. Cavity balance is the engineering problem behind the number.",
+      "heading": "More cavities do not always mean better production.",
+      "body": "Cavity count and cycle time tell you how much a mould can produce on paper. But if a 32-cavity mould makes some parts lighter, heavier or slightly different, the output number alone is not enough.",
+      "body2": "Set the cavity count and cycle time to see the approximate output.",
       "calcLabel": "Output",
       "controls": [
         {
@@ -155,15 +155,15 @@
           "label": "Parts per year at 300 days"
         }
       ],
-      "note": "Output arithmetic, not a quotation. Achievable cycle time still depends on the part, cooling, ejection and the process window.",
+      "note": "This is a capacity calculation, not a quotation. Real cycle time still depends on the part, cooling, ejection and process conditions.",
       "amortHeading": "Production economics",
-      "amort": "Tool cost is spread across production volume. Higher cavitation can reduce unit cost, but only if melt delivery, cooling, maintenance and cavity consistency remain manageable."
+      "amort": "The mould cost is spread across the total production volume. More cavities can reduce unit cost, but only when the cavities remain consistent enough to run reliably."
     },
     "imbalance": {
       "index": "03",
       "kicker": "Cavity consistency",
-      "heading": "A balanced layout is not enough.",
-      "body": "A runner can look geometrically balanced and still produce cavity-to-cavity variation. The useful check is cavity-by-cavity data: how each cavity fills, what each part weighs and whether critical dimensions group by flow path.",
+      "heading": "A symmetrical runner layout is not enough.",
+      "body": "The runner can look perfectly balanced on the drawing and the cavities can still fill differently in production. That is why we compare part weight, critical dimensions and filling behaviour cavity by cavity.",
       "steps": [
         {
           "label": "The runner tree",
@@ -188,58 +188,58 @@
         "Use controlled short-shot studies to compare cavity filling.",
         "Identify every sample by cavity.",
         "Compare part weight and critical dimensions cavity by cavity.",
-        "Group results by flow path as well as cavity number."
+        "Group the results by flow path as well as cavity number."
       ],
       "diagnosisHeading": "Diagnostic examples",
       "diagnosis": [
         {
           "symptom": "A few light cavities",
-          "cause": "Check local gate, venting, cooling or cavity condition."
+          "cause": "Check the local gate, venting, cooling or cavity condition."
         },
         {
-          "symptom": "A gradual pattern across flow groups",
+          "symptom": "A repeated pattern across flow groups",
           "cause": "Investigate melt delivery and runner balance."
         },
         {
           "symptom": "Random scatter with no repeatable cavity pattern",
-          "cause": "Investigate material and process variation before blaming the tool."
+          "cause": "Investigate material and process variation before blaming the mould."
         }
       ],
-      "close": "Separate runner-balance effects from steel, cooling, material and process variation before dismantling the mould.",
+      "close": "Before changing mould steel, separate runner-balance effects from steel, cooling, material and process variation.",
       "figureMark": "100–300 °F"
     },
     "line": {
       "index": "04",
       "kicker": "Responsibility",
-      "heading": "Tooling and engineering stop before validated manufacture.",
-      "body": "Metal Form supplies the part and mould engineering, the tool, sampling support and agreed documentation. The manufacturer or validation owner qualifies the process and releases the regulated product.",
+      "heading": "We build the mould. The manufacturer approves the production process and final product.",
+      "body": "Metal Form is responsible for mould engineering, manufacture, trials, dimensional correction and the technical documentation agreed with the order. The manufacturer is responsible for validating production and approving the final medical or pharmaceutical product.",
       "body2": "The boundary is agreed before order so tooling evidence supports — but never replaces — the manufacturer's own qualification work.",
-      "supplyHeading": "Metal Form supplies",
+      "supplyHeading": "Metal Form",
       "supply": [
-        "Part engineering, reverse engineering and DFM",
-        "Mould design and multi-cavity tool manufacture",
-        "Sampling and dimensional correction",
-        "Agreed tool documentation and sampling evidence",
-        "Spares, duplicate and second-source tooling",
+        "Part engineering and DFM",
+        "Mould design and manufacture",
+        "Mould trials and dimensional correction",
+        "Agreed technical documentation and sampling evidence",
+        "Spares and backup tooling",
         "Sampling evidence you can carry into your own qualification work",
         "Spare cavity inserts, core pins and wear parts, specified at design time",
         "Duplicate, backup and second-source tooling to the same part specification",
         "Component production and supply only where the part is outside sterile manufacture and other regulated production scope."
       ],
-      "staysHeading": "Stays with the manufacturer / validation owner",
+      "staysHeading": "Manufacturer / validation owner",
       "stays": [
-        "Quality-system certification and supplier qualification",
-        "Cleanroom or controlled-environment manufacture",
-        "Sterilisation and validation",
-        "IQ, OQ, PQ and the validated process window",
-        "Regulatory release and product fitness for intended use",
+        "Quality system and supplier approval",
+        "Cleanroom or controlled-environment production",
+        "Sterilisation",
+        "Process validation, including IQ / OQ / PQ where applicable",
+        "Final product approval and release",
         "Regulatory submission, market approval and post-market obligations",
         "Batch traceability, release testing and certificates of analysis",
         "The decision that a component is fit for its clinical or pharmaceutical use"
       ],
-      "close": "No ISO 13485, GMP or other quality-system certification is claimed on this website. Project-specific certification, validation and supplier-approval requirements must be confirmed before order.",
+      "close": "Metal Form does not claim ISO 13485, GMP or any other quality-system certification on this website. If a project requires specific certification, validation or supplier approval, that requirement must be confirmed before the order.",
       "howHeading": "How this works in practice",
-      "how": "Metal Form remains on the tooling and engineering side of the boundary. The manufacturer or validation owner remains responsible for qualifying the process, maintaining the validated state and releasing the regulated product."
+      "how": "Metal Form remains responsible for the mould and its engineering documentation. The manufacturer or validation owner remains responsible for qualifying the production process, maintaining the validated state and releasing the finished product."
     },
     "anatomy": {
       "index": "05",
@@ -357,29 +357,29 @@
       "warranty": "Tooling warranty terms are defined per project against the mould specification and written into the order. No shot count is published here: a shot count that ignores your resin, your cycle and your maintenance means nothing."
     },
     "second": {
-      "index": "When a second tool is justified",
+      "index": "When a second mould makes sense",
       "kicker": "Supply continuity",
-      "heading": "One tool is one point of failure.",
-      "body": "A duplicate or second-source tool can protect supply, add capacity or reduce dependence on a single moulder or toolmaker. We can build it from your data, an existing tool specification or the part itself.",
+      "heading": "If you have only one mould, one failure can stop production.",
+      "body": "A second mould can protect production, add capacity or reduce dependence on one mould maker or one production site. We can build it from your drawings and data, an existing mould specification or the part itself.",
       "risks": [
         {
           "n": "01",
-          "scenario": "Tool or insert failure",
+          "scenario": "One mould failure could stop the line.",
           "consequence": "A line can stop when no qualified spare exists."
         },
         {
           "n": "02",
-          "scenario": "Demand outgrows the original programme",
+          "scenario": "Demand has grown beyond the capacity of the original mould.",
           "consequence": "The cavitation chosen at launch may no longer provide enough output."
         },
         {
           "n": "03",
-          "scenario": "A moulder, region or commercial relationship changes",
+          "scenario": "Production is moving to another plant or region.",
           "consequence": "Another qualified production asset may be required."
         },
         {
           "n": "04",
-          "scenario": "Demand rises faster than the forecast the tool was sized for.",
+          "scenario": "The buyer wants to reduce dependence on one mould maker or production source.",
           "consequence": "Cavity count is fixed in steel and cannot be increased."
         },
         {
@@ -395,33 +395,33 @@
       ],
       "offerHeading": "What we can supply",
       "offer": [
-        "Duplicate or backup tooling to the same part specification",
-        "Second-source tooling for a part already in production",
+        "A second or backup mould to the same part specification",
+        "A replacement mould for a part already in production",
         "Replacement cavity inserts, cores and wear parts",
-        "Re-tooling for worn, lost or obsolete assets",
+        "A new mould to replace a worn, lost or obsolete tool",
         "Documentation scope is agreed with the tool order."
       ],
-      "honesty": "A second tool still follows your own qualification and validation process."
+      "honesty": "A second mould still has to go through the manufacturer's own approval and validation process before regulated production."
     },
     "start": {
       "index": "08",
       "kicker": "Start",
       "heading": "Send the part.",
-      "body": "A model, drawing or physical sample is enough for a first technical review. Add annual volume and the critical dimensions if you have them.",
-      "needHeading": "What helps us quote",
+      "body": "You do not need every project detail before contacting us. A 3D model, drawing or physical sample is enough for a first review. Annual volume and critical dimensions help if you already have them.",
+      "needHeading": "What helps us start",
       "need": [
-        "3D model, 2D drawing or physical sample",
-        "Resin or material requirement",
-        "Annual volume and required tool life",
-        "Critical dimensions or functional interfaces",
-        "Press details, if the machine is already selected",
-        "Initial DFM and tooling route",
-        "Recommended cavitation against volume and press constraints",
-        "Scope for the tool, spares and documentation"
+        "3D model, drawing or physical sample",
+        "Material or resin",
+        "Annual volume",
+        "Required mould life\nCritical dimensions or functional areas",
+        "Injection-machine details, if already selected",
+        "Initial part review",
+        "Recommended tooling approach",
+        "Recommended cavity count"
       ],
       "getHeading": "What comes back",
       "get": [
-        "Open technical questions that must be resolved before quotation"
+        "Scope for the mould, spares and documentation\nOpen technical questions that must be answered before quotation"
       ]
     },
     "panels": {
@@ -466,7 +466,7 @@
   },
   "cta": {
     "headline": "Send the part.",
-    "body": "A model, drawing or sample is enough to start. We will review geometry, tooling route, cavitation and the information needed to quote.",
+    "body": "A model, drawing or sample is enough to start. We will review the part, the tooling approach, cavity count and the information needed for a quotation.",
     "action": "Send your component",
     "actionAlt": "See all contact options",
     "prefill": "Hello Metal Form — medical / pharmaceutical component.\n\nPart: \nResin: \nAnnual volume: \nRequired tool life (shots): \nCavities required: \nCritical dimensions: \nI have: 3D model / 2D drawing / physical sample / existing tool\nPress (tonnage, platen, tie-bar spacing): \nDelivery to: \nNDA required: yes / no",

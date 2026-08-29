@@ -166,7 +166,6 @@ const SPREAD = [
       </div>
 
       <p class="bev-econ__equation t-mono">{b.grams.scaleLabel}</p>
-      <h3 class="bev-h3 bev-econ__setpoint">{b.cavities.heading}</h3>
       <div class="bev-cav__figs" data-reveal>
         <figure class="bev-plate">
           <svg viewBox="0 0 300 200" data-nomirror role="img" aria-label={common.schematic}>
@@ -700,11 +699,11 @@ const SPREAD = [
       <div class="bev-ledger bev-ledger--visible">
         <section class="bev-ledger__col">
           <h3 class="bev-h4">{b.start.sendHeading}</h3>
-          <ul>{b.start.send.slice(0, 5).map((item: string) => <li>{item}</li>)}</ul>
+          <ul>{b.start.send.slice(0, 7).map((item: string) => <li>{item}</li>)}</ul>
         </section>
         <section class="bev-ledger__col bev-ledger__col--out">
           <h3 class="bev-h4">{b.start.getHeading}</h3>
-          <ul>{b.start.get.slice(0, 4).map((item: string) => <li>{item}</li>)}</ul>
+          <ul>{b.start.get.slice(0, 5).map((item: string) => <li>{item}</li>)}</ul>
         </section>
       </div>
       ) : (

@@ -32,6 +32,12 @@ interface Props {
 const { locale, content, common } = Astro.props;
 const b = content.blocks as any;
 const isEnglish = locale === 'en';
+const splitCompactItems = (items: string[]): string[] =>
+  items.flatMap((item) => String(item).split('\n').filter(Boolean));
+const medicalStartNeed = isEnglish ? splitCompactItems(b.start.need.slice(0, 5)) : [];
+const medicalStartGet = isEnglish
+  ? splitCompactItems([...b.start.need.slice(5), ...b.start.get])
+  : [];
 const showUnsupportedRunnerTemperature = false;
 const showUnsupportedMouldClassTable = false;
 const showUnsupportedLifeTable = false;
@@ -115,7 +121,7 @@ const withUnit = (value: number, i: number): string => {
   <section class="med-atlas" id="atlas">
     <div class="shell--wide">
       <div class="med-head">
-        <p class="eyebrow">{b.atlas.index} · {b.atlas.kicker}</p>
+        <p class="eyebrow">{isEnglish ? b.atlas.kicker : `${b.atlas.index} · ${b.atlas.kicker}`}</p>
         <h2 class="med-h2">{b.atlas.heading}</h2>
         <p class="t-lead">{b.atlas.body}</p>
       </div>
@@ -583,13 +589,13 @@ const withUnit = (value: number, i: number): string => {
         <section>
           <h3 class="med-h4">{b.start.needHeading}</h3>
           <ul class="med-exchange__list">
-            {(isEnglish ? b.start.need.slice(0, 5) : b.start.need).map((item: string) => <li>{item}</li>)}
+            {(isEnglish ? medicalStartNeed : b.start.need).map((item: string) => <li>{item}</li>)}
           </ul>
         </section>
         <section class="med-exchange__out">
           <h3 class="med-h4">{b.start.getHeading}</h3>
           <ul class="med-exchange__list">
-            {(isEnglish ? [...b.start.need.slice(5), ...b.start.get] : b.start.get).map((item: string) => <li>{item}</li>)}
+            {(isEnglish ? medicalStartGet : b.start.get).map((item: string) => <li>{item}</li>)}
           </ul>
         </section>
       </div>
@@ -641,15 +647,9 @@ const withUnit = (value: number, i: number): string => {
         </TechNote>
 
         <TechNote locale={locale} label={b.second.index} ruled>
-          <ol class="med-risks">
-            {b.second.risks.slice(0, 3).map((risk: any) => (
-              <li>
-                <span class="med-risks__n t-mono">{risk.n}</span>
-                <span class="med-risks__s">{risk.scenario}</span>
-                <span class="med-risks__c">{risk.consequence}</span>
-              </li>
-            ))}
-          </ol>
+          <ul class="med-panel__list">
+            {b.second.risks.slice(0, 4).map((risk: any) => <li>{risk.scenario}</li>)}
+          </ul>
         </TechNote>
 
         <TechNote locale={locale} label={b.panels.items[1].title} ruled>
